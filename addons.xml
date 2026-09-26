@@ -32,7 +32,7 @@
     </addon>
     <addon id="resource.images.pronostici"
            name="Pronostici - Loghi squadre"
-           version="1.0.3"
+           version="1.0.4"
            provider-name="Caltiki">
 
       <!-- ATTENZIONE - un addon di risorse NON dipende da xbmc.python (non
@@ -59,13 +59,13 @@
         <assets>
           <icon>icon.png</icon>
         </assets>
-        <news>v1.0.3 - Aggiunte 19 squadre francesi (Ligue 2 e National) piu' Longford Town: 896 loghi, 1766 nomi in mappa.</news>
+        <news>v1.0.4 - Aggiunti i nomi con cui AsianOdds chiama alcune squadre francesi (Fleury-Merogis, Paris 13 Atl., La Roche): 896 loghi, 1774 nomi in mappa.</news>
       </extension>
 
     </addon>
     <addon id="plugin.video.pronostici"
            name="Pronostici Calcio"
-           version="1.3.5"
+           version="1.3.6"
            provider-name="Caltiki">
 
       <requires>
@@ -88,7 +88,7 @@
         <assets>
           <icon>resources/icon.png</icon>
         </assets>
-        <news>v1.3.5 - Il filtro Movimenti segue il giudizio calcolato a monte, che pesa il movimento con il margine del bookmaker: meno partite, ma quelle dove il mercato si e' mosso davvero.</news>
+        <news>v1.3.6 - I loghi si trovano anche quando il nome differisce per trattini o punti (Le Puy-en-Velay).</news>
       </extension>
 
     </addon>
