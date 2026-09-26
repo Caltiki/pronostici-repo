@@ -65,7 +65,7 @@
     </addon>
     <addon id="plugin.video.pronostici"
            name="Pronostici Calcio"
-           version="1.3.7"
+           version="1.3.9"
            provider-name="Caltiki">
 
       <requires>
@@ -88,7 +88,7 @@
         <assets>
           <icon>resources/icon.png</icon>
         </assets>
-        <news>v1.3.7 - Icona.</news>
+        <news>v1.3.9 - Nuovo filtro Affidabili in AsianOdds: le partite a margine basso dove i due de-vig concordano, cioe' quelle con le probabilita' piu' attendibili. In elenco sono marcate con *.</news>
       </extension>
 
     </addon>
