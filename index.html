@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caltiki Repository per Kodi</title>
+<!--
+  QUESTA PAGINA HA DUE LETTORI, e va tenuta valida per entrambi.
+
+  1. Una persona, che ci legge le istruzioni.
+  2. KODI, che di questa pagina guarda SOLO i tag <a href>: il suo lettore
+     HTTP ricava l'elenco dei file di una cartella dai link della pagina
+     servita a quell'indirizzo. E' il motivo per cui esiste: GitHub non
+     genera elenchi di cartella, e senza elenco "Installa da file zip" non
+     mostra niente e l'aggiunta della sorgente sembra non funzionare.
+
+  Conseguenza pratica: il link allo ZIP deve restare un <a href> semplice,
+  con il file nella STESSA cartella di questa pagina. Un link a una
+  sottocartella, o costruito in JavaScript, per Kodi non esiste.
+-->
+<style>
+  :root {
+    --sfondo: #faf9f7;
+    --testo: #1d1c1a;
+    --tenue: #5c5955;
+    --bordo: #e2ded8;
+    --scheda: #ffffff;
+    --evidenza: #b3542a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --sfondo: #16151a;
+      --testo: #f0eeea;
+      --tenue: #a39f99;
+      --bordo: #2e2c33;
+      --scheda: #1e1d23;
+      --evidenza: #e08b5c;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 48px 16px 72px;
+    background: var(--sfondo);
+    color: var(--testo);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 640px; margin: 0 auto; }
+  h1 { font-size: 1.7rem; margin: 0 0 6px; letter-spacing: -0.01em; }
+  .sotto { color: var(--tenue); margin: 0 0 36px; }
+  h2 { font-size: 1.05rem; margin: 36px 0 12px; }
+  ol { padding-left: 22px; margin: 0; }
+  li { margin-bottom: 12px; }
+  code {
+    font: 0.87em/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+    background: var(--scheda);
+    border: 1px solid var(--bordo);
+    border-radius: 5px;
+    padding: 2px 6px;
+    overflow-wrap: break-word;
+  }
+  .url {
+    display: block;
+    margin: 10px 0 0;
+    padding: 12px 14px;
+    background: var(--scheda);
+    border: 1px solid var(--bordo);
+    border-radius: 8px;
+    font: 0.9rem/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+    overflow-wrap: break-word;
+  }
+  .nota {
+    margin-top: 40px;
+    padding: 16px 18px;
+    background: var(--scheda);
+    border: 1px solid var(--bordo);
+    border-left: 3px solid var(--evidenza);
+    border-radius: 8px;
+    color: var(--tenue);
+    font-size: 0.93rem;
+  }
+  .file { margin-top: 32px; font-size: 0.93rem; }
+  .file a { color: var(--evidenza); }
+  footer { margin-top: 48px; color: var(--tenue); font-size: 0.83rem; }
+</style>
+</head>
+<body>
+<main>
+
+  <h1>Caltiki Repository</h1>
+  <p class="sotto">Pronostici calcio per Kodi. Si installa come qualunque
+  altro addon: niente account, niente chiavi da inserire.</p>
+
+  <h2>Installazione</h2>
+  <ol>
+    <li>In Kodi: <code>Impostazioni</code> &rarr; <code>Sistema</code> &rarr;
+      <code>Add-on</code> e attiva <code>Origini sconosciute</code>.</li>
+    <li><code>Impostazioni</code> &rarr; <code>Gestione file</code> &rarr;
+      <code>Aggiungi sorgente</code> &rarr; <code>&lt;Nessuno&gt;</code>, e
+      scrivi questo indirizzo:
+      <span class="url">https://caltiki.github.io/pronostici-repo/</span>
+      Dai alla sorgente il nome <code>caltiki</code>.</li>
+    <li><code>Add-on</code> &rarr; <code>Installa da file zip</code> &rarr;
+      <code>caltiki</code> &rarr;
+      <code>repository.pronostici.zip</code>.</li>
+    <li><code>Add-on</code> &rarr; <code>Installa da repository</code> &rarr;
+      <code>Caltiki Repository</code> &rarr; <code>Add-on video</code> &rarr;
+      <code>Pronostici Calcio</code> &rarr; <code>Installa</code>.</li>
+  </ol>
+
+  <div class="nota">
+    Al passo 4 Kodi scarica da solo anche i loghi delle squadre: sono un
+    pacchetto a parte da 18&nbsp;MB, quindi quel passaggio impiega qualche
+    secondo in piu&#39; degli altri. Da qui in avanti gli aggiornamenti
+    arrivano da soli.
+  </div>
+
+  <p class="file">File di questa cartella:
+    <a href="repository.pronostici.zip">repository.pronostici.zip</a></p>
+
+  <footer>I dati vengono aggiornati ogni mattina. Le quote e le percentuali
+  hanno scopo informativo.</footer>
+
+</main>
+</body>
+</html>

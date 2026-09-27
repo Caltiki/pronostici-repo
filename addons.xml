@@ -2,7 +2,7 @@
 <addons>
     <addon id="repository.pronostici"
            name="Caltiki Repository"
-           version="1.0.2"
+           version="1.0.3"
            provider-name="Caltiki">
 
       <extension point="xbmc.addon.repository" name="Caltiki Repository">
@@ -10,8 +10,10 @@
              PUBBLICO che ospita i pacchetti. Se il repository si chiama in altro
              modo, o il branch non e' main, gli aggiornamenti non arrivano - e non
              arriva nessun messaggio d'errore, Kodi semplicemente non trova nulla.
-             Il repository pubblico contiene SOLO pacchetti: i dati dei pronostici
-             restano nel repository privato, raggiunto dall'addon con il token. -->
+             Su main stanno SOLO i pacchetti. I dati dei pronostici stanno sul
+             branch gh-data dello stesso repository, letti dall'addon da
+             raw.githubusercontent.com senza autenticazione. Nel privato restano
+             gli scraper e il codice che li produce. -->
         <dir>
           <info compressed="false">https://raw.githubusercontent.com/Caltiki/pronostici-repo/main/addons.xml</info>
           <checksum>https://raw.githubusercontent.com/Caltiki/pronostici-repo/main/addons.xml.md5</checksum>
@@ -21,12 +23,12 @@
 
       <extension point="xbmc.addon.metadata">
         <summary lang="it">Repository per Pronostici Calcio</summary>
-        <description lang="it">Sorgente degli aggiornamenti automatici di Pronostici Calcio e dei loghi delle squadre. Non contiene dati, solo i pacchetti degli addon.</description>
+        <description lang="it">Sorgente degli aggiornamenti automatici di Pronostici Calcio e dei loghi delle squadre.</description>
         <platform>all</platform>
         <assets>
           <icon>icon.png</icon>
         </assets>
-        <news>v1.0.2 - Icona.</news>
+        <news>v1.0.3 - Dati su repository pubblico: l'addon non chiede piu' un token.</news>
       </extension>
 
     </addon>
@@ -65,7 +67,7 @@
     </addon>
     <addon id="plugin.video.pronostici"
            name="Pronostici Calcio"
-           version="1.3.9"
+           version="1.4.0"
            provider-name="Caltiki">
 
       <requires>
@@ -83,12 +85,12 @@
 
       <extension point="xbmc.addon.metadata">
         <summary lang="it">Pronostici calcio</summary>
-        <description lang="it">Statarea, WebPronostici, Consensus e AsianOdds. Richiede un token GitHub da inserire una volta in Impostazioni - GitHub: il repository dei dati e' privato.</description>
+        <description lang="it">Statarea, WebPronostici, Consensus e AsianOdds aggiornati ogni giorno. Non serve configurare niente: si installa e funziona.</description>
         <platform>all</platform>
         <assets>
           <icon>resources/icon.png</icon>
         </assets>
-        <news>v1.3.9 - Nuovo filtro Affidabili in AsianOdds: le partite a margine basso dove i due de-vig concordano, cioe' quelle con le probabilita' piu' attendibili. In elenco sono marcate con *.</news>
+        <news>v1.4.0 - Niente piu' token GitHub: i dati stanno ora in un repository pubblico e l'addon funziona appena installato. Chi aggiorna da una versione precedente trova [Ripristina i valori predefiniti] in [Avanzate]: serve a cancellare il vecchio token, altrimenti resta salvato e continua a essere usato.</news>
       </extension>
 
     </addon>
