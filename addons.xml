@@ -67,7 +67,7 @@
     </addon>
     <addon id="plugin.video.pronostici"
            name="Pronostici Calcio"
-           version="1.4.0"
+           version="1.4.1"
            provider-name="Caltiki">
 
       <requires>
@@ -90,7 +90,7 @@
         <assets>
           <icon>resources/icon.png</icon>
         </assets>
-        <news>v1.4.0 - Niente piu' token GitHub: i dati stanno ora in un repository pubblico e l'addon funziona appena installato. Chi aggiorna da una versione precedente trova [Ripristina i valori predefiniti] in [Avanzate]: serve a cancellare il vecchio token, altrimenti resta salvato e continua a essere usato.</news>
+        <news>v1.4.1 - Menu ripulito: restano le quattro sorgenti. La voce [Avanzate] e' sparita, perche' non serve a chi usa l'addon; repository e branch restano modificabili dalle Impostazioni di Kodi, dove chi ne ha bisogno li cerca. v1.4.0 - Niente piu' token GitHub: i dati stanno in un repository pubblico e l'addon funziona appena installato.</news>
       </extension>
 
     </addon>
