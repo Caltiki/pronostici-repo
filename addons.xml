@@ -34,7 +34,7 @@
     </addon>
     <addon id="resource.images.pronostici"
            name="Pronostici - Loghi squadre"
-           version="1.0.13"
+           version="1.0.18"
            provider-name="Caltiki">
 
       <!-- ATTENZIONE - un addon di risorse NON dipende da xbmc.python (non
@@ -48,20 +48,19 @@
 
       <!-- Addon di sole risorse: nessun codice, solo immagini e la mappa
            nome-squadra -> file. Sta separato da plugin.video.pronostici per una
-           ragione pratica: i loghi pesano 16 MB e cambiano raramente, mentre il
-           codice del plugin cambia spesso e pesa poche decine di KB. Tenuti
-           insieme, ogni correzione di tre righe costringeva a riscaricare
-           16 MB. -->
+           ragione pratica: i loghi cambiano raramente, mentre il codice del
+           plugin cambia spesso e pesa poche decine di KB. Tenuti insieme, ogni
+           correzione di tre righe costringeva a riscaricare tutto. -->
       <extension point="kodi.resource.images"/>
 
       <extension point="xbmc.addon.metadata">
         <summary lang="it">Loghi delle squadre per Pronostici Calcio</summary>
-        <description lang="it">1800 loghi di squadre e nazionali e la mappa dei nomi, usati da Pronostici Calcio per mostrare gli stemmi accanto alle partite. Si aggiorna solo quando vengono aggiunte squadre.</description>
+        <description lang="it">2764 loghi di squadre e nazionali e la mappa dei nomi, usati da Pronostici Calcio per mostrare gli stemmi accanto alle partite. Si aggiorna solo quando vengono aggiunte squadre.</description>
         <platform>all</platform>
         <assets>
           <icon>icon.png</icon>
         </assets>
-        <news>v1.0.13 - Israele, Ungheria, Kazakistan, Lituania, Lettonia, Estonia, Georgia, Moldavia, Grecia, Danimarca, Finlandia, Isole Faroe, Malta, Kosovo, Macedonia, Montenegro, Lussemburgo, Irlanda del Nord, Irlanda, Gibilterra, Norvegia e Olanda. 1800 loghi, 2803 nomi in mappa.</news>
+        <news>v1.0.18 - Naples United (Florida) ha il suo stemma, e "Naples" non prende piu' quello del Napoli. v1.0.17 - Centro America, Caraibi, MLS e Canadian Premier League.</news>
       </extension>
 
     </addon>
