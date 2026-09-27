@@ -34,7 +34,7 @@
     </addon>
     <addon id="resource.images.pronostici"
            name="Pronostici - Loghi squadre"
-           version="1.0.25"
+           version="1.0.26"
            provider-name="Caltiki">
 
       <!-- ATTENZIONE - un addon di risorse NON dipende da xbmc.python (non
@@ -55,18 +55,18 @@
 
       <extension point="xbmc.addon.metadata">
         <summary lang="it">Loghi delle squadre per Pronostici Calcio</summary>
-        <description lang="it">2873 loghi di squadre e nazionali e la mappa dei nomi, usati da Pronostici Calcio per mostrare gli stemmi accanto alle partite. Si aggiorna solo quando vengono aggiunte squadre.</description>
+        <description lang="it">2898 loghi di squadre e nazionali e la mappa dei nomi, usati da Pronostici Calcio per mostrare gli stemmi accanto alle partite. Si aggiorna solo quando vengono aggiunte squadre.</description>
         <platform>all</platform>
         <assets>
           <icon>icon.png</icon>
         </assets>
-        <news>v1.0.25 - Liga Profesional argentina: nessun club nuovo, ma le grafie lunghe (CA Lanus, Club Atletico Platense) ora trovano lo stemma. Unito un doppione di Talleres. 2873 loghi, 4084 nomi. v1.0.24 - Le nazionali CONCACAF.</news>
+        <news>v1.0.26 - Le 26 nazionali asiatiche di Coppa d'Asia e ASEAN (Cina, India, Thailandia, Vietnam, Indonesia, Emirati, Kuwait...). Agganciate 43 squadre che lo stemma ce l'avevano gia' ma che le fonti scrivono con la sigla sociale (UD Llanera, CD Alcoyano, Ath. Carpi, Calcio Giugliano). 2898 loghi, 4173 nomi. v1.0.25 - Liga Profesional argentina: nessun club nuovo, ma le grafie lunghe (CA Lanus, Club Atletico Platense) ora trovano lo stemma. Unito un doppione di Talleres. 2872 loghi, 4105 nomi. v1.0.24 - Le nazionali CONCACAF.</news>
       </extension>
 
     </addon>
     <addon id="plugin.video.pronostici"
            name="Pronostici Calcio"
-           version="1.4.6"
+           version="1.4.7"
            provider-name="Caltiki">
 
       <requires>
@@ -89,7 +89,7 @@
         <assets>
           <icon>resources/icon.png</icon>
         </assets>
-        <news>v1.4.6 - La mappa dei nomi si ricontrolla a ogni apertura dell'addon, non piu' a intervalli: una correzione pubblicata adesso si vede subito. Dentro le liste nessuna richiesta in piu'. v1.4.5 - La mappa dei nomi si aggiorna da sola.</news>
+        <news>v1.4.7 - Le squadre femminili e le seconde squadre prendono lo stemma del club, e le nazionali giovanili la loro bandiera: Arsenal (w), Osasuna B, Inter U23, Francia U21. Sui nomi veri di oggi sono 51 squadre in piu', senza toccare la prudenza sulle omonimie. v1.4.6 - La mappa dei nomi si ricontrolla a ogni apertura dell'addon, non piu' a intervalli: una correzione pubblicata adesso si vede subito. Dentro le liste nessuna richiesta in piu'. v1.4.5 - La mappa dei nomi si aggiorna da sola.</news>
       </extension>
 
     </addon>
