@@ -34,7 +34,7 @@
     </addon>
     <addon id="resource.images.pronostici"
            name="Pronostici - Loghi squadre"
-           version="1.0.7"
+           version="1.0.9"
            provider-name="Caltiki">
 
       <!-- ATTENZIONE - un addon di risorse NON dipende da xbmc.python (non
@@ -56,18 +56,18 @@
 
       <extension point="xbmc.addon.metadata">
         <summary lang="it">Loghi delle squadre per Pronostici Calcio</summary>
-        <description lang="it">962 loghi di squadre e la mappa dei nomi, usati da Pronostici Calcio per mostrare gli stemmi accanto alle partite. Si aggiorna solo quando vengono aggiunte squadre.</description>
+        <description lang="it">1232 loghi di squadre e nazionali e la mappa dei nomi, usati da Pronostici Calcio per mostrare gli stemmi accanto alle partite. Si aggiorna solo quando vengono aggiunte squadre.</description>
         <platform>all</platform>
         <assets>
           <icon>icon.png</icon>
         </assets>
-        <news>v1.0.7 - MLS: 30 squadre. 962 loghi, 1910 nomi in mappa.</news>
+        <news>v1.0.9 - Le 48 nazionali del Mondiale e le cinque Regionalliga tedesche. 1232 loghi, 2216 nomi in mappa.</news>
       </extension>
 
     </addon>
     <addon id="plugin.video.pronostici"
            name="Pronostici Calcio"
-           version="1.4.1"
+           version="1.4.2"
            provider-name="Caltiki">
 
       <requires>
@@ -90,7 +90,7 @@
         <assets>
           <icon>resources/icon.png</icon>
         </assets>
-        <news>v1.4.1 - Menu ripulito: restano le quattro sorgenti. La voce [Avanzate] e' sparita, perche' non serve a chi usa l'addon; repository e branch restano modificabili dalle Impostazioni di Kodi, dove chi ne ha bisogno li cerca. v1.4.0 - Niente piu' token GitHub: i dati stanno in un repository pubblico e l'addon funziona appena installato.</news>
+        <news>v1.4.2 - Riconosce le terze squadre (Villarreal C, Real Sociedad C): senza, il logo della prima squadra finiva sulla squadra C. v1.4.1 - Menu ripulito: restano le quattro sorgenti.</news>
       </extension>
 
     </addon>
