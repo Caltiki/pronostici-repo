@@ -34,7 +34,7 @@
     </addon>
     <addon id="resource.images.pronostici"
            name="Pronostici - Loghi squadre"
-           version="1.0.9"
+           version="1.0.10"
            provider-name="Caltiki">
 
       <!-- ATTENZIONE - un addon di risorse NON dipende da xbmc.python (non
@@ -56,12 +56,12 @@
 
       <extension point="xbmc.addon.metadata">
         <summary lang="it">Loghi delle squadre per Pronostici Calcio</summary>
-        <description lang="it">1232 loghi di squadre e nazionali e la mappa dei nomi, usati da Pronostici Calcio per mostrare gli stemmi accanto alle partite. Si aggiorna solo quando vengono aggiunte squadre.</description>
+        <description lang="it">1362 loghi di squadre e nazionali e la mappa dei nomi, usati da Pronostici Calcio per mostrare gli stemmi accanto alle partite. Si aggiorna solo quando vengono aggiunte squadre.</description>
         <platform>all</platform>
         <assets>
           <icon>icon.png</icon>
         </assets>
-        <news>v1.0.9 - Le 48 nazionali del Mondiale e le cinque Regionalliga tedesche. 1232 loghi, 2216 nomi in mappa.</news>
+        <news>v1.0.10 - Primera e Segunda Federacion spagnole: 130 squadre. 1362 loghi, 2346 nomi in mappa.</news>
       </extension>
 
     </addon>
