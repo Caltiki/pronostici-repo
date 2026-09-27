@@ -34,7 +34,7 @@
     </addon>
     <addon id="resource.images.pronostici"
            name="Pronostici - Loghi squadre"
-           version="1.0.19"
+           version="1.0.21"
            provider-name="Caltiki">
 
       <!-- ATTENZIONE - un addon di risorse NON dipende da xbmc.python (non
@@ -60,13 +60,13 @@
         <assets>
           <icon>icon.png</icon>
         </assets>
-        <news>v1.0.19 - Serie D, gironi A e B: 33 squadre, ciascuna raggiungibile sia col nome nudo sia con la sigla (Imperia e ASD Imperia, Bra e AC Bra). 2797 loghi, 3880 nomi in mappa.</news>
+        <news>v1.0.21 - Agganciati i nomi con cui le fonti scrivono davvero alcune squadre di Serie D: Valenzana, Ciserano-Bergamo, Milan II, Derthona FbC, Palazzolo. v1.0.20 - Tabella delle omonimie: 13 nomi risolti in base al campionato.</news>
       </extension>
 
     </addon>
     <addon id="plugin.video.pronostici"
            name="Pronostici Calcio"
-           version="1.4.3"
+           version="1.4.4"
            provider-name="Caltiki">
 
       <requires>
@@ -89,7 +89,7 @@
         <assets>
           <icon>resources/icon.png</icon>
         </assets>
-        <news>v1.4.3 - Trova i loghi anche quando il nome ha lettere accentate: Bodo/Glimt, Puskas Akademia, Hafnarfjordur e compagnia non hanno piu' bisogno di un alias scritto a mano. v1.4.2 - Riconosce le terze squadre (Villarreal C).</news>
+        <news>v1.4.4 - Le squadre omonime ora si distinguono dal campionato: Leon in Serie D non e' piu' il Leon messicano, Barcelona in Ecuador non e' il Barca, Naples in USA non e' il Napoli. Dove la fonte non dice il campionato, quelle squadre restano senza stemma invece di prendere quello sbagliato. v1.4.3 - Trova i loghi anche coi nomi accentati.</news>
       </extension>
 
     </addon>
