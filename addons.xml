@@ -34,7 +34,7 @@
     </addon>
     <addon id="resource.images.pronostici"
            name="Pronostici - Loghi squadre"
-           version="1.0.12"
+           version="1.0.13"
            provider-name="Caltiki">
 
       <!-- ATTENZIONE - un addon di risorse NON dipende da xbmc.python (non
@@ -56,18 +56,18 @@
 
       <extension point="xbmc.addon.metadata">
         <summary lang="it">Loghi delle squadre per Pronostici Calcio</summary>
-        <description lang="it">1547 loghi di squadre e nazionali e la mappa dei nomi, usati da Pronostici Calcio per mostrare gli stemmi accanto alle partite. Si aggiorna solo quando vengono aggiunte squadre.</description>
+        <description lang="it">1800 loghi di squadre e nazionali e la mappa dei nomi, usati da Pronostici Calcio per mostrare gli stemmi accanto alle partite. Si aggiorna solo quando vengono aggiunte squadre.</description>
         <platform>all</platform>
         <assets>
           <icon>icon.png</icon>
         </assets>
-        <news>v1.0.12 - Stessi 1547 loghi, pacchetto da 29 a 7 MB: gli stemmi ora usano una tavolozza invece dei colori pieni, differenza non visibile a 128 pixel. v1.0.11 - Austria, Belgio, Cechia, Croazia, Bosnia, Bulgaria, Cipro, Albania, Azerbaigian, Andorra, Armenia e National League inglese.</news>
+        <news>v1.0.13 - Israele, Ungheria, Kazakistan, Lituania, Lettonia, Estonia, Georgia, Moldavia, Grecia, Danimarca, Finlandia, Isole Faroe, Malta, Kosovo, Macedonia, Montenegro, Lussemburgo, Irlanda del Nord, Irlanda, Gibilterra, Norvegia e Olanda. 1800 loghi, 2803 nomi in mappa.</news>
       </extension>
 
     </addon>
     <addon id="plugin.video.pronostici"
            name="Pronostici Calcio"
-           version="1.4.2"
+           version="1.4.3"
            provider-name="Caltiki">
 
       <requires>
@@ -90,7 +90,7 @@
         <assets>
           <icon>resources/icon.png</icon>
         </assets>
-        <news>v1.4.2 - Riconosce le terze squadre (Villarreal C, Real Sociedad C): senza, il logo della prima squadra finiva sulla squadra C. v1.4.1 - Menu ripulito: restano le quattro sorgenti.</news>
+        <news>v1.4.3 - Trova i loghi anche quando il nome ha lettere accentate: Bodo/Glimt, Puskas Akademia, Hafnarfjordur e compagnia non hanno piu' bisogno di un alias scritto a mano. v1.4.2 - Riconosce le terze squadre (Villarreal C).</news>
       </extension>
 
     </addon>
