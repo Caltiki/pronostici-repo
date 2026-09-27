@@ -66,7 +66,7 @@
     </addon>
     <addon id="plugin.video.pronostici"
            name="Pronostici Calcio"
-           version="1.4.5"
+           version="1.4.6"
            provider-name="Caltiki">
 
       <requires>
@@ -89,7 +89,7 @@
         <assets>
           <icon>resources/icon.png</icon>
         </assets>
-        <news>v1.4.5 - La mappa dei nomi delle squadre si aggiorna da sola: non serve piu' aggiornare l'addon per correggere un nome o un'omonimia. Le immagini restano nel pacchetto dei loghi. v1.4.4 - Le squadre omonime si distinguono dal campionato.</news>
+        <news>v1.4.6 - La mappa dei nomi si ricontrolla a ogni apertura dell'addon, non piu' a intervalli: una correzione pubblicata adesso si vede subito. Dentro le liste nessuna richiesta in piu'. v1.4.5 - La mappa dei nomi si aggiorna da sola.</news>
       </extension>
 
     </addon>
