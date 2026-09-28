@@ -34,7 +34,7 @@
     </addon>
     <addon id="resource.images.pronostici"
            name="Pronostici - Loghi squadre"
-           version="1.0.27"
+           version="1.0.28"
            provider-name="Caltiki">
 
       <!-- ATTENZIONE - un addon di risorse NON dipende da xbmc.python (non
@@ -55,12 +55,12 @@
 
       <extension point="xbmc.addon.metadata">
         <summary lang="it">Loghi delle squadre per Pronostici Calcio</summary>
-        <description lang="it">2898 loghi di squadre e nazionali e la mappa dei nomi, usati da Pronostici Calcio per mostrare gli stemmi accanto alle partite. Si aggiorna solo quando vengono aggiunte squadre.</description>
+        <description lang="it">2965 loghi di squadre e nazionali e la mappa dei nomi, usati da Pronostici Calcio per mostrare gli stemmi accanto alle partite. Si aggiorna solo quando vengono aggiunte squadre.</description>
         <platform>all</platform>
         <assets>
           <icon>icon.png</icon>
         </assets>
-        <news>v1.0.27 - I paesi come li scrivono le fonti italiane: Cambogia, Malesia, Siria, Kirghizistan, Emirati Arabi Uniti, Rep. Democratica del Congo. Corretti cinque stemmi sbagliati. 2898 loghi, 4181 nomi. v1.0.26 - Le 26 nazionali asiatiche di Coppa d'Asia e ASEAN (Cina, India, Thailandia, Vietnam, Indonesia, Emirati, Kuwait...). Agganciate 43 squadre che lo stemma ce l'avevano gia' ma che le fonti scrivono con la sigla sociale (UD Llanera, CD Alcoyano, Ath. Carpi, Calcio Giugliano). 2898 loghi, 4173 nomi. v1.0.25 - Liga Profesional argentina: nessun club nuovo, ma le grafie lunghe (CA Lanus, Club Atletico Platense) ora trovano lo stemma. Unito un doppione di Talleres. 2872 loghi, 4105 nomi. v1.0.24 - Le nazionali CONCACAF.</news>
+        <news>v1.0.28 - Botola Pro marocchina (16 club, tutti nuovi), Gaucho A2 e Carioca B2 brasiliani, Tercera Federacion di Murcia, Segunda venezuelana. Separati tre omonimi che si sarebbero rubati lo stemma: Atlas di Guadalajara contro CA Atlas argentino, Zamora di Barinas contro Zamora CF, Santa Cruz di Rio contro quello di Recife. 2965 loghi, 4290 nomi. v1.0.27 - I paesi come li scrivono le fonti italiane: Cambogia, Malesia, Siria, Kirghizistan, Emirati Arabi Uniti, Rep. Democratica del Congo. Corretti cinque stemmi sbagliati. 2898 loghi, 4181 nomi. v1.0.26 - Le 26 nazionali asiatiche di Coppa d'Asia e ASEAN (Cina, India, Thailandia, Vietnam, Indonesia, Emirati, Kuwait...). Agganciate 43 squadre che lo stemma ce l'avevano gia' ma che le fonti scrivono con la sigla sociale (UD Llanera, CD Alcoyano, Ath. Carpi, Calcio Giugliano). 2898 loghi, 4173 nomi. v1.0.25 - Liga Profesional argentina: nessun club nuovo, ma le grafie lunghe (CA Lanus, Club Atletico Platense) ora trovano lo stemma. Unito un doppione di Talleres. 2872 loghi, 4105 nomi. v1.0.24 - Le nazionali CONCACAF.</news>
       </extension>
 
     </addon>
