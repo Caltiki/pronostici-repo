@@ -67,7 +67,7 @@
     "Ospite": "Qatar",
     "Tipo": "MISTO",
     "Pronostico": "1",
-    "Quota": 2.5
+    "Quota": 2.51
   },
   {
     "Data_partita": "2026-09-30",
@@ -87,7 +87,7 @@
     "Ospite": "San Luis Quillota",
     "Tipo": "MISTO",
     "Pronostico": "12",
-    "Quota": ""
+    "Quota": 1.25
   },
   {
     "Data_partita": "2026-09-30",
@@ -111,12 +111,12 @@
   },
   {
     "Data_partita": "2026-09-30",
-    "Ora": "09/30 21:30",
+    "Ora": "09/30 21:00",
     "Campionato": "El Salvador - Primera Division",
-    "Casa": "Alianza FC",
-    "Ospite": "Platense",
+    "Casa": "Aguila",
+    "Ospite": "Inter",
     "Tipo": "MISTO",
-    "Pronostico": "SEGNA CASA",
+    "Pronostico": "OVER",
     "Quota": ""
   },
   {
@@ -157,7 +157,7 @@
     "Ospite": "Svezia U21",
     "Tipo": "MISTO",
     "Pronostico": "12",
-    "Quota": ""
+    "Quota": 1.25
   },
   {
     "Data_partita": "2026-09-30",
@@ -177,7 +177,7 @@
     "Ospite": "Bulgaria U21",
     "Tipo": "MISTO",
     "Pronostico": "GOL",
-    "Quota": ""
+    "Quota": 1.91
   },
   {
     "Data_partita": "2026-09-30",
@@ -197,7 +197,7 @@
     "Ospite": "Azerbaijan U21",
     "Tipo": "MISTO",
     "Pronostico": "1",
-    "Quota": ""
+    "Quota": 1.18
   },
   {
     "Data_partita": "2026-09-30",
@@ -241,6 +241,16 @@
   },
   {
     "Data_partita": "2026-09-30",
+    "Ora": "09/30 12:00",
+    "Campionato": "Internazionali - Friendly International",
+    "Casa": "Austria U19",
+    "Ospite": "Danimarca U19",
+    "Tipo": "MISTO",
+    "Pronostico": "OVER",
+    "Quota": ""
+  },
+  {
+    "Data_partita": "2026-09-30",
     "Ora": "09/30 09:00",
     "Campionato": "Internazionali - Friendly International",
     "Casa": "Corea del Sud U18",
@@ -255,6 +265,26 @@
     "Campionato": "Internazionali - Friendly International",
     "Casa": "Fiji",
     "Ospite": "Nuova Caledonia",
+    "Tipo": "MISTO",
+    "Pronostico": "SEGNA FUORI",
+    "Quota": ""
+  },
+  {
+    "Data_partita": "2026-09-30",
+    "Ora": "09/30 09:00",
+    "Campionato": "Internazionali - Friendly International",
+    "Casa": "Finlandia U19",
+    "Ospite": "Germania U19",
+    "Tipo": "MISTO",
+    "Pronostico": "OVER",
+    "Quota": ""
+  },
+  {
+    "Data_partita": "2026-09-30",
+    "Ora": "09/30 09:00",
+    "Campionato": "Internazionali - Friendly International",
+    "Casa": "Ireland U17",
+    "Ospite": "Repubblica Ceca U17",
     "Tipo": "MISTO",
     "Pronostico": "SEGNA FUORI",
     "Quota": ""
@@ -287,16 +317,16 @@
     "Ospite": "Perù",
     "Tipo": "MISTO",
     "Pronostico": "1",
-    "Quota": 1.44
+    "Quota": 1.51
   },
   {
     "Data_partita": "2026-09-30",
-    "Ora": "09/30 12:00",
+    "Ora": "09/30 14:00",
     "Campionato": "Internazionali - Friendly International",
-    "Casa": "Olanda U19",
-    "Ospite": "Austria U19",
+    "Casa": "Netherlands U18",
+    "Ospite": "Norvegia U18",
     "Tipo": "MISTO",
-    "Pronostico": "1X",
+    "Pronostico": "OVER 1.5",
     "Quota": ""
   },
   {
@@ -321,13 +351,43 @@
   },
   {
     "Data_partita": "2026-09-30",
+    "Ora": "09/30 16:30",
+    "Campionato": "Internazionali - Friendly International",
+    "Casa": "Portogallo U19",
+    "Ospite": "Olanda U19",
+    "Tipo": "MISTO",
+    "Pronostico": "12",
+    "Quota": ""
+  },
+  {
+    "Data_partita": "2026-09-30",
+    "Ora": "09/30 09:00",
+    "Campionato": "Internazionali - Friendly International",
+    "Casa": "Scozia U19",
+    "Ospite": "Ucraina U19",
+    "Tipo": "MISTO",
+    "Pronostico": "SEGNA FUORI",
+    "Quota": ""
+  },
+  {
+    "Data_partita": "2026-09-30",
     "Ora": "09/30 13:00",
     "Campionato": "Internazionali - Friendly International",
     "Casa": "Seychelles",
     "Ospite": "Sri Lanka",
     "Tipo": "MISTO",
     "Pronostico": "2",
-    "Quota": 2.55
+    "Quota": 2.77
+  },
+  {
+    "Data_partita": "2026-09-30",
+    "Ora": "09/30 09:00",
+    "Campionato": "Internazionali - Friendly International",
+    "Casa": "Svezia U19",
+    "Ospite": "Repubblica Ceca U19",
+    "Tipo": "MISTO",
+    "Pronostico": "SEGNA FUORI",
+    "Quota": ""
   },
   {
     "Data_partita": "2026-09-30",
@@ -337,6 +397,26 @@
     "Ospite": "Cile",
     "Tipo": "MISTO",
     "Pronostico": "OVER 1.5",
+    "Quota": ""
+  },
+  {
+    "Data_partita": "2026-09-30",
+    "Ora": "09/30 08:00",
+    "Campionato": "Internazionali - Friendly matches",
+    "Casa": "FC Arges Pitesti",
+    "Ospite": "Cetate Deva",
+    "Tipo": "MISTO",
+    "Pronostico": "OVER",
+    "Quota": ""
+  },
+  {
+    "Data_partita": "2026-09-30",
+    "Ora": "09/30 16:00",
+    "Campionato": "Internazionali - Friendly matches",
+    "Casa": "SC Kalsdorf",
+    "Ospite": "Grazer AK",
+    "Tipo": "MISTO",
+    "Pronostico": "OVER",
     "Quota": ""
   },
   {
@@ -557,7 +637,7 @@
     "Ospite": "Rentistas",
     "Tipo": "MISTO",
     "Pronostico": "12",
-    "Quota": 1.25
+    "Quota": 1.24
   },
   {
     "Data_partita": "2026-09-30",
