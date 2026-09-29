@@ -690,7 +690,7 @@
  {
   "Casa": "Madagascar",
   "Ospite": "Tanzania",
-  "Ora": "15:00",
+  "Ora": "16:00",
   "Paese": "Africa",
   "Lega": "Africa Cup Of Nations Qualification",
   "Mercato": "DC",
@@ -1424,22 +1424,6 @@
   "Q2": 2.75
  },
  {
-  "Casa": "Tochigi City",
-  "Ospite": "Sanfrecce Hiroshima",
-  "Ora": "12:00",
-  "Paese": "Japan",
-  "Lega": "J League Cup",
-  "Mercato": "1X2",
-  "Sel": "2",
-  "Linea": null,
-  "Tip": "Away Win",
-  "Conf": 0.8,
-  "Q tip": null,
-  "Q1": 9.0,
-  "QX": 5.0,
-  "Q2": 1.25
- },
- {
   "Casa": "Coventry City U21",
   "Ospite": "Colchester United U21",
   "Ora": "14:00",
@@ -1472,20 +1456,20 @@
   "Q2": 3.4
  },
  {
-  "Casa": "Sagan Tosu",
-  "Ospite": "Tokyo Verdy",
+  "Casa": "Tochigi City",
+  "Ospite": "Sanfrecce Hiroshima",
   "Ora": "12:00",
   "Paese": "Japan",
   "Lega": "J League Cup",
-  "Mercato": "DC",
-  "Sel": "12",
+  "Mercato": "1X2",
+  "Sel": "2",
   "Linea": null,
-  "Tip": "12",
+  "Tip": "Away Win",
   "Conf": 0.8,
   "Q tip": null,
-  "Q1": 2.9,
-  "QX": 3.1,
-  "Q2": 2.1
+  "Q1": 9.0,
+  "QX": 5.0,
+  "Q2": 1.25
  },
  {
   "Casa": "Oman",
@@ -1502,6 +1486,22 @@
   "Q1": 1.57,
   "QX": 3.5,
   "Q2": 5.0
+ },
+ {
+  "Casa": "Sagan Tosu",
+  "Ospite": "Tokyo Verdy",
+  "Ora": "12:00",
+  "Paese": "Japan",
+  "Lega": "J League Cup",
+  "Mercato": "DC",
+  "Sel": "12",
+  "Linea": null,
+  "Tip": "12",
+  "Conf": 0.8,
+  "Q tip": null,
+  "Q1": 2.9,
+  "QX": 3.1,
+  "Q2": 2.1
  },
  {
   "Casa": "St. Kitts and Nevis",
@@ -2064,22 +2064,6 @@
   "Q2": 2.62
  },
  {
-  "Casa": "Jubilo Iwata",
-  "Ospite": "JEF United Chiba",
-  "Ora": "12:00",
-  "Paese": "Japan",
-  "Lega": "J League Cup",
-  "Mercato": "BTTS",
-  "Sel": "Yes",
-  "Linea": null,
-  "Tip": "BTTS Yes",
-  "Conf": 0.75,
-  "Q tip": null,
-  "Q1": 2.3,
-  "QX": 3.2,
-  "Q2": 2.62
- },
- {
   "Casa": "San Lorenzo Res.",
   "Ospite": "Aldosivi Res.",
   "Ora": "20:00",
@@ -2094,6 +2078,22 @@
   "Q1": 1.83,
   "QX": 3.1,
   "Q2": 3.9
+ },
+ {
+  "Casa": "Jubilo Iwata",
+  "Ospite": "JEF United Chiba",
+  "Ora": "12:00",
+  "Paese": "Japan",
+  "Lega": "J League Cup",
+  "Mercato": "BTTS",
+  "Sel": "Yes",
+  "Linea": null,
+  "Tip": "BTTS Yes",
+  "Conf": 0.75,
+  "Q tip": null,
+  "Q1": 2.3,
+  "QX": 3.2,
+  "Q2": 2.62
  },
  {
   "Casa": "Ehime FC",
