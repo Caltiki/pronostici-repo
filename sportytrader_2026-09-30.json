@@ -1,78 +1,8 @@
 [
  {
-  "Casa": "Zeta Golubovci",
-  "Ospite": "FK Kom Podgorica",
-  "Ora": "17:00",
-  "Lega": "Druga liga Crne Gore",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.47,
-  "Quota": null
- },
- {
-  "Casa": "Sporting Lagos FC",
-  "Ospite": "Ikorodu City",
-  "Ora": "17:00",
-  "Lega": "Premier League",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.45,
-  "Quota": null
- },
- {
-  "Casa": "Burgos CF",
-  "Ospite": "CFF Caceres",
-  "Ora": "17:00",
-  "Lega": "Copa de la Reina - Women",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.58,
-  "Quota": null
- },
- {
-  "Casa": "Enyimba",
-  "Ospite": "Shooting Stars",
-  "Ora": "17:00",
-  "Lega": "Premier League",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.6,
-  "Quota": null
- },
- {
-  "Casa": "Katsina United",
-  "Ospite": "Rivers United",
-  "Ora": "17:00",
-  "Lega": "Premier League",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.48,
-  "Quota": null
- },
- {
-  "Casa": "Medeama",
-  "Ospite": "Port City FC",
-  "Ora": "17:00",
-  "Lega": "Ghana Premier League",
-  "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.47,
-  "Quota": null
- },
- {
-  "Casa": "RC Celta De Vigo",
-  "Ospite": "Oviedo Moderno D",
-  "Ora": "17:30",
-  "Lega": "Copa de la Reina - Women",
-  "Tipo": "B",
-  "Pronostico": "X",
-  "Prob": 0.46,
-  "Quota": null
- },
- {
   "Casa": "Romania -21",
   "Ospite": "Finlandia -21",
-  "Ora": "18:00",
+  "Ora": "17:00",
   "Lega": "Europei Under 21 - Qualification - U21 UEFA European Championship 2027, Qualification,.",
   "Tipo": "B",
   "Pronostico": "2",
@@ -82,7 +12,7 @@
  {
   "Casa": "Repubblica Ceca -21",
   "Ospite": "Bulgaria",
-  "Ora": "18:00",
+  "Ora": "17:00",
   "Lega": "Europei Under 21 - Qualification - U21 UEFA European Championship 2027, Qualification,.",
   "Tipo": "B",
   "Pronostico": "1",
@@ -92,11 +22,81 @@
  {
   "Casa": "Isole Faer Oer -21",
   "Ospite": "Lussemburgo -21",
-  "Ora": "18:00",
+  "Ora": "17:00",
   "Lega": "Europei Under 21 - Qualification - U21 UEFA European Championship 2027, Qualification,.",
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.52,
+  "Quota": null
+ },
+ {
+  "Casa": "Polonia -21",
+  "Ospite": "Svezia -21",
+  "Ora": "17:00",
+  "Lega": "Europei Under 21 - Qualification - U21 UEFA European Championship 2027, Qualification,.",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.63,
+  "Quota": null
+ },
+ {
+  "Casa": "Malta",
+  "Ospite": "Germania -21",
+  "Ora": "17:00",
+  "Lega": "Europei Under 21 - Qualification - U21 UEFA European Championship 2027, Qualification,.",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.84,
+  "Quota": null
+ },
+ {
+  "Casa": "Lautp",
+  "Ospite": "Ips",
+  "Ora": "17:00",
+  "Lega": "Kolmonen - Eastern, Group 3",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.44,
+  "Quota": null
+ },
+ {
+  "Casa": "Honefoss",
+  "Ospite": "Kfum Oslo",
+  "Ora": "17:00",
+  "Lega": "NM Cup",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.54,
+  "Quota": null
+ },
+ {
+  "Casa": "Dbk Fortuna Hjoerring",
+  "Ospite": "PSV Eindhoven",
+  "Ora": "17:00",
+  "Lega": "UEFA Europa Cup Femminile - Women - UEFA Europa Cup, Women 25/26",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.55,
+  "Quota": null
+ },
+ {
+  "Casa": "Spartak Myjava",
+  "Ospite": "PAOK Salonicco",
+  "Ora": "17:00",
+  "Lega": "UEFA Europa Cup Femminile - Women - UEFA Europa Cup, Women 25/26",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.53,
+  "Quota": null
+ },
+ {
+  "Casa": "Sandviken",
+  "Ospite": "HJK Helsinki",
+  "Ora": "17:00",
+  "Lega": "UEFA Europa Cup Femminile - Women - UEFA Europa Cup, Women 25/26",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.68,
   "Quota": null
  },
  {
