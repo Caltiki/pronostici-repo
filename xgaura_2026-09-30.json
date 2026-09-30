@@ -43,14 +43,14 @@
   "Tip": "Draw",
   "Conf": 0.95,
   "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
+  "Q1": 1.2,
+  "QX": 5.5,
+  "Q2": 11.0
  },
  {
   "Casa": "Águila",
   "Ospite": "Inter",
-  "Ora": "23:00",
+  "Ora": "23:30",
   "Paese": "El-Salvador",
   "Lega": "Primera Division",
   "Mercato": "DC",
@@ -96,22 +96,6 @@
   "Q2": null
  },
  {
-  "Casa": "Chisola",
-  "Ospite": "Borgosesia",
-  "Ora": "15:00",
-  "Paese": "Italy",
-  "Lega": "Serie D Girone A",
-  "Mercato": "OU",
-  "Sel": "Under",
-  "Linea": 2.5,
-  "Tip": "Under 2.5 Goals",
-  "Conf": 0.8,
-  "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
- },
- {
   "Casa": "Botswana W",
   "Ospite": "Namibia W",
   "Ora": "14:00",
@@ -139,25 +123,9 @@
   "Tip": "Home Win",
   "Conf": 0.8,
   "Q tip": null,
-  "Q1": 1.33,
-  "QX": 4.4,
-  "Q2": 8.5
- },
- {
-  "Casa": "Kalsdorf",
-  "Ospite": "Grazer AK",
-  "Ora": "18:00",
-  "Paese": "World",
-  "Lega": "Friendlies Clubs",
-  "Mercato": "OU",
-  "Sel": "Over",
-  "Linea": 2.5,
-  "Tip": "Over 2.5 Goals",
-  "Conf": 0.8,
-  "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
+  "Q1": 1.22,
+  "QX": 5.0,
+  "Q2": 12.0
  },
  {
   "Casa": "Rwanda U23",
@@ -190,6 +158,22 @@
   "Q1": 2.0,
   "QX": 3.6,
   "Q2": 3.0
+ },
+ {
+  "Casa": "Kalsdorf",
+  "Ospite": "Grazer AK",
+  "Ora": "18:00",
+  "Paese": "World",
+  "Lega": "Friendlies Clubs",
+  "Mercato": "OU",
+  "Sel": "Over",
+  "Linea": 2.5,
+  "Tip": "Over 2.5 Goals",
+  "Conf": 0.8,
+  "Q tip": null,
+  "Q1": 19.0,
+  "QX": 8.0,
+  "Q2": 1.11
  },
  {
   "Casa": "Uzbekistan U23",
