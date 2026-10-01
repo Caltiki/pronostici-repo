@@ -48,22 +48,6 @@
   "Q2": null
  },
  {
-  "Casa": "British Virgin Islands",
-  "Ospite": "Montserrat",
-  "Ora": "21:00",
-  "Paese": "North & Central America",
-  "Lega": "CONCACAF Nations League",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Linea": null,
-  "Tip": "Draw",
-  "Conf": 0.95,
-  "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
- },
- {
   "Casa": "AS Eupen",
   "Ospite": "Alemannia Aachen",
   "Ora": "13:30",
@@ -144,40 +128,8 @@
   "Q2": null
  },
  {
-  "Casa": "Talleres Córdoba Res.",
-  "Ospite": "Godoy Cruz Res.",
-  "Ora": "22:00",
-  "Paese": "Argentina",
-  "Lega": "Reserve League",
-  "Mercato": "DC",
-  "Sel": "12",
-  "Linea": null,
-  "Tip": "12",
-  "Conf": 0.9,
-  "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
- },
- {
   "Casa": "Rana",
   "Ospite": "BodoGlimt",
-  "Ora": "18:00",
-  "Paese": "Norway",
-  "Lega": "NM Cupen",
-  "Mercato": "OU",
-  "Sel": "Over",
-  "Linea": 2.5,
-  "Tip": "Over 2.5 Goals",
-  "Conf": 0.9,
-  "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
- },
- {
-  "Casa": "Madla",
-  "Ospite": "Viking",
   "Ora": "18:00",
   "Paese": "Norway",
   "Lega": "NM Cupen",
@@ -256,22 +208,6 @@
   "Q2": 2.45
  },
  {
-  "Casa": "Armenia U21",
-  "Ospite": "Italy U21",
-  "Ora": "18:30",
-  "Paese": "Europe",
-  "Lega": "UEFA U21 Championship Qualification",
-  "Mercato": "1X2",
-  "Sel": "2",
-  "Linea": null,
-  "Tip": "Away Win",
-  "Conf": 0.85,
-  "Q tip": null,
-  "Q1": 23.0,
-  "QX": 11.0,
-  "Q2": 1.06
- },
- {
   "Casa": "Alianza",
   "Ospite": "Platense",
   "Ora": "02:00",
@@ -288,6 +224,22 @@
   "Q2": 4.6
  },
  {
+  "Casa": "Armenia U21",
+  "Ospite": "Italy U21",
+  "Ora": "18:30",
+  "Paese": "Europe",
+  "Lega": "UEFA U21 Championship Qualification",
+  "Mercato": "1X2",
+  "Sel": "2",
+  "Linea": null,
+  "Tip": "Away Win",
+  "Conf": 0.85,
+  "Q tip": null,
+  "Q1": 23.0,
+  "QX": 12.0,
+  "Q2": 1.06
+ },
+ {
   "Casa": "Búzios",
   "Ospite": "Paraty",
   "Ora": "20:00",
@@ -302,6 +254,38 @@
   "Q1": null,
   "QX": null,
   "Q2": null
+ },
+ {
+  "Casa": "Maccabi Bnei Raina",
+  "Ospite": "Hapoel Kfar Shalem",
+  "Ora": "18:00",
+  "Paese": "Israel",
+  "Lega": "Liga Leumit",
+  "Mercato": "OU",
+  "Sel": "Over",
+  "Linea": 2.5,
+  "Tip": "Over 2.5 Goals",
+  "Conf": 0.85,
+  "Q tip": null,
+  "Q1": 2.0,
+  "QX": 3.3,
+  "Q2": 3.1
+ },
+ {
+  "Casa": "Vélez Sársfield Res.",
+  "Ospite": "Argentinos Juniors Res.",
+  "Ora": "20:45",
+  "Paese": "Argentina",
+  "Lega": "Reserve League",
+  "Mercato": "1X2",
+  "Sel": "1",
+  "Linea": null,
+  "Tip": "Home Win",
+  "Conf": 0.85,
+  "Q tip": null,
+  "Q1": 1.53,
+  "QX": 3.6,
+  "Q2": 5.0
  },
  {
   "Casa": "Køge W",
@@ -368,22 +352,6 @@
   "Q2": 1.05
  },
  {
-  "Casa": "Croatia U19",
-  "Ospite": "Italy U19",
-  "Ora": "15:30",
-  "Paese": "World",
-  "Lega": "Friendlies",
-  "Mercato": "DC",
-  "Sel": "12",
-  "Linea": null,
-  "Tip": "12",
-  "Conf": 0.85,
-  "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
- },
- {
   "Casa": "Dunajska Streda",
   "Ospite": "Puskas Academy",
   "Ora": "15:00",
@@ -400,22 +368,6 @@
   "Q2": null
  },
  {
-  "Casa": "Kfar Saba 1928",
-  "Ospite": "Hapoel Marmorek",
-  "Ora": "18:30",
-  "Paese": "Israel",
-  "Lega": "Liga Alef",
-  "Mercato": "1X2",
-  "Sel": "1",
-  "Linea": null,
-  "Tip": "Home Win",
-  "Conf": 0.85,
-  "Q tip": null,
-  "Q1": 1.8,
-  "QX": 3.3,
-  "Q2": 3.9
- },
- {
   "Casa": "Olimpija Ljubljana",
   "Ospite": "NK Slaven Belupo",
   "Ora": "12:00",
@@ -430,22 +382,6 @@
   "Q1": 2.15,
   "QX": 3.1,
   "Q2": 2.9
- },
- {
-  "Casa": "VfL Wolfsburg",
-  "Ospite": "Havelse",
-  "Ora": "16:00",
-  "Paese": "World",
-  "Lega": "Friendlies Clubs",
-  "Mercato": "OU",
-  "Sel": "Over",
-  "Linea": 2.5,
-  "Tip": "Over 2.5 Goals",
-  "Conf": 0.85,
-  "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
  },
  {
   "Casa": "Dominica",
@@ -491,9 +427,9 @@
   "Tip": "Over 2.5 Goals",
   "Conf": 0.8,
   "Q tip": null,
-  "Q1": 3.1,
-  "QX": 3.1,
-  "Q2": 2.15
+  "Q1": 3.0,
+  "QX": 3.2,
+  "Q2": 2.2
  },
  {
   "Casa": "Malta",
@@ -507,8 +443,8 @@
   "Tip": "Home Win",
   "Conf": 0.8,
   "Q tip": null,
-  "Q1": 1.25,
-  "QX": 4.8,
+  "Q1": 1.3,
+  "QX": 4.5,
   "Q2": 11.0
  },
  {
@@ -523,8 +459,8 @@
   "Tip": "Home Win",
   "Conf": 0.8,
   "Q tip": null,
-  "Q1": 1.67,
-  "QX": 3.0,
+  "Q1": 1.65,
+  "QX": 3.1,
   "Q2": 5.5
  },
  {
@@ -539,9 +475,9 @@
   "Tip": "Draw",
   "Conf": 0.8,
   "Q tip": null,
-  "Q1": 2.35,
-  "QX": 2.8,
-  "Q2": 3.0
+  "Q1": 2.62,
+  "QX": 2.9,
+  "Q2": 2.5
  },
  {
   "Casa": "Real Betis",
@@ -560,36 +496,20 @@
   "Q2": 5.25
  },
  {
-  "Casa": "Brazil U20",
-  "Ospite": "United States U20",
-  "Ora": "18:00",
+  "Casa": "Faroe Islands U19",
+  "Ospite": "Slovenia U19",
+  "Ora": "16:00",
   "Paese": "World",
   "Lega": "Friendlies",
-  "Mercato": "DC",
-  "Sel": "12",
+  "Mercato": "1X2",
+  "Sel": "2",
   "Linea": null,
-  "Tip": "12",
+  "Tip": "Away Win",
   "Conf": 0.8,
   "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
- },
- {
-  "Casa": "Slovakia U19",
-  "Ospite": "Switzerland U19",
-  "Ora": "11:30",
-  "Paese": "World",
-  "Lega": "Friendlies",
-  "Mercato": "OU",
-  "Sel": "Over",
-  "Linea": 2.5,
-  "Tip": "Over 2.5 Goals",
-  "Conf": 0.8,
-  "Q tip": null,
-  "Q1": 3.0,
-  "QX": 3.4,
-  "Q2": 2.0
+  "Q1": 19.0,
+  "QX": 6.5,
+  "Q2": 1.12
  },
  {
   "Casa": "North Macedonia U21",
@@ -606,22 +526,6 @@
   "Q1": 2.62,
   "QX": 3.1,
   "Q2": 2.3
- },
- {
-  "Casa": "Faroe Islands U19",
-  "Ospite": "Slovenia U19",
-  "Ora": "16:00",
-  "Paese": "World",
-  "Lega": "Friendlies",
-  "Mercato": "1X2",
-  "Sel": "2",
-  "Linea": null,
-  "Tip": "Away Win",
-  "Conf": 0.8,
-  "Q tip": null,
-  "Q1": 19.0,
-  "QX": 6.5,
-  "Q2": 1.12
  },
  {
   "Casa": "Northern Ireland U21",
@@ -656,6 +560,38 @@
   "Q2": null
  },
  {
+  "Casa": "Bastia",
+  "Ospite": "Orleans",
+  "Ora": "20:45",
+  "Paese": "France",
+  "Lega": "National 1",
+  "Mercato": "DC",
+  "Sel": "12",
+  "Linea": null,
+  "Tip": "12",
+  "Conf": 0.8,
+  "Q tip": null,
+  "Q1": 2.15,
+  "QX": 3.1,
+  "Q2": 2.9
+ },
+ {
+  "Casa": "El Seka El Hadid",
+  "Ospite": "El Entag EL Harby",
+  "Ora": "14:30",
+  "Paese": "Egypt",
+  "Lega": "Second League",
+  "Mercato": "BTTS",
+  "Sel": "No",
+  "Linea": null,
+  "Tip": "BTTS No",
+  "Conf": 0.8,
+  "Q tip": null,
+  "Q1": 2.8,
+  "QX": 2.6,
+  "Q2": 2.7
+ },
+ {
   "Casa": "Cardoso Moreira",
   "Ospite": "Serra Macaense",
   "Ora": "20:00",
@@ -672,20 +608,20 @@
   "Q2": null
  },
  {
-  "Casa": "Bastia",
-  "Ospite": "Orleans",
-  "Ora": "20:45",
-  "Paese": "France",
-  "Lega": "National 1",
-  "Mercato": "DC",
-  "Sel": "12",
-  "Linea": null,
-  "Tip": "12",
+  "Casa": "Hapoel Afula",
+  "Ospite": "Hapoel Rishon LeZion",
+  "Ora": "18:00",
+  "Paese": "Israel",
+  "Lega": "Liga Leumit",
+  "Mercato": "OU",
+  "Sel": "Over",
+  "Linea": 2.5,
+  "Tip": "Over 2.5 Goals",
   "Conf": 0.8,
   "Q tip": null,
-  "Q1": 2.2,
-  "QX": 2.9,
-  "Q2": 3.0
+  "Q1": 3.0,
+  "QX": 3.25,
+  "Q2": 2.1
  },
  {
   "Casa": "Dayrout",
@@ -704,8 +640,8 @@
   "Q2": 1.8
  },
  {
-  "Casa": "Hapoel Afula",
-  "Ospite": "Hapoel Rishon LeZion",
+  "Casa": "Hapoel Ra'anana",
+  "Ospite": "Kafr Qasim",
   "Ora": "18:00",
   "Paese": "Israel",
   "Lega": "Liga Leumit",
@@ -715,9 +651,9 @@
   "Tip": "Over 2.5 Goals",
   "Conf": 0.8,
   "Q tip": null,
-  "Q1": 2.9,
-  "QX": 3.6,
-  "Q2": 2.0
+  "Q1": 2.05,
+  "QX": 3.1,
+  "Q2": 3.2
  },
  {
   "Casa": "El Mansura",
@@ -736,20 +672,20 @@
   "Q2": 2.1
  },
  {
-  "Casa": "Hapoel Ra'anana",
-  "Ospite": "Kafr Qasim",
+  "Casa": "Kiryat Yam SC",
+  "Ospite": "Hapoel Kfar Saba",
   "Ora": "18:00",
   "Paese": "Israel",
   "Lega": "Liga Leumit",
-  "Mercato": "OU",
-  "Sel": "Over",
-  "Linea": 2.5,
-  "Tip": "Over 2.5 Goals",
+  "Mercato": "1X2",
+  "Sel": "1",
+  "Linea": null,
+  "Tip": "Home Win",
   "Conf": 0.8,
   "Q tip": null,
-  "Q1": 2.0,
-  "QX": 3.5,
-  "Q2": 3.0
+  "Q1": 1.73,
+  "QX": 3.7,
+  "Q2": 3.9
  },
  {
   "Casa": "La Viena FC",
@@ -763,41 +699,9 @@
   "Tip": "Under 2.5 Goals",
   "Conf": 0.8,
   "Q tip": null,
-  "Q1": 2.45,
-  "QX": 2.62,
-  "Q2": 3.1
- },
- {
-  "Casa": "Colón Res.",
-  "Ospite": "Deportivo Riestra Res.",
-  "Ora": "20:00",
-  "Paese": "Argentina",
-  "Lega": "Reserve League",
-  "Mercato": "DC",
-  "Sel": "12",
-  "Linea": null,
-  "Tip": "12",
-  "Conf": 0.8,
-  "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
- },
- {
-  "Casa": "Kiryat Yam SC",
-  "Ospite": "Hapoel Kfar Saba",
-  "Ora": "18:00",
-  "Paese": "Israel",
-  "Lega": "Liga Leumit",
-  "Mercato": "1X2",
-  "Sel": "1",
-  "Linea": null,
-  "Tip": "Home Win",
-  "Conf": 0.8,
-  "Q tip": null,
-  "Q1": 1.67,
-  "QX": 4.0,
-  "Q2": 3.75
+  "Q1": 2.5,
+  "QX": 2.5,
+  "Q2": 3.0
  },
  {
   "Casa": "Pharco",
@@ -816,22 +720,6 @@
   "Q2": 4.0
  },
  {
-  "Casa": "Maccabi Bnei Raina",
-  "Ospite": "Hapoel Kfar Shalem",
-  "Ora": "18:00",
-  "Paese": "Israel",
-  "Lega": "Liga Leumit",
-  "Mercato": "1X2",
-  "Sel": "1",
-  "Linea": null,
-  "Tip": "Home Win",
-  "Conf": 0.8,
-  "Q tip": null,
-  "Q1": 1.95,
-  "QX": 3.75,
-  "Q2": 2.9
- },
- {
   "Casa": "Maccabi Kabilio Jaffa",
   "Ospite": "Hapoel Acre",
   "Ora": "18:00",
@@ -843,52 +731,20 @@
   "Tip": "Home Win",
   "Conf": 0.8,
   "Q tip": null,
-  "Q1": 1.75,
-  "QX": 3.75,
-  "Q2": 3.6
+  "Q1": 1.8,
+  "QX": 3.4,
+  "Q2": 3.8
  },
  {
-  "Casa": "Vélez Sársfield Res.",
-  "Ospite": "Argentinos Juniors Res.",
-  "Ora": "20:45",
+  "Casa": "Colón Res.",
+  "Ospite": "Deportivo Riestra Res.",
+  "Ora": "20:00",
   "Paese": "Argentina",
   "Lega": "Reserve League",
   "Mercato": "DC",
   "Sel": "12",
   "Linea": null,
   "Tip": "12",
-  "Conf": 0.8,
-  "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
- },
- {
-  "Casa": "Oriente Petrolero",
-  "Ospite": "The Strongest",
-  "Ora": "02:30",
-  "Paese": "Bolivia",
-  "Lega": "Copa De La División Profesional",
-  "Mercato": "OU",
-  "Sel": "Over",
-  "Linea": 2.5,
-  "Tip": "Over 2.5 Goals",
-  "Conf": 0.8,
-  "Q tip": null,
-  "Q1": 2.3,
-  "QX": 3.5,
-  "Q2": 2.4
- },
- {
-  "Casa": "Bahla",
-  "Ospite": "Fanja",
-  "Ora": "16:25",
-  "Paese": "Oman",
-  "Lega": "FA Cup",
-  "Mercato": "OU",
-  "Sel": "Over",
-  "Linea": 2.5,
-  "Tip": "Over 2.5 Goals",
   "Conf": 0.8,
   "Q tip": null,
   "Q1": null,
@@ -912,38 +768,6 @@
   "Q2": 2.9
  },
  {
-  "Casa": "Austria Wien W",
-  "Ospite": "Inter Milano W",
-  "Ora": "18:45",
-  "Paese": "Europe",
-  "Lega": "UEFA Champions League Women",
-  "Mercato": "OU",
-  "Sel": "Over",
-  "Linea": 2.5,
-  "Tip": "Over 2.5 Goals",
-  "Conf": 0.8,
-  "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
- },
- {
-  "Casa": "Al Shamal",
-  "Ospite": "Muaither SC",
-  "Ora": "19:15",
-  "Paese": "Qatar",
-  "Lega": "QSL Cup",
-  "Mercato": "OU",
-  "Sel": "Over",
-  "Linea": 2.5,
-  "Tip": "Over 2.5 Goals",
-  "Conf": 0.8,
-  "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
- },
- {
   "Casa": "Fuerte San Francisco",
   "Ospite": "Firpo",
   "Ora": "23:30",
@@ -955,9 +779,41 @@
   "Tip": "Away Win",
   "Conf": 0.8,
   "Q tip": null,
-  "Q1": 5.0,
-  "QX": 3.7,
-  "Q2": 1.53
+  "Q1": 4.8,
+  "QX": 3.5,
+  "Q2": 1.62
+ },
+ {
+  "Casa": "Hapoel Umm al-Fahm",
+  "Ospite": "Hapoel Ironi Karmiel",
+  "Ora": "18:30",
+  "Paese": "Israel",
+  "Lega": "Liga Alef",
+  "Mercato": "OU",
+  "Sel": "Over",
+  "Linea": 2.5,
+  "Tip": "Over 2.5 Goals",
+  "Conf": 0.8,
+  "Q tip": null,
+  "Q1": 2.62,
+  "QX": 3.1,
+  "Q2": 2.38
+ },
+ {
+  "Casa": "Kfar Saba 1928",
+  "Ospite": "Hapoel Marmorek",
+  "Ora": "18:30",
+  "Paese": "Israel",
+  "Lega": "Liga Alef",
+  "Mercato": "DC",
+  "Sel": "12",
+  "Linea": null,
+  "Tip": "12",
+  "Conf": 0.8,
+  "Q tip": null,
+  "Q1": 2.0,
+  "QX": 3.0,
+  "Q2": 3.5
  },
  {
   "Casa": "VfB Stuttgart",
@@ -971,9 +827,9 @@
   "Tip": "Home Win",
   "Conf": 0.8,
   "Q tip": null,
-  "Q1": 1.33,
-  "QX": 5.0,
-  "Q2": 6.0
+  "Q1": 1.22,
+  "QX": 5.8,
+  "Q2": 8.5
  },
  {
   "Casa": "Poland U19",
@@ -988,24 +844,24 @@
   "Conf": 0.8,
   "Q tip": null,
   "Q1": 1.5,
-  "QX": 3.6,
+  "QX": 3.75,
   "Q2": 5.0
  },
  {
-  "Casa": "Hapoel Umm al-Fahm",
-  "Ospite": "Hapoel Ironi Karmiel",
-  "Ora": "18:30",
-  "Paese": "Israel",
-  "Lega": "Liga Alef",
-  "Mercato": "OU",
-  "Sel": "Over",
-  "Linea": 2.5,
-  "Tip": "Over 2.5 Goals",
+  "Casa": "Croatia U19",
+  "Ospite": "Italy U19",
+  "Ora": "15:30",
+  "Paese": "World",
+  "Lega": "Friendlies",
+  "Mercato": "BTTS",
+  "Sel": "Yes",
+  "Linea": null,
+  "Tip": "BTTS Yes",
   "Conf": 0.8,
   "Q tip": null,
-  "Q1": 2.9,
-  "QX": 3.4,
-  "Q2": 2.1
+  "Q1": 3.2,
+  "QX": 3.0,
+  "Q2": 2.05
  },
  {
   "Casa": "Alianza Lima",
@@ -1024,20 +880,20 @@
   "Q2": 3.5
  },
  {
-  "Casa": "Al Musannah",
-  "Ospite": "Ibri",
-  "Ora": "16:25",
-  "Paese": "Oman",
-  "Lega": "FA Cup",
-  "Mercato": "DC",
-  "Sel": "12",
+  "Casa": "Sharjah FC",
+  "Ospite": "Al-Dhafra",
+  "Ora": "15:15",
+  "Paese": "United-Arab-Emirates",
+  "Lega": "League Cup",
+  "Mercato": "1X2",
+  "Sel": "1",
   "Linea": null,
-  "Tip": "12",
+  "Tip": "Home Win",
   "Conf": 0.8,
   "Q tip": null,
-  "Q1": 2.8,
-  "QX": 3.25,
-  "Q2": 2.2
+  "Q1": 1.53,
+  "QX": 4.0,
+  "Q2": 4.5
  },
  {
   "Casa": "Bærum",
@@ -1056,6 +912,22 @@
   "Q2": 1.12
  },
  {
+  "Casa": "Madla",
+  "Ospite": "Viking",
+  "Ora": "18:00",
+  "Paese": "Norway",
+  "Lega": "NM Cupen",
+  "Mercato": "1X2",
+  "Sel": "2",
+  "Linea": null,
+  "Tip": "Away Win",
+  "Conf": 0.8,
+  "Q tip": null,
+  "Q1": 26.0,
+  "QX": 7.5,
+  "Q2": 1.11
+ },
+ {
   "Casa": "Qatar SC",
   "Ospite": "Al Bidda SC",
   "Ora": "19:15",
@@ -1070,6 +942,22 @@
   "Q1": 1.57,
   "QX": 4.0,
   "Q2": 4.0
+ },
+ {
+  "Casa": "North District",
+  "Ospite": "Southern District",
+  "Ora": "10:00",
+  "Paese": "Hong-Kong",
+  "Lega": "League Cup",
+  "Mercato": "1X2",
+  "Sel": "1",
+  "Linea": null,
+  "Tip": "Home Win",
+  "Conf": 0.8,
+  "Q tip": null,
+  "Q1": 1.85,
+  "QX": 3.9,
+  "Q2": 3.2
  },
  {
   "Casa": "Azerbaijan",
@@ -1101,7 +989,7 @@
   "Q tip": null,
   "Q1": 1.2,
   "QX": 6.0,
-  "Q2": 11.0
+  "Q2": 12.0
  },
  {
   "Casa": "Greece",
@@ -1152,22 +1040,6 @@
   "Q2": 1.85
  },
  {
-  "Casa": "Hapoel Sderot",
-  "Ospite": "Hapoel Azor",
-  "Ora": "18:00",
-  "Paese": "Israel",
-  "Lega": "Liga Alef",
-  "Mercato": "DC",
-  "Sel": "12",
-  "Linea": null,
-  "Tip": "12",
-  "Conf": 0.75,
-  "Q tip": null,
-  "Q1": 2.0,
-  "QX": 3.25,
-  "Q2": 3.25
- },
- {
   "Casa": "Maccabi Yavne",
   "Ospite": "Ironi Beit Shemesh",
   "Ora": "17:30",
@@ -1179,9 +1051,9 @@
   "Tip": "Home Win",
   "Conf": 0.75,
   "Q tip": null,
-  "Q1": 1.75,
-  "QX": 3.5,
-  "Q2": 3.9
+  "Q1": 1.44,
+  "QX": 4.0,
+  "Q2": 5.5
  },
  {
   "Casa": "France U19",
@@ -1195,9 +1067,9 @@
   "Tip": "Home Win",
   "Conf": 0.75,
   "Q tip": null,
-  "Q1": 1.17,
+  "Q1": 1.15,
   "QX": 6.5,
-  "Q2": 12.0
+  "Q2": 13.0
  },
  {
   "Casa": "Greece U21",
@@ -1213,7 +1085,7 @@
   "Q tip": null,
   "Q1": 1.07,
   "QX": 9.0,
-  "Q2": 26.0
+  "Q2": 23.0
  },
  {
   "Casa": "Envigado",
@@ -1232,20 +1104,20 @@
   "Q2": 4.8
  },
  {
-  "Casa": "El Seka El Hadid",
-  "Ospite": "El Entag EL Harby",
-  "Ora": "14:30",
-  "Paese": "Egypt",
-  "Lega": "Second League",
+  "Casa": "Maccabi Ahi Nazareth",
+  "Ospite": "Ironi Modi'in",
+  "Ora": "18:00",
+  "Paese": "Israel",
+  "Lega": "Liga Leumit",
   "Mercato": "DC",
   "Sel": "12",
   "Linea": null,
   "Tip": "12",
   "Conf": 0.75,
   "Q tip": null,
-  "Q1": 2.9,
-  "QX": 2.5,
-  "Q2": 2.62
+  "Q1": 2.3,
+  "QX": 3.1,
+  "Q2": 2.75
  },
  {
   "Casa": "Independiente Res.",
@@ -1264,20 +1136,36 @@
   "Q2": 2.05
  },
  {
-  "Casa": "Maccabi Ahi Nazareth",
-  "Ospite": "Ironi Modi'in",
+  "Casa": "Ashdod",
+  "Ospite": "Maccabi Herzliya",
   "Ora": "18:00",
   "Paese": "Israel",
   "Lega": "Liga Leumit",
-  "Mercato": "DC",
-  "Sel": "12",
+  "Mercato": "1X2",
+  "Sel": "1",
   "Linea": null,
-  "Tip": "12",
+  "Tip": "Home Win",
   "Conf": 0.75,
   "Q tip": null,
-  "Q1": 2.25,
-  "QX": 3.4,
-  "Q2": 2.62
+  "Q1": 1.5,
+  "QX": 4.0,
+  "Q2": 5.0
+ },
+ {
+  "Casa": "Oriente Petrolero",
+  "Ospite": "The Strongest",
+  "Ora": "02:30",
+  "Paese": "Bolivia",
+  "Lega": "Copa De La División Profesional",
+  "Mercato": "1X2",
+  "Sel": "1",
+  "Linea": null,
+  "Tip": "Home Win",
+  "Conf": 0.75,
+  "Q tip": null,
+  "Q1": 1.91,
+  "QX": 3.6,
+  "Q2": 3.0
  },
  {
   "Casa": "Argentina",
@@ -1291,9 +1179,9 @@
   "Tip": "Home Win",
   "Conf": 0.75,
   "Q tip": null,
-  "Q1": 1.07,
-  "QX": 9.0,
-  "Q2": 34.0
+  "Q1": 1.06,
+  "QX": 10.0,
+  "Q2": 36.0
  },
  {
   "Casa": "Uzbekistan",
@@ -1312,6 +1200,38 @@
   "Q2": 8.0
  },
  {
+  "Casa": "Talleres Córdoba Res.",
+  "Ospite": "Godoy Cruz Res.",
+  "Ora": "22:00",
+  "Paese": "Argentina",
+  "Lega": "Reserve League",
+  "Mercato": "1X2",
+  "Sel": "1",
+  "Linea": null,
+  "Tip": "Home Win",
+  "Conf": 0.75,
+  "Q tip": null,
+  "Q1": 1.8,
+  "QX": 3.4,
+  "Q2": 3.9
+ },
+ {
+  "Casa": "Al Musannah",
+  "Ospite": "Ibri",
+  "Ora": "16:25",
+  "Paese": "Oman",
+  "Lega": "FA Cup",
+  "Mercato": "DC",
+  "Sel": "12",
+  "Linea": null,
+  "Tip": "12",
+  "Conf": 0.75,
+  "Q tip": null,
+  "Q1": 2.38,
+  "QX": 3.2,
+  "Q2": 2.6
+ },
+ {
   "Casa": "Trabzonspor",
   "Ospite": "Drogheda United",
   "Ora": "18:00",
@@ -1326,6 +1246,22 @@
   "Q1": null,
   "QX": null,
   "Q2": null
+ },
+ {
+  "Casa": "Austria Wien W",
+  "Ospite": "Inter Milano W",
+  "Ora": "18:45",
+  "Paese": "Europe",
+  "Lega": "UEFA Champions League Women",
+  "Mercato": "1X2",
+  "Sel": "2",
+  "Linea": null,
+  "Tip": "Away Win",
+  "Conf": 0.75,
+  "Q tip": null,
+  "Q1": 4.4,
+  "QX": 3.6,
+  "Q2": 1.57
  },
  {
   "Casa": "Manchester City W",
@@ -1344,6 +1280,22 @@
   "Q2": 3.9
  },
  {
+  "Casa": "British Virgin Islands",
+  "Ospite": "Montserrat",
+  "Ora": "21:00",
+  "Paese": "North & Central America",
+  "Lega": "CONCACAF Nations League",
+  "Mercato": "1X2",
+  "Sel": "2",
+  "Linea": null,
+  "Tip": "Away Win",
+  "Conf": 0.75,
+  "Q tip": null,
+  "Q1": 15.0,
+  "QX": 6.0,
+  "Q2": 1.18
+ },
+ {
   "Casa": "US Virgin Islands",
   "Ospite": "Saint Martin",
   "Ora": "22:00",
@@ -1355,9 +1307,41 @@
   "Tip": "Away Win",
   "Conf": 0.75,
   "Q tip": null,
-  "Q1": 6.5,
-  "QX": 4.5,
-  "Q2": 1.33
+  "Q1": 10.0,
+  "QX": 5.0,
+  "Q2": 1.25
+ },
+ {
+  "Casa": "Baniyas SC",
+  "Ospite": "Al Wahda FC",
+  "Ora": "17:45",
+  "Paese": "United-Arab-Emirates",
+  "Lega": "League Cup",
+  "Mercato": "1X2",
+  "Sel": "2",
+  "Linea": null,
+  "Tip": "Away Win",
+  "Conf": 0.75,
+  "Q tip": null,
+  "Q1": 3.5,
+  "QX": 3.7,
+  "Q2": 1.75
+ },
+ {
+  "Casa": "Shatin",
+  "Ospite": "Hong Kong FC",
+  "Ora": "13:00",
+  "Paese": "Hong-Kong",
+  "Lega": "League Cup",
+  "Mercato": "1X2",
+  "Sel": "1",
+  "Linea": null,
+  "Tip": "Home Win",
+  "Conf": 0.75,
+  "Q tip": null,
+  "Q1": 1.83,
+  "QX": 4.0,
+  "Q2": 3.1
  },
  {
   "Casa": "Denmark",
@@ -1390,6 +1374,54 @@
   "Q1": null,
   "QX": null,
   "Q2": null
+ },
+ {
+  "Casa": "Hapoel Sderot",
+  "Ospite": "Hapoel Azor",
+  "Ora": "18:00",
+  "Paese": "Israel",
+  "Lega": "Liga Alef",
+  "Mercato": "1X2",
+  "Sel": "1",
+  "Linea": null,
+  "Tip": "Home Win",
+  "Conf": 0.7,
+  "Q tip": null,
+  "Q1": 1.95,
+  "QX": 3.2,
+  "Q2": 3.3
+ },
+ {
+  "Casa": "Slovakia U19",
+  "Ospite": "Switzerland U19",
+  "Ora": "11:30",
+  "Paese": "World",
+  "Lega": "Friendlies",
+  "Mercato": "1X2",
+  "Sel": "2",
+  "Linea": null,
+  "Tip": "Away Win",
+  "Conf": 0.7,
+  "Q tip": null,
+  "Q1": 3.1,
+  "QX": 3.3,
+  "Q2": 1.95
+ },
+ {
+  "Casa": "Brazil U20",
+  "Ospite": "United States U20",
+  "Ora": "18:00",
+  "Paese": "World",
+  "Lega": "Friendlies",
+  "Mercato": "1X2",
+  "Sel": "1",
+  "Linea": null,
+  "Tip": "Home Win",
+  "Conf": 0.7,
+  "Q tip": null,
+  "Q1": 1.83,
+  "QX": 3.75,
+  "Q2": 3.3
  },
  {
   "Casa": "Hungary U21",
@@ -1440,38 +1472,6 @@
   "Q2": 5.0
  },
  {
-  "Casa": "Ashdod",
-  "Ospite": "Maccabi Herzliya",
-  "Ora": "18:00",
-  "Paese": "Israel",
-  "Lega": "Liga Leumit",
-  "Mercato": "1X2",
-  "Sel": "1",
-  "Linea": null,
-  "Tip": "Home Win",
-  "Conf": 0.7,
-  "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
- },
- {
-  "Casa": "Paduano",
-  "Ospite": "Campos AA",
-  "Ora": "20:00",
-  "Paese": "Brazil",
-  "Lega": "Carioca B2",
-  "Mercato": "1X2",
-  "Sel": "1",
-  "Linea": null,
-  "Tip": "Home Win",
-  "Conf": 0.7,
-  "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
- },
- {
   "Casa": "Atletico Nacional",
   "Ospite": "Junior",
   "Ora": "03:00",
@@ -1502,6 +1502,22 @@
   "Q1": 1.29,
   "QX": 5.0,
   "Q2": 8.0
+ },
+ {
+  "Casa": "Paduano",
+  "Ospite": "Campos AA",
+  "Ora": "20:00",
+  "Paese": "Brazil",
+  "Lega": "Carioca B2",
+  "Mercato": "1X2",
+  "Sel": "1",
+  "Linea": null,
+  "Tip": "Home Win",
+  "Conf": 0.7,
+  "Q tip": null,
+  "Q1": null,
+  "QX": null,
+  "Q2": null
  },
  {
   "Casa": "Spartax",
@@ -1552,22 +1568,6 @@
   "Q2": null
  },
  {
-  "Casa": "Sharjah FC",
-  "Ospite": "Al-Dhafra",
-  "Ora": "15:15",
-  "Paese": "United-Arab-Emirates",
-  "Lega": "League Cup",
-  "Mercato": "1X2",
-  "Sel": "1",
-  "Linea": null,
-  "Tip": "Home Win",
-  "Conf": 0.7,
-  "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
- },
- {
   "Casa": "Cariari Pococi",
   "Ospite": "Santa Ana",
   "Ora": "21:00",
@@ -1600,6 +1600,22 @@
   "Q2": 4.33
  },
  {
+  "Casa": "Al Nasr",
+  "Ospite": "Smail",
+  "Ora": "15:30",
+  "Paese": "Oman",
+  "Lega": "FA Cup",
+  "Mercato": "1X2",
+  "Sel": "1",
+  "Linea": null,
+  "Tip": "Home Win",
+  "Conf": 0.7,
+  "Q tip": null,
+  "Q1": 1.55,
+  "QX": 4.0,
+  "Q2": 4.5
+ },
+ {
   "Casa": "Khovd Western",
   "Ospite": "Deren",
   "Ora": "07:00",
@@ -1616,9 +1632,9 @@
   "Q2": 1.05
  },
  {
-  "Casa": "Al Nasr",
-  "Ospite": "Smail",
-  "Ora": "15:30",
+  "Casa": "Bahla",
+  "Ospite": "Fanja",
+  "Ora": "16:25",
   "Paese": "Oman",
   "Lega": "FA Cup",
   "Mercato": "1X2",
@@ -1627,9 +1643,41 @@
   "Tip": "Home Win",
   "Conf": 0.7,
   "Q tip": null,
-  "Q1": 1.53,
-  "QX": 4.0,
-  "Q2": 4.75
+  "Q1": 1.22,
+  "QX": 6.25,
+  "Q2": 8.0
+ },
+ {
+  "Casa": "Germany U17",
+  "Ospite": "Israel U17",
+  "Ora": "16:00",
+  "Paese": "World",
+  "Lega": "Friendlies",
+  "Mercato": "1X2",
+  "Sel": "1",
+  "Linea": null,
+  "Tip": "Home Win",
+  "Conf": 0.7,
+  "Q tip": null,
+  "Q1": null,
+  "QX": null,
+  "Q2": null
+ },
+ {
+  "Casa": "VfL Wolfsburg",
+  "Ospite": "Havelse",
+  "Ora": "16:00",
+  "Paese": "World",
+  "Lega": "Friendlies Clubs",
+  "Mercato": "1X2",
+  "Sel": "1",
+  "Linea": null,
+  "Tip": "Home Win",
+  "Conf": 0.7,
+  "Q tip": null,
+  "Q1": 1.17,
+  "QX": 6.5,
+  "Q2": 12.0
  },
  {
   "Casa": "Paris Saint Germain W",
@@ -1646,5 +1694,53 @@
   "Q1": 1.15,
   "QX": 6.5,
   "Q2": 12.0
+ },
+ {
+  "Casa": "Al Shamal",
+  "Ospite": "Muaither SC",
+  "Ora": "19:15",
+  "Paese": "Qatar",
+  "Lega": "QSL Cup",
+  "Mercato": "1X2",
+  "Sel": "1",
+  "Linea": null,
+  "Tip": "Home Win",
+  "Conf": 0.7,
+  "Q tip": null,
+  "Q1": 1.5,
+  "QX": 4.0,
+  "Q2": 4.6
+ },
+ {
+  "Casa": "Dubai United",
+  "Ospite": "Hatta SC",
+  "Ora": "15:15",
+  "Paese": "United-Arab-Emirates",
+  "Lega": "League Cup",
+  "Mercato": "1X2",
+  "Sel": "1",
+  "Linea": null,
+  "Tip": "Home Win",
+  "Conf": 0.7,
+  "Q tip": null,
+  "Q1": 1.85,
+  "QX": 3.5,
+  "Q2": 3.4
+ },
+ {
+  "Casa": "Cumbayá",
+  "Ospite": "Santo Domingo",
+  "Ora": "22:30",
+  "Paese": "Ecuador",
+  "Lega": "Liga Pro Serie B",
+  "Mercato": "1X2",
+  "Sel": "1",
+  "Linea": null,
+  "Tip": "Home Win",
+  "Conf": 0.7,
+  "Q tip": null,
+  "Q1": 1.8,
+  "QX": 3.2,
+  "Q2": 4.1
  }
 ]
