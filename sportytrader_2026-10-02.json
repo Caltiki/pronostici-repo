@@ -16,7 +16,7 @@
   "Lega": "Campeonato De Reserva De Primera Division - Reserves - Premiera LPF, Reserves 2025, Clausura, Group A",
   "Tipo": "B",
   "Pronostico": "X",
-  "Prob": 0.52,
+  "Prob": 0.51,
   "Quota": null
  },
  {
@@ -27,6 +27,16 @@
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.66,
+  "Quota": null
+ },
+ {
+  "Casa": "Club Bolivar",
+  "Ospite": "GV Club Deportivo San Jose De Oruro",
+  "Ora": "00:30",
+  "Lega": "LFPB - Gruppo A",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.84,
   "Quota": null
  },
  {
@@ -76,7 +86,7 @@
   "Lega": "CONCACAF Nations League - League A, Group A",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.44,
+  "Prob": 0.43,
   "Quota": null
  },
  {
@@ -86,7 +96,7 @@
   "Lega": "CONCACAF Nations League - League B, Group A",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.54,
+  "Prob": 0.55,
   "Quota": null
  },
  {
@@ -106,7 +116,7 @@
   "Lega": "LFPB - Gruppo A",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.45,
+  "Prob": 0.47,
   "Quota": null
  },
  {
@@ -156,7 +166,77 @@
   "Lega": "Asian Games, Women, Group A - Women, Knockout stage",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.44,
+  "Prob": 0.43,
+  "Quota": null
+ },
+ {
+  "Casa": "Vietnam",
+  "Ospite": "Pakistan",
+  "Ora": "11:00",
+  "Lega": "FIFA ASEAN Cup - FIFA ASEAN Cup 2026, Premier Division, Gr. A - Premier Division, Gr. B",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.58,
+  "Quota": null
+ },
+ {
+  "Casa": "Thailandia",
+  "Ospite": "Filippine",
+  "Ora": "11:00",
+  "Lega": "FIFA ASEAN Cup - FIFA ASEAN Cup 2026, Premier Division, Gr. A - Premier Division, Gr. B",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.52,
+  "Quota": null
+ },
+ {
+  "Casa": "Pwd SC",
+  "Ospite": "Brothers Union",
+  "Ora": "11:00",
+  "Lega": "B-League",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.39,
+  "Quota": null
+ },
+ {
+  "Casa": "Chattogram City Football Club",
+  "Ospite": "BANGLADESH POLICE CLUB",
+  "Ora": "11:00",
+  "Lega": "B-League",
+  "Tipo": "B",
+  "Pronostico": "X",
+  "Prob": 0.55,
+  "Quota": null
+ },
+ {
+  "Casa": "Gornik Zabrze",
+  "Ospite": "Odra Opole",
+  "Ora": "11:00",
+  "Lega": "Partite Amichevoli Club",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.5,
+  "Quota": null
+ },
+ {
+  "Casa": "Fastav Zlin",
+  "Ospite": "Prostejov",
+  "Ora": "11:00",
+  "Lega": "Partite Amichevoli Club",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.4,
+  "Quota": null
+ },
+ {
+  "Casa": "Chanmari FC",
+  "Ospite": "Dinthar FC",
+  "Ora": "11:30",
+  "Lega": "Mizoram Premier League",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.61,
   "Quota": null
  },
  {
@@ -167,6 +247,16 @@
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.57,
+  "Quota": null
+ },
+ {
+  "Casa": "Gumi Sportstoto",
+  "Ospite": "Suwon",
+  "Ora": "12:00",
+  "Lega": "WK-League",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.61,
   "Quota": null
  },
  {
@@ -190,13 +280,53 @@
   "Quota": null
  },
  {
+  "Casa": "Incheon Hyundai Steel",
+  "Ospite": "Hwacheon Kspo",
+  "Ora": "12:00",
+  "Lega": "WK-League",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.51,
+  "Quota": null
+ },
+ {
+  "Casa": "Wisla Plock",
+  "Ospite": "Unia Skierniewice",
+  "Ora": "12:00",
+  "Lega": "Partite Amichevoli Club",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.53,
+  "Quota": null
+ },
+ {
   "Casa": "Corea del Nord D",
   "Ospite": "Giappone D",
   "Ora": "12:30",
   "Lega": "Asian Games, Women, Group A - Women, Knockout stage",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.45,
+  "Prob": 0.44,
+  "Quota": null
+ },
+ {
+  "Casa": "Corea del Sud",
+  "Ospite": "Venezuela",
+  "Ora": "13:00",
+  "Lega": "Partite Amichevoli",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.6,
+  "Quota": null
+ },
+ {
+  "Casa": "De Red FC",
+  "Ospite": "Persipura Jayapura",
+  "Ora": "14:00",
+  "Lega": "Liga 2 - Gruppo B",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.47,
   "Quota": null
  },
  {
@@ -256,7 +386,7 @@
   "Lega": "Seconda Divisione",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.6,
+  "Prob": 0.59,
   "Quota": null
  },
  {
@@ -270,13 +400,43 @@
   "Quota": null
  },
  {
+  "Casa": "Persiraja Banda",
+  "Ospite": "Sumsel United",
+  "Ora": "15:30",
+  "Lega": "Liga 2 - Gruppo A",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.54,
+  "Quota": null
+ },
+ {
+  "Casa": "Belgio -19",
+  "Ospite": "Irlanda Del Nord -19",
+  "Ora": "15:30",
+  "Lega": "Amichevoli U19",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.42,
+  "Quota": null
+ },
+ {
+  "Casa": "Albania",
+  "Ospite": "Lituania -19",
+  "Ora": "15:30",
+  "Lega": "Amichevoli U19",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.52,
+  "Quota": null
+ },
+ {
   "Casa": "Kazakistan",
   "Ospite": "Moldavia",
   "Ora": "16:00",
   "Lega": "Nations League - League C, Gr. 3",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.53,
+  "Prob": 0.52,
   "Quota": null
  },
  {
@@ -287,6 +447,56 @@
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.77,
+  "Quota": null
+ },
+ {
+  "Casa": "Annaba",
+  "Ospite": "PARADOU AC",
+  "Ora": "16:00",
+  "Lega": "Ligue 2 - Center-East",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.57,
+  "Quota": null
+ },
+ {
+  "Casa": "Nrb Teleghma",
+  "Ospite": "NC Magra",
+  "Ora": "16:00",
+  "Lega": "Ligue 2 - Center-East",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.39,
+  "Quota": null
+ },
+ {
+  "Casa": "Batna",
+  "Ospite": "Msp Batna",
+  "Ora": "16:00",
+  "Lega": "Ligue 2 - Center-East",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.45,
+  "Quota": null
+ },
+ {
+  "Casa": "Mo Constantine",
+  "Ospite": "CR BENI THOUR",
+  "Ora": "16:00",
+  "Lega": "Ligue 2 - Center-East",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.5,
+  "Quota": null
+ },
+ {
+  "Casa": "US Chaouia",
+  "Ospite": "Khroub",
+  "Ora": "16:00",
+  "Lega": "Ligue 2 - Center-East",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.67,
   "Quota": null
  },
  {
@@ -306,7 +516,7 @@
   "Lega": "Ykkonen Promozione - PROMOTION",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.48,
+  "Prob": 0.47,
   "Quota": null
  },
  {
@@ -326,7 +536,7 @@
   "Lega": "Europei Under 21 - Qualification - U21 UEFA European Championship 2027, Qualification,.",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.42,
+  "Prob": 0.49,
   "Quota": null
  },
  {
@@ -346,7 +556,7 @@
   "Lega": "Europei Under 21 - Qualification - U21 UEFA European Championship 2027, Qualification,.",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.37,
+  "Prob": 0.38,
   "Quota": null
  },
  {
@@ -366,7 +576,17 @@
   "Lega": "Nations League - League C, Gr. 2",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.5,
+  "Prob": 0.51,
+  "Quota": null
+ },
+ {
+  "Casa": "SK Hranice",
+  "Ospite": "SK Lisen B",
+  "Ora": "18:00",
+  "Lega": "Morasvkoslezská fotbalová liga",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.56,
   "Quota": null
  },
  {
@@ -396,7 +616,7 @@
   "Lega": "Coppa Ceca Pohár ČMFS",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.49,
+  "Prob": 0.46,
   "Quota": null
  },
  {
@@ -406,7 +626,17 @@
   "Lega": "Botola Pro",
   "Tipo": "B",
   "Pronostico": "X",
-  "Prob": 0.46,
+  "Prob": 0.45,
+  "Quota": null
+ },
+ {
+  "Casa": "Serbia -21",
+  "Ospite": "Russia",
+  "Ora": "18:00",
+  "Lega": "Amichevoli internazionali Under 21",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.53,
   "Quota": null
  },
  {
@@ -435,8 +665,8 @@
   "Ora": "18:30",
   "Lega": "Bundesliga Femminile - Women",
   "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.46,
+  "Pronostico": "1",
+  "Prob": 0.48,
   "Quota": null
  },
  {
@@ -486,7 +716,7 @@
   "Lega": "Division 1, Norra - Sodra",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.52,
+  "Prob": 0.53,
   "Quota": null
  },
  {
@@ -615,8 +845,8 @@
   "Ora": "19:00",
   "Lega": "Kolmonen - Southern, Group 2",
   "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.39,
+  "Pronostico": "2",
+  "Prob": 0.4,
   "Quota": null
  },
  {
@@ -670,6 +900,16 @@
   "Quota": null
  },
  {
+  "Casa": "Favoritner",
+  "Ospite": "FC Marchfeld Donauauen",
+  "Ora": "19:10",
+  "Lega": "Regionalliga Ost",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.63,
+  "Quota": null
+ },
+ {
   "Casa": "Andorra",
   "Ospite": "Moldavia -21",
   "Ora": "19:30",
@@ -700,13 +940,23 @@
   "Quota": null
  },
  {
+  "Casa": "Arriba Krems",
+  "Ospite": "Wiener SK",
+  "Ora": "19:30",
+  "Lega": "Regionalliga Ost",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.51,
+  "Quota": null
+ },
+ {
   "Casa": "Ferro Carril Oeste",
   "Ospite": "Union De Santa Fe",
   "Ora": "19:30",
   "Lega": "Prima Divisione, Femminile - Women - Primera Division A, Women 2024, Clausura",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.53,
+  "Prob": 0.54,
   "Quota": null
  },
  {
@@ -746,7 +996,7 @@
   "Lega": "Landsbankadeild kvenna - Women, Championship round",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.47,
+  "Prob": 0.48,
   "Quota": null
  },
  {
@@ -756,7 +1006,7 @@
   "Lega": "Landsbankadeild kvenna - Women, Relegation round",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.5,
+  "Prob": 0.49,
   "Quota": null
  },
  {
@@ -766,7 +1016,7 @@
   "Lega": "Landsbankadeild kvenna - Women, Relegation round",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.49,
+  "Prob": 0.48,
   "Quota": null
  },
  {
@@ -786,7 +1036,7 @@
   "Lega": "Prima Divisione, Femminile - Women - Primera Division A, Women 2024, Clausura",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.7,
+  "Prob": 0.71,
   "Quota": null
  },
  {
@@ -806,7 +1056,7 @@
   "Lega": "FAW Championship South & Mid",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.5,
+  "Prob": 0.51,
   "Quota": null
  },
  {
@@ -826,7 +1076,7 @@
   "Lega": "Europei Under 21 - Qualification - U21 UEFA European Championship 2027, Qualification,.",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.63,
+  "Prob": 0.61,
   "Quota": null
  },
  {
@@ -866,7 +1116,7 @@
   "Lega": "First Division",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.6,
+  "Prob": 0.61,
   "Quota": null
  },
  {
@@ -946,7 +1196,7 @@
   "Lega": "Nations League - League B, Gr. 4",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.47,
+  "Prob": 0.48,
   "Quota": null
  },
  {
@@ -990,13 +1240,23 @@
   "Quota": null
  },
  {
+  "Casa": "Santa Lucia",
+  "Ospite": "Guadalupa",
+  "Ora": "21:00",
+  "Lega": "CONCACAF Nations League - League B, Group B",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.46,
+  "Quota": null
+ },
+ {
   "Casa": "Real Madrid Castilla",
   "Ospite": "Atletico Madrid",
   "Ora": "21:15",
   "Lega": "Primera Federación - Gruppo 2",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.38,
+  "Prob": 0.42,
   "Quota": null
  },
  {
@@ -1016,7 +1276,7 @@
   "Lega": "Botola Pro",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.38,
+  "Prob": 0.41,
   "Quota": null
  },
  {
@@ -1037,6 +1297,16 @@
   "Tipo": "B",
   "Pronostico": "2",
   "Prob": 0.43,
+  "Quota": null
+ },
+ {
+  "Casa": "Saint Kitts e Nevis",
+  "Ospite": "Cuba",
+  "Ora": "23:00",
+  "Lega": "CONCACAF Nations League - League B, Group C",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.47,
   "Quota": null
  }
 ]
