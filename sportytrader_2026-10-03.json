@@ -150,6 +150,16 @@
   "Quota": null
  },
  {
+  "Casa": "Real Potosi",
+  "Ospite": "Club Aurora",
+  "Ora": "02:00",
+  "Lega": "LFPB - Gruppo A",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.34,
+  "Quota": null
+ },
+ {
   "Casa": "Colombia",
   "Ospite": "Paraguay",
   "Ora": "02:00",
@@ -336,7 +346,7 @@
   "Lega": "National League",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.38,
+  "Prob": 0.39,
   "Quota": null
  },
  {
@@ -426,6 +436,16 @@
   "Lega": "Giochi Asiatici, Fase Finale - Knockout stage",
   "Tipo": "B",
   "Pronostico": "X",
+  "Prob": 0.39,
+  "Quota": null
+ },
+ {
+  "Casa": "Perth Glory",
+  "Ospite": "Adelaide United",
+  "Ora": "08:00",
+  "Lega": "Partite Amichevoli Club",
+  "Tipo": "B",
+  "Pronostico": "2",
   "Prob": 0.38,
   "Quota": null
  },
@@ -556,7 +576,7 @@
   "Lega": "Kolmonen - Southern, Group 1",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.5,
+  "Prob": 0.49,
   "Quota": null
  },
  {
@@ -716,7 +736,7 @@
   "Lega": "Northern Territory Premier League - Northern Territory Premier League 2026 - Playoffs",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.49,
+  "Prob": 0.5,
   "Quota": null
  },
  {
@@ -806,7 +826,7 @@
   "Lega": "Division 1, Norra - Sodra",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.41,
+  "Prob": 0.42,
   "Quota": null
  },
  {
@@ -846,7 +866,7 @@
   "Lega": "Division 2, Norrland - Norra Svealand",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.55,
+  "Prob": 0.56,
   "Quota": null
  },
  {
@@ -1160,6 +1180,16 @@
   "Quota": null
  },
  {
+  "Casa": "Ullensaker/Kisa",
+  "Ospite": "Kjelsas",
+  "Ora": "14:00",
+  "Lega": "PostNord-ligaen - Gruppo 2",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.66,
+  "Quota": null
+ },
+ {
   "Casa": "Grorud IL",
   "Ospite": "Lørenskog",
   "Ora": "14:00",
@@ -1327,6 +1357,36 @@
   "Tipo": "B",
   "Pronostico": "2",
   "Prob": 0.43,
+  "Quota": null
+ },
+ {
+  "Casa": "LASK",
+  "Ospite": "FC SUDBURGENLAND",
+  "Ora": "14:00",
+  "Lega": "ÖFB Frauen Bundesliga",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.62,
+  "Quota": null
+ },
+ {
+  "Casa": "SPG SCR Altach / FFC Vorderland",
+  "Ospite": "UNION KLEINMUNCHEN",
+  "Ora": "14:00",
+  "Lega": "ÖFB Frauen Bundesliga",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.61,
+  "Quota": null
+ },
+ {
+  "Casa": "SV LOCHAU",
+  "Ospite": "FC Lustenau",
+  "Ora": "14:00",
+  "Lega": "Regionalliga West",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.59,
   "Quota": null
  },
  {
@@ -1746,7 +1806,7 @@
   "Lega": "Morasvkoslezská fotbalová liga",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.57,
+  "Prob": 0.55,
   "Quota": null
  },
  {
@@ -1887,6 +1947,76 @@
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.78,
+  "Quota": null
+ },
+ {
+  "Casa": "Buckley Town",
+  "Ospite": "Ruthin Town",
+  "Ora": "15:30",
+  "Lega": "FAW Championship North & Mid",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.59,
+  "Quota": null
+ },
+ {
+  "Casa": "Caersws",
+  "Ospite": "Bala Town",
+  "Ora": "15:30",
+  "Lega": "FAW Championship North & Mid",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.51,
+  "Quota": null
+ },
+ {
+  "Casa": "Guilsfield FC",
+  "Ospite": "Llanuwchllyn",
+  "Ora": "15:30",
+  "Lega": "FAW Championship North & Mid",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.61,
+  "Quota": null
+ },
+ {
+  "Casa": "Mold Alexandra",
+  "Ospite": "Newtown AFC",
+  "Ora": "15:30",
+  "Lega": "FAW Championship North & Mid",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.46,
+  "Quota": null
+ },
+ {
+  "Casa": "Penrhyncoch FC",
+  "Ospite": "Gresford Athletic",
+  "Ora": "15:30",
+  "Lega": "FAW Championship North & Mid",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.45,
+  "Quota": null
+ },
+ {
+  "Casa": "Porthmadog FC",
+  "Ospite": "CPD Dinas Bangor City 1876 FC",
+  "Ora": "15:30",
+  "Lega": "FAW Championship North & Mid",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.47,
+  "Quota": null
+ },
+ {
+  "Casa": "FC Rhyl",
+  "Ospite": "Brickfield Rangers",
+  "Ora": "15:30",
+  "Lega": "FAW Championship North & Mid",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.5,
   "Quota": null
  },
  {
@@ -2060,13 +2190,23 @@
   "Quota": null
  },
  {
+  "Casa": "Syrianska FC",
+  "Ospite": "Lindo Ff",
+  "Ora": "16:00",
+  "Lega": "Division 2, Norrland - Sodra Svealand",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.53,
+  "Quota": null
+ },
+ {
   "Casa": "Greenock Morton FC",
   "Ospite": "Raith Rovers",
   "Ora": "16:00",
   "Lega": "Scottish Championship",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.62,
+  "Prob": 0.63,
   "Quota": null
  },
  {
@@ -2490,6 +2630,36 @@
   "Quota": null
  },
  {
+  "Casa": "FC Dornbirn 1913",
+  "Ospite": "FC Kitzbuhel",
+  "Ora": "16:00",
+  "Lega": "Regionalliga West",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.57,
+  "Quota": null
+ },
+ {
+  "Casa": "Kufstein",
+  "Ospite": "SC Imst 1933",
+  "Ora": "16:00",
+  "Lega": "Regionalliga West",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.54,
+  "Quota": null
+ },
+ {
+  "Casa": "SCR Altach",
+  "Ospite": "Hohenems",
+  "Ora": "16:00",
+  "Lega": "Regionalliga West",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.68,
+  "Quota": null
+ },
+ {
   "Casa": "Aldershot Town FC",
   "Ospite": "Carlisle United",
   "Ora": "16:00",
@@ -2506,7 +2676,7 @@
   "Lega": "National League",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.48,
+  "Prob": 0.49,
   "Quota": null
  },
  {
@@ -2536,7 +2706,7 @@
   "Lega": "National League",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.55,
+  "Prob": 0.56,
   "Quota": null
  },
  {
@@ -2610,6 +2780,26 @@
   "Quota": null
  },
  {
+  "Casa": "Poole Town",
+  "Ospite": "Evesham United",
+  "Ora": "16:00",
+  "Lega": "Southern League, Premier Division South - Premier Division South",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.44,
+  "Quota": null
+ },
+ {
+  "Casa": "Yate Town",
+  "Ospite": "Frome Town",
+  "Ora": "16:00",
+  "Lega": "Southern League, Premier Division South - Premier Division South",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.41,
+  "Quota": null
+ },
+ {
   "Casa": "Bamber Bridge",
   "Ospite": "Quorn",
   "Ora": "16:00",
@@ -2660,6 +2850,16 @@
   "Quota": null
  },
  {
+  "Casa": "Workington",
+  "Ospite": "Cleethorpes Town",
+  "Ora": "16:00",
+  "Lega": "Northern Premier League - Premier Division",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.42,
+  "Quota": null
+ },
+ {
   "Casa": "Leamington",
   "Ospite": "Hitchin Town",
   "Ora": "16:00",
@@ -2677,6 +2877,16 @@
   "Tipo": "B",
   "Pronostico": "X",
   "Prob": 0.35,
+  "Quota": null
+ },
+ {
+  "Casa": "Rushall Olympic",
+  "Ospite": "Needham Market",
+  "Ora": "16:00",
+  "Lega": "Southern Football League, Premier Division Central - Premier Division Central",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.46,
   "Quota": null
  },
  {
@@ -2856,7 +3066,7 @@
   "Lega": "FA Cup",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.39,
+  "Prob": 0.38,
   "Quota": null
  },
  {
@@ -2976,7 +3186,7 @@
   "Lega": "FA Cup",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.51,
+  "Prob": 0.5,
   "Quota": null
  },
  {
@@ -3036,7 +3246,7 @@
   "Lega": "FA Cup",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.52,
+  "Prob": 0.51,
   "Quota": null
  },
  {
@@ -3376,7 +3586,7 @@
   "Lega": "Serie C - Girone B",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.44,
+  "Prob": 0.45,
   "Quota": null
  },
  {
@@ -3436,7 +3646,7 @@
   "Lega": "Division 2, Norrland - Norra Svealand",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.59,
+  "Prob": 0.61,
   "Quota": null
  },
  {
@@ -3576,7 +3786,7 @@
   "Lega": "Segunda Federación - GROUP II",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.67,
+  "Prob": 0.68,
   "Quota": null
  },
  {
@@ -3617,6 +3827,266 @@
   "Tipo": "B",
   "Pronostico": "2",
   "Prob": 0.41,
+  "Quota": null
+ },
+ {
+  "Casa": "Lidingö",
+  "Ospite": "Bollstanas SK",
+  "Ora": "18:15",
+  "Lega": "Division 2, Norrland - Norra Svealand",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.44,
+  "Quota": null
+ },
+ {
+  "Casa": "Hamilton Academical FC",
+  "Ospite": "Peterhead FC",
+  "Ora": "18:30",
+  "Lega": "Scottish League One",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.64,
+  "Quota": null
+ },
+ {
+  "Casa": "Cadice",
+  "Ospite": "Leganés",
+  "Ora": "18:30",
+  "Lega": "LaLiga 2",
+  "Tipo": "B",
+  "Pronostico": "X",
+  "Prob": 0.39,
+  "Quota": null
+ },
+ {
+  "Casa": "Sabadell",
+  "Ospite": "Andorra FC",
+  "Ora": "18:30",
+  "Lega": "LaLiga 2",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.66,
+  "Quota": null
+ },
+ {
+  "Casa": "Unionistas De Salamanca CF",
+  "Ospite": "Cultural Deportiva Leonesa",
+  "Ora": "18:45",
+  "Lega": "Primera Federación - Gruppo 1",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.41,
+  "Quota": null
+ },
+ {
+  "Casa": "Alcorcón",
+  "Ospite": "Juventud Torremolinos Cf",
+  "Ora": "18:45",
+  "Lega": "Primera Federación - Gruppo 2",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.54,
+  "Quota": null
+ },
+ {
+  "Casa": "Cartagena",
+  "Ospite": "Cda Aguilas",
+  "Ora": "18:45",
+  "Lega": "Primera Federación - Gruppo 2",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.43,
+  "Quota": null
+ },
+ {
+  "Casa": "Sant Andreu",
+  "Ospite": "Antequera CF",
+  "Ora": "18:45",
+  "Lega": "Primera Federación - Gruppo 2",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.51,
+  "Quota": null
+ },
+ {
+  "Casa": "Moyola Park",
+  "Ospite": "Glenavon FC",
+  "Ora": "19:00",
+  "Lega": "Championship 1",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.46,
+  "Quota": null
+ },
+ {
+  "Casa": "Deportivo Mixco",
+  "Ospite": "Municipal",
+  "Ora": "19:00",
+  "Lega": "Liga Nacional - Apertura",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.44,
+  "Quota": null
+ },
+ {
+  "Casa": "CD Estepona",
+  "Ospite": "CD Don Benito",
+  "Ora": "19:00",
+  "Lega": "Segunda Federación - Group IV",
+  "Tipo": "B",
+  "Pronostico": "X",
+  "Prob": 0.36,
+  "Quota": null
+ },
+ {
+  "Casa": "Odra Bytom Odrzanski",
+  "Ospite": "Zaglebie Sosnowiec",
+  "Ora": "19:00",
+  "Lega": "III Liga, Gruppo 3 - Gruppo 3",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.51,
+  "Quota": null
+ },
+ {
+  "Casa": "Warta Sieradz",
+  "Ospite": "SK Mazovia Minsk Mazowiecki",
+  "Ora": "19:00",
+  "Lega": "III Liga - Gruppo 1 - Gruppo 1",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.49,
+  "Quota": null
+ },
+ {
+  "Casa": "AS Montlouis Football",
+  "Ospite": "St. Pryve-Saint Hilaire",
+  "Ora": "19:00",
+  "Lega": "National 2 - National 2 25/26, Group A - Gruppo A",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.42,
+  "Quota": null
+ },
+ {
+  "Casa": "KFC Dessel Sport",
+  "Ospite": "Sporting West Harelbeke",
+  "Ora": "19:30",
+  "Lega": "Nationale 1 VV - Nationale 1 VV 24/25",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.67,
+  "Quota": null
+ },
+ {
+  "Casa": "CD Atletico Paso",
+  "Ospite": "RSC Internacional FC",
+  "Ora": "19:30",
+  "Lega": "Segunda Federación - Group V",
+  "Tipo": "B",
+  "Pronostico": "X",
+  "Prob": 0.44,
+  "Quota": null
+ },
+ {
+  "Casa": "Defensa Y Justicia",
+  "Ospite": "San Lorenzo",
+  "Ora": "19:45",
+  "Lega": "Liga Profesional Argentina - Clausura, Group A",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.53,
+  "Quota": null
+ },
+ {
+  "Casa": "Club Atletico Acassuso",
+  "Ospite": "Ciudad De Bolivar",
+  "Ora": "20:00",
+  "Lega": "Primera Nacional",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.4,
+  "Quota": null
+ },
+ {
+  "Casa": "CA San Miguel",
+  "Ospite": "Mitre Santiago Del Estero",
+  "Ora": "20:00",
+  "Lega": "Primera Nacional",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.39,
+  "Quota": null
+ },
+ {
+  "Casa": "Colon",
+  "Ospite": "Estudiantes De Buenos Aires",
+  "Ora": "20:00",
+  "Lega": "Primera Nacional",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.4,
+  "Quota": null
+ },
+ {
+  "Casa": "Deportivo Moron",
+  "Ospite": "All Boys",
+  "Ora": "20:00",
+  "Lega": "Primera Nacional",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.45,
+  "Quota": null
+ },
+ {
+  "Casa": "Club Atletico Temperley",
+  "Ospite": "Gimnasia Jujuy",
+  "Ora": "20:00",
+  "Lega": "Primera Nacional",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.49,
+  "Quota": null
+ },
+ {
+  "Casa": "CSD Tristan Suarez",
+  "Ospite": "Quilmes",
+  "Ora": "20:00",
+  "Lega": "Primera Nacional",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.68,
+  "Quota": null
+ },
+ {
+  "Casa": "Real Pilar",
+  "Ospite": "Villa Dalmine",
+  "Ora": "20:00",
+  "Lega": "Primera B",
+  "Tipo": "B",
+  "Pronostico": "X",
+  "Prob": 0.4,
+  "Quota": null
+ },
+ {
+  "Casa": "CSD Liniers",
+  "Ospite": "Excursionistas",
+  "Ora": "20:00",
+  "Lega": "Primera B",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.48,
+  "Quota": null
+ },
+ {
+  "Casa": "Villa San Carlos",
+  "Ospite": "Arsenal Sarandi",
+  "Ora": "20:00",
+  "Lega": "Primera B",
+  "Tipo": "B",
+  "Pronostico": "X",
+  "Prob": 0.47,
   "Quota": null
  }
 ]
