@@ -352,6 +352,22 @@
   "Q2": null
  },
  {
+  "Casa": "TuS Hordel",
+  "Ospite": "Vreden",
+  "Ora": "15:30",
+  "Paese": "Germany",
+  "Lega": "Oberliga Westfalen",
+  "Mercato": "OU",
+  "Sel": "Over",
+  "Linea": 2.5,
+  "Tip": "Over 2.5 Goals",
+  "Conf": 0.9,
+  "Q tip": null,
+  "Q1": null,
+  "QX": null,
+  "Q2": null
+ },
+ {
   "Casa": "Trostianets",
   "Ospite": "Metalurh Zaporizhya",
   "Ora": "10:00",
@@ -457,22 +473,6 @@
   "Sel": "12",
   "Linea": null,
   "Tip": "12",
-  "Conf": 0.9,
-  "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
- },
- {
-  "Casa": "TuS Hordel",
-  "Ospite": "Vreden",
-  "Ora": "15:30",
-  "Paese": "Germany",
-  "Lega": "Oberliga Westfalen",
-  "Mercato": "OU",
-  "Sel": "Over",
-  "Linea": 2.5,
-  "Tip": "Over 2.5 Goals",
   "Conf": 0.9,
   "Q tip": null,
   "Q1": null,
@@ -3264,22 +3264,6 @@
   "Q2": null
  },
  {
-  "Casa": "Karlsruhe II",
-  "Ospite": "Balingen",
-  "Ora": "15:00",
-  "Paese": "Germany",
-  "Lega": "Oberliga Baden Württemberg",
-  "Mercato": "OU",
-  "Sel": "Over",
-  "Linea": 2.5,
-  "Tip": "Over 2.5 Goals",
-  "Conf": 0.8,
-  "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
- },
- {
   "Casa": "Tudelano",
   "Ospite": "Barcelona B",
   "Ora": "18:00",
@@ -3294,6 +3278,22 @@
   "Q1": 3.9,
   "QX": 3.3,
   "Q2": 1.8
+ },
+ {
+  "Casa": "Karlsruhe II",
+  "Ospite": "Balingen",
+  "Ora": "15:00",
+  "Paese": "Germany",
+  "Lega": "Oberliga Baden Württemberg",
+  "Mercato": "OU",
+  "Sel": "Over",
+  "Linea": 2.5,
+  "Tip": "Over 2.5 Goals",
+  "Conf": 0.8,
+  "Q tip": null,
+  "Q1": null,
+  "QX": null,
+  "Q2": null
  },
  {
   "Casa": "Acren-Lessines",
@@ -3392,22 +3392,6 @@
   "Q2": null
  },
  {
-  "Casa": "Municipal Salamanca",
-  "Ospite": "Linares Unido",
-  "Ora": "17:00",
-  "Paese": "Chile",
-  "Lega": "Segunda División",
-  "Mercato": "OU",
-  "Sel": "Under",
-  "Linea": 2.5,
-  "Tip": "Under 2.5 Goals",
-  "Conf": 0.8,
-  "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
- },
- {
   "Casa": "Bellinzona",
   "Ospite": "Zürich II",
   "Ora": "16:00",
@@ -3422,6 +3406,22 @@
   "Q1": 2.1,
   "QX": 3.6,
   "Q2": 2.7
+ },
+ {
+  "Casa": "Municipal Salamanca",
+  "Ospite": "Linares Unido",
+  "Ora": "17:00",
+  "Paese": "Chile",
+  "Lega": "Segunda División",
+  "Mercato": "OU",
+  "Sel": "Under",
+  "Linea": 2.5,
+  "Tip": "Under 2.5 Goals",
+  "Conf": 0.8,
+  "Q tip": null,
+  "Q1": null,
+  "QX": null,
+  "Q2": null
  },
  {
   "Casa": "Colchagua",
@@ -3664,22 +3664,6 @@
   "Q2": 4.2
  },
  {
-  "Casa": "68 Aksaray Belediyespor",
-  "Ospite": "Ankaraspor",
-  "Ora": "14:00",
-  "Paese": "Turkey",
-  "Lega": "2. Lig",
-  "Mercato": "OU",
-  "Sel": "Over",
-  "Linea": 2.5,
-  "Tip": "Over 2.5 Goals",
-  "Conf": 0.8,
-  "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
- },
- {
   "Casa": "Dinamo Vladivostok",
   "Ospite": "Volgar Astrakhan",
   "Ora": "06:00",
@@ -3696,15 +3680,15 @@
   "Q2": 2.74
  },
  {
-  "Casa": "Elazığspor",
-  "Ospite": "Çorluspor 1947",
-  "Ora": "18:00",
+  "Casa": "68 Aksaray Belediyespor",
+  "Ospite": "Ankaraspor",
+  "Ora": "14:00",
   "Paese": "Turkey",
   "Lega": "2. Lig",
-  "Mercato": "DC",
-  "Sel": "12",
-  "Linea": null,
-  "Tip": "12",
+  "Mercato": "OU",
+  "Sel": "Over",
+  "Linea": 2.5,
+  "Tip": "Over 2.5 Goals",
   "Conf": 0.8,
   "Q tip": null,
   "Q1": null,
@@ -3726,6 +3710,22 @@
   "Q1": 1.35,
   "QX": 4.5,
   "Q2": 6.3
+ },
+ {
+  "Casa": "Elazığspor",
+  "Ospite": "Çorluspor 1947",
+  "Ora": "18:00",
+  "Paese": "Turkey",
+  "Lega": "2. Lig",
+  "Mercato": "DC",
+  "Sel": "12",
+  "Linea": null,
+  "Tip": "12",
+  "Conf": 0.8,
+  "Q tip": null,
+  "Q1": null,
+  "QX": null,
+  "Q2": null
  },
  {
   "Casa": "Kastamonuspor",
@@ -6176,22 +6176,6 @@
   "Q2": 15.0
  },
  {
-  "Casa": "Vipava",
-  "Ospite": "Litija",
-  "Ora": "15:30",
-  "Paese": "Slovenia",
-  "Lega": "3. SNL West",
-  "Mercato": "1X2",
-  "Sel": "2",
-  "Linea": null,
-  "Tip": "Away Win",
-  "Conf": 0.7,
-  "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
- },
- {
   "Casa": "Granada",
   "Ospite": "Eibar W",
   "Ora": "12:00",
@@ -6318,6 +6302,22 @@
   "Q1": 1.25,
   "QX": 5.0,
   "Q2": 10.0
+ },
+ {
+  "Casa": "Vipava",
+  "Ospite": "Litija",
+  "Ora": "15:30",
+  "Paese": "Slovenia",
+  "Lega": "3. SNL West",
+  "Mercato": "1X2",
+  "Sel": "2",
+  "Linea": null,
+  "Tip": "Away Win",
+  "Conf": 0.7,
+  "Q tip": null,
+  "Q1": null,
+  "QX": null,
+  "Q2": null
  },
  {
   "Casa": "Novosibirsk",
