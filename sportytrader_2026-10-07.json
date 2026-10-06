@@ -1,5 +1,15 @@
 [
  {
+  "Casa": "Real Potosi",
+  "Ospite": "San Antonio Bulo Bulo",
+  "Ora": "00:00",
+  "Lega": "LFPB - Gruppo A",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.54,
+  "Quota": null
+ },
+ {
   "Casa": "Club Olimpia",
   "Ospite": "Club Nacional",
   "Ora": "00:15",
@@ -16,7 +26,7 @@
   "Lega": "Brasileirão Série B",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.39,
+  "Prob": 0.38,
   "Quota": null
  },
  {
@@ -27,6 +37,16 @@
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.61,
+  "Quota": null
+ },
+ {
+  "Casa": "Antigua e Barbuda",
+  "Ospite": "Aruba",
+  "Ora": "01:00",
+  "Lega": "CONCACAF Nations League - League C, Group B",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.5,
   "Quota": null
  },
  {
@@ -60,13 +80,23 @@
   "Quota": null
  },
  {
+  "Casa": "Colombia",
+  "Ospite": "Perù",
+  "Ora": "01:45",
+  "Lega": "Partite Amichevoli",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.59,
+  "Quota": null
+ },
+ {
   "Casa": "Stati Uniti",
   "Ospite": "Canada",
   "Ora": "02:00",
   "Lega": "Partite Amichevoli",
   "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.44,
+  "Pronostico": "1",
+  "Prob": 0.45,
   "Quota": null
  },
  {
@@ -96,7 +126,37 @@
   "Lega": "Brasileirão Série B",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.6,
+  "Prob": 0.59,
+  "Quota": null
+ },
+ {
+  "Casa": "Guyana francese",
+  "Ospite": "Belize",
+  "Ora": "04:00",
+  "Lega": "CONCACAF Nations League - League B, Group D",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.49,
+  "Quota": null
+ },
+ {
+  "Casa": "Messico",
+  "Ospite": "Cile",
+  "Ora": "04:30",
+  "Lega": "Partite Amichevoli",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.55,
+  "Quota": null
+ },
+ {
+  "Casa": "Taian Tiankuang",
+  "Ospite": "Ganzhou Ruishi FC",
+  "Ora": "10:00",
+  "Lega": "China League Two - Relegation Round, Group B",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.42,
   "Quota": null
  },
  {
@@ -156,7 +216,7 @@
   "Lega": "Chinese League One",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.62,
+  "Prob": 0.67,
   "Quota": null
  },
  {
@@ -166,7 +226,7 @@
   "Lega": "Chinese League One",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.4,
+  "Prob": 0.39,
   "Quota": null
  },
  {
@@ -186,7 +246,7 @@
   "Lega": "China League Two - Relegation Round, Group B",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.46,
+  "Prob": 0.45,
   "Quota": null
  },
  {
@@ -196,7 +256,7 @@
   "Lega": "Canadian Premier League",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.44,
+  "Prob": 0.43,
   "Quota": null
  },
  {
@@ -210,6 +270,16 @@
   "Quota": null
  },
  {
+  "Casa": "AD Cantolao",
+  "Ospite": "Santos FC Nasca",
+  "Ora": "17:45",
+  "Lega": "Segunda Division - Relegation Round, Group B",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.5,
+  "Quota": null
+ },
+ {
   "Casa": "IF Gnistan",
   "Ospite": "Inter Turku",
   "Ora": "18:00",
@@ -217,16 +287,6 @@
   "Tipo": "B",
   "Pronostico": "2",
   "Prob": 0.36,
-  "Quota": null
- },
- {
-  "Casa": "AD Cantolao",
-  "Ospite": "Santos FC Nasca",
-  "Ora": "18:00",
-  "Lega": "Segunda Division - Relegation Round, Group B",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.5,
   "Quota": null
  },
  {
@@ -240,16 +300,6 @@
   "Quota": null
  },
  {
-  "Casa": "Atherton Collieries AFC",
-  "Ospite": "Trafford FC",
-  "Ora": "19:45",
-  "Lega": "FA Cup",
-  "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.57,
-  "Quota": null
- },
- {
   "Casa": "Sport Huancayo Reserve",
   "Ospite": "Club Ada Jaen",
   "Ora": "20:30",
@@ -257,6 +307,16 @@
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.49,
+  "Quota": null
+ },
+ {
+  "Casa": "Cartagena",
+  "Ospite": "Real Murcia CF",
+  "Ora": "20:30",
+  "Lega": "Primera Federación - Gruppo 2",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.43,
   "Quota": null
  },
  {
@@ -276,7 +336,17 @@
   "Lega": "Northern Premier League - Premier Division",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.54,
+  "Prob": 0.53,
+  "Quota": null
+ },
+ {
+  "Casa": "Belouizdad",
+  "Ospite": "USM Khenchela",
+  "Ora": "21:00",
+  "Lega": "Ligue 1 Mobilis",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.52,
   "Quota": null
  },
  {
@@ -286,7 +356,17 @@
   "Lega": "Copa Ecuador",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.47,
+  "Prob": 0.52,
+  "Quota": null
+ },
+ {
+  "Casa": "Universidad Catolica Del Ecuador",
+  "Ospite": "LDU Quito",
+  "Ora": "22:00",
+  "Lega": "Copa Ecuador",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.49,
   "Quota": null
  },
  {
@@ -325,8 +405,8 @@
   "Ora": "23:00",
   "Lega": "Primera B - Clausura",
   "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.36,
+  "Pronostico": "X",
+  "Prob": 0.34,
   "Quota": null
  }
 ]
