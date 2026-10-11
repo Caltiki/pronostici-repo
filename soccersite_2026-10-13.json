@@ -7,11 +7,25 @@
   "Mercato": "DC",
   "Tip": "X",
   "Prob": "",
-  "Quota": "2.62",
+  "Quota": "2.60",
   "Risultato": "",
-  "PA": 25,
+  "PA": 24,
   "PB": 40,
-  "PC": 35
+  "PC": 36
+ },
+ {
+  "Casa": "Novorizontino",
+  "Ospite": "Ponte Preta",
+  "Ora": "00:00",
+  "Lega": "Brazil Serie B",
+  "Mercato": "DC",
+  "Tip": "1",
+  "Prob": "",
+  "Quota": "1.05",
+  "Risultato": "",
+  "PA": 79,
+  "PB": 11,
+  "PC": 10
  },
  {
   "Casa": "All Boys",
@@ -21,11 +35,25 @@
   "Mercato": "OU2.5",
   "Tip": "X",
   "Prob": "",
-  "Quota": "2.62",
+  "Quota": "2.60",
   "Risultato": "",
-  "PA": 25,
+  "PA": 24,
   "PB": 40,
-  "PC": 35
+  "PC": 36
+ },
+ {
+  "Casa": "Novorizontino",
+  "Ospite": "Ponte Preta",
+  "Ora": "00:00",
+  "Lega": "Brazil Serie B",
+  "Mercato": "OU2.5",
+  "Tip": "1",
+  "Prob": "",
+  "Quota": "1.05",
+  "Risultato": "",
+  "PA": 79,
+  "PB": 11,
+  "PC": 10
  },
  {
   "Casa": "All Boys",
@@ -35,11 +63,25 @@
   "Mercato": "BTTS",
   "Tip": "X",
   "Prob": "",
-  "Quota": "2.62",
+  "Quota": "2.60",
   "Risultato": "",
-  "PA": 25,
+  "PA": 24,
   "PB": 40,
-  "PC": 35
+  "PC": 36
+ },
+ {
+  "Casa": "Novorizontino",
+  "Ospite": "Ponte Preta",
+  "Ora": "00:00",
+  "Lega": "Brazil Serie B",
+  "Mercato": "BTTS",
+  "Tip": "1",
+  "Prob": "",
+  "Quota": "1.05",
+  "Risultato": "",
+  "PA": 79,
+  "PB": 11,
+  "PC": 10
  },
  {
   "Casa": "Nacional Asuncion",
@@ -49,11 +91,11 @@
   "Mercato": "DC",
   "Tip": "1",
   "Prob": "",
-  "Quota": "1.59",
+  "Quota": "1.74",
   "Risultato": "",
-  "PA": 53,
-  "PB": 29,
-  "PC": 18
+  "PA": 49,
+  "PB": 31,
+  "PC": 20
  },
  {
   "Casa": "Nacional Asuncion",
@@ -63,11 +105,11 @@
   "Mercato": "OU2.5",
   "Tip": "1",
   "Prob": "",
-  "Quota": "1.59",
+  "Quota": "1.74",
   "Risultato": "",
-  "PA": 53,
-  "PB": 29,
-  "PC": 18
+  "PA": 49,
+  "PB": 31,
+  "PC": 20
  },
  {
   "Casa": "Nacional Asuncion",
@@ -77,11 +119,179 @@
   "Mercato": "BTTS",
   "Tip": "1",
   "Prob": "",
-  "Quota": "1.59",
+  "Quota": "1.74",
   "Risultato": "",
-  "PA": 53,
-  "PB": 29,
-  "PC": 18
+  "PA": 49,
+  "PB": 31,
+  "PC": 20
+ },
+ {
+  "Casa": "Criciuma",
+  "Ospite": "America Mineiro",
+  "Ora": "00:30",
+  "Lega": "Brazil Serie B",
+  "Mercato": "DC",
+  "Tip": "1",
+  "Prob": "",
+  "Quota": "1.33",
+  "Risultato": "",
+  "PA": 68,
+  "PB": 26,
+  "PC": 6
+ },
+ {
+  "Casa": "Deportivo Capiata",
+  "Ospite": "Benjamín Aceval",
+  "Ora": "00:30",
+  "Lega": "Paraguay Division Intermedia",
+  "Mercato": "DC",
+  "Tip": "2",
+  "Prob": "",
+  "Quota": "2.38",
+  "Risultato": "",
+  "PA": 29,
+  "PB": 33,
+  "PC": 38
+ },
+ {
+  "Casa": "Criciuma",
+  "Ospite": "America Mineiro",
+  "Ora": "00:30",
+  "Lega": "Brazil Serie B",
+  "Mercato": "OU2.5",
+  "Tip": "1",
+  "Prob": "",
+  "Quota": "1.33",
+  "Risultato": "",
+  "PA": 68,
+  "PB": 26,
+  "PC": 6
+ },
+ {
+  "Casa": "Deportivo Capiata",
+  "Ospite": "Benjamín Aceval",
+  "Ora": "00:30",
+  "Lega": "Paraguay Division Intermedia",
+  "Mercato": "OU2.5",
+  "Tip": "2",
+  "Prob": "",
+  "Quota": "2.38",
+  "Risultato": "",
+  "PA": 29,
+  "PB": 33,
+  "PC": 38
+ },
+ {
+  "Casa": "Criciuma",
+  "Ospite": "America Mineiro",
+  "Ora": "00:30",
+  "Lega": "Brazil Serie B",
+  "Mercato": "BTTS",
+  "Tip": "1",
+  "Prob": "",
+  "Quota": "1.33",
+  "Risultato": "",
+  "PA": 68,
+  "PB": 26,
+  "PC": 6
+ },
+ {
+  "Casa": "Deportivo Capiata",
+  "Ospite": "Benjamín Aceval",
+  "Ora": "00:30",
+  "Lega": "Paraguay Division Intermedia",
+  "Mercato": "BTTS",
+  "Tip": "2",
+  "Prob": "",
+  "Quota": "2.38",
+  "Risultato": "",
+  "PA": 29,
+  "PB": 33,
+  "PC": 38
+ },
+ {
+  "Casa": "Botafogo SP",
+  "Ospite": "Ceara",
+  "Ora": "02:00",
+  "Lega": "Brazil Serie B",
+  "Mercato": "DC",
+  "Tip": "1",
+  "Prob": "",
+  "Quota": "2.08",
+  "Risultato": "",
+  "PA": 36,
+  "PB": 34,
+  "PC": 30
+ },
+ {
+  "Casa": "Botafogo SP",
+  "Ospite": "Ceara",
+  "Ora": "02:00",
+  "Lega": "Brazil Serie B",
+  "Mercato": "OU2.5",
+  "Tip": "1",
+  "Prob": "",
+  "Quota": "2.08",
+  "Risultato": "",
+  "PA": 36,
+  "PB": 34,
+  "PC": 30
+ },
+ {
+  "Casa": "Botafogo SP",
+  "Ospite": "Ceara",
+  "Ora": "02:00",
+  "Lega": "Brazil Serie B",
+  "Mercato": "BTTS",
+  "Tip": "1",
+  "Prob": "",
+  "Quota": "2.08",
+  "Risultato": "",
+  "PA": 36,
+  "PB": 34,
+  "PC": 30
+ },
+ {
+  "Casa": "Sporting San Miguelito",
+  "Ospite": "Tauro FC",
+  "Ora": "03:00",
+  "Lega": "Panama Liga Panameña de Fútbol",
+  "Mercato": "DC",
+  "Tip": "2",
+  "Prob": "",
+  "Quota": "2.46",
+  "Risultato": "",
+  "PA": 27,
+  "PB": 36,
+  "PC": 37
+ },
+ {
+  "Casa": "Sporting San Miguelito",
+  "Ospite": "Tauro FC",
+  "Ora": "03:00",
+  "Lega": "Panama Liga Panameña de Fútbol",
+  "Mercato": "OU2.5",
+  "Tip": "2",
+  "Prob": "",
+  "Quota": "2.46",
+  "Risultato": "",
+  "PA": 27,
+  "PB": 36,
+  "PC": 37
+ },
+ {
+  "Casa": "Sporting San Miguelito",
+  "Ospite": "Tauro FC",
+  "Ora": "03:00",
+  "Lega": "Panama Liga Panameña de Fútbol",
+  "Mercato": "BTTS",
+  "Tip": "2",
+  "Prob": "",
+  "Quota": "2.46",
+  "Risultato": "",
+  "PA": 27,
+  "PB": 36,
+  "PC": 37
  },
  {
   "Casa": "Bandırmaspor",
@@ -91,11 +301,11 @@
   "Mercato": "DC",
   "Tip": "1",
   "Prob": "",
-  "Quota": "2.32",
+  "Quota": "2.03",
   "Risultato": "",
-  "PA": 34,
-  "PB": 34,
-  "PC": 32
+  "PA": 37,
+  "PB": 33,
+  "PC": 30
  },
  {
   "Casa": "Bandırmaspor",
@@ -105,11 +315,11 @@
   "Mercato": "OU2.5",
   "Tip": "1",
   "Prob": "",
-  "Quota": "2.32",
+  "Quota": "2.03",
   "Risultato": "",
-  "PA": 34,
-  "PB": 34,
-  "PC": 32
+  "PA": 37,
+  "PB": 33,
+  "PC": 30
  },
  {
   "Casa": "Bandırmaspor",
@@ -119,11 +329,25 @@
   "Mercato": "BTTS",
   "Tip": "1",
   "Prob": "",
-  "Quota": "2.32",
+  "Quota": "2.03",
   "Risultato": "",
-  "PA": 34,
-  "PB": 34,
-  "PC": 32
+  "PA": 37,
+  "PB": 33,
+  "PC": 30
+ },
+ {
+  "Casa": "Abu Qair Semad",
+  "Ospite": "Asyut Petrol",
+  "Ora": "16:00",
+  "Lega": "Egypt Premier League",
+  "Mercato": "DC",
+  "Tip": "X",
+  "Prob": "",
+  "Quota": "2.77",
+  "Risultato": "",
+  "PA": 37,
+  "PB": 38,
+  "PC": 25
  },
  {
   "Casa": "Juventus U23",
@@ -135,9 +359,23 @@
   "Prob": "",
   "Quota": "3.11",
   "Risultato": "",
-  "PA": 32,
+  "PA": 29,
   "PB": 31,
-  "PC": 37
+  "PC": 40
+ },
+ {
+  "Casa": "National Bank of Egypt",
+  "Ospite": "El Geish",
+  "Ora": "16:00",
+  "Lega": "Egypt Premier League",
+  "Mercato": "DC",
+  "Tip": "1",
+  "Prob": "",
+  "Quota": "1.89",
+  "Risultato": "",
+  "PA": 39,
+  "PB": 36,
+  "PC": 25
  },
  {
   "Casa": "Sarıyer",
@@ -147,11 +385,25 @@
   "Mercato": "DC",
   "Tip": "1",
   "Prob": "",
-  "Quota": "2.31",
+  "Quota": "2.16",
   "Risultato": "",
-  "PA": 38,
+  "PA": 40,
   "PB": 34,
-  "PC": 28
+  "PC": 26
+ },
+ {
+  "Casa": "Abu Qair Semad",
+  "Ospite": "Asyut Petrol",
+  "Ora": "16:00",
+  "Lega": "Egypt Premier League",
+  "Mercato": "OU2.5",
+  "Tip": "X",
+  "Prob": "",
+  "Quota": "2.77",
+  "Risultato": "",
+  "PA": 37,
+  "PB": 38,
+  "PC": 25
  },
  {
   "Casa": "Juventus U23",
@@ -163,9 +415,23 @@
   "Prob": "",
   "Quota": "3.11",
   "Risultato": "",
-  "PA": 32,
+  "PA": 29,
   "PB": 31,
-  "PC": 37
+  "PC": 40
+ },
+ {
+  "Casa": "National Bank of Egypt",
+  "Ospite": "El Geish",
+  "Ora": "16:00",
+  "Lega": "Egypt Premier League",
+  "Mercato": "OU2.5",
+  "Tip": "1",
+  "Prob": "",
+  "Quota": "1.89",
+  "Risultato": "",
+  "PA": 39,
+  "PB": 36,
+  "PC": 25
  },
  {
   "Casa": "Sarıyer",
@@ -175,11 +441,25 @@
   "Mercato": "OU2.5",
   "Tip": "1",
   "Prob": "",
-  "Quota": "2.31",
+  "Quota": "2.16",
   "Risultato": "",
-  "PA": 38,
+  "PA": 40,
   "PB": 34,
-  "PC": 28
+  "PC": 26
+ },
+ {
+  "Casa": "Abu Qair Semad",
+  "Ospite": "Asyut Petrol",
+  "Ora": "16:00",
+  "Lega": "Egypt Premier League",
+  "Mercato": "BTTS",
+  "Tip": "X",
+  "Prob": "",
+  "Quota": "2.77",
+  "Risultato": "",
+  "PA": 37,
+  "PB": 38,
+  "PC": 25
  },
  {
   "Casa": "Juventus U23",
@@ -191,9 +471,23 @@
   "Prob": "",
   "Quota": "3.11",
   "Risultato": "",
-  "PA": 32,
+  "PA": 29,
   "PB": 31,
-  "PC": 37
+  "PC": 40
+ },
+ {
+  "Casa": "National Bank of Egypt",
+  "Ospite": "El Geish",
+  "Ora": "16:00",
+  "Lega": "Egypt Premier League",
+  "Mercato": "BTTS",
+  "Tip": "1",
+  "Prob": "",
+  "Quota": "1.89",
+  "Risultato": "",
+  "PA": 39,
+  "PB": 36,
+  "PC": 25
  },
  {
   "Casa": "Sarıyer",
@@ -203,53 +497,95 @@
   "Mercato": "BTTS",
   "Tip": "1",
   "Prob": "",
-  "Quota": "2.31",
+  "Quota": "2.16",
   "Risultato": "",
-  "PA": 38,
+  "PA": 40,
   "PB": 34,
-  "PC": 28
+  "PC": 26
  },
  {
-  "Casa": "Montana",
-  "Ospite": "Ludogorets II",
+  "Casa": "Laagri",
+  "Ospite": "Nõmme United",
   "Ora": "17:00",
-  "Lega": "Bulgaria Second League",
+  "Lega": "Estonia Meistriliiga",
   "Mercato": "DC",
   "Tip": "1",
   "Prob": "",
-  "Quota": "1.58",
+  "Quota": "2.21",
   "Risultato": "",
   "PA": 44,
-  "PB": 30,
-  "PC": 26
+  "PB": 29,
+  "PC": 27
  },
  {
-  "Casa": "Montana",
-  "Ospite": "Ludogorets II",
+  "Casa": "Vaprus",
+  "Ospite": "Kalju Nomme",
   "Ora": "17:00",
-  "Lega": "Bulgaria Second League",
+  "Lega": "Estonia Meistriliiga",
+  "Mercato": "DC",
+  "Tip": "2",
+  "Prob": "",
+  "Quota": "1.55",
+  "Risultato": "",
+  "PA": 21,
+  "PB": 27,
+  "PC": 52
+ },
+ {
+  "Casa": "Laagri",
+  "Ospite": "Nõmme United",
+  "Ora": "17:00",
+  "Lega": "Estonia Meistriliiga",
   "Mercato": "OU2.5",
   "Tip": "1",
   "Prob": "",
-  "Quota": "1.58",
+  "Quota": "2.21",
   "Risultato": "",
   "PA": 44,
-  "PB": 30,
-  "PC": 26
+  "PB": 29,
+  "PC": 27
  },
  {
-  "Casa": "Montana",
-  "Ospite": "Ludogorets II",
+  "Casa": "Vaprus",
+  "Ospite": "Kalju Nomme",
   "Ora": "17:00",
-  "Lega": "Bulgaria Second League",
+  "Lega": "Estonia Meistriliiga",
+  "Mercato": "OU2.5",
+  "Tip": "2",
+  "Prob": "",
+  "Quota": "1.55",
+  "Risultato": "",
+  "PA": 21,
+  "PB": 27,
+  "PC": 52
+ },
+ {
+  "Casa": "Laagri",
+  "Ospite": "Nõmme United",
+  "Ora": "17:00",
+  "Lega": "Estonia Meistriliiga",
   "Mercato": "BTTS",
   "Tip": "1",
   "Prob": "",
-  "Quota": "1.58",
+  "Quota": "2.21",
   "Risultato": "",
   "PA": 44,
-  "PB": 30,
-  "PC": 26
+  "PB": 29,
+  "PC": 27
+ },
+ {
+  "Casa": "Vaprus",
+  "Ospite": "Kalju Nomme",
+  "Ora": "17:00",
+  "Lega": "Estonia Meistriliiga",
+  "Mercato": "BTTS",
+  "Tip": "2",
+  "Prob": "",
+  "Quota": "1.55",
+  "Risultato": "",
+  "PA": 21,
+  "PB": 27,
+  "PC": 52
  },
  {
   "Casa": "Lens",
@@ -336,6 +672,20 @@
   "PC": 43
  },
  {
+  "Casa": "Al Ittihad",
+  "Ospite": "El Gouna FC",
+  "Ora": "19:00",
+  "Lega": "Egypt Premier League",
+  "Mercato": "DC",
+  "Tip": "1",
+  "Prob": "",
+  "Quota": "2.13",
+  "Risultato": "",
+  "PA": 45,
+  "PB": 40,
+  "PC": 15
+ },
+ {
   "Casa": "FC Saarbrücken",
   "Ospite": "MSV Duisburg",
   "Ora": "19:00",
@@ -343,11 +693,11 @@
   "Mercato": "DC",
   "Tip": "2",
   "Prob": "",
-  "Quota": "2.21",
+  "Quota": "2.38",
   "Risultato": "",
   "PA": 31,
-  "PB": 31,
-  "PC": 38
+  "PB": 32,
+  "PC": 37
  },
  {
   "Casa": "Hansa Rostock",
@@ -357,11 +707,11 @@
   "Mercato": "DC",
   "Tip": "1",
   "Prob": "",
-  "Quota": "1.47",
+  "Quota": "1.45",
   "Risultato": "",
-  "PA": 56,
-  "PB": 26,
-  "PC": 18
+  "PA": 62,
+  "PB": 25,
+  "PC": 13
  },
  {
   "Casa": "Havelse",
@@ -371,11 +721,11 @@
   "Mercato": "DC",
   "Tip": "2",
   "Prob": "",
-  "Quota": "2.24",
+  "Quota": "2.20",
   "Risultato": "",
-  "PA": 25,
+  "PA": 24,
   "PB": 31,
-  "PC": 44
+  "PC": 45
  },
  {
   "Casa": "IFK Norrkoping",
@@ -385,10 +735,10 @@
   "Mercato": "DC",
   "Tip": "1",
   "Prob": "",
-  "Quota": "1.19",
+  "Quota": "1.18",
   "Risultato": "",
-  "PA": 65,
-  "PB": 19,
+  "PA": 66,
+  "PB": 18,
   "PC": 16
  },
  {
@@ -399,11 +749,25 @@
   "Mercato": "DC",
   "Tip": "1",
   "Prob": "",
-  "Quota": "1.77",
+  "Quota": "1.60",
   "Risultato": "",
-  "PA": 50,
-  "PB": 31,
-  "PC": 19
+  "PA": 53,
+  "PB": 30,
+  "PC": 17
+ },
+ {
+  "Casa": "Petrojet",
+  "Ospite": "Wadi Degla",
+  "Ora": "19:00",
+  "Lega": "Egypt Premier League",
+  "Mercato": "DC",
+  "Tip": "X",
+  "Prob": "",
+  "Quota": "2.70",
+  "Risultato": "",
+  "PA": 29,
+  "PB": 39,
+  "PC": 32
  },
  {
   "Casa": "Rot-Weiß Essen",
@@ -413,11 +777,11 @@
   "Mercato": "DC",
   "Tip": "1",
   "Prob": "",
-  "Quota": "1.45",
+  "Quota": "1.44",
   "Risultato": "",
-  "PA": 52,
+  "PA": 54,
   "PB": 26,
-  "PC": 22
+  "PC": 20
  },
  {
   "Casa": "Stuttgart II",
@@ -427,11 +791,25 @@
   "Mercato": "DC",
   "Tip": "2",
   "Prob": "",
-  "Quota": "2.52",
+  "Quota": "2.24",
   "Risultato": "",
-  "PA": 33,
+  "PA": 29,
   "PB": 29,
-  "PC": 38
+  "PC": 42
+ },
+ {
+  "Casa": "Al Ittihad",
+  "Ospite": "El Gouna FC",
+  "Ora": "19:00",
+  "Lega": "Egypt Premier League",
+  "Mercato": "OU2.5",
+  "Tip": "1",
+  "Prob": "",
+  "Quota": "2.13",
+  "Risultato": "",
+  "PA": 45,
+  "PB": 40,
+  "PC": 15
  },
  {
   "Casa": "FC Saarbrücken",
@@ -441,11 +819,11 @@
   "Mercato": "OU2.5",
   "Tip": "2",
   "Prob": "",
-  "Quota": "2.21",
+  "Quota": "2.38",
   "Risultato": "",
   "PA": 31,
-  "PB": 31,
-  "PC": 38
+  "PB": 32,
+  "PC": 37
  },
  {
   "Casa": "Hansa Rostock",
@@ -455,11 +833,11 @@
   "Mercato": "OU2.5",
   "Tip": "1",
   "Prob": "",
-  "Quota": "1.47",
+  "Quota": "1.45",
   "Risultato": "",
-  "PA": 56,
-  "PB": 26,
-  "PC": 18
+  "PA": 62,
+  "PB": 25,
+  "PC": 13
  },
  {
   "Casa": "Havelse",
@@ -469,11 +847,11 @@
   "Mercato": "OU2.5",
   "Tip": "2",
   "Prob": "",
-  "Quota": "2.24",
+  "Quota": "2.20",
   "Risultato": "",
-  "PA": 25,
+  "PA": 24,
   "PB": 31,
-  "PC": 44
+  "PC": 45
  },
  {
   "Casa": "IFK Norrkoping",
@@ -483,10 +861,10 @@
   "Mercato": "OU2.5",
   "Tip": "1",
   "Prob": "",
-  "Quota": "1.19",
+  "Quota": "1.18",
   "Risultato": "",
-  "PA": 65,
-  "PB": 19,
+  "PA": 66,
+  "PB": 18,
   "PC": 16
  },
  {
@@ -497,11 +875,25 @@
   "Mercato": "OU2.5",
   "Tip": "1",
   "Prob": "",
-  "Quota": "1.77",
+  "Quota": "1.60",
   "Risultato": "",
-  "PA": 50,
-  "PB": 31,
-  "PC": 19
+  "PA": 53,
+  "PB": 30,
+  "PC": 17
+ },
+ {
+  "Casa": "Petrojet",
+  "Ospite": "Wadi Degla",
+  "Ora": "19:00",
+  "Lega": "Egypt Premier League",
+  "Mercato": "OU2.5",
+  "Tip": "X",
+  "Prob": "",
+  "Quota": "2.70",
+  "Risultato": "",
+  "PA": 29,
+  "PB": 39,
+  "PC": 32
  },
  {
   "Casa": "Rot-Weiß Essen",
@@ -511,11 +903,11 @@
   "Mercato": "OU2.5",
   "Tip": "1",
   "Prob": "",
-  "Quota": "1.45",
+  "Quota": "1.44",
   "Risultato": "",
-  "PA": 52,
+  "PA": 54,
   "PB": 26,
-  "PC": 22
+  "PC": 20
  },
  {
   "Casa": "Stuttgart II",
@@ -525,11 +917,25 @@
   "Mercato": "OU2.5",
   "Tip": "2",
   "Prob": "",
-  "Quota": "2.52",
+  "Quota": "2.24",
   "Risultato": "",
-  "PA": 33,
+  "PA": 29,
   "PB": 29,
-  "PC": 38
+  "PC": 42
+ },
+ {
+  "Casa": "Al Ittihad",
+  "Ospite": "El Gouna FC",
+  "Ora": "19:00",
+  "Lega": "Egypt Premier League",
+  "Mercato": "BTTS",
+  "Tip": "1",
+  "Prob": "",
+  "Quota": "2.13",
+  "Risultato": "",
+  "PA": 45,
+  "PB": 40,
+  "PC": 15
  },
  {
   "Casa": "FC Saarbrücken",
@@ -539,11 +945,11 @@
   "Mercato": "BTTS",
   "Tip": "2",
   "Prob": "",
-  "Quota": "2.21",
+  "Quota": "2.38",
   "Risultato": "",
   "PA": 31,
-  "PB": 31,
-  "PC": 38
+  "PB": 32,
+  "PC": 37
  },
  {
   "Casa": "Hansa Rostock",
@@ -553,11 +959,11 @@
   "Mercato": "BTTS",
   "Tip": "1",
   "Prob": "",
-  "Quota": "1.47",
+  "Quota": "1.45",
   "Risultato": "",
-  "PA": 56,
-  "PB": 26,
-  "PC": 18
+  "PA": 62,
+  "PB": 25,
+  "PC": 13
  },
  {
   "Casa": "Havelse",
@@ -567,11 +973,11 @@
   "Mercato": "BTTS",
   "Tip": "2",
   "Prob": "",
-  "Quota": "2.24",
+  "Quota": "2.20",
   "Risultato": "",
-  "PA": 25,
+  "PA": 24,
   "PB": 31,
-  "PC": 44
+  "PC": 45
  },
  {
   "Casa": "IFK Norrkoping",
@@ -581,10 +987,10 @@
   "Mercato": "BTTS",
   "Tip": "1",
   "Prob": "",
-  "Quota": "1.19",
+  "Quota": "1.18",
   "Risultato": "",
-  "PA": 65,
-  "PB": 19,
+  "PA": 66,
+  "PB": 18,
   "PC": 16
  },
  {
@@ -595,11 +1001,25 @@
   "Mercato": "BTTS",
   "Tip": "1",
   "Prob": "",
-  "Quota": "1.77",
+  "Quota": "1.60",
   "Risultato": "",
-  "PA": 50,
-  "PB": 31,
-  "PC": 19
+  "PA": 53,
+  "PB": 30,
+  "PC": 17
+ },
+ {
+  "Casa": "Petrojet",
+  "Ospite": "Wadi Degla",
+  "Ora": "19:00",
+  "Lega": "Egypt Premier League",
+  "Mercato": "BTTS",
+  "Tip": "X",
+  "Prob": "",
+  "Quota": "2.70",
+  "Risultato": "",
+  "PA": 29,
+  "PB": 39,
+  "PC": 32
  },
  {
   "Casa": "Rot-Weiß Essen",
@@ -609,11 +1029,11 @@
   "Mercato": "BTTS",
   "Tip": "1",
   "Prob": "",
-  "Quota": "1.45",
+  "Quota": "1.44",
   "Risultato": "",
-  "PA": 52,
+  "PA": 54,
   "PB": 26,
-  "PC": 22
+  "PC": 20
  },
  {
   "Casa": "Stuttgart II",
@@ -623,53 +1043,11 @@
   "Mercato": "BTTS",
   "Tip": "2",
   "Prob": "",
-  "Quota": "2.52",
+  "Quota": "2.24",
   "Risultato": "",
-  "PA": 33,
+  "PA": 29,
   "PB": 29,
-  "PC": 38
- },
- {
-  "Casa": "Queens Park",
-  "Ospite": "Inverness CT",
-  "Ora": "20:45",
-  "Lega": "Scotland Championship",
-  "Mercato": "DC",
-  "Tip": "2",
-  "Prob": "",
-  "Quota": "1.56",
-  "Risultato": "",
-  "PA": 19,
-  "PB": 31,
-  "PC": 50
- },
- {
-  "Casa": "Queens Park",
-  "Ospite": "Inverness CT",
-  "Ora": "20:45",
-  "Lega": "Scotland Championship",
-  "Mercato": "OU2.5",
-  "Tip": "2",
-  "Prob": "",
-  "Quota": "1.56",
-  "Risultato": "",
-  "PA": 19,
-  "PB": 31,
-  "PC": 50
- },
- {
-  "Casa": "Queens Park",
-  "Ospite": "Inverness CT",
-  "Ora": "20:45",
-  "Lega": "Scotland Championship",
-  "Mercato": "BTTS",
-  "Tip": "2",
-  "Prob": "",
-  "Quota": "1.56",
-  "Risultato": "",
-  "PA": 19,
-  "PB": 31,
-  "PC": 50
+  "PC": 42
  },
  {
   "Casa": "Arsenal",
@@ -693,11 +1071,11 @@
   "Mercato": "DC",
   "Tip": "1",
   "Prob": "",
-  "Quota": "2.24",
+  "Quota": "2.16",
   "Risultato": "",
-  "PA": 43,
-  "PB": 30,
-  "PC": 27
+  "PA": 46,
+  "PB": 29,
+  "PC": 25
  },
  {
   "Casa": "Galatasaray",
@@ -723,9 +1101,9 @@
   "Prob": "",
   "Quota": "1.31",
   "Risultato": "",
-  "PA": 61,
+  "PA": 59,
   "PB": 21,
-  "PC": 18
+  "PC": 20
  },
  {
   "Casa": "RB Leipzig",
@@ -735,11 +1113,11 @@
   "Mercato": "DC",
   "Tip": "1",
   "Prob": "",
-  "Quota": "2.08",
+  "Quota": "1.96",
   "Risultato": "",
-  "PA": 38,
-  "PB": 29,
-  "PC": 33
+  "PA": 40,
+  "PB": 28,
+  "PC": 32
  },
  {
   "Casa": "Viking",
@@ -751,9 +1129,9 @@
   "Prob": "",
   "Quota": "1.10",
   "Risultato": "",
-  "PA": 16,
-  "PB": 9,
-  "PC": 75
+  "PA": 18,
+  "PB": 8,
+  "PC": 74
  },
  {
   "Casa": "Villarreal",
@@ -763,11 +1141,11 @@
   "Mercato": "DC",
   "Tip": "1",
   "Prob": "",
-  "Quota": "2.31",
+  "Quota": "2.29",
   "Risultato": "",
-  "PA": 40,
+  "PA": 37,
   "PB": 32,
-  "PC": 28
+  "PC": 31
  },
  {
   "Casa": "Arsenal",
@@ -791,11 +1169,11 @@
   "Mercato": "OU2.5",
   "Tip": "1",
   "Prob": "",
-  "Quota": "2.24",
+  "Quota": "2.16",
   "Risultato": "",
-  "PA": 43,
-  "PB": 30,
-  "PC": 27
+  "PA": 46,
+  "PB": 29,
+  "PC": 25
  },
  {
   "Casa": "Galatasaray",
@@ -821,9 +1199,9 @@
   "Prob": "",
   "Quota": "1.31",
   "Risultato": "",
-  "PA": 61,
+  "PA": 59,
   "PB": 21,
-  "PC": 18
+  "PC": 20
  },
  {
   "Casa": "RB Leipzig",
@@ -833,11 +1211,11 @@
   "Mercato": "OU2.5",
   "Tip": "1",
   "Prob": "",
-  "Quota": "2.08",
+  "Quota": "1.96",
   "Risultato": "",
-  "PA": 38,
-  "PB": 29,
-  "PC": 33
+  "PA": 40,
+  "PB": 28,
+  "PC": 32
  },
  {
   "Casa": "Viking",
@@ -849,9 +1227,9 @@
   "Prob": "",
   "Quota": "1.10",
   "Risultato": "",
-  "PA": 16,
-  "PB": 9,
-  "PC": 75
+  "PA": 18,
+  "PB": 8,
+  "PC": 74
  },
  {
   "Casa": "Villarreal",
@@ -861,11 +1239,11 @@
   "Mercato": "OU2.5",
   "Tip": "1",
   "Prob": "",
-  "Quota": "2.31",
+  "Quota": "2.29",
   "Risultato": "",
-  "PA": 40,
+  "PA": 37,
   "PB": 32,
-  "PC": 28
+  "PC": 31
  },
  {
   "Casa": "Arsenal",
@@ -889,11 +1267,11 @@
   "Mercato": "BTTS",
   "Tip": "1",
   "Prob": "",
-  "Quota": "2.24",
+  "Quota": "2.16",
   "Risultato": "",
-  "PA": 43,
-  "PB": 30,
-  "PC": 27
+  "PA": 46,
+  "PB": 29,
+  "PC": 25
  },
  {
   "Casa": "Galatasaray",
@@ -919,9 +1297,9 @@
   "Prob": "",
   "Quota": "1.31",
   "Risultato": "",
-  "PA": 61,
+  "PA": 59,
   "PB": 21,
-  "PC": 18
+  "PC": 20
  },
  {
   "Casa": "RB Leipzig",
@@ -931,11 +1309,11 @@
   "Mercato": "BTTS",
   "Tip": "1",
   "Prob": "",
-  "Quota": "2.08",
+  "Quota": "1.96",
   "Risultato": "",
-  "PA": 38,
-  "PB": 29,
-  "PC": 33
+  "PA": 40,
+  "PB": 28,
+  "PC": 32
  },
  {
   "Casa": "Viking",
@@ -947,9 +1325,9 @@
   "Prob": "",
   "Quota": "1.10",
   "Risultato": "",
-  "PA": 16,
-  "PB": 9,
-  "PC": 75
+  "PA": 18,
+  "PB": 8,
+  "PC": 74
  },
  {
   "Casa": "Villarreal",
@@ -959,10 +1337,10 @@
   "Mercato": "BTTS",
   "Tip": "1",
   "Prob": "",
-  "Quota": "2.31",
+  "Quota": "2.29",
   "Risultato": "",
-  "PA": 40,
+  "PA": 37,
   "PB": 32,
-  "PC": 28
+  "PC": 31
  }
 ]
