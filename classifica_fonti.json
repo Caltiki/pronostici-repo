@@ -1,7 +1,7 @@
 {
- "aggiornato": "2026-10-17 07:08",
- "risultati": 9161,
- "con_prezzo": 2088,
+ "aggiornato": "2026-10-18 07:13",
+ "risultati": 11266,
+ "con_prezzo": 2840,
  "minimo": 100,
  "fonti": [
   {
@@ -9,235 +9,235 @@
    "nome": "WebPronostici",
    "righe": 20788,
    "rotte": 0,
-   "misurate": 4026,
+   "misurate": 5012,
    "mercati": [
     {
      "mercato": "1X2",
-     "prese": 231,
-     "su": 436,
-     "pct": 53.0,
+     "prese": 278,
+     "su": 542,
+     "pct": 51.3,
      "rimborsi": 0
     },
     {
      "mercato": "BTTS",
-     "prese": 661,
-     "su": 1188,
-     "pct": 55.6,
+     "prese": 825,
+     "su": 1479,
+     "pct": 55.8,
      "rimborsi": 0
     },
     {
      "mercato": "DC",
-     "prese": 552,
-     "su": 752,
-     "pct": 73.4,
+     "prese": 683,
+     "su": 937,
+     "pct": 72.9,
      "rimborsi": 0
     },
     {
      "mercato": "OU",
-     "prese": 866,
-     "su": 1437,
-     "pct": 60.3,
-     "rimborsi": 119
+     "prese": 1062,
+     "su": 1792,
+     "pct": 59.3,
+     "rimborsi": 155
     },
     {
      "mercato": "SEGNA",
-     "prese": 173,
-     "su": 213,
-     "pct": 81.2,
+     "prese": 214,
+     "su": 262,
+     "pct": 81.7,
      "rimborsi": 0
     }
    ],
-   "prese": 2483,
-   "pct": 61.7,
+   "prese": 3062,
+   "pct": 61.1,
    "mercato": {
-    "n": 71,
-    "fonte": 60.6,
-    "book": 62.0
-   }
-  },
-  {
-   "chiave": "ratingbet",
-   "nome": "RatingBet",
-   "righe": 4102,
-   "rotte": 0,
-   "misurate": 656,
-   "mercati": [
-    {
-     "mercato": "1X2",
-     "prese": 114,
-     "su": 203,
-     "pct": 56.2,
-     "rimborsi": 0
-    },
-    {
-     "mercato": "BTTS",
-     "prese": 87,
-     "su": 154,
-     "pct": 56.5,
-     "rimborsi": 0
-    },
-    {
-     "mercato": "DC",
-     "prese": 111,
-     "su": 134,
-     "pct": 82.8,
-     "rimborsi": 0
-    },
-    {
-     "mercato": "OU",
-     "prese": 109,
-     "su": 165,
-     "pct": 66.1,
-     "rimborsi": 0
-    }
-   ],
-   "prese": 421,
-   "pct": 64.2,
-   "mercato": {
-    "n": 111,
-    "fonte": 58.6,
-    "book": 63.1
-   }
-  },
-  {
-   "chiave": "soccersite",
-   "nome": "SoccerSite",
-   "righe": 2155,
-   "rotte": 48,
-   "misurate": 654,
-   "mercati": [
-    {
-     "mercato": "1X2",
-     "prese": 169,
-     "su": 310,
-     "pct": 54.5,
-     "rimborsi": 0
-    },
-    {
-     "mercato": "BTTS",
-     "prese": 75,
-     "su": 132,
-     "pct": 56.8,
-     "rimborsi": 0
-    },
-    {
-     "mercato": "DC",
-     "prese": 62,
-     "su": 80,
-     "pct": 77.5,
-     "rimborsi": 0
-    },
-    {
-     "mercato": "OU",
-     "prese": 84,
-     "su": 132,
-     "pct": 63.6,
-     "rimborsi": 0
-    }
-   ],
-   "prese": 390,
-   "pct": 59.6,
-   "mercato": {
-    "n": 165,
-    "fonte": 58.2,
-    "book": 60.0
+    "n": 132,
+    "fonte": 53.8,
+    "book": 56.1
    }
   },
   {
    "chiave": "xgaura",
    "nome": "xGaura",
-   "righe": 3860,
+   "righe": 4106,
    "rotte": 0,
-   "misurate": 450,
+   "misurate": 1142,
    "mercati": [
     {
      "mercato": "1X2",
-     "prese": 100,
-     "su": 185,
-     "pct": 54.1,
+     "prese": 228,
+     "su": 428,
+     "pct": 53.3,
      "rimborsi": 0
     },
     {
      "mercato": "BTTS",
-     "prese": 5,
-     "su": 15,
-     "pct": 33.3,
+     "prese": 24,
+     "su": 38,
+     "pct": 63.2,
      "rimborsi": 0
     },
     {
      "mercato": "DC",
-     "prese": 71,
-     "su": 97,
-     "pct": 73.2,
+     "prese": 194,
+     "su": 278,
+     "pct": 69.8,
      "rimborsi": 0
     },
     {
      "mercato": "OU",
-     "prese": 98,
-     "su": 153,
-     "pct": 64.1,
+     "prese": 240,
+     "su": 398,
+     "pct": 60.3,
      "rimborsi": 0
     }
    ],
-   "prese": 274,
-   "pct": 60.9,
+   "prese": 686,
+   "pct": 60.1,
    "mercato": {
-    "n": 93,
-    "fonte": 60.2,
-    "book": 66.7
+    "n": 202,
+    "fonte": 55.4,
+    "book": 59.4
+   }
+  },
+  {
+   "chiave": "soccersite",
+   "nome": "SoccerSite",
+   "righe": 2581,
+   "rotte": 48,
+   "misurate": 1026,
+   "mercati": [
+    {
+     "mercato": "1X2",
+     "prese": 296,
+     "su": 563,
+     "pct": 52.6,
+     "rimborsi": 0
+    },
+    {
+     "mercato": "BTTS",
+     "prese": 102,
+     "su": 178,
+     "pct": 57.3,
+     "rimborsi": 0
+    },
+    {
+     "mercato": "DC",
+     "prese": 85,
+     "su": 107,
+     "pct": 79.4,
+     "rimborsi": 0
+    },
+    {
+     "mercato": "OU",
+     "prese": 110,
+     "su": 178,
+     "pct": 61.8,
+     "rimborsi": 0
+    }
+   ],
+   "prese": 593,
+   "pct": 57.8,
+   "mercato": {
+    "n": 304,
+    "fonte": 55.3,
+    "book": 54.9
+   }
+  },
+  {
+   "chiave": "ratingbet",
+   "nome": "RatingBet",
+   "righe": 4847,
+   "rotte": 0,
+   "misurate": 887,
+   "mercati": [
+    {
+     "mercato": "1X2",
+     "prese": 139,
+     "su": 248,
+     "pct": 56.0,
+     "rimborsi": 0
+    },
+    {
+     "mercato": "BTTS",
+     "prese": 120,
+     "su": 216,
+     "pct": 55.6,
+     "rimborsi": 0
+    },
+    {
+     "mercato": "DC",
+     "prese": 166,
+     "su": 198,
+     "pct": 83.8,
+     "rimborsi": 0
+    },
+    {
+     "mercato": "OU",
+     "prese": 139,
+     "su": 225,
+     "pct": 61.8,
+     "rimborsi": 0
+    }
+   ],
+   "prese": 564,
+   "pct": 63.6,
+   "mercato": {
+    "n": 140,
+    "fonte": 58.6,
+    "book": 63.6
    }
   },
   {
    "chiave": "sportytrader",
    "nome": "Sportytrader",
-   "righe": 1580,
+   "righe": 2158,
    "rotte": 0,
-   "misurate": 332,
+   "misurate": 538,
    "mercati": [
     {
      "mercato": "1X2",
-     "prese": 177,
-     "su": 332,
-     "pct": 53.3,
+     "prese": 278,
+     "su": 538,
+     "pct": 51.7,
      "rimborsi": 0
     }
    ],
-   "prese": 177,
-   "pct": 53.3,
+   "prese": 278,
+   "pct": 51.7,
    "mercato": {
-    "n": 155,
-    "fonte": 55.5,
-    "book": 57.4
+    "n": 237,
+    "fonte": 51.9,
+    "book": 57.0
    }
   },
   {
    "chiave": "statarea",
    "nome": "Statarea",
-   "righe": 1200,
+   "righe": 1300,
    "rotte": 0,
-   "misurate": 169,
+   "misurate": 484,
    "mercati": [
     {
      "mercato": "1X2",
-     "prese": 55,
-     "su": 107,
-     "pct": 51.4,
+     "prese": 141,
+     "su": 301,
+     "pct": 46.8,
      "rimborsi": 0
     },
     {
      "mercato": "DC",
-     "prese": 47,
-     "su": 62,
-     "pct": 75.8,
+     "prese": 131,
+     "su": 183,
+     "pct": 71.6,
      "rimborsi": 0
     }
    ],
-   "prese": 102,
-   "pct": 60.4,
+   "prese": 272,
+   "pct": 56.2,
    "mercato": {
-    "n": 69,
-    "fonte": 56.5,
-    "book": 56.5
+    "n": 186,
+    "fonte": 44.1,
+    "book": 45.2
    }
   }
  ]
