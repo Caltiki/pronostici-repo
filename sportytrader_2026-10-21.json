@@ -1,12 +1,672 @@
 [
  {
+  "Casa": "Tacuary Asuncion",
+  "Ospite": "Independiente",
+  "Ora": "00:00",
+  "Lega": "Segunda Division",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.53,
+  "Quota": null
+ },
+ {
+  "Casa": "Paraguari AC",
+  "Ospite": "Club Fernando de La Mora",
+  "Ora": "00:00",
+  "Lega": "Segunda Division",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.47,
+  "Quota": null
+ },
+ {
+  "Casa": "Londrina",
+  "Ospite": "Cuiaba",
+  "Ora": "00:30",
+  "Lega": "Brasileirão Série B",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.37,
+  "Quota": null
+ },
+ {
+  "Casa": "La Calera",
+  "Ospite": "Coquimbo Unido",
+  "Ora": "01:00",
+  "Lega": "Coppa Cile - Knockout stage",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.41,
+  "Quota": null
+ },
+ {
+  "Casa": "Internacional De Bogota.",
+  "Ospite": "Fortaleza",
+  "Ora": "01:15",
+  "Lega": "Liga Postobon - Finalizacion",
+  "Tipo": "B",
+  "Pronostico": "X",
+  "Prob": 0.62,
+  "Quota": null
+ },
+ {
+  "Casa": "Cucuta Deportivo",
+  "Ospite": "Atlético Nacional",
+  "Ora": "01:30",
+  "Lega": "Liga Postobon - Finalizacion",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.51,
+  "Quota": null
+ },
+ {
+  "Casa": "Chivas",
+  "Ospite": "Necaxa",
+  "Ora": "02:07",
+  "Lega": "Liga MX - Apertura",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.51,
+  "Quota": null
+ },
+ {
+  "Casa": "Vasco Da Gama",
+  "Ospite": "Boca Juniors",
+  "Ora": "02:30",
+  "Lega": "Coppa Sudamericana - Knockout stage",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.49,
+  "Quota": null
+ },
+ {
+  "Casa": "San Luis",
+  "Ospite": "Queretaro",
+  "Ora": "03:00",
+  "Lega": "Liga MX - Apertura",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.45,
+  "Quota": null
+ },
+ {
+  "Casa": "FC Juarez",
+  "Ospite": "Atlante",
+  "Ora": "03:00",
+  "Lega": "Liga MX - Apertura",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.39,
+  "Quota": null
+ },
+ {
+  "Casa": "Millonarios",
+  "Ospite": "Once Caldas",
+  "Ora": "03:30",
+  "Lega": "Liga Postobon - Finalizacion",
+  "Tipo": "B",
+  "Pronostico": "X",
+  "Prob": 0.4,
+  "Quota": null
+ },
+ {
+  "Casa": "Malacateco",
+  "Ospite": "Comunicaciones",
+  "Ora": "04:00",
+  "Lega": "Liga Nacional - Apertura",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.54,
+  "Quota": null
+ },
+ {
+  "Casa": "Tigres UANL",
+  "Ospite": "Leon",
+  "Ora": "05:00",
+  "Lega": "Liga MX - Apertura",
+  "Tipo": "B",
+  "Pronostico": "X",
+  "Prob": 0.42,
+  "Quota": null
+ },
+ {
+  "Casa": "GUADALAJARA",
+  "Ospite": "Necaxa",
+  "Ora": "05:06",
+  "Lega": "Liga MX Femenil - Women, Apertura",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.87,
+  "Quota": null
+ },
+ {
+  "Casa": "Montedio Yamagata",
+  "Ospite": "Consadole Sapporo",
+  "Ora": "06:00",
+  "Lega": "J. League 2",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.5,
+  "Quota": null
+ },
+ {
+  "Casa": "Bali United",
+  "Ospite": "Garuda Yaksa",
+  "Ora": "10:30",
+  "Lega": "Liga Indonesia",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.52,
+  "Quota": null
+ },
+ {
+  "Casa": "FC Tokyo",
+  "Ospite": "Kashiwa Reysol",
+  "Ora": "12:00",
+  "Lega": "J.League",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.56,
+  "Quota": null
+ },
+ {
+  "Casa": "Kawasaki",
+  "Ospite": "Vissel Kobe",
+  "Ora": "12:00",
+  "Lega": "J.League",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.47,
+  "Quota": null
+ },
+ {
+  "Casa": "Yokohama Marinos",
+  "Ospite": "Tokyo Verdy",
+  "Ora": "12:00",
+  "Lega": "J.League",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.54,
+  "Quota": null
+ },
+ {
+  "Casa": "Shimizu S-Pulse",
+  "Ospite": "Machida Zelvia",
+  "Ora": "12:00",
+  "Lega": "J.League",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.49,
+  "Quota": null
+ },
+ {
+  "Casa": "Nagoya Grampus",
+  "Ospite": "Cerezo Osaka",
+  "Ora": "12:00",
+  "Lega": "J.League",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.43,
+  "Quota": null
+ },
+ {
+  "Casa": "Kyoto Sanga",
+  "Ospite": "Kashima Antlers",
+  "Ora": "12:00",
+  "Lega": "J.League",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.44,
+  "Quota": null
+ },
+ {
+  "Casa": "Fagiano Okayama",
+  "Ospite": "Mito Hollyhock",
+  "Ora": "12:00",
+  "Lega": "J.League",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.46,
+  "Quota": null
+ },
+ {
+  "Casa": "Avispa Fukuoka",
+  "Ospite": "Gamba Osaka",
+  "Ora": "12:00",
+  "Lega": "J.League",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.35,
+  "Quota": null
+ },
+ {
+  "Casa": "V-Varen Nagasaki",
+  "Ospite": "Sanfrecce Hiroshima",
+  "Ora": "12:00",
+  "Lega": "J.League",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.57,
+  "Quota": null
+ },
+ {
+  "Casa": "Vegalta Sendai",
+  "Ospite": "Imabari",
+  "Ora": "12:00",
+  "Lega": "J. League 2",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.44,
+  "Quota": null
+ },
+ {
+  "Casa": "TOCHIGI UVA",
+  "Ospite": "Fujieda Myfc",
+  "Ora": "12:00",
+  "Lega": "J. League 2",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.45,
+  "Quota": null
+ },
+ {
+  "Casa": "Omiya Ardija",
+  "Ospite": "Kataller Toyama",
+  "Ora": "12:00",
+  "Lega": "J. League 2",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.38,
+  "Quota": null
+ },
+ {
+  "Casa": "Shonan Bellmare",
+  "Ospite": "Iwaki FC",
+  "Ora": "12:00",
+  "Lega": "J. League 2",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.43,
+  "Quota": null
+ },
+ {
+  "Casa": "Ventforet Kofu",
+  "Ospite": "Yokohama FC",
+  "Ora": "12:00",
+  "Lega": "J. League 2",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.57,
+  "Quota": null
+ },
+ {
+  "Casa": "Albirex Niigata",
+  "Ospite": "Sagan Tosu",
+  "Ora": "12:00",
+  "Lega": "J. League 2",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.55,
+  "Quota": null
+ },
+ {
+  "Casa": "Jubilo Iwata",
+  "Ospite": "Oita Trinita",
+  "Ora": "12:00",
+  "Lega": "J. League 2",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.41,
+  "Quota": null
+ },
+ {
+  "Casa": "Tokushima Vortis",
+  "Ospite": "Vanraure Hachnohe",
+  "Ora": "12:00",
+  "Lega": "J. League 2",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.55,
+  "Quota": null
+ },
+ {
+  "Casa": "Tegevajaro Miyazaki",
+  "Ospite": "Blaublitz Akita",
+  "Ora": "12:00",
+  "Lega": "J. League 2",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.51,
+  "Quota": null
+ },
+ {
+  "Casa": "Urawa Red Diamonds",
+  "Ospite": "JEF Utd Chiba",
+  "Ora": "12:30",
+  "Lega": "J.League",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.65,
+  "Quota": null
+ },
+ {
+  "Casa": "Persija Jakarta",
+  "Ospite": "Arema FC",
+  "Ora": "14:00",
+  "Lega": "Liga Indonesia",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.58,
+  "Quota": null
+ },
+ {
+  "Casa": "Gasogi United",
+  "Ospite": "GORILLA FC",
+  "Ora": "15:00",
+  "Lega": "National Football League",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.38,
+  "Quota": null
+ },
+ {
+  "Casa": "Ghazl El Mahallah",
+  "Ospite": "Al Ittihad Alexandria Club",
+  "Ora": "16:00",
+  "Lega": "Egyptian Premier League",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.37,
+  "Quota": null
+ },
+ {
+  "Casa": "HARJU JK LAAGRI",
+  "Ospite": "Flora Tallinn",
+  "Ora": "17:00",
+  "Lega": "Meistriliiga",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.45,
+  "Quota": null
+ },
+ {
+  "Casa": "Deportivo Toluca FC U21",
+  "Ospite": "Club Tijuana De Caliente U21",
+  "Ora": "17:00",
+  "Lega": "Liga MX - U21 - Apertura",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.6,
+  "Quota": null
+ },
+ {
+  "Casa": "Pachuca U21",
+  "Ospite": "Cruz Azul U21",
+  "Ora": "17:15",
+  "Lega": "Liga MX - U21 - Apertura",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.43,
+  "Quota": null
+ },
+ {
   "Casa": "Widzew Lodz II",
   "Ospite": "Warta Sieradz",
   "Ora": "17:30",
   "Lega": "III Liga - Gruppo 1 - Gruppo 1",
   "Tipo": "B",
   "Pronostico": "2",
+  "Prob": 0.55,
+  "Quota": null
+ },
+ {
+  "Casa": "Como",
+  "Ospite": "Manchester United",
+  "Ora": "18:45",
+  "Lega": "Champions League - UEFA Champions League 24/25",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.48,
+  "Quota": null
+ },
+ {
+  "Casa": "Lilla",
+  "Ospite": "Galatasaray",
+  "Ora": "18:45",
+  "Lega": "Champions League - UEFA Champions League 24/25",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.41,
+  "Quota": null
+ },
+ {
+  "Casa": "Santos Laguna U21",
+  "Ospite": "Universidad Nacional U21",
+  "Ora": "19:00",
+  "Lega": "Liga MX - U21 - Apertura",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.36,
+  "Quota": null
+ },
+ {
+  "Casa": "Ceramica Cleopatra",
+  "Ospite": "Suez Petrojet",
+  "Ora": "19:00",
+  "Lega": "Egyptian Premier League",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.45,
+  "Quota": null
+ },
+ {
+  "Casa": "AL Ahly",
+  "Ospite": "Alqana",
+  "Ora": "19:00",
+  "Lega": "Egyptian Premier League",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.72,
+  "Quota": null
+ },
+ {
+  "Casa": "AZS UJ KRAKOW",
+  "Ospite": "Kks Lech Poznan",
+  "Ora": "19:00",
+  "Lega": "Ekstraliga Women - Women",
+  "Tipo": "B",
+  "Pronostico": "1",
   "Prob": 0.5,
+  "Quota": null
+ },
+ {
+  "Casa": "Sogndal",
+  "Ospite": "Raufoss Fotball",
+  "Ora": "19:00",
+  "Lega": "OBOS-ligaen",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.39,
+  "Quota": null
+ },
+ {
+  "Casa": "Duque De Caxias FC RJ",
+  "Ospite": "Artsul FC RJ",
+  "Ora": "20:00",
+  "Lega": "Campeonato Carioca - Serie B1",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.4,
+  "Quota": null
+ },
+ {
+  "Casa": "Niteroiense FC RJ",
+  "Ospite": "Audax Rio",
+  "Ora": "20:00",
+  "Lega": "Campeonato Carioca - Serie B1",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.74,
+  "Quota": null
+ },
+ {
+  "Casa": "Levante",
+  "Ospite": "Athletic Bilbao",
+  "Ora": "20:00",
+  "Lega": "LaLiga",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.4,
+  "Quota": null
+ },
+ {
+  "Casa": "Montrose FC",
+  "Ospite": "Aberdeen Lfc",
+  "Ora": "20:30",
+  "Lega": "Scottish Women's PL - Women",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.54,
+  "Quota": null
+ },
+ {
+  "Casa": "Glasgow City",
+  "Ospite": "Rangers Lfc",
+  "Ora": "20:35",
+  "Lega": "Scottish Women's PL - Women",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.48,
+  "Quota": null
+ },
+ {
+  "Casa": "Frome Town",
+  "Ospite": "Gloucester",
+  "Ora": "20:45",
+  "Lega": "Southern League, Premier Division South - Premier Division South",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.4,
+  "Quota": null
+ },
+ {
+  "Casa": "AFC Whyteleafe",
+  "Ospite": "Burgess Hill Town",
+  "Ora": "20:45",
+  "Lega": "Isthmian Football League - Premier Division",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.42,
+  "Quota": null
+ },
+ {
+  "Casa": "Avro FC",
+  "Ospite": "Ashton Utd",
+  "Ora": "20:45",
+  "Lega": "Northern Premier League - Premier Division",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.45,
+  "Quota": null
+ },
+ {
+  "Casa": "Reading",
+  "Ospite": "Leyton Orient",
+  "Ora": "21:00",
+  "Lega": "League One",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.39,
+  "Quota": null
+ },
+ {
+  "Casa": "Aston Villa",
+  "Ospite": "Viking FK",
+  "Ora": "21:00",
+  "Lega": "Champions League - UEFA Champions League 24/25",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.44,
+  "Quota": null
+ },
+ {
+  "Casa": "Club Bruges",
+  "Ospite": "Lens",
+  "Ora": "21:00",
+  "Lega": "Champions League - UEFA Champions League 24/25",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.58,
+  "Quota": null
+ },
+ {
+  "Casa": "Bayern Monaco",
+  "Ospite": "Arsenal",
+  "Ora": "21:00",
+  "Lega": "Champions League - UEFA Champions League 24/25",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.48,
+  "Quota": null
+ },
+ {
+  "Casa": "Inter",
+  "Ospite": "Shakhtar Donetsk",
+  "Ora": "21:00",
+  "Lega": "Champions League - UEFA Champions League 24/25",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.47,
+  "Quota": null
+ },
+ {
+  "Casa": "Real Madrid",
+  "Ospite": "Lipsia",
+  "Ora": "21:00",
+  "Lega": "Champions League - UEFA Champions League 24/25",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.74,
+  "Quota": null
+ },
+ {
+  "Casa": "Betis",
+  "Ospite": "Feyenoord",
+  "Ora": "21:00",
+  "Lega": "Champions League - UEFA Champions League 24/25",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.56,
+  "Quota": null
+ },
+ {
+  "Casa": "Sporting Lisbona",
+  "Ospite": "LASK Linz",
+  "Ora": "21:00",
+  "Lega": "Champions League - UEFA Champions League 24/25",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.61,
+  "Quota": null
+ },
+ {
+  "Casa": "Club Deportivo Cuenca Juniors",
+  "Ospite": "Atletico Rojiblanco",
+  "Ora": "22:30",
+  "Lega": "Serie B - Promotion Round",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.48,
+  "Quota": null
+ },
+ {
+  "Casa": "Sporting Jax",
+  "Ospite": "Louisville City",
+  "Ora": "23:00",
+  "Lega": "USL, Championship - Championship",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.62,
   "Quota": null
  }
 ]
