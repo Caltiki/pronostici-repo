@@ -883,8 +883,7 @@
   "Mercato": "1X2",
   "Sel": "2",
   "Prob": 70.9,
-  "Equa": 1.41,
-  "InSchedina": "si"
+  "Equa": 1.41
  },
  {
   "Data": "2026-10-27",
@@ -904,8 +903,7 @@
   "Mercato": "OU 1.5",
   "Sel": "Over",
   "Prob": 70.7,
-  "Equa": 1.41,
-  "InSchedina": "si"
+  "Equa": 1.41
  },
  {
   "Data": "2026-10-27",
@@ -1433,7 +1431,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "2 + Over 1.5",
   "Prob": 63.0,
-  "Equa": 1.59
+  "Equa": 1.59,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-27",
@@ -3360,7 +3359,8 @@
   "Mercato": "BTTS",
   "Sel": "NoGol",
   "Prob": 50.4,
-  "Equa": 1.98
+  "Equa": 1.98,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-27",
@@ -3420,6 +3420,26 @@
   "Gruppo": "Combo",
   "Mercato": "Esito + Gol",
   "Sel": "1X + Over 2.5",
+  "Prob": 49.6,
+  "Equa": 2.02
+ },
+ {
+  "Data": "2026-10-27",
+  "Ora": "23:00",
+  "Campionato": "Brazil Serie B",
+  "Partita": "Ceará - Goiás",
+  "Casa": "Ceará",
+  "Ospite": "Goiás",
+  "Linea_OU": "",
+  "Gol_attesi": 2.47,
+  "Margine": 4.9,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "Gol NoGol",
+  "Mercato": "BTTS",
+  "Sel": "Gol",
   "Prob": 49.6,
   "Equa": 2.02
  },
@@ -5125,26 +5145,6 @@
  },
  {
   "Data": "2026-10-27",
-  "Ora": "23:00",
-  "Campionato": "Brazil Serie B",
-  "Partita": "Ceará - Goiás",
-  "Casa": "Ceará",
-  "Ospite": "Goiás",
-  "Linea_OU": "",
-  "Gol_attesi": 2.47,
-  "Margine": 4.9,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "Under Over",
-  "Mercato": "OU 1.5",
-  "Sel": "Under",
-  "Prob": 29.3,
-  "Equa": 3.41
- },
- {
-  "Data": "2026-10-27",
   "Ora": "17:30",
   "Campionato": "Bulgaria First League",
   "Partita": "Arda - Levski Sofia",
@@ -5302,25 +5302,5 @@
   "Sel": "X",
   "Prob": 17.2,
   "Equa": 5.83
- },
- {
-  "Data": "2026-10-27",
-  "Ora": "17:00",
-  "Campionato": "Germany DFB Pokal",
-  "Partita": "Sonnenhof Großaspach - Augsburg",
-  "Casa": "Sonnenhof Großaspach",
-  "Ospite": "Augsburg",
-  "Linea_OU": "",
-  "Gol_attesi": 3.42,
-  "Margine": 2.2,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 16.9,
-  "Equa": 5.93
  }
 ]

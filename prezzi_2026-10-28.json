@@ -1324,8 +1324,7 @@
   "Mercato": "1X2",
   "Sel": "2",
   "Prob": 72.3,
-  "Equa": 1.38,
-  "InSchedina": "si"
+  "Equa": 1.38
  },
  {
   "Data": "2026-10-28",
@@ -1428,8 +1427,7 @@
   "Mercato": "OU 1.5",
   "Sel": "Over",
   "Prob": 71.3,
-  "Equa": 1.4,
-  "InSchedina": "si"
+  "Equa": 1.4
  },
  {
   "Data": "2026-10-28",
@@ -1449,7 +1447,8 @@
   "Mercato": "OU 1.5",
   "Sel": "Over",
   "Prob": 71.3,
-  "Equa": 1.4
+  "Equa": 1.4,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-28",
@@ -1770,7 +1769,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "2 + Over 1.5",
   "Prob": 66.6,
-  "Equa": 1.5
+  "Equa": 1.5,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-28",
@@ -2253,7 +2253,8 @@
   "Mercato": "1X2",
   "Sel": "2",
   "Prob": 61.9,
-  "Equa": 1.62
+  "Equa": 1.62,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-28",
@@ -3057,7 +3058,8 @@
   "Mercato": "1X2",
   "Sel": "2",
   "Prob": 56.7,
-  "Equa": 1.76
+  "Equa": 1.76,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-28",
@@ -3459,8 +3461,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "2 + Over 1.5",
   "Prob": 54.4,
-  "Equa": 1.84,
-  "InSchedina": "si"
+  "Equa": 1.84
  },
  {
   "Data": "2026-10-28",
@@ -4060,8 +4061,7 @@
   "Mercato": "BTTS",
   "Sel": "NoGol",
   "Prob": 50.5,
-  "Equa": 1.98,
-  "InSchedina": "si"
+  "Equa": 1.98
  },
  {
   "Data": "2026-10-28",
@@ -4182,26 +4182,6 @@
   "Sel": "1 + Over 2.5",
   "Prob": 49.9,
   "Equa": 2.0
- },
- {
-  "Data": "2026-10-28",
-  "Ora": "22:30",
-  "Campionato": "Brazil Serie A",
-  "Partita": "Fluminense - Internacional",
-  "Casa": "Fluminense",
-  "Ospite": "Internacional",
-  "Linea_OU": "",
-  "Gol_attesi": 2.48,
-  "Margine": 2.1,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "Gol",
-  "Prob": 49.5,
-  "Equa": 2.02
  },
  {
   "Data": "2026-10-28",
@@ -6065,14 +6045,14 @@
  },
  {
   "Data": "2026-10-28",
-  "Ora": "19:45",
-  "Campionato": "Italy Serie A",
-  "Partita": "Genoa - Juventus",
-  "Casa": "Genoa",
-  "Ospite": "Juventus",
+  "Ora": "19:00",
+  "Campionato": "Italy Serie B",
+  "Partita": "Juve Stabia - Hellas Verona",
+  "Casa": "Juve Stabia",
+  "Ospite": "Hellas Verona",
   "Linea_OU": "",
   "Gol_attesi": 2.5,
-  "Margine": 2.0,
+  "Margine": 5.9,
   "Movimento": null,
   "Principale": "",
   "Schedina": "si",
@@ -6081,7 +6061,7 @@
   "Mercato": "OU 1.5",
   "Sel": "Under",
   "Prob": 28.7,
-  "Equa": 3.48
+  "Equa": 3.49
  },
  {
   "Data": "2026-10-28",
@@ -6122,6 +6102,26 @@
   "Sel": "NoGol",
   "Prob": 27.5,
   "Equa": 3.63
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "19:45",
+  "Campionato": "Italy Serie A",
+  "Partita": "Genoa - Juventus",
+  "Casa": "Genoa",
+  "Ospite": "Juventus",
+  "Linea_OU": "",
+  "Gol_attesi": 2.5,
+  "Margine": 2.0,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 25.8,
+  "Equa": 3.88
  },
  {
   "Data": "2026-10-28",
@@ -6205,6 +6205,26 @@
  },
  {
   "Data": "2026-10-28",
+  "Ora": "17:00",
+  "Campionato": "Germany DFB Pokal",
+  "Partita": "Paderborn - VfB Stuttgart",
+  "Casa": "Paderborn",
+  "Ospite": "VfB Stuttgart",
+  "Linea_OU": "",
+  "Gol_attesi": 3.18,
+  "Margine": 4.3,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 21.3,
+  "Equa": 4.69
+ },
+ {
+  "Data": "2026-10-28",
   "Ora": "22:30",
   "Campionato": "Brazil Serie A",
   "Partita": "Bragantino - Chapecoense",
@@ -6222,26 +6242,6 @@
   "Sel": "X",
   "Prob": 16.3,
   "Equa": 6.14
- },
- {
-  "Data": "2026-10-28",
-  "Ora": "17:30",
-  "Campionato": "Italy Serie A",
-  "Partita": "Venezia - Inter",
-  "Casa": "Venezia",
-  "Ospite": "Inter",
-  "Linea_OU": "",
-  "Gol_attesi": 3.7,
-  "Margine": 2.5,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 16.3,
-  "Equa": 6.15
  },
  {
   "Data": "2026-10-28",
