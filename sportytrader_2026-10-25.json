@@ -1,105 +1,5 @@
 [
  {
-  "Casa": "Urawa Red Diamonds",
-  "Ospite": "V-Varen Nagasaki",
-  "Ora": "06:00",
-  "Lega": "J.League",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.6,
-  "Quota": null
- },
- {
-  "Casa": "Cerezo Osaka",
-  "Ospite": "JEF Utd Chiba",
-  "Ora": "06:00",
-  "Lega": "J.League",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.55,
-  "Quota": null
- },
- {
-  "Casa": "Iwaki FC",
-  "Ospite": "Jubilo Iwata",
-  "Ora": "06:00",
-  "Lega": "J. League 2",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.44,
-  "Quota": null
- },
- {
-  "Casa": "Sydney FC D",
-  "Ospite": "Melbourne City",
-  "Ora": "06:45",
-  "Lega": "W-League - Women",
-  "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.67,
-  "Quota": null
- },
- {
-  "Casa": "FC Tokyo",
-  "Ospite": "Mito Hollyhock",
-  "Ora": "08:00",
-  "Lega": "J.League",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.6,
-  "Quota": null
- },
- {
-  "Casa": "Kawasaki",
-  "Ospite": "Fagiano Okayama",
-  "Ora": "08:00",
-  "Lega": "J.League",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.46,
-  "Quota": null
- },
- {
-  "Casa": "Ehime FC",
-  "Ospite": "Fukushima United",
-  "Ora": "08:00",
-  "Lega": "J. League 3",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.72,
-  "Quota": null
- },
- {
-  "Casa": "Philippine Army",
-  "Ospite": "Stallion Laguna",
-  "Ora": "08:00",
-  "Lega": "Philippines Football League",
-  "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.65,
-  "Quota": null
- },
- {
-  "Casa": "Beijing Beikong",
-  "Ospite": "Jiangsu LFC",
-  "Ora": "08:00",
-  "Lega": "Super League, Femminile - Women - Chinese Super League, Women 2026, Championship Round",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.64,
-  "Quota": null
- },
- {
-  "Casa": "Cheonan City",
-  "Ospite": "Ansan Greeners",
-  "Ora": "08:30",
-  "Lega": "K-League 2",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.37,
-  "Quota": null
- },
- {
   "Casa": "Paju Citizen FC",
   "Ospite": "Hwaseong",
   "Ora": "08:30",
@@ -270,6 +170,56 @@
   "Quota": null
  },
  {
+  "Casa": "FC Tokyo",
+  "Ospite": "Mito Hollyhock",
+  "Ora": "10:00",
+  "Lega": "J.League",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.6,
+  "Quota": null
+ },
+ {
+  "Casa": "Kawasaki",
+  "Ospite": "Fagiano Okayama",
+  "Ora": "10:00",
+  "Lega": "J.League",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.46,
+  "Quota": null
+ },
+ {
+  "Casa": "Ehime FC",
+  "Ospite": "Fukushima United",
+  "Ora": "10:00",
+  "Lega": "J. League 3",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.72,
+  "Quota": null
+ },
+ {
+  "Casa": "Philippine Army",
+  "Ospite": "Stallion Laguna",
+  "Ora": "10:00",
+  "Lega": "Philippines Football League",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.65,
+  "Quota": null
+ },
+ {
+  "Casa": "Beijing Beikong",
+  "Ospite": "Jiangsu LFC",
+  "Ora": "10:00",
+  "Lega": "Super League, Femminile - Women - Chinese Super League, Women 2026, Championship Round",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.64,
+  "Quota": null
+ },
+ {
   "Casa": "Shonan Bellmare",
   "Ospite": "TOCHIGI UVA",
   "Ora": "10:00",
@@ -437,6 +387,56 @@
   "Tipo": "B",
   "Pronostico": "2",
   "Prob": 0.39,
+  "Quota": null
+ },
+ {
+  "Casa": "Cheonan City",
+  "Ospite": "Ansan Greeners",
+  "Ora": "10:30",
+  "Lega": "K-League 2",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.37,
+  "Quota": null
+ },
+ {
+  "Casa": "Paju Citizen FC",
+  "Ospite": "Hwaseong",
+  "Ora": "10:30",
+  "Lega": "K-League 2",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.38,
+  "Quota": null
+ },
+ {
+  "Casa": "Cheongju FC",
+  "Ospite": "Yongin FC",
+  "Ora": "10:30",
+  "Lega": "K-League 2",
+  "Tipo": "B",
+  "Pronostico": "X",
+  "Prob": 0.39,
+  "Quota": null
+ },
+ {
+  "Casa": "Hoi King",
+  "Ospite": "WSE",
+  "Ora": "10:30",
+  "Lega": "Hong Kong Premier League",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.47,
+  "Quota": null
+ },
+ {
+  "Casa": "Dreams Metro Gallery",
+  "Ospite": "Supreme FC",
+  "Ora": "10:30",
+  "Lega": "Hong Kong Premier League",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.72,
   "Quota": null
  },
  {
