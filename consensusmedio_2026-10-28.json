@@ -28,6 +28,19 @@
  {
   "Data": "2026-10-28",
   "Ora": "00:00",
+  "Lega": "Colombia: Primera A Colombia",
+  "Casa": "Cucuta",
+  "Ospite": "Aguilas Doradas",
+  "Segno": "1",
+  "P1": 37.0,
+  "PX": 30.0,
+  "P2": 33.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "00:00",
   "Lega": "COLOMBIA - PRIMERA A APERTURA FINALIZACION",
   "Casa": "Cucuta",
   "Ospite": "Rionegro FC",
@@ -40,27 +53,14 @@
  },
  {
   "Data": "2026-10-28",
-  "Ora": "00:00",
-  "Lega": "Colombia: Primera A Colombia",
-  "Casa": "Cucuta",
-  "Ospite": "Aguilas Doradas",
-  "Segno": "1",
-  "P1": 41.0,
-  "PX": 29.0,
-  "P2": 30.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
- },
- {
-  "Data": "2026-10-28",
   "Ora": "02:05",
   "Lega": "COLOMBIA - PRIMERA A APERTURA FINALIZACION",
   "Casa": "Chico",
   "Ospite": "Junior",
-  "Segno": "2",
-  "P1": 34.5,
-  "PX": 28.5,
-  "P2": 37.0,
+  "Segno": "1",
+  "P1": 36.5,
+  "PX": 28.0,
+  "P2": 35.5,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea"
  },
@@ -210,19 +210,6 @@
  {
   "Data": "2026-10-28",
   "Ora": "14:00",
-  "Lega": "Russia: Cup",
-  "Casa": "FC Orenburg",
-  "Ospite": "Rodina",
-  "Segno": "1",
-  "P1": 51.0,
-  "PX": 26.0,
-  "P2": 23.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
- },
- {
-  "Data": "2026-10-28",
-  "Ora": "14:00",
   "Lega": "Greece: Greek Cup",
   "Casa": "GS Marko",
   "Ospite": "Olympiacos",
@@ -249,6 +236,19 @@
  {
   "Data": "2026-10-28",
   "Ora": "14:00",
+  "Lega": "GREECE - SUPERBET GREEK CUP MAIN ROUND",
+  "Casa": "Marko",
+  "Ospite": "Olympiakos Piraeus",
+  "Segno": "2",
+  "P1": 30.0,
+  "PX": 21.0,
+  "P2": 49.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "14:00",
   "Lega": "Egypt - Premier League",
   "Casa": "National Bank",
   "Ospite": "Al Masry",
@@ -262,15 +262,28 @@
  {
   "Data": "2026-10-28",
   "Ora": "14:00",
-  "Lega": "Greece: Greek Cup",
+  "Lega": "GREECE - SUPERBET GREEK CUP MAIN ROUND",
   "Casa": "Nestos Chrisoupolis",
   "Ospite": "Kalamata",
   "Segno": "2",
-  "P1": 14.0,
-  "PX": 26.0,
-  "P2": 60.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
+  "P1": 23.0,
+  "PX": 27.5,
+  "P2": 49.5,
+  "Fonti": 2,
+  "Elenco": "ratingbet, statarea"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "14:00",
+  "Lega": "RUSSIA - GROUP A",
+  "Casa": "Orenburg",
+  "Ospite": "Rodina",
+  "Segno": "1",
+  "P1": 53.5,
+  "PX": 26.5,
+  "P2": 20.0,
+  "Fonti": 2,
+  "Elenco": "ratingbet, statarea"
  },
  {
   "Data": "2026-10-28",
@@ -370,24 +383,24 @@
   "Casa": "Oulu",
   "Ospite": "VPS",
   "Segno": "1",
-  "P1": 39.0,
-  "PX": 28.0,
-  "P2": 33.0,
-  "Fonti": 2,
-  "Elenco": "footymetrics, ratingbet"
+  "P1": 40.0,
+  "PX": 29.3,
+  "P2": 30.7,
+  "Fonti": 3,
+  "Elenco": "footymetrics, ratingbet, statarea"
  },
  {
   "Data": "2026-10-28",
   "Ora": "16:15",
-  "Lega": "Russia: Cup",
+  "Lega": "RUSSIA - GROUP D",
   "Casa": "FC Rostov",
   "Ospite": "Akron Togliatti",
   "Segno": "1",
-  "P1": 52.0,
-  "PX": 26.0,
-  "P2": 22.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
+  "P1": 47.5,
+  "PX": 28.0,
+  "P2": 24.5,
+  "Fonti": 2,
+  "Elenco": "ratingbet, statarea"
  },
  {
   "Data": "2026-10-28",
@@ -401,6 +414,19 @@
   "P2": 19.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "16:30",
+  "Lega": "GREECE - SUPERBET GREEK CUP MAIN ROUND",
+  "Casa": "Panathinaikos",
+  "Ospite": "Aris Thessalonikis",
+  "Segno": "1",
+  "P1": 62.0,
+  "PX": 25.0,
+  "P2": 13.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-10-28",
@@ -422,11 +448,11 @@
   "Casa": "Dynamo Dresden",
   "Ospite": "Schalke 04",
   "Segno": "2",
-  "P1": 28.8,
-  "PX": 22.9,
-  "P2": 48.3,
-  "Fonti": 2,
-  "Elenco": "footymetrics, ratingbet"
+  "P1": 29.2,
+  "PX": 21.6,
+  "P2": 49.2,
+  "Fonti": 3,
+  "Elenco": "footymetrics, ratingbet, statarea"
  },
  {
   "Data": "2026-10-28",
@@ -496,6 +522,19 @@
  {
   "Data": "2026-10-28",
   "Ora": "17:00",
+  "Lega": "SLOVENIA - PRVA LIGA",
+  "Casa": "Nafta",
+  "Ospite": "Aluminij",
+  "Segno": "1",
+  "P1": 41.0,
+  "PX": 31.0,
+  "P2": 28.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "17:00",
   "Lega": "Germany - DFB Pokal",
   "Casa": "Paderborn",
   "Ospite": "VfB Stuttgart",
@@ -522,15 +561,28 @@
  {
   "Data": "2026-10-28",
   "Ora": "17:00",
+  "Lega": "SERBIA - SUPER LIGA",
+  "Casa": "Radnicki Nis",
+  "Ospite": "FK Partizan",
+  "Segno": "2",
+  "P1": 29.0,
+  "PX": 25.0,
+  "P2": 46.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "17:00",
   "Lega": "Egypt - Premier League",
   "Casa": "Zamalek",
   "Ospite": "Al Mokawloon",
   "Segno": "1",
-  "P1": 35.0,
+  "P1": 41.5,
   "PX": 31.0,
-  "P2": 34.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P2": 27.5,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-10-28",
@@ -539,11 +591,11 @@
   "Casa": "AC Milan",
   "Ospite": "Bologna",
   "Segno": "1",
-  "P1": 55.5,
+  "P1": 55.3,
   "PX": 24.0,
-  "P2": 20.5,
-  "Fonti": 2,
-  "Elenco": "footymetrics, ratingbet"
+  "P2": 20.7,
+  "Fonti": 3,
+  "Elenco": "footymetrics, ratingbet, statarea"
  },
  {
   "Data": "2026-10-28",
@@ -552,11 +604,11 @@
   "Casa": "Parma",
   "Ospite": "Udinese",
   "Segno": "1",
-  "P1": 36.0,
-  "PX": 29.0,
+  "P1": 35.0,
+  "PX": 30.0,
   "P2": 35.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-10-28",
@@ -639,6 +691,19 @@
  {
   "Data": "2026-10-28",
   "Ora": "18:00",
+  "Lega": "SLOVAKIA - 1. LIGA",
+  "Casa": "AS Trencin",
+  "Ospite": "Slovan Bratislava",
+  "Segno": "2",
+  "P1": 23.0,
+  "PX": 22.0,
+  "P2": 55.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "18:00",
   "Lega": "Spain - Copa Del Rey",
   "Casa": "Anaitasuna FT",
   "Ospite": "Deportivo Alavés",
@@ -656,11 +721,11 @@
   "Casa": "Brommapojkarna",
   "Ospite": "Häcken",
   "Segno": "2",
-  "P1": 25.0,
-  "PX": 24.0,
-  "P2": 51.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 27.5,
+  "PX": 25.0,
+  "P2": 47.5,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-10-28",
@@ -695,11 +760,11 @@
   "Casa": "Halmstad",
   "Ospite": "Malmö FF",
   "Segno": "2",
-  "P1": 21.0,
-  "PX": 22.0,
-  "P2": 57.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 22.0,
+  "PX": 23.0,
+  "P2": 55.0,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-10-28",
@@ -708,11 +773,11 @@
   "Casa": "IFK Göteborg",
   "Ospite": "Djurgården",
   "Segno": "2",
-  "P1": 27.3,
-  "PX": 25.3,
-  "P2": 47.5,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 27.6,
+  "PX": 24.6,
+  "P2": 47.7,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-10-28",
@@ -726,6 +791,19 @@
   "P2": 34.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "18:00",
+  "Lega": "ESTONIA - MEISTRILIIGA",
+  "Casa": "Paide Lm",
+  "Ospite": "Kalju Nomme",
+  "Segno": "1",
+  "P1": 44.0,
+  "PX": 29.0,
+  "P2": 27.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-10-28",
@@ -808,15 +886,41 @@
  {
   "Data": "2026-10-28",
   "Ora": "18:00",
-  "Lega": "Germany: DFB-Pokal Germany",
+  "Lega": "GERMANY - DFB POKAL",
+  "Casa": "SC Freiburg",
+  "Ospite": "VfL Wolfsburg",
+  "Segno": "1",
+  "P1": 63.0,
+  "PX": 20.0,
+  "P2": 17.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "18:00",
+  "Lega": "GERMANY - DFB POKAL",
+  "Casa": "SC Paderborn 07",
+  "Ospite": "VfB Stuttgart",
+  "Segno": "2",
+  "P1": 29.0,
+  "PX": 22.0,
+  "P2": 49.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "18:00",
+  "Lega": "GERMANY - DFB POKAL",
   "Casa": "SSV Jeddeloh",
   "Ospite": "Hertha Berlin",
   "Segno": "2",
-  "P1": 3.0,
-  "PX": 7.0,
-  "P2": 90.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
+  "P1": 9.0,
+  "PX": 12.0,
+  "P2": 79.0,
+  "Fonti": 2,
+  "Elenco": "ratingbet, statarea"
  },
  {
   "Data": "2026-10-28",
@@ -912,6 +1016,19 @@
  {
   "Data": "2026-10-28",
   "Ora": "18:30",
+  "Lega": "GREECE - SUPERBET GREEK CUP MAIN ROUND",
+  "Casa": "Larisa",
+  "Ospite": "OFI",
+  "Segno": "2",
+  "P1": 34.0,
+  "PX": 27.0,
+  "P2": 39.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "18:30",
   "Lega": "Italy: Serie A Italy",
   "Casa": "Parma Calcio 1913",
   "Ospite": "Udinese",
@@ -919,6 +1036,71 @@
   "P1": 31.0,
   "PX": 29.0,
   "P2": 40.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "18:30",
+  "Lega": "RUSSIA - GROUP A",
+  "Casa": "Spartak Moscow",
+  "Ospite": "Rubin",
+  "Segno": "1",
+  "P1": 61.0,
+  "PX": 30.0,
+  "P2": 9.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "18:30",
+  "Lega": "ITALY - SERIE A",
+  "Casa": "Unione Venezia",
+  "Ospite": "Inter",
+  "Segno": "2",
+  "P1": 18.0,
+  "PX": 16.0,
+  "P2": 66.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "18:45",
+  "Lega": "International: Women's Champions League",
+  "Casa": "Bayern Munich",
+  "Ospite": "Real Madrid Femenino",
+  "Segno": "1",
+  "P1": 57.0,
+  "PX": 22.0,
+  "P2": 21.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "18:45",
+  "Lega": "International: Women's Champions League",
+  "Casa": "Chelsea FC Women",
+  "Ospite": "Roma",
+  "Segno": "1",
+  "P1": 87.0,
+  "PX": 9.0,
+  "P2": 4.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "18:45",
+  "Lega": "International: Women's Champions League",
+  "Casa": "Servette",
+  "Ospite": "Oud-Heverlee Leuven",
+  "Segno": "2",
+  "P1": 33.0,
+  "PX": 25.0,
+  "P2": 42.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
  },
@@ -968,11 +1150,11 @@
   "Casa": "Carrarese",
   "Ospite": "Arezzo",
   "Segno": "1",
-  "P1": 37.0,
-  "PX": 26.0,
-  "P2": 37.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 36.0,
+  "PX": 28.5,
+  "P2": 35.5,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-10-28",
@@ -986,6 +1168,19 @@
   "P2": 48.0,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "19:00",
+  "Lega": "SWEDEN - ALLSVENSKAN",
+  "Casa": "Degerfors IF",
+  "Ospite": "Vaesteraas IK",
+  "Segno": "2",
+  "P1": 29.0,
+  "PX": 30.0,
+  "P2": 41.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-10-28",
@@ -1077,6 +1272,19 @@
   "P2": 36.0,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "19:00",
+  "Lega": "ITALY - SERIE B",
+  "Casa": "Pisa",
+  "Ospite": "SSD Palermo",
+  "Segno": "1",
+  "P1": 35.0,
+  "PX": 30.0,
+  "P2": 35.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-10-28",
@@ -1198,6 +1406,32 @@
  {
   "Data": "2026-10-28",
   "Ora": "19:30",
+  "Lega": "SLOVENIA - PRVA LIGA",
+  "Casa": "Olimpija Ljubljana",
+  "Ospite": "NK Celje",
+  "Segno": "1",
+  "P1": 43.0,
+  "PX": 36.0,
+  "P2": 21.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "19:30",
+  "Lega": "GREECE - SUPERBET GREEK CUP MAIN ROUND",
+  "Casa": "PAOK",
+  "Ospite": "AEK Athens",
+  "Segno": "1",
+  "P1": 43.0,
+  "PX": 31.0,
+  "P2": 26.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "19:30",
   "Lega": "Greece: Greek Cup",
   "Casa": "PAOK Thessaloniki FC",
   "Ospite": "AEK Athens",
@@ -1241,11 +1475,11 @@
   "Casa": "Aberdeen",
   "Ospite": "Falkirk",
   "Segno": "1",
-  "P1": 44.0,
-  "PX": 26.0,
-  "P2": 30.0,
-  "Fonti": 2,
-  "Elenco": "footymetrics, ratingbet"
+  "P1": 44.7,
+  "PX": 26.7,
+  "P2": 28.7,
+  "Fonti": 3,
+  "Elenco": "footymetrics, ratingbet, statarea"
  },
  {
   "Data": "2026-10-28",
@@ -1254,11 +1488,11 @@
   "Casa": "Bayer Leverkusen",
   "Ospite": "Nürnberg",
   "Segno": "1",
-  "P1": 53.0,
-  "PX": 20.0,
-  "P2": 27.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 62.5,
+  "PX": 21.0,
+  "P2": 16.5,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-10-28",
@@ -1280,11 +1514,11 @@
   "Casa": "Bournemouth",
   "Ospite": "Aston Villa",
   "Segno": "1",
-  "P1": 41.0,
-  "PX": 25.5,
-  "P2": 33.5,
-  "Fonti": 2,
-  "Elenco": "footymetrics, ratingbet"
+  "P1": 40.7,
+  "PX": 26.0,
+  "P2": 33.3,
+  "Fonti": 3,
+  "Elenco": "footymetrics, ratingbet, statarea"
  },
  {
   "Data": "2026-10-28",
@@ -1319,11 +1553,11 @@
   "Casa": "Dundee",
   "Ospite": "Kilmarnock",
   "Segno": "1",
-  "P1": 46.5,
-  "PX": 25.0,
-  "P2": 28.5,
-  "Fonti": 2,
-  "Elenco": "footymetrics, ratingbet"
+  "P1": 47.7,
+  "PX": 26.0,
+  "P2": 26.3,
+  "Fonti": 3,
+  "Elenco": "footymetrics, ratingbet, statarea"
  },
  {
   "Data": "2026-10-28",
@@ -1345,11 +1579,11 @@
   "Casa": "Fulham",
   "Ospite": "Crystal Palace",
   "Segno": "1",
-  "P1": 49.7,
-  "PX": 23.9,
-  "P2": 26.4,
-  "Fonti": 2,
-  "Elenco": "footymetrics, ratingbet"
+  "P1": 49.2,
+  "PX": 24.6,
+  "P2": 26.2,
+  "Fonti": 3,
+  "Elenco": "footymetrics, ratingbet, statarea"
  },
  {
   "Data": "2026-10-28",
@@ -1358,11 +1592,11 @@
   "Casa": "Genoa",
   "Ospite": "Juventus",
   "Segno": "2",
-  "P1": 21.5,
-  "PX": 24.5,
-  "P2": 54.0,
-  "Fonti": 2,
-  "Elenco": "footymetrics, ratingbet"
+  "P1": 22.0,
+  "PX": 25.3,
+  "P2": 52.7,
+  "Fonti": 3,
+  "Elenco": "footymetrics, ratingbet, statarea"
  },
  {
   "Data": "2026-10-28",
@@ -1371,11 +1605,11 @@
   "Casa": "Hannover 96",
   "Ospite": "Kaiserslautern",
   "Segno": "1",
-  "P1": 51.0,
-  "PX": 22.5,
-  "P2": 26.5,
-  "Fonti": 2,
-  "Elenco": "footymetrics, ratingbet"
+  "P1": 46.3,
+  "PX": 24.7,
+  "P2": 29.0,
+  "Fonti": 3,
+  "Elenco": "footymetrics, ratingbet, statarea"
  },
  {
   "Data": "2026-10-28",
@@ -1397,11 +1631,11 @@
   "Casa": "Monza",
   "Ospite": "Napoli",
   "Segno": "2",
-  "P1": 33.0,
-  "PX": 26.0,
-  "P2": 41.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 31.5,
+  "PX": 26.5,
+  "P2": 42.0,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-10-28",
@@ -1411,10 +1645,10 @@
   "Ospite": "Motherwell",
   "Segno": "1",
   "P1": 45.0,
-  "PX": 25.5,
-  "P2": 29.5,
-  "Fonti": 2,
-  "Elenco": "footymetrics, ratingbet"
+  "PX": 27.3,
+  "P2": 27.7,
+  "Fonti": 3,
+  "Elenco": "footymetrics, ratingbet, statarea"
  },
  {
   "Data": "2026-10-28",
@@ -1423,11 +1657,11 @@
   "Casa": "St. Mirren",
   "Ospite": "Hibernian",
   "Segno": "2",
-  "P1": 26.9,
-  "PX": 25.9,
-  "P2": 47.3,
-  "Fonti": 2,
-  "Elenco": "footymetrics, ratingbet"
+  "P1": 29.9,
+  "PX": 26.6,
+  "P2": 43.5,
+  "Fonti": 3,
+  "Elenco": "footymetrics, ratingbet, statarea"
  },
  {
   "Data": "2026-10-28",
@@ -1436,11 +1670,11 @@
   "Casa": "Sunderland",
   "Ospite": "Brentford",
   "Segno": "2",
-  "P1": 28.5,
-  "PX": 26.0,
-  "P2": 45.5,
-  "Fonti": 2,
-  "Elenco": "footymetrics, ratingbet"
+  "P1": 28.3,
+  "PX": 27.3,
+  "P2": 44.3,
+  "Fonti": 3,
+  "Elenco": "footymetrics, ratingbet, statarea"
  },
  {
   "Data": "2026-10-28",
@@ -1514,24 +1748,24 @@
   "Casa": "Hearts",
   "Ospite": "Rangers",
   "Segno": "1",
-  "P1": 40.0,
-  "PX": 27.0,
-  "P2": 33.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 38.0,
+  "PX": 27.5,
+  "P2": 34.5,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-10-28",
   "Ora": "20:00",
-  "Lega": "Italy: Serie B Italy",
+  "Lega": "ITALY - SERIE B",
   "Casa": "Juve Stabia",
   "Ospite": "Verona",
   "Segno": "2",
-  "P1": 32.0,
-  "PX": 29.0,
-  "P2": 39.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
+  "P1": 34.0,
+  "PX": 31.0,
+  "P2": 35.0,
+  "Fonti": 2,
+  "Elenco": "ratingbet, statarea"
  },
  {
   "Data": "2026-10-28",
@@ -1540,11 +1774,11 @@
   "Casa": "Liverpool",
   "Ospite": "Chelsea",
   "Segno": "1",
-  "P1": 41.3,
-  "PX": 23.9,
-  "P2": 34.9,
-  "Fonti": 2,
-  "Elenco": "footymetrics, ratingbet"
+  "P1": 41.8,
+  "PX": 26.3,
+  "P2": 31.9,
+  "Fonti": 3,
+  "Elenco": "footymetrics, ratingbet, statarea"
  },
  {
   "Data": "2026-10-28",
@@ -1627,15 +1861,15 @@
  {
   "Data": "2026-10-28",
   "Ora": "20:30",
-  "Lega": "England: EFL Cup (Carabao Cup)",
+  "Lega": "ENGLAND - EFL CUP",
   "Casa": "Manchester City",
   "Ospite": "Brighton",
   "Segno": "1",
-  "P1": 57.0,
+  "P1": 59.5,
   "PX": 22.0,
-  "P2": 21.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
+  "P2": 18.5,
+  "Fonti": 2,
+  "Elenco": "ratingbet, statarea"
  },
  {
   "Data": "2026-10-28",
@@ -1653,15 +1887,67 @@
  {
   "Data": "2026-10-28",
   "Ora": "20:45",
-  "Lega": "Germany: DFB-Pokal Germany",
+  "Lega": "GERMANY - DFB POKAL",
   "Casa": "Bayern Munich",
-  "Ospite": "Magdeburg",
+  "Ospite": "FC Magdeburg",
   "Segno": "1",
-  "P1": 92.0,
-  "PX": 6.0,
-  "P2": 2.0,
+  "P1": 82.0,
+  "PX": 10.0,
+  "P2": 8.0,
+  "Fonti": 2,
+  "Elenco": "ratingbet, statarea"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "20:45",
+  "Lega": "England: National League England",
+  "Casa": "Carlisle",
+  "Ospite": "Harrogate Town",
+  "Segno": "1",
+  "P1": 47.0,
+  "PX": 25.0,
+  "P2": 28.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "20:45",
+  "Lega": "SCOTLAND - PREMIERSHIP",
+  "Casa": "Celtic",
+  "Ospite": "Dundee Utd",
+  "Segno": "1",
+  "P1": 65.0,
+  "PX": 21.0,
+  "P2": 14.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "20:45",
+  "Lega": "England: National League England",
+  "Casa": "Forest Green",
+  "Ospite": "Eastleigh",
+  "Segno": "1",
+  "P1": 60.0,
+  "PX": 22.0,
+  "P2": 18.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "20:45",
+  "Lega": "GERMANY - DFB POKAL",
+  "Casa": "Holstein Kiel",
+  "Ospite": "1899 Hoffenheim",
+  "Segno": "2",
+  "P1": 29.0,
+  "PX": 22.0,
+  "P2": 49.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-10-28",
@@ -1670,9 +1956,48 @@
   "Casa": "Monza",
   "Ospite": "SSC Napoli",
   "Segno": "2",
-  "P1": 25.0,
+  "P1": 22.0,
+  "PX": 24.0,
+  "P2": 54.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "20:45",
+  "Lega": "England: National League England",
+  "Casa": "Sutton United",
+  "Ospite": "Aldershot",
+  "Segno": "1",
+  "P1": 52.0,
   "PX": 25.0,
-  "P2": 50.0,
+  "P2": 23.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "21:00",
+  "Lega": "International: Women's Champions League",
+  "Casa": "Arsenal Women",
+  "Ospite": "SL Benfica",
+  "Segno": "1",
+  "P1": 80.0,
+  "PX": 13.0,
+  "P2": 7.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "21:00",
+  "Lega": "International: Women's Champions League",
+  "Casa": "OL Lyonnes",
+  "Ospite": "Inter",
+  "Segno": "1",
+  "P1": 86.0,
+  "PX": 9.0,
+  "P2": 5.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
  },
@@ -1709,9 +2034,9 @@
   "Casa": "Fluminense",
   "Ospite": "Internacional",
   "Segno": "1",
-  "P1": 52.3,
-  "PX": 26.1,
-  "P2": 21.6,
+  "P1": 53.8,
+  "PX": 25.6,
+  "P2": 20.6,
   "Fonti": 2,
   "Elenco": "footymetrics, ratingbet"
  },
@@ -1723,10 +2048,62 @@
   "Ospite": "Palmeiras",
   "Segno": "2",
   "P1": 30.0,
-  "PX": 29.0,
-  "P2": 41.0,
+  "PX": 29.5,
+  "P2": 40.5,
   "Fonti": 2,
   "Elenco": "footymetrics, ratingbet"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "23:30",
+  "Lega": "United States - Major League Soccer",
+  "Casa": "Charlotte",
+  "Ospite": "Montréal",
+  "Segno": "1",
+  "P1": 52.5,
+  "PX": 22.8,
+  "P2": 24.8,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "23:30",
+  "Lega": "United States - Major League Soccer",
+  "Casa": "Inter Miami",
+  "Ospite": "Cincinnati",
+  "Segno": "1",
+  "P1": 60.0,
+  "PX": 20.0,
+  "P2": 20.0,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "23:30",
+  "Lega": "United States - Major League Soccer",
+  "Casa": "New England",
+  "Ospite": "New York RB",
+  "Segno": "1",
+  "P1": 44.0,
+  "PX": 23.0,
+  "P2": 33.0,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "23:30",
+  "Lega": "United States - Major League Soccer",
+  "Casa": "New York City",
+  "Ospite": "Atlanta United",
+  "Segno": "1",
+  "P1": 41.0,
+  "PX": 25.0,
+  "P2": 34.0,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
  },
  {
   "Data": "2026-10-28",
@@ -1735,10 +2112,23 @@
   "Casa": "Red Bull Bragantino",
   "Ospite": "Chapecoense AF",
   "Segno": "1",
-  "P1": 73.0,
+  "P1": 74.0,
   "PX": 17.0,
-  "P2": 10.0,
+  "P2": 9.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "23:30",
+  "Lega": "United States - Major League Soccer",
+  "Casa": "Toronto",
+  "Ospite": "DC United",
+  "Segno": "1",
+  "P1": 46.5,
+  "PX": 26.7,
+  "P2": 26.7,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
  }
 ]
