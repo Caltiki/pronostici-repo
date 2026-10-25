@@ -196,6 +196,12 @@
   }
   .scarto-pos { color: var(--buono); }
   .scarto-neg { color: var(--male); }
+  /* Lo scarto dal mercato NON ha un verso buono: allontanarsi dal prezzo,
+     in su o in giu', e' stato misurato come sbagliare di piu'. Quindi
+     niente verde/rosso: neutro, e arancio solo sopra i 10 punti, la
+     stessa soglia dell'avviso "scarto grosso" nel dettaglio. */
+  .scarto { color: var(--tenue); }
+  .scarto-grosso { color: var(--attento); font-weight: 600; }
 
   .altre {
     display: block; width: 100%; margin: 12px 0;
@@ -771,7 +777,7 @@
     var coda = "";
     if (scarto != null) {
       coda = Math.abs(scarto) < 0.5 ? "in linea col mercato"
-        : '<span class="' + (scarto >= 0 ? "scarto-pos" : "scarto-neg") + '">' +
+        : '<span class="' + (Math.abs(scarto) >= 10 ? "scarto-grosso" : "scarto") + '">' +
           (scarto > 0 ? "+" : "") + scarto.toFixed(0) + " vs mercato</span>";
     }
 
