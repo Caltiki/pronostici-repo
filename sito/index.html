@@ -538,8 +538,9 @@
 
   <nav class="sezioni" aria-label="Sezioni">
     <button data-sez="prezzi">Prezzi equi</button>
-    <button data-sez="consensus">Consensus medio</button>
-    <button data-sez="fonti">Le fonti</button>
+    <button data-sez="consensus">Consensus</button>
+    <button data-sez="poisson">Poisson xG</button>
+    <button data-sez="fonti">Fonti</button>
   </nav>
 
   <section id="contenuto"></section>
@@ -626,6 +627,20 @@
      "Tutte le partite su cui almeno una fonte si esprime."]
   ];
 
+  // Il Poisson in Kodi non ha sotto-viste. Qui ne ha due perche' sul web
+  // la lista si filtra senza tornare indietro di un menu; l'avvertenza che
+  // l'addon ripete in fondo a ogni partita sta qui, letta una volta.
+  var PO_VISTE = [
+    ["tutte", "Tutte",
+     "Lambda calcolati dagli xG di Understat, senza guardare le quote: primi cinque " +
+     "campionati europei, solo partite complete di tutti i dati. Nessuna delle fonti " +
+     "misurate finora batte il book: questo \u00e8 da misurare, non da dare per buono."],
+    ["mercato", "Con il mercato",
+     "Solo dove AsianOdds ha la partita. Lo scarto dal prezzo \u00e8 la cosa interessante: " +
+     "questa \u00e8 l'unica stima del sistema che possa discostarsi dal book per un motivo suo."]
+  ];
+  var PO_ORDINI = [["file", "Per orario"], ["scarto", "Per scarto"], ["gol", "Per gol attesi"]];
+
   var PE_ORDINI = [["file", "Per probabilità"], ["ora", "Per orario"], ["margine", "Per margine"]];
   var CM_ORDINI = [["file", "Per orario"], ["scarto", "Per scarto"], ["fonti", "Per n. fonti"]];
 
@@ -633,9 +648,9 @@
 
   var stato = {
     sez: "prezzi",
-    data: { prezzi: null, consensus: null },
-    vista: { prezzi: "schedina", consensus: "mercato" },
-    ordine: { prezzi: "file", consensus: "file" },
+    data: { prezzi: null, consensus: null, poisson: null },
+    vista: { prezzi: "schedina", consensus: "mercato", poisson: "tutte" },
+    ordine: { prezzi: "file", consensus: "file", poisson: "file" },
     cerca: "",
     limite: PASSO
   };
@@ -645,10 +660,10 @@
 
   function leggiHash() {
     var p = location.hash.replace(/^#/, "").split("/");
-    if (p[0] === "prezzi" || p[0] === "consensus" || p[0] === "fonti") stato.sez = p[0];
+    if (SEZ[p[0]] || p[0] === "fonti") stato.sez = p[0];
     if (stato.sez !== "fonti") {
       if (/^\d{4}-\d{2}-\d{2}$/.test(p[1] || "")) stato.data[stato.sez] = p[1];
-      var viste = stato.sez === "prezzi" ? PE_VISTE : CM_VISTE;
+      var viste = SEZ[stato.sez].viste;
       if (p[2] && viste.some(function (v) { return v[0] === p[2]; })) stato.vista[stato.sez] = p[2];
     }
   }
@@ -659,6 +674,18 @@
     }
     if (location.hash !== "#" + h) history.replaceState(null, "", "#" + h);
   }
+
+  // Tutto quello che distingue una sezione a giornate dall'altra.
+  // Le funzioni sono dichiarate piu' sotto: in JavaScript esistono gia'.
+  var SEZ = {
+    prezzi: { indice: "prezzi_index.json", prefisso: "prezzi_", viste: PE_VISTE, ordini: PE_ORDINI,
+              tiene: peTiene, riepilogo: riepilogoPrezzi, riga: rigaPrezzo,
+              nota: " \u00b7 la tacca sulle barre segna il 60%" },
+    consensus: { indice: "consensusmedio_index.json", prefisso: "consensusmedio_", viste: CM_VISTE, ordini: CM_ORDINI,
+                 tiene: cmTiene, riepilogo: riepilogoConsensus, riga: rigaConsensus, nota: "" },
+    poisson: { indice: "poisson_index.json", prefisso: "poisson_", viste: PO_VISTE, ordini: PO_ORDINI,
+               tiene: poTiene, riepilogo: riepilogoPoisson, riga: rigaPoisson, nota: "" }
+  };
 
   // --------------------------------------------------------- utilita'
 
@@ -746,10 +773,8 @@
   }
 
   function disegnaGiornata(sez) {
-    var indice = sez === "prezzi" ? "prezzi_index.json" : "consensusmedio_index.json";
-    var prefisso = sez === "prezzi" ? "prezzi_" : "consensusmedio_";
-    var viste = sez === "prezzi" ? PE_VISTE : CM_VISTE;
-    var ordini = sez === "prezzi" ? PE_ORDINI : CM_ORDINI;
+    var conf = SEZ[sez];
+    var indice = conf.indice, prefisso = conf.prefisso, viste = conf.viste, ordini = conf.ordini;
 
     $cont.innerHTML = messaggio("vuoto", "Carico&hellip;");
     leggi(indice).then(function (ix) {
@@ -768,6 +793,7 @@
       var testa = chipsHtml(date.map(function (x) { return [x, etichettaData(x)]; }), d, "data-data") +
         chipsHtml(viste, vista[0], "data-vista") +
         '<p class="descr">' + esc(vista[2]) + "</p>" +
+        (sez === "poisson" ? notaCampo(ix) : "") +
         strumentiHtml(ordini, stato.ordine[sez]);
       $cont.innerHTML = testa + '<div id="righe">' + messaggio("vuoto", "Carico&hellip;") + "</div>";
       collegaTesta(sez);
@@ -818,7 +844,7 @@
   function disegnaRighe(sez, righe, data) {
     ultime = { sez: sez, righe: righe, data: data };
     var vista = stato.vista[sez];
-    var tiene = sez === "prezzi" ? peTiene : cmTiene;
+    var tiene = SEZ[sez].tiene;
     var tutte = Array.isArray(righe) ? righe : [];
     var passano = tutte.filter(function (r) { return tiene(r, vista); });
     var q = stato.cerca.toLowerCase();
@@ -844,9 +870,9 @@
     var conta = visibili.length === tutte.length
       ? visibili.length + " righe"
       : visibili.length + " righe su " + tutte.length;
-    var html = (sez === "prezzi" ? riepilogoPrezzi(visibili) : riepilogoConsensus(visibili)) +
-      '<p class="conta">' + conta + (sez === "prezzi" ? " \u00b7 la tacca sulle barre segna il 60%" : "") + "</p><div class=\"lista\">" +
-      mostrate.map(sez === "prezzi" ? rigaPrezzo : rigaConsensus).join("") + "</div>";
+    var html = SEZ[sez].riepilogo(visibili) +
+      '<p class="conta">' + conta + SEZ[sez].nota + "</p><div class=\"lista\">" +
+      mostrate.map(SEZ[sez].riga).join("") + "</div>";
     if (visibili.length > mostrate.length) {
       html += '<button type="button" class="altre" id="altre">Mostra altre ' +
         Math.min(PASSO, visibili.length - mostrate.length) + " (ne restano " +
@@ -905,8 +931,7 @@
       [String(multi), "con due fonti o più"],
       [sc == null ? "-" : sc.toFixed(1), "scarto tipico dal mercato, in punti"]
     ]) +
-      '<div class="legenda"><span><i class="s1"></i>1 casa</span><span><i class="sx"></i>X pareggio</span>' +
-      "<span><i class=\"s2\"></i>2 trasferta</span></div>";
+      legenda();
   }
 
   // Una barra 1-X-2. Il numero sta dentro il pezzo quando c'e' posto;
@@ -956,15 +981,21 @@
       return (x == null ? 99 : x) - (y == null ? 99 : y);
     });
     else if (o === "scarto") v.sort(function (a, b) {
-      var x = num(a.Scarto), y = num(b.Scarto);
+      var x = scartoDi(a), y = scartoDi(b);
       return (y == null ? -1 : Math.abs(y)) - (x == null ? -1 : Math.abs(x));
     });
+    else if (o === "gol") v.sort(function (a, b) { return (num(b.Gol_Attesi) || 0) - (num(a.Gol_Attesi) || 0); });
     else if (o === "fonti") v.sort(function (a, b) { return (num(b.Fonti) || 0) - (num(a.Fonti) || 0); });
     // "file": l'ordine del file, che e' quello che mostra Kodi.
     return v;
   }
 
+  function scartoDi(r) { var v = num(r.Scarto); return v != null ? v : num(r.Scarto_Segno); }
+
   function vuotoPerVista(sez, vista, n, data) {
+    if (sez === "poisson") {
+      return "Nessuna delle " + n + " partite del " + data + " ha il prezzo: AsianOdds copre le prossime 24 ore. Prova \u201cTutte\u201d.";
+    }
     if (sez === "prezzi") {
       if (vista === "schedina") return "Nessuna delle " + n + " selezioni del " + data + " è finita in schedina.";
       if (vista === "stretto") return "Nessuna delle " + n + " selezioni del " + data + " ha il margine sotto il 2%. Prova un'altra vista.";
@@ -1159,6 +1190,100 @@
       (m1 != null ? tripla("mercato", m1, mx, m2) : "") +
       "</div>" +
       '<div class="numero"><b>' + f0(pSegno) + "%</b><span>sul " + esc(segno) + "</span></div>" +
+      "</summary>" +
+      '<div class="dettaglio">' + det.join("") + "</div>" +
+      "</details></div>";
+  }
+
+  // ------------------------------------------------------- poisson xG
+
+  function legenda() {
+    return '<div class="legenda"><span><i class="s1"></i>1 casa</span><span><i class="sx"></i>X pareggio</span>' +
+      "<span><i class=\"s2\"></i>2 trasferta</span></div>";
+  }
+
+  function poTiene(r, tipo) {
+    if (tipo === "mercato") return num(r.M_P1) != null;
+    return true;
+  }
+
+  // Il fattore campo lo scrive poisson_xg.py nell'indice: quanto dei gol
+  // segna la squadra di casa, e su quante partite e' stimato.
+  function notaCampo(ix) {
+    var q = num(ix.quota_casa);
+    if (q == null) return "";
+    return '<p class="descr">Fattore campo: la squadra di casa prende il ' + (q * 100).toFixed(1) +
+      "% dei gol attesi" + (ix.partite_stima ? ", stimato su " + esc(ix.partite_stima) + " partite" : "") +
+      (ix.stima_da ? " (" + esc(ix.stima_da) + ")" : "") + ".</p>";
+  }
+
+  function riepilogoPoisson(v) {
+    var conM = v.filter(function (r) { return num(r.M_P1) != null; });
+    var sc = mediana(conM.map(function (r) { var x = num(r.Scarto_Segno); return x == null ? null : Math.abs(x); }));
+    return tessere([
+      [String(v.length), "partite"],
+      [String(conM.length), "col prezzo del mercato"],
+      [sc == null ? "-" : sc.toFixed(1), "scarto tipico sul segno, in punti"]
+    ]) + legenda();
+  }
+
+  // IN EVIDENZA I GOL ATTESI, come in Kodi: i lambda sono quello che il
+  // modello produce davvero, le percentuali ne discendono.
+  function rigaPoisson(r) {
+    var segno = String(r.Segno || "").toUpperCase();
+    var lc = num(r.Lambda_Casa), lo = num(r.Lambda_Osp), gol = num(r.Gol_Attesi);
+    var p1 = num(r.P1), px = num(r.PX), p2 = num(r.P2);
+    var m1 = num(r.M_P1), mx = num(r.M_PX), m2 = num(r.M_P2);
+    var mgol = num(r.M_Gol_Attesi), mlin = num(r.M_Linea), mmarg = num(r.M_Margine);
+    var ds = num(r.Scarto_Segno), dg = num(r.Scarto_Gol);
+    var mpc = num(r.MP_Casa), mpo = num(r.MP_Osp);
+
+    var coda = "";
+    if (ds != null) {
+      coda = Math.abs(ds) < 0.5 ? " \u00b7 in linea col mercato"
+        : ' \u00b7 <span class="' + (Math.abs(ds) >= 10 ? "scarto-grosso" : "scarto") + '">' +
+          (ds > 0 ? "+" : "") + ds.toFixed(0) + " vs mercato</span>";
+    }
+
+    var det = [];
+    if (r.Lega) det.push("<p>" + esc(r.Lega) + "</p>");
+    det.push("<p>Modello: 1 " + f0(p1) + "% \u00b7 X " + f0(px) + "% \u00b7 2 " + f0(p2) + "%" +
+      (num(r.Equa_Segno) != null ? " \u2013 quota equa del " + esc(segno) + " " + f2(num(r.Equa_Segno)) : "") + "</p>");
+    det.push("<p>Lambda: casa " + f2(lc) + ", ospite " + f2(lo) + " (gol attesi " + f2(gol) + ")</p>");
+    det.push("<p>xG/90: " + f2(num(r.xG_Casa)) + " \u2013 " + f2(num(r.xG_Osp)) +
+      " \u00b7 xGA/90: " + f2(num(r.xGA_Casa)) + " \u2013 " + f2(num(r.xGA_Osp)) + "</p>");
+    var gl = [["Over 1.5", r.P_O15], ["Over 2.5", r.P_O25], ["Over 3.5", r.P_O35], ["Gol", r.P_GG]]
+      .filter(function (x) { return num(x[1]) != null; })
+      .map(function (x) { return x[0] + " " + f0(num(x[1])) + "%"; });
+    if (gl.length) det.push("<p>" + gl.join(" \u00b7 ") + "</p>");
+    if (m1 != null) {
+      det.push("<p>Mercato" + (mmarg != null ? " (margine " + f1(mmarg) + "%)" : "") + ": 1 " + f0(m1) +
+        "% \u00b7 X " + f0(mx) + "% \u00b7 2 " + f0(m2) + "%" +
+        (mgol != null ? ", gol attesi " + f2(mgol) + (mlin != null ? " dalla linea " + esc(mlin) : "") : "") + "</p>");
+      if (ds != null) {
+        det.push("<p>Sul " + esc(segno) + ": il modello d\u00e0 " + Math.abs(ds).toFixed(1) + " punti " +
+          (ds >= 0 ? "pi\u00f9" : "meno") + " del mercato.</p>");
+      }
+      if (dg != null) {
+        det.push("<p>Gol attesi: " + (dg > 0 ? "+" : "") + dg.toFixed(2) + " rispetto a quelli del mercato.</p>");
+      }
+    } else {
+      det.push("<p>Nessun prezzo su questa partita: resta solo il modello.</p>");
+    }
+    // Le partite giocate si scrivono sempre: una media su sei giornate e
+    // una su venti non valgono uguale.
+    if (mpc != null && mpo != null) det.push("<p>Medie calcolate su " + f0(mpc) + " e " + f0(mpo) + " partite giocate.</p>");
+
+    return '<div class="riga"><details><summary>' +
+      '<span class="segno">' + esc(segno || "?") + "</span>" +
+      '<div class="corpo">' +
+      '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" + (r.Lega ? '<span class="chip">' + esc(r.Lega) + "</span>" : "") + "</div>" +
+      '<div class="partita">' + esc(r.Casa) + " \u2013 " + esc(r.Ospite) + "</div>" +
+      '<div class="sel">\u03bb ' + f2(lc) + " \u2013 " + f2(lo) + coda + "</div>" +
+      tripla("modello", p1, px, p2) +
+      (m1 != null ? tripla("mercato", m1, mx, m2) : "") +
+      "</div>" +
+      '<div class="numero"><b>' + f2(gol) + "</b><span>gol attesi</span></div>" +
       "</summary>" +
       '<div class="dettaglio">' + det.join("") + "</div>" +
       "</details></div>";
