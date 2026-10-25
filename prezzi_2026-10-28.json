@@ -1810,7 +1810,8 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 65.7,
-  "Equa": 1.52
+  "Equa": 1.52,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-28",
@@ -2253,8 +2254,7 @@
   "Mercato": "1X2",
   "Sel": "2",
   "Prob": 61.9,
-  "Equa": 1.62,
-  "InSchedina": "si"
+  "Equa": 1.62
  },
  {
   "Data": "2026-10-28",
@@ -2736,8 +2736,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 58.5,
-  "Equa": 1.71,
-  "InSchedina": "si"
+  "Equa": 1.71
  },
  {
   "Data": "2026-10-28",
@@ -2777,8 +2776,7 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 58.4,
-  "Equa": 1.71,
-  "InSchedina": "si"
+  "Equa": 1.71
  },
  {
   "Data": "2026-10-28",
@@ -3461,7 +3459,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "2 + Over 1.5",
   "Prob": 54.4,
-  "Equa": 1.84
+  "Equa": 1.84,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-28",
@@ -4061,7 +4060,8 @@
   "Mercato": "BTTS",
   "Sel": "NoGol",
   "Prob": 50.5,
-  "Equa": 1.98
+  "Equa": 1.98,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-28",
@@ -4182,6 +4182,26 @@
   "Sel": "1 + Over 2.5",
   "Prob": 49.9,
   "Equa": 2.0
+ },
+ {
+  "Data": "2026-10-28",
+  "Ora": "22:30",
+  "Campionato": "Brazil Serie A",
+  "Partita": "Fluminense - Internacional",
+  "Casa": "Fluminense",
+  "Ospite": "Internacional",
+  "Linea_OU": "",
+  "Gol_attesi": 2.48,
+  "Margine": 2.1,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "Gol NoGol",
+  "Mercato": "BTTS",
+  "Sel": "Gol",
+  "Prob": 49.5,
+  "Equa": 2.02
  },
  {
   "Data": "2026-10-28",
@@ -6145,26 +6165,6 @@
  },
  {
   "Data": "2026-10-28",
-  "Ora": "17:30",
-  "Campionato": "Italy Serie A",
-  "Partita": "AC Milan - Bologna",
-  "Casa": "AC Milan",
-  "Ospite": "Bologna",
-  "Linea_OU": "",
-  "Gol_attesi": 2.77,
-  "Margine": 2.5,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 23.8,
-  "Equa": 4.2
- },
- {
-  "Data": "2026-10-28",
   "Ora": "18:00",
   "Campionato": "Sweden Allsvenskan",
   "Partita": "Halmstad - Malmö FF",
@@ -6207,12 +6207,12 @@
   "Data": "2026-10-28",
   "Ora": "17:00",
   "Campionato": "Germany DFB Pokal",
-  "Partita": "Paderborn - VfB Stuttgart",
-  "Casa": "Paderborn",
-  "Ospite": "VfB Stuttgart",
+  "Partita": "Freiburg - Wolfsburg",
+  "Casa": "Freiburg",
+  "Ospite": "Wolfsburg",
   "Linea_OU": "",
-  "Gol_attesi": 3.18,
-  "Margine": 4.3,
+  "Gol_attesi": 3.51,
+  "Margine": 5.7,
   "Movimento": null,
   "Principale": "",
   "Schedina": "si",
@@ -6220,8 +6220,8 @@
   "Gruppo": "1X2",
   "Mercato": "1X2",
   "Sel": "X",
-  "Prob": 21.3,
-  "Equa": 4.69
+  "Prob": 18.5,
+  "Equa": 5.39
  },
  {
   "Data": "2026-10-28",
