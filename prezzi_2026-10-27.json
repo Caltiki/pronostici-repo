@@ -1250,7 +1250,8 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 65.6,
-  "Equa": 1.53
+  "Equa": 1.53,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-27",
@@ -1270,8 +1271,7 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 65.1,
-  "Equa": 1.53,
-  "InSchedina": "si"
+  "Equa": 1.53
  },
  {
   "Data": "2026-10-27",
@@ -2194,8 +2194,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 56.7,
-  "Equa": 1.76,
-  "InSchedina": "si"
+  "Equa": 1.76
  },
  {
   "Data": "2026-10-27",
@@ -2315,7 +2314,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 56.3,
-  "Equa": 1.78
+  "Equa": 1.78,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-27",
@@ -5226,6 +5226,26 @@
  {
   "Data": "2026-10-27",
   "Ora": "19:45",
+  "Campionato": "England League One",
+  "Partita": "Leicester - Wigan",
+  "Casa": "Leicester",
+  "Ospite": "Wigan",
+  "Linea_OU": "",
+  "Gol_attesi": 3.22,
+  "Margine": 5.2,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 19.8,
+  "Equa": 5.05
+ },
+ {
+  "Data": "2026-10-27",
+  "Ora": "19:45",
   "Campionato": "Italy Serie A",
   "Partita": "Roma - Cagliari",
   "Casa": "Roma",
@@ -5242,26 +5262,6 @@
   "Sel": "X",
   "Prob": 19.2,
   "Equa": 5.21
- },
- {
-  "Data": "2026-10-27",
-  "Ora": "19:45",
-  "Campionato": "Germany DFB Pokal",
-  "Partita": "Elversberg - Darmstadt 98",
-  "Casa": "Elversberg",
-  "Ospite": "Darmstadt 98",
-  "Linea_OU": "",
-  "Gol_attesi": 3.22,
-  "Margine": 4.4,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 19.2,
-  "Equa": 5.22
  },
  {
   "Data": "2026-10-27",
