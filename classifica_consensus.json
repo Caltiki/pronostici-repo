@@ -1,79 +1,79 @@
 {
  "medio": {
   "copertura": {
-   "1": 14342,
+   "1": 14346,
    "2": 1337,
    "3": 630,
    "4": 287,
-   "5": 98
+   "5": 100
   },
-  "totale": 16694,
-  "brier": 0.5797,
-  "brier_clima": 0.6412,
+  "totale": 16700,
+  "brier": 0.5798,
+  "brier_clima": 0.6413,
   "fonti": [
    {
     "nome": "betimate",
-    "partite": 15938,
-    "brier": 0.5791,
-    "brier_media": 0.5784
-   },
-   {
-    "nome": "footymetrics",
-    "partite": 1466,
-    "brier": 0.605,
-    "brier_media": 0.5985
-   },
-   {
-    "nome": "ratingbet",
-    "partite": 568,
-    "brier": 0.5733,
+    "partite": 15943,
+    "brier": 0.5792,
     "brier_media": 0.5785
    },
    {
+    "nome": "footymetrics",
+    "partite": 1469,
+    "brier": 0.6051,
+    "brier_media": 0.5986
+   },
+   {
+    "nome": "ratingbet",
+    "partite": 570,
+    "brier": 0.5735,
+    "brier_media": 0.5786
+   },
+   {
     "nome": "soccersite",
-    "partite": 1432,
+    "partite": 1434,
     "brier": 0.5997,
-    "brier_media": 0.5929
+    "brier_media": 0.593
    },
    {
     "nome": "statarea",
-    "partite": 1140,
+    "partite": 1142,
     "brier": 0.6114,
-    "brier_media": 0.6052
+    "brier_media": 0.6053
    }
   ],
   "mercato": {
-   "partite": 2043,
+   "partite": 2046,
    "poche": false,
-   "brier": 0.5935,
-   "brier_mercato": 0.5806,
+   "brier": 0.5936,
+   "brier_mercato": 0.5808,
    "diff": 0.0128,
    "es": 0.0031,
    "t": 4.08,
    "ic": [
-    0.0067,
+    0.0066,
     0.019
    ]
   }
  },
- "aggiornato": "2026-10-25 05:17",
+ "aggiornato": "2026-10-25 07:13",
  "accordo": {
-  "totale": 1034,
+  "totale": 1035,
   "prende": {
    "statarea": {
-    "prese": 420,
-    "su": 748,
-    "pct": 56.1
+    "prese": 421,
+    "su": 749,
+    "pct": 56.2
    },
    "webpronostici": {
-    "prese": 205,
-    "su": 407,
-    "pct": 50.4
+    "prese": 206,
+    "su": 408,
+    "pct": 50.5
    },
    "consensus": {
-    "prese": 160,
-    "su": 271,
-    "pct": 59.0
+    "prese": 161,
+    "su": 272,
+    "pct": 59.2
    }
   },
   "mercato": {
