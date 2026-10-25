@@ -2,26 +2,26 @@
  "medio": {
   "copertura": {
    "1": 14349,
-   "2": 1337,
+   "2": 1338,
    "3": 630,
    "4": 288,
    "5": 100
   },
-  "totale": 16704,
-  "brier": 0.5798,
+  "totale": 16705,
+  "brier": 0.5797,
   "brier_clima": 0.6413,
   "fonti": [
    {
     "nome": "betimate",
-    "partite": 15944,
-    "brier": 0.5792,
+    "partite": 15945,
+    "brier": 0.5791,
     "brier_media": 0.5785
    },
    {
     "nome": "footymetrics",
-    "partite": 1473,
-    "brier": 0.6048,
-    "brier_media": 0.5982
+    "partite": 1474,
+    "brier": 0.6044,
+    "brier_media": 0.5979
    },
    {
     "nome": "ratingbet",
@@ -56,7 +56,7 @@
    ]
   }
  },
- "aggiornato": "2026-10-25 09:43",
+ "aggiornato": "2026-10-25 11:28",
  "accordo": {
   "totale": 1036,
   "prende": {
