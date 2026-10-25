@@ -1,1 +1,971 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<title>Caltiki Pronostici</title>
+<!--
+  IL SITO LEGGE GLI STESSI FILE DELL'ADDON KODI, E NON NE CALCOLA DI NUOVI.
 
+  Tutti i numeri arrivano gia' fatti dal branch gh-data, letto da
+  raw.githubusercontent.com (pubblico, CORS aperto, cache di 5 minuti).
+  Qui si filtra e si mostra, niente di piu': la schedina e' il campo
+  "InSchedina" scritto da scelta_schedina() in prezzi_equi.py, lo scarto
+  dal mercato e' il campo "Scarto" del consensus medio, il verdetto contro
+  il mercato viene dalla t gia' calcolata. Se una regola vivesse anche qui,
+  sito e Kodi finirebbero per mostrare cose diverse senza che si capisca
+  perche' - e' gia' successo una volta fra Kodi e Telegram.
+
+  L'unico conto fatto in pagina e' la multipla che compone chi legge:
+  prodotto delle quote eque e stima della quota pagata col margine di
+  ciascuna partita. E' aritmetica, non una regola del sistema.
+
+  Le etichette e le frasi di spiegazione sono quelle dell'addon 1.18.1:
+  le due interfacce devono dire la stessa cosa con le stesse parole.
+
+  Questa pagina sta in sito/ e NON nella radice: l'index.html della radice
+  lo legge Kodi per trovare repository.pronostici.zip.
+-->
+<style>
+  :root {
+    --sfondo: #faf9f7;
+    --testo: #1d1c1a;
+    --tenue: #5c5955;
+    --bordo: #e2ded8;
+    --scheda: #ffffff;
+    --evidenza: #b3542a;
+    --evidenza-tenue: #f5e6dd;
+    --buono: #2f7a4d;
+    --buono-tenue: #e2f1e7;
+    --attento: #a5611a;
+    --attento-tenue: #f7ead8;
+    --male: #b23a3a;
+    --ombra: 0 1px 2px rgba(0,0,0,.04);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --sfondo: #16151a;
+      --testo: #f0eeea;
+      --tenue: #a39f99;
+      --bordo: #2e2c33;
+      --scheda: #1e1d23;
+      --evidenza: #e08b5c;
+      --evidenza-tenue: #3a2a22;
+      --buono: #6cc58f;
+      --buono-tenue: #1d3326;
+      --attento: #e0a35c;
+      --attento-tenue: #3a2e1e;
+      --male: #e57878;
+      --ombra: none;
+    }
+  }
+  :root[data-theme="dark"] {
+    --sfondo: #16151a; --testo: #f0eeea; --tenue: #a39f99; --bordo: #2e2c33;
+    --scheda: #1e1d23; --evidenza: #e08b5c; --evidenza-tenue: #3a2a22;
+    --buono: #6cc58f; --buono-tenue: #1d3326; --attento: #e0a35c;
+    --attento-tenue: #3a2e1e; --male: #e57878; --ombra: none;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--sfondo);
+    color: var(--testo);
+    font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 0 16px 120px; }
+  button, input { font: inherit; color: inherit; }
+
+  /* Testata */
+  header.testa { padding: 28px 0 8px; }
+  header.testa h1 { font-size: 1.5rem; margin: 0; letter-spacing: -0.01em; }
+  header.testa p { margin: 2px 0 0; color: var(--tenue); font-size: .9rem; }
+
+  /* Sezioni: la barra resta in cima mentre si scorre */
+  nav.sezioni {
+    position: sticky; top: 0; z-index: 5;
+    background: var(--sfondo);
+    padding: 10px 0;
+    display: flex; gap: 6px;
+    border-bottom: 1px solid var(--bordo);
+  }
+  nav.sezioni button {
+    flex: 1;
+    border: 1px solid var(--bordo);
+    background: var(--scheda);
+    border-radius: 999px;
+    padding: 8px 6px;
+    font-size: .9rem;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  nav.sezioni button[aria-current="true"] {
+    background: var(--evidenza); border-color: var(--evidenza); color: #fff;
+  }
+
+  /* Righe di chip orizzontali: date e viste */
+  .chips {
+    display: flex; gap: 6px;
+    overflow-x: auto; scrollbar-width: none;
+    padding: 12px 0 2px;
+    margin: 0 -16px; padding-left: 16px; padding-right: 16px;
+  }
+  .chips::-webkit-scrollbar { display: none; }
+  .chips button {
+    flex: none;
+    border: 1px solid var(--bordo);
+    background: transparent;
+    border-radius: 8px;
+    padding: 6px 11px;
+    font-size: .88rem;
+    cursor: pointer;
+  }
+  .chips button[aria-pressed="true"] {
+    border-color: var(--evidenza); color: var(--evidenza);
+    background: var(--evidenza-tenue); font-weight: 600;
+  }
+  .descr { color: var(--tenue); font-size: .88rem; margin: 10px 0 0; }
+
+  /* Ricerca e ordine */
+  .strumenti { display: flex; gap: 8px; margin: 12px 0 4px; align-items: center; }
+  .strumenti input[type="search"] {
+    flex: 1; min-width: 0;
+    border: 1px solid var(--bordo); background: var(--scheda);
+    border-radius: 8px; padding: 8px 10px; font-size: .92rem;
+  }
+  .strumenti select {
+    border: 1px solid var(--bordo); background: var(--scheda); color: var(--testo);
+    border-radius: 8px; padding: 8px 6px; font-size: .88rem;
+  }
+  .conta { color: var(--tenue); font-size: .82rem; margin: 6px 0 8px; }
+
+  /* Righe */
+  .lista { display: flex; flex-direction: column; gap: 8px; }
+  .riga {
+    display: flex; align-items: stretch;
+    background: var(--scheda);
+    border: 1px solid var(--bordo);
+    border-radius: 10px;
+    box-shadow: var(--ombra);
+    overflow: hidden;
+  }
+  .riga.scelta { border-color: var(--evidenza); }
+  .riga .spunta {
+    flex: none; display: flex; align-items: center; justify-content: center;
+    width: 40px; border-right: 1px solid var(--bordo); cursor: pointer;
+  }
+  .riga .spunta input { width: 18px; height: 18px; accent-color: var(--evidenza); cursor: pointer; }
+  .riga details { flex: 1; min-width: 0; }
+  .riga summary {
+    list-style: none; cursor: pointer;
+    padding: 10px 12px;
+    display: flex; gap: 10px; align-items: center;
+  }
+  .riga summary::-webkit-details-marker { display: none; }
+  .riga .corpo { flex: 1; min-width: 0; }
+  .riga .alto { font-size: .78rem; color: var(--tenue); display: flex; gap: 8px; flex-wrap: wrap; }
+  .riga .partita { font-weight: 600; font-size: .95rem; overflow-wrap: anywhere; }
+  .riga .sel { font-size: .9rem; }
+  .riga .numero { flex: none; text-align: right; }
+  .riga .numero b { display: block; font-size: 1.15rem; font-variant-numeric: tabular-nums; }
+  .riga .numero span { font-size: .78rem; color: var(--tenue); font-variant-numeric: tabular-nums; }
+  .riga .dettaglio {
+    padding: 0 12px 12px;
+    font-size: .86rem; color: var(--tenue);
+    border-top: 1px dashed var(--bordo);
+    padding-top: 10px;
+  }
+  .riga .dettaglio p { margin: 0 0 4px; }
+  .riga .dettaglio p.avviso { color: var(--attento); }
+
+  .pill {
+    display: inline-block; font-size: .72rem; line-height: 1;
+    padding: 3px 6px; border-radius: 999px; font-weight: 600;
+    white-space: nowrap;
+  }
+  .pill.stretto { background: var(--buono-tenue); color: var(--buono); }
+  .pill.medio { background: var(--bordo); color: var(--tenue); }
+  .pill.largo { background: var(--attento-tenue); color: var(--attento); }
+
+  .segno {
+    flex: none; width: 30px; height: 30px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; background: var(--evidenza-tenue); color: var(--evidenza);
+  }
+  .scarto-pos { color: var(--buono); }
+  .scarto-neg { color: var(--male); }
+
+  .altre {
+    display: block; width: 100%; margin: 12px 0;
+    padding: 10px; border-radius: 10px; cursor: pointer;
+    border: 1px dashed var(--bordo); background: transparent; color: var(--tenue);
+  }
+  .vuoto, .errore {
+    padding: 24px 16px; text-align: center; color: var(--tenue);
+    border: 1px dashed var(--bordo); border-radius: 10px; margin-top: 12px;
+  }
+  .errore { color: var(--male); }
+
+  /* Schede del consuntivo */
+  .scheda {
+    background: var(--scheda); border: 1px solid var(--bordo);
+    border-radius: 10px; padding: 14px; margin-top: 12px; box-shadow: var(--ombra);
+  }
+  .scheda h3 { margin: 0 0 4px; font-size: 1rem; }
+  .scheda .verdetto { margin: 0 0 8px; font-weight: 600; }
+  .scheda .verdetto.vince-mercato { color: var(--male); }
+  .scheda .verdetto.rumore { color: var(--tenue); }
+  .scheda .verdetto.batte { color: var(--buono); }
+  .scheda p { margin: 0 0 6px; font-size: .9rem; }
+  .scheda .piccolo { color: var(--tenue); font-size: .84rem; }
+  table.mercati { width: 100%; border-collapse: collapse; font-size: .88rem; margin: 6px 0; }
+  table.mercati th, table.mercati td {
+    text-align: right; padding: 5px 4px; border-bottom: 1px solid var(--bordo);
+    font-variant-numeric: tabular-nums;
+  }
+  table.mercati th:first-child, table.mercati td:first-child { text-align: left; }
+  table.mercati th { color: var(--tenue); font-weight: 500; font-size: .78rem; }
+  table.mercati tr.pochi td { color: var(--tenue); }
+  .barra { height: 6px; border-radius: 3px; background: var(--bordo); overflow: hidden; display: flex; margin: 6px 0 2px; }
+  .barra i { display: block; height: 100%; }
+  .barra .b1 { background: var(--evidenza); }
+  .barra .bx { background: var(--tenue); opacity: .55; }
+  .barra .b2 { background: var(--attento); opacity: .7; }
+
+  /* Multipla composta dall'utente */
+  .multipla {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
+    background: var(--scheda); border-top: 1px solid var(--bordo);
+    box-shadow: 0 -4px 16px rgba(0,0,0,.08);
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  }
+  .multipla[hidden] { display: none; }
+  .multipla .dentro { max-width: 720px; margin: 0 auto; }
+  .multipla .riga1 { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+  .multipla .riga1 b { font-size: 1.1rem; font-variant-numeric: tabular-nums; }
+  .multipla p { margin: 2px 0 0; font-size: .82rem; color: var(--tenue); }
+  .multipla p.avviso { color: var(--attento); }
+  .multipla button {
+    border: 1px solid var(--bordo); background: transparent; border-radius: 8px;
+    padding: 4px 10px; font-size: .82rem; cursor: pointer;
+  }
+
+  footer { margin-top: 32px; color: var(--tenue); font-size: .8rem; }
+  footer a { color: var(--evidenza); }
+</style>
+</head>
+<body>
+<main>
+  <header class="testa">
+    <h1>Caltiki Pronostici</h1>
+    <p id="aggiornato">Carico i dati&hellip;</p>
+  </header>
+
+  <nav class="sezioni" aria-label="Sezioni">
+    <button data-sez="prezzi">Prezzi equi</button>
+    <button data-sez="consensus">Consensus medio</button>
+    <button data-sez="fonti">Le fonti</button>
+  </nav>
+
+  <section id="contenuto"></section>
+
+  <footer>
+    I dati si aggiornano da soli durante la notte e, per i prezzi, ogni sei
+    ore. Quote e percentuali hanno scopo informativo.
+  </footer>
+</main>
+
+<div class="multipla" id="multipla" hidden>
+  <div class="dentro">
+    <div class="riga1">
+      <span id="m-gambe"></span>
+      <b id="m-equa"></b>
+    </div>
+    <p id="m-stima"></p>
+    <p id="m-avviso" class="avviso" hidden></p>
+    <p style="margin-top:6px"><button id="m-svuota" type="button">Svuota</button></p>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // ------------------------------------------------------------------ dati
+
+  var REPO = "Caltiki/pronostici-repo";
+  var RAMO = "gh-data";
+  var BASE = "https://raw.githubusercontent.com/" + REPO + "/" + RAMO + "/";
+
+  // Come in Kodi: sotto le 30 partite una percentuale non si mostra.
+  var MINIMO_MOSTRA = 30;
+  // Quante righe disegnare per volta: "Tutte" del consensus supera le 2.000.
+  var PASSO = 150;
+
+  var cache = {};
+  function leggi(file) {
+    if (!cache[file]) {
+      cache[file] = fetch(BASE + file).then(function (r) {
+        if (!r.ok) throw new Error(file + ": risposta " + r.status);
+        return r.json();
+      });
+      // Un errore non deve restare in cache: al prossimo giro si riprova.
+      cache[file].catch(function () { delete cache[file]; });
+    }
+    return cache[file];
+  }
+
+  // -------------------------------------------------------------- viste
+
+  // Stesse viste, stesso ordine e stesse descrizioni dell'addon 1.18.1.
+  var PE_VISTE = [
+    ["schedina", "Schedina",
+     "Le righe che il sistema ha messo in schedina: una per partita. " +
+     "Spunta quelle che vuoi combinare e in fondo vedi quanto vale la multipla."],
+    ["stretto", "Solo prezzo stretto",
+     "Margine sotto il 2%: le partite dove il prezzo è affidabile e la " +
+     "probabilità calcolata regge. Sono poche, ed è il punto."],
+    ["combo", "Esito + Gol",
+     "Le combinate segno + Under/Over, con la probabilità congiunta vera " +
+     "e non il prodotto delle due: esito e gol sono correlati."],
+    ["btts", "Gol / NoGol",
+     "Il mercato che il modello ha azzeccato meglio: nella fascia 55-65%, " +
+     "su 238 partite finite, previsto 60.0% e uscito 60.1%."],
+    ["ou", "Under / Over",
+     "Sopra o sotto la soglia. Attenzione: su 563 partite il modello ha " +
+     "sottostimato gli Over di 4.6 punti, quindi qui i numeri sono bassi."],
+    ["1x2", "1X2",
+     "Il de-vig di AsianOdds senza passare dal modello: è già una " +
+     "probabilità, ed è la stima migliore che abbiamo."],
+    ["tutte", "Tutto",
+     "Tutte le selezioni della giornata, ordinate per probabilità."]
+  ];
+  var CM_VISTE = [
+    ["mercato", "Con lo scarto dal mercato",
+     "Solo dove AsianOdds ha la partita: si vede di quanto le fonti si " +
+     "discostano dal prezzo. È l'unica cosa che la media aggiunge."],
+    ["multi", "Due fonti o più",
+     "Solo dove la media è davvero una media. Sul resto del calendario " +
+     "c'è una fonte sola, e allora è quella fonte."],
+    ["tutte", "Tutte",
+     "Tutte le partite su cui almeno una fonte si esprime."]
+  ];
+
+  var PE_ORDINI = [["file", "Per probabilità"], ["ora", "Per orario"], ["margine", "Per margine"]];
+  var CM_ORDINI = [["file", "Per orario"], ["scarto", "Per scarto"], ["fonti", "Per n. fonti"]];
+
+  // ------------------------------------------------------------ stato
+
+  var stato = {
+    sez: "prezzi",
+    data: { prezzi: null, consensus: null },
+    vista: { prezzi: "schedina", consensus: "mercato" },
+    ordine: { prezzi: "file", consensus: "file" },
+    cerca: "",
+    limite: PASSO
+  };
+  // La multipla sopravvive al cambio di vista e di data: si compone
+  // anche con partite di giorni diversi.
+  var scelte = {};
+
+  function leggiHash() {
+    var p = location.hash.replace(/^#/, "").split("/");
+    if (p[0] === "prezzi" || p[0] === "consensus" || p[0] === "fonti") stato.sez = p[0];
+    if (stato.sez !== "fonti") {
+      if (/^\d{4}-\d{2}-\d{2}$/.test(p[1] || "")) stato.data[stato.sez] = p[1];
+      var viste = stato.sez === "prezzi" ? PE_VISTE : CM_VISTE;
+      if (p[2] && viste.some(function (v) { return v[0] === p[2]; })) stato.vista[stato.sez] = p[2];
+    }
+  }
+  function scriviHash() {
+    var h = stato.sez;
+    if (stato.sez !== "fonti") {
+      h += "/" + (stato.data[stato.sez] || "") + "/" + stato.vista[stato.sez];
+    }
+    if (location.hash !== "#" + h) history.replaceState(null, "", "#" + h);
+  }
+
+  // --------------------------------------------------------- utilita'
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function num(v) {
+    if (v === null || v === undefined || v === "") return null;
+    var n = Number(v);
+    return isFinite(n) ? n : null;
+  }
+  function f1(v) { return v == null ? "-" : v.toFixed(1); }
+  function f0(v) { return v == null ? "-" : v.toFixed(0); }
+  function f2(v) { return v == null ? "?" : v.toFixed(2); }
+
+  // La data di oggi in Italia, non quella del dispositivo in UTC.
+  function oggi() {
+    try {
+      return new Intl.DateTimeFormat("en-CA", {
+        timeZone: "Europe/Rome", year: "numeric", month: "2-digit", day: "2-digit"
+      }).format(new Date());
+    } catch (e) {
+      return new Date().toISOString().slice(0, 10);
+    }
+  }
+  var GIORNI = ["dom", "lun", "mar", "mer", "gio", "ven", "sab"];
+  function etichettaData(d) {
+    var o = oggi();
+    var t = new Date(d + "T12:00:00Z");
+    var g = GIORNI[t.getUTCDay()] + " " + t.getUTCDate();
+    var diff = Math.round((t - new Date(o + "T12:00:00Z")) / 86400000);
+    if (diff === 0) return "Oggi";
+    if (diff === 1) return "Domani";
+    if (diff === -1) return "Ieri";
+    return g;
+  }
+  // Data di partenza: oggi se c'e', altrimenti la prima dopo oggi,
+  // altrimenti l'ultima disponibile.
+  function dataIniziale(date) {
+    var o = oggi();
+    if (date.indexOf(o) >= 0) return o;
+    var dopo = date.filter(function (d) { return d > o; }).sort();
+    if (dopo.length) return dopo[0];
+    return date.slice().sort().pop();
+  }
+
+  function testoCerca(r) {
+    return [r.Partita, r.Casa, r.Ospite, r.Campionato, r.Lega, r.Elenco]
+      .join(" ").toLowerCase();
+  }
+
+  // ---------------------------------------------------------- disegno
+
+  var $cont = document.getElementById("contenuto");
+
+  function chipsHtml(voci, attivo, attr) {
+    return '<div class="chips" role="group">' + voci.map(function (v) {
+      return '<button type="button" ' + attr + '="' + esc(v[0]) + '" aria-pressed="' +
+        (v[0] === attivo) + '">' + esc(v[1]) + "</button>";
+    }).join("") + "</div>";
+  }
+  function strumentiHtml(ordini, attivo) {
+    return '<div class="strumenti">' +
+      '<input type="search" id="cerca" placeholder="Squadra o campionato" value="' +
+      esc(stato.cerca) + '" autocomplete="off">' +
+      '<select id="ordine" aria-label="Ordine">' + ordini.map(function (o) {
+        return '<option value="' + o[0] + '"' + (o[0] === attivo ? " selected" : "") +
+          ">" + esc(o[1]) + "</option>";
+      }).join("") + "</select></div>";
+  }
+
+  function disegna() {
+    scriviHash();
+    document.querySelectorAll("nav.sezioni button").forEach(function (b) {
+      b.setAttribute("aria-current", String(b.dataset.sez === stato.sez));
+    });
+    if (stato.sez === "fonti") return disegnaFonti();
+    return disegnaGiornata(stato.sez);
+  }
+
+  function messaggio(cls, testo) {
+    return '<div class="' + cls + '">' + testo + "</div>";
+  }
+
+  function disegnaGiornata(sez) {
+    var indice = sez === "prezzi" ? "prezzi_index.json" : "consensusmedio_index.json";
+    var prefisso = sez === "prezzi" ? "prezzi_" : "consensusmedio_";
+    var viste = sez === "prezzi" ? PE_VISTE : CM_VISTE;
+    var ordini = sez === "prezzi" ? PE_ORDINI : CM_ORDINI;
+
+    $cont.innerHTML = messaggio("vuoto", "Carico&hellip;");
+    leggi(indice).then(function (ix) {
+      var date = (ix.date || []).slice().sort();
+      document.getElementById("aggiornato").textContent =
+        "Aggiornato il " + (ix.updated || "?");
+      if (!date.length) {
+        $cont.innerHTML = messaggio("vuoto", "Nessuna giornata pubblicata.");
+        return;
+      }
+      if (date.indexOf(stato.data[sez]) < 0) stato.data[sez] = dataIniziale(date);
+      var d = stato.data[sez];
+      scriviHash();
+
+      var vista = viste.filter(function (v) { return v[0] === stato.vista[sez]; })[0];
+      var testa = chipsHtml(date.map(function (x) { return [x, etichettaData(x)]; }), d, "data-data") +
+        chipsHtml(viste, vista[0], "data-vista") +
+        '<p class="descr">' + esc(vista[2]) + "</p>" +
+        strumentiHtml(ordini, stato.ordine[sez]);
+      $cont.innerHTML = testa + '<div id="righe">' + messaggio("vuoto", "Carico&hellip;") + "</div>";
+      collegaTesta(sez);
+
+      return leggi(prefisso + d + ".json").then(function (righe) {
+        if (stato.sez !== sez || stato.data[sez] !== d) return;
+        disegnaRighe(sez, righe, d);
+      });
+    }).catch(function (e) {
+      $cont.innerHTML = messaggio("errore",
+        "Non riesco a leggere i dati (" + esc(e.message) + "). " +
+        "Riprova fra qualche minuto: se il giro notturno sta scrivendo, i file arrivano dopo.");
+    });
+  }
+
+  function collegaTesta(sez) {
+    $cont.querySelectorAll("[data-data]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        stato.data[sez] = b.dataset.data; stato.limite = PASSO; disegna();
+      });
+    });
+    $cont.querySelectorAll("[data-vista]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        stato.vista[sez] = b.dataset.vista; stato.limite = PASSO; disegna();
+      });
+    });
+    var c = document.getElementById("cerca");
+    var t = null;
+    c.addEventListener("input", function () {
+      clearTimeout(t);
+      t = setTimeout(function () {
+        stato.cerca = c.value.trim(); stato.limite = PASSO; ridisegnaRighe();
+      }, 150);
+    });
+    document.getElementById("ordine").addEventListener("change", function (e) {
+      stato.ordine[sez] = e.target.value; stato.limite = PASSO; ridisegnaRighe();
+    });
+    // Le date attive restano in vista anche quando la riga scorre.
+    var att = $cont.querySelector('[data-data][aria-pressed="true"]');
+    if (att && att.scrollIntoView) att.scrollIntoView({ block: "nearest", inline: "center" });
+  }
+
+  var ultime = null;
+  function ridisegnaRighe() {
+    if (ultime) disegnaRighe(ultime.sez, ultime.righe, ultime.data);
+  }
+
+  function disegnaRighe(sez, righe, data) {
+    ultime = { sez: sez, righe: righe, data: data };
+    var vista = stato.vista[sez];
+    var tiene = sez === "prezzi" ? peTiene : cmTiene;
+    var tutte = Array.isArray(righe) ? righe : [];
+    var passano = tutte.filter(function (r) { return tiene(r, vista); });
+    var q = stato.cerca.toLowerCase();
+    var visibili = q ? passano.filter(function (r) { return testoCerca(r).indexOf(q) >= 0; }) : passano;
+    visibili = ordina(sez, visibili.slice());
+
+    var $r = document.getElementById("righe");
+    if (!$r) return;
+    if (!tutte.length) {
+      $r.innerHTML = messaggio("vuoto", "Il file di questa giornata è vuoto.");
+      return;
+    }
+    if (!passano.length) {
+      $r.innerHTML = messaggio("vuoto", vuotoPerVista(sez, vista, tutte.length, data));
+      return;
+    }
+    if (!visibili.length) {
+      $r.innerHTML = messaggio("vuoto", "Nessuna riga corrisponde a “" + esc(stato.cerca) + "”.");
+      return;
+    }
+
+    var mostrate = visibili.slice(0, stato.limite);
+    var conta = visibili.length === tutte.length
+      ? visibili.length + " righe"
+      : visibili.length + " righe su " + tutte.length;
+    var html = '<p class="conta">' + conta + "</p><div class=\"lista\">" +
+      mostrate.map(sez === "prezzi" ? rigaPrezzo : rigaConsensus).join("") + "</div>";
+    if (visibili.length > mostrate.length) {
+      html += '<button type="button" class="altre" id="altre">Mostra altre ' +
+        Math.min(PASSO, visibili.length - mostrate.length) + " (ne restano " +
+        (visibili.length - mostrate.length) + ")</button>";
+    }
+    $r.innerHTML = html;
+
+    var a = document.getElementById("altre");
+    if (a) a.addEventListener("click", function () { stato.limite += PASSO; ridisegnaRighe(); });
+    if (sez === "prezzi") {
+      $r.querySelectorAll("input[data-chiave]").forEach(function (cb) {
+        cb.addEventListener("change", function () {
+          var k = cb.dataset.chiave;
+          var r = mostrate[Number(cb.dataset.i)];
+          if (cb.checked) scelte[k] = r; else delete scelte[k];
+          cb.closest(".riga").classList.toggle("scelta", cb.checked);
+          aggiornaMultipla();
+        });
+      });
+    }
+  }
+
+  function ordina(sez, v) {
+    var o = stato.ordine[sez];
+    if (o === "ora") v.sort(function (a, b) { return (a.Ora || "").localeCompare(b.Ora || ""); });
+    else if (o === "margine") v.sort(function (a, b) {
+      var x = num(a.Margine), y = num(b.Margine);
+      return (x == null ? 99 : x) - (y == null ? 99 : y);
+    });
+    else if (o === "scarto") v.sort(function (a, b) {
+      var x = num(a.Scarto), y = num(b.Scarto);
+      return (y == null ? -1 : Math.abs(y)) - (x == null ? -1 : Math.abs(x));
+    });
+    else if (o === "fonti") v.sort(function (a, b) { return (num(b.Fonti) || 0) - (num(a.Fonti) || 0); });
+    // "file": l'ordine del file, che e' quello che mostra Kodi.
+    return v;
+  }
+
+  function vuotoPerVista(sez, vista, n, data) {
+    if (sez === "prezzi") {
+      if (vista === "schedina") return "Nessuna delle " + n + " selezioni del " + data + " è finita in schedina.";
+      if (vista === "stretto") return "Nessuna delle " + n + " selezioni del " + data + " ha il margine sotto il 2%. Prova un'altra vista.";
+      return "Nessuna selezione di questo tipo fra le " + n + " del " + data + ". Prova “Tutto”.";
+    }
+    if (vista === "mercato") return "Nessuna delle " + n + " partite del " + data + " ha la linea di chiusura: AsianOdds copre le prossime 24 ore.";
+    return "Su tutte e " + n + " le partite del " + data + " si esprime una fonte sola. Prova “Tutte”.";
+  }
+
+  // ------------------------------------------------------ prezzi equi
+
+  function peTiene(r, tipo) {
+    var g = String(r.Gruppo || "");
+    if (tipo === "schedina") return String(r.InSchedina || "") === "si";
+    if (tipo === "stretto") { var m = num(r.Margine); return m != null && m < 2; }
+    if (tipo === "combo") return g === "Combo";
+    if (tipo === "btts") return g === "Gol NoGol";
+    if (tipo === "ou") return g === "Under Over";
+    if (tipo === "1x2") return g === "1X2";
+    return true;
+  }
+
+  // La linea dentro l'etichetta: "Over" da solo non dice quale.
+  function etichettaSel(r) {
+    var merc = String(r.Mercato || ""), sel = String(r.Sel || "");
+    if (merc.indexOf("OU ") === 0 && (sel === "Over" || sel === "Under")) return sel + " " + merc.slice(3);
+    if (merc === "1X2" && /^[1X2]$/.test(sel)) return "Esito " + sel;
+    return sel;
+  }
+
+  function fiducia(m) {
+    if (m == null) return null;
+    if (m < 2) return ["stretto", "prezzo stretto, il numero regge"];
+    if (m < 5) return ["medio", "prezzo medio"];
+    return ["largo", "prezzo largo, la probabilità balla"];
+  }
+
+  function chiave(r) {
+    return [r.Data, r.Partita, r.Mercato, r.Sel].join("|");
+  }
+
+  function rigaPrezzo(r, i) {
+    var prob = num(r.Prob), equa = num(r.Equa), marg = num(r.Margine);
+    var linea = r.Linea_OU, gol = num(r.Gol_attesi), mov = num(r.Movimento);
+    var merc = String(r.Mercato || ""), sel = String(r.Sel || "");
+    var fid = fiducia(marg);
+    var k = chiave(r);
+    var scelta = !!scelte[k];
+
+    var det = [];
+    if (r.Campionato) det.push("<p>" + esc(r.Campionato) + "</p>");
+    det.push("<p>Quota equa " + f2(equa) + " – probabilità " + f0(prob) + "%. " +
+      "Sopra quella quota prendi valore, sotto paghi margine.</p>");
+    if (r.Fonte === "FootyMetrics") {
+      det.push("<p>Prezzo da FootyMetrics: AsianOdds copre solo le prossime 24 ore. " +
+        "Sulle partite che hanno tutte e due, le due fonti differiscono di 0.7 punti in mediana.</p>");
+    }
+    if (fid) det.push("<p>Margine del book: " + f1(marg) + "% (" + fid[1] + ")</p>");
+    if (linea !== null && linea !== undefined && linea !== "") {
+      det.push("<p>Linea principale del book " + esc(linea) + " – gol attesi " + f2(gol) +
+        ". È la linea della partita, non quella di questa riga.</p>");
+    }
+    if (mov) det.push("<p>La quota si è mossa di " + f1(mov) + " punti dall'apertura.</p>");
+    if (merc.indexOf("OU") === 0) {
+      det.push('<p class="avviso">Su 563 partite finite il modello ha sottostimato gli Over di 4.6 punti: qui semmai il numero è basso.</p>');
+    } else if (sel.indexOf("1X") >= 0 || sel.indexOf("X2") >= 0) {
+      det.push('<p class="avviso">Le doppie con la X sono le meno affidabili: Poisson sottostima i pareggi, quindi la quota equa è un po\' troppo generosa.</p>');
+    } else if (merc === "BTTS") {
+      det.push("<p>È il mercato tarato meglio: fascia 55-65%, 238 partite, previsto 60.0% e uscito 60.1%.</p>");
+    }
+
+    return '<div class="riga' + (scelta ? " scelta" : "") + '">' +
+      '<label class="spunta" title="Aggiungi alla multipla"><input type="checkbox" data-chiave="' +
+      esc(k) + '" data-i="' + i + '"' + (scelta ? " checked" : "") + ' aria-label="Aggiungi alla multipla"></label>' +
+      "<details><summary>" +
+      '<div class="corpo">' +
+      '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" +
+      (fid ? '<span class="pill ' + fid[0] + '">margine ' + f1(marg) + "%</span>" : "") +
+      "</div>" +
+      '<div class="partita">' + esc(r.Partita || (r.Casa + " - " + r.Ospite)) + "</div>" +
+      '<div class="sel">' + esc(etichettaSel(r)) + "</div>" +
+      "</div>" +
+      '<div class="numero"><b>' + f2(equa) + "</b><span>" + f0(prob) + "%</span></div>" +
+      "</summary>" +
+      '<div class="dettaglio">' + det.join("") + "</div>" +
+      "</details></div>";
+  }
+
+  // ------------------------------------------------------- multipla
+
+  var $m = document.getElementById("multipla");
+  document.getElementById("m-svuota").addEventListener("click", function () {
+    scelte = {};
+    aggiornaMultipla();
+    ridisegnaRighe();
+  });
+
+  // Il margine si compone a ogni gamba: la quota equa cresce col
+  // prodotto, quella pagata perde il margine di ogni partita. La stima
+  // usa il margine riportato per ciascuna riga, con la stessa aritmetica
+  // del documento di stato (1.60 equa, 6% x 10 gambe -> 0.89).
+  function aggiornaMultipla() {
+    var r = Object.keys(scelte).map(function (k) { return scelte[k]; });
+    if (!r.length) { $m.hidden = true; document.body.style.paddingBottom = ""; return; }
+    $m.hidden = false;
+    var equa = 1, pagata = 1, prob = 1, senzaMarg = 0;
+    r.forEach(function (x) {
+      var e = num(x.Equa), m = num(x.Margine), p = num(x.Prob);
+      equa *= e || 1;
+      prob *= p != null ? p / 100 : 1;
+      if (m == null) { senzaMarg++; pagata *= e || 1; } else pagata *= (e || 1) / (1 + m / 100);
+    });
+    var perdita = (pagata / equa - 1) * 100;
+    document.getElementById("m-gambe").textContent =
+      r.length + (r.length === 1 ? " gamba" : " gambe") + " · probabilità " + (prob * 100).toFixed(1) + "%";
+    document.getElementById("m-equa").textContent = "equa " + equa.toFixed(2);
+    document.getElementById("m-stima").textContent =
+      "Col margine di ciascuna partita il book pagherebbe circa " + pagata.toFixed(2) +
+      " (" + perdita.toFixed(0) + "%)." +
+      (senzaMarg ? " " + senzaMarg + " righe senza margine, contate a prezzo pieno." : "") +
+      " Il tuo bookmaker può caricarne di più: confronta la quota che vedi con quella equa.";
+
+    // Una riga per partita: due selezioni sulla stessa gara cadono insieme.
+    var conta = {};
+    r.forEach(function (x) {
+      var p = (x.Data || "") + "|" + String(x.Partita || "").toLowerCase();
+      conta[p] = (conta[p] || 0) + 1;
+    });
+    var doppie = Object.keys(conta).filter(function (p) { return conta[p] > 1; })
+      .map(function (p) { return p.split("|")[1]; });
+    var $a = document.getElementById("m-avviso");
+    if (doppie.length) {
+      $a.hidden = false;
+      $a.textContent = "Stessa partita due volte (" + doppie.join(", ") +
+        "): non sono eventi indipendenti, cadono insieme e il prodotto delle quote mente.";
+    } else $a.hidden = true;
+    document.body.style.paddingBottom = $m.offsetHeight + "px";
+  }
+
+  // --------------------------------------------------- consensus medio
+
+  function cmTiene(r, tipo) {
+    if (tipo === "mercato") return num(r.Scarto) != null;
+    if (tipo === "multi") return (num(r.Fonti) || 0) >= 2;
+    return true;
+  }
+
+  function rigaConsensus(r) {
+    var segno = String(r.Segno || "").toUpperCase();
+    var fonti = num(r.Fonti) || 0;
+    var p1 = num(r.P1), px = num(r.PX), p2 = num(r.P2);
+    var m1 = num(r.MP1), mx = num(r.MPX), m2 = num(r.MP2);
+    var scarto = num(r.Scarto);
+    var segnoM = String(r.Segno_Mercato || "").toUpperCase();
+    var pSegno = segno === "1" ? p1 : segno === "X" ? px : p2;
+
+    var coda = "";
+    if (scarto != null) {
+      coda = Math.abs(scarto) < 0.5 ? "in linea col mercato"
+        : '<span class="' + (scarto >= 0 ? "scarto-pos" : "scarto-neg") + '">' +
+          (scarto > 0 ? "+" : "") + scarto.toFixed(0) + " vs mercato</span>";
+    }
+
+    var det = [];
+    if (r.Lega) det.push("<p>" + esc(r.Lega) + "</p>");
+    det.push("<p>Media delle fonti: 1 " + f0(p1) + "% · X " + f0(px) + "% · 2 " + f0(p2) + "%</p>");
+    if (p1 != null && px != null && p2 != null) {
+      det.push('<div class="barra"><i class="b1" style="width:' + p1 + '%"></i><i class="bx" style="width:' +
+        px + '%"></i><i class="b2" style="width:' + p2 + '%"></i></div>');
+    }
+    if (fonti === 1) det.push("<p>Fonte unica: " + esc(r.Elenco) + ". Non è una media, è quella fonte.</p>");
+    else det.push("<p>Media di " + fonti + " fonti: " + esc(r.Elenco) + "</p>");
+    if (m1 != null) {
+      det.push("<p>Mercato (Shin): 1 " + f0(m1) + "% · X " + f0(mx) + "% · 2 " + f0(m2) + "%</p>");
+      if (segnoM && segnoM !== segno) {
+        det.push('<p class="avviso">Segni diversi: le fonti dicono ' + esc(segno) + ", il mercato " + esc(segnoM) + ".</p>");
+      }
+      if (scarto != null) {
+        det.push("<p>Sul " + esc(segno) + ": le fonti danno " + Math.abs(scarto).toFixed(1) + " punti " +
+          (scarto >= 0 ? "più" : "meno") + " del mercato.</p>");
+        if (Math.abs(scarto) >= 10) {
+          det.push('<p class="avviso">Scarto grosso. Sulle fonti misurate finora, quando si allontanano così dal mercato hanno torto più spesso, non meno.</p>');
+        }
+      }
+    }
+
+    return '<div class="riga"><details><summary>' +
+      '<span class="segno">' + esc(segno || "?") + "</span>" +
+      '<div class="corpo">' +
+      '<div class="alto"><span>' + esc(r.Ora || "") + "</span><span>" + fonti + (fonti === 1 ? " fonte" : " fonti") + "</span></div>" +
+      '<div class="partita">' + esc(r.Casa) + " – " + esc(r.Ospite) + "</div>" +
+      (coda ? '<div class="sel">' + coda + "</div>" : "") +
+      "</div>" +
+      '<div class="numero"><b>' + f0(pSegno) + "%</b><span>sul " + esc(segno) + "</span></div>" +
+      "</summary>" +
+      '<div class="dettaglio">' + det.join("") + "</div>" +
+      "</details></div>";
+  }
+
+  // ---------------------------------------------------------- le fonti
+
+  // La t decide, non la differenza: sotto 2 e' rumore.
+  function verdetto(m) {
+    if (!m || m.poche) return ["rumore", "Troppe poche partite col prezzo di chiusura: è presto."];
+    var t = num(m.t) || 0, n = m.partite || 0;
+    var ts = (t > 0 ? "+" : "") + t.toFixed(1);
+    if (Math.abs(t) < 2) return ["rumore", "Dentro il rumore su " + n + " partite (t " + ts + "): non si può ancora dire chi vince."];
+    if (t > 0) return ["vince-mercato", "Il mercato vince, e lo scarto regge: " + n + " partite, t " + ts + "."];
+    return ["batte", "Batte il mercato, e lo scarto regge: " + n + " partite, t " + ts + ". Da rifare fra un mese su partite nuove prima di crederci."];
+  }
+  function segnato(v) { var n = num(v); return n == null ? "?" : (n > 0 ? "+" : "") + n; }
+  function righeMercato(m) {
+    if (!m || m.poche) {
+      return "<p class=\"piccolo\">Partite col prezzo di chiusura: " + ((m || {}).partite || 0) + ". Sotto le 50 non si misura.</p>";
+    }
+    var h = '<table class="mercati"><tr><th>Brier, più basso è meglio</th><th>' + m.partite + " partite</th></tr>" +
+      "<tr><td>Queste probabilità</td><td>" + esc(m.brier) + "</td></tr>" +
+      "<tr><td>Mercato de-viggato</td><td>" + esc(m.brier_mercato) + "</td></tr></table>" +
+      '<p class="piccolo">Differenza partita per partita ' + segnato(m.diff) + ", errore standard " + esc(m.es) +
+      ", t " + segnato(m.t) + ".";
+    if (m.ic && m.ic.length === 2) h += " Intervallo al 95%: da " + segnato(m.ic[0]) + " a " + segnato(m.ic[1]) + ".";
+    return h + "</p>";
+  }
+
+  function disegnaFonti() {
+    $cont.innerHTML = messaggio("vuoto", "Carico&hellip;");
+    Promise.all([
+      leggi("classifica_fonti.json").catch(function () { return null; }),
+      leggi("classifica_consensus.json").catch(function () { return null; })
+    ]).then(function (res) {
+      if (stato.sez !== "fonti") return;
+      var d = res[0], c = res[1];
+      if (!d && !c) {
+        $cont.innerHTML = messaggio("errore", "Il consuntivo non è ancora stato pubblicato: arriva col primo giro notturno.");
+        return;
+      }
+      var agg = (d && d.aggiornato) || (c && c.aggiornato) || "?";
+      document.getElementById("aggiornato").textContent = "Consuntivo aggiornato il " + agg;
+
+      var h = '<p class="descr">Misurato solo su partite già finite, con i valori congelati prima del calcio d\'inizio. ' +
+        (d ? d.risultati + " partite con risultato. " : "") +
+        "Finché una fonte non arriva a qualche centinaio di partite i numeri ballano: si guardano, non si usano per decidere.</p>";
+
+      if (c && c.medio) h += schedaMedio(c.medio);
+      if (c && c.accordo) h += schedaAccordo(c.accordo);
+
+      if (d && d.fonti) {
+        h += '<p class="descr" style="margin-top:24px">Le fonti in ordine di quante partite sono state misurate, non di quante ne prendono: ' +
+          "la percentuale più alta la fa sempre chi ha il campione più piccolo. " +
+          "Mercati diversi non si sommano volentieri: una doppia chance si prende molto più spesso di un 1X2 e paga molto meno. " +
+          "Il numero che conta è il confronto col favorito del book: se la fonte non ci sta sopra, seguirla al prezzo del book non conviene, per quante ne prenda.</p>";
+        h += d.fonti.map(schedaFonte).join("");
+      }
+      $cont.innerHTML = h;
+    });
+  }
+
+  function schedaMedio(b) {
+    var v = verdetto(b.mercato);
+    var cop = b.copertura || {};
+    var copTesto = Object.keys(cop).sort().map(function (k) {
+      return k + (k === "1" ? " fonte: " : " fonti: ") + cop[k];
+    }).join(" · ");
+    var righe = (b.fonti || []).map(function (f) {
+      var peggiora = num(f.brier) != null && num(f.brier_media) != null && num(f.brier) < num(f.brier_media);
+      return "<tr><td>" + esc(f.nome) + "</td><td>" + esc(f.partite) + "</td><td>" + esc(f.brier) +
+        "</td><td>" + esc(f.brier_media) + (peggiora ? " ↑" : "") + "</td></tr>";
+    }).join("");
+    return '<div class="scheda"><h3>Consensus medio</h3>' +
+      '<p class="verdetto ' + v[0] + '">Contro il mercato: ' + esc(v[1]) + "</p>" +
+      righeMercato(b.mercato) +
+      "<p>Copertura: " + esc(b.totale) + " partite. " + esc(copTesto) + ".</p>" +
+      '<p class="piccolo">Dove la fonte è una sola la media non è una media: è quella fonte.</p>' +
+      "<p>Brier " + esc(b.brier) + " contro " + esc(b.brier_clima) + " di chi dice sempre le frequenze medie, " +
+      "il pavimento sotto cui non si sta prevedendo niente.</p>" +
+      (righe ? '<table class="mercati"><tr><th>Fonte</th><th>Partite</th><th>Brier fonte</th><th>Brier media</th></tr>' +
+        righe + "</table>" +
+        '<p class="piccolo">↑ dove la fonte da sola fa meglio della media sulle stesse partite: mediarla con le altre la peggiora.</p>' : "") +
+      "</div>";
+  }
+
+  function schedaAccordo(b) {
+    var v = verdetto(b.mercato);
+    var nomi = [["statarea", "Statarea da sola"], ["webpronostici", "WebPronostici da sola"], ["consensus", "Consensus (le due d'accordo)"]];
+    var righe = nomi.map(function (n) {
+      var x = (b.prende || {})[n[0]];
+      if (!x) return "";
+      return "<tr><td>" + n[1] + "</td><td>" + esc(x.pct) + "%</td><td>" + esc(x.su) + "</td></tr>";
+    }).join("");
+    var tt = b.testa_a_testa;
+    return '<div class="scheda"><h3>Consensus per accordo</h3>' +
+      '<p class="verdetto ' + v[0] + '">Contro il mercato: ' + esc(v[1]) + "</p>" +
+      righeMercato(b.mercato) +
+      (righe ? '<table class="mercati"><tr><th>Quante ne prende</th><th>%</th><th>Su</th></tr>' + righe + "</table>" : "") +
+      (tt ? "<p>Testa a testa col favorito del mercato, sulle " + esc(tt.partite) +
+        " partite dove il consensus ha un pronostico e c'è il prezzo di chiusura: consensus " +
+        esc(tt.consensus) + "%, mercato " + esc(tt.mercato) + "%.</p>" : "") +
+      '<p class="piccolo">I due consensus non si sommano: l\'accordo conta i segni su cui Statarea e WebPronostici concordano, ' +
+      "la media confronta le probabilità di cinque fonti su tutto il calendario. Non guardano le stesse partite.</p>" +
+      "</div>";
+  }
+
+  function schedaFonte(f) {
+    var nome = f.nome || f.chiave || "?";
+    var mis = f.misurate || 0;
+    var h = '<div class="scheda"><h3>' + esc(nome) + "</h3>";
+    if (!mis) {
+      h += '<p class="piccolo">Nessuna partita finita: l\'archivio è partito da poco, oppure il risultato non è stato agganciato.</p>';
+    } else if (mis < MINIMO_MOSTRA) {
+      h += '<p class="piccolo">Solo ' + mis + " pronostici finiti: troppo pochi per una percentuale che voglia dire qualcosa.</p>";
+    } else {
+      h += "<p>" + esc(f.pct) + "% su " + mis + " pronostici, tutti i mercati insieme.</p>";
+      var mm = (f.mercati || []).map(function (m) {
+        var pochi = m.su < MINIMO_MOSTRA;
+        return "<tr" + (pochi ? ' class="pochi"' : "") + "><td>" + esc(m.mercato) + "</td><td>" +
+          (pochi ? "solo " + m.su : esc(m.pct) + "%") + "</td><td>" + (pochi ? "" : m.prese + "/" + m.su) + "</td>" +
+          "<td>" + (m.rimborsi ? m.rimborsi : "") + "</td></tr>";
+      }).join("");
+      if (mm) {
+        h += '<table class="mercati"><tr><th>Mercato</th><th>Prese</th><th>Su</th><th>Rimborsi</th></tr>' + mm + "</table>";
+      }
+    }
+    var conf = f.mercato;
+    if (conf && conf.n < MINIMO_MOSTRA) {
+      h += '<p class="piccolo">Contro il mercato: solo ' + conf.n + " partite con la quota di chiusura. È il numero che conta di più e sarà l'ultimo ad arrivare.</p>";
+    } else if (conf) {
+      var sotto = num(conf.fonte) != null && num(conf.book) != null && num(conf.fonte) <= num(conf.book);
+      h += '<p><b class="' + (sotto ? "scarto-neg" : "scarto-pos") + '">Contro il mercato: fonte ' + esc(conf.fonte) +
+        "%, favorito del book " + esc(conf.book) + "%</b></p>" +
+        '<p class="piccolo">Sulle ' + esc(conf.n) + " partite 1X2 di cui l'archivio ha anche la quota di chiusura.</p>";
+    }
+    if (f.rotte) {
+      h += '<p class="piccolo">' + f.rotte + " righe scartate perché il pronostico non corrispondeva al mercato dichiarato.</p>";
+    }
+    return h + "</div>";
+  }
+
+  // ------------------------------------------------------------- avvio
+
+  document.querySelectorAll("nav.sezioni button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      if (stato.sez === b.dataset.sez) return;
+      stato.sez = b.dataset.sez;
+      stato.cerca = "";
+      stato.limite = PASSO;
+      window.scrollTo(0, 0);
+      disegna();
+    });
+  });
+  window.addEventListener("hashchange", function () { leggiHash(); disegna(); });
+
+  leggiHash();
+  disegna();
+})();
+</script>
+</body>
+</html>
