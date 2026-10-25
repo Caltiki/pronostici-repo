@@ -639,10 +639,10 @@
      "Solo dove AsianOdds ha la partita. Lo scarto dal prezzo \u00e8 la cosa interessante: " +
      "questa \u00e8 l'unica stima del sistema che possa discostarsi dal book per un motivo suo."]
   ];
-  var PO_ORDINI = [["file", "Per orario"], ["scarto", "Per scarto"], ["gol", "Per gol attesi"]];
+  var PO_ORDINI = [["file", "Per orario"], ["prob", "Per probabilit\u00e0"], ["scarto", "Per scarto"], ["gol", "Per gol attesi"]];
 
   var PE_ORDINI = [["file", "Per probabilità"], ["ora", "Per orario"], ["margine", "Per margine"]];
-  var CM_ORDINI = [["file", "Per orario"], ["scarto", "Per scarto"], ["fonti", "Per n. fonti"]];
+  var CM_ORDINI = [["file", "Per orario"], ["prob", "Per probabilit\u00e0"], ["scarto", "Per scarto"], ["fonti", "Per n. fonti"]];
 
   // ------------------------------------------------------------ stato
 
@@ -984,12 +984,21 @@
       var x = scartoDi(a), y = scartoDi(b);
       return (y == null ? -1 : Math.abs(y)) - (x == null ? -1 : Math.abs(x));
     });
+    // La probabilita' del segno indicato, dalla piu' alta. A parita' vince
+    // chi ha piu' fonti: lo stesso 70% detto da tre siti pesa piu' di uno.
+    else if (o === "prob") v.sort(function (a, b) {
+      return ((probSegno(b) || 0) - (probSegno(a) || 0)) || ((num(b.Fonti) || 0) - (num(a.Fonti) || 0));
+    });
     else if (o === "gol") v.sort(function (a, b) { return (num(b.Gol_Attesi) || 0) - (num(a.Gol_Attesi) || 0); });
     else if (o === "fonti") v.sort(function (a, b) { return (num(b.Fonti) || 0) - (num(a.Fonti) || 0); });
     // "file": l'ordine del file, che e' quello che mostra Kodi.
     return v;
   }
 
+  function probSegno(r) {
+    var s = String(r.Segno || "").toUpperCase();
+    return num(s === "1" ? r.P1 : s === "X" ? r.PX : s === "2" ? r.P2 : null);
+  }
   function scartoDi(r) { var v = num(r.Scarto); return v != null ? v : num(r.Scarto_Segno); }
 
   function vuotoPerVista(sez, vista, n, data) {
