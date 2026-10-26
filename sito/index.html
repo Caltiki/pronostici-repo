@@ -127,14 +127,20 @@
   }
   /* Con cinque voci la barra va stretta: le sezioni cedono spazio e
      scorciano il testo prima di spingere fuori la casa. */
-  nav.sezioni { gap: 4px; }
-  nav.sezioni button[data-sez] { overflow: hidden; text-overflow: ellipsis; }
+  /* Con sei voci, sugli schermi piu' stretti la barra scorre di lato
+     invece di troncare i nomi: una voce tagliata non si legge, una che
+     sta fuori si raggiunge col dito. Dai 360 px in su ci stanno tutte. */
+  nav.sezioni { gap: 4px; overflow-x: auto; scrollbar-width: none; }
+  nav.sezioni::-webkit-scrollbar { display: none; }
+  nav.sezioni button[data-sez] { flex: 1 0 auto; }
   nav.sezioni button.casa {
     flex: none; width: 34px; padding: 0;
     display: flex; align-items: center; justify-content: center;
     color: var(--tenue);
   }
   nav.sezioni button.casa svg { width: 18px; height: 18px; }
+  .riga .spunta.vuota { cursor: default; }
+  .riga .dettaglio a { color: var(--evidenza); font-weight: 500; }
   .testa a.marchio { color: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent; }
   .testa a.marchio:active { opacity: .7; }
   nav.sezioni button:hover {
@@ -554,9 +560,10 @@
         <path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/>
       </svg>
     </button>
-    <button data-sez="prezzi">Prezzi equi</button>
+    <button data-sez="prezzi">Prezzi</button>
     <button data-sez="consensus">Consensus</button>
-    <button data-sez="poisson">Poisson xG</button>
+    <button data-sez="poisson">Poisson</button>
+    <button data-sez="sure">Sure Bets</button>
     <button data-sez="fonti">Fonti</button>
   </nav>
 
@@ -597,9 +604,13 @@
 
   var cache = {};
   function leggi(file) {
+    return leggiUrl(BASE + file, file);
+  }
+  function leggiUrl(url, nome) {
+    var file = url;
     if (!cache[file]) {
-      cache[file] = fetch(BASE + file).then(function (r) {
-        if (!r.ok) throw new Error(file + ": risposta " + r.status);
+      cache[file] = fetch(url).then(function (r) {
+        if (!r.ok) throw new Error((nome || file) + ": risposta " + r.status);
         return r.json();
       });
       // Un errore non deve restare in cache: al prossimo giro si riprova.
@@ -656,6 +667,20 @@
      "Solo dove AsianOdds ha la partita. Lo scarto dal prezzo \u00e8 la cosa interessante: " +
      "questa \u00e8 l'unica stima del sistema che possa discostarsi dal book per un motivo suo."]
   ];
+  // Le stesse frasi dell'addon 1.19.0. Il conteggio del favorito e' quello
+  // rifatto sull'archivio al 26 ottobre: 147 su 147 (Kodi scrive 82 su 82,
+  // il conto di quando la sezione e' nata).
+  var SB_VISTE = [
+    ["tutte", "Tutte",
+     "Le Sure Bets di FootballPredictions, con accanto il nostro prezzo equo. Misurate " +
+     "sull'archivio: la selezione del sito era il favorito del book in 147 casi su 147. " +
+     "Il pronostico non aggiunge niente al prezzo, e il prezzo \u00e8 questo."],
+    ["prezzo", "Con il prezzo",
+     "Solo quelle che hanno il prezzo del mercato. AsianOdds copre le prossime 24 ore: " +
+     "per i giorni dopo questa vista resta vuota, ed \u00e8 normale."]
+  ];
+  var SB_ORDINI = [["file", "Per orario"], ["prob", "Per probabilit\u00e0"]];
+
   var PO_ORDINI = [["file", "Per orario"], ["prob", "Per probabilit\u00e0"], ["scarto", "Per scarto"], ["gol", "Per gol attesi"]];
 
   var PE_ORDINI = [["file", "Per probabilità"], ["ora", "Per orario"], ["margine", "Per margine"]];
@@ -665,9 +690,9 @@
 
   var stato = {
     sez: "prezzi",
-    data: { prezzi: null, consensus: null, poisson: null },
-    vista: { prezzi: "schedina", consensus: "mercato", poisson: "tutte" },
-    ordine: { prezzi: "file", consensus: "file", poisson: "file" },
+    data: { prezzi: null, consensus: null, poisson: null, sure: null },
+    vista: { prezzi: "schedina", consensus: "mercato", poisson: "tutte", sure: "tutte" },
+    ordine: { prezzi: "file", consensus: "file", poisson: "file", sure: "file" },
     cerca: "",
     limite: PASSO
   };
@@ -701,7 +726,10 @@
     consensus: { indice: "consensusmedio_index.json", prefisso: "consensusmedio_", viste: CM_VISTE, ordini: CM_ORDINI,
                  tiene: cmTiene, riepilogo: riepilogoConsensus, riga: rigaConsensus, nota: "" },
     poisson: { indice: "poisson_index.json", prefisso: "poisson_", viste: PO_VISTE, ordini: PO_ORDINI,
-               tiene: poTiene, riepilogo: riepilogoPoisson, riga: rigaPoisson, nota: "" }
+               tiene: poTiene, riepilogo: riepilogoPoisson, riga: rigaPoisson, nota: "" },
+    sure: { indice: "fpnet_index.json", prefisso: "fpnet_", viste: SB_VISTE, ordini: SB_ORDINI,
+            tiene: sbTiene, riepilogo: riepilogoSure, riga: rigaSure, arricchisci: arricchisciSure,
+            nota: " \u00b7 la tacca sulle barre segna il 60%" }
   };
 
   // --------------------------------------------------------- utilita'
@@ -815,7 +843,9 @@
       $cont.innerHTML = testa + '<div id="righe">' + messaggio("vuoto", "Carico&hellip;") + "</div>";
       collegaTesta(sez);
 
-      return leggi(prefisso + d + ".json").then(function (righe) {
+      var carica = leggi(prefisso + d + ".json");
+      if (conf.arricchisci) carica = carica.then(function (righe) { return conf.arricchisci(righe, d); });
+      return carica.then(function (righe) {
         if (stato.sez !== sez || stato.data[sez] !== d) return;
         disegnaRighe(sez, righe, d);
       });
@@ -899,7 +929,7 @@
 
     var a = document.getElementById("altre");
     if (a) a.addEventListener("click", function () { stato.limite += PASSO; ridisegnaRighe(); });
-    if (sez === "prezzi") {
+    if (sez === "prezzi" || sez === "sure") {
       $r.querySelectorAll("input[data-chiave]").forEach(function (cb) {
         cb.addEventListener("change", function () {
           var k = cb.dataset.chiave;
@@ -1004,7 +1034,7 @@
     // La probabilita' del segno indicato, dalla piu' alta. A parita' vince
     // chi ha piu' fonti: lo stesso 70% detto da tre siti pesa piu' di uno.
     else if (o === "prob") v.sort(function (a, b) {
-      return ((probSegno(b) || 0) - (probSegno(a) || 0)) || ((num(b.Fonti) || 0) - (num(a.Fonti) || 0));
+      return ((probOrdine(b) || 0) - (probOrdine(a) || 0)) || ((num(b.Fonti) || 0) - (num(a.Fonti) || 0));
     });
     else if (o === "gol") v.sort(function (a, b) { return (num(b.Gol_Attesi) || 0) - (num(a.Gol_Attesi) || 0); });
     else if (o === "fonti") v.sort(function (a, b) { return (num(b.Fonti) || 0) - (num(a.Fonti) || 0); });
@@ -1016,9 +1046,13 @@
     var s = String(r.Segno || "").toUpperCase();
     return num(s === "1" ? r.P1 : s === "X" ? r.PX : s === "2" ? r.P2 : null);
   }
+  function probOrdine(r) { return r._prob != null ? r._prob * 100 : probSegno(r); }
   function scartoDi(r) { var v = num(r.Scarto); return v != null ? v : num(r.Scarto_Segno); }
 
   function vuotoPerVista(sez, vista, n, data) {
+    if (sez === "sure") {
+      return "Nessuna delle " + n + " Sure Bets del " + data + " ha il prezzo: AsianOdds copre le prossime 24 ore. Prova \u201cTutte\u201d.";
+    }
     if (sez === "poisson") {
       return "Nessuna delle " + n + " partite del " + data + " ha il prezzo: AsianOdds copre le prossime 24 ore. Prova \u201cTutte\u201d.";
     }
@@ -1315,6 +1349,232 @@
       "</details></div>";
   }
 
+  // ------------------------------------------------- aggancio al mercato
+  //
+  // VERSIONE PRUDENTE DELL'AGGANCIO DI KODI, NON UNA COPIA.
+  //
+  // Kodi riconosce la stessa partita fra FootballPredictions e AsianOdds
+  // passando dagli stemmi: due squadre che prendono lo stesso stemma sono
+  // la stessa squadra (_chiave_incontro / _riga_mercato in default.py).
+  // Per trovare lo stemma usa loghi.json e, quando il nome esatto non c'e',
+  // la somiglianza (difflib, soglia 0.88), le sigle sociali e la tabella
+  // delle omonimie. Qui si tiene SOLO la ricerca esatta, in quattro grafie
+  // (com'e', senza accenti, con la punteggiatura come spazi, entrambe), e
+  // un nome che sta fra le omonimie non si aggancia affatto.
+  //
+  // Misurato sulle 278 Sure Bets dell'archivio contro il codice di Kodi
+  // eseguito cosi' com'e': Kodi ne aggancia 147, questa versione 129, e
+  // tutte e 129 sono la stessa partita che sceglie Kodi. Zero diverse,
+  // zero in piu'. Le 18 che mancano ("Inter Milan" / "Inter", "Sint-
+  // Truidense" / "St. Truiden") restano senza prezzo: meglio il silenzio
+  // del prezzo di un'altra partita.
+  //
+  // normalizza() e senzaAccenti() devono restare identiche alle Python
+  // (normalizza_squadra, _senza_accenti): sono le chiavi di loghi.json.
+
+  var SUFFISSI = ["fc", "ac", "as", "ss", "us", "cf", "sc", "afc", "fk", "sk", "bk", "if"];
+  var RE_SUFF = SUFFISSI.map(function (w) {
+    return new RegExp("(?<![\\p{L}\\p{N}_])" + w + "(?![\\p{L}\\p{N}_])", "gu");
+  });
+  var RE_PUNT = /[-‐-―_.,'’\/]+/g;
+  var LETTERE = { "ø": "o", "æ": "ae", "å": "a", "ð": "d", "þ": "th", "ß": "ss",
+                  "đ": "d", "ł": "l", "ı": "i", "œ": "oe", "ħ": "h", "ż": "z", "ġ": "g" };
+  var FEMMINILE = ["w", "wom", "women", "womens", "ladies", "femminile", "femenino", "femenil", "feminino",
+                   "feminin", "feminina", "frauen", "damen", "dames", "kvinner", "naiset", "kobiet", "zeny"];
+  var UNDER = ["u16", "u17", "u18", "u19", "u20", "u21", "u22", "u23"];
+  var RISERVE = ["b", "c", "ii", "iii", "2", "u21", "u23", "u19", "reserve", "reserves", "riserve", "youth", "primavera"];
+  var RE_ETA = /\b(?:u|under\s*|-)(1[6-9]|2[0-3])\b/;
+
+  function normalizza(nome, punteggiatura) {
+    var n = String(nome == null ? "" : nome).toLowerCase().trim();
+    if (punteggiatura) n = n.replace(RE_PUNT, " ");
+    n = n.replace(/\s+/g, " ");
+    RE_SUFF.forEach(function (rx) { n = n.replace(rx, ""); });
+    return n.replace(/\s+/g, " ").trim();
+  }
+  function senzaAccenti(t) {
+    t = Array.from(String(t)).map(function (c) { return LETTERE[c] || c; }).join("");
+    return t.normalize("NFKD").replace(/\p{M}/gu, "");
+  }
+  function parole(t) { return String(t || "").toLowerCase().split(/[^a-z0-9]+/); }
+  function interseca(a, b) { return a.filter(function (x) { return b.indexOf(x) >= 0; }); }
+
+  // Femminile, giovanile, riserve o prima squadra: due partite con gli
+  // stessi stemmi ma variante diversa NON sono la stessa partita.
+  function variante(casa, ospite, dove) {
+    var nomi = parole(casa).concat(parole(ospite));
+    if (interseca(nomi.concat(parole(dove)), FEMMINILE).length) return "f";
+    var u = interseca(nomi, UNDER).sort();
+    if (u.length) return u[0];
+    var m = RE_ETA.exec(String(dove || "").toLowerCase()) ||
+            RE_ETA.exec((String(casa || "") + " " + String(ospite || "")).toLowerCase());
+    if (m) return "u" + m[1];
+    if (interseca(nomi, RISERVE).length) return "r";
+    return "";
+  }
+
+  function stemma(nome, loghi) {
+    var mappa = loghi.mappa || {}, ambigue = loghi.ambigue || {};
+    var prove = [normalizza(nome), normalizza(senzaAccenti(nome)),
+                 normalizza(nome, true), normalizza(senzaAccenti(nome), true)];
+    for (var i = 0; i < prove.length; i++) {
+      var k = prove[i];
+      if (!k) continue;
+      if (Object.prototype.hasOwnProperty.call(ambigue, k)) return null;
+      if (Object.prototype.hasOwnProperty.call(mappa, k)) return mappa[k];
+    }
+    return null;
+  }
+
+  // "Benfica to Win" su Santa Clara - Benfica e' un 2, non un 1.
+  function esitoSure(r) {
+    var t = String(r.Lista || r.Sure || "").trim(), b = t.toLowerCase();
+    var code = [" to win", " win"], trovata = false;
+    for (var i = 0; i < code.length; i++) {
+      if (b.slice(-code[i].length) === code[i]) { t = t.slice(0, -code[i].length).trim(); trovata = true; break; }
+    }
+    if (!trovata) return null;
+    var sq = normalizza(t);
+    if (!sq) return null;
+    if (sq === normalizza(r.Casa)) return "1";
+    if (sq === normalizza(r.Ospite)) return "2";
+    return null;
+  }
+
+  // La riga AsianOdds della stessa partita, o null. Una sola candidata,
+  // altrimenti niente: due partite con gli stessi stemmi nello stesso
+  // giorno vuol dire che non sappiamo quale sia.
+  function rigaMercato(r, mercato, loghi) {
+    var lc = stemma(r.Casa, loghi), lo = stemma(r.Ospite, loghi);
+    if (!lc || !lo) return null;
+    var v = variante(r.Casa, r.Ospite, r.Lega || "");
+    var trovate = (mercato || []).filter(function (a) {
+      return stemma(a.Casa, loghi) === lc && stemma(a.Ospite, loghi) === lo &&
+             variante(a.Casa, a.Ospite, a.Lega || "") === v;
+    });
+    return trovate.length === 1 ? trovate[0] : null;
+  }
+
+  // Shin quando c'e', proporzionale come ripiego: lo stesso ordine di Kodi.
+  function probMercato(esito, a) {
+    if (!a || !esito) return null;
+    var campi = { "1": ["P1 Shin", "P1", "P1_Shin"], "X": ["PX Shin", "PX", "PX_Shin"], "2": ["P2 Shin", "P2", "P2_Shin"] }[esito];
+    for (var i = 0; i < campi.length; i++) {
+      var v = num(a[campi[i]]);
+      if (v != null) return { prob: v / 100, margine: num(a.Margine) };
+    }
+    return null;
+  }
+
+  // ------------------------------------------------------- sure bets
+
+  var URL_LOGHI = "https://raw.githubusercontent.com/" + REPO + "/main/loghi.json";
+
+  // Il mercato del giorno e la mappa dei nomi si leggono qui, una volta per
+  // data. Se AsianOdds non ha il file (oltre le 24 ore) le righe restano
+  // senza prezzo; se manca la mappa, idem: nessun prezzo e' meglio di un
+  // prezzo agganciato a caso.
+  function arricchisciSure(righe, data) {
+    var mercato = leggi("asianodds_" + data + ".json").catch(function () { return null; });
+    var loghi = leggiUrl(URL_LOGHI, "loghi.json").catch(function () { return null; });
+    return Promise.all([mercato, loghi]).then(function (x) {
+      var ao = Array.isArray(x[0]) ? x[0] : null, lg = x[1] && x[1].mappa ? x[1] : null;
+      return (Array.isArray(righe) ? righe : []).map(function (r) {
+        var o = {};
+        for (var k in r) o[k] = r[k];
+        o.Data = o.Data || data;
+        o._esito = esitoSure(r);
+        o._mercato = ao ? (ao.length ? "si" : "vuoto") : "no";
+        var a = ao && lg ? rigaMercato(r, ao, lg) : null;
+        var p = a ? probMercato(o._esito, a) : null;
+        if (p) {
+          o._prob = p.prob;
+          // I campi che usa la multipla, con il nome della partita come lo
+          // scrive AsianOdds: e' quello dei Prezzi equi, cosi' la stessa
+          // partita presa da due sezioni si riconosce come doppia.
+          o.Prob = p.prob * 100;
+          o.Equa = 1 / p.prob;
+          o.Margine = p.margine;
+          o.Partita = a.Casa + " - " + a.Ospite;
+          o.Mercato = "1X2";
+          o.Sel = o._esito;
+          o.Lega = a.Lega;
+        }
+        return o;
+      });
+    });
+  }
+
+  function sbTiene(r, tipo) {
+    if (tipo === "prezzo") return r._prob != null;
+    return true;
+  }
+
+  function riepilogoSure(v) {
+    var con = v.filter(function (r) { return r._prob != null; });
+    var eq = mediana(con.map(function (r) { return num(r.Equa); }));
+    return tessere([
+      [String(v.length), "Sure Bets"],
+      [String(con.length), "con il prezzo del mercato"],
+      [eq == null ? "-" : eq.toFixed(2), "quota equa mediana"]
+    ]);
+  }
+
+  function rigaSure(r, i) {
+    var esito = r._esito, prob = r._prob, equa = num(r.Equa), marg = num(r.Margine);
+    var fid = fiducia(marg);
+    var lista = String(r.Lista || "").trim();
+    var squadra = esito === "1" ? r.Casa : esito === "2" ? r.Ospite : null;
+    var conPrezzo = prob != null;
+    var k = conPrezzo ? chiave(r) : null;
+    var scelta = conPrezzo && !!scelte[k];
+
+    var det = [];
+    if (r.Lega) det.push("<p>" + esc(r.Lega) + "</p>");
+    if (lista) det.push("<p>Dalla lista: " + esc(lista) + "</p>");
+    [["1X2", "1X2", "Q 1X2", "Book 1X2"], ["U/O 2.5", "OU", "Q OU", "Book OU"],
+     ["Gol/NoGol", "BTTS", "Q BTTS", "Book BTTS"], ["Sure Bet", "Sure", "Q Sure", "Book Sure"]].forEach(function (m) {
+      var pred = String(r[m[1]] || "").trim();
+      if (!pred) return;
+      var q = num(r[m[2]]), t = m[0] + ": " + esc(pred);
+      if (q != null) t += " @ " + q.toFixed(2) + (r[m[3]] ? " (" + esc(r[m[3]]) + ")" : "");
+      det.push("<p>" + t + "</p>");
+    });
+    if (conPrezzo) {
+      det.push("<p>Prezzo equo del mercato: " + f2(equa) + " (" + f0(prob * 100) + "%)" +
+        (marg != null ? ", margine " + f1(marg) + "%" : "") + ". Sopra quella quota prendi valore, sotto paghi margine.</p>");
+    } else if (esito) {
+      det.push("<p>" + (r._mercato === "si"
+        ? "Nessun prezzo: AsianOdds non ha questa partita, oppure i nomi non combaciano abbastanza da esserne sicuri."
+        : "Nessun prezzo: AsianOdds copre le prossime 24 ore, oltre non arriva.") + "</p>");
+    }
+    if (/^https:\/\/(www\.)?footballpredictions\.net\//.test(String(r.Link || ""))) {
+      det.push('<p><a href="' + esc(r.Link) + '" target="_blank" rel="noopener noreferrer">Apri su FootballPredictions</a></p>');
+    }
+
+    var sel = squadra ? "Vince " + esc(squadra) : esc(lista || "Sure Bet");
+    return '<div class="riga' + (scelta ? " scelta" : "") + '">' +
+      (conPrezzo
+        ? '<label class="spunta" title="Aggiungi alla multipla"><input type="checkbox" data-chiave="' + esc(k) +
+          '" data-i="' + i + '"' + (scelta ? " checked" : "") + ' aria-label="Aggiungi alla multipla"></label>'
+        : '<span class="spunta vuota" aria-hidden="true"></span>') +
+      "<details><summary>" +
+      '<span class="segno">' + esc(esito || "?") + "</span>" +
+      '<div class="corpo">' +
+      '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" +
+      (fid ? '<span class="pill ' + fid[0] + '">margine ' + f1(marg) + "%</span>" : "") + "</div>" +
+      '<div class="partita">' + esc(r.Casa) + " \u2013 " + esc(r.Ospite) + "</div>" +
+      '<div class="sel">' + sel + "</div>" +
+      (conPrezzo ? '<div class="pbar"><i style="width:' + Math.min(100, prob * 100) + '%"></i></div>' : "") +
+      "</div>" +
+      '<div class="numero">' + (conPrezzo
+        ? "<b>" + f2(equa) + "</b><span>" + f0(prob * 100) + "%</span>"
+        : '<b style="color:var(--tenue)">\u2013</b><span>senza prezzo</span>') + "</div>" +
+      "</summary>" +
+      '<div class="dettaglio">' + det.join("") + "</div>" +
+      "</details></div>";
+  }
+
   // ---------------------------------------------------------- le fonti
 
   // La t decide, non la differenza: sotto 2 e' rumore.
@@ -1477,9 +1737,9 @@
   function vaiHome(e) {
     if (e) e.preventDefault();
     stato.sez = "prezzi";
-    stato.data = { prezzi: null, consensus: null, poisson: null };
-    stato.vista = { prezzi: "schedina", consensus: "mercato", poisson: "tutte" };
-    stato.ordine = { prezzi: "file", consensus: "file", poisson: "file" };
+    stato.data = { prezzi: null, consensus: null, poisson: null, sure: null };
+    stato.vista = { prezzi: "schedina", consensus: "mercato", poisson: "tutte", sure: "tutte" };
+    stato.ordine = { prezzi: "file", consensus: "file", poisson: "file", sure: "file" };
     stato.cerca = "";
     stato.limite = PASSO;
     window.scrollTo(0, 0);
