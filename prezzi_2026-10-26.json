@@ -744,7 +744,29 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 71.6,
-  "Equa": 1.4
+  "Equa": 1.4,
+  "InSchedina": "si"
+ },
+ {
+  "Data": "2026-10-26",
+  "Ora": "18:00",
+  "Campionato": "Romania Superliga",
+  "Partita": "Sepsi - Universitatea Craiova",
+  "Casa": "Sepsi",
+  "Ospite": "Universitatea Craiova",
+  "Linea_OU": "",
+  "Gol_attesi": 2.71,
+  "Margine": 2.8,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "Under Over",
+  "Mercato": "OU 3.5",
+  "Sel": "Under",
+  "Prob": 71.2,
+  "Equa": 1.41,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-26",
@@ -1112,27 +1134,6 @@
  },
  {
   "Data": "2026-10-26",
-  "Ora": "19:05",
-  "Campionato": "Sweden: Superettan",
-  "Partita": "Orebro - Falkenberg",
-  "Casa": "Orebro",
-  "Ospite": "Falkenberg",
-  "Linea_OU": 2.75,
-  "Gol_attesi": 2.99,
-  "Margine": 7.9,
-  "Movimento": 4.2,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "AsianOdds",
-  "Gruppo": "Under Over",
-  "Mercato": "OU 3.5",
-  "Sel": "Under",
-  "Prob": 64.9,
-  "Equa": 1.54,
-  "InSchedina": "si"
- },
- {
-  "Data": "2026-10-26",
   "Ora": "19:30",
   "Campionato": "Turkey: Super Lig",
   "Partita": "Galatasaray - Fenerbahce",
@@ -1411,8 +1412,7 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 63.3,
-  "Equa": 1.58,
-  "InSchedina": "si"
+  "Equa": 1.58
  },
  {
   "Data": "2026-10-26",
@@ -1472,8 +1472,7 @@
   "Mercato": "1X2",
   "Sel": "2",
   "Prob": 63.1,
-  "Equa": 1.58,
-  "InSchedina": "si"
+  "Equa": 1.58
  },
  {
   "Data": "2026-10-26",
@@ -1493,8 +1492,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 62.9,
-  "Equa": 1.59,
-  "InSchedina": "si"
+  "Equa": 1.59
  },
  {
   "Data": "2026-10-26",
@@ -1936,7 +1934,8 @@
   "Mercato": "1X2",
   "Sel": "2",
   "Prob": 59.4,
-  "Equa": 1.68
+  "Equa": 1.68,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-26",
@@ -3140,8 +3139,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "2 + Over 1.5",
   "Prob": 51.9,
-  "Equa": 1.93,
-  "InSchedina": "si"
+  "Equa": 1.93
  },
  {
   "Data": "2026-10-26",
@@ -3321,7 +3319,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 50.0,
-  "Equa": 2.0
+  "Equa": 2.0,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-26",
@@ -5125,43 +5124,23 @@
  },
  {
   "Data": "2026-10-26",
-  "Ora": "23:30",
-  "Campionato": "Brazil Serie B",
-  "Partita": "Juventude - Náutico",
-  "Casa": "Juventude",
-  "Ospite": "Náutico",
-  "Linea_OU": "",
-  "Gol_attesi": 2.64,
-  "Margine": 1.9,
-  "Movimento": null,
+  "Ora": "17:00",
+  "Campionato": "Cyprus: Cyprus League",
+  "Partita": "Nea Salamis - Pafos",
+  "Casa": "Nea Salamis",
+  "Ospite": "Pafos",
+  "Linea_OU": 2.75,
+  "Gol_attesi": 2.99,
+  "Margine": 7.9,
+  "Movimento": 8.3,
   "Principale": "",
   "Schedina": "si",
-  "Fonte": "FootyMetrics",
+  "Fonte": "AsianOdds",
   "Gruppo": "1X2",
   "Mercato": "1X2",
   "Sel": "X",
-  "Prob": 22.7,
-  "Equa": 4.41
- },
- {
-  "Data": "2026-10-26",
-  "Ora": "18:00",
-  "Campionato": "Romania Superliga",
-  "Partita": "Sepsi - Universitatea Craiova",
-  "Casa": "Sepsi",
-  "Ospite": "Universitatea Craiova",
-  "Linea_OU": "",
-  "Gol_attesi": 2.71,
-  "Margine": 2.8,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 22.5,
-  "Equa": 4.45
+  "Prob": 23.6,
+  "Equa": 4.24
  },
  {
   "Data": "2026-10-26",
@@ -5202,6 +5181,26 @@
   "Sel": "X",
   "Prob": 17.5,
   "Equa": 5.71
+ },
+ {
+  "Data": "2026-10-26",
+  "Ora": "17:00",
+  "Campionato": "Turkey: Super Lig",
+  "Partita": "Besiktas - Basaksehir",
+  "Casa": "Besiktas",
+  "Ospite": "Basaksehir",
+  "Linea_OU": 3.25,
+  "Gol_attesi": 3.33,
+  "Margine": 3.3,
+  "Movimento": 4.7,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "AsianOdds",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 17.1,
+  "Equa": 5.85
  },
  {
   "Data": "2026-10-26",

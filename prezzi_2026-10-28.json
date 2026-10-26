@@ -1470,6 +1470,27 @@
  },
  {
   "Data": "2026-10-28",
+  "Ora": "17:30",
+  "Campionato": "Italy Serie A",
+  "Partita": "AC Milan - Bologna",
+  "Casa": "AC Milan",
+  "Ospite": "Bologna",
+  "Linea_OU": "",
+  "Gol_attesi": 2.74,
+  "Margine": 1.1,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "Under Over",
+  "Mercato": "OU 3.5",
+  "Sel": "Under",
+  "Prob": 70.5,
+  "Equa": 1.42,
+  "InSchedina": "si"
+ },
+ {
+  "Data": "2026-10-28",
   "Ora": "19:45",
   "Campionato": "Scotland Premiership",
   "Partita": "Aberdeen - Falkirk",
@@ -2373,8 +2394,7 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 60.7,
-  "Equa": 1.65,
-  "InSchedina": "si"
+  "Equa": 1.65
  },
  {
   "Data": "2026-10-28",
@@ -2534,8 +2554,7 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 60.0,
-  "Equa": 1.67,
-  "InSchedina": "si"
+  "Equa": 1.67
  },
  {
   "Data": "2026-10-28",
@@ -3801,7 +3820,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 52.0,
-  "Equa": 1.92
+  "Equa": 1.92,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-28",
@@ -6145,26 +6165,6 @@
  },
  {
   "Data": "2026-10-28",
-  "Ora": "17:30",
-  "Campionato": "Italy Serie A",
-  "Partita": "AC Milan - Bologna",
-  "Casa": "AC Milan",
-  "Ospite": "Bologna",
-  "Linea_OU": "",
-  "Gol_attesi": 2.74,
-  "Margine": 1.1,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 23.6,
-  "Equa": 4.25
- },
- {
-  "Data": "2026-10-28",
   "Ora": "18:00",
   "Campionato": "Sweden Allsvenskan",
   "Partita": "Halmstad - Malmö FF",
@@ -6182,26 +6182,6 @@
   "Sel": "X",
   "Prob": 22.8,
   "Equa": 4.38
- },
- {
-  "Data": "2026-10-28",
-  "Ora": "19:45",
-  "Campionato": "England Enterprise National League",
-  "Partita": "Forest Green Rovers - Eastleigh",
-  "Casa": "Forest Green Rovers",
-  "Ospite": "Eastleigh",
-  "Linea_OU": "",
-  "Gol_attesi": 3.18,
-  "Margine": 2.9,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 21.6,
-  "Equa": 4.63
  },
  {
   "Data": "2026-10-28",

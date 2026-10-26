@@ -1353,7 +1353,8 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 61.8,
-  "Equa": 1.62
+  "Equa": 1.62,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-29",
@@ -2134,8 +2135,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 53.6,
-  "Equa": 1.86,
-  "InSchedina": "si"
+  "Equa": 1.86
  },
  {
   "Data": "2026-10-29",
@@ -3637,6 +3637,26 @@
   "Sel": "X",
   "Prob": 24.7,
   "Equa": 4.05
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "17:30",
+  "Campionato": "Sweden Allsvenskan",
+  "Partita": "Hammarby - Sirius",
+  "Casa": "Hammarby",
+  "Ospite": "Sirius",
+  "Linea_OU": "",
+  "Gol_attesi": 3.28,
+  "Margine": 3.7,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 21.0,
+  "Equa": 4.77
  },
  {
   "Data": "2026-10-29",
