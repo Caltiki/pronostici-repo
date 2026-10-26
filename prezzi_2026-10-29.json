@@ -1332,8 +1332,7 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 61.4,
-  "Equa": 1.63,
-  "InSchedina": "si"
+  "Equa": 1.63
  },
  {
   "Data": "2026-10-29",
@@ -2335,7 +2334,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 52.1,
-  "Equa": 1.92
+  "Equa": 1.92,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-29",
@@ -3776,26 +3776,6 @@
   "Sel": "Under",
   "Prob": 25.5,
   "Equa": 3.92
- },
- {
-  "Data": "2026-10-29",
-  "Ora": "17:00",
-  "Campionato": "Finland Veikkausliiga",
-  "Partita": "KuPS - Gnistan",
-  "Casa": "KuPS",
-  "Ospite": "Gnistan",
-  "Linea_OU": "",
-  "Gol_attesi": 3.11,
-  "Margine": 6.5,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 22.1,
-  "Equa": 4.53
  },
  {
   "Data": "2026-10-29",
