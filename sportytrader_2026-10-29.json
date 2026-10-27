@@ -6,7 +6,7 @@
   "Lega": "Liga Postobon - Finalizacion",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.42,
+  "Prob": 0.48,
   "Quota": null
  },
  {
@@ -16,7 +16,7 @@
   "Lega": "Major League Soccer",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.53,
+  "Prob": 0.54,
   "Quota": null
  },
  {
@@ -46,7 +46,7 @@
   "Lega": "Major League Soccer",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.46,
+  "Prob": 0.47,
   "Quota": null
  },
  {
@@ -66,7 +66,7 @@
   "Lega": "Primera División Cile",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.4,
+  "Prob": 0.38,
   "Quota": null
  },
  {
@@ -96,7 +96,7 @@
   "Lega": "Liga Nacional - Apertura",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.59,
+  "Prob": 0.54,
   "Quota": null
  },
  {
@@ -206,7 +206,7 @@
   "Lega": "Liga Postobon - Finalizacion",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.5,
+  "Prob": 0.55,
   "Quota": null
  },
  {
@@ -257,6 +257,16 @@
   "Tipo": "B",
   "Pronostico": "X",
   "Prob": 0.49,
+  "Quota": null
+ },
+ {
+  "Casa": "Pamba SC",
+  "Ospite": "Ihefu FC",
+  "Ora": "12:00",
+  "Lega": "Tanzanian Premier League",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.5,
   "Quota": null
  },
  {
@@ -350,13 +360,43 @@
   "Quota": null
  },
  {
+  "Casa": "Aarhus Fremad",
+  "Ospite": "FC Copenaghen",
+  "Ora": "13:30",
+  "Lega": "DBU Pokalen",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.41,
+  "Quota": null
+ },
+ {
+  "Casa": "FK Sutjeska Niksic",
+  "Ospite": "Jezero Plav",
+  "Ora": "14:00",
+  "Lega": "1. CFL",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.47,
+  "Quota": null
+ },
+ {
+  "Casa": "Korona Kielce II",
+  "Ospite": "Wislanie Jaskowice",
+  "Ora": "14:00",
+  "Lega": "III Liga, Gruppo 4 - Gruppo 4",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.44,
+  "Quota": null
+ },
+ {
   "Casa": "Future FC",
   "Ospite": "AL Ahly",
   "Ora": "15:00",
   "Lega": "Egyptian Premier League",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.38,
+  "Prob": 0.44,
   "Quota": null
  },
  {
@@ -377,6 +417,66 @@
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.39,
+  "Quota": null
+ },
+ {
+  "Casa": "Concordia Chiajna",
+  "Ospite": "Sfantu Gheorghe",
+  "Ora": "16:00",
+  "Lega": "Cupa Romaniei - Gruppo 2",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.45,
+  "Quota": null
+ },
+ {
+  "Casa": "AL Sareeh",
+  "Ospite": "AL Sarhan",
+  "Ora": "16:00",
+  "Lega": "Jordan 1st Division",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.44,
+  "Quota": null
+ },
+ {
+  "Casa": "AL Ahli Jordan",
+  "Ospite": "Ittihad AL Ramtha",
+  "Ora": "16:00",
+  "Lega": "Jordan 1st Division",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.39,
+  "Quota": null
+ },
+ {
+  "Casa": "AL Salt",
+  "Ospite": "AL Jazeera Club Amman",
+  "Ora": "16:00",
+  "Lega": "Jordanian Pro League",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.39,
+  "Quota": null
+ },
+ {
+  "Casa": "FK Decic Tuzi",
+  "Ospite": "FK Otrant",
+  "Ora": "17:00",
+  "Lega": "1. CFL",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.37,
+  "Quota": null
+ },
+ {
+  "Casa": "Jantra",
+  "Ospite": "FK Hebar Pazardzhik",
+  "Ora": "17:00",
+  "Lega": "Second Professional League",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.46,
   "Quota": null
  },
  {
@@ -440,13 +540,33 @@
   "Quota": null
  },
  {
+  "Casa": "Voluntari",
+  "Ospite": "Universitatea Craiova",
+  "Ora": "18:00",
+  "Lega": "Cupa Romaniei - Gruppo 4",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.65,
+  "Quota": null
+ },
+ {
   "Casa": "KUPS",
   "Ospite": "IF Gnistan",
   "Ora": "18:00",
   "Lega": "Veikkausliiga - Championship Round",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.4,
+  "Prob": 0.41,
+  "Quota": null
+ },
+ {
+  "Casa": "Werder Bremen",
+  "Ospite": "Hoffenheim D",
+  "Ora": "18:00",
+  "Lega": "Bundesliga Femminile - Women",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.44,
   "Quota": null
  },
  {
@@ -455,8 +575,8 @@
   "Ora": "18:30",
   "Lega": "Allsvenskan",
   "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.47,
+  "Pronostico": "1",
+  "Prob": 0.48,
   "Quota": null
  },
  {
@@ -466,7 +586,7 @@
   "Lega": "Serie A",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.48,
+  "Prob": 0.49,
   "Quota": null
  },
  {
@@ -516,7 +636,7 @@
   "Lega": "Allsvenskan",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.5,
+  "Prob": 0.51,
   "Quota": null
  },
  {
@@ -550,6 +670,46 @@
   "Quota": null
  },
  {
+  "Casa": "FC Midtjylland",
+  "Ospite": "Odense Boldklub",
+  "Ora": "19:30",
+  "Lega": "DBU Pokalen",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.39,
+  "Quota": null
+ },
+ {
+  "Casa": "Sporting Braga",
+  "Ospite": "Famalicao",
+  "Ora": "19:45",
+  "Lega": "League Cup - Final Round",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.46,
+  "Quota": null
+ },
+ {
+  "Casa": "De Treffers Groesbeek",
+  "Ospite": "Heracles",
+  "Ora": "20:00",
+  "Lega": "Coppa d'Olanda KNVB",
+  "Tipo": "B",
+  "Pronostico": "X",
+  "Prob": 0.35,
+  "Quota": null
+ },
+ {
+  "Casa": "CS Gloria Bistrita",
+  "Ospite": "FCSB",
+  "Ora": "20:30",
+  "Lega": "Cupa Romaniei - Gruppo 3",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.43,
+  "Quota": null
+ },
+ {
   "Casa": "Fiorentina",
   "Ospite": "Atalanta",
   "Ora": "20:45",
@@ -566,7 +726,7 @@
   "Lega": "National",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.5,
+  "Prob": 0.51,
   "Quota": null
  },
  {
@@ -586,7 +746,7 @@
   "Lega": "Champions League Femminile - Women 25/26",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.53,
+  "Prob": 0.51,
   "Quota": null
  },
  {
@@ -616,7 +776,17 @@
   "Lega": "Liga 1 - Clausura",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.47,
+  "Prob": 0.43,
+  "Quota": null
+ },
+ {
+  "Casa": "Benfica",
+  "Ospite": "Gil Vicente",
+  "Ora": "21:45",
+  "Lega": "League Cup - Final Round",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.65,
   "Quota": null
  },
  {
