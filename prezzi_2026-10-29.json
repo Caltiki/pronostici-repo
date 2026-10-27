@@ -1151,7 +1151,8 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 64.5,
-  "Equa": 1.55
+  "Equa": 1.55,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-29",
@@ -1413,8 +1414,7 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 62.1,
-  "Equa": 1.61,
-  "InSchedina": "si"
+  "Equa": 1.61
  },
  {
   "Data": "2026-10-29",
@@ -2234,8 +2234,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 54.4,
-  "Equa": 1.84,
-  "InSchedina": "si"
+  "Equa": 1.84
  },
  {
   "Data": "2026-10-29",
@@ -2295,7 +2294,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 53.9,
-  "Equa": 1.86
+  "Equa": 1.86,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-29",
@@ -3959,14 +3959,14 @@
  },
  {
   "Data": "2026-10-29",
-  "Ora": "17:30",
-  "Campionato": "Sweden Allsvenskan",
-  "Partita": "Hammarby - Sirius",
-  "Casa": "Hammarby",
-  "Ospite": "Sirius",
+  "Ora": "17:00",
+  "Campionato": "Finland Veikkausliiga",
+  "Partita": "KuPS - Gnistan",
+  "Casa": "KuPS",
+  "Ospite": "Gnistan",
   "Linea_OU": "",
-  "Gol_attesi": 3.28,
-  "Margine": 5.3,
+  "Gol_attesi": 3.03,
+  "Margine": 4.7,
   "Movimento": null,
   "Principale": "",
   "Schedina": "si",
@@ -3974,8 +3974,8 @@
   "Gruppo": "1X2",
   "Mercato": "1X2",
   "Sel": "X",
-  "Prob": 20.6,
-  "Equa": 4.84
+  "Prob": 20.8,
+  "Equa": 4.82
  },
  {
   "Data": "2026-10-29",
