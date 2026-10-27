@@ -136,9 +136,9 @@
   "Casa": "Vasco da Gama",
   "Ospite": "Flamengo",
   "Segno": "2",
-  "P1": 29.5,
-  "PX": 27.0,
-  "P2": 43.5,
+  "P1": 30.0,
+  "PX": 27.5,
+  "P2": 42.5,
   "Fonti": 2,
   "Elenco": "footymetrics, ratingbet"
  },
@@ -149,9 +149,9 @@
   "Casa": "America De Cali",
   "Ospite": "Fortaleza FC",
   "Segno": "1",
-  "P1": 60.0,
-  "PX": 26.5,
-  "P2": 13.5,
+  "P1": 63.0,
+  "PX": 25.0,
+  "P2": 12.0,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea"
  },
@@ -318,9 +318,9 @@
   "Casa": "Gremio",
   "Ospite": "Athletico Paranaense",
   "Segno": "1",
-  "P1": 38.0,
-  "PX": 29.0,
-  "P2": 33.0,
+  "P1": 37.0,
+  "PX": 28.0,
+  "P2": 35.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
  },
@@ -7754,9 +7754,9 @@
   "Casa": "Arsenal Dzerzhinsk",
   "Ospite": "BATE Borisov",
   "Segno": "2",
-  "P1": 34.0,
+  "P1": 35.0,
   "PX": 28.0,
-  "P2": 38.0,
+  "P2": 37.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
  },
@@ -10259,19 +10259,6 @@
  {
   "Data": "2026-10-30",
   "Ora": "18:30",
-  "Lega": "GERMANY - 2. BUNDESLIGA",
-  "Casa": "Energie Cottbus",
-  "Ospite": "VfL Bochum",
-  "Segno": "2",
-  "P1": 30.0,
-  "PX": 32.0,
-  "P2": 38.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
- },
- {
-  "Data": "2026-10-30",
-  "Ora": "18:30",
   "Lega": "Germany - 2. Bundesliga",
   "Casa": "Energie Cottbus",
   "Ospite": "VfL Bochum 1848",
@@ -10281,6 +10268,19 @@
   "P2": 38.0,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-10-30",
+  "Ora": "18:30",
+  "Lega": "GERMANY - 2. BUNDESLIGA",
+  "Casa": "Energie Cottbus",
+  "Ospite": "VfL Bochum",
+  "Segno": "2",
+  "P1": 30.0,
+  "PX": 32.0,
+  "P2": 38.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-10-30",
@@ -10705,9 +10705,9 @@
   "Casa": "HIK",
   "Ospite": "Nykoebing FC",
   "Segno": "2",
-  "P1": 23.0,
-  "PX": 24.0,
-  "P2": 53.0,
+  "P1": 19.0,
+  "PX": 22.0,
+  "P2": 59.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
  },
@@ -10818,6 +10818,19 @@
  {
   "Data": "2026-10-30",
   "Ora": "19:00",
+  "Lega": "France: Ligue 1 France",
+  "Casa": "Nice",
+  "Ospite": "Rennes",
+  "Segno": "2",
+  "P1": 35.0,
+  "PX": 25.0,
+  "P2": 40.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-10-30",
+  "Ora": "19:00",
   "Lega": "GREECE - SUPER LEAGUE",
   "Casa": "OFI",
   "Ospite": "PAOK",
@@ -10887,8 +10900,8 @@
   "Casa": "Skive",
   "Ospite": "VSK Aarhus",
   "Segno": "1",
-  "P1": 37.0,
-  "PX": 28.0,
+  "P1": 38.0,
+  "PX": 27.0,
   "P2": 35.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
@@ -11676,19 +11689,6 @@
  {
   "Data": "2026-10-30",
   "Ora": "20:00",
-  "Lega": "France: Ligue 2 France",
-  "Casa": "Nantes",
-  "Ospite": "Clermont Foot",
-  "Segno": "1",
-  "P1": 64.0,
-  "PX": 22.0,
-  "P2": 14.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
- },
- {
-  "Data": "2026-10-30",
-  "Ora": "20:00",
   "Lega": "France - Ligue 2",
   "Casa": "Nantes",
   "Ospite": "Clermont",
@@ -11698,6 +11698,19 @@
   "P2": 24.2,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-10-30",
+  "Ora": "20:00",
+  "Lega": "France: Ligue 2 France",
+  "Casa": "Nantes",
+  "Ospite": "Clermont Foot",
+  "Segno": "1",
+  "P1": 64.0,
+  "PX": 22.0,
+  "P2": 14.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
  },
  {
   "Data": "2026-10-30",
@@ -11962,19 +11975,6 @@
  {
   "Data": "2026-10-30",
   "Ora": "20:45",
-  "Lega": "ENGLAND - NATIONAL LEAGUE",
-  "Casa": "AFC Fylde",
-  "Ospite": "AFC Hornchurch",
-  "Segno": "1",
-  "P1": 49.0,
-  "PX": 24.0,
-  "P2": 27.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
- },
- {
-  "Data": "2026-10-30",
-  "Ora": "20:45",
   "Lega": "England: National League England",
   "Casa": "AFC Fylde",
   "Ospite": "Hornchurch",
@@ -11984,6 +11984,19 @@
   "P2": 24.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-10-30",
+  "Ora": "20:45",
+  "Lega": "ENGLAND - NATIONAL LEAGUE",
+  "Casa": "AFC Fylde",
+  "Ospite": "AFC Hornchurch",
+  "Segno": "1",
+  "P1": 49.0,
+  "PX": 24.0,
+  "P2": 27.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-10-30",
@@ -12317,9 +12330,9 @@
   "Casa": "Villarreal",
   "Ospite": "Espanyol",
   "Segno": "1",
-  "P1": 59.0,
-  "PX": 23.0,
-  "P2": 18.0,
+  "P1": 59.7,
+  "PX": 22.7,
+  "P2": 17.7,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea"
  },

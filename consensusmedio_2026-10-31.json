@@ -71,8 +71,8 @@
   "Casa": "Deportivo Pereira",
   "Ospite": "CD Jaguares",
   "Segno": "1",
-  "P1": 41.0,
-  "PX": 30.0,
+  "P1": 43.0,
+  "PX": 28.0,
   "P2": 29.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
@@ -979,19 +979,6 @@
   "Ora": "06:00",
   "Lega": "JAPAN - J. LEAGUE 2",
   "Casa": "Albirex Niigata",
-  "Ospite": "Vegalta Sendai",
-  "Segno": "2",
-  "P1": 36.0,
-  "PX": 22.0,
-  "P2": 42.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
- },
- {
-  "Data": "2026-10-31",
-  "Ora": "06:00",
-  "Lega": "JAPAN - J. LEAGUE 2",
-  "Casa": "Albirex Niigata",
   "Ospite": "Kataller Toyama",
   "Segno": "1",
   "P1": 40.0,
@@ -1004,12 +991,12 @@
   "Data": "2026-10-31",
   "Ora": "06:00",
   "Lega": "JAPAN - J. LEAGUE 2",
-  "Casa": "Blaublitz Akita",
-  "Ospite": "Fujieda MYFC",
-  "Segno": "1",
-  "P1": 46.0,
-  "PX": 33.0,
-  "P2": 21.0,
+  "Casa": "Albirex Niigata",
+  "Ospite": "Vegalta Sendai",
+  "Segno": "2",
+  "P1": 36.0,
+  "PX": 22.0,
+  "P2": 42.0,
   "Fonti": 1,
   "Elenco": "statarea"
  },
@@ -1023,6 +1010,19 @@
   "P1": 52.0,
   "PX": 29.0,
   "P2": 19.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-31",
+  "Ora": "06:00",
+  "Lega": "JAPAN - J. LEAGUE 2",
+  "Casa": "Blaublitz Akita",
+  "Ospite": "Fujieda MYFC",
+  "Segno": "1",
+  "P1": 46.0,
+  "PX": 33.0,
+  "P2": 21.0,
   "Fonti": 1,
   "Elenco": "statarea"
  },
@@ -1211,19 +1211,6 @@
  {
   "Data": "2026-10-31",
   "Ora": "06:00",
-  "Lega": "Japan - J1 League",
-  "Casa": "Kyoto Sanga",
-  "Ospite": "Shimizu S-Pulse",
-  "Segno": "1",
-  "P1": 36.3,
-  "PX": 27.4,
-  "P2": 36.3,
-  "Fonti": 2,
-  "Elenco": "footymetrics, ratingbet"
- },
- {
-  "Data": "2026-10-31",
-  "Ora": "06:00",
   "Lega": "JAPAN - J. LEAGUE",
   "Casa": "Kyoto Sanga",
   "Ospite": "Shimizu",
@@ -1233,6 +1220,19 @@
   "P2": 31.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-31",
+  "Ora": "06:00",
+  "Lega": "Japan - J1 League",
+  "Casa": "Kyoto Sanga",
+  "Ospite": "Shimizu S-Pulse",
+  "Segno": "1",
+  "P1": 36.3,
+  "PX": 27.4,
+  "P2": 36.3,
+  "Fonti": 2,
+  "Elenco": "footymetrics, ratingbet"
  },
  {
   "Data": "2026-10-31",
@@ -1588,6 +1588,19 @@
  {
   "Data": "2026-10-31",
   "Ora": "07:00",
+  "Lega": "Japan - J1 League",
+  "Casa": "Kashima Antlers",
+  "Ospite": "Cerezo Osaka",
+  "Segno": "1",
+  "P1": 55.0,
+  "PX": 24.0,
+  "P2": 21.0,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-10-31",
+  "Ora": "07:00",
   "Lega": "JAPAN - J. LEAGUE",
   "Casa": "Kashima Antlers",
   "Ospite": "C-Osaka",
@@ -1610,19 +1623,6 @@
   "P2": 24.0,
   "Fonti": 1,
   "Elenco": "statarea"
- },
- {
-  "Data": "2026-10-31",
-  "Ora": "07:00",
-  "Lega": "Japan - J1 League",
-  "Casa": "Kashima Antlers",
-  "Ospite": "Cerezo Osaka",
-  "Segno": "1",
-  "P1": 55.0,
-  "PX": 24.0,
-  "P2": 21.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
  },
  {
   "Data": "2026-10-31",
@@ -1666,19 +1666,6 @@
  {
   "Data": "2026-10-31",
   "Ora": "07:00",
-  "Lega": "JAPAN - J. LEAGUE",
-  "Casa": "Vissel Kobe",
-  "Ospite": "Machida Zelvia",
-  "Segno": "1",
-  "P1": 37.0,
-  "PX": 30.0,
-  "P2": 33.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
- },
- {
-  "Data": "2026-10-31",
-  "Ora": "07:00",
   "Lega": "Japan - J1 League",
   "Casa": "Vissel Kobe",
   "Ospite": "Nagoya Grampus",
@@ -1688,6 +1675,19 @@
   "P2": 19.5,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea"
+ },
+ {
+  "Data": "2026-10-31",
+  "Ora": "07:00",
+  "Lega": "JAPAN - J. LEAGUE",
+  "Casa": "Vissel Kobe",
+  "Ospite": "Machida Zelvia",
+  "Segno": "1",
+  "P1": 37.0,
+  "PX": 30.0,
+  "P2": 33.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-10-31",
@@ -3244,8 +3244,8 @@
   "Ospite": "Atlético de Madrid",
   "Segno": "2",
   "P1": 22.0,
-  "PX": 23.0,
-  "P2": 55.0,
+  "PX": 23.5,
+  "P2": 54.5,
   "Fonti": 2,
   "Elenco": "footymetrics, ratingbet"
  },
@@ -4916,19 +4916,6 @@
  {
   "Data": "2026-10-31",
   "Ora": "16:00",
-  "Lega": "England - Premier League",
-  "Casa": "Brentford",
-  "Ospite": "Nottm Forest",
-  "Segno": "2",
-  "P1": 35.0,
-  "PX": 28.0,
-  "P2": 37.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
- },
- {
-  "Data": "2026-10-31",
-  "Ora": "16:00",
   "Lega": "England: English Premier League",
   "Casa": "Brentford",
   "Ospite": "Nottingham Forest",
@@ -4938,6 +4925,19 @@
   "P2": 27.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-10-31",
+  "Ora": "16:00",
+  "Lega": "England - Premier League",
+  "Casa": "Brentford",
+  "Ospite": "Nottm Forest",
+  "Segno": "2",
+  "P1": 35.0,
+  "PX": 28.0,
+  "P2": 37.0,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
  },
  {
   "Data": "2026-10-31",
@@ -7923,9 +7923,9 @@
   "Casa": "Porto",
   "Ospite": "Estoril",
   "Segno": "1",
-  "P1": 72.2,
+  "P1": 71.7,
   "PX": 17.4,
-  "P2": 10.4,
+  "P2": 10.9,
   "Fonti": 2,
   "Elenco": "footymetrics, ratingbet"
  },
