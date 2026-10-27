@@ -130,11 +130,11 @@
   /* Con sei voci, sugli schermi piu' stretti la barra scorre di lato
      invece di troncare i nomi: una voce tagliata non si legge, una che
      sta fuori si raggiunge col dito. Dai 360 px in su ci stanno tutte. */
-  nav.sezioni { gap: 3px; overflow-x: auto; scrollbar-width: none; }
+  nav.sezioni { gap: 2px; overflow-x: auto; scrollbar-width: none; }
   nav.sezioni::-webkit-scrollbar { display: none; }
   nav.sezioni button[data-sez] { flex: 1 0 auto; }
   nav.sezioni button.casa {
-    flex: none; width: 30px; padding: 0;
+    flex: none; width: 28px; padding: 0;
     display: flex; align-items: center; justify-content: center;
     color: var(--tenue);
   }
@@ -571,7 +571,7 @@
     <button data-sez="consensus" class="due">Consenso<br>fonti</button>
     <button data-sez="poisson">Poisson</button>
     <button data-sez="sure">Sure Bets</button>
-    <button data-sez="fonti">Fonti</button>
+    <button data-sez="fonti" class="due">Statistiche<br>fonti</button>
   </nav>
 
   <section id="contenuto"></section>
