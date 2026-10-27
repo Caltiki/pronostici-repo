@@ -1108,8 +1108,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "1X + Over 2.5",
   "Prob": 68.0,
-  "Equa": 1.47,
-  "InSchedina": "si"
+  "Equa": 1.47
  },
  {
   "Data": "2026-10-30",
@@ -1231,7 +1230,8 @@
   "Mercato": "BTTS",
   "Sel": "NoGol",
   "Prob": 66.8,
-  "Equa": 1.5
+  "Equa": 1.5,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-30",
@@ -1432,7 +1432,8 @@
   "Mercato": "OU 2.5",
   "Sel": "Over",
   "Prob": 63.7,
-  "Equa": 1.57
+  "Equa": 1.57,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-30",
@@ -1533,7 +1534,8 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 62.6,
-  "Equa": 1.6
+  "Equa": 1.6,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-30",
@@ -2634,8 +2636,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 53.8,
-  "Equa": 1.86,
-  "InSchedina": "si"
+  "Equa": 1.86
  },
  {
   "Data": "2026-10-30",
@@ -2675,8 +2676,7 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 53.4,
-  "Equa": 1.87,
-  "InSchedina": "si"
+  "Equa": 1.87
  },
  {
   "Data": "2026-10-30",
@@ -4625,6 +4625,26 @@
  },
  {
   "Data": "2026-10-30",
+  "Ora": "19:30",
+  "Campionato": "Germany Bundesliga",
+  "Partita": "Elversberg - Mainz",
+  "Casa": "Elversberg",
+  "Ospite": "Mainz",
+  "Linea_OU": "",
+  "Gol_attesi": 3.28,
+  "Margine": 2.2,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "Under Over",
+  "Mercato": "OU 2.5",
+  "Sel": "Under",
+  "Prob": 36.3,
+  "Equa": 2.75
+ },
+ {
+  "Data": "2026-10-30",
   "Ora": "19:00",
   "Campionato": "Netherlands Eerste Divisie",
   "Partita": "FC Volendam - De Graafschap",
@@ -4805,6 +4825,26 @@
  },
  {
   "Data": "2026-10-30",
+  "Ora": "22:30",
+  "Campionato": "Brazil Serie B",
+  "Partita": "Criciúma - Ponte Preta",
+  "Casa": "Criciúma",
+  "Ospite": "Ponte Preta",
+  "Linea_OU": "",
+  "Gol_attesi": 3.59,
+  "Margine": 4.1,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "Gol NoGol",
+  "Mercato": "BTTS",
+  "Sel": "Gol",
+  "Prob": 33.2,
+  "Equa": 3.01
+ },
+ {
+  "Data": "2026-10-30",
   "Ora": "17:30",
   "Campionato": "Germany 2. Bundesliga",
   "Partita": "Energie Cottbus - VfL Bochum 1848",
@@ -4945,26 +4985,6 @@
  },
  {
   "Data": "2026-10-30",
-  "Ora": "17:30",
-  "Campionato": "Germany 2. Bundesliga",
-  "Partita": "DSC Arminia Bielefeld - Eintracht Braunschweig",
-  "Casa": "DSC Arminia Bielefeld",
-  "Ospite": "Eintracht Braunschweig",
-  "Linea_OU": "",
-  "Gol_attesi": 3.11,
-  "Margine": 1.7,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 24.0,
-  "Equa": 4.17
- },
- {
-  "Data": "2026-10-30",
   "Ora": "19:00",
   "Campionato": "France Ligue 2",
   "Partita": "Nantes - Clermont",
@@ -5002,6 +5022,26 @@
   "Sel": "X",
   "Prob": 21.1,
   "Equa": 4.74
+ },
+ {
+  "Data": "2026-10-30",
+  "Ora": "20:00",
+  "Campionato": "Spain La Liga",
+  "Partita": "Villarreal - Espanyol",
+  "Casa": "Villarreal",
+  "Ospite": "Espanyol",
+  "Linea_OU": "",
+  "Gol_attesi": 3.2,
+  "Margine": 2.4,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 20.6,
+  "Equa": 4.86
  },
  {
   "Data": "2026-10-30",
