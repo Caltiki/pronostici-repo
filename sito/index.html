@@ -139,6 +139,13 @@
     color: var(--tenue);
   }
   nav.sezioni button.casa svg { width: 18px; height: 18px; }
+  /* "Consenso fonti" sta su due righe: su una sola la barra sforava
+     fino ai 390 px e "Fonti" restava mezza fuori. Stessa altezza degli
+     altri pulsanti, che sono allineati sull'altezza piu' grande. */
+  nav.sezioni button.due {
+    line-height: 1.05; padding-top: 4px; padding-bottom: 4px;
+    font-size: clamp(.66rem, 3vw, .8rem);
+  }
   .riga .spunta.vuota { cursor: default; }
   .riga .dettaglio a { color: var(--evidenza); font-weight: 500; }
   .testa a.marchio { color: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent; }
@@ -561,7 +568,7 @@
       </svg>
     </button>
     <button data-sez="prezzi">Pronostici</button>
-    <button data-sez="consensus">Consensus</button>
+    <button data-sez="consensus" class="due">Consenso<br>fonti</button>
     <button data-sez="poisson">Poisson</button>
     <button data-sez="sure">Sure Bets</button>
     <button data-sez="fonti">Fonti</button>
@@ -721,7 +728,7 @@
   // Le funzioni sono dichiarate piu' sotto: in JavaScript esistono gia'.
   var SEZ = {
     prezzi: { indice: "prezzi_index.json", prefisso: "prezzi_", viste: PE_VISTE, ordini: PE_ORDINI,
-              tiene: peTiene, riepilogo: riepilogoPrezzi, riga: rigaPrezzo,
+              tiene: peTiene, riepilogo: riepilogoPrezzi, riga: rigaPrezzo, arricchisci: arricchisciPrezzi,
               nota: " \u00b7 la tacca sulle barre segna il 60%" },
     consensus: { indice: "consensusmedio_index.json", prefisso: "consensusmedio_", viste: CM_VISTE, ordini: CM_ORDINI,
                  tiene: cmTiene, riepilogo: riepilogoConsensus, riga: rigaConsensus, nota: "" },
@@ -1093,6 +1100,80 @@
     return ["largo", "prezzo largo, la probabilità balla"];
   }
 
+  // ------------------------------------------- verso del movimento
+  //
+  // IL CAMPO "Movimento" NON DICE IL VERSO, e nemmeno di quale quota si
+  // parla: e' il movimento del mercato 1X2 della partita (il "Mov" di
+  // AsianOdds), in punti di probabilita', sempre positivo. Su un Over 1.5
+  // scriverci "la quota si e' mossa" faceva pensare alla quota dell'Over.
+  //
+  // Il verso si ricava dal file AsianOdds del giorno, che porta quote di
+  // apertura e attuali (Q1 Apre -> Q1 ...) e la linea gol di apertura e
+  // attuale (OU Apre -> OU). Per ogni riga si dice SOLO quello che la
+  // riguarda: la quota del suo esito, e/o la linea gol.
+  //
+  // Le righe dei Pronostici con Fonte AsianOdds portano i nomi di AsianOdds
+  // tali e quali: si ritrovano per nome esatto, data compresa (506 su 506
+  // il 27 ottobre). Nessuna somiglianza: se non combaciano, niente verso.
+  function arricchisciPrezzi(righe, data) {
+    return leggi("asianodds_" + data + ".json").catch(function () { return null; }).then(function (ao) {
+      if (!Array.isArray(ao) || !Array.isArray(righe)) return righe;
+      var per = {};
+      ao.forEach(function (a) { per[(a.Data || data) + "|" + a.Casa + "|" + a.Ospite] = a; });
+      return righe.map(function (r) {
+        if (r.Fonte !== "AsianOdds") return r;
+        var a = per[(r.Data || data) + "|" + r.Casa + "|" + r.Ospite];
+        if (!a) return r;
+        var o = {};
+        for (var k in r) o[k] = r[k];
+        o._ao = a;
+        return o;
+      });
+    });
+  }
+
+  var NOME_ESITO = { "1": "dell'1", "X": "della X", "2": "del 2" };
+  var ESCLUSO = { "1X": "2", "X2": "1", "12": "X" };
+
+  function versoQuota(a, esito, doppia) {
+    var qa = num(a["Q" + esito + " Apre"]), qc = num(a["Q" + esito]);
+    if (qa == null || qc == null) return null;
+    var di = "La quota " + NOME_ESITO[esito];
+    if (Math.abs(qc - qa) < 0.005) return di + " non si \u00e8 mossa dall'apertura (" + qc.toFixed(2) + ").";
+    var su = qc > qa, pct = (qc / qa - 1) * 100;
+    var t = di + " \u00e8 " + (su ? "salita" : "scesa") + " da " + qa.toFixed(2) + " a " + qc.toFixed(2) +
+      " dall'apertura (" + (pct > 0 ? "+" : "") + pct.toFixed(0) + "%)";
+    if (doppia) {
+      // Nella doppia la quota che conta e' quella dell'esito escluso.
+      return t + ": \u00e8 l'esito che la " + doppia + " lascia fuori, quindi il mercato crede " +
+        (su ? "di pi\u00f9" : "di meno") + " nella " + doppia + ".";
+    }
+    return t + ": il mercato ci crede " + (su ? "di meno" : "di pi\u00f9") + ".";
+  }
+
+  function versoLinea(a) {
+    var la = num(a["OU Apre"]), lc = num(a.OU);
+    if (la == null || lc == null) return null;
+    if (Math.abs(lc - la) < 0.001) return "La linea gol del book non si \u00e8 mossa dall'apertura (" + lc + ").";
+    return "La linea gol del book \u00e8 " + (lc > la ? "salita" : "scesa") + " da " + la + " a " + lc +
+      " dall'apertura: il mercato si aspetta " + (lc > la ? "pi\u00f9" : "meno") + " gol.";
+  }
+
+  function movimentoVersi(r) {
+    var a = r._ao;
+    if (!a) return [];
+    var sel = String(r.Sel || ""), merc = String(r.Mercato || ""), g = String(r.Gruppo || "");
+    var out = [];
+    var esito = sel.split(" + ")[0].trim();
+    if (g === "1X2" || g === "Combo") {
+      if (/^[1X2]$/.test(esito)) out.push(versoQuota(a, esito));
+      else if (ESCLUSO[esito]) out.push(versoQuota(a, ESCLUSO[esito], esito));
+    }
+    var gol = g === "Under Over" || g === "Gol NoGol" || merc.indexOf("OU") === 0 || / \+ (Over|Under|Gol|NoGol)/.test(sel);
+    if (gol) out.push(versoLinea(a));
+    return out.filter(Boolean);
+  }
+
   function chiave(r) {
     return [r.Data, r.Partita, r.Mercato, r.Sel].join("|");
   }
@@ -1118,7 +1199,9 @@
       det.push("<p>Linea principale del book " + esc(linea) + " – gol attesi " + f2(gol) +
         ". È la linea della partita, non quella di questa riga.</p>");
     }
-    if (mov) det.push("<p>La quota si è mossa di " + f1(mov) + " punti dall'apertura.</p>");
+    var versi = movimentoVersi(r);
+    if (versi.length) versi.forEach(function (t) { det.push("<p>" + t + "</p>"); });
+    else if (mov) det.push("<p>Il mercato 1X2 di questa partita si \u00e8 mosso di " + f1(mov) + " punti dall'apertura.</p>");
     if (merc.indexOf("OU") === 0) {
       det.push('<p class="avviso">Su 563 partite finite il modello ha sottostimato gli Over di 4.6 punti: qui semmai il numero è basso.</p>');
     } else if (sel.indexOf("1X") >= 0 || sel.indexOf("X2") >= 0) {
