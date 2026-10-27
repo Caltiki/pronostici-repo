@@ -1211,7 +1211,8 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 66.4,
-  "Equa": 1.51
+  "Equa": 1.51,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-29",
@@ -1251,7 +1252,8 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 65.3,
-  "Equa": 1.53
+  "Equa": 1.53,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-29",
@@ -1331,8 +1333,7 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 65.0,
-  "Equa": 1.54,
-  "InSchedina": "si"
+  "Equa": 1.54
  },
  {
   "Data": "2026-10-29",
@@ -1914,8 +1915,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "1X + Over 2.5",
   "Prob": 60.4,
-  "Equa": 1.65,
-  "InSchedina": "si"
+  "Equa": 1.65
  },
  {
   "Data": "2026-10-29",
@@ -2215,8 +2215,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 58.0,
-  "Equa": 1.72,
-  "InSchedina": "si"
+  "Equa": 1.72
  },
  {
   "Data": "2026-10-29",
@@ -2236,8 +2235,7 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 57.9,
-  "Equa": 1.73,
-  "InSchedina": "si"
+  "Equa": 1.73
  },
  {
   "Data": "2026-10-29",
@@ -2597,7 +2595,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 54.8,
-  "Equa": 1.82
+  "Equa": 1.82,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-29",
@@ -3138,7 +3137,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "1X + Over 2.5",
   "Prob": 50.5,
-  "Equa": 1.98
+  "Equa": 1.98,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-29",
@@ -4682,14 +4682,14 @@
  },
  {
   "Data": "2026-10-29",
-  "Ora": "18:30",
-  "Campionato": "Italy Serie A",
-  "Partita": "Frosinone - Lecce",
-  "Casa": "Frosinone",
-  "Ospite": "Lecce",
+  "Ora": "00:30",
+  "Campionato": "United States Major League Soccer",
+  "Partita": "Charlotte - Montréal",
+  "Casa": "Charlotte",
+  "Ospite": "Montréal",
   "Linea_OU": "",
-  "Gol_attesi": 3.35,
-  "Margine": 1.6,
+  "Gol_attesi": 3.48,
+  "Margine": 2.1,
   "Movimento": null,
   "Principale": "",
   "Schedina": "si",
@@ -4697,28 +4697,8 @@
   "Gruppo": "1X2",
   "Mercato": "1X2",
   "Sel": "X",
-  "Prob": 22.4,
-  "Equa": 4.47
- },
- {
-  "Data": "2026-10-29",
-  "Ora": "18:00",
-  "Campionato": "Finland Veikkausliiga",
-  "Partita": "KuPS - Gnistan",
-  "Casa": "KuPS",
-  "Ospite": "Gnistan",
-  "Linea_OU": "",
-  "Gol_attesi": 3.04,
-  "Margine": 4.0,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 20.2,
-  "Equa": 4.94
+  "Prob": 19.6,
+  "Equa": 5.1
  },
  {
   "Data": "2026-10-29",
@@ -4759,6 +4739,26 @@
   "Sel": "X",
   "Prob": 18.2,
   "Equa": 5.49
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "03:30",
+  "Campionato": "United States Major League Soccer",
+  "Partita": "Vancouver - San Diego",
+  "Casa": "Vancouver",
+  "Ospite": "San Diego",
+  "Linea_OU": "",
+  "Gol_attesi": 3.73,
+  "Margine": 3.8,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 17.5,
+  "Equa": 5.71
  },
  {
   "Data": "2026-10-29",
