@@ -147,6 +147,16 @@
     font-size: clamp(.66rem, 3vw, .8rem);
   }
   .riga .spunta.vuota { cursor: default; }
+  /* Presa / sbagliata: colore di stato PIU' simbolo e parola nel title,
+     mai il colore da solo. */
+  .pron-lista { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+  .esito-pill {
+    font-size: .72rem; line-height: 1.2; padding: 3px 7px; border-radius: 999px;
+    border: 1px solid var(--bordo); color: var(--tenue); white-space: nowrap;
+  }
+  .esito-pill b { font-weight: 700; }
+  .esito-pill.presa { background: var(--buono-tenue); color: var(--buono); border-color: transparent; }
+  .esito-pill.sbagliata { background: color-mix(in srgb, var(--male) 12%, transparent); color: var(--male); border-color: transparent; }
   .riga .dettaglio a { color: var(--evidenza); font-weight: 500; }
   .testa a.marchio { color: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent; }
   .testa a.marchio:active { opacity: .7; }
@@ -707,9 +717,16 @@
   // anche con partite di giorni diversi.
   var scelte = {};
 
+  // "Statistiche fonti" ha due viste: il riepilogo e le partite una per una.
+  var FONTI = { vista: "riepilogo", data: null, fonte: "" };
+
   function leggiHash() {
     var p = location.hash.replace(/^#/, "").split("/");
     if (SEZ[p[0]] || p[0] === "fonti") stato.sez = p[0];
+    if (stato.sez === "fonti") {
+      FONTI.vista = p[1] === "partite" ? "partite" : "riepilogo";
+      if (/^\d{4}-\d{2}-\d{2}$/.test(p[2] || "")) FONTI.data = p[2];
+    }
     if (stato.sez !== "fonti") {
       if (/^\d{4}-\d{2}-\d{2}$/.test(p[1] || "")) stato.data[stato.sez] = p[1];
       var viste = SEZ[stato.sez].viste;
@@ -720,6 +737,8 @@
     var h = stato.sez;
     if (stato.sez !== "fonti") {
       h += "/" + (stato.data[stato.sez] || "") + "/" + stato.vista[stato.sez];
+    } else if (FONTI.vista === "partite") {
+      h += "/partite/" + (FONTI.data || "");
     }
     if (location.hash !== "#" + h) history.replaceState(null, "", "#" + h);
   }
@@ -1682,7 +1701,28 @@
     return h + "</p>";
   }
 
+  var FO_VISTE = [
+    ["riepilogo", "Riepilogo",
+     "I totali per fonte, misurati sulle partite gi\u00e0 finite."],
+    ["partite", "Partita per partita",
+     "Ogni partita finita, con il risultato e quello che avevano detto le fonti. " +
+     "Stesse regole e stesse partite del riepilogo: qui si vede da dove vengono i numeri."]
+  ];
+
+  function testaFonti() {
+    var v = FO_VISTE.filter(function (x) { return x[0] === FONTI.vista; })[0];
+    return chipsHtml(FO_VISTE, FONTI.vista, "data-fvista") + '<p class="descr">' + esc(v[2]) + "</p>";
+  }
+  function collegaTestaFonti() {
+    $cont.querySelectorAll("[data-fvista]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        FONTI.vista = b.dataset.fvista; stato.cerca = ""; stato.limite = PASSO; disegna();
+      });
+    });
+  }
+
   function disegnaFonti() {
+    if (FONTI.vista === "partite") return disegnaPartite();
     $cont.innerHTML = messaggio("vuoto", "Carico&hellip;");
     Promise.all([
       leggi("classifica_fonti.json").catch(function () { return null; }),
@@ -1712,9 +1752,152 @@
           "La tacca sulle barre segna il 60%.</p>";
         h += d.fonti.map(schedaFonte).join("");
       }
-      $cont.innerHTML = h;
+      $cont.innerHTML = testaFonti() + h;
+      collegaTestaFonti();
     });
   }
+
+  // ------------------------------------------- partita per partita
+  //
+  // I file risultati_<data>.json li scrive archivio_risultati.py con le
+  // regole di misura_fonti.py: quali partite sono finite, come si legge un
+  // pronostico, quando e' preso. Qui si mostra e basta.
+
+  function etichettaPron(x) {
+    var s = String(x.Sel || ""), m = x.Mercato;
+    if (m === "OU") return (s === "OVER" ? "Over" : "Under") + (x.Linea != null ? " " + x.Linea : "");
+    if (m === "BTTS") return s === "SI" ? "Gol" : "NoGol";
+    if (m === "SEGNA") return s === "CASA" ? "Segna casa" : "Segna ospite";
+    return s;
+  }
+
+  function pillPron(x) {
+    var cls = x.Esito === "presa" ? "presa" : x.Esito === "sbagliata" ? "sbagliata" : "rimborso";
+    var segno = x.Esito === "presa" ? "\u2713" : x.Esito === "sbagliata" ? "\u2717" : "\u21ba";
+    var testo = x.Esito === "presa" ? "presa" : x.Esito === "sbagliata" ? "sbagliata" : "rimborso";
+    return '<span class="esito-pill ' + cls + '" title="' + esc(x.Nome) + ": " + esc(etichettaPron(x)) + ", " + testo + '">' +
+      "<b>" + segno + "</b> " + esc(x.Nome) + " \u00b7 " + esc(etichettaPron(x)) + "</span>";
+  }
+
+  function rigaPartitaFinita(p) {
+    var prons = FONTI.fonte ? p.Pronostici.filter(function (x) { return x.Fonte === FONTI.fonte; }) : p.Pronostici;
+    var m = p.Mercato;
+    var det = [];
+    if (p.Lega) det.push("<p>" + esc(p.Lega) + "</p>");
+    det.push("<p>Risultato da " + esc(p.Fonte_Risultato) + ".</p>");
+    if (m) {
+      det.push("<p>Mercato alla chiusura (Shin): 1 " + f0(m.P1) + "% \u00b7 X " + f0(m.PX) + "% \u00b7 2 " + f0(m.P2) +
+        "%. Favorito: " + esc(m.Favorito) + ", " + (m.Preso ? "uscito" : "non uscito") + ".</p>");
+    } else {
+      det.push("<p>Nessuna quota di chiusura archiviata per questa partita.</p>");
+    }
+    return '<div class="riga"><details><summary>' +
+      '<span class="segno">' + esc(p.Esito) + "</span>" +
+      '<div class="corpo">' +
+      '<div class="alto"><span>' + esc(p.Ora || "") + "</span>" + (p.Lega ? '<span class="chip">' + esc(p.Lega) + "</span>" : "") + "</div>" +
+      '<div class="partita">' + esc(p.Casa) + " \u2013 " + esc(p.Ospite) + "</div>" +
+      '<div class="pron-lista">' + prons.map(pillPron).join("") + "</div>" +
+      (m ? tripla("mercato", m.P1, m.PX, m.P2) : "") +
+      "</div>" +
+      '<div class="numero"><b>' + esc(p.Gol_Casa) + "\u2013" + esc(p.Gol_Ospite) + "</b><span>finale</span></div>" +
+      "</summary>" +
+      '<div class="dettaglio">' + det.join("") + "</div>" +
+      "</details></div>";
+  }
+
+  function disegnaPartite() {
+    $cont.innerHTML = testaFonti() + messaggio("vuoto", "Carico&hellip;");
+    collegaTestaFonti();
+    leggi("risultati_index.json").then(function (ix) {
+      if (stato.sez !== "fonti" || FONTI.vista !== "partite") return;
+      var date = (ix.date || []).slice().sort().reverse();
+      document.getElementById("aggiornato").textContent = "Risultati aggiornati il " + (ix.aggiornato || "?");
+      if (!date.length) {
+        $cont.innerHTML = testaFonti() + messaggio("vuoto", "Nessuna giornata con risultati.");
+        collegaTestaFonti();
+        return;
+      }
+      if (date.indexOf(FONTI.data) < 0) FONTI.data = date[0];
+      var d = FONTI.data;
+      scriviHash();
+      var opz = [["", "Tutte le fonti"]].concat(Object.keys(NOMI_FONTI).map(function (k) { return [k, NOMI_FONTI[k]]; }));
+      var testa = testaFonti() +
+        chipsHtml(date.map(function (x) { return [x, etichettaData(x)]; }), d, "data-fdata") +
+        '<div class="strumenti">' +
+        '<input type="search" id="cerca" placeholder="Squadra o campionato" value="' + esc(stato.cerca) + '" autocomplete="off">' +
+        '<select id="fonte-sel" aria-label="Fonte">' + opz.map(function (o) {
+          return '<option value="' + o[0] + '"' + (o[0] === FONTI.fonte ? " selected" : "") + ">" + esc(o[1]) + "</option>";
+        }).join("") + "</select></div>";
+      $cont.innerHTML = testa + '<div id="righe">' + messaggio("vuoto", "Carico&hellip;") + "</div>";
+      collegaTestaFonti();
+      $cont.querySelectorAll("[data-fdata]").forEach(function (b) {
+        b.addEventListener("click", function () { FONTI.data = b.dataset.fdata; stato.limite = PASSO; disegna(); });
+      });
+      var att = $cont.querySelector('[data-fdata][aria-pressed="true"]');
+      if (att && att.scrollIntoView) att.scrollIntoView({ block: "nearest", inline: "center" });
+      return leggi("risultati_" + d + ".json").then(function (partite) {
+        if (stato.sez !== "fonti" || FONTI.vista !== "partite" || FONTI.data !== d) return;
+        var t = null, c = document.getElementById("cerca");
+        c.addEventListener("input", function () {
+          clearTimeout(t);
+          t = setTimeout(function () { stato.cerca = c.value.trim(); stato.limite = PASSO; righePartite(partite); }, 150);
+        });
+        document.getElementById("fonte-sel").addEventListener("change", function (e) {
+          FONTI.fonte = e.target.value; stato.limite = PASSO; righePartite(partite);
+        });
+        righePartite(partite);
+      });
+    }).catch(function (e) {
+      $cont.innerHTML = testaFonti() + messaggio("errore",
+        "Non riesco a leggere i risultati (" + esc(e.message) + "). Arrivano col primo giro notturno dopo l'aggiornamento del workflow.");
+      collegaTestaFonti();
+    });
+  }
+
+  function righePartite(partite) {
+    var $r = document.getElementById("righe");
+    if (!$r) return;
+    var tutte = Array.isArray(partite) ? partite : [];
+    var q = stato.cerca.toLowerCase();
+    var vis = tutte.filter(function (p) {
+      if (FONTI.fonte && !p.Pronostici.some(function (x) { return x.Fonte === FONTI.fonte; })) return false;
+      return !q || (p.Casa + " " + p.Ospite + " " + p.Lega).toLowerCase().indexOf(q) >= 0;
+    });
+    // I conti della giornata, su quello che si vede: con una fonte scelta
+    // diventano i conti di quella fonte.
+    var prese = 0, su = 0, conM = 0, fav = 0;
+    vis.forEach(function (p) {
+      p.Pronostici.forEach(function (x) {
+        if (FONTI.fonte && x.Fonte !== FONTI.fonte) return;
+        if (x.Esito === "rimborso") return;
+        su++; if (x.Esito === "presa") prese++;
+      });
+      if (p.Mercato) { conM++; if (p.Mercato.Preso) fav++; }
+    });
+    var html = tessere([
+      [String(vis.length), "partite finite"],
+      [su ? Math.round(100 * prese / su) + "%" : "-", "pronostici presi, " + prese + " su " + su],
+      [conM ? Math.round(100 * fav / conM) + "%" : "-", "favorito del book uscito, " + fav + " su " + conM]
+    ]);
+    if (!vis.length) {
+      $r.innerHTML = html + messaggio("vuoto", tutte.length ? "Nessuna partita corrisponde." : "Nessuna partita finita in questa giornata.");
+      return;
+    }
+    var mostrate = vis.slice(0, stato.limite);
+    html += '<p class="conta">' + vis.length + " partite \u00b7 \u2713 presa, \u2717 sbagliata, \u21ba rimborso</p>" +
+      '<div class="lista">' + mostrate.map(rigaPartitaFinita).join("") + "</div>";
+    if (vis.length > mostrate.length) {
+      html += '<button type="button" class="altre" id="altre">Mostra altre ' +
+        Math.min(PASSO, vis.length - mostrate.length) + " (ne restano " + (vis.length - mostrate.length) + ")</button>";
+    }
+    $r.innerHTML = html;
+    var a = document.getElementById("altre");
+    if (a) a.addEventListener("click", function () { stato.limite += PASSO; righePartite(partite); });
+  }
+
+  // Le fonti che misura misura_fonti.py, con i nomi di "Statistiche fonti".
+  var NOMI_FONTI = { webpronostici: "WebPronostici", soccersite: "SoccerSite", xgaura: "xGaura",
+                     ratingbet: "RatingBet", sportytrader: "Sportytrader", statarea: "Statarea" };
 
   function schedaMedio(b) {
     var v = verdetto(b.mercato);
@@ -1825,6 +2008,7 @@
     stato.ordine = { prezzi: "file", consensus: "file", poisson: "file", sure: "file" };
     stato.cerca = "";
     stato.limite = PASSO;
+    FONTI.vista = "riepilogo"; FONTI.data = null; FONTI.fonte = "";
     window.scrollTo(0, 0);
     disegna();
   }
