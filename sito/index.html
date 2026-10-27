@@ -701,15 +701,28 @@
   var PO_ORDINI = [["file", "Per orario"], ["prob", "Per probabilit\u00e0"], ["scarto", "Per scarto"], ["gol", "Per gol attesi"]];
 
   var PE_ORDINI = [["file", "Per probabilità"], ["ora", "Per orario"], ["margine", "Per margine"]];
+  // IL CONSENSUS PER ACCORDO: le partite su cui Statarea e WebPronostici
+  // dicono la stessa cosa, il "[*] Consensus" di Kodi. Sta dentro "Consenso
+  // fonti" come seconda strada, non come sezione a se': sono due modi di
+  // mettere insieme le fonti, e stanno meglio vicini.
+  var AC_VISTE = [
+    ["tutte", "Tutte",
+     "Le partite su cui Statarea e WebPronostici concordano: il pronostico combinato \u00e8 " +
+     "quello che le due hanno in comune. Copre poche partite ma dice un segno. Come va, misurato, " +
+     "\u00e8 in Statistiche fonti \u2192 Consensus per accordo."]
+  ];
+  var AC_ORDINI = [["file", "Per orario"], ["prob", "Per probabilit\u00e0"]];
+  var GRUPPO_CONSENSO = [["consensus", "Media delle fonti"], ["accordo", "Statarea + WebPronostici"]];
+
   var CM_ORDINI = [["file", "Per orario"], ["prob", "Per probabilit\u00e0"], ["scarto", "Per scarto"], ["fonti", "Per n. fonti"]];
 
   // ------------------------------------------------------------ stato
 
   var stato = {
     sez: "prezzi",
-    data: { prezzi: null, consensus: null, poisson: null, sure: null },
-    vista: { prezzi: "schedina", consensus: "mercato", poisson: "tutte", sure: "tutte" },
-    ordine: { prezzi: "file", consensus: "file", poisson: "file", sure: "file" },
+    data: { prezzi: null, consensus: null, accordo: null, poisson: null, sure: null },
+    vista: { prezzi: "schedina", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" },
+    ordine: { prezzi: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" },
     cerca: "",
     limite: PASSO
   };
@@ -751,6 +764,8 @@
               nota: " \u00b7 la tacca sulle barre segna il 60%" },
     consensus: { indice: "consensusmedio_index.json", prefisso: "consensusmedio_", viste: CM_VISTE, ordini: CM_ORDINI,
                  tiene: cmTiene, riepilogo: riepilogoConsensus, riga: rigaConsensus, nota: "" },
+    accordo: { indice: "consensus_index.json", prefisso: "consensus_", viste: AC_VISTE, ordini: AC_ORDINI,
+               tiene: function () { return true; }, riepilogo: riepilogoAccordo, riga: rigaAccordo, nota: "" },
     poisson: { indice: "poisson_index.json", prefisso: "poisson_", viste: PO_VISTE, ordini: PO_ORDINI,
                tiene: poTiene, riepilogo: riepilogoPoisson, riga: rigaPoisson, nota: "" },
     sure: { indice: "fpnet_index.json", prefisso: "fpnet_", viste: SB_VISTE, ordini: SB_ORDINI,
@@ -833,7 +848,8 @@
   function disegna() {
     scriviHash();
     document.querySelectorAll("nav.sezioni button[data-sez]").forEach(function (b) {
-      b.setAttribute("aria-current", String(b.dataset.sez === stato.sez));
+      var accesa = stato.sez === "accordo" ? "consensus" : stato.sez;
+      b.setAttribute("aria-current", String(b.dataset.sez === accesa));
     });
     if (stato.sez === "fonti") return disegnaFonti();
     return disegnaGiornata(stato.sez);
@@ -861,8 +877,9 @@
       scriviHash();
 
       var vista = viste.filter(function (v) { return v[0] === stato.vista[sez]; })[0];
-      var testa = chipsHtml(date.map(function (x) { return [x, etichettaData(x)]; }), d, "data-data") +
-        chipsHtml(viste, vista[0], "data-vista") +
+      var testa = (sez === "consensus" || sez === "accordo" ? chipsHtml(GRUPPO_CONSENSO, sez, "data-gruppo") : "") +
+        chipsHtml(date.map(function (x) { return [x, etichettaData(x)]; }), d, "data-data") +
+        (viste.length > 1 ? chipsHtml(viste, vista[0], "data-vista") : "") +
         '<p class="descr">' + esc(vista[2]) + "</p>" +
         (sez === "poisson" ? notaCampo(ix) : "") +
         strumentiHtml(ordini, stato.ordine[sez]);
@@ -883,6 +900,16 @@
   }
 
   function collegaTesta(sez) {
+    // Passando da una strada all'altra si resta sulla stessa giornata, se
+    // l'altra ce l'ha.
+    $cont.querySelectorAll("[data-gruppo]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var nuova = b.dataset.gruppo;
+        if (nuova === sez) return;
+        if (!stato.data[nuova]) stato.data[nuova] = stato.data[sez];
+        stato.sez = nuova; stato.cerca = ""; stato.limite = PASSO; disegna();
+      });
+    });
     $cont.querySelectorAll("[data-data]").forEach(function (b) {
       b.addEventListener("click", function () {
         stato.data[sez] = b.dataset.data; stato.limite = PASSO; disegna();
@@ -1072,7 +1099,11 @@
     var s = String(r.Segno || "").toUpperCase();
     return num(s === "1" ? r.P1 : s === "X" ? r.PX : s === "2" ? r.P2 : null);
   }
-  function probOrdine(r) { return r._prob != null ? r._prob * 100 : probSegno(r); }
+  function probOrdine(r) {
+    if (r._prob != null) return r._prob * 100;
+    if (r["Pron Combinato"] != null) return probCombinato(r);
+    return probSegno(r);
+  }
   function scartoDi(r) { var v = num(r.Scarto); return v != null ? v : num(r.Scarto_Segno); }
 
   function vuotoPerVista(sez, vista, n, data) {
@@ -1568,6 +1599,83 @@
     return null;
   }
 
+  // ------------------------------------------------- consensus per accordo
+
+  // La probabilita' del pronostico combinato, come la calcola Kodi: sulle
+  // doppie e' la somma dei due esiti.
+  var CAMPI_COMB = { "1": ["P_1 %"], "X": ["P_X %"], "2": ["P_2 %"],
+                     "1X": ["P_1 %", "P_X %"], "12": ["P_1 %", "P_2 %"], "X2": ["P_X %", "P_2 %"] };
+  function probCombinato(r) {
+    var c = CAMPI_COMB[String(r["Pron Combinato"] || "").toUpperCase()];
+    if (!c) return null;
+    var v = c.map(function (k) { return num(r[k]); });
+    return v.some(function (x) { return x == null; }) ? null : v.reduce(function (a, b) { return a + b; }, 0);
+  }
+
+  function riepilogoAccordo(v) {
+    var secchi = v.filter(function (r) { return /^[1X2]$/.test(String(r["Pron Combinato"] || "").toUpperCase()); }).length;
+    var q = mediana(v.map(function (r) { return num(r["Quota WP"]); }));
+    return tessere([
+      [String(v.length), "partite d'accordo"],
+      [String(secchi), "su un segno secco (1, X o 2)"],
+      [q == null ? "-" : q.toFixed(2), "quota WebPronostici mediana"]
+    ]) + legenda();
+  }
+
+  // Le quote AsianOdds, quando consensus.py ha agganciato la partita: si
+  // mostrano come le scrive il file, senza nessun aggancio in pi\u00f9 qui.
+  function righeAO(r) {
+    var out = [];
+    var d = ["1", "X", "2"].map(function (e) { return [e, num(r["AO Drift " + e])]; })
+      .filter(function (x) { return x[1] != null; });
+    if (d.length) {
+      out.push("<p>Quote AsianOdds dall'apertura: " + d.map(function (x) {
+        return x[0] + " " + (x[1] > 0 ? "+" : "") + x[1].toFixed(0) + "%";
+      }).join(" \u00b7 ") + " (quota salita = il mercato ci crede meno).</p>");
+    }
+    var la = num(r["AO OU Open"]), lc = num(r["AO OU"]);
+    if (lc != null) {
+      out.push("<p>Linea gol " + (la != null && la !== lc ? la + " \u2192 " + lc + ", il mercato si aspetta " +
+        (lc > la ? "pi\u00f9" : "meno") + " gol" : lc) + ".</p>");
+    }
+    var aa = num(r["AO AH Open"]), ac = num(r["AO AH"]);
+    var sg = function (x) { return (x > 0 ? "+" : "") + x.toFixed(2); };
+    if (ac != null) out.push("<p>Handicap asiatico " + (aa != null && aa !== ac ? sg(aa) + " \u2192 " + sg(ac) : sg(ac)) + ".</p>");
+    var ec = num(r["AO Elo Casa"]), eo = num(r["AO Elo Osp"]);
+    if (ec != null && eo != null) out.push("<p>Elo: " + ec + " \u2013 " + eo + ".</p>");
+    return out;
+  }
+
+  function rigaAccordo(r) {
+    var pron = String(r["Pron Combinato"] || "").toUpperCase();
+    var p1 = num(r["P_1 %"]), px = num(r["P_X %"]), p2 = num(r["P_2 %"]);
+    var pc = probCombinato(r);
+    var det = [];
+    det.push("<p>Statarea: " + esc(r["Pron Statarea"]) + " \u00b7 WebPronostici: " + esc(r["Pron WebPron"]) +
+      " \u2192 combinato " + esc(pron) + "</p>");
+    det.push("<p>1X2: 1 " + f0(p1) + "% \u00b7 X " + f0(px) + "% \u00b7 2 " + f0(p2) + "%</p>");
+    var gol = [["Over 1.5", r["Over1.5 %"]], ["Over 2.5", r["Over2.5 %"]], ["Gol", r["BTTS %"]]]
+      .filter(function (x) { return num(x[1]) != null; }).map(function (x) { return x[0] + " " + f0(num(x[1])) + "%"; });
+    if (gol.length) det.push("<p>" + gol.join(" \u00b7 ") + "</p>");
+    if (String(r["Quota WP"] || "").trim()) det.push("<p>Quota WebPronostici: " + esc(r["Quota WP"]) + "</p>");
+    if (String(r["xG Casa"] || "").trim() || String(r["xG Ospite"] || "").trim()) {
+      det.push("<p>xG: " + esc(r["xG Casa"] || "-") + " \u2013 " + esc(r["xG Ospite"] || "-") + "</p>");
+    }
+    righeAO(r).forEach(function (x) { det.push(x); });
+    return '<div class="riga"><details><summary>' +
+      '<span class="segno">' + esc(pron || "?") + "</span>" +
+      '<div class="corpo">' +
+      '<div class="alto"><span>' + esc(r.Ora || "") + "</span></div>" +
+      '<div class="partita">' + esc(r.Casa) + " \u2013 " + esc(r.Ospite) + "</div>" +
+      '<div class="sel">Statarea ' + esc(r["Pron Statarea"]) + " \u00b7 WebPronostici " + esc(r["Pron WebPron"]) + "</div>" +
+      tripla("fonti", p1, px, p2) +
+      "</div>" +
+      '<div class="numero"><b>' + f0(pc) + "%</b><span>sul " + esc(pron) + "</span></div>" +
+      "</summary>" +
+      '<div class="dettaglio">' + det.join("") + "</div>" +
+      "</details></div>";
+  }
+
   // ------------------------------------------------------- sure bets
 
   var URL_LOGHI = "https://raw.githubusercontent.com/" + REPO + "/main/loghi.json";
@@ -2003,9 +2111,9 @@
   function vaiHome(e) {
     if (e) e.preventDefault();
     stato.sez = "prezzi";
-    stato.data = { prezzi: null, consensus: null, poisson: null, sure: null };
-    stato.vista = { prezzi: "schedina", consensus: "mercato", poisson: "tutte", sure: "tutte" };
-    stato.ordine = { prezzi: "file", consensus: "file", poisson: "file", sure: "file" };
+    stato.data = { prezzi: null, consensus: null, accordo: null, poisson: null, sure: null };
+    stato.vista = { prezzi: "schedina", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" };
+    stato.ordine = { prezzi: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" };
     stato.cerca = "";
     stato.limite = PASSO;
     FONTI.vista = "riepilogo"; FONTI.data = null; FONTI.fonte = "";
