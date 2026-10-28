@@ -595,7 +595,7 @@
 <div class="multipla" id="multipla" hidden>
   <div class="dentro">
     <div class="riga1">
-      <span id="m-gambe"></span>
+      <span id="m-eventi"></span>
       <b id="m-equa"></b>
     </div>
     <p id="m-stima"></p>
@@ -1288,10 +1288,10 @@
     ridisegnaRighe();
   });
 
-  // Il margine si compone a ogni gamba: la quota equa cresce col
+  // Il margine si compone a ogni evento: la quota equa cresce col
   // prodotto, quella pagata perde il margine di ogni partita. La stima
   // usa il margine riportato per ciascuna riga, con la stessa aritmetica
-  // del documento di stato (1.60 equa, 6% x 10 gambe -> 0.89).
+  // del documento di stato (1.60 equa, 6% x 10 eventi -> 0.89).
   function aggiornaMultipla() {
     var r = Object.keys(scelte).map(function (k) { return scelte[k]; });
     if (!r.length) { $m.hidden = true; document.body.style.paddingBottom = ""; return; }
@@ -1304,8 +1304,8 @@
       if (m == null) { senzaMarg++; pagata *= e || 1; } else pagata *= (e || 1) / (1 + m / 100);
     });
     var perdita = (pagata / equa - 1) * 100;
-    document.getElementById("m-gambe").textContent =
-      r.length + (r.length === 1 ? " gamba" : " gambe") + " · probabilità " + (prob * 100).toFixed(1) + "%";
+    document.getElementById("m-eventi").textContent =
+      r.length + (r.length === 1 ? " evento" : " eventi") + " · probabilità " + (prob * 100).toFixed(1) + "%";
     document.getElementById("m-equa").textContent = "equa " + equa.toFixed(2);
     document.getElementById("m-stima").textContent =
       "Col margine di ciascuna partita il book pagherebbe circa " + pagata.toFixed(2) +
