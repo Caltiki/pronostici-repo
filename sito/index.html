@@ -714,15 +714,32 @@
   var AC_ORDINI = [["file", "Per orario"], ["prob", "Per probabilit\u00e0"]];
   var GRUPPO_CONSENSO = [["consensus", "Media delle fonti"], ["accordo", "Statarea + WebPronostici"]];
 
+  // IL MERCATO ASIANODDS, la sezione "[A] AsianOdds" di Kodi. Sta dentro
+  // "Pronostici" come seconda scheda: i prezzi equi nascono da queste
+  // stesse quote. "Notevole" e "Affidabile" li decide asianodds_ci.py e qui
+  // si leggono soltanto, come fa l'addon: la regola vive in un posto solo.
+  var MK_VISTE = [
+    ["aff", "Affidabili",
+     "Margine basso e i due de-vig concordi: le probabilit\u00e0 pi\u00f9 attendibili. Attendibile non vuol dire " +
+     "conveniente: sono le stime migliori del mercato, quindi il prezzo le incorpora gi\u00e0. Servono come metro."],
+    ["mov", "Movimenti",
+     "Solo le partite dove il mercato si \u00e8 mosso davvero. Conta anche il margine: un movimento piccolo su un " +
+     "mercato quotato con cura pesa pi\u00f9 di uno grande su una lega minore, dove spesso \u00e8 solo la correzione dell'apertura."],
+    ["tutte", "Tutte",
+     "Tutte le partite delle prossime 24 ore. Quote 1xBet, solo informative: non entrano nel pronostico."]
+  ];
+  var MK_ORDINI = [["file", "Per orario"], ["mov", "Per movimento"], ["margine", "Per margine"]];
+  var GRUPPO_PRONOSTICI = [["prezzi", "Prezzi equi"], ["mercato", "Mercato"]];
+
   var CM_ORDINI = [["file", "Per orario"], ["prob", "Per probabilit\u00e0"], ["scarto", "Per scarto"], ["fonti", "Per n. fonti"]];
 
   // ------------------------------------------------------------ stato
 
   var stato = {
     sez: "prezzi",
-    data: { prezzi: null, consensus: null, accordo: null, poisson: null, sure: null },
-    vista: { prezzi: "schedina", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" },
-    ordine: { prezzi: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" },
+    data: { prezzi: null, mercato: null, consensus: null, accordo: null, poisson: null, sure: null },
+    vista: { prezzi: "schedina", mercato: "aff", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" },
+    ordine: { prezzi: "file", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" },
     cerca: "",
     limite: PASSO
   };
@@ -764,6 +781,8 @@
               nota: " \u00b7 la tacca sulle barre segna il 60%" },
     consensus: { indice: "consensusmedio_index.json", prefisso: "consensusmedio_", viste: CM_VISTE, ordini: CM_ORDINI,
                  tiene: cmTiene, riepilogo: riepilogoConsensus, riga: rigaConsensus, nota: "" },
+    mercato: { indice: "asianodds_index.json", prefisso: "asianodds_", viste: MK_VISTE, ordini: MK_ORDINI,
+               tiene: mkTiene, riepilogo: riepilogoMercato, riga: rigaMercato, nota: "", daOggi: true },
     accordo: { indice: "consensus_index.json", prefisso: "consensus_", viste: AC_VISTE, ordini: AC_ORDINI,
                tiene: function () { return true; }, riepilogo: riepilogoAccordo, riga: rigaAccordo, nota: "" },
     poisson: { indice: "poisson_index.json", prefisso: "poisson_", viste: PO_VISTE, ordini: PO_ORDINI,
@@ -848,7 +867,7 @@
   function disegna() {
     scriviHash();
     document.querySelectorAll("nav.sezioni button[data-sez]").forEach(function (b) {
-      var accesa = stato.sez === "accordo" ? "consensus" : stato.sez;
+      var accesa = stato.sez === "accordo" ? "consensus" : stato.sez === "mercato" ? "prezzi" : stato.sez;
       b.setAttribute("aria-current", String(b.dataset.sez === accesa));
     });
     if (stato.sez === "fonti") return disegnaFonti();
@@ -866,6 +885,10 @@
     $cont.innerHTML = messaggio("vuoto", "Carico&hellip;");
     leggi(indice).then(function (ix) {
       var date = (ix.date || []).slice().sort();
+      if (conf.daOggi) {
+        var futuri = date.filter(function (x) { return x >= oggi(); });
+        if (futuri.length) date = futuri;
+      }
       document.getElementById("aggiornato").textContent =
         "Aggiornato il " + (ix.updated || "?");
       if (!date.length) {
@@ -878,6 +901,7 @@
 
       var vista = viste.filter(function (v) { return v[0] === stato.vista[sez]; })[0];
       var testa = (sez === "consensus" || sez === "accordo" ? chipsHtml(GRUPPO_CONSENSO, sez, "data-gruppo") : "") +
+        (sez === "prezzi" || sez === "mercato" ? chipsHtml(GRUPPO_PRONOSTICI, sez, "data-gruppo") : "") +
         chipsHtml(date.map(function (x) { return [x, etichettaData(x)]; }), d, "data-data") +
         (viste.length > 1 ? chipsHtml(viste, vista[0], "data-vista") : "") +
         '<p class="descr">' + esc(vista[2]) + "</p>" +
@@ -1089,6 +1113,7 @@
     else if (o === "prob") v.sort(function (a, b) {
       return ((probOrdine(b) || 0) - (probOrdine(a) || 0)) || ((num(b.Fonti) || 0) - (num(a.Fonti) || 0));
     });
+    else if (o === "mov") v.sort(function (a, b) { return (num(b.Mov) || 0) - (num(a.Mov) || 0); });
     else if (o === "gol") v.sort(function (a, b) { return (num(b.Gol_Attesi) || 0) - (num(a.Gol_Attesi) || 0); });
     else if (o === "fonti") v.sort(function (a, b) { return (num(b.Fonti) || 0) - (num(a.Fonti) || 0); });
     // "file": l'ordine del file, che e' quello che mostra Kodi.
@@ -1107,6 +1132,10 @@
   function scartoDi(r) { var v = num(r.Scarto); return v != null ? v : num(r.Scarto_Segno); }
 
   function vuotoPerVista(sez, vista, n, data) {
+    if (sez === "mercato") {
+      if (vista === "aff") return "Nessuna partita a margine basso fra le " + n + " del " + data + ". Prova \u201cTutte\u201d.";
+      if (vista === "mov") return "Nessun movimento notevole fra le " + n + " partite del " + data + ". Prova \u201cTutte\u201d.";
+    }
     if (sez === "sure") {
       return "Nessuna delle " + n + " Sure Bets del " + data + " ha il prezzo: AsianOdds copre le prossime 24 ore. Prova \u201cTutte\u201d.";
     }
@@ -1597,6 +1626,91 @@
       if (v != null) return { prob: v / 100, margine: num(a.Margine) };
     }
     return null;
+  }
+
+  // ---------------------------------------------------------- mercato
+
+  function mkTiene(r, tipo) {
+    if (tipo === "aff") return r.Affidabile === true || String(r.Affidabile).toLowerCase() === "true";
+    if (tipo === "mov") return r.Notevole === true || String(r.Notevole).toLowerCase() === "true";
+    return true;
+  }
+
+  function riepilogoMercato(v) {
+    var mg = mediana(v.map(function (r) { return num(r.Margine); }));
+    return tessere([
+      [String(v.length), "partite"],
+      [String(v.filter(function (r) { return mkTiene(r, "mov"); }).length), "con movimento notevole"],
+      [mg == null ? "-" : mg.toFixed(1) + "%", "margine mediano"]
+    ]) + legenda();
+  }
+
+  // Le probabilita' all'apertura, dalle quote di apertura: de-vig
+  // proporzionale, cioe' 1/quota rinormalizzata. Servono solo a far vedere
+  // la barra di prima accanto a quella di adesso.
+  function apertura(r) {
+    var q = [num(r["Q1 Apre"]), num(r["QX Apre"]), num(r["Q2 Apre"])];
+    if (q.some(function (x) { return !x || x <= 1; })) return null;
+    var inv = q.map(function (x) { return 1 / x; }), t = inv[0] + inv[1] + inv[2];
+    return inv.map(function (x) { return 100 * x / t; });
+  }
+
+  function rigaMercato(r) {
+    var p1 = num(r["P1 Shin"]), px = num(r["PX Shin"]), p2 = num(r["P2 Shin"]);
+    if (p1 == null) { p1 = num(r.P1); px = num(r.PX); p2 = num(r.P2); }
+    var marg = num(r.Margine), mov = num(r.Mov), fid = fiducia(marg);
+    var nota = mkTiene(r, "mov"), aff = mkTiene(r, "aff");
+    var ap = apertura(r);
+    var det = [];
+    if (r.Lega) det.push("<p>" + esc(r.Lega) + "</p>");
+    var q = [["1", "Q1 Apre", "Q1", "Drift 1"], ["X", "QX Apre", "QX", "Drift X"], ["2", "Q2 Apre", "Q2", "Drift 2"]]
+      .map(function (k) {
+        var a = num(r[k[1]]), c = num(r[k[2]]), d = num(r[k[3]]);
+        if (c == null) return "";
+        var t = k[0] + ": " + (a != null && a !== c ? a.toFixed(2) + " \u2192 " : "") + c.toFixed(2);
+        return t + (d != null && d !== 0 ? " (" + (d > 0 ? "+" : "") + d.toFixed(0) + "%)" : "");
+      }).filter(Boolean);
+    if (q.length) det.push("<p>Quote: " + q.join(" \u00b7 ") + "</p>");
+    var pp1 = num(r.P1), ppx = num(r.PX), pp2 = num(r.P2);
+    if (pp1 != null) {
+      det.push("<p>De-vig proporzionale: 1 " + f1(pp1) + "% \u00b7 X " + f1(ppx) + "% \u00b7 2 " + f1(pp2) + "%" +
+        (marg != null ? ", margine " + f1(marg) + "%" : "") + "</p>");
+      var s1 = num(r["P1 Shin"]), sx = num(r["PX Shin"]), s2 = num(r["P2 Shin"]);
+      // Shin solo dove diverge di almeno un punto: dove coincidono, due
+      // righe uguali sono rumore; dove divergono, c'e' un outsider lungo.
+      if (s1 != null && Math.max(Math.abs(s1 - pp1), Math.abs(sx - ppx), Math.abs(s2 - pp2)) >= 1) {
+        det.push("<p>Con Shin: 1 " + f1(s1) + "% \u00b7 X " + f1(sx) + "% \u00b7 2 " + f1(s2) +
+          "% \u2013 c'\u00e8 un outsider lungo, e la percentuale proporzionale dell'outsider \u00e8 gonfiata.</p>");
+      }
+    }
+    if (mov != null) det.push("<p>Movimento dall'apertura: " + f1(mov) + " punti" + (nota ? ", notevole" : "") + ".</p>");
+    var aa = num(r["AH Apre"]), ah = num(r.AH), oa = num(r["OU Apre"]), ou = num(r.OU);
+    var sg = function (x) { return (x > 0 ? "+" : "") + x.toFixed(2); };
+    var linee = [];
+    if (ah != null) linee.push("Handicap " + (aa != null && aa !== ah ? sg(aa) + " \u2192 " : "") + sg(ah));
+    if (ou != null) linee.push("Linea gol " + (oa != null && oa !== ou ? oa + " \u2192 " : "") + ou +
+      (oa != null && oa !== ou ? " (" + (ou > oa ? "pi\u00f9" : "meno") + " gol attesi)" : ""));
+    if (linee.length) det.push("<p>" + linee.join(" \u00b7 ") + "</p>");
+    var ec = num(r["Elo Casa"]), eo = num(r["Elo Osp"]);
+    if (ec != null && eo != null) det.push("<p>Elo: " + ec.toFixed(0) + " \u2013 " + eo.toFixed(0) +
+      " (differenza " + (ec - eo > 0 ? "+" : "") + (ec - eo).toFixed(0) + ")</p>");
+
+    var fav = p1 == null ? "?" : (p1 >= px && p1 >= p2 ? "1" : p2 >= px ? "2" : "X");
+    return '<div class="riga"><details><summary>' +
+      '<span class="segno">' + fav + "</span>" +
+      '<div class="corpo">' +
+      '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" +
+      (fid ? '<span class="pill ' + fid[0] + '">margine ' + f1(marg) + "%</span>" : "") +
+      (aff ? '<span class="chip">affidabile</span>' : "") + "</div>" +
+      '<div class="partita">' + esc(r.Casa) + " \u2013 " + esc(r.Ospite) + "</div>" +
+      (nota ? '<div class="sel"><span class="scarto-grosso">movimento notevole</span></div>' : "") +
+      (ap && mov ? tripla("apertura", ap[0], ap[1], ap[2]) : "") +
+      tripla("ora", p1, px, p2) +
+      "</div>" +
+      '<div class="numero"><b>' + (mov != null ? f1(mov) : "-") + "</b><span>punti mossi</span></div>" +
+      "</summary>" +
+      '<div class="dettaglio">' + det.join("") + "</div>" +
+      "</details></div>";
   }
 
   // ------------------------------------------------- consensus per accordo
@@ -2111,9 +2225,9 @@
   function vaiHome(e) {
     if (e) e.preventDefault();
     stato.sez = "prezzi";
-    stato.data = { prezzi: null, consensus: null, accordo: null, poisson: null, sure: null };
-    stato.vista = { prezzi: "schedina", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" };
-    stato.ordine = { prezzi: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" };
+    stato.data = { prezzi: null, mercato: null, consensus: null, accordo: null, poisson: null, sure: null };
+    stato.vista = { prezzi: "schedina", mercato: "aff", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" };
+    stato.ordine = { prezzi: "file", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" };
     stato.cerca = "";
     stato.limite = PASSO;
     FONTI.vista = "riepilogo"; FONTI.data = null; FONTI.fonte = "";
