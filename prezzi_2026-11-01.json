@@ -7480,8 +7480,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "1X + Over 2.5",
   "Prob": 54.7,
-  "Equa": 1.83,
-  "InSchedina": "si"
+  "Equa": 1.83
  },
  {
   "Data": "2026-11-01",
@@ -8001,7 +8000,8 @@
   "Mercato": "BTTS",
   "Sel": "NoGol",
   "Prob": 53.9,
-  "Equa": 1.86
+  "Equa": 1.86,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-01",
@@ -11140,6 +11140,26 @@
   "Gruppo": "Combo",
   "Mercato": "Esito + Gol",
   "Sel": "X2 + Over 2.5",
+  "Prob": 46.1,
+  "Equa": 2.17
+ },
+ {
+  "Data": "2026-11-01",
+  "Ora": "19:00",
+  "Campionato": "Portugal Liga Portugal",
+  "Partita": "Marítimo - Santa Clara",
+  "Casa": "Marítimo",
+  "Ospite": "Santa Clara",
+  "Linea_OU": "",
+  "Gol_attesi": 2.23,
+  "Margine": 1.8,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "Gol NoGol",
+  "Mercato": "BTTS",
+  "Sel": "Gol",
   "Prob": 46.1,
   "Equa": 2.17
  },

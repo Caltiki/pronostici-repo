@@ -5380,8 +5380,7 @@
   "Mercato": "1X2",
   "Sel": "2",
   "Prob": 65.9,
-  "Equa": 1.52,
-  "InSchedina": "si"
+  "Equa": 1.52
  },
  {
   "Data": "2026-10-31",
@@ -5661,7 +5660,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "2 + Over 1.5",
   "Prob": 65.0,
-  "Equa": 1.54
+  "Equa": 1.54,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-31",
@@ -21662,26 +21662,6 @@
   "Sel": "Under",
   "Prob": 25.0,
   "Equa": 4.01
- },
- {
-  "Data": "2026-10-31",
-  "Ora": "18:00",
-  "Campionato": "Greece Super League",
-  "Partita": "Kifisia - Olympiacos",
-  "Casa": "Kifisia",
-  "Ospite": "Olympiacos",
-  "Linea_OU": "",
-  "Gol_attesi": 2.63,
-  "Margine": 4.7,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 22.1,
-  "Equa": 4.53
  },
  {
   "Data": "2026-10-31",
