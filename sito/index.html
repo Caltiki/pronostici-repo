@@ -610,6 +610,8 @@
   table.mercati.pron td:nth-child(2) { text-align: left; }
   table.mercati.pron th:nth-child(2) { text-align: left; }
   .scheda p.avviso { color: var(--attento); font-weight: 500; }
+  .accordo-conta { font-size: .78rem; color: var(--tenue); margin-top: 2px; }
+  .accordo-conta b { color: var(--testo); }
   .fonte-pill { color: var(--evidenza); border-color: color-mix(in srgb, var(--evidenza) 35%, transparent); }
   .strumenti #fonte-cm { flex: 1; }
   .piede-scheda { margin: 14px 2px 0; font-size: .8rem; color: var(--tenue); }
@@ -1951,7 +1953,7 @@
     return String(r.Elenco || "").split(/,\s*/).indexOf(f) >= 0;
   }
   function arricchisciConsensus(righe, data) {
-    if (!stato.fonteCm || !Array.isArray(righe)) return righe;
+    if (!Array.isArray(righe)) return righe;
     return leggi("scheda_" + data + ".json").catch(function () { return null; }).then(function (s) {
       if (!s || !s.alias) return righe;
       var per = {};
@@ -1978,6 +1980,30 @@
     }).join("") + "</div>";
   }
 
+  // QUANTE FONTI SONO D'ACCORDO COL SEGNO DELLA MEDIA, xGaura, Sportytrader
+  // e WebPronostici comprese. Non tocca la media: e' un conteggio. Di ogni
+  // fonte si guarda un solo pronostico sull'esito, il primo 1X2 secco o in
+  // mancanza la doppia chance; la doppia e' d'accordo se contiene il segno
+  // ("1X" sta con l'1). I pronostici sono quelli della scheda della
+  // partita, letti da scheda_partite.py con le regole di misura_fonti.py.
+  function accordoSegno(r) {
+    var segno = String(r.Segno || "").toUpperCase();
+    if (!r._prons || !/^[1X2]$/.test(segno)) return null;
+    var per = {};
+    r._prons.forEach(function (x) {
+      if (x.Mercato !== "1X2" && x.Mercato !== "DC") return;
+      var g = per[x.Fonte];
+      if (!g || (g.Mercato === "DC" && x.Mercato === "1X2")) per[x.Fonte] = x;
+    });
+    var si = [], no = [];
+    Object.keys(per).sort(function (a, b) { return nomeFonte(a).localeCompare(nomeFonte(b)); }).forEach(function (f) {
+      var x = per[f];
+      (String(x.Sel).indexOf(segno) >= 0 ? si : no).push(nomeFonte(f) + " " + x.Sel);
+    });
+    return si.length + no.length ? { segno: segno, si: si, no: no } : null;
+  }
+  function articolo(s) { return s === "X" ? "sulla X" : s === "2" ? "sul 2" : "sull'1"; }
+
   function cmTiene(r, tipo) {
     if (tipo === "mercato") return num(r.Scarto) != null;
     if (tipo === "multi") return (num(r.Fonti) || 0) >= 2;
@@ -2003,6 +2029,12 @@
     var det = [];
     if (r.Lega) det.push("<p>" + esc(r.Lega) + "</p>");
     det.push("<p>Media delle fonti: 1 " + f0(p1) + "% · X " + f0(px) + "% · 2 " + f0(p2) + "%</p>");
+    var acc = accordoSegno(r);
+    if (acc) {
+      det.push("<p>D\u2019accordo " + articolo(acc.segno) + ": " + (acc.si.length ? esc(acc.si.join(", ")) : "nessuna") +
+        (acc.no.length ? ". Contro: " + esc(acc.no.join(", ")) : "") +
+        '. <span class="piccolo">Conta tutte le fonti, anche quelle fuori dalla media.</span></p>');
+    }
     if (fonti === 1) det.push("<p>Fonte unica: " + esc(r.Elenco) + ". Non è una media, è quella fonte.</p>");
     else det.push("<p>Media di " + fonti + " fonti: " + esc(r.Elenco) + "</p>");
     if (m1 != null) {
@@ -2011,7 +2043,7 @@
         det.push('<p class="avviso">Segni diversi: le fonti dicono ' + esc(segno) + ", il mercato " + esc(segnoM) + ".</p>");
       }
       if (scarto != null) {
-        det.push("<p>Sul " + esc(segno) + ": le fonti danno " + Math.abs(scarto).toFixed(1) + " punti " +
+        det.push("<p>" + (/^[1X2]$/.test(segno) ? articolo(segno).replace(/^s/, "S") : "Sul " + esc(segno)) + ": le fonti danno " + Math.abs(scarto).toFixed(1) + " punti " +
           (scarto >= 0 ? "più" : "meno") + " del mercato.</p>");
         if (Math.abs(scarto) >= 10) {
           det.push('<p class="avviso">Scarto grosso. Sulle fonti misurate finora, quando si allontanano così dal mercato hanno torto più spesso, non meno.</p>');
@@ -2025,11 +2057,13 @@
       '<div class="alto"><span>' + esc(r.Ora || "") + "</span><span>" + fonti + (fonti === 1 ? " fonte" : " fonti") + "</span></div>" +
       '<div class="partita">' + esc(r.Casa) + " – " + esc(r.Ospite) + "</div>" +
       (coda ? '<div class="sel">' + coda + "</div>" : "") +
+      (acc ? '<div class="accordo-conta">D\u2019accordo ' + articolo(acc.segno) + ": <b>" + acc.si.length +
+        "</b> " + (acc.si.length + acc.no.length === 1 ? "fonte su 1" : "su " + (acc.si.length + acc.no.length) + " fonti") + "</div>" : "") +
       pronFonteHtml(r) +
       tripla("fonti", p1, px, p2) +
       (m1 != null ? tripla("mercato", m1, mx, m2) : "") +
       "</div>" +
-      '<div class="numero"><b>' + f0(pSegno) + "%</b><span>sul " + esc(segno) + "</span></div>" +
+      '<div class="numero"><b>' + f0(pSegno) + "%</b><span>" + (/^[1X2]$/.test(segno) ? articolo(segno) : "sul " + esc(segno)) + "</span></div>" +
       "</summary>" +
       '<div class="dettaglio">' + det.join("") + "</div>" +
       "</details></div>";
