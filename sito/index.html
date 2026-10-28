@@ -1708,12 +1708,39 @@
     return inv.map(function (x) { return 100 * x / t; });
   }
 
+  // IL VERSO DEL MOVIMENTO. "Mov" dice quanto si e' mosso il mercato 1X2,
+  // non verso dove. Il verso si legge dalle quote: l'esito la cui quota e'
+  // scesa di piu' dall'apertura ("Drift", gia' nel file) e' quello su cui
+  // il mercato si e' spostato. Se nessuna quota e' scesa (succede quando
+  // il book allarga il margine) un verso non c'e' e non si scrive.
+  function versoMercato(r) {
+    var meglio = null;
+    ["1", "X", "2"].forEach(function (e) {
+      var d = num(r["Drift " + e]);
+      if (d != null && d < 0 && (meglio == null || d < meglio[1])) meglio = [e, d];
+    });
+    if (!meglio) return null;
+    var e = meglio[0], qa = num(r["Q" + e + " Apre"]), qc = num(r["Q" + e]);
+    return { esito: e, testo: "verso " + ({ "1": "l'1", "X": "la X", "2": "il 2" })[e] +
+      (qa != null && qc != null ? ": quota " + qa.toFixed(2) + " → " + qc.toFixed(2) + " ↓" : "") };
+  }
+
+  // Le due barre "apertura" e "ora" vanno calcolate ALLO STESSO MODO.
+  // L'apertura si ricava dalle quote col de-vig proporzionale; se "ora"
+  // usasse Shin, la differenza fra i due metodi (fino a 5 punti il 28
+  // ottobre, oltre un punto su 188 partite su 311) sembrerebbe movimento.
+  function oraComeApertura(r) {
+    var p = [num(r.P1), num(r.PX), num(r.P2)];
+    return p.some(function (x) { return x == null; }) ? null : p;
+  }
+
   function rigaMercato(r) {
     var p1 = num(r["P1 Shin"]), px = num(r["PX Shin"]), p2 = num(r["P2 Shin"]);
     if (p1 == null) { p1 = num(r.P1); px = num(r.PX); p2 = num(r.P2); }
     var marg = num(r.Margine), mov = num(r.Mov), fid = fiducia(marg);
     var nota = mkTiene(r, "mov"), aff = mkTiene(r, "aff");
-    var ap = apertura(r);
+    var ap = apertura(r), pp = oraComeApertura(r);
+    var verso = mov ? versoMercato(r) : null;
     var det = [];
     if (r.Lega) det.push("<p>" + esc(r.Lega) + "</p>");
     var q = [["1", "Q1 Apre", "Q1", "Drift 1"], ["X", "QX Apre", "QX", "Drift X"], ["2", "Q2 Apre", "Q2", "Drift 2"]]
@@ -1723,7 +1750,9 @@
         var t = k[0] + ": " + (a != null && a !== c ? a.toFixed(2) + " \u2192 " : "") + c.toFixed(2);
         return t + (d != null && d !== 0 ? " (" + (d > 0 ? "+" : "") + d.toFixed(0) + "%)" : "");
       }).filter(Boolean);
-    if (q.length) det.push("<p>Quote: " + q.join(" \u00b7 ") + "</p>");
+    var versi = ["1", "X", "2"].map(function (e) { return versoQuota(r, e); }).filter(Boolean);
+    if (versi.length) versi.forEach(function (t) { det.push("<p>" + t + "</p>"); });
+    else if (q.length) det.push("<p>Quote: " + q.join(" \u00b7 ") + "</p>");
     var pp1 = num(r.P1), ppx = num(r.PX), pp2 = num(r.P2);
     if (pp1 != null) {
       det.push("<p>De-vig proporzionale: 1 " + f1(pp1) + "% \u00b7 X " + f1(ppx) + "% \u00b7 2 " + f1(pp2) + "%" +
@@ -1756,9 +1785,9 @@
       (fid ? '<span class="pill ' + fid[0] + '">margine ' + f1(marg) + "%</span>" : "") +
       (aff ? '<span class="chip">affidabile</span>' : "") + "</div>" +
       '<div class="partita">' + esc(r.Casa) + " \u2013 " + esc(r.Ospite) + "</div>" +
-      (nota ? '<div class="sel"><span class="scarto-grosso">movimento notevole</span></div>' : "") +
-      (ap && mov ? tripla("apertura", ap[0], ap[1], ap[2]) : "") +
-      tripla("ora", p1, px, p2) +
+      (verso || nota ? '<div class="sel">' + (nota ? '<span class="scarto-grosso">movimento notevole' + (verso ? " " + esc(verso.testo) : "") + "</span>"
+        : '<span class="scarto">' + esc(verso.testo.charAt(0).toUpperCase() + verso.testo.slice(1)) + "</span>") + "</div>" : "") +
+      (ap && mov && pp ? tripla("apertura", ap[0], ap[1], ap[2]) + tripla("ora", pp[0], pp[1], pp[2]) : tripla("ora", p1, px, p2)) +
       "</div>" +
       '<div class="numero"><b>' + (mov != null ? f1(mov) : "-") + "</b><span>punti mossi</span></div>" +
       "</summary>" +
@@ -2412,7 +2441,11 @@
     }
     if (a) {
       var ap = apertura(a), marg = num(a.Margine), fid = fiducia(marg);
-      h += (ap && num(a.Mov) ? tripla("apertura", ap[0], ap[1], ap[2]) : "") + tripla("ora", m["1"], m.X, m["2"]) + legenda();
+      var pp = oraComeApertura(a), vm = num(a.Mov) ? versoMercato(a) : null;
+      if (num(a.Mov)) h += "<p><b>" + (a.Notevole ? "Movimento notevole" : "Movimento") + " di " + f1(num(a.Mov)) + " punti" +
+        (vm ? " " + esc(vm.testo) : "") + "</b></p>";
+      h += (ap && num(a.Mov) && pp ? tripla("apertura", ap[0], ap[1], ap[2]) + tripla("ora", pp[0], pp[1], pp[2])
+        : tripla("ora", m["1"], m.X, m["2"])) + legenda();
       ["1", "X", "2"].forEach(function (e) { var t = versoQuota(a, e); if (t) h += "<p>" + t + "</p>"; });
       var vl = versoLinea(a);
       if (vl) h += "<p>" + vl + "</p>";
