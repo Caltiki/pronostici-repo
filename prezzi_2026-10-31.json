@@ -5200,7 +5200,8 @@
   "Mercato": "1X2",
   "Sel": "2",
   "Prob": 66.0,
-  "Equa": 1.52
+  "Equa": 1.52,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-31",
@@ -6680,8 +6681,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 61.8,
-  "Equa": 1.62,
-  "InSchedina": "si"
+  "Equa": 1.62
  },
  {
   "Data": "2026-10-31",
@@ -21562,6 +21562,26 @@
   "Sel": "Under",
   "Prob": 25.0,
   "Equa": 4.01
+ },
+ {
+  "Data": "2026-10-31",
+  "Ora": "06:00",
+  "Campionato": "Japan J1 League",
+  "Partita": "Mito Hollyhock - Sanfrecce",
+  "Casa": "Mito Hollyhock",
+  "Ospite": "Sanfrecce",
+  "Linea_OU": "",
+  "Gol_attesi": 2.96,
+  "Margine": 3.8,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 20.3,
+  "Equa": 4.93
  },
  {
   "Data": "2026-10-31",

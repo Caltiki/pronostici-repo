@@ -44,10 +44,10 @@
   "Lega": "Campeonato Gaúcho 2 Brasile",
   "Casa": "Brasil de Pelotas",
   "Ospite": "Passo Fundo RS",
-  "Segno": "1",
+  "Segno": "2",
   "P1": 37.0,
-  "PX": 26.0,
-  "P2": 37.0,
+  "PX": 25.0,
+  "P2": 38.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -136,8 +136,8 @@
   "Casa": "Matagalpa FC",
   "Ospite": "Jalapa",
   "Segno": "2",
-  "P1": 34.0,
-  "PX": 24.0,
+  "P1": 35.0,
+  "PX": 23.0,
   "P2": 42.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -165,6 +165,19 @@
   "P1": 29.0,
   "PX": 22.0,
   "P2": 49.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "00:00",
+  "Lega": "Suriname Major League",
+  "Casa": "SV Flora",
+  "Ospite": "SV Leo Victor",
+  "Segno": "2",
+  "P1": 9.0,
+  "PX": 11.0,
+  "P2": 80.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -236,15 +249,28 @@
  {
   "Data": "2026-10-29",
   "Ora": "00:30",
+  "Lega": "Primera División venezuelana",
+  "Casa": "Carabobo",
+  "Ospite": "Deportivo La Guaira",
+  "Segno": "1",
+  "P1": 46.0,
+  "PX": 29.0,
+  "P2": 25.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "00:30",
   "Lega": "United States - Major League Soccer",
   "Casa": "Charlotte",
   "Ospite": "Montréal",
   "Segno": "1",
-  "P1": 56.7,
-  "PX": 21.9,
-  "P2": 21.4,
-  "Fonti": 2,
-  "Elenco": "betimate, footymetrics"
+  "P1": 56.8,
+  "PX": 23.3,
+  "P2": 19.9,
+  "Fonti": 3,
+  "Elenco": "betimate, footymetrics, soccersite"
  },
  {
   "Data": "2026-10-29",
@@ -279,11 +305,11 @@
   "Casa": "Inter Miami",
   "Ospite": "Cincinnati",
   "Segno": "1",
-  "P1": 59.3,
-  "PX": 21.3,
-  "P2": 19.3,
-  "Fonti": 3,
-  "Elenco": "betimate, footymetrics, statarea"
+  "P1": 57.0,
+  "PX": 22.2,
+  "P2": 20.8,
+  "Fonti": 4,
+  "Elenco": "betimate, footymetrics, soccersite, statarea"
  },
  {
   "Data": "2026-10-29",
@@ -318,11 +344,11 @@
   "Casa": "New England Revolution",
   "Ospite": "New York Red Bulls",
   "Segno": "1",
-  "P1": 51.5,
-  "PX": 25.5,
-  "P2": 23.0,
-  "Fonti": 2,
-  "Elenco": "betimate, statarea"
+  "P1": 49.0,
+  "PX": 26.7,
+  "P2": 24.3,
+  "Fonti": 3,
+  "Elenco": "betimate, soccersite, statarea"
  },
  {
   "Data": "2026-10-29",
@@ -331,11 +357,11 @@
   "Casa": "New York City",
   "Ospite": "Atlanta United",
   "Segno": "1",
-  "P1": 46.7,
-  "PX": 26.3,
-  "P2": 27.0,
-  "Fonti": 3,
-  "Elenco": "betimate, footymetrics, statarea"
+  "P1": 45.0,
+  "PX": 27.2,
+  "P2": 27.8,
+  "Fonti": 4,
+  "Elenco": "betimate, footymetrics, soccersite, statarea"
  },
  {
   "Data": "2026-10-29",
@@ -370,11 +396,11 @@
   "Casa": "Toronto",
   "Ospite": "DC United",
   "Segno": "1",
-  "P1": 46.5,
-  "PX": 28.6,
-  "P2": 24.9,
-  "Fonti": 3,
-  "Elenco": "betimate, footymetrics, statarea"
+  "P1": 46.4,
+  "PX": 28.9,
+  "P2": 24.7,
+  "Fonti": 4,
+  "Elenco": "betimate, footymetrics, soccersite, statarea"
  },
  {
   "Data": "2026-10-29",
@@ -383,9 +409,9 @@
   "Casa": "Universidad Catolica",
   "Ospite": "Audax Italiano",
   "Segno": "1",
-  "P1": 60.0,
+  "P1": 59.0,
   "PX": 23.0,
-  "P2": 17.0,
+  "P2": 18.0,
   "Fonti": 2,
   "Elenco": "betimate, ratingbet"
  },
@@ -422,11 +448,24 @@
   "Casa": "Cienciano",
   "Ospite": "Atletico Grau",
   "Segno": "1",
-  "P1": 63.0,
-  "PX": 22.0,
-  "P2": 15.0,
-  "Fonti": 2,
-  "Elenco": "betimate, statarea"
+  "P1": 62.7,
+  "PX": 21.7,
+  "P2": 15.7,
+  "Fonti": 3,
+  "Elenco": "betimate, soccersite, statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "01:00",
+  "Lega": "Copa Libertadores Women",
+  "Casa": "Cruzeiro (W)",
+  "Ospite": "Olimpia Asuncion (W)",
+  "Segno": "1",
+  "P1": 81.0,
+  "PX": 11.0,
+  "P2": 8.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -435,11 +474,11 @@
   "Casa": "Delfin SC",
   "Ospite": "Independiente del Valle",
   "Segno": "2",
-  "P1": 15.0,
-  "PX": 23.0,
-  "P2": 62.0,
-  "Fonti": 2,
-  "Elenco": "betimate, ratingbet"
+  "P1": 18.3,
+  "PX": 25.7,
+  "P2": 56.0,
+  "Fonti": 3,
+  "Elenco": "betimate, ratingbet, soccersite"
  },
  {
   "Data": "2026-10-29",
@@ -495,16 +534,42 @@
  },
  {
   "Data": "2026-10-29",
+  "Ora": "01:00",
+  "Lega": "College Championship USA",
+  "Casa": "West Florida",
+  "Ospite": "Central Arkansas",
+  "Segno": "1",
+  "P1": 50.0,
+  "PX": 19.0,
+  "P2": 31.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
   "Ora": "01:15",
   "Lega": "Argentina: Copa Argentina",
   "Casa": "Atletico Tucuman",
   "Ospite": "Club Atletico Platense",
   "Segno": "2",
-  "P1": 31.0,
-  "PX": 33.0,
+  "P1": 28.5,
+  "PX": 35.5,
   "P2": 36.0,
+  "Fonti": 2,
+  "Elenco": "ratingbet, soccersite"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "01:15",
+  "Lega": "Coppa d'Argentina",
+  "Casa": "Atlético Tucumán",
+  "Ospite": "Platense",
+  "Segno": "1",
+  "P1": 39.0,
+  "PX": 29.0,
+  "P2": 32.0,
   "Fonti": 1,
-  "Elenco": "ratingbet"
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -525,12 +590,12 @@
   "Lega": "Major League Soccer statunitense",
   "Casa": "Austin FC",
   "Ospite": "Real Salt Lake",
-  "Segno": "1",
-  "P1": 36.5,
-  "PX": 30.0,
-  "P2": 33.5,
-  "Fonti": 2,
-  "Elenco": "betimate, statarea"
+  "Segno": "2",
+  "P1": 33.7,
+  "PX": 30.7,
+  "P2": 35.7,
+  "Fonti": 3,
+  "Elenco": "betimate, soccersite, statarea"
  },
  {
   "Data": "2026-10-29",
@@ -539,11 +604,11 @@
   "Casa": "Bahia",
   "Ospite": "São Paulo",
   "Segno": "1",
-  "P1": 52.0,
-  "PX": 25.0,
-  "P2": 23.0,
-  "Fonti": 2,
-  "Elenco": "footymetrics, ratingbet"
+  "P1": 46.7,
+  "PX": 27.3,
+  "P2": 26.0,
+  "Fonti": 3,
+  "Elenco": "footymetrics, ratingbet, soccersite"
  },
  {
   "Data": "2026-10-29",
@@ -565,11 +630,11 @@
   "Casa": "Chicago Fire",
   "Ospite": "Orlando City SC",
   "Segno": "1",
-  "P1": 55.0,
-  "PX": 22.5,
-  "P2": 22.5,
-  "Fonti": 2,
-  "Elenco": "betimate, statarea"
+  "P1": 53.3,
+  "PX": 24.0,
+  "P2": 22.7,
+  "Fonti": 3,
+  "Elenco": "betimate, soccersite, statarea"
  },
  {
   "Data": "2026-10-29",
@@ -578,11 +643,11 @@
   "Casa": "Dallas",
   "Ospite": "Columbus Crew",
   "Segno": "1",
-  "P1": 46.0,
-  "PX": 25.7,
-  "P2": 28.3,
-  "Fonti": 3,
-  "Elenco": "betimate, footymetrics, statarea"
+  "P1": 44.8,
+  "PX": 26.5,
+  "P2": 28.8,
+  "Fonti": 4,
+  "Elenco": "betimate, footymetrics, soccersite, statarea"
  },
  {
   "Data": "2026-10-29",
@@ -630,11 +695,24 @@
   "Casa": "Minnesota United",
   "Ospite": "Sporting Kansas City",
   "Segno": "1",
-  "P1": 61.0,
-  "PX": 21.0,
-  "P2": 18.0,
+  "P1": 62.0,
+  "PX": 22.0,
+  "P2": 16.0,
+  "Fonti": 3,
+  "Elenco": "betimate, soccersite, statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "01:30",
+  "Lega": "Major League Soccer statunitense",
+  "Casa": "Nashville SC",
+  "Ospite": "Philadelphia Union",
+  "Segno": "1",
+  "P1": 47.5,
+  "PX": 27.5,
+  "P2": 25.0,
   "Fonti": 2,
-  "Elenco": "betimate, statarea"
+  "Elenco": "betimate, soccersite"
  },
  {
   "Data": "2026-10-29",
@@ -652,28 +730,15 @@
  {
   "Data": "2026-10-29",
   "Ora": "01:30",
-  "Lega": "Major League Soccer statunitense",
-  "Casa": "Nashville SC",
-  "Ospite": "Philadelphia Union",
-  "Segno": "1",
-  "P1": 50.0,
-  "PX": 25.0,
-  "P2": 25.0,
-  "Fonti": 1,
-  "Elenco": "betimate"
- },
- {
-  "Data": "2026-10-29",
-  "Ora": "01:30",
   "Lega": "Brazil - Serie A",
   "Casa": "Remo",
   "Ospite": "Botafogo",
   "Segno": "2",
-  "P1": 34.0,
-  "PX": 28.0,
-  "P2": 38.0,
-  "Fonti": 2,
-  "Elenco": "betimate, footymetrics"
+  "P1": 32.3,
+  "PX": 29.0,
+  "P2": 38.7,
+  "Fonti": 3,
+  "Elenco": "betimate, footymetrics, soccersite"
  },
  {
   "Data": "2026-10-29",
@@ -683,8 +748,8 @@
   "Ospite": "Botafogo RJ",
   "Segno": "2",
   "P1": 34.0,
-  "PX": 27.0,
-  "P2": 39.0,
+  "PX": 26.0,
+  "P2": 40.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
  },
@@ -708,11 +773,11 @@
   "Casa": "St. Louis City SC",
   "Ospite": "Portland Timbers",
   "Segno": "1",
-  "P1": 53.5,
-  "PX": 25.5,
-  "P2": 21.0,
-  "Fonti": 2,
-  "Elenco": "betimate, statarea"
+  "P1": 51.0,
+  "PX": 26.0,
+  "P2": 23.0,
+  "Fonti": 3,
+  "Elenco": "betimate, soccersite, statarea"
  },
  {
   "Data": "2026-10-29",
@@ -864,11 +929,24 @@
   "Casa": "Internacional de Bogota",
   "Ospite": "Independiente Medellin",
   "Segno": "1",
-  "P1": 35.7,
-  "PX": 29.0,
-  "P2": 35.3,
-  "Fonti": 3,
-  "Elenco": "betimate, ratingbet, statarea"
+  "P1": 36.0,
+  "PX": 30.2,
+  "P2": 33.8,
+  "Fonti": 4,
+  "Elenco": "betimate, ratingbet, soccersite, statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "03:00",
+  "Lega": "El Salvador Liga de Ascenso",
+  "Casa": "CD Marte Soyapango",
+  "Ospite": "AD Izalco",
+  "Segno": "1",
+  "P1": 54.0,
+  "PX": 19.0,
+  "P2": 27.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -877,8 +955,8 @@
   "Casa": "CSD Municipal",
   "Ospite": "CSD Comunicaciones",
   "Segno": "1",
-  "P1": 72.0,
-  "PX": 20.0,
+  "P1": 73.0,
+  "PX": 19.0,
   "P2": 8.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -968,11 +1046,11 @@
   "Casa": "San Jose Earthquakes",
   "Ospite": "Colorado Rapids",
   "Segno": "1",
-  "P1": 43.0,
-  "PX": 29.0,
-  "P2": 28.0,
-  "Fonti": 2,
-  "Elenco": "betimate, statarea"
+  "P1": 41.7,
+  "PX": 29.3,
+  "P2": 29.0,
+  "Fonti": 3,
+  "Elenco": "betimate, soccersite, statarea"
  },
  {
   "Data": "2026-10-29",
@@ -981,11 +1059,11 @@
   "Casa": "Seattle Sounders",
   "Ospite": "Houston Dynamo",
   "Segno": "1",
-  "P1": 46.3,
-  "PX": 27.7,
-  "P2": 26.0,
-  "Fonti": 3,
-  "Elenco": "betimate, footymetrics, statarea"
+  "P1": 47.0,
+  "PX": 28.0,
+  "P2": 25.0,
+  "Fonti": 4,
+  "Elenco": "betimate, footymetrics, soccersite, statarea"
  },
  {
   "Data": "2026-10-29",
@@ -1007,11 +1085,11 @@
   "Casa": "Vancouver Whitecaps",
   "Ospite": "San Diego FC",
   "Segno": "1",
-  "P1": 60.0,
-  "PX": 23.0,
-  "P2": 17.0,
-  "Fonti": 2,
-  "Elenco": "betimate, statarea"
+  "P1": 59.3,
+  "PX": 22.7,
+  "P2": 18.0,
+  "Fonti": 3,
+  "Elenco": "betimate, soccersite, statarea"
  },
  {
   "Data": "2026-10-29",
@@ -1020,11 +1098,11 @@
   "Casa": "América",
   "Ospite": "Tijuana",
   "Segno": "1",
-  "P1": 58.5,
+  "P1": 58.0,
   "PX": 24.2,
-  "P2": 17.2,
-  "Fonti": 4,
-  "Elenco": "betimate, footymetrics, ratingbet, statarea"
+  "P2": 17.8,
+  "Fonti": 5,
+  "Elenco": "betimate, footymetrics, ratingbet, soccersite, statarea"
  },
  {
   "Data": "2026-10-29",
@@ -1033,11 +1111,11 @@
   "Casa": "CD Olimpia",
   "Ospite": "Cartagines",
   "Segno": "1",
-  "P1": 51.0,
-  "PX": 22.0,
-  "P2": 27.0,
-  "Fonti": 1,
-  "Elenco": "betimate"
+  "P1": 47.5,
+  "PX": 27.0,
+  "P2": 25.5,
+  "Fonti": 2,
+  "Elenco": "betimate, soccersite"
  },
  {
   "Data": "2026-10-29",
@@ -1116,6 +1194,19 @@
   "P2": 25.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "06:00",
+  "Lega": "Campionato College USA Femminile",
+  "Casa": "Hawaii (W)",
+  "Ospite": "UNLV (W)",
+  "Segno": "1",
+  "P1": 46.0,
+  "PX": 23.0,
+  "P2": 31.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -1331,12 +1422,25 @@
   "Lega": "Asia - AFC Champions League Two",
   "Casa": "Adelaide United",
   "Ospite": "Lion City Sailors FC",
-  "Segno": "2",
-  "P1": 36.0,
-  "PX": 21.0,
-  "P2": 43.0,
+  "Segno": "1",
+  "P1": 47.0,
+  "PX": 23.0,
+  "P2": 30.0,
+  "Fonti": 3,
+  "Elenco": "betimate, footymetrics, ratingbet"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "08:45",
+  "Lega": "AFC Champions League Two",
+  "Casa": "Adelaide United",
+  "Ospite": "Home United",
+  "Segno": "1",
+  "P1": 46.0,
+  "PX": 28.0,
+  "P2": 26.0,
   "Fonti": 1,
-  "Elenco": "footymetrics"
+  "Elenco": "soccersite"
  },
  {
   "Data": "2026-10-29",
@@ -1379,6 +1483,45 @@
  },
  {
   "Data": "2026-10-29",
+  "Ora": "09:30",
+  "Lega": "Australian Championship",
+  "Casa": "Canberra Croatia FC",
+  "Ospite": "South Melbourne",
+  "Segno": "2",
+  "P1": 19.5,
+  "PX": 17.0,
+  "P2": 63.5,
+  "Fonti": 2,
+  "Elenco": "betimate, ratingbet"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "09:30",
+  "Lega": "Australia Australian Championship",
+  "Casa": "Canberra FC",
+  "Ospite": "South Melbourne",
+  "Segno": "2",
+  "P1": 18.0,
+  "PX": 22.0,
+  "P2": 60.0,
+  "Fonti": 1,
+  "Elenco": "soccersite"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "09:30",
+  "Lega": "Liga 2 indonesiana",
+  "Casa": "RANS Nusantara",
+  "Ospite": "Kendal Tornado",
+  "Segno": "2",
+  "P1": 29.0,
+  "PX": 24.0,
+  "P2": 47.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
   "Ora": "09:40",
   "Lega": "AUSTRALIA - A-LEAGUE MEN",
   "Casa": "Melbourne Victory FC",
@@ -1393,6 +1536,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "10:00",
+  "Lega": "Qualificazioni Europeo UEFA U17 Femminile",
+  "Casa": "Andorra U17 (D)",
+  "Ospite": "Armenia U17 (D)",
+  "Segno": "1",
+  "P1": 47.0,
+  "PX": 23.0,
+  "P2": 30.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "10:00",
   "Lega": "AUSTRALIA - A-LEAGUE MEN",
   "Casa": "Brisbane Roar FC",
   "Ospite": "Perth Glory FC",
@@ -1402,6 +1558,32 @@
   "P2": 25.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "10:00",
+  "Lega": "Seconda Lega russa",
+  "Casa": "Nosta Novotroitsk",
+  "Ospite": "FK Zenit Izhevsk",
+  "Segno": "2",
+  "P1": 33.0,
+  "PX": 23.0,
+  "P2": 44.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "10:00",
+  "Lega": "Algeria U20 League",
+  "Casa": "RC Relizane U20",
+  "Ospite": "US Remchi U20",
+  "Segno": "1",
+  "P1": 47.0,
+  "PX": 22.0,
+  "P2": 31.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -1540,11 +1722,24 @@
   "Casa": "Gangwon",
   "Ospite": "Kuching FA",
   "Segno": "1",
-  "P1": 42.4,
-  "PX": 25.3,
-  "P2": 32.3,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 47.7,
+  "PX": 26.1,
+  "P2": 26.2,
+  "Fonti": 2,
+  "Elenco": "footymetrics, soccersite"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "11:00",
+  "Lega": "AFC Champions League Two",
+  "Casa": "Gangwon FC",
+  "Ospite": "Kuching City FC",
+  "Segno": "1",
+  "P1": 46.5,
+  "PX": 29.0,
+  "P2": 24.5,
+  "Fonti": 2,
+  "Elenco": "betimate, ratingbet"
  },
  {
   "Data": "2026-10-29",
@@ -1571,6 +1766,32 @@
   "P2": 11.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "11:00",
+  "Lega": "Pro League Uzbekistan",
+  "Casa": "Kattaqorgon",
+  "Ospite": "Olympic Mobiuz",
+  "Segno": "2",
+  "P1": 35.0,
+  "PX": 23.0,
+  "P2": 42.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "11:00",
+  "Lega": "Azerbaijan Cup",
+  "Casa": "Khankendi FK",
+  "Ospite": "Ganjabasar FK",
+  "Segno": "2",
+  "P1": 20.0,
+  "PX": 19.0,
+  "P2": 61.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -1631,11 +1852,11 @@
   "Casa": "Tampines Rovers",
   "Ospite": "Svay Rieng",
   "Segno": "1",
-  "P1": 45.0,
-  "PX": 20.0,
-  "P2": 35.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 38.3,
+  "PX": 24.3,
+  "P2": 37.3,
+  "Fonti": 3,
+  "Elenco": "betimate, footymetrics, soccersite"
  },
  {
   "Data": "2026-10-29",
@@ -1662,6 +1883,32 @@
   "P2": 13.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "11:00",
+  "Lega": "Azerbaijan Cup",
+  "Casa": "Zangazur FC",
+  "Ospite": "FK Karvan",
+  "Segno": "1",
+  "P1": 51.0,
+  "PX": 21.0,
+  "P2": 28.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "11:00",
+  "Lega": "Azerbaijan Cup",
+  "Casa": "Zangezur FC",
+  "Ospite": "FK Karvan",
+  "Segno": "1",
+  "P1": 53.0,
+  "PX": 20.0,
+  "P2": 27.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -1714,6 +1961,19 @@
   "P2": 29.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "11:30",
+  "Lega": "Coppa di Turchia",
+  "Casa": "Bitlis Ozguzeldere Spor",
+  "Ospite": "Kayserispor",
+  "Segno": "2",
+  "P1": 16.0,
+  "PX": 16.0,
+  "P2": 68.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -1779,6 +2039,19 @@
   "P2": 5.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "12:00",
+  "Lega": "Prima Lega armena",
+  "Casa": "BKMA Vagharshapat 2",
+  "Ospite": "Ararat Yerevan II",
+  "Segno": "1",
+  "P1": 76.0,
+  "PX": 13.0,
+  "P2": 11.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -1900,6 +2173,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "12:00",
+  "Lega": "Coppa d'Ucraina",
+  "Casa": "FC Zorya Lugansk",
+  "Ospite": "FC Kryvbas Kriviy Rih",
+  "Segno": "1",
+  "P1": 48.0,
+  "PX": 22.0,
+  "P2": 30.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "12:00",
   "Lega": "GERMANY - 2. BUNDESLIGA",
   "Casa": "Hertha Berlin",
   "Ospite": "Arminia Bielefeld",
@@ -1991,6 +2277,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "12:00",
+  "Lega": "Premier League Kenya",
+  "Casa": "Mathare United",
+  "Ospite": "Tusker",
+  "Segno": "2",
+  "P1": 29.0,
+  "PX": 35.0,
+  "P2": 36.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "12:00",
   "Lega": "NORWAY - 2. DIVISION AVDELING 1",
   "Casa": "Mjondalen",
   "Ospite": "Brattvag",
@@ -2052,6 +2351,19 @@
   "P2": 23.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "12:00",
+  "Lega": "Premier League Kenya",
+  "Casa": "Shabana FC",
+  "Ospite": "Migori Youth",
+  "Segno": "1",
+  "P1": 38.0,
+  "PX": 34.3,
+  "P2": 27.7,
+  "Fonti": 3,
+  "Elenco": "betimate, ratingbet, soccersite"
  },
  {
   "Data": "2026-10-29",
@@ -2133,6 +2445,19 @@
  },
  {
   "Data": "2026-10-29",
+  "Ora": "12:00",
+  "Lega": "Ukraine Cup",
+  "Casa": "Zorya Luhansk",
+  "Ospite": "Kryvbas KR",
+  "Segno": "1",
+  "P1": 61.0,
+  "PX": 24.0,
+  "P2": 15.0,
+  "Fonti": 1,
+  "Elenco": "soccersite"
+ },
+ {
+  "Data": "2026-10-29",
   "Ora": "12:30",
   "Lega": "TURKEY - 2. LIG - KIRMIZI GRUP",
   "Casa": "Ankara Demirspor",
@@ -2169,6 +2494,19 @@
   "P2": 54.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "12:30",
+  "Lega": "Coppa di Polonia",
+  "Casa": "Avia Swidnik",
+  "Ospite": "Radomiak Radom",
+  "Segno": "2",
+  "P1": 20.5,
+  "PX": 24.0,
+  "P2": 55.5,
+  "Fonti": 2,
+  "Elenco": "betimate, ratingbet"
  },
  {
   "Data": "2026-10-29",
@@ -2316,6 +2654,32 @@
  {
   "Data": "2026-10-29",
   "Ora": "12:30",
+  "Lega": "Coppa d'Armenia",
+  "Casa": "Olympia FC",
+  "Ospite": "Ararat Armenia",
+  "Segno": "2",
+  "P1": 23.0,
+  "PX": 20.0,
+  "P2": 57.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "12:30",
+  "Lega": "Coppa d'Armenia",
+  "Casa": "Olympia Yerevan",
+  "Ospite": "Ararat Armenia",
+  "Segno": "2",
+  "P1": 11.0,
+  "PX": 16.0,
+  "P2": 73.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "12:30",
   "Lega": "ENGLAND - CHAMPIONSHIP",
   "Casa": "Portsmouth",
   "Ospite": "Millwall",
@@ -2325,6 +2689,19 @@
   "P2": 27.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "12:30",
+  "Lega": "Qualificazioni Europeo UEFA U17 Femminile",
+  "Casa": "Serbia U17 (D)",
+  "Ospite": "Malta U17 (D)",
+  "Segno": "1",
+  "P1": 96.0,
+  "PX": 3.0,
+  "P2": 1.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -2394,6 +2771,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "13:00",
+  "Lega": "Division 2 Arabia Saudita",
+  "Casa": "AL Hada",
+  "Ospite": "Al Entesar Club",
+  "Segno": "1",
+  "P1": 45.0,
+  "PX": 22.0,
+  "P2": 33.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "13:00",
   "Lega": "CYPRUS - 2. DIVISION",
   "Casa": "ASIL",
   "Ospite": "Doxa Katokopias",
@@ -2403,6 +2793,19 @@
   "P2": 39.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "13:00",
+  "Lega": "Division 2 Arabia Saudita",
+  "Casa": "Al-Rawdhah Club",
+  "Ospite": "AL Loa",
+  "Segno": "1",
+  "P1": 41.0,
+  "PX": 23.0,
+  "P2": 36.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -2784,6 +3187,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "13:00",
+  "Lega": "Liga 2 indonesiana",
+  "Casa": "Persiba Balikpapan",
+  "Ospite": "PSBS Biak",
+  "Segno": "1",
+  "P1": 77.0,
+  "PX": 13.0,
+  "P2": 10.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "13:00",
   "Lega": "INDONESIA - LIGA 2 GRP. A",
   "Casa": "Persiku Kudus",
   "Ospite": "Semen Padang",
@@ -2927,6 +3343,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "13:00",
+  "Lega": "Qualificazioni Europeo UEFA U17 Femminile",
+  "Casa": "Turchia U17 (D)",
+  "Ospite": "Montenegro U17 (D)",
+  "Segno": "1",
+  "P1": 77.0,
+  "PX": 11.0,
+  "P2": 12.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "13:00",
   "Lega": "KENYA - PREMIER LEAGUE",
   "Casa": "Ulinzi Stars",
   "Ospite": "Mara Sugar",
@@ -3017,16 +3446,55 @@
  },
  {
   "Data": "2026-10-29",
+  "Ora": "13:10",
+  "Lega": "Division 2 Arabia Saudita",
+  "Casa": "Al Sharq",
+  "Ospite": "Najran SC",
+  "Segno": "1",
+  "P1": 44.0,
+  "PX": 25.0,
+  "P2": 31.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "13:10",
+  "Lega": "Division 2 Arabia Saudita",
+  "Casa": "Al Shoalah",
+  "Ospite": "Al Washm",
+  "Segno": "1",
+  "P1": 46.0,
+  "PX": 20.0,
+  "P2": 34.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "13:15",
+  "Lega": "International: AFC Champions League Two",
+  "Casa": "Phnom Penh",
+  "Ospite": "Kitchee",
+  "Segno": "1",
+  "P1": 40.0,
+  "PX": 26.0,
+  "P2": 34.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-10-29",
   "Ora": "13:15",
   "Lega": "Asia - AFC Champions League Two",
   "Casa": "Phnom Penh Crown",
   "Ospite": "Kitchee",
   "Segno": "1",
-  "P1": 42.0,
-  "PX": 23.0,
-  "P2": 35.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 48.7,
+  "PX": 24.3,
+  "P2": 27.0,
+  "Fonti": 3,
+  "Elenco": "betimate, footymetrics, soccersite"
  },
  {
   "Data": "2026-10-29",
@@ -3034,12 +3502,25 @@
   "Lega": "Asia - AFC Champions League Two",
   "Casa": "Shanghai Shenhua",
   "Ospite": "Machida Zelvia",
-  "Segno": "1",
-  "P1": 38.0,
-  "PX": 24.0,
-  "P2": 38.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "Segno": "2",
+  "P1": 28.2,
+  "PX": 26.8,
+  "P2": 45.0,
+  "Fonti": 4,
+  "Elenco": "betimate, footymetrics, ratingbet, soccersite"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "13:15",
+  "Lega": "AFC Champions League Two",
+  "Casa": "Tai Po",
+  "Ospite": "BG Pathum United",
+  "Segno": "2",
+  "P1": 16.5,
+  "PX": 23.5,
+  "P2": 60.0,
+  "Fonti": 2,
+  "Elenco": "betimate, ratingbet"
  },
  {
   "Data": "2026-10-29",
@@ -3048,24 +3529,24 @@
   "Casa": "Wofoo Tai Po",
   "Ospite": "BG Pathum United",
   "Segno": "2",
-  "P1": 30.0,
-  "PX": 25.0,
-  "P2": 45.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 28.0,
+  "PX": 25.5,
+  "P2": 46.5,
+  "Fonti": 2,
+  "Elenco": "footymetrics, soccersite"
  },
  {
   "Data": "2026-10-29",
   "Ora": "13:30",
-  "Lega": "DENMARK - DBU POKALEN",
+  "Lega": "Coppa di Danimarca",
   "Casa": "Aarhus Fremad",
   "Ospite": "FC Copenhagen",
   "Segno": "2",
-  "P1": 16.0,
-  "PX": 19.5,
-  "P2": 64.5,
-  "Fonti": 2,
-  "Elenco": "ratingbet, statarea"
+  "P1": 14.2,
+  "PX": 20.0,
+  "P2": 65.8,
+  "Fonti": 4,
+  "Elenco": "betimate, ratingbet, soccersite, statarea"
  },
  {
   "Data": "2026-10-29",
@@ -3079,6 +3560,19 @@
   "P2": 34.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "13:30",
+  "Lega": "Second Division egiziana",
+  "Casa": "Baladiyet El Mahallah",
+  "Ospite": "Al Nasr Cairo",
+  "Segno": "2",
+  "P1": 30.0,
+  "PX": 25.0,
+  "P2": 45.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -3135,6 +3629,84 @@
  {
   "Data": "2026-10-29",
   "Ora": "13:30",
+  "Lega": "Egitto - Seconda Divisione B",
+  "Casa": "Delphi SC",
+  "Ospite": "Al Majd",
+  "Segno": "1",
+  "P1": 49.0,
+  "PX": 25.0,
+  "P2": 26.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "13:30",
+  "Lega": "Second Division egiziana",
+  "Casa": "El Daklyeh",
+  "Ospite": "El Entag El Harby",
+  "Segno": "2",
+  "P1": 37.0,
+  "PX": 21.0,
+  "P2": 42.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "13:30",
+  "Lega": "Second Division egiziana",
+  "Casa": "El Mansoura",
+  "Ospite": "Haras El Hedoud",
+  "Segno": "2",
+  "P1": 33.0,
+  "PX": 29.0,
+  "P2": 38.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "13:30",
+  "Lega": "Second Division egiziana",
+  "Casa": "El Seka El Hadid",
+  "Ospite": "Tanta",
+  "Segno": "1",
+  "P1": 49.0,
+  "PX": 27.0,
+  "P2": 24.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "13:30",
+  "Lega": "Coppa di Turchia",
+  "Casa": "Genclerbirligi",
+  "Ospite": "Karakopru Belediyespor",
+  "Segno": "1",
+  "P1": 56.0,
+  "PX": 22.0,
+  "P2": 22.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "13:30",
+  "Lega": "Albania 1st Division",
+  "Casa": "Iliria Fushë-Krujë",
+  "Ospite": "Flamurtari",
+  "Segno": "2",
+  "P1": 26.0,
+  "PX": 34.0,
+  "P2": 40.0,
+  "Fonti": 1,
+  "Elenco": "soccersite"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "13:30",
   "Lega": "ITALY - SERIE C GRP. C",
   "Casa": "Inter U23",
   "Ospite": "ASD Sorrento",
@@ -3148,6 +3720,58 @@
  {
   "Data": "2026-10-29",
   "Ora": "13:30",
+  "Lega": "Division 2 Arabia Saudita",
+  "Casa": "Jubbah",
+  "Ospite": "Al-Arabi Al-Saudi",
+  "Segno": "1",
+  "P1": 64.0,
+  "PX": 19.0,
+  "P2": 17.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "13:30",
+  "Lega": "Kategoria e Parë Albania",
+  "Casa": "KF Iliria Fushe-Kruje",
+  "Ospite": "KS Flamurtari Vlore",
+  "Segno": "2",
+  "P1": 36.0,
+  "PX": 26.0,
+  "P2": 38.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "13:30",
+  "Lega": "Kategoria Superiore Albania",
+  "Casa": "KF Tirana",
+  "Ospite": "FC Dinamo City",
+  "Segno": "2",
+  "P1": 35.5,
+  "PX": 28.0,
+  "P2": 36.5,
+  "Fonti": 2,
+  "Elenco": "betimate, ratingbet"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "13:30",
+  "Lega": "Second Division egiziana",
+  "Casa": "Kahraba Ismailia",
+  "Ospite": "FC Masar",
+  "Segno": "2",
+  "P1": 34.0,
+  "PX": 20.0,
+  "P2": 46.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "13:30",
   "Lega": "CZECH REPUBLIC - CFL GRP. A",
   "Casa": "Kraluv Dvur",
   "Ospite": "Dynamo Ceske Budejovice",
@@ -3157,6 +3781,19 @@
   "P2": 27.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "13:30",
+  "Lega": "Second Division egiziana",
+  "Casa": "La Viena FC",
+  "Ospite": "Dayrout",
+  "Segno": "1",
+  "P1": 50.0,
+  "PX": 28.0,
+  "P2": 22.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -3183,6 +3820,45 @@
   "P2": 49.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "13:30",
+  "Lega": "Egitto - Seconda Divisione B",
+  "Casa": "Orange Sport FSI",
+  "Ospite": "Misr Insurance FC",
+  "Segno": "2",
+  "P1": 34.0,
+  "PX": 25.0,
+  "P2": 41.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "13:30",
+  "Lega": "Second Division egiziana",
+  "Casa": "Pharco FC",
+  "Ospite": "WE SC",
+  "Segno": "1",
+  "P1": 38.0,
+  "PX": 26.0,
+  "P2": 36.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "13:30",
+  "Lega": "Second Division egiziana",
+  "Casa": "Proxy SC",
+  "Ospite": "Ismaily SC",
+  "Segno": "1",
+  "P1": 47.0,
+  "PX": 24.0,
+  "P2": 29.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -3252,6 +3928,45 @@
  {
   "Data": "2026-10-29",
   "Ora": "13:30",
+  "Lega": "Second Division egiziana",
+  "Casa": "Team FC Cairo",
+  "Ospite": "Delta United",
+  "Segno": "1",
+  "P1": 48.0,
+  "PX": 21.0,
+  "P2": 31.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "13:30",
+  "Lega": "Second Division egiziana",
+  "Casa": "Tersana SC",
+  "Ospite": "Maleyat Kafr El Zayat",
+  "Segno": "1",
+  "P1": 38.0,
+  "PX": 29.0,
+  "P2": 33.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "13:30",
+  "Lega": "Albania Superliga",
+  "Casa": "Tirana",
+  "Ospite": "Dinamo Tirana",
+  "Segno": "X",
+  "P1": 31.0,
+  "PX": 35.0,
+  "P2": 34.0,
+  "Fonti": 1,
+  "Elenco": "soccersite"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "13:30",
   "Lega": "ITALY - SERIE C GRP. A",
   "Casa": "Treviso",
   "Ospite": "Dolomiti Bellunesi",
@@ -3274,6 +3989,45 @@
   "P2": 41.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "13:35",
+  "Lega": "Division 2 Arabia Saudita",
+  "Casa": "Jerash",
+  "Ospite": "Al Qous",
+  "Segno": "1",
+  "P1": 55.0,
+  "PX": 19.0,
+  "P2": 26.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "13:40",
+  "Lega": "Division 2 Arabia Saudita",
+  "Casa": "Qilwah Club",
+  "Ospite": "Al Najoom",
+  "Segno": "1",
+  "P1": 42.0,
+  "PX": 25.0,
+  "P2": 33.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "13:45",
+  "Lega": "Oman Sultans Cup",
+  "Casa": "Al Taleea",
+  "Ospite": "Al Mudhaibi",
+  "Segno": "1",
+  "P1": 57.0,
+  "PX": 21.0,
+  "P2": 22.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -3313,6 +4067,19 @@
   "P2": 26.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "14:00",
+  "Lega": "Premier Soccer League Zimbabwe",
+  "Casa": "CAPS United",
+  "Ospite": "Scottland FC Mabvuku",
+  "Segno": "2",
+  "P1": 21.0,
+  "PX": 30.0,
+  "P2": 49.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -3473,6 +4240,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "14:00",
+  "Lega": "Ligue A Burundi",
+  "Casa": "Inter Stars",
+  "Ospite": "Olympic Star",
+  "Segno": "2",
+  "P1": 34.0,
+  "PX": 29.0,
+  "P2": 37.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "14:00",
   "Lega": "HUNGARY - NB II",
   "Casa": "Kecskemeti TE",
   "Ospite": "Karcagi Se",
@@ -3482,6 +4262,19 @@
   "P2": 11.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "14:00",
+  "Lega": "III Liga polacca",
+  "Casa": "Korona Kielce II",
+  "Ospite": "Wislanie Jaskowice",
+  "Segno": "1",
+  "P1": 47.0,
+  "PX": 21.0,
+  "P2": 32.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -3508,6 +4301,19 @@
   "P2": 16.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "14:00",
+  "Lega": "Iraq Stars League",
+  "Casa": "Mosul FC",
+  "Ospite": "Al Jolan SC",
+  "Segno": "2",
+  "P1": 35.0,
+  "PX": 28.0,
+  "P2": 37.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -3564,6 +4370,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "14:00",
+  "Lega": "Premier League Tanzania",
+  "Casa": "Pamba SC",
+  "Ospite": "Singida Black Stars",
+  "Segno": "2",
+  "P1": 32.0,
+  "PX": 25.0,
+  "P2": 43.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "14:00",
   "Lega": "ITALY - SERIE D GRP. B",
   "Casa": "Scanzorosciate",
   "Ospite": "Villa dAlme",
@@ -3607,11 +4426,37 @@
   "Casa": "Sutjeska",
   "Ospite": "Jezero",
   "Segno": "1",
-  "P1": 70.0,
-  "PX": 20.0,
-  "P2": 10.0,
+  "P1": 64.0,
+  "PX": 23.0,
+  "P2": 13.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "14:00",
+  "Lega": "Prva Liga montenegrina",
+  "Casa": "Sutjeska Niksic",
+  "Ospite": "FK Jezero",
+  "Segno": "1",
+  "P1": 60.0,
+  "PX": 23.0,
+  "P2": 17.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "14:00",
+  "Lega": "Premier League Tanzania",
+  "Casa": "TRA United",
+  "Ospite": "Geita Gold",
+  "Segno": "1",
+  "P1": 56.0,
+  "PX": 25.0,
+  "P2": 19.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -3655,6 +4500,32 @@
  {
   "Data": "2026-10-29",
   "Ora": "14:15",
+  "Lega": "Premier League Kenya",
+  "Casa": "Administration Police FC",
+  "Ospite": "Ulinzi Stars",
+  "Segno": "1",
+  "P1": 45.0,
+  "PX": 33.0,
+  "P2": 22.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "14:15",
+  "Lega": "Iran Persian Gulf Pro League",
+  "Casa": "Fajr Sepasi",
+  "Ospite": "Tractor Sazi",
+  "Segno": "2",
+  "P1": 25.0,
+  "PX": 33.0,
+  "P2": 42.0,
+  "Fonti": 1,
+  "Elenco": "soccersite"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "14:15",
   "Lega": "Iran: Persian Gulf Pro League Iran",
   "Casa": "Fajr Sepasi",
   "Ospite": "Tractor",
@@ -3668,6 +4539,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "14:15",
+  "Lega": "Pro League iraniana",
+  "Casa": "Fajr Shahid Sepasi",
+  "Ospite": "Tractor Sazi",
+  "Segno": "2",
+  "P1": 15.0,
+  "PX": 26.0,
+  "P2": 59.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "14:15",
   "Lega": "KENYA - PREMIER LEAGUE",
   "Casa": "Gor Mahia",
   "Ospite": "Bandari",
@@ -3677,6 +4561,19 @@
   "P2": 9.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "14:15",
+  "Lega": "Premier League Kenya",
+  "Casa": "Kenya Police FC",
+  "Ospite": "Ulinzi Stars",
+  "Segno": "1",
+  "P1": 46.0,
+  "PX": 26.0,
+  "P2": 28.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -3707,6 +4604,32 @@
  {
   "Data": "2026-10-29",
   "Ora": "14:30",
+  "Lega": "Ligue 1 Tunisia",
+  "Casa": "CS Sfaxien",
+  "Ospite": "Esperance de Tunis",
+  "Segno": "1",
+  "P1": 35.0,
+  "PX": 34.0,
+  "P2": 31.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "14:30",
+  "Lega": "Ligue 1 Tunisia",
+  "Casa": "Club Africain",
+  "Ospite": "Bizertin",
+  "Segno": "1",
+  "P1": 59.0,
+  "PX": 30.0,
+  "P2": 11.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "14:30",
   "Lega": "GERMANY - BUNDESLIGA",
   "Casa": "FC Augsburg",
   "Ospite": "Union Berlin",
@@ -3729,6 +4652,19 @@
   "P2": 28.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "14:30",
+  "Lega": "1. Liga U19 slovacca",
+  "Casa": "FC Petrzalka U19",
+  "Ospite": "Slovan Bratislava U19",
+  "Segno": "2",
+  "P1": 21.0,
+  "PX": 17.0,
+  "P2": 62.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -3824,6 +4760,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "14:30",
+  "Lega": "Ligue 1 Tunisia",
+  "Casa": "Stade Tunisien",
+  "Ospite": "ES Zarzis",
+  "Segno": "1",
+  "P1": 50.0,
+  "PX": 31.0,
+  "P2": 19.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "14:30",
   "Lega": "POLAND - I LIGA",
   "Casa": "Stal Mielec",
   "Ospite": "Chrobry Glogow",
@@ -3872,6 +4821,19 @@
   "P2": 38.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "14:45",
+  "Lega": "Iraq Stars League",
+  "Casa": "Al Naft SC",
+  "Ospite": "Al Kahrabaa",
+  "Segno": "1",
+  "P1": 45.0,
+  "PX": 32.0,
+  "P2": 23.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -4591,6 +5553,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "15:00",
+  "Lega": "Egypt Premier League",
+  "Casa": "Future FC",
+  "Ospite": "Al Ahly",
+  "Segno": "2",
+  "P1": 20.0,
+  "PX": 30.0,
+  "P2": 50.0,
+  "Fonti": 1,
+  "Elenco": "soccersite"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "15:00",
   "Lega": "ENGLAND - LEAGUE TWO",
   "Casa": "Gillingham",
   "Ospite": "Grimsby",
@@ -4838,6 +5813,32 @@
  {
   "Data": "2026-10-29",
   "Ora": "15:00",
+  "Lega": "Russia Cup",
+  "Casa": "Krylia Sovetov",
+  "Ospite": "Dinamo Makhachkala",
+  "Segno": "1",
+  "P1": 50.0,
+  "PX": 32.0,
+  "P2": 18.0,
+  "Fonti": 1,
+  "Elenco": "soccersite"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "15:00",
+  "Lega": "Coppa di Russia",
+  "Casa": "Krylia Sovetov",
+  "Ospite": "Dynamo Makhachkala",
+  "Segno": "1",
+  "P1": 47.0,
+  "PX": 25.0,
+  "P2": 28.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "15:00",
   "Lega": "RUSSIA - GROUP C",
   "Casa": "Krylya Sovetov",
   "Ospite": "FK Makhachkala",
@@ -5003,6 +6004,19 @@
   "P2": 55.5,
   "Fonti": 2,
   "Elenco": "footymetrics, ratingbet"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "15:00",
+  "Lega": "Premier League egiziana",
+  "Casa": "Modern Sport FC",
+  "Ospite": "Al Ahly Cairo",
+  "Segno": "2",
+  "P1": 13.0,
+  "PX": 21.0,
+  "P2": 66.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -5644,15 +6658,41 @@
  {
   "Data": "2026-10-29",
   "Ora": "15:10",
+  "Lega": "Pro League degli Emirati Arabi Uniti",
+  "Casa": "Al Ain SCC",
+  "Ospite": "Ajman SCC",
+  "Segno": "1",
+  "P1": 74.0,
+  "PX": 15.0,
+  "P2": 11.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "15:10",
   "Lega": "United Arab Emirates: Pro League UAE",
   "Casa": "Al-Ain",
   "Ospite": "Ajman",
   "Segno": "1",
-  "P1": 73.0,
-  "PX": 17.0,
-  "P2": 10.0,
+  "P1": 65.5,
+  "PX": 19.0,
+  "P2": 15.5,
+  "Fonti": 2,
+  "Elenco": "ratingbet, soccersite"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "15:15",
+  "Lega": "Seconda Divisione Qatar",
+  "Casa": "Al Waab FC",
+  "Ospite": "Al Kharaitiyat SC",
+  "Segno": "2",
+  "P1": 36.0,
+  "PX": 25.0,
+  "P2": 39.0,
   "Fonti": 1,
-  "Elenco": "ratingbet"
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -5826,6 +6866,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "15:35",
+  "Lega": "Saudi Pro League",
+  "Casa": "Al Khaleej Saihat",
+  "Ospite": "Al Hazm",
+  "Segno": "1",
+  "P1": 43.5,
+  "PX": 28.5,
+  "P2": 28.0,
+  "Fonti": 2,
+  "Elenco": "betimate, soccersite"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "15:35",
   "Lega": "KUWAIT - PREMIER LEAGUE",
   "Casa": "Al-Salmiyah",
   "Ospite": "Al-Jahra",
@@ -5839,6 +6892,45 @@
  {
   "Data": "2026-10-29",
   "Ora": "16:00",
+  "Lega": "Division 1 Giordania",
+  "Casa": "Al Ahli Amman",
+  "Ospite": "Ittihad Al-Ramtha",
+  "Segno": "1",
+  "P1": 38.0,
+  "PX": 27.0,
+  "P2": 35.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "16:00",
+  "Lega": "Pro League Giordania",
+  "Casa": "Al Salt",
+  "Ospite": "Al-Jazeera",
+  "Segno": "2",
+  "P1": 32.0,
+  "PX": 28.0,
+  "P2": 40.0,
+  "Fonti": 2,
+  "Elenco": "betimate, ratingbet"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "16:00",
+  "Lega": "Division 1 Giordania",
+  "Casa": "Al-Sareeh",
+  "Ospite": "Sama Al Sarhan",
+  "Segno": "1",
+  "P1": 45.0,
+  "PX": 25.0,
+  "P2": 30.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "16:00",
   "Lega": "SPAIN - SEGUNDA FEDERACION - GROUP 1",
   "Casa": "Amorebieta",
   "Ospite": "Coruxo",
@@ -5848,6 +6940,19 @@
   "P2": 28.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "16:00",
+  "Lega": "Coppa di Romania",
+  "Casa": "CS Concordia Chiajna",
+  "Ospite": "ACS Sepsi",
+  "Segno": "2",
+  "P1": 36.0,
+  "PX": 22.0,
+  "P2": 42.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -5874,6 +6979,19 @@
   "P2": 25.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "16:00",
+  "Lega": "U17 Womens World Cup",
+  "Casa": "Cina U17 (Donne)",
+  "Ospite": "Francia U17 (D)",
+  "Segno": "1",
+  "P1": 54.0,
+  "PX": 18.0,
+  "P2": 28.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -5930,6 +7048,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "16:00",
+  "Lega": "Prima Lega bielorussa",
+  "Casa": "Dinamo Minsk Reserves",
+  "Ospite": "FC Molodechno-Dyussh-4",
+  "Segno": "1",
+  "P1": 40.0,
+  "PX": 26.0,
+  "P2": 34.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "16:00",
   "Lega": "ROMANIA - SUPERLIGA",
   "Casa": "FC Arges Pitesti",
   "Ospite": "UTA Arad",
@@ -5952,6 +7083,19 @@
   "P2": 28.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "16:00",
+  "Lega": "Coppa d'Armenia",
+  "Casa": "FC Noah",
+  "Ospite": "Syunik",
+  "Segno": "1",
+  "P1": 89.0,
+  "PX": 8.0,
+  "P2": 3.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -5995,6 +7139,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "16:00",
+  "Lega": "Coppa di Turchia",
+  "Casa": "Kasimpasa",
+  "Ospite": "Corluspor 1947",
+  "Segno": "1",
+  "P1": 85.0,
+  "PX": 10.0,
+  "P2": 5.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "16:00",
   "Lega": "HUNGARY - NB II",
   "Casa": "MOL Fehervar FC",
   "Ospite": "FC Ajka",
@@ -6004,6 +7161,32 @@
   "P2": 20.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "16:00",
+  "Lega": "Division 1 Giordania",
+  "Casa": "Ma'an",
+  "Ospite": "Shabab Al-Aqaba SC",
+  "Segno": "1",
+  "P1": 50.0,
+  "PX": 25.0,
+  "P2": 25.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "16:00",
+  "Lega": "U17 Womens World Cup",
+  "Casa": "Nigeria U17 (Donne)",
+  "Ospite": "Messico U17 (D)",
+  "Segno": "1",
+  "P1": 38.0,
+  "PX": 25.0,
+  "P2": 37.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -6125,6 +7308,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "16:30",
+  "Lega": "Iraq Stars League",
+  "Casa": "Al Quwa Al Jawiya",
+  "Ospite": "Al Minaa",
+  "Segno": "1",
+  "P1": 56.0,
+  "PX": 26.0,
+  "P2": 18.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "16:30",
   "Lega": "Ivory Coast - Ligue 1",
   "Casa": "Bouake",
   "Ospite": "Korhogo",
@@ -6134,6 +7330,19 @@
   "P2": 55.4,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "16:30",
+  "Lega": "Ivory Coast Premier Division",
+  "Casa": "Bouaké FC",
+  "Ospite": "CO Korhogo",
+  "Segno": "2",
+  "P1": 29.0,
+  "PX": 33.0,
+  "P2": 38.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -6229,6 +7438,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "16:30",
+  "Lega": "Ivory Coast Premier Division",
+  "Casa": "San-Pédro FC",
+  "Ospite": "Societe Omnisports De L'Armee",
+  "Segno": "1",
+  "P1": 39.0,
+  "PX": 29.0,
+  "P2": 32.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "16:30",
   "Lega": "ITALY - SERIE C GRP. C",
   "Casa": "Savoia",
   "Ospite": "Cosenza",
@@ -6251,6 +7473,19 @@
   "P2": 31.0,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "16:30",
+  "Lega": "Ivory Coast Premier Division",
+  "Casa": "Stella Club d'Adjame",
+  "Ospite": "AFAD Djekanou",
+  "Segno": "2",
+  "P1": 22.0,
+  "PX": 30.0,
+  "P2": 48.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -6319,6 +7554,19 @@
  },
  {
   "Data": "2026-10-29",
+  "Ora": "16:45",
+  "Lega": "Oman Sultans Cup",
+  "Casa": "Samail",
+  "Ospite": "Bidiyah",
+  "Segno": "1",
+  "P1": 39.0,
+  "PX": 23.0,
+  "P2": 38.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
   "Ora": "17:00",
   "Lega": "TURKEY - 2. LIG - BEYAZ GRUP",
   "Casa": "Aliaga",
@@ -6350,9 +7598,9 @@
   "Casa": "Decic Tuzi",
   "Ospite": "Otrant",
   "Segno": "1",
-  "P1": 38.0,
+  "P1": 45.0,
   "PX": 29.0,
-  "P2": 33.0,
+  "P2": 26.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
  },
@@ -6372,6 +7620,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "17:00",
+  "Lega": "Veikkausliiga finlandese",
+  "Casa": "FC Inter",
+  "Ospite": "HJK Helsinki",
+  "Segno": "1",
+  "P1": 46.0,
+  "PX": 27.0,
+  "P2": 27.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "17:00",
   "Lega": "SWITZERLAND - SUPER LEAGUE",
   "Casa": "FC Zurich",
   "Ospite": "FC Luzern",
@@ -6381,6 +7642,19 @@
   "P2": 32.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "17:00",
+  "Lega": "Prva Liga montenegrina",
+  "Casa": "FK Decic Tuzi",
+  "Ospite": "Otrant-Olympic Ulcinj",
+  "Segno": "1",
+  "P1": 39.0,
+  "PX": 27.0,
+  "P2": 34.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -6411,6 +7685,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "17:00",
+  "Lega": "Prima Divisione Femminile (Israele)",
+  "Casa": "Hapoel Raanana (W)",
+  "Ospite": "Bnot Netanya (W)",
+  "Segno": "1",
+  "P1": 60.0,
+  "PX": 17.0,
+  "P2": 23.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "17:00",
   "Lega": "ISRAEL - LIGAT HAAL",
   "Casa": "Hapoel Ramat Gan",
   "Ospite": "Maccabi Petah Tikva",
@@ -6424,15 +7711,28 @@
  {
   "Data": "2026-10-29",
   "Ora": "17:00",
+  "Lega": "Prima Divisione Femminile (Israele)",
+  "Casa": "Hapoel Tel Aviv (W)",
+  "Ospite": "Kiryat Gat SC (W)",
+  "Segno": "2",
+  "P1": 6.0,
+  "PX": 6.0,
+  "P2": 88.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "17:00",
   "Lega": "FINLAND - VEIKKAUSLIIGA CHAMPIONSHIP ROUND",
   "Casa": "Inter Turku",
   "Ospite": "HJK Helsinki",
   "Segno": "1",
-  "P1": 41.0,
-  "PX": 32.0,
-  "P2": 27.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
+  "P1": 38.5,
+  "PX": 32.5,
+  "P2": 29.0,
+  "Fonti": 2,
+  "Elenco": "soccersite, statarea"
  },
  {
   "Data": "2026-10-29",
@@ -6489,6 +7789,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "17:00",
+  "Lega": "Ukraine Cup",
+  "Casa": "Karpaty",
+  "Ospite": "Oleksandria",
+  "Segno": "1",
+  "P1": 50.0,
+  "PX": 26.0,
+  "P2": 24.0,
+  "Fonti": 1,
+  "Elenco": "soccersite"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "17:00",
   "Lega": "UKRAINE - CUP",
   "Casa": "Karpaty Lviv",
   "Ospite": "FC Oleksandriya",
@@ -6498,6 +7811,19 @@
   "P2": 18.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "17:00",
+  "Lega": "Coppa d'Ucraina",
+  "Casa": "Karpaty Lviv",
+  "Ospite": "PFC Oleksandria",
+  "Segno": "1",
+  "P1": 68.0,
+  "PX": 19.0,
+  "P2": 13.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -6524,6 +7850,45 @@
   "P2": 53.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "17:00",
+  "Lega": "Esiliiga estone",
+  "Casa": "Maardu Linnameeskond",
+  "Ospite": "FC Elva",
+  "Segno": "1",
+  "P1": 47.0,
+  "PX": 22.0,
+  "P2": 31.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "17:00",
+  "Lega": "Prima Divisione Femminile (Israele)",
+  "Casa": "Maccabi Kishronot Hadera (W)",
+  "Ospite": "Hapoel Katamon Jerusalem (W)",
+  "Segno": "2",
+  "P1": 10.0,
+  "PX": 10.0,
+  "P2": 80.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "17:00",
+  "Lega": "Prima Divisione Femminile (Israele)",
+  "Casa": "Maccabi Tel Aviv (W)",
+  "Ospite": "Maccabi Holon (W)",
+  "Segno": "1",
+  "P1": 54.0,
+  "PX": 18.0,
+  "P2": 28.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -6558,9 +7923,9 @@
   "Casa": "NFC Volos",
   "Ospite": "Atromitos",
   "Segno": "1",
-  "P1": 38.0,
-  "PX": 30.0,
-  "P2": 32.0,
+  "P1": 37.0,
+  "PX": 29.0,
+  "P2": 34.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
  },
@@ -6576,6 +7941,19 @@
   "P2": 17.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "17:00",
+  "Lega": "Premier League Tanzania",
+  "Casa": "Namungo FC",
+  "Ospite": "Polisi Tanzania FC",
+  "Segno": "1",
+  "P1": 42.0,
+  "PX": 29.0,
+  "P2": 29.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -6788,6 +8166,32 @@
  {
   "Data": "2026-10-29",
   "Ora": "17:00",
+  "Lega": "Coppa di Grecia",
+  "Casa": "Volos NFC",
+  "Ospite": "Atromitos Athinon",
+  "Segno": "1",
+  "P1": 38.0,
+  "PX": 27.0,
+  "P2": 35.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "17:00",
+  "Lega": "Greece Cup",
+  "Casa": "Volos NFC",
+  "Ospite": "Atromitos",
+  "Segno": "X",
+  "P1": 32.0,
+  "PX": 35.0,
+  "P2": 33.0,
+  "Fonti": 1,
+  "Elenco": "soccersite"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "17:00",
   "Lega": "GREECE - SUPERBET GREEK CUP MAIN ROUND",
   "Casa": "Volos NPS",
   "Ospite": "Atromitos Athinon",
@@ -6805,11 +8209,37 @@
   "Casa": "Yantra",
   "Ospite": "Hebar",
   "Segno": "1",
-  "P1": 47.0,
+  "P1": 49.0,
   "PX": 26.0,
-  "P2": 27.0,
+  "P2": 25.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "17:00",
+  "Lega": "Bulgaria Second League",
+  "Casa": "Yantra 2019",
+  "Ospite": "Hebar 1918",
+  "Segno": "1",
+  "P1": 38.0,
+  "PX": 32.0,
+  "P2": 30.0,
+  "Fonti": 1,
+  "Elenco": "soccersite"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "17:00",
+  "Lega": "Bulgaria - Seconda Lega",
+  "Casa": "Yantra Gabrovo",
+  "Ospite": "FC Hebar Pazardzhik",
+  "Segno": "1",
+  "P1": 47.0,
+  "PX": 25.0,
+  "P2": 28.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -6849,6 +8279,19 @@
   "P2": 21.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "17:30",
+  "Lega": "Seconda Divisione Qatar",
+  "Casa": "AL Rayyan Nextgen",
+  "Ospite": "Al Mesaimeer SC",
+  "Segno": "2",
+  "P1": 23.0,
+  "PX": 19.0,
+  "P2": 58.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -6905,15 +8348,28 @@
  {
   "Data": "2026-10-29",
   "Ora": "17:30",
-  "Lega": "RUSSIA - GROUP D",
+  "Lega": "Coppa di Russia",
   "Casa": "CSKA Moscow",
   "Ospite": "Lokomotiv Moscow",
   "Segno": "1",
-  "P1": 52.0,
-  "PX": 26.0,
-  "P2": 22.0,
-  "Fonti": 2,
-  "Elenco": "ratingbet, statarea"
+  "P1": 53.3,
+  "PX": 25.0,
+  "P2": 21.7,
+  "Fonti": 3,
+  "Elenco": "betimate, ratingbet, statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "17:30",
+  "Lega": "Russia Cup",
+  "Casa": "CSKA Moscow",
+  "Ospite": "Lokomotiv",
+  "Segno": "1",
+  "P1": 44.0,
+  "PX": 31.0,
+  "P2": 25.0,
+  "Fonti": 1,
+  "Elenco": "soccersite"
  },
  {
   "Data": "2026-10-29",
@@ -6931,15 +8387,28 @@
  {
   "Data": "2026-10-29",
   "Ora": "17:30",
-  "Lega": "Poland: Polish Cup",
+  "Lega": "Coppa di Polonia",
   "Casa": "Chrobry Glogow",
   "Ospite": "Polonia Bytom",
   "Segno": "1",
-  "P1": 38.0,
-  "PX": 28.0,
-  "P2": 34.0,
+  "P1": 41.0,
+  "PX": 26.0,
+  "P2": 33.0,
+  "Fonti": 2,
+  "Elenco": "betimate, ratingbet"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "17:30",
+  "Lega": "Poland Cup",
+  "Casa": "Chrobry Głogów",
+  "Ospite": "Polonia Bytom",
+  "Segno": "2",
+  "P1": 25.0,
+  "PX": 33.0,
+  "P2": 42.0,
   "Fonti": 1,
-  "Elenco": "ratingbet"
+  "Elenco": "soccersite"
  },
  {
   "Data": "2026-10-29",
@@ -7035,15 +8504,15 @@
  {
   "Data": "2026-10-29",
   "Ora": "17:30",
-  "Lega": "SLOVENIA - PRVA LIGA",
+  "Lega": "Prva Liga Slovenia",
   "Casa": "NK Brinje Grosuplje",
   "Ospite": "NK Bravo",
   "Segno": "2",
-  "P1": 30.0,
-  "PX": 29.0,
-  "P2": 41.0,
-  "Fonti": 2,
-  "Elenco": "ratingbet, statarea"
+  "P1": 29.2,
+  "PX": 28.8,
+  "P2": 42.0,
+  "Fonti": 4,
+  "Elenco": "betimate, ratingbet, soccersite, statarea"
  },
  {
   "Data": "2026-10-29",
@@ -7057,6 +8526,19 @@
   "P2": 27.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "17:30",
+  "Lega": "Coppa di Polonia",
+  "Casa": "Polonia Warsaw",
+  "Ospite": "Korona Kielce",
+  "Segno": "2",
+  "P1": 28.0,
+  "PX": 26.0,
+  "P2": 46.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -7096,6 +8578,19 @@
   "P2": 54.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "17:30",
+  "Lega": "Seconda Divisione Qatar",
+  "Casa": "Umm Salal",
+  "Ospite": "Al Bidda SC",
+  "Segno": "1",
+  "P1": 72.0,
+  "PX": 15.0,
+  "P2": 13.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -7230,6 +8725,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "18:00",
+  "Lega": "Division 2 Arabia Saudita",
+  "Casa": "Al Kawkab",
+  "Ospite": "Al Jubail Club",
+  "Segno": "1",
+  "P1": 56.0,
+  "PX": 22.0,
+  "P2": 22.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "18:00",
   "Lega": "TURKEY - SUPER LIG",
   "Casa": "Alanyaspor",
   "Ospite": "Kocaelispor",
@@ -7256,6 +8764,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "18:00",
+  "Lega": "Coppa d'Austria",
+  "Casa": "Austria Lustenau",
+  "Ospite": "SK Sturm Graz",
+  "Segno": "2",
+  "P1": 9.5,
+  "PX": 14.5,
+  "P2": 76.0,
+  "Fonti": 2,
+  "Elenco": "betimate, ratingbet"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "18:00",
   "Lega": "TURKEY - 1. LIG",
   "Casa": "Boluspor",
   "Ospite": "Van Spor FK",
@@ -7265,6 +8786,19 @@
   "P2": 45.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "18:00",
+  "Lega": "Liga Nacional Guatemala",
+  "Casa": "Deportivo Mixco",
+  "Ospite": "Xelaju",
+  "Segno": "1",
+  "P1": 49.0,
+  "PX": 25.0,
+  "P2": 26.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -7282,15 +8816,41 @@
  {
   "Data": "2026-10-29",
   "Ora": "18:00",
+  "Lega": "Coppa d'Estonia",
+  "Casa": "FC Flora Tallinn",
+  "Ospite": "JK Tallinna Kalev II",
+  "Segno": "1",
+  "P1": 97.0,
+  "PX": 2.0,
+  "P2": 1.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "18:00",
+  "Lega": "Coppa di Romania",
+  "Casa": "FC Voluntari",
+  "Ospite": "CS U Craiova",
+  "Segno": "2",
+  "P1": 2.0,
+  "PX": 6.0,
+  "P2": 92.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "18:00",
   "Lega": "ROMANIA - CUPA ROMANIEI GROUP D",
   "Casa": "FC Voluntari",
   "Ospite": "CS Universitatea Craiova",
   "Segno": "2",
-  "P1": 21.0,
-  "PX": 28.5,
-  "P2": 50.5,
-  "Fonti": 2,
-  "Elenco": "ratingbet, statarea"
+  "P1": 17.7,
+  "PX": 29.3,
+  "P2": 53.0,
+  "Fonti": 3,
+  "Elenco": "ratingbet, soccersite, statarea"
  },
  {
   "Data": "2026-10-29",
@@ -7334,15 +8894,67 @@
  {
   "Data": "2026-10-29",
   "Ora": "18:00",
+  "Lega": "Esiliiga estone",
+  "Casa": "JK Tallinna Kalev",
+  "Ospite": "JK Nomme Kalju II",
+  "Segno": "1",
+  "P1": 60.0,
+  "PX": 19.0,
+  "P2": 21.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "18:00",
   "Lega": "Finland - Veikkausliiga",
   "Casa": "KuPS",
   "Ospite": "Gnistan",
   "Segno": "1",
-  "P1": 57.0,
-  "PX": 23.0,
-  "P2": 20.0,
-  "Fonti": 3,
-  "Elenco": "footymetrics, ratingbet, statarea"
+  "P1": 57.2,
+  "PX": 23.8,
+  "P2": 19.0,
+  "Fonti": 4,
+  "Elenco": "footymetrics, ratingbet, soccersite, statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "18:00",
+  "Lega": "Veikkausliiga finlandese",
+  "Casa": "KuPS Kuopio",
+  "Ospite": "IF Gnistan",
+  "Segno": "1",
+  "P1": 55.0,
+  "PX": 24.0,
+  "P2": 21.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "18:00",
+  "Lega": "Botola Pro marocchina",
+  "Casa": "MAS Fes",
+  "Ospite": "RSB Berkane",
+  "Segno": "2",
+  "P1": 33.0,
+  "PX": 32.0,
+  "P2": 35.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "18:00",
+  "Lega": "Campionato College USA Femminile",
+  "Casa": "Mercyhurst (W)",
+  "Ospite": "Wagner (W)",
+  "Segno": "2",
+  "P1": 29.0,
+  "PX": 21.0,
+  "P2": 50.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -7351,11 +8963,11 @@
   "Casa": "Pyramids FC",
   "Ospite": "Wadi Degla",
   "Segno": "1",
-  "P1": 58.5,
-  "PX": 25.9,
-  "P2": 15.6,
-  "Fonti": 3,
-  "Elenco": "footymetrics, ratingbet, statarea"
+  "P1": 59.1,
+  "PX": 25.7,
+  "P2": 15.2,
+  "Fonti": 5,
+  "Elenco": "betimate, footymetrics, ratingbet, soccersite, statarea"
  },
  {
   "Data": "2026-10-29",
@@ -7386,13 +8998,39 @@
  {
   "Data": "2026-10-29",
   "Ora": "18:00",
+  "Lega": "UEFA Women's Europa Cup",
+  "Casa": "Rosenborg (W)",
+  "Ospite": "Brondby (W)",
+  "Segno": "2",
+  "P1": 20.0,
+  "PX": 18.0,
+  "P2": 62.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "18:00",
+  "Lega": "UEFA Women's Europa Cup",
+  "Casa": "Sparta Praha (W)",
+  "Ospite": "Torreense (W)",
+  "Segno": "2",
+  "P1": 35.0,
+  "PX": 17.0,
+  "P2": 48.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "18:00",
   "Lega": "Estonia: Esiliiga Estonia",
   "Casa": "Tallinna Kalev",
   "Ospite": "Nomme Kalju U21",
   "Segno": "1",
-  "P1": 69.0,
-  "PX": 16.0,
-  "P2": 15.0,
+  "P1": 71.0,
+  "PX": 15.0,
+  "P2": 14.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
  },
@@ -7408,6 +9046,19 @@
   "P2": 22.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "18:00",
+  "Lega": "Premier League Botswana",
+  "Casa": "Township Rollers",
+  "Ospite": "Tonota FC",
+  "Segno": "1",
+  "P1": 40.0,
+  "PX": 24.0,
+  "P2": 36.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -7442,11 +9093,24 @@
   "Casa": "Werder Bremen",
   "Ospite": "TSG 1899 Hoffenheim",
   "Segno": "1",
-  "P1": 44.0,
-  "PX": 25.0,
-  "P2": 31.0,
+  "P1": 48.0,
+  "PX": 24.0,
+  "P2": 28.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "18:00",
+  "Lega": "Bundesliga Femminile Germania",
+  "Casa": "Werder Bremen (W)",
+  "Ospite": "TSG 1899 Hoffenheim (W)",
+  "Segno": "2",
+  "P1": 35.0,
+  "PX": 19.0,
+  "P2": 46.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -7477,15 +9141,28 @@
  {
   "Data": "2026-10-29",
   "Ora": "18:30",
-  "Lega": "Albania: Kategoria Superiore Albania",
-  "Casa": "Egnatia",
-  "Ospite": "Teuta Durres",
+  "Lega": "Albania Superliga",
+  "Casa": "Egnatia Rrogozhinë",
+  "Ospite": "Teuta Durrës",
   "Segno": "1",
-  "P1": 48.0,
-  "PX": 28.0,
-  "P2": 24.0,
+  "P1": 38.0,
+  "PX": 33.0,
+  "P2": 29.0,
   "Fonti": 1,
-  "Elenco": "ratingbet"
+  "Elenco": "soccersite"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "18:30",
+  "Lega": "Coppa di Turchia",
+  "Casa": "Eskisehirspor",
+  "Ospite": "76 Igdir Belediyespor",
+  "Segno": "1",
+  "P1": 51.0,
+  "PX": 19.0,
+  "P2": 30.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -7529,15 +9206,28 @@
  {
   "Data": "2026-10-29",
   "Ora": "18:30",
+  "Lega": "Kategoria Superiore Albania",
+  "Casa": "FK Egnatia",
+  "Ospite": "Teuta Durres",
+  "Segno": "1",
+  "P1": 47.5,
+  "PX": 28.5,
+  "P2": 24.0,
+  "Fonti": 2,
+  "Elenco": "betimate, ratingbet"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "18:30",
   "Lega": "Italy - Serie A",
   "Casa": "Frosinone",
   "Ospite": "Lecce",
   "Segno": "1",
-  "P1": 54.5,
-  "PX": 23.7,
-  "P2": 21.7,
-  "Fonti": 3,
-  "Elenco": "footymetrics, ratingbet, statarea"
+  "P1": 53.5,
+  "PX": 24.6,
+  "P2": 21.8,
+  "Fonti": 5,
+  "Elenco": "betimate, footymetrics, ratingbet, soccersite, statarea"
  },
  {
   "Data": "2026-10-29",
@@ -7546,11 +9236,11 @@
   "Casa": "Hammarby",
   "Ospite": "Sirius",
   "Segno": "1",
-  "P1": 57.2,
-  "PX": 20.9,
-  "P2": 21.9,
-  "Fonti": 2,
-  "Elenco": "footymetrics, ratingbet"
+  "P1": 55.9,
+  "PX": 22.4,
+  "P2": 21.7,
+  "Fonti": 4,
+  "Elenco": "betimate, footymetrics, ratingbet, soccersite"
  },
  {
   "Data": "2026-10-29",
@@ -7585,11 +9275,11 @@
   "Casa": "Austria Wien W",
   "Ospite": "Juventus W",
   "Segno": "2",
-  "P1": 37.4,
-  "PX": 24.2,
-  "P2": 38.4,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 35.2,
+  "PX": 28.6,
+  "P2": 36.2,
+  "Fonti": 2,
+  "Elenco": "footymetrics, soccersite"
  },
  {
   "Data": "2026-10-29",
@@ -7620,15 +9310,28 @@
  {
   "Data": "2026-10-29",
   "Ora": "18:45",
+  "Lega": "UEFA Women's Champions League",
+  "Casa": "FK Austria Vienna (W)",
+  "Ospite": "Juventus (W)",
+  "Segno": "1",
+  "P1": 50.0,
+  "PX": 22.0,
+  "P2": 28.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "18:45",
   "Lega": "Netherlands - KNVB Beker",
   "Casa": "Kozakken Boys",
   "Ospite": "FC Utrecht",
   "Segno": "2",
-  "P1": 37.6,
-  "PX": 21.8,
-  "P2": 40.6,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 24.3,
+  "PX": 16.9,
+  "P2": 58.8,
+  "Fonti": 2,
+  "Elenco": "betimate, footymetrics"
  },
  {
   "Data": "2026-10-29",
@@ -7650,11 +9353,11 @@
   "Casa": "Paris W",
   "Ospite": "Häcken W",
   "Segno": "1",
-  "P1": 48.0,
-  "PX": 21.0,
-  "P2": 31.0,
-  "Fonti": 2,
-  "Elenco": "footymetrics, statarea"
+  "P1": 45.8,
+  "PX": 22.8,
+  "P2": 31.5,
+  "Fonti": 4,
+  "Elenco": "betimate, footymetrics, soccersite, statarea"
  },
  {
   "Data": "2026-10-29",
@@ -7689,11 +9392,11 @@
   "Casa": "Al Nassr",
   "Ospite": "Al Kholood",
   "Segno": "1",
-  "P1": 77.0,
-  "PX": 14.5,
-  "P2": 8.5,
-  "Fonti": 2,
-  "Elenco": "footymetrics, ratingbet"
+  "P1": 76.0,
+  "PX": 15.0,
+  "P2": 9.0,
+  "Fonti": 3,
+  "Elenco": "footymetrics, ratingbet, soccersite"
  },
  {
   "Data": "2026-10-29",
@@ -7711,28 +9414,28 @@
  {
   "Data": "2026-10-29",
   "Ora": "19:00",
-  "Lega": "SAUDI ARABIA - SAUDI PRO LEAGUE",
-  "Casa": "Al-Nassr Riyadh",
-  "Ospite": "Al Kholood",
-  "Segno": "1",
-  "P1": 67.0,
-  "PX": 21.0,
-  "P2": 12.0,
+  "Lega": "Saudi Pro League",
+  "Casa": "Al Riyadh",
+  "Ospite": "Al Qadisiya Al Khubar",
+  "Segno": "2",
+  "P1": 12.0,
+  "PX": 17.0,
+  "P2": 71.0,
   "Fonti": 1,
-  "Elenco": "statarea"
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
   "Ora": "19:00",
-  "Lega": "SAUDI ARABIA - SAUDI PRO LEAGUE",
-  "Casa": "Al-Riyadh",
-  "Ospite": "Al-Qadisiyah",
-  "Segno": "2",
-  "P1": 21.0,
-  "PX": 19.0,
-  "P2": 60.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
+  "Lega": "Saudi Pro League",
+  "Casa": "Al-Nassr Riyadh",
+  "Ospite": "Al Kholood",
+  "Segno": "1",
+  "P1": 74.0,
+  "PX": 16.5,
+  "P2": 9.5,
+  "Fonti": 2,
+  "Elenco": "betimate, statarea"
  },
  {
   "Data": "2026-10-29",
@@ -7750,6 +9453,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "19:00",
+  "Lega": "SAUDI ARABIA - SAUDI PRO LEAGUE",
+  "Casa": "Al-Riyadh",
+  "Ospite": "Al-Qadisiyah",
+  "Segno": "2",
+  "P1": 20.0,
+  "PX": 19.5,
+  "P2": 60.5,
+  "Fonti": 2,
+  "Elenco": "soccersite, statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "19:00",
   "Lega": "EL SALVADOR - PRIMERA DIVISION - APERTURA",
   "Casa": "Alianza",
   "Ospite": "AD Isidro Metapan",
@@ -7763,15 +9479,15 @@
  {
   "Data": "2026-10-29",
   "Ora": "19:00",
-  "Lega": "Poland: Polish Cup",
+  "Lega": "Coppa di Polonia",
   "Casa": "Arka Gdynia",
   "Ospite": "Stal Rzeszow",
   "Segno": "1",
-  "P1": 56.0,
-  "PX": 24.0,
-  "P2": 20.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
+  "P1": 55.0,
+  "PX": 23.0,
+  "P2": 22.0,
+  "Fonti": 2,
+  "Elenco": "betimate, ratingbet"
  },
  {
   "Data": "2026-10-29",
@@ -7779,12 +9495,12 @@
   "Lega": "Spain - Copa Del Rey",
   "Casa": "Atlético Baleares",
   "Ospite": "Eldense",
-  "Segno": "1",
-  "P1": 48.0,
-  "PX": 25.0,
-  "P2": 27.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "Segno": "2",
+  "P1": 37.0,
+  "PX": 24.0,
+  "P2": 39.0,
+  "Fonti": 2,
+  "Elenco": "betimate, footymetrics"
  },
  {
   "Data": "2026-10-29",
@@ -7802,6 +9518,45 @@
  {
   "Data": "2026-10-29",
   "Ora": "19:00",
+  "Lega": "Argentina - Liga Profesional Riserve",
+  "Casa": "Barracas Central Reserves",
+  "Ospite": "Gimnasia LP Reserves",
+  "Segno": "2",
+  "P1": 27.0,
+  "PX": 25.0,
+  "P2": 48.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "19:00",
+  "Lega": "Perù - Liga 1",
+  "Casa": "CD Los Chankas",
+  "Ospite": "Cusco FC",
+  "Segno": "2",
+  "P1": 31.5,
+  "PX": 26.0,
+  "P2": 42.5,
+  "Fonti": 2,
+  "Elenco": "betimate, ratingbet"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "19:00",
+  "Lega": "Spain Copa del Rey",
+  "Casa": "Calatayud",
+  "Ospite": "Osasuna",
+  "Segno": "2",
+  "P1": 37.0,
+  "PX": 22.0,
+  "P2": 41.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "19:00",
   "Lega": "FRANCE - LIGUE 2",
   "Casa": "Clermont Foot 63",
   "Ospite": "Guingamp",
@@ -7811,6 +9566,19 @@
   "P2": 32.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "19:00",
+  "Lega": "Peru Primera División",
+  "Casa": "Club Deportivo Los Chankas",
+  "Ospite": "Cusco",
+  "Segno": "2",
+  "P1": 28.0,
+  "PX": 32.0,
+  "P2": 40.0,
+  "Fonti": 1,
+  "Elenco": "soccersite"
  },
  {
   "Data": "2026-10-29",
@@ -7841,15 +9609,93 @@
  {
   "Data": "2026-10-29",
   "Ora": "19:00",
+  "Lega": "Argentina - Liga Profesional Riserve",
+  "Casa": "Ferro Carril Oeste Reserves",
+  "Ospite": "Huracan Reserves",
+  "Segno": "2",
+  "P1": 29.0,
+  "PX": 22.0,
+  "P2": 49.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "19:00",
+  "Lega": "U17 Womens World Cup",
+  "Casa": "Giappone U17 (D)",
+  "Ospite": "Kenya U17 (Donne)",
+  "Segno": "1",
+  "P1": 84.0,
+  "PX": 9.0,
+  "P2": 7.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "19:00",
+  "Lega": "Argentina - Liga Profesional Riserve",
+  "Casa": "Godoy Cruz Reserves",
+  "Ospite": "Atletico Tucuman Reserves",
+  "Segno": "1",
+  "P1": 46.0,
+  "PX": 22.0,
+  "P2": 32.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "19:00",
+  "Lega": "Brazil Campeonato Pernambucano",
+  "Casa": "Guarany EC PE",
+  "Ospite": "America PE",
+  "Segno": "2",
+  "P1": 19.0,
+  "PX": 17.0,
+  "P2": 64.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "19:00",
+  "Lega": "Juniorallsvenskan svedese",
+  "Casa": "IFK Goteborg U19",
+  "Ospite": "BK Hacken U19",
+  "Segno": "1",
+  "P1": 66.0,
+  "PX": 17.0,
+  "P2": 17.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "19:00",
   "Lega": "Ivory Coast - Ligue 1",
   "Casa": "ISCA",
   "Ospite": "ASEC Mimosas",
   "Segno": "2",
   "P1": 11.9,
-  "PX": 23.8,
-  "P2": 64.4,
+  "PX": 26.4,
+  "P2": 61.7,
+  "Fonti": 2,
+  "Elenco": "betimate, footymetrics"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "19:00",
+  "Lega": "Argentina - Liga Profesional Riserve",
+  "Casa": "Instituto AC Cordoba Reserves",
+  "Ospite": "Velez Sarsfield Reserves",
+  "Segno": "2",
+  "P1": 30.0,
+  "PX": 24.0,
+  "P2": 46.0,
   "Fonti": 1,
-  "Elenco": "footymetrics"
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -7858,11 +9704,11 @@
   "Casa": "Kalmar",
   "Ospite": "GAIS",
   "Segno": "2",
-  "P1": 34.0,
-  "PX": 27.3,
-  "P2": 38.7,
-  "Fonti": 3,
-  "Elenco": "footymetrics, ratingbet, statarea"
+  "P1": 34.2,
+  "PX": 28.6,
+  "P2": 37.2,
+  "Fonti": 5,
+  "Elenco": "betimate, footymetrics, ratingbet, soccersite, statarea"
  },
  {
   "Data": "2026-10-29",
@@ -7871,24 +9717,11 @@
   "Casa": "Lebrijana",
   "Ospite": "Getafe",
   "Segno": "2",
-  "P1": 12.0,
-  "PX": 20.0,
-  "P2": 68.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
- },
- {
-  "Data": "2026-10-29",
-  "Ora": "19:00",
-  "Lega": "Peru: Liga 1 Peru",
-  "Casa": "Los Chankas",
-  "Ospite": "Cusco FC",
-  "Segno": "2",
-  "P1": 30.0,
-  "PX": 27.0,
-  "P2": 43.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
+  "P1": 10.0,
+  "PX": 18.0,
+  "P2": 72.0,
+  "Fonti": 2,
+  "Elenco": "betimate, footymetrics"
  },
  {
   "Data": "2026-10-29",
@@ -7919,6 +9752,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "19:00",
+  "Lega": "Allsvenskan svedese",
+  "Casa": "Orgryte IS",
+  "Ospite": "Mjallby AIF",
+  "Segno": "2",
+  "P1": 32.5,
+  "PX": 29.0,
+  "P2": 38.5,
+  "Fonti": 2,
+  "Elenco": "betimate, soccersite"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "19:00",
   "Lega": "FRANCE - LIGUE 2",
   "Casa": "Pau",
   "Ospite": "Grenoble Foot 38",
@@ -7928,6 +9774,19 @@
   "P2": 23.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "19:00",
+  "Lega": "Argentina - Liga Profesional Riserve",
+  "Casa": "Quilmes Reserves",
+  "Ospite": "Belgrano Reserves",
+  "Segno": "1",
+  "P1": 48.0,
+  "PX": 21.0,
+  "P2": 31.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -7945,6 +9804,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "19:00",
+  "Lega": "U17 Womens World Cup",
+  "Casa": "Spagna U17 (D)",
+  "Ospite": "Stati Uniti U17 (D)",
+  "Segno": "1",
+  "P1": 45.0,
+  "PX": 19.0,
+  "P2": 36.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "19:00",
   "Lega": "POLAND - II LIGA",
   "Casa": "Stal Stalowa Wola",
   "Ospite": "Sandecja Nowy Sacz",
@@ -7954,6 +9826,32 @@
   "P2": 37.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "19:00",
+  "Lega": "Coppa d'Ungheria",
+  "Casa": "Szeged-Csanad Grosics",
+  "Ospite": "Ujpest",
+  "Segno": "2",
+  "P1": 10.0,
+  "PX": 19.0,
+  "P2": 71.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "19:00",
+  "Lega": "Spain Copa del Rey",
+  "Casa": "UD San Sebastian Reyes",
+  "Ospite": "CD Coria",
+  "Segno": "1",
+  "P1": 39.0,
+  "PX": 25.0,
+  "P2": 36.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -8040,24 +9938,11 @@
   "Casa": "FC Midtjylland",
   "Ospite": "OB",
   "Segno": "1",
-  "P1": 60.0,
-  "PX": 22.0,
-  "P2": 18.0,
+  "P1": 57.0,
+  "PX": 23.0,
+  "P2": 20.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
- },
- {
-  "Data": "2026-10-29",
-  "Ora": "19:30",
-  "Lega": "DENMARK - DBU POKALEN",
-  "Casa": "FC Midtjylland",
-  "Ospite": "Odense",
-  "Segno": "1",
-  "P1": 58.0,
-  "PX": 26.0,
-  "P2": 16.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
  },
  {
   "Data": "2026-10-29",
@@ -8114,6 +9999,32 @@
  {
   "Data": "2026-10-29",
   "Ora": "19:30",
+  "Lega": "Israele - Coppa di Lega",
+  "Casa": "Maccabi Tel Aviv",
+  "Ospite": "Hapoel Tel Aviv",
+  "Segno": "1",
+  "P1": 49.0,
+  "PX": 25.0,
+  "P2": 26.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "19:30",
+  "Lega": "Coppa di Danimarca",
+  "Casa": "Midtjylland",
+  "Ospite": "Odense BK",
+  "Segno": "1",
+  "P1": 57.7,
+  "PX": 25.0,
+  "P2": 17.3,
+  "Fonti": 3,
+  "Elenco": "betimate, soccersite, statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "19:30",
   "Lega": "GERMANY - BUNDESLIGA",
   "Casa": "VfB Stuttgart",
   "Ospite": "Borussia Monchengladbach",
@@ -8140,6 +10051,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "19:45",
+  "Lega": "RUSSIA - GROUP C",
+  "Casa": "Baltika",
+  "Ospite": "Zenit",
+  "Segno": "2",
+  "P1": 20.0,
+  "PX": 30.5,
+  "P2": 49.5,
+  "Fonti": 2,
+  "Elenco": "soccersite, statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "19:45",
   "Lega": "Russia: Cup",
   "Casa": "Baltika",
   "Ospite": "Zenit St. Petersburg",
@@ -8153,15 +10077,15 @@
  {
   "Data": "2026-10-29",
   "Ora": "19:45",
-  "Lega": "RUSSIA - GROUP C",
-  "Casa": "Baltika",
-  "Ospite": "Zenit",
+  "Lega": "Coppa di Russia",
+  "Casa": "Baltika Kaliningrad",
+  "Ospite": "Zenit St Petersburg",
   "Segno": "2",
-  "P1": 21.0,
+  "P1": 22.0,
   "PX": 28.0,
-  "P2": 51.0,
+  "P2": 50.0,
   "Fonti": 1,
-  "Elenco": "statarea"
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -8175,6 +10099,19 @@
   "P2": 20.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "19:45",
+  "Lega": "Portugal League Cup",
+  "Casa": "Braga",
+  "Ospite": "Famalicao",
+  "Segno": "1",
+  "P1": 48.2,
+  "PX": 27.8,
+  "P2": 24.0,
+  "Fonti": 4,
+  "Elenco": "betimate, ratingbet, soccersite, statarea"
  },
  {
   "Data": "2026-10-29",
@@ -8309,19 +10246,6 @@
  {
   "Data": "2026-10-29",
   "Ora": "19:45",
-  "Lega": "PORTUGAL - LEAGUE CUP",
-  "Casa": "SC Braga",
-  "Ospite": "Famalicao",
-  "Segno": "1",
-  "P1": 47.5,
-  "PX": 29.0,
-  "P2": 23.5,
-  "Fonti": 2,
-  "Elenco": "ratingbet, statarea"
- },
- {
-  "Data": "2026-10-29",
-  "Ora": "19:45",
   "Lega": "FRANCE - LIGUE 2",
   "Casa": "St Etienne",
   "Ospite": "Nantes",
@@ -8400,6 +10324,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "20:00",
+  "Lega": "Coppa dei Paesi Bassi",
+  "Casa": "ACV Assen",
+  "Ospite": "Amsterdamsche FC",
+  "Segno": "1",
+  "P1": 55.0,
+  "PX": 19.0,
+  "P2": 26.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "20:00",
   "Lega": "SPAIN - LALIGA2",
   "Casa": "Almeria",
   "Ospite": "Oviedo",
@@ -8417,11 +10354,11 @@
   "Casa": "Antequera",
   "Ospite": "Águilas CF",
   "Segno": "1",
-  "P1": 38.0,
-  "PX": 29.0,
-  "P2": 33.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 46.5,
+  "PX": 26.0,
+  "P2": 27.5,
+  "Fonti": 2,
+  "Elenco": "betimate, footymetrics"
  },
  {
   "Data": "2026-10-29",
@@ -8439,15 +10376,28 @@
  {
   "Data": "2026-10-29",
   "Ora": "20:00",
+  "Lega": "Copa do Brasil U20",
+  "Casa": "Ceara U20",
+  "Ospite": "Sao Paulo U20",
+  "Segno": "1",
+  "P1": 42.0,
+  "PX": 18.0,
+  "P2": 40.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "20:00",
   "Lega": "Spain - Copa Del Rey",
   "Casa": "Conquense",
   "Ospite": "Castellón",
   "Segno": "2",
-  "P1": 24.2,
-  "PX": 26.3,
-  "P2": 49.5,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 17.6,
+  "PX": 21.1,
+  "P2": 61.2,
+  "Fonti": 2,
+  "Elenco": "betimate, footymetrics"
  },
  {
   "Data": "2026-10-29",
@@ -8469,11 +10419,11 @@
   "Casa": "De Treffers",
   "Ospite": "Heracles",
   "Segno": "2",
-  "P1": 31.7,
-  "PX": 21.8,
-  "P2": 46.5,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 17.8,
+  "PX": 13.9,
+  "P2": 68.3,
+  "Fonti": 2,
+  "Elenco": "betimate, footymetrics"
  },
  {
   "Data": "2026-10-29",
@@ -8504,6 +10454,32 @@
  {
   "Data": "2026-10-29",
   "Ora": "20:00",
+  "Lega": "College Championship USA",
+  "Casa": "Eastern Illinois",
+  "Ospite": "Southern Indiana Screaming Eagles",
+  "Segno": "1",
+  "P1": 74.0,
+  "PX": 12.0,
+  "P2": 14.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "20:00",
+  "Lega": "Primera B colombiana",
+  "Casa": "Envigado FC",
+  "Ospite": "Independiente Valle del Cauca",
+  "Segno": "1",
+  "P1": 40.0,
+  "PX": 26.0,
+  "P2": 34.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "20:00",
   "Lega": "Netherlands - KNVB Beker",
   "Casa": "GVVV",
   "Ospite": "Noordwijk",
@@ -8517,15 +10493,28 @@
  {
   "Data": "2026-10-29",
   "Ora": "20:00",
+  "Lega": "Coppa dei Paesi Bassi",
+  "Casa": "GVVV Veenendaal",
+  "Ospite": "Noordwijk",
+  "Segno": "2",
+  "P1": 40.0,
+  "PX": 19.0,
+  "P2": 41.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "20:00",
   "Lega": "Spain - Copa Del Rey",
   "Casa": "Guijuelo",
   "Ospite": "Sporting Gijón",
   "Segno": "2",
-  "P1": 21.8,
-  "PX": 22.8,
-  "P2": 55.4,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 21.9,
+  "PX": 22.4,
+  "P2": 55.7,
+  "Fonti": 2,
+  "Elenco": "betimate, footymetrics"
  },
  {
   "Data": "2026-10-29",
@@ -8534,11 +10523,11 @@
   "Casa": "HSV Hoek",
   "Ospite": "Sparta Nijkerk",
   "Segno": "1",
-  "P1": 52.5,
-  "PX": 19.8,
-  "P2": 27.7,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 52.7,
+  "PX": 19.4,
+  "P2": 27.9,
+  "Fonti": 2,
+  "Elenco": "betimate, footymetrics"
  },
  {
   "Data": "2026-10-29",
@@ -8560,11 +10549,11 @@
   "Casa": "Laredo",
   "Ospite": "Burgos",
   "Segno": "2",
-  "P1": 36.0,
-  "PX": 27.0,
-  "P2": 37.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 23.5,
+  "PX": 22.5,
+  "P2": 54.0,
+  "Fonti": 2,
+  "Elenco": "betimate, footymetrics"
  },
  {
   "Data": "2026-10-29",
@@ -8582,6 +10571,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "20:00",
+  "Lega": "Campionato College USA Femminile",
+  "Casa": "Ohio (W)",
+  "Ospite": "Toledo (W)",
+  "Segno": "1",
+  "P1": 60.0,
+  "PX": 19.0,
+  "P2": 21.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "20:00",
   "Lega": "Netherlands - KNVB Beker",
   "Casa": "Purmersteijn",
   "Ospite": "Gemert",
@@ -8595,15 +10597,28 @@
  {
   "Data": "2026-10-29",
   "Ora": "20:00",
+  "Lega": "Coppa dei Paesi Bassi",
+  "Casa": "Purmersteijn",
+  "Ospite": "VV Gemert",
+  "Segno": "1",
+  "P1": 42.0,
+  "PX": 20.0,
+  "P2": 38.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "20:00",
   "Lega": "Netherlands - KNVB Beker",
   "Casa": "RKAV Volendam",
   "Ospite": "ROHDA Raalte",
   "Segno": "1",
-  "P1": 45.0,
-  "PX": 21.0,
-  "P2": 34.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 61.5,
+  "PX": 16.0,
+  "P2": 22.5,
+  "Fonti": 2,
+  "Elenco": "betimate, footymetrics"
  },
  {
   "Data": "2026-10-29",
@@ -8611,12 +10626,12 @@
   "Lega": "Spain - Copa Del Rey",
   "Casa": "Real Ávila",
   "Ospite": "Unionistas de Salamanca",
-  "Segno": "1",
-  "P1": 40.0,
-  "PX": 29.0,
-  "P2": 31.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "Segno": "2",
+  "P1": 35.5,
+  "PX": 27.0,
+  "P2": 37.5,
+  "Fonti": 2,
+  "Elenco": "betimate, footymetrics"
  },
  {
   "Data": "2026-10-29",
@@ -8634,15 +10649,28 @@
  {
   "Data": "2026-10-29",
   "Ora": "20:00",
+  "Lega": "Campionato College USA Femminile",
+  "Casa": "UMass Minutewomen (W)",
+  "Ospite": "Western Michigan (W)",
+  "Segno": "2",
+  "P1": 26.0,
+  "PX": 23.0,
+  "P2": 51.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "20:00",
   "Lega": "Spain - Copa Del Rey",
   "Casa": "Varea",
   "Ospite": "FC Andorra",
   "Segno": "2",
-  "P1": 20.0,
-  "PX": 23.0,
-  "P2": 57.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 13.0,
+  "PX": 18.0,
+  "P2": 69.0,
+  "Fonti": 2,
+  "Elenco": "betimate, footymetrics"
  },
  {
   "Data": "2026-10-29",
@@ -8686,15 +10714,15 @@
  {
   "Data": "2026-10-29",
   "Ora": "20:30",
-  "Lega": "Romania: Romanian Cup",
+  "Lega": "Coppa di Romania",
   "Casa": "Gloria Bistrita",
-  "Ospite": "FC FCSB",
+  "Ospite": "FCSB",
   "Segno": "2",
-  "P1": 9.0,
-  "PX": 18.0,
-  "P2": 73.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
+  "P1": 12.3,
+  "PX": 18.7,
+  "P2": 69.0,
+  "Fonti": 3,
+  "Elenco": "betimate, ratingbet, soccersite"
  },
  {
   "Data": "2026-10-29",
@@ -8712,15 +10740,15 @@
  {
   "Data": "2026-10-29",
   "Ora": "20:30",
-  "Lega": "Poland: Polish Cup",
+  "Lega": "Coppa di Polonia",
   "Casa": "Odra Opole",
   "Ospite": "Slask Wroclaw",
   "Segno": "2",
-  "P1": 30.0,
-  "PX": 27.0,
-  "P2": 43.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
+  "P1": 25.5,
+  "PX": 26.0,
+  "P2": 48.5,
+  "Fonti": 2,
+  "Elenco": "betimate, ratingbet"
  },
  {
   "Data": "2026-10-29",
@@ -8742,11 +10770,24 @@
   "Casa": "Amiens",
   "Ospite": "Thionville Lusitanos",
   "Segno": "1",
-  "P1": 54.0,
-  "PX": 25.0,
-  "P2": 21.0,
+  "P1": 54.5,
+  "PX": 27.5,
+  "P2": 18.0,
+  "Fonti": 2,
+  "Elenco": "ratingbet, soccersite"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "20:45",
+  "Lega": "National Francia",
+  "Casa": "Amiens",
+  "Ospite": "Thionville FC",
+  "Segno": "1",
+  "P1": 63.0,
+  "PX": 18.0,
+  "P2": 19.0,
   "Fonti": 1,
-  "Elenco": "ratingbet"
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -8755,11 +10796,11 @@
   "Casa": "Everton",
   "Ospite": "Newcastle",
   "Segno": "1",
-  "P1": 39.3,
-  "PX": 27.0,
-  "P2": 33.7,
-  "Fonti": 3,
-  "Elenco": "footymetrics, ratingbet, statarea"
+  "P1": 38.0,
+  "PX": 27.8,
+  "P2": 34.2,
+  "Fonti": 5,
+  "Elenco": "betimate, footymetrics, ratingbet, soccersite, statarea"
  },
  {
   "Data": "2026-10-29",
@@ -8768,11 +10809,11 @@
   "Casa": "Fiorentina",
   "Ospite": "Atalanta",
   "Segno": "1",
-  "P1": 43.8,
-  "PX": 27.3,
-  "P2": 28.9,
-  "Fonti": 3,
-  "Elenco": "footymetrics, ratingbet, statarea"
+  "P1": 39.7,
+  "PX": 27.6,
+  "P2": 32.7,
+  "Fonti": 5,
+  "Elenco": "betimate, footymetrics, ratingbet, soccersite, statarea"
  },
  {
   "Data": "2026-10-29",
@@ -8807,11 +10848,11 @@
   "Casa": "Cented Academy",
   "Ospite": "Deportivo A Coruña",
   "Segno": "2",
-  "P1": 3.0,
-  "PX": 8.0,
-  "P2": 89.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 2.5,
+  "PX": 7.0,
+  "P2": 90.5,
+  "Fonti": 2,
+  "Elenco": "betimate, footymetrics"
  },
  {
   "Data": "2026-10-29",
@@ -8832,12 +10873,12 @@
   "Lega": "Netherlands - KNVB Beker",
   "Casa": "FC Groningen",
   "Ospite": "FC Emmen",
-  "Segno": "2",
-  "P1": 36.0,
-  "PX": 23.0,
-  "P2": 41.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "Segno": "1",
+  "P1": 58.5,
+  "PX": 17.0,
+  "P2": 24.5,
+  "Fonti": 2,
+  "Elenco": "betimate, footymetrics"
  },
  {
   "Data": "2026-10-29",
@@ -8855,6 +10896,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "21:00",
+  "Lega": "UEFA Women's Champions League",
+  "Casa": "HB Koge (W)",
+  "Ospite": "Barcelona (W)",
+  "Segno": "2",
+  "P1": 7.0,
+  "PX": 7.0,
+  "P2": 86.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "21:00",
   "Lega": "Europe - UEFA Women's Champions League",
   "Casa": "Køge",
   "Ospite": "Barcelona W",
@@ -8868,6 +10922,19 @@
  {
   "Data": "2026-10-29",
   "Ora": "21:00",
+  "Lega": "UEFA Champions League Women",
+  "Casa": "Køge W",
+  "Ospite": "Barcelona W",
+  "Segno": "2",
+  "P1": 14.0,
+  "PX": 8.0,
+  "P2": 78.0,
+  "Fonti": 1,
+  "Elenco": "soccersite"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "21:00",
   "Lega": "Morocco - Botola Pro",
   "Casa": "Maghreb Fès",
   "Ospite": "RSB Berkane",
@@ -8877,6 +10944,19 @@
   "P2": 29.7,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "21:00",
+  "Lega": "UEFA Women's Champions League",
+  "Casa": "Man City (W)",
+  "Ospite": "PSG (W)",
+  "Segno": "1",
+  "P1": 52.0,
+  "PX": 19.0,
+  "P2": 29.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -8898,11 +10978,11 @@
   "Casa": "Manchester City (w)",
   "Ospite": "Paris Saint Germain (w)",
   "Segno": "1",
-  "P1": 55.0,
-  "PX": 24.0,
-  "P2": 21.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
+  "P1": 53.0,
+  "PX": 25.5,
+  "P2": 21.5,
+  "Fonti": 2,
+  "Elenco": "soccersite, statarea"
  },
  {
   "Data": "2026-10-29",
@@ -8920,15 +11000,41 @@
  {
   "Data": "2026-10-29",
   "Ora": "21:00",
+  "Lega": "Campionato College USA Femminile",
+  "Casa": "North Dakota (W)",
+  "Ospite": "South Dakota State (W)",
+  "Segno": "2",
+  "P1": 36.0,
+  "PX": 25.0,
+  "P2": 39.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "21:00",
+  "Lega": "Campionato College USA Femminile",
+  "Casa": "Portland State (W)",
+  "Ospite": "Idaho (W)",
+  "Segno": "2",
+  "P1": 37.0,
+  "PX": 23.0,
+  "P2": 40.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "21:00",
   "Lega": "Spain - Copa Del Rey",
   "Casa": "Prat",
   "Ospite": "Athletic Bilbao",
   "Segno": "2",
-  "P1": 11.0,
-  "PX": 17.0,
-  "P2": 72.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 7.0,
+  "PX": 11.5,
+  "P2": 81.5,
+  "Fonti": 2,
+  "Elenco": "betimate, footymetrics"
  },
  {
   "Data": "2026-10-29",
@@ -8937,11 +11043,11 @@
   "Casa": "Ribadesella",
   "Ospite": "Racing Santander",
   "Segno": "2",
-  "P1": 11.0,
-  "PX": 14.0,
-  "P2": 75.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 29.0,
+  "PX": 17.0,
+  "P2": 54.0,
+  "Fonti": 2,
+  "Elenco": "betimate, footymetrics"
  },
  {
   "Data": "2026-10-29",
@@ -8963,11 +11069,24 @@
   "Casa": "Sporting Hortaleza",
   "Ospite": "Sevilla",
   "Segno": "2",
-  "P1": 5.0,
-  "PX": 10.9,
-  "P2": 84.2,
+  "P1": 21.5,
+  "PX": 16.4,
+  "P2": 62.1,
+  "Fonti": 2,
+  "Elenco": "betimate, footymetrics"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "21:00",
+  "Lega": "College Championship USA",
+  "Casa": "Western Illinois Leathernecks",
+  "Ospite": "SIU Edwardsville Cougars",
+  "Segno": "2",
+  "P1": 34.0,
+  "PX": 26.0,
+  "P2": 40.0,
   "Fonti": 1,
-  "Elenco": "footymetrics"
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -8998,28 +11117,41 @@
  {
   "Data": "2026-10-29",
   "Ora": "21:30",
-  "Lega": "Peru: Liga 1 Peru",
+  "Lega": "Premier League Giamaica",
+  "Casa": "Cavalier",
+  "Ospite": "Portmore United",
+  "Segno": "1",
+  "P1": 37.0,
+  "PX": 28.0,
+  "P2": 35.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "21:30",
+  "Lega": "Perù - Liga 1",
   "Casa": "Sporting Cristal",
   "Ospite": "Alianza Lima",
   "Segno": "1",
-  "P1": 39.0,
-  "PX": 27.0,
-  "P2": 34.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
+  "P1": 38.3,
+  "PX": 29.0,
+  "P2": 32.7,
+  "Fonti": 3,
+  "Elenco": "betimate, ratingbet, soccersite"
  },
  {
   "Data": "2026-10-29",
   "Ora": "21:45",
-  "Lega": "PORTUGAL - LEAGUE CUP",
+  "Lega": "Portugal League Cup",
   "Casa": "Benfica",
   "Ospite": "Gil Vicente",
   "Segno": "1",
-  "P1": 64.5,
-  "PX": 21.0,
-  "P2": 14.5,
-  "Fonti": 2,
-  "Elenco": "ratingbet, statarea"
+  "P1": 68.5,
+  "PX": 18.5,
+  "P2": 13.0,
+  "Fonti": 4,
+  "Elenco": "betimate, ratingbet, soccersite, statarea"
  },
  {
   "Data": "2026-10-29",
@@ -9033,6 +11165,32 @@
   "P2": 33.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "22:00",
+  "Lega": "Primera B colombiana",
+  "Casa": "Boca Juniors De Cali",
+  "Ospite": "Union Magdalena",
+  "Segno": "2",
+  "P1": 33.0,
+  "PX": 28.0,
+  "P2": 39.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "22:00",
+  "Lega": "Campionato College USA Femminile",
+  "Casa": "Montana (W)",
+  "Ospite": "Eastern Washington (W)",
+  "Segno": "1",
+  "P1": 48.0,
+  "PX": 21.0,
+  "P2": 31.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -9062,6 +11220,19 @@
  },
  {
   "Data": "2026-10-29",
+  "Ora": "22:00",
+  "Lega": "Primera B colombiana",
+  "Casa": "Tigres FC",
+  "Ospite": "Real Cartagena",
+  "Segno": "2",
+  "P1": 27.0,
+  "PX": 29.0,
+  "P2": 44.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
   "Ora": "22:30",
   "Lega": "VENEZUELA - PRIMERA DIVISION - CLAUSURA - MAIN ROUND GROUP B",
   "Casa": "Monagas SC",
@@ -9085,6 +11256,58 @@
   "P2": 51.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "22:30",
+  "Lega": "Copa do Brasil U20",
+  "Casa": "Palmeiras U20",
+  "Ospite": "Paysandu U20",
+  "Segno": "1",
+  "P1": 68.0,
+  "PX": 15.0,
+  "P2": 17.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "23:00",
+  "Lega": "Argentina - Liga Profesional Riserve",
+  "Casa": "Boca Juniors Reserves",
+  "Ospite": "Estudiantes Rio Cuarto Reserves",
+  "Segno": "1",
+  "P1": 66.0,
+  "PX": 21.0,
+  "P2": 13.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "23:00",
+  "Lega": "Campionato College USA Femminile",
+  "Casa": "Buffalo (W)",
+  "Ospite": "Kent State (W)",
+  "Segno": "1",
+  "P1": 42.0,
+  "PX": 24.0,
+  "P2": 34.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "23:00",
+  "Lega": "Campionato College USA Femminile",
+  "Casa": "California Golden Bears (W)",
+  "Ospite": "Notre Dame (W)",
+  "Segno": "2",
+  "P1": 18.0,
+  "PX": 15.0,
+  "P2": 67.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -9115,6 +11338,32 @@
  {
   "Data": "2026-10-29",
   "Ora": "23:00",
+  "Lega": "Campionato College USA Femminile",
+  "Casa": "Chattanooga (W)",
+  "Ospite": "East Tennessee State (W)",
+  "Segno": "1",
+  "P1": 47.0,
+  "PX": 25.0,
+  "P2": 28.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "23:00",
+  "Lega": "Campeonato Paulista U20 brasiliano",
+  "Casa": "Corinthians U20",
+  "Ospite": "Guarani SP U20",
+  "Segno": "1",
+  "P1": 49.0,
+  "PX": 19.0,
+  "P2": 32.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "23:00",
   "Lega": "URUGUAY - LIGA AUF CLAUSURA",
   "Casa": "Deportivo Maldonado",
   "Ospite": "Danubio",
@@ -9124,6 +11373,19 @@
   "P2": 17.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "23:00",
+  "Lega": "College Championship USA",
+  "Casa": "Fairleigh",
+  "Ospite": "Central Connecticut Blue Devils",
+  "Segno": "1",
+  "P1": 64.0,
+  "PX": 19.0,
+  "P2": 17.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-10-29",
@@ -9166,6 +11428,58 @@
  },
  {
   "Data": "2026-10-29",
+  "Ora": "23:00",
+  "Lega": "Campionato College USA Femminile",
+  "Casa": "Virginia Women",
+  "Ospite": "Louisville Women",
+  "Segno": "1",
+  "P1": 51.0,
+  "PX": 17.0,
+  "P2": 32.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "23:00",
+  "Lega": "Campionato College USA Femminile",
+  "Casa": "West Georgia (W)",
+  "Ospite": "Eastern Kentucky (W)",
+  "Segno": "2",
+  "P1": 29.0,
+  "PX": 22.0,
+  "P2": 49.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "23:00",
+  "Lega": "Campionato College USA Femminile",
+  "Casa": "Western Carolina (W)",
+  "Ospite": "Tennessee Tech (W)",
+  "Segno": "2",
+  "P1": 35.0,
+  "PX": 22.0,
+  "P2": 43.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "23:00",
+  "Lega": "Campionato College USA Femminile",
+  "Casa": "Wofford (W)",
+  "Ospite": "VMI (W)",
+  "Segno": "1",
+  "P1": 64.0,
+  "PX": 18.0,
+  "P2": 18.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
   "Ora": "23:30",
   "Lega": "PARAGUAY - DIVISION PROFESIONAL - CLAUSURA",
   "Casa": "2 De Mayo",
@@ -9180,15 +11494,28 @@
  {
   "Data": "2026-10-29",
   "Ora": "23:30",
+  "Lega": "Campionato College USA Femminile",
+  "Casa": "Akron (W)",
+  "Ospite": "Eastern Michigan (W)",
+  "Segno": "1",
+  "P1": 41.0,
+  "PX": 23.0,
+  "P2": 36.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "23:30",
   "Lega": "Brazil: Serie A Brazil",
   "Casa": "Atletico MG",
   "Ospite": "Cruzeiro",
   "Segno": "1",
-  "P1": 38.0,
-  "PX": 27.0,
+  "P1": 35.5,
+  "PX": 29.5,
   "P2": 35.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
+  "Fonti": 2,
+  "Elenco": "ratingbet, soccersite"
  },
  {
   "Data": "2026-10-29",
@@ -9197,11 +11524,24 @@
   "Casa": "Atlético Mineiro",
   "Ospite": "Cruzeiro",
   "Segno": "1",
-  "P1": 51.0,
-  "PX": 25.0,
-  "P2": 24.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 45.5,
+  "PX": 26.0,
+  "P2": 28.5,
+  "Fonti": 2,
+  "Elenco": "betimate, footymetrics"
+ },
+ {
+  "Data": "2026-10-29",
+  "Ora": "23:30",
+  "Lega": "Série A brasiliana",
+  "Casa": "Coritiba",
+  "Ospite": "Vitoria",
+  "Segno": "2",
+  "P1": 33.5,
+  "PX": 30.0,
+  "P2": 36.5,
+  "Fonti": 2,
+  "Elenco": "betimate, soccersite"
  },
  {
   "Data": "2026-10-29",
