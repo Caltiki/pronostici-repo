@@ -1532,7 +1532,7 @@
     if (!passano.length) {
       $r.innerHTML = messaggio("vuoto", sez === "consensus" && stato.fonteCm
         ? "In questa giornata, in questa vista, nessuna partita ha un pronostico di " +
-          esc((FONTI_CM.filter(function (o) { return o[0] === stato.fonteCm; })[0] || [0, stato.fonteCm])[1]) +
+          esc(nomeCm(stato.fonteCm)) +
           ". Prova un altro giorno, la vista \u201cTutte\u201d o un'altra fonte."
         : vuotoPerVista(sez, vista, tutte.length, data));
       return;
@@ -1609,6 +1609,9 @@
       [String(multi), "con due fonti o più"],
       [sc == null ? "-" : sc.toFixed(1), "scarto tipico dal mercato, in punti"]
     ]) +
+      (stato.fonteCm && fuoriMedia(stato.fonteCm)
+        ? '<p class="descr">' + esc(nomeCm(stato.fonteCm)) + " non entra nella media: il suo pronostico \u00e8 scritto sotto ogni partita, " +
+          "le barre e le percentuali restano quelle delle altre fonti.</p>" : "") +
       legenda();
   }
 
@@ -1923,13 +1926,28 @@
   // con le regole di misura_fonti.py, le stesse di "Statistiche fonti".
   var FONTI_CM = [["statarea", "Statarea"], ["betimate", "Betimate"], ["footymetrics", "FootyMetrics"],
                   ["ratingbet", "RatingBet"], ["soccersite", "SoccerSite"]];
+  // LE FONTI FUORI DALLA MEDIA. xGaura e Sportytrader non entrano nel
+  // consenso per scelta (sezioni a se', le loro "confidenze" non sono
+  // probabilita' di cui fidarsi), WebPronostici solo nella vista con
+  // Statarea. Si possono scegliere per vederle ACCANTO alla media: restano
+  // le partite su cui hanno un pronostico, la media resta quella delle
+  // altre fonti.
+  var FONTI_FUORI = [["xgaura", "xGaura"], ["sportytrader", "Sportytrader"], ["webpronostici", "WebPronostici"]];
+  function fuoriMedia(f) { return FONTI_FUORI.some(function (o) { return o[0] === f; }); }
+  function nomeCm(f) {
+    var o = FONTI_CM.concat(FONTI_FUORI).filter(function (x) { return x[0] === f; })[0];
+    return o ? o[1] : f;
+  }
   function sceltaFonteHtml() {
-    return '<select id="fonte-cm" aria-label="Fonte">' +
-      [["", "Tutte le fonti"]].concat(FONTI_CM).map(function (o) {
-        return '<option value="' + o[0] + '"' + (o[0] === stato.fonteCm ? " selected" : "") + ">" + esc(o[1]) + "</option>";
-      }).join("") + "</select>";
+    function opz(o) {
+      return '<option value="' + o[0] + '"' + (o[0] === stato.fonteCm ? " selected" : "") + ">" + esc(o[1]) + "</option>";
+    }
+    return '<select id="fonte-cm" aria-label="Fonte">' + opz(["", "Tutte le fonti"]) +
+      '<optgroup label="Nella media">' + FONTI_CM.map(opz).join("") + "</optgroup>" +
+      '<optgroup label="Fuori dalla media">' + FONTI_FUORI.map(opz).join("") + "</optgroup></select>";
   }
   function haFonte(r, f) {
+    if (fuoriMedia(f)) return !!(r._prons && r._prons.some(function (x) { return x.Fonte === f; }));
     return String(r.Elenco || "").split(/,\s*/).indexOf(f) >= 0;
   }
   function arricchisciConsensus(righe, data) {
@@ -1952,7 +1970,7 @@
     if (!stato.fonteCm || !r._prons) return "";
     var mie = r._prons.filter(function (x) { return x.Fonte === stato.fonteCm; });
     if (!mie.length) return "";
-    var nome = (FONTI_CM.filter(function (o) { return o[0] === stato.fonteCm; })[0] || [0, stato.fonteCm])[1];
+    var nome = nomeCm(stato.fonteCm);
     return '<div class="pron-lista">' + mie.map(function (x) {
       return '<span class="esito-pill fonte-pill"><b>' + esc(nome) + "</b> \u00b7 " +
         esc(x.Mercato ? etichettaPron(x) : (x.Testo || "?")) +
