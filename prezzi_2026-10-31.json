@@ -3409,27 +3409,6 @@
  },
  {
   "Data": "2026-10-31",
-  "Ora": "18:00",
-  "Campionato": "Romania Superliga",
-  "Partita": "Petrolul 52 - CFR Cluj",
-  "Casa": "Petrolul 52",
-  "Ospite": "CFR Cluj",
-  "Linea_OU": "",
-  "Gol_attesi": 2.57,
-  "Margine": 5.1,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "Under Over",
-  "Mercato": "OU 3.5",
-  "Sel": "Under",
-  "Prob": 74.3,
-  "Equa": 1.35,
-  "InSchedina": "si"
- },
- {
-  "Data": "2026-10-31",
   "Ora": "19:00",
   "Campionato": "United States Major League Soccer",
   "Partita": "Cincinnati - Philadelphia",
@@ -5420,7 +5399,8 @@
   "Mercato": "1X2",
   "Sel": "2",
   "Prob": 65.2,
-  "Equa": 1.53
+  "Equa": 1.53,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-10-31",
@@ -21602,6 +21582,26 @@
   "Sel": "Under",
   "Prob": 25.0,
   "Equa": 4.01
+ },
+ {
+  "Data": "2026-10-31",
+  "Ora": "13:00",
+  "Campionato": "Bulgaria First League",
+  "Partita": "Lokomotiv Plovdiv - Ludogorets",
+  "Casa": "Lokomotiv Plovdiv",
+  "Ospite": "Ludogorets",
+  "Linea_OU": "",
+  "Gol_attesi": 2.49,
+  "Margine": 2.2,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 23.3,
+  "Equa": 4.29
  },
  {
   "Data": "2026-10-31",
