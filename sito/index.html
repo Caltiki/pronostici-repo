@@ -26,6 +26,11 @@
   Le etichette e le frasi di spiegazione sono quelle dell'addon 1.18.1:
   le due interfacce devono dire la stessa cosa con le stesse parole.
 
+  LA SCHEDA DELLA PARTITA (scheda_<data>.json) e' scritta da
+  scheda_partite.py: e' li' che le quindici fonti vengono unite partita per
+  partita. Qui ogni riga cerca se stessa nella tabella "alias" per nome
+  esatto, e basta.
+
   Questa pagina sta in sito/ e NON nella radice: l'index.html della radice
   lo legge Kodi per trovare repository.pronostici.zip.
 -->
@@ -557,6 +562,42 @@
     from { opacity: 0; transform: translateY(-4px); }
     to { opacity: 1; transform: translateY(0); }
   }
+  /* Scheda della partita */
+  .riga .dettaglio p.aggancio { margin: 8px 0 0; }
+  .riga .dettaglio p.aggancio:empty { display: none; }
+  a.apri-scheda {
+    display: inline-block; padding: 6px 12px; border-radius: 999px;
+    background: var(--evidenza-tenue); color: var(--evidenza) !important;
+    text-decoration: none; font-weight: 600; font-size: .85rem;
+  }
+  .testa-partita h2 { margin: 2px 0 6px; font-size: 1.3rem; letter-spacing: -0.02em; line-height: 1.25; }
+  .indietro {
+    border: 1px solid var(--bordo); background: var(--scheda); border-radius: 999px;
+    padding: 5px 12px; font-size: .82rem; cursor: pointer; margin-bottom: 10px; color: var(--tenue);
+  }
+  .punteggio { font-size: .95rem; }
+  .punteggio b { font-size: 1.2rem; margin-right: 4px; }
+  .forme { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+  .forme div { min-width: 0; }
+  .forme span { display: block; font-size: .76rem; color: var(--tenue); margin-bottom: 3px; }
+  .forme i {
+    display: inline-flex; width: 20px; height: 20px; margin-right: 3px; border-radius: 5px;
+    align-items: center; justify-content: center; font-style: normal; font-size: .7rem; font-weight: 700;
+  }
+  .fm-v { background: var(--buono-tenue); color: var(--buono); }
+  .fm-n { background: var(--bordo); color: var(--tenue); }
+  .fm-p { background: color-mix(in srgb, var(--male) 14%, transparent); color: var(--male); }
+  .riga-prezzo { display: flex; align-items: center; gap: 10px; padding: 2px 4px; border-radius: var(--raggio-sm); cursor: pointer; }
+  .riga-prezzo input { flex: none; width: 18px; height: 18px; accent-color: var(--evidenza); }
+  .riga-prezzo .hb { flex: 1; min-width: 0; }
+  .riga-prezzo.scelta { background: var(--evidenza-tenue); }
+  table.mercati.pron { font-size: .82rem; }
+  table.mercati.pron td, table.mercati.pron th { padding: 6px 3px; }
+  table.mercati.pron th { text-transform: none; letter-spacing: 0; font-size: .74rem; }
+  table.mercati.pron td:nth-child(2) { text-align: left; }
+  table.mercati.pron th:nth-child(2) { text-align: left; }
+  .scheda p.avviso { color: var(--attento); font-weight: 500; }
+  .piede-scheda { margin: 14px 2px 0; font-size: .8rem; color: var(--tenue); }
 </style>
 </head>
 <body>
@@ -752,6 +793,13 @@
 
   function leggiHash() {
     var p = location.hash.replace(/^#/, "").split("/");
+    if (p[0] === "scheda") {
+      stato.sez = "scheda";
+      SCHEDA.interna = daClic; daClic = false;
+      SCHEDA.data = p[1] || null;
+      try { SCHEDA.chiave = p[2] ? decodeURIComponent(p[2]) : null; } catch (e) { SCHEDA.chiave = null; }
+      return;
+    }
     if (SEZ[p[0]] || p[0] === "fonti") stato.sez = p[0];
     if (stato.sez === "fonti") {
       FONTI.vista = p[1] === "partite" ? "partite" : "riepilogo";
@@ -765,7 +813,9 @@
   }
   function scriviHash() {
     var h = stato.sez;
-    if (stato.sez !== "fonti") {
+    if (stato.sez === "scheda") {
+      h += "/" + (SCHEDA.data || "") + "/" + encodeURIComponent(SCHEDA.chiave || "");
+    } else if (stato.sez !== "fonti") {
       h += "/" + (stato.data[stato.sez] || "") + "/" + stato.vista[stato.sez];
     } else if (FONTI.vista === "partite") {
       h += "/partite/" + (FONTI.data || "");
@@ -871,6 +921,7 @@
       b.setAttribute("aria-current", String(b.dataset.sez === accesa));
     });
     if (stato.sez === "fonti") return disegnaFonti();
+    if (stato.sez === "scheda") return disegnaScheda();
     return disegnaGiornata(stato.sez);
   }
 
@@ -996,7 +1047,7 @@
       : visibili.length + " righe su " + tutte.length;
     var html = SEZ[sez].riepilogo(visibili) +
       '<p class="conta">' + conta + SEZ[sez].nota + "</p><div class=\"lista\">" +
-      mostrate.map(SEZ[sez].riga).join("") + "</div>";
+      mostrate.map(function (r, i) { return conAggancio(SEZ[sez].riga(r, i), sez, r); }).join("") + "</div>";
     if (visibili.length > mostrate.length) {
       html += '<button type="button" class="altre" id="altre">Mostra altre ' +
         Math.min(PASSO, visibili.length - mostrate.length) + " (ne restano " +
@@ -1006,6 +1057,7 @@
 
     var a = document.getElementById("altre");
     if (a) a.addEventListener("click", function () { stato.limite += PASSO; ridisegnaRighe(); });
+    collegaAgganci($r, data);
     if (sez === "prezzi" || sez === "sure") {
       $r.querySelectorAll("input[data-chiave]").forEach(function (cb) {
         cb.addEventListener("change", function () {
@@ -1017,6 +1069,7 @@
         });
       });
     }
+    rimettiPosto($r);
   }
 
   // --------------------------------------------------------- grafica
@@ -2204,6 +2257,356 @@
     return h + "</div>";
   }
 
+  // ------------------------------------------------- scheda della partita
+  //
+  // TUTTO QUELLO CHE IL SISTEMA SA DI UNA PARTITA, IN UNA PAGINA. La
+  // scrive scheda_partite.py nel giro notturno (scheda_<data>.json): li'
+  // si riconosce la stessa partita fra quindici fonti che scrivono i nomi
+  // ognuna a modo suo, con le regole di prezzi_equi.py. Qui NON si
+  // riconosce niente: ogni riga delle pagine cerca se stessa nella tabella
+  // "alias" del file, con i nomi esattamente come li ha. Se non c'e', il
+  // collegamento non compare.
+  //
+  // Nell'indirizzo si scrive la riga di partenza (pagina|Casa|Ospite) e
+  // non il numero della scheda: i numeri cambiano a ogni giro, la riga no.
+  // Un indirizzo salvato porta alla partita giusta o a nessuna.
+
+  // "interna": la scheda si e' aperta da una riga del sito, quindi
+  // "Indietro" torna li'. Aperta da un indirizzo salvato, porta alla home.
+  var SCHEDA = { data: null, chiave: null, interna: false };
+  var ritorno = null, daClic = false;
+
+  function aliasDi(sez, r) {
+    return SEZ[sez].prefisso.replace(/_$/, "") + "|" + r.Casa + "|" + r.Ospite;
+  }
+
+  // Un posto vuoto in fondo al dettaglio: si riempie solo quando la riga
+  // si apre, cosi' il file delle schede si scarica solo a chi lo usa.
+  function conAggancio(html, sez, r) {
+    if (!r || !r.Casa || !r.Ospite) return html;
+    var fine = "</div></details></div>";
+    var i = html.lastIndexOf(fine);
+    if (i < 0) return html;
+    return html.slice(0, i) + '<p class="aggancio" data-alias="' + esc(aliasDi(sez, r)) + '"></p>' + html.slice(i);
+  }
+
+  function collegaAgganci($r, data) {
+    $r.querySelectorAll("details").forEach(function (det) {
+      det.addEventListener("toggle", function () {
+        if (det.open) riempiAggancio(det, data);
+      });
+    });
+  }
+
+  function riempiAggancio(det, data) {
+    var p = det.querySelector(".aggancio");
+    if (!p || p.dataset.fatto) return;
+    p.dataset.fatto = "1";
+    leggi("scheda_" + data + ".json").then(function (s) {
+      var al = p.dataset.alias;
+      if (!s || !s.alias || !s.alias[al]) { p.remove(); return; }
+      p.innerHTML = '<a class="apri-scheda" href="#scheda/' + data + "/" + encodeURIComponent(al) + '">' +
+        "Tutto su questa partita →</a>";
+    }).catch(function () { p.remove(); });
+  }
+
+  // Si ricorda dove si era, per tornarci con "Indietro".
+  $cont.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a.apri-scheda");
+    if (!a) return;
+    var p = a.closest(".aggancio");
+    ritorno = { y: window.scrollY, alias: p ? p.dataset.alias : null };
+    daClic = true;
+  });
+
+  function rimettiPosto($r) {
+    if (!ritorno) return;
+    var r = ritorno;
+    ritorno = null;
+    if (r.alias) {
+      var p = $r.querySelector('.aggancio[data-alias="' + (window.CSS && CSS.escape ? CSS.escape(r.alias) : r.alias) + '"]');
+      var det = p && p.closest("details");
+      if (det) det.open = true;
+    }
+    window.scrollTo({ top: r.y, behavior: "instant" });
+  }
+
+  var NOMI_SCHEDA = {
+    asianodds: "AsianOdds", footymetrics: "FootyMetrics", prezzi: "Prezzi equi", poisson: "Poisson",
+    accordo: "Statarea + WebPronostici", consenso: "Consenso medio", statarea: "Statarea",
+    wp_1x2: "WebPronostici", wp_ou: "WebPronostici", wp_ggng: "WebPronostici", wp_misti: "WebPronostici",
+    webpronostici: "WebPronostici", betimate: "Betimate", xgaura: "xGaura", sportytrader: "Sportytrader",
+    soccersite: "SoccerSite", ratingbet: "RatingBet", fpnet: "FootballPredictions"
+  };
+  function nomeFonte(k) { return NOMI_SCHEDA[k] || k; }
+
+  // Le probabilita' 1X2 del mercato: AsianOdds (Shin se c'e') o, oltre le
+  // 24 ore, FootyMetrics senza margine. Sono quelle dei file, non ricalcolate.
+  function mercatoScheda(p) {
+    var a = p.Mercato, f = p.FM;
+    if (a) {
+      var s = [num(a["P1 Shin"]), num(a["PX Shin"]), num(a["P2 Shin"])];
+      if (s[0] == null) s = [num(a.P1), num(a.PX), num(a.P2)];
+      if (s[0] != null) return { "1": s[0], "X": s[1], "2": s[2], da: "AsianOdds" };
+    }
+    if (f && num(f.Devig1) != null) {
+      return { "1": num(f.Devig1), "X": num(f.DevigX), "2": num(f.Devig2), da: "FootyMetrics" };
+    }
+    return null;
+  }
+
+  // Il mercato su un pronostico: sull'esito dalle probabilita' 1X2, su
+  // gol e Gol/NoGol dalla riga dei prezzi equi con la stessa selezione,
+  // se c'e'. Altrimenti niente: nessun numero e' meglio di uno inventato.
+  function mercatoSu(p, m, x) {
+    var s = String(x.Sel || "");
+    if ((x.Mercato === "1X2" || x.Mercato === "DC") && m) {
+      var t = 0;
+      for (var i = 0; i < s.length; i++) { if (m[s[i]] == null) return null; t += m[s[i]]; }
+      return t;
+    }
+    var righe = p.Prezzi && p.Prezzi.Righe || [];
+    var cerca = null;
+    if (x.Mercato === "OU" && x.Linea != null) cerca = ["OU " + x.Linea, s === "OVER" ? "Over" : "Under"];
+    if (x.Mercato === "BTTS") cerca = ["BTTS", s === "SI" ? "Gol" : "NoGol"];
+    if (!cerca) return null;
+    var r = righe.filter(function (y) { return y.Mercato === cerca[0] && y.Sel === cerca[1]; })[0];
+    return r ? num(r.Prob) : null;
+  }
+
+  var FORMA = { W: ["V", "vittoria", "v"], D: ["N", "pareggio", "n"], L: ["P", "sconfitta", "p"] };
+  function forma(t) {
+    return String(t || "").split("").map(function (c) {
+      var f = FORMA[c.toUpperCase()];
+      return f ? '<i class="fm-' + f[2] + '" title="' + f[1] + '">' + f[0] + "</i>" : "";
+    }).join("");
+  }
+
+  function testaScheda(p, d) {
+    var fm = p.FM || {};
+    var h = '<div class="scheda testa-partita">' +
+      '<button type="button" class="indietro" id="indietro">← Indietro</button>' +
+      '<p class="piccolo">' + esc(etichettaData(d)) + (p.Ora ? " · " + esc(p.Ora) : "") +
+      (p.Lega ? " · " + esc(p.Lega) : "") + "</p>" +
+      "<h2>" + esc(p.Casa) + " – " + esc(p.Ospite) + "</h2>";
+    var st = String(fm.Stato || "").toUpperCase(), gc = num(fm.Gol_Casa), go = num(fm.Gol_Ospite);
+    if (gc != null && go != null && st && st !== "NS") {
+      var fin = ["FT", "AET", "PEN"].indexOf(st) >= 0;
+      h += '<p class="punteggio"><b>' + gc + " – " + go + "</b> " + (fin ? "finita" : "in corso (" + esc(st) + ")") + "</p>";
+    }
+    if (fm.Forma_Casa || fm.Pos_Casa != null) {
+      h += '<div class="forme">' +
+        "<div><span>" + (fm.Pos_Casa != null ? esc(fm.Pos_Casa) + "° in classifica" : "casa") + "</span>" + forma(fm.Forma_Casa) + "</div>" +
+        "<div><span>" + (fm.Pos_Ospite != null ? esc(fm.Pos_Ospite) + "° in classifica" : "ospite") + "</span>" + forma(fm.Forma_Ospite) + "</div>" +
+        '</div><p class="piccolo">Ultime cinque partite, la più recente a destra (FootyMetrics).</p>';
+    }
+    return h + "</div>";
+  }
+
+  function bloccoMercato(p, m) {
+    var a = p.Mercato, f = p.FM;
+    var h = '<div class="scheda"><h3>Il mercato</h3>';
+    if (!m) {
+      return h + '<p class="piccolo">Nessuna quota per questa partita: AsianOdds copre le prossime 24 ore, ' +
+        "FootyMetrics le giornate dopo, e qui non c'è nessuno dei due.</p></div>";
+    }
+    if (a) {
+      var ap = apertura(a), marg = num(a.Margine), fid = fiducia(marg);
+      h += (ap && num(a.Mov) ? tripla("apertura", ap[0], ap[1], ap[2]) : "") + tripla("ora", m["1"], m.X, m["2"]) + legenda();
+      ["1", "X", "2"].forEach(function (e) { var t = versoQuota(a, e); if (t) h += "<p>" + t + "</p>"; });
+      var vl = versoLinea(a);
+      if (vl) h += "<p>" + vl + "</p>";
+      var aa = num(a["AH Apre"]), ah = num(a.AH);
+      var sg = function (x) { return (x > 0 ? "+" : "") + x.toFixed(2); };
+      if (ah != null) h += "<p>Handicap asiatico " + (aa != null && aa !== ah ? sg(aa) + " → " : "") + sg(ah) + ".</p>";
+      if (fid) h += "<p>Margine del book " + f1(marg) + "%: " + fid[1] + ".</p>";
+      var chip = [];
+      if (a.Notevole) chip.push('<span class="scarto-grosso">movimento notevole</span>');
+      if (a.Affidabile) chip.push('<span class="chip">affidabile</span>');
+      if (chip.length) h += "<p>" + chip.join(" ") + "</p>";
+      h += '<p class="piccolo">Quote AsianOdds, probabilità senza margine.</p>';
+    } else {
+      var or = num(f.Overround);
+      h += tripla("book", m["1"], m.X, m["2"]) + legenda();
+      var q = [["1", f.Q1], ["X", f.QX], ["2", f.Q2]].filter(function (x) { return num(x[1]) != null; });
+      if (q.length) h += "<p>Quote: " + q.map(function (x) { return x[0] + " " + f2(num(x[1])); }).join(" · ") +
+        (or != null ? " (margine " + f1(or - 100) + "%)" : "") + "</p>";
+      var due = [["Over 2.5", f.Q_O25, f.Q_U25], ["Over 1.5", f.Q_O15, f.Q_U15], ["Gol", f.Q_GG, f.Q_NG]].map(function (x) {
+        var s = num(x[1]), n = num(x[2]);
+        if (!s || !n || s <= 1 || n <= 1) return null;
+        return x[0] + " " + f0(100 * (1 / s) / (1 / s + 1 / n)) + "%";
+      }).filter(Boolean);
+      if (due.length) h += "<p>" + due.join(" · ") + "</p>";
+      h += '<p class="piccolo">Quote FootyMetrics, probabilità senza margine. AsianOdds arriva nelle 24 ore prima della partita.</p>';
+    }
+    return h + "</div>";
+  }
+
+  var righeSchedaPrezzi = [];
+  function bloccoPrezzi(p, d) {
+    var P = p.Prezzi;
+    if (!P || !P.Righe || !P.Righe.length) return "";
+    var base = { Data: d, Ora: p.Ora, Partita: P.Partita || (p.Casa + " - " + p.Ospite), Casa: p.Casa, Ospite: p.Ospite,
+                 Campionato: p.Lega, Margine: P.Margine, Fonte: P.Fonte, Linea_OU: P.Linea_OU,
+                 Gol_attesi: P.Gol_attesi, Movimento: P.Movimento };
+    righeSchedaPrezzi = P.Righe.map(function (r) {
+      var o = {};
+      for (var k in base) o[k] = base[k];
+      for (var j in r) o[j] = r[j];
+      return o;
+    }).sort(function (x, y) { return (num(y.Prob) || 0) - (num(x.Prob) || 0); });
+    var marg = num(P.Margine), fid = fiducia(marg);
+    var h = '<div class="scheda"><h3>Prezzi equi</h3>' +
+      '<p class="piccolo">La quota sotto cui non conviene giocare. Spunta per metterla nella multipla.</p>';
+    h += righeSchedaPrezzi.map(function (r, i) {
+      var k = chiave(r), on = !!scelte[k];
+      return '<label class="riga-prezzo' + (on ? " scelta" : "") + '"><input type="checkbox" data-sp="' + i + '"' + (on ? " checked" : "") + ">" +
+        barra(etichettaSel(r) + (r.InSchedina === "si" ? " ★" : ""), num(r.Prob),
+          "<b>" + f2(num(r.Equa)) + "</b> · " + f0(num(r.Prob)) + "%") + "</label>";
+    }).join("");
+    var nota = [];
+    if (righeSchedaPrezzi.some(function (r) { return r.InSchedina === "si"; })) nota.push("★ = nella schedina del giorno");
+    if (fid) nota.push("margine " + f1(marg) + "%, " + fid[1]);
+    if (num(P.Gol_attesi) != null) nota.push("gol attesi " + f2(num(P.Gol_attesi)) + (P.Linea_OU != null ? " (linea " + esc(P.Linea_OU) + ")" : ""));
+    nota.push("da " + esc(P.Fonte || "?"));
+    return h + '<p class="piccolo">' + nota.join(" · ") + ". La tacca segna il 60%.</p></div>";
+  }
+
+  function bloccoPoisson(p) {
+    var r = p.Poisson;
+    if (!r) return "";
+    var gl = [["Over 2.5", r.P_O25], ["Gol", r.P_GG]].filter(function (x) { return num(x[1]) != null; })
+      .map(function (x) { return x[0] + " " + f0(num(x[1])) + "%"; });
+    var ds = num(r.Scarto_Segno);
+    var h = '<div class="scheda"><h3>Poisson (xG)</h3>' + tripla("modello", num(r.P1), num(r.PX), num(r.P2)) +
+      "<p>Gol attesi " + f2(num(r.Gol_Attesi)) + (gl.length ? " · " + gl.join(" · ") : "") + "</p>";
+    if (ds != null) h += "<p>Sul " + esc(r.Segno) + " il modello dà " + Math.abs(ds).toFixed(1) + " punti " +
+      (ds >= 0 ? "più" : "meno") + " del mercato.</p>";
+    if (num(r.MP_Casa) != null) h += '<p class="piccolo">Medie su ' + f0(num(r.MP_Casa)) + " e " + f0(num(r.MP_Osp)) + " partite giocate.</p>";
+    return h + "</div>";
+  }
+
+  function bloccoFonti(p, m) {
+    var h = '<div class="scheda"><h3>Le fonti</h3>';
+    var cons = p.Consenso || [];
+    cons.forEach(function (c) {
+      var n = num(c.Fonti) || 0;
+      h += tripla(n === 1 ? "1 fonte" : n + " fonti", num(c.P1), num(c.PX), num(c.P2)) +
+        '<p class="piccolo">Consenso medio: ' + esc(String(c.Elenco || "").split(/,\s*/).map(nomeFonte).join(", ")) +
+        (num(c.Scarto) != null ? " · " + (num(c.Scarto) > 0 ? "+" : "") + num(c.Scarto).toFixed(0) + " vs mercato sul " + esc(c.Segno) : "") + "</p>";
+    });
+    if (cons.length > 1) {
+      h += '<p class="avviso">Il consenso medio ha questa partita su ' + cons.length + " righe separate: " +
+        "le fonti la scrivono con nomi diversi e il consenso non le ha unite. Qui sono messe insieme.</p>";
+    }
+    if (m) h += tripla("mercato", m["1"], m.X, m["2"]);
+    if (cons.length || m) h += legenda();
+    var ac = p.Accordo;
+    if (ac) {
+      var pc = probCombinato(ac);
+      h += "<p>Statarea " + esc(ac["Pron Statarea"]) + " · WebPronostici " + esc(ac["Pron WebPron"]) +
+        " → d'accordo su <b>" + esc(ac["Pron Combinato"]) + "</b>" + (pc != null ? " (" + f0(pc) + "%)" : "") + "</p>";
+    }
+    var pr = (p.Pronostici || []).slice();
+    if (pr.length) {
+      var ord = { "1X2": 0, "DC": 1, "OU": 2, "BTTS": 3, "SEGNA": 4 };
+      pr.sort(function (x, y) {
+        return ((ord[x.Mercato] != null ? ord[x.Mercato] : 9) - (ord[y.Mercato] != null ? ord[y.Mercato] : 9)) ||
+          String(x.Sel).localeCompare(String(y.Sel)) || nomeFonte(x.Fonte).localeCompare(nomeFonte(y.Fonte));
+      });
+      h += '<table class="mercati pron"><thead><tr><th>Fonte</th><th>Dice</th><th>% fonte</th><th>Quota</th><th>% book</th></tr></thead><tbody>' +
+        pr.map(function (x) {
+          var mp = mercatoSu(p, m, x);
+          var lab = x.Mercato ? etichettaPron(x) : (x.Testo || "?");
+          return "<tr><td>" + esc(nomeFonte(x.Fonte)) + "</td><td><b>" + esc(lab) + "</b></td><td>" +
+            (num(x.Prob) != null ? f0(num(x.Prob)) : "–") + "</td><td>" +
+            (num(x.Quota) != null ? f2(num(x.Quota)) : "–") + "</td><td>" +
+            (mp != null ? f0(mp) : "–") + "</td></tr>";
+        }).join("") + "</tbody></table>";
+      h += '<p class="piccolo">“% fonte” è la probabilità che dà la fonte, quando la scrive; ' +
+        "“% book” quella del mercato senza margine sulla stessa giocata, quando c'è. " +
+        "Quanto vale ogni fonte lo dice “Statistiche fonti”.</p>";
+    } else if (!cons.length && !ac) {
+      h += '<p class="piccolo">Nessuna fonte si è espressa su questa partita.</p>';
+    }
+    return h + "</div>";
+  }
+
+  function bloccoSure(p) {
+    if (!p.Sure || !p.Sure.length) return "";
+    var t = p.Sure.map(function (r) { return esc(r.Lista || r.Sure || "Sure Bet"); }).join(" · ");
+    return '<div class="scheda"><h3>Sure Bet</h3><p>FootballPredictions la mette fra le Sure Bets: <b>' + t + "</b>.</p>" +
+      (p.SureLink ? '<p class="piccolo"><a href="' + esc(p.SureLink) + '" target="_blank" rel="noopener">La pagina della fonte ↗</a></p>' : "") +
+      "</div>";
+  }
+
+  function bloccoAltro(p) {
+    var b = p.Betimate || {}, f = p.FM || {}, a = p.Mercato || {}, ac = p.Accordo || {};
+    var r = [];
+    if (b.Pron_Esatto) r.push("Risultato esatto secondo Betimate: <b>" + esc(b.Pron_Esatto) + "</b>" +
+      (num(b.Media_Gol) != null ? " (media gol " + f2(num(b.Media_Gol)) + ")" : ""));
+    if (b.Meteo) r.push("Meteo: " + esc(b.Meteo));
+    if (f.Arbitro) r.push("Arbitro: " + esc(f.Arbitro) + (num(f.Arb_Gialli) != null ? " · " + f1(num(f.Arb_Gialli)) + " gialli" : "") +
+      (num(f.Arb_Falli) != null ? " e " + f0(num(f.Arb_Falli)) + " falli a partita" : ""));
+    var ec = num(a["Elo Casa"]) != null ? num(a["Elo Casa"]) : num(ac["AO Elo Casa"]);
+    var eo = num(a["Elo Osp"]) != null ? num(a["Elo Osp"]) : num(ac["AO Elo Osp"]);
+    if (ec != null && eo != null) r.push("Elo: " + f0(ec) + " – " + f0(eo) + " (differenza " + (ec - eo > 0 ? "+" : "") + f0(ec - eo) + ")");
+    if (!r.length) return "";
+    return '<div class="scheda"><h3>Altro</h3>' + r.map(function (x) { return "<p>" + x + "</p>"; }).join("") + "</div>";
+  }
+
+  function piedeScheda(p) {
+    var visti = {}, nomi = [];
+    (p.Fonti || []).forEach(function (k) { var n = nomeFonte(k); if (!visti[n]) { visti[n] = 1; nomi.push(n); } });
+    return '<p class="piccolo piede-scheda">In questa scheda: ' + esc(nomi.join(", ")) + ". " +
+      "Ogni fonte scrive le squadre a modo suo: le righe sono state unite nel giro notturno " +
+      "con le regole dei prezzi equi (stemma, nomi parola per parola, ora). Se qui compare una partita che non c'entra, è un'unione sbagliata: segnalala.</p>";
+  }
+
+  function disegnaScheda() {
+    var d = SCHEDA.data, al = SCHEDA.chiave;
+    window.scrollTo({ top: 0, behavior: "instant" });
+    $cont.innerHTML = messaggio("vuoto", "Carico&hellip;");
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(d || "") || !al) {
+      $cont.innerHTML = messaggio("vuoto", "Indirizzo della scheda incompleto.");
+      return;
+    }
+    leggi("scheda_index.json").then(function (ix) {
+      document.getElementById("aggiornato").textContent = "Aggiornato il " + (ix.aggiornato || "?");
+    }).catch(function () {});
+    leggi("scheda_" + d + ".json").then(function (s) {
+      if (stato.sez !== "scheda" || SCHEDA.data !== d || SCHEDA.chiave !== al) return;
+      var id = s && s.alias ? s.alias[al] : null;
+      var p = id == null ? null : (s.partite || []).filter(function (x) { return x.id === id; })[0];
+      if (!p) {
+        $cont.innerHTML = '<div class="scheda"><button type="button" class="indietro" id="indietro">← Indietro</button>' +
+          "<p>Questa partita non c'è nelle schede del " + esc(etichettaData(d)) +
+          ". Le schede si rifanno a ogni giro: torna alla lista e riaprila da lì.</p></div>";
+      } else {
+        var m = mercatoScheda(p);
+        $cont.innerHTML = testaScheda(p, d) + bloccoMercato(p, m) + bloccoPrezzi(p, d) + bloccoPoisson(p) +
+          bloccoFonti(p, m) + bloccoSure(p) + bloccoAltro(p) + piedeScheda(p);
+        $cont.querySelectorAll("input[data-sp]").forEach(function (cb) {
+          cb.addEventListener("change", function () {
+            var r = righeSchedaPrezzi[Number(cb.dataset.sp)];
+            var k = chiave(r);
+            if (cb.checked) scelte[k] = r; else delete scelte[k];
+            cb.closest(".riga-prezzo").classList.toggle("scelta", cb.checked);
+            aggiornaMultipla();
+          });
+        });
+      }
+      var b = document.getElementById("indietro");
+      if (b) b.addEventListener("click", function () {
+        if (SCHEDA.interna) history.back();
+        else vaiHome();
+      });
+    }).catch(function (e) {
+      $cont.innerHTML = messaggio("errore", "Non riesco a leggere la scheda (" + esc(e.message) + "). " +
+        "Le schede ci sono da oggi in avanti: per le partite passate c'è “Statistiche fonti”, partita per partita.");
+    });
+  }
+
   // ------------------------------------------------------------- avvio
 
   document.querySelectorAll("nav.sezioni button[data-sez]").forEach(function (b) {
@@ -2231,6 +2634,7 @@
     stato.cerca = "";
     stato.limite = PASSO;
     FONTI.vista = "riepilogo"; FONTI.data = null; FONTI.fonte = "";
+    SCHEDA.interna = false; ritorno = null;
     window.scrollTo(0, 0);
     disegna();
   }
