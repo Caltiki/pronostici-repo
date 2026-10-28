@@ -1207,8 +1207,9 @@
   // l'addon ripete in fondo a ogni partita sta qui, letta una volta.
   var PO_VISTE = [
     ["tutte", "Tutte",
-     "Lambda calcolati dagli xG di Understat, senza guardare le quote: primi cinque " +
-     "campionati europei, solo partite complete di tutti i dati. Nessuna delle fonti " +
+     "Lambda calcolati dagli xG, senza guardare le quote: Understat per i primi cinque " +
+     "campionati europei, FotMob per gli altri dove ha la tabella xG. Solo partite complete " +
+     "di tutti i dati, mai le due fonti nella stessa partita. Nessuna delle fonti " +
      "misurate finora batte il book: questo \u00e8 da misurare, non da dare per buono."],
     ["mercato", "Con il mercato",
      "Solo dove AsianOdds ha la partita. Lo scarto dal prezzo \u00e8 la cosa interessante: " +
@@ -2120,10 +2121,11 @@
     }
 
     var det = [];
-    if (r.Lega) det.push("<p>" + esc(r.Lega) + "</p>");
+    if (r.Lega) det.push("<p>" + esc(String(r.Lega).replace(/\s*\[\d+\]$/, "")) + "</p>");
     det.push("<p>Modello: 1 " + f0(p1) + "% \u00b7 X " + f0(px) + "% \u00b7 2 " + f0(p2) + "%" +
       (num(r.Equa_Segno) != null ? " \u2013 quota equa del " + esc(segno) + " " + f2(num(r.Equa_Segno)) : "") + "</p>");
     det.push("<p>Lambda: casa " + f2(lc) + ", ospite " + f2(lo) + " (gol attesi " + f2(gol) + ")</p>");
+    if (r.Fonte_xG) det.push("<p>xG da " + esc(r.Fonte_xG) + ".</p>");
     det.push("<p>xG/90: " + f2(num(r.xG_Casa)) + " \u2013 " + f2(num(r.xG_Osp)) +
       " \u00b7 xGA/90: " + f2(num(r.xGA_Casa)) + " \u2013 " + f2(num(r.xGA_Osp)) + "</p>");
     var gl = [["Over 1.5", r.P_O15], ["Over 2.5", r.P_O25], ["Over 3.5", r.P_O35], ["Gol", r.P_GG]]
@@ -2151,7 +2153,8 @@
     return '<div class="riga"><details><summary>' +
       '<span class="segno">' + esc(segno || "?") + "</span>" +
       '<div class="corpo">' +
-      '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" + (r.Lega ? '<span class="chip">' + esc(r.Lega) + "</span>" : "") + "</div>" +
+      '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" + (r.Lega ? '<span class="chip">' + esc(String(r.Lega).replace(/\s*\[\d+\]$/, "")) + "</span>" : "") +
+        (r.Fonte_xG === "FotMob" ? '<span class="chip">xG FotMob</span>' : "") + "</div>" +
       '<div class="partita">' + esc(r.Casa) + " \u2013 " + esc(r.Ospite) + "</div>" +
       '<div class="sel">\u03bb ' + f2(lc) + " \u2013 " + f2(lo) + coda + "</div>" +
       tripla("modello", p1, px, p2) +
