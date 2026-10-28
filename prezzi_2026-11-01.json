@@ -6140,7 +6140,8 @@
   "Mercato": "1X2",
   "Sel": "2",
   "Prob": 59.4,
-  "Equa": 1.68
+  "Equa": 1.68,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-01",
@@ -6820,8 +6821,7 @@
   "Mercato": "BTTS",
   "Sel": "NoGol",
   "Prob": 56.9,
-  "Equa": 1.76,
-  "InSchedina": "si"
+  "Equa": 1.76
  },
  {
   "Data": "2026-11-01",
@@ -12385,26 +12385,6 @@
  },
  {
   "Data": "2026-11-01",
-  "Ora": "14:00",
-  "Campionato": "Spain La Liga",
-  "Partita": "Getafe - Sevilla",
-  "Casa": "Getafe",
-  "Ospite": "Sevilla",
-  "Linea_OU": "",
-  "Gol_attesi": 2.1,
-  "Margine": 1.8,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "Gol",
-  "Prob": 43.1,
-  "Equa": 2.32
- },
- {
-  "Data": "2026-11-01",
   "Ora": "18:30",
   "Campionato": "Belgium Pro League",
   "Partita": "Lommel SK - Gent",
@@ -15702,6 +15682,26 @@
   "Sel": "Under",
   "Prob": 25.2,
   "Equa": 3.96
+ },
+ {
+  "Data": "2026-11-01",
+  "Ora": "12:00",
+  "Campionato": "Ukraine Premier League",
+  "Partita": "Kolos Kovalivka - Polissya Zhytomyr",
+  "Casa": "Kolos Kovalivka",
+  "Ospite": "Polissya Zhytomyr",
+  "Linea_OU": "",
+  "Gol_attesi": 2.49,
+  "Margine": 5.9,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 24.9,
+  "Equa": 4.02
  },
  {
   "Data": "2026-11-01",
