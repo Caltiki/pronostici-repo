@@ -2462,27 +2462,6 @@
   "Schedina": "si",
   "Fonte": "FootyMetrics",
   "Gruppo": "Under Over",
-  "Mercato": "OU 3.5",
-  "Sel": "Under",
-  "Prob": 73.5,
-  "Equa": 1.36,
-  "InSchedina": "si"
- },
- {
-  "Data": "2026-11-01",
-  "Ora": "14:00",
-  "Campionato": "Finland Veikkausliiga",
-  "Partita": "Oulu - KuPS",
-  "Casa": "Oulu",
-  "Ospite": "KuPS",
-  "Linea_OU": "",
-  "Gol_attesi": 2.6,
-  "Margine": 6.5,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "Under Over",
   "Mercato": "OU 1.5",
   "Sel": "Over",
   "Prob": 73.3,
@@ -7781,7 +7760,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "1X + Over 2.5",
   "Prob": 54.7,
-  "Equa": 1.83
+  "Equa": 1.83,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-01",
