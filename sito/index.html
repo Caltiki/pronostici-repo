@@ -610,6 +610,8 @@
   table.mercati.pron td:nth-child(2) { text-align: left; }
   table.mercati.pron th:nth-child(2) { text-align: left; }
   .scheda p.avviso { color: var(--attento); font-weight: 500; }
+  .fonte-pill { color: var(--evidenza); border-color: color-mix(in srgb, var(--evidenza) 35%, transparent); }
+  .strumenti #fonte-cm { flex: 1; }
   .piede-scheda { margin: 14px 2px 0; font-size: .8rem; color: var(--tenue); }
   /* TEMA SCURO FISSO (dalla v18). Blu notte, schede arrotondate con un
      filo di sfumatura, accento viola. NON blu: il blu e' il colore
@@ -1267,6 +1269,7 @@
     vista: { prezzi: "schedina", mercato: "aff", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" },
     ordine: { prezzi: "file", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" },
     cerca: "",
+    fonteCm: "",
     limite: PASSO
   };
   // La multipla sopravvive al cambio di vista e di data: si compone
@@ -1315,7 +1318,8 @@
               tiene: peTiene, riepilogo: riepilogoPrezzi, riga: rigaPrezzo, arricchisci: arricchisciPrezzi,
               nota: " \u00b7 la tacca sulle barre segna il 60%" },
     consensus: { indice: "consensusmedio_index.json", prefisso: "consensusmedio_", viste: CM_VISTE, ordini: CM_ORDINI,
-                 tiene: cmTiene, riepilogo: riepilogoConsensus, riga: rigaConsensus, nota: "" },
+                 tiene: cmTiene, riepilogo: riepilogoConsensus, riga: rigaConsensus, nota: "",
+                 arricchisci: arricchisciConsensus },
     mercato: { indice: "asianodds_index.json", prefisso: "asianodds_", viste: MK_VISTE, ordini: MK_ORDINI,
                tiene: mkTiene, riepilogo: riepilogoMercato, riga: rigaMercato, nota: "", daOggi: true },
     accordo: { indice: "consensus_index.json", prefisso: "consensus_", viste: AC_VISTE, ordini: AC_ORDINI,
@@ -1443,6 +1447,7 @@
         '<p class="descr">' + esc(vista[2]) + "</p>" +
         (sez === "poisson" ? notaCampo(ix) : "") +
         strumentiHtml(ordini, stato.ordine[sez]);
+      if (sez === "consensus") testa = testa.replace(/<\/div>$/, sceltaFonteHtml() + "</div>");
       $cont.innerHTML = testa + '<div id="righe">' + messaggio("vuoto", "Carico&hellip;") + "</div>";
       collegaTesta(sez);
 
@@ -1491,6 +1496,12 @@
     document.getElementById("ordine").addEventListener("change", function (e) {
       stato.ordine[sez] = e.target.value; stato.limite = PASSO; ridisegnaRighe();
     });
+    var sf = document.getElementById("fonte-cm");
+    if (sf) sf.addEventListener("change", function (e) {
+      // Si ridisegna tutta la giornata: la prima volta che si sceglie una
+      // fonte bisogna leggere le schede, che portano i suoi pronostici.
+      stato.fonteCm = e.target.value; stato.limite = PASSO; disegna();
+    });
     // Le date attive restano in vista anche quando la riga scorre.
     var att = $cont.querySelector('[data-data][aria-pressed="true"]');
     if (att && att.scrollIntoView) att.scrollIntoView({ block: "nearest", inline: "center" });
@@ -1507,6 +1518,7 @@
     var tiene = SEZ[sez].tiene;
     var tutte = Array.isArray(righe) ? righe : [];
     var passano = tutte.filter(function (r) { return tiene(r, vista); });
+    if (sez === "consensus" && stato.fonteCm) passano = passano.filter(function (r) { return haFonte(r, stato.fonteCm); });
     var q = stato.cerca.toLowerCase();
     var visibili = q ? passano.filter(function (r) { return testoCerca(r).indexOf(q) >= 0; }) : passano;
     visibili = ordina(sez, visibili.slice());
@@ -1518,7 +1530,11 @@
       return;
     }
     if (!passano.length) {
-      $r.innerHTML = messaggio("vuoto", vuotoPerVista(sez, vista, tutte.length, data));
+      $r.innerHTML = messaggio("vuoto", sez === "consensus" && stato.fonteCm
+        ? "In questa giornata, in questa vista, nessuna partita ha un pronostico di " +
+          esc((FONTI_CM.filter(function (o) { return o[0] === stato.fonteCm; })[0] || [0, stato.fonteCm])[1]) +
+          ". Prova un altro giorno, la vista \u201cTutte\u201d o un'altra fonte."
+        : vuotoPerVista(sez, vista, tutte.length, data));
       return;
     }
     if (!visibili.length) {
@@ -1899,6 +1915,51 @@
 
   // --------------------------------------------------- consensus medio
 
+  // LA FONTE SCELTA NEL MENU. Le fonti del consenso medio sono quelle che
+  // stanno nella colonna "Elenco": scegliendone una restano le partite su
+  // cui quella fonte si e' espressa, e sotto ciascuna compare il suo
+  // pronostico. Il pronostico NON si ricalcola qui: viene dalla scheda
+  // della partita (scheda_<data>.json), dove scheda_partite.py l'ha letto
+  // con le regole di misura_fonti.py, le stesse di "Statistiche fonti".
+  var FONTI_CM = [["statarea", "Statarea"], ["betimate", "Betimate"], ["footymetrics", "FootyMetrics"],
+                  ["ratingbet", "RatingBet"], ["soccersite", "SoccerSite"]];
+  function sceltaFonteHtml() {
+    return '<select id="fonte-cm" aria-label="Fonte">' +
+      [["", "Tutte le fonti"]].concat(FONTI_CM).map(function (o) {
+        return '<option value="' + o[0] + '"' + (o[0] === stato.fonteCm ? " selected" : "") + ">" + esc(o[1]) + "</option>";
+      }).join("") + "</select>";
+  }
+  function haFonte(r, f) {
+    return String(r.Elenco || "").split(/,\s*/).indexOf(f) >= 0;
+  }
+  function arricchisciConsensus(righe, data) {
+    if (!stato.fonteCm || !Array.isArray(righe)) return righe;
+    return leggi("scheda_" + data + ".json").catch(function () { return null; }).then(function (s) {
+      if (!s || !s.alias) return righe;
+      var per = {};
+      (s.partite || []).forEach(function (p) { per[p.id] = p; });
+      return righe.map(function (r) {
+        var p = per[s.alias["consensusmedio|" + r.Casa + "|" + r.Ospite]];
+        if (!p) return r;
+        var o = {};
+        for (var k in r) o[k] = r[k];
+        o._prons = p.Pronostici || [];
+        return o;
+      });
+    });
+  }
+  function pronFonteHtml(r) {
+    if (!stato.fonteCm || !r._prons) return "";
+    var mie = r._prons.filter(function (x) { return x.Fonte === stato.fonteCm; });
+    if (!mie.length) return "";
+    var nome = (FONTI_CM.filter(function (o) { return o[0] === stato.fonteCm; })[0] || [0, stato.fonteCm])[1];
+    return '<div class="pron-lista">' + mie.map(function (x) {
+      return '<span class="esito-pill fonte-pill"><b>' + esc(nome) + "</b> \u00b7 " +
+        esc(x.Mercato ? etichettaPron(x) : (x.Testo || "?")) +
+        (num(x.Prob) != null ? " \u00b7 " + f0(num(x.Prob)) + "%" : "") + "</span>";
+    }).join("") + "</div>";
+  }
+
   function cmTiene(r, tipo) {
     if (tipo === "mercato") return num(r.Scarto) != null;
     if (tipo === "multi") return (num(r.Fonti) || 0) >= 2;
@@ -1946,6 +2007,7 @@
       '<div class="alto"><span>' + esc(r.Ora || "") + "</span><span>" + fonti + (fonti === 1 ? " fonte" : " fonti") + "</span></div>" +
       '<div class="partita">' + esc(r.Casa) + " – " + esc(r.Ospite) + "</div>" +
       (coda ? '<div class="sel">' + coda + "</div>" : "") +
+      pronFonteHtml(r) +
       tripla("fonti", p1, px, p2) +
       (m1 != null ? tripla("mercato", m1, mx, m2) : "") +
       "</div>" +
@@ -3150,6 +3212,7 @@
     stato.vista = { prezzi: "schedina", mercato: "aff", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" };
     stato.ordine = { prezzi: "file", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" };
     stato.cerca = "";
+    stato.fonteCm = "";
     stato.limite = PASSO;
     FONTI.vista = "riepilogo"; FONTI.data = null; FONTI.fonte = "";
     SCHEDA.interna = false; ritorno = null;
