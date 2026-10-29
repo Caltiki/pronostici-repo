@@ -1555,10 +1555,11 @@
     }
   }
   var GIORNI = ["dom", "lun", "mar", "mer", "gio", "ven", "sab"];
+  var MESI_BREVI = ["gen", "feb", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic"];
   function etichettaData(d) {
     var o = oggi();
     var t = new Date(d + "T12:00:00Z");
-    var g = GIORNI[t.getUTCDay()] + " " + t.getUTCDate();
+    var g = GIORNI[t.getUTCDay()] + " " + t.getUTCDate() + " " + MESI_BREVI[t.getUTCMonth()];
     var diff = Math.round((t - new Date(o + "T12:00:00Z")) / 86400000);
     if (diff === 0) return "Oggi";
     if (diff === 1) return "Domani";
