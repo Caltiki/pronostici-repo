@@ -1209,6 +1209,17 @@
   .riepilogo button.filtro-esito b { display: block; }
   .riepilogo button.filtro-esito span { display: block; }
   .riepilogo button.filtro-esito.attivo { border-color: var(--evidenza); box-shadow: 0 0 0 1px var(--evidenza), var(--ombra); }
+  /* CONDIVIDI LA MULTIPLA. I canali stanno in una fila che va a capo. */
+  .multipla .m-azioni { display: flex; gap: 8px; margin-top: 8px; }
+  .multipla button.primo { border-color: var(--evidenza); color: var(--evidenza); background: var(--evidenza-tenue); }
+  .multipla .m-invio { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--bordo); }
+  .multipla .m-invio[hidden] { display: none; }
+  .multipla .m-canali { display: flex; flex-wrap: wrap; gap: 6px; }
+  .multipla .m-canali button[hidden] { display: none; }
+  .multipla .m-canali button { padding: 7px 11px; }
+  .multipla p.m-esito-invio { min-height: 1em; margin-top: 6px; color: var(--evidenza); font-weight: 600; }
+  :root[data-theme="light"] .multipla button.primo { border-color: rgba(77,124,15,.35); color: #2f4d07; background: rgba(201,255,61,.3); }
+  :root[data-theme="light"] .multipla p.m-esito-invio { color: #2f4d07; }
 </style>
 </head>
 <body>
@@ -1261,7 +1272,25 @@
     </div>
     <p id="m-stima"></p>
     <p id="m-avviso" class="avviso" hidden></p>
-    <p style="margin-top:8px"><button id="m-svuota" type="button">Svuota</button></p>
+    <p class="m-azioni">
+      <button id="m-condividi" class="primo" type="button" aria-expanded="false" aria-controls="m-invio">Condividi</button>
+      <button id="m-svuota" type="button">Svuota</button>
+    </p>
+    <div id="m-invio" class="m-invio" hidden>
+      <div class="m-canali">
+        <button type="button" data-invio="nativo" hidden>Condividi&hellip;</button>
+        <button type="button" data-invio="immagine" hidden>Invia immagine&hellip;</button>
+        <button type="button" data-invio="whatsapp">WhatsApp</button>
+        <button type="button" data-invio="telegram">Telegram</button>
+        <button type="button" data-invio="email">Email</button>
+        <button type="button" data-invio="copia">Copia testo</button>
+        <button type="button" data-invio="file" hidden>Invia come file&hellip;</button>
+        <button type="button" data-invio="png">Scarica immagine</button>
+        <button type="button" data-invio="txt">Scarica .txt</button>
+        <button type="button" data-invio="csv">Scarica .csv</button>
+      </div>
+      <p id="m-esito-invio" class="m-esito-invio" role="status" aria-live="polite"></p>
+    </div>
   </div>
 </div>
 
@@ -2089,6 +2118,7 @@
   var $m = document.getElementById("multipla");
   document.getElementById("m-svuota").addEventListener("click", function () {
     scelte = {};
+    chiudiInvio();
     aggiornaMultipla();
     ridisegnaRighe();
   });
@@ -2099,7 +2129,7 @@
   // del documento di stato (1.60 equa, 6% x 10 eventi -> 0.89).
   function aggiornaMultipla() {
     var r = Object.keys(scelte).map(function (k) { return scelte[k]; });
-    if (!r.length) { $m.hidden = true; document.body.style.paddingBottom = ""; return; }
+    if (!r.length) { $m.hidden = true; chiudiInvio(); document.body.style.paddingBottom = ""; return; }
     $m.hidden = false;
     var equa = 1, pagata = 1, prob = 1, senzaMarg = 0;
     r.forEach(function (x) {
@@ -2133,7 +2163,424 @@
         "): non sono eventi indipendenti, cadono insieme e il prodotto delle quote mente.";
     } else $a.hidden = true;
     document.body.style.paddingBottom = $m.offsetHeight + "px";
+    if ($invio) preparaSeAperto();
   }
+
+  // ------------------------------------------- condividi la multipla
+  //
+  // TUTTO NEL TELEFONO, NIENTE SERVER: il testo si compone qui dalle righe
+  // scelte, con gli stessi numeri della barra (quota reale, probabilita',
+  // stima col margine). Poi:
+  //   - "Condividi..." apre il menu di condivisione del telefono
+  //     (navigator.share): WhatsApp, Telegram, email, Messaggi, Drive...;
+  //     c'e' solo dove il browser lo offre, altrove il bottone non compare;
+  //   - WhatsApp, Telegram, Email aprono l'app con il testo gia' scritto
+  //     (wa.me, t.me/share, mailto): il testo si', l'allegato no, per
+  //     questi indirizzi non esiste modo di passarlo;
+  //   - "Invia come file..." passa il .txt al menu del telefono, che cosi'
+  //     lo allega (solo dove navigator.canShare accetta file);
+  //   - .txt e .csv si scaricano. Il .csv e' con il punto e virgola e la
+  //     virgola nei decimali: Excel in italiano lo apre in colonne.
+
+  var SITO = "https://caltiki.github.io/pronostici-repo/sito/";
+  var MESI = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio",
+    "agosto", "settembre", "ottobre", "novembre", "dicembre"];
+  var GIORNI_LUNGHI = ["domenica", "lunedì", "martedì", "mercoledì", "giovedì", "venerdì", "sabato"];
+
+  function dataLunga(d) {
+    var t = new Date(d + "T12:00:00Z");
+    if (isNaN(t)) return d || "";
+    return GIORNI_LUNGHI[t.getUTCDay()] + " " + t.getUTCDate() + " " + MESI[t.getUTCMonth()];
+  }
+
+  function righeScelte() {
+    return Object.keys(scelte).map(function (k) { return scelte[k]; }).sort(function (a, b) {
+      var x = (a.Data || "") + " " + (a.Ora || ""), y = (b.Data || "") + " " + (b.Ora || "");
+      return x < y ? -1 : x > y ? 1 : String(a.Partita || "").localeCompare(String(b.Partita || ""));
+    });
+  }
+
+  function conti(r) {
+    var equa = 1, pagata = 1, prob = 1;
+    r.forEach(function (x) {
+      var e = num(x.Equa), m = num(x.Margine), p = num(x.Prob);
+      equa *= e || 1;
+      prob *= p != null ? p / 100 : 1;
+      pagata *= m == null ? (e || 1) : (e || 1) / (1 + m / 100);
+    });
+    return { equa: equa, pagata: pagata, prob: prob * 100 };
+  }
+
+  function testoMultipla() {
+    var r = righeScelte(), c = conti(r), out = ["Multipla - Sistema Pronostici", ""], giorno = null;
+    r.forEach(function (x) {
+      if (x.Data !== giorno) {
+        if (giorno !== null) out.push("");
+        giorno = x.Data;
+        var g = dataLunga(giorno);
+        out.push(g.charAt(0).toUpperCase() + g.slice(1));
+      }
+      out.push((x.Ora ? x.Ora + "  " : "") + (x.Partita || ""));
+      if (x.Campionato) out.push("    " + x.Campionato);
+      out.push("    " + etichettaSel(x) + " -> quota reale " + f2(num(x.Equa)) +
+        " (" + f0(num(x.Prob)) + "%)");
+    });
+    out.push("");
+    out.push(r.length + (r.length === 1 ? " evento" : " eventi") + " · probabilità " +
+      c.prob.toFixed(1) + "% · quota reale " + c.equa.toFixed(2));
+    out.push("Col margine del bookmaker pagherebbe circa " + c.pagata.toFixed(2) + ".");
+    out.push("Quota reale = quella del bookmaker senza il suo guadagno: se la tua è più bassa, ci perdi.");
+    out.push("");
+    out.push(SITO);
+    return out.join("\n");
+  }
+
+  function csvMultipla() {
+    var r = righeScelte(), c = conti(r);
+    function cella(v) {
+      v = String(v == null ? "" : v);
+      return /[;"\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v;
+    }
+    function dec(v, n) { return v == null ? "" : v.toFixed(n).replace(".", ","); }
+    var righe = [["Data", "Ora", "Campionato", "Partita", "Giocata", "Probabilità %", "Quota reale", "Margine book %"]];
+    r.forEach(function (x) {
+      righe.push([x.Data, x.Ora, x.Campionato, x.Partita, etichettaSel(x),
+        dec(num(x.Prob), 1), dec(num(x.Equa), 2), dec(num(x.Margine), 1)]);
+    });
+    righe.push([]);
+    righe.push(["Totale", "", "", r.length + (r.length === 1 ? " evento" : " eventi"), "",
+      dec(c.prob, 1), dec(c.equa, 2), ""]);
+    righe.push(["Stima col margine", "", "", "", "", "", dec(c.pagata, 2), ""]);
+    return "\ufeff" + righe.map(function (l) { return l.map(cella).join(";"); }).join("\r\n") + "\r\n";
+  }
+
+  function nomeFile(est) {
+    var r = righeScelte(), d = r.length ? r[0].Data : oggi();
+    return "multipla_" + d + "." + est;
+  }
+
+  var $invio = document.getElementById("m-invio");
+  var $condividi = document.getElementById("m-condividi");
+  var $esitoInvio = document.getElementById("m-esito-invio");
+  var $nativo = $invio.querySelector('[data-invio="nativo"]');
+  var $file = $invio.querySelector('[data-invio="file"]');
+  var timerInvio = null;
+
+  if (navigator.share) $nativo.hidden = false;
+  try {
+    if (navigator.canShare && typeof File === "function" &&
+        navigator.canShare({ files: [new File(["x"], "prova.txt", { type: "text/plain" })] })) $file.hidden = false;
+  } catch (e) { /* niente file: resta lo scaricamento */ }
+  var $immagine = $invio.querySelector('[data-invio="immagine"]');
+  try {
+    if (navigator.canShare && typeof File === "function" &&
+        navigator.canShare({ files: [new File([new Uint8Array(8)], "prova.png", { type: "image/png" })] })) $immagine.hidden = false;
+  } catch (e) { /* niente: resta "Scarica immagine" */ }
+
+  // ------------------------------------------ l'immagine della multipla
+  //
+  // DISEGNATA QUI, SU UN CANVAS, con i colori del tema in uso e i
+  // caratteri del sito: niente librerie esterne e niente server. Gli
+  // stemmi restano fuori: vengono da un altro indirizzo e un'immagine
+  // presa da li' puo' bloccare il salvataggio del canvas.
+  //
+  // PERCHE' SI PREPARA PRIMA: il menu di condivisione del telefono si
+  // apre solo "dentro" il tocco. Safari su iPhone lo rifiuta se nel mezzo
+  // c'e' da aspettare (caratteri, conversione in PNG). Cosi' l'immagine
+  // si prepara quando si apre il pannello e quando cambia la multipla, e
+  // al tocco e' gia' pronta.
+
+  var IMG = { chiave: null, blob: null, inCorso: null };
+
+  function chiaveImmagine() {
+    return (document.documentElement.getAttribute("data-theme") || "") + "|" + testoMultipla();
+  }
+
+  function colori() {
+    var cs = getComputedStyle(document.documentElement);
+    function v(n, d) { var x = cs.getPropertyValue(n).trim(); return x || d; }
+    return {
+      sfondo: v("--sfondo", "#0b1120"), scheda: v("--scheda", "#131c2e"),
+      testo: v("--testo", "#e2e8f0"), tenue: v("--tenue", "#94a3b8"),
+      bordo: v("--bordo", "#1f2a3d"), evidenza: v("--evidenza", "#a78bfa"),
+      alone: v("--evidenza-tenue", "rgba(139,92,246,.16)")
+    };
+  }
+
+  function rettangolo(ctx, x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+
+  // Al massimo "quante" righe; l'ultima chiude con i puntini se non ci sta.
+  function aCapo(ctx, t, larg, quante) {
+    var parole = String(t || "").split(/\s+/), righe = [], cor = "";
+    for (var i = 0; i < parole.length; i++) {
+      var prova = cor ? cor + " " + parole[i] : parole[i];
+      if (ctx.measureText(prova).width <= larg || !cor) cor = prova;
+      else { righe.push(cor); cor = parole[i]; }
+    }
+    if (cor) righe.push(cor);
+    if (righe.length > quante) {
+      righe = righe.slice(0, quante);
+      var u = righe[quante - 1];
+      while (u.length > 1 && ctx.measureText(u + "…").width > larg) u = u.slice(0, -1);
+      righe[quante - 1] = u.replace(/\s+$/, "") + "…";
+    }
+    return righe;
+  }
+
+  var MAN = "Manrope, system-ui, sans-serif", BAR = '"Barlow Condensed", Manrope, sans-serif';
+
+  // Due passate con la stessa funzione: la prima misura l'altezza, la
+  // seconda disegna.
+  function disegnaMultipla(ctx, W, col, disegnaDavvero) {
+    var r = righeScelte(), c = conti(r), P = 56, y = P;
+    function fill(f) { if (disegnaDavvero) f(); }
+
+    // Testa: titolo a sinistra, quota reale a destra.
+    ctx.textBaseline = "alphabetic";
+    fill(function () {
+      ctx.fillStyle = col.tenue; ctx.font = "800 26px " + MAN; ctx.textAlign = "left";
+      ctx.fillText("MULTIPLA", P, y + 30);
+      ctx.fillStyle = col.testo; ctx.font = "800 40px " + MAN;
+      ctx.fillText("Sistema Pronostici", P, y + 80);
+      ctx.textAlign = "right"; ctx.fillStyle = col.evidenza; ctx.font = "700 104px " + BAR;
+      ctx.fillText(c.equa.toFixed(2), W - P, y + 84);
+      ctx.fillStyle = col.tenue; ctx.font = "700 22px " + MAN;
+      ctx.fillText("QUOTA REALE", W - P, y + 116);
+    });
+    y += 150;
+    fill(function () {
+      ctx.textAlign = "left"; ctx.fillStyle = col.testo; ctx.font = "600 28px " + MAN;
+      ctx.fillText(r.length + (r.length === 1 ? " evento" : " eventi") + "  ·  probabilità " +
+        c.prob.toFixed(1) + "%", P, y);
+      ctx.fillStyle = col.tenue; ctx.font = "500 24px " + MAN;
+      ctx.fillText("Col margine del bookmaker pagherebbe circa " + c.pagata.toFixed(2), P, y + 38);
+    });
+    y += 78;
+
+    var giorno = null, LQ = 190, xT = P + 34, largT = W - 2 * P - 34 - LQ;
+    r.forEach(function (x) {
+      if (x.Data !== giorno) {
+        giorno = x.Data;
+        y += 22;
+        fill(function () {
+          ctx.textAlign = "left"; ctx.fillStyle = col.tenue; ctx.font = "800 24px " + MAN;
+          ctx.fillText(dataLunga(giorno).toUpperCase(), P, y + 24);
+        });
+        y += 46;
+      }
+      ctx.font = "800 36px " + MAN;
+      var nomi = aCapo(ctx, x.Partita || "", largT, 2);
+      ctx.font = "600 24px " + MAN;
+      var sopra = aCapo(ctx, (x.Ora ? x.Ora + "  ·  " : "") + (x.Campionato || ""), largT, 1)[0] || "";
+      var h = 28 + 30 + nomi.length * 46 + 44 + 30 + 28;
+      var y0 = y, prob = num(x.Prob);
+      fill(function () {
+        ctx.save();
+        rettangolo(ctx, P, y0, W - 2 * P, h, 24);
+        ctx.fillStyle = col.scheda; ctx.fill();
+        ctx.lineWidth = 2; ctx.strokeStyle = col.bordo; ctx.stroke();
+        ctx.clip();
+        ctx.fillStyle = col.evidenza; ctx.fillRect(P, y0, 8, h);
+        ctx.restore();
+        var yy = y0 + 28 + 24;
+        ctx.textAlign = "left"; ctx.fillStyle = col.tenue; ctx.font = "600 24px " + MAN;
+        ctx.fillText(sopra, xT, yy);
+        yy += 10;
+        ctx.fillStyle = col.testo; ctx.font = "800 36px " + MAN;
+        nomi.forEach(function (n) { yy += 46; ctx.fillText(n, xT, yy); });
+        yy += 44;
+        ctx.fillStyle = col.evidenza; ctx.font = "700 32px " + MAN;
+        ctx.fillText(etichettaSel(x), xT, yy);
+        // barra della probabilita', come sul sito
+        var bx = xT, by = yy + 22, bw = largT, bh = 8;
+        rettangolo(ctx, bx, by, bw, bh, 4); ctx.fillStyle = col.bordo; ctx.fill();
+        if (prob != null) {
+          rettangolo(ctx, bx, by, Math.max(bh, bw * Math.min(100, prob) / 100), bh, 4);
+          ctx.fillStyle = col.evidenza; ctx.fill();
+        }
+        // quota e probabilita' a destra
+        ctx.textAlign = "right"; ctx.fillStyle = col.evidenza; ctx.font = "700 76px " + BAR;
+        ctx.fillText(f2(num(x.Equa)), W - P - 32, y0 + h / 2 + 12);
+        ctx.fillStyle = col.tenue; ctx.font = "600 26px " + MAN;
+        ctx.fillText(f0(prob) + "%", W - P - 32, y0 + h / 2 + 50);
+      });
+      y += h + 16;
+    });
+
+    y += 22;
+    fill(function () {
+      ctx.textAlign = "left"; ctx.fillStyle = col.tenue; ctx.font = "500 22px " + MAN;
+      ctx.fillText("Quota reale = quella del bookmaker senza il suo guadagno.", P, y + 22);
+      ctx.fillText("Se quella che ti offre è più bassa, ci perdi.", P, y + 52);
+      ctx.fillStyle = col.testo; ctx.font = "700 22px " + MAN;
+      ctx.fillText(SITO.replace(/^https:\/\//, "").replace(/\/$/, ""), P, y + 92);
+    });
+    y += 92 + P;
+    return y;
+  }
+
+  function preparaImmagine() {
+    var k = chiaveImmagine();
+    if (IMG.chiave === k && (IMG.blob || IMG.inCorso)) return IMG.inCorso || Promise.resolve(IMG.blob);
+    IMG.chiave = k; IMG.blob = null;
+    var caratteri = document.fonts && document.fonts.load ? Promise.all([
+      document.fonts.load("800 36px Manrope"), document.fonts.load("600 24px Manrope"),
+      document.fonts.load('700 76px "Barlow Condensed"')]).catch(function () {}) : Promise.resolve();
+    var p = caratteri.then(function () {
+      var W = 1080, col = colori();
+      var prova = document.createElement("canvas").getContext("2d");
+      var H = Math.ceil(disegnaMultipla(prova, W, col, false));
+      var cv = document.createElement("canvas");
+      cv.width = W; cv.height = H;
+      var ctx = cv.getContext("2d");
+      ctx.fillStyle = col.sfondo; ctx.fillRect(0, 0, W, H);
+      var g = ctx.createRadialGradient(W * 0.85, 0, 0, W * 0.85, 0, W * 0.9);
+      g.addColorStop(0, col.alone); g.addColorStop(1, "rgba(0,0,0,0)");
+      ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+      disegnaMultipla(ctx, W, col, true);
+      return new Promise(function (ok, ko) {
+        cv.toBlob(function (b) { b ? ok(b) : ko(new Error("PNG non creato")); }, "image/png");
+      });
+    }).then(function (b) {
+      if (IMG.chiave === k) { IMG.blob = b; IMG.inCorso = null; }
+      return b;
+    }, function (e) {
+      if (IMG.chiave === k) { IMG.chiave = null; IMG.inCorso = null; }
+      throw e;
+    });
+    IMG.inCorso = p;
+    return p;
+  }
+  function preparaSeAperto() {
+    if (!$invio.hidden && Object.keys(scelte).length) preparaImmagine().catch(function () {});
+  }
+
+  function avvisaInvio(t) {
+    $esitoInvio.textContent = t;
+    clearTimeout(timerInvio);
+    timerInvio = setTimeout(function () { $esitoInvio.textContent = ""; }, 3500);
+    document.body.style.paddingBottom = $m.offsetHeight + "px";
+  }
+  function chiudiInvio() {
+    if (!$invio) return;
+    $invio.hidden = true;
+    $condividi.setAttribute("aria-expanded", "false");
+    $esitoInvio.textContent = "";
+  }
+  $condividi.addEventListener("click", function () {
+    var apri = $invio.hidden;
+    $invio.hidden = !apri;
+    $condividi.setAttribute("aria-expanded", apri ? "true" : "false");
+    document.body.style.paddingBottom = $m.offsetHeight + "px";
+    preparaSeAperto();
+  });
+
+  function scarica(contenuto, nome, tipo) {
+    var url = URL.createObjectURL(contenuto instanceof Blob ? contenuto : new Blob([contenuto], { type: tipo }));
+    var a = document.createElement("a");
+    a.href = url; a.download = nome; a.style.display = "none";
+    document.body.appendChild(a); a.click();
+    setTimeout(function () { URL.revokeObjectURL(url); a.remove(); }, 1000);
+  }
+
+  function copia(t) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(t);
+    }
+    return new Promise(function (ok, ko) {
+      var ta = document.createElement("textarea");
+      ta.value = t; ta.setAttribute("readonly", "");
+      ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
+      var fatto = false;
+      try { fatto = document.execCommand("copy"); } catch (e) { /* sotto */ }
+      ta.remove();
+      fatto ? ok() : ko();
+    });
+  }
+
+  function apri(url) {
+    // Una scheda nuova per WhatsApp e Telegram (sul telefono si apre
+    // l'app); il sito resta dov'era. Con window.open(..., "noopener") il
+    // browser restituisce sempre null e non si sa se la scheda e' partita:
+    // un link vero, cliccato, non ha questo problema.
+    var a = document.createElement("a");
+    a.href = url; a.target = "_blank"; a.rel = "noopener noreferrer";
+    a.style.display = "none";
+    document.body.appendChild(a); a.click(); a.remove();
+  }
+
+  $invio.addEventListener("click", function (ev) {
+    var b = ev.target.closest("button[data-invio]");
+    if (!b || !Object.keys(scelte).length) return;
+    var t = testoMultipla(), titolo = "Multipla - Sistema Pronostici";
+    switch (b.getAttribute("data-invio")) {
+      case "nativo":
+        navigator.share({ title: titolo, text: t }).catch(function (e) {
+          if (e && e.name !== "AbortError") avvisaInvio("Condivisione non riuscita: usa Copia testo.");
+        });
+        break;
+      case "whatsapp":
+        apri("https://wa.me/?text=" + encodeURIComponent(t));
+        break;
+      case "telegram":
+        // t.me/share vuole un url: il sito va li', e si toglie dal testo
+        // per non averlo due volte.
+        apri("https://t.me/share/url?url=" + encodeURIComponent(SITO) +
+          "&text=" + encodeURIComponent(t.replace("\n\n" + SITO, "")));
+        break;
+      case "email":
+        location.href = "mailto:?subject=" + encodeURIComponent(titolo) + "&body=" + encodeURIComponent(t);
+        break;
+      case "copia":
+        copia(t).then(function () { avvisaInvio("Copiato: incollalo dove vuoi."); },
+          function () { avvisaInvio("Il browser non lascia copiare: usa Scarica .txt."); });
+        break;
+      case "file":
+        var f = new File([t], nomeFile("txt"), { type: "text/plain" });
+        navigator.share({ title: titolo, files: [f] }).catch(function (e) {
+          if (e && e.name !== "AbortError") avvisaInvio("Il file non è partito: usa Scarica .txt.");
+        });
+        break;
+      case "immagine":
+        // Pronta: si condivide subito, dentro il tocco. Non pronta (appena
+        // cambiata la multipla o il tema): si prepara e si chiede di
+        // ritoccare, perche' dopo l'attesa il telefono rifiuterebbe.
+        if (IMG.blob && IMG.chiave === chiaveImmagine()) {
+          var fi = new File([IMG.blob], nomeFile("png"), { type: "image/png" });
+          navigator.share({ title: titolo, files: [fi] }).catch(function (e) {
+            if (e && e.name !== "AbortError") avvisaInvio("L'immagine non è partita: usa Scarica immagine.");
+          });
+        } else {
+          avvisaInvio("Preparo l'immagine…");
+          preparaImmagine().then(function () { avvisaInvio("Immagine pronta: tocca di nuovo Invia immagine."); },
+            function () { avvisaInvio("Immagine non riuscita su questo browser."); });
+        }
+        break;
+      case "png":
+        preparaImmagine().then(function (bl) {
+          scarica(bl, nomeFile("png"), "image/png");
+          avvisaInvio("Scaricato " + nomeFile("png") + ".");
+        }, function () { avvisaInvio("Immagine non riuscita su questo browser."); });
+        break;
+      case "txt":
+        scarica(t, nomeFile("txt"), "text/plain;charset=utf-8");
+        avvisaInvio("Scaricato " + nomeFile("txt") + ".");
+        break;
+      case "csv":
+        scarica(csvMultipla(), nomeFile("csv"), "text/csv;charset=utf-8");
+        avvisaInvio("Scaricato " + nomeFile("csv") + ": si apre con Excel.");
+        break;
+    }
+  });
 
   // --------------------------------------------------- consensus medio
 
