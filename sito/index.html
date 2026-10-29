@@ -1200,6 +1200,15 @@
     --ombra-hover: 0 1px 2px rgba(15,23,42,.06), 0 4px 8px rgba(15,23,42,.05), 0 18px 30px -14px rgba(15,23,42,.22);
   }
   :root[data-theme="light"] .riga .spunta { background: rgba(15,23,42,.018); }
+  /* Riquadri prese / sbagliate come pulsanti di filtro. */
+  .riepilogo button.filtro-esito {
+    font: inherit; text-align: left; cursor: pointer; color: inherit;
+    background: var(--carta); border: 1px solid var(--bordo); border-radius: var(--raggio);
+    padding: 10px 12px; box-shadow: var(--ombra); min-width: 0;
+  }
+  .riepilogo button.filtro-esito b { display: block; }
+  .riepilogo button.filtro-esito span { display: block; }
+  .riepilogo button.filtro-esito.attivo { border-color: var(--evidenza); box-shadow: 0 0 0 1px var(--evidenza), var(--ombra); }
 </style>
 </head>
 <body>
@@ -1396,6 +1405,7 @@
     ordine: { prezzi: "file", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" },
     cerca: "",
     fonteCm: "",
+    esito: "",
     limite: PASSO
   };
   // La multipla sopravvive al cambio di vista e di data: si compone
@@ -1617,7 +1627,7 @@
     });
     $cont.querySelectorAll("[data-data]").forEach(function (b) {
       b.addEventListener("click", function () {
-        stato.data[sez] = b.dataset.data; stato.limite = PASSO; disegna();
+        stato.data[sez] = b.dataset.data; stato.limite = PASSO; stato.esito = ""; disegna();
       });
     });
     $cont.querySelectorAll("[data-vista]").forEach(function (b) {
@@ -1659,6 +1669,12 @@
     var tutte = Array.isArray(righe) ? righe : [];
     var passano = tutte.filter(function (r) { return tiene(r, vista); });
     if (sez === "consensus" && stato.fonteCm) passano = passano.filter(function (r) { return haFonte(r, stato.fonteCm); });
+    baseEsiti = passano;
+    if (sez === "prezzi" && stato.esito) {
+      var tutteFiltro = passano;
+      passano = passano.filter(function (r) { return r.Esito === stato.esito; });
+      if (!passano.length) { stato.esito = ""; passano = tutteFiltro; }
+    }
     var q = stato.cerca.toLowerCase();
     var visibili = q ? passano.filter(function (r) { return testoCerca(r).indexOf(q) >= 0; }) : passano;
     visibili = ordina(sez, visibili.slice());
@@ -1699,6 +1715,12 @@
     var a = document.getElementById("altre");
     if (a) a.addEventListener("click", function () { stato.limite += PASSO; ridisegnaRighe(); });
     collegaAgganci($r, data);
+    $r.querySelectorAll("[data-esito]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        stato.esito = stato.esito === b.dataset.esito ? "" : b.dataset.esito;
+        stato.limite = PASSO; ridisegnaRighe();
+      });
+    });
     if (sez === "prezzi" || sez === "sure") {
       $r.querySelectorAll("input[data-chiave]").forEach(function (cb) {
         cb.addEventListener("change", function () {
@@ -1729,19 +1751,26 @@
 
   // Le mediane e non le medie: una quota a 9.00 sposterebbe la media di
   // tutta la lista, la mediana resta dov'e' la riga tipica.
+  // Le righe della giornata PRIMA del filtro prese/sbagliate: i conteggi
+  // dei riquadri restano quelli di tutta la schedina anche col filtro.
+  var baseEsiti = null;
   function riepilogoPrezzi(v) {
     var eq = mediana(v.map(function (r) { return num(r.Equa); }));
     var mg = mediana(v.map(function (r) { return num(r.Margine); }));
     var strette = v.filter(function (r) { var m = num(r.Margine); return m != null && m < 2; }).length;
-    var prese = v.filter(function (r) { return r.Esito === "presa"; }).length;
-    var sbagliate = v.filter(function (r) { return r.Esito === "sbagliata"; }).length;
+    var tutteE = stato.esito && baseEsiti ? baseEsiti : v;
+    var prese = tutteE.filter(function (r) { return r.Esito === "presa"; }).length;
+    var sbagliate = tutteE.filter(function (r) { return r.Esito === "sbagliata"; }).length;
     if (prese + sbagliate) {
-      var attesa = v.filter(function (r) { return !r.Esito; }).length;
-      return tessere([
-        ['<em style="font-style:normal;color:var(--buono)">\u2713 ' + prese + "</em>", "prese"],
-        ['<em style="font-style:normal;color:var(--male)">\u2717 ' + sbagliate + "</em>", "sbagliate"],
-        [String(attesa), attesa === 1 ? "senza risultato" : "senza risultato"]
-      ]);
+      var attesa = tutteE.filter(function (r) { return !r.Esito; }).length;
+      // I due riquadri sono pulsanti: toccandoli restano solo le prese o
+      // solo le sbagliate; ritoccandoli si torna a tutte.
+      var p = stato.esito;
+      return '<div class="riepilogo">' +
+        '<button type="button" class="filtro-esito' + (p === "presa" ? " attivo" : "") + '" data-esito="presa"><b><em style="font-style:normal;color:var(--buono)">\u2713 ' + prese + "</em></b><span>prese" + (p === "presa" ? " \u00b7 mostra tutte" : "") + "</span></button>" +
+        '<button type="button" class="filtro-esito' + (p === "sbagliata" ? " attivo" : "") + '" data-esito="sbagliata"><b><em style="font-style:normal;color:var(--male)">\u2717 ' + sbagliate + "</em></b><span>sbagliate" + (p === "sbagliata" ? " \u00b7 mostra tutte" : "") + "</span></button>" +
+        "<div><b>" + attesa + "</b><span>senza risultato</span></div></div>" +
+        '<p class="conta">Tocca \u2713 o \u2717 per vedere solo quelle. Le partite finite sono in cima.</p>';
     }
     return tessere([
       [eq == null ? "-" : eq.toFixed(2), "quota reale mediana"],
@@ -1824,6 +1853,12 @@
     else if (o === "gol") v.sort(function (a, b) { return (num(b.Gol_Attesi) || 0) - (num(a.Gol_Attesi) || 0); });
     else if (o === "fonti") v.sort(function (a, b) { return (num(b.Fonti) || 0) - (num(a.Fonti) || 0); });
     // "file": l'ordine del file, che e' quello che mostra Kodi.
+    // Nei Pronostici le partite gia' finite (con la V o la X) vanno in
+    // cima, nell'ordine scelto: sono quelle che si cercano per prime.
+    if (sez === "prezzi" && v.some(function (r) { return r.Esito; })) {
+      var fin = v.filter(function (r) { return r.Esito; }), alt = v.filter(function (r) { return !r.Esito; });
+      v = fin.concat(alt);
+    }
     return v;
   }
 
@@ -3476,6 +3511,7 @@
     stato.ordine = { prezzi: "file", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" };
     stato.cerca = "";
     stato.fonteCm = "";
+    stato.esito = "";
     stato.limite = PASSO;
     FONTI.vista = "riepilogo"; FONTI.data = null; FONTI.fonte = "";
     SCHEDA.interna = false; ritorno = null;
