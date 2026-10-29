@@ -1251,6 +1251,24 @@
   .multipla p.m-esito-invio { min-height: 1em; margin-top: 6px; color: var(--evidenza); font-weight: 600; }
   :root[data-theme="light"] .multipla button.primo { border-color: rgba(77,124,15,.35); color: #2f4d07; background: rgba(201,255,61,.3); }
   :root[data-theme="light"] .multipla p.m-esito-invio { color: #2f4d07; }
+  /* xG SQUADRE */
+  .strumenti.xgs { flex-wrap: wrap; }
+  .strumenti.xgs select#xg-lega { flex: 1 1 220px; min-width: 0; }
+  .strumenti.xgs input { flex: 1 1 100%; }
+  table.xgt td.sq { text-align: left; }
+  table.xgt th:nth-child(2) { text-align: left; }
+  table.xgt td:first-child, table.xgt th:first-child { width: 1.6em; color: var(--tenue); }
+  table.xgt td.sq > div { display: flex; align-items: center; gap: 6px; }
+  table.xgt td.sq span { min-width: 0; overflow-wrap: anywhere; }
+  table.xgt td.sq small { display: block; color: var(--tenue); font-size: .72rem; }
+  table.xgt td.piu { color: var(--buono); font-weight: 700; }
+  table.xgt td.meno { color: var(--male); font-weight: 700; }
+  table.xgt td.pt { font-weight: 700; }
+  @media (max-width: 380px) { table.xgt th, table.xgt td { padding: 8px 3px; font-size: .8rem; } }
+  @media (max-width: 430px) {
+    table.xgt.conpt th, table.xgt.conpt td { padding: 8px 2px; font-size: .76rem; }
+    table.xgt.conpt td.sq img.stemma { display: none; }
+  }
 </style>
 </head>
 <body>
@@ -1368,9 +1386,7 @@
     ["stretto", "Pi\u00f9 affidabili",
      "Il bookmaker su queste partite guadagna meno del 2%: le probabilit\u00e0 " +
      "sono le pi\u00f9 affidabili."],
-    ["1x2", "1X2",
-     "Il de-vig di AsianOdds senza passare dal modello: \u00e8 gi\u00e0 una " +
-     "probabilit\u00e0, ed \u00e8 la stima migliore che abbiamo."],
+    ["1x2", "1X2", ""],
     ["combo", "Combinate",
      "Segno + Over/Under e segno + Gol/NoGol (per esempio 1X + Over 2.5, 1 + NoGol), " +
      "con la probabilit\u00e0 congiunta vera " +
@@ -1454,6 +1470,9 @@
   ];
   var MK_ORDINI = [["file", "Per orario"], ["mov", "Per movimento"], ["margine", "Per margine"]];
   var GRUPPO_PRONOSTICI = [["prezzi", "Probabilit\u00e0 reali"], ["mercato", "Mercato"]];
+  // Gli xG delle squadre stanno dentro "Poisson": sono i numeri da cui il
+  // Poisson parte, e la barra in alto non ha posto per un'altra voce.
+  var GRUPPO_POISSON = [["poisson", "Partite"], ["xg", "xG squadre"]];
 
   var CM_ORDINI = [["file", "Per orario"], ["prob", "Per probabilit\u00e0"], ["scarto", "Per scarto"], ["fonti", "Per n. fonti"]];
 
@@ -1485,6 +1504,12 @@
       try { SCHEDA.chiave = p[2] ? decodeURIComponent(p[2]) : null; } catch (e) { SCHEDA.chiave = null; }
       return;
     }
+    if (p[0] === "xg") {
+      stato.sez = "xg";
+      try { XG.lega = p[1] ? decodeURIComponent(p[1]) : XG.lega; } catch (e) { /* resta quella che c'era */ }
+      if (p[2] === "fotmob" || p[2] === "understat") XG.fonte = p[2];
+      return;
+    }
     if (SEZ[p[0]] || p[0] === "fonti") stato.sez = p[0];
     if (stato.sez === "fonti") {
       FONTI.vista = p[1] === "partite" ? "partite" : "riepilogo";
@@ -1500,6 +1525,8 @@
     var h = stato.sez;
     if (stato.sez === "scheda") {
       h += "/" + (SCHEDA.data || "") + "/" + encodeURIComponent(SCHEDA.chiave || "");
+    } else if (stato.sez === "xg") {
+      h += "/" + encodeURIComponent(XG.lega || "") + "/" + (XG.fonte || "");
     } else if (stato.sez !== "fonti") {
       h += "/" + (stato.data[stato.sez] || "") + "/" + stato.vista[stato.sez];
     } else if (FONTI.vista === "partite") {
@@ -1604,11 +1631,13 @@
   function disegna() {
     scriviHash();
     document.querySelectorAll("nav.sezioni button[data-sez]").forEach(function (b) {
-      var accesa = stato.sez === "accordo" ? "consensus" : stato.sez === "mercato" ? "prezzi" : stato.sez;
+      var accesa = stato.sez === "accordo" ? "consensus" : stato.sez === "mercato" ? "prezzi" :
+        stato.sez === "xg" ? "poisson" : stato.sez;
       b.setAttribute("aria-current", String(b.dataset.sez === accesa));
     });
     if (stato.sez === "fonti") return disegnaFonti();
     if (stato.sez === "scheda") return disegnaScheda();
+    if (stato.sez === "xg") return disegnaXG();
     return disegnaGiornata(stato.sez);
   }
 
@@ -1653,9 +1682,10 @@
       var vista = viste.filter(function (v) { return v[0] === stato.vista[sez]; })[0];
       var testa = (sez === "consensus" || sez === "accordo" ? chipsHtml(GRUPPO_CONSENSO, sez, "data-gruppo") : "") +
         (sez === "prezzi" || sez === "mercato" ? chipsHtml(GRUPPO_PRONOSTICI, sez, "data-gruppo") : "") +
+        (sez === "poisson" ? chipsHtml(GRUPPO_POISSON, sez, "data-gruppo") : "") +
         chipsHtml(date.map(function (x) { return [x, etichettaData(x)]; }), d, "data-data") +
         (viste.length > 1 ? chipsHtml(viste, vista[0], "data-vista") : "") +
-        '<p class="descr">' + esc(vista[2]) + "</p>" +
+        (vista[2] ? '<p class="descr">' + esc(vista[2]) + "</p>" : "") +
         (sez === "poisson" ? notaCampo(ix) : "") +
         strumentiHtml(ordini, stato.ordine[sez]);
       if (sez === "consensus") testa = testa.replace(/<\/div>$/, sceltaFonteHtml() + "</div>");
@@ -3962,6 +3992,212 @@
     }).catch(function (e) {
       $cont.innerHTML = messaggio("errore", "Non riesco a leggere la scheda (" + esc(e.message) + "). " +
         "Le schede ci sono da oggi in avanti: per le partite passate c'è “Statistiche fonti”, partita per partita.");
+    });
+  }
+
+  // ------------------------------------------------------------ xG squadre
+  //
+  // LE TABELLE xG PER CAMPIONATO, le stesse che usa il Poisson:
+  //   - fotmobxg_<data>.json (fotmob_xg_ci.py): molti campionati, ma solo
+  //     quelli con partite nei tre giorni dopo la lettura. Per non perdere
+  //     un campionato fermo, si leggono le ultime giornate pubblicate e
+  //     per ciascun campionato vale la lettura piu' recente (la data si
+  //     vede sotto la tabella);
+  //   - xg_<data>.json (understat_xg.py): i primi cinque campionati.
+  // Sui cinque campionati che hanno tutte e due si sceglie la fonte: i
+  // numeri NON si mescolano, come nel Poisson. Understat esce di solito un
+  // po' piu' alto di FotMob: sono due modelli diversi di gol attesi.
+  // Il sito non ricalcola niente: xG e xGA a partita sono quelli dei file.
+
+  var XG = { lega: "", fonte: "", ordine: "diff", cerca: "", dati: null };
+  var XG_GIORNI = 7;
+  var US_IN_FM = { "Serie A": "Italia - Serie A", "EPL": "Inghilterra - Premier League",
+    "La Liga": "Spagna - LaLiga", "Bundesliga": "Germania - Bundesliga", "Ligue 1": "Francia - Ligue 1" };
+  var XG_ORDINI = [["diff", "Per differenza"], ["xg", "Per xG fatti"], ["xga", "Per xG subiti"],
+    ["xpts", "Per punti attesi"], ["nome", "Per nome"]];
+
+  function senzaId(l) { return String(l || "").replace(/\s*\[\d+\]$/, ""); }
+
+  function caricaXG() {
+    if (XG.dati) return Promise.resolve(XG.dati);
+    var nessuno = function () { return null; };
+    return Promise.all([leggi("fotmobxg_index.json").catch(nessuno), leggi("xg_index.json").catch(nessuno)])
+      .then(function (ix) {
+        var fd = ((ix[0] && ix[0].date) || []).slice().sort().reverse().slice(0, XG_GIORNI);
+        var ud = ((ix[1] && ix[1].date) || []).slice().sort().reverse().slice(0, 1);
+        return Promise.all([
+          Promise.all(fd.map(function (d) {
+            return leggi("fotmobxg_" + d + ".json").then(function (j) { return [d, j]; }).catch(nessuno);
+          })),
+          Promise.all(ud.map(function (d) {
+            return leggi("xg_" + d + ".json").then(function (j) { return [d, j]; }).catch(nessuno);
+          }))
+        ]);
+      }).then(function (r) {
+        var leghe = {};
+        function lega(nome) {
+          return leghe[nome] || (leghe[nome] = { nome: nome, fotmob: null, understat: null });
+        }
+        // FotMob: dalla lettura piu' recente alla piu' vecchia; un
+        // campionato si prende una volta sola.
+        r[0].forEach(function (x) {
+          if (!x || !x[1] || !x[1].squadre) return;
+          var d = x[0], per = {};
+          Object.keys(x[1].squadre).forEach(function (k) {
+            var v = x[1].squadre[k], n = senzaId(v.lega);
+            (per[n] = per[n] || []).push(v);
+          });
+          Object.keys(per).forEach(function (n) {
+            var L = lega(n);
+            if (!L.fotmob) L.fotmob = { data: d, squadre: per[n] };
+          });
+        });
+        r[1].forEach(function (x) {
+          if (!x || !x[1] || !x[1].squadre) return;
+          var d = x[0], per = {};
+          Object.keys(x[1].squadre).forEach(function (k) {
+            var v = x[1].squadre[k], n = US_IN_FM[v.lega] || v.lega;
+            (per[n] = per[n] || []).push(v);
+          });
+          Object.keys(per).forEach(function (n) { lega(n).understat = { data: d, squadre: per[n] }; });
+        });
+        XG.dati = leghe;
+        return leghe;
+      });
+  }
+
+  function fonteXG(L) {
+    if (XG.fonte === "understat" && L.understat) return "understat";
+    if (XG.fonte === "fotmob" && L.fotmob) return "fotmob";
+    return L.fotmob ? "fotmob" : "understat";
+  }
+
+  function ordinaXG(sq) {
+    var o = XG.ordine;
+    return sq.slice().sort(function (a, b) {
+      if (o === "nome") return String(a.nome).localeCompare(String(b.nome));
+      if (o === "xg") return b.xg_90 - a.xg_90;
+      if (o === "xga") return a.xga_90 - b.xga_90;
+      if (o === "xpts") {
+        // A partita, perche' le squadre possono avere giocato un numero
+        // diverso di partite; senza xPTS in fondo.
+        var pa = a.xpts != null ? a.xpts / (a.mp || 1) : -1, pb = b.xpts != null ? b.xpts / (b.mp || 1) : -1;
+        return pb - pa;
+      }
+      return (b.xg_90 - b.xga_90) - (a.xg_90 - a.xga_90);
+    });
+  }
+
+  function tabellaXG(sq, conLega) {
+    // La colonna dei punti attesi solo se c'e' almeno un numero: Understat
+    // non li da', e i file FotMob piu' vecchi nemmeno.
+    var pt = sq.some(function (v) { return v.xpts != null; });
+    return '<table class="mercati xgt' + (pt ? " conpt" : "") + '"><thead><tr><th>#</th><th>Squadra</th><th title="Partite giocate">PG</th>' +
+      '<th title="Gol attesi fatti a partita">xG</th><th title="Gol attesi subiti a partita">xGA</th>' +
+      '<th title="xG meno xGA">Diff</th>' + (pt ? '<th title="Punti attesi nella stagione">xPTS</th>' : "") +
+      "</tr></thead><tbody>" +
+      sq.map(function (v, i) {
+        var d = num(v.xg_90) - num(v.xga_90);
+        return "<tr><td>" + (i + 1) + '</td><td class="sq"><div>' + logo(v.nome) + "<span>" + esc(v.nome) +
+          (conLega ? '<small>' + esc(senzaId(v.lega)) + " · " + esc(v.fonte) + "</small>" : "") + "</span></div></td>" +
+          "<td>" + esc(v.mp) + "</td><td>" + f2(num(v.xg_90)) + "</td><td>" + f2(num(v.xga_90)) + "</td>" +
+          '<td class="' + (d > 0.005 ? "piu" : d < -0.005 ? "meno" : "") + '">' + (d > 0 ? "+" : "") + d.toFixed(2) + "</td>" +
+          (pt ? '<td class="pt">' + (v.xpts != null ? esc(num(v.xpts).toFixed(1)) : "\u2013") + "</td>" : "") + "</tr>";
+      }).join("") + "</tbody></table>";
+  }
+
+  function disegnaXG() {
+    ultime = null;
+    $cont.innerHTML = messaggio("vuoto", "Carico&hellip;");
+    Promise.all([caricaXG(), caricaLoghi()]).then(function (a) {
+      if (stato.sez !== "xg") return;
+      var leghe = a[0], nomi = Object.keys(leghe).sort(function (x, y) { return x.localeCompare(y); });
+      if (!nomi.length) {
+        $cont.innerHTML = chipsHtml(GRUPPO_POISSON, "xg", "data-gruppo") +
+          messaggio("vuoto", "Le tabelle xG non sono ancora state pubblicate: arrivano col giro notturno.");
+        collegaXG();
+        return;
+      }
+      if (!leghe[XG.lega]) XG.lega = leghe["Italia - Serie A"] ? "Italia - Serie A" : nomi[0];
+      var L = leghe[XG.lega], fonte = fonteXG(L), T = L[fonte];
+      scriviHash();
+      var piu = [];
+      nomi.forEach(function (n) { if (leghe[n].fotmob) piu.push(leghe[n].fotmob.data); });
+      document.getElementById("aggiornato").textContent = "xG letti il " + (piu.sort().pop() || "?");
+
+      var h = chipsHtml(GRUPPO_POISSON, "xg", "data-gruppo") +
+        '<p class="descr">Gol attesi a partita: quanto valevano le occasioni create (xG) e quelle concesse (xGA). ' +
+        "Sono i numeri da cui il Poisson ricava la forza delle squadre. Con poche partite giocate (PG) ballano.</p>" +
+        '<div class="strumenti xgs">' +
+        '<select id="xg-lega" aria-label="Campionato">' + nomi.map(function (n) {
+          return '<option value="' + esc(n) + '"' + (n === XG.lega ? " selected" : "") + ">" + esc(n) + "</option>";
+        }).join("") + "</select>" +
+        '<select id="xg-ordine" aria-label="Ordine">' + XG_ORDINI.map(function (o) {
+          return '<option value="' + o[0] + '"' + (o[0] === XG.ordine ? " selected" : "") + ">" + esc(o[1]) + "</option>";
+        }).join("") + "</select>" +
+        '<input type="search" id="xg-cerca" placeholder="Cerca una squadra in tutti i campionati" value="' +
+        esc(XG.cerca) + '" autocomplete="off"></div>' +
+        '<div id="xg-corpo"></div>';
+      $cont.innerHTML = h;
+      collegaXG();
+      corpoXG();
+    }).catch(function (e) {
+      $cont.innerHTML = messaggio("errore", "Non riesco a leggere le tabelle xG (" + esc(e.message) + ").");
+    });
+  }
+
+  function corpoXG() {
+    var $c = document.getElementById("xg-corpo");
+    if (!$c || !XG.dati) return;
+    var leghe = XG.dati, q = XG.cerca.toLowerCase();
+    if (q) {
+      // La ricerca guarda tutti i campionati e tutte e due le fonti.
+      var trovate = [];
+      Object.keys(leghe).forEach(function (n) {
+        ["fotmob", "understat"].forEach(function (f) {
+          var T = leghe[n][f];
+          if (!T) return;
+          T.squadre.forEach(function (v) {
+            if (String(v.nome).toLowerCase().indexOf(q) >= 0)
+              trovate.push(Object.assign({}, v, { lega: n, fonte: f === "fotmob" ? "FotMob" : "Understat" }));
+          });
+        });
+      });
+      $c.innerHTML = trovate.length ? tabellaXG(ordinaXG(trovate).slice(0, 60), true)
+        : messaggio("vuoto", "Nessuna squadra con questo nome nelle tabelle xG.");
+      return;
+    }
+    var L = leghe[XG.lega], fonte = fonteXG(L), T = L[fonte];
+    var scelta = L.fotmob && L.understat ? chipsHtml([["fotmob", "FotMob"], ["understat", "Understat"]], fonte, "data-xgfonte") : "";
+    var sq = T.squadre.map(function (v) { return Object.assign({}, v, { lega: XG.lega }); });
+    var pg = sq.map(function (v) { return num(v.mp) || 0; });
+    $c.innerHTML = scelta + tabellaXG(ordinaXG(sq), false) +
+      '<p class="piede-scheda">Fonte ' + (fonte === "fotmob" ? "FotMob" : "Understat") + ", letta " +
+      esc(etichettaData(T.data).toLowerCase() === "oggi" ? "oggi" : "il " + etichettaData(T.data)) +
+      " · " + sq.length + " squadre · partite giocate da " + Math.min.apply(null, pg) + " a " + Math.max.apply(null, pg) +
+      (L.fotmob && L.understat ? ". Le due fonti usano modelli diversi: Understat di solito un po' più alto." : ".") +
+      (sq.some(function (v) { return v.xpts != null; }) ? " xPTS: i punti che la squadra avrebbe in classifica secondo gli xG di ogni partita, sulla stagione." : "") +
+      "</p>";
+    $c.querySelectorAll("[data-xgfonte]").forEach(function (b) {
+      b.addEventListener("click", function () { XG.fonte = b.dataset.xgfonte; scriviHash(); corpoXG(); });
+    });
+  }
+
+  function collegaXG() {
+    $cont.querySelectorAll("[data-gruppo]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        if (b.dataset.gruppo === "xg") return;
+        stato.sez = b.dataset.gruppo; stato.cerca = ""; stato.limite = PASSO; disegna();
+      });
+    });
+    var $l = document.getElementById("xg-lega");
+    if (!$l) return;
+    $l.addEventListener("change", function () { XG.lega = $l.value; XG.fonte = ""; scriviHash(); corpoXG(); });
+    document.getElementById("xg-ordine").addEventListener("change", function (e) { XG.ordine = e.target.value; corpoXG(); });
+    var $q = document.getElementById("xg-cerca"), t = null;
+    $q.addEventListener("input", function () {
+      clearTimeout(t);
+      t = setTimeout(function () { XG.cerca = $q.value.trim(); corpoXG(); }, 150);
     });
   }
 
