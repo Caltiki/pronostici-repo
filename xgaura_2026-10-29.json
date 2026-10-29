@@ -16,6 +16,38 @@
   "Q2": null
  },
  {
+  "Casa": "Covadonga",
+  "Ospite": "Valladolid",
+  "Ora": "20:00",
+  "Paese": "Spain",
+  "Lega": "Copa Del Rey",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Linea": null,
+  "Tip": "Draw",
+  "Conf": 0.95,
+  "Q tip": null,
+  "Q1": 13.0,
+  "QX": 6.5,
+  "Q2": 1.2
+ },
+ {
+  "Casa": "Gimnástica Torrelavega",
+  "Ospite": "UD Ourense",
+  "Ora": "20:30",
+  "Paese": "Spain",
+  "Lega": "Copa Del Rey",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Linea": null,
+  "Tip": "Draw",
+  "Conf": 0.95,
+  "Q tip": null,
+  "Q1": 3.2,
+  "QX": 3.4,
+  "Q2": 2.2
+ },
+ {
   "Casa": "Shabana",
   "Ospite": "Migori Youth",
   "Ora": "12:00",
@@ -30,38 +62,6 @@
   "Q1": 2.15,
   "QX": 2.75,
   "Q2": 3.5
- },
- {
-  "Casa": "Lillestrøm U19",
-  "Ospite": "Brann U19",
-  "Ora": "16:00",
-  "Paese": "Norway",
-  "Lega": "Nasjonal U19 Champions League",
-  "Mercato": "OU",
-  "Sel": "Over",
-  "Linea": 2.5,
-  "Tip": "Over 2.5 Goals",
-  "Conf": 0.9,
-  "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
- },
- {
-  "Casa": "Rosenborg W",
-  "Ospite": "Brøndby W",
-  "Ora": "18:00",
-  "Paese": "World",
-  "Lega": "UEFA Europa Cup Women",
-  "Mercato": "OU",
-  "Sel": "Over",
-  "Linea": 2.5,
-  "Tip": "Over 2.5 Goals",
-  "Conf": 0.9,
-  "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
  },
  {
   "Casa": "Sparta Praha W",
@@ -128,6 +128,38 @@
   "Q2": null
  },
  {
+  "Casa": "Lillestrøm U19",
+  "Ospite": "Brann U19",
+  "Ora": "16:00",
+  "Paese": "Norway",
+  "Lega": "Nasjonal U19 Champions League",
+  "Mercato": "OU",
+  "Sel": "Over",
+  "Linea": 2.5,
+  "Tip": "Over 2.5 Goals",
+  "Conf": 0.9,
+  "Q tip": null,
+  "Q1": 2.2,
+  "QX": 4.2,
+  "Q2": 2.38
+ },
+ {
+  "Casa": "Rosenborg W",
+  "Ospite": "Brøndby W",
+  "Ora": "18:00",
+  "Paese": "World",
+  "Lega": "UEFA Europa Cup Women",
+  "Mercato": "OU",
+  "Sel": "Over",
+  "Linea": 2.5,
+  "Tip": "Over 2.5 Goals",
+  "Conf": 0.9,
+  "Q tip": null,
+  "Q1": 2.25,
+  "QX": 3.5,
+  "Q2": 2.62
+ },
+ {
   "Casa": "Cienciano",
   "Ospite": "Atletico Grau",
   "Ora": "01:00",
@@ -139,9 +171,9 @@
   "Tip": "Home Win",
   "Conf": 0.85,
   "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
+  "Q1": 1.25,
+  "QX": 5.0,
+  "Q2": 10.0
  },
  {
   "Casa": "Diriangén",
@@ -155,6 +187,22 @@
   "Tip": "12",
   "Conf": 0.85,
   "Q tip": null,
+  "Q1": 2.4,
+  "QX": 3.0,
+  "Q2": 2.75
+ },
+ {
+  "Casa": "Chernihiv",
+  "Ospite": "Epitsentr Dunayivtsi",
+  "Ora": "11:00",
+  "Paese": "Ukraine",
+  "Lega": "Cup",
+  "Mercato": "OU",
+  "Sel": "Over",
+  "Linea": 2.5,
+  "Tip": "Over 2.5 Goals",
+  "Conf": 0.85,
+  "Q tip": null,
   "Q1": null,
   "QX": null,
   "Q2": null
@@ -162,7 +210,7 @@
  {
   "Casa": "England U17 W",
   "Ospite": "Belgium U17 W",
-  "Ora": "12:00",
+  "Ora": "13:30",
   "Paese": "World",
   "Lega": "Friendlies Women",
   "Mercato": "DC",
@@ -208,6 +256,22 @@
   "Q2": null
  },
  {
+  "Casa": "Poblense",
+  "Ospite": "AD Ceuta FC",
+  "Ora": "19:00",
+  "Paese": "Spain",
+  "Lega": "Copa Del Rey",
+  "Mercato": "1X2",
+  "Sel": "2",
+  "Linea": null,
+  "Tip": "Away Win",
+  "Conf": 0.85,
+  "Q tip": null,
+  "Q1": 4.2,
+  "QX": 3.9,
+  "Q2": 1.75
+ },
+ {
   "Casa": "Envigado",
   "Ospite": "Ind. Yumbo",
   "Ora": "20:00",
@@ -219,9 +283,9 @@
   "Tip": "12",
   "Conf": 0.85,
   "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
+  "Q1": 1.85,
+  "QX": 3.3,
+  "Q2": 4.33
  },
  {
   "Casa": "Tigres FC",
@@ -235,9 +299,9 @@
   "Tip": "12",
   "Conf": 0.85,
   "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
+  "Q1": 3.25,
+  "QX": 3.2,
+  "Q2": 2.2
  },
  {
   "Casa": "Quindio",
@@ -251,9 +315,9 @@
   "Tip": "Under 2.5 Goals",
   "Conf": 0.8,
   "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
+  "Q1": 1.75,
+  "QX": 3.3,
+  "Q2": 4.5
  },
  {
   "Casa": "Regar-TadAZ",
@@ -315,9 +379,41 @@
   "Tip": "Home Win",
   "Conf": 0.8,
   "Q tip": null,
-  "Q1": 1.91,
-  "QX": 3.4,
-  "Q2": 3.2
+  "Q1": 2.25,
+  "QX": 3.2,
+  "Q2": 2.75
+ },
+ {
+  "Casa": "Popayan",
+  "Ospite": "Union Magdalena",
+  "Ora": "20:00",
+  "Paese": "Colombia",
+  "Lega": "Primera B",
+  "Mercato": "DC",
+  "Sel": "12",
+  "Linea": null,
+  "Tip": "12",
+  "Conf": 0.8,
+  "Q tip": null,
+  "Q1": 3.2,
+  "QX": 3.3,
+  "Q2": 2.2
+ },
+ {
+  "Casa": "Xerez",
+  "Ospite": "Cadiz",
+  "Ora": "21:00",
+  "Paese": "Spain",
+  "Lega": "Copa Del Rey",
+  "Mercato": "1X2",
+  "Sel": "2",
+  "Linea": null,
+  "Tip": "Away Win",
+  "Conf": 0.8,
+  "Q tip": null,
+  "Q1": 4.0,
+  "QX": 3.6,
+  "Q2": 1.75
  },
  {
   "Casa": "Sporting Cristal",
@@ -331,25 +427,9 @@
   "Tip": "12",
   "Conf": 0.8,
   "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
- },
- {
-  "Casa": "Popayan",
-  "Ospite": "Union Magdalena",
-  "Ora": "22:00",
-  "Paese": "Colombia",
-  "Lega": "Primera B",
-  "Mercato": "DC",
-  "Sel": "12",
-  "Linea": null,
-  "Tip": "12",
-  "Conf": 0.8,
-  "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
+  "Q1": 2.45,
+  "QX": 3.1,
+  "Q2": 2.75
  },
  {
   "Casa": "Tirana",
@@ -384,6 +464,22 @@
   "Q2": null
  },
  {
+  "Casa": "Coruxo",
+  "Ospite": "Zamora",
+  "Ora": "19:00",
+  "Paese": "Spain",
+  "Lega": "Copa Del Rey",
+  "Mercato": "1X2",
+  "Sel": "2",
+  "Linea": null,
+  "Tip": "Away Win",
+  "Conf": 0.7,
+  "Q tip": null,
+  "Q1": 3.5,
+  "QX": 3.4,
+  "Q2": 2.1
+ },
+ {
   "Casa": "Japan U17 W",
   "Ospite": "Kenya U17 W",
   "Ora": "19:00",
@@ -411,8 +507,8 @@
   "Tip": "Away Win",
   "Conf": 0.7,
   "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
+  "Q1": 5.0,
+  "QX": 4.0,
+  "Q2": 1.5
  }
 ]
