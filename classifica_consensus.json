@@ -1,79 +1,79 @@
 {
  "medio": {
   "copertura": {
-   "1": 16354,
-   "2": 1628,
-   "3": 812,
-   "4": 375,
-   "5": 146
+   "1": 16404,
+   "2": 1633,
+   "3": 825,
+   "4": 381,
+   "5": 147
   },
-  "totale": 19315,
-  "brier": 0.58,
-  "brier_clima": 0.6415,
+  "totale": 19390,
+  "brier": 0.5803,
+  "brier_clima": 0.6417,
   "fonti": [
    {
     "nome": "betimate",
-    "partite": 18422,
-    "brier": 0.5797,
-    "brier_media": 0.5789
+    "partite": 18488,
+    "brier": 0.58,
+    "brier_media": 0.5792
    },
    {
     "nome": "footymetrics",
-    "partite": 1785,
-    "brier": 0.6033,
-    "brier_media": 0.5956
+    "partite": 1802,
+    "brier": 0.6041,
+    "brier_media": 0.5964
    },
    {
     "nome": "ratingbet",
-    "partite": 763,
-    "brier": 0.5732,
-    "brier_media": 0.5786
+    "partite": 768,
+    "brier": 0.575,
+    "brier_media": 0.5798
    },
    {
     "nome": "soccersite",
-    "partite": 1844,
-    "brier": 0.5966,
-    "brier_media": 0.5886
+    "partite": 1866,
+    "brier": 0.5969,
+    "brier_media": 0.5892
    },
    {
     "nome": "statarea",
-    "partite": 1462,
-    "brier": 0.606,
-    "brier_media": 0.6006
+    "partite": 1480,
+    "brier": 0.6067,
+    "brier_media": 0.6016
    }
   ],
   "mercato": {
-   "partite": 2598,
+   "partite": 2602,
    "poche": false,
-   "brier": 0.5909,
-   "brier_mercato": 0.5775,
-   "diff": 0.0134,
+   "brier": 0.5916,
+   "brier_mercato": 0.5783,
+   "diff": 0.0132,
    "es": 0.0028,
-   "t": 4.77,
+   "t": 4.7,
    "ic": [
-    0.0079,
-    0.019
+    0.0077,
+    0.0187
    ]
   }
  },
- "aggiornato": "2026-10-29 01:37",
+ "aggiornato": "2026-10-29 06:35",
  "accordo": {
-  "totale": 1272,
+  "totale": 1286,
   "prende": {
    "statarea": {
-    "prese": 524,
-    "su": 929,
-    "pct": 56.4
+    "prese": 528,
+    "su": 938,
+    "pct": 56.3
    },
    "webpronostici": {
-    "prese": 249,
-    "su": 490,
-    "pct": 50.8
+    "prese": 253,
+    "su": 499,
+    "pct": 50.7
    },
    "consensus": {
-    "prese": 197,
-    "su": 330,
-    "pct": 59.7
+    "prese": 200,
+    "su": 337,
+    "pct": 59.3
    }
   },
   "mercato": {

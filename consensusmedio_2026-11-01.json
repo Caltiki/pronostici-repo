@@ -41,19 +41,6 @@
  {
   "Data": "2026-11-01",
   "Ora": "00:00",
-  "Lega": "Mexico - Liga MX",
-  "Casa": "Pachuca",
-  "Ospite": "Tigres UANL",
-  "Segno": "1",
-  "P1": 39.0,
-  "PX": 28.0,
-  "P2": 33.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
- },
- {
-  "Data": "2026-11-01",
-  "Ora": "00:00",
   "Lega": "MEXICO - LIGA MX APERTURA",
   "Casa": "Pachuca",
   "Ospite": "U.A.N.L. - Tigres",
@@ -63,6 +50,19 @@
   "P2": 25.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-01",
+  "Ora": "00:00",
+  "Lega": "Mexico - Liga MX",
+  "Casa": "Pachuca",
+  "Ospite": "Tigres UANL",
+  "Segno": "1",
+  "P1": 39.0,
+  "PX": 28.0,
+  "P2": 33.0,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
  },
  {
   "Data": "2026-11-01",
@@ -261,20 +261,7 @@
  },
  {
   "Data": "2026-11-01",
-  "Ora": "04:00",
-  "Lega": "MEXICO - LIGA MX APERTURA",
-  "Casa": "Club Tijuana",
-  "Ospite": "Santos Laguna",
-  "Segno": "1",
-  "P1": 46.0,
-  "PX": 25.0,
-  "P2": 29.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
- },
- {
-  "Data": "2026-11-01",
-  "Ora": "04:00",
+  "Ora": "03:00",
   "Lega": "COSTA RICA - PRIMERA DIVISION APERTURA",
   "Casa": "Sporting San Jose",
   "Ospite": "CS Herediano",
@@ -287,7 +274,7 @@
  },
  {
   "Data": "2026-11-01",
-  "Ora": "04:06",
+  "Ora": "03:06",
   "Lega": "MEXICO - LIGA MX FEMENIL APERTURA GROUP A",
   "Casa": "Club Queretaro (w)",
   "Ospite": "Pachuca (w)",
@@ -295,6 +282,19 @@
   "P1": 29.0,
   "PX": 13.0,
   "P2": 58.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-01",
+  "Ora": "04:00",
+  "Lega": "MEXICO - LIGA MX APERTURA",
+  "Casa": "Club Tijuana",
+  "Ospite": "Santos Laguna",
+  "Segno": "1",
+  "P1": 46.0,
+  "PX": 25.0,
+  "P2": 29.0,
   "Fonti": 1,
   "Elenco": "statarea"
  },
@@ -378,6 +378,32 @@
  },
  {
   "Data": "2026-11-01",
+  "Ora": "05:00",
+  "Lega": "JAPAN - J. LEAGUE",
+  "Casa": "Yokohama F. Marinos",
+  "Ospite": "Kawasaki Frontale",
+  "Segno": "2",
+  "P1": 32.0,
+  "PX": 30.0,
+  "P2": 38.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-01",
+  "Ora": "05:10",
+  "Lega": "MEXICO - LIGA MX FEMENIL APERTURA GROUP A",
+  "Casa": "Necaxa (w)",
+  "Ospite": "Santos Laguna (w)",
+  "Segno": "2",
+  "P1": 24.0,
+  "PX": 19.0,
+  "P2": 57.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-01",
   "Ora": "06:00",
   "Lega": "Japan - J1 League",
   "Casa": "JEF United",
@@ -418,15 +444,15 @@
  {
   "Data": "2026-11-01",
   "Ora": "06:00",
-  "Lega": "SOUTH KOREA - K-LEAGUE 1 RELEGATION ROUND",
+  "Lega": "South Korea - K League 1",
   "Casa": "Pohang Steelers",
-  "Ospite": "Jeju United FC",
+  "Ospite": "Jeju United",
   "Segno": "1",
-  "P1": 36.0,
-  "PX": 31.0,
-  "P2": 33.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
+  "P1": 37.8,
+  "PX": 30.4,
+  "P2": 31.8,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-01",
@@ -440,6 +466,19 @@
   "P2": 10.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-01",
+  "Ora": "06:00",
+  "Lega": "South Korea - K League 1",
+  "Casa": "Ulsan HD",
+  "Ospite": "Gangwon",
+  "Segno": "1",
+  "P1": 45.0,
+  "PX": 26.0,
+  "P2": 29.0,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
  },
  {
   "Data": "2026-11-01",
@@ -466,32 +505,6 @@
   "P2": 27.0,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea"
- },
- {
-  "Data": "2026-11-01",
-  "Ora": "06:00",
-  "Lega": "JAPAN - J. LEAGUE",
-  "Casa": "Yokohama F. Marinos",
-  "Ospite": "Kawasaki Frontale",
-  "Segno": "2",
-  "P1": 32.0,
-  "PX": 30.0,
-  "P2": 38.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
- },
- {
-  "Data": "2026-11-01",
-  "Ora": "06:10",
-  "Lega": "MEXICO - LIGA MX FEMENIL APERTURA GROUP A",
-  "Casa": "Necaxa (w)",
-  "Ospite": "Santos Laguna (w)",
-  "Segno": "2",
-  "P1": 24.0,
-  "PX": 19.0,
-  "P2": 57.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-01",
@@ -535,6 +548,19 @@
  {
   "Data": "2026-11-01",
   "Ora": "08:00",
+  "Lega": "JAPAN - J. LEAGUE",
+  "Casa": "Machida Zelvia",
+  "Ospite": "G-Osaka",
+  "Segno": "1",
+  "P1": 57.0,
+  "PX": 27.0,
+  "P2": 16.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-01",
+  "Ora": "08:00",
   "Lega": "Japan - J1 League",
   "Casa": "Machida Zelvia",
   "Ospite": "Gamba Osaka",
@@ -547,16 +573,16 @@
  },
  {
   "Data": "2026-11-01",
-  "Ora": "08:00",
-  "Lega": "JAPAN - J. LEAGUE",
-  "Casa": "Machida Zelvia",
-  "Ospite": "G-Osaka",
+  "Ora": "08:30",
+  "Lega": "South Korea - K League 1",
+  "Casa": "Anyang",
+  "Ospite": "Bucheon 1995",
   "Segno": "1",
-  "P1": 57.0,
-  "PX": 27.0,
-  "P2": 16.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
+  "P1": 44.3,
+  "PX": 28.4,
+  "P2": 27.3,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-01",
@@ -574,32 +600,6 @@
  {
   "Data": "2026-11-01",
   "Ora": "08:30",
-  "Lega": "SOUTH KOREA - K-LEAGUE 1 RELEGATION ROUND",
-  "Casa": "FC Anyang",
-  "Ospite": "Bucheon 1995",
-  "Segno": "1",
-  "P1": 50.0,
-  "PX": 28.0,
-  "P2": 22.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
- },
- {
-  "Data": "2026-11-01",
-  "Ora": "08:30",
-  "Lega": "SOUTH KOREA - K-LEAGUE 1 CHAMPIONSHIP ROUND",
-  "Casa": "FC Seoul",
-  "Ospite": "Incheon United",
-  "Segno": "1",
-  "P1": 56.0,
-  "PX": 27.0,
-  "P2": 17.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
- },
- {
-  "Data": "2026-11-01",
-  "Ora": "08:30",
   "Lega": "SOUTH KOREA - K-LEAGUE 2",
   "Casa": "Gimhae City",
   "Ospite": "Cheonan City",
@@ -609,6 +609,19 @@
   "P2": 36.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-01",
+  "Ora": "08:30",
+  "Lega": "South Korea - K League 1",
+  "Casa": "Seoul",
+  "Ospite": "Incheon United",
+  "Segno": "1",
+  "P1": 52.0,
+  "PX": 27.5,
+  "P2": 20.5,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-01",
@@ -2992,19 +3005,6 @@
  {
   "Data": "2026-11-01",
   "Ora": "17:00",
-  "Lega": "Austria: Bundesliga Austria",
-  "Casa": "Austria Wien",
-  "Ospite": "Rapid Wien",
-  "Segno": "2",
-  "P1": 20.0,
-  "PX": 23.0,
-  "P2": 57.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
- },
- {
-  "Data": "2026-11-01",
-  "Ora": "17:00",
   "Lega": "Austria - Admiral Bundesliga",
   "Casa": "Austria Wien",
   "Ospite": "SK Rapid",
@@ -3014,6 +3014,19 @@
   "P2": 52.5,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-01",
+  "Ora": "17:00",
+  "Lega": "Austria: Bundesliga Austria",
+  "Casa": "Austria Wien",
+  "Ospite": "Rapid Wien",
+  "Segno": "2",
+  "P1": 20.0,
+  "PX": 23.0,
+  "P2": 57.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
  },
  {
   "Data": "2026-11-01",
@@ -3356,19 +3369,6 @@
  {
   "Data": "2026-11-01",
   "Ora": "17:00",
-  "Lega": "NORWAY - ELITESERIEN",
-  "Casa": "Start",
-  "Ospite": "Lillestrom",
-  "Segno": "2",
-  "P1": 26.0,
-  "PX": 31.0,
-  "P2": 43.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
- },
- {
-  "Data": "2026-11-01",
-  "Ora": "17:00",
   "Lega": "Norway - Eliteserien",
   "Casa": "Start",
   "Ospite": "Lillestrøm",
@@ -3378,6 +3378,19 @@
   "P2": 37.4,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-01",
+  "Ora": "17:00",
+  "Lega": "NORWAY - ELITESERIEN",
+  "Casa": "Start",
+  "Ospite": "Lillestrom",
+  "Segno": "2",
+  "P1": 26.0,
+  "PX": 31.0,
+  "P2": 43.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-01",
@@ -4149,19 +4162,6 @@
  {
   "Data": "2026-11-01",
   "Ora": "19:00",
-  "Lega": "Israel - Ligat ha'Al",
-  "Casa": "Maccabi Petah Tikva",
-  "Ospite": "Hapoel Be'er Sheva",
-  "Segno": "1",
-  "P1": 41.6,
-  "PX": 23.8,
-  "P2": 34.7,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
- },
- {
-  "Data": "2026-11-01",
-  "Ora": "19:00",
   "Lega": "ISRAEL - LIGAT HAAL",
   "Casa": "Maccabi Petah Tikva",
   "Ospite": "Hapoel Beer Sheva",
@@ -4171,6 +4171,19 @@
   "P2": 57.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-01",
+  "Ora": "19:00",
+  "Lega": "Israel - Ligat ha'Al",
+  "Casa": "Maccabi Petah Tikva",
+  "Ospite": "Hapoel Be'er Sheva",
+  "Segno": "1",
+  "P1": 41.6,
+  "PX": 23.8,
+  "P2": 34.7,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
  },
  {
   "Data": "2026-11-01",
