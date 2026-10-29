@@ -1275,6 +1275,7 @@
   // Stesse viste, stesso ordine e stesse descrizioni dell'addon 1.18.1.
   var PE_VISTE = [
     ["schedina", "Schedina",
+     "Probabilit\u00e0 reali: quelle delle quote del bookmaker, tolto il suo guadagno. " +
      "Le righe che il sistema ha messo in schedina: una per partita. " +
      "Spunta quelle che vuoi combinare e in fondo vedi quanto vale la multipla."],
     ["stretto", "Solo prezzo stretto",
@@ -1324,7 +1325,7 @@
   // il conto di quando la sezione e' nata).
   var SB_VISTE = [
     ["tutte", "Tutte",
-     "Le Sure Bets di FootballPredictions, con accanto il nostro prezzo equo. Misurate " +
+     "Le Sure Bets di FootballPredictions, con accanto la quota reale del mercato. Misurate " +
      "sull'archivio: la selezione del sito era il favorito del book in 147 casi su 147. " +
      "Il pronostico non aggiunge niente al prezzo, e il prezzo \u00e8 questo."],
     ["prezzo", "Con il prezzo",
@@ -1364,7 +1365,7 @@
      "Tutte le partite delle prossime 24 ore. Quote 1xBet, solo informative: non entrano nel pronostico."]
   ];
   var MK_ORDINI = [["file", "Per orario"], ["mov", "Per movimento"], ["margine", "Per margine"]];
-  var GRUPPO_PRONOSTICI = [["prezzi", "Prezzi equi"], ["mercato", "Mercato"]];
+  var GRUPPO_PRONOSTICI = [["prezzi", "Probabilit\u00e0 reali"], ["mercato", "Mercato"]];
 
   var CM_ORDINI = [["file", "Per orario"], ["prob", "Per probabilit\u00e0"], ["scarto", "Per scarto"], ["fonti", "Per n. fonti"]];
 
@@ -1725,7 +1726,7 @@
       ]);
     }
     return tessere([
-      [eq == null ? "-" : eq.toFixed(2), "quota equa mediana"],
+      [eq == null ? "-" : eq.toFixed(2), "quota reale mediana"],
       [mg == null ? "-" : mg.toFixed(1) + "%", "margine mediano"],
       [strette + "<small style=\"font-size:.7em;color:var(--tenue)\"> / " + v.length + "</small>", "con margine sotto il 2%"]
     ]);
@@ -1979,7 +1980,7 @@
 
     var det = [];
     if (r.Campionato) det.push("<p>" + esc(r.Campionato) + "</p>");
-    det.push("<p>Quota equa " + f2(equa) + " – probabilità " + f0(prob) + "%. " +
+    det.push("<p>Quota reale " + f2(equa) + " – probabilità " + f0(prob) + "%. " +
       "Sopra quella quota prendi valore, sotto paghi margine.</p>");
     if (r.Fonte === "FootyMetrics") {
       det.push("<p>Prezzo da FootyMetrics: AsianOdds copre solo le prossime 24 ore. " +
@@ -1996,7 +1997,7 @@
     if (merc.indexOf("OU") === 0) {
       det.push('<p class="avviso">Su 563 partite finite il modello ha sottostimato gli Over di 4.6 punti: qui semmai il numero è basso.</p>');
     } else if (sel.indexOf("1X") >= 0 || sel.indexOf("X2") >= 0) {
-      det.push('<p class="avviso">Le doppie con la X sono le meno affidabili: Poisson sottostima i pareggi, quindi la quota equa è un po\' troppo generosa.</p>');
+      det.push('<p class="avviso">Le doppie con la X sono le meno affidabili: Poisson sottostima i pareggi, quindi la quota reale è un po\' troppo generosa.</p>');
     } else if (merc === "BTTS") {
       det.push("<p>È il mercato tarato meglio: fascia 55-65%, 238 partite, previsto 60.0% e uscito 60.1%.</p>");
     }
@@ -2056,12 +2057,12 @@
     var perdita = (pagata / equa - 1) * 100;
     document.getElementById("m-eventi").textContent =
       r.length + (r.length === 1 ? " evento" : " eventi") + " · probabilità " + (prob * 100).toFixed(1) + "%";
-    document.getElementById("m-equa").textContent = "equa " + equa.toFixed(2);
+    document.getElementById("m-equa").textContent = "reale " + equa.toFixed(2);
     document.getElementById("m-stima").textContent =
       "Col margine di ciascuna partita il book pagherebbe circa " + pagata.toFixed(2) +
       " (" + perdita.toFixed(0) + "%)." +
       (senzaMarg ? " " + senzaMarg + " righe senza margine, contate a prezzo pieno." : "") +
-      " Il tuo bookmaker può caricarne di più: confronta la quota che vedi con quella equa.";
+      " Il tuo bookmaker può caricarne di più: confronta la quota che vedi con quella reale.";
 
     // Una riga per partita: due selezioni sulla stessa gara cadono insieme.
     var conta = {};
@@ -2284,7 +2285,7 @@
     var det = [];
     if (r.Lega) det.push("<p>" + esc(String(r.Lega).replace(/\s*\[\d+\]$/, "")) + "</p>");
     det.push("<p>Modello: 1 " + f0(p1) + "% \u00b7 X " + f0(px) + "% \u00b7 2 " + f0(p2) + "%" +
-      (num(r.Equa_Segno) != null ? " \u2013 quota equa del " + esc(segno) + " " + f2(num(r.Equa_Segno)) : "") + "</p>");
+      (num(r.Equa_Segno) != null ? " \u2013 quota del modello sul " + esc(segno) + " " + f2(num(r.Equa_Segno)) : "") + "</p>");
     det.push("<p>Lambda: casa " + f2(lc) + ", ospite " + f2(lo) + " (gol attesi " + f2(gol) + ")</p>");
     if (r.Fonte_xG) det.push("<p>xG da " + esc(r.Fonte_xG) + ".</p>");
     det.push("<p>xG/90: " + f2(num(r.xG_Casa)) + " \u2013 " + f2(num(r.xG_Osp)) +
@@ -2713,7 +2714,7 @@
     return tessere([
       [String(v.length), "Sure Bets"],
       [String(con.length), "con il prezzo del mercato"],
-      [eq == null ? "-" : eq.toFixed(2), "quota equa mediana"]
+      [eq == null ? "-" : eq.toFixed(2), "quota reale mediana"]
     ]);
   }
 
@@ -2738,7 +2739,7 @@
       det.push("<p>" + t + "</p>");
     });
     if (conPrezzo) {
-      det.push("<p>Prezzo equo del mercato: " + f2(equa) + " (" + f0(prob * 100) + "%)" +
+      det.push("<p>Quota reale del mercato: " + f2(equa) + " (" + f0(prob * 100) + "%)" +
         (marg != null ? ", margine " + f1(marg) + "%" : "") + ". Sopra quella quota prendi valore, sotto paghi margine.</p>");
     } else if (esito) {
       det.push("<p>" + (r._mercato === "si"
@@ -3152,7 +3153,7 @@
   }
 
   var NOMI_SCHEDA = {
-    asianodds: "AsianOdds", footymetrics: "FootyMetrics", prezzi: "Prezzi equi", poisson: "Poisson",
+    asianodds: "AsianOdds", footymetrics: "FootyMetrics", prezzi: "Probabilit\u00e0 reali", poisson: "Poisson",
     accordo: "Statarea + WebPronostici", consenso: "Consenso medio", statarea: "Statarea",
     wp_1x2: "WebPronostici", wp_ou: "WebPronostici", wp_ggng: "WebPronostici", wp_misti: "WebPronostici",
     webpronostici: "WebPronostici", betimate: "Betimate", xgaura: "xGaura", sportytrader: "Sportytrader",
@@ -3280,7 +3281,7 @@
       return o;
     }).sort(function (x, y) { return (num(y.Prob) || 0) - (num(x.Prob) || 0); });
     var marg = num(P.Margine), fid = fiducia(marg);
-    var h = '<div class="scheda"><h3>Prezzi equi</h3>' +
+    var h = '<div class="scheda"><h3>Probabilit\u00e0 reali</h3>' +
       '<p class="piccolo">La quota sotto cui non conviene giocare. Spunta per metterla nella multipla.</p>';
     h += righeSchedaPrezzi.map(function (r, i) {
       var k = chiave(r), on = !!scelte[k];
@@ -3384,7 +3385,7 @@
     (p.Fonti || []).forEach(function (k) { var n = nomeFonte(k); if (!visti[n]) { visti[n] = 1; nomi.push(n); } });
     return '<p class="piccolo piede-scheda">In questa scheda: ' + esc(nomi.join(", ")) + ". " +
       "Ogni fonte scrive le squadre a modo suo: le righe sono state unite nel giro notturno " +
-      "con le regole dei prezzi equi (stemma, nomi parola per parola, ora). Se qui compare una partita che non c'entra, è un'unione sbagliata: segnalala.</p>";
+      "con regole precise (stemma, nomi parola per parola, ora). Se qui compare una partita che non c'entra, è un'unione sbagliata: segnalala.</p>";
   }
 
   function disegnaScheda() {
