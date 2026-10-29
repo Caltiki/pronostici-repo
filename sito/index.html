@@ -1178,6 +1178,10 @@
   .riga .spunta.esito.presa { color: var(--buono); background: var(--buono-tenue); }
   .riga .spunta.esito.sbagliata { color: var(--male); background: color-mix(in srgb, var(--male) 12%, transparent); }
   .riga .spunta.esito.rimborso, .riga .spunta.esito.attesa { color: var(--tenue); }
+  /* Stemmi accanto ai nomi delle squadre. */
+  img.stemma { width: 18px; height: 18px; object-fit: contain; vertical-align: -3px; margin-right: 5px; }
+  img.stemma.grande { width: 28px; height: 28px; vertical-align: -6px; margin-right: 7px; }
+  .partita .sq { white-space: normal; }
 </style>
 </head>
 <body>
@@ -1567,7 +1571,8 @@
       $cont.innerHTML = testa + '<div id="righe">' + messaggio("vuoto", "Carico&hellip;") + "</div>";
       collegaTesta(sez);
 
-      var carica = leggi((passate[d] ? "schedina_" : prefisso) + d + ".json");
+      var carica = Promise.all([leggi((passate[d] ? "schedina_" : prefisso) + d + ".json"), caricaLoghi()])
+        .then(function (a) { return a[0]; });
       if (conf.arricchisci) carica = carica.then(function (righe) { return conf.arricchisci(righe, d); });
       return carica.then(function (righe) {
         if (stato.sez !== sez || stato.data[sez] !== d) return;
@@ -2014,7 +2019,7 @@
       (r.Gruppo ? '<span class="chip">' + esc(r.Gruppo) + "</span>" : "") +
       (fid ? '<span class="pill ' + fid[0] + '">margine ' + f1(marg) + "%</span>" : "") +
       "</div>" +
-      '<div class="partita">' + esc(r.Partita || (r.Casa + " - " + r.Ospite)) + "</div>" +
+      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, r.Partita) + "</div>" +
       '<div class="sel">' + esc(etichettaSel(r)) + "</div>" +
       (prob != null ? '<div class="pbar"><i style="width:' + Math.min(100, prob) + '%"></i></div>' : "") +
       "</div>" +
@@ -2212,7 +2217,7 @@
       '<span class="segno">' + esc(segno || "?") + "</span>" +
       '<div class="corpo">' +
       '<div class="alto"><span>' + esc(r.Ora || "") + "</span><span>" + fonti + (fonti === 1 ? " fonte" : " fonti") + "</span></div>" +
-      '<div class="partita">' + esc(r.Casa) + " – " + esc(r.Ospite) + "</div>" +
+      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite) + "</div>" +
       (coda ? '<div class="sel">' + coda + "</div>" : "") +
       (acc ? '<div class="accordo-conta">D\u2019accordo ' + articolo(acc.segno) + ": <b>" + acc.si.length +
         "</b> " + (acc.si.length + acc.no.length === 1 ? "fonte su 1" : "su " + (acc.si.length + acc.no.length) + " fonti") + "</div>" : "") +
@@ -2311,7 +2316,7 @@
       '<div class="corpo">' +
       '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" + (r.Lega ? '<span class="chip">' + esc(String(r.Lega).replace(/\s*\[\d+\]$/, "")) + "</span>" : "") +
         (r.Fonte_xG === "FotMob" ? '<span class="chip">xG FotMob</span>' : "") + "</div>" +
-      '<div class="partita">' + esc(r.Casa) + " \u2013 " + esc(r.Ospite) + "</div>" +
+      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite) + "</div>" +
       '<div class="sel">\u03bb ' + f2(lc) + " \u2013 " + f2(lo) + coda + "</div>" +
       tripla("modello", p1, px, p2) +
       (m1 != null ? tripla("mercato", m1, mx, m2) : "") +
@@ -2542,7 +2547,7 @@
       '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" +
       (fid ? '<span class="pill ' + fid[0] + '">margine ' + f1(marg) + "%</span>" : "") +
       (aff ? '<span class="chip">affidabile</span>' : "") + "</div>" +
-      '<div class="partita">' + esc(r.Casa) + " \u2013 " + esc(r.Ospite) + "</div>" +
+      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite) + "</div>" +
       (verso || nota ? '<div class="sel">' + (nota ? '<span class="scarto-grosso">movimento notevole' + (verso ? " " + esc(verso.testo) : "") + "</span>"
         : '<span class="scarto">' + esc(verso.testo.charAt(0).toUpperCase() + verso.testo.slice(1)) + "</span>") + "</div>" : "") +
       (ap && mov && pp ? tripla("apertura", ap[0], ap[1], ap[2]) + tripla("ora", pp[0], pp[1], pp[2]) : tripla("ora", p1, px, p2)) +
@@ -2620,7 +2625,7 @@
       '<span class="segno">' + esc(pron || "?") + "</span>" +
       '<div class="corpo">' +
       '<div class="alto"><span>' + esc(r.Ora || "") + "</span></div>" +
-      '<div class="partita">' + esc(r.Casa) + " \u2013 " + esc(r.Ospite) + "</div>" +
+      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite) + "</div>" +
       '<div class="sel">Statarea ' + esc(r["Pron Statarea"]) + " \u00b7 WebPronostici " + esc(r["Pron WebPron"]) + "</div>" +
       tripla("fonti", p1, px, p2) +
       "</div>" +
@@ -2633,6 +2638,34 @@
   // ------------------------------------------------------- sure bets
 
   var URL_LOGHI = "https://raw.githubusercontent.com/" + REPO + "/main/loghi.json";
+
+  // GLI STEMMI. I PNG stanno sul ramo "stemmi" di pronostici-repo (li
+  // pubblica il job "stemmi" del workflow dal pacchetto Kodi), il nome
+  // della squadra porta al file con loghi.json e la stessa ricerca ESATTA
+  // delle Sure Bets (stemma(), piu' sotto): un nome che non c'e' o che sta
+  // fra le omonimie resta senza stemma, mai con quello di un'altra squadra.
+  // Se il file non si carica, l'immagine sparisce e resta il nome.
+  var URL_STEMMI = "https://raw.githubusercontent.com/" + REPO + "/stemmi/";
+  var LOGHI = null;
+  var loghiPronti = null;
+  function caricaLoghi() {
+    if (!loghiPronti) {
+      loghiPronti = leggiUrl(URL_LOGHI, "loghi.json").catch(function () { return null; })
+        .then(function (l) { LOGHI = l; return l; });
+    }
+    return loghiPronti;
+  }
+  function logo(nome, grande) {
+    if (!LOGHI || !nome) return "";
+    var f = stemma(nome, LOGHI);
+    if (!f) return "";
+    return '<img class="stemma' + (grande ? " grande" : "") + '" src="' + URL_STEMMI + encodeURIComponent(f) +
+      '" alt="" loading="lazy" decoding="async" onerror="this.remove()">';
+  }
+  function partitaHtml(casa, ospite, testo) {
+    if (!casa || !ospite) return esc(testo || "");
+    return '<span class="sq">' + logo(casa) + esc(casa) + '</span> \u2013 <span class="sq">' + logo(ospite) + esc(ospite) + "</span>";
+  }
 
   // Il mercato del giorno e la mappa dei nomi si leggono qui, una volta per
   // data. Se AsianOdds non ha il file (oltre le 24 ore) le righe restano
@@ -2727,7 +2760,7 @@
       '<div class="corpo">' +
       '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" +
       (fid ? '<span class="pill ' + fid[0] + '">margine ' + f1(marg) + "%</span>" : "") + "</div>" +
-      '<div class="partita">' + esc(r.Casa) + " \u2013 " + esc(r.Ospite) + "</div>" +
+      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite) + "</div>" +
       '<div class="sel">' + sel + "</div>" +
       (conPrezzo ? '<div class="pbar"><i style="width:' + Math.min(100, prob * 100) + '%"></i></div>' : "") +
       "</div>" +
@@ -2857,7 +2890,7 @@
       '<span class="segno">' + esc(p.Esito) + "</span>" +
       '<div class="corpo">' +
       '<div class="alto"><span>' + esc(p.Ora || "") + "</span>" + (p.Lega ? '<span class="chip">' + esc(p.Lega) + "</span>" : "") + "</div>" +
-      '<div class="partita">' + esc(p.Casa) + " \u2013 " + esc(p.Ospite) + "</div>" +
+      '<div class="partita">' + partitaHtml(p.Casa, p.Ospite) + "</div>" +
       '<div class="pron-lista">' + prons.map(pillPron).join("") + "</div>" +
       (m ? tripla("mercato", m.P1, m.PX, m.P2) : "") +
       "</div>" +
@@ -3175,7 +3208,7 @@
       '<button type="button" class="indietro" id="indietro">← Indietro</button>' +
       '<p class="piccolo">' + esc(etichettaData(d)) + (p.Ora ? " · " + esc(p.Ora) : "") +
       (p.Lega ? " · " + esc(p.Lega) : "") + "</p>" +
-      "<h2>" + esc(p.Casa) + " – " + esc(p.Ospite) + "</h2>";
+      "<h2>" + logo(p.Casa, true) + esc(p.Casa) + " – " + logo(p.Ospite, true) + esc(p.Ospite) + "</h2>";
     var st = String(fm.Stato || "").toUpperCase(), gc = num(fm.Gol_Casa), go = num(fm.Gol_Ospite);
     if (gc != null && go != null && st && st !== "NS") {
       var fin = ["FT", "AET", "PEN"].indexOf(st) >= 0;
@@ -3365,7 +3398,7 @@
     leggi("scheda_index.json").then(function (ix) {
       document.getElementById("aggiornato").textContent = "Aggiornato il " + (ix.aggiornato || "?");
     }).catch(function () {});
-    leggi("scheda_" + d + ".json").then(function (s) {
+    Promise.all([leggi("scheda_" + d + ".json"), caricaLoghi()]).then(function (a) { return a[0]; }).then(function (s) {
       if (stato.sez !== "scheda" || SCHEDA.data !== d || SCHEDA.chiave !== al) return;
       var id = s && s.alias ? s.alias[al] : null;
       var p = id == null ? null : (s.partite || []).filter(function (x) { return x.id === id; })[0];
