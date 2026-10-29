@@ -4126,8 +4126,7 @@
       document.getElementById("aggiornato").textContent = "xG letti il " + (piu.sort().pop() || "?");
 
       var h = chipsHtml(GRUPPO_POISSON, "xg", "data-gruppo") +
-        '<p class="descr">Gol attesi a partita: quanto valevano le occasioni create (xG) e quelle concesse (xGA). ' +
-        "Sono i numeri da cui il Poisson ricava la forza delle squadre. Con poche partite giocate (PG) ballano.</p>" +
+        '<p class="descr">Gol attesi a partita: quanto valevano le occasioni create (xG) e quelle concesse (xGA).</p>' +
         '<div class="strumenti xgs">' +
         '<select id="xg-lega" aria-label="Campionato">' + nomi.map(function (n) {
           return '<option value="' + esc(n) + '"' + (n === XG.lega ? " selected" : "") + ">" + esc(n) + "</option>";
