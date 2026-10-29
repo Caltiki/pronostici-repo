@@ -679,7 +679,8 @@
   "Mercato": "OU 1.5",
   "Sel": "Over",
   "Prob": 74.2,
-  "Equa": 1.35
+  "Equa": 1.35,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-02",
@@ -1028,8 +1029,7 @@
   "Mercato": "OU 1.5",
   "Sel": "Over",
   "Prob": 71.6,
-  "Equa": 1.4,
-  "InSchedina": "si"
+  "Equa": 1.4
  },
  {
   "Data": "2026-11-02",
@@ -1676,8 +1676,7 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 63.1,
-  "Equa": 1.59,
-  "InSchedina": "si"
+  "Equa": 1.59
  },
  {
   "Data": "2026-11-02",
@@ -2358,7 +2357,8 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 57.2,
-  "Equa": 1.75
+  "Equa": 1.75,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-02",
@@ -6566,26 +6566,6 @@
  {
   "Data": "2026-11-02",
   "Ora": "20:00",
-  "Campionato": "Brazil Serie B",
-  "Partita": "Fortaleza - Atlético GO",
-  "Casa": "Fortaleza",
-  "Ospite": "Atlético GO",
-  "Linea_OU": "",
-  "Gol_attesi": 2.52,
-  "Margine": 4.9,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "Under Over",
-  "Mercato": "OU 1.5",
-  "Sel": "Under",
-  "Prob": 28.4,
-  "Equa": 3.52
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "20:00",
   "Campionato": "Netherlands Eerste Divisie",
   "Partita": "Jong Ajax - Vitesse",
   "Casa": "Jong Ajax",
@@ -6697,11 +6677,31 @@
   "Principale": "",
   "Schedina": "si",
   "Fonte": "FootyMetrics",
+  "Gruppo": "Under Over",
+  "Mercato": "OU 1.5",
+  "Sel": "Under",
+  "Prob": 25.8,
+  "Equa": 3.87
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "02:10",
+  "Campionato": "Mexico Liga MX",
+  "Partita": "Cruz Azul - León",
+  "Casa": "Cruz Azul",
+  "Ospite": "León",
+  "Linea_OU": "",
+  "Gol_attesi": 3.28,
+  "Margine": 4.7,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
   "Gruppo": "1X2",
   "Mercato": "1X2",
   "Sel": "X",
   "Prob": 22.7,
-  "Equa": 4.41
+  "Equa": 4.4
  },
  {
   "Data": "2026-11-02",
