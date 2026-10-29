@@ -1182,6 +1182,24 @@
   img.stemma { width: 18px; height: 18px; object-fit: contain; vertical-align: -3px; margin-right: 5px; }
   img.stemma.grande { width: 28px; height: 28px; vertical-align: -6px; margin-right: 7px; }
   .partita .sq { white-space: normal; }
+  /* OMBRE DELLE SCHEDE, riviste. Prima: a sinistra una striscia di colore
+     che sfumava nel nulla (sembrava una macchia), sotto un alone largo e
+     grigio. Ora: a sinistra una barretta netta e staccata dagli angoli;
+     sotto due ombre, una corta e scura che "appoggia" la scheda e una
+     morbida che non si allarga ai lati (raggio negativo). */
+  .riga::before {
+    inset: 14px auto 14px 0; width: 3px; border-radius: 0 3px 3px 0;
+    background: var(--evidenza); opacity: .5;
+  }
+  :root, :root:not([data-theme="zz"]), :root[data-theme="dark"] {
+    --ombra: 0 1px 0 rgba(255,255,255,.035) inset, 0 1px 2px rgba(0,0,0,.35), 0 12px 24px -12px rgba(0,0,0,.7);
+    --ombra-hover: 0 1px 0 rgba(255,255,255,.05) inset, 0 2px 4px rgba(0,0,0,.35), 0 18px 32px -14px rgba(0,0,0,.8);
+  }
+  :root[data-theme="light"] {
+    --ombra: 0 1px 1px rgba(15,23,42,.05), 0 2px 4px rgba(15,23,42,.04), 0 12px 22px -12px rgba(15,23,42,.18);
+    --ombra-hover: 0 1px 2px rgba(15,23,42,.06), 0 4px 8px rgba(15,23,42,.05), 0 18px 30px -14px rgba(15,23,42,.22);
+  }
+  :root[data-theme="light"] .riga .spunta { background: rgba(15,23,42,.018); }
 </style>
 </head>
 <body>
