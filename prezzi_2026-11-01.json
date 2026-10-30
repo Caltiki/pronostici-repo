@@ -5476,7 +5476,8 @@
   "Mercato": "1X2",
   "Sel": "2",
   "Prob": 60.7,
-  "Equa": 1.65
+  "Equa": 1.65,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-01",
@@ -9580,8 +9581,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "1X + Over 2.5",
   "Prob": 52.3,
-  "Equa": 1.91,
-  "InSchedina": "si"
+  "Equa": 1.91
  },
  {
   "Data": "2026-11-01",
@@ -18822,6 +18822,26 @@
   "Sel": "Under",
   "Prob": 25.3,
   "Equa": 3.95
+ },
+ {
+  "Data": "2026-11-01",
+  "Ora": "12:00",
+  "Campionato": "Ukraine Premier League",
+  "Partita": "Kolos Kovalivka - Polissya Zhytomyr",
+  "Casa": "Kolos Kovalivka",
+  "Ospite": "Polissya Zhytomyr",
+  "Linea_OU": "",
+  "Gol_attesi": 2.62,
+  "Margine": 7.8,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 23.2,
+  "Equa": 4.31
  },
  {
   "Data": "2026-11-01",
