@@ -1310,6 +1310,19 @@
     .chips::-webkit-scrollbar-thumb:hover { background: var(--tenue); }
     .chips::-webkit-scrollbar-track { background: transparent; }
   }
+  /* BARRA DELLE SEZIONI VERDE SCURO nel tema chiaro: stacca dallo sfondo
+     chiaro e richiama il verde della pagina; il tasto acceso resta lime. */
+  :root[data-theme="light"] nav.sezioni {
+    background: rgba(22, 52, 30, .97);
+    border-color: rgba(22, 52, 30, .9);
+    box-shadow:
+      0 1px 0 rgba(255,255,255,.06) inset,
+      0 10px 26px -12px rgba(22, 52, 30, .55);
+  }
+  :root[data-theme="light"] nav.sezioni button { color: #d3e4cc; }
+  :root[data-theme="light"] nav.sezioni button:hover { background: rgba(255,255,255,.08); color: #fff; }
+  :root[data-theme="light"] nav.sezioni button.casa { color: #b9cfb1; }
+  :root[data-theme="light"] nav.sezioni button[aria-current="true"] { background: #c9ff3d; color: #10140a; box-shadow: 0 6px 18px rgba(0,0,0,.25); }
 </style>
 </head>
 <body>
