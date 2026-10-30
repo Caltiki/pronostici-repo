@@ -1282,6 +1282,19 @@
   .altrove button.vai-altrove:hover { border-color: var(--evidenza); }
   .altrove button.vai-altrove b { color: var(--evidenza); }
   .altrove button.vai-altrove > span:last-child { display: block; margin-top: 3px; font-size: .86rem; color: var(--tenue); }
+  /* TUTTE LE PARTITE: una scheda per partita, dentro le sue righe */
+  .riga.partitona > details > summary .numero b { font-size: 1.15rem; }
+  .riga.partitona .dentro-partita {
+    display: grid; gap: 8px; padding: 0 10px 12px;
+    border-top: 1px dashed var(--bordo); padding-top: 10px;
+  }
+  .riga.partitona .dentro-partita .riga { box-shadow: none; }
+  /* Dentro la partita non serve ripetere squadre e orario. */
+  .riga.partitona .dentro-partita .riga .partita,
+  .riga.partitona .dentro-partita .riga .alto > span:first-child { display: none; }
+  .riga.partitona .dentro-partita .riga .sel { font-weight: 600; font-size: .95rem; color: var(--testo); margin-top: 2px; }
+  .riga.partitona .dentro-partita p.aggancio { margin: 4px 4px 0; }
+  .riga.partitona .dentro-partita p.aggancio:empty { display: none; }
 </style>
 </head>
 <body>
@@ -1391,7 +1404,13 @@
   // -------------------------------------------------------------- viste
 
   // Stesse viste, stesso ordine e stesse descrizioni dell'addon 1.18.1.
+  // "Tutte le partite" e' la prima e la pagina d'apertura: il menu
+  // completo della giornata. La Schedina viene dopo.
   var PE_VISTE = [
+    ["partite", "Tutte le partite",
+     "Probabilit\u00e0 reali: quelle delle quote del bookmaker, tolto il suo guadagno. " +
+     "Ogni partita della giornata, una per riga: toccala per vedere tutte le sue probabilit\u00e0 " +
+     "e aggiungere quelle che vuoi alla multipla."],
     ["schedina", "Schedina",
      "Probabilit\u00e0 reali: quelle delle quote del bookmaker, tolto il suo guadagno. " +
      "Le righe che il sistema ha messo in schedina: una per partita. " +
@@ -1494,8 +1513,8 @@
   var stato = {
     sez: "prezzi",
     data: { prezzi: null, mercato: null, consensus: null, accordo: null, poisson: null, sure: null },
-    vista: { prezzi: "schedina", mercato: "aff", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" },
-    ordine: { prezzi: "file", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" },
+    vista: { prezzi: "partite", mercato: "aff", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" },
+    ordine: { prezzi: "ora", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" },
     cerca: "",
     fonteCm: "",
     esito: "",
@@ -1739,7 +1758,9 @@
     });
     $cont.querySelectorAll("[data-vista]").forEach(function (b) {
       b.addEventListener("click", function () {
-        stato.vista[sez] = b.dataset.vista; stato.limite = PASSO; disegna();
+        stato.vista[sez] = b.dataset.vista; stato.limite = PASSO;
+        if (sez === "prezzi" && b.dataset.vista === "partite" && stato.ordine.prezzi === "file") stato.ordine.prezzi = "ora";
+        disegna();
       });
     });
     var c = document.getElementById("cerca");
@@ -1808,6 +1829,8 @@
       return;
     }
 
+    if (sez === "prezzi" && vista === "partite") return disegnaPerPartita(sez, visibili, tutte, data, $r);
+
     var mostrate = visibili.slice(0, stato.limite);
     var conta = visibili.length === tutte.length
       ? visibili.length + " righe"
@@ -1845,6 +1868,101 @@
     rimettiPosto($r);
   }
 
+  // ------------------------------------------------ tutte le partite
+  //
+  // LA STESSA GIORNATA, RACCOLTA PER PARTITA. Le righe sono quelle di
+  // prezzi_<data>.json, tali e quali: qui si mettono soltanto insieme
+  // quelle della stessa partita (stessa data, stesso nome come lo scrive
+  // il file), cosi' chi cerca il derby lo trova una volta sola e, aprendolo,
+  // vede tutte le sue probabilita' con la spunta per la multipla.
+  var ORDINE_GRUPPO = { "1X2": 0, "Combo": 1, "Gol NoGol": 2, "Under Over": 3 };
+
+  function disegnaPerPartita(sez, visibili, tutte, data, $r) {
+    var gruppi = [], dove = {};
+    visibili.forEach(function (r) {
+      var k = (r.Data || "") + "|" + String(r.Partita || (r.Casa + " - " + r.Ospite)).toLowerCase();
+      if (!(k in dove)) { dove[k] = gruppi.length; gruppi.push([]); }
+      gruppi[dove[k]].push(r);
+    });
+    gruppi.forEach(function (g) {
+      g.sort(function (a, b) {
+        var sa = String(a.InSchedina || "") === "si" ? 0 : 1, sb = String(b.InSchedina || "") === "si" ? 0 : 1;
+        if (sa !== sb) return sa - sb;
+        var ga = ORDINE_GRUPPO[a.Gruppo], gb = ORDINE_GRUPPO[b.Gruppo];
+        ga = ga == null ? 9 : ga; gb = gb == null ? 9 : gb;
+        if (ga !== gb) return ga - gb;
+        return (num(b.Prob) || 0) - (num(a.Prob) || 0);
+      });
+    });
+    var o = stato.ordine[sez];
+    function maxProb(g) { return Math.max.apply(null, g.map(function (r) { return num(r.Prob) || 0; })); }
+    function minMarg(g) { return Math.min.apply(null, g.map(function (r) { var m = num(r.Margine); return m == null ? 99 : m; })); }
+    gruppi.sort(function (a, b) {
+      if (o === "file") return maxProb(b) - maxProb(a);
+      if (o === "margine") return minMarg(a) - minMarg(b);
+      return String(a[0].Ora || "").localeCompare(String(b[0].Ora || "")) ||
+        String(a[0].Partita || "").localeCompare(String(b[0].Partita || ""));
+    });
+    // Le partite finite in cima, come nelle altre viste.
+    var fin = gruppi.filter(function (g) { return g.some(function (r) { return r.Esito; }); });
+    if (fin.length) gruppi = fin.concat(gruppi.filter(function (g) { return fin.indexOf(g) < 0; }));
+
+    var mostrateG = gruppi.slice(0, stato.limite), mostrate = [];
+    var html = SEZ[sez].riepilogo(visibili) +
+      '<p class="conta">' + gruppi.length + (gruppi.length === 1 ? " partita" : " partite") + " · " +
+      visibili.length + " probabilità" + SEZ[sez].nota + '</p><div class="lista">' +
+      mostrateG.map(function (g) {
+        var r0 = g[0], inSch = g.filter(function (r) { return String(r.InSchedina || "") === "si"; })[0];
+        var top = inSch || g.slice().sort(function (a, b) { return (num(b.Prob) || 0) - (num(a.Prob) || 0); })[0];
+        var gol = r0.Gol_Casa != null && r0.Gol_Ospite != null ? r0.Gol_Casa + "-" + r0.Gol_Ospite : "";
+        var dentro = g.map(function (r) {
+          var i = mostrate.length; mostrate.push(r);
+          return rigaPrezzo(r, i);
+        }).join("");
+        var scelte_ = g.filter(function (r) { return scelte[chiave(r)]; }).length;
+        return '<div class="riga partitona' + (scelte_ ? " scelta" : "") + '"><details><summary><div class="corpo">' +
+          '<div class="alto"><span>' + esc(r0.Ora || "") + "</span>" +
+          (gol ? "<span><b>" + esc(gol) + "</b></span>" : "") +
+          (r0.Campionato ? '<span class="chip">' + esc(r0.Campionato) + "</span>" : "") + "</div>" +
+          '<div class="partita">' + partitaHtml(r0.Casa, r0.Ospite, r0.Partita, campiRiga(r0)) + "</div>" +
+          '<div class="sel">' + (inSch ? "In schedina: " : "Più probabile: ") + esc(etichettaSel(top)) +
+          " · " + f0(num(top.Prob)) + "%" + (scelte_ ? " · " + scelte_ + " nella multipla" : "") + "</div>" +
+          '</div><div class="numero"><b>' + g.length + "</b><span>" + (g.length === 1 ? "probabilità" : "probabilità") + "</span></div></summary>" +
+          '<div class="dentro-partita">' + dentro +
+          (r0.Casa && r0.Ospite ? '<p class="aggancio" data-alias="' + esc(aliasDi(sez, r0)) + '"></p>' : "") +
+          "</div></details></div>";
+      }).join("") + "</div>";
+    if (gruppi.length > mostrateG.length) {
+      html += '<button type="button" class="altre" id="altre">Mostra altre ' +
+        Math.min(PASSO, gruppi.length - mostrateG.length) + " partite (ne restano " +
+        (gruppi.length - mostrateG.length) + ")</button>";
+    }
+    $r.innerHTML = html;
+    var a = document.getElementById("altre");
+    if (a) a.addEventListener("click", function () { stato.limite += PASSO; ridisegnaRighe(); });
+    // Il link alla scheda si riempie quando si apre la partita.
+    $r.querySelectorAll(".partitona > details").forEach(function (det) {
+      det.addEventListener("toggle", function () { if (det.open) riempiAggancio(det, data); });
+    });
+    $r.querySelectorAll("[data-esito]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        stato.esito = stato.esito === b.dataset.esito ? "" : b.dataset.esito;
+        stato.limite = PASSO; ridisegnaRighe();
+      });
+    });
+    $r.querySelectorAll("input[data-chiave]").forEach(function (cb) {
+      cb.addEventListener("change", function () {
+        var k = cb.dataset.chiave, r = mostrate[Number(cb.dataset.i)];
+        if (cb.checked) scelte[k] = r; else delete scelte[k];
+        cb.closest(".riga").classList.toggle("scelta", cb.checked);
+        var box = cb.closest(".partitona");
+        if (box) box.classList.toggle("scelta", !!box.querySelector("input[data-chiave]:checked"));
+        aggiornaMultipla();
+      });
+    });
+    rimettiPosto($r);
+  }
+
   // ------------------------------------------- la ricerca negli altri giorni
   //
   // Chi cerca "Milan" su Oggi non trova il derby di sabato: sta in un altro
@@ -1854,7 +1972,9 @@
   // testoCerca(): niente regole nuove.
   function cercaAltrove(sez, data, cerca, righeOggi) {
     var q = cerca.toLowerCase(), conf = SEZ[sez], vista = stato.vista[sez];
-    var haTutte = conf.viste.some(function (v) { return v[0] === "tutte"; });
+    // Dove mandare chi non trova: nei Pronostici la vista per partita.
+    var VISTA_AMPIA = sez === "prezzi" ? "partite" : "tutte";
+    var haTutte = conf.viste.some(function (v) { return v[0] === VISTA_AMPIA; });
     // Prima il giorno scelto, poi i prossimi dal piu' vicino, poi i
     // passati dal piu' recente: chi cerca una partita di solito la cerca
     // in arrivo.
@@ -1889,7 +2009,7 @@
         .map(function (x) {
           var d = x[0], t = x[1];
           // La vista resta quella scelta se la partita ci sta; se no "Tutte".
-          var nuova = t.inVista ? vista : (haTutte ? "tutte" : vista);
+          var nuova = t.inVista ? vista : (haTutte ? VISTA_AMPIA : vista);
           if (d === data && nuova === vista) return "";
           var mostra = t.nomi.slice(0, 2).map(esc).join(", ") + (t.nomi.length > 2 ? " e altre " + (t.nomi.length - 2) : "");
           var nomeVista = (conf.viste.filter(function (v) { return v[0] === nuova; })[0] || [])[1] || "";
@@ -1906,6 +2026,7 @@
         b.addEventListener("click", function () {
           stato.data[sez] = b.dataset.vaiData;
           stato.vista[sez] = b.dataset.vaiVista;
+          if (sez === "prezzi" && b.dataset.vaiVista === "partite" && stato.ordine.prezzi === "file") stato.ordine.prezzi = "ora";
           stato.limite = PASSO; stato.esito = "";
           window.scrollTo(0, 0);
           disegna();
@@ -4348,8 +4469,8 @@
     if (e) e.preventDefault();
     stato.sez = "prezzi";
     stato.data = { prezzi: null, mercato: null, consensus: null, accordo: null, poisson: null, sure: null };
-    stato.vista = { prezzi: "schedina", mercato: "aff", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" };
-    stato.ordine = { prezzi: "file", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" };
+    stato.vista = { prezzi: "partite", mercato: "aff", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" };
+    stato.ordine = { prezzi: "ora", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" };
     stato.cerca = "";
     stato.fonteCm = "";
     stato.esito = "";
