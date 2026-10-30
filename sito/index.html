@@ -1295,11 +1295,20 @@
   .riga.partitona .dentro-partita .riga .sel { font-weight: 600; font-size: .95rem; color: var(--testo); margin-top: 2px; }
   .riga.partitona .dentro-partita p.aggancio { margin: 4px 4px 0; }
   .riga.partitona .dentro-partita p.aggancio:empty { display: none; }
-  /* CON IL MOUSE LE FILE DI TASTI VANNO A CAPO. Sul telefono scorrono
-     col dito; sul PC una riga che scorre di lato col mouse non si sposta
-     (la rotella va in verticale) e i giorni a sinistra restavano tagliati. */
+  /* CON IL MOUSE LE FILE DI TASTI SCORRONO CON LA ROTELLA E HANNO LA
+     BARRA. Sul telefono scorrono col dito e la barra non serve; sul PC la
+     rotella andava in verticale e i giorni oltre il bordo restavano
+     tagliati senza modo di raggiungerli. La fila resta dentro i margini
+     della pagina, la barra sottile sta sotto i tasti. */
   @media (hover: hover) and (pointer: fine) {
-    .chips { flex-wrap: wrap; overflow-x: visible; margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0; }
+    .chips {
+      margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0; padding-bottom: 10px;
+      scrollbar-width: thin; scrollbar-color: var(--bordo) transparent;
+    }
+    .chips::-webkit-scrollbar { display: block; height: 6px; }
+    .chips::-webkit-scrollbar-thumb { background: var(--bordo); border-radius: 3px; }
+    .chips::-webkit-scrollbar-thumb:hover { background: var(--tenue); }
+    .chips::-webkit-scrollbar-track { background: transparent; }
   }
 </style>
 </head>
@@ -4614,6 +4623,18 @@
 
   // L'icona e' scritta una volta sola nella pagina: la favicon la riusa.
   try { document.getElementById("favicon").href = document.querySelector(".marchio img").src; } catch (e) {}
+
+  // La rotella del mouse sopra una fila di tasti che non ci sta la fa
+  // scorrere di lato invece di muovere la pagina. Se la fila ci sta tutta,
+  // la rotella fa il suo lavoro normale.
+  $cont.addEventListener("wheel", function (e) {
+    var c = e.target.closest && e.target.closest(".chips");
+    if (!c || c.scrollWidth <= c.clientWidth + 1) return;
+    if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+    var prima = c.scrollLeft;
+    c.scrollLeft += e.deltaY;
+    if (c.scrollLeft !== prima) e.preventDefault();
+  }, { passive: false });
 
   leggiHash();
   disegna();
