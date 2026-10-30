@@ -46,8 +46,8 @@
   "Ospite": "Lexington SC (W)",
   "Segno": "1",
   "P1": 40.0,
-  "PX": 23.0,
-  "P2": 37.0,
+  "PX": 24.0,
+  "P2": 36.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -319,8 +319,8 @@
   "Ospite": "Alianza FC Panama",
   "Segno": "1",
   "P1": 62.0,
-  "PX": 21.0,
-  "P2": 17.0,
+  "PX": 20.0,
+  "P2": 18.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -539,9 +539,9 @@
   "Casa": "Estudiantes LP",
   "Ospite": "Instituto AC Cordoba",
   "Segno": "1",
-  "P1": 43.0,
+  "P1": 42.0,
   "PX": 29.0,
-  "P2": 28.0,
+  "P2": 29.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -578,8 +578,8 @@
   "Casa": "Alacranes de Durango",
   "Ospite": "Atletico Morelia",
   "Segno": "1",
-  "P1": 39.0,
-  "PX": 30.0,
+  "P1": 38.0,
+  "PX": 31.0,
   "P2": 31.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -604,9 +604,9 @@
   "Casa": "Cashmere Technical",
   "Ospite": "Auckland City",
   "Segno": "1",
-  "P1": 67.0,
+  "P1": 66.0,
   "PX": 17.0,
-  "P2": 16.0,
+  "P2": 17.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -669,8 +669,8 @@
   "Casa": "Piratas",
   "Ospite": "Tapatio",
   "Segno": "1",
-  "P1": 64.0,
-  "PX": 20.0,
+  "P1": 63.0,
+  "PX": 21.0,
   "P2": 16.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -722,8 +722,8 @@
   "Ospite": "Herrera FC",
   "Segno": "1",
   "P1": 73.0,
-  "PX": 17.0,
-  "P2": 10.0,
+  "PX": 16.0,
+  "P2": 11.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -825,8 +825,8 @@
   "Casa": "Atletico Choloma",
   "Ospite": "CD Olimpia",
   "Segno": "2",
-  "P1": 13.0,
-  "PX": 19.0,
+  "P1": 12.0,
+  "PX": 20.0,
   "P2": 68.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -864,8 +864,8 @@
   "Casa": "Birkenhead United",
   "Ospite": "Ferrymead Bays",
   "Segno": "1",
-  "P1": 70.0,
-  "PX": 17.0,
+  "P1": 69.0,
+  "PX": 18.0,
   "P2": 13.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -981,8 +981,8 @@
   "Casa": "Sporting San Jose",
   "Ospite": "Herediano",
   "Segno": "1",
-  "P1": 38.0,
-  "PX": 29.0,
+  "P1": 38.5,
+  "PX": 28.5,
   "P2": 33.0,
   "Fonti": 2,
   "Elenco": "betimate, statarea"
@@ -1658,8 +1658,8 @@
   "Ospite": "FC Noah",
   "Segno": "2",
   "P1": 6.0,
-  "PX": 12.0,
-  "P2": 82.0,
+  "PX": 13.0,
+  "P2": 81.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
  },
@@ -1978,19 +1978,6 @@
  {
   "Data": "2026-11-01",
   "Ora": "12:30",
-  "Lega": "Italy - Serie A",
-  "Casa": "Como",
-  "Ospite": "Venezia",
-  "Segno": "1",
-  "P1": 67.0,
-  "PX": 19.0,
-  "P2": 14.0,
-  "Fonti": 2,
-  "Elenco": "footymetrics, ratingbet"
- },
- {
-  "Data": "2026-11-01",
-  "Ora": "12:30",
   "Lega": "ITALY - SERIE A",
   "Casa": "Como",
   "Ospite": "Unione Venezia",
@@ -2000,6 +1987,19 @@
   "P2": 9.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-01",
+  "Ora": "12:30",
+  "Lega": "Italy - Serie A",
+  "Casa": "Como",
+  "Ospite": "Venezia",
+  "Segno": "1",
+  "P1": 67.0,
+  "PX": 19.0,
+  "P2": 14.0,
+  "Fonti": 2,
+  "Elenco": "footymetrics, ratingbet"
  },
  {
   "Data": "2026-11-01",
@@ -2927,19 +2927,6 @@
  {
   "Data": "2026-11-01",
   "Ora": "14:00",
-  "Lega": "TURKEY - SUPER LIG",
-  "Casa": "Trabzonspor",
-  "Ospite": "Gaziantep FK",
-  "Segno": "1",
-  "P1": 64.0,
-  "PX": 20.0,
-  "P2": 16.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
- },
- {
-  "Data": "2026-11-01",
-  "Ora": "14:00",
   "Lega": "Turkey - Super Lig",
   "Casa": "Trabzonspor",
   "Ospite": "Gaziantep F.K.",
@@ -2949,6 +2936,19 @@
   "P2": 20.0,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-01",
+  "Ora": "14:00",
+  "Lega": "TURKEY - SUPER LIG",
+  "Casa": "Trabzonspor",
+  "Ospite": "Gaziantep FK",
+  "Segno": "1",
+  "P1": 64.0,
+  "PX": 20.0,
+  "P2": 16.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-01",
@@ -3040,6 +3040,19 @@
   "P2": 41.0,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea"
+ },
+ {
+  "Data": "2026-11-01",
+  "Ora": "14:30",
+  "Lega": "Argentina: Primera B Metropolitana Argentina",
+  "Casa": "CA Alvarado",
+  "Ospite": "Sportivo Las Parejas",
+  "Segno": "1",
+  "P1": 59.0,
+  "PX": 27.0,
+  "P2": 14.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
  },
  {
   "Data": "2026-11-01",
@@ -3768,6 +3781,19 @@
   "P2": 18.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-01",
+  "Ora": "16:00",
+  "Lega": "Andorra: Primera Divisió Andorra",
+  "Casa": "Inter Club d'Escaldes",
+  "Ospite": "Penya Encarnada d'Andorra",
+  "Segno": "1",
+  "P1": 84.0,
+  "PX": 11.0,
+  "P2": 5.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
  },
  {
   "Data": "2026-11-01",
@@ -4604,19 +4630,6 @@
  {
   "Data": "2026-11-01",
   "Ora": "17:00",
-  "Lega": "NORWAY - ELITESERIEN",
-  "Casa": "Start",
-  "Ospite": "Lillestrom",
-  "Segno": "2",
-  "P1": 26.0,
-  "PX": 31.0,
-  "P2": 43.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
- },
- {
-  "Data": "2026-11-01",
-  "Ora": "17:00",
   "Lega": "Norway - Eliteserien",
   "Casa": "Start",
   "Ospite": "Lillestrøm",
@@ -4626,6 +4639,19 @@
   "P2": 37.4,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-01",
+  "Ora": "17:00",
+  "Lega": "NORWAY - ELITESERIEN",
+  "Casa": "Start",
+  "Ospite": "Lillestrom",
+  "Segno": "2",
+  "P1": 26.0,
+  "PX": 31.0,
+  "P2": 43.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-01",
@@ -5037,9 +5063,9 @@
   "Casa": "Lecce",
   "Ospite": "Genoa",
   "Segno": "1",
-  "P1": 38.7,
-  "PX": 28.7,
-  "P2": 32.7,
+  "P1": 38.0,
+  "PX": 29.0,
+  "P2": 33.0,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea"
  },
@@ -5271,9 +5297,9 @@
   "Casa": "Lommel SK",
   "Ospite": "Gent",
   "Segno": "2",
-  "P1": 23.9,
+  "P1": 22.9,
   "PX": 25.4,
-  "P2": 50.8,
+  "P2": 51.8,
   "Fonti": 2,
   "Elenco": "footymetrics, ratingbet"
  },
@@ -5436,6 +5462,19 @@
  {
   "Data": "2026-11-01",
   "Ora": "19:00",
+  "Lega": "Andorra: Primera Divisió Andorra",
+  "Casa": "FC Rangers",
+  "Ospite": "FC Santa Coloma",
+  "Segno": "2",
+  "P1": 29.0,
+  "PX": 26.0,
+  "P2": 45.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-11-01",
+  "Ora": "19:00",
   "Lega": "Morocco - Botola Pro",
   "Casa": "Ittihad Tanger",
   "Ospite": "CR Khemis Zemamra",
@@ -5462,19 +5501,6 @@
  {
   "Data": "2026-11-01",
   "Ora": "19:00",
-  "Lega": "Israel - Ligat ha'Al",
-  "Casa": "Maccabi Petah Tikva",
-  "Ospite": "Hapoel Be'er Sheva",
-  "Segno": "1",
-  "P1": 41.6,
-  "PX": 23.8,
-  "P2": 34.7,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
- },
- {
-  "Data": "2026-11-01",
-  "Ora": "19:00",
   "Lega": "ISRAEL - LIGAT HAAL",
   "Casa": "Maccabi Petah Tikva",
   "Ospite": "Hapoel Beer Sheva",
@@ -5488,13 +5514,26 @@
  {
   "Data": "2026-11-01",
   "Ora": "19:00",
+  "Lega": "Israel - Ligat ha'Al",
+  "Casa": "Maccabi Petah Tikva",
+  "Ospite": "Hapoel Be'er Sheva",
+  "Segno": "1",
+  "P1": 41.6,
+  "PX": 23.8,
+  "P2": 34.7,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-01",
+  "Ora": "19:00",
   "Lega": "Liga Portugal",
   "Casa": "Marítimo",
   "Ospite": "Santa Clara",
   "Segno": "2",
-  "P1": 28.3,
-  "PX": 30.0,
-  "P2": 41.7,
+  "P1": 28.0,
+  "PX": 29.7,
+  "P2": 42.3,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea"
  },
@@ -7220,9 +7259,9 @@
   "Lega": "Argentina: Primera Nacional Argentina",
   "Casa": "San Martin de Tucuman",
   "Ospite": "Colegiales",
-  "Segno": "2",
-  "P1": 33.0,
-  "PX": 33.0,
+  "Segno": "X",
+  "P1": 32.0,
+  "PX": 34.0,
   "P2": 34.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
@@ -7260,9 +7299,9 @@
   "Casa": "Gimnasia y Tiro",
   "Ospite": "Quilmes",
   "Segno": "1",
-  "P1": 47.0,
-  "PX": 30.0,
-  "P2": 23.0,
+  "P1": 49.0,
+  "PX": 29.0,
+  "P2": 22.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
  },
