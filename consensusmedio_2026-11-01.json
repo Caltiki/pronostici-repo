@@ -46,8 +46,8 @@
   "Ospite": "Lexington SC (W)",
   "Segno": "1",
   "P1": 40.0,
-  "PX": 24.0,
-  "P2": 36.0,
+  "PX": 23.0,
+  "P2": 37.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -85,8 +85,8 @@
   "Ospite": "Southern United (W)",
   "Segno": "1",
   "P1": 86.0,
-  "PX": 8.0,
-  "P2": 6.0,
+  "PX": 9.0,
+  "P2": 5.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -319,8 +319,8 @@
   "Ospite": "Alianza FC Panama",
   "Segno": "1",
   "P1": 62.0,
-  "PX": 20.0,
-  "P2": 18.0,
+  "PX": 21.0,
+  "P2": 17.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -331,8 +331,8 @@
   "Casa": "Real Espana",
   "Ospite": "Juticalpa",
   "Segno": "1",
-  "P1": 79.0,
-  "PX": 14.0,
+  "P1": 78.0,
+  "PX": 15.0,
   "P2": 7.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -422,9 +422,9 @@
   "Casa": "Deportivo Ocotal",
   "Ospite": "Real Madriz FC",
   "Segno": "1",
-  "P1": 66.0,
+  "P1": 65.0,
   "PX": 17.0,
-  "P2": 17.0,
+  "P2": 18.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -539,9 +539,9 @@
   "Casa": "Estudiantes LP",
   "Ospite": "Instituto AC Cordoba",
   "Segno": "1",
-  "P1": 42.0,
+  "P1": 43.0,
   "PX": 29.0,
-  "P2": 29.0,
+  "P2": 28.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -565,8 +565,8 @@
   "Casa": "AD Isidro Metapan",
   "Ospite": "Municipal Limeno",
   "Segno": "1",
-  "P1": 37.0,
-  "PX": 28.0,
+  "P1": 38.0,
+  "PX": 27.0,
   "P2": 35.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -591,8 +591,8 @@
   "Casa": "Cancun FC",
   "Ospite": "Jaiba Brava",
   "Segno": "1",
-  "P1": 59.0,
-  "PX": 24.0,
+  "P1": 60.0,
+  "PX": 23.0,
   "P2": 17.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -605,8 +605,8 @@
   "Ospite": "Auckland City",
   "Segno": "1",
   "P1": 67.0,
-  "PX": 16.0,
-  "P2": 17.0,
+  "PX": 17.0,
+  "P2": 16.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -669,8 +669,8 @@
   "Casa": "Piratas",
   "Ospite": "Tapatio",
   "Segno": "1",
-  "P1": 63.0,
-  "PX": 21.0,
+  "P1": 64.0,
+  "PX": 20.0,
   "P2": 16.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -722,8 +722,8 @@
   "Ospite": "Herrera FC",
   "Segno": "1",
   "P1": 73.0,
-  "PX": 16.0,
-  "P2": 11.0,
+  "PX": 17.0,
+  "P2": 10.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -981,9 +981,9 @@
   "Casa": "Sporting San Jose",
   "Ospite": "Herediano",
   "Segno": "1",
-  "P1": 38.5,
+  "P1": 38.0,
   "PX": 29.0,
-  "P2": 32.5,
+  "P2": 33.0,
   "Fonti": 2,
   "Elenco": "betimate, statarea"
  },
@@ -1072,8 +1072,8 @@
   "Casa": "América",
   "Ospite": "Toluca",
   "Segno": "1",
-  "P1": 42.0,
-  "PX": 30.3,
+  "P1": 41.7,
+  "PX": 30.7,
   "P2": 27.7,
   "Fonti": 3,
   "Elenco": "betimate, footymetrics, statarea"
@@ -1978,19 +1978,6 @@
  {
   "Data": "2026-11-01",
   "Ora": "12:30",
-  "Lega": "ITALY - SERIE A",
-  "Casa": "Como",
-  "Ospite": "Unione Venezia",
-  "Segno": "1",
-  "P1": 69.0,
-  "PX": 22.0,
-  "P2": 9.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
- },
- {
-  "Data": "2026-11-01",
-  "Ora": "12:30",
   "Lega": "Italy - Serie A",
   "Casa": "Como",
   "Ospite": "Venezia",
@@ -2000,6 +1987,19 @@
   "P2": 14.0,
   "Fonti": 2,
   "Elenco": "footymetrics, ratingbet"
+ },
+ {
+  "Data": "2026-11-01",
+  "Ora": "12:30",
+  "Lega": "ITALY - SERIE A",
+  "Casa": "Como",
+  "Ospite": "Unione Venezia",
+  "Segno": "1",
+  "P1": 69.0,
+  "PX": 22.0,
+  "P2": 9.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-01",
@@ -3785,19 +3785,6 @@
  {
   "Data": "2026-11-01",
   "Ora": "16:00",
-  "Lega": "Greece - Super League",
-  "Casa": "Levadiakos",
-  "Ospite": "Aris",
-  "Segno": "2",
-  "P1": 32.0,
-  "PX": 27.0,
-  "P2": 41.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
- },
- {
-  "Data": "2026-11-01",
-  "Ora": "16:00",
   "Lega": "GREECE - SUPER LEAGUE",
   "Casa": "Levadiakos",
   "Ospite": "Aris Thessalonikis",
@@ -3807,6 +3794,19 @@
   "P2": 41.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-01",
+  "Ora": "16:00",
+  "Lega": "Greece - Super League",
+  "Casa": "Levadiakos",
+  "Ospite": "Aris",
+  "Segno": "2",
+  "P1": 32.0,
+  "PX": 27.0,
+  "P2": 41.0,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
  },
  {
   "Data": "2026-11-01",
@@ -5462,19 +5462,6 @@
  {
   "Data": "2026-11-01",
   "Ora": "19:00",
-  "Lega": "ISRAEL - LIGAT HAAL",
-  "Casa": "Maccabi Petah Tikva",
-  "Ospite": "Hapoel Beer Sheva",
-  "Segno": "2",
-  "P1": 23.0,
-  "PX": 20.0,
-  "P2": 57.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
- },
- {
-  "Data": "2026-11-01",
-  "Ora": "19:00",
   "Lega": "Israel - Ligat ha'Al",
   "Casa": "Maccabi Petah Tikva",
   "Ospite": "Hapoel Be'er Sheva",
@@ -5484,6 +5471,19 @@
   "P2": 34.7,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-01",
+  "Ora": "19:00",
+  "Lega": "ISRAEL - LIGAT HAAL",
+  "Casa": "Maccabi Petah Tikva",
+  "Ospite": "Hapoel Beer Sheva",
+  "Segno": "2",
+  "P1": 23.0,
+  "PX": 20.0,
+  "P2": 57.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-01",
