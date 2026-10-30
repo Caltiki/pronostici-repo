@@ -825,8 +825,7 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 67.8,
-  "Equa": 1.48,
-  "InSchedina": "si"
+  "Equa": 1.48
  },
  {
   "Data": "2026-11-03",
@@ -1230,7 +1229,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 60.1,
-  "Equa": 1.66
+  "Equa": 1.66,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-03",
@@ -3473,26 +3473,6 @@
   "Sel": "X",
   "Prob": 24.1,
   "Equa": 4.15
- },
- {
-  "Data": "2026-11-03",
-  "Ora": "21:00",
-  "Campionato": "Europe Champions League",
-  "Partita": "LASK - Slovan Bratislava",
-  "Casa": "LASK",
-  "Ospite": "Slovan Bratislava",
-  "Linea_OU": "",
-  "Gol_attesi": 3.46,
-  "Margine": 2.5,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 18.3,
-  "Equa": 5.46
  },
  {
   "Data": "2026-11-03",
