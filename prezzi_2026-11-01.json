@@ -6919,7 +6919,8 @@
   "Mercato": "BTTS",
   "Sel": "NoGol",
   "Prob": 57.0,
-  "Equa": 1.76
+  "Equa": 1.76,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-01",
@@ -8600,8 +8601,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "1X + Over 2.5",
   "Prob": 53.8,
-  "Equa": 1.86,
-  "InSchedina": "si"
+  "Equa": 1.86
  },
  {
   "Data": "2026-11-01",
@@ -13302,6 +13302,26 @@
   "Sel": "1X + Over 2.5",
   "Prob": 43.0,
   "Equa": 2.33
+ },
+ {
+  "Data": "2026-11-01",
+  "Ora": "14:00",
+  "Campionato": "Spain La Liga",
+  "Partita": "Getafe - Sevilla",
+  "Casa": "Getafe",
+  "Ospite": "Sevilla",
+  "Linea_OU": "",
+  "Gol_attesi": 2.08,
+  "Margine": 2.2,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "Gol NoGol",
+  "Mercato": "BTTS",
+  "Sel": "Gol",
+  "Prob": 43.0,
+  "Equa": 2.32
  },
  {
   "Data": "2026-11-01",

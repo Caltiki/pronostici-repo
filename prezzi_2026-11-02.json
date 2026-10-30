@@ -805,7 +805,29 @@
   "Mercato": "OU 1.5",
   "Sel": "Over",
   "Prob": 73.7,
-  "Equa": 1.36
+  "Equa": 1.36,
+  "InSchedina": "si"
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "17:00",
+  "Campionato": "Greece Super League",
+  "Partita": "Atromitos - Volos",
+  "Casa": "Atromitos",
+  "Ospite": "Volos",
+  "Linea_OU": "",
+  "Gol_attesi": 2.6,
+  "Margine": 3.6,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "Under Over",
+  "Mercato": "OU 3.5",
+  "Sel": "Under",
+  "Prob": 73.7,
+  "Equa": 1.36,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-02",
@@ -3478,8 +3500,7 @@
   "Mercato": "BTTS",
   "Sel": "NoGol",
   "Prob": 51.8,
-  "Equa": 1.93,
-  "InSchedina": "si"
+  "Equa": 1.93
  },
  {
   "Data": "2026-11-02",
@@ -3639,8 +3660,7 @@
   "Mercato": "BTTS",
   "Sel": "NoGol",
   "Prob": 50.8,
-  "Equa": 1.97,
-  "InSchedina": "si"
+  "Equa": 1.97
  },
  {
   "Data": "2026-11-02",
@@ -3905,26 +3925,6 @@
  },
  {
   "Data": "2026-11-02",
-  "Ora": "21:00",
-  "Campionato": "Spain La Liga",
-  "Partita": "Deportivo A Coruña - Osasuna",
-  "Casa": "Deportivo A Coruña",
-  "Ospite": "Osasuna",
-  "Linea_OU": "",
-  "Gol_attesi": 2.38,
-  "Margine": 1.8,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "Gol",
-  "Prob": 49.2,
-  "Equa": 2.03
- },
- {
-  "Data": "2026-11-02",
   "Ora": "17:00",
   "Campionato": "Ukraine Premier League",
   "Partita": "Karpaty - Kudrivka",
@@ -4000,26 +4000,6 @@
   "Gruppo": "Combo",
   "Mercato": "Esito + Gol",
   "Sel": "2 + Over 2.5",
-  "Prob": 48.2,
-  "Equa": 2.08
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "22:00",
-  "Campionato": "Brazil Serie B",
-  "Partita": "Athletic Club - Ceará",
-  "Casa": "Athletic Club",
-  "Ospite": "Ceará",
-  "Linea_OU": "",
-  "Gol_attesi": 2.34,
-  "Margine": 5.0,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "Gol",
   "Prob": 48.2,
   "Equa": 2.08
  },
@@ -6822,6 +6802,26 @@
   "Sel": "NoGol",
   "Prob": 27.5,
   "Equa": 3.63
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "16:15",
+  "Campionato": "Spain La Liga 2",
+  "Partita": "Real Oviedo - Las Palmas",
+  "Casa": "Real Oviedo",
+  "Ospite": "Las Palmas",
+  "Linea_OU": "",
+  "Gol_attesi": 2.62,
+  "Margine": 2.3,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "Under Over",
+  "Mercato": "OU 1.5",
+  "Sel": "Under",
+  "Prob": 26.3,
+  "Equa": 3.8
  },
  {
   "Data": "2026-11-02",
