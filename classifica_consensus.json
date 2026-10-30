@@ -3,62 +3,62 @@
   "copertura": {
    "1": 16623,
    "2": 1682,
-   "3": 852,
-   "4": 397,
+   "3": 853,
+   "4": 400,
    "5": 152
   },
-  "totale": 19706,
-  "brier": 0.5805,
-  "brier_clima": 0.6421,
+  "totale": 19710,
+  "brier": 0.5806,
+  "brier_clima": 0.6422,
   "fonti": [
    {
     "nome": "betimate",
-    "partite": 18782,
+    "partite": 18786,
     "brier": 0.5804,
     "brier_media": 0.5795
    },
    {
     "nome": "footymetrics",
-    "partite": 1859,
-    "brier": 0.6012,
+    "partite": 1863,
+    "brier": 0.6013,
     "brier_media": 0.5931
    },
    {
     "nome": "ratingbet",
-    "partite": 813,
-    "brier": 0.5757,
-    "brier_media": 0.581
+    "partite": 814,
+    "brier": 0.576,
+    "brier_media": 0.5812
    },
    {
     "nome": "soccersite",
-    "partite": 1927,
+    "partite": 1931,
     "brier": 0.5959,
-    "brier_media": 0.589
+    "brier_media": 0.5891
    },
    {
     "nome": "statarea",
-    "partite": 1510,
-    "brier": 0.6068,
-    "brier_media": 0.6004
+    "partite": 1512,
+    "brier": 0.6069,
+    "brier_media": 0.6005
    }
   ],
   "mercato": {
-   "partite": 2668,
+   "partite": 2671,
    "poche": false,
-   "brier": 0.5911,
-   "brier_mercato": 0.5774,
+   "brier": 0.5913,
+   "brier_mercato": 0.5776,
    "diff": 0.0137,
    "es": 0.0028,
-   "t": 4.95,
+   "t": 4.94,
    "ic": [
     0.0083,
-    0.0192
+    0.0191
    ]
   }
  },
- "aggiornato": "2026-10-30 06:39",
+ "aggiornato": "2026-10-30 14:26",
  "accordo": {
-  "totale": 1302,
+  "totale": 1304,
   "prende": {
    "statarea": {
     "prese": 537,
@@ -77,19 +77,19 @@
    }
   },
   "mercato": {
-   "partite": 865,
+   "partite": 867,
    "poche": false,
-   "brier": 0.5759,
-   "brier_mercato": 0.5658,
-   "diff": 0.0102,
+   "brier": 0.5762,
+   "brier_mercato": 0.5661,
+   "diff": 0.01,
    "es": 0.0042,
-   "t": 2.44,
+   "t": 2.41,
    "ic": [
-    0.002,
-    0.0183
+    0.0019,
+    0.0182
    ]
   },
-  "favorito_mercato": 56.1,
+  "favorito_mercato": 55.9,
   "testa_a_testa": {
    "partite": 224,
    "consensus": 64.7,
