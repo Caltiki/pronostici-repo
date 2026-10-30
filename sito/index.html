@@ -1501,7 +1501,15 @@
      "Tutte le partite delle prossime 24 ore. Quote 1xBet, solo informative: non entrano nel pronostico."]
   ];
   var MK_ORDINI = [["file", "Per orario"], ["mov", "Per movimento"], ["margine", "Per margine"]];
-  var GRUPPO_PRONOSTICI = [["prezzi", "Probabilit\u00e0 reali"], ["mercato", "Mercato"], ["wdw", "FootyStats"]];
+  var GRUPPO_PRONOSTICI_TUTTI = [["prezzi", "Probabilit\u00e0 reali"], ["mercato", "Mercato"], ["wdw", "FootyStats"]];
+  // Il tasto FootyStats compare solo quando i dati ci sono davvero
+  // (footystatswdw_index.json con almeno una data): finche' FootyStats
+  // rifiuta i server di GitHub, un tasto che porta a una pagina vuota
+  // confonde. Chi ci arriva da un link diretto lo vede lo stesso.
+  var WDW_PRONTO = false;
+  function gruppoPronostici(sez) {
+    return GRUPPO_PRONOSTICI_TUTTI.filter(function (g) { return g[0] !== "wdw" || WDW_PRONTO || sez === "wdw"; });
+  }
 
   // FOOTYSTATS 1X2 (footystats_wdw_ci.py, pagina win-draw-win). Sono le
   // quote di un bookmaker con il margine tolto: la stessa natura delle
@@ -1732,7 +1740,7 @@
 
       var vista = viste.filter(function (v) { return v[0] === stato.vista[sez]; })[0];
       var testa = (sez === "consensus" || sez === "accordo" ? chipsHtml(GRUPPO_CONSENSO, sez, "data-gruppo") : "") +
-        (sez === "prezzi" || sez === "mercato" || sez === "wdw" ? chipsHtml(GRUPPO_PRONOSTICI, sez, "data-gruppo") : "") +
+        (sez === "prezzi" || sez === "mercato" || sez === "wdw" ? chipsHtml(gruppoPronostici(sez), sez, "data-gruppo") : "") +
         (sez === "poisson" ? chipsHtml(GRUPPO_POISSON, sez, "data-gruppo") : "") +
         chipsHtml(date.map(function (x) { return [x, etichettaData(x)]; }), d, "data-data") +
         (viste.length > 1 ? chipsHtml(viste, vista[0], "data-vista") : "") +
@@ -1753,7 +1761,7 @@
     }).catch(function (e) {
       if (sez === "wdw") {
         // Prima del primo giro l'indice non c'e': non e' un guasto.
-        $cont.innerHTML = chipsHtml(GRUPPO_PRONOSTICI, sez, "data-gruppo") +
+        $cont.innerHTML = chipsHtml(gruppoPronostici(sez), sez, "data-gruppo") +
           messaggio("vuoto", "FootyStats non \u00e8 ancora stato pubblicato: arriva col giro notturno. " +
             "Se non compare nemmeno domani, il motivo \u00e8 nel log del passo \u201cScarica FootyStats\u201d su GitHub Actions.");
         $cont.querySelectorAll("[data-gruppo]").forEach(function (b) {
@@ -4603,6 +4611,25 @@
 
   leggiHash();
   disegna();
+  leggi("footystatswdw_index.json").then(function (ix) {
+    if (!ix || !Array.isArray(ix.date) || !ix.date.length) return;
+    WDW_PRONTO = true;
+    // La pagina e' gia' disegnata: si aggiunge il tasto dove serve.
+    if (stato.sez === "prezzi" || stato.sez === "mercato") {
+      var m = $cont.querySelector('[data-gruppo="mercato"]');
+      if (m && !$cont.querySelector('[data-gruppo="wdw"]')) {
+        var sez = stato.sez;
+        var b = document.createElement("button");
+        b.type = "button"; b.setAttribute("data-gruppo", "wdw"); b.setAttribute("aria-pressed", "false");
+        b.textContent = "FootyStats";
+        b.addEventListener("click", function () {
+          if (!stato.data.wdw) stato.data.wdw = stato.data[sez];
+          stato.sez = "wdw"; stato.cerca = ""; stato.limite = PASSO; disegna();
+        });
+        m.parentNode.appendChild(b);
+      }
+    }
+  }, function () { /* nessun dato: il tasto resta nascosto */ });
 })();
 </script>
 </body>
