@@ -1861,7 +1861,7 @@
       // solo le sbagliate; ritoccandoli si torna a tutte.
       var p = stato.esito;
       return '<div class="riepilogo">' +
-        '<button type="button" class="filtro-esito' + (p === "presa" ? " attivo" : "") + '" data-esito="presa"><b><em style="font-style:normal;color:var(--buono)">\u2713 ' + prese + "</em></b><span>prese" + (p === "presa" ? " \u00b7 mostra tutte" : "") + "</span></button>" +
+        '<button type="button" class="filtro-esito' + (p === "presa" ? " attivo" : "") + '" data-esito="presa"><b><em style="font-style:normal;color:var(--buono)">\u2713 ' + prese + "</em></b><span>vinte" + (p === "presa" ? " \u00b7 mostra tutte" : "") + "</span></button>" +
         '<button type="button" class="filtro-esito' + (p === "sbagliata" ? " attivo" : "") + '" data-esito="sbagliata"><b><em style="font-style:normal;color:var(--male)">\u2717 ' + sbagliate + "</em></b><span>sbagliate" + (p === "sbagliata" ? " \u00b7 mostra tutte" : "") + "</span></button>" +
         "<div><b>" + attesa + "</b><span>senza risultato</span></div></div>" +
         '<p class="conta">Tocca \u2713 o \u2717 per vedere solo quelle. Le partite finite sono in cima.</p>';
@@ -2153,11 +2153,11 @@
     // partita): niente spunta, che per una partita giocata non ha senso.
     var es = r.Esito || (r.Data && r.Data < oggi() ? "attesa" : null), gol = (r.Gol_Casa != null && r.Gol_Ospite != null) ? r.Gol_Casa + "-" + r.Gol_Ospite : "";
     if (es === "attesa") det.unshift("<p>Risultato non disponibile: nessuna delle fonti dei risultati ha questa partita.</p>");
-    else if (es) det.unshift("<p>Finita " + esc(gol) + ": " + (es === "presa" ? "presa" : es === "sbagliata" ? "sbagliata" : "rimborso") +
+    else if (es) det.unshift("<p>Finita " + esc(gol) + ": " + (es === "presa" ? "vinta" : es === "sbagliata" ? "sbagliata" : "rimborso") +
       (r.Risultato_Da ? " (risultato da " + esc(r.Risultato_Da) + ")" : "") + ".</p>");
     var segnoEsito = es === "presa" ? "\u2713" : es === "sbagliata" ? "\u2717" : es === "attesa" ? "\u2013" : "\u21ba";
     return '<div class="riga' + (scelta ? " scelta" : "") + (es ? " finita" : "") + '">' +
-      (es ? '<span class="spunta esito ' + esc(es) + '" title="' + esc(es) + '" aria-label="' + esc(es) + '">' + segnoEsito + "</span>"
+      (es ? '<span class="spunta esito ' + esc(es) + '" title="' + esc(es === "presa" ? "vinta" : es) + '" aria-label="' + esc(es === "presa" ? "vinta" : es) + '">' + segnoEsito + "</span>"
         : '<label class="spunta" title="Aggiungi alla multipla"><input type="checkbox" data-chiave="' +
       esc(k) + '" data-i="' + i + '"' + (scelta ? " checked" : "") + ' aria-label="Aggiungi alla multipla"></label>') +
       "<details><summary>" +
