@@ -11,9 +11,9 @@
   "Tip": "12",
   "Conf": 0.9,
   "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
+  "Q1": 2.3,
+  "QX": 3.4,
+  "Q2": 2.55
  },
  {
   "Casa": "Hapoel Sderot",
@@ -27,9 +27,9 @@
   "Tip": "Over 2.5 Goals",
   "Conf": 0.85,
   "Q tip": null,
-  "Q1": 2.0,
-  "QX": 3.5,
-  "Q2": 3.0
+  "Q1": 1.75,
+  "QX": 3.7,
+  "Q2": 3.6
  },
  {
   "Casa": "Ballkani",
@@ -37,6 +37,22 @@
   "Ora": "13:00",
   "Paese": "Kosovo",
   "Lega": "Superliga",
+  "Mercato": "DC",
+  "Sel": "12",
+  "Linea": null,
+  "Tip": "12",
+  "Conf": 0.85,
+  "Q tip": null,
+  "Q1": 1.6,
+  "QX": 3.5,
+  "Q2": 5.0
+ },
+ {
+  "Casa": "Sierra Leone U20",
+  "Ospite": "Senegal U20",
+  "Ora": "17:00",
+  "Paese": "Africa",
+  "Lega": "Africa Cup Of Nations U20",
   "Mercato": "DC",
   "Sel": "12",
   "Linea": null,
@@ -62,22 +78,6 @@
   "Q1": 1.95,
   "QX": 2.88,
   "Q2": 3.9
- },
- {
-  "Casa": "Sierra Leone U20",
-  "Ospite": "Senegal U20",
-  "Ora": "17:00",
-  "Paese": "Africa",
-  "Lega": "Africa Cup Of Nations U20",
-  "Mercato": "DC",
-  "Sel": "12",
-  "Linea": null,
-  "Tip": "12",
-  "Conf": 0.85,
-  "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
  },
  {
   "Casa": "Santa Cruz AC U20",
@@ -139,9 +139,25 @@
   "Tip": "Home Win",
   "Conf": 0.8,
   "Q tip": null,
-  "Q1": 1.29,
-  "QX": 5.0,
-  "Q2": 9.0
+  "Q1": 1.4,
+  "QX": 4.5,
+  "Q2": 6.5
+ },
+ {
+  "Casa": "Fratria II",
+  "Ospite": "Ludogorets III",
+  "Ora": "13:00",
+  "Paese": "Bulgaria",
+  "Lega": "Third League Northeast",
+  "Mercato": "1X2",
+  "Sel": "2",
+  "Linea": null,
+  "Tip": "Away Win",
+  "Conf": 0.8,
+  "Q tip": null,
+  "Q1": null,
+  "QX": null,
+  "Q2": null
  },
  {
   "Casa": "El Dakhleya",
@@ -155,9 +171,9 @@
   "Tip": "12",
   "Conf": 0.8,
   "Q tip": null,
-  "Q1": 2.62,
-  "QX": 3.1,
-  "Q2": 2.45
+  "Q1": 2.5,
+  "QX": 2.8,
+  "Q2": 2.8
  },
  {
   "Casa": "Marek",
@@ -176,8 +192,8 @@
   "Q2": 2.15
  },
  {
-  "Casa": "Teleghma",
-  "Ospite": "CA Batna",
+  "Casa": "Khroub",
+  "Ospite": "MO Bejaia",
   "Ora": "15:00",
   "Paese": "Algeria",
   "Lega": "Ligue 2",
@@ -208,6 +224,22 @@
   "Q2": 2.51
  },
  {
+  "Casa": "Attram de Visser",
+  "Ospite": "Nukunu",
+  "Ora": "16:00",
+  "Paese": "Ghana",
+  "Lega": "Division One League",
+  "Mercato": "OU",
+  "Sel": "Under",
+  "Linea": 2.5,
+  "Tip": "Under 2.5 Goals",
+  "Conf": 0.8,
+  "Q tip": null,
+  "Q1": null,
+  "QX": null,
+  "Q2": null
+ },
+ {
   "Casa": "Shakhtar Donetsk",
   "Ospite": "Obolon'-Brovar",
   "Ora": "17:00",
@@ -222,22 +254,6 @@
   "Q1": 1.06,
   "QX": 9.1,
   "Q2": 34.0
- },
- {
-  "Casa": "Baladiyyat Al Mehalla",
-  "Ospite": "AL Nasr SC",
-  "Ora": "13:30",
-  "Paese": "Egypt",
-  "Lega": "Second League",
-  "Mercato": "DC",
-  "Sel": "12",
-  "Linea": null,
-  "Tip": "12",
-  "Conf": 0.8,
-  "Q tip": null,
-  "Q1": 2.38,
-  "QX": 2.9,
-  "Q2": 2.88
  },
  {
   "Casa": "Al-Gharafa",
@@ -304,6 +320,22 @@
   "Q2": null
  },
  {
+  "Casa": "Teleghma",
+  "Ospite": "CA Batna",
+  "Ora": "15:00",
+  "Paese": "Algeria",
+  "Lega": "Ligue 2",
+  "Mercato": "OU",
+  "Sel": "Under",
+  "Linea": 2.5,
+  "Tip": "Under 2.5 Goals",
+  "Conf": 0.8,
+  "Q tip": null,
+  "Q1": 3.2,
+  "QX": 2.88,
+  "Q2": 2.2
+ },
+ {
   "Casa": "Al Shahaniya",
   "Ospite": "Al Ahli Doha",
   "Ora": "15:15",
@@ -352,6 +384,38 @@
   "Q2": null
  },
  {
+  "Casa": "Kahraba Ismailia",
+  "Ospite": "Masar",
+  "Ora": "13:30",
+  "Paese": "Egypt",
+  "Lega": "Second League",
+  "Mercato": "DC",
+  "Sel": "12",
+  "Linea": null,
+  "Tip": "12",
+  "Conf": 0.75,
+  "Q tip": null,
+  "Q1": 2.3,
+  "QX": 2.8,
+  "Q2": 3.1
+ },
+ {
+  "Casa": "Proxy",
+  "Ospite": "Ismaily SC",
+  "Ora": "13:30",
+  "Paese": "Egypt",
+  "Lega": "Second League",
+  "Mercato": "DC",
+  "Sel": "12",
+  "Linea": null,
+  "Tip": "12",
+  "Conf": 0.75,
+  "Q tip": null,
+  "Q1": 2.25,
+  "QX": 2.8,
+  "Q2": 3.2
+ },
+ {
   "Casa": "RCK",
   "Ospite": "FocuSport",
   "Ora": "16:30",
@@ -380,8 +444,8 @@
   "Conf": 0.75,
   "Q tip": null,
   "Q1": 1.83,
-  "QX": 3.25,
-  "Q2": 3.8
+  "QX": 3.3,
+  "Q2": 3.6
  },
  {
   "Casa": "Flamengo U20",
@@ -398,54 +462,6 @@
   "Q1": null,
   "QX": null,
   "Q2": null
- },
- {
-  "Casa": "Kahraba Ismailia",
-  "Ospite": "Masar",
-  "Ora": "13:30",
-  "Paese": "Egypt",
-  "Lega": "Second League",
-  "Mercato": "DC",
-  "Sel": "12",
-  "Linea": null,
-  "Tip": "12",
-  "Conf": 0.75,
-  "Q tip": null,
-  "Q1": 2.2,
-  "QX": 3.0,
-  "Q2": 3.0
- },
- {
-  "Casa": "Pharco",
-  "Ospite": "Itesalat",
-  "Ora": "13:30",
-  "Paese": "Egypt",
-  "Lega": "Second League",
-  "Mercato": "DC",
-  "Sel": "12",
-  "Linea": null,
-  "Tip": "12",
-  "Conf": 0.75,
-  "Q tip": null,
-  "Q1": 2.45,
-  "QX": 2.75,
-  "Q2": 2.88
- },
- {
-  "Casa": "Proxy",
-  "Ospite": "Ismaily SC",
-  "Ora": "13:30",
-  "Paese": "Egypt",
-  "Lega": "Second League",
-  "Mercato": "DC",
-  "Sel": "12",
-  "Linea": null,
-  "Tip": "12",
-  "Conf": 0.75,
-  "Q tip": null,
-  "Q1": 2.3,
-  "QX": 3.0,
-  "Q2": 2.9
  },
  {
   "Casa": "Al Sadd",
@@ -469,14 +485,62 @@
   "Ora": "13:30",
   "Paese": "Egypt",
   "Lega": "Second League",
-  "Mercato": "DC",
-  "Sel": "12",
+  "Mercato": "BTTS",
+  "Sel": "No",
   "Linea": null,
-  "Tip": "12",
+  "Tip": "BTTS No",
   "Conf": 0.7,
   "Q tip": null,
-  "Q1": 2.15,
-  "QX": 2.88,
-  "Q2": 3.3
+  "Q1": 2.5,
+  "QX": 2.62,
+  "Q2": 3.0
+ },
+ {
+  "Casa": "Lokomotiv Plovdiv II",
+  "Ospite": "Yambol 1915",
+  "Ora": "13:30",
+  "Paese": "Bulgaria",
+  "Lega": "Third League Southeast",
+  "Mercato": "1X2",
+  "Sel": "2",
+  "Linea": null,
+  "Tip": "Away Win",
+  "Conf": 0.7,
+  "Q tip": null,
+  "Q1": null,
+  "QX": null,
+  "Q2": null
+ },
+ {
+  "Casa": "Pharco",
+  "Ospite": "Itesalat",
+  "Ora": "13:30",
+  "Paese": "Egypt",
+  "Lega": "Second League",
+  "Mercato": "BTTS",
+  "Sel": "No",
+  "Linea": null,
+  "Tip": "BTTS No",
+  "Conf": 0.7,
+  "Q tip": null,
+  "Q1": 2.6,
+  "QX": 2.5,
+  "Q2": 3.0
+ },
+ {
+  "Casa": "Baladiyyat Al Mehalla",
+  "Ospite": "AL Nasr SC",
+  "Ora": "13:30",
+  "Paese": "Egypt",
+  "Lega": "Second League",
+  "Mercato": "BTTS",
+  "Sel": "No",
+  "Linea": null,
+  "Tip": "BTTS No",
+  "Conf": 0.65,
+  "Q tip": null,
+  "Q1": 2.5,
+  "QX": 2.6,
+  "Q2": 3.0
  }
 ]
