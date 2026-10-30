@@ -2409,6 +2409,27 @@
  },
  {
   "Data": "2026-11-01",
+  "Ora": "20:45",
+  "Campionato": "Italy Serie A",
+  "Partita": "Juventus - Napoli",
+  "Casa": "Juventus",
+  "Ospite": "Napoli",
+  "Linea_OU": "",
+  "Gol_attesi": 2.58,
+  "Margine": 0.6,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "Under Over",
+  "Mercato": "OU 3.5",
+  "Sel": "Under",
+  "Prob": 74.1,
+  "Equa": 1.35,
+  "InSchedina": "si"
+ },
+ {
+  "Data": "2026-11-01",
   "Ora": "14:00",
   "Campionato": "Sweden Allsvenskan",
   "Partita": "Djurgården - Degerfors",
@@ -5456,7 +5477,8 @@
   "Mercato": "1X2",
   "Sel": "2",
   "Prob": 60.8,
-  "Equa": 1.65
+  "Equa": 1.65,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-01",
@@ -5596,8 +5618,7 @@
   "Mercato": "1X2",
   "Sel": "2",
   "Prob": 60.7,
-  "Equa": 1.65,
-  "InSchedina": "si"
+  "Equa": 1.65
  },
  {
   "Data": "2026-11-01",
@@ -7880,8 +7901,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "2 + Over 1.5",
   "Prob": 55.1,
-  "Equa": 1.82,
-  "InSchedina": "si"
+  "Equa": 1.82
  },
  {
   "Data": "2026-11-01",
@@ -19085,14 +19105,14 @@
  },
  {
   "Data": "2026-11-01",
-  "Ora": "12:00",
-  "Campionato": "Ukraine Premier League",
-  "Partita": "Kolos Kovalivka - Polissya Zhytomyr",
-  "Casa": "Kolos Kovalivka",
-  "Ospite": "Polissya Zhytomyr",
+  "Ora": "14:30",
+  "Campionato": "Netherlands Eredivisie",
+  "Partita": "Excelsior - FC Twente",
+  "Casa": "Excelsior",
+  "Ospite": "FC Twente",
   "Linea_OU": "",
-  "Gol_attesi": 2.62,
-  "Margine": 7.8,
+  "Gol_attesi": 3.35,
+  "Margine": 0.9,
   "Movimento": null,
   "Principale": "",
   "Schedina": "si",
@@ -19100,8 +19120,8 @@
   "Gruppo": "1X2",
   "Mercato": "1X2",
   "Sel": "X",
-  "Prob": 23.2,
-  "Equa": 4.31
+  "Prob": 21.5,
+  "Equa": 4.64
  },
  {
   "Data": "2026-11-01",
