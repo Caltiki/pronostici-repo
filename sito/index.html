@@ -1271,6 +1271,17 @@
     table.xgt.conpt td.sq > div { gap: 4px; }
     table.xgt.conpv th:first-child, table.xgt.conpv td:first-child { display: none; }
   }
+  /* RICERCA NEGLI ALTRI GIORNI */
+  .altrove { margin: 10px 0 0; }
+  .altrove p.piccolo { color: var(--tenue); font-size: .82rem; margin: 6px 2px; }
+  .altrove button.vai-altrove {
+    display: block; width: 100%; text-align: left; font: inherit; color: inherit; cursor: pointer;
+    background: var(--carta, var(--scheda)); border: 1px solid var(--bordo); border-radius: var(--raggio-sm);
+    padding: 11px 14px; margin: 8px 0; box-shadow: var(--ombra);
+  }
+  .altrove button.vai-altrove:hover { border-color: var(--evidenza); }
+  .altrove button.vai-altrove b { color: var(--evidenza); }
+  .altrove button.vai-altrove > span:last-child { display: block; margin-top: 3px; font-size: .86rem; color: var(--tenue); }
 </style>
 </head>
 <body>
@@ -1462,10 +1473,10 @@
   // si leggono soltanto, come fa l'addon: la regola vive in un posto solo.
   var MK_VISTE = [
     ["aff", "Affidabili",
-     "Margine basso e i due de-vig concordi: le probabilit\u00e0 pi\u00f9 attendibili. Attendibile non vuol dire " +
+     "Solo le partite delle prossime 24 ore. Margine basso e i due de-vig concordi: le probabilit\u00e0 pi\u00f9 attendibili. Attendibile non vuol dire " +
      "conveniente: sono le stime migliori del mercato, quindi il prezzo le incorpora gi\u00e0. Servono come metro."],
     ["mov", "Movimenti",
-     "Solo le partite dove il mercato si \u00e8 mosso davvero. Conta anche il margine: un movimento piccolo su un " +
+     "Solo le partite delle prossime 24 ore, e fra queste solo quelle dove il mercato si \u00e8 mosso davvero. Conta anche il margine: un movimento piccolo su un " +
      "mercato quotato con cura pesa pi\u00f9 di uno grande su una lega minore, dove spesso \u00e8 solo la correzione dell'apertura."],
     ["tutte", "Tutte",
      "Tutte le partite delle prossime 24 ore. Quote 1xBet, solo informative: non entrano nel pronostico."]
@@ -1648,6 +1659,7 @@
   }
 
   var passate = {};
+  var DATE_SEZ = {};
   function disegnaGiornata(sez) {
     var conf = SEZ[sez];
     var indice = conf.indice, prefisso = conf.prefisso, viste = conf.viste, ordini = conf.ordini;
@@ -1677,6 +1689,7 @@
         $cont.innerHTML = messaggio("vuoto", "Nessuna giornata pubblicata.");
         return;
       }
+      DATE_SEZ[sez] = date.slice();
       if (date.indexOf(stato.data[sez]) < 0) stato.data[sez] = dataIniziale(date);
       var d = stato.data[sez];
       scriviHash();
@@ -1788,7 +1801,10 @@
       return;
     }
     if (!visibili.length) {
-      $r.innerHTML = messaggio("vuoto", "Nessuna riga corrisponde a “" + esc(stato.cerca) + "”.");
+      $r.innerHTML = messaggio("vuoto", "Nessuna riga corrisponde a “" + esc(stato.cerca) + "”" +
+        (vista !== "tutte" ? " in questa vista" : "") + " in questa giornata.") +
+        '<div id="altrove" class="altrove"><p class="piccolo">Cerco negli altri giorni&hellip;</p></div>';
+      cercaAltrove(sez, data, stato.cerca, tutte);
       return;
     }
 
@@ -1827,6 +1843,75 @@
       });
     }
     rimettiPosto($r);
+  }
+
+  // ------------------------------------------- la ricerca negli altri giorni
+  //
+  // Chi cerca "Milan" su Oggi non trova il derby di sabato: sta in un altro
+  // giorno, o in un'altra vista. Quando la ricerca non trova niente, si
+  // guardano le altre giornate della stessa sezione (e le altre viste di
+  // questa) e si propone dove andare. Stessi file e stessa ricerca di
+  // testoCerca(): niente regole nuove.
+  function cercaAltrove(sez, data, cerca, righeOggi) {
+    var q = cerca.toLowerCase(), conf = SEZ[sez], vista = stato.vista[sez];
+    var haTutte = conf.viste.some(function (v) { return v[0] === "tutte"; });
+    // Prima il giorno scelto, poi i prossimi dal piu' vicino, poi i
+    // passati dal piu' recente: chi cerca una partita di solito la cerca
+    // in arrivo.
+    var o = oggi();
+    var date = (DATE_SEZ[sez] || []).slice().sort(function (a, b) {
+      function rango(d) { return d === data ? 0 : d >= o ? 1 : 2; }
+      var ra = rango(a), rb = rango(b);
+      if (ra !== rb) return ra - rb;
+      return ra === 2 ? (a < b ? 1 : -1) : (a < b ? -1 : 1);
+    });
+    function partite(righe) {
+      var n = 0, inVista = 0, nomi = [];
+      (Array.isArray(righe) ? righe : []).forEach(function (r) {
+        if (testoCerca(r).indexOf(q) < 0) return;
+        n++;
+        if (conf.tiene(r, vista)) inVista++;
+        var nome = r.Casa && r.Ospite ? r.Casa + " – " + r.Ospite : (r.Partita || "");
+        if (nome && nomi.indexOf(nome) < 0) nomi.push(nome);
+      });
+      return { n: n, inVista: inVista, nomi: nomi };
+    }
+    var carichi = date.map(function (d) {
+      if (d === data) return Promise.resolve([d, partite(righeOggi)]);
+      return leggi((sez === "prezzi" && passate[d] ? "schedina_" : conf.prefisso) + d + ".json")
+        .then(function (r) { return [d, partite(r)]; }, function () { return [d, null]; });
+    });
+    Promise.all(carichi).then(function (ris) {
+      var $a = document.getElementById("altrove");
+      // La pagina e' cambiata intanto (altra ricerca, altro giorno): niente.
+      if (!$a || stato.sez !== sez || stato.data[sez] !== data || stato.cerca !== cerca) return;
+      var voci = ris.filter(function (x) { return x[1] && x[1].n && (x[0] !== data || haTutte); })
+        .map(function (x) {
+          var d = x[0], t = x[1];
+          // La vista resta quella scelta se la partita ci sta; se no "Tutte".
+          var nuova = t.inVista ? vista : (haTutte ? "tutte" : vista);
+          if (d === data && nuova === vista) return "";
+          var mostra = t.nomi.slice(0, 2).map(esc).join(", ") + (t.nomi.length > 2 ? " e altre " + (t.nomi.length - 2) : "");
+          var nomeVista = (conf.viste.filter(function (v) { return v[0] === nuova; })[0] || [])[1] || "";
+          return '<button type="button" class="vai-altrove" data-vai-data="' + esc(d) + '" data-vai-vista="' + esc(nuova) + '">' +
+            "<b>" + esc(d === data ? "Questo giorno" : etichettaData(d)) + "</b>" +
+            (nuova !== vista ? ' <span class="piccolo">· vista ' + esc(nomeVista) + "</span>" : "") +
+            "<span>" + mostra + " · " + t.n + (t.n === 1 ? " riga" : " righe") + "</span></button>";
+        }).filter(Boolean);
+      $a.innerHTML = voci.length
+        ? '<p class="piccolo">“' + esc(cerca) + "” si trova qui:</p>" + voci.join("")
+        : '<p class="piccolo">Nemmeno negli altri giorni pubblicati in questa sezione.' +
+          (sez === "mercato" ? " Il Mercato ha solo le partite delle prossime 24 ore: le altre si trovano in Probabilit\u00e0 reali." : "") + "</p>";
+      $a.querySelectorAll("[data-vai-data]").forEach(function (b) {
+        b.addEventListener("click", function () {
+          stato.data[sez] = b.dataset.vaiData;
+          stato.vista[sez] = b.dataset.vaiVista;
+          stato.limite = PASSO; stato.esito = "";
+          window.scrollTo(0, 0);
+          disegna();
+        });
+      });
+    });
   }
 
   // --------------------------------------------------------- grafica
