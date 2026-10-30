@@ -1501,7 +1501,22 @@
      "Tutte le partite delle prossime 24 ore. Quote 1xBet, solo informative: non entrano nel pronostico."]
   ];
   var MK_ORDINI = [["file", "Per orario"], ["mov", "Per movimento"], ["margine", "Per margine"]];
-  var GRUPPO_PRONOSTICI = [["prezzi", "Probabilit\u00e0 reali"], ["mercato", "Mercato"]];
+  var GRUPPO_PRONOSTICI = [["prezzi", "Probabilit\u00e0 reali"], ["mercato", "Mercato"], ["wdw", "FootyStats"]];
+
+  // FOOTYSTATS 1X2 (footystats_wdw_ci.py, pagina win-draw-win). Sono le
+  // quote di un bookmaker con il margine tolto: la stessa natura delle
+  // Probabilita' reali, da un'altra fonte e su molti piu' campionati. NON
+  // e' un modello e non vota nel consenso. Nei giorni passati FootyStats
+  // segna anche l'esito uscito: la spunta dice se e' uscito il segno piu'
+  // probabile. Mancano orario e campionato (solo il paese).
+  var WD_VISTE = [
+    ["tutte", "Tutte",
+     "Le probabilit\u00e0 1X2 di FootyStats: quote di un bookmaker con il suo guadagno tolto, su moltissimi campionati. " +
+     "Non hanno orario n\u00e9 campionato, solo il paese. Nei giorni passati \u2713 se \u00e8 uscito il segno pi\u00f9 probabile, \u2717 se no."],
+    ["forti", "Favorita sopra il 60%",
+     "Solo le partite in cui il segno pi\u00f9 probabile supera il 60%."]
+  ];
+  var WD_ORDINI = [["prob", "Per probabilit\u00e0"], ["paese", "Per paese"], ["file", "Come FootyStats"]];
   // Gli xG delle squadre stanno dentro "Poisson": sono i numeri da cui il
   // Poisson parte, e la barra in alto non ha posto per un'altra voce.
   var GRUPPO_POISSON = [["poisson", "Partite"], ["xg", "xG squadre"]];
@@ -1512,9 +1527,9 @@
 
   var stato = {
     sez: "prezzi",
-    data: { prezzi: null, mercato: null, consensus: null, accordo: null, poisson: null, sure: null },
-    vista: { prezzi: "partite", mercato: "aff", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" },
-    ordine: { prezzi: "ora", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" },
+    data: { prezzi: null, mercato: null, consensus: null, accordo: null, poisson: null, sure: null, wdw: null },
+    vista: { wdw: "tutte", prezzi: "partite", mercato: "aff", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" },
+    ordine: { wdw: "prob", prezzi: "ora", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" },
     cerca: "",
     fonteCm: "",
     esito: "",
@@ -1582,6 +1597,8 @@
                tiene: function () { return true; }, riepilogo: riepilogoAccordo, riga: rigaAccordo, nota: "" },
     poisson: { indice: "poisson_index.json", prefisso: "poisson_", viste: PO_VISTE, ordini: PO_ORDINI,
                tiene: poTiene, riepilogo: riepilogoPoisson, riga: rigaPoisson, nota: "" },
+    wdw: { indice: "footystatswdw_index.json", prefisso: "footystatswdw_", viste: WD_VISTE, ordini: WD_ORDINI,
+           tiene: wdTiene, riepilogo: riepilogoWdw, riga: rigaWdw, arricchisci: arricchisciWdw, nota: "" },
     sure: { indice: "fpnet_index.json", prefisso: "fpnet_", viste: SB_VISTE, ordini: SB_ORDINI,
             tiene: sbTiene, riepilogo: riepilogoSure, riga: rigaSure, arricchisci: arricchisciSure,
             nota: " \u00b7 la tacca sulle barre segna il 60%" }
@@ -1663,7 +1680,7 @@
   function disegna() {
     scriviHash();
     document.querySelectorAll("nav.sezioni button[data-sez]").forEach(function (b) {
-      var accesa = stato.sez === "accordo" ? "consensus" : stato.sez === "mercato" ? "prezzi" :
+      var accesa = stato.sez === "accordo" ? "consensus" : (stato.sez === "mercato" || stato.sez === "wdw") ? "prezzi" :
         stato.sez === "xg" ? "poisson" : stato.sez;
       b.setAttribute("aria-current", String(b.dataset.sez === accesa));
     });
@@ -1715,7 +1732,7 @@
 
       var vista = viste.filter(function (v) { return v[0] === stato.vista[sez]; })[0];
       var testa = (sez === "consensus" || sez === "accordo" ? chipsHtml(GRUPPO_CONSENSO, sez, "data-gruppo") : "") +
-        (sez === "prezzi" || sez === "mercato" ? chipsHtml(GRUPPO_PRONOSTICI, sez, "data-gruppo") : "") +
+        (sez === "prezzi" || sez === "mercato" || sez === "wdw" ? chipsHtml(GRUPPO_PRONOSTICI, sez, "data-gruppo") : "") +
         (sez === "poisson" ? chipsHtml(GRUPPO_POISSON, sez, "data-gruppo") : "") +
         chipsHtml(date.map(function (x) { return [x, etichettaData(x)]; }), d, "data-data") +
         (viste.length > 1 ? chipsHtml(viste, vista[0], "data-vista") : "") +
@@ -1734,6 +1751,19 @@
         disegnaRighe(sez, righe, d);
       });
     }).catch(function (e) {
+      if (sez === "wdw") {
+        // Prima del primo giro l'indice non c'e': non e' un guasto.
+        $cont.innerHTML = chipsHtml(GRUPPO_PRONOSTICI, sez, "data-gruppo") +
+          messaggio("vuoto", "FootyStats non \u00e8 ancora stato pubblicato: arriva col giro notturno. " +
+            "Se non compare nemmeno domani, il motivo \u00e8 nel log del passo \u201cScarica FootyStats\u201d su GitHub Actions.");
+        $cont.querySelectorAll("[data-gruppo]").forEach(function (b) {
+          b.addEventListener("click", function () {
+            if (b.dataset.gruppo === sez) return;
+            stato.sez = b.dataset.gruppo; stato.cerca = ""; stato.limite = PASSO; disegna();
+          });
+        });
+        return;
+      }
       $cont.innerHTML = messaggio("errore",
         "Non riesco a leggere i dati (" + esc(e.message) + "). " +
         "Riprova fra qualche minuto: se il giro notturno sta scrivendo, i file arrivano dopo.");
@@ -2135,6 +2165,9 @@
 
   function ordina(sez, v) {
     var o = stato.ordine[sez];
+    if (o === "paese") v.sort(function (a, b) {
+      return String(a.Lega || "").localeCompare(String(b.Lega || "")) || String(a.Casa || "").localeCompare(String(b.Casa || ""));
+    });
     if (o === "ora") v.sort(function (a, b) { return (a.Ora || "").localeCompare(b.Ora || ""); });
     else if (o === "margine") v.sort(function (a, b) {
       var x = num(a.Margine), y = num(b.Margine);
@@ -2181,6 +2214,7 @@
     if (sez === "sure") {
       return "Nessuna delle " + n + " Sure Bets del " + data + " ha il prezzo: AsianOdds copre le prossime 24 ore. Prova \u201cTutte\u201d.";
     }
+    if (sez === "wdw") return "Nessuna delle " + n + " partite del " + data + " ha una favorita sopra il 60%. Prova \u201cTutte\u201d.";
     if (sez === "poisson") {
       return "Nessuna delle " + n + " partite del " + data + " ha il prezzo: AsianOdds copre le prossime 24 ore. Prova \u201cTutte\u201d.";
     }
@@ -3094,6 +3128,71 @@
       (m1 != null ? tripla("mercato", m1, mx, m2) : "") +
       "</div>" +
       '<div class="numero"><b>' + f2(gol) + "</b><span>gol attesi</span></div>" +
+      "</summary>" +
+      '<div class="dettaglio">' + det.join("") + "</div>" +
+      "</details></div>";
+  }
+
+  // ------------------------------------------------- FootyStats 1X2
+
+  function arricchisciWdw(righe) {
+    return (Array.isArray(righe) ? righe : []).map(function (r) {
+      var p = [num(r.P1), num(r.PX), num(r.P2)];
+      if (p.some(function (x) { return x == null; })) return r;
+      var i = p.indexOf(Math.max.apply(null, p));
+      // Segno e _prob servono all'ordinamento comune (probOrdine).
+      return Object.assign({}, r, { Segno: r.Pron || ["1", "X", "2"][i], _prob: p[i] / 100, _fav: p[i] });
+    });
+  }
+
+  function wdTiene(r, tipo) {
+    if (tipo === "forti") return r._fav != null && r._fav > 60;
+    return true;
+  }
+
+  function riepilogoWdw(v) {
+    var con = v.filter(function (r) { return r.Esito && r._fav != null; });
+    if (con.length) {
+      // Calibrazione della favorita: quanto la danno in media, quanto esce.
+      var prese = con.filter(function (r) { return r.Esito === r.Segno; }).length;
+      var media = con.reduce(function (s, r) { return s + r._fav; }, 0) / con.length;
+      return tessere([
+        [Math.round(100 * prese / con.length) + "%", "favorita uscita, " + prese + " su " + con.length],
+        [media.toFixed(0) + "%", "probabilità media della favorita"],
+        [String(v.length), "partite"]
+      ]);
+    }
+    var mg = mediana(v.map(function (r) { var o = num(r.Overround); return o == null ? null : o - 100; }));
+    return tessere([
+      [String(v.length), "partite"],
+      [String(v.filter(function (r) { return r._fav > 60; }).length), "con favorita sopra il 60%"],
+      [mg == null ? "-" : mg.toFixed(1) + "%", "margine mediano del book"]
+    ]);
+  }
+
+  function rigaWdw(r) {
+    var p1 = num(r.P1), px = num(r.PX), p2 = num(r.P2), seg = r.Segno || "";
+    var q = [num(r.Q1), num(r.QX), num(r.Q2)], ov = num(r.Overround);
+    var es = r.Esito ? (r.Esito === seg ? "presa" : "sbagliata") : null;
+    var det = [];
+    if (r.Lega) det.push("<p>" + esc(r.Lega) + " (FootyStats non indica il campionato).</p>");
+    det.push("<p>1 " + f1(p1) + "% · X " + f1(px) + "% · 2 " + f1(p2) + "%</p>");
+    if (q[0] != null) det.push("<p>Quote " + q.map(f2).join(" · ") + (ov != null ? " – margine del book " + f1(ov - 100) + "%" : "") + "</p>");
+    if (r.Esito) det.push("<p>Uscito il " + esc(r.Esito) + (es === "presa" ? ": era la favorita." : ": la favorita era il " + esc(seg) + ".") + "</p>");
+    if (r.Url) det.push('<p><a href="' + esc(r.Url) + '" target="_blank" rel="noopener">La partita su FootyStats</a></p>');
+    return '<div class="riga' + (es ? " finita" : "") + '">' +
+      (es ? '<span class="spunta esito ' + es + '" title="' + (es === "presa" ? "favorita uscita" : "favorita non uscita") + '">' +
+        (es === "presa" ? "✓" : "✗") + "</span>" : "") +
+      "<details><summary>" +
+      '<span class="segno">' + esc(seg || "?") + "</span>" +
+      '<div class="corpo">' +
+      '<div class="alto">' + (r.Lega ? '<span class="chip">' + esc(r.Lega) + "</span>" : "") +
+        (r.Esito ? "<span><b>uscito " + esc(r.Esito) + "</b></span>" : "") + "</div>" +
+      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" +
+      (q[0] != null ? '<div class="sel">quote ' + q.map(f2).join(" · ") + "</div>" : "") +
+      tripla("FootyStats", p1, px, p2) +
+      "</div>" +
+      '<div class="numero"><b>' + f0(r._fav) + '%</b><span>sul ' + esc(seg) + "</span></div>" +
       "</summary>" +
       '<div class="dettaglio">' + det.join("") + "</div>" +
       "</details></div>";
@@ -4468,9 +4567,9 @@
   function vaiHome(e) {
     if (e) e.preventDefault();
     stato.sez = "prezzi";
-    stato.data = { prezzi: null, mercato: null, consensus: null, accordo: null, poisson: null, sure: null };
-    stato.vista = { prezzi: "partite", mercato: "aff", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" };
-    stato.ordine = { prezzi: "ora", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" };
+    stato.data = { prezzi: null, mercato: null, consensus: null, accordo: null, poisson: null, sure: null, wdw: null };
+    stato.vista = { wdw: "tutte", prezzi: "partite", mercato: "aff", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" };
+    stato.ordine = { wdw: "prob", prezzi: "ora", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" };
     stato.cerca = "";
     stato.fonteCm = "";
     stato.esito = "";
