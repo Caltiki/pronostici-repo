@@ -1295,6 +1295,12 @@
   .riga.partitona .dentro-partita .riga .sel { font-weight: 600; font-size: .95rem; color: var(--testo); margin-top: 2px; }
   .riga.partitona .dentro-partita p.aggancio { margin: 4px 4px 0; }
   .riga.partitona .dentro-partita p.aggancio:empty { display: none; }
+  /* CON IL MOUSE LE FILE DI TASTI VANNO A CAPO. Sul telefono scorrono
+     col dito; sul PC una riga che scorre di lato col mouse non si sposta
+     (la rotella va in verticale) e i giorni a sinistra restavano tagliati. */
+  @media (hover: hover) and (pointer: fine) {
+    .chips { flex-wrap: wrap; overflow-x: visible; margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0; }
+  }
 </style>
 </head>
 <body>
