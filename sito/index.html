@@ -1267,7 +1267,9 @@
   @media (max-width: 380px) { table.xgt th, table.xgt td { padding: 8px 3px; font-size: .8rem; } }
   @media (max-width: 430px) {
     table.xgt.conpt th, table.xgt.conpt td { padding: 8px 2px; font-size: .76rem; }
-    table.xgt.conpt td.sq img.stemma { display: none; }
+    table.xgt.conpt td.sq img.stemma { width: 16px; height: 16px; }
+    table.xgt.conpt td.sq > div { gap: 4px; }
+    table.xgt.conpv th:first-child, table.xgt.conpv td:first-child { display: none; }
   }
 </style>
 </head>
@@ -4014,7 +4016,7 @@
   var US_IN_FM = { "Serie A": "Italia - Serie A", "EPL": "Inghilterra - Premier League",
     "La Liga": "Spagna - LaLiga", "Bundesliga": "Germania - Bundesliga", "Ligue 1": "Francia - Ligue 1" };
   var XG_ORDINI = [["diff", "Per differenza"], ["xg", "Per xG fatti"], ["xga", "Per xG subiti"],
-    ["xpts", "Per punti attesi"], ["nome", "Per nome"]];
+    ["xpts", "Per punti attesi"], ["pts", "Per punti veri"], ["fortuna", "Punti sopra le attese"], ["nome", "Per nome"]];
 
   function senzaId(l) { return String(l || "").replace(/\s*\[\d+\]$/, ""); }
 
@@ -4084,6 +4086,12 @@
         var pa = a.xpts != null ? a.xpts / (a.mp || 1) : -1, pb = b.xpts != null ? b.xpts / (b.mp || 1) : -1;
         return pb - pa;
       }
+      if (o === "pts" || o === "fortuna") {
+        // Anche qui a partita; senza classifica vera in fondo.
+        var va = a.pts == null ? -99 : (o === "pts" ? a.pts : a.pts - (a.xpts != null ? a.xpts : a.pts)) / (a.mp || 1);
+        var vb = b.pts == null ? -99 : (o === "pts" ? b.pts : b.pts - (b.xpts != null ? b.xpts : b.pts)) / (b.mp || 1);
+        return vb - va;
+      }
       return (b.xg_90 - b.xga_90) - (a.xg_90 - a.xga_90);
     });
   }
@@ -4092,9 +4100,14 @@
     // La colonna dei punti attesi solo se c'e' almeno un numero: Understat
     // non li da', e i file FotMob piu' vecchi nemmeno.
     var pt = sq.some(function (v) { return v.xpts != null; });
-    return '<table class="mercati xgt' + (pt ? " conpt" : "") + '"><thead><tr><th>#</th><th>Squadra</th><th title="Partite giocate">PG</th>' +
+    // I punti veri (dalla classifica normale di FotMob): verdi se la
+    // squadra ne ha piu' degli attesi, rossi se ne ha meno.
+    var pv = sq.some(function (v) { return v.pts != null; });
+    return '<table class="mercati xgt' + (pt || pv ? " conpt" : "") + (pv ? " conpv" : "") +
+      '"><thead><tr><th>#</th><th>Squadra</th><th title="Partite giocate">PG</th>' +
       '<th title="Gol attesi fatti a partita">xG</th><th title="Gol attesi subiti a partita">xGA</th>' +
       '<th title="xG meno xGA">Diff</th>' + (pt ? '<th title="Punti attesi nella stagione">xPTS</th>' : "") +
+      (pv ? '<th title="Punti veri in classifica">Pt</th>' : "") +
       "</tr></thead><tbody>" +
       sq.map(function (v, i) {
         var d = num(v.xg_90) - num(v.xga_90);
@@ -4102,7 +4115,10 @@
           (conLega ? '<small>' + esc(senzaId(v.lega)) + " · " + esc(v.fonte) + "</small>" : "") + "</span></div></td>" +
           "<td>" + esc(v.mp) + "</td><td>" + f2(num(v.xg_90)) + "</td><td>" + f2(num(v.xga_90)) + "</td>" +
           '<td class="' + (d > 0.005 ? "piu" : d < -0.005 ? "meno" : "") + '">' + (d > 0 ? "+" : "") + d.toFixed(2) + "</td>" +
-          (pt ? '<td class="pt">' + (v.xpts != null ? esc(num(v.xpts).toFixed(1)) : "\u2013") + "</td>" : "") + "</tr>";
+          (pt ? '<td class="pt">' + (v.xpts != null ? esc(String(Math.round(num(v.xpts) * 10) / 10)) : "\u2013") + "</td>" : "") +
+          (pv ? '<td class="pv ' + (v.pts == null || v.xpts == null ? "" : v.pts > v.xpts ? "piu" : v.pts < v.xpts ? "meno" : "") + '"' +
+            (v.pts != null ? ' title="' + esc(v.v + " vinte, " + v.n + " pari, " + v.s + " perse \u00b7 gol " + v.gf + "-" + v.gs) + '"' : "") + ">" +
+            (v.pts != null ? esc(v.pts) : "\u2013") + "</td>" : "") + "</tr>";
       }).join("") + "</tbody></table>";
   }
 
@@ -4126,7 +4142,8 @@
       document.getElementById("aggiornato").textContent = "xG letti il " + (piu.sort().pop() || "?");
 
       var h = chipsHtml(GRUPPO_POISSON, "xg", "data-gruppo") +
-        '<p class="descr">Gol attesi a partita: quanto valevano le occasioni create (xG) e quelle concesse (xGA).</p>' +
+        '<p class="descr">Gol attesi a partita: quanto valevano le occasioni create (xG) e quelle concesse (xGA). ' +
+        "Con poche partite giocate (PG) sono inaffidabili.</p>" +
         '<div class="strumenti xgs">' +
         '<select id="xg-lega" aria-label="Campionato">' + nomi.map(function (n) {
           return '<option value="' + esc(n) + '"' + (n === XG.lega ? " selected" : "") + ">" + esc(n) + "</option>";
@@ -4176,6 +4193,7 @@
       " · " + sq.length + " squadre · partite giocate da " + Math.min.apply(null, pg) + " a " + Math.max.apply(null, pg) +
       (L.fotmob && L.understat ? ". Le due fonti usano modelli diversi: Understat di solito un po' più alto." : ".") +
       (sq.some(function (v) { return v.xpts != null; }) ? " xPTS: i punti che la squadra avrebbe in classifica secondo gli xG di ogni partita, sulla stagione." : "") +
+      (sq.some(function (v) { return v.pts != null; }) ? " Pt: i punti veri in classifica, in verde se sono pi\u00f9 degli xPTS, in rosso se sono meno." : "") +
       "</p>";
     $c.querySelectorAll("[data-xgfonte]").forEach(function (b) {
       b.addEventListener("click", function () { XG.fonte = b.dataset.xgfonte; scriviHash(); corpoXG(); });
