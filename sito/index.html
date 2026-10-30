@@ -1993,7 +1993,14 @@
           return rigaPrezzo(r, i);
         }).join("");
         var scelte_ = g.filter(function (r) { return scelte[chiave(r)]; }).length;
-        return '<div class="riga partitona' + (scelte_ ? " scelta" : "") + '"><details><summary><div class="corpo">' +
+        // L'esito della giocata IN SCHEDINA sulla scheda chiusa, come nella
+        // vista Schedina: si vede senza aprire la partita.
+        var es = inSch ? (inSch.Esito || (inSch.Data && inSch.Data < oggi() ? "attesa" : null)) : null;
+        var segnoEs = es === "presa" ? "\u2713" : es === "sbagliata" ? "\u2717" : es === "attesa" ? "\u2013" : "\u21ba";
+        var titoloEs = es === "presa" ? "schedina vinta" : es === "sbagliata" ? "schedina persa" : es === "attesa" ? "risultato non disponibile" : "rimborso";
+        return '<div class="riga partitona' + (scelte_ ? " scelta" : "") + (es ? " finita" : "") + '">' +
+          (es ? '<span class="spunta esito ' + esc(es) + '" title="' + titoloEs + '" aria-label="' + titoloEs + '">' + segnoEs + "</span>" : "") +
+          '<details><summary><div class="corpo">' +
           '<div class="alto"><span>' + esc(r0.Ora || "") + "</span>" +
           (gol ? "<span><b>" + esc(gol) + "</b></span>" : "") +
           (r0.Campionato ? '<span class="chip">' + esc(r0.Campionato) + "</span>" : "") + "</div>" +
