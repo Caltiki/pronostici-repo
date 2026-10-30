@@ -2167,7 +2167,7 @@
       (r.Gruppo ? '<span class="chip">' + esc(r.Gruppo) + "</span>" : "") +
       (fid ? '<span class="pill ' + fid[0] + '">margine ' + f1(marg) + "%</span>" : "") +
       "</div>" +
-      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, r.Partita) + "</div>" +
+      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, r.Partita, campiRiga(r)) + "</div>" +
       '<div class="sel">' + esc(etichettaSel(r)) + "</div>" +
       (prob != null ? '<div class="pbar"><i style="width:' + Math.min(100, prob) + '%"></i></div>' : "") +
       "</div>" +
@@ -2783,7 +2783,7 @@
       '<span class="segno">' + esc(segno || "?") + "</span>" +
       '<div class="corpo">' +
       '<div class="alto"><span>' + esc(r.Ora || "") + "</span><span>" + fonti + (fonti === 1 ? " fonte" : " fonti") + "</span></div>" +
-      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite) + "</div>" +
+      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" +
       (coda ? '<div class="sel">' + coda + "</div>" : "") +
       (acc ? '<div class="accordo-conta">D\u2019accordo ' + articolo(acc.segno) + ": <b>" + acc.si.length +
         "</b> " + (acc.si.length + acc.no.length === 1 ? "fonte su 1" : "su " + (acc.si.length + acc.no.length) + " fonti") + "</div>" : "") +
@@ -2882,7 +2882,7 @@
       '<div class="corpo">' +
       '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" + (r.Lega ? '<span class="chip">' + esc(String(r.Lega).replace(/\s*\[\d+\]$/, "")) + "</span>" : "") +
         (r.Fonte_xG === "FotMob" ? '<span class="chip">xG FotMob</span>' : "") + "</div>" +
-      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite) + "</div>" +
+      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" +
       '<div class="sel">\u03bb ' + f2(lc) + " \u2013 " + f2(lo) + coda + "</div>" +
       tripla("modello", p1, px, p2) +
       (m1 != null ? tripla("mercato", m1, mx, m2) : "") +
@@ -3113,7 +3113,7 @@
       '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" +
       (fid ? '<span class="pill ' + fid[0] + '">margine ' + f1(marg) + "%</span>" : "") +
       (aff ? '<span class="chip">affidabile</span>' : "") + "</div>" +
-      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite) + "</div>" +
+      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" +
       (verso || nota ? '<div class="sel">' + (nota ? '<span class="scarto-grosso">movimento notevole' + (verso ? " " + esc(verso.testo) : "") + "</span>"
         : '<span class="scarto">' + esc(verso.testo.charAt(0).toUpperCase() + verso.testo.slice(1)) + "</span>") + "</div>" : "") +
       (ap && mov && pp ? tripla("apertura", ap[0], ap[1], ap[2]) + tripla("ora", pp[0], pp[1], pp[2]) : tripla("ora", p1, px, p2)) +
@@ -3191,7 +3191,7 @@
       '<span class="segno">' + esc(pron || "?") + "</span>" +
       '<div class="corpo">' +
       '<div class="alto"><span>' + esc(r.Ora || "") + "</span></div>" +
-      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite) + "</div>" +
+      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" +
       '<div class="sel">Statarea ' + esc(r["Pron Statarea"]) + " \u00b7 WebPronostici " + esc(r["Pron WebPron"]) + "</div>" +
       tripla("fonti", p1, px, p2) +
       "</div>" +
@@ -3221,16 +3221,39 @@
     }
     return loghiPronti;
   }
-  function logo(nome, grande) {
+  // LE OMONIMIE ("Inter" e' sia l'Inter sia una squadra salvadoregna):
+  // loghi.json dice, per ogni nome ambiguo, quale indizio nel campionato
+  // porta a quale file; "" vale per tutti gli altri campionati. E' la
+  // _scioglie_omonimia() dell'addon, con la stessa regola: il primo
+  // indizio contenuto nel campionato vince; senza campionato, nessuno
+  // stemma. SOLO per mostrare lo stemma: stemma() qui sopra, che serve ad
+  // agganciare le partite, resta senza campionato come in prezzi_equi.py.
+  function stemmaDove(nome, loghi, dove) {
+    var ambigue = loghi.ambigue || {}, k = normalizza(nome);
+    if (!k || !Object.prototype.hasOwnProperty.call(ambigue, k)) return stemma(nome, loghi);
+    if (!dove) return null;
+    var contesto = senzaAccenti(String(dove).toLowerCase()), voci = ambigue[k] || [];
+    for (var i = 0; i < voci.length; i++) {
+      if (contesto.indexOf(voci[i][0]) >= 0) return voci[i][1] || null;
+    }
+    return null;
+  }
+  // Il campionato della riga, come lo scrive la fonte (_campi_riga
+  // dell'addon): ogni fonte lo chiama a modo suo.
+  function campiRiga(r) {
+    return ["Lega", "Paese", "Competizione", "Campionato"].map(function (c) { return r && r[c] ? String(r[c]) : ""; })
+      .filter(Boolean).join(" ");
+  }
+  function logo(nome, grande, dove) {
     if (!LOGHI || !nome) return "";
-    var f = stemma(nome, LOGHI);
+    var f = stemmaDove(nome, LOGHI, dove);
     if (!f) return "";
     return '<img class="stemma' + (grande ? " grande" : "") + '" src="' + URL_STEMMI + encodeURIComponent(f) +
       '" alt="" loading="lazy" decoding="async" onerror="this.remove()">';
   }
-  function partitaHtml(casa, ospite, testo) {
+  function partitaHtml(casa, ospite, testo, dove) {
     if (!casa || !ospite) return esc(testo || "");
-    return '<span class="sq">' + logo(casa) + esc(casa) + '</span> \u2013 <span class="sq">' + logo(ospite) + esc(ospite) + "</span>";
+    return '<span class="sq">' + logo(casa, false, dove) + esc(casa) + '</span> \u2013 <span class="sq">' + logo(ospite, false, dove) + esc(ospite) + "</span>";
   }
 
   // Il mercato del giorno e la mappa dei nomi si leggono qui, una volta per
@@ -3326,7 +3349,7 @@
       '<div class="corpo">' +
       '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" +
       (fid ? '<span class="pill ' + fid[0] + '">margine ' + f1(marg) + "%</span>" : "") + "</div>" +
-      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite) + "</div>" +
+      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" +
       '<div class="sel">' + sel + "</div>" +
       (conPrezzo ? '<div class="pbar"><i style="width:' + Math.min(100, prob * 100) + '%"></i></div>' : "") +
       "</div>" +
@@ -3456,7 +3479,7 @@
       '<span class="segno">' + esc(p.Esito) + "</span>" +
       '<div class="corpo">' +
       '<div class="alto"><span>' + esc(p.Ora || "") + "</span>" + (p.Lega ? '<span class="chip">' + esc(p.Lega) + "</span>" : "") + "</div>" +
-      '<div class="partita">' + partitaHtml(p.Casa, p.Ospite) + "</div>" +
+      '<div class="partita">' + partitaHtml(p.Casa, p.Ospite, "", campiRiga(p)) + "</div>" +
       '<div class="pron-lista">' + prons.map(pillPron).join("") + "</div>" +
       (m ? tripla("mercato", m.P1, m.PX, m.P2) : "") +
       "</div>" +
@@ -3774,7 +3797,7 @@
       '<button type="button" class="indietro" id="indietro">← Indietro</button>' +
       '<p class="piccolo">' + esc(etichettaData(d)) + (p.Ora ? " · " + esc(p.Ora) : "") +
       (p.Lega ? " · " + esc(p.Lega) : "") + "</p>" +
-      "<h2>" + logo(p.Casa, true) + esc(p.Casa) + " – " + logo(p.Ospite, true) + esc(p.Ospite) + "</h2>";
+      "<h2>" + logo(p.Casa, true, campiRiga(p)) + esc(p.Casa) + " – " + logo(p.Ospite, true, campiRiga(p)) + esc(p.Ospite) + "</h2>";
     var st = String(fm.Stato || "").toUpperCase(), gc = num(fm.Gol_Casa), go = num(fm.Gol_Ospite);
     if (gc != null && go != null && st && st !== "NS") {
       var fin = ["FT", "AET", "PEN"].indexOf(st) >= 0;
@@ -4111,7 +4134,7 @@
       "</tr></thead><tbody>" +
       sq.map(function (v, i) {
         var d = num(v.xg_90) - num(v.xga_90);
-        return "<tr><td>" + (i + 1) + '</td><td class="sq"><div>' + logo(v.nome) + "<span>" + esc(v.nome) +
+        return "<tr><td>" + (i + 1) + '</td><td class="sq"><div>' + logo(v.nome, false, v.lega) + "<span>" + esc(v.nome) +
           (conLega ? '<small>' + esc(senzaId(v.lega)) + " · " + esc(v.fonte) + "</small>" : "") + "</span></div></td>" +
           "<td>" + esc(v.mp) + "</td><td>" + f2(num(v.xg_90)) + "</td><td>" + f2(num(v.xga_90)) + "</td>" +
           '<td class="' + (d > 0.005 ? "piu" : d < -0.005 ? "meno" : "") + '">' + (d > 0 ? "+" : "") + d.toFixed(2) + "</td>" +
