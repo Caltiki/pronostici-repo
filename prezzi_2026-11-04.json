@@ -766,7 +766,8 @@
   "Mercato": "BTTS",
   "Sel": "Gol",
   "Prob": 64.6,
-  "Equa": 1.55
+  "Equa": 1.55,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-04",
@@ -887,8 +888,7 @@
   "Mercato": "BTTS",
   "Sel": "Gol",
   "Prob": 63.0,
-  "Equa": 1.59,
-  "InSchedina": "si"
+  "Equa": 1.59
  },
  {
   "Data": "2026-11-04",
@@ -1089,8 +1089,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "2 + Over 1.5",
   "Prob": 58.2,
-  "Equa": 1.72,
-  "InSchedina": "si"
+  "Equa": 1.72
  },
  {
   "Data": "2026-11-04",
@@ -1351,7 +1350,8 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 53.8,
-  "Equa": 1.86
+  "Equa": 1.86,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-04",
@@ -2198,26 +2198,6 @@
   "Data": "2026-11-04",
   "Ora": "21:00",
   "Campionato": "Europe Champions League",
-  "Partita": "Dortmund - Real Betis",
-  "Casa": "Dortmund",
-  "Ospite": "Real Betis",
-  "Linea_OU": "",
-  "Gol_attesi": 3.26,
-  "Margine": 2.1,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "NoGol",
-  "Prob": 37.0,
-  "Equa": 2.7
- },
- {
-  "Data": "2026-11-04",
-  "Ora": "21:00",
-  "Campionato": "Europe Champions League",
   "Partita": "RB Leipzig - Man City",
   "Casa": "RB Leipzig",
   "Ospite": "Man City",
@@ -2332,6 +2312,26 @@
   "Mercato": "Esito + Gol",
   "Sel": "2 + Over 1.5",
   "Prob": 35.5,
+  "Equa": 2.82
+ },
+ {
+  "Data": "2026-11-04",
+  "Ora": "21:00",
+  "Campionato": "Europe Champions League",
+  "Partita": "RB Leipzig - Man City",
+  "Casa": "RB Leipzig",
+  "Ospite": "Man City",
+  "Linea_OU": "",
+  "Gol_attesi": 3.61,
+  "Margine": 1.9,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "Gol NoGol",
+  "Mercato": "BTTS",
+  "Sel": "NoGol",
+  "Prob": 35.4,
   "Equa": 2.82
  },
  {
@@ -2533,6 +2533,26 @@
   "Sel": "Under",
   "Prob": 25.4,
   "Equa": 3.93
+ },
+ {
+  "Data": "2026-11-04",
+  "Ora": "21:00",
+  "Campionato": "Europe Champions League",
+  "Partita": "Dortmund - Real Betis",
+  "Casa": "Dortmund",
+  "Ospite": "Real Betis",
+  "Linea_OU": "",
+  "Gol_attesi": 3.26,
+  "Margine": 2.1,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 23.9,
+  "Equa": 4.18
  },
  {
   "Data": "2026-11-04",
