@@ -726,8 +726,7 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 64.7,
-  "Equa": 1.55,
-  "InSchedina": "si"
+  "Equa": 1.55
  },
  {
   "Data": "2026-11-04",
@@ -1231,7 +1230,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 57.1,
-  "Equa": 1.75
+  "Equa": 1.75,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-04",
@@ -2553,26 +2553,6 @@
   "Sel": "X",
   "Prob": 23.3,
   "Equa": 4.29
- },
- {
-  "Data": "2026-11-04",
-  "Ora": "21:00",
-  "Campionato": "Europe Champions League",
-  "Partita": "Viking - Sabah",
-  "Casa": "Viking",
-  "Ospite": "Sabah",
-  "Linea_OU": "",
-  "Gol_attesi": 3.42,
-  "Margine": 3.7,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 19.9,
-  "Equa": 5.03
  },
  {
   "Data": "2026-11-04",

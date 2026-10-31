@@ -1371,7 +1371,8 @@
   "Mercato": "1X2",
   "Sel": "2",
   "Prob": 67.4,
-  "Equa": 1.48
+  "Equa": 1.48,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-02",
@@ -1674,8 +1675,7 @@
   "Mercato": "1X2",
   "Sel": "2",
   "Prob": 63.3,
-  "Equa": 1.58,
-  "InSchedina": "si"
+  "Equa": 1.58
  },
  {
   "Data": "2026-11-02",
@@ -2135,8 +2135,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "2 + Over 1.5",
   "Prob": 59.4,
-  "Equa": 1.68,
-  "InSchedina": "si"
+  "Equa": 1.68
  },
  {
   "Data": "2026-11-02",
@@ -2579,7 +2578,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "2 + Over 1.5",
   "Prob": 56.1,
-  "Equa": 1.78
+  "Equa": 1.78,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-02",
@@ -6765,26 +6765,6 @@
  },
  {
   "Data": "2026-11-02",
-  "Ora": "17:00",
-  "Campionato": "Finland Veikkausliiga",
-  "Partita": "VPS - HJK",
-  "Casa": "VPS",
-  "Ospite": "HJK",
-  "Linea_OU": "",
-  "Gol_attesi": 3.22,
-  "Margine": 5.3,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 20.9,
-  "Equa": 4.79
- },
- {
-  "Data": "2026-11-02",
   "Ora": "18:00",
   "Campionato": "Turkey 1. Lig",
   "Partita": "Kayserispor - Muğlaspor",
@@ -6802,6 +6782,26 @@
   "Sel": "X",
   "Prob": 20.0,
   "Equa": 5.0
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "12:00",
+  "Campionato": "Ukraine Premier League",
+  "Partita": "Kryvbas Kryvyi Rih - Dynamo Kyiv",
+  "Casa": "Kryvbas Kryvyi Rih",
+  "Ospite": "Dynamo Kyiv",
+  "Linea_OU": "",
+  "Gol_attesi": 3.25,
+  "Margine": 5.2,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 19.0,
+  "Equa": 5.26
  },
  {
   "Data": "2026-11-02",
