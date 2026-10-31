@@ -806,8 +806,7 @@
   "Mercato": "OU 1.5",
   "Sel": "Over",
   "Prob": 73.7,
-  "Equa": 1.36,
-  "InSchedina": "si"
+  "Equa": 1.36
  },
  {
   "Data": "2026-11-02",
@@ -1371,7 +1370,8 @@
   "Mercato": "1X2",
   "Sel": "2",
   "Prob": 67.4,
-  "Equa": 1.48
+  "Equa": 1.48,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-02",
@@ -2155,8 +2155,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "2 + Over 1.5",
   "Prob": 59.4,
-  "Equa": 1.68,
-  "InSchedina": "si"
+  "Equa": 1.68
  },
  {
   "Data": "2026-11-02",
@@ -3641,7 +3640,8 @@
   "Mercato": "BTTS",
   "Sel": "NoGol",
   "Prob": 50.8,
-  "Equa": 1.97
+  "Equa": 1.97,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-02",
@@ -3881,6 +3881,26 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 49.3,
+  "Equa": 2.03
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "21:00",
+  "Campionato": "Spain La Liga",
+  "Partita": "Deportivo A Coruña - Osasuna",
+  "Casa": "Deportivo A Coruña",
+  "Ospite": "Osasuna",
+  "Linea_OU": "",
+  "Gol_attesi": 2.38,
+  "Margine": 1.8,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "Gol NoGol",
+  "Mercato": "BTTS",
+  "Sel": "Gol",
+  "Prob": 49.2,
   "Equa": 2.03
  },
  {
@@ -6825,26 +6845,6 @@
  },
  {
   "Data": "2026-11-02",
-  "Ora": "16:15",
-  "Campionato": "Spain La Liga 2",
-  "Partita": "Real Oviedo - Las Palmas",
-  "Casa": "Real Oviedo",
-  "Ospite": "Las Palmas",
-  "Linea_OU": "",
-  "Gol_attesi": 2.62,
-  "Margine": 3.5,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "Under Over",
-  "Mercato": "OU 1.5",
-  "Sel": "Under",
-  "Prob": 26.3,
-  "Equa": 3.8
- },
- {
-  "Data": "2026-11-02",
   "Ora": "00:00",
   "Campionato": "Uruguay Primera Division",
   "Partita": "Liverpool - Juventud",
@@ -6962,6 +6962,26 @@
   "Sel": "X",
   "Prob": 20.0,
   "Equa": 5.0
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "12:00",
+  "Campionato": "Ukraine Premier League",
+  "Partita": "Kryvbas Kryvyi Rih - Dynamo Kyiv",
+  "Casa": "Kryvbas Kryvyi Rih",
+  "Ospite": "Dynamo Kyiv",
+  "Linea_OU": "",
+  "Gol_attesi": 3.25,
+  "Margine": 5.2,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 19.0,
+  "Equa": 5.26
  },
  {
   "Data": "2026-11-02",
