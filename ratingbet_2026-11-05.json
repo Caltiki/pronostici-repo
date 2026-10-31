@@ -1,8 +1,99 @@
 [
  {
+  "Casa": "Cucuta",
+  "Ospite": "Santa Fe",
+  "Ora": "00:30",
+  "OraSito": "18:30",
+  "Linea": null,
+  "Lega": "Colombia: Primera A Colombia",
+  "Sezione": "1X2",
+  "Tip": "W2",
+  "Mercato": "Result : W2",
+  "Prob": 42.0,
+  "Quota": 2.19,
+  "Q1": 3.1,
+  "P1": 30.0,
+  "Q2": 3.32,
+  "P2": 28.0,
+  "Q3": 2.19,
+  "P3": 42.0
+ },
+ {
+  "Casa": "Cucuta",
+  "Ospite": "Santa Fe",
+  "Ora": "00:30",
+  "OraSito": "18:30",
+  "Linea": 2.5,
+  "Lega": "Colombia: Primera A Colombia",
+  "Sezione": "OU",
+  "Tip": "U2.5",
+  "Mercato": "Total : U2.5",
+  "Prob": 52.0,
+  "Quota": 1.78,
+  "Q1": 1.95,
+  "P1": 48.0,
+  "Q2": 1.78,
+  "P2": 52.0
+ },
+ {
+  "Casa": "Cucuta",
+  "Ospite": "Santa Fe",
+  "Ora": "00:30",
+  "OraSito": "18:30",
+  "Linea": null,
+  "Lega": "Colombia: Primera A Colombia",
+  "Sezione": "BTTS",
+  "Tip": "Yes",
+  "Mercato": "BTTS : Yes",
+  "Prob": 53.0,
+  "Quota": 1.75,
+  "Q1": 1.75,
+  "P1": 53.0,
+  "Q2": 1.97,
+  "P2": 47.0
+ },
+ {
+  "Casa": "Cucuta",
+  "Ospite": "Santa Fe",
+  "Ora": "00:30",
+  "OraSito": "18:30",
+  "Linea": null,
+  "Lega": "Colombia: Primera A Colombia",
+  "Sezione": "DC",
+  "Tip": "1/2",
+  "Mercato": "1/2",
+  "Prob": 72.0,
+  "Quota": 1.28,
+  "Q1": 1.61,
+  "P1": 58.0,
+  "Q2": 1.28,
+  "P2": 72.0,
+  "Q3": 1.32,
+  "P3": 70.0
+ },
+ {
+  "Casa": "Cucuta",
+  "Ospite": "Santa Fe",
+  "Ora": "00:30",
+  "OraSito": "18:30",
+  "Linea": null,
+  "Lega": "Colombia: Primera A Colombia",
+  "Sezione": "MATH",
+  "Tip": "Yes",
+  "Mercato": "BTTS : Yes",
+  "Prob": 50.0,
+  "Quota": 1.75,
+  "Q1": 2.19,
+  "P1": 47.0,
+  "Q2": 1.78,
+  "P2": 13.0,
+  "Q3": 1.75,
+  "P3": 50.0
+ },
+ {
   "Casa": "Botafogo RJ",
   "Ospite": "Atletico MG",
-  "Ora": "00:30",
+  "Ora": "01:30",
   "OraSito": "19:30",
   "Linea": null,
   "Lega": "Brazil: Serie A Brazil",
@@ -21,7 +112,7 @@
  {
   "Casa": "Sao Paulo",
   "Ospite": "Corinthians",
-  "Ora": "00:30",
+  "Ora": "01:30",
   "OraSito": "19:30",
   "Linea": null,
   "Lega": "Brazil: Serie A Brazil",
@@ -40,7 +131,7 @@
  {
   "Casa": "Botafogo RJ",
   "Ospite": "Atletico MG",
-  "Ora": "00:30",
+  "Ora": "01:30",
   "OraSito": "19:30",
   "Linea": 2.5,
   "Lega": "Brazil: Serie A Brazil",
@@ -57,7 +148,7 @@
  {
   "Casa": "Sao Paulo",
   "Ospite": "Corinthians",
-  "Ora": "00:30",
+  "Ora": "01:30",
   "OraSito": "19:30",
   "Linea": 2.5,
   "Lega": "Brazil: Serie A Brazil",
@@ -74,7 +165,7 @@
  {
   "Casa": "Botafogo RJ",
   "Ospite": "Atletico MG",
-  "Ora": "00:30",
+  "Ora": "01:30",
   "OraSito": "19:30",
   "Linea": null,
   "Lega": "Brazil: Serie A Brazil",
@@ -91,7 +182,7 @@
  {
   "Casa": "Sao Paulo",
   "Ospite": "Corinthians",
-  "Ora": "00:30",
+  "Ora": "01:30",
   "OraSito": "19:30",
   "Linea": null,
   "Lega": "Brazil: Serie A Brazil",
@@ -108,7 +199,7 @@
  {
   "Casa": "Botafogo RJ",
   "Ospite": "Atletico MG",
-  "Ora": "00:30",
+  "Ora": "01:30",
   "OraSito": "19:30",
   "Linea": null,
   "Lega": "Brazil: Serie A Brazil",
@@ -127,7 +218,7 @@
  {
   "Casa": "Sao Paulo",
   "Ospite": "Corinthians",
-  "Ora": "00:30",
+  "Ora": "01:30",
   "OraSito": "19:30",
   "Linea": null,
   "Lega": "Brazil: Serie A Brazil",
@@ -146,7 +237,7 @@
  {
   "Casa": "Botafogo RJ",
   "Ospite": "Atletico MG",
-  "Ora": "00:30",
+  "Ora": "01:30",
   "OraSito": "19:30",
   "Linea": null,
   "Lega": "Brazil: Serie A Brazil",
@@ -165,7 +256,7 @@
  {
   "Casa": "Sao Paulo",
   "Ospite": "Corinthians",
-  "Ora": "00:30",
+  "Ora": "01:30",
   "OraSito": "19:30",
   "Linea": null,
   "Lega": "Brazil: Serie A Brazil",
@@ -184,7 +275,7 @@
  {
   "Casa": "Millonarios",
   "Ospite": "America de Cali",
-  "Ora": "01:30",
+  "Ora": "02:30",
   "OraSito": "20:30",
   "Linea": null,
   "Lega": "Colombia: Primera A Colombia",
@@ -203,7 +294,7 @@
  {
   "Casa": "Millonarios",
   "Ospite": "America de Cali",
-  "Ora": "01:30",
+  "Ora": "02:30",
   "OraSito": "20:30",
   "Linea": 2.5,
   "Lega": "Colombia: Primera A Colombia",
@@ -220,7 +311,7 @@
  {
   "Casa": "Millonarios",
   "Ospite": "America de Cali",
-  "Ora": "01:30",
+  "Ora": "02:30",
   "OraSito": "20:30",
   "Linea": null,
   "Lega": "Colombia: Primera A Colombia",
@@ -237,7 +328,7 @@
  {
   "Casa": "Millonarios",
   "Ospite": "America de Cali",
-  "Ora": "01:30",
+  "Ora": "02:30",
   "OraSito": "20:30",
   "Linea": null,
   "Lega": "Colombia: Primera A Colombia",
@@ -256,7 +347,7 @@
  {
   "Casa": "Millonarios",
   "Ospite": "America de Cali",
-  "Ora": "01:30",
+  "Ora": "02:30",
   "OraSito": "20:30",
   "Linea": null,
   "Lega": "Colombia: Primera A Colombia",
@@ -275,7 +366,7 @@
  {
   "Casa": "Al Kholood",
   "Ospite": "Al Khaleej",
-  "Ora": "13:25",
+  "Ora": "14:25",
   "OraSito": "08:25",
   "Linea": null,
   "Lega": "Saudi Arabia: Pro League Saudi Arabia",
@@ -294,7 +385,7 @@
  {
   "Casa": "Al Kholood",
   "Ospite": "Al Khaleej",
-  "Ora": "13:25",
+  "Ora": "14:25",
   "OraSito": "08:25",
   "Linea": 2.5,
   "Lega": "Saudi Arabia: Pro League Saudi Arabia",
@@ -311,7 +402,7 @@
  {
   "Casa": "Al Kholood",
   "Ospite": "Al Khaleej",
-  "Ora": "13:25",
+  "Ora": "14:25",
   "OraSito": "08:25",
   "Linea": null,
   "Lega": "Saudi Arabia: Pro League Saudi Arabia",
@@ -328,7 +419,7 @@
  {
   "Casa": "Al Kholood",
   "Ospite": "Al Khaleej",
-  "Ora": "13:25",
+  "Ora": "14:25",
   "OraSito": "08:25",
   "Linea": null,
   "Lega": "Saudi Arabia: Pro League Saudi Arabia",
@@ -347,7 +438,7 @@
  {
   "Casa": "Al Kholood",
   "Ospite": "Al Khaleej",
-  "Ora": "13:25",
+  "Ora": "14:25",
   "OraSito": "08:25",
   "Linea": null,
   "Lega": "Saudi Arabia: Pro League Saudi Arabia",
@@ -366,7 +457,7 @@
  {
   "Casa": "Abha",
   "Ospite": "Al Shabab",
-  "Ora": "15:10",
+  "Ora": "16:10",
   "OraSito": "10:10",
   "Linea": null,
   "Lega": "Saudi Arabia: Pro League Saudi Arabia",
@@ -385,7 +476,7 @@
  {
   "Casa": "Abha",
   "Ospite": "Al Shabab",
-  "Ora": "15:10",
+  "Ora": "16:10",
   "OraSito": "10:10",
   "Linea": null,
   "Lega": "Saudi Arabia: Pro League Saudi Arabia",
@@ -404,7 +495,7 @@
  {
   "Casa": "AC Milan",
   "Ospite": "Ferencvaros",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -423,7 +514,7 @@
  {
   "Casa": "AGF",
   "Ospite": "Braga",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -442,7 +533,7 @@
  {
   "Casa": "Anderlecht",
   "Ospite": "Salzburg",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -461,7 +552,7 @@
  {
   "Casa": "Atalanta",
   "Ospite": "Kairat Almaty",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -480,7 +571,7 @@
  {
   "Casa": "Crystal Palace",
   "Ospite": "Hoffenheim",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -499,7 +590,7 @@
  {
   "Casa": "FC Midtjylland",
   "Ospite": "Ajax",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -518,7 +609,7 @@
  {
   "Casa": "FC Thun",
   "Ospite": "Heart of Midlothian",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -537,7 +628,7 @@
  {
   "Casa": "FK Crvena Zvezda",
   "Ospite": "Inter Club d'Escaldes",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -556,7 +647,7 @@
  {
   "Casa": "KuPS",
   "Ospite": "Gent",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -575,7 +666,7 @@
  {
   "Casa": "Levski Sofia",
   "Ospite": "Jagiellonia Bialystok",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -594,7 +685,7 @@
  {
   "Casa": "Lillestroem",
   "Ospite": "Viktoria Plzen",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -613,7 +704,7 @@
  {
   "Casa": "Lincoln Red Imps FC",
   "Ospite": "Hajduk Split",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -632,7 +723,7 @@
  {
   "Casa": "Mjaellby",
   "Ospite": "Borac Banja Luka",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -651,7 +742,7 @@
  {
   "Casa": "NEC Nijmegen",
   "Ospite": "Omonia Nicosia",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -670,7 +761,7 @@
  {
   "Casa": "Real Sociedad",
   "Ospite": "Lyon",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -689,7 +780,7 @@
  {
   "Casa": "Sparta Prague",
   "Ospite": "Bournemouth",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -708,7 +799,7 @@
  {
   "Casa": "Trabzonspor",
   "Ospite": "Freiburg",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -727,7 +818,7 @@
  {
   "Casa": "AC Milan",
   "Ospite": "Ferencvaros",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": 2.5,
   "Lega": "International: Europa League",
@@ -744,7 +835,7 @@
  {
   "Casa": "AGF",
   "Ospite": "Braga",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": 2.5,
   "Lega": "International: Europa Conference League",
@@ -761,7 +852,7 @@
  {
   "Casa": "Anderlecht",
   "Ospite": "Salzburg",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": 2.5,
   "Lega": "International: Europa League",
@@ -778,7 +869,7 @@
  {
   "Casa": "Atalanta",
   "Ospite": "Kairat Almaty",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": 2.5,
   "Lega": "International: Europa Conference League",
@@ -795,7 +886,7 @@
  {
   "Casa": "Crystal Palace",
   "Ospite": "Hoffenheim",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": 2.5,
   "Lega": "International: Europa League",
@@ -812,7 +903,7 @@
  {
   "Casa": "FC Midtjylland",
   "Ospite": "Ajax",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": 2.5,
   "Lega": "International: Europa Conference League",
@@ -829,7 +920,7 @@
  {
   "Casa": "FC Thun",
   "Ospite": "Heart of Midlothian",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": 2.5,
   "Lega": "International: Europa Conference League",
@@ -846,7 +937,7 @@
  {
   "Casa": "FK Crvena Zvezda",
   "Ospite": "Inter Club d'Escaldes",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": 2.5,
   "Lega": "International: Europa Conference League",
@@ -863,7 +954,7 @@
  {
   "Casa": "KuPS",
   "Ospite": "Gent",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": 2.5,
   "Lega": "International: Europa Conference League",
@@ -880,7 +971,7 @@
  {
   "Casa": "Levski Sofia",
   "Ospite": "Jagiellonia Bialystok",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": 2.5,
   "Lega": "International: Europa League",
@@ -897,7 +988,7 @@
  {
   "Casa": "Lillestroem",
   "Ospite": "Viktoria Plzen",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": 2.5,
   "Lega": "International: Europa League",
@@ -914,7 +1005,7 @@
  {
   "Casa": "Lincoln Red Imps FC",
   "Ospite": "Hajduk Split",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": 2.5,
   "Lega": "International: Europa Conference League",
@@ -931,7 +1022,7 @@
  {
   "Casa": "Mjaellby",
   "Ospite": "Borac Banja Luka",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": 2.5,
   "Lega": "International: Europa Conference League",
@@ -948,7 +1039,7 @@
  {
   "Casa": "NEC Nijmegen",
   "Ospite": "Omonia Nicosia",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": 2.5,
   "Lega": "International: Europa League",
@@ -965,7 +1056,7 @@
  {
   "Casa": "Real Sociedad",
   "Ospite": "Lyon",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": 2.5,
   "Lega": "International: Europa League",
@@ -982,7 +1073,7 @@
  {
   "Casa": "Sparta Prague",
   "Ospite": "Bournemouth",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": 2.5,
   "Lega": "International: Europa League",
@@ -999,7 +1090,7 @@
  {
   "Casa": "Trabzonspor",
   "Ospite": "Freiburg",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": 2.5,
   "Lega": "International: Europa Conference League",
@@ -1016,7 +1107,7 @@
  {
   "Casa": "AC Milan",
   "Ospite": "Ferencvaros",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -1033,7 +1124,7 @@
  {
   "Casa": "AGF",
   "Ospite": "Braga",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -1050,7 +1141,7 @@
  {
   "Casa": "Anderlecht",
   "Ospite": "Salzburg",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -1067,7 +1158,7 @@
  {
   "Casa": "Atalanta",
   "Ospite": "Kairat Almaty",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -1084,7 +1175,7 @@
  {
   "Casa": "Crystal Palace",
   "Ospite": "Hoffenheim",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -1101,7 +1192,7 @@
  {
   "Casa": "FC Midtjylland",
   "Ospite": "Ajax",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -1118,7 +1209,7 @@
  {
   "Casa": "FC Thun",
   "Ospite": "Heart of Midlothian",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -1135,7 +1226,7 @@
  {
   "Casa": "FK Crvena Zvezda",
   "Ospite": "Inter Club d'Escaldes",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -1152,7 +1243,7 @@
  {
   "Casa": "KuPS",
   "Ospite": "Gent",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -1169,7 +1260,7 @@
  {
   "Casa": "Levski Sofia",
   "Ospite": "Jagiellonia Bialystok",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -1186,7 +1277,7 @@
  {
   "Casa": "Lillestroem",
   "Ospite": "Viktoria Plzen",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -1203,7 +1294,7 @@
  {
   "Casa": "Lincoln Red Imps FC",
   "Ospite": "Hajduk Split",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -1220,7 +1311,7 @@
  {
   "Casa": "Mjaellby",
   "Ospite": "Borac Banja Luka",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -1237,7 +1328,7 @@
  {
   "Casa": "NEC Nijmegen",
   "Ospite": "Omonia Nicosia",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -1254,7 +1345,7 @@
  {
   "Casa": "Real Sociedad",
   "Ospite": "Lyon",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -1271,7 +1362,7 @@
  {
   "Casa": "Sparta Prague",
   "Ospite": "Bournemouth",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -1288,7 +1379,7 @@
  {
   "Casa": "Trabzonspor",
   "Ospite": "Freiburg",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -1305,7 +1396,7 @@
  {
   "Casa": "AC Milan",
   "Ospite": "Ferencvaros",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -1324,7 +1415,7 @@
  {
   "Casa": "AGF",
   "Ospite": "Braga",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -1343,7 +1434,7 @@
  {
   "Casa": "Anderlecht",
   "Ospite": "Salzburg",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -1362,7 +1453,7 @@
  {
   "Casa": "Atalanta",
   "Ospite": "Kairat Almaty",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -1381,7 +1472,7 @@
  {
   "Casa": "Crystal Palace",
   "Ospite": "Hoffenheim",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -1400,7 +1491,7 @@
  {
   "Casa": "FC Midtjylland",
   "Ospite": "Ajax",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -1419,7 +1510,7 @@
  {
   "Casa": "FC Thun",
   "Ospite": "Heart of Midlothian",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -1438,7 +1529,7 @@
  {
   "Casa": "FK Crvena Zvezda",
   "Ospite": "Inter Club d'Escaldes",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -1457,7 +1548,7 @@
  {
   "Casa": "KuPS",
   "Ospite": "Gent",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -1476,7 +1567,7 @@
  {
   "Casa": "Levski Sofia",
   "Ospite": "Jagiellonia Bialystok",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -1495,7 +1586,7 @@
  {
   "Casa": "Lillestroem",
   "Ospite": "Viktoria Plzen",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -1514,7 +1605,7 @@
  {
   "Casa": "Lincoln Red Imps FC",
   "Ospite": "Hajduk Split",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -1533,7 +1624,7 @@
  {
   "Casa": "Mjaellby",
   "Ospite": "Borac Banja Luka",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -1552,7 +1643,7 @@
  {
   "Casa": "NEC Nijmegen",
   "Ospite": "Omonia Nicosia",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -1571,7 +1662,7 @@
  {
   "Casa": "Real Sociedad",
   "Ospite": "Lyon",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -1590,7 +1681,7 @@
  {
   "Casa": "Sparta Prague",
   "Ospite": "Bournemouth",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -1609,7 +1700,7 @@
  {
   "Casa": "Trabzonspor",
   "Ospite": "Freiburg",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -1628,7 +1719,7 @@
  {
   "Casa": "AC Milan",
   "Ospite": "Ferencvaros",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -1647,7 +1738,7 @@
  {
   "Casa": "AGF",
   "Ospite": "Braga",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -1666,7 +1757,7 @@
  {
   "Casa": "Anderlecht",
   "Ospite": "Salzburg",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -1685,7 +1776,7 @@
  {
   "Casa": "Atalanta",
   "Ospite": "Kairat Almaty",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -1704,7 +1795,7 @@
  {
   "Casa": "Crystal Palace",
   "Ospite": "Hoffenheim",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -1723,7 +1814,7 @@
  {
   "Casa": "FC Midtjylland",
   "Ospite": "Ajax",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -1742,7 +1833,7 @@
  {
   "Casa": "FC Thun",
   "Ospite": "Heart of Midlothian",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -1761,7 +1852,7 @@
  {
   "Casa": "FK Crvena Zvezda",
   "Ospite": "Inter Club d'Escaldes",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -1780,7 +1871,7 @@
  {
   "Casa": "KuPS",
   "Ospite": "Gent",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -1799,7 +1890,7 @@
  {
   "Casa": "Levski Sofia",
   "Ospite": "Jagiellonia Bialystok",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -1818,7 +1909,7 @@
  {
   "Casa": "Lillestroem",
   "Ospite": "Viktoria Plzen",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -1837,7 +1928,7 @@
  {
   "Casa": "Lincoln Red Imps FC",
   "Ospite": "Hajduk Split",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -1856,7 +1947,7 @@
  {
   "Casa": "Mjaellby",
   "Ospite": "Borac Banja Luka",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -1875,7 +1966,7 @@
  {
   "Casa": "NEC Nijmegen",
   "Ospite": "Omonia Nicosia",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -1894,7 +1985,7 @@
  {
   "Casa": "Real Sociedad",
   "Ospite": "Lyon",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -1913,7 +2004,7 @@
  {
   "Casa": "Sparta Prague",
   "Ospite": "Bournemouth",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -1932,7 +2023,7 @@
  {
   "Casa": "Trabzonspor",
   "Ospite": "Freiburg",
-  "Ora": "17:45",
+  "Ora": "18:45",
   "OraSito": "12:45",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -1951,7 +2042,7 @@
  {
   "Casa": "AZ Alkmaar",
   "Ospite": "Juventus",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -1970,7 +2061,7 @@
  {
   "Casa": "Alcoyano",
   "Ospite": "Mallorca",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "Spain: Copa del Rey Spain",
@@ -1989,7 +2080,7 @@
  {
   "Casa": "Bayer Leverkusen",
   "Ospite": "Marseille",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -2008,7 +2099,7 @@
  {
   "Casa": "Benfica",
   "Ospite": "Lech Poznan",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -2027,7 +2118,7 @@
  {
   "Casa": "Celta Vigo",
   "Ospite": "Union St.Gilloise",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -2046,7 +2137,7 @@
  {
   "Casa": "Celtic",
   "Ospite": "Besiktas",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -2065,7 +2156,7 @@
  {
   "Casa": "FC Copenhagen",
   "Ospite": "Iberia 1999",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -2084,7 +2175,7 @@
  {
   "Casa": "FC Lugano",
   "Ospite": "FK Kauno Zalgiris",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -2103,7 +2194,7 @@
  {
   "Casa": "Getafe",
   "Ospite": "Brighton",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -2122,7 +2213,7 @@
  {
   "Casa": "Hapoel Beer Sheva",
   "Ospite": "OFI Crete",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -2141,7 +2232,7 @@
  {
   "Casa": "Monaco",
   "Ospite": "FC Nordsjaelland",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -2160,7 +2251,7 @@
  {
   "Casa": "Panathinaikos",
   "Ospite": "CSKA Sofia",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -2179,7 +2270,7 @@
  {
   "Casa": "Riga FC",
   "Ospite": "Jablonec",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -2198,7 +2289,7 @@
  {
   "Casa": "St.Truiden",
   "Ospite": "Brann",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -2217,7 +2308,7 @@
  {
   "Casa": "Sturm Graz",
   "Ospite": "NK Celje",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -2236,7 +2327,7 @@
  {
   "Casa": "Sunderland",
   "Ospite": "Dinamo Zagreb",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -2255,7 +2346,7 @@
  {
   "Casa": "Torreense",
   "Ospite": "Ararat Armenia",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -2274,7 +2365,7 @@
  {
   "Casa": "Twente",
   "Ospite": "Pafos FC",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -2293,7 +2384,7 @@
  {
   "Casa": "Universitatea Craiova",
   "Ospite": "Egnatia",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -2312,7 +2403,7 @@
  {
   "Casa": "AZ Alkmaar",
   "Ospite": "Juventus",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": 2.5,
   "Lega": "International: Europa League",
@@ -2329,7 +2420,7 @@
  {
   "Casa": "Alcoyano",
   "Ospite": "Mallorca",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": 2.5,
   "Lega": "Spain: Copa del Rey Spain",
@@ -2346,7 +2437,7 @@
  {
   "Casa": "Bayer Leverkusen",
   "Ospite": "Marseille",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": 2.5,
   "Lega": "International: Europa League",
@@ -2363,7 +2454,7 @@
  {
   "Casa": "Benfica",
   "Ospite": "Lech Poznan",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": 2.5,
   "Lega": "International: Europa League",
@@ -2380,7 +2471,7 @@
  {
   "Casa": "Celta Vigo",
   "Ospite": "Union St.Gilloise",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": 2.5,
   "Lega": "International: Europa League",
@@ -2397,7 +2488,7 @@
  {
   "Casa": "Celtic",
   "Ospite": "Besiktas",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": 2.5,
   "Lega": "International: Europa League",
@@ -2414,7 +2505,7 @@
  {
   "Casa": "FC Copenhagen",
   "Ospite": "Iberia 1999",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": 2.5,
   "Lega": "International: Europa Conference League",
@@ -2431,7 +2522,7 @@
  {
   "Casa": "FC Lugano",
   "Ospite": "FK Kauno Zalgiris",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": 2.5,
   "Lega": "International: Europa Conference League",
@@ -2448,7 +2539,7 @@
  {
   "Casa": "Getafe",
   "Ospite": "Brighton",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": 2.5,
   "Lega": "International: Europa Conference League",
@@ -2465,7 +2556,7 @@
  {
   "Casa": "Hapoel Beer Sheva",
   "Ospite": "OFI Crete",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": 2.5,
   "Lega": "International: Europa League",
@@ -2482,7 +2573,7 @@
  {
   "Casa": "Monaco",
   "Ospite": "FC Nordsjaelland",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": 2.5,
   "Lega": "International: Europa Conference League",
@@ -2499,7 +2590,7 @@
  {
   "Casa": "Panathinaikos",
   "Ospite": "CSKA Sofia",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": 2.5,
   "Lega": "International: Europa Conference League",
@@ -2516,7 +2607,7 @@
  {
   "Casa": "Riga FC",
   "Ospite": "Jablonec",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": 2.5,
   "Lega": "International: Europa Conference League",
@@ -2533,7 +2624,7 @@
  {
   "Casa": "St.Truiden",
   "Ospite": "Brann",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": 2.5,
   "Lega": "International: Europa Conference League",
@@ -2550,7 +2641,7 @@
  {
   "Casa": "Sturm Graz",
   "Ospite": "NK Celje",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": 2.5,
   "Lega": "International: Europa League",
@@ -2567,7 +2658,7 @@
  {
   "Casa": "Sunderland",
   "Ospite": "Dinamo Zagreb",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": 2.5,
   "Lega": "International: Europa League",
@@ -2584,7 +2675,7 @@
  {
   "Casa": "Torreense",
   "Ospite": "Ararat Armenia",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": 2.5,
   "Lega": "International: Europa League",
@@ -2601,7 +2692,7 @@
  {
   "Casa": "Twente",
   "Ospite": "Pafos FC",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": 2.5,
   "Lega": "International: Europa Conference League",
@@ -2618,7 +2709,7 @@
  {
   "Casa": "Universitatea Craiova",
   "Ospite": "Egnatia",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": 2.5,
   "Lega": "International: Europa Conference League",
@@ -2635,7 +2726,7 @@
  {
   "Casa": "AZ Alkmaar",
   "Ospite": "Juventus",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -2652,7 +2743,7 @@
  {
   "Casa": "Alcoyano",
   "Ospite": "Mallorca",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "Spain: Copa del Rey Spain",
@@ -2669,7 +2760,7 @@
  {
   "Casa": "Bayer Leverkusen",
   "Ospite": "Marseille",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -2686,7 +2777,7 @@
  {
   "Casa": "Benfica",
   "Ospite": "Lech Poznan",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -2703,7 +2794,7 @@
  {
   "Casa": "Celta Vigo",
   "Ospite": "Union St.Gilloise",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -2720,7 +2811,7 @@
  {
   "Casa": "Celtic",
   "Ospite": "Besiktas",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -2737,7 +2828,7 @@
  {
   "Casa": "FC Copenhagen",
   "Ospite": "Iberia 1999",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -2754,7 +2845,7 @@
  {
   "Casa": "FC Lugano",
   "Ospite": "FK Kauno Zalgiris",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -2771,7 +2862,7 @@
  {
   "Casa": "Getafe",
   "Ospite": "Brighton",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -2788,7 +2879,7 @@
  {
   "Casa": "Hapoel Beer Sheva",
   "Ospite": "OFI Crete",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -2805,7 +2896,7 @@
  {
   "Casa": "Monaco",
   "Ospite": "FC Nordsjaelland",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -2822,7 +2913,7 @@
  {
   "Casa": "Panathinaikos",
   "Ospite": "CSKA Sofia",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -2839,7 +2930,7 @@
  {
   "Casa": "Riga FC",
   "Ospite": "Jablonec",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -2856,7 +2947,7 @@
  {
   "Casa": "St.Truiden",
   "Ospite": "Brann",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -2873,7 +2964,7 @@
  {
   "Casa": "Sturm Graz",
   "Ospite": "NK Celje",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -2890,7 +2981,7 @@
  {
   "Casa": "Sunderland",
   "Ospite": "Dinamo Zagreb",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -2907,7 +2998,7 @@
  {
   "Casa": "Torreense",
   "Ospite": "Ararat Armenia",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -2924,7 +3015,7 @@
  {
   "Casa": "Twente",
   "Ospite": "Pafos FC",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -2941,7 +3032,7 @@
  {
   "Casa": "Universitatea Craiova",
   "Ospite": "Egnatia",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -2958,7 +3049,7 @@
  {
   "Casa": "AZ Alkmaar",
   "Ospite": "Juventus",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -2977,7 +3068,7 @@
  {
   "Casa": "Alcoyano",
   "Ospite": "Mallorca",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "Spain: Copa del Rey Spain",
@@ -2996,7 +3087,7 @@
  {
   "Casa": "Bayer Leverkusen",
   "Ospite": "Marseille",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -3015,7 +3106,7 @@
  {
   "Casa": "Benfica",
   "Ospite": "Lech Poznan",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -3034,7 +3125,7 @@
  {
   "Casa": "Celta Vigo",
   "Ospite": "Union St.Gilloise",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -3053,7 +3144,7 @@
  {
   "Casa": "Celtic",
   "Ospite": "Besiktas",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -3072,7 +3163,7 @@
  {
   "Casa": "FC Copenhagen",
   "Ospite": "Iberia 1999",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -3091,7 +3182,7 @@
  {
   "Casa": "FC Lugano",
   "Ospite": "FK Kauno Zalgiris",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -3110,7 +3201,7 @@
  {
   "Casa": "Getafe",
   "Ospite": "Brighton",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -3129,7 +3220,7 @@
  {
   "Casa": "Hapoel Beer Sheva",
   "Ospite": "OFI Crete",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -3148,7 +3239,7 @@
  {
   "Casa": "Monaco",
   "Ospite": "FC Nordsjaelland",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -3167,7 +3258,7 @@
  {
   "Casa": "Panathinaikos",
   "Ospite": "CSKA Sofia",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -3186,7 +3277,7 @@
  {
   "Casa": "Riga FC",
   "Ospite": "Jablonec",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -3205,7 +3296,7 @@
  {
   "Casa": "St.Truiden",
   "Ospite": "Brann",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -3224,7 +3315,7 @@
  {
   "Casa": "Sturm Graz",
   "Ospite": "NK Celje",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -3243,7 +3334,7 @@
  {
   "Casa": "Sunderland",
   "Ospite": "Dinamo Zagreb",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -3262,7 +3353,7 @@
  {
   "Casa": "Torreense",
   "Ospite": "Ararat Armenia",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -3281,7 +3372,7 @@
  {
   "Casa": "Twente",
   "Ospite": "Pafos FC",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -3300,7 +3391,7 @@
  {
   "Casa": "Universitatea Craiova",
   "Ospite": "Egnatia",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -3319,7 +3410,7 @@
  {
   "Casa": "AZ Alkmaar",
   "Ospite": "Juventus",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -3338,7 +3429,7 @@
  {
   "Casa": "Alcoyano",
   "Ospite": "Mallorca",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "Spain: Copa del Rey Spain",
@@ -3357,7 +3448,7 @@
  {
   "Casa": "Bayer Leverkusen",
   "Ospite": "Marseille",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -3376,7 +3467,7 @@
  {
   "Casa": "Benfica",
   "Ospite": "Lech Poznan",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -3395,7 +3486,7 @@
  {
   "Casa": "Celta Vigo",
   "Ospite": "Union St.Gilloise",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -3414,7 +3505,7 @@
  {
   "Casa": "Celtic",
   "Ospite": "Besiktas",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -3433,7 +3524,7 @@
  {
   "Casa": "FC Copenhagen",
   "Ospite": "Iberia 1999",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -3452,7 +3543,7 @@
  {
   "Casa": "FC Lugano",
   "Ospite": "FK Kauno Zalgiris",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -3471,7 +3562,7 @@
  {
   "Casa": "Getafe",
   "Ospite": "Brighton",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -3490,7 +3581,7 @@
  {
   "Casa": "Hapoel Beer Sheva",
   "Ospite": "OFI Crete",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -3509,7 +3600,7 @@
  {
   "Casa": "Monaco",
   "Ospite": "FC Nordsjaelland",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -3528,7 +3619,7 @@
  {
   "Casa": "Panathinaikos",
   "Ospite": "CSKA Sofia",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -3547,7 +3638,7 @@
  {
   "Casa": "Riga FC",
   "Ospite": "Jablonec",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -3566,7 +3657,7 @@
  {
   "Casa": "St.Truiden",
   "Ospite": "Brann",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -3585,7 +3676,7 @@
  {
   "Casa": "Sturm Graz",
   "Ospite": "NK Celje",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -3604,7 +3695,7 @@
  {
   "Casa": "Sunderland",
   "Ospite": "Dinamo Zagreb",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -3623,7 +3714,7 @@
  {
   "Casa": "Torreense",
   "Ospite": "Ararat Armenia",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa League",
@@ -3642,7 +3733,7 @@
  {
   "Casa": "Twente",
   "Ospite": "Pafos FC",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -3661,7 +3752,7 @@
  {
   "Casa": "Universitatea Craiova",
   "Ospite": "Egnatia",
-  "Ora": "20:00",
+  "Ora": "21:00",
   "OraSito": "15:00",
   "Linea": null,
   "Lega": "International: Europa Conference League",
@@ -3680,7 +3771,7 @@
  {
   "Casa": "Palmeiras",
   "Ospite": "Remo",
-  "Ora": "22:30",
+  "Ora": "23:30",
   "OraSito": "17:30",
   "Linea": null,
   "Lega": "Brazil: Serie A Brazil",
@@ -3699,7 +3790,7 @@
  {
   "Casa": "Palmeiras",
   "Ospite": "Remo",
-  "Ora": "22:30",
+  "Ora": "23:30",
   "OraSito": "17:30",
   "Linea": 2.5,
   "Lega": "Brazil: Serie A Brazil",
@@ -3716,7 +3807,7 @@
  {
   "Casa": "Palmeiras",
   "Ospite": "Remo",
-  "Ora": "22:30",
+  "Ora": "23:30",
   "OraSito": "17:30",
   "Linea": null,
   "Lega": "Brazil: Serie A Brazil",
@@ -3733,7 +3824,7 @@
  {
   "Casa": "Palmeiras",
   "Ospite": "Remo",
-  "Ora": "22:30",
+  "Ora": "23:30",
   "OraSito": "17:30",
   "Linea": null,
   "Lega": "Brazil: Serie A Brazil",
@@ -3752,7 +3843,7 @@
  {
   "Casa": "Palmeiras",
   "Ospite": "Remo",
-  "Ora": "22:30",
+  "Ora": "23:30",
   "OraSito": "17:30",
   "Linea": null,
   "Lega": "Brazil: Serie A Brazil",
