@@ -352,6 +352,19 @@
  },
  {
   "Data": "2026-11-04",
+  "Ora": "09:00",
+  "Lega": "RUSSIA - REGIONAL PATH",
+  "Casa": "Yenisey Krasnoyarsk",
+  "Ospite": "FC Nizhny Novgorod",
+  "Segno": "2",
+  "P1": 21.0,
+  "PX": 26.0,
+  "P2": 53.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-04",
   "Ora": "10:00",
   "Lega": "Europe - UEFA Youth League",
   "Casa": "Kairat U19",
@@ -542,6 +555,19 @@
   "P1": 27.0,
   "PX": 32.0,
   "P2": 41.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-04",
+  "Ora": "12:00",
+  "Lega": "RUSSIA - REGIONAL PATH",
+  "Casa": "Leningradets",
+  "Ospite": "SKA-Energiya",
+  "Segno": "1",
+  "P1": 44.0,
+  "PX": 33.0,
+  "P2": 23.0,
   "Fonti": 1,
   "Elenco": "statarea"
  },
@@ -1289,6 +1315,19 @@
  {
   "Data": "2026-11-04",
   "Ora": "16:30",
+  "Lega": "INTERNATIONAL - EUROPA LEAGUE",
+  "Casa": "Rennes",
+  "Ospite": "Olympiakos Piraeus",
+  "Segno": "1",
+  "P1": 45.0,
+  "PX": 23.0,
+  "P2": 32.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-04",
+  "Ora": "16:30",
   "Lega": "CZECH REPUBLIC - CUP",
   "Casa": "Slovacko",
   "Ospite": "Pardubice",
@@ -1491,6 +1530,19 @@
   "P1": 29.0,
   "PX": 25.0,
   "P2": 46.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-04",
+  "Ora": "17:00",
+  "Lega": "HUNGARY - NB II",
+  "Casa": "Szeged-Csanad",
+  "Ospite": "Bvsc Zuglo",
+  "Segno": "1",
+  "P1": 36.0,
+  "PX": 29.0,
+  "P2": 35.0,
   "Fonti": 1,
   "Elenco": "statarea"
  },
@@ -2251,15 +2303,15 @@
  {
   "Data": "2026-11-04",
   "Ora": "18:45",
-  "Lega": "International: Champions League",
+  "Lega": "INTERNATIONAL - CHAMPIONS LEAGUE",
   "Casa": "AEK Athens",
   "Ospite": "Real Madrid",
   "Segno": "2",
-  "P1": 11.0,
-  "PX": 15.0,
-  "P2": 74.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
+  "P1": 16.5,
+  "PX": 14.5,
+  "P2": 69.0,
+  "Fonti": 2,
+  "Elenco": "ratingbet, statarea"
  },
  {
   "Data": "2026-11-04",
@@ -2290,15 +2342,15 @@
  {
   "Data": "2026-11-04",
   "Ora": "18:45",
-  "Lega": "International: Champions League",
+  "Lega": "INTERNATIONAL - CHAMPIONS LEAGUE",
   "Casa": "Fenerbahce",
   "Ospite": "Liverpool",
   "Segno": "2",
-  "P1": 20.0,
-  "PX": 22.0,
-  "P2": 58.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
+  "P1": 24.0,
+  "PX": 22.5,
+  "P2": 53.5,
+  "Fonti": 2,
+  "Elenco": "ratingbet, statarea"
  },
  {
   "Data": "2026-11-04",
@@ -2472,15 +2524,15 @@
  {
   "Data": "2026-11-04",
   "Ora": "19:00",
-  "Lega": "Spain: Copa del Rey Spain",
+  "Lega": "SPAIN - COPA DEL REY",
   "Casa": "Portugalete",
   "Ospite": "Real Union",
-  "Segno": "2",
-  "P1": 31.0,
-  "PX": 29.0,
-  "P2": 40.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
+  "Segno": "1",
+  "P1": 36.5,
+  "PX": 28.0,
+  "P2": 35.5,
+  "Fonti": 2,
+  "Elenco": "ratingbet, statarea"
  },
  {
   "Data": "2026-11-04",
@@ -2624,6 +2676,19 @@
   "P2": 21.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-04",
+  "Ora": "20:00",
+  "Lega": "SPAIN - COPA DEL REY",
+  "Casa": "Amorebieta",
+  "Ospite": "Logrones CF",
+  "Segno": "2",
+  "P1": 25.0,
+  "PX": 25.0,
+  "P2": 50.0,
+  "Fonti": 2,
+  "Elenco": "ratingbet, statarea"
  },
  {
   "Data": "2026-11-04",
@@ -2823,19 +2888,6 @@
  {
   "Data": "2026-11-04",
   "Ora": "20:00",
-  "Lega": "Spain: Copa del Rey Spain",
-  "Casa": "SD Amorebieta",
-  "Ospite": "Logrones",
-  "Segno": "2",
-  "P1": 23.0,
-  "PX": 25.0,
-  "P2": 52.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
- },
- {
-  "Data": "2026-11-04",
-  "Ora": "20:00",
   "Lega": "ENGLAND - WOMENS LEAGUE CUP NORTHERN GROUP",
   "Casa": "Sheffield United Women (w)",
   "Ospite": "Everton (w)",
@@ -2888,15 +2940,15 @@
  {
   "Data": "2026-11-04",
   "Ora": "20:30",
-  "Lega": "Spain: Copa del Rey Spain",
+  "Lega": "SPAIN - COPA DEL REY",
   "Casa": "Deportiva Minera",
   "Ospite": "Cartagena",
-  "Segno": "2",
-  "P1": 26.0,
-  "PX": 28.0,
-  "P2": 46.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
+  "Segno": "1",
+  "P1": 37.5,
+  "PX": 26.0,
+  "P2": 36.5,
+  "Fonti": 2,
+  "Elenco": "ratingbet, statarea"
  },
  {
   "Data": "2026-11-04",
@@ -2992,15 +3044,28 @@
  {
   "Data": "2026-11-04",
   "Ora": "20:30",
-  "Lega": "Spain: Copa del Rey Spain",
+  "Lega": "SPAIN - COPA DEL REY",
+  "Casa": "Reus",
+  "Ospite": "Barakaldo",
+  "Segno": "1",
+  "P1": 44.0,
+  "PX": 28.0,
+  "P2": 28.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-04",
+  "Ora": "20:30",
+  "Lega": "SPAIN - COPA DEL REY",
   "Casa": "Utebo",
   "Ospite": "Sabadell",
   "Segno": "2",
-  "P1": 17.0,
-  "PX": 25.0,
-  "P2": 58.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
+  "P1": 20.5,
+  "PX": 31.5,
+  "P2": 48.0,
+  "Fonti": 2,
+  "Elenco": "ratingbet, statarea"
  },
  {
   "Data": "2026-11-04",
@@ -3330,6 +3395,19 @@
  {
   "Data": "2026-11-04",
   "Ora": "21:00",
+  "Lega": "INTERNATIONAL - CHAMPIONS LEAGUE",
+  "Casa": "Borussia Dortmund",
+  "Ospite": "Betis",
+  "Segno": "1",
+  "P1": 55.0,
+  "PX": 24.0,
+  "P2": 21.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-04",
+  "Ora": "21:00",
   "Lega": "England - Championship",
   "Casa": "Bristol",
   "Ospite": "Wolves",
@@ -3369,19 +3447,6 @@
  {
   "Data": "2026-11-04",
   "Ora": "21:00",
-  "Lega": "MOROCCO - BOTOLA PRO",
-  "Casa": "FAR Rabat",
-  "Ospite": "Ittihad Tanger",
-  "Segno": "1",
-  "P1": 62.0,
-  "PX": 26.0,
-  "P2": 12.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
- },
- {
-  "Data": "2026-11-04",
-  "Ora": "21:00",
   "Lega": "Morocco: Botola Pro Morocco",
   "Casa": "FAR Rabat",
   "Ospite": "Raja Casablanca",
@@ -3391,6 +3456,19 @@
   "P2": 23.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-11-04",
+  "Ora": "21:00",
+  "Lega": "MOROCCO - BOTOLA PRO",
+  "Casa": "FAR Rabat",
+  "Ospite": "Ittihad Tanger",
+  "Segno": "1",
+  "P1": 62.0,
+  "PX": 26.0,
+  "P2": 12.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-04",
@@ -3408,6 +3486,19 @@
  {
   "Data": "2026-11-04",
   "Ora": "21:00",
+  "Lega": "INTERNATIONAL - CHAMPIONS LEAGUE",
+  "Casa": "FC Porto",
+  "Ospite": "Napoli",
+  "Segno": "1",
+  "P1": 49.0,
+  "PX": 25.0,
+  "P2": 26.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-04",
+  "Ora": "21:00",
   "Lega": "SCOTLAND - PREMIERSHIP",
   "Casa": "Hearts",
   "Ospite": "Rangers",
@@ -3421,15 +3512,15 @@
  {
   "Data": "2026-11-04",
   "Ora": "21:00",
-  "Lega": "International: Champions League",
+  "Lega": "INTERNATIONAL - CHAMPIONS LEAGUE",
   "Casa": "Lens",
   "Ospite": "Como",
   "Segno": "2",
-  "P1": 33.0,
+  "P1": 35.5,
   "PX": 25.0,
-  "P2": 42.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
+  "P2": 39.5,
+  "Fonti": 2,
+  "Elenco": "ratingbet, statarea"
  },
  {
   "Data": "2026-11-04",
@@ -3486,15 +3577,15 @@
  {
   "Data": "2026-11-04",
   "Ora": "21:00",
-  "Lega": "International: Champions League",
+  "Lega": "INTERNATIONAL - CHAMPIONS LEAGUE",
   "Casa": "RB Leipzig",
   "Ospite": "Manchester City",
   "Segno": "2",
-  "P1": 16.0,
-  "PX": 20.0,
-  "P2": 64.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
+  "P1": 29.0,
+  "PX": 18.0,
+  "P2": 53.0,
+  "Fonti": 2,
+  "Elenco": "ratingbet, statarea"
  },
  {
   "Data": "2026-11-04",

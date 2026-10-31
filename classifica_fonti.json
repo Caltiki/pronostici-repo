@@ -1,15 +1,15 @@
 {
- "aggiornato": "2026-10-31 21:25",
- "risultati": 20677,
+ "aggiornato": "2026-10-31 21:42",
+ "risultati": 20685,
  "con_prezzo": 7901,
  "minimo": 100,
  "fonti": [
   {
    "chiave": "webpronostici",
    "nome": "WebPronostici",
-   "righe": 36700,
+   "righe": 36764,
    "rotte": 0,
-   "misurate": 9518,
+   "misurate": 9521,
    "mercati": [
     {
      "mercato": "1X2",
@@ -20,22 +20,22 @@
     },
     {
      "mercato": "BTTS",
-     "prese": 1576,
-     "su": 2812,
-     "pct": 56.0,
+     "prese": 1577,
+     "su": 2813,
+     "pct": 56.1,
      "rimborsi": 0
     },
     {
      "mercato": "DC",
-     "prese": 1295,
-     "su": 1772,
+     "prese": 1296,
+     "su": 1773,
      "pct": 73.1,
      "rimborsi": 0
     },
     {
      "mercato": "OU",
-     "prese": 2017,
-     "su": 3379,
+     "prese": 2018,
+     "su": 3380,
      "pct": 59.7,
      "rimborsi": 286
     },
@@ -47,7 +47,7 @@
      "rimborsi": 0
     }
    ],
-   "prese": 5837,
+   "prese": 5840,
    "pct": 61.3,
    "mercato": {
     "n": 393,
@@ -60,20 +60,20 @@
    "nome": "SoccerSite",
    "righe": 7424,
    "rotte": 48,
-   "misurate": 3741,
+   "misurate": 3747,
    "mercati": [
     {
      "mercato": "1X2",
-     "prese": 1115,
-     "su": 2118,
+     "prese": 1117,
+     "su": 2122,
      "pct": 52.6,
      "rimborsi": 0
     },
     {
      "mercato": "BTTS",
-     "prese": 363,
-     "su": 620,
-     "pct": 58.5,
+     "prese": 364,
+     "su": 621,
+     "pct": 58.6,
      "rimborsi": 0
     },
     {
@@ -85,18 +85,18 @@
     },
     {
      "mercato": "OU",
-     "prese": 377,
-     "su": 620,
-     "pct": 60.8,
+     "prese": 378,
+     "su": 621,
+     "pct": 60.9,
      "rimborsi": 0
     }
    ],
-   "prese": 2157,
+   "prese": 2161,
    "pct": 57.7,
    "mercato": {
-    "n": 1193,
-    "fonte": 53.3,
-    "book": 54.0
+    "n": 1194,
+    "fonte": 53.4,
+    "book": 53.9
    }
   },
   {
@@ -148,7 +148,7 @@
    "nome": "xGaura",
    "righe": 10879,
    "rotte": 0,
-   "misurate": 3456,
+   "misurate": 3460,
    "mercati": [
     {
      "mercato": "1X2",
@@ -166,20 +166,20 @@
     },
     {
      "mercato": "DC",
-     "prese": 623,
-     "su": 887,
+     "prese": 624,
+     "su": 889,
      "pct": 70.2,
      "rimborsi": 0
     },
     {
      "mercato": "OU",
-     "prese": 595,
-     "su": 987,
+     "prese": 596,
+     "su": 989,
      "pct": 60.3,
      "rimborsi": 0
     }
    ],
-   "prese": 2118,
+   "prese": 2120,
    "pct": 61.3,
    "mercato": {
     "n": 704,
@@ -213,31 +213,31 @@
   {
    "chiave": "statarea",
    "nome": "Statarea",
-   "righe": 5954,
+   "righe": 6725,
    "rotte": 0,
-   "misurate": 1637,
+   "misurate": 1640,
    "mercati": [
     {
      "mercato": "1X2",
-     "prese": 560,
-     "su": 1045,
+     "prese": 561,
+     "su": 1047,
      "pct": 53.6,
      "rimborsi": 0
     },
     {
      "mercato": "DC",
-     "prese": 409,
-     "su": 592,
+     "prese": 410,
+     "su": 593,
      "pct": 69.1,
      "rimborsi": 0
     }
    ],
-   "prese": 969,
+   "prese": 971,
    "pct": 59.2,
    "mercato": {
-    "n": 663,
-    "fonte": 53.1,
-    "book": 54.8
+    "n": 664,
+    "fonte": 53.0,
+    "book": 54.7
    }
   }
  ]

@@ -2416,7 +2416,8 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 58.0,
-  "Equa": 1.72
+  "Equa": 1.72,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-02",
@@ -2616,8 +2617,7 @@
   "Mercato": "BTTS",
   "Sel": "NoGol",
   "Prob": 56.9,
-  "Equa": 1.76,
-  "InSchedina": "si"
+  "Equa": 1.76
  },
  {
   "Data": "2026-11-02",
@@ -2657,8 +2657,7 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 56.7,
-  "Equa": 1.77,
-  "InSchedina": "si"
+  "Equa": 1.77
  },
  {
   "Data": "2026-11-02",
@@ -3761,7 +3760,8 @@
   "Mercato": "BTTS",
   "Sel": "NoGol",
   "Prob": 50.8,
-  "Equa": 1.97
+  "Equa": 1.97,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-02",
@@ -3961,6 +3961,26 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 49.3,
+  "Equa": 2.03
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "21:00",
+  "Campionato": "Spain La Liga",
+  "Partita": "Deportivo A Coruña - Osasuna",
+  "Casa": "Deportivo A Coruña",
+  "Ospite": "Osasuna",
+  "Linea_OU": "",
+  "Gol_attesi": 2.38,
+  "Margine": 1.8,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "Gol NoGol",
+  "Mercato": "BTTS",
+  "Sel": "Gol",
+  "Prob": 49.2,
   "Equa": 2.03
  },
  {
@@ -4760,26 +4780,6 @@
   "Gruppo": "1X2",
   "Mercato": "1X2",
   "Sel": "1",
-  "Prob": 43.1,
-  "Equa": 2.32
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "18:30",
-  "Campionato": "Bulgaria First League",
-  "Partita": "Arda - Septemvri Sofia",
-  "Casa": "Arda",
-  "Ospite": "Septemvri Sofia",
-  "Linea_OU": "",
-  "Gol_attesi": 2.38,
-  "Margine": 5.1,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "Gol",
   "Prob": 43.1,
   "Equa": 2.32
  },
@@ -6905,13 +6905,13 @@
  },
  {
   "Data": "2026-11-02",
-  "Ora": "02:10",
-  "Campionato": "Mexico Liga MX",
-  "Partita": "Cruz Azul - León",
-  "Casa": "Cruz Azul",
-  "Ospite": "León",
+  "Ora": "18:30",
+  "Campionato": "Bulgaria First League",
+  "Partita": "Arda - Septemvri Sofia",
+  "Casa": "Arda",
+  "Ospite": "Septemvri Sofia",
   "Linea_OU": "",
-  "Gol_attesi": 3.27,
+  "Gol_attesi": 2.38,
   "Margine": 5.1,
   "Movimento": null,
   "Principale": "",
@@ -6920,8 +6920,8 @@
   "Gruppo": "1X2",
   "Mercato": "1X2",
   "Sel": "X",
-  "Prob": 22.7,
-  "Equa": 4.41
+  "Prob": 25.0,
+  "Equa": 4.0
  },
  {
   "Data": "2026-11-02",

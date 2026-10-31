@@ -7,8 +7,8 @@
   "Ospite": "Deportivo Maldonado",
   "Segno": "2",
   "P1": 29.0,
-  "PX": 28.0,
-  "P2": 43.0,
+  "PX": 27.0,
+  "P2": 44.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -162,8 +162,8 @@
   "Casa": "Independiente Medellin",
   "Ospite": "Alianza",
   "Segno": "1",
-  "P1": 64.0,
-  "PX": 22.0,
+  "P1": 63.0,
+  "PX": 23.0,
   "P2": 14.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -175,9 +175,9 @@
   "Casa": "CA Independiente de la Chorrera",
   "Ospite": "San Francisco FC",
   "Segno": "1",
-  "P1": 38.0,
+  "P1": 39.0,
   "PX": 26.0,
-  "P2": 36.0,
+  "P2": 35.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -241,8 +241,8 @@
   "Ospite": "Always Ready",
   "Segno": "2",
   "P1": 25.0,
-  "PX": 24.0,
-  "P2": 51.0,
+  "PX": 23.0,
+  "P2": 52.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -266,9 +266,9 @@
   "Casa": "Charlotte Independence",
   "Ospite": "FC Naples",
   "Segno": "1",
-  "P1": 59.0,
+  "P1": 60.0,
   "PX": 19.0,
-  "P2": 22.0,
+  "P2": 21.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -397,8 +397,8 @@
   "Ospite": "León",
   "Segno": "1",
   "P1": 55.5,
-  "PX": 23.1,
-  "P2": 21.4,
+  "PX": 22.7,
+  "P2": 21.7,
   "Fonti": 3,
   "Elenco": "betimate, footymetrics, statarea"
  },
@@ -461,8 +461,8 @@
   "Casa": "Olancho FC",
   "Ospite": "CD Platense",
   "Segno": "1",
-  "P1": 58.0,
-  "PX": 24.0,
+  "P1": 59.0,
+  "PX": 23.0,
   "P2": 18.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -513,8 +513,8 @@
   "Casa": "Sacramento Republic",
   "Ospite": "Tulsa",
   "Segno": "1",
-  "P1": 54.0,
-  "PX": 29.5,
+  "P1": 53.5,
+  "PX": 30.0,
   "P2": 16.5,
   "Fonti": 2,
   "Elenco": "betimate, statarea"
@@ -639,19 +639,6 @@
  {
   "Data": "2026-11-02",
   "Ora": "12:00",
-  "Lega": "UKRAINE - PREMIER LEAGUE",
-  "Casa": "Kryvbas Kryvyi Rih",
-  "Ospite": "Dinamo Kiev",
-  "Segno": "2",
-  "P1": 21.0,
-  "PX": 22.0,
-  "P2": 57.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "12:00",
   "Lega": "Ukraine - Premier League",
   "Casa": "Kryvbas Kryvyi Rih",
   "Ospite": "Dynamo Kyiv",
@@ -661,6 +648,19 @@
   "P2": 70.3,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "12:00",
+  "Lega": "UKRAINE - PREMIER LEAGUE",
+  "Casa": "Kryvbas Kryvyi Rih",
+  "Ospite": "Dinamo Kiev",
+  "Segno": "2",
+  "P1": 21.0,
+  "PX": 22.0,
+  "P2": 57.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-02",
@@ -1653,19 +1653,6 @@
  {
   "Data": "2026-11-02",
   "Ora": "18:00",
-  "Lega": "Poland - Ekstraklasa",
-  "Casa": "Radomiak Radom",
-  "Ospite": "Śląsk Wrocław",
-  "Segno": "1",
-  "P1": 47.0,
-  "PX": 25.0,
-  "P2": 28.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "18:00",
   "Lega": "POLAND - EKSTRAKLASA",
   "Casa": "Radomiak Radom",
   "Ospite": "Slask Wroclaw",
@@ -1675,6 +1662,19 @@
   "P2": 32.0,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea"
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "18:00",
+  "Lega": "Poland - Ekstraklasa",
+  "Casa": "Radomiak Radom",
+  "Ospite": "Śląsk Wrocław",
+  "Segno": "1",
+  "P1": 47.0,
+  "PX": 25.0,
+  "P2": 28.0,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
  },
  {
   "Data": "2026-11-02",
@@ -2823,19 +2823,6 @@
  {
   "Data": "2026-11-02",
   "Ora": "20:45",
-  "Lega": "Italy - Serie A",
-  "Casa": "Atalanta",
-  "Ospite": "Parma",
-  "Segno": "1",
-  "P1": 63.7,
-  "PX": 21.4,
-  "P2": 14.9,
-  "Fonti": 2,
-  "Elenco": "footymetrics, statarea"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "20:45",
   "Lega": "Italy: Serie A Italy",
   "Casa": "Atalanta",
   "Ospite": "Parma Calcio 1913",
@@ -2845,6 +2832,19 @@
   "P2": 14.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "20:45",
+  "Lega": "Italy - Serie A",
+  "Casa": "Atalanta",
+  "Ospite": "Parma",
+  "Segno": "1",
+  "P1": 63.7,
+  "PX": 21.4,
+  "P2": 14.9,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-02",
