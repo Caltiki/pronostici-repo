@@ -1,0 +1,678 @@
+{
+ "generato": "2026-10-31T08:23:13",
+ "stagione": "2026/2027",
+ "squadre": {
+  "Roma": {
+   "nome": "Roma",
+   "mp": 9,
+   "xg_90": 2.72,
+   "xga_90": 1.49,
+   "lega": "Serie A"
+  },
+  "Lazio": {
+   "nome": "Lazio",
+   "mp": 9,
+   "xg_90": 2.01,
+   "xga_90": 1.28,
+   "lega": "Serie A"
+  },
+  "Bologna": {
+   "nome": "Bologna",
+   "mp": 9,
+   "xg_90": 1.63,
+   "xga_90": 1.45,
+   "lega": "Serie A"
+  },
+  "Juventus": {
+   "nome": "Juventus",
+   "mp": 9,
+   "xg_90": 1.59,
+   "xga_90": 0.6,
+   "lega": "Serie A"
+  },
+  "Udinese": {
+   "nome": "Udinese",
+   "mp": 9,
+   "xg_90": 1.18,
+   "xga_90": 2.41,
+   "lega": "Serie A"
+  },
+  "Genoa": {
+   "nome": "Genoa",
+   "mp": 9,
+   "xg_90": 0.93,
+   "xga_90": 1.45,
+   "lega": "Serie A"
+  },
+  "Sassuolo": {
+   "nome": "Sassuolo",
+   "mp": 9,
+   "xg_90": 1.54,
+   "xga_90": 2.19,
+   "lega": "Serie A"
+  },
+  "Napoli": {
+   "nome": "Napoli",
+   "mp": 9,
+   "xg_90": 2.27,
+   "xga_90": 1.22,
+   "lega": "Serie A"
+  },
+  "Inter": {
+   "nome": "Inter",
+   "mp": 9,
+   "xg_90": 3.01,
+   "xga_90": 1.27,
+   "lega": "Serie A"
+  },
+  "Atalanta": {
+   "nome": "Atalanta",
+   "mp": 9,
+   "xg_90": 1.58,
+   "xga_90": 2.16,
+   "lega": "Serie A"
+  },
+  "Fiorentina": {
+   "nome": "Fiorentina",
+   "mp": 9,
+   "xg_90": 1.49,
+   "xga_90": 1.89,
+   "lega": "Serie A"
+  },
+  "AC Milan": {
+   "nome": "AC Milan",
+   "mp": 9,
+   "xg_90": 2.15,
+   "xga_90": 1.33,
+   "lega": "Serie A"
+  },
+  "Frosinone": {
+   "nome": "Frosinone",
+   "mp": 9,
+   "xg_90": 1.95,
+   "xga_90": 2.47,
+   "lega": "Serie A"
+  },
+  "Torino": {
+   "nome": "Torino",
+   "mp": 9,
+   "xg_90": 1.3,
+   "xga_90": 1.41,
+   "lega": "Serie A"
+  },
+  "Cagliari": {
+   "nome": "Cagliari",
+   "mp": 9,
+   "xg_90": 1.3,
+   "xga_90": 2.07,
+   "lega": "Serie A"
+  },
+  "Parma Calcio 1913": {
+   "nome": "Parma Calcio 1913",
+   "mp": 9,
+   "xg_90": 0.89,
+   "xga_90": 1.93,
+   "lega": "Serie A"
+  },
+  "Lecce": {
+   "nome": "Lecce",
+   "mp": 9,
+   "xg_90": 1.57,
+   "xga_90": 2.49,
+   "lega": "Serie A"
+  },
+  "Venezia": {
+   "nome": "Venezia",
+   "mp": 9,
+   "xg_90": 1.73,
+   "xga_90": 2.32,
+   "lega": "Serie A"
+  },
+  "Monza": {
+   "nome": "Monza",
+   "mp": 9,
+   "xg_90": 1.61,
+   "xga_90": 1.81,
+   "lega": "Serie A"
+  },
+  "Como": {
+   "nome": "Como",
+   "mp": 9,
+   "xg_90": 2.28,
+   "xga_90": 1.5,
+   "lega": "Serie A"
+  },
+  "Aston Villa": {
+   "nome": "Aston Villa",
+   "mp": 8,
+   "xg_90": 1.19,
+   "xga_90": 1.92,
+   "lega": "EPL"
+  },
+  "Everton": {
+   "nome": "Everton",
+   "mp": 8,
+   "xg_90": 1.56,
+   "xga_90": 1.58,
+   "lega": "EPL"
+  },
+  "Bournemouth": {
+   "nome": "Bournemouth",
+   "mp": 8,
+   "xg_90": 2.09,
+   "xga_90": 1.16,
+   "lega": "EPL"
+  },
+  "Sunderland": {
+   "nome": "Sunderland",
+   "mp": 8,
+   "xg_90": 1.51,
+   "xga_90": 1.99,
+   "lega": "EPL"
+  },
+  "Crystal Palace": {
+   "nome": "Crystal Palace",
+   "mp": 8,
+   "xg_90": 1.56,
+   "xga_90": 2.17,
+   "lega": "EPL"
+  },
+  "Chelsea": {
+   "nome": "Chelsea",
+   "mp": 8,
+   "xg_90": 1.55,
+   "xga_90": 1.69,
+   "lega": "EPL"
+  },
+  "Tottenham": {
+   "nome": "Tottenham",
+   "mp": 8,
+   "xg_90": 1.23,
+   "xga_90": 1.46,
+   "lega": "EPL"
+  },
+  "Arsenal": {
+   "nome": "Arsenal",
+   "mp": 8,
+   "xg_90": 1.87,
+   "xga_90": 1.02,
+   "lega": "EPL"
+  },
+  "Newcastle United": {
+   "nome": "Newcastle United",
+   "mp": 8,
+   "xg_90": 1.25,
+   "xga_90": 1.89,
+   "lega": "EPL"
+  },
+  "Liverpool": {
+   "nome": "Liverpool",
+   "mp": 8,
+   "xg_90": 1.48,
+   "xga_90": 1.34,
+   "lega": "EPL"
+  },
+  "Manchester City": {
+   "nome": "Manchester City",
+   "mp": 8,
+   "xg_90": 2.37,
+   "xga_90": 1.24,
+   "lega": "EPL"
+  },
+  "Manchester United": {
+   "nome": "Manchester United",
+   "mp": 8,
+   "xg_90": 1.67,
+   "xga_90": 1.65,
+   "lega": "EPL"
+  },
+  "Hull": {
+   "nome": "Hull",
+   "mp": 8,
+   "xg_90": 1.17,
+   "xga_90": 1.75,
+   "lega": "EPL"
+  },
+  "Brighton": {
+   "nome": "Brighton",
+   "mp": 8,
+   "xg_90": 2.26,
+   "xga_90": 1.43,
+   "lega": "EPL"
+  },
+  "Fulham": {
+   "nome": "Fulham",
+   "mp": 8,
+   "xg_90": 1.57,
+   "xga_90": 1.53,
+   "lega": "EPL"
+  },
+  "Brentford": {
+   "nome": "Brentford",
+   "mp": 8,
+   "xg_90": 1.8,
+   "xga_90": 1.6,
+   "lega": "EPL"
+  },
+  "Leeds": {
+   "nome": "Leeds",
+   "mp": 8,
+   "xg_90": 1.36,
+   "xga_90": 1.35,
+   "lega": "EPL"
+  },
+  "Nottingham Forest": {
+   "nome": "Nottingham Forest",
+   "mp": 8,
+   "xg_90": 1.97,
+   "xga_90": 1.13,
+   "lega": "EPL"
+  },
+  "Ipswich": {
+   "nome": "Ipswich",
+   "mp": 8,
+   "xg_90": 1.33,
+   "xga_90": 2.36,
+   "lega": "EPL"
+  },
+  "Coventry": {
+   "nome": "Coventry",
+   "mp": 8,
+   "xg_90": 1.02,
+   "xga_90": 1.54,
+   "lega": "EPL"
+  },
+  "Malaga": {
+   "nome": "Malaga",
+   "mp": 10,
+   "xg_90": 0.91,
+   "xga_90": 1.97,
+   "lega": "La Liga"
+  },
+  "Sevilla": {
+   "nome": "Sevilla",
+   "mp": 10,
+   "xg_90": 1.28,
+   "xga_90": 1.54,
+   "lega": "La Liga"
+  },
+  "Deportivo La Coruna": {
+   "nome": "Deportivo La Coruna",
+   "mp": 10,
+   "xg_90": 1.44,
+   "xga_90": 1.46,
+   "lega": "La Liga"
+  },
+  "Real Sociedad": {
+   "nome": "Real Sociedad",
+   "mp": 10,
+   "xg_90": 1.62,
+   "xga_90": 1.78,
+   "lega": "La Liga"
+  },
+  "Espanyol": {
+   "nome": "Espanyol",
+   "mp": 11,
+   "xg_90": 1.13,
+   "xga_90": 1.47,
+   "lega": "La Liga"
+  },
+  "Getafe": {
+   "nome": "Getafe",
+   "mp": 10,
+   "xg_90": 0.77,
+   "xga_90": 1.67,
+   "lega": "La Liga"
+  },
+  "Atletico Madrid": {
+   "nome": "Atletico Madrid",
+   "mp": 10,
+   "xg_90": 1.97,
+   "xga_90": 1.22,
+   "lega": "La Liga"
+  },
+  "Rayo Vallecano": {
+   "nome": "Rayo Vallecano",
+   "mp": 9,
+   "xg_90": 1.4,
+   "xga_90": 1.81,
+   "lega": "La Liga"
+  },
+  "Valencia": {
+   "nome": "Valencia",
+   "mp": 10,
+   "xg_90": 1.09,
+   "xga_90": 1.61,
+   "lega": "La Liga"
+  },
+  "Athletic Club": {
+   "nome": "Athletic Club",
+   "mp": 9,
+   "xg_90": 1.58,
+   "xga_90": 1.35,
+   "lega": "La Liga"
+  },
+  "Barcelona": {
+   "nome": "Barcelona",
+   "mp": 10,
+   "xg_90": 3.71,
+   "xga_90": 1.12,
+   "lega": "La Liga"
+  },
+  "Real Madrid": {
+   "nome": "Real Madrid",
+   "mp": 10,
+   "xg_90": 2.52,
+   "xga_90": 1.13,
+   "lega": "La Liga"
+  },
+  "Levante": {
+   "nome": "Levante",
+   "mp": 10,
+   "xg_90": 1.45,
+   "xga_90": 2.26,
+   "lega": "La Liga"
+  },
+  "Celta Vigo": {
+   "nome": "Celta Vigo",
+   "mp": 10,
+   "xg_90": 0.96,
+   "xga_90": 1.22,
+   "lega": "La Liga"
+  },
+  "Real Betis": {
+   "nome": "Real Betis",
+   "mp": 10,
+   "xg_90": 1.82,
+   "xga_90": 1.79,
+   "lega": "La Liga"
+  },
+  "Villarreal": {
+   "nome": "Villarreal",
+   "mp": 11,
+   "xg_90": 2.23,
+   "xga_90": 1.34,
+   "lega": "La Liga"
+  },
+  "Osasuna": {
+   "nome": "Osasuna",
+   "mp": 10,
+   "xg_90": 1.39,
+   "xga_90": 1.57,
+   "lega": "La Liga"
+  },
+  "Alaves": {
+   "nome": "Alaves",
+   "mp": 10,
+   "xg_90": 1.46,
+   "xga_90": 1.12,
+   "lega": "La Liga"
+  },
+  "Elche": {
+   "nome": "Elche",
+   "mp": 10,
+   "xg_90": 1.32,
+   "xga_90": 1.97,
+   "lega": "La Liga"
+  },
+  "Racing Santander": {
+   "nome": "Racing Santander",
+   "mp": 10,
+   "xg_90": 1.43,
+   "xga_90": 2.14,
+   "lega": "La Liga"
+  },
+  "Bayern Munich": {
+   "nome": "Bayern Munich",
+   "mp": 7,
+   "xg_90": 3.7,
+   "xga_90": 0.93,
+   "lega": "Bundesliga"
+  },
+  "Hamburger SV": {
+   "nome": "Hamburger SV",
+   "mp": 7,
+   "xg_90": 1.08,
+   "xga_90": 2.02,
+   "lega": "Bundesliga"
+  },
+  "Bayer Leverkusen": {
+   "nome": "Bayer Leverkusen",
+   "mp": 7,
+   "xg_90": 2.14,
+   "xga_90": 1.43,
+   "lega": "Bundesliga"
+  },
+  "Hoffenheim": {
+   "nome": "Hoffenheim",
+   "mp": 7,
+   "xg_90": 2.14,
+   "xga_90": 1.58,
+   "lega": "Bundesliga"
+  },
+  "Augsburg": {
+   "nome": "Augsburg",
+   "mp": 7,
+   "xg_90": 2.33,
+   "xga_90": 2.56,
+   "lega": "Bundesliga"
+  },
+  "Werder Bremen": {
+   "nome": "Werder Bremen",
+   "mp": 7,
+   "xg_90": 1.68,
+   "xga_90": 1.74,
+   "lega": "Bundesliga"
+  },
+  "Schalke 04": {
+   "nome": "Schalke 04",
+   "mp": 7,
+   "xg_90": 1.12,
+   "xga_90": 2.09,
+   "lega": "Bundesliga"
+  },
+  "Mainz 05": {
+   "nome": "Mainz 05",
+   "mp": 8,
+   "xg_90": 2.26,
+   "xga_90": 1.62,
+   "lega": "Bundesliga"
+  },
+  "Borussia Dortmund": {
+   "nome": "Borussia Dortmund",
+   "mp": 7,
+   "xg_90": 1.99,
+   "xga_90": 0.98,
+   "lega": "Bundesliga"
+  },
+  "Borussia M.Gladbach": {
+   "nome": "Borussia M.Gladbach",
+   "mp": 7,
+   "xg_90": 1.7,
+   "xga_90": 2.59,
+   "lega": "Bundesliga"
+  },
+  "Eintracht Frankfurt": {
+   "nome": "Eintracht Frankfurt",
+   "mp": 7,
+   "xg_90": 1.85,
+   "xga_90": 2.34,
+   "lega": "Bundesliga"
+  },
+  "VfB Stuttgart": {
+   "nome": "VfB Stuttgart",
+   "mp": 7,
+   "xg_90": 2.19,
+   "xga_90": 2.63,
+   "lega": "Bundesliga"
+  },
+  "FC Cologne": {
+   "nome": "FC Cologne",
+   "mp": 7,
+   "xg_90": 1.81,
+   "xga_90": 1.64,
+   "lega": "Bundesliga"
+  },
+  "Freiburg": {
+   "nome": "Freiburg",
+   "mp": 7,
+   "xg_90": 1.76,
+   "xga_90": 1.34,
+   "lega": "Bundesliga"
+  },
+  "RasenBallsport Leipzig": {
+   "nome": "RasenBallsport Leipzig",
+   "mp": 7,
+   "xg_90": 2.46,
+   "xga_90": 1.82,
+   "lega": "Bundesliga"
+  },
+  "Paderborn": {
+   "nome": "Paderborn",
+   "mp": 7,
+   "xg_90": 1.13,
+   "xga_90": 1.89,
+   "lega": "Bundesliga"
+  },
+  "Union Berlin": {
+   "nome": "Union Berlin",
+   "mp": 7,
+   "xg_90": 1.13,
+   "xga_90": 2.31,
+   "lega": "Bundesliga"
+  },
+  "Elversberg": {
+   "nome": "Elversberg",
+   "mp": 8,
+   "xg_90": 1.56,
+   "xga_90": 2.47,
+   "lega": "Bundesliga"
+  },
+  "Lille": {
+   "nome": "Lille",
+   "mp": 9,
+   "xg_90": 1.5,
+   "xga_90": 1.42,
+   "lega": "Ligue 1"
+  },
+  "Paris Saint Germain": {
+   "nome": "Paris Saint Germain",
+   "mp": 9,
+   "xg_90": 2.44,
+   "xga_90": 1.39,
+   "lega": "Ligue 1"
+  },
+  "Rennes": {
+   "nome": "Rennes",
+   "mp": 9,
+   "xg_90": 2.34,
+   "xga_90": 2.17,
+   "lega": "Ligue 1"
+  },
+  "Marseille": {
+   "nome": "Marseille",
+   "mp": 8,
+   "xg_90": 1.84,
+   "xga_90": 2.24,
+   "lega": "Ligue 1"
+  },
+  "Angers": {
+   "nome": "Angers",
+   "mp": 8,
+   "xg_90": 1.46,
+   "xga_90": 1.97,
+   "lega": "Ligue 1"
+  },
+  "Nice": {
+   "nome": "Nice",
+   "mp": 9,
+   "xg_90": 1.4,
+   "xga_90": 1.88,
+   "lega": "Ligue 1"
+  },
+  "Monaco": {
+   "nome": "Monaco",
+   "mp": 8,
+   "xg_90": 1.22,
+   "xga_90": 1.29,
+   "lega": "Ligue 1"
+  },
+  "Troyes": {
+   "nome": "Troyes",
+   "mp": 8,
+   "xg_90": 1.16,
+   "xga_90": 1.77,
+   "lega": "Ligue 1"
+  },
+  "Toulouse": {
+   "nome": "Toulouse",
+   "mp": 8,
+   "xg_90": 1.82,
+   "xga_90": 1.31,
+   "lega": "Ligue 1"
+  },
+  "Lyon": {
+   "nome": "Lyon",
+   "mp": 8,
+   "xg_90": 1.65,
+   "xga_90": 1.19,
+   "lega": "Ligue 1"
+  },
+  "Lorient": {
+   "nome": "Lorient",
+   "mp": 8,
+   "xg_90": 1.14,
+   "xga_90": 0.99,
+   "lega": "Ligue 1"
+  },
+  "Lens": {
+   "nome": "Lens",
+   "mp": 9,
+   "xg_90": 1.87,
+   "xga_90": 1.51,
+   "lega": "Ligue 1"
+  },
+  "Strasbourg": {
+   "nome": "Strasbourg",
+   "mp": 8,
+   "xg_90": 1.14,
+   "xga_90": 1.91,
+   "lega": "Ligue 1"
+  },
+  "Brest": {
+   "nome": "Brest",
+   "mp": 8,
+   "xg_90": 2.22,
+   "xga_90": 1.21,
+   "lega": "Ligue 1"
+  },
+  "Auxerre": {
+   "nome": "Auxerre",
+   "mp": 8,
+   "xg_90": 1.39,
+   "xga_90": 1.97,
+   "lega": "Ligue 1"
+  },
+  "Le Havre": {
+   "nome": "Le Havre",
+   "mp": 9,
+   "xg_90": 1.49,
+   "xga_90": 2.03,
+   "lega": "Ligue 1"
+  },
+  "Paris FC": {
+   "nome": "Paris FC",
+   "mp": 8,
+   "xg_90": 1.76,
+   "xga_90": 0.94,
+   "lega": "Ligue 1"
+  },
+  "Le Mans": {
+   "nome": "Le Mans",
+   "mp": 8,
+   "xg_90": 1.52,
+   "xga_90": 2.24,
+   "lega": "Ligue 1"
+  }
+ }
+}
