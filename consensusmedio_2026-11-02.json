@@ -6,8 +6,8 @@
   "Casa": "Albion FC",
   "Ospite": "Deportivo Maldonado",
   "Segno": "2",
-  "P1": 29.0,
-  "PX": 28.0,
+  "P1": 30.0,
+  "PX": 27.0,
   "P2": 43.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -59,8 +59,8 @@
   "Ospite": "Coban Imperial",
   "Segno": "1",
   "P1": 55.0,
-  "PX": 25.0,
-  "P2": 20.0,
+  "PX": 26.0,
+  "P2": 19.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -175,9 +175,9 @@
   "Casa": "CA Independiente de la Chorrera",
   "Ospite": "San Francisco FC",
   "Segno": "1",
-  "P1": 39.0,
+  "P1": 38.0,
   "PX": 26.0,
-  "P2": 35.0,
+  "P2": 36.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -201,8 +201,8 @@
   "Casa": "CD Luis Angel Firpo",
   "Ospite": "CD FAS",
   "Segno": "1",
-  "P1": 46.0,
-  "PX": 25.0,
+  "P1": 45.0,
+  "PX": 26.0,
   "P2": 29.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -215,8 +215,8 @@
   "Ospite": "Metropolitanos FC",
   "Segno": "1",
   "P1": 46.0,
-  "PX": 27.0,
-  "P2": 27.0,
+  "PX": 28.0,
+  "P2": 26.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -266,8 +266,8 @@
   "Casa": "Charlotte Independence",
   "Ospite": "FC Naples",
   "Segno": "1",
-  "P1": 60.0,
-  "PX": 19.0,
+  "P1": 59.0,
+  "PX": 20.0,
   "P2": 21.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -410,8 +410,8 @@
   "Ospite": "Boyaca Chico",
   "Segno": "1",
   "P1": 67.0,
-  "PX": 22.0,
-  "P2": 11.0,
+  "PX": 23.0,
+  "P2": 10.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -462,8 +462,8 @@
   "Ospite": "CD Platense",
   "Segno": "1",
   "P1": 58.0,
-  "PX": 23.0,
-  "P2": 19.0,
+  "PX": 24.0,
+  "P2": 18.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -1021,8 +1021,8 @@
   "Ospite": "Fratria",
   "Segno": "2",
   "P1": 20.0,
-  "PX": 24.0,
-  "P2": 56.0,
+  "PX": 25.0,
+  "P2": 55.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
  },
@@ -1072,9 +1072,9 @@
   "Casa": "All Boys",
   "Ospite": "Club Atletico Estudiantes",
   "Segno": "1",
-  "P1": 40.0,
-  "PX": 35.0,
-  "P2": 25.0,
+  "P1": 35.0,
+  "PX": 33.0,
+  "P2": 32.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
  },
@@ -1445,6 +1445,19 @@
  {
   "Data": "2026-11-02",
   "Ora": "17:00",
+  "Lega": "Finland - Veikkausliiga",
+  "Casa": "VPS",
+  "Ospite": "HJK",
+  "Segno": "2",
+  "P1": 19.5,
+  "PX": 22.0,
+  "P2": 58.5,
+  "Fonti": 2,
+  "Elenco": "footymetrics, ratingbet"
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "17:00",
   "Lega": "FINLAND - VEIKKAUSLIIGA CHAMPIONSHIP ROUND",
   "Casa": "VPS",
   "Ospite": "HJK Helsinki",
@@ -1454,19 +1467,6 @@
   "P2": 64.0,
   "Fonti": 1,
   "Elenco": "statarea"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "17:00",
-  "Lega": "Finland - Veikkausliiga",
-  "Casa": "VPS",
-  "Ospite": "HJK",
-  "Segno": "2",
-  "P1": 19.0,
-  "PX": 22.0,
-  "P2": 59.0,
-  "Fonti": 2,
-  "Elenco": "footymetrics, ratingbet"
  },
  {
   "Data": "2026-11-02",
@@ -1744,19 +1744,6 @@
  {
   "Data": "2026-11-02",
   "Ora": "18:00",
-  "Lega": "Poland - Ekstraklasa",
-  "Casa": "Radomiak Radom",
-  "Ospite": "Śląsk Wrocław",
-  "Segno": "1",
-  "P1": 47.0,
-  "PX": 25.0,
-  "P2": 28.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "18:00",
   "Lega": "POLAND - EKSTRAKLASA",
   "Casa": "Radomiak Radom",
   "Ospite": "Slask Wroclaw",
@@ -1766,6 +1753,19 @@
   "P2": 32.0,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea"
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "18:00",
+  "Lega": "Poland - Ekstraklasa",
+  "Casa": "Radomiak Radom",
+  "Ospite": "Śląsk Wrocław",
+  "Segno": "1",
+  "P1": 47.0,
+  "PX": 25.0,
+  "P2": 28.0,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
  },
  {
   "Data": "2026-11-02",

@@ -1,99 +1,99 @@
 {
  "medio": {
   "copertura": {
-   "1": 17101,
-   "2": 1753,
+   "1": 17102,
+   "2": 1755,
    "3": 894,
-   "4": 428,
+   "4": 432,
    "5": 159
   },
-  "totale": 20335,
-  "brier": 0.5809,
-  "brier_clima": 0.6423,
+  "totale": 20342,
+  "brier": 0.5808,
+  "brier_clima": 0.6422,
   "fonti": [
    {
     "nome": "betimate",
-    "partite": 19382,
+    "partite": 19388,
     "brier": 0.5808,
-    "brier_media": 0.58
+    "brier_media": 0.5799
    },
    {
     "nome": "footymetrics",
-    "partite": 1927,
-    "brier": 0.6003,
-    "brier_media": 0.5921
+    "partite": 1934,
+    "brier": 0.5998,
+    "brier_media": 0.5916
    },
    {
     "nome": "ratingbet",
-    "partite": 871,
-    "brier": 0.5785,
-    "brier_media": 0.5833
+    "partite": 873,
+    "brier": 0.5783,
+    "brier_media": 0.5832
    },
    {
     "nome": "soccersite",
-    "partite": 2038,
-    "brier": 0.5973,
-    "brier_media": 0.5897
+    "partite": 2042,
+    "brier": 0.5972,
+    "brier_media": 0.5895
    },
    {
     "nome": "statarea",
-    "partite": 1578,
-    "brier": 0.6074,
-    "brier_media": 0.602
+    "partite": 1580,
+    "brier": 0.6072,
+    "brier_media": 0.6018
    }
   ],
   "mercato": {
-   "partite": 2780,
+   "partite": 2784,
    "poche": false,
-   "brier": 0.5913,
-   "brier_mercato": 0.5777,
+   "brier": 0.591,
+   "brier_mercato": 0.5775,
    "diff": 0.0135,
    "es": 0.0027,
-   "t": 5.01,
+   "t": 5.02,
    "ic": [
-    0.0082,
+    0.0083,
     0.0188
    ]
   }
  },
- "aggiornato": "2026-10-31 07:11",
+ "aggiornato": "2026-10-31 09:13",
  "accordo": {
-  "totale": 1347,
+  "totale": 1348,
   "prende": {
    "statarea": {
-    "prese": 552,
-    "su": 981,
+    "prese": 553,
+    "su": 982,
     "pct": 56.3
    },
    "webpronostici": {
-    "prese": 267,
-    "su": 528,
-    "pct": 50.6
+    "prese": 268,
+    "su": 529,
+    "pct": 50.7
    },
    "consensus": {
-    "prese": 214,
-    "su": 358,
-    "pct": 59.8
+    "prese": 215,
+    "su": 359,
+    "pct": 59.9
    }
   },
   "mercato": {
-   "partite": 890,
+   "partite": 891,
    "poche": false,
-   "brier": 0.5763,
-   "brier_mercato": 0.5654,
-   "diff": 0.0109,
+   "brier": 0.5759,
+   "brier_mercato": 0.5652,
+   "diff": 0.0107,
    "es": 0.0041,
-   "t": 2.66,
+   "t": 2.61,
    "ic": [
-    0.0029,
-    0.0189
+    0.0027,
+    0.0187
    ]
   },
   "favorito_mercato": 56.1,
   "testa_a_testa": {
-   "partite": 233,
-   "consensus": 64.8,
-   "mercato": 66.1
+   "partite": 234,
+   "consensus": 65.0,
+   "mercato": 66.2
   }
  }
 }
