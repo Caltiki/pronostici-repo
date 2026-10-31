@@ -20099,6 +20099,7 @@ Data,Ora,Lega,Casa,Ospite,Norm_Casa,Norm_Ospite,Gol_Casa,Gol_Ospite,Esito,Fonte_
 2026-10-30,16:00,Premier League egiziana,Asyut Petroleum,El Gounah,asyut petroleum,el gounah,1,1,X,Betimate,,,
 2026-10-30,16:00,Campionato Under 21 messicano,Atletico San Luis U21,Atlas U21,atletico san luis u21,atlas u21,4,1,1,Betimate,,,
 2026-10-30,16:00,Ghana Division 1,Attram De Visser,Nukunu FC,attram visser,nukunu,1,0,1,Betimate,,,
+2026-10-30,16:00,Bulgaria First League,CSKA 1948,Spartak Varna,cska 1948,spartak varna,6,1,1,FootyMetrics,,,
 2026-10-30,16:00,Parva Liga Bulgaria,CSKA 1948 Sofia,Spartak Varna,cska 1948 sofia,spartak varna,6,1,1,Betimate,68.7,19.8,11.5
 2026-10-30,16:00,Super League Femminile Russia,CSKA Moscow Women,FK Kubanochka Krasnodar Women,cska moscow women,kubanochka krasnodar women,4,2,1,Betimate,,,
 2026-10-30,16:00,Seconda Divisione Emirati Arabi Uniti,Dubai United II,Masfut,dubai united ii,masfut,1,2,2,Betimate,,,
@@ -20113,7 +20114,6 @@ Data,Ora,Lega,Casa,Ospite,Norm_Casa,Norm_Ospite,Gol_Casa,Gol_Ospite,Esito,Fonte_
 2026-10-30,16:00,Division 1 Giordania,Sahl Horan SC,Amman FC,sahl horan,amman,0,0,X,Betimate,,,
 2026-10-30,16:00,2. Liga Slovacchia,FK Tatran Liptovsky Mikulas,MSK Zilina B,tatran liptovsky mikulas,msk zilina b,3,2,1,Betimate,,,
 2026-10-30,16:00,First League Russia,Veles,FK Spartak Kostroma,veles,spartak kostroma,1,1,X,Betimate,,,
-2026-10-30,16:10,Bulgaria First League,CSKA 1948,Spartak Varna,cska 1948,spartak varna,6,1,1,FootyMetrics,,,
 2026-10-30,16:15,Super League Niger,AS Douanes de Niamey,AS Police Niger,douanes niamey,police niger,2,0,1,Betimate,,,
 2026-10-30,16:30,1 Lyga Lituania,FK BE1,FK Babrungas,be1,babrungas,1,1,X,Betimate,,,
 2026-10-30,16:30,Bulgaria - Seconda Lega,Lokomotiv Gorna Oryahovitsa,Beroe,lokomotiv gorna oryahovitsa,beroe,2,0,1,Betimate,,,
@@ -20471,7 +20471,7 @@ Data,Ora,Lega,Casa,Ospite,Norm_Casa,Norm_Ospite,Gol_Casa,Gol_Ospite,Esito,Fonte_
 2026-10-31,00:30,Campionato College USA Femminile,Kansas State Women,UCF (W),kansas state women,ucf w,1,1,X,Betimate,,,
 2026-10-31,00:30,Campionato College USA Femminile,Northwestern Women,Michigan State (W),northwestern women,michigan state w,0,1,2,Betimate,,,
 2026-10-31,00:30,College Championship USA,SMU,Louisville,smu,louisville,1,1,X,Betimate,,,
-2026-10-31,00:30,USL Championship,Tampa Bay Rowdies,Miami FC,tampa bay rowdies,miami,1,1,X,Betimate,,,
+2026-10-31,00:30,USL Championship,Tampa Bay Rowdies,Miami FC,tampa bay rowdies,miami,5,6,2,Betimate,,,
 2026-10-31,01:00,USL Championship,Detroit City FC,Hartford Athletic,detroit city,hartford athletic,1,2,2,Betimate,,,
 2026-10-31,01:00,Campionato College USA Femminile,Houston (W),Kansas Jayhawks (W),houston w,kansas jayhawks w,2,0,1,Betimate,,,
 2026-10-31,01:00,Primera División costaricana,Inter San Carlos,Escorpiones de Belen FC,inter san carlos,escorpiones belen,2,3,2,Betimate,,,
@@ -20487,7 +20487,7 @@ Data,Ora,Lega,Casa,Ospite,Norm_Casa,Norm_Ospite,Gol_Casa,Gol_Ospite,Esito,Fonte_
 2026-10-31,01:00,College Championship USA,Washington,Maryland,washington,maryland,2,1,1,Betimate,,,
 2026-10-31,01:00,College Championship USA,Wisconsin,Michigan,wisconsin,michigan,2,1,1,Betimate,,,
 2026-10-31,01:15,Primera B Cile,Curico Unido,Deportes Temuco,curico unido,deportes temuco,4,1,1,Betimate,35.8,26.2,37.9
-2026-10-31,01:15,Liga Profesional Argentina,Racing Club,CA Aldosivi,racing,aldosivi,0,0,X,Betimate,58.5,25.0,16.5
+2026-10-31,01:15,Liga Profesional Argentina,Racing Club,CA Aldosivi,racing,aldosivi,2,1,1,Betimate,58.5,25.0,16.5
 2026-10-31,01:15,Liga Profesional Argentina,Sarmiento,Rosario Central,sarmiento,rosario central,1,2,2,Betimate,,,
 2026-10-31,01:24,S-League Isole Salomone,SOSA,Ghupo FC,sosa,ghupo,1,1,X,Betimate,,,
 2026-10-31,01:30,Aruba Division Di Honor,SV Estrella,SV La Fama,sv estrella,sv la fama,0,3,2,Betimate,,,
@@ -20534,3 +20534,145 @@ Data,Ora,Lega,Casa,Ospite,Norm_Casa,Norm_Ospite,Gol_Casa,Gol_Ospite,Esito,Fonte_
 2026-10-31,07:00,Australia A-League Men,Melbourne City,Sydney,melbourne city,sydney,2,1,1,FootyMetrics,45.9,26.7,27.4
 2026-10-31,07:00,Japan J1 League,Vissel Kobe,Nagoya Grampus,vissel kobe,nagoya grampus,3,1,1,FootyMetrics,48.8,25.3,26.0
 2026-10-31,08:00,Japan J1 League,Kashiwa Reysol,Urawa Reds,kashiwa reysol,urawa reds,4,0,1,FootyMetrics,46.6,24.7,28.8
+2026-10-31,08:30,South Korea K League 1,Gwangju,Gimcheon Sangmu,gwangju,gimcheon sangmu,1,1,X,FootyMetrics,32.2,27.2,40.6
+2026-10-31,09:40,Australia A-League Men,Macarthur,Western Sydney,macarthur,western sydney,0,0,X,FootyMetrics,,,
+2026-10-31,11:30,Turkey Super Lig,Erzurumspor FK,Çorum FK,erzurumspor,corum,1,3,2,FootyMetrics,35.7,27.9,36.4
+2026-10-31,11:30,Turkey 1. Lig,Vanspor FK,Sarıyer SK,vanspor,sar yer,1,0,1,FootyMetrics,,,
+2026-10-31,12:00,Vietnam V-League,Hải Phòng,Trường Tươi Đồng Nai,hai phong,truong tuoi ong nai,1,0,1,FootyMetrics,,,
+2026-10-31,12:00,Vietnam V-League,Nam Định,Thể Công - Viettel,nam inh,the cong viettel,3,1,1,FootyMetrics,,,
+2026-10-31,12:00,Vietnam V-League,Sông Lam Nghệ An,Công an Hà Nội,song lam nghe an,cong an ha noi,1,1,X,FootyMetrics,16.2,22.8,61.0
+2026-10-31,12:00,Ukraine Premier League,Veres,Chornomorets,veres,chornomorets,1,3,2,FootyMetrics,,,
+2026-10-31,12:15,Poland Ekstraklasa,Wisła Płock,Piast Gliwice,wis a p ock,piast gliwice,2,2,X,FootyMetrics,,,
+2026-10-31,12:30,India Indian Super League,Chennaiyin,Kerala Blasters,chennaiyin,kerala blasters,0,0,X,FootyMetrics,35.8,27.7,36.5
+2026-10-31,13:00,Germany 2. Bundesliga,Darmstadt 98,Magdeburg,darmstadt 98,magdeburg,1,1,X,FootyMetrics,,,
+2026-10-31,13:00,Germany 2. Bundesliga,Kaiserslautern,Hertha BSC,kaiserslautern,hertha bsc,0,3,2,FootyMetrics,,,
+2026-10-31,13:00,Denmark First Division,Kolding IF,HB Køge,kolding,hb k ge,3,2,1,FootyMetrics,,,
+2026-10-31,13:00,Bulgaria First League,Lokomotiv Plovdiv,Ludogorets,lokomotiv plovdiv,ludogorets,0,3,2,FootyMetrics,,,
+2026-10-31,13:00,Germany 2. Bundesliga,Wolfsburg,Osnabrück,wolfsburg,osnabruck,2,0,1,FootyMetrics,,,
+2026-10-31,13:30,England League One,Bradford,Huddersfield,bradford,huddersfield,0,3,2,FootyMetrics,,,
+2026-10-31,13:30,England Premier League,Chelsea,Man United,chelsea,man united,2,0,1,FootyMetrics,,,
+2026-10-31,13:30,England Enterprise National League,Forest Green Rovers,Harrogate Town,forest green rovers,harrogate town,2,2,X,FootyMetrics,,,
+2026-10-31,13:30,Denmark First Division,Fredericia,Akademisk Boldklub,fredericia,akademisk boldklub,3,1,1,FootyMetrics,,,
+2026-10-31,13:30,England League Two,Grimsby Town,York City,grimsby town,york city,5,2,1,FootyMetrics,,,
+2026-10-31,13:30,England Enterprise National League,Halifax Town,Yeovil Town,halifax town,yeovil town,2,0,1,FootyMetrics,,,
+2026-10-31,13:30,England League One,Leyton Orient,Cambridge United,leyton orient,cambridge united,3,0,1,FootyMetrics,,,
+2026-10-31,13:30,England Championship,Lincoln,Birmingham,lincoln,birmingham,1,3,2,FootyMetrics,28.6,27.0,44.4
+2026-10-31,13:30,England Championship,Norwich,Watford,norwich,watford,3,2,1,FootyMetrics,64.3,20.1,15.6
+2026-10-31,13:30,England League One,Plymouth,Reading,plymouth,reading,0,0,X,FootyMetrics,41.6,24.7,33.7
+2026-10-31,13:30,England League Two,Port Vale,Rochdale,port vale,rochdale,4,2,1,FootyMetrics,58.2,24.2,17.6
+2026-10-31,13:30,England Championship,Stoke,Preston,stoke,preston,2,0,1,FootyMetrics,53.8,24.7,21.5
+2026-10-31,13:45,England Women's Super League,Everton W,Man United W,everton w,man united w,0,0,X,FootyMetrics,,,
+2026-10-31,14:00,France Ligue 2,Annecy,Montpellier,annecy,montpellier,0,3,2,FootyMetrics,31.5,27.3,41.2
+2026-10-31,14:00,Israel Ligat ha'Al,Beitar Jerusalem,Ironi Kiryat Shmona,beitar jerusalem,ironi kiryat shmona,1,1,X,FootyMetrics,,,
+2026-10-31,14:00,Turkey 1. Lig,Bursaspor,Bandırmaspor,bursaspor,band rmaspor,3,0,1,FootyMetrics,,,
+2026-10-31,14:00,Turkey 1. Lig,Karagümrük,Pendikspor,karagumruk,pendikspor,0,1,2,FootyMetrics,52.2,25.9,21.9
+2026-10-31,14:00,Turkey Super Lig,Kocaelispor,Rizespor,kocaelispor,rizespor,0,0,X,FootyMetrics,37.2,27.3,35.5
+2026-10-31,14:00,Spain La Liga,Levante,Atlético de Madrid,levante,atletico madrid,0,2,2,FootyMetrics,,,
+2026-10-31,14:00,Iran Persian Gulf Pro League,Mes Shahr-e Babak,Paykan,mes shahr e babak,paykan,1,3,2,FootyMetrics,,,
+2026-10-31,14:00,Iran Persian Gulf Pro League,Nassaji Mazandaran,Persepolis,nassaji mazandaran,persepolis,0,1,2,FootyMetrics,10.2,24.9,64.9
+2026-10-31,14:00,Uruguay Primera Division,Racing,Cerro Largo,racing,cerro largo,3,1,1,FootyMetrics,,,
+2026-10-31,14:00,Spain La Liga 2,Real Sociedad II,Girona,real sociedad ii,girona,1,0,1,FootyMetrics,,,
+2026-10-31,14:30,Saudi Arabia Pro League,Al Taawoun,Al Ettifaq,al taawoun,al ettifaq,1,1,X,FootyMetrics,,,
+2026-10-31,14:45,Poland Ekstraklasa,Wieczysta Kraków,Jagiellonia Białystok,wieczysta krakow,jagiellonia bia ystok,1,3,2,FootyMetrics,,,
+2026-10-31,15:00,Czech Republic Chance Liga,SK Artis Brno,Zlín,artis brno,zlin,2,2,X,FootyMetrics,51.3,25.7,23.0
+2026-10-31,15:00,India Indian Super League,ATK Mohun Bagan,Minerva Punjab,atk mohun bagan,minerva punjab,2,1,1,FootyMetrics,,,
+2026-10-31,15:00,Italy Serie A,Bologna,Monza,bologna,monza,2,1,1,FootyMetrics,56.9,24.4,18.7
+2026-10-31,15:00,Romania Superliga,Corvinul Hunedoara,Argeş,corvinul hunedoara,arges,2,0,1,FootyMetrics,,,
+2026-10-31,15:00,Italy Serie B,Cremonese,Benevento,cremonese,benevento,2,0,1,FootyMetrics,36.0,30.0,34.0
+2026-10-31,15:00,Croatia 1. HNL,Hajduk Split,Gorica,hajduk split,gorica,5,0,1,FootyMetrics,73.6,16.9,9.5
+2026-10-31,15:00,Czech Republic Chance Liga,Jablonec,Slavia Praha,jablonec,slavia praha,0,5,2,FootyMetrics,,,
+2026-10-31,15:00,Italy Serie B,Modena,Mantova,modena,mantova,1,1,X,FootyMetrics,46.9,27.5,25.6
+2026-10-31,15:00,Czech Republic Chance Liga,Pardubice,Slovan Liberec,pardubice,slovan liberec,1,2,2,FootyMetrics,,,
+2026-10-31,15:00,Czech Republic Chance Liga,Slovácko,Teplice,slovacko,teplice,1,3,2,FootyMetrics,33.4,27.6,39.0
+2026-10-31,15:00,Italy Serie B,Südtirol,Cesena,sudtirol,cesena,1,1,X,FootyMetrics,40.8,30.5,28.6
+2026-10-31,15:15,Qatar Stars League,Al Sailiya,Lusail City,al sailiya,lusail city,1,2,2,FootyMetrics,,,
+2026-10-31,15:30,Germany Bundesliga,Augsburg,Freiburg,augsburg,freiburg,1,2,2,FootyMetrics,34.0,24.8,41.2
+2026-10-31,15:30,Germany Bundesliga,Bayer Leverkusen,VfB Stuttgart,bayer leverkusen,vfb stuttgart,2,4,2,FootyMetrics,,,
+2026-10-31,15:30,Bulgaria First League,Dunav 2010,Levski Sofia,dunav 2010,levski sofia,0,1,2,FootyMetrics,,,
+2026-10-31,15:30,Germany Bundesliga,M'Gladbach,Paderborn,m gladbach,paderborn,0,0,X,FootyMetrics,,,
+2026-10-31,15:30,Germany Bundesliga,Schalke 04,RB Leipzig,schalke 04,rb leipzig,0,2,2,FootyMetrics,,,
+2026-10-31,15:30,Germany Bundesliga,Werder Bremen,Hoffenheim,werder bremen,hoffenheim,2,0,1,FootyMetrics,39.3,23.3,37.4
+2026-10-31,15:55,Saudi Arabia Pro League,Al-Fayha,Al Faisaly,al fayha,al faisaly,4,1,1,FootyMetrics,,,
+2026-10-31,16:00,Egypt Premier League,Abu Qir Fertilizers,Ghazl El Mehalla,abu qir fertilizers,ghazl el mehalla,0,1,2,FootyMetrics,,,
+2026-10-31,16:00,England League Two,Accrington Stanley,Northampton,accrington stanley,northampton,1,1,X,FootyMetrics,,,
+2026-10-31,16:00,England Enterprise National League,Aldershot Town,Gateshead,aldershot town,gateshead,1,0,1,FootyMetrics,,,
+2026-10-31,16:00,England Enterprise National League,Altrincham,Carlisle United,altrincham,carlisle united,2,4,2,FootyMetrics,,,
+2026-10-31,16:00,England League One,Barnsley,Oxford Utd,barnsley,oxford utd,1,1,X,FootyMetrics,36.0,24.6,39.5
+2026-10-31,16:00,England Enterprise National League,Barrow,Eastleigh,barrow,eastleigh,1,1,X,FootyMetrics,66.5,19.9,13.6
+2026-10-31,16:00,England Championship,Bolton,Bristol,bolton,bristol,2,3,2,FootyMetrics,,,
+2026-10-31,16:00,England Enterprise National League,Boreham Wood,Hartlepool United,boreham wood,hartlepool united,4,3,1,FootyMetrics,,,
+2026-10-31,16:00,England Premier League,Bournemouth,Leeds,bournemouth,leeds,2,0,1,FootyMetrics,44.9,28.1,27.0
+2026-10-31,16:00,England Premier League,Brentford,Nottm Forest,brentford,nottm forest,2,0,1,FootyMetrics,,,
+2026-10-31,16:00,England Championship,Burnley,Portsmouth,burnley,portsmouth,0,0,X,FootyMetrics,43.2,27.4,29.4
+2026-10-31,16:00,England League Two,Colchester United,Walsall,colchester united,walsall,1,3,2,FootyMetrics,,,
+2026-10-31,16:00,England Premier League,Coventry,Sunderland,coventry,sunderland,3,1,1,FootyMetrics,30.4,28.7,40.9
+2026-10-31,16:00,England League Two,Crewe Alexandra,Barnet,crewe alexandra,barnet,1,1,X,FootyMetrics,,,
+2026-10-31,16:00,Denmark First Division,Esbjerg,Hvidovre,esbjerg,hvidovre,1,1,X,FootyMetrics,30.8,24.0,45.2
+2026-10-31,16:00,England League Two,Fleetwood Town,Bristol Rovers,fleetwood town,bristol rovers,3,1,1,FootyMetrics,,,
+2026-10-31,16:00,Norway Eliteserien,Fredrikstad,Rosenborg,fredrikstad,rosenborg,0,3,2,FootyMetrics,22.6,23.3,54.1
+2026-10-31,16:00,England Premier League,Hull,Ipswich,hull,ipswich,2,2,X,FootyMetrics,33.0,28.3,38.7
+2026-10-31,16:00,Belgium Challenger Pro League,K. Beerschot V.A.,Royal Francs Borains,k beerschot v a,royal francs borains,3,0,1,FootyMetrics,,,
+2026-10-31,16:00,Scotland Premiership,Kilmarnock,St. Johnstone,kilmarnock,st johnstone,2,2,X,FootyMetrics,44.2,25.9,30.0
+2026-10-31,16:00,England League One,Leicester,Stevenage,leicester,stevenage,2,2,X,FootyMetrics,57.9,22.5,19.6
+2026-10-31,16:00,England Premier League,Man City,Brighton,man city,brighton,0,1,2,FootyMetrics,,,
+2026-10-31,16:00,England League One,Mansfield,Notts County,mansfield,notts county,0,2,2,FootyMetrics,51.4,25.0,23.6
+2026-10-31,16:00,Belgium Pro League,Mechelen,Genk,mechelen,genk,1,0,1,FootyMetrics,,,
+2026-10-31,16:00,England Championship,Middlesbrough,Charlton,middlesbrough,charlton,3,0,1,FootyMetrics,78.2,14.1,7.7
+2026-10-31,16:00,England Championship,Millwall,Derby,millwall,derby,4,1,1,FootyMetrics,58.3,23.3,18.4
+2026-10-31,16:00,England League One,Milton Keynes Dons,Doncaster,milton keynes dons,doncaster,6,1,1,FootyMetrics,,,
+2026-10-31,16:00,Scotland Premiership,Motherwell,St. Mirren,motherwell,st mirren,1,0,1,FootyMetrics,52.9,23.7,23.4
+2026-10-31,16:00,England League Two,Oldham Athletic,Crawley Town,oldham athletic,crawley town,0,1,2,FootyMetrics,,,
+2026-10-31,16:00,Belgium Challenger Pro League,Patro Eisden Maasmechelen,KSC Lokeren,patro eisden maasmechelen,ksc lokeren,3,1,1,FootyMetrics,,,
+2026-10-31,16:00,England League One,Peterborough,Luton,peterborough,luton,0,2,2,FootyMetrics,27.9,23.5,48.7
+2026-10-31,16:00,England League Two,Salford City,Exeter City,salford city,exeter city,2,1,1,FootyMetrics,,,
+2026-10-31,16:00,England League Two,Shrewsbury Town,Gillingham,shrewsbury town,gillingham,1,2,2,FootyMetrics,,,
+2026-10-31,16:00,England Enterprise National League,Solihull Moors,Kidderminster Harriers,solihull moors,kidderminster harriers,2,1,1,FootyMetrics,,,
+2026-10-31,16:00,England Championship,Southampton,QPR,southampton,qpr,4,1,1,FootyMetrics,50.9,23.6,25.5
+2026-10-31,16:00,England League One,Stockport County,Wimbledon,stockport county,wimbledon,2,1,1,FootyMetrics,,,
+2026-10-31,16:00,England Championship,Swansea,Blackburn,swansea,blackburn,4,0,1,FootyMetrics,55.4,24.2,20.4
+2026-10-31,16:00,England League Two,Swindon Town,Rotherham,swindon town,rotherham,2,1,1,FootyMetrics,,,
+2026-10-31,16:00,England Enterprise National League,Tamworth,Woking,tamworth,woking,0,1,2,FootyMetrics,42.1,24.5,33.4
+2026-10-31,16:00,England League Two,Tranmere Rovers,Cheltenham Town,tranmere rovers,cheltenham town,3,1,1,FootyMetrics,,,
+2026-10-31,16:00,England Enterprise National League,Wealdstone,Southend United,wealdstone,southend united,3,2,1,FootyMetrics,,,
+2026-10-31,16:00,England Championship,West Ham,West Brom,west ham,west brom,1,3,2,FootyMetrics,56.1,23.4,20.5
+2026-10-31,16:00,England League One,Wigan,Bromley,wigan,bromley,3,2,1,FootyMetrics,51.4,25.1,23.5
+2026-10-31,16:00,England Championship,Wolves,Cardiff,wolves,cardiff,3,0,1,FootyMetrics,59.7,20.9,19.4
+2026-10-31,16:00,England Enterprise National League,Worthing,Sutton United,worthing,sutton united,0,3,2,FootyMetrics,,,
+2026-10-31,16:00,England League One,Wycombe,Burton,wycombe,burton,2,0,1,FootyMetrics,61.3,21.7,17.0
+2026-10-31,16:15,Spain La Liga 2,Eibar,Almería,eibar,almeria,1,1,X,FootyMetrics,36.3,26.5,37.2
+2026-10-31,16:15,Spain La Liga,Rayo Vallecano,Celta Vigo,rayo vallecano,celta vigo,3,0,1,FootyMetrics,38.8,29.4,31.7
+2026-10-31,16:30,Netherlands Eredivisie,Feyenoord,Fortuna Sittard,feyenoord,fortuna sittard,1,1,X,FootyMetrics,,,
+2026-10-31,16:30,Israel Ligat ha'Al,Hapoel Haifa,Hapoel Petah Tikva,hapoel haifa,hapoel petah tikva,2,1,1,FootyMetrics,52.5,24.2,23.3
+2026-10-31,16:30,Portugal Liga Portugal,Moreirense,Estrela Amadora,moreirense,estrela amadora,2,1,1,FootyMetrics,,,
+2026-10-31,16:30,Netherlands Eerste Divisie,MVV Maastricht,VVV-Venlo,mvv maastricht,vvv venlo,1,2,2,FootyMetrics,,,
+2026-10-31,17:00,Austria Admiral Bundesliga,Altach,Ried,altach,ried,1,1,X,FootyMetrics,43.3,26.0,30.7
+2026-10-31,17:00,Morocco Botola Pro,Amal Tiznit,Kawkab Marrakech,amal tiznit,kawkab marrakech,0,1,2,FootyMetrics,30.4,32.6,37.0
+2026-10-31,17:00,Israel Ligat ha'Al,Bnei Sakhnin,Ironi Tiberias,bnei sakhnin,ironi tiberias,1,1,X,FootyMetrics,,,
+2026-10-31,17:00,Uruguay Primera Division,Cerro,Central Español,cerro,central espanol,1,2,2,FootyMetrics,,,
+2026-10-31,17:00,Turkey Super Lig,Fenerbahçe,Göztepe,fenerbahce,goztepe,1,2,2,FootyMetrics,69.1,18.2,12.7
+2026-10-31,17:00,Turkey 1. Lig,Manisa FK,Batman Petrolspor,manisa,batman petrolspor,2,1,1,FootyMetrics,29.3,25.3,45.4
+2026-10-31,17:15,Italy Serie B,Catanzaro,Padova,catanzaro,padova,1,1,X,FootyMetrics,41.4,27.7,30.9
+2026-10-31,17:30,Qatar Stars League,Al-Arabi SC,Al Rayyan,al arabi,al rayyan,0,0,X,FootyMetrics,23.6,22.7,53.7
+2026-10-31,17:30,Qatar Stars League,Al Duhail,Al Wakrah,al duhail,al wakrah,3,1,1,FootyMetrics,,,
+2026-10-31,17:30,Poland Ekstraklasa,Lech Poznań,Wisła Kraków,lech poznan,wis a krakow,3,1,1,FootyMetrics,,,
+2026-10-31,18:00,Norway Eliteserien,Aalesund,Sandefjord,aalesund,sandefjord,3,4,2,FootyMetrics,47.5,23.8,28.7
+2026-10-31,18:00,United States Major League Soccer,Charlotte,Orlando,charlotte,orlando,4,0,1,FootyMetrics,,,
+2026-10-31,18:00,Switzerland Super League,Grasshopper,Vaduz,grasshopper,vaduz,2,2,X,FootyMetrics,,,
+2026-10-31,18:00,Greece Super League,Kifisia,Olympiacos,kifisia,olympiacos,2,3,2,FootyMetrics,,,
+2026-10-31,18:00,Romania Superliga,Petrolul 52,CFR Cluj,petrolul 52,cfr cluj,1,1,X,FootyMetrics,,,
+2026-10-31,18:00,Croatia 1. HNL,Rudeš,Dinamo Zagreb,rudes,dinamo zagreb,1,0,1,FootyMetrics,,,
+2026-10-31,18:00,Czech Republic Chance Liga,Sigma Olomouc,Zbrojovka Brno,sigma olomouc,zbrojovka brno,3,0,1,FootyMetrics,,,
+2026-10-31,18:00,Switzerland Super League,St. Gallen,Servette,st gallen,servette,2,1,1,FootyMetrics,53.1,23.9,23.0
+2026-10-31,18:00,Italy Serie A,Udinese,Roma,udinese,roma,2,5,2,FootyMetrics,17.4,21.4,61.2
+2026-10-31,18:15,Belgium Pro League,Standard Liège,KV Kortrijk,standard liege,kv kortrijk,1,1,X,FootyMetrics,,,
+2026-10-31,18:30,Germany Bundesliga,Bayern München,Dortmund,bayern munchen,dortmund,2,2,X,FootyMetrics,,,
+2026-10-31,18:30,England Enterprise National League,Boston United,Scunthorpe United,boston united,scunthorpe united,2,1,1,FootyMetrics,,,
+2026-10-31,18:30,Spain La Liga 2,Celta Fortuna,Córdoba,celta fortuna,cordoba,2,2,X,FootyMetrics,,,
+2026-10-31,18:30,Bulgaria First League,CSKA Sofia,Slavia Sofia,cska sofia,slavia sofia,0,0,X,FootyMetrics,81.2,13.4,5.4
+2026-10-31,18:30,Israel Ligat ha'Al,Maccabi Netanya,Hapoel Jerusalem,maccabi netanya,hapoel jerusalem,1,1,X,FootyMetrics,,,
+2026-10-31,18:30,Spain La Liga,Real Betis,Málaga,real betis,malaga,2,1,1,FootyMetrics,,,
+2026-10-31,18:30,England Premier League,Tottenham,Crystal Palace,tottenham,crystal palace,2,0,1,FootyMetrics,57.9,23.2,18.9
+2026-10-31,18:45,Netherlands Eredivisie,SC Heerenveen,NEC Nijmegen,heerenveen,nec nijmegen,1,0,1,FootyMetrics,,,
+2026-10-31,18:45,Netherlands Eredivisie,PSV,Willem II,psv,willem ii,7,0,1,FootyMetrics,92.2,5.4,2.4
+2026-10-31,19:00,Saudi Arabia Pro League,Al Hilal,Al Fateh,al hilal,al fateh,2,0,1,FootyMetrics,92.6,4.8,2.6
+2026-10-31,19:00,Egypt Premier League,Ceramica Cleopatra,ZED FC,ceramica cleopatra,zed,2,1,1,FootyMetrics,43.2,31.5,25.3
