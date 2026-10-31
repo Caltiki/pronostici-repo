@@ -27,9 +27,9 @@
   "Tip": "12",
   "Conf": 0.9,
   "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
+  "Q1": 2.38,
+  "QX": 2.8,
+  "Q2": 2.8
  },
  {
   "Casa": "Málaga II",
@@ -64,6 +64,38 @@
   "Q2": null
  },
  {
+  "Casa": "Pamplona",
+  "Ospite": "Valle Egüés",
+  "Ora": "15:30",
+  "Paese": "Spain",
+  "Lega": "Tercera División RFEF Group 15",
+  "Mercato": "DC",
+  "Sel": "12",
+  "Linea": null,
+  "Tip": "12",
+  "Conf": 0.9,
+  "Q tip": null,
+  "Q1": null,
+  "QX": null,
+  "Q2": null
+ },
+ {
+  "Casa": "Gimnasia Chivilcoy",
+  "Ospite": "Boca Unidos",
+  "Ora": "20:00",
+  "Paese": "Argentina",
+  "Lega": "Torneo Federal A",
+  "Mercato": "DC",
+  "Sel": "12",
+  "Linea": null,
+  "Tip": "12",
+  "Conf": 0.9,
+  "Q tip": null,
+  "Q1": null,
+  "QX": null,
+  "Q2": null
+ },
+ {
   "Casa": "Arna-Bjørnar W",
   "Ospite": "Viking FK W",
   "Ora": "15:00",
@@ -85,22 +117,6 @@
   "Ora": "14:00",
   "Paese": "Greece",
   "Lega": "Gamma Ethniki Group 9",
-  "Mercato": "DC",
-  "Sel": "12",
-  "Linea": null,
-  "Tip": "12",
-  "Conf": 0.85,
-  "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
- },
- {
-  "Casa": "Milford FC",
-  "Ospite": "Sekhukhune United",
-  "Ora": "14:30",
-  "Paese": "South-Africa",
-  "Lega": "Premier Soccer League",
   "Mercato": "DC",
   "Sel": "12",
   "Linea": null,
@@ -187,9 +203,9 @@
   "Tip": "12",
   "Conf": 0.85,
   "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
+  "Q1": 3.0,
+  "QX": 3.2,
+  "Q2": 2.15
  },
  {
   "Casa": "Olimpo Bahia Blanca",
@@ -201,6 +217,22 @@
   "Sel": "Under",
   "Linea": 2.5,
   "Tip": "Under 2.5 Goals",
+  "Conf": 0.85,
+  "Q tip": null,
+  "Q1": 1.48,
+  "QX": 3.4,
+  "Q2": 7.0
+ },
+ {
+  "Casa": "Sol de América",
+  "Ospite": "Juventud Antoniana",
+  "Ora": "23:00",
+  "Paese": "Argentina",
+  "Lega": "Torneo Federal A",
+  "Mercato": "DC",
+  "Sel": "12",
+  "Linea": null,
+  "Tip": "12",
   "Conf": 0.85,
   "Q tip": null,
   "Q1": null,
@@ -224,22 +256,6 @@
   "Q2": null
  },
  {
-  "Casa": "Dinamo Vladivostok",
-  "Ospite": "Alaniya Vladikavkaz",
-  "Ora": "05:00",
-  "Paese": "Russia",
-  "Lega": "Second League A Fall Season Gold",
-  "Mercato": "DC",
-  "Sel": "12",
-  "Linea": null,
-  "Tip": "12",
-  "Conf": 0.85,
-  "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
- },
- {
   "Casa": "26 de Febrero",
   "Ospite": "San Martin de Yacuiba",
   "Ora": "20:00",
@@ -254,6 +270,22 @@
   "Q1": null,
   "QX": null,
   "Q2": null
+ },
+ {
+  "Casa": "Dinamo Vladivostok",
+  "Ospite": "Alaniya Vladikavkaz",
+  "Ora": "05:00",
+  "Paese": "Russia",
+  "Lega": "Second League A Fall Season Gold",
+  "Mercato": "DC",
+  "Sel": "12",
+  "Linea": null,
+  "Tip": "12",
+  "Conf": 0.85,
+  "Q tip": null,
+  "Q1": 2.27,
+  "QX": 3.2,
+  "Q2": 2.71
  },
  {
   "Casa": "2 Korriku",
@@ -427,9 +459,9 @@
   "Tip": "Away Win",
   "Conf": 0.8,
   "Q tip": null,
-  "Q1": 3.1,
+  "Q1": 3.3,
   "QX": 3.75,
-  "Q2": 1.91
+  "Q2": 1.85
  },
  {
   "Casa": "Botev Plovdiv II",
@@ -441,6 +473,54 @@
   "Sel": "Over",
   "Linea": 2.5,
   "Tip": "Over 2.5 Goals",
+  "Conf": 0.8,
+  "Q tip": null,
+  "Q1": null,
+  "QX": null,
+  "Q2": null
+ },
+ {
+  "Casa": "Bamboutos",
+  "Ospite": "Tonnerre",
+  "Ora": "15:00",
+  "Paese": "Cameroon",
+  "Lega": "Elite Two",
+  "Mercato": "OU",
+  "Sel": "Over",
+  "Linea": 2.5,
+  "Tip": "Over 2.5 Goals",
+  "Conf": 0.8,
+  "Q tip": null,
+  "Q1": null,
+  "QX": null,
+  "Q2": null
+ },
+ {
+  "Casa": "Douglas Haig",
+  "Ospite": "Villa Mitre",
+  "Ora": "20:00",
+  "Paese": "Argentina",
+  "Lega": "Torneo Federal A",
+  "Mercato": "OU",
+  "Sel": "Under",
+  "Linea": 2.5,
+  "Tip": "Under 2.5 Goals",
+  "Conf": 0.8,
+  "Q tip": null,
+  "Q1": 2.25,
+  "QX": 2.75,
+  "Q2": 3.3
+ },
+ {
+  "Casa": "Kimberley Mar del Plata",
+  "Ospite": "Argentino Monte Maíz",
+  "Ora": "19:00",
+  "Paese": "Argentina",
+  "Lega": "Torneo Federal A",
+  "Mercato": "OU",
+  "Sel": "Under",
+  "Linea": 2.5,
+  "Tip": "Under 2.5 Goals",
   "Conf": 0.8,
   "Q tip": null,
   "Q1": null,
@@ -480,22 +560,6 @@
   "Q2": null
  },
  {
-  "Casa": "Stellenbosch",
-  "Ospite": "Chippa United",
-  "Ora": "17:00",
-  "Paese": "South-Africa",
-  "Lega": "Premier Soccer League",
-  "Mercato": "OU",
-  "Sel": "Under",
-  "Linea": 2.5,
-  "Tip": "Under 2.5 Goals",
-  "Conf": 0.8,
-  "Q tip": null,
-  "Q1": null,
-  "QX": null,
-  "Q2": null
- },
- {
   "Casa": "Independiente CBBA",
   "Ospite": "Mineros Potosi",
   "Ora": "20:00",
@@ -510,6 +574,22 @@
   "Q1": null,
   "QX": null,
   "Q2": null
+ },
+ {
+  "Casa": "Stellenbosch",
+  "Ospite": "Chippa United",
+  "Ora": "17:00",
+  "Paese": "South-Africa",
+  "Lega": "Premier Soccer League",
+  "Mercato": "OU",
+  "Sel": "Under",
+  "Linea": 2.5,
+  "Tip": "Under 2.5 Goals",
+  "Conf": 0.8,
+  "Q tip": null,
+  "Q1": 1.73,
+  "QX": 3.1,
+  "Q2": 5.0
  },
  {
   "Casa": "FC Besa Peja",
@@ -576,22 +656,6 @@
   "Q2": null
  },
  {
-  "Casa": "Al-Sailiya",
-  "Ospite": "Lusail City",
-  "Ora": "15:15",
-  "Paese": "Qatar",
-  "Lega": "Stars League",
-  "Mercato": "1X2",
-  "Sel": "2",
-  "Linea": null,
-  "Tip": "Away Win",
-  "Conf": 0.75,
-  "Q tip": null,
-  "Q1": 3.3,
-  "QX": 3.4,
-  "Q2": 1.95
- },
- {
   "Casa": "Cantoria",
   "Ospite": "Marbelli",
   "Ora": "17:30",
@@ -606,6 +670,22 @@
   "Q1": null,
   "QX": null,
   "Q2": null
+ },
+ {
+  "Casa": "Al-Sailiya",
+  "Ospite": "Lusail City",
+  "Ora": "15:15",
+  "Paese": "Qatar",
+  "Lega": "Stars League",
+  "Mercato": "1X2",
+  "Sel": "2",
+  "Linea": null,
+  "Tip": "Away Win",
+  "Conf": 0.75,
+  "Q tip": null,
+  "Q1": 3.3,
+  "QX": 3.4,
+  "Q2": 1.95
  },
  {
   "Casa": "Mamelodi Sundowns",
@@ -702,5 +782,21 @@
   "Q1": null,
   "QX": null,
   "Q2": null
+ },
+ {
+  "Casa": "Milford FC",
+  "Ospite": "Sekhukhune United",
+  "Ora": "14:30",
+  "Paese": "South-Africa",
+  "Lega": "Premier Soccer League",
+  "Mercato": "BTTS",
+  "Sel": "No",
+  "Linea": null,
+  "Tip": "BTTS No",
+  "Conf": 0.65,
+  "Q tip": null,
+  "Q1": 3.25,
+  "QX": 2.75,
+  "Q2": 2.4
  }
 ]
