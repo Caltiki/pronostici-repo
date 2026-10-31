@@ -1452,7 +1452,7 @@
      "Spunta quelle che vuoi combinare e in fondo vedi quanto vale la multipla."],
     ["stretto", "Pi\u00f9 affidabili",
      "Il bookmaker su queste partite guadagna meno del 2%: le probabilit\u00e0 " +
-     "sono le pi\u00f9 affidabili."],
+     "sono le pi\u00f9 affidabili. Una partita per riga: toccala per vedere tutte le sue."],
     ["1x2", "1X2", ""],
     ["combo", "Combinate",
      "Segno + Over/Under e segno + Gol/NoGol (per esempio 1X + Over 2.5, 1 + NoGol), " +
@@ -1902,7 +1902,10 @@
       return;
     }
 
-    if (sez === "prezzi" && vista === "partite") return disegnaPerPartita(sez, visibili, tutte, data, $r);
+    // "Tutte le partite" e "Piu' affidabili" raccolte per partita: nella
+    // seconda una partita ben quotata aveva sei righe una sotto l'altra e
+    // copriva tutte le altre.
+    if (sez === "prezzi" && (vista === "partite" || vista === "stretto")) return disegnaPerPartita(sez, visibili, tutte, data, $r);
 
     var mostrate = visibili.slice(0, stato.limite);
     var conta = visibili.length === tutte.length
@@ -1981,12 +1984,31 @@
     if (fin.length) gruppi = fin.concat(gruppi.filter(function (g) { return fin.indexOf(g) < 0; }));
 
     var mostrateG = gruppi.slice(0, stato.limite), mostrate = [];
+    // LA GIOCATA PROPOSTA SULLA SCHEDA CHIUSA, quando la partita non ha
+    // quella della schedina. Prima era la piu' probabile, cioe' quasi
+    // sempre un Over 1.5: una lista tutta uguale. Ora si sceglie fra le
+    // probabilita' fra il 55% e l'80% (giocabili: sopra, la quota e'
+    // troppo bassa) il tipo di mercato meno usato finora nella lista -
+    // 1X2, combo, Gol/NoGol, Under/Over - e a parita' la piu' vicina al
+    // 65%. Se nella fascia non c'e' niente, resta la piu' probabile.
+    // Cambia solo cosa si mostra: le probabilita' sono quelle del file.
+    var usati = {};
+    function proposta(g) {
+      var cand = g.filter(function (r) { var p = num(r.Prob); return p != null && p >= 55 && p <= 80; });
+      if (!cand.length) return g.slice().sort(function (a, b) { return (num(b.Prob) || 0) - (num(a.Prob) || 0); })[0];
+      cand.sort(function (a, b) {
+        return ((usati[a.Gruppo] || 0) - (usati[b.Gruppo] || 0)) ||
+          (Math.abs(num(a.Prob) - 65) - Math.abs(num(b.Prob) - 65));
+      });
+      usati[cand[0].Gruppo] = (usati[cand[0].Gruppo] || 0) + 1;
+      return cand[0];
+    }
     var html = SEZ[sez].riepilogo(visibili) +
       '<p class="conta">' + gruppi.length + (gruppi.length === 1 ? " partita" : " partite") + " · " +
       visibili.length + " probabilità" + SEZ[sez].nota + '</p><div class="lista">' +
       mostrateG.map(function (g) {
         var r0 = g[0], inSch = g.filter(function (r) { return String(r.InSchedina || "") === "si"; })[0];
-        var top = inSch || g.slice().sort(function (a, b) { return (num(b.Prob) || 0) - (num(a.Prob) || 0); })[0];
+        var top = inSch || proposta(g);
         var gol = r0.Gol_Casa != null && r0.Gol_Ospite != null ? r0.Gol_Casa + "-" + r0.Gol_Ospite : "";
         var dentro = g.map(function (r) {
           var i = mostrate.length; mostrate.push(r);
@@ -2005,7 +2027,7 @@
           (gol ? "<span><b>" + esc(gol) + "</b></span>" : "") +
           (r0.Campionato ? '<span class="chip">' + esc(r0.Campionato) + "</span>" : "") + "</div>" +
           '<div class="partita">' + partitaHtml(r0.Casa, r0.Ospite, r0.Partita, campiRiga(r0)) + "</div>" +
-          '<div class="sel">' + (inSch ? "In schedina: " : "Più probabile: ") + esc(etichettaSel(top)) +
+          '<div class="sel">' + (inSch ? "In schedina: " : "Proposta: ") + esc(etichettaSel(top)) +
           " · " + f0(num(top.Prob)) + "%" + (scelte_ ? " · " + scelte_ + " nella multipla" : "") + "</div>" +
           '</div><div class="numero"><b>' + g.length + "</b><span>" + (g.length === 1 ? "probabilità" : "probabilità") + "</span></div></summary>" +
           '<div class="dentro-partita">' + dentro +
