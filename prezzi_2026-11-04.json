@@ -686,8 +686,7 @@
   "Mercato": "BTTS",
   "Sel": "Gol",
   "Prob": 65.1,
-  "Equa": 1.54,
-  "InSchedina": "si"
+  "Equa": 1.54
  },
  {
   "Data": "2026-11-04",
@@ -707,7 +706,8 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 65.1,
-  "Equa": 1.54
+  "Equa": 1.54,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-04",
@@ -868,7 +868,8 @@
   "Mercato": "BTTS",
   "Sel": "Gol",
   "Prob": 63.0,
-  "Equa": 1.59
+  "Equa": 1.59,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-04",
@@ -988,8 +989,7 @@
   "Mercato": "1X2",
   "Sel": "2",
   "Prob": 59.9,
-  "Equa": 1.67,
-  "InSchedina": "si"
+  "Equa": 1.67
  },
  {
   "Data": "2026-11-04",
@@ -1110,7 +1110,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "2 + Over 1.5",
   "Prob": 58.3,
-  "Equa": 1.71
+  "Equa": 1.71,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-04",
@@ -1210,8 +1211,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 57.4,
-  "Equa": 1.74,
-  "InSchedina": "si"
+  "Equa": 1.74
  },
  {
   "Data": "2026-11-04",
@@ -1251,8 +1251,7 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 56.3,
-  "Equa": 1.78,
-  "InSchedina": "si"
+  "Equa": 1.78
  },
  {
   "Data": "2026-11-04",
@@ -1372,7 +1371,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "2 + Over 1.5",
   "Prob": 53.8,
-  "Equa": 1.86
+  "Equa": 1.86,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-04",
@@ -2259,6 +2259,26 @@
   "Data": "2026-11-04",
   "Ora": "21:00",
   "Campionato": "Europe Champions League",
+  "Partita": "Dortmund - Real Betis",
+  "Casa": "Dortmund",
+  "Ospite": "Real Betis",
+  "Linea_OU": "",
+  "Gol_attesi": 3.28,
+  "Margine": 1.5,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "Gol NoGol",
+  "Mercato": "BTTS",
+  "Sel": "NoGol",
+  "Prob": 37.0,
+  "Equa": 2.7
+ },
+ {
+  "Data": "2026-11-04",
+  "Ora": "21:00",
+  "Campionato": "Europe Champions League",
   "Partita": "RB Leipzig - Man City",
   "Casa": "RB Leipzig",
   "Ospite": "Man City",
@@ -2457,26 +2477,6 @@
  },
  {
   "Data": "2026-11-04",
-  "Ora": "21:00",
-  "Campionato": "Europe Champions League",
-  "Partita": "RB Leipzig - Man City",
-  "Casa": "RB Leipzig",
-  "Ospite": "Man City",
-  "Linea_OU": "",
-  "Gol_attesi": 3.61,
-  "Margine": 2.5,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "NoGol",
-  "Prob": 34.9,
-  "Equa": 2.86
- },
- {
-  "Data": "2026-11-04",
   "Ora": "20:45",
   "Campionato": "England Championship",
   "Partita": "Cardiff - West Ham",
@@ -2599,12 +2599,12 @@
   "Data": "2026-11-04",
   "Ora": "21:00",
   "Campionato": "Europe Champions League",
-  "Partita": "Dortmund - Real Betis",
-  "Casa": "Dortmund",
-  "Ospite": "Real Betis",
+  "Partita": "Viking - Sabah",
+  "Casa": "Viking",
+  "Ospite": "Sabah",
   "Linea_OU": "",
-  "Gol_attesi": 3.28,
-  "Margine": 1.5,
+  "Gol_attesi": 3.42,
+  "Margine": 3.1,
   "Movimento": null,
   "Principale": "",
   "Schedina": "si",
@@ -2612,28 +2612,8 @@
   "Gruppo": "1X2",
   "Mercato": "1X2",
   "Sel": "X",
-  "Prob": 22.8,
-  "Equa": 4.4
- },
- {
-  "Data": "2026-11-04",
-  "Ora": "18:45",
-  "Campionato": "Europe Champions League",
-  "Partita": "Fenerbahçe - Liverpool",
-  "Casa": "Fenerbahçe",
-  "Ospite": "Liverpool",
-  "Linea_OU": "",
-  "Gol_attesi": 3.32,
-  "Margine": 3.0,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 21.6,
-  "Equa": 4.63
+  "Prob": 20.0,
+  "Equa": 5.0
  },
  {
   "Data": "2026-11-04",
