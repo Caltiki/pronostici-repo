@@ -2391,7 +2391,8 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 59.2,
-  "Equa": 1.69
+  "Equa": 1.69,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-05",
@@ -3334,8 +3335,7 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 52.6,
-  "Equa": 1.9,
-  "InSchedina": "si"
+  "Equa": 1.9
  },
  {
   "Data": "2026-11-05",
@@ -3835,8 +3835,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 50.1,
-  "Equa": 2.0,
-  "InSchedina": "si"
+  "Equa": 2.0
  },
  {
   "Data": "2026-11-05",
@@ -6360,14 +6359,14 @@
  },
  {
   "Data": "2026-11-05",
-  "Ora": "18:45",
+  "Ora": "21:00",
   "Campionato": "Europe Europa League",
-  "Partita": "NEC Nijmegen - Omonia Nicosia",
-  "Casa": "NEC Nijmegen",
-  "Ospite": "Omonia Nicosia",
+  "Partita": "Sturm Graz - Celje",
+  "Casa": "Sturm Graz",
+  "Ospite": "Celje",
   "Linea_OU": "",
-  "Gol_attesi": 3.12,
-  "Margine": 2.8,
+  "Gol_attesi": 3.1,
+  "Margine": 1.8,
   "Movimento": null,
   "Principale": "",
   "Schedina": "si",
@@ -6375,8 +6374,8 @@
   "Gruppo": "1X2",
   "Mercato": "1X2",
   "Sel": "X",
-  "Prob": 23.7,
-  "Equa": 4.22
+  "Prob": 22.3,
+  "Equa": 4.48
  },
  {
   "Data": "2026-11-05",
