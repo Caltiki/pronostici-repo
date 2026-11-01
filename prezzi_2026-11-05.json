@@ -2171,7 +2171,8 @@
   "Mercato": "1X2",
   "Sel": "2",
   "Prob": 60.6,
-  "Equa": 1.65
+  "Equa": 1.65,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-05",
@@ -2491,8 +2492,7 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 59.2,
-  "Equa": 1.69,
-  "InSchedina": "si"
+  "Equa": 1.69
  },
  {
   "Data": "2026-11-05",
@@ -3413,8 +3413,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "2 + Over 1.5",
   "Prob": 52.8,
-  "Equa": 1.89,
-  "InSchedina": "si"
+  "Equa": 1.89
  },
  {
   "Data": "2026-11-05",
@@ -3434,7 +3433,8 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 52.6,
-  "Equa": 1.9
+  "Equa": 1.9,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-05",
@@ -3935,7 +3935,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 50.1,
-  "Equa": 2.0
+  "Equa": 2.0,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-05",
@@ -6579,14 +6580,14 @@
  },
  {
   "Data": "2026-11-05",
-  "Ora": "21:00",
+  "Ora": "18:45",
   "Campionato": "Europe Europa League",
-  "Partita": "Sturm Graz - Celje",
-  "Casa": "Sturm Graz",
-  "Ospite": "Celje",
+  "Partita": "NEC Nijmegen - Omonia Nicosia",
+  "Casa": "NEC Nijmegen",
+  "Ospite": "Omonia Nicosia",
   "Linea_OU": "",
-  "Gol_attesi": 3.1,
-  "Margine": 1.8,
+  "Gol_attesi": 3.12,
+  "Margine": 2.8,
   "Movimento": null,
   "Principale": "",
   "Schedina": "si",
@@ -6594,8 +6595,28 @@
   "Gruppo": "1X2",
   "Mercato": "1X2",
   "Sel": "X",
-  "Prob": 22.3,
-  "Equa": 4.48
+  "Prob": 23.7,
+  "Equa": 4.22
+ },
+ {
+  "Data": "2026-11-05",
+  "Ora": "18:45",
+  "Campionato": "Europe Europa League",
+  "Partita": "Sparta Praha - Bournemouth",
+  "Casa": "Sparta Praha",
+  "Ospite": "Bournemouth",
+  "Linea_OU": "",
+  "Gol_attesi": 3.09,
+  "Margine": 3.1,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 22.0,
+  "Equa": 4.54
  },
  {
   "Data": "2026-11-05",

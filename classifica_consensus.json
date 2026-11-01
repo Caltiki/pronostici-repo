@@ -1,26 +1,26 @@
 {
  "medio": {
   "copertura": {
-   "1": 18694,
+   "1": 18696,
    "2": 1976,
-   "3": 986,
+   "3": 987,
    "4": 473,
    "5": 173
   },
-  "totale": 22302,
+  "totale": 22305,
   "brier": 0.5812,
   "brier_clima": 0.6421,
   "fonti": [
    {
     "nome": "betimate",
-    "partite": 21256,
+    "partite": 21259,
     "brier": 0.5811,
     "brier_media": 0.5804
    },
    {
     "nome": "footymetrics",
-    "partite": 2109,
-    "brier": 0.6004,
+    "partite": 2110,
+    "brier": 0.6003,
     "brier_media": 0.5919
    },
    {
@@ -31,7 +31,7 @@
    },
    {
     "nome": "soccersite",
-    "partite": 2322,
+    "partite": 2323,
     "brier": 0.5982,
     "brier_media": 0.5901
    },
@@ -43,20 +43,20 @@
    }
   ],
   "mercato": {
-   "partite": 3155,
+   "partite": 3156,
    "poche": false,
    "brier": 0.5921,
    "brier_mercato": 0.5788,
    "diff": 0.0133,
    "es": 0.0025,
-   "t": 5.31,
+   "t": 5.32,
    "ic": [
     0.0084,
     0.0182
    ]
   }
  },
- "aggiornato": "2026-11-01 01:16",
+ "aggiornato": "2026-11-01 01:32",
  "accordo": {
   "totale": 1506,
   "prende": {
