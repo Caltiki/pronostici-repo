@@ -1505,8 +1505,7 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 66.8,
-  "Equa": 1.5,
-  "InSchedina": "si"
+  "Equa": 1.5
  },
  {
   "Data": "2026-11-05",
@@ -2552,7 +2551,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 58.5,
-  "Equa": 1.71
+  "Equa": 1.71,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-05",
@@ -6637,26 +6637,6 @@
   "Sel": "X",
   "Prob": 20.7,
   "Equa": 4.83
- },
- {
-  "Data": "2026-11-05",
-  "Ora": "21:00",
-  "Campionato": "Europe Europa League",
-  "Partita": "Bayer Leverkusen - Marseille",
-  "Casa": "Bayer Leverkusen",
-  "Ospite": "Marseille",
-  "Linea_OU": "",
-  "Gol_attesi": 3.33,
-  "Margine": 3.3,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 19.4,
-  "Equa": 5.16
  },
  {
   "Data": "2026-11-05",
