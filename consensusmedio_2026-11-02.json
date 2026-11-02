@@ -105,50 +105,6 @@
  },
  {
   "Data": "2026-11-02",
-  "Ora": "00:10",
-  "Lega": "Primera A colombiana",
-  "Casa": "Independiente Medellin",
-  "Ospite": "Alianza",
-  "Segno": "1",
-  "P1": 64.0,
-  "PX": 22.0,
-  "P2": 14.0,
-  "Fonti": 1,
-  "Elenco": "betimate"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "00:15",
-  "Lega": "LPF panamense",
-  "Casa": "CA Independiente de la Chorrera",
-  "Ospite": "San Francisco FC",
-  "Segno": "1",
-  "P1": 39.0,
-  "PX": 27.0,
-  "P2": 34.0,
-  "Fonti": 1,
-  "Elenco": "betimate"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "00:15",
-  "Lega": "Liga Nacional honduregna",
-  "Casa": "Motagua",
-  "Ospite": "CD Marathon",
-  "Segno": "1",
-  "P1": 43.7,
-  "PX": 31.7,
-  "P2": 24.7,
-  "Fonti": 3,
-  "Elenco": "betimate, soccersite, statarea",
-  "MP1": 45.8,
-  "MPX": 28.6,
-  "MP2": 25.7,
-  "Scarto": -2.1,
-  "Segno_Mercato": "1"
- },
- {
-  "Data": "2026-11-02",
   "Ora": "00:30",
   "Lega": "Primera División Apertura salvadoregna",
   "Casa": "CD Luis Angel Firpo",
@@ -528,19 +484,6 @@
  {
   "Data": "2026-11-02",
   "Ora": "02:30",
-  "Lega": "Major League Soccer statunitense",
-  "Casa": "Los Angeles FC",
-  "Ospite": "Minnesota United",
-  "Segno": "1",
-  "P1": 50.0,
-  "PX": 24.5,
-  "P2": 25.5,
-  "Fonti": 2,
-  "Elenco": "betimate, soccersite"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "02:30",
   "Lega": "United States - Major League Soccer",
   "Casa": "Los Angeles FC",
   "Ospite": "Minnesota",
@@ -568,6 +511,19 @@
   "MP2": 14.6,
   "Scarto": -10.3,
   "Segno_Mercato": "1"
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "02:40",
+  "Lega": "Major League Soccer statunitense",
+  "Casa": "Los Angeles FC",
+  "Ospite": "Minnesota United",
+  "Segno": "1",
+  "P1": 50.0,
+  "PX": 24.5,
+  "P2": 25.5,
+  "Fonti": 2,
+  "Elenco": "betimate, soccersite"
  },
  {
   "Data": "2026-11-02",
@@ -816,19 +772,6 @@
  {
   "Data": "2026-11-02",
   "Ora": "11:00",
-  "Lega": "Persha Liga Ucraina",
-  "Casa": "Kolos Kovalivka II",
-  "Ospite": "FC Metalist Kharkiv",
-  "Segno": "2",
-  "P1": 34.0,
-  "PX": 27.0,
-  "P2": 39.0,
-  "Fonti": 1,
-  "Elenco": "betimate"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "11:00",
   "Lega": "Ukraine Persha Liga",
   "Casa": "Kolos Kovalivka II",
   "Ospite": "Metal Kharkiv",
@@ -838,6 +781,19 @@
   "P2": 37.0,
   "Fonti": 1,
   "Elenco": "soccersite"
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "11:00",
+  "Lega": "Persha Liga Ucraina",
+  "Casa": "Kolos Kovalivka II",
+  "Ospite": "FC Metalist Kharkiv",
+  "Segno": "2",
+  "P1": 34.0,
+  "PX": 27.0,
+  "P2": 39.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-11-02",
@@ -1016,19 +972,6 @@
  {
   "Data": "2026-11-02",
   "Ora": "12:00",
-  "Lega": "UKRAINE - PREMIER LEAGUE",
-  "Casa": "Kryvbas Kryvyi Rih",
-  "Ospite": "Dinamo Kiev",
-  "Segno": "2",
-  "P1": 21.0,
-  "PX": 22.0,
-  "P2": 57.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "12:00",
   "Lega": "Ukraine - Premier League",
   "Casa": "Kryvbas Kryvyi Rih",
   "Ospite": "Dynamo Kyiv",
@@ -1038,6 +981,19 @@
   "P2": 70.3,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "12:00",
+  "Lega": "UKRAINE - PREMIER LEAGUE",
+  "Casa": "Kryvbas Kryvyi Rih",
+  "Ospite": "Dinamo Kiev",
+  "Segno": "2",
+  "P1": 21.0,
+  "PX": 22.0,
+  "P2": 57.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-02",
@@ -1325,19 +1281,6 @@
  {
   "Data": "2026-11-02",
   "Ora": "12:55",
-  "Lega": "Saudi Arabia Division 2",
-  "Casa": "Al Taraji",
-  "Ospite": "Al Baten",
-  "Segno": "1",
-  "P1": 43.0,
-  "PX": 33.0,
-  "P2": 24.0,
-  "Fonti": 1,
-  "Elenco": "soccersite"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "12:55",
   "Lega": "Division 2 Arabia Saudita",
   "Casa": "Al Taraji",
   "Ospite": "Al Batin",
@@ -1352,6 +1295,19 @@
   "MP2": 27.4,
   "Scarto": 6.4,
   "Segno_Mercato": "1"
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "12:55",
+  "Lega": "Saudi Arabia Division 2",
+  "Casa": "Al Taraji",
+  "Ospite": "Al Baten",
+  "Segno": "1",
+  "P1": 43.0,
+  "PX": 33.0,
+  "P2": 24.0,
+  "Fonti": 1,
+  "Elenco": "soccersite"
  },
  {
   "Data": "2026-11-02",
@@ -1688,19 +1644,6 @@
  {
   "Data": "2026-11-02",
   "Ora": "13:00",
-  "Lega": "Prva Liga Serbia",
-  "Casa": "Teleoptik",
-  "Ospite": "Javor Ivanjica",
-  "Segno": "1",
-  "P1": 66.0,
-  "PX": 19.0,
-  "P2": 15.0,
-  "Fonti": 1,
-  "Elenco": "betimate"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "13:00",
   "Lega": "Serbia Prva Liga",
   "Casa": "Teleoptik",
   "Ospite": "Javor",
@@ -1715,6 +1658,19 @@
   "MP2": 59.0,
   "Scarto": -7.0,
   "Segno_Mercato": "2"
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "13:00",
+  "Lega": "Prva Liga Serbia",
+  "Casa": "Teleoptik",
+  "Ospite": "Javor Ivanjica",
+  "Segno": "1",
+  "P1": 66.0,
+  "PX": 19.0,
+  "P2": 15.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-11-02",
@@ -1869,19 +1825,6 @@
  {
   "Data": "2026-11-02",
   "Ora": "13:30",
-  "Lega": "Bulgaria Second League",
-  "Casa": "Sportist Svoge",
-  "Ospite": "Ludogorets II",
-  "Segno": "1",
-  "P1": 34.0,
-  "PX": 34.0,
-  "P2": 32.0,
-  "Fonti": 1,
-  "Elenco": "soccersite"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "13:30",
   "Lega": "Bulgaria - Seconda Lega",
   "Casa": "Sportist Svoge",
   "Ospite": "Ludogorets Razgrad II",
@@ -1891,6 +1834,19 @@
   "P2": 36.0,
   "Fonti": 2,
   "Elenco": "betimate, ratingbet"
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "13:30",
+  "Lega": "Bulgaria Second League",
+  "Casa": "Sportist Svoge",
+  "Ospite": "Ludogorets II",
+  "Segno": "1",
+  "P1": 34.0,
+  "PX": 34.0,
+  "P2": 32.0,
+  "Fonti": 1,
+  "Elenco": "soccersite"
  },
  {
   "Data": "2026-11-02",
@@ -2529,19 +2485,6 @@
  {
   "Data": "2026-11-02",
   "Ora": "15:15",
-  "Lega": "Azadegan League Iran",
-  "Casa": "Shahin Bandar Ameri",
-  "Ospite": "Shenavar Sazi Qeshm",
-  "Segno": "1",
-  "P1": 46.0,
-  "PX": 25.0,
-  "P2": 29.0,
-  "Fonti": 1,
-  "Elenco": "betimate"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "15:15",
   "Lega": "IRAN - AZADEGAN LEAGUE",
   "Casa": "Shahin Bandar Ameri",
   "Ospite": "Shenavarsazi Qeshm",
@@ -2556,6 +2499,19 @@
   "MP2": 54.0,
   "Scarto": -6.5,
   "Segno_Mercato": "2"
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "15:15",
+  "Lega": "Azadegan League Iran",
+  "Casa": "Shahin Bandar Ameri",
+  "Ospite": "Shenavar Sazi Qeshm",
+  "Segno": "1",
+  "P1": 46.0,
+  "PX": 25.0,
+  "P2": 29.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-11-02",
@@ -2811,19 +2767,6 @@
  {
   "Data": "2026-11-02",
   "Ora": "16:00",
-  "Lega": "Russia Premier League",
-  "Casa": "Krylia Sovetov",
-  "Ospite": "Zenit",
-  "Segno": "2",
-  "P1": 18.0,
-  "PX": 27.0,
-  "P2": 55.0,
-  "Fonti": 1,
-  "Elenco": "soccersite"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "16:00",
   "Lega": "Premier League russa",
   "Casa": "Krylia Sovetov",
   "Ospite": "Zenit St Petersburg",
@@ -2833,6 +2776,19 @@
   "P2": 61.0,
   "Fonti": 1,
   "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "16:00",
+  "Lega": "Russia Premier League",
+  "Casa": "Krylia Sovetov",
+  "Ospite": "Zenit",
+  "Segno": "2",
+  "P1": 18.0,
+  "PX": 27.0,
+  "P2": 55.0,
+  "Fonti": 1,
+  "Elenco": "soccersite"
  },
  {
   "Data": "2026-11-02",
@@ -3049,19 +3005,6 @@
  {
   "Data": "2026-11-02",
   "Ora": "16:30",
-  "Lega": "Liga Alef Sud Israele",
-  "Casa": "Hapoel Azor",
-  "Ospite": "MS Jerusalem",
-  "Segno": "2",
-  "P1": 37.0,
-  "PX": 23.0,
-  "P2": 40.0,
-  "Fonti": 1,
-  "Elenco": "betimate"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "16:30",
   "Lega": "Israel Liga Alef",
   "Casa": "Hapoel Azor",
   "Ospite": "FC Jerusalem",
@@ -3076,6 +3019,19 @@
   "MP2": 31.3,
   "Scarto": -0.1,
   "Segno_Mercato": "1"
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "16:30",
+  "Lega": "Liga Alef Sud Israele",
+  "Casa": "Hapoel Azor",
+  "Ospite": "MS Jerusalem",
+  "Segno": "2",
+  "P1": 37.0,
+  "PX": 23.0,
+  "P2": 40.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-11-02",
@@ -3186,19 +3142,6 @@
  {
   "Data": "2026-11-02",
   "Ora": "17:00",
-  "Lega": "AFC Champions League Elite",
-  "Casa": "Al Sadd",
-  "Ospite": "Al Ahli Jeddah",
-  "Segno": "2",
-  "P1": 24.0,
-  "PX": 23.0,
-  "P2": 53.0,
-  "Fonti": 2,
-  "Elenco": "betimate, soccersite"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "17:00",
   "Lega": "Asia - AFC Champions League Elite",
   "Casa": "Al Sadd",
   "Ospite": "Al Ahli",
@@ -3213,6 +3156,19 @@
   "MP2": 42.6,
   "Scarto": 11.4,
   "Segno_Mercato": "2"
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "17:00",
+  "Lega": "AFC Champions League Elite",
+  "Casa": "Al Sadd",
+  "Ospite": "Al Ahli Jeddah",
+  "Segno": "2",
+  "P1": 24.0,
+  "PX": 23.0,
+  "P2": 53.0,
+  "Fonti": 2,
+  "Elenco": "betimate, soccersite"
  },
  {
   "Data": "2026-11-02",
@@ -3235,15 +3191,15 @@
  {
   "Data": "2026-11-02",
   "Ora": "17:00",
-  "Lega": "Primera Nacional argentina",
+  "Lega": "Argentina: Primera Nacional Argentina",
   "Casa": "All Boys",
-  "Ospite": "CA Estudiantes Caseros",
-  "Segno": "1",
-  "P1": 35.0,
-  "PX": 35.0,
-  "P2": 30.0,
+  "Ospite": "Club Atletico Estudiantes",
+  "Segno": "2",
+  "P1": 29.0,
+  "PX": 34.0,
+  "P2": 37.0,
   "Fonti": 1,
-  "Elenco": "betimate"
+  "Elenco": "ratingbet"
  },
  {
   "Data": "2026-11-02",
@@ -3266,28 +3222,15 @@
  {
   "Data": "2026-11-02",
   "Ora": "17:00",
-  "Lega": "Argentina: Primera Nacional Argentina",
+  "Lega": "Primera Nacional argentina",
   "Casa": "All Boys",
-  "Ospite": "Club Atletico Estudiantes",
-  "Segno": "2",
-  "P1": 29.0,
-  "PX": 34.0,
-  "P2": 37.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "17:00",
-  "Lega": "Greece: Super League Greece",
-  "Casa": "Atromitos",
-  "Ospite": "NFC Volos",
+  "Ospite": "CA Estudiantes Caseros",
   "Segno": "1",
-  "P1": 51.0,
-  "PX": 26.0,
-  "P2": 23.0,
+  "P1": 35.0,
+  "PX": 35.0,
+  "P2": 30.0,
   "Fonti": 1,
-  "Elenco": "ratingbet"
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-11-02",
@@ -3319,6 +3262,19 @@
   "MP2": 22.4,
   "Scarto": -4.6,
   "Segno_Mercato": "1"
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "17:00",
+  "Lega": "Greece: Super League Greece",
+  "Casa": "Atromitos",
+  "Ospite": "NFC Volos",
+  "Segno": "1",
+  "P1": 51.0,
+  "PX": 26.0,
+  "P2": 23.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
  },
  {
   "Data": "2026-11-02",
@@ -3686,19 +3642,6 @@
  {
   "Data": "2026-11-02",
   "Ora": "17:00",
-  "Lega": "AFC Champions League Elite",
-  "Casa": "Tractor Sazi",
-  "Ospite": "Neftchi Fergana",
-  "Segno": "1",
-  "P1": 45.0,
-  "PX": 31.0,
-  "P2": 24.0,
-  "Fonti": 1,
-  "Elenco": "betimate"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "17:00",
   "Lega": "Asia - AFC Champions League Elite",
   "Casa": "Tractor Sazi",
   "Ospite": "Neftchi",
@@ -3708,6 +3651,19 @@
   "P2": 33.0,
   "Fonti": 2,
   "Elenco": "footymetrics, soccersite"
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "17:00",
+  "Lega": "AFC Champions League Elite",
+  "Casa": "Tractor Sazi",
+  "Ospite": "Neftchi Fergana",
+  "Segno": "1",
+  "P1": 45.0,
+  "PX": 31.0,
+  "P2": 24.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-11-02",
@@ -4347,6 +4303,19 @@
  {
   "Data": "2026-11-02",
   "Ora": "18:00",
+  "Lega": "Poland - Ekstraklasa",
+  "Casa": "Radomiak Radom",
+  "Ospite": "Śląsk Wrocław",
+  "Segno": "1",
+  "P1": 47.0,
+  "PX": 25.0,
+  "P2": 28.0,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "18:00",
   "Lega": "Ekstraklasa polacca",
   "Casa": "Radomiak Radom",
   "Ospite": "Slask Wroclaw",
@@ -4361,19 +4330,6 @@
   "MP2": 30.7,
   "Scarto": -5.4,
   "Segno_Mercato": "1"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "18:00",
-  "Lega": "Poland - Ekstraklasa",
-  "Casa": "Radomiak Radom",
-  "Ospite": "Śląsk Wrocław",
-  "Segno": "1",
-  "P1": 47.0,
-  "PX": 25.0,
-  "P2": 28.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
  },
  {
   "Data": "2026-11-02",
@@ -4614,6 +4570,19 @@
  {
   "Data": "2026-11-02",
   "Ora": "18:30",
+  "Lega": "Greece: Super League Greece",
+  "Casa": "Kalamata",
+  "Ospite": "Iraklis",
+  "Segno": "1",
+  "P1": 41.0,
+  "PX": 30.0,
+  "P2": 29.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "18:30",
   "Lega": "Greece - Super League",
   "Casa": "Kalamata",
   "Ospite": "Iraklis 1908 FC",
@@ -4628,19 +4597,6 @@
   "MP2": 28.9,
   "Scarto": 4.5,
   "Segno_Mercato": "1"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "18:30",
-  "Lega": "Greece: Super League Greece",
-  "Casa": "Kalamata",
-  "Ospite": "Iraklis",
-  "Segno": "1",
-  "P1": 41.0,
-  "PX": 30.0,
-  "P2": 29.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
  },
  {
   "Data": "2026-11-02",
@@ -4684,6 +4640,19 @@
  {
   "Data": "2026-11-02",
   "Ora": "18:30",
+  "Lega": "ITALY - SERIE A",
+  "Casa": "Sassuolo",
+  "Ospite": "Lazio",
+  "Segno": "2",
+  "P1": 26.0,
+  "PX": 29.0,
+  "P2": 45.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "18:30",
   "Lega": "Italy - Serie A",
   "Casa": "Sassuolo",
   "Ospite": "Fiorentina",
@@ -4702,15 +4671,15 @@
  {
   "Data": "2026-11-02",
   "Ora": "18:30",
-  "Lega": "ITALY - SERIE A",
-  "Casa": "Sassuolo",
-  "Ospite": "Lazio",
-  "Segno": "2",
-  "P1": 26.0,
-  "PX": 29.0,
-  "P2": 45.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
+  "Lega": "Albania: Kategoria Superiore Albania",
+  "Casa": "Teuta Durres",
+  "Ospite": "Partizani",
+  "Segno": "1",
+  "P1": 64.5,
+  "PX": 23.5,
+  "P2": 12.0,
+  "Fonti": 2,
+  "Elenco": "ratingbet, soccersite"
  },
  {
   "Data": "2026-11-02",
@@ -4724,19 +4693,6 @@
   "P2": 17.0,
   "Fonti": 1,
   "Elenco": "betimate"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "18:30",
-  "Lega": "Albania: Kategoria Superiore Albania",
-  "Casa": "Teuta Durres",
-  "Ospite": "Partizani",
-  "Segno": "1",
-  "P1": 64.5,
-  "PX": 23.5,
-  "P2": 12.0,
-  "Fonti": 2,
-  "Elenco": "ratingbet, soccersite"
  },
  {
   "Data": "2026-11-02",
@@ -5757,6 +5713,19 @@
  {
   "Data": "2026-11-02",
   "Ora": "20:00",
+  "Lega": "Netherlands - Eerste Divisie",
+  "Casa": "Heracles",
+  "Ospite": "TOP Oss",
+  "Segno": "1",
+  "P1": 73.7,
+  "PX": 15.7,
+  "P2": 10.7,
+  "Fonti": 3,
+  "Elenco": "betimate, footymetrics, ratingbet"
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "20:00",
   "Lega": "Netherlands Eerste Divisie",
   "Casa": "Heracles",
   "Ospite": "FC OSS",
@@ -5771,19 +5740,6 @@
   "MP2": 6.4,
   "Scarto": -18.9,
   "Segno_Mercato": "1"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "20:00",
-  "Lega": "Netherlands - Eerste Divisie",
-  "Casa": "Heracles",
-  "Ospite": "TOP Oss",
-  "Segno": "1",
-  "P1": 73.7,
-  "PX": 15.7,
-  "P2": 10.7,
-  "Fonti": 3,
-  "Elenco": "betimate, footymetrics, ratingbet"
  },
  {
   "Data": "2026-11-02",
@@ -6182,19 +6138,6 @@
  {
   "Data": "2026-11-02",
   "Ora": "20:30",
-  "Lega": "SPAIN - PRIMERA FEDERACION - GROUP 2",
-  "Casa": "Huesca",
-  "Ospite": "Gimnastic Tarragona",
-  "Segno": "1",
-  "P1": 53.0,
-  "PX": 27.0,
-  "P2": 20.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "20:30",
   "Lega": "Spagna - Primera Federación Gruppo 2",
   "Casa": "Huesca",
   "Ospite": "Gimnastic",
@@ -6209,6 +6152,19 @@
   "MP2": 16.6,
   "Scarto": -6.2,
   "Segno_Mercato": "1"
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "20:30",
+  "Lega": "SPAIN - PRIMERA FEDERACION - GROUP 2",
+  "Casa": "Huesca",
+  "Ospite": "Gimnastic Tarragona",
+  "Segno": "1",
+  "P1": 53.0,
+  "PX": 27.0,
+  "P2": 20.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-02",
@@ -6244,19 +6200,6 @@
  {
   "Data": "2026-11-02",
   "Ora": "20:30",
-  "Lega": "I Liga polacca",
-  "Casa": "LKS Lodz",
-  "Ospite": "Polonia Warsaw",
-  "Segno": "1",
-  "P1": 41.0,
-  "PX": 27.0,
-  "P2": 32.0,
-  "Fonti": 1,
-  "Elenco": "betimate"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "20:30",
   "Lega": "POLAND - I LIGA",
   "Casa": "LKS Lodz",
   "Ospite": "Polonia Warszawa",
@@ -6271,6 +6214,19 @@
   "MP2": 32.7,
   "Scarto": -3.2,
   "Segno_Mercato": "1"
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "20:30",
+  "Lega": "I Liga polacca",
+  "Casa": "LKS Lodz",
+  "Ospite": "Polonia Warsaw",
+  "Segno": "1",
+  "P1": 41.0,
+  "PX": 27.0,
+  "P2": 32.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-11-02",
@@ -6519,19 +6475,6 @@
  {
   "Data": "2026-11-02",
   "Ora": "20:45",
-  "Lega": "England Non League Premier - Isthmian",
-  "Casa": "Aveley",
-  "Ospite": "St Albans City",
-  "Segno": "2",
-  "P1": 32.0,
-  "PX": 30.0,
-  "P2": 38.0,
-  "Fonti": 1,
-  "Elenco": "soccersite"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "20:45",
   "Lega": "Isthmian Premier Division Inghilterra",
   "Casa": "Aveley",
   "Ospite": "St Albans",
@@ -6546,6 +6489,19 @@
   "MP2": 41.4,
   "Scarto": 1.6,
   "Segno_Mercato": "2"
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "20:45",
+  "Lega": "England Non League Premier - Isthmian",
+  "Casa": "Aveley",
+  "Ospite": "St Albans City",
+  "Segno": "2",
+  "P1": 32.0,
+  "PX": 30.0,
+  "P2": 38.0,
+  "Fonti": 1,
+  "Elenco": "soccersite"
  },
  {
   "Data": "2026-11-02",
@@ -6984,19 +6940,6 @@
  {
   "Data": "2026-11-02",
   "Ora": "20:45",
-  "Lega": "FRANCE - LIGUE 1",
-  "Casa": "Lorient",
-  "Ospite": "Stade Brestois 29",
-  "Segno": "1",
-  "P1": 41.0,
-  "PX": 32.5,
-  "P2": 26.5,
-  "Fonti": 2,
-  "Elenco": "soccersite, statarea"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "20:45",
   "Lega": "France - Ligue 1",
   "Casa": "Lorient",
   "Ospite": "Brest",
@@ -7011,6 +6954,19 @@
   "MP2": 32.5,
   "Scarto": 5.0,
   "Segno_Mercato": "1"
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "20:45",
+  "Lega": "FRANCE - LIGUE 1",
+  "Casa": "Lorient",
+  "Ospite": "Stade Brestois 29",
+  "Segno": "1",
+  "P1": 41.0,
+  "PX": 32.5,
+  "P2": 26.5,
+  "Fonti": 2,
+  "Elenco": "soccersite, statarea"
  },
  {
   "Data": "2026-11-02",
@@ -7825,19 +7781,6 @@
  {
   "Data": "2026-11-02",
   "Ora": "21:15",
-  "Lega": "Primeira Liga Portogallo",
-  "Casa": "Gil Vicente",
-  "Ospite": "Guimaraes",
-  "Segno": "1",
-  "P1": 37.5,
-  "PX": 29.5,
-  "P2": 33.0,
-  "Fonti": 2,
-  "Elenco": "betimate, statarea"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "21:15",
   "Lega": "Liga Portugal",
   "Casa": "Gil Vicente",
   "Ospite": "Vitória Guimarães",
@@ -7852,6 +7795,19 @@
   "MP2": 37.7,
   "Scarto": 7.4,
   "Segno_Mercato": "2"
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "21:15",
+  "Lega": "Primeira Liga Portogallo",
+  "Casa": "Gil Vicente",
+  "Ospite": "Guimaraes",
+  "Segno": "1",
+  "P1": 37.5,
+  "PX": 29.5,
+  "P2": 33.0,
+  "Fonti": 2,
+  "Elenco": "betimate, statarea"
  },
  {
   "Data": "2026-11-02",
@@ -7983,19 +7939,6 @@
  {
   "Data": "2026-11-02",
   "Ora": "22:05",
-  "Lega": "Colombia: Primera A Colombia",
-  "Casa": "Aguilas Doradas",
-  "Ospite": "Fortaleza FC",
-  "Segno": "1",
-  "P1": 48.0,
-  "PX": 27.0,
-  "P2": 25.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
- },
- {
-  "Data": "2026-11-02",
-  "Ora": "22:05",
   "Lega": "Primera A colombiana",
   "Casa": "Aguilas Doradas",
   "Ospite": "Fortaleza CEIF",
@@ -8005,6 +7948,19 @@
   "P2": 21.0,
   "Fonti": 1,
   "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-11-02",
+  "Ora": "22:05",
+  "Lega": "Colombia: Primera A Colombia",
+  "Casa": "Aguilas Doradas",
+  "Ospite": "Fortaleza FC",
+  "Segno": "1",
+  "P1": 48.0,
+  "PX": 27.0,
+  "P2": 25.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
  },
  {
   "Data": "2026-11-02",
