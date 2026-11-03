@@ -149,8 +149,8 @@
   "Casa": "Junior",
   "Ospite": "Cucuta Deportivo",
   "Segno": "1",
-  "P1": 62.0,
-  "PX": 22.0,
+  "P1": 63.0,
+  "PX": 21.0,
   "P2": 16.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -240,8 +240,8 @@
   "Casa": "Metropolitanos FC",
   "Ospite": "Carabobo",
   "Segno": "2",
-  "P1": 32.0,
-  "PX": 28.0,
+  "P1": 32.5,
+  "PX": 27.5,
   "P2": 40.0,
   "Fonti": 2,
   "Elenco": "betimate, ratingbet"
@@ -396,8 +396,8 @@
   "Casa": "Puntarenas",
   "Ospite": "AD San Carlos",
   "Segno": "1",
-  "P1": 45.0,
-  "PX": 26.0,
+  "P1": 44.0,
+  "PX": 27.0,
   "P2": 29.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -643,8 +643,8 @@
   "Casa": "São Paulo",
   "Ospite": "Corinthians",
   "Segno": "1",
-  "P1": 45.7,
-  "PX": 27.7,
+  "P1": 46.0,
+  "PX": 27.3,
   "P2": 26.7,
   "Fonti": 3,
   "Elenco": "betimate, footymetrics, ratingbet"
@@ -708,9 +708,9 @@
   "Casa": "CD Luis Angel Firpo",
   "Ospite": "Alianza FC",
   "Segno": "1",
-  "P1": 52.0,
-  "PX": 23.0,
-  "P2": 25.0,
+  "P1": 54.0,
+  "PX": 22.0,
+  "P2": 24.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -877,8 +877,8 @@
   "Casa": "CD Olimpia",
   "Ospite": "Juticalpa",
   "Segno": "1",
-  "P1": 89.0,
-  "PX": 8.0,
+  "P1": 88.0,
+  "PX": 9.0,
   "P2": 3.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -903,8 +903,8 @@
   "Casa": "Universitario de Deportes",
   "Ospite": "Sport Boys",
   "Segno": "1",
-  "P1": 68.5,
-  "PX": 20.0,
+  "P1": 69.0,
+  "PX": 19.5,
   "P2": 11.5,
   "Fonti": 2,
   "Elenco": "betimate, ratingbet"
@@ -956,8 +956,8 @@
   "Ospite": "Alajuelense",
   "Segno": "2",
   "P1": 19.0,
-  "PX": 22.0,
-  "P2": 59.0,
+  "PX": 23.0,
+  "P2": 58.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -2446,19 +2446,6 @@
  {
   "Data": "2026-11-05",
   "Ora": "14:00",
-  "Lega": "Iran - Persian Gulf Pro League",
-  "Casa": "Shams Azar Qazvin",
-  "Ospite": "Sanat Naft",
-  "Segno": "2",
-  "P1": 31.0,
-  "PX": 31.0,
-  "P2": 38.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
- },
- {
-  "Data": "2026-11-05",
-  "Ora": "14:00",
   "Lega": "Iran: Persian Gulf Pro League Iran",
   "Casa": "Shams Azar Qazvin",
   "Ospite": "Sanat Naft Abadan",
@@ -2468,6 +2455,19 @@
   "P2": 34.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-11-05",
+  "Ora": "14:00",
+  "Lega": "Iran - Persian Gulf Pro League",
+  "Casa": "Shams Azar Qazvin",
+  "Ospite": "Sanat Naft",
+  "Segno": "2",
+  "P1": 31.0,
+  "PX": 31.0,
+  "P2": 38.0,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
  },
  {
   "Data": "2026-11-05",
@@ -5891,19 +5891,6 @@
  {
   "Data": "2026-11-05",
   "Ora": "18:45",
-  "Lega": "International: Europa League",
-  "Casa": "AC Milan",
-  "Ospite": "Ferencvaros",
-  "Segno": "1",
-  "P1": 71.0,
-  "PX": 19.0,
-  "P2": 10.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
- },
- {
-  "Data": "2026-11-05",
-  "Ora": "18:45",
   "Lega": "INTERNATIONAL - EUROPA LEAGUE",
   "Casa": "AC Milan",
   "Ospite": "Ferencvarosi TC",
@@ -5913,6 +5900,19 @@
   "P2": 12.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-05",
+  "Ora": "18:45",
+  "Lega": "International: Europa League",
+  "Casa": "AC Milan",
+  "Ospite": "Ferencvaros",
+  "Segno": "1",
+  "P1": 71.0,
+  "PX": 19.0,
+  "P2": 10.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
  },
  {
   "Data": "2026-11-05",
@@ -5969,19 +5969,6 @@
  {
   "Data": "2026-11-05",
   "Ora": "18:45",
-  "Lega": "International: Europa League",
-  "Casa": "Crystal Palace",
-  "Ospite": "Hoffenheim",
-  "Segno": "1",
-  "P1": 50.0,
-  "PX": 24.0,
-  "P2": 26.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
- },
- {
-  "Data": "2026-11-05",
-  "Ora": "18:45",
   "Lega": "INTERNATIONAL - EUROPA LEAGUE",
   "Casa": "Crystal Palace",
   "Ospite": "1899 Hoffenheim",
@@ -5991,6 +5978,19 @@
   "P2": 29.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-05",
+  "Ora": "18:45",
+  "Lega": "International: Europa League",
+  "Casa": "Crystal Palace",
+  "Ospite": "Hoffenheim",
+  "Segno": "1",
+  "P1": 50.0,
+  "PX": 24.0,
+  "P2": 26.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
  },
  {
   "Data": "2026-11-05",
@@ -6008,19 +6008,6 @@
  {
   "Data": "2026-11-05",
   "Ora": "18:45",
-  "Lega": "International: Europa Conference League",
-  "Casa": "FC Thun",
-  "Ospite": "Heart of Midlothian",
-  "Segno": "1",
-  "P1": 40.0,
-  "PX": 26.0,
-  "P2": 34.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
- },
- {
-  "Data": "2026-11-05",
-  "Ora": "18:45",
   "Lega": "INTERNATIONAL - CONFERENCE LEAGUE",
   "Casa": "FC Thun",
   "Ospite": "Hearts",
@@ -6030,6 +6017,19 @@
   "P2": 31.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-05",
+  "Ora": "18:45",
+  "Lega": "International: Europa Conference League",
+  "Casa": "FC Thun",
+  "Ospite": "Heart of Midlothian",
+  "Segno": "1",
+  "P1": 40.0,
+  "PX": 26.0,
+  "P2": 34.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
  },
  {
   "Data": "2026-11-05",
@@ -6138,19 +6138,6 @@
  {
   "Data": "2026-11-05",
   "Ora": "18:45",
-  "Lega": "International: Europa League",
-  "Casa": "NEC Nijmegen",
-  "Ospite": "Omonia Nicosia",
-  "Segno": "1",
-  "P1": 54.0,
-  "PX": 23.0,
-  "P2": 23.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
- },
- {
-  "Data": "2026-11-05",
-  "Ora": "18:45",
   "Lega": "INTERNATIONAL - EUROPA LEAGUE",
   "Casa": "NEC Nijmegen",
   "Ospite": "Omonia",
@@ -6160,6 +6147,19 @@
   "P2": 19.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-05",
+  "Ora": "18:45",
+  "Lega": "International: Europa League",
+  "Casa": "NEC Nijmegen",
+  "Ospite": "Omonia Nicosia",
+  "Segno": "1",
+  "P1": 54.0,
+  "PX": 23.0,
+  "P2": 23.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
  },
  {
   "Data": "2026-11-05",
