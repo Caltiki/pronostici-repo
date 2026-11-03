@@ -24309,6 +24309,7 @@ Data,Ora,Lega,Casa,Ospite,Norm_Casa,Norm_Ospite,Gol_Casa,Gol_Ospite,Esito,Fonte_
 2026-11-02,17:00,Ukraine Premier League,Karpaty Lviv,Kudrivka Irpin,karpaty lviv,kudrivka irpin,5,0,1,API-Football,,,
 2026-11-02,17:00,Mali Premiere Division,AS Korofina,Derby Academie,korofina,derby academie,2,3,2,Betimate,42.2,31.8,26.0
 2026-11-02,17:00,Liga U23 Portogallo,Leixoes U23,Rio Ave U23,leixoes u23,rio ave u23,1,4,2,Betimate,36.2,23.9,40.0
+2026-11-02,17:00,Campionato Giovanile Argentina,CD Moron U20,CA San Miguel U20,moron u20,san miguel u20,0,0,X,Betimate,,,
 2026-11-02,17:00,Slovenia 1. SNL,NK Bravo,FC Koper,nk bravo,koper,1,2,2,API-Football,,,
 2026-11-02,17:00,Czech-Republic FNL,Ostrava B,Jihlava,ostrava b,jihlava,1,3,2,API-Football,40.2,25.9,33.9
 2026-11-02,17:00,Greece Super League 1,PAE Atromitos,Volos NFC,pae atromitos,volos nfc,3,0,1,API-Football,,,
@@ -24488,7 +24489,7 @@ Data,Ora,Lega,Casa,Ospite,Norm_Casa,Norm_Ospite,Gol_Casa,Gol_Ospite,Esito,Fonte_
 2026-11-02,20:00,England Premier League Cup,Bolton Wanderers Res.,Queens Park Rangers U21,bolton wanderers res,queens park rangers u21,0,4,2,API-Football,,,
 2026-11-02,20:00,Inghilterra - Premier League Cup U21,Bournemouth U21,Cardiff U21,bournemouth u21,cardiff u21,3,2,1,Betimate,48.8,23.6,27.5
 2026-11-02,20:00,England Premier League Cup,Bournemouth U21,Cardiff City U21,bournemouth u21,cardiff city u21,3,2,1,API-Football,,,
-2026-11-02,20:00,Italy Serie D - Girone C,Clodiense,Bassano,clodiense,bassano,0,0,X,API-Football,,,
+2026-11-02,20:00,Serie D (Italia),Clodiense,Bassano,clodiense,bassano,0,0,X,Betimate,,,
 2026-11-02,20:00,Italy Serie D - Girone C,Clodiense,Bassano Virtus,clodiense,bassano virtus,0,0,X,API-Football,,,
 2026-11-02,20:00,Ligue 1 Algeria,CR Belouizdad,JS Saoura,cr belouizdad,js saoura,1,0,1,Betimate,,,
 2026-11-02,20:00,Algeria Ligue 1,CR Belouizdad,Saoura,cr belouizdad,saoura,1,0,1,API-Football,71.8,20.5,7.7
@@ -24623,3 +24624,47 @@ Data,Ora,Lega,Casa,Ospite,Norm_Casa,Norm_Ospite,Gol_Casa,Gol_Ospite,Esito,Fonte_
 2026-11-03,02:15,Primera A colombiana,Atletico Bucaramanga,Atletico Nacional Medellin,atletico bucaramanga,atletico nacional medellin,1,1,X,Betimate,,,
 2026-11-03,03:00,Liga Nacional Guatemala,Suchitepequez,Malacateco,suchitepequez,malacateco,1,0,1,Betimate,48.9,26.7,24.4
 2026-11-03,03:05,Liga Premier Serie A Messico,Halcones Negros FC,Real Apodaca FC,halcones negros,real apodaca,1,0,1,Betimate,,,
+2026-11-03,08:45,Asia AFC Champions League Elite,Newcastle Jets,Shanghai Port,newcastle jets,shanghai port,2,4,2,FootyMetrics,25.6,23.3,51.1
+2026-11-03,11:00,Europe UEFA Youth League,Bodø / Glimt U19,Lille U19,bod glimt u19,lille u19,2,1,1,FootyMetrics,,,
+2026-11-03,11:00,Asia AFC Champions League Elite,Jeonbuk Motors,Johor Darul Ta'zim,jeonbuk motors,johor darul ta zim,2,0,1,FootyMetrics,,,
+2026-11-03,11:00,Asia AFC Champions League Elite,Kashiwa Reysol,Daejeon Citizen,kashiwa reysol,daejeon citizen,2,0,1,FootyMetrics,,,
+2026-11-03,11:00,Asia AFC Champions League Elite,Vissel Kobe,Ratchaburi Mitrphol FC,vissel kobe,ratchaburi mitrphol,3,2,1,FootyMetrics,,,
+2026-11-03,12:00,Europe UEFA Youth League,Galatasaray U19,Stuttgart U19,galatasaray u19,stuttgart u19,2,2,X,FootyMetrics,28.4,22.9,48.7
+2026-11-03,13:00,Europe UEFA Youth League,Shakhtar Donetsk U19,Sporting CP U19,shakhtar donetsk u19,sporting cp u19,1,3,2,FootyMetrics,18.1,21.2,60.7
+2026-11-03,13:00,Europe UEFA Youth League,Villarreal U19,Paris SG U19,villarreal u19,paris sg u19,3,0,1,FootyMetrics,,,
+2026-11-03,13:15,Asia AFC Champions League Elite,Công an Hà Nội,Kyoto Sanga,cong an ha noi,kyoto sanga,0,0,X,FootyMetrics,,,
+2026-11-03,13:15,Asia AFC Champions League Elite,Port FC,Beijing Guoan,port,beijing guoan,7,4,1,FootyMetrics,,,
+2026-11-03,14:00,Europe UEFA Youth League,Feyenoord U19,Inter U19,feyenoord u19,inter u19,3,1,1,FootyMetrics,53.4,20.6,26.0
+2026-11-03,14:00,Europe UEFA Youth League,Manchester United U19,Roma U19,manchester united u19,roma u19,1,1,X,FootyMetrics,,,
+2026-11-03,14:00,Europe UEFA Youth League,Salzburg U19,Genk U19,salzburg u19,genk u19,4,3,1,FootyMetrics,64.7,19.5,15.8
+2026-11-03,14:45,Asia AFC Champions League Two,East Bengal,Al Seeb,east bengal,al seeb,0,2,2,FootyMetrics,40.4,27.7,31.9
+2026-11-03,15:00,Europe UEFA Youth League,LASK UEFA U19,Slovan Bratislava U19,lask uefa u19,slovan bratislava u19,2,1,1,FootyMetrics,,,
+2026-11-03,16:00,Europe UEFA Youth League,Atl. Madrid U19,FC Bayern München U19,atl madrid u19,bayern munchen u19,4,1,1,FootyMetrics,,,
+2026-11-03,16:00,Europe UEFA Youth League,Barcelona U19,Aston Villa U19,barcelona u19,aston villa u19,3,3,X,FootyMetrics,81.1,12.0,6.9
+2026-11-03,16:30,Europe UEFA Youth League,Maccabi Tel Aviv U19,Zürich U19,maccabi tel aviv u19,zurich u19,0,0,X,FootyMetrics,40.7,25.9,33.4
+2026-11-03,17:00,Asia AFC Champions League Two,Al Hussein,Al Shorta,al hussein,al shorta,0,3,2,FootyMetrics,36.6,33.3,30.0
+2026-11-03,17:00,Asia AFC Champions League Elite,Esteghlal,Al Shamal SC,esteghlal,al shamal,1,0,1,FootyMetrics,,,
+2026-11-03,18:00,Europe UEFA Youth League,Göztepe U19,AZ U19,goztepe u19,az u19,1,2,2,FootyMetrics,,,
+2026-11-03,18:45,Europe Champions League,Galatasaray,VfB Stuttgart,galatasaray,vfb stuttgart,2,0,1,FootyMetrics,,,
+2026-11-03,18:45,Europe Champions League,Shakhtar Donetsk,Sporting CP,shakhtar donetsk,sporting cp,0,1,2,FootyMetrics,27.0,25.5,47.5
+2026-11-03,19:00,Sweden Allsvenskan,Sirius,Halmstad,sirius,halmstad,2,0,1,FootyMetrics,74.1,16.0,9.9
+2026-11-03,19:15,Asia AFC Champions League Elite,Al Hilal,Shabab Al Ahli Dubai,al hilal,shabab al ahli dubai,2,0,1,FootyMetrics,67.1,19.5,13.4
+2026-11-03,20:45,England Championship,Blackburn,Stoke,blackburn,stoke,1,2,2,FootyMetrics,35.3,28.5,36.2
+2026-11-03,20:45,England Championship,Charlton,Bolton,charlton,bolton,0,1,2,FootyMetrics,42.7,26.8,30.5
+2026-11-03,20:45,England Championship,Derby,Norwich,derby,norwich,0,4,2,FootyMetrics,26.8,26.0,47.2
+2026-11-03,20:45,England League One,Huddersfield,Luton,huddersfield,luton,1,1,X,FootyMetrics,47.2,25.6,27.2
+2026-11-03,20:45,England League Two,Northampton,Oldham Athletic,northampton,oldham athletic,0,1,2,FootyMetrics,,,
+2026-11-03,20:45,England Championship,Portsmouth,Swansea,portsmouth,swansea,3,1,1,FootyMetrics,33.4,29.3,37.2
+2026-11-03,20:45,England Championship,Preston,Sheff Utd,preston,sheff utd,2,3,2,FootyMetrics,,,
+2026-11-03,20:45,England Championship,QPR,Burnley,qpr,burnley,1,1,X,FootyMetrics,47.7,25.3,27.0
+2026-11-03,20:45,England Championship,Watford,Lincoln,watford,lincoln,1,0,1,FootyMetrics,35.9,28.1,35.9
+2026-11-03,20:45,England League One,Wigan,Mansfield,wigan,mansfield,0,0,X,FootyMetrics,29.3,25.4,45.3
+2026-11-03,21:00,Europe Champions League,Atlético de Madrid,Bayern München,atletico madrid,bayern munchen,0,2,2,FootyMetrics,,,
+2026-11-03,21:00,Europe Champions League,Barcelona,Aston Villa,barcelona,aston villa,3,0,1,FootyMetrics,75.0,13.8,11.2
+2026-11-03,21:00,England Championship,Birmingham,Millwall,birmingham,millwall,3,0,1,FootyMetrics,49.2,25.6,25.3
+2026-11-03,21:00,Europe Champions League,Bodø / Glimt,Lille,bod glimt,lille,0,0,X,FootyMetrics,,,
+2026-11-03,21:00,Europe Champions League,Feyenoord,Inter,feyenoord,inter,0,3,2,FootyMetrics,26.8,23.0,50.2
+2026-11-03,21:00,Europe Champions League,LASK,Slovan Bratislava,lask,slovan bratislava,4,0,1,FootyMetrics,69.3,17.6,13.1
+2026-11-03,21:00,Europe Champions League,Man United,Roma,man united,roma,3,2,1,FootyMetrics,,,
+2026-11-03,21:00,Europe Champions League,Villarreal,PSG,villarreal,psg,0,6,2,FootyMetrics,22.0,22.5,55.5
+2026-11-03,21:00,England Championship,West Brom,Southampton,west brom,southampton,1,1,X,FootyMetrics,39.9,28.0,32.0
