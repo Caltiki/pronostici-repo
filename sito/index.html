@@ -1241,6 +1241,18 @@
   .riepilogo button.filtro-esito span { display: block; }
   .riepilogo button.filtro-esito.attivo { border-color: var(--evidenza); box-shadow: 0 0 0 1px var(--evidenza), var(--ombra); }
   .riepilogo button.filtro-esito:disabled { cursor: default; }
+  /* LIVE: il punteggio della partita in corso, accanto ai nomi. */
+  .live {
+    display: inline-block; margin-left: 8px; padding: 1px 8px 1px 18px; border-radius: 999px;
+    font-size: .78em; font-weight: 700; letter-spacing: .01em; vertical-align: middle; white-space: nowrap;
+    color: #fff; background: #d1342f; position: relative;
+  }
+  .live::before {
+    content: ""; position: absolute; left: 7px; top: 50%; width: 6px; height: 6px; margin-top: -3px;
+    border-radius: 50%; background: #fff; animation: livePulsa 1.4s ease-in-out infinite;
+  }
+  @keyframes livePulsa { 50% { opacity: .25; } }
+  @media (prefers-reduced-motion: reduce) { .live::before { animation: none; } }
   /* CONDIVIDI LA MULTIPLA. I canali stanno in una fila che va a capo. */
   .multipla .m-azioni { display: flex; gap: 8px; margin-top: 8px; }
   .multipla button.primo { border-color: var(--evidenza); color: var(--evidenza); background: var(--evidenza-tenue); }
@@ -3780,7 +3792,10 @@
   }
   function partitaHtml(casa, ospite, testo, dove) {
     if (!casa || !ospite) return esc(testo || "");
-    return '<span class="sq">' + logo(casa, false, dove) + esc(casa) + '</span> \u2013 <span class="sq">' + logo(ospite, false, dove) + esc(ospite) + "</span>";
+    // data-lc: la chiave per i LIVE (vedi aggiornaLive), "Casa|Ospite" come
+    // li scrive il file. Non costa niente se i live sono spenti.
+    return '<span class="sq" data-lc="' + esc(casa + "|" + ospite) + '">' + logo(casa, false, dove) + esc(casa) +
+      '</span> \u2013 <span class="sq">' + logo(ospite, false, dove) + esc(ospite) + "</span>";
   }
 
   // Il mercato del giorno e la mappa dei nomi si leggono qui, una volta per
@@ -4843,6 +4858,83 @@
   document.getElementById("casa").addEventListener("click", vaiHome);
   document.getElementById("titolo").addEventListener("click", vaiHome);
 
+  // ------------------------------------------------------------- LIVE
+  // Il punteggio delle partite in corso, accanto ai nomi, ovunque.
+  //
+  // DA DOVE ARRIVA: dal ponte su Cloudflare (worker.js), che tiene la chiave
+  // di API-Football e chiede le partite in corso ogni 30 minuti. Il sito
+  // legge l'ultima risposta salvata: le visite non consumano richieste.
+  // COME SI AGGANCIA: partite_api_<data>.json (scritto da apifootball.py)
+  // dice, per ogni "Casa|Ospite" come lo scrivono i nostri file, il numero
+  // della partita in API-Football; la risposta del ponte porta lo stesso
+  // numero. Nessun nome da riconoscere qui.
+  // URL_LIVE vuoto = live spenti, il sito resta come prima.
+  var URL_LIVE = "https://caltiki-live.caltiki.workers.dev";
+  var MAPPA_LIVE = {}, DATI_LIVE = null, LIVE_ORA = "";
+  var IN_CORSO = { "1H": 1, "2H": 1, "HT": 1, "ET": 1, "BT": 1, "P": 1, "LIVE": 1, "INT": 1, "SUSP": 1 };
+  function giornoRoma(delta) {
+    var t = new Date(Date.now() + delta * 86400000);
+    try {
+      return new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Rome", year: "numeric", month: "2-digit", day: "2-digit" }).format(t);
+    } catch (e) { return t.toISOString().slice(0, 10); }
+  }
+  function testoLive(x) {
+    var g = (x.gc == null ? "-" : x.gc) + "\u2013" + (x.go == null ? "-" : x.go);
+    if (x.stato === "HT") return "intervallo " + g;
+    if (x.stato === "BT") return "pausa " + g;
+    if (x.stato === "P") return "rigori " + g;
+    if (x.stato === "INT" || x.stato === "SUSP") return "sospesa " + g;
+    return (x.min != null ? x.min + (x.extra ? "+" + x.extra : "") + "\u2032 " : "") + g;
+  }
+  function aggiornaLive() {
+    if (!DATI_LIVE) return;
+    $cont.querySelectorAll("[data-lc]").forEach(function (el) {
+      var id = MAPPA_LIVE[el.getAttribute("data-lc")];
+      var x = id != null ? DATI_LIVE[id] : null;
+      var box = el.parentNode;
+      var pill = box ? box.querySelector(":scope > .live") : null;
+      if (!x || !IN_CORSO[x.stato]) { if (pill) pill.remove(); return; }
+      if (!pill) {
+        pill = document.createElement("span");
+        pill.className = "live";
+        box.appendChild(pill);
+      }
+      pill.textContent = testoLive(x);
+      pill.title = "In corso" + (LIVE_ORA ? " \u00b7 aggiornato alle " + LIVE_ORA : "");
+    });
+  }
+  function caricaLive() {
+    return fetch(URL_LIVE.replace(/\/$/, "") + "/live", { cache: "no-store" }).then(function (r) {
+      return r.ok ? r.json() : null;
+    }).then(function (d) {
+      if (!d || !Array.isArray(d.partite)) return;
+      var per = {};
+      d.partite.forEach(function (x) { if (x && x.id != null) per[x.id] = x; });
+      DATI_LIVE = per;
+      LIVE_ORA = d.aggiornato ? new Date(d.aggiornato).toLocaleTimeString("it-IT", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Rome" }) : "";
+      aggiornaLive();
+    }).catch(function () { /* il ponte non risponde: niente live, il resto va */ });
+  }
+  function avviaLive() {
+    if (!URL_LIVE) return;
+    // Le mappe di ieri (partite dopo mezzanotte), oggi e domani.
+    Promise.all([-1, 0, 1].map(function (k) {
+      return leggi("partite_api_" + giornoRoma(k) + ".json").catch(function () { return null; });
+    })).then(function (m) {
+      m.forEach(function (x) { if (x && typeof x === "object") for (var k in x) MAPPA_LIVE[k] = x[k]; });
+      caricaLive();
+    });
+    // Ogni volta che la pagina si ridisegna le pillole si rimettono.
+    var attesa = null;
+    new MutationObserver(function () {
+      if (attesa) return;
+      attesa = setTimeout(function () { attesa = null; aggiornaLive(); }, 150);
+    }).observe($cont, { childList: true, subtree: true });
+    // Il ponte si aggiorna ogni 30 minuti: rileggerlo ogni 2 basta.
+    setInterval(function () { if (!document.hidden) caricaLive(); }, 120000);
+    document.addEventListener("visibilitychange", function () { if (!document.hidden) caricaLive(); });
+  }
+
   // IL TEMA. Si ricorda la scelta su questo telefono (localStorage): e'
   // una comodita' di chi guarda, non un dato del sistema.
   function applicaTema(t) {
@@ -4876,6 +4968,7 @@
 
   leggiHash();
   disegna();
+  avviaLive();
   leggi("footystatswdw_index.json").then(function (ix) {
     if (!ix || !Array.isArray(ix.date) || !ix.date.length) return;
     WDW_PRONTO = true;
