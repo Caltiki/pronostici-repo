@@ -2025,7 +2025,8 @@
           '<details><summary><div class="corpo">' +
           '<div class="alto"><span>' + esc(r0.Ora || "") + "</span>" +
           (gol ? "<span><b>" + esc(gol) + "</b></span>" : "") +
-          (r0.Campionato ? '<span class="chip">' + esc(r0.Campionato) + "</span>" : "") + "</div>" +
+          (r0.Campionato ? '<span class="chip">' + esc(r0.Campionato) + "</span>" : "") +
+          (r0.Fonte === "Pinnacle" ? '<span class="chip">quota Pinnacle</span>' : "") + "</div>" +
           '<div class="partita">' + partitaHtml(r0.Casa, r0.Ospite, r0.Partita, campiRiga(r0)) + "</div>" +
           '<div class="sel">' + (inSch ? "In schedina: " : "Proposta: ") + esc(etichettaSel(top)) +
           " · " + f0(num(top.Prob)) + "%" + (scelte_ ? " · " + scelte_ + " nella multipla" : "") + "</div>" +
@@ -2481,6 +2482,8 @@
       '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" +
       (gol ? "<span><b>" + esc(gol) + "</b></span>" : "") +
       (r.Gruppo ? '<span class="chip">' + esc(r.Gruppo) + "</span>" : "") +
+      (r.Fonte === "Pinnacle" && stato.vista.prezzi !== "partite" && stato.vista.prezzi !== "stretto"
+        ? '<span class="chip">quota Pinnacle</span>' : "") +
       (fid ? '<span class="pill ' + fid[0] + '">margine ' + f1(marg) + "%</span>" : "") +
       "</div>" +
       '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, r.Partita, campiRiga(r)) + "</div>" +
