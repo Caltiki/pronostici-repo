@@ -2441,6 +2441,10 @@
     if (r.Campionato) det.push("<p>" + esc(r.Campionato) + "</p>");
     det.push("<p>Quota reale " + f2(equa) + " – probabilità " + f0(prob) + "%. " +
       "Sopra quella quota prendi valore, sotto paghi margine.</p>");
+    if (r.Fonte === "Pinnacle") {
+      det.push("<p>Prezzo da Pinnacle (via API-Football): AsianOdds non ha questa partita. " +
+        "Sulle partite che hanno tutte e due, le probabilit\u00e0 differiscono di 1-2 punti.</p>");
+    }
     if (r.Fonte === "FootyMetrics") {
       det.push("<p>Prezzo da FootyMetrics: AsianOdds copre solo le prossime 24 ore. " +
         "Sulle partite che hanno tutte e due, le due fonti differiscono di 0.7 punti in mediana.</p>");
