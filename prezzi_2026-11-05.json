@@ -2114,7 +2114,8 @@
   "Mercato": "OU 2.5",
   "Sel": "Over",
   "Prob": 61.4,
-  "Equa": 1.63
+  "Equa": 1.63,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-05",
@@ -2174,7 +2175,8 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 61.2,
-  "Equa": 1.63
+  "Equa": 1.63,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-05",
@@ -3355,8 +3357,7 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 53.7,
-  "Equa": 1.86,
-  "InSchedina": "si"
+  "Equa": 1.86
  },
  {
   "Data": "2026-11-05",
@@ -3657,8 +3658,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 51.9,
-  "Equa": 1.93,
-  "InSchedina": "si"
+  "Equa": 1.93
  },
  {
   "Data": "2026-11-05",
@@ -5902,6 +5902,26 @@
  },
  {
   "Data": "2026-11-05",
+  "Ora": "18:45",
+  "Campionato": "Europe Europa League",
+  "Partita": "NEC Nijmegen - Omonia Nicosia",
+  "Casa": "NEC Nijmegen",
+  "Ospite": "Omonia Nicosia",
+  "Linea_OU": "",
+  "Gol_attesi": 3.17,
+  "Margine": 2.9,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "Under Over",
+  "Mercato": "OU 2.5",
+  "Sel": "Under",
+  "Prob": 38.6,
+  "Equa": 2.59
+ },
+ {
+  "Data": "2026-11-05",
   "Ora": "23:30",
   "Campionato": "Brazil Serie B",
   "Partita": "Botafogo SP - Londrina",
@@ -6882,26 +6902,6 @@
  },
  {
   "Data": "2026-11-05",
-  "Ora": "18:45",
-  "Campionato": "Europe Europa League",
-  "Partita": "NEC Nijmegen - Omonia Nicosia",
-  "Casa": "NEC Nijmegen",
-  "Ospite": "Omonia Nicosia",
-  "Linea_OU": "",
-  "Gol_attesi": 3.17,
-  "Margine": 2.9,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 23.1,
-  "Equa": 4.32
- },
- {
-  "Data": "2026-11-05",
   "Ora": "16:10",
   "Campionato": "Saudi Arabia Pro League",
   "Partita": "Abha - Al Shabab",
@@ -6919,6 +6919,26 @@
   "Sel": "X",
   "Prob": 22.3,
   "Equa": 4.48
+ },
+ {
+  "Data": "2026-11-05",
+  "Ora": "21:00",
+  "Campionato": "Europe Europa League",
+  "Partita": "Sturm Graz - Celje",
+  "Casa": "Sturm Graz",
+  "Ospite": "Celje",
+  "Linea_OU": "",
+  "Gol_attesi": 3.11,
+  "Margine": 2.1,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 21.8,
+  "Equa": 4.6
  },
  {
   "Data": "2026-11-05",
