@@ -1240,6 +1240,7 @@
   .riepilogo button.filtro-esito b { display: block; }
   .riepilogo button.filtro-esito span { display: block; }
   .riepilogo button.filtro-esito.attivo { border-color: var(--evidenza); box-shadow: 0 0 0 1px var(--evidenza), var(--ombra); }
+  .riepilogo button.filtro-esito:disabled { cursor: default; }
   /* CONDIVIDI LA MULTIPLA. I canali stanno in una fila che va a capo. */
   .multipla .m-azioni { display: flex; gap: 8px; margin-top: 8px; }
   .multipla button.primo { border-color: var(--evidenza); color: var(--evidenza); background: var(--evidenza-tenue); }
@@ -1576,6 +1577,7 @@
     cerca: "",
     fonteCm: "",
     esito: "",
+    stretti: false,
     limite: PASSO
   };
   // La multipla sopravvive al cambio di vista e di data: si compone
@@ -1876,6 +1878,14 @@
       passano = passano.filter(function (r) { return r.Esito === stato.esito; });
       if (!passano.length) { stato.esito = ""; passano = tutteFiltro; }
     }
+    // IL RIQUADRO "CON MARGINE SOTTO IL 2%" E' UN PULSANTE: toccandolo
+    // restano solo quelle righe, ritoccandolo si torna a tutte. Se in una
+    // giornata non ce n'e' nessuna, il filtro si spegne da solo.
+    baseStrette = passano;
+    if (sez === "prezzi" && stato.stretti) {
+      var stretteF = passano.filter(margineStretto);
+      if (stretteF.length) passano = stretteF; else stato.stretti = false;
+    }
     var q = stato.cerca.toLowerCase();
     var visibili = q ? passano.filter(function (r) { return testoCerca(r).indexOf(q) >= 0; }) : passano;
     visibili = ordina(sez, visibili.slice());
@@ -1927,6 +1937,12 @@
     $r.querySelectorAll("[data-esito]").forEach(function (b) {
       b.addEventListener("click", function () {
         stato.esito = stato.esito === b.dataset.esito ? "" : b.dataset.esito;
+        stato.limite = PASSO; ridisegnaRighe();
+      });
+    });
+    $r.querySelectorAll("[data-stretti]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        stato.stretti = !stato.stretti;
         stato.limite = PASSO; ridisegnaRighe();
       });
     });
@@ -2053,6 +2069,12 @@
         stato.limite = PASSO; ridisegnaRighe();
       });
     });
+    $r.querySelectorAll("[data-stretti]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        stato.stretti = !stato.stretti;
+        stato.limite = PASSO; ridisegnaRighe();
+      });
+    });
     $r.querySelectorAll("input[data-chiave]").forEach(function (cb) {
       cb.addEventListener("change", function () {
         var k = cb.dataset.chiave, r = mostrate[Number(cb.dataset.i)];
@@ -2157,10 +2179,15 @@
   // Le righe della giornata PRIMA del filtro prese/sbagliate: i conteggi
   // dei riquadri restano quelli di tutta la schedina anche col filtro.
   var baseEsiti = null;
+  var baseStrette = null;
+  function margineStretto(r) { var m = num(r.Margine); return m != null && m < 2; }
   function riepilogoPrezzi(v) {
     var eq = mediana(v.map(function (r) { return num(r.Equa); }));
     var mg = mediana(v.map(function (r) { return num(r.Margine); }));
-    var strette = v.filter(function (r) { var m = num(r.Margine); return m != null && m < 2; }).length;
+    // Col filtro acceso i conteggi restano quelli di tutta la giornata.
+    var base = stato.stretti && baseStrette ? baseStrette : v;
+    if (stato.cerca && !stato.stretti) base = v;
+    var strette = base.filter(margineStretto).length;
     var tutteE = stato.esito && baseEsiti ? baseEsiti : v;
     var prese = tutteE.filter(function (r) { return r.Esito === "presa"; }).length;
     var sbagliate = tutteE.filter(function (r) { return r.Esito === "sbagliata"; }).length;
@@ -2175,11 +2202,15 @@
         "<div><b>" + attesa + "</b><span>senza risultato</span></div></div>" +
         '<p class="conta">Tocca \u2713 o \u2717 per vedere solo quelle. Le partite finite sono in cima.</p>';
     }
-    return tessere([
-      [eq == null ? "-" : eq.toFixed(2), "quota reale mediana"],
-      [mg == null ? "-" : mg.toFixed(1) + "%", "margine mediano"],
-      [strette + "<small style=\"font-size:.7em;color:var(--tenue)\"> / " + v.length + "</small>", "con margine sotto il 2%"]
-    ]);
+    var on = stato.stretti;
+    return '<div class="riepilogo">' +
+      "<div><b>" + (eq == null ? "-" : eq.toFixed(2)) + "</b><span>quota reale mediana</span></div>" +
+      "<div><b>" + (mg == null ? "-" : mg.toFixed(1) + "%") + "</b><span>margine mediano</span></div>" +
+      '<button type="button" class="filtro-esito' + (on ? " attivo" : "") + '" data-stretti="1"' +
+      (strette ? "" : " disabled") + ' aria-pressed="' + (on ? "true" : "false") + '"><b>' + strette +
+      '<small style="font-size:.7em;color:var(--tenue)"> / ' + base.length + "</small></b><span>" +
+      (on ? "margine sotto il 2% \u00b7 mostra tutte" : "con margine sotto il 2%") + "</span></button></div>" +
+      (strette && !on ? '<p class="conta">Tocca il riquadro del 2% per vedere solo quelle.</p>' : "");
   }
 
   function riepilogoConsensus(v) {
@@ -4748,6 +4779,7 @@
     stato.cerca = "";
     stato.fonteCm = "";
     stato.esito = "";
+    stato.stretti = false;
     stato.limite = PASSO;
     FONTI.vista = "riepilogo"; FONTI.data = null; FONTI.fonte = "";
     SCHEDA.interna = false; ritorno = null;
