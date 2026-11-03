@@ -2913,8 +2913,7 @@
   "Mercato": "BTTS",
   "Sel": "NoGol",
   "Prob": 57.7,
-  "Equa": 1.73,
-  "InSchedina": "si"
+  "Equa": 1.73
  },
  {
   "Data": "2026-11-03",
@@ -3114,7 +3113,8 @@
   "Mercato": "1X2",
   "Sel": "2",
   "Prob": 56.4,
-  "Equa": 1.77
+  "Equa": 1.77,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-03",
@@ -5699,26 +5699,6 @@
  },
  {
   "Data": "2026-11-03",
-  "Ora": "21:30",
-  "Campionato": "Colombia: Primera A - Clausura",
-  "Partita": "Pereira - Deportes Tolima",
-  "Casa": "Pereira",
-  "Ospite": "Deportes Tolima",
-  "Linea_OU": 2.25,
-  "Gol_attesi": 2.33,
-  "Margine": 8.0,
-  "Movimento": 1.1,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "AsianOdds",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "Gol",
-  "Prob": 42.3,
-  "Equa": 2.36
- },
- {
-  "Data": "2026-11-03",
   "Ora": "12:00",
   "Campionato": "Europe UEFA Youth League",
   "Partita": "Galatasaray U19 - Stuttgart U19",
@@ -7774,6 +7754,26 @@
   "Gruppo": "Under Over",
   "Mercato": "OU 1.5",
   "Sel": "Under",
+  "Prob": 25.3,
+  "Equa": 3.95
+ },
+ {
+  "Data": "2026-11-03",
+  "Ora": "21:30",
+  "Campionato": "Colombia: Primera A - Clausura",
+  "Partita": "Pereira - Deportes Tolima",
+  "Casa": "Pereira",
+  "Ospite": "Deportes Tolima",
+  "Linea_OU": 2.25,
+  "Gol_attesi": 2.33,
+  "Margine": 8.0,
+  "Movimento": 1.1,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "AsianOdds",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
   "Prob": 25.3,
   "Equa": 3.95
  },
