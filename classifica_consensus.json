@@ -1,19 +1,19 @@
 {
  "medio": {
   "copertura": {
-   "1": 20050,
-   "2": 2232,
-   "3": 1113,
+   "1": 20054,
+   "2": 2233,
+   "3": 1111,
    "4": 521,
    "5": 200
   },
-  "totale": 24116,
+  "totale": 24119,
   "brier": 0.58,
   "brier_clima": 0.6418,
   "fonti": [
    {
     "nome": "betimate",
-    "partite": 22984,
+    "partite": 22987,
     "brier": 0.5798,
     "brier_media": 0.5792
    },
@@ -21,7 +21,7 @@
     "nome": "footymetrics",
     "partite": 2305,
     "brier": 0.5983,
-    "brier_media": 0.5895
+    "brier_media": 0.5894
    },
    {
     "nome": "ratingbet",
@@ -31,32 +31,32 @@
    },
    {
     "nome": "soccersite",
-    "partite": 2628,
+    "partite": 2629,
     "brier": 0.5969,
-    "brier_media": 0.5885
+    "brier_media": 0.5884
    },
    {
     "nome": "statarea",
-    "partite": 1969,
-    "brier": 0.6049,
-    "brier_media": 0.5987
+    "partite": 1965,
+    "brier": 0.6048,
+    "brier_media": 0.5988
    }
   ],
   "mercato": {
-   "partite": 3557,
+   "partite": 3558,
    "poche": false,
-   "brier": 0.5903,
+   "brier": 0.5902,
    "brier_mercato": 0.5772,
-   "diff": 0.013,
+   "diff": 0.0131,
    "es": 0.0023,
-   "t": 5.57,
+   "t": 5.58,
    "ic": [
     0.0085,
     0.0176
    ]
   }
  },
- "aggiornato": "2026-11-03 03:54",
+ "aggiornato": "2026-11-03 05:43",
  "accordo": {
   "totale": 1660,
   "prende": {

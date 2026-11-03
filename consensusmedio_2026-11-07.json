@@ -28,19 +28,6 @@
  {
   "Data": "2026-11-07",
   "Ora": "00:00",
-  "Lega": "MEXICO - LIGA MX APERTURA",
-  "Casa": "Pachuca",
-  "Ospite": "U.A.N.L. - Tigres",
-  "Segno": "1",
-  "P1": 43.0,
-  "PX": 33.0,
-  "P2": 24.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
- },
- {
-  "Data": "2026-11-07",
-  "Ora": "00:00",
   "Lega": "Brazil - Serie A",
   "Casa": "Vitória",
   "Ospite": "Fluminense",
@@ -50,45 +37,6 @@
   "P2": 34.0,
   "Fonti": 2,
   "Elenco": "footymetrics, ratingbet"
- },
- {
-  "Data": "2026-11-07",
-  "Ora": "00:15",
-  "Lega": "HONDURAS - LIGA NACIONAL - APERTURA",
-  "Casa": "Real Espana",
-  "Ospite": "Juticalpa",
-  "Segno": "1",
-  "P1": 71.0,
-  "PX": 20.0,
-  "P2": 9.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
- },
- {
-  "Data": "2026-11-07",
-  "Ora": "00:30",
-  "Lega": "VENEZUELA - PRIMERA DIVISION - CLAUSURA - MAIN ROUND GROUP B",
-  "Casa": "Caracas FC",
-  "Ospite": "Monagas SC",
-  "Segno": "1",
-  "P1": 47.0,
-  "PX": 28.0,
-  "P2": 25.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
- },
- {
-  "Data": "2026-11-07",
-  "Ora": "00:45",
-  "Lega": "MEXICO - LIGA MX FEMENIL APERTURA GROUP A",
-  "Casa": "Club Tijuana (w)",
-  "Ospite": "Cruz Azul (w)",
-  "Segno": "1",
-  "P1": 42.0,
-  "PX": 21.0,
-  "P2": 37.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-07",
@@ -639,19 +587,6 @@
  {
   "Data": "2026-11-07",
   "Ora": "13:30",
-  "Lega": "England: EFL Championship",
-  "Casa": "Wrexham",
-  "Ospite": "Wolverhampton",
-  "Segno": "2",
-  "P1": 32.0,
-  "PX": 27.0,
-  "P2": 41.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
- },
- {
-  "Data": "2026-11-07",
-  "Ora": "13:30",
   "Lega": "England - Championship",
   "Casa": "Wrexham",
   "Ospite": "Wolves",
@@ -661,6 +596,19 @@
   "P2": 35.0,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "13:30",
+  "Lega": "England: EFL Championship",
+  "Casa": "Wrexham",
+  "Ospite": "Wolverhampton",
+  "Segno": "2",
+  "P1": 32.0,
+  "PX": 27.0,
+  "P2": 41.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
  },
  {
   "Data": "2026-11-07",
@@ -1081,19 +1029,6 @@
  {
   "Data": "2026-11-07",
   "Ora": "15:30",
-  "Lega": "Germany - Bundesliga",
-  "Casa": "Paderborn",
-  "Ospite": "Frankfurt",
-  "Segno": "1",
-  "P1": 40.0,
-  "PX": 22.0,
-  "P2": 38.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
- },
- {
-  "Data": "2026-11-07",
-  "Ora": "15:30",
   "Lega": "Germany: Bundesliga Germany",
   "Casa": "Paderborn",
   "Ospite": "Eintracht Frankfurt",
@@ -1103,6 +1038,19 @@
   "P2": 44.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "15:30",
+  "Lega": "Germany - Bundesliga",
+  "Casa": "Paderborn",
+  "Ospite": "Frankfurt",
+  "Segno": "1",
+  "P1": 40.0,
+  "PX": 22.0,
+  "P2": 38.0,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
  },
  {
   "Data": "2026-11-07",
@@ -2433,19 +2381,6 @@
  {
   "Data": "2026-11-07",
   "Ora": "18:30",
-  "Lega": "Spain: LaLiga Spain",
-  "Casa": "Osasuna",
-  "Ospite": "Athletic Club",
-  "Segno": "2",
-  "P1": 28.0,
-  "PX": 28.0,
-  "P2": 44.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
- },
- {
-  "Data": "2026-11-07",
-  "Ora": "18:30",
   "Lega": "Spain - La Liga",
   "Casa": "Osasuna",
   "Ospite": "Athletic Bilbao",
@@ -2455,6 +2390,19 @@
   "P2": 42.4,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "18:30",
+  "Lega": "Spain: LaLiga Spain",
+  "Casa": "Osasuna",
+  "Ospite": "Athletic Club",
+  "Segno": "2",
+  "P1": 28.0,
+  "PX": 28.0,
+  "P2": 44.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
  },
  {
   "Data": "2026-11-07",
