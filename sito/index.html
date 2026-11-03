@@ -1624,6 +1624,15 @@
     } else if (FONTI.vista === "partite") {
       h += "/partite/" + (FONTI.data || "");
     }
+    // LA HOME NON HA INDIRIZZO: Pronostici, "Tutte le partite", oggi. Cosi'
+    // l'indirizzo che si salva o si condivide dalla home apre sempre il
+    // giorno in cui lo si apre, non quello in cui e' stato copiato.
+    var home = stato.sez === "prezzi" && stato.vista.prezzi === "partite" &&
+      (!stato.data.prezzi || stato.data.prezzi === oggi());
+    if (home) {
+      if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+      return;
+    }
     if (location.hash !== "#" + h) history.replaceState(null, "", "#" + h);
   }
 
