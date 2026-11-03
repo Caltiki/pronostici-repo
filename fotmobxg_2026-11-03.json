@@ -1,5 +1,5 @@
 {
- "generato": "2026-11-03T01:11:01",
+ "generato": "2026-11-03T05:28:36",
  "fonte": "FotMob",
  "stagione": "",
  "squadre": {
@@ -1227,6 +1227,23 @@
    "nome": "Novorizontino",
    "lega": "Brasile - Série B [8814]"
   },
+  "CRB|Brasile - Série B [8814]": {
+   "mp": 36,
+   "xg_tot": 60.1,
+   "xga_tot": 44.2,
+   "xg_90": 1.67,
+   "xga_90": 1.23,
+   "xpts": 62.0,
+   "pts": 55,
+   "v": 16,
+   "n": 7,
+   "s": 13,
+   "pg_classifica": 36,
+   "gf": 54,
+   "gs": 51,
+   "nome": "CRB",
+   "lega": "Brasile - Série B [8814]"
+  },
   "Criciúma|Brasile - Série B [8814]": {
    "mp": 36,
    "xg_tot": 44.3,
@@ -1315,9 +1332,9 @@
   "Botafogo SP|Brasile - Série B [8814]": {
    "mp": 36,
    "xg_tot": 43.2,
-   "xga_tot": 37.9,
+   "xga_tot": 38.2,
    "xg_90": 1.2,
-   "xga_90": 1.05,
+   "xga_90": 1.06,
    "xpts": 53.0,
    "pts": 48,
    "v": 13,
@@ -1331,9 +1348,9 @@
   },
   "Sport Recife|Brasile - Série B [8814]": {
    "mp": 36,
-   "xg_tot": 52.3,
+   "xg_tot": 52.6,
    "xga_tot": 46.4,
-   "xg_90": 1.45,
+   "xg_90": 1.46,
    "xga_90": 1.29,
    "xpts": 52.0,
    "pts": 55,
@@ -1395,6 +1412,23 @@
    "gf": 51,
    "gs": 40,
    "nome": "São Bernardo",
+   "lega": "Brasile - Série B [8814]"
+  },
+  "Goiás|Brasile - Série B [8814]": {
+   "mp": 36,
+   "xg_tot": 45.6,
+   "xga_tot": 50.6,
+   "xg_90": 1.27,
+   "xga_90": 1.41,
+   "xpts": 47.0,
+   "pts": 55,
+   "v": 16,
+   "n": 7,
+   "s": 13,
+   "pg_classifica": 36,
+   "gf": 38,
+   "gs": 41,
+   "nome": "Goiás",
    "lega": "Brasile - Série B [8814]"
   },
   "Operário-PR|Brasile - Série B [8814]": {
@@ -2288,16 +2322,6 @@
    "nome": "Cúcuta",
    "lega": "Colombia - Primera A [274]"
   },
-  "Deportivo Pasto|Colombia - Primera A [274]": {
-   "mp": 19,
-   "xg_tot": 21.9,
-   "xga_tot": 17.9,
-   "xg_90": 1.15,
-   "xga_90": 0.94,
-   "xpts": 28.0,
-   "nome": "Deportivo Pasto",
-   "lega": "Colombia - Primera A [274]"
-  },
   "Bucaramanga|Colombia - Primera A [274]": {
    "mp": 19,
    "xg_tot": 19.8,
@@ -2306,6 +2330,16 @@
    "xga_90": 0.78,
    "xpts": 30.0,
    "nome": "Bucaramanga",
+   "lega": "Colombia - Primera A [274]"
+  },
+  "Deportivo Pasto|Colombia - Primera A [274]": {
+   "mp": 19,
+   "xg_tot": 21.9,
+   "xga_tot": 17.9,
+   "xg_90": 1.15,
+   "xga_90": 0.94,
+   "xpts": 28.0,
+   "nome": "Deportivo Pasto",
    "lega": "Colombia - Primera A [274]"
   },
   "CD Jaguares|Colombia - Primera A [274]": {
@@ -5203,10 +5237,10 @@
   },
   "Sekhukhune United|Sudafrica - Premier Soccer League [537]": {
    "mp": 9,
-   "xg_tot": 10.5,
-   "xga_tot": 8.5,
-   "xg_90": 1.17,
-   "xga_90": 0.94,
+   "xg_tot": 10.4,
+   "xga_tot": 8.6,
+   "xg_90": 1.16,
+   "xga_90": 0.96,
    "xpts": 13.0,
    "pts": 14,
    "v": 4,
@@ -5235,6 +5269,23 @@
    "nome": "Lamontville Golden Arrows",
    "lega": "Sudafrica - Premier Soccer League [537]"
   },
+  "Milford FC|Sudafrica - Premier Soccer League [537]": {
+   "mp": 10,
+   "xg_tot": 10.6,
+   "xga_tot": 11.8,
+   "xg_90": 1.06,
+   "xga_90": 1.18,
+   "xpts": 13.0,
+   "pts": 18,
+   "v": 5,
+   "n": 3,
+   "s": 2,
+   "pg_classifica": 10,
+   "gf": 11,
+   "gs": 7,
+   "nome": "Milford FC",
+   "lega": "Sudafrica - Premier Soccer League [537]"
+  },
   "Polokwane City|Sudafrica - Premier Soccer League [537]": {
    "mp": 9,
    "xg_tot": 8.3,
@@ -5250,23 +5301,6 @@
    "gf": 8,
    "gs": 11,
    "nome": "Polokwane City",
-   "lega": "Sudafrica - Premier Soccer League [537]"
-  },
-  "Milford FC|Sudafrica - Premier Soccer League [537]": {
-   "mp": 10,
-   "xg_tot": 10.5,
-   "xga_tot": 11.9,
-   "xg_90": 1.05,
-   "xga_90": 1.19,
-   "xpts": 12.0,
-   "pts": 18,
-   "v": 5,
-   "n": 3,
-   "s": 2,
-   "pg_classifica": 10,
-   "gf": 11,
-   "gs": 7,
-   "nome": "Milford FC",
    "lega": "Sudafrica - Premier Soccer League [537]"
   },
   "Durban City|Sudafrica - Premier Soccer League [537]": {
@@ -5459,10 +5493,10 @@
   "Häcken|Svezia - Allsvenskan [67]": {
    "mp": 27,
    "xg_tot": 49.8,
-   "xga_tot": 30.9,
+   "xga_tot": 31.2,
    "xg_90": 1.84,
-   "xga_90": 1.14,
-   "xpts": 50.0,
+   "xga_90": 1.16,
+   "xpts": 49.0,
    "pts": 49,
    "v": 13,
    "n": 10,
@@ -5560,10 +5594,10 @@
   },
   "Brommapojkarna|Svezia - Allsvenskan [67]": {
    "mp": 27,
-   "xg_tot": 35.4,
-   "xga_tot": 37.3,
-   "xg_90": 1.31,
-   "xga_90": 1.38,
+   "xg_tot": 35.8,
+   "xga_tot": 37.4,
+   "xg_90": 1.33,
+   "xga_90": 1.39,
    "xpts": 36.0,
    "pts": 34,
    "v": 9,
@@ -5628,9 +5662,9 @@
   },
   "Mjällby|Svezia - Allsvenskan [67]": {
    "mp": 27,
-   "xg_tot": 31.1,
-   "xga_tot": 48.3,
-   "xg_90": 1.15,
+   "xg_tot": 31.5,
+   "xga_tot": 48.4,
+   "xg_90": 1.17,
    "xga_90": 1.79,
    "xpts": 27.0,
    "pts": 27,
@@ -5662,11 +5696,11 @@
   },
   "Örgryte|Svezia - Allsvenskan [67]": {
    "mp": 27,
-   "xg_tot": 29.6,
-   "xga_tot": 54.6,
+   "xg_tot": 29.7,
+   "xga_tot": 54.9,
    "xg_90": 1.1,
-   "xga_90": 2.02,
-   "xpts": 24.0,
+   "xga_90": 2.03,
+   "xpts": 23.0,
    "pts": 19,
    "v": 4,
    "n": 7,
