@@ -1,6 +1,7 @@
 {
- "aggiornato": "2026-11-03 00:54",
+ "aggiornato": "2026-11-03 02:26",
  "date": [
+  "2026-11-03",
   "2026-11-02",
   "2026-11-01",
   "2026-10-31",
@@ -29,16 +30,22 @@
   "2026-10-08",
   "2026-10-07",
   "2026-10-06",
-  "2026-10-05",
-  "2026-10-04"
+  "2026-10-05"
  ],
  "giorni": {
+  "2026-11-03": {
+   "partite": 2,
+   "pronostici": 11,
+   "prese": 4,
+   "con_mercato": 1,
+   "favorito_preso": 1
+  },
   "2026-11-02": {
-   "partite": 46,
-   "pronostici": 314,
-   "prese": 198,
-   "con_mercato": 33,
-   "favorito_preso": 21
+   "partite": 155,
+   "pronostici": 836,
+   "prese": 533,
+   "con_mercato": 84,
+   "favorito_preso": 52
   },
   "2026-11-01": {
    "partite": 599,
@@ -233,13 +240,6 @@
    "partite": 31,
    "pronostici": 107,
    "prese": 73,
-   "con_mercato": 0,
-   "favorito_preso": 0
-  },
-  "2026-10-04": {
-   "partite": 115,
-   "pronostici": 383,
-   "prese": 229,
    "con_mercato": 0,
    "favorito_preso": 0
   }
