@@ -48,8 +48,8 @@
   "P1": 54.0,
   "PX": 23.0,
   "P2": 23.0,
-  "Fonti": 2,
-  "Elenco": "footymetrics, ratingbet"
+  "Fonti": 3,
+  "Elenco": "footymetrics, ratingbet, statarea"
  },
  {
   "Data": "2026-11-07",
@@ -162,11 +162,11 @@
   "Casa": "Nagoya Grampus",
   "Ospite": "Kyoto Sanga",
   "Segno": "1",
-  "P1": 46.0,
-  "PX": 26.0,
-  "P2": 28.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 47.5,
+  "PX": 31.0,
+  "P2": 21.5,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-07",
@@ -214,11 +214,11 @@
   "Casa": "FC Tokyo",
   "Ospite": "Kashima Antlers",
   "Segno": "1",
-  "P1": 46.0,
-  "PX": 25.0,
-  "P2": 29.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 44.0,
+  "PX": 26.5,
+  "P2": 29.5,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-07",
@@ -1380,19 +1380,6 @@
  {
   "Data": "2026-11-07",
   "Ora": "16:00",
-  "Lega": "England: FA Cup England",
-  "Casa": "Eastleigh",
-  "Ospite": "Shrewsbury",
-  "Segno": "2",
-  "P1": 26.0,
-  "PX": 26.0,
-  "P2": 48.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
- },
- {
-  "Data": "2026-11-07",
-  "Ora": "16:00",
   "Lega": "England - FA Cup",
   "Casa": "Eastleigh",
   "Ospite": "Shrewsbury Town",
@@ -1402,6 +1389,19 @@
   "P2": 56.0,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "16:00",
+  "Lega": "England: FA Cup England",
+  "Casa": "Eastleigh",
+  "Ospite": "Shrewsbury",
+  "Segno": "2",
+  "P1": 26.0,
+  "PX": 26.0,
+  "P2": 48.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
  },
  {
   "Data": "2026-11-07",

@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-03 06:43",
+ "aggiornato": "2026-11-03 07:47",
  "risultati": 24624,
  "con_prezzo": 8413,
  "minimo": 100,
@@ -7,58 +7,58 @@
   {
    "chiave": "webpronostici",
    "nome": "WebPronostici",
-   "righe": 36764,
+   "righe": 43224,
    "rotte": 0,
-   "misurate": 11300,
+   "misurate": 11315,
    "mercati": [
     {
      "mercato": "1X2",
-     "prese": 637,
-     "su": 1224,
-     "pct": 52.0,
+     "prese": 639,
+     "su": 1227,
+     "pct": 52.1,
      "rimborsi": 0
     },
     {
      "mercato": "BTTS",
-     "prese": 1870,
-     "su": 3345,
+     "prese": 1873,
+     "su": 3349,
      "pct": 55.9,
      "rimborsi": 0
     },
     {
      "mercato": "DC",
      "prese": 1542,
-     "su": 2121,
+     "su": 2122,
      "pct": 72.7,
      "rimborsi": 0
     },
     {
      "mercato": "OU",
-     "prese": 2372,
-     "su": 3988,
+     "prese": 2374,
+     "su": 3993,
      "pct": 59.5,
      "rimborsi": 335
     },
     {
      "mercato": "SEGNA",
-     "prese": 510,
-     "su": 622,
-     "pct": 82.0,
+     "prese": 512,
+     "su": 624,
+     "pct": 82.1,
      "rimborsi": 0
     }
    ],
-   "prese": 6931,
+   "prese": 6940,
    "pct": 61.3,
    "mercato": {
-    "n": 498,
-    "fonte": 52.0,
-    "book": 58.4
+    "n": 499,
+    "fonte": 52.1,
+    "book": 58.5
    }
   },
   {
    "chiave": "xgaura",
    "nome": "xGaura",
-   "righe": 11563,
+   "righe": 11596,
    "rotte": 0,
    "misurate": 4750,
    "mercati": [
@@ -146,7 +146,7 @@
   {
    "chiave": "ratingbet",
    "nome": "RatingBet",
-   "righe": 14276,
+   "righe": 14392,
    "rotte": 0,
    "misurate": 4239,
    "mercati": [
@@ -213,7 +213,7 @@
   {
    "chiave": "statarea",
    "nome": "Statarea",
-   "righe": 4145,
+   "righe": 4148,
    "rotte": 0,
    "misurate": 1982,
    "mercati": [

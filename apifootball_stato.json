@@ -1,13 +1,93 @@
 {
  "pinnacle": {
   "2026-11-03": {
-   "letto": "2026-11-03 06:42",
-   "completo": false,
-   "pagine": 3,
-   "partite": 15
+   "letto": "2026-11-03 07:40",
+   "chieste": [
+    1531124,
+    1581709,
+    1582149,
+    1596444,
+    1596454,
+    1605113,
+    1607859,
+    1612155,
+    1619610,
+    1623283,
+    1627164,
+    1629972,
+    1630390,
+    1630391,
+    1632525,
+    1634377,
+    1634378,
+    1634379,
+    1634381,
+    1634384,
+    1634385,
+    1637364,
+    1638854,
+    1638855,
+    1640301,
+    1641837,
+    1645609,
+    1647088,
+    1647090,
+    1648365
+   ],
+   "partite": 19
   }
  },
  "giornate": {
+  "2026-10-13": {
+   "letta": "2026-11-03 07:43",
+   "chiusa": true,
+   "errore": "{\"plan\": \"Free plans do not have access to this date, try from 2026-11-02 to 2026-11-04.\"}"
+  },
+  "2026-10-14": {
+   "letta": "2026-11-03 07:43",
+   "chiusa": true,
+   "errore": "{\"plan\": \"Free plans do not have access to this date, try from 2026-11-02 to 2026-11-04.\"}"
+  },
+  "2026-10-15": {
+   "letta": "2026-11-03 07:43",
+   "chiusa": true,
+   "errore": "{\"plan\": \"Free plans do not have access to this date, try from 2026-11-02 to 2026-11-04.\"}"
+  },
+  "2026-10-16": {
+   "letta": "2026-11-03 07:43",
+   "chiusa": true,
+   "errore": "{\"plan\": \"Free plans do not have access to this date, try from 2026-11-02 to 2026-11-04.\"}"
+  },
+  "2026-10-17": {
+   "letta": "2026-11-03 07:43",
+   "chiusa": true,
+   "errore": "{\"plan\": \"Free plans do not have access to this date, try from 2026-11-02 to 2026-11-04.\"}"
+  },
+  "2026-10-18": {
+   "letta": "2026-11-03 07:43",
+   "chiusa": true,
+   "errore": "{\"plan\": \"Free plans do not have access to this date, try from 2026-11-02 to 2026-11-04.\"}"
+  },
+  "2026-10-19": {
+   "letta": "2026-11-03 07:43",
+   "chiusa": true,
+   "errore": "{\"plan\": \"Free plans do not have access to this date, try from 2026-11-02 to 2026-11-04.\"}"
+  },
+  "2026-10-20": {
+   "letta": "2026-11-03 07:43",
+   "chiusa": true,
+   "errore": "{\"plan\": \"Free plans do not have access to this date, try from 2026-11-02 to 2026-11-04.\"}"
+  },
+  "2026-10-21": {
+   "letta": "2026-11-03 07:43",
+   "chiusa": true,
+   "errore": "{\"plan\": \"Free plans do not have access to this date, try from 2026-11-02 to 2026-11-04.\"}"
+  },
+  "2026-10-22": {
+   "letta": "2026-11-03 07:43",
+   "chiusa": true,
+   "errore": "{\"plan\": \"Free plans do not have access to this date, try from 2026-11-02 to 2026-11-04.\"}"
+  },
   "2026-10-23": {
    "letta": "2026-11-03 06:42",
    "chiusa": true,
@@ -59,7 +139,7 @@
    "errore": "{\"plan\": \"Free plans do not have access to this date, try from 2026-11-02 to 2026-11-04.\"}"
   },
   "2026-11-02": {
-   "letta": "2026-11-03 06:42",
+   "letta": "2026-11-03 07:43",
    "chiusa": false,
    "partite_api": 241,
    "nostre": 613,
@@ -67,5 +147,5 @@
    "finite": 440
   }
  },
- "aggiornato": "2026-11-03 06:42"
+ "aggiornato": "2026-11-03 07:43"
 }
