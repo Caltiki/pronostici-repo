@@ -1755,20 +1755,24 @@
     var indice = conf.indice, prefisso = conf.prefisso, viste = conf.viste, ordini = conf.ordini;
 
     $cont.innerHTML = messaggio("vuoto", "Carico&hellip;");
-    // Per i Pronostici anche le giornate passate che hanno la schedina con
-    // gli esiti (schedina_index.json, scritto da esiti_schedina.py).
+    // Per i Pronostici anche le giornate passate con gli esiti, scritte da
+    // esiti_schedina.py: TUTTE le probabilita' del giorno (esiti_<data>)
+    // dove ci sono, altrimenti la sola schedina (schedina_<data>), che e'
+    // l'unica che c'era prima del 4 novembre.
     Promise.all([leggi(indice),
-                 sez === "prezzi" ? leggi("schedina_index.json").catch(function () { return null; }) : null
+                 sez === "prezzi" ? leggi("schedina_index.json").catch(function () { return null; }) : null,
+                 sez === "prezzi" ? leggi("esiti_index.json").catch(function () { return null; }) : null
     ]).then(function (arr) {
-      var ix = arr[0], sx = arr[1];
+      var ix = arr[0], sx = arr[1], ex = arr[2];
       var date = (ix.date || []).slice().sort();
       passate = {};
-      if (sx && Array.isArray(sx.date)) {
-        sx.date.forEach(function (x) {
-          if (x < oggi() && date.indexOf(x) < 0) { date.push(x); passate[x] = 1; }
+      [[ex, "esiti_"], [sx, "schedina_"]].forEach(function (c) {
+        if (!c[0] || !Array.isArray(c[0].date)) return;
+        c[0].date.forEach(function (x) {
+          if (x < oggi() && !passate[x] && date.indexOf(x) < 0) { date.push(x); passate[x] = c[1]; }
         });
-        date.sort();
-      }
+      });
+      date.sort();
       if (conf.daOggi) {
         var futuri = date.filter(function (x) { return x >= oggi(); });
         if (futuri.length) date = futuri;
@@ -1797,7 +1801,7 @@
       $cont.innerHTML = testa + '<div id="righe">' + messaggio("vuoto", "Carico&hellip;") + "</div>";
       collegaTesta(sez);
 
-      var carica = Promise.all([leggi((passate[d] ? "schedina_" : prefisso) + d + ".json"), caricaLoghi()])
+      var carica = Promise.all([leggi((passate[d] || prefisso) + d + ".json"), caricaLoghi()])
         .then(function (a) { return a[0]; });
       if (conf.arricchisci) carica = carica.then(function (righe) { return conf.arricchisci(righe, d); });
       return carica.then(function (righe) {
@@ -2132,7 +2136,7 @@
     }
     var carichi = date.map(function (d) {
       if (d === data) return Promise.resolve([d, partite(righeOggi)]);
-      return leggi((sez === "prezzi" && passate[d] ? "schedina_" : conf.prefisso) + d + ".json")
+      return leggi(((sez === "prezzi" && passate[d]) || conf.prefisso) + d + ".json")
         .then(function (r) { return [d, partite(r)]; }, function () { return [d, null]; });
     });
     Promise.all(carichi).then(function (ris) {
@@ -2389,7 +2393,10 @@
   // mercato e selezione come le scrive prezzi_equi.py.
   function conEsiti(righe, data) {
     if (!Array.isArray(righe) || righe.some(function (r) { return r.Esito; })) return Promise.resolve(righe);
-    return leggi("schedina_" + data + ".json").catch(function () { return null; }).then(function (s) {
+    // Prima gli esiti di tutte le probabilita', poi quelli della sola schedina.
+    return leggi("esiti_" + data + ".json").catch(function () {
+      return leggi("schedina_" + data + ".json");
+    }).catch(function () { return null; }).then(function (s) {
       if (!Array.isArray(s)) return righe;
       var per = {};
       s.forEach(function (x) { if (x.Esito) per[chiave(x)] = x; });
@@ -3930,10 +3937,11 @@
     $cont.innerHTML = messaggio("vuoto", "Carico&hellip;");
     Promise.all([
       leggi("classifica_fonti.json").catch(function () { return null; }),
-      leggi("classifica_consensus.json").catch(function () { return null; })
+      leggi("classifica_consensus.json").catch(function () { return null; }),
+      leggi("esiti_index.json").catch(function () { return null; })
     ]).then(function (res) {
       if (stato.sez !== "fonti") return;
-      var d = res[0], c = res[1];
+      var d = res[0], c = res[1], ei = res[2];
       if (!d && !c) {
         $cont.innerHTML = messaggio("errore", "Il consuntivo non è ancora stato pubblicato: arriva col primo giro notturno.");
         return;
@@ -3945,6 +3953,7 @@
         (d ? d.risultati + " partite con risultato. " : "") +
         "Finché una fonte non arriva a qualche centinaio di partite i numeri ballano: si guardano, non si usano per decidere.</p>";
 
+      if (ei && ei.taratura) h += schedaTaratura(ei.taratura);
       if (c && c.medio) h += schedaMedio(c.medio);
       if (c && c.accordo) h += schedaAccordo(c.accordo);
 
@@ -4102,6 +4111,42 @@
   // Le fonti che misura misura_fonti.py, con i nomi di "Statistiche fonti".
   var NOMI_FONTI = { webpronostici: "WebPronostici", soccersite: "SoccerSite", xgaura: "xGaura",
                      ratingbet: "RatingBet", sportytrader: "Sportytrader", statarea: "Statarea" };
+
+  // I PREZZI EQUI SONO TARATI? Quando il sito dice 70%, esce 7 volte su 10?
+  // Lo scrive esiti_schedina.py in esiti_index.json, su tutte le
+  // probabilita' dei giorni passati dal 3 novembre (prima si teneva solo la
+  // schedina). Uno scarto conta solo se supera di molto l'errore standard,
+  // che qui e' anche ottimista: le righe della stessa partita vanno insieme.
+  function schedaTaratura(t) {
+    var tot = t.totale;
+    if (!tot) return "";
+    function riga(x, nome) {
+      var sc = num(x.scarto), es = num(x.errore_std) || 0;
+      var forte = sc != null && Math.abs(sc) > 2 * es && x.righe >= 30;
+      return "<tr><td>" + esc(nome) + "</td><td>" + esc(x.righe) + " <span class=\"piccolo\">(" + esc(x.partite) + ")</span></td><td>" +
+        esc(x.prevista) + "%</td><td>" + esc(x.uscita) + "%</td><td>" +
+        (forte ? "<b>" : "") + (sc > 0 ? "+" : "") + esc(x.scarto) + (forte ? "</b>" : "") + "</td></tr>";
+    }
+    function tabella(titolo, voci, nome) {
+      if (!voci || !voci.length) return "";
+      return '<p class="sotto-titolo">' + titolo + "</p>" +
+        '<table class="mercati"><tr><th></th><th>Righe (partite)</th><th>Previsto</th><th>Uscito</th><th>Scarto</th></tr>' +
+        voci.map(function (x) { return riga(x, x[nome]); }).join("") + "</table>";
+    }
+    var poche = tot.partite < 100;
+    return '<div class="scheda"><h3>I prezzi equi sono tarati?</h3>' +
+      '<p class="verdetto' + (poche ? " rumore" : "") + '">' +
+      (poche ? "Ancora poche partite: " + esc(tot.partite) + ". I numeri ballano." :
+        "Su " + esc(tot.partite) + " partite: previsto " + esc(tot.prevista) + "%, uscito " + esc(tot.uscita) + "%.") + "</p>" +
+      "<p>Tutte le probabilità dei Pronostici, giorno per giorno" + (t.dal ? " dal " + esc(t.dal) : "") +
+      ", con l'esito vero. Se i prezzi sono giusti, in ogni fascia &laquo;uscito&raquo; sta vicino a &laquo;previsto&raquo;.</p>" +
+      tabella("Per fascia di probabilità", t.fasce, "fascia") +
+      tabella("Per mercato", t.gruppi, "nome") +
+      tabella("Per fonte del prezzo", t.fonti, "nome") +
+      '<p class="piccolo">Scarto in grassetto quando supera due volte l\'errore standard. Le righe di una stessa partita ' +
+      "(Over 1.5, Over 2.5, la combo) escono o non escono insieme: l'errore vero è più grande di quello calcolato, " +
+      "per questo accanto alle righe c'è il numero di partite.</p></div>";
+  }
 
   function schedaMedio(b) {
     var v = verdetto(b.mercato);
