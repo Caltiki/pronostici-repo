@@ -2998,14 +2998,73 @@
       if (!s || !s.alias) return righe;
       var per = {};
       (s.partite || []).forEach(function (p) { per[p.id] = p; });
-      return righe.map(function (r) {
-        var p = per[s.alias["consensusmedio|" + r.Casa + "|" + r.Ospite]];
+      var arricchite = righe.map(function (r) {
+        var id = s.alias["consensusmedio|" + r.Casa + "|" + r.Ospite];
+        var p = per[id];
         if (!p) return r;
         var o = {};
         for (var k in r) o[k] = r[k];
         o._prons = p.Pronostici || [];
+        o._scheda = id;
         return o;
       });
+      return unisciDoppioni(arricchite);
+    });
+  }
+
+  // LA STESSA PARTITA SCRITTA IN DUE MODI. consensus_medio.py mette
+  // insieme le fonti solo se scrivono le squadre uguali: "Atromitos -
+  // Volos NFC" e "Atromitos Athinon - Volos NPS" diventavano due partite,
+  // ciascuna con meta' delle fonti (il 3/11: 597 righe per 515 partite).
+  // Qui NON si riconosce niente: si uniscono le righe che la scheda della
+  // partita (scheda_partite.py, le cui unioni sono state riviste una per
+  // una) mette nella stessa scheda. La media si rifa' pesata sul numero
+  // di fonti di ciascuna riga, che e' la media di tutte le fonti: le
+  // righe unite non hanno mai una fonte in comune (verificato il 3/11 su
+  // tutte le 74 unioni), e se capitasse la fonte si conta una volta.
+  // Nome, ora e campionato restano quelli della riga con piu' fonti; il
+  // mercato quello della riga che lo ha.
+  function unisciDoppioni(righe) {
+    var gruppi = {}, ordine = [];
+    righe.forEach(function (r) {
+      var k = r._scheda != null ? "s" + r._scheda : "r" + ordine.length;
+      if (!gruppi[k]) { gruppi[k] = []; ordine.push(k); }
+      gruppi[k].push(r);
+    });
+    return ordine.map(function (k) {
+      var g = gruppi[k];
+      if (g.length === 1) return g[0];
+      g = g.slice().sort(function (a, b) { return (num(b.Fonti) || 0) - (num(a.Fonti) || 0); });
+      var o = {};
+      for (var c in g[0]) o[c] = g[0][c];
+      var fonti = [], somma = { P1: 0, PX: 0, P2: 0 }, peso = 0;
+      g.forEach(function (r) {
+        var el = String(r.Elenco || "").split(/,\s*/).filter(Boolean);
+        var nuove = el.filter(function (f) { return fonti.indexOf(f) < 0; });
+        var w = el.length ? (num(r.Fonti) || el.length) * nuove.length / el.length : 0;
+        if (w > 0 && num(r.P1) != null && num(r.PX) != null && num(r.P2) != null) {
+          somma.P1 += num(r.P1) * w; somma.PX += num(r.PX) * w; somma.P2 += num(r.P2) * w; peso += w;
+        }
+        nuove.forEach(function (f) { fonti.push(f); });
+      });
+      if (peso > 0) {
+        o.P1 = Math.round(somma.P1 / peso * 10) / 10;
+        o.PX = Math.round(somma.PX / peso * 10) / 10;
+        o.P2 = Math.round(somma.P2 / peso * 10) / 10;
+      }
+      o.Elenco = fonti.slice().sort().join(", ");
+      o.Fonti = fonti.length;
+      o.Segno = o.P1 >= o.PX && o.P1 >= o.P2 ? "1" : o.PX >= o.P2 ? "X" : "2";
+      var m = g.filter(function (r) { return num(r.MP1) != null && num(r.MPX) != null && num(r.MP2) != null; })[0];
+      ["MP1", "MPX", "MP2", "Segno_Mercato", "Scarto"].forEach(function (c) { delete o[c]; });
+      if (m) {
+        o.MP1 = m.MP1; o.MPX = m.MPX; o.MP2 = m.MP2; o.Segno_Mercato = m.Segno_Mercato;
+        var ps = o.Segno === "1" ? o.P1 : o.Segno === "X" ? o.PX : o.P2;
+        var ms = o.Segno === "1" ? num(m.MP1) : o.Segno === "X" ? num(m.MPX) : num(m.MP2);
+        o.Scarto = Math.round((ps - ms) * 10) / 10;
+      }
+      o._unite = g.length;
+      return o;
     });
   }
   function pronFonteHtml(r) {
@@ -3591,10 +3650,32 @@
   var URL_STEMMI = "https://raw.githubusercontent.com/" + REPO + "/stemmi/";
   var LOGHI = null;
   var loghiPronti = null;
+  // OMONIMIE CHE loghi.json NON CONOSCE ANCORA. Per "inter" dice: El
+  // Salvador nessuno stemma, tutti gli altri campionati l'Inter. Ma
+  // Betimate chiama "FC Inter" l'Inter Turku, e nella Veikkausliiga
+  // compariva lo stemma dell'Inter (2/11, FC Inter - IF Gnistan). Queste
+  // regole vengono PRIMA di quelle di loghi.json, e valgono anche se il
+  // file viene rigenerato.
+  var OMONIMI_SITO = {
+    inter: [["finland", "inter-turku.png"], ["veikkaus", "inter-turku.png"]]
+  };
+  function aggiungiOmonimi(l) {
+    l.ambigue = l.ambigue || {};
+    Object.keys(OMONIMI_SITO).forEach(function (k) {
+      var gia = l.ambigue[k] || [];
+      // Solo se lo stemma c'e' davvero fra quelli pubblicati.
+      var noti = {};
+      Object.keys(l.mappa || {}).forEach(function (n) { noti[l.mappa[n]] = true; });
+      var nuove = OMONIMI_SITO[k].filter(function (v) { return !v[1] || noti[v[1]]; });
+      l.ambigue[k] = nuove.concat(gia.filter(function (v) {
+        return !nuove.some(function (n) { return n[0] === v[0]; });
+      }));
+    });
+  }
   function caricaLoghi() {
     if (!loghiPronti) {
       loghiPronti = leggiUrl(URL_LOGHI, "loghi.json").catch(function () { return null; })
-        .then(function (l) { LOGHI = l; return l; });
+        .then(function (l) { LOGHI = l; if (l) aggiungiOmonimi(l); return l; });
     }
     return loghiPronti;
   }
