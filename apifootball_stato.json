@@ -38,6 +38,56 @@
   }
  },
  "giornate": {
+  "2026-10-03": {
+   "letta": "2026-11-03 09:05",
+   "chiusa": true,
+   "errore": "{\"plan\": \"Free plans do not have access to this date, try from 2026-11-02 to 2026-11-04.\"}"
+  },
+  "2026-10-04": {
+   "letta": "2026-11-03 09:05",
+   "chiusa": true,
+   "errore": "{\"plan\": \"Free plans do not have access to this date, try from 2026-11-02 to 2026-11-04.\"}"
+  },
+  "2026-10-05": {
+   "letta": "2026-11-03 09:05",
+   "chiusa": true,
+   "errore": "{\"plan\": \"Free plans do not have access to this date, try from 2026-11-02 to 2026-11-04.\"}"
+  },
+  "2026-10-06": {
+   "letta": "2026-11-03 09:05",
+   "chiusa": true,
+   "errore": "{\"plan\": \"Free plans do not have access to this date, try from 2026-11-02 to 2026-11-04.\"}"
+  },
+  "2026-10-07": {
+   "letta": "2026-11-03 09:05",
+   "chiusa": true,
+   "errore": "{\"plan\": \"Free plans do not have access to this date, try from 2026-11-02 to 2026-11-04.\"}"
+  },
+  "2026-10-08": {
+   "letta": "2026-11-03 09:05",
+   "chiusa": true,
+   "errore": "{\"plan\": \"Free plans do not have access to this date, try from 2026-11-02 to 2026-11-04.\"}"
+  },
+  "2026-10-09": {
+   "letta": "2026-11-03 09:05",
+   "chiusa": true,
+   "errore": "{\"plan\": \"Free plans do not have access to this date, try from 2026-11-02 to 2026-11-04.\"}"
+  },
+  "2026-10-10": {
+   "letta": "2026-11-03 09:05",
+   "chiusa": true,
+   "errore": "{\"plan\": \"Free plans do not have access to this date, try from 2026-11-02 to 2026-11-04.\"}"
+  },
+  "2026-10-11": {
+   "letta": "2026-11-03 09:05",
+   "chiusa": true,
+   "errore": "{\"plan\": \"Free plans do not have access to this date, try from 2026-11-02 to 2026-11-04.\"}"
+  },
+  "2026-10-12": {
+   "letta": "2026-11-03 09:05",
+   "chiusa": true,
+   "errore": "{\"plan\": \"Free plans do not have access to this date, try from 2026-11-02 to 2026-11-04.\"}"
+  },
   "2026-10-13": {
    "letta": "2026-11-03 07:43",
    "chiusa": true,
@@ -139,7 +189,7 @@
    "errore": "{\"plan\": \"Free plans do not have access to this date, try from 2026-11-02 to 2026-11-04.\"}"
   },
   "2026-11-02": {
-   "letta": "2026-11-03 07:43",
+   "letta": "2026-11-03 09:05",
    "chiusa": false,
    "partite_api": 241,
    "nostre": 613,
@@ -147,5 +197,6 @@
    "finite": 440
   }
  },
- "aggiornato": "2026-11-03 07:43"
+ "aggiornato": "2026-11-03 09:05",
+ "nomi_annotati": "2026-11-04"
 }
