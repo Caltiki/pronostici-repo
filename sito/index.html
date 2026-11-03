@@ -3676,10 +3676,24 @@
       }));
     });
   }
+  // GLI STEMMI DI API-FOOTBALL (ramo stemmi-api), solo per i nomi a cui
+  // loghi.json non ne da' uno sicuro. stemmi_api.json li lega al nome
+  // ESATTO come lo scrive la fonte, perche' viene dalle partite
+  // riconosciute una per una (apifootball.py): "FC Inter" -> Inter Turku.
+  // Vengono PRIMA di loghi.json; se il file non c'e', tutto come prima.
+  var URL_STEMMI_API = "https://raw.githubusercontent.com/" + REPO + "/stemmi-api/";
+  var STEMMI_API = null;
   function caricaLoghi() {
     if (!loghiPronti) {
-      loghiPronti = leggiUrl(URL_LOGHI, "loghi.json").catch(function () { return null; })
-        .then(function (l) { LOGHI = l; if (l) aggiungiOmonimi(l); return l; });
+      loghiPronti = Promise.all([
+        leggiUrl(URL_LOGHI, "loghi.json").catch(function () { return null; }),
+        leggi("stemmi_api.json").catch(function () { return null; })
+      ]).then(function (a) {
+        var l = a[0];
+        LOGHI = l; if (l) aggiungiOmonimi(l);
+        STEMMI_API = a[1] && typeof a[1] === "object" ? a[1] : null;
+        return l;
+      });
     }
     return loghiPronti;
   }
@@ -3707,11 +3721,12 @@
       .filter(Boolean).join(" ");
   }
   function logo(nome, grande, dove) {
-    if (!LOGHI || !nome) return "";
-    var f = stemmaDove(nome, LOGHI, dove);
+    if (!nome) return "";
+    var api = STEMMI_API && Object.prototype.hasOwnProperty.call(STEMMI_API, nome) ? STEMMI_API[nome] : null;
+    var f = api || (LOGHI ? stemmaDove(nome, LOGHI, dove) : null);
     if (!f) return "";
-    return '<img class="stemma' + (grande ? " grande" : "") + '" src="' + URL_STEMMI + encodeURIComponent(f) +
-      '" alt="" loading="lazy" decoding="async" onerror="this.remove()">';
+    return '<img class="stemma' + (grande ? " grande" : "") + '" src="' + (api ? URL_STEMMI_API : URL_STEMMI) +
+      encodeURIComponent(f) + '" alt="" loading="lazy" decoding="async" onerror="this.remove()">';
   }
   function partitaHtml(casa, ospite, testo, dove) {
     if (!casa || !ospite) return esc(testo || "");
