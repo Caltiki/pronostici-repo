@@ -1767,18 +1767,21 @@
     var indice = conf.indice, prefisso = conf.prefisso, viste = conf.viste, ordini = conf.ordini;
 
     $cont.innerHTML = messaggio("vuoto", "Carico&hellip;");
-    // Per i Pronostici anche le giornate passate, con gli esiti della SOLA
-    // schedina (schedina_<data>, scritto da esiti_schedina.py). Gli esiti
-    // di tutte le probabilita' (esiti_<data>) servono solo alla taratura in
-    // "Statistiche fonti": mostrati sul sito, una lista di ✗ su eventi dati
-    // al 40% confondeva invece di informare (deciso il 4/11).
+    // Per i Pronostici anche le giornate passate. Le ✓/✗ restano della SOLA
+    // schedina: una lista di ✗ su eventi dati al 40% confondeva invece di
+    // informare (deciso il 4/11). Il PUNTEGGIO invece va su tutte le
+    // partite (deciso lo stesso giorno, piu' tardi): per questo, dove c'e',
+    // si legge esiti_<data> (tutte le partite della giornata, scritto da
+    // esiti_schedina.py) togliendo l'esito alle righe fuori schedina;
+    // dove non c'e' (piu' vecchie di 14 giorni) resta schedina_<data>.
     Promise.all([leggi(indice),
+                 sez === "prezzi" ? leggi("esiti_index.json").catch(function () { return null; }) : null,
                  sez === "prezzi" ? leggi("schedina_index.json").catch(function () { return null; }) : null
     ]).then(function (arr) {
-      var ix = arr[0], sx = arr[1];
+      var ix = arr[0], ex = arr[1], sx = arr[2];
       var date = (ix.date || []).slice().sort();
       passate = {};
-      [[sx, "schedina_"]].forEach(function (c) {
+      [[ex, "esiti_"], [sx, "schedina_"]].forEach(function (c) {
         if (!c[0] || !Array.isArray(c[0].date)) return;
         c[0].date.forEach(function (x) {
           if (x < oggi() && !passate[x] && date.indexOf(x) < 0) { date.push(x); passate[x] = c[1]; }
@@ -1814,8 +1817,9 @@
       collegaTesta(sez);
 
       var carica = Promise.all([leggi((passate[d] || prefisso) + d + ".json"), caricaLoghi()])
-        .then(function (a) { return a[0]; });
+        .then(function (a) { return righeDellaGiornata(a[0], passate[d]); });
       if (conf.arricchisci) carica = carica.then(function (righe) { return conf.arricchisci(righe, d); });
+      carica = carica.then(function (righe) { return conRisultati(sez, righe, d); });
       return carica.then(function (righe) {
         if (stato.sez !== sez || stato.data[sez] !== d) return;
         disegnaRighe(sez, righe, d);
@@ -2217,7 +2221,9 @@
     var prese = tutteE.filter(function (r) { return r.Esito === "presa"; }).length;
     var sbagliate = tutteE.filter(function (r) { return r.Esito === "sbagliata"; }).length;
     if (prese + sbagliate) {
-      var attesa = tutteE.filter(function (r) { return !r.Esito; }).length;
+      // Senza risultato si contano solo le righe della schedina: le altre
+      // non hanno esito per scelta, non perche' manchi il risultato.
+      var attesa = tutteE.filter(function (r) { return !r.Esito && String(r.InSchedina || "") === "si"; }).length;
       // LA PERCENTUALE DA SOLA NON DICE SE E' ANDATA BENE: con pronostici
       // al 70% ci si aspetta di prenderne 7 su 10, con pronostici al 55%
       // ne bastano 5 e mezzo. Accanto si mette quante ne promettevano le
@@ -2433,6 +2439,53 @@
     });
   }
 
+  // Le righe di una giornata passata dei Pronostici. Da esiti_: l'esito
+  // resta solo sulle righe in schedina, il punteggio su tutte. Da
+  // schedina_: sono tutte righe della schedina (i file vecchi potrebbero
+  // non dirlo, si scrive).
+  function righeDellaGiornata(righe, file) {
+    if (!Array.isArray(righe) || !file) return righe;
+    return righe.map(function (r) {
+      var o = {};
+      for (var k in r) o[k] = r[k];
+      if (file === "schedina_") o.InSchedina = "si";
+      else if (String(o.InSchedina || "") !== "si") delete o.Esito;
+      return o;
+    });
+  }
+
+  // IL PUNTEGGIO SU TUTTE LE SCHEDE. scheda_partite.py scrive in ogni
+  // scheda il risultato ("Risultato"), deciso da misura_fonti come in
+  // "Statistiche fonti"; ogni riga ritrova la sua scheda nella tabella
+  // "alias" con i nomi esattamente come li ha. Qui non si riconosce niente:
+  // senza scheda o senza risultato, niente punteggio. Solo oggi e prima.
+  var PREFISSO_SCHEDA = { prezzi: "prezzi", consensus: "consensusmedio", mercato: "asianodds",
+                          accordo: "consensus", poisson: "poisson" };
+  function conRisultati(sez, righe, data) {
+    if (!PREFISSO_SCHEDA[sez] || !Array.isArray(righe) || data > oggi()) return Promise.resolve(righe);
+    return leggi("scheda_" + data + ".json").catch(function () { return null; }).then(function (s) {
+      if (!s || !s.alias) return righe;
+      var per = {}, quante = 0;
+      (s.partite || []).forEach(function (p) { if (p.Risultato) { per[p.id] = p.Risultato; quante++; } });
+      if (!quante) return righe;
+      return righe.map(function (r) {
+        if (r.Gol_Casa != null && r.Gol_Ospite != null) return r;
+        var x = per[s.alias[PREFISSO_SCHEDA[sez] + "|" + r.Casa + "|" + r.Ospite]];
+        if (!x) return r;
+        var o = {};
+        for (var k in r) o[k] = r[k];
+        o.Gol_Casa = x.Gol_Casa; o.Gol_Ospite = x.Gol_Ospite; o.Risultato_Da = x.Fonte;
+        return o;
+      });
+    });
+  }
+  // Il punteggio in testa alla scheda, accanto all'ora.
+  function golHtml(r) {
+    if (r.Gol_Casa == null || r.Gol_Ospite == null) return "";
+    var t = "risultato finale" + (r.Risultato_Da ? ", da " + r.Risultato_Da : "");
+    return '<span class="finale" title="' + esc(t) + '"><b>' + esc(r.Gol_Casa + "-" + r.Gol_Ospite) + "</b></span>";
+  }
+
   function arricchisciPrezzi(righe, data) {
     return conEsiti(righe, data).then(function (r2) { return arricchisciAO(r2, data); });
   }
@@ -2537,19 +2590,27 @@
 
     // Giornata passata senza risultato (la fonte dei risultati non ha la
     // partita): niente spunta, che per una partita giocata non ha senso.
-    var es = r.Esito || (r.Data && r.Data < oggi() ? "attesa" : null), gol = (r.Gol_Casa != null && r.Gol_Ospite != null) ? r.Gol_Casa + "-" + r.Gol_Ospite : "";
+    // La ✓/✗ solo sulle righe in schedina; le altre righe passate hanno
+    // il punteggio e basta, e niente casella per la multipla.
+    var passata = !!(r.Data && r.Data < oggi()), inSch = String(r.InSchedina || "") === "si";
+    var es = r.Esito || (passata && inSch ? "attesa" : null), gol = (r.Gol_Casa != null && r.Gol_Ospite != null) ? r.Gol_Casa + "-" + r.Gol_Ospite : "";
+    var daDove = r.Risultato_Da ? " (risultato da " + esc(r.Risultato_Da) + ")" : "";
     if (es === "attesa") det.unshift("<p>Risultato non disponibile: nessuna delle fonti dei risultati ha questa partita.</p>");
     else if (es) det.unshift("<p>Finita " + esc(gol) + ": " + (es === "presa" ? "vinta" : es === "sbagliata" ? "sbagliata" : "rimborso") +
-      (r.Risultato_Da ? " (risultato da " + esc(r.Risultato_Da) + ")" : "") + ".</p>");
+      daDove + ".</p>");
+    else if (gol) det.unshift("<p>Finita " + esc(gol) + daDove + ".</p>");
+    else if (passata) det.unshift("<p>Risultato non disponibile: nessuna delle fonti dei risultati ha questa partita.</p>");
     var segnoEsito = es === "presa" ? "\u2713" : es === "sbagliata" ? "\u2717" : es === "attesa" ? "\u2013" : "\u21ba";
     return '<div class="riga' + (scelta ? " scelta" : "") + (es ? " finita" : "") + '">' +
       (es ? '<span class="spunta esito ' + esc(es) + '" title="' + esc(es === "presa" ? "vinta" : es) + '" aria-label="' + esc(es === "presa" ? "vinta" : es) + '">' + segnoEsito + "</span>"
+        : passata ? '<span class="spunta vuota" aria-hidden="true"></span>'
         : '<label class="spunta" title="Aggiungi alla multipla"><input type="checkbox" data-chiave="' +
       esc(k) + '" data-i="' + i + '"' + (scelta ? " checked" : "") + ' aria-label="Aggiungi alla multipla"></label>') +
       "<details><summary>" +
       '<div class="corpo">' +
       '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" +
-      (gol ? "<span><b>" + esc(gol) + "</b></span>" : "") +
+      // Dentro la scheda della partita il punteggio sta gia' in testa.
+      (gol && stato.vista.prezzi !== "partite" ? "<span><b>" + esc(gol) + "</b></span>" : "") +
       (r.Gruppo ? '<span class="chip">' + esc(r.Gruppo) + "</span>" : "") +
       (r.Fonte === "Pinnacle" && stato.vista.prezzi !== "partite" && stato.vista.prezzi !== "stretto"
         ? '<span class="chip">quota Pinnacle</span>' : "") +
@@ -3229,7 +3290,7 @@
     return '<div class="riga"><details><summary>' +
       '<span class="segno">' + esc(segno || "?") + "</span>" +
       '<div class="corpo">' +
-      '<div class="alto"><span>' + esc(r.Ora || "") + "</span><span>" + fonti + (fonti === 1 ? " fonte" : " fonti") + "</span></div>" +
+      '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" + golHtml(r) + "<span>" + fonti + (fonti === 1 ? " fonte" : " fonti") + "</span></div>" +
       '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" +
       (coda ? '<div class="sel">' + coda + "</div>" : "") +
       (acc ? '<div class="accordo-conta">D\u2019accordo ' + articolo(acc.segno) + ": <b>" + acc.si.length +
@@ -3327,7 +3388,7 @@
     return '<div class="riga"><details><summary>' +
       '<span class="segno">' + esc(segno || "?") + "</span>" +
       '<div class="corpo">' +
-      '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" + (r.Lega ? '<span class="chip">' + esc(String(r.Lega).replace(/\s*\[\d+\]$/, "")) + "</span>" : "") +
+      '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" + golHtml(r) + (r.Lega ? '<span class="chip">' + esc(String(r.Lega).replace(/\s*\[\d+\]$/, "")) + "</span>" : "") +
         (r.Fonte_xG === "FotMob" ? '<span class="chip">xG FotMob</span>' : "") + "</div>" +
       '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" +
       '<div class="sel">\u03bb ' + f2(lc) + " \u2013 " + f2(lo) + coda + "</div>" +
@@ -3622,7 +3683,7 @@
     return '<div class="riga"><details><summary>' +
       '<span class="segno">' + fav + "</span>" +
       '<div class="corpo">' +
-      '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" +
+      '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" + golHtml(r) +
       (fid ? '<span class="pill ' + fid[0] + '">margine ' + f1(marg) + "%</span>" : "") +
       (aff ? '<span class="chip">affidabile</span>' : "") + "</div>" +
       '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" +
@@ -3702,7 +3763,7 @@
     return '<div class="riga"><details><summary>' +
       '<span class="segno">' + esc(pron || "?") + "</span>" +
       '<div class="corpo">' +
-      '<div class="alto"><span>' + esc(r.Ora || "") + "</span></div>" +
+      '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" + golHtml(r) + "</div>" +
       '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" +
       '<div class="sel">Statarea ' + esc(r["Pron Statarea"]) + " \u00b7 WebPronostici " + esc(r["Pron WebPron"]) + "</div>" +
       tripla("fonti", p1, px, p2) +
