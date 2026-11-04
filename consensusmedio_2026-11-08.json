@@ -171,6 +171,19 @@
  {
   "Data": "2026-11-08",
   "Ora": "02:00",
+  "Lega": "Argentina - Liga Profesional de Fútbol",
+  "Casa": "Instituto",
+  "Ospite": "Newell's Old Boys",
+  "Segno": "1",
+  "P1": 52.5,
+  "PX": 26.7,
+  "P2": 20.8,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-08",
+  "Ora": "02:00",
   "Lega": "Mexico - Liga MX",
   "Casa": "Toluca",
   "Ospite": "Monterrey",
@@ -457,6 +470,19 @@
  {
   "Data": "2026-11-08",
   "Ora": "12:00",
+  "Lega": "Ukraine - Premier League",
+  "Casa": "Bukovyna Chernivtsi",
+  "Ospite": "Kolos Kovalivka",
+  "Segno": "1",
+  "P1": 41.0,
+  "PX": 29.0,
+  "P2": 30.0,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-08",
+  "Ora": "12:00",
   "Lega": "Denmark: Superliga Denmark",
   "Casa": "FC Copenhagen",
   "Ospite": "Brondby IF",
@@ -587,19 +613,6 @@
  {
   "Data": "2026-11-08",
   "Ora": "13:00",
-  "Lega": "England - FA Cup",
-  "Casa": "Stafford Rangers",
-  "Ospite": "Grimsby Town",
-  "Segno": "2",
-  "P1": 22.8,
-  "PX": 20.8,
-  "P2": 56.4,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
- },
- {
-  "Data": "2026-11-08",
-  "Ora": "13:00",
   "Lega": "England: FA Cup England",
   "Casa": "Stafford Rangers",
   "Ospite": "Grimsby",
@@ -609,6 +622,19 @@
   "P2": 70.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-11-08",
+  "Ora": "13:00",
+  "Lega": "England - FA Cup",
+  "Casa": "Stafford Rangers",
+  "Ospite": "Grimsby Town",
+  "Segno": "2",
+  "P1": 22.8,
+  "PX": 20.8,
+  "P2": 56.4,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
  },
  {
   "Data": "2026-11-08",
@@ -880,19 +906,6 @@
   "P1": 33.0,
   "PX": 26.0,
   "P2": 41.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
- },
- {
-  "Data": "2026-11-08",
-  "Ora": "14:30",
-  "Lega": "Ukraine - Premier League",
-  "Casa": "Bukovyna Chernivtsi",
-  "Ospite": "Kolos Kovalivka",
-  "Segno": "1",
-  "P1": 41.0,
-  "PX": 29.0,
-  "P2": 30.0,
   "Fonti": 1,
   "Elenco": "footymetrics"
  },
@@ -1224,19 +1237,6 @@
  {
   "Data": "2026-11-08",
   "Ora": "16:00",
-  "Lega": "Belgium: Pro League Belgium",
-  "Casa": "Gent",
-  "Ospite": "Kortrijk",
-  "Segno": "1",
-  "P1": 68.0,
-  "PX": 21.0,
-  "P2": 11.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
- },
- {
-  "Data": "2026-11-08",
-  "Ora": "16:00",
   "Lega": "Belgium - Pro League",
   "Casa": "Gent",
   "Ospite": "KV Kortrijk",
@@ -1246,6 +1246,19 @@
   "P2": 20.0,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-08",
+  "Ora": "16:00",
+  "Lega": "Belgium: Pro League Belgium",
+  "Casa": "Gent",
+  "Ospite": "Kortrijk",
+  "Segno": "1",
+  "P1": 68.0,
+  "PX": 21.0,
+  "P2": 11.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
  },
  {
   "Data": "2026-11-08",
@@ -1289,19 +1302,6 @@
  {
   "Data": "2026-11-08",
   "Ora": "16:00",
-  "Lega": "Denmark - Superliga",
-  "Casa": "Randers FC",
-  "Ospite": "Nordsjælland",
-  "Segno": "2",
-  "P1": 23.8,
-  "PX": 22.8,
-  "P2": 53.5,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
- },
- {
-  "Data": "2026-11-08",
-  "Ora": "16:00",
   "Lega": "Denmark: Superliga Denmark",
   "Casa": "Randers FC",
   "Ospite": "FC Nordsjaelland",
@@ -1315,13 +1315,13 @@
  {
   "Data": "2026-11-08",
   "Ora": "16:00",
-  "Lega": "England - FA Cup",
-  "Casa": "Wimborne Town",
-  "Ospite": "Crawley Town",
+  "Lega": "Denmark - Superliga",
+  "Casa": "Randers FC",
+  "Ospite": "Nordsjælland",
   "Segno": "2",
-  "P1": 19.0,
-  "PX": 19.0,
-  "P2": 62.0,
+  "P1": 23.8,
+  "PX": 22.8,
+  "P2": 53.5,
   "Fonti": 1,
   "Elenco": "footymetrics"
  },
@@ -1337,6 +1337,19 @@
   "P2": 67.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-11-08",
+  "Ora": "16:00",
+  "Lega": "England - FA Cup",
+  "Casa": "Wimborne Town",
+  "Ospite": "Crawley Town",
+  "Segno": "2",
+  "P1": 19.0,
+  "PX": 19.0,
+  "P2": 62.0,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
  },
  {
   "Data": "2026-11-08",
@@ -2147,19 +2160,6 @@
  {
   "Data": "2026-11-08",
   "Ora": "20:00",
-  "Lega": "Greece - Super League",
-  "Casa": "Olympiacos",
-  "Ospite": "PAOK",
-  "Segno": "1",
-  "P1": 55.0,
-  "PX": 25.0,
-  "P2": 20.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
- },
- {
-  "Data": "2026-11-08",
-  "Ora": "20:00",
   "Lega": "Greece: Super League Greece",
   "Casa": "Olympiacos",
   "Ospite": "PAOK Thessaloniki FC",
@@ -2169,6 +2169,19 @@
   "P2": 19.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-11-08",
+  "Ora": "20:00",
+  "Lega": "Greece - Super League",
+  "Casa": "Olympiacos",
+  "Ospite": "PAOK",
+  "Segno": "1",
+  "P1": 55.0,
+  "PX": 25.0,
+  "P2": 20.0,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
  },
  {
   "Data": "2026-11-08",
@@ -2221,19 +2234,6 @@
   "P2": 48.3,
   "Fonti": 2,
   "Elenco": "footymetrics, ratingbet"
- },
- {
-  "Data": "2026-11-08",
-  "Ora": "21:00",
-  "Lega": "Argentina - Liga Profesional de Fútbol",
-  "Casa": "Central Cordoba",
-  "Ospite": "Lanús",
-  "Segno": "2",
-  "P1": 30.0,
-  "PX": 28.0,
-  "P2": 42.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
  },
  {
   "Data": "2026-11-08",
@@ -2330,12 +2330,12 @@
   "Data": "2026-11-08",
   "Ora": "23:30",
   "Lega": "Argentina - Liga Profesional de Fútbol",
-  "Casa": "Instituto",
-  "Ospite": "Newell's Old Boys",
-  "Segno": "1",
-  "P1": 52.5,
-  "PX": 26.7,
-  "P2": 20.8,
+  "Casa": "Central Cordoba",
+  "Ospite": "Lanús",
+  "Segno": "2",
+  "P1": 30.0,
+  "PX": 28.0,
+  "P2": 42.0,
   "Fonti": 1,
   "Elenco": "footymetrics"
  }
