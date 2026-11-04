@@ -1767,18 +1767,18 @@
     var indice = conf.indice, prefisso = conf.prefisso, viste = conf.viste, ordini = conf.ordini;
 
     $cont.innerHTML = messaggio("vuoto", "Carico&hellip;");
-    // Per i Pronostici anche le giornate passate con gli esiti, scritte da
-    // esiti_schedina.py: TUTTE le probabilita' del giorno (esiti_<data>)
-    // dove ci sono, altrimenti la sola schedina (schedina_<data>), che e'
-    // l'unica che c'era prima del 4 novembre.
+    // Per i Pronostici anche le giornate passate, con gli esiti della SOLA
+    // schedina (schedina_<data>, scritto da esiti_schedina.py). Gli esiti
+    // di tutte le probabilita' (esiti_<data>) servono solo alla taratura in
+    // "Statistiche fonti": mostrati sul sito, una lista di ✗ su eventi dati
+    // al 40% confondeva invece di informare (deciso il 4/11).
     Promise.all([leggi(indice),
-                 sez === "prezzi" ? leggi("schedina_index.json").catch(function () { return null; }) : null,
-                 sez === "prezzi" ? leggi("esiti_index.json").catch(function () { return null; }) : null
+                 sez === "prezzi" ? leggi("schedina_index.json").catch(function () { return null; }) : null
     ]).then(function (arr) {
-      var ix = arr[0], sx = arr[1], ex = arr[2];
+      var ix = arr[0], sx = arr[1];
       var date = (ix.date || []).slice().sort();
       passate = {};
-      [[ex, "esiti_"], [sx, "schedina_"]].forEach(function (c) {
+      [[sx, "schedina_"]].forEach(function (c) {
         if (!c[0] || !Array.isArray(c[0].date)) return;
         c[0].date.forEach(function (x) {
           if (x < oggi() && !passate[x] && date.indexOf(x) < 0) { date.push(x); passate[x] = c[1]; }
@@ -2405,10 +2405,8 @@
   // mercato e selezione come le scrive prezzi_equi.py.
   function conEsiti(righe, data) {
     if (!Array.isArray(righe) || righe.some(function (r) { return r.Esito; })) return Promise.resolve(righe);
-    // Prima gli esiti di tutte le probabilita', poi quelli della sola schedina.
-    return leggi("esiti_" + data + ".json").catch(function () {
-      return leggi("schedina_" + data + ".json");
-    }).catch(function () { return null; }).then(function (s) {
+    // Solo la schedina: vedi la nota in disegnaGiornata.
+    return leggi("schedina_" + data + ".json").catch(function () { return null; }).then(function (s) {
       if (!Array.isArray(s)) return righe;
       var per = {};
       s.forEach(function (x) { if (x.Esito) per[chiave(x)] = x; });
