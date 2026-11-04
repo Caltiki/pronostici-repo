@@ -19,9 +19,9 @@
   "Casa": "Independiente Petrolero",
   "Ospite": "Real Tomayapo",
   "Segno": "1",
-  "P1": 59.0,
-  "PX": 24.0,
-  "P2": 17.0,
+  "P1": 62.0,
+  "PX": 22.0,
+  "P2": 16.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
  },
@@ -57,12 +57,12 @@
   "Lega": "Argentina - Liga Profesional de Fútbol",
   "Casa": "Banfield",
   "Ospite": "Atlético Tucumán",
-  "Segno": "2",
-  "P1": 35.0,
-  "PX": 28.0,
-  "P2": 37.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "Segno": "1",
+  "P1": 37.0,
+  "PX": 28.5,
+  "P2": 34.5,
+  "Fonti": 2,
+  "Elenco": "footymetrics, ratingbet"
  },
  {
   "Data": "2026-11-07",
@@ -71,9 +71,9 @@
   "Casa": "Fortaleza FC",
   "Ospite": "Independiente Medellin",
   "Segno": "2",
-  "P1": 29.0,
+  "P1": 31.0,
   "PX": 26.0,
-  "P2": 45.0,
+  "P2": 43.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
  },
@@ -84,11 +84,11 @@
   "Casa": "Necaxa",
   "Ospite": "Tijuana",
   "Segno": "1",
-  "P1": 49.5,
-  "PX": 24.8,
-  "P2": 25.7,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 41.8,
+  "PX": 29.4,
+  "P2": 28.9,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-07",
@@ -97,11 +97,11 @@
   "Casa": "Tigre",
   "Ospite": "Sarmiento",
   "Segno": "1",
-  "P1": 50.0,
-  "PX": 26.0,
-  "P2": 24.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 50.5,
+  "PX": 27.0,
+  "P2": 22.5,
+  "Fonti": 2,
+  "Elenco": "footymetrics, ratingbet"
  },
  {
   "Data": "2026-11-07",
@@ -110,11 +110,11 @@
   "Casa": "Atlante",
   "Ospite": "Santos Laguna",
   "Segno": "1",
-  "P1": 53.5,
-  "PX": 22.8,
-  "P2": 23.8,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 45.7,
+  "PX": 25.9,
+  "P2": 28.4,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-07",
@@ -136,9 +136,9 @@
   "Casa": "Central Coast Mariners",
   "Ospite": "Newcastle Jets",
   "Segno": "1",
-  "P1": 57.0,
+  "P1": 58.0,
   "PX": 23.0,
-  "P2": 20.0,
+  "P2": 19.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
  },
@@ -154,6 +154,19 @@
   "P2": 30.0,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "05:00",
+  "Lega": "JAPAN - J. LEAGUE",
+  "Casa": "Shimizu",
+  "Ospite": "Tokyo Verdy",
+  "Segno": "1",
+  "P1": 40.0,
+  "PX": 33.0,
+  "P2": 27.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-07",
@@ -175,11 +188,11 @@
   "Casa": "Jeju United",
   "Ospite": "Gwangju",
   "Segno": "1",
-  "P1": 47.5,
-  "PX": 26.7,
-  "P2": 25.7,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 50.3,
+  "PX": 28.9,
+  "P2": 20.9,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-07",
@@ -188,11 +201,37 @@
   "Casa": "Nagoya Grampus",
   "Ospite": "Kyoto Sanga",
   "Segno": "1",
-  "P1": 47.5,
-  "PX": 31.0,
-  "P2": 21.5,
+  "P1": 45.0,
+  "PX": 29.0,
+  "P2": 26.0,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "06:00",
+  "Lega": "SOUTH KOREA - K-LEAGUE 2",
+  "Casa": "Seongnam FC",
+  "Ospite": "Daegu FC",
+  "Segno": "2",
+  "P1": 23.0,
+  "PX": 31.0,
+  "P2": 46.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "06:00",
+  "Lega": "SOUTH KOREA - K-LEAGUE 2",
+  "Casa": "Suwon City FC",
+  "Ospite": "Gyeongnam FC",
+  "Segno": "1",
+  "P1": 56.0,
+  "PX": 30.0,
+  "P2": 14.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-07",
@@ -201,11 +240,11 @@
   "Casa": "Yokohama F. Marinos",
   "Ospite": "Fagiano Okayama",
   "Segno": "1",
-  "P1": 42.0,
-  "PX": 25.0,
-  "P2": 33.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 45.5,
+  "PX": 26.0,
+  "P2": 28.5,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-07",
@@ -214,11 +253,11 @@
   "Casa": "Avispa Fukuoka",
   "Ospite": "V-Varen Nagasaki",
   "Segno": "1",
-  "P1": 45.0,
-  "PX": 26.0,
-  "P2": 29.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 44.0,
+  "PX": 26.5,
+  "P2": 29.5,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-07",
@@ -261,6 +300,19 @@
  },
  {
   "Data": "2026-11-07",
+  "Ora": "08:00",
+  "Lega": "JAPAN - J. LEAGUE",
+  "Casa": "Kashiwa Reysol",
+  "Ospite": "Kawasaki Frontale",
+  "Segno": "1",
+  "P1": 44.0,
+  "PX": 30.0,
+  "P2": 26.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
   "Ora": "08:30",
   "Lega": "South Korea - K League 1",
   "Casa": "Gimcheon Sangmu",
@@ -271,6 +323,58 @@
   "P2": 35.0,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "08:30",
+  "Lega": "SOUTH KOREA - K-LEAGUE 2",
+  "Casa": "Gimhae City",
+  "Ospite": "Hwaseong FC",
+  "Segno": "2",
+  "P1": 20.0,
+  "PX": 33.0,
+  "P2": 47.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "08:30",
+  "Lega": "SOUTH KOREA - K-LEAGUE 2",
+  "Casa": "Gimpo Citizen",
+  "Ospite": "Ansan Greeners",
+  "Segno": "1",
+  "P1": 55.0,
+  "PX": 24.0,
+  "P2": 21.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "08:30",
+  "Lega": "SOUTH KOREA - K-LEAGUE 1 RELEGATION ROUND",
+  "Casa": "Sangju Sangmu FC",
+  "Ospite": "FC Anyang",
+  "Segno": "1",
+  "P1": 37.0,
+  "PX": 33.0,
+  "P2": 30.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "08:30",
+  "Lega": "SOUTH KOREA - K-LEAGUE 2",
+  "Casa": "Seoul E-Land FC",
+  "Ospite": "Jeonnam Dragons",
+  "Segno": "1",
+  "P1": 60.0,
+  "PX": 29.0,
+  "P2": 11.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-07",
@@ -297,6 +401,58 @@
   "P2": 35.0,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "10:00",
+  "Lega": "ROMANIA - LIGA II",
+  "Casa": "CS Afumati",
+  "Ospite": "FC Bacau",
+  "Segno": "1",
+  "P1": 38.0,
+  "PX": 32.0,
+  "P2": 30.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "10:00",
+  "Lega": "ROMANIA - LIGA II",
+  "Casa": "Concordia",
+  "Ospite": "ASA Targu Mures",
+  "Segno": "1",
+  "P1": 51.0,
+  "PX": 28.0,
+  "P2": 21.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "10:00",
+  "Lega": "ROMANIA - LIGA II",
+  "Casa": "Metaloglobus",
+  "Ospite": "Dumbravita",
+  "Segno": "1",
+  "P1": 64.0,
+  "PX": 25.0,
+  "P2": 11.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "10:00",
+  "Lega": "ROMANIA - LIGA II",
+  "Casa": "Unirea 2004 Slobozia",
+  "Ospite": "Olimpia Satu Mare",
+  "Segno": "1",
+  "P1": 43.0,
+  "PX": 30.0,
+  "P2": 27.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-07",
@@ -327,6 +483,19 @@
  {
   "Data": "2026-11-07",
   "Ora": "11:30",
+  "Lega": "ROMANIA - LIGA II",
+  "Casa": "FC Bihor",
+  "Ospite": "CSM Slatina",
+  "Segno": "1",
+  "P1": 41.0,
+  "PX": 32.0,
+  "P2": 27.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "11:30",
   "Lega": "Turkey - 1. Lig",
   "Casa": "Keçiörengücü",
   "Ospite": "Manisa FK",
@@ -336,6 +505,19 @@
   "P2": 17.5,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "11:30",
+  "Lega": "TURKEY - 1. LIG",
+  "Casa": "Van Spor FK",
+  "Ospite": "Sivasspor",
+  "Segno": "1",
+  "P1": 45.0,
+  "PX": 25.0,
+  "P2": 30.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-07",
@@ -392,6 +574,19 @@
  {
   "Data": "2026-11-07",
   "Ora": "12:00",
+  "Lega": "LIGA PORTUGAL 2",
+  "Casa": "Felgueiras",
+  "Ospite": "Leixoes",
+  "Segno": "2",
+  "P1": 33.0,
+  "PX": 33.0,
+  "P2": 34.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "12:00",
   "Lega": "Vietnam - V-League",
   "Casa": "Hải Phòng",
   "Ospite": "Sông Lam Nghệ An",
@@ -418,19 +613,6 @@
  {
   "Data": "2026-11-07",
   "Ora": "12:00",
-  "Lega": "UKRAINE - PREMIER LEAGUE",
-  "Casa": "Metalist 1925 Kharkiv",
-  "Ospite": "Karpaty Lviv",
-  "Segno": "1",
-  "P1": 44.0,
-  "PX": 25.0,
-  "P2": 31.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
- },
- {
-  "Data": "2026-11-07",
-  "Ora": "12:00",
   "Lega": "Ukraine - Premier League",
   "Casa": "Metalist 1925 Kharkiv",
   "Ospite": "Karpaty",
@@ -440,6 +622,19 @@
   "P2": 31.0,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "12:00",
+  "Lega": "UKRAINE - PREMIER LEAGUE",
+  "Casa": "Metalist 1925 Kharkiv",
+  "Ospite": "Karpaty Lviv",
+  "Segno": "1",
+  "P1": 44.0,
+  "PX": 25.0,
+  "P2": 31.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-07",
@@ -456,6 +651,32 @@
  },
  {
   "Data": "2026-11-07",
+  "Ora": "12:00",
+  "Lega": "KAZAKHSTAN - CUP",
+  "Casa": "Ordabasy",
+  "Ospite": "FC Kaysar",
+  "Segno": "1",
+  "P1": 69.0,
+  "PX": 20.0,
+  "P2": 11.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "12:00",
+  "Lega": "POLAND - II LIGA",
+  "Casa": "Sokol Kleczew",
+  "Ospite": "Sandecja Nowy Sacz",
+  "Segno": "2",
+  "P1": 29.0,
+  "PX": 28.0,
+  "P2": 43.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
   "Ora": "12:15",
   "Lega": "Poland - Ekstraklasa",
   "Casa": "Korona Kielce",
@@ -466,6 +687,19 @@
   "P2": 20.4,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "12:15",
+  "Lega": "POLAND - II LIGA",
+  "Casa": "Znicz Pruszkow",
+  "Ospite": "Podhale Nowy Targ",
+  "Segno": "1",
+  "P1": 45.0,
+  "PX": 31.0,
+  "P2": 24.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-07",
@@ -578,11 +812,11 @@
   "Casa": "Paykan",
   "Ospite": "Nassaji Mazandaran",
   "Segno": "X",
-  "P1": 31.0,
-  "PX": 36.0,
-  "P2": 33.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 31.5,
+  "PX": 39.5,
+  "P2": 29.0,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-07",
@@ -604,11 +838,11 @@
   "Casa": "Tractor Sazi",
   "Ospite": "Kheybar Khorramabad",
   "Segno": "1",
-  "P1": 54.5,
-  "PX": 28.7,
-  "P2": 16.8,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 55.2,
+  "PX": 28.9,
+  "P2": 15.9,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-07",
@@ -695,24 +929,11 @@
   "Casa": "Portsmouth",
   "Ospite": "Stoke",
   "Segno": "1",
-  "P1": 40.0,
-  "PX": 27.0,
-  "P2": 33.0,
+  "P1": 40.5,
+  "PX": 27.5,
+  "P2": 32.0,
   "Fonti": 2,
   "Elenco": "footymetrics, ratingbet"
- },
- {
-  "Data": "2026-11-07",
-  "Ora": "13:30",
-  "Lega": "England - Championship",
-  "Casa": "Wrexham",
-  "Ospite": "Wolves",
-  "Segno": "1",
-  "P1": 38.0,
-  "PX": 27.0,
-  "P2": 35.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
  },
  {
   "Data": "2026-11-07",
@@ -726,6 +947,19 @@
   "P2": 41.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "13:30",
+  "Lega": "England - Championship",
+  "Casa": "Wrexham",
+  "Ospite": "Wolves",
+  "Segno": "1",
+  "P1": 38.0,
+  "PX": 27.0,
+  "P2": 35.0,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
  },
  {
   "Data": "2026-11-07",
@@ -765,6 +999,19 @@
   "P2": 39.6,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "14:00",
+  "Lega": "RUSSIA - FIRST LEAGUE",
+  "Casa": "Arsenal Tula",
+  "Ospite": "FC Chelyabinsk",
+  "Segno": "1",
+  "P1": 50.0,
+  "PX": 28.0,
+  "P2": 22.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-07",
@@ -838,11 +1085,11 @@
   "Casa": "Hapoel Petah Tikva",
   "Ospite": "Hapoel Ramat Gan",
   "Segno": "2",
-  "P1": 22.8,
-  "PX": 24.8,
-  "P2": 52.5,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 26.9,
+  "PX": 28.9,
+  "P2": 44.2,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-07",
@@ -851,11 +1098,11 @@
   "Casa": "Muğlaspor",
   "Ospite": "Esenler Erokspor",
   "Segno": "2",
-  "P1": 31.7,
-  "PX": 27.7,
-  "P2": 40.6,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 30.8,
+  "PX": 31.4,
+  "P2": 37.8,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-07",
@@ -1068,15 +1315,28 @@
  {
   "Data": "2026-11-07",
   "Ora": "15:00",
+  "Lega": "SERBIA - SUPER LIGA",
+  "Casa": "Cukaricki",
+  "Ospite": "Radnicki Nis",
+  "Segno": "1",
+  "P1": 48.0,
+  "PX": 29.0,
+  "P2": 23.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "15:00",
   "Lega": "Iran - Persian Gulf Pro League",
   "Casa": "Esteghlal Khuzestan",
   "Ospite": "Esteghlal",
   "Segno": "2",
-  "P1": 13.0,
-  "PX": 28.0,
-  "P2": 59.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 18.0,
+  "PX": 30.0,
+  "P2": 52.0,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-07",
@@ -1088,6 +1348,32 @@
   "P1": 32.0,
   "PX": 25.0,
   "P2": 43.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "15:00",
+  "Lega": "SLOVENIA - PRVA LIGA",
+  "Casa": "FC Koper",
+  "Ospite": "NS Mura",
+  "Segno": "1",
+  "P1": 57.0,
+  "PX": 28.0,
+  "P2": 15.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "15:00",
+  "Lega": "RUSSIA - FIRST LEAGUE",
+  "Casa": "FC Torpedo Moscow",
+  "Ospite": "FK Neftekhimik",
+  "Segno": "1",
+  "P1": 61.0,
+  "PX": 26.0,
+  "P2": 13.0,
   "Fonti": 1,
   "Elenco": "statarea"
  },
@@ -1120,6 +1406,19 @@
  {
   "Data": "2026-11-07",
   "Ora": "15:00",
+  "Lega": "SWEDEN - SUPERETTAN",
+  "Casa": "Helsingborg",
+  "Ospite": "Falkenbergs FF",
+  "Segno": "2",
+  "P1": 32.0,
+  "PX": 31.0,
+  "P2": 37.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "15:00",
   "Lega": "Czech Republic - Chance Liga",
   "Casa": "Hradec Králové",
   "Ospite": "Sigma Olomouc",
@@ -1137,11 +1436,37 @@
   "Casa": "Juve Stabia",
   "Ospite": "Arezzo",
   "Segno": "1",
-  "P1": 47.0,
+  "P1": 46.0,
   "PX": 26.0,
-  "P2": 27.0,
+  "P2": 28.0,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "15:00",
+  "Lega": "SWEDEN - SUPERETTAN",
+  "Casa": "Ljungskile SK",
+  "Ospite": "Landskrona BoIS",
+  "Segno": "2",
+  "P1": 31.0,
+  "PX": 29.0,
+  "P2": 40.0,
   "Fonti": 1,
-  "Elenco": "footymetrics"
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "15:00",
+  "Lega": "SWEDEN - SUPERETTAN",
+  "Casa": "Orebro",
+  "Ospite": "Osters IF",
+  "Segno": "1",
+  "P1": 45.0,
+  "PX": 26.0,
+  "P2": 29.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-07",
@@ -1150,11 +1475,11 @@
   "Casa": "Padova",
   "Ospite": "Empoli",
   "Segno": "1",
-  "P1": 37.0,
-  "PX": 29.0,
-  "P2": 34.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 43.0,
+  "PX": 28.5,
+  "P2": 28.5,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-07",
@@ -1168,6 +1493,19 @@
   "P2": 22.0,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "15:00",
+  "Lega": "RUSSIA - FIRST LEAGUE",
+  "Casa": "Shinnik Yaroslavl",
+  "Ospite": "FC Ufa",
+  "Segno": "1",
+  "P1": 45.0,
+  "PX": 37.0,
+  "P2": 18.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-07",
@@ -1228,11 +1566,11 @@
   "Casa": "Al Shamal SC",
   "Ospite": "Al Sailiya",
   "Segno": "1",
-  "P1": 54.5,
-  "PX": 22.8,
-  "P2": 22.8,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 55.7,
+  "PX": 22.9,
+  "P2": 21.4,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-07",
@@ -1241,11 +1579,24 @@
   "Casa": "Al Ettifaq",
   "Ospite": "Al Hilal",
   "Segno": "2",
-  "P1": 9.5,
+  "P1": 9.0,
   "PX": 15.0,
-  "P2": 75.5,
+  "P2": 76.0,
   "Fonti": 2,
   "Elenco": "footymetrics, ratingbet"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "15:30",
+  "Lega": "POLAND - I LIGA",
+  "Casa": "Arka Gdynia",
+  "Ospite": "Podbeskidzie",
+  "Segno": "1",
+  "P1": 43.0,
+  "PX": 39.0,
+  "P2": 18.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-07",
@@ -1289,13 +1640,39 @@
  {
   "Data": "2026-11-07",
   "Ora": "15:30",
+  "Lega": "SLOVAKIA - 1. LIGA",
+  "Casa": "Dukla Banska Bystrica",
+  "Ospite": "Spartak Trnava",
+  "Segno": "2",
+  "P1": 26.0,
+  "PX": 29.0,
+  "P2": 45.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "15:30",
   "Lega": "GERMANY - BUNDESLIGA",
   "Casa": "FSV Mainz 05",
   "Ospite": "Bayern Munich",
   "Segno": "2",
-  "P1": 17.0,
-  "PX": 21.0,
-  "P2": 62.0,
+  "P1": 22.0,
+  "PX": 22.0,
+  "P2": 56.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "15:30",
+  "Lega": "SLOVAKIA - 1. LIGA",
+  "Casa": "MFK Skalica",
+  "Ospite": "MSK Zilina",
+  "Segno": "2",
+  "P1": 25.0,
+  "PX": 29.0,
+  "P2": 46.0,
   "Fonti": 1,
   "Elenco": "statarea"
  },
@@ -1319,9 +1696,9 @@
   "Casa": "Mainz 05",
   "Ospite": "Bayern Munich",
   "Segno": "2",
-  "P1": 15.0,
-  "PX": 17.0,
-  "P2": 68.0,
+  "P1": 13.0,
+  "PX": 15.0,
+  "P2": 72.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
  },
@@ -1379,6 +1756,45 @@
  },
  {
   "Data": "2026-11-07",
+  "Ora": "15:30",
+  "Lega": "SLOVAKIA - 1. LIGA",
+  "Casa": "Slovan Bratislava",
+  "Ospite": "AS Trencin",
+  "Segno": "1",
+  "P1": 69.0,
+  "PX": 20.0,
+  "P2": 11.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "15:30",
+  "Lega": "POLAND - I LIGA",
+  "Casa": "Termalica Nieciecza",
+  "Ospite": "Chrobry Glogow",
+  "Segno": "1",
+  "P1": 51.0,
+  "PX": 25.0,
+  "P2": 24.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "15:30",
+  "Lega": "POLAND - I LIGA",
+  "Casa": "Warta Poznan",
+  "Ospite": "Polonia Warszawa",
+  "Segno": "2",
+  "P1": 30.0,
+  "PX": 30.0,
+  "P2": 40.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
   "Ora": "16:00",
   "Lega": "England - FA Cup",
   "Casa": "AFC Hornchurch",
@@ -1415,6 +1831,19 @@
   "P2": 40.0,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "16:00",
+  "Lega": "SCOTLAND - LEAGUE ONE",
+  "Casa": "Alloa Athletic",
+  "Ospite": "Airdrieonians",
+  "Segno": "1",
+  "P1": 39.0,
+  "PX": 32.0,
+  "P2": 29.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-07",
@@ -1501,9 +1930,9 @@
   "Casa": "Birmingham",
   "Ospite": "Swansea",
   "Segno": "1",
-  "P1": 50.7,
-  "PX": 25.9,
-  "P2": 23.4,
+  "P1": 51.7,
+  "PX": 25.4,
+  "P2": 22.9,
   "Fonti": 2,
   "Elenco": "footymetrics, ratingbet"
  },
@@ -1527,9 +1956,9 @@
   "Casa": "Boreham Wood",
   "Ospite": "Wigan",
   "Segno": "1",
-  "P1": 57.0,
+  "P1": 57.7,
   "PX": 23.0,
-  "P2": 20.0,
+  "P2": 19.3,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea"
  },
@@ -1627,6 +2056,19 @@
  {
   "Data": "2026-11-07",
   "Ora": "16:00",
+  "Lega": "England: EFL Championship",
+  "Casa": "Charlton",
+  "Ospite": "Sheffield United",
+  "Segno": "2",
+  "P1": 29.0,
+  "PX": 27.0,
+  "P2": 44.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "16:00",
   "Lega": "England - Championship",
   "Casa": "Charlton",
   "Ospite": "Sheff Utd",
@@ -1636,19 +2078,6 @@
   "P2": 44.0,
   "Fonti": 1,
   "Elenco": "footymetrics"
- },
- {
-  "Data": "2026-11-07",
-  "Ora": "16:00",
-  "Lega": "England: EFL Championship",
-  "Casa": "Charlton",
-  "Ospite": "Sheffield United",
-  "Segno": "2",
-  "P1": 32.0,
-  "PX": 27.0,
-  "P2": 41.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
  },
  {
   "Data": "2026-11-07",
@@ -1822,19 +2251,6 @@
  {
   "Data": "2026-11-07",
   "Ora": "16:00",
-  "Lega": "England - FA Cup",
-  "Casa": "Eastleigh",
-  "Ospite": "Shrewsbury Town",
-  "Segno": "2",
-  "P1": 21.0,
-  "PX": 23.0,
-  "P2": 56.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
- },
- {
-  "Data": "2026-11-07",
-  "Ora": "16:00",
   "Lega": "ENGLAND - FA CUP",
   "Casa": "Eastleigh",
   "Ospite": "Shrewsbury",
@@ -1844,6 +2260,19 @@
   "P2": 39.5,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "16:00",
+  "Lega": "England - FA Cup",
+  "Casa": "Eastleigh",
+  "Ospite": "Shrewsbury Town",
+  "Segno": "2",
+  "P1": 21.0,
+  "PX": 23.0,
+  "P2": 56.0,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
  },
  {
   "Data": "2026-11-07",
@@ -1904,9 +2333,22 @@
   "Casa": "Guiseley AFC",
   "Ospite": "Sutton Utd",
   "Segno": "1",
-  "P1": 40.0,
+  "P1": 42.0,
   "PX": 21.0,
-  "P2": 39.0,
+  "P2": 37.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "16:00",
+  "Lega": "ENGLAND - FA CUP",
+  "Casa": "Harrogate Town",
+  "Ospite": "AFC Fylde",
+  "Segno": "1",
+  "P1": 55.0,
+  "PX": 22.0,
+  "P2": 23.0,
   "Fonti": 1,
   "Elenco": "statarea"
  },
@@ -1926,19 +2368,6 @@
  {
   "Data": "2026-11-07",
   "Ora": "16:00",
-  "Lega": "ENGLAND - FA CUP",
-  "Casa": "Harrogate Town",
-  "Ospite": "AFC Fylde",
-  "Segno": "1",
-  "P1": 55.0,
-  "PX": 22.0,
-  "P2": 23.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
- },
- {
-  "Data": "2026-11-07",
-  "Ora": "16:00",
   "Lega": "England: FA Cup England",
   "Casa": "Hornchurch",
   "Ospite": "Blackpool",
@@ -1948,19 +2377,6 @@
   "P2": 54.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
- },
- {
-  "Data": "2026-11-07",
-  "Ora": "16:00",
-  "Lega": "ENGLAND - FA CUP",
-  "Casa": "Huddersfield",
-  "Ospite": "Exeter",
-  "Segno": "1",
-  "P1": 67.0,
-  "PX": 25.0,
-  "P2": 8.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-07",
@@ -1978,13 +2394,26 @@
  {
   "Data": "2026-11-07",
   "Ora": "16:00",
+  "Lega": "ENGLAND - FA CUP",
+  "Casa": "Huddersfield",
+  "Ospite": "Exeter",
+  "Segno": "1",
+  "P1": 67.0,
+  "PX": 25.0,
+  "P2": 8.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "16:00",
   "Lega": "SCOTLAND - CHAMPIONSHIP",
   "Casa": "Inverness CT",
   "Ospite": "Livingston",
   "Segno": "1",
   "P1": 40.0,
-  "PX": 34.0,
-  "P2": 26.0,
+  "PX": 32.0,
+  "P2": 28.0,
   "Fonti": 1,
   "Elenco": "statarea"
  },
@@ -2100,8 +2529,8 @@
   "Ospite": "Stenhousemuir",
   "Segno": "2",
   "P1": 23.0,
-  "PX": 31.0,
-  "P2": 46.0,
+  "PX": 30.0,
+  "P2": 47.0,
   "Fonti": 1,
   "Elenco": "statarea"
  },
@@ -2112,9 +2541,9 @@
   "Casa": "NFC Volos",
   "Ospite": "Kifisia FC",
   "Segno": "2",
-  "P1": 33.0,
+  "P1": 32.0,
   "PX": 28.0,
-  "P2": 39.0,
+  "P2": 40.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
  },
@@ -2173,19 +2602,6 @@
  {
   "Data": "2026-11-07",
   "Ora": "16:00",
-  "Lega": "England - FA Cup",
-  "Casa": "Port Vale",
-  "Ospite": "Scunthorpe United",
-  "Segno": "1",
-  "P1": 51.0,
-  "PX": 24.0,
-  "P2": 25.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
- },
- {
-  "Data": "2026-11-07",
-  "Ora": "16:00",
   "Lega": "ENGLAND - FA CUP",
   "Casa": "Port Vale",
   "Ospite": "Scunthorpe",
@@ -2199,13 +2615,26 @@
  {
   "Data": "2026-11-07",
   "Ora": "16:00",
+  "Lega": "England - FA Cup",
+  "Casa": "Port Vale",
+  "Ospite": "Scunthorpe United",
+  "Segno": "1",
+  "P1": 51.0,
+  "PX": 24.0,
+  "P2": 25.0,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "16:00",
   "Lega": "England - Championship",
   "Casa": "Preston",
   "Ospite": "Southampton",
   "Segno": "2",
-  "P1": 19.5,
-  "PX": 22.0,
-  "P2": 58.5,
+  "P1": 20.0,
+  "PX": 22.5,
+  "P2": 57.5,
   "Fonti": 2,
   "Elenco": "footymetrics, ratingbet"
  },
@@ -2229,9 +2658,9 @@
   "Casa": "Queens Park",
   "Ospite": "Partick",
   "Segno": "2",
-  "P1": 17.0,
+  "P1": 16.0,
   "PX": 19.0,
-  "P2": 64.0,
+  "P2": 65.0,
   "Fonti": 1,
   "Elenco": "statarea"
  },
@@ -2242,9 +2671,9 @@
   "Casa": "Queens Park Rangers",
   "Ospite": "Lincoln City",
   "Segno": "1",
-  "P1": 52.0,
+  "P1": 53.0,
   "PX": 25.0,
-  "P2": 23.0,
+  "P2": 22.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
  },
@@ -2260,6 +2689,19 @@
   "P2": 41.0,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "16:00",
+  "Lega": "SCOTLAND - LEAGUE ONE",
+  "Casa": "Ross County",
+  "Ospite": "Peterhead",
+  "Segno": "1",
+  "P1": 68.0,
+  "PX": 18.0,
+  "P2": 14.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-07",
@@ -2281,9 +2723,9 @@
   "Casa": "Salisbury",
   "Ospite": "Sholing",
   "Segno": "1",
-  "P1": 65.4,
+  "P1": 65.8,
   "PX": 21.3,
-  "P2": 13.3,
+  "P2": 13.0,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea"
  },
@@ -2319,10 +2761,10 @@
   "Lega": "GREECE - SUPER LEAGUE",
   "Casa": "Volos NPS",
   "Ospite": "Kifisia",
-  "Segno": "2",
-  "P1": 32.0,
-  "PX": 33.0,
-  "P2": 35.0,
+  "Segno": "1",
+  "P1": 36.0,
+  "PX": 34.0,
+  "P2": 30.0,
   "Fonti": 1,
   "Elenco": "statarea"
  },
@@ -2333,9 +2775,9 @@
   "Casa": "Watford",
   "Ospite": "Middlesbrough",
   "Segno": "2",
-  "P1": 23.0,
+  "P1": 22.0,
   "PX": 23.0,
-  "P2": 54.0,
+  "P2": 55.0,
   "Fonti": 2,
   "Elenco": "footymetrics, ratingbet"
  },
@@ -2407,6 +2849,19 @@
  {
   "Data": "2026-11-07",
   "Ora": "16:15",
+  "Lega": "SPAIN - LALIGA2",
+  "Casa": "Cadiz",
+  "Ospite": "Oviedo",
+  "Segno": "2",
+  "P1": 34.0,
+  "PX": 31.0,
+  "P2": 35.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "16:15",
   "Lega": "Spain - La Liga 2",
   "Casa": "Cádiz",
   "Ospite": "Real Oviedo",
@@ -2440,6 +2895,19 @@
   "P1": 37.0,
   "PX": 33.0,
   "P2": 30.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "16:30",
+  "Lega": "LIGA PORTUGAL 2",
+  "Casa": "Academica",
+  "Ospite": "Amarante",
+  "Segno": "1",
+  "P1": 52.0,
+  "PX": 27.0,
+  "P2": 21.0,
   "Fonti": 1,
   "Elenco": "statarea"
  },
@@ -2515,11 +2983,11 @@
   "Casa": "Maccabi Haifa",
   "Ospite": "Maccabi Netanya",
   "Segno": "1",
-  "P1": 41.0,
-  "PX": 26.0,
-  "P2": 33.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 46.0,
+  "PX": 25.0,
+  "P2": 29.0,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-07",
@@ -2528,11 +2996,11 @@
   "Casa": "Nacional",
   "Ospite": "Academico Viseu",
   "Segno": "2",
-  "P1": 34.0,
-  "PX": 27.0,
-  "P2": 39.0,
-  "Fonti": 2,
-  "Elenco": "footymetrics, ratingbet"
+  "P1": 35.0,
+  "PX": 27.3,
+  "P2": 37.7,
+  "Fonti": 3,
+  "Elenco": "footymetrics, ratingbet, statarea"
  },
  {
   "Data": "2026-11-07",
@@ -2554,9 +3022,9 @@
   "Casa": "Galatasaray",
   "Ospite": "Amedspor",
   "Segno": "1",
-  "P1": 52.0,
+  "P1": 55.0,
   "PX": 28.0,
-  "P2": 20.0,
+  "P2": 17.0,
   "Fonti": 1,
   "Elenco": "statarea"
  },
@@ -2615,6 +3083,19 @@
  {
   "Data": "2026-11-07",
   "Ora": "17:00",
+  "Lega": "ISRAEL - LIGAT HAAL",
+  "Casa": "Irony Kiryat Shmona",
+  "Ospite": "Hapoel Haifa",
+  "Segno": "X",
+  "P1": 32.0,
+  "PX": 34.0,
+  "P2": 34.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "17:00",
   "Lega": "Morocco - Botola Pro",
   "Casa": "Kawkab Marrakech",
   "Ospite": "Wydad Casablanca",
@@ -2632,11 +3113,24 @@
   "Casa": "Pendikspor",
   "Ospite": "İstanbulspor",
   "Segno": "1",
+  "P1": 49.5,
+  "PX": 27.0,
+  "P2": 23.5,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "17:00",
+  "Lega": "SERBIA - SUPER LIGA",
+  "Casa": "Zeleznicar Pancevo",
+  "Ospite": "Radnicki 1923",
+  "Segno": "1",
   "P1": 51.0,
-  "PX": 25.0,
-  "P2": 24.0,
+  "PX": 32.0,
+  "P2": 17.0,
   "Fonti": 1,
-  "Elenco": "footymetrics"
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-07",
@@ -2666,6 +3160,19 @@
  },
  {
   "Data": "2026-11-07",
+  "Ora": "17:15",
+  "Lega": "ITALY - SERIE B",
+  "Casa": "Mantova",
+  "Ospite": "Verona",
+  "Segno": "1",
+  "P1": 44.0,
+  "PX": 29.0,
+  "P2": 27.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
   "Ora": "17:30",
   "Lega": "Qatar - Stars League",
   "Casa": "Al Gharafa",
@@ -2684,11 +3191,11 @@
   "Casa": "Degerfors",
   "Ospite": "GAIS",
   "Segno": "2",
-  "P1": 22.8,
-  "PX": 23.8,
-  "P2": 53.5,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 27.4,
+  "PX": 26.4,
+  "P2": 46.2,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-07",
@@ -2697,11 +3204,11 @@
   "Casa": "Górnik Zabrze",
   "Ospite": "Wieczysta Kraków",
   "Segno": "1",
-  "P1": 43.0,
-  "PX": 23.0,
-  "P2": 34.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 52.0,
+  "PX": 24.0,
+  "P2": 24.0,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-07",
@@ -2732,6 +3239,19 @@
  {
   "Data": "2026-11-07",
   "Ora": "17:30",
+  "Lega": "SWEDEN - ALLSVENSKAN",
+  "Casa": "Orgryte",
+  "Ospite": "Vaesteraas IK",
+  "Segno": "2",
+  "P1": 26.0,
+  "PX": 31.0,
+  "P2": 43.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "17:30",
   "Lega": "Sweden - Allsvenskan",
   "Casa": "Örgryte",
   "Ospite": "Västerås SK",
@@ -2741,6 +3261,32 @@
   "P2": 45.5,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "18:00",
+  "Lega": "SWITZERLAND - SUPER LEAGUE",
+  "Casa": "FC Luzern",
+  "Ospite": "BSC Young Boys",
+  "Segno": "2",
+  "P1": 23.0,
+  "PX": 27.0,
+  "P2": 50.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "18:00",
+  "Lega": "SWITZERLAND - CHALLENGE LEAGUE",
+  "Casa": "FC Winterthur",
+  "Ospite": "Etoile-Carouge FC",
+  "Segno": "1",
+  "P1": 60.0,
+  "PX": 26.0,
+  "P2": 14.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-07",
@@ -2767,6 +3313,19 @@
   "P2": 45.0,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "18:00",
+  "Lega": "SLOVENIA - PRVA LIGA",
+  "Casa": "NK Bravo",
+  "Ospite": "Maribor",
+  "Segno": "2",
+  "P1": 29.0,
+  "PX": 28.0,
+  "P2": 43.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-07",
@@ -2827,11 +3386,11 @@
   "Casa": "Rosenborg",
   "Ospite": "Start",
   "Segno": "1",
-  "P1": 67.0,
-  "PX": 19.0,
-  "P2": 14.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 69.5,
+  "PX": 18.5,
+  "P2": 12.0,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-07",
@@ -2839,12 +3398,12 @@
   "Lega": "Switzerland - Super League",
   "Casa": "Vaduz",
   "Ospite": "Sion",
-  "Segno": "1",
-  "P1": 38.0,
-  "PX": 24.0,
-  "P2": 38.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "Segno": "2",
+  "P1": 32.0,
+  "PX": 25.5,
+  "P2": 42.5,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-07",
@@ -2855,19 +3414,6 @@
   "Segno": "1",
   "P1": 49.0,
   "PX": 24.0,
-  "P2": 27.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
- },
- {
-  "Data": "2026-11-07",
-  "Ora": "18:15",
-  "Lega": "Belgium - Pro League",
-  "Casa": "OH Leuven",
-  "Ospite": "Mechelen",
-  "Segno": "1",
-  "P1": 47.0,
-  "PX": 26.0,
   "P2": 27.0,
   "Fonti": 1,
   "Elenco": "footymetrics"
@@ -2887,16 +3433,42 @@
  },
  {
   "Data": "2026-11-07",
+  "Ora": "18:15",
+  "Lega": "Belgium - Pro League",
+  "Casa": "OH Leuven",
+  "Ospite": "Mechelen",
+  "Segno": "1",
+  "P1": 47.0,
+  "PX": 26.0,
+  "P2": 27.0,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-07",
   "Ora": "18:30",
   "Lega": "Saudi Arabia - Pro League",
   "Casa": "Al Ahli",
   "Ospite": "Al Taawoun",
   "Segno": "1",
-  "P1": 67.6,
-  "PX": 18.9,
-  "P2": 13.4,
+  "P1": 66.6,
+  "PX": 19.4,
+  "P2": 13.9,
   "Fonti": 2,
   "Elenco": "footymetrics, ratingbet"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "18:30",
+  "Lega": "SAUDI ARABIA - SAUDI PRO LEAGUE",
+  "Casa": "Al-Ahli Jeddah",
+  "Ospite": "Al-Taawon",
+  "Segno": "1",
+  "P1": 65.0,
+  "PX": 25.0,
+  "P2": 10.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-07",
@@ -2953,6 +3525,19 @@
  {
   "Data": "2026-11-07",
   "Ora": "18:30",
+  "Lega": "SPAIN - LALIGA2",
+  "Casa": "Cordoba",
+  "Ospite": "AD Ceuta",
+  "Segno": "1",
+  "P1": 55.0,
+  "PX": 28.0,
+  "P2": 17.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "18:30",
   "Lega": "Spain - La Liga 2",
   "Casa": "Córdoba",
   "Ospite": "Ceuta",
@@ -2970,11 +3555,11 @@
   "Casa": "Ironi Tiberias",
   "Ospite": "Beitar Jerusalem",
   "Segno": "2",
-  "P1": 11.0,
-  "PX": 18.0,
-  "P2": 71.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 15.0,
+  "PX": 18.5,
+  "P2": 66.5,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-07",
@@ -2983,11 +3568,11 @@
   "Casa": "Leganés",
   "Ospite": "Albacete",
   "Segno": "1",
-  "P1": 49.0,
-  "PX": 26.0,
-  "P2": 25.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 48.5,
+  "PX": 28.0,
+  "P2": 23.5,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-07",
@@ -3035,9 +3620,9 @@
   "Casa": "Osasuna",
   "Ospite": "Athletic Club",
   "Segno": "2",
-  "P1": 28.5,
+  "P1": 28.0,
   "PX": 27.5,
-  "P2": 44.0,
+  "P2": 44.5,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea"
  },
@@ -3048,9 +3633,9 @@
   "Casa": "VfB Stuttgart",
   "Ospite": "Werder Bremen",
   "Segno": "1",
-  "P1": 60.5,
-  "PX": 20.9,
-  "P2": 18.6,
+  "P1": 57.1,
+  "PX": 21.3,
+  "P2": 21.6,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea"
  },
@@ -3087,11 +3672,11 @@
   "Casa": "Alverca",
   "Ospite": "Casa Pia",
   "Segno": "1",
-  "P1": 46.3,
-  "PX": 26.9,
-  "P2": 26.8,
-  "Fonti": 2,
-  "Elenco": "footymetrics, ratingbet"
+  "P1": 47.2,
+  "PX": 27.6,
+  "P2": 25.2,
+  "Fonti": 3,
+  "Elenco": "footymetrics, ratingbet, statarea"
  },
  {
   "Data": "2026-11-07",
@@ -3139,11 +3724,11 @@
   "Casa": "Benevento",
   "Ospite": "Avellino",
   "Segno": "1",
-  "P1": 55.0,
-  "PX": 24.0,
-  "P2": 21.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 53.0,
+  "PX": 27.0,
+  "P2": 20.0,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-07",
@@ -3243,11 +3828,11 @@
   "Casa": "Widzew Lodz",
   "Ospite": "Pogoń Szczecin",
   "Segno": "1",
-  "P1": 38.0,
-  "PX": 27.0,
-  "P2": 35.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "P1": 37.5,
+  "PX": 28.0,
+  "P2": 34.5,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-07",
@@ -3255,12 +3840,12 @@
   "Lega": "Switzerland - Super League",
   "Casa": "Grasshopper",
   "Ospite": "Lausanne Sport",
-  "Segno": "2",
-  "P1": 32.0,
-  "PX": 23.0,
-  "P2": 45.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "Segno": "1",
+  "P1": 39.0,
+  "PX": 26.0,
+  "P2": 35.0,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-07",
@@ -3322,8 +3907,8 @@
   "Ospite": "Estac Troyes",
   "Segno": "1",
   "P1": 76.0,
-  "PX": 19.0,
-  "P2": 5.0,
+  "PX": 18.0,
+  "P2": 6.0,
   "Fonti": 1,
   "Elenco": "statarea"
  },
@@ -3347,8 +3932,8 @@
   "Casa": "RAAL La Louviere",
   "Ospite": "Cercle Bruges",
   "Segno": "2",
-  "P1": 36.0,
-  "PX": 27.0,
+  "P1": 35.0,
+  "PX": 28.0,
   "P2": 37.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
@@ -3360,9 +3945,9 @@
   "Casa": "Roma",
   "Ospite": "Sassuolo",
   "Segno": "1",
-  "P1": 70.8,
-  "PX": 19.3,
-  "P2": 10.0,
+  "P1": 70.4,
+  "PX": 18.9,
+  "P2": 10.6,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea"
  },
@@ -3373,8 +3958,8 @@
   "Casa": "Royal Antwerp",
   "Ospite": "Lommel",
   "Segno": "1",
-  "P1": 51.0,
-  "PX": 24.0,
+  "P1": 50.0,
+  "PX": 25.0,
   "P2": 25.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
@@ -3399,11 +3984,11 @@
   "Casa": "Granada",
   "Ospite": "Tenerife",
   "Segno": "1",
-  "P1": 44.0,
-  "PX": 29.0,
+  "P1": 44.5,
+  "PX": 28.5,
   "P2": 27.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-07",
@@ -3503,9 +4088,9 @@
   "Casa": "Sporting CP",
   "Ospite": "Moreirense",
   "Segno": "1",
-  "P1": 78.7,
-  "PX": 14.0,
-  "P2": 7.3,
+  "P1": 75.3,
+  "PX": 15.3,
+  "P2": 9.3,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea"
  },
@@ -3586,6 +4171,19 @@
   "P2": 17.5,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea"
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "22:00",
+  "Lega": "USA - MAJOR LEAGUE SOCCER",
+  "Casa": "Montreal Impact",
+  "Ospite": "Vancouver Whitecaps",
+  "Segno": "2",
+  "P1": 19.0,
+  "PX": 25.0,
+  "P2": 56.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-07",

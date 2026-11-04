@@ -8040,9 +8040,9 @@ Data,Norm_Casa,Norm_Ospite,Chiave_Pron,Vista_Prima_Il,Vista_Ultima_Il,Rilevazion
 2026-11-03,cambridge united,brighton u21,BTTS|Y,2026-11-03 02:25,2026-11-03 09:05,5,si,Cambridge United,England EFL Trophy,BTTS,20:00,Brighton U21,59,41,,59,1.57,,Y
 2026-11-03,cambridge united,brighton u21,DC|1X,2026-11-03 02:25,2026-11-03 09:05,5,si,Cambridge United,England EFL Trophy,DC,20:00,Brighton U21,46,28,26,74,1.19,,1X
 2026-11-03,cambridge united,brighton u21,OU2.5|O,2026-11-03 02:25,2026-11-03 09:05,5,si,Cambridge United,England EFL Trophy,OU2.5,20:00,Brighton U21,63,38,,63,1.50,,O
-2026-11-03,chapecoense,mirassol,1X2|2,2026-11-02 02:32,2026-11-03 23:21,9,,Chapecoense-sc,Brazil Serie A,1X2,23:30,Mirassol,26,31,43,43,2.03,,2
-2026-11-03,chapecoense,mirassol,BTTS|Y,2026-11-03 02:25,2026-11-03 23:21,6,,Chapecoense-sc,Brazil Serie A,BTTS,23:30,Mirassol,59,41,,59,1.58,,Y
-2026-11-03,chapecoense,mirassol,OU2.5|O,2026-11-03 02:25,2026-11-03 23:21,6,,Chapecoense-sc,Brazil Serie A,OU2.5,23:30,Mirassol,56,44,,56,1.72,,O
+2026-11-03,chapecoense,mirassol,1X2|2,2026-11-02 02:32,2026-11-03 23:21,9,si,Chapecoense-sc,Brazil Serie A,1X2,23:30,Mirassol,26,31,43,43,2.03,,2
+2026-11-03,chapecoense,mirassol,BTTS|Y,2026-11-03 02:25,2026-11-03 23:21,6,si,Chapecoense-sc,Brazil Serie A,BTTS,23:30,Mirassol,59,41,,59,1.58,,Y
+2026-11-03,chapecoense,mirassol,OU2.5|O,2026-11-03 02:25,2026-11-03 23:21,6,si,Chapecoense-sc,Brazil Serie A,OU2.5,23:30,Mirassol,56,44,,56,1.72,,O
 2026-11-03,charlton,bolton,1X2|2,2026-11-02 02:32,2026-11-03 09:05,8,si,Charlton,England Championship,1X2,20:45,Bolton,32,32,36,36,3.05,,2
 2026-11-03,charlton,bolton,BTTS|Y,2026-11-03 02:25,2026-11-03 09:05,5,si,Charlton,England Championship,BTTS,20:45,Bolton,58,42,,58,1.61,,Y
 2026-11-03,charlton,bolton,OU2.5|O,2026-11-03 02:25,2026-11-03 09:05,5,si,Charlton,England Championship,OU2.5,20:45,Bolton,53,47,,53,1.76,,O
@@ -8160,7 +8160,7 @@ Data,Norm_Casa,Norm_Ospite,Chiave_Pron,Vista_Prima_Il,Vista_Ultima_Il,Rilevazion
 2026-11-03,mushuc runa,manta,BTTS|N,2026-11-03 02:25,2026-11-03 09:05,5,si,Mushuc Runa SC,Ecuador Liga Pro,BTTS,21:30,Manta FC,47,53,,53,1.75,,N
 2026-11-03,mushuc runa,manta,DC|1X,2026-11-03 02:25,2026-11-03 09:05,5,si,Mushuc Runa SC,Ecuador Liga Pro,DC,21:30,Manta FC,39,31,30,70,1.21,,1X
 2026-11-03,mushuc runa,manta,OU2.5|U,2026-11-03 02:25,2026-11-03 09:05,5,si,Mushuc Runa SC,Ecuador Liga Pro,OU2.5,21:30,Manta FC,47,53,,53,1.76,,U
-2026-11-03,nacional asuncion,sp san lorenzo,1X2|1,2026-11-02 02:32,2026-11-03 23:21,9,,Nacional Asuncion,Paraguay Division Profesional - Clausura,1X2,23:30,Club Sp. San Lorenzo,64,22,14,64,1.29,,1
+2026-11-03,nacional asuncion,sp san lorenzo,1X2|1,2026-11-02 02:32,2026-11-03 23:21,9,si,Nacional Asuncion,Paraguay Division Profesional - Clausura,1X2,23:30,Club Sp. San Lorenzo,64,22,14,64,1.29,,1
 2026-11-03,najran,jubbah,1X2|1,2026-11-03 02:25,2026-11-03 09:05,5,si,Najran,Saudi Arabia Division 2,1X2,13:25,Jubbah,49,32,19,49,1.73,,1
 2026-11-03,nara,thespakusatsu gunma,1X2|1,2026-11-03 02:25,2026-11-03 04:54,2,si,Nara Club,Japan J3 League,1X2,06:00,Thespakusatsu Gunma,46,28,26,46,1.73,,1
 2026-11-03,neom,al duhail,1X2|1,2026-11-03 02:25,2026-11-03 09:05,5,si,NEOM,AGCFF Gulf Champions League,1X2,19:00,Al-Duhail SC,46,27,27,46,1.42,,1
@@ -8259,46 +8259,286 @@ Data,Norm_Casa,Norm_Ospite,Chiave_Pron,Vista_Prima_Il,Vista_Ultima_Il,Rilevazion
 2026-11-03,worcester city,bishops stortford,1X2|1,2026-11-03 02:25,2026-11-03 09:05,5,si,Worcester City,England Non League Premier - Southern Central,1X2,20:45,Bishops Stortford,51,29,20,51,1.70,,1
 2026-11-03,xelaju,marquense,1X2|1,2026-11-03 02:25,2026-11-03 09:05,5,si,Xelajú,Guatemala Liga Nacional,1X2,22:00,Marquense,52,28,20,52,1.45,,1
 2026-11-03,yokohama,blaublitz akita,1X2|1,2026-11-02 02:32,2026-11-03 00:54,3,si,Yokohama FC,Japan J2 League,1X2,06:00,Blaublitz Akita,49,31,20,49,1.67,,1
-2026-11-04,aek athens,real madrid,1X2|2,2026-11-03 02:25,2026-11-03 23:21,6,,AEK Athens FC,UEFA Champions League,1X2,18:45,Real Madrid,11,18,71,71,1.30,,2
-2026-11-04,alianza lima,cienciano,1X2|1,2026-11-03 02:25,2026-11-03 23:21,6,,Alianza Lima,Peru Primera División,1X2,02:00,Cienciano,53,26,21,53,1.39,,1
-2026-11-04,amorebieta,logrones,1X2|2,2026-11-03 02:25,2026-11-03 23:21,6,,Amorebieta,Spain Copa del Rey,1X2,20:00,UD Logroñés,31,32,37,37,1.99,,2
-2026-11-04,artis,bohemians 1905,1X2|1,2026-11-03 02:25,2026-11-03 23:21,6,,Artis,Czech Republic Czech Liga,1X2,18:00,Bohemians 1905,34,32,34,34,2.58,,1
-2026-11-04,atletico paranaense,vasco da gama,1X2|1,2026-11-03 02:25,2026-11-03 23:21,6,,Atletico Paranaense,Brazil Serie A,1X2,23:30,Vasco DA Gama,41,32,27,41,2.16,,1
-2026-11-04,badajoz,tenerife,1X2|2,2026-11-03 02:25,2026-11-03 23:21,6,,Badajoz,Spain Copa del Rey,1X2,21:00,Tenerife,28,30,42,42,1.59,,2
-2026-11-04,be1 nfa,atmosfera,1X2|1,2026-11-03 02:25,2026-11-03 23:21,6,,Be1 NFA,Lithuania 1 Lyga,1X2,16:30,Atmosfera,44,30,26,44,1.87,,1
-2026-11-04,borussia dortmund,real betis,1X2|1,2026-11-03 02:25,2026-11-03 23:21,6,,Borussia Dortmund,UEFA Champions League,1X2,21:00,Real Betis,46,29,25,46,1.80,,1
-2026-11-04,bristol city,wolves,1X2|2,2026-11-03 02:25,2026-11-03 23:21,6,,Bristol City,England Championship,1X2,21:00,Wolves,24,32,44,44,2.05,,2
-2026-11-04,calvo sotelo,albacete,1X2|2,2026-11-03 02:25,2026-11-03 23:21,6,,Calvo Sotelo,Spain Copa del Rey,1X2,20:45,Albacete,16,28,56,56,1.56,,2
+2026-11-04,aek athens,real madrid,1X2|2,2026-11-03 02:25,2026-11-04 03:06,7,,AEK Athens FC,UEFA Champions League,1X2,18:45,Real Madrid,11,18,71,71,1.30,,2
+2026-11-04,aek athens,real madrid,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,AEK Athens FC,UEFA Champions League,BTTS,18:45,Real Madrid,58,42,,58,1.61,,Y
+2026-11-04,aek athens,real madrid,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,AEK Athens FC,UEFA Champions League,OU2.5,18:45,Real Madrid,71,29,,71,1.33,,O
+2026-11-04,aek athens u19,real madrid u19,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,AEK Athens U19,UEFA Youth League,1X2,11:00,Real Madrid U19,16,23,61,61,1.33,,2
+2026-11-04,al bidda,muaither,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Al Bidda SC,Qatar Second Division,1X2,17:30,Muaither SC,32,31,37,37,2.45,,2
+2026-11-04,al ettifaq,ajman,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Al-Ettifaq,AGCFF Gulf Champions League,1X2,19:00,Ajman,46,31,23,46,1.65,,1
+2026-11-04,al ettifaq,ajman,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,Al-Ettifaq,AGCFF Gulf Champions League,BTTS,19:00,Ajman,54,46,,54,1.73,,Y
+2026-11-04,al ettifaq,ajman,DC|1X,2026-11-04 03:06,2026-11-04 03:06,1,,Al-Ettifaq,AGCFF Gulf Champions League,DC,19:00,Ajman,46,31,23,77,1.21,,1X
+2026-11-04,al ettifaq,ajman,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,Al-Ettifaq,AGCFF Gulf Champions League,OU2.5,19:00,Ajman,54,46,,54,1.75,,O
+2026-11-04,al gharafa b,umm salal,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Al-Gharafa B,Qatar Second Division,1X2,17:30,UMM Salal,9,22,69,69,1.25,,2
+2026-11-04,al kuwait,nasaf,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Al Kuwait,AFC Champions League Two,1X2,17:00,Nasaf,39,33,28,39,2.55,,1
+2026-11-04,al kuwait,nasaf,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,Al Kuwait,AFC Champions League Two,BTTS,17:00,Nasaf,51,49,,51,-,,Y
+2026-11-04,al kuwait,nasaf,DC|1X,2026-11-04 03:06,2026-11-04 03:06,1,,Al Kuwait,AFC Champions League Two,DC,17:00,Nasaf,39,33,28,72,1.51,,1X
+2026-11-04,al kuwait,nasaf,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,Al Kuwait,AFC Champions League Two,OU2.5,17:00,Nasaf,51,49,,51,1.95,,O
+2026-11-04,al nasr,sur,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Al Nasr,Oman Professional League,1X2,14:05,Sur,45,29,26,45,1.48,,1
+2026-11-04,al nasr dubai,qatar,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Al Nasr Dubai,AGCFF Gulf Champions League,1X2,16:00,Qatar SC,49,32,19,49,1.73,,1
+2026-11-04,al nasr dubai,qatar,BTTS|N,2026-11-04 03:06,2026-11-04 03:06,1,,Al Nasr Dubai,AGCFF Gulf Champions League,BTTS,16:00,Qatar SC,49,51,,51,1.83,,N
+2026-11-04,al nasr dubai,qatar,DC|1X,2026-11-04 03:06,2026-11-04 03:06,1,,Al Nasr Dubai,AGCFF Gulf Champions League,DC,16:00,Qatar SC,49,32,19,81,1.23,,1X
+2026-11-04,al nasr dubai,qatar,OU2.5|U,2026-11-04 03:06,2026-11-04 03:06,1,,Al Nasr Dubai,AGCFF Gulf Champions League,OU2.5,16:00,Qatar SC,49,51,,51,1.85,,U
+2026-11-04,al rayyan,al nahda,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Al-Rayyan SC,AFC Champions League Two,1X2,17:00,Al-Nahda,52,24,24,52,1.42,,1
+2026-11-04,al rayyan,al nahda,BTTS|N,2026-11-04 03:06,2026-11-04 03:06,1,,Al-Rayyan SC,AFC Champions League Two,BTTS,17:00,Al-Nahda,49,51,,51,-,,N
+2026-11-04,al rayyan,al nahda,DC|1X,2026-11-04 03:06,2026-11-04 03:06,1,,Al-Rayyan SC,AFC Champions League Two,DC,17:00,Al-Nahda,52,24,24,76,1.17,,1X
+2026-11-04,al rayyan,al nahda,OU2.5|U,2026-11-04 03:06,2026-11-04 03:06,1,,Al-Rayyan SC,AFC Champions League Two,OU2.5,17:00,Al-Nahda,40,60,,60,2.35,,U
+2026-11-04,al shamal ii,al mesaimeer,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Al Shamal II,Qatar Second Division,1X2,15:15,Al Mesaimeer,18,27,55,55,1.48,,2
+2026-11-04,al taawon,al faisaly,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Al Taawon,AFC Champions League Two,1X2,19:15,Al Faisaly,44,29,27,44,1.60,,1
+2026-11-04,al taawon,al faisaly,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,Al Taawon,AFC Champions League Two,BTTS,19:15,Al Faisaly,51,49,,51,-,,Y
+2026-11-04,al taawon,al faisaly,DC|1X,2026-11-04 03:06,2026-11-04 03:06,1,,Al Taawon,AFC Champions League Two,DC,19:15,Al Faisaly,44,29,27,73,1.21,,1X
+2026-11-04,al taawon,al faisaly,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,Al Taawon,AFC Champions League Two,OU2.5,19:15,Al Faisaly,54,46,,54,1.75,,O
+2026-11-04,al wahda,khalidiya,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Al Wahda FC,AFC Champions League Two,1X2,17:00,Khalidiya,53,28,19,53,1.55,,1
+2026-11-04,al wahda,khalidiya,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,Al Wahda FC,AFC Champions League Two,BTTS,17:00,Khalidiya,51,49,,51,-,,Y
+2026-11-04,al wahda,khalidiya,DC|1X,2026-11-04 03:06,2026-11-04 03:06,1,,Al Wahda FC,AFC Champions League Two,DC,17:00,Khalidiya,53,28,19,81,1.20,,1X
+2026-11-04,al wahda,khalidiya,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,Al Wahda FC,AFC Champions League Two,OU2.5,17:00,Khalidiya,60,40,,60,1.57,,O
+2026-11-04,alianza lima,cienciano,1X2|1,2026-11-03 02:25,2026-11-03 23:21,6,si,Alianza Lima,Peru Primera División,1X2,02:00,Cienciano,53,26,21,53,1.39,,1
+2026-11-04,amorebieta,logrones,1X2|2,2026-11-03 02:25,2026-11-04 03:06,7,,Amorebieta,Spain Copa del Rey,1X2,20:00,UD Logroñés,31,32,37,37,1.99,,2
+2026-11-04,arkadag,gol gohar,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Arkadag,AFC Champions League Two,1X2,14:45,Gol Gohar,43,35,22,43,2.00,,1
+2026-11-04,arkadag,gol gohar,BTTS|N,2026-11-04 03:06,2026-11-04 03:06,1,,Arkadag,AFC Champions League Two,BTTS,14:45,Gol Gohar,49,51,,51,-,,N
+2026-11-04,arkadag,gol gohar,DC|1X,2026-11-04 03:06,2026-11-04 03:06,1,,Arkadag,AFC Champions League Two,DC,14:45,Gol Gohar,43,35,22,78,1.28,,1X
+2026-11-04,arkadag,gol gohar,OU2.5|U,2026-11-04 03:06,2026-11-04 03:06,1,,Arkadag,AFC Champions League Two,OU2.5,14:45,Gol Gohar,38,63,,63,1.50,,U
+2026-11-04,artis,bohemians 1905,1X2|1,2026-11-03 02:25,2026-11-04 03:06,7,,Artis,Czech Republic Czech Liga,1X2,18:00,Bohemians 1905,34,32,34,34,2.58,,1
+2026-11-04,artis,bohemians 1905,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,Artis,Czech Republic Czech Liga,BTTS,18:00,Bohemians 1905,58,42,,58,1.61,,Y
+2026-11-04,artis,bohemians 1905,DC|12,2026-11-04 03:06,2026-11-04 03:06,1,,Artis,Czech Republic Czech Liga,DC,18:00,Bohemians 1905,34,32,34,68,1.34,,12
+2026-11-04,artis,bohemians 1905,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,Artis,Czech Republic Czech Liga,OU2.5,18:00,Bohemians 1905,53,47,,53,1.76,,O
+2026-11-04,atletico paranaense,vasco da gama,1X2|1,2026-11-03 02:25,2026-11-04 03:06,7,,Atletico Paranaense,Brazil Serie A,1X2,23:30,Vasco DA Gama,41,32,27,41,2.16,,1
+2026-11-04,atletico paranaense,vasco da gama,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,Atletico Paranaense,Brazil Serie A,BTTS,23:30,Vasco DA Gama,58,42,,58,1.61,,Y
+2026-11-04,atletico paranaense,vasco da gama,DC|1X,2026-11-04 03:06,2026-11-04 03:06,1,,Atletico Paranaense,Brazil Serie A,DC,23:30,Vasco DA Gama,41,32,27,73,1.44,,1X
+2026-11-04,atletico paranaense,vasco da gama,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,Atletico Paranaense,Brazil Serie A,OU2.5,23:30,Vasco DA Gama,53,47,,53,1.80,,O
+2026-11-04,badajoz,tenerife,1X2|2,2026-11-03 02:25,2026-11-04 03:06,7,,Badajoz,Spain Copa del Rey,1X2,21:00,Tenerife,28,30,42,42,1.59,,2
+2026-11-04,be1 nfa,atmosfera,1X2|1,2026-11-03 02:25,2026-11-04 03:06,7,,Be1 NFA,Lithuania 1 Lyga,1X2,16:30,Atmosfera,44,30,26,44,1.87,,1
+2026-11-04,boleraz,skalica,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Boleráz,Slovakia Cup,1X2,13:00,Skalica,23,15,62,62,1.12,,2
+2026-11-04,borussia dortmund,real betis,1X2|1,2026-11-03 02:25,2026-11-04 03:06,7,,Borussia Dortmund,UEFA Champions League,1X2,21:00,Real Betis,46,29,25,46,1.80,,1
+2026-11-04,borussia dortmund,real betis,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,Borussia Dortmund,UEFA Champions League,BTTS,21:00,Real Betis,62,38,,62,1.49,,Y
+2026-11-04,borussia dortmund,real betis,DC|1X,2026-11-04 03:06,2026-11-04 03:06,1,,Borussia Dortmund,UEFA Champions League,DC,21:00,Real Betis,46,29,25,75,1.34,,1X
+2026-11-04,borussia dortmund,real betis,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,Borussia Dortmund,UEFA Champions League,OU2.5,21:00,Real Betis,63,37,,63,1.50,,O
+2026-11-04,borussia dortmund u19,real betis u19,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Borussia Dortmund U19,UEFA Youth League,1X2,16:00,Real Betis U19,38,27,35,38,2.30,,1
+2026-11-04,bristol city,wolves,1X2|2,2026-11-03 02:25,2026-11-04 03:06,7,,Bristol City,England Championship,1X2,21:00,Wolves,24,32,44,44,2.05,,2
+2026-11-04,bristol city,wolves,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,Bristol City,England Championship,BTTS,21:00,Wolves,55,45,,55,1.69,,Y
+2026-11-04,bristol city,wolves,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,Bristol City,England Championship,OU2.5,21:00,Wolves,51,49,,51,1.86,,O
+2026-11-04,burgan,shamiya,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Burgan,Kuwait Division 1,1X2,15:30,Shamiya,66,25,9,66,1.36,,1
+2026-11-04,buriram united,kashima,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Buriram United,AFC Champions League Elite,1X2,13:15,Kashima,26,32,42,42,1.95,,2
+2026-11-04,buriram united,kashima,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,Buriram United,AFC Champions League Elite,BTTS,13:15,Kashima,54,46,,54,1.73,,Y
+2026-11-04,buriram united,kashima,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,Buriram United,AFC Champions League Elite,OU2.5,13:15,Kashima,51,49,,51,1.85,,O
+2026-11-04,calvo sotelo,albacete,1X2|2,2026-11-03 02:25,2026-11-04 03:06,7,,Calvo Sotelo,Spain Copa del Rey,1X2,20:45,Albacete,16,28,56,56,1.56,,2
 2026-11-04,cancun,piratas,1X2|2,2026-11-03 02:25,2026-11-03 23:21,6,,Cancún,Mexico Liga de Expansión MX,1X2,22:00,Piratas,33,33,34,34,2.38,,2
-2026-11-04,cardiff,west ham,1X2|2,2026-11-03 02:25,2026-11-03 23:21,6,,Cardiff,England Championship,1X2,20:45,West Ham,30,28,42,42,1.94,,2
-2026-11-04,deportiva minera,cartagena,1X2|X,2026-11-03 02:25,2026-11-03 23:21,6,,Deportiva Minera,Spain Copa del Rey,1X2,20:30,FC Cartagena,33,35,32,35,3.18,,X
-2026-11-04,deportivo pasto,jaguares,BTTS|N,2026-11-03 02:25,2026-11-03 23:21,6,,Deportivo Pasto,Colombia Primera A,BTTS,00:20,Jaguares,48,52,,52,1.79,,N
-2026-11-04,deportivo pasto,jaguares,DC|1X,2026-11-03 02:25,2026-11-03 23:21,6,,Deportivo Pasto,Colombia Primera A,DC,00:20,Jaguares,44,30,26,74,1.21,,1X
-2026-11-04,deportivo pasto,jaguares,OU2.5|U,2026-11-03 02:25,2026-11-03 23:21,6,,Deportivo Pasto,Colombia Primera A,OU2.5,00:20,Jaguares,48,52,,52,1.79,,U
-2026-11-04,enisey,nizhny novgorod,1X2|2,2026-11-03 02:25,2026-11-03 23:21,6,,Enisey,Russia Cup,1X2,09:00,Nizhny Novgorod,15,30,55,55,1.69,,2
-2026-11-04,fenerbahce,liverpool,1X2|2,2026-11-03 02:25,2026-11-03 23:21,6,,Fenerbahçe,UEFA Champions League,1X2,18:45,Liverpool,18,26,56,56,1.61,,2
-2026-11-04,flamengo,gremio,1X2|1,2026-11-03 02:25,2026-11-03 23:21,6,,Flamengo,Brazil Serie A,1X2,23:30,Gremio,68,15,17,68,1.17,,1
-2026-11-04,francs borains,dender,1X2|2,2026-11-03 02:25,2026-11-03 23:21,6,,Francs Borains,Belgium Challenger Pro League,1X2,20:00,Dender,25,32,43,43,2.10,,2
-2026-11-04,internacional,coritiba,1X2|1,2026-11-03 02:25,2026-11-03 23:21,6,,Internacional,Brazil Serie A,1X2,01:30,Coritiba,52,28,20,52,1.63,,1
-2026-11-04,kortrijk,kv mechelen,1X2|2,2026-11-03 02:25,2026-11-03 23:21,6,,Kortrijk,Belgium Jupiler Pro League,1X2,20:30,KV Mechelen,29,33,38,38,2.62,,2
-2026-11-04,leningradets,ska khabarovsk,1X2|1,2026-11-03 02:25,2026-11-03 23:21,6,,Leningradets,Russia Cup,1X2,12:00,Ska-khabarovsk,34,34,32,34,2.35,,1
-2026-11-04,lens,como,1X2|2,2026-11-03 02:25,2026-11-03 23:21,6,,Lens,UEFA Champions League,1X2,21:00,Como,26,30,44,44,2.27,,2
-2026-11-04,libertad asuncion,cerro porteno,1X2|2,2026-11-03 02:25,2026-11-03 23:21,6,,Libertad Asuncion,Paraguay Division Profesional - Clausura,1X2,23:00,Cerro Porteno,32,33,35,35,2.46,,2
-2026-11-04,oxford united,reading,1X2|1,2026-11-03 02:25,2026-11-03 23:21,6,,Oxford United,England League One,1X2,20:45,Reading,34,32,34,34,2.68,,1
-2026-11-04,porto,napoli,1X2|1,2026-11-03 02:25,2026-11-03 23:21,6,,FC Porto,UEFA Champions League,1X2,21:00,Napoli,43,31,26,43,2.06,,1
-2026-11-04,portugalete,real union,1X2|2,2026-11-03 02:25,2026-11-03 23:21,6,,Portugalete,Spain Copa del Rey,1X2,19:00,Real Unión,30,34,36,36,2.32,,2
-2026-11-04,psv eindhoven,brugge kv,1X2|2,2026-11-03 02:25,2026-11-03 23:21,6,,PSV Eindhoven,UEFA Champions League,1X2,21:00,Club Brugge KV,36,27,37,37,3.16,,2
-2026-11-04,rb leipzig,manchester city,1X2|2,2026-11-03 02:25,2026-11-03 23:21,6,,RB Leipzig,UEFA Champions League,1X2,21:00,Manchester City,26,25,49,49,1.58,,2
+2026-11-04,cardiff,west ham,1X2|2,2026-11-03 02:25,2026-11-04 03:06,7,,Cardiff,England Championship,1X2,20:45,West Ham,30,28,42,42,1.94,,2
+2026-11-04,cardiff,west ham,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,Cardiff,England Championship,BTTS,20:45,West Ham,69,31,,69,1.35,,Y
+2026-11-04,cardiff,west ham,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,Cardiff,England Championship,OU2.5,20:45,West Ham,68,32,,68,1.33,,O
+2026-11-04,clermont u19,legia warszawa u19,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Clermont U19,UEFA Youth League,1X2,19:00,Legia Warszawa U19,26,31,43,43,2.75,,2
+2026-11-04,crvena zvezda u18,bravo u19,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Crvena Zvezda U18,UEFA Youth League,1X2,14:00,Bravo U19,70,21,9,70,1.28,,1
+2026-11-04,deportiva minera,cartagena,1X2|X,2026-11-03 02:25,2026-11-04 03:06,7,,Deportiva Minera,Spain Copa del Rey,1X2,20:30,FC Cartagena,33,35,32,35,3.18,,X
+2026-11-04,deportivo pasto,jaguares,BTTS|N,2026-11-03 02:25,2026-11-03 23:21,6,si,Deportivo Pasto,Colombia Primera A,BTTS,00:20,Jaguares,48,52,,52,1.79,,N
+2026-11-04,deportivo pasto,jaguares,DC|1X,2026-11-03 02:25,2026-11-03 23:21,6,si,Deportivo Pasto,Colombia Primera A,DC,00:20,Jaguares,44,30,26,74,1.21,,1X
+2026-11-04,deportivo pasto,jaguares,OU2.5|U,2026-11-03 02:25,2026-11-03 23:21,6,si,Deportivo Pasto,Colombia Primera A,OU2.5,00:20,Jaguares,48,52,,52,1.79,,U
+2026-11-04,dinamo zagreb u19,qarabag u19,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Dinamo Zagreb U19,UEFA Youth League,1X2,13:00,Qarabağ U19,76,18,6,76,1.18,,1
+2026-11-04,drita,prishtina,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Drita,Kosovo Superliga,1X2,13:00,Prishtina,41,33,26,41,2.00,,1
+2026-11-04,dukla banska bystrica,trencin,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Dukla Banská Bystrica,Slovakia Cup,1X2,17:00,AS Trencin,42,31,27,42,2.00,,1
+2026-11-04,dynamo douala,gazelle,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Dynamo de Douala,Cameroon Elite One,1X2,17:00,Gazelle,54,33,13,54,1.62,,1
+2026-11-04,dynamo douala,gazelle,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,Dynamo de Douala,Cameroon Elite One,BTTS,17:00,Gazelle,51,49,,51,-,,Y
+2026-11-04,dynamo douala,gazelle,DC|1X,2026-11-04 03:06,2026-11-04 03:06,1,,Dynamo de Douala,Cameroon Elite One,DC,17:00,Gazelle,54,33,13,87,1.17,,1X
+2026-11-04,dynamo douala,gazelle,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,Dynamo de Douala,Cameroon Elite One,OU2.5,17:00,Gazelle,54,46,,54,2.05,,O
+2026-11-04,enisey,nizhny novgorod,1X2|2,2026-11-03 02:25,2026-11-04 03:06,7,,Enisey,Russia Cup,1X2,09:00,Nizhny Novgorod,15,30,55,55,1.69,,2
+2026-11-04,enugu rangers,bendel insurance,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Enugu Rangers,Nigeria NPFL,1X2,16:00,Bendel Insurance,47,31,22,47,1.53,,1
+2026-11-04,erbil,kazma,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Erbil,AGCFF Gulf Champions League,1X2,18:00,Kazma,30,33,37,37,3.00,,2
+2026-11-04,erbil,kazma,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,Erbil,AGCFF Gulf Champions League,BTTS,18:00,Kazma,51,49,,51,1.80,,Y
+2026-11-04,erbil,kazma,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,Erbil,AGCFF Gulf Champions League,OU2.5,18:00,Kazma,53,47,,53,2.00,,O
+2026-11-04,far rabat,raja casablanca,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,FAR Rabat,Morocco Botola Pro,1X2,21:00,Raja Casablanca,44,34,22,44,1.80,,1
+2026-11-04,fenerbahce,liverpool,1X2|2,2026-11-03 02:25,2026-11-04 03:06,7,,Fenerbahçe,UEFA Champions League,1X2,18:45,Liverpool,18,26,56,56,1.61,,2
+2026-11-04,fenerbahce,liverpool,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,Fenerbahçe,UEFA Champions League,BTTS,18:45,Liverpool,60,40,,60,1.54,,Y
+2026-11-04,fenerbahce,liverpool,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,Fenerbahçe,UEFA Champions League,OU2.5,18:45,Liverpool,64,36,,64,1.48,,O
+2026-11-04,fenerbahce u19,liverpool u19,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Fenerbahce U19,UEFA Youth League,1X2,12:00,Liverpool U19,26,23,51,51,1.55,,2
+2026-11-04,flamengo,gremio,1X2|1,2026-11-03 02:25,2026-11-04 03:06,7,,Flamengo,Brazil Serie A,1X2,23:30,Gremio,68,15,17,68,1.17,,1
+2026-11-04,flamengo,gremio,BTTS|N,2026-11-04 03:06,2026-11-04 03:06,1,,Flamengo,Brazil Serie A,BTTS,23:30,Gremio,47,53,,53,1.74,,N
+2026-11-04,flamengo,gremio,DC|12,2026-11-04 03:06,2026-11-04 03:06,1,,Flamengo,Brazil Serie A,DC,23:30,Gremio,68,15,17,85,1.17,,12
+2026-11-04,flamengo,gremio,OU2.5|U,2026-11-04 03:06,2026-11-04 03:06,1,,Flamengo,Brazil Serie A,OU2.5,23:30,Gremio,33,67,,67,2.84,,U
+2026-11-04,flora tallinn,tartu welco,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Flora Tallinn,Estonia Cup,1X2,18:00,Tartu Welco,59,20,21,59,1.18,,1
+2026-11-04,francs borains,dender,1X2|2,2026-11-03 02:25,2026-11-04 03:06,7,,Francs Borains,Belgium Challenger Pro League,1X2,20:00,Dender,25,32,43,43,2.10,,2
+2026-11-04,francs borains,dender,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,Francs Borains,Belgium Challenger Pro League,BTTS,20:00,Dender,60,40,,60,1.53,,Y
+2026-11-04,francs borains,dender,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,Francs Borains,Belgium Challenger Pro League,OU2.5,20:00,Dender,57,43,,57,1.62,,O
+2026-11-04,hoffenheim u19,akademija pandev u19,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Hoffenheim U19,UEFA Youth League,1X2,18:00,Akademija Pandev U19,71,15,14,71,1.10,,1
+2026-11-04,hradec kralove u19,partizani u19,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Hradec Králové U19,UEFA Youth League,1X2,17:30,Partizani U19,53,23,24,53,1.40,,1
+2026-11-04,ilbirs,toktogul,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Ilbirs,Kyrgyzstan Premier League,1X2,13:30,Toktogul,32,30,38,38,2.45,,2
+2026-11-04,internacional,coritiba,1X2|1,2026-11-03 02:25,2026-11-03 23:21,6,si,Internacional,Brazil Serie A,1X2,01:30,Coritiba,52,28,20,52,1.63,,1
+2026-11-04,k benhavn u19,dinamo tbilisi u19,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,København U19,UEFA Youth League,1X2,14:00,Dinamo Tbilisi U19,40,27,33,40,1.67,,1
+2026-11-04,kluczevia stargard,lech poznan ii,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Kluczevia Stargard,Poland III Liga - Group 2,1X2,12:00,Lech Poznań II,37,28,35,37,2.10,,1
+2026-11-04,kortrijk,kv mechelen,1X2|2,2026-11-03 02:25,2026-11-04 03:06,7,,Kortrijk,Belgium Jupiler Pro League,1X2,20:30,KV Mechelen,29,33,38,38,2.62,,2
+2026-11-04,kortrijk,kv mechelen,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,Kortrijk,Belgium Jupiler Pro League,BTTS,20:30,KV Mechelen,58,42,,58,1.61,,Y
+2026-11-04,kortrijk,kv mechelen,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,Kortrijk,Belgium Jupiler Pro League,OU2.5,20:30,KV Mechelen,52,48,,52,1.82,,O
+2026-11-04,leningradets,ska khabarovsk,1X2|1,2026-11-03 02:25,2026-11-04 03:06,7,,Leningradets,Russia Cup,1X2,12:00,Ska-khabarovsk,34,34,32,34,2.35,,1
+2026-11-04,lens,como,1X2|2,2026-11-03 02:25,2026-11-04 03:06,7,,Lens,UEFA Champions League,1X2,21:00,Como,26,30,44,44,2.27,,2
+2026-11-04,lens,como,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,Lens,UEFA Champions League,BTTS,21:00,Como,64,36,,64,1.44,,Y
+2026-11-04,lens,como,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,Lens,UEFA Champions League,OU2.5,21:00,Como,62,38,,62,1.54,,O
+2026-11-04,lens u19,como u19,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Lens U19,UEFA Youth League,1X2,14:00,Como U19,39,27,34,39,2.05,,1
+2026-11-04,libertad asuncion,cerro porteno,1X2|2,2026-11-03 02:25,2026-11-04 03:06,7,,Libertad Asuncion,Paraguay Division Profesional - Clausura,1X2,23:00,Cerro Porteno,32,33,35,35,2.46,,2
+2026-11-04,majevica lopare,sutjeska foca,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,FK Majevica Lopare,Bosnia 1st League - RS,1X2,14:30,Sutjeska Foča,53,26,21,53,1.40,,1
+2026-11-04,majevica lopare,sutjeska foca,BTTS|N,2026-11-04 03:06,2026-11-04 03:06,1,,FK Majevica Lopare,Bosnia 1st League - RS,BTTS,14:30,Sutjeska Foča,49,51,,51,-,,N
+2026-11-04,majevica lopare,sutjeska foca,DC|1X,2026-11-04 03:06,2026-11-04 03:06,1,,FK Majevica Lopare,Bosnia 1st League - RS,DC,14:30,Sutjeska Foča,53,26,21,79,1.14,,1X
+2026-11-04,majevica lopare,sutjeska foca,OU2.5|U,2026-11-04 03:06,2026-11-04 03:06,1,,FK Majevica Lopare,Bosnia 1st League - RS,OU2.5,14:30,Sutjeska Foča,44,56,,56,2.15,,U
+2026-11-04,masr,el geish,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Masr,Egypt League Cup,1X2,16:00,El Geish,43,37,20,43,2.05,,1
+2026-11-04,masr,el geish,BTTS|N,2026-11-04 03:06,2026-11-04 03:06,1,,Masr,Egypt League Cup,BTTS,16:00,El Geish,42,58,,58,1.62,,N
+2026-11-04,masr,el geish,DC|1X,2026-11-04 03:06,2026-11-04 03:06,1,,Masr,Egypt League Cup,DC,16:00,El Geish,43,37,20,80,1.28,,1X
+2026-11-04,masr,el geish,OU2.5|U,2026-11-04 03:06,2026-11-04 03:06,1,,Masr,Egypt League Cup,OU2.5,16:00,El Geish,35,65,,65,1.44,,U
+2026-11-04,melbourne victory,persib bandung,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Melbourne Victory,AFC Champions League Two,1X2,08:45,Persib Bandung,35,31,34,35,1.90,,1
+2026-11-04,melbourne victory,persib bandung,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,Melbourne Victory,AFC Champions League Two,BTTS,08:45,Persib Bandung,51,49,,51,-,,Y
+2026-11-04,melbourne victory,persib bandung,DC|12,2026-11-04 03:06,2026-11-04 03:06,1,,Melbourne Victory,AFC Champions League Two,DC,08:45,Persib Bandung,35,31,34,69,1.29,,12
+2026-11-04,melbourne victory,persib bandung,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,Melbourne Victory,AFC Champions League Two,OU2.5,08:45,Persib Bandung,51,49,,51,1.95,,O
+2026-11-04,mendiola,dynamic herb cebu,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Mendiola,Philippines PFL,1X2,10:45,Dynamic Herb Cebu,18,15,67,67,1.20,,2
+2026-11-04,ming cevir,sahdag,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Mingəçevir,Azerbaijan Birinci Dasta,1X2,12:00,Şahdağ,8,16,76,76,1.10,,2
+2026-11-04,ming cevir,sahdag,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,Mingəçevir,Azerbaijan Birinci Dasta,BTTS,12:00,Şahdağ,51,49,,51,-,,Y
+2026-11-04,ming cevir,sahdag,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,Mingəçevir,Azerbaijan Birinci Dasta,OU2.5,12:00,Şahdağ,71,29,,71,1.33,,O
+2026-11-04,muharraq,al jazira,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Muharraq,AFC Champions League Two,1X2,19:15,Al-Jazira,26,29,45,45,1.65,,2
+2026-11-04,muharraq,al jazira,BTTS|N,2026-11-04 03:06,2026-11-04 03:06,1,,Muharraq,AFC Champions League Two,BTTS,19:15,Al-Jazira,49,51,,51,-,,N
+2026-11-04,muharraq,al jazira,OU2.5|U,2026-11-04 03:06,2026-11-04 03:06,1,,Muharraq,AFC Champions League Two,OU2.5,19:15,Al-Jazira,47,53,,53,2.00,,U
+2026-11-04,nacional potosi,oriente petrolero,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Nacional Potosí,Bolivia Copa de la División Profesional,1X2,23:00,Oriente Petrolero,47,25,28,47,1.45,,1
+2026-11-04,nacional potosi,oriente petrolero,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,Nacional Potosí,Bolivia Copa de la División Profesional,BTTS,23:00,Oriente Petrolero,56,44,,56,1.67,,Y
+2026-11-04,nacional potosi,oriente petrolero,DC|12,2026-11-04 03:06,2026-11-04 03:06,1,,Nacional Potosí,Bolivia Copa de la División Profesional,DC,23:00,Oriente Petrolero,47,25,28,75,1.20,,12
+2026-11-04,nacional potosi,oriente petrolero,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,Nacional Potosí,Bolivia Copa de la División Profesional,OU2.5,23:00,Oriente Petrolero,63,38,,63,1.50,,O
+2026-11-04,nkana,kansanshi dynamos,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Nkana,Zambia Super League,1X2,14:00,Kansanshi Dynamos,43,37,20,43,1.90,,1
+2026-11-04,olancho,lobos upnfm,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Olancho,Honduras Liga Nacional,1X2,22:00,Lobos Upnfm,41,31,28,41,1.67,,1
+2026-11-04,osaka,roasso kumamoto,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Osaka,Japan J3 League,1X2,06:00,Roasso Kumamoto,35,33,32,35,2.20,,1
+2026-11-04,oxford united,reading,1X2|1,2026-11-03 02:25,2026-11-04 03:06,7,,Oxford United,England League One,1X2,20:45,Reading,34,32,34,34,2.68,,1
+2026-11-04,pafos u19,benfica u19,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Pafos U19,UEFA Youth League,1X2,13:00,Benfica U19,8,7,85,85,1.03,,2
+2026-11-04,paok u19,zrinjski u19,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,PAOK U19,UEFA Youth League,1X2,14:30,Zrinjski U19,56,24,20,56,1.36,,1
+2026-11-04,philippine army,azkals,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Philippine Army,Philippines PFL,1X2,08:00,Azkals,9,23,68,68,1.33,,2
+2026-11-04,pohang steelers,gamba osaka,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Pohang Steelers,AFC Champions League Elite,1X2,11:00,Gamba Osaka,24,33,43,43,2.10,,2
+2026-11-04,pohang steelers,gamba osaka,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,Pohang Steelers,AFC Champions League Elite,BTTS,11:00,Gamba Osaka,56,44,,56,1.67,,Y
+2026-11-04,pohang steelers,gamba osaka,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,Pohang Steelers,AFC Champions League Elite,OU2.5,11:00,Gamba Osaka,51,49,,51,1.85,,O
+2026-11-04,porto,napoli,1X2|1,2026-11-03 02:25,2026-11-04 03:06,7,,FC Porto,UEFA Champions League,1X2,21:00,Napoli,43,31,26,43,2.06,,1
+2026-11-04,porto,napoli,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,FC Porto,UEFA Champions League,BTTS,21:00,Napoli,58,42,,58,1.61,,Y
+2026-11-04,porto,napoli,DC|1X,2026-11-04 03:06,2026-11-04 03:06,1,,FC Porto,UEFA Champions League,DC,21:00,Napoli,43,31,26,74,1.42,,1X
+2026-11-04,porto,napoli,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,FC Porto,UEFA Champions League,OU2.5,21:00,Napoli,55,45,,55,1.81,,O
+2026-11-04,porto u19,napoli u19,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Porto U19,UEFA Youth League,1X2,13:00,Napoli U19,59,22,19,59,1.20,,1
+2026-11-04,portugalete,real union,1X2|2,2026-11-03 02:25,2026-11-04 03:06,7,,Portugalete,Spain Copa del Rey,1X2,19:00,Real Unión,30,34,36,36,2.32,,2
+2026-11-04,portuguesa,deportivo la guaira,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Portuguesa FC,Venezuela Primera División,1X2,22:30,Deportivo La Guaira,28,35,37,37,2.45,,2
+2026-11-04,psv eindhoven,brugge kv,1X2|2,2026-11-03 02:25,2026-11-04 03:06,7,,PSV Eindhoven,UEFA Champions League,1X2,21:00,Club Brugge KV,36,27,37,37,3.16,,2
+2026-11-04,psv eindhoven,brugge kv,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,PSV Eindhoven,UEFA Champions League,BTTS,21:00,Club Brugge KV,70,30,,70,1.33,,Y
+2026-11-04,psv eindhoven,brugge kv,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,PSV Eindhoven,UEFA Champions League,OU2.5,21:00,Club Brugge KV,70,30,,70,1.35,,O
+2026-11-04,psv u19,brugge u19,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,PSV U19,UEFA Youth League,1X2,14:00,Club Brugge U19,29,26,45,45,1.75,,2
+2026-11-04,rakow ii,kluczbork,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Rakow II,Poland III Liga - Group 3,1X2,12:30,Kluczbork,29,30,41,41,2.25,,2
+2026-11-04,rangers u19,dynamo kyiv u19,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Rangers U19,UEFA Youth League,1X2,20:00,Dynamo Kyiv U19,35,31,34,35,1.85,,1
+2026-11-04,rb leipzig,manchester city,1X2|2,2026-11-03 02:25,2026-11-04 03:06,7,,RB Leipzig,UEFA Champions League,1X2,21:00,Manchester City,26,25,49,49,1.58,,2
+2026-11-04,rb leipzig,manchester city,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,RB Leipzig,UEFA Champions League,BTTS,21:00,Manchester City,65,35,,65,1.43,,Y
+2026-11-04,rb leipzig,manchester city,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,RB Leipzig,UEFA Champions League,OU2.5,21:00,Manchester City,70,30,,70,1.36,,O
+2026-11-04,rb leipzig u19,manchester city u19,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,RB Leipzig U19,UEFA Youth League,1X2,15:00,Manchester City U19,21,25,54,54,1.73,,2
 2026-11-04,real cartagena,real cundinamarca,1X2|1,2026-11-03 02:25,2026-11-03 23:21,6,,Real Cartagena,Colombia Primera B,1X2,22:00,Real Cundinamarca,50,29,21,50,1.53,,1
-2026-11-04,reddis,barakaldo,1X2|2,2026-11-03 02:25,2026-11-03 23:21,6,,Reddis,Spain Copa del Rey,1X2,20:30,Barakaldo,25,34,41,41,1.97,,2
-2026-11-04,rennes,olympiakos piraeus,1X2|2,2026-11-03 02:25,2026-11-03 23:21,6,,Rennes,UEFA Europa League,1X2,16:30,Olympiakos Piraeus,33,32,35,35,3.18,,2
-2026-11-04,rsc anderlecht ii,k lierse s k,1X2|2,2026-11-03 02:25,2026-11-03 23:21,6,,RSC Anderlecht II,Belgium Challenger Pro League,1X2,20:00,K. Lierse S.K.,27,30,43,43,2.36,,2
-2026-11-04,slavia praha,arsenal,1X2|2,2026-11-03 02:25,2026-11-03 23:21,6,,Slavia Praha,UEFA Champions League,1X2,21:00,Arsenal,18,20,62,62,1.32,,2
-2026-11-04,sporting san jose,perez zeledon,1X2|1,2026-11-03 02:25,2026-11-03 23:21,6,,Sporting San Jose,Costa Rica Primera División,1X2,02:00,Perez Zeledon,63,25,12,63,1.36,,1
-2026-11-04,sportivo ameliano,guarani,1X2|2,2026-11-03 02:25,2026-11-03 23:21,6,,Sportivo Ameliano,Paraguay Division Profesional - Clausura,1X2,23:00,Club Guarani,21,34,45,45,2.40,,2
+2026-11-04,red arrows,nkwazi,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Red Arrows,Zambia Super League,1X2,14:00,Nkwazi,51,34,15,51,1.57,,1
+2026-11-04,reddis,barakaldo,1X2|2,2026-11-03 02:25,2026-11-04 03:06,7,,Reddis,Spain Copa del Rey,1X2,20:30,Barakaldo,25,34,41,41,1.97,,2
+2026-11-04,rennes,olympiakos piraeus,1X2|2,2026-11-03 02:25,2026-11-04 03:06,7,,Rennes,UEFA Europa League,1X2,16:30,Olympiakos Piraeus,33,32,35,35,3.18,,2
+2026-11-04,rennes,olympiakos piraeus,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,Rennes,UEFA Europa League,BTTS,16:30,Olympiakos Piraeus,58,42,,58,1.60,,Y
+2026-11-04,rennes,olympiakos piraeus,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,Rennes,UEFA Europa League,OU2.5,16:30,Olympiakos Piraeus,54,46,,54,1.79,,O
+2026-11-04,rsc anderlecht ii,k lierse s k,1X2|2,2026-11-03 02:25,2026-11-04 03:06,7,,RSC Anderlecht II,Belgium Challenger Pro League,1X2,20:00,K. Lierse S.K.,27,30,43,43,2.36,,2
+2026-11-04,rsc anderlecht ii,k lierse s k,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,RSC Anderlecht II,Belgium Challenger Pro League,BTTS,20:00,K. Lierse S.K.,65,35,,65,1.41,,Y
+2026-11-04,rsc anderlecht ii,k lierse s k,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,RSC Anderlecht II,Belgium Challenger Pro League,OU2.5,20:00,K. Lierse S.K.,63,37,,63,1.44,,O
+2026-11-04,seoul,viettel,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,FC Seoul,AFC Champions League Two,1X2,11:00,Viettel,70,21,9,70,1.20,,1
+2026-11-04,seoul,viettel,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,FC Seoul,AFC Champions League Two,BTTS,11:00,Viettel,51,49,,51,-,,Y
+2026-11-04,seoul,viettel,DC|1X,2026-11-04 03:06,2026-11-04 03:06,1,,FC Seoul,AFC Champions League Two,DC,11:00,Viettel,70,21,9,91,1.07,,1X
+2026-11-04,seoul,viettel,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,FC Seoul,AFC Champions League Two,OU2.5,11:00,Viettel,65,35,,65,1.44,,O
+2026-11-04,septemvri sofia u19,fiorentina u19,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Septemvri Sofia U19,UEFA Youth League,1X2,11:30,Fiorentina U19,16,19,65,65,1.27,,2
+2026-11-04,sheriff u19,fcv farul u19,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Sheriff U19,UEFA Youth League,1X2,17:00,FCV Farul U19,37,31,32,37,2.40,,1
+2026-11-04,slavia praha,arsenal,1X2|2,2026-11-03 02:25,2026-11-04 03:06,7,,Slavia Praha,UEFA Champions League,1X2,21:00,Arsenal,18,20,62,62,1.32,,2
+2026-11-04,slavia praha,arsenal,BTTS|N,2026-11-04 03:06,2026-11-04 03:06,1,,Slavia Praha,UEFA Champions League,BTTS,21:00,Arsenal,49,51,,51,1.82,,N
+2026-11-04,slavia praha,arsenal,OU2.5|U,2026-11-04 03:06,2026-11-04 03:06,1,,Slavia Praha,UEFA Champions League,OU2.5,21:00,Arsenal,39,61,,61,2.42,,U
+2026-11-04,slavia praha u19,arsenal u19,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Slavia Praha U19,UEFA Youth League,1X2,14:00,Arsenal U19,51,24,25,51,1.57,,1
+2026-11-04,sparta praha ii,viktoria plzen ii,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Sparta Praha II,Czech Republic 3. liga - CFL A,1X2,10:15,Viktoria Plzeň II,40,27,33,40,1.80,,1
+2026-11-04,sparta praha ii,viktoria plzen ii,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,Sparta Praha II,Czech Republic 3. liga - CFL A,BTTS,10:15,Viktoria Plzeň II,51,49,,51,-,,Y
+2026-11-04,sparta praha ii,viktoria plzen ii,DC|12,2026-11-04 03:06,2026-11-04 03:06,1,,Sparta Praha II,Czech Republic 3. liga - CFL A,DC,10:15,Viktoria Plzeň II,40,27,33,73,1.23,,12
+2026-11-04,sparta praha ii,viktoria plzen ii,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,Sparta Praha II,Czech Republic 3. liga - CFL A,OU2.5,10:15,Viktoria Plzeň II,65,35,,65,1.44,,O
+2026-11-04,sporting san jose,perez zeledon,1X2|1,2026-11-03 02:25,2026-11-03 23:21,6,si,Sporting San Jose,Costa Rica Primera División,1X2,02:00,Perez Zeledon,63,25,12,63,1.36,,1
+2026-11-04,sportivo ameliano,guarani,1X2|2,2026-11-03 02:25,2026-11-04 03:06,7,,Sportivo Ameliano,Paraguay Division Profesional - Clausura,1X2,23:00,Club Guarani,21,34,45,45,2.40,,2
+2026-11-04,super nova u19,hammarby u19,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Super Nova U19,UEFA Youth League,1X2,17:00,Hammarby U19,27,27,46,46,1.57,,2
+2026-11-04,tauras,minija,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Tauras,Lithuania 1 Lyga,1X2,13:00,Minija,22,24,54,54,1.33,,2
 2026-11-04,tigres,quindio,1X2|2,2026-11-03 02:25,2026-11-03 23:21,6,,Tigres FC,Colombia Primera B,1X2,22:00,Quindio,23,36,41,41,2.28,,2
 2026-11-04,tlaxcala,la paz,1X2|1,2026-11-03 02:25,2026-11-03 23:21,6,,Tlaxcala,Mexico Liga de Expansión MX,1X2,22:00,CA La Paz,35,31,34,35,2.39,,1
-2026-11-04,union la calera,coquimbo unido,1X2|2,2026-11-03 02:25,2026-11-03 23:21,6,,Union La Calera,Chile Copa Chile,1X2,23:00,Coquimbo Unido,29,34,37,37,2.64,,2
-2026-11-04,utebo,sabadell,1X2|2,2026-11-03 02:25,2026-11-03 23:21,6,,Utebo,Spain Copa del Rey,1X2,20:30,Sabadell,19,29,52,52,1.51,,2
-2026-11-04,venados,monarcas,1X2|1,2026-11-03 02:25,2026-11-03 23:21,6,,Venados FC,Mexico Liga de Expansión MX,1X2,22:00,Monarcas,39,32,29,39,2.27,,1
-2026-11-04,wrexham,middlesbrough,1X2|2,2026-11-03 02:25,2026-11-03 23:21,6,,Wrexham,England Championship,1X2,20:45,Middlesbrough,19,29,52,52,1.75,,2
+2026-11-04,union la calera,coquimbo unido,1X2|2,2026-11-03 02:25,2026-11-04 03:06,7,,Union La Calera,Chile Copa Chile,1X2,23:00,Coquimbo Unido,29,34,37,37,2.64,,2
+2026-11-04,union la calera,coquimbo unido,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,Union La Calera,Chile Copa Chile,BTTS,23:00,Coquimbo Unido,55,45,,55,1.67,,Y
+2026-11-04,union la calera,coquimbo unido,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,Union La Calera,Chile Copa Chile,OU2.5,23:00,Coquimbo Unido,51,49,,51,1.87,,O
+2026-11-04,utebo,sabadell,1X2|2,2026-11-03 02:25,2026-11-04 03:06,7,,Utebo,Spain Copa del Rey,1X2,20:30,Sabadell,19,29,52,52,1.51,,2
+2026-11-04,venados,monarcas,1X2|1,2026-11-03 02:25,2026-11-04 03:06,7,,Venados FC,Mexico Liga de Expansión MX,1X2,22:00,Monarcas,39,32,29,39,2.27,,1
+2026-11-04,victoria united,cotonsport,1X2|X,2026-11-04 03:06,2026-11-04 03:06,1,,Victoria United,Cameroon Elite One,1X2,17:00,Cotonsport,32,34,34,34,3.10,,X
+2026-11-04,victoria united,cotonsport,BTTS|N,2026-11-04 03:06,2026-11-04 03:06,1,,Victoria United,Cameroon Elite One,BTTS,17:00,Cotonsport,49,51,,51,-,,N
+2026-11-04,victoria united,cotonsport,DC|X2,2026-11-04 03:06,2026-11-04 03:06,1,,Victoria United,Cameroon Elite One,DC,17:00,Cotonsport,32,34,34,68,1.46,,X2
+2026-11-04,victoria united,cotonsport,OU2.5|U,2026-11-04 03:06,2026-11-04 03:06,1,,Victoria United,Cameroon Elite One,OU2.5,17:00,Cotonsport,45,55,,55,1.70,,U
+2026-11-04,viking,sabah,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Viking,UEFA Champions League,1X2,21:00,Sabah FK,55,24,21,55,1.40,,1
+2026-11-04,viking,sabah,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,Viking,UEFA Champions League,BTTS,21:00,Sabah FK,61,39,,61,1.53,,Y
+2026-11-04,viking,sabah,DC|1X,2026-11-04 03:06,2026-11-04 03:06,1,,Viking,UEFA Champions League,DC,21:00,Sabah FK,55,24,21,79,1.17,,1X
+2026-11-04,viking,sabah,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,Viking,UEFA Champions League,OU2.5,21:00,Sabah FK,70,30,,70,1.36,,O
+2026-11-04,viking u19,sabah u19,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Viking U19,UEFA Youth League,1X2,13:00,Sabah U19,72,19,9,72,1.25,,1
+2026-11-04,wrexham,middlesbrough,1X2|2,2026-11-03 02:25,2026-11-04 03:06,7,,Wrexham,England Championship,1X2,20:45,Middlesbrough,19,29,52,52,1.75,,2
+2026-11-04,wrexham,middlesbrough,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,Wrexham,England Championship,BTTS,20:45,Middlesbrough,57,43,,57,1.62,,Y
+2026-11-04,wrexham,middlesbrough,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,Wrexham,England Championship,OU2.5,20:45,Middlesbrough,57,43,,57,1.65,,O
+2026-11-04,yarmouk,sporty,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Yarmouk,Kuwait Division 1,1X2,15:30,Sporty,84,13,3,84,1.09,,1
+2026-11-04,zalgiris u19,st patricks u19,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Žalgiris U19,UEFA Youth League,1X2,18:00,St Patricks U19,47,33,20,47,2.10,,1
+2026-11-04,zanaco,man utd zambia academy,1X2|X,2026-11-04 03:06,2026-11-04 03:06,1,,Zanaco,Zambia Super League,1X2,14:00,Man Utd Zambia Academy,36,38,26,38,2.80,,X
+2026-11-04,zilina u19,hjk u19,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Žilina U19,UEFA Youth League,1X2,16:30,HJK U19,35,30,35,35,2.15,,1
+2026-11-05,aarhus,braga,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Aarhus,UEFA Europa Conference League,1X2,18:45,SC Braga,28,33,39,39,2.06,,2
+2026-11-05,abha,al shabab,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Abha,Saudi Arabia Pro League,1X2,16:10,Al Shabab,18,30,52,52,1.83,,2
+2026-11-05,al hazm,al nassr,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Al-Hazm,Saudi Arabia Pro League,1X2,18:00,Al-Nassr,7,17,76,76,1.18,,2
+2026-11-05,al ittihad,neom,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Al-Ittihad FC,Saudi Arabia Pro League,1X2,18:00,NEOM,42,30,28,42,1.93,,1
+2026-11-05,al kholood,al khaleej saihat,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Al Kholood,Saudi Arabia Pro League,1X2,14:25,Al Khaleej Saihat,24,33,43,43,2.88,,2
+2026-11-05,al markhiya,al waab,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Al-Markhiya,Qatar Second Division,1X2,15:15,Al Waab,58,26,16,58,1.32,,1
+2026-11-05,al qadisiyah,al fayha,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Al-Qadisiyah FC,Saudi Arabia Pro League,1X2,18:30,Al-Fayha,71,16,13,71,1.16,,1
+2026-11-05,anderlecht,red bull salzburg,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Anderlecht,UEFA Europa League,1X2,18:45,Red Bull Salzburg,38,29,33,38,1.93,,1
+2026-11-05,atalanta,kairat almaty,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Atalanta,UEFA Europa Conference League,1X2,18:45,Kairat Almaty,60,15,25,60,1.17,,1
+2026-11-05,atk mohun bagan,odisha,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,ATK Mohun Bagan,India Indian Super League,1X2,15:00,Odisha,63,25,12,63,1.33,,1
+2026-11-05,az alkmaar,juventus,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,AZ Alkmaar,UEFA Europa League,1X2,21:00,Juventus,28,31,41,41,2.04,,2
+2026-11-05,baku sportinq,xank ndi,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Baku Sportinq,Azerbaijan Birinci Dasta,1X2,12:00,Xankəndi FK,22,33,45,45,2.60,,2
+2026-11-05,bayer leverkusen,marseille,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Bayer Leverkusen,UEFA Europa League,1X2,21:00,Marseille,56,23,21,56,1.42,,1
+2026-11-05,benfica,lech poznan,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Benfica,UEFA Europa League,1X2,21:00,Lech Poznan,71,15,14,71,1.17,,1
+2026-11-05,bg pathum united,wofoo tai po,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,BG Pathum United,AFC Champions League Two,1X2,13:15,Wofoo Tai Po,54,24,22,54,1.36,,1
+2026-11-05,botafogo,atletico mg,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Botafogo,Brazil Serie A,1X2,01:30,Atletico-MG,43,30,27,43,1.96,,1
+2026-11-05,botafogo sp,londrina,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Botafogo SP,Brazil Serie B,1X2,23:30,Londrina,51,31,18,51,1.71,,1
+2026-11-05,celta vigo,union st gilloise,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Celta Vigo,UEFA Europa League,1X2,21:00,Union St. Gilloise,35,31,34,35,2.20,,1
+2026-11-05,celtic,besiktas,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Celtic,UEFA Europa League,1X2,21:00,Beşiktaş,31,30,39,39,2.23,,2
+2026-11-05,chindia targoviste,popesti leordeni,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Chindia Targoviste,Romania Liga II,1X2,16:00,Popești-Leordeni,48,29,23,48,1.54,,1
+2026-11-05,churchill brothers,northeast united,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Churchill Brothers,India Indian Super League,1X2,12:30,NorthEast United,23,32,45,45,1.83,,2
+2026-11-05,copenhagen,iberia 1999,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,FC Copenhagen,UEFA Europa Conference League,1X2,21:00,FC Iberia 1999,67,16,17,67,1.19,,1
+2026-11-05,crvena zvezda,inter descaldes,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,FK Crvena Zvezda,UEFA Europa Conference League,1X2,18:45,Inter Club dEscaldes,83,8,9,83,1.05,,1
+2026-11-05,crystal palace,1899 hoffenheim,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Crystal Palace,UEFA Europa League,1X2,18:45,1899 Hoffenheim,37,29,34,37,1.95,,1
+2026-11-05,cucuta,santa fe,BTTS|Y,2026-11-04 03:06,2026-11-04 03:06,1,,Cucuta,Colombia Primera A,BTTS,00:30,Santa Fe,54,46,,54,1.73,,Y
+2026-11-05,cucuta,santa fe,OU2.5|O,2026-11-04 03:06,2026-11-04 03:06,1,,Cucuta,Colombia Primera A,OU2.5,00:30,Santa Fe,52,48,,52,1.93,,O
+2026-11-05,getafe,brighton,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Getafe,UEFA Europa Conference League,1X2,21:00,Brighton,21,29,50,50,1.60,,2
+2026-11-05,hapoel beer sheva,ofi,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Hapoel Beer Sheva,UEFA Europa League,1X2,21:00,OFI,43,31,26,43,2.10,,1
+2026-11-05,home united,adelaide united,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Home United,AFC Champions League Two,1X2,11:00,Adelaide United,45,31,24,45,1.95,,1
+2026-11-05,karvan,simal,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Karvan,Azerbaijan Birinci Dasta,1X2,12:00,Şimal,47,32,21,47,1.67,,1
+2026-11-05,kups,gent,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,KuPS,UEFA Europa Conference League,1X2,18:45,Gent,22,29,49,49,1.70,,2
+2026-11-05,levski sofia,jagiellonia,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Levski Sofia,UEFA Europa League,1X2,18:45,Jagiellonia,42,31,27,42,2.00,,1
+2026-11-05,lillestrom,plzen,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Lillestrom,UEFA Europa League,1X2,18:45,Plzen,33,30,37,37,2.24,,2
+2026-11-05,lincoln red imps,hajduk split,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Lincoln Red Imps FC,UEFA Europa Conference League,1X2,18:45,HNK Hajduk Split,17,23,60,60,1.35,,2
+2026-11-05,lugano,kauno zalgiris,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,FC Lugano,UEFA Europa Conference League,1X2,21:00,Kauno Žalgiris,71,16,13,71,1.19,,1
+2026-11-05,machida zelvia,shanghai shenhua,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Machida Zelvia,AFC Champions League Two,1X2,11:00,Shanghai Shenhua,55,26,19,55,1.40,,1
+2026-11-05,midtjylland,ajax,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,FC Midtjylland,UEFA Europa Conference League,1X2,18:45,Ajax,33,31,36,36,2.45,,2
+2026-11-05,milan,ferencvarosi tc,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,AC Milan,UEFA Europa League,1X2,18:45,Ferencvarosi TC,57,22,21,57,1.32,,1
+2026-11-05,millonarios,america cali,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Millonarios,Colombia Primera A,1X2,02:30,America de Cali,39,32,29,39,1.84,,1
+2026-11-05,mjallby aif,borac banja luka,1X2|X,2026-11-04 03:06,2026-11-04 03:06,1,,Mjallby AIF,UEFA Europa Conference League,1X2,18:45,Borac Banja Luka,32,34,34,34,3.32,,X
+2026-11-05,monaco,nordsjaelland,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Monaco,UEFA Europa Conference League,1X2,21:00,FC Nordsjaelland,55,25,20,55,1.47,,1
+2026-11-05,nec nijmegen,omonia nicosia,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,NEC Nijmegen,UEFA Europa League,1X2,18:45,Omonia Nicosia,44,28,28,44,1.79,,1
+2026-11-05,olimpia,deportivo recoleta,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Olimpia,Paraguay Division Profesional - Clausura,1X2,01:15,Deportivo Recoleta,59,22,19,59,1.30,,1
+2026-11-05,palmeiras,remo,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Palmeiras,Brazil Serie A,1X2,23:30,Remo,67,19,14,67,1.24,,1
+2026-11-05,panathinaikos,cska sofia,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Panathinaikos,UEFA Europa Conference League,1X2,21:00,CSKA Sofia,54,27,19,54,1.60,,1
+2026-11-05,puntarenas,san carlos,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Puntarenas FC,Costa Rica Primera División,1X2,01:00,San Carlos,37,34,29,37,2.20,,1
+2026-11-05,qatar u23,al khor,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Qatar U23,Qatar Second Division,1X2,15:15,Al-Khor,30,31,39,39,2.33,,2
+2026-11-05,real sociedad,lyon,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Real Sociedad,UEFA Europa League,1X2,18:45,Lyon,45,29,26,45,1.82,,1
+2026-11-05,riga,jablonec,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Riga,UEFA Europa Conference League,1X2,21:00,FK Jablonec,41,33,26,41,2.34,,1
+2026-11-05,rubio nu,sportivo luqueno,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Rubio NU,Paraguay Division Profesional - Clausura,1X2,23:00,Sportivo Luqueno,45,32,23,45,1.98,,1
+2026-11-05,s bail,c bray l,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Səbail,Azerbaijan Birinci Dasta,1X2,12:00,Cəbrayıl,35,32,33,35,2.17,,1
+2026-11-05,sao paulo,corinthians,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Sao Paulo,Brazil Serie A,1X2,01:30,Corinthians,40,34,26,40,2.29,,1
+2026-11-05,shams azar qazvin,sanat naft,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Shams Azar Qazvin,Iran Persian Gulf Pro League,1X2,14:00,Sanat Naft,29,35,36,36,2.60,,2
+2026-11-05,sparta praha,bournemouth,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Sparta Praha,UEFA Europa League,1X2,18:45,Bournemouth,16,25,59,59,1.52,,2
+2026-11-05,st truiden,brann,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,St. Truiden,UEFA Europa Conference League,1X2,21:00,Brann,46,29,25,46,1.75,,1
+2026-11-05,sturm graz,celje,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Sturm Graz,UEFA Europa League,1X2,21:00,Celje,50,26,24,50,1.58,,1
+2026-11-05,sunderland,dinamo zagreb,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Sunderland,UEFA Europa League,1X2,21:00,Dinamo Zagreb,49,25,26,49,1.47,,1
+2026-11-05,svay rieng,tampines rovers,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Svay Rieng,AFC Champions League Two,1X2,13:15,Tampines Rovers,52,26,22,52,1.44,,1
+2026-11-05,sydney olympic,oakleigh cannons,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Sydney Olympic,Australia Australian Championship,1X2,09:30,Oakleigh Cannons,25,28,47,47,1.88,,2
+2026-11-05,tarancon,levante,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Tarancón,Spain Copa del Rey,1X2,19:00,Levante,23,15,62,62,1.17,,2
+2026-11-05,the strongest,always ready,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,The Strongest,Bolivia Copa de la División Profesional,1X2,01:30,Always Ready,38,30,32,38,1.95,,1
+2026-11-05,thun,heart of midlothian,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,FC Thun,UEFA Europa Conference League,1X2,18:45,Heart Of Midlothian,36,31,33,36,2.42,,1
+2026-11-05,torreense,ararat armenia,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Torreense,UEFA Europa League,1X2,21:00,Ararat-Armenia,39,29,32,39,1.76,,1
+2026-11-05,trabzonspor,freiburg,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Trabzonspor,UEFA Europa Conference League,1X2,18:45,SC Freiburg,40,31,29,40,2.54,,1
+2026-11-05,twente,pafos,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Twente,UEFA Europa Conference League,1X2,21:00,Pafos,67,21,12,67,1.33,,1
+2026-11-05,universidad chile,antofagasta,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Universidad de Chile,Chile Copa Chile,1X2,23:00,Antofagasta,51,25,24,51,1.37,,1
+2026-11-05,universitario,sport boys,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Universitario,Peru Primera División,1X2,02:30,Sport Boys,59,24,17,59,1.34,,1
+2026-11-05,universitatea craiova,egnatia rrogozhine,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Universitatea Craiova,UEFA Europa Conference League,1X2,21:00,Egnatia Rrogozhinë,53,27,20,53,1.54,,1
+2026-11-05,valenciennes,orleans,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Valenciennes,France Ligue 3,1X2,20:45,Orleans,40,34,26,40,2.11,,1
+2026-11-05,volga ulyanovsk,chertanovo moscow,1X2|1,2026-11-04 03:06,2026-11-04 03:06,1,,Volga Ulyanovsk,Russia Cup,1X2,17:30,Chertanovo Moscow,52,25,23,52,1.50,,1
+2026-11-05,zaqatala,moik,1X2|2,2026-11-04 03:06,2026-11-04 03:06,1,,Zaqatala,Azerbaijan Birinci Dasta,1X2,12:00,MOIK,7,23,70,70,1.30,,2

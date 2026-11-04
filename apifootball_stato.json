@@ -219,14 +219,11 @@
    "errore": "{\"plan\": \"Free plans do not have access to this date, try from 2026-11-02 to 2026-11-04.\"}"
   },
   "2026-11-02": {
-   "letta": "2026-11-03 09:05",
-   "chiusa": false,
-   "partite_api": 241,
-   "nostre": 613,
-   "riconosciute": 446,
-   "finite": 440
+   "letta": "2026-11-04 03:07",
+   "chiusa": true,
+   "errore": "{\"plan\": \"Free plans do not have access to this date, try from 2026-11-03 to 2026-11-05.\"}"
   }
  },
- "aggiornato": "2026-11-03 23:21",
+ "aggiornato": "2026-11-04 03:07",
  "nomi_annotati": "2026-11-04"
 }

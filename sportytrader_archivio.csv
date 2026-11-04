@@ -7410,7 +7410,7 @@ Data,Norm_Casa,Norm_Ospite,Chiave_Pron,Vista_Prima_Il,Vista_Ultima_Il,Rilevazion
 2026-11-03,bury,avro,B|1,2026-11-02 02:32,2026-11-03 09:05,8,si,Bury,Northern Premier League - Premier Division,20:45,Avro FC,0.49,1,,B
 2026-11-03,bury town,kettering town,B|1,2026-11-02 02:32,2026-11-03 09:05,8,si,Bury Town,"Southern Football League, Premier Division Central - Premier Division Central",20:45,Kettering Town,0.4,1,,B
 2026-11-03,cambridge united,brighton hove albion u21,B|1,2026-11-03 02:25,2026-11-03 09:05,5,si,Cambridge United,EFL Trophy - Southern Group G,20:00,Brighton & Hove Albion U21,0.53,1,,B
-2026-11-03,chapecoense,mirassol sp,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Chapecoense SC,Brasileirão,23:30,Mirassol FC SP,0.4,2,,B
+2026-11-03,chapecoense,mirassol sp,B|2,2026-11-02 02:32,2026-11-03 23:21,9,si,Chapecoense SC,Brasileirão,23:30,Mirassol FC SP,0.4,2,,B
 2026-11-03,charlton athletic,bolton,B|1,2026-11-02 02:32,2026-11-03 09:05,8,si,Charlton Athletic,Championship,20:45,Bolton,0.4,1,,B
 2026-11-03,charlton athletic,stockport county reserves,B|1,2026-11-03 02:25,2026-11-03 09:05,5,si,Charlton Athletic,Premier League Cup Under 23 - Gruppo I,20:00,Stockport County Reserves,0.63,1,,B
 2026-11-03,chippenham town,evesham united,B|2,2026-11-02 02:32,2026-11-03 09:05,8,si,Chippenham Town,"Southern League, Premier Division South - Premier Division South",20:45,Evesham United,0.44,2,,B
@@ -7548,513 +7548,825 @@ Data,Norm_Casa,Norm_Ospite,Chiave_Pron,Vista_Prima_Il,Vista_Ultima_Il,Rilevazion
 2026-11-03,xelaju,marquense,B|1,2026-11-02 02:32,2026-11-03 09:05,8,si,Xelaju,Liga Nacional - Apertura,22:00,Marquense,0.49,1,,B
 2026-11-03,yokohama,blaublitz akita,B|1,2026-11-02 02:32,2026-11-03 04:54,5,si,Yokohama FC,J. League 2,06:00,Blaublitz Akita,0.62,1,,B
 2026-11-03,zweigen kanazawa,nagano parceiro,B|1,2026-11-03 02:25,2026-11-03 04:54,2,si,Zweigen Kanazawa,J. League 3,06:00,AC Nagano Parceiro,0.55,1,,B
-2026-11-04,aberdeen lfc,spartans wfc,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Aberdeen Lfc,Scottish Women's PL - Women,20:45,Spartans Wfc,0.59,2,,B
-2026-11-04,aek atene,real madrid,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Aek Atene,Champions League - UEFA Champions League 24/25,18:45,Real Madrid,0.5,2,,B
-2026-11-04,al nassr,sur,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,AL Nassr,Omani League,14:05,Sur SC,0.61,1,,B
-2026-11-04,alianza lima,cienciano,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Alianza Lima,Liga 1 - Clausura,02:00,CS Cienciano,0.56,1,,B
-2026-11-04,amorebieta,logrones,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Amorebieta,Copa del Rey,20:00,UD Logrones,0.52,2,,B
-2026-11-04,atletico paranense,vasco da gama,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Atletico Paranense,Brasileirão,23:30,Vasco Da Gama,0.42,1,,B
-2026-11-04,atletico saguntino,espanol san vicente,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Atletico Saguntino,Tercera Federación - Gruppo 6,19:30,CD Espanol San Vicente,0.59,1,,B
-2026-11-04,aurora,independiente petrolero,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Club Aurora,"Copa Division Profesional, Playoffs - Playoffs",00:00,Independiente Petrolero,0.44,1,,B
+2026-11-04,aberdeen lfc,spartans wfc,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Aberdeen Lfc,Scottish Women's PL - Women,20:45,Spartans Wfc,0.53,2,,B
+2026-11-04,aek atene,real madrid,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Aek Atene,Champions League - UEFA Champions League 24/25,18:45,Real Madrid,0.52,2,,B
+2026-11-04,aek athens,real madrid,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,AEK Athens,UEFA Youth League - UEFA Youth League 24/25,11:00,Real Madrid,0.7,2,,B
+2026-11-04,aguilas b,ucam murcia ii,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Aguilas FC B,Tercera Federación - Gruppo 13,20:30,Ucam Murcia II,0.36,1,,B
+2026-11-04,al bidda,al mu aidar,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,AL BIDDA SC,Qatargas League,17:30,Al-Mu Aidar,0.38,1,,B
+2026-11-04,al hilal,rayon sports,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,AL Hilal,National Football League,17:30,Rayon Sports,0.56,1,,B
+2026-11-04,al kuwait kaifan,nasaf,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Al Kuwait Kaifan,"AFC Cup, Gruppo A - Gruppo A",17:00,FC Nasaf,0.41,1,,B
+2026-11-04,al masry,suez petrojet,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Al-Masry,"League Cup - League Cup 24/25, Knockout Stage - Gruppo D",19:00,Suez Petrojet,0.51,1,,B
+2026-11-04,al nassr,sur,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,AL Nassr,Omani League,14:05,Sur SC,0.74,1,,B
+2026-11-04,al rayyan,al nahda,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Al-Rayyan,"AFC Cup, Gruppo A - Gruppo C",17:00,Al-Nahda,0.64,1,,B
+2026-11-04,al shamal future,al mesaimeer,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,AL Shamal Future,Qatargas League,15:15,AL MESAIMEER,0.48,2,,B
+2026-11-04,al taawoun,al faisaly,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Al-Taawoun,"AFC Cup, Gruppo A - Gruppo C",19:15,AL Faisaly,0.53,1,,B
+2026-11-04,al wahda,al khalidiyah,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,AL Wahda,"AFC Cup, Gruppo A - Gruppo A",17:00,AL Khalidiyah,0.57,1,,B
+2026-11-04,alcantarilla,sfc minerva,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Alcantarilla FC,Tercera Federación - Gruppo 13,20:30,SFC Minerva,0.43,1,,B
+2026-11-04,aldosivi reserve,barracas central reserve,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,CA Aldosivi Reserve,"Campeonato De Reserva De Primera Division - Reserves - Premiera LPF, Reserves 2025, Clausura, Group A",19:00,CA BARRACAS CENTRAL RESERVE,0.42,1,,B
+2026-11-04,alianza lima,cienciano,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Alianza Lima,Liga 1 - Clausura,04:00,CS Cienciano,0.59,1,,B
+2026-11-04,amorebieta,logrones,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Amorebieta,Copa del Rey,20:00,UD Logrones,0.45,2,,B
+2026-11-04,arkadag,gol gohar sirjan,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Arkadag FK,"AFC Cup, Gruppo A - Gruppo B",14:45,Gol Gohar Sirjan FC,0.46,1,,B
+2026-11-04,atletico paranense,vasco da gama,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Atletico Paranense,Brasileirão,23:30,Vasco Da Gama,0.57,1,,B
+2026-11-04,atletico saguntino,espanol san vicente,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Atletico Saguntino,Tercera Federación - Gruppo 6,19:30,CD Espanol San Vicente,0.54,1,,B
+2026-11-04,aurora,independiente petrolero,B|1,2026-11-03 02:25,2026-11-03 23:21,6,si,Club Aurora,"Copa Division Profesional, Playoffs - Playoffs",00:00,Independiente Petrolero,0.44,1,,B
+2026-11-04,badajoz,tenerife,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,CD Badajoz,Copa del Rey,21:00,Tenerife,0.45,2,,B
 2026-11-04,badajoz,tenerife,B|X,2026-11-02 02:32,2026-11-03 23:21,9,,CD Badajoz,Copa del Rey,21:00,Tenerife,0.42,X,,B
-2026-11-04,be1 nfa,atmosfera,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Be1 Nfa,1 Lyga,16:30,FK Atmosfera,0.56,1,,B
-2026-11-04,borussia dortmund,betis,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Borussia Dortmund,Champions League - UEFA Champions League 24/25,21:00,Betis,0.49,1,,B
-2026-11-04,bristol city,wolverhampton,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Bristol City,Championship,21:00,Wolverhampton,0.52,2,,B
+2026-11-04,be1 nfa,atmosfera,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Be1 Nfa,1 Lyga,16:30,FK Atmosfera,0.48,1,,B
+2026-11-04,borussia dortmund,betis,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Borussia Dortmund,Champions League - UEFA Champions League 24/25,21:00,Betis,0.48,1,,B
+2026-11-04,borussia dortmund,real betis balompie,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Borussia Dortmund,UEFA Youth League - UEFA Youth League 24/25,16:00,Real Betis Balompie,0.4,2,,B
+2026-11-04,bristol city,wolverhampton,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Bristol City,Championship,21:00,Wolverhampton,0.37,2,,B
+2026-11-04,brno,teplice,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Brno,First Division Under 19,12:00,Teplice,0.54,1,,B
+2026-11-04,bugesera,amagaju,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Bugesera FC,National Football League,14:00,Amagaju,0.41,1,,B
+2026-11-04,bunol,hercules b,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,CD Bunol,Tercera Federación - Gruppo 6,20:00,Hercules CF B,0.43,1,,B
 2026-11-04,bunol,hercules b,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,CD Bunol,Tercera Federación - Gruppo 6,20:00,Hercules CF B,0.37,2,,B
 2026-11-04,buriram united,kashima antlers,B|1,2026-11-03 06:41,2026-11-03 23:21,4,,Buriram United,AFC Champions League - East,13:15,Kashima Antlers,0.35,1,,B
+2026-11-04,buriram united,kashima antlers,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Buriram United,AFC Champions League - East,13:15,Kashima Antlers,0.49,2,,B
 2026-11-04,calvo sotelo puertollano,albacete,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Calvo Sotelo Puertollano,Copa del Rey,20:45,Albacete,0.39,1,,B
-2026-11-04,cardiff,west ham united,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Cardiff,Championship,20:45,West Ham United,0.43,2,,B
-2026-11-04,courtrai,k v mechelen,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Courtrai,Jupiler Pro League,20:30,K.V. Mechelen,0.36,2,,B
-2026-11-04,defensor sporting,torque,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Defensor Sporting,Primera Division Reserve League - Reserve,14:00,Torque,0.41,1,,B
+2026-11-04,calvo sotelo puertollano,albacete,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Calvo Sotelo Puertollano,Copa del Rey,20:45,Albacete,0.41,2,,B
+2026-11-04,cardiff,west ham united,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Cardiff,Championship,20:45,West Ham United,0.48,2,,B
+2026-11-04,cff caceres,deportivo alaves,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,CFF Caceres,Copa de la Reina - Women,17:00,Deportivo Alaves,0.5,2,,B
+2026-11-04,chippa united,sekhukhune united,B|X,2026-11-04 03:06,2026-11-04 03:06,1,,Chippa United,Premier Soccer League,18:30,Sekhukhune United,0.36,X,,B
+2026-11-04,clermont foot,legia varsavia,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Clermont Foot,UEFA Youth League - Knockout stage,19:00,Legia Varsavia,0.49,1,,B
+2026-11-04,copenaghen,dinamo tbilisi,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Copenaghen,UEFA Youth League - Knockout stage,14:00,Dinamo Tbilisi,0.63,1,,B
+2026-11-04,cotillas,union molinense 2020,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Cotillas CD,Tercera Federación - Gruppo 13,21:00,Union Molinense CF 2020,0.45,2,,B
+2026-11-04,courtrai,k v mechelen,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Courtrai,Jupiler Pro League,20:30,K.V. Mechelen,0.39,2,,B
+2026-11-04,cukaricki,partizan belgrad,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,FC Cukaricki,U19 Serbian League,13:00,Partizan Belgrad,0.57,1,,B
+2026-11-04,d sofala league,ad vilankulo,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,D Sofala League,Mocambola,14:00,AD Vilankulo,0.51,2,,B
+2026-11-04,defensor sporting,torque,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Defensor Sporting,Primera Division Reserve League - Reserve,14:00,Torque,0.4,1,,B
 2026-11-04,deportiva minera,cartagena,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Club Deportiva Minera,Copa del Rey,20:30,Cartagena,0.42,1,,B
-2026-11-04,deportivo pasto,jaguares cordoba,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Deportivo Pasto,Liga Postobon - Finalizacion,00:20,Jaguares de Cordoba,0.48,1,,B
-2026-11-04,deportivo tachira,academia puerto cabello,B|X,2026-11-02 02:32,2026-11-03 23:21,9,,Deportivo Tachira,"Primera División - Clausura, Main Round, Group B",00:30,Academia Puerto Cabello,0.42,X,,B
-2026-11-04,do songo,ferroviario lichinga,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,UD Do Songo,Mocambola,14:00,FERROVIARIO DE LICHINGA,0.5,1,,B
-2026-11-04,espanyol b,naxara,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Espanyol B,Segunda Federación - GROUP II,18:00,Naxara,0.64,1,,B
+2026-11-04,deportiva minera,cartagena,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Club Deportiva Minera,Copa del Rey,20:30,Cartagena,0.54,2,,B
+2026-11-04,deportivo pasto,jaguares cordoba,B|1,2026-11-02 02:32,2026-11-03 23:21,9,si,Deportivo Pasto,Liga Postobon - Finalizacion,00:20,Jaguares de Cordoba,0.48,1,,B
+2026-11-04,deportivo riestra afbc reserve,quilmes reserve,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Deportivo Riestra Afbc Reserve,"Campeonato De Reserva De Primera Division - Reserves - Premiera LPF, Reserves 2025, Clausura, Group A",19:00,CA Quilmes Reserve,0.44,1,,B
+2026-11-04,deportivo tachira,academia puerto cabello,B|X,2026-11-02 02:32,2026-11-03 23:21,9,si,Deportivo Tachira,"Primera División - Clausura, Main Round, Group B",00:30,Academia Puerto Cabello,0.42,X,,B
+2026-11-04,do songo,ferroviario lichinga,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,UD Do Songo,Mocambola,14:00,FERROVIARIO DE LICHINGA,0.65,1,,B
+2026-11-04,east bengal,hwacheon kspo,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,East Bengal FC,"AFC Champions League, Women - AFC Champions League - Women - AFC Champions League 2024, Women, Group B",15:30,Hwacheon Kspo,0.86,2,,B
+2026-11-04,enugu rangers,bendel insurance,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Enugu Rangers,Premier League,16:00,Bendel Insurance Fc,0.61,1,,B
+2026-11-04,espanyol b,naxara,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Espanyol B,Segunda Federación - GROUP II,18:00,Naxara,0.73,1,,B
+2026-11-04,etihad al gharafa,umm salal,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Etihad AL Gharafa,Qatargas League,17:30,Umm-Salal,0.75,2,,B
+2026-11-04,etincelles,kiyovu sports,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Etincelles,National Football League,14:00,Kiyovu Sports,0.45,2,,B
+2026-11-04,etoile lest,musanze,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Etoile De Lest,National Football League,14:00,Musanze,0.39,2,,B
+2026-11-04,far rabat,raja casablanca,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,AS Far Rabat,Botola Pro,21:00,Raja Casablanca,0.42,1,,B
 2026-11-04,far rabat,raja casablanca,B|X,2026-11-02 02:32,2026-11-03 23:21,9,,AS Far Rabat,Botola Pro,21:00,Raja Casablanca,0.49,X,,B
-2026-11-04,fenerbahce,liverpool,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Fenerbahçe,Champions League - UEFA Champions League 24/25,18:45,Liverpool,0.52,2,,B
-2026-11-04,flamengo,gremio,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Flamengo,Brasileirão,23:30,Gremio,0.62,1,,B
+2026-11-04,fenerbahce,liverpool,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Fenerbahçe,Champions League - UEFA Champions League 24/25,18:45,Liverpool,0.4,1,,B
+2026-11-04,fenerbahce,liverpool,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,FENERBAHCE AS,UEFA Youth League - UEFA Youth League 24/25,12:00,Liverpool,0.59,2,,B
+2026-11-04,flamengo,gremio,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Flamengo,Brasileirão,23:30,Gremio,0.74,1,,B
+2026-11-04,flora tallinn,tartu welco elekter,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Flora Tallinn,Coppa,18:00,Tartu JK Welco Elekter,0.8,1,,B
+2026-11-04,ghazl el mahallah,al ittihad alexandria,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Ghazl El Mahallah,Coppa d'Egitto,16:00,Al Ittihad Alexandria Club,0.44,2,,B
+2026-11-04,gimnasia la plata reserve,gimnasia mendoza reserve,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Gimnasia De La Plata Reserve,"Campeonato De Reserva De Primera Division - Reserves - Premiera LPF, Reserves 2025, Clausura, Group A",19:00,Gimnasia De Mendoza Reserve,0.48,1,,B
+2026-11-04,gnk dinamo zagreb,qarabag,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Gnk Dinamo Zagreb,UEFA Youth League - Knockout stage,13:00,QARABAG FK,0.84,1,,B
+2026-11-04,gorilla,gicumbi,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,GORILLA FC,National Football League,14:00,Gicumbi,0.4,1,,B
 2026-11-04,hibernian,celtic,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Hibernian,Scottish Women's PL - Women,20:30,Celtic,0.47,1,,B
-2026-11-04,internacional,coritiba,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Internacional,Brasileirão,01:30,Coritiba,0.43,1,,B
-2026-11-04,j lease,tokyo musashino city,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,J-Lease FC,Japan Football League,05:00,Tokyo Musashino City FC,0.42,1,,B
-2026-11-04,kampala city council,maroons,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Kampala City Council,Uganda Premier League,14:00,MAROONS FC,0.52,1,,B
-2026-11-04,kataka,uganda revenue authority,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Kataka FC,Uganda Premier League,14:00,Uganda Revenue Authority,0.6,2,,B
+2026-11-04,hibernian,celtic,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Hibernian,Scottish Women's PL - Women,20:30,Celtic,0.53,2,,B
+2026-11-04,hyh export sebaco,indigenas matagalpa,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,HYH EXPORT SEBACO FC,Primera Division - Apertura,22:00,Indigenas De Matagalpa FC,0.44,1,,B
+2026-11-04,internacional,coritiba,B|1,2026-11-02 02:32,2026-11-03 23:21,9,si,Internacional,Brasileirão,01:30,Coritiba,0.43,1,,B
+2026-11-04,j lease,tokyo musashino city,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,J-Lease FC,Japan Football League,07:00,Tokyo Musashino City FC,0.44,1,,B
+2026-11-04,kaizer chiefs,amazulu,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Kaizer Chiefs,Premier Soccer League,18:30,Amazulu FC,0.38,1,,B
+2026-11-04,kampala city council,maroons,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Kampala City Council,Uganda Premier League,14:00,MAROONS FC,0.53,1,,B
+2026-11-04,kataka,uganda revenue authority,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Kataka FC,Uganda Premier League,14:00,Uganda Revenue Authority,0.43,2,,B
+2026-11-04,kf drita,prishtina,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,KF Drita,Superliga,13:00,FC Prishtina,0.45,1,,B
+2026-11-04,la calera,coquimbo unido,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,La Calera,Coppa Cile - Knockout stage,23:00,Coquimbo Unido,0.38,1,,B
 2026-11-04,la calera,coquimbo unido,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,La Calera,Coppa Cile - Knockout stage,23:00,Coquimbo Unido,0.37,2,,B
+2026-11-04,lamontville golden arrows,marumo gallants,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Lamontville Golden Arrows,Premier Soccer League,18:30,Marumo Gallants FC,0.51,1,,B
+2026-11-04,leiria,estoril praia,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,UD Leiria,Liga Revelação Under 23 - 1st Phase,16:00,Estoril Praia,0.39,2,,B
 2026-11-04,leiria,estoril praia,B|X,2026-11-02 02:32,2026-11-03 23:21,9,,UD Leiria,Liga Revelação Under 23 - 1st Phase,16:00,Estoril Praia,0.42,X,,B
+2026-11-04,lens,como,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Lens,Champions League - UEFA Champions League 24/25,21:00,Como,0.5,1,,B
 2026-11-04,lens,como,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Lens,Champions League - UEFA Champions League 24/25,21:00,Como,0.52,2,,B
+2026-11-04,levante d,eibar,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Levante D,Copa de la Reina - Women,17:00,SD Eibar,0.55,2,,B
+2026-11-04,libertad,cerro porteno,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Club Libertad,Primera Division - Clausura 2026,23:00,Cerro Porteno,0.36,2,,B
 2026-11-04,lipsia,manchester city,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Lipsia,Champions League - UEFA Champions League 24/25,21:00,Manchester City,0.51,1,,B
-2026-11-04,lisen brno,bohemians prague 1905,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,SK Lisen Brno,Chance Liga,18:00,Bohemians Prague 1905,0.35,2,,B
-2026-11-04,majevica lopare,sutjeska foca,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,FK Majevica Lopare,Prva Liga - Republic of Srpska,13:30,Sutjeska Foca,0.73,1,,B
+2026-11-04,lipsia,manchester city,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Lipsia,Champions League - UEFA Champions League 24/25,21:00,Manchester City,0.5,2,,B
+2026-11-04,lisen brno,bohemians prague 1905,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,SK Lisen Brno,Chance Liga,18:00,Bohemians Prague 1905,0.41,2,,B
+2026-11-04,majevica lopare,sutjeska foca,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,FK Majevica Lopare,Prva Liga - Republic of Srpska,13:30,Sutjeska Foca,0.8,1,,B
+2026-11-04,mazarron,los garres,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Mazarrón FC,Tercera Federación - Gruppo 13,18:00,Los Garres,0.53,1,,B
+2026-11-04,mc alger,oran,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,MC Alger,Ligue 1 Mobilis,20:00,Oran,0.57,1,,B
+2026-11-04,melbourne victory,persib bandung,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Melbourne Victory,"AFC Cup, Gruppo A - Gruppo E",10:45,Persib Bandung,0.5,1,,B
+2026-11-04,mendiola,dh cebu,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Mendiola FC,Philippines Football League,12:45,DH Cebu FC,0.74,2,,B
+2026-11-04,mfk dukla banska bystrica,trencin,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,MFk Dukla Banska Bystrica,Slovensky Pohar,17:00,Trencin,0.46,1,,B
+2026-11-04,mingechevir,sahdag qusar,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Mingechevir,I Divizion,12:00,Sahdag Qusar,0.85,2,,B
+2026-11-04,mladost lucani,imt,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Mladost Lucani,U19 Serbian League,13:00,FK IMT,0.46,2,,B
+2026-11-04,msk zilina,hjk helsinki,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,MSK ZILINA,UEFA Youth League - Knockout stage,16:30,HJK Helsinki,0.49,1,,B
+2026-11-04,muharraq,al jazira uae,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Muharraq,"AFC Cup, Gruppo A - Gruppo B",19:15,Al Jazira (UAE),0.57,2,,B
+2026-11-04,nasaf,beijing beikong,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,FC Nasaf,"AFC Champions League, Women - AFC Champions League - Women - AFC Champions League 2024, Women, Group C",15:30,Beijing Beikong,0.71,2,,B
+2026-11-04,olancho,lobos upnfm,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Olancho FC,Liga Nacional - Apertura,22:00,Lobos Upnfm,0.52,1,,B
 2026-11-04,olancho,lobos upnfm,B|X,2026-11-02 02:32,2026-11-03 23:21,9,,Olancho FC,Liga Nacional - Apertura,22:00,Lobos Upnfm,0.4,X,,B
-2026-11-04,ontinyent,utiel,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Ontinyent,Tercera Federación - Gruppo 6,19:45,CD Utiel,0.43,1,,B
+2026-11-04,olimpico totana,algar,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Olimpico Totana,Tercera Federación - Gruppo 13,20:00,CD Algar,0.76,1,,B
+2026-11-04,ontinyent,utiel,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Ontinyent,Tercera Federación - Gruppo 6,19:45,CD Utiel,0.44,1,,B
+2026-11-04,osaka,roasso kumamoto,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,FC OSAKA,J. League 3,08:00,Roasso Kumamoto,0.51,1,,B
 2026-11-04,osaka,roasso kumamoto,B|2,2026-11-03 09:05,2026-11-03 23:21,2,,FC OSAKA,J. League 3,06:00,Roasso Kumamoto,0.44,2,,B
+2026-11-04,osasuna,logrono united,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,CA OSASUNA,Copa de la Reina - Women,17:00,Logrono United,0.48,2,,B
+2026-11-04,oxford united,reading,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Oxford United,League One,20:45,Reading,0.51,1,,B
 2026-11-04,oxford united,reading,B|X,2026-11-02 02:32,2026-11-03 23:21,9,,Oxford United,League One,20:45,Reading,0.44,X,,B
+2026-11-04,pafos u19,benfica,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Pafos FC U19,UEFA Youth League - Knockout stage,13:00,Benfica,0.94,2,,B
+2026-11-04,paok thessaloniki,zrinjski mostar,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,PAOK Thessaloniki,UEFA Youth League - Knockout stage,14:30,Zrinjski Mostar,0.73,1,,B
+2026-11-04,persik kediri,persis solo,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Persik Kediri,"League Cup - League Cup 26/27, Group A - Gruppo H",13:00,PERSIS SOLO,0.69,1,,B
+2026-11-04,persikad depok,persiku kudus,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Persikad Depok,"League Cup - League Cup 26/27, Group A - Gruppo E",12:00,Persiku Kudus,0.77,1,,B
+2026-11-04,philippine army,azkals development team,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Philippine Army,Philippines Football League,10:00,Azkals Development Team,0.57,2,,B
+2026-11-04,pohang steelers,gamba osaka,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Pohang Steelers,AFC Champions League - East,11:00,Gamba Osaka,0.46,2,,B
 2026-11-04,pohang steelers,gamba osaka,B|X,2026-11-03 06:41,2026-11-03 23:21,4,,Pohang Steelers,AFC Champions League - East,11:00,Gamba Osaka,0.42,X,,B
-2026-11-04,porto,napoli,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,FC Porto,Champions League - UEFA Champions League 24/25,21:00,Napoli,0.58,1,,B
+2026-11-04,polokwane city,kruger united,B|X,2026-11-04 03:06,2026-11-04 03:06,1,,Polokwane City,Premier Soccer League,18:30,Kruger United,0.36,X,,B
+2026-11-04,porto,napoli,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,FC Porto,Champions League - UEFA Champions League 24/25,21:00,Napoli,0.59,1,,B
+2026-11-04,porto,ssc napoli u20,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Porto,UEFA Youth League - UEFA Youth League 24/25,13:00,SSC Napoli U20-,0.82,1,,B
+2026-11-04,portugalete,real union,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Club Portugalete,Copa del Rey,19:00,Real Unión,0.47,1,,B
 2026-11-04,portugalete,real union,B|X,2026-11-02 02:32,2026-11-03 23:21,9,,Club Portugalete,Copa del Rey,19:00,Real Unión,0.39,X,,B
+2026-11-04,portuguesa,deportivo la guaira,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Portuguesa,"Primera División - Clausura, Main Round, Group A",22:30,Deportivo La Guaira,0.37,2,,B
 2026-11-04,portuguesa,deportivo la guaira,B|X,2026-11-02 02:32,2026-11-03 23:21,9,,Portuguesa,"Primera División - Clausura, Main Round, Group A",22:30,Deportivo La Guaira,0.43,X,,B
+2026-11-04,psv eindhoven,bruges,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,PSV Eindhoven,Champions League - UEFA Champions League 24/25,21:00,Club Bruges,0.52,1,,B
 2026-11-04,psv eindhoven,bruges,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,PSV Eindhoven,Champions League - UEFA Champions League 24/25,21:00,Club Bruges,0.4,2,,B
-2026-11-04,rakow ll czestochowa,mks kluczbork,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,RAKOW LL CZESTOCHOWA,"III Liga, Gruppo 3 - Gruppo 3",11:30,MKS Kluczbork,0.45,1,,B
-2026-11-04,real cartagena,deportes quindio,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Real Cartagena,"Primera B - Clausura, Promotion, Group B",02:30,Deportes Quindio,0.4,2,,B
-2026-11-04,reus reddis,barakaldo,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Reus FC Reddis,Copa del Rey,20:30,FC Barakaldo,0.46,1,,B
-2026-11-04,roda,athletic torrellano,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,CD Roda,Tercera Federación - Gruppo 6,18:00,Athletic Torrellano,0.49,1,,B
-2026-11-04,royal francs borains,fcv dender eh,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Royal Francs Borains,Challenger Pro League,20:00,FCV Dender EH,0.47,2,,B
-2026-11-04,rsc anderlecht futures,lierse kempenzonen,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,RSC Anderlecht Futures,Challenger Pro League,20:00,Lierse Kempenzonen,0.43,2,,B
+2026-11-04,psv eindhoven,brugge,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,PSV Eindhoven,UEFA Youth League - UEFA Youth League 24/25,14:00,Club Brugge,0.52,2,,B
+2026-11-04,rakow ll czestochowa,mks kluczbork,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,RAKOW LL CZESTOCHOWA,"III Liga, Gruppo 3 - Gruppo 3",12:30,MKS Kluczbork,0.41,1,,B
+2026-11-04,rangers,dynamo kiev,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Rangers,UEFA Youth League - Knockout stage,20:00,FC Dynamo Kiev,0.51,1,,B
+2026-11-04,rb leipzig,manchester city,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,RB Leipzig,UEFA Youth League - UEFA Youth League 24/25,15:00,Manchester City FC,0.51,2,,B
+2026-11-04,rc lens,como 1907 u20,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,RC LENS,UEFA Youth League - UEFA Youth League 24/25,14:00,Como 1907 U20,0.46,1,,B
+2026-11-04,real cartagena,deportes quindio,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Real Cartagena,"Primera B - Clausura, Promotion, Group B",04:30,Deportes Quindio,0.5,1,,B
+2026-11-04,real cartagena,deportes quindio,B|2,2026-11-02 02:32,2026-11-03 23:21,9,si,Real Cartagena,"Primera B - Clausura, Promotion, Group B",02:30,Deportes Quindio,0.4,2,,B
+2026-11-04,red arrows,nkwazi,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Red Arrows,Zambia Super League - Gruppo B,14:00,Nkwazi,0.58,1,,B
+2026-11-04,reus reddis,barakaldo,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Reus FC Reddis,Copa del Rey,20:30,FC Barakaldo,0.52,1,,B
+2026-11-04,richards bay,stellenbosch,B|X,2026-11-04 03:06,2026-11-04 03:06,1,,Richards Bay Fc,Premier Soccer League,18:30,Stellenbosch FC,0.36,X,,B
+2026-11-04,roda,athletic torrellano,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,CD Roda,Tercera Federación - Gruppo 6,18:00,Athletic Torrellano,0.42,1,,B
+2026-11-04,royal francs borains,fcv dender eh,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Royal Francs Borains,Challenger Pro League,20:00,FCV Dender EH,0.4,2,,B
+2026-11-04,rsc anderlecht futures,lierse kempenzonen,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,RSC Anderlecht Futures,Challenger Pro League,20:00,Lierse Kempenzonen,0.39,2,,B
+2026-11-04,san carlos,boston river,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,CA San Carlos,Copa Uruguay - Knockout Stage,19:00,CA Boston River,0.68,2,,B
 2026-11-04,san carlos,boston river,B|X,2026-11-03 02:25,2026-11-03 23:21,6,,CA San Carlos,Copa Uruguay - Knockout Stage,19:00,CA Boston River,0.41,X,,B
-2026-11-04,slavia praga,arsenal,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Slavia Praga,Champions League - UEFA Champions League 24/25,21:00,Arsenal,0.48,2,,B
+2026-11-04,san martin san juan reserve,central cordoba,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,San Martin De San Juan Reserve,"Campeonato De Reserva De Primera Division - Reserves - Premiera LPF, Reserves 2025, Clausura, Group A",19:00,Central Cordoba,0.44,2,,B
+2026-11-04,septemvri sofia,acf fiorentina,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Septemvri Sofia,UEFA Youth League - Knockout stage,11:30,ACF Fiorentina,0.72,2,,B
+2026-11-04,seul,viettel,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Seul,"AFC Cup, Gruppo A - Gruppo E",11:00,Viettel,0.77,1,,B
+2026-11-04,sheriff tiraspol,farul constanta,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Sheriff Tiraspol,UEFA Youth League - Knockout stage,17:00,Farul Constanta,0.41,1,,B
+2026-11-04,siwelele,orlando pirates,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Siwelele FC,Premier Soccer League,18:30,Orlando Pirates FC,0.49,2,,B
+2026-11-04,slavia praga,arsenal fcpre,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Slavia Praga,UEFA Youth League - UEFA Youth League 24/25,14:00,Arsenal FCPre,0.54,1,,B
+2026-11-04,slavia praga,arsenal,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Slavia Praga,Champions League - UEFA Champions League 24/25,21:00,Arsenal,0.55,2,,B
 2026-11-04,sohar,bahla,B|X,2026-11-03 02:25,2026-11-03 23:21,6,,Sohar SC,Omani League,16:20,Bahla,0.44,X,,B
-2026-11-04,somaspor,sebat genclik spor,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Somaspor,2. Lig - Beyaz Grup,13:00,Sebat Genclik Spor,0.59,2,,B
-2026-11-04,sporting,perez zeledon,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Sporting FC,Liga Promerica - Apertura,02:00,Perez Zeledon,0.64,1,,B
+2026-11-04,somaspor,sebat genclik spor,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Somaspor,2. Lig - Beyaz Grup,13:00,Sebat Genclik Spor,0.7,2,,B
+2026-11-04,sparta praga b,viktoria plzen b,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Sparta Praga B,Lega Calcio Repubblica Ceca - Gruppo A,12:15,FC Viktoria Plzen B,0.48,1,,B
+2026-11-04,sporting,perez zeledon,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Sporting FC,Liga Promerica - Apertura,04:00,Perez Zeledon,0.48,1,,B
+2026-11-04,sportivo ameliano,guarani,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Sportivo Ameliano,Primera Division - Clausura 2026,23:00,Club Guarani,0.35,2,,B
+2026-11-04,stade rennes,olympiacos,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Stade Rennes FC,Europa League - UEFA Europa League,16:30,Olympiacos,0.68,1,,B
 2026-11-04,stade rennes,olympiacos,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Stade Rennes FC,Europa League - UEFA Europa League,16:30,Olympiacos,0.44,2,,B
+2026-11-04,stella rossa,bravo ljubljana,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Stella Rossa,UEFA Youth League - Knockout stage,14:00,NK Bravo Ljubljana,0.77,1,,B
+2026-11-04,super nova,hammarby,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,SK Super Nova,UEFA Youth League - Knockout stage,17:00,Hammarby IF,0.63,2,,B
+2026-11-04,szeged 2011,bvsc zuglo,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Szeged 2011,NB II,17:00,Bvsc-Zuglo,0.48,1,,B
 2026-11-04,szeged 2011,bvsc zuglo,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Szeged 2011,NB II,17:00,Bvsc-Zuglo,0.42,2,,B
+2026-11-04,tauras taurage,minija kretinga,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,FK Tauras Tauragė,1 Lyga,13:00,Minija Fc Kretinga,0.7,2,,B
+2026-11-04,tj slavoj boleraz,mfk skalica,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,TJ Slavoj Boleraz,Slovensky Pohar,13:00,MFK Skalica,0.82,2,,B
+2026-11-04,ts galaxy,durban city,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,TS Galaxy FC,Premier Soccer League,18:30,Durban City FC,0.37,1,,B
+2026-11-04,union santa fe,godoy cruz,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,CA UNION SANTA FE,"Campeonato De Reserva De Primera Division - Reserves - Premiera LPF, Reserves 2025, Clausura, Group A",19:00,CD Godoy Cruz,0.46,1,,B
+2026-11-04,utebo,sabadell,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Utebo,Copa del Rey,20:30,Sabadell,0.56,2,,B
 2026-11-04,utebo,sabadell,B|X,2026-11-02 02:32,2026-11-03 23:21,9,,Utebo,Copa del Rey,20:30,Sabadell,0.4,X,,B
-2026-11-04,vall uxo,torrent,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,UD Vall De Uxo,Tercera Federación - Gruppo 6,19:00,TORRENT CF,0.5,1,,B
-2026-11-04,viking,sabah masazir,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Viking FK,Champions League - UEFA Champions League 24/25,21:00,Sabah Masazir,0.57,1,,B
+2026-11-04,vall uxo,torrent,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,UD Vall De Uxo,Tercera Federación - Gruppo 6,19:00,TORRENT CF,0.36,1,,B
+2026-11-04,velez sarsfield,san lorenzo almagro res,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Velez Sarsfield,"Campeonato De Reserva De Primera Division - Reserves - Premiera LPF, Reserves 2025, Clausura, Group A",19:00,San Lorenzo De Almagro Res.,0.58,1,,B
+2026-11-04,viking,sabah masazir,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Viking FK,Champions League - UEFA Champions League 24/25,21:00,Sabah Masazir,0.68,1,,B
+2026-11-04,viking,sabah masazir u19,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Viking FK,UEFA Youth League - UEFA Youth League 24/25,13:00,Sabah Masazir U19,0.79,1,,B
+2026-11-04,wrexham,middlesbrough,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Wrexham FC,Championship,20:45,Middlesbrough,0.36,1,,B
 2026-11-04,wrexham,middlesbrough,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Wrexham FC,Championship,20:45,Middlesbrough,0.45,2,,B
+2026-11-04,zalgiris vilnius u19,st patricks athletic,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,FK Zalgiris Vilnius U19,UEFA Youth League - Knockout stage,18:00,St Patricks Athletic,0.47,1,,B
+2026-11-04,zanaco,muza,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Zanaco FC,Zambia Super League - Gruppo A,14:00,Fc Muza,0.44,1,,B
+2026-11-04,zed,talaea el gaish,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Zed FC,"League Cup - League Cup 24/25, Knockout Stage - Gruppo A",16:00,Talaea El Gaish,0.48,1,,B
+2026-11-04,zks kluczevia stargard,lech ii poznan,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Zks Kluczevia Stargard,"III Liga, Gruppo 2 - Gruppo 2",12:00,Lech II Poznan,0.46,1,,B
 2026-11-05,aarhus,sporting braga,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Aarhus,Europa Conference League,18:45,Sporting Braga,0.35,1,,B
-2026-11-05,abha,al shabab,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Abha Club,Saudi Pro League,16:10,Al Shabab,0.48,2,,B
-2026-11-05,afc chindia targoviste,acs gloria popesti leordeni,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,AFC Chindia Targoviste,Liga 2,16:00,ACS Gloria Popesti Leordeni,0.41,1,,B
-2026-11-05,al kahraba,zakho,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,AL Kahraba,Iraqi League,14:00,Zakho FC,0.38,2,,B
-2026-11-05,al khlood,al khaleej saihat,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,AL Khlood,Saudi Pro League,14:25,AL Khaleej Saihat FC,0.45,1,,B
+2026-11-05,aarhus,sporting braga,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Aarhus,Europa Conference League,18:45,Sporting Braga,0.58,2,,B
+2026-11-05,abha,al shabab,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Abha Club,Saudi Pro League,16:10,Al Shabab,0.47,2,,B
+2026-11-05,afc chindia targoviste,acs gloria popesti leordeni,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,AFC Chindia Targoviste,Liga 2,16:00,ACS Gloria Popesti Leordeni,0.61,1,,B
+2026-11-05,al kahraba,zakho,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,AL Kahraba,Iraqi League,14:00,Zakho FC,0.44,2,,B
+2026-11-05,al khlood,al khaleej saihat,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,AL Khlood,Saudi Pro League,14:25,AL Khaleej Saihat FC,0.42,1,,B
+2026-11-05,al mosul,dohuk,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,AL Mosul SC,Iraqi League,16:30,Dohuk,0.4,2,,B
 2026-11-05,al mosul,dohuk,B|X,2026-11-02 02:32,2026-11-03 23:21,9,,AL Mosul SC,Iraqi League,16:30,Dohuk,0.39,X,,B
-2026-11-05,al qadasiya,al faiha,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Al Qadasiya,Saudi Pro League,18:30,AL Faiha,0.54,1,,B
+2026-11-05,al qadasiya,al faiha,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Al Qadasiya,Saudi Pro League,18:30,AL Faiha,0.76,1,,B
+2026-11-05,alcoyano,maiorca,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Alcoyano,Copa del Rey,21:00,Maiorca,0.6,2,,B
 2026-11-05,alcoyano,maiorca,B|X,2026-11-03 02:25,2026-11-03 23:21,6,,Alcoyano,Copa del Rey,21:00,Maiorca,0.46,X,,B
+2026-11-05,aldosivi,river plate,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Aldosivi,"Liga Profesional Argentina - Clausura, Group A",19:00,River Plate,0.48,2,,B
 2026-11-05,anderlecht,salisburgo,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Anderlecht,Europa League - UEFA Europa League,18:45,Salisburgo,0.37,1,,B
-2026-11-05,atalanta,kairat almaty,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Atalanta,Europa Conference League,18:45,Kairat Almaty,0.54,1,,B
-2026-11-05,atk mohun bagan,odisha,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,ATK Mohun Bagan,Indian Super League,15:00,Odisha FC,0.58,1,,B
-2026-11-05,az alkmaar,juventus,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,AZ Alkmaar,Europa League - UEFA Europa League,21:00,Juventus,0.43,1,,B
-2026-11-05,bayer leverkusen,marsiglia,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Bayer Leverkusen,Europa League - UEFA Europa League,21:00,Marsiglia,0.71,1,,B
-2026-11-05,benfica,lech poznan,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Benfica,Europa League - UEFA Europa League,21:00,Lech Poznan,0.75,1,,B
-2026-11-05,botafogo,atletico mg,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Botafogo,Brasileirão,01:30,Atletico MG,0.5,1,,B
-2026-11-05,botafogo,londrina,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Botafogo,Brasileirão Série B,23:30,Londrina,0.47,1,,B
+2026-11-05,anderlecht,salisburgo,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Anderlecht,Europa League - UEFA Europa League,18:45,Salisburgo,0.37,2,,B
+2026-11-05,atalanta,kairat almaty,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Atalanta,Europa Conference League,18:45,Kairat Almaty,0.78,1,,B
+2026-11-05,atk mohun bagan,odisha,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,ATK Mohun Bagan,Indian Super League,15:00,Odisha FC,0.71,1,,B
+2026-11-05,az alkmaar,juventus,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,AZ Alkmaar,Europa League - UEFA Europa League,21:00,Juventus,0.59,1,,B
+2026-11-05,baku,khankendi,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Baku SC,I Divizion,12:00,Khankendi FK,0.39,1,,B
+2026-11-05,bangkok glass,tai po,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Bangkok Glass,"AFC Cup, Gruppo A - Gruppo F",13:15,Tai Po,0.64,1,,B
+2026-11-05,bayer leverkusen,marsiglia,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Bayer Leverkusen,Europa League - UEFA Europa League,21:00,Marsiglia,0.62,1,,B
+2026-11-05,benfica,lech poznan,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Benfica,Europa League - UEFA Europa League,21:00,Lech Poznan,0.68,1,,B
+2026-11-05,botafogo,atletico mg,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Botafogo,Brasileirão,01:30,Atletico MG,0.43,1,,B
+2026-11-05,botafogo,londrina,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Botafogo,Brasileirão Série B,23:30,Londrina,0.45,1,,B
+2026-11-05,celta vigo,union saint gilloise,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Celta Vigo,Europa League - UEFA Europa League,21:00,Union Saint Gilloise,0.38,1,,B
 2026-11-05,celta vigo,union saint gilloise,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Celta Vigo,Europa League - UEFA Europa League,21:00,Union Saint Gilloise,0.53,2,,B
+2026-11-05,celtic,besiktas,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Celtic,Europa League - UEFA Europa League,21:00,Besiktas,0.4,1,,B
 2026-11-05,celtic,besiktas,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Celtic,Europa League - UEFA Europa League,21:00,Besiktas,0.45,2,,B
-2026-11-05,copenaghen,iberia 1999,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,FC Copenaghen,Europa Conference League,21:00,FC Iberia 1999,0.55,1,,B
-2026-11-05,crystal palace,hoffenheim,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Crystal Palace,Europa League - UEFA Europa League,18:45,Hoffenheim,0.53,1,,B
-2026-11-05,cucuta deportivo,santa fe,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Cucuta Deportivo,Liga Postobon - Finalizacion,00:30,Santa Fe,0.45,2,,B
-2026-11-05,diyala,al minaa,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Diyala FC,Iraqi League,14:45,AL Minaa,0.37,1,,B
-2026-11-05,escorpiones belen,alajuelense,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,CD Escorpiones Belen,Liga Promerica - Apertura,03:00,Alajuelense,0.58,2,,B
+2026-11-05,churchill brothers,northeast united,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Churchill Brothers,Indian Super League,12:30,Northeast United,0.47,2,,B
+2026-11-05,copenaghen,iberia 1999,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,FC Copenaghen,Europa Conference League,21:00,FC Iberia 1999,0.71,1,,B
+2026-11-05,crystal palace,hoffenheim,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Crystal Palace,Europa League - UEFA Europa League,18:45,Hoffenheim,0.53,1,,B
+2026-11-05,cucuta deportivo,santa fe,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Cucuta Deportivo,Liga Postobon - Finalizacion,00:30,Santa Fe,0.38,2,,B
+2026-11-05,dhofar,saham,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Dhofar,Omani League,16:20,Saham,0.38,1,,B
+2026-11-05,diyala,al minaa,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Diyala FC,Iraqi League,14:45,AL Minaa,0.36,1,,B
+2026-11-05,escorpiones belen,alajuelense,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,CD Escorpiones Belen,Liga Promerica - Apertura,03:00,Alajuelense,0.52,2,,B
 2026-11-05,estrella roja,motagua,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,CD Estrella Roja,Liga Nacional - Apertura,00:15,FC Motagua,0.38,1,,B
-2026-11-05,express,bukedea town council,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,EXPRESS FC,Uganda Premier League,17:00,BUKEDEA TOWN COUNCIL FC,0.42,1,,B
-2026-11-05,ferro carril,nacional football,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Ferro Carril FC,Copa Uruguay - Knockout Stage,01:00,Club Nacional De Football,0.55,2,,B
-2026-11-05,getafe,brighton,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Getafe,Europa Conference League,21:00,Brighton,0.43,2,,B
-2026-11-05,hapoel beer sheva,ofi creta,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Hapoel Beer Sheva,Europa League - UEFA Europa League,21:00,OFI Creta,0.55,1,,B
+2026-11-05,estrella roja,motagua,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,CD Estrella Roja,Liga Nacional - Apertura,00:15,FC Motagua,0.55,2,,B
+2026-11-05,express,bukedea town council,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,EXPRESS FC,Uganda Premier League,17:00,BUKEDEA TOWN COUNCIL FC,0.49,1,,B
+2026-11-05,fanja,al msnaa,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Fanja,Omani League,13:45,AL Msnaa,0.54,1,,B
+2026-11-05,ferro carril,nacional football,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,Ferro Carril FC,Copa Uruguay - Knockout Stage,01:00,Club Nacional De Football,0.78,2,,B
+2026-11-05,getafe,brighton,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Getafe,Europa Conference League,21:00,Brighton,0.56,2,,B
+2026-11-05,gimnasia,belgrano,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Gimnasia,"Liga Profesional Argentina - Clausura, Group A",23:15,Belgrano,0.34,2,,B
+2026-11-05,gladiador,liverpool montevideo,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Gladiador FC,Copa Uruguay - Knockout Stage,22:00,Liverpool Montevideo,0.78,2,,B
+2026-11-05,hapoel beer sheva,ofi creta,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Hapoel Beer Sheva,Europa League - UEFA Europa League,21:00,OFI Creta,0.42,1,,B
+2026-11-05,hay al amir hassan,al sareeh,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Hay AL Amir Hassan,Jordan 1st Division,14:00,AL Sareeh,0.4,2,,B
 2026-11-05,hay al amir hassan,al sareeh,B|X,2026-11-03 02:25,2026-11-03 23:21,6,,Hay AL Amir Hassan,Jordan 1st Division,16:00,AL Sareeh,0.47,X,,B
+2026-11-05,ittihad al ramtha,maan,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Ittihad AL Ramtha,Jordan 1st Division,16:00,FC Maan,0.53,1,,B
 2026-11-05,ittihad al ramtha,maan,B|X,2026-11-03 02:25,2026-11-03 23:21,6,,Ittihad AL Ramtha,Jordan 1st Division,16:00,FC Maan,0.47,X,,B
-2026-11-05,kups,gent,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,KUPS,Europa Conference League,18:45,Gent,0.44,2,,B
-2026-11-05,levski sofia,jagiellonia bialystok,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Levski Sofia,Europa League - UEFA Europa League,18:45,Jagiellonia Bialystok,0.55,1,,B
-2026-11-05,lillestrom,viktoria plzen,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Lillestrom,Europa League - UEFA Europa League,18:45,Viktoria Plzen,0.43,1,,B
+2026-11-05,karvan yevlakh,simal,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Karvan Yevlakh,I Divizion,12:00,Simal,0.57,1,,B
+2026-11-05,kitchee,phnom penh crown,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Kitchee,"AFC Cup, Gruppo A - Gruppo H",11:00,Phnom Penh Crown,0.38,1,,B
+2026-11-05,kups,gent,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,KUPS,Europa Conference League,18:45,Gent,0.51,2,,B
+2026-11-05,ldu quito,universidad catolica del ecuador,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,LDU Quito,Copa Ecuador,01:00,Universidad Catolica Del Ecuador,0.56,1,,B
+2026-11-05,levski sofia,jagiellonia bialystok,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Levski Sofia,Europa League - UEFA Europa League,18:45,Jagiellonia Bialystok,0.48,1,,B
+2026-11-05,lillestrom,viktoria plzen,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Lillestrom,Europa League - UEFA Europa League,18:45,Viktoria Plzen,0.49,1,,B
+2026-11-05,lincoln red imps,hajduk spalato,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Lincoln Red Imps,Europa Conference League,18:45,Hajduk Spalato,0.39,1,,B
 2026-11-05,lincoln red imps,hajduk spalato,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Lincoln Red Imps,Europa Conference League,18:45,Hajduk Spalato,0.57,2,,B
-2026-11-05,lugano,zalgiris kaunas,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Lugano,Europa Conference League,21:00,FK Zalgiris Kaunas,0.59,1,,B
+2026-11-05,lion city sailors,adelaide united,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Lion City Sailors FC,"AFC Cup, Gruppo A - Gruppo F",11:00,Adelaide United,0.51,1,,B
+2026-11-05,lito,wanderers,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,CA Lito,Copa Uruguay - Knockout Stage,20:00,Wanderers,0.55,2,,B
+2026-11-05,lugano,zalgiris kaunas,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Lugano,Europa Conference League,21:00,FK Zalgiris Kaunas,0.71,1,,B
+2026-11-05,luis angel firpo,alianza san salvador,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,CD Luis Angel Firpo,Primera Division - Apertura,02:00,Alianza FC San Salvador,0.5,1,,B
+2026-11-05,machida zelvia,shanghai shenhua,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Machida Zelvia,"AFC Cup, Gruppo A - Gruppo G",11:00,Shanghai Shenhua,0.64,1,,B
+2026-11-05,marines gisenyi,police rwanda,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,MARINES FC GISENYI,National Football League,14:00,Police FC Rwanda,0.42,1,,B
+2026-11-05,metropolitanos,carabobo,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Metropolitanos FC,"Primera División - Clausura, Main Round, Group A",00:30,Carabobo,0.47,2,,B
 2026-11-05,metropolitanos,carabobo,B|X,2026-11-02 02:32,2026-11-03 23:21,9,,Metropolitanos FC,"Primera División - Clausura, Main Round, Group A",00:30,Carabobo,0.36,X,,B
+2026-11-05,midtjylland,ajax,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,FC Midtjylland,Europa Conference League,18:45,Ajax,0.5,1,,B
 2026-11-05,midtjylland,ajax,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,FC Midtjylland,Europa Conference League,18:45,Ajax,0.52,2,,B
+2026-11-05,milan,ferencvaros,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Milan,Europa League - UEFA Europa League,18:45,Ferencváros,0.6,1,,B
 2026-11-05,milan,ferencvaros,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Milan,Europa League - UEFA Europa League,18:45,Ferencváros,0.43,2,,B
+2026-11-05,millonarios,america cali,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Millonarios,Liga Postobon - Finalizacion,02:30,America De Cali,0.38,1,,B
 2026-11-05,millonarios,america cali,B|X,2026-11-02 02:32,2026-11-03 23:21,9,,Millonarios,Liga Postobon - Finalizacion,02:30,America De Cali,0.5,X,,B
-2026-11-05,mjallby,borac banja luka,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Mjallby,Europa Conference League,18:45,FK Borac Banja Luka,0.53,2,,B
-2026-11-05,monaco,nordsjaelland,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Monaco,Europa Conference League,21:00,Nordsjaelland,0.46,1,,B
+2026-11-05,mjallby,borac banja luka,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Mjallby,Europa Conference League,18:45,FK Borac Banja Luka,0.38,2,,B
+2026-11-05,monaco,nordsjaelland,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Monaco,Europa Conference League,21:00,Nordsjaelland,0.62,1,,B
+2026-11-05,municipal limeno,fuerte san francisco morazan,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Municipal Limeno,Primera Division - Apertura,02:00,CD FUERTE SAN FRANCISCO MORAZAN,0.59,1,,B
+2026-11-05,national bank of egypt,port fouad,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,National Bank Of Egypt SC,Coppa d'Egitto,16:00,Port Fouad SC,0.74,1,,B
+2026-11-05,nec nimega,omonia nicosia,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,NEC Nimega,Europa League - UEFA Europa League,18:45,Omonia Nicosia,0.42,1,,B
 2026-11-05,nec nimega,omonia nicosia,B|X,2026-11-02 02:32,2026-11-03 23:21,9,,NEC Nimega,Europa League - UEFA Europa League,18:45,Omonia Nicosia,0.42,X,,B
-2026-11-05,palmeiras,remo pa,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Palmeiras,Brasileirão,23:30,Remo PA,0.59,1,,B
-2026-11-05,panathinaikos,cska sofia,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Panathinaikos,Europa Conference League,21:00,CSKA Sofia,0.53,1,,B
-2026-11-05,policia nacional,real espana,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,FC Policia Nacional,Liga Nacional - Apertura,22:00,Real España,0.5,2,,B
+2026-11-05,olimpia,recoleta,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Club Olimpia,Primera Division - Clausura 2026,01:15,CD Recoleta,0.63,1,,B
+2026-11-05,olimpia,juticalpa,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Olimpia,Liga Nacional - Apertura,02:30,JUTICALPA FC,0.83,1,,B
+2026-11-05,palmeiras,remo pa,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Palmeiras,Brasileirão,23:30,Remo PA,0.7,1,,B
+2026-11-05,panathinaikos,cska sofia,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Panathinaikos,Europa Conference League,21:00,CSKA Sofia,0.64,1,,B
+2026-11-05,policia nacional,real espana,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,FC Policia Nacional,Liga Nacional - Apertura,22:00,Real España,0.44,2,,B
+2026-11-05,puntarenas,ad san carlos,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Puntarenas FC,Liga Promerica - Apertura,01:00,AD San Carlos,0.4,1,,B
 2026-11-05,puntarenas,ad san carlos,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Puntarenas FC,Liga Promerica - Apertura,01:00,AD San Carlos,0.4,2,,B
-2026-11-05,real sociedad,lione,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Real Sociedad,Europa League - UEFA Europa League,18:45,Lione,0.43,1,,B
-2026-11-05,riga,jablonec,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Riga,Europa Conference League,21:00,FK Jablonec,0.42,1,,B
-2026-11-05,sao paulo,corinthians,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,São Paulo FC,Brasileirão,01:30,Corinthians,0.59,1,,B
+2026-11-05,real sociedad,lione,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Real Sociedad,Europa League - UEFA Europa League,18:45,Lione,0.44,1,,B
+2026-11-05,riga,jablonec,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Riga,Europa Conference League,21:00,FK Jablonec,0.53,1,,B
+2026-11-05,rubio nu,sportivo luqueno,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Rubio NU,Primera Division - Clausura 2026,23:00,Sportivo Luqueno,0.39,1,,B
+2026-11-05,sabail,ganjabasar,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Sabail FK,I Divizion,12:00,Ganjabasar FK,0.46,1,,B
+2026-11-05,sao paulo,corinthians,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,São Paulo FC,Brasileirão,01:30,Corinthians,0.5,1,,B
+2026-11-05,satsaid,banfield,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,SATSAID,"Prima Divisione, Femminile - Women - Primera Division A, Women 2024, Clausura",14:00,CA Banfield,0.4,1,,B
 2026-11-05,satsaid,banfield,B|X,2026-11-02 02:32,2026-11-03 23:21,9,,SATSAID,"Prima Divisione, Femminile - Women - Primera Division A, Women 2024, Clausura",14:00,CA Banfield,0.42,X,,B
+2026-11-05,sohar,bahla,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Sohar SC,Omani League,13:45,Bahla,0.37,2,,B
 2026-11-05,sparta praga,afc bournemouth,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Sparta Praga,Europa League - UEFA Europa League,18:45,AFC Bournemouth,0.42,1,,B
-2026-11-05,st truiden,brann,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,St. Truiden,Europa Conference League,21:00,Brann,0.49,1,,B
-2026-11-05,stella rossa belgrado,inter escaldes,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Stella Rossa Belgrado,Europa Conference League,18:45,Inter Escaldes,0.66,1,,B
-2026-11-05,sturm graz,celje,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,SK Sturm Graz,Europa League - UEFA Europa League,21:00,NK Celje,0.43,1,,B
-2026-11-05,sunderland,dinamo zagabria,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Sunderland,Europa League - UEFA Europa League,21:00,Dinamo Zagabria,0.44,1,,B
+2026-11-05,sparta praga,afc bournemouth,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Sparta Praga,Europa League - UEFA Europa League,18:45,AFC Bournemouth,0.59,2,,B
+2026-11-05,st truiden,brann,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,St. Truiden,Europa Conference League,21:00,Brann,0.41,1,,B
+2026-11-05,stella rossa belgrado,inter escaldes,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Stella Rossa Belgrado,Europa Conference League,18:45,Inter Escaldes,0.63,1,,B
+2026-11-05,sturm graz,celje,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,SK Sturm Graz,Europa League - UEFA Europa League,21:00,NK Celje,0.58,1,,B
+2026-11-05,sunderland,dinamo zagabria,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Sunderland,Europa League - UEFA Europa League,21:00,Dinamo Zagabria,0.72,1,,B
+2026-11-05,sunrise,al merrikh omdurman,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Sunrise,National Football League,14:00,Al-Merrikh SC (Omdurman),0.57,2,,B
+2026-11-05,svay rieng,tampines rovers,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Svay Rieng,"AFC Cup, Gruppo A - Gruppo G",13:15,Tampines Rovers,0.63,1,,B
+2026-11-05,sydney olympic,oakleigh cannons,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Sydney Olympic,NPL Victoria - Gruppo C,09:30,Oakleigh Cannons,0.52,2,,B
 2026-11-05,tarancon,levante,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,CD TARANCÓN,Copa del Rey,19:00,Levante,0.38,1,,B
-2026-11-05,thun,heart of midlothian,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Thun,Europa Conference League,18:45,Heart Of Midlothian FC,0.43,2,,B
+2026-11-05,tarancon,levante,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,CD TARANCÓN,Copa del Rey,19:00,Levante,0.7,2,,B
+2026-11-05,thun,heart of midlothian,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Thun,Europa Conference League,18:45,Heart Of Midlothian FC,0.43,2,,B
+2026-11-05,torreense,ararat armenia,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Torreense,Europa League - UEFA Europa League,21:00,FC Ararat-Armenia,0.43,1,,B
 2026-11-05,torreense,ararat armenia,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Torreense,Europa League - UEFA Europa League,21:00,FC Ararat-Armenia,0.45,2,,B
 2026-11-05,trabzonspor,friburgo,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Trabzonspor,Europa Conference League,18:45,Friburgo,0.6,1,,B
-2026-11-05,twente,pafos,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Twente,Europa Conference League,21:00,Pafos FC,0.57,1,,B
-2026-11-05,u chile,antofagasta,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,U. De Chile,Coppa Cile - Knockout stage,23:00,Antofagasta,0.41,1,,B
-2026-11-05,union santa fe,talleres cordoba,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Union De Santa Fe,"Prima Divisione, Femminile - Women - Primera Division A, Women 2024, Clausura",19:30,CA Talleres De Cordoba,0.47,2,,B
-2026-11-05,universitario,sport boys association,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Universitario,Liga 1 - Clausura,02:30,Sport Boys Association,0.59,1,,B
-2026-11-05,universitatea craiova,egnatia,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Universitatea Craiova,Europa Conference League,21:00,Egnatia,0.57,1,,B
+2026-11-05,trabzonspor,friburgo,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Trabzonspor,Europa Conference League,18:45,Friburgo,0.55,2,,B
+2026-11-05,twente,pafos,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Twente,Europa Conference League,21:00,Pafos FC,0.71,1,,B
+2026-11-05,u chile,antofagasta,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,U. De Chile,Coppa Cile - Knockout stage,23:00,Antofagasta,0.73,1,,B
+2026-11-05,union santa fe,talleres cordoba,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Union De Santa Fe,"Prima Divisione, Femminile - Women - Primera Division A, Women 2024, Clausura",19:30,CA Talleres De Cordoba,0.64,2,,B
+2026-11-05,universitario,sport boys association,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Universitario,Liga 1 - Clausura,02:30,Sport Boys Association,0.59,1,,B
+2026-11-05,universitatea craiova,egnatia,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Universitatea Craiova,Europa Conference League,21:00,Egnatia,0.63,1,,B
+2026-11-05,valenciennes,orleans,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Valenciennes,National,20:45,Orléans,0.43,1,,B
 2026-11-05,valenciennes,orleans,B|X,2026-11-02 02:32,2026-11-03 23:21,9,,Valenciennes,National,20:45,Orléans,0.35,X,,B
-2026-11-06,aarau,wil,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Aarau,Challenge League,20:15,Wil,0.38,1,,B
+2026-11-05,vipers,lugazi municipal,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,VIPERS,Uganda Premier League,18:00,Lugazi Municipal FC,0.75,1,,B
+2026-11-05,zaqatala,moik baku,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Zaqatala FK,I Divizion,12:00,Moik Baku,0.71,2,,B
+2026-11-06,aarau,wil,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Aarau,Challenge League,20:15,Wil,0.55,1,,B
 2026-11-06,aarau,wil,B|X,2026-11-02 02:32,2026-11-03 00:54,3,,Aarau,Challenge League,20:15,Wil,0.34,X,,B
-2026-11-06,ab gladsaxe,vendsyssel,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,AB Gladsaxe,1. Division,19:00,Vendsyssel FF,0.52,1,,B
+2026-11-06,ab gladsaxe,vendsyssel,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,AB Gladsaxe,1. Division,19:00,Vendsyssel FF,0.44,1,,B
 2026-11-06,adelaide united d,wellington phoenix,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Adelaide United D,W-League - Women,09:00,Wellington Phoenix,0.46,1,,B
+2026-11-06,adelaide united d,wellington phoenix,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Adelaide United D,W-League - Women,09:00,Wellington Phoenix,0.45,2,,B
 2026-11-06,admira wacker,skn st polten,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Admira Wacker,2. Liga,20:30,SKN St. Pölten,0.43,1,,B
+2026-11-06,admira wacker,skn st polten,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Admira Wacker,2. Liga,20:30,SKN St. Pölten,0.44,2,,B
+2026-11-06,aek larnaca,karmiotissa,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,AEK Larnaca,Cyta Championship,18:00,Karmiotissa FC,0.73,1,,B
+2026-11-06,al aqaba,jerash,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,AL AQABA,Jordan 1st Division,16:00,Jerash,0.69,2,,B
+2026-11-06,al arabi,al ahli,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Al-Arabi,Stars League,15:15,Al-Ahli,0.53,1,,B
 2026-11-06,al arabi,al ahli,B|X,2026-11-03 02:25,2026-11-03 23:21,6,,Al-Arabi,Stars League,15:15,Al-Ahli,0.41,X,,B
-2026-11-06,al fateh,al riyadh,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Al-Fateh SC,Saudi Pro League,15:30,AL Riyadh,0.46,2,,B
-2026-11-06,al hazem,al nasr,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,AL Hazem FC,Saudi Pro League,15:55,Al Nasr,0.59,2,,B
-2026-11-06,al ittihad jeddah,neom,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Al-Ittihad Jeddah,Saudi Pro League,18:30,Neom SC,0.49,1,,B
-2026-11-06,al karma,al naft maysan,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,AL Karma,Iraqi League,16:30,AL Naft Maysan,0.67,1,,B
-2026-11-06,al wakrah,al shahania,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,AL Wakrah,Stars League,17:30,Al Shahania,0.51,1,,B
+2026-11-06,al baqaa,al wehdat,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Al-Baqaa,Jordanian Pro League,17:30,AL Wehdat,0.65,2,,B
+2026-11-06,al fahaheel,al salibikhaet,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Al-Fahaheel SC,Kuwait League,15:25,Al-Salibikhaet,0.61,1,,B
+2026-11-06,al fateh,al riyadh,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Al-Fateh SC,Saudi Pro League,15:30,AL Riyadh,0.36,2,,B
+2026-11-06,al hazem,al nasr,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,AL Hazem FC,Saudi Pro League,15:55,Al Nasr,0.62,2,,B
+2026-11-06,al ittihad jeddah,neom,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Al-Ittihad Jeddah,Saudi Pro League,18:30,Neom SC,0.44,1,,B
+2026-11-06,al jazeera amman,ramtha,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,AL Jazeera Club Amman,Jordanian Pro League,15:00,Ramtha,0.37,2,,B
+2026-11-06,al karma,al naft maysan,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,AL Karma,Iraqi League,16:30,AL Naft Maysan,0.69,1,,B
+2026-11-06,al sarhan,sahl horan,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,AL Sarhan,Jordan 1st Division,13:00,Sahl Horan SC,0.41,1,,B
+2026-11-06,al wakrah,al shahania,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,AL Wakrah,Stars League,17:30,Al Shahania,0.56,1,,B
+2026-11-06,al yarmouk,al ahli jordan,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Al-Yarmouk,Jordan 1st Division,16:00,AL Ahli Jordan,0.4,1,,B
+2026-11-06,al zlfe,jeddah,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Al-Zlfe,Prima Divisione,15:55,Jeddah Club,0.58,1,,B
 2026-11-06,al zlfe,jeddah,B|X,2026-11-02 02:32,2026-11-03 23:21,9,,Al-Zlfe,Prima Divisione,15:55,Jeddah Club,0.38,X,,B
+2026-11-06,amburgo,borussia monchengladbach,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Amburgo,Bundesliga,20:30,Borussia Mönchengladbach,0.37,1,,B
 2026-11-06,amburgo,borussia monchengladbach,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Amburgo,Bundesliga,20:30,Borussia Mönchengladbach,0.42,2,,B
-2026-11-06,ammanford,briton ferry,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Ammanford,Cymru Premier,20:45,Briton Ferry,0.52,2,,B
+2026-11-06,ammanford,briton ferry,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Ammanford,Cymru Premier,20:45,Briton Ferry,0.54,2,,B
+2026-11-06,antalyaspor,bursaspor,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Antalyaspor,1. Lig,18:00,Bursaspor,0.45,1,,B
 2026-11-06,antalyaspor,bursaspor,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Antalyaspor,1. Lig,18:00,Bursaspor,0.63,2,,B
+2026-11-06,ascoli calcio 1898,palermo,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Ascoli Calcio 1898 FC,Serie B,20:30,Palermo FC,0.4,1,,B
 2026-11-06,ascoli calcio 1898,palermo,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Ascoli Calcio 1898 FC,Serie B,20:30,Palermo FC,0.4,2,,B
-2026-11-06,atletico grau,cusco,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Atletico Grau,Liga 1 - Clausura,21:00,Cusco FC,0.38,1,,B
-2026-11-06,avs futebol sad,vizela,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Avs Futebol Sad,Segunda Liga,19:45,Vizela,0.51,1,,B
+2026-11-06,asd alcione milano,lumezzane,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Asd Alcione Milano,Serie C - Girone A,20:30,Lumezzane,0.34,2,,B
+2026-11-06,atletico grau,cusco,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Atletico Grau,Liga 1 - Clausura,21:00,Cusco FC,0.39,1,,B
+2026-11-06,avs futebol sad,vizela,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Avs Futebol Sad,Segunda Liga,19:45,Vizela,0.5,1,,B
+2026-11-06,b93 copenhagen,skive,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,B93 Copenhagen,2. Division,19:00,Skive IK,0.46,1,,B
 2026-11-06,b93 copenhagen,skive,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,B93 Copenhagen,2. Division,19:00,Skive IK,0.42,2,,B
-2026-11-06,belgrano cordoba,newells old boys,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Belgrano De Cordoba,"Prima Divisione, Femminile - Women - Primera Division A, Women 2024, Clausura",19:00,Newells Old Boys,0.56,1,,B
-2026-11-06,bouri,etehad alreef,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Bouri,2nd Division,16:00,Etehad Alreef,0.6,1,,B
+2026-11-06,barracas central,racing,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Barracas Central,"Liga Profesional Argentina - Clausura, Group A",19:00,Racing,0.38,1,,B
+2026-11-06,bayern monaco,werder bremen,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Bayern Monaco,Bundesliga Femminile - Women,18:30,Werder Bremen,0.83,1,,B
+2026-11-06,belgrano cordoba,newells old boys,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Belgrano De Cordoba,"Prima Divisione, Femminile - Women - Primera Division A, Women 2024, Clausura",19:00,Newells Old Boys,0.62,1,,B
+2026-11-06,bouri,etehad alreef,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Bouri,2nd Division,16:00,Etehad Alreef,0.67,1,,B
 2026-11-06,braunschweig,energie cottbus,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Braunschweig,2. Bundesliga,18:30,Energie Cottbus,0.41,1,,B
+2026-11-06,braunschweig,energie cottbus,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Braunschweig,2. Bundesliga,18:30,Energie Cottbus,0.42,2,,B
+2026-11-06,bristol rovers,cambridge united,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Bristol Rovers,FA Cup,20:30,Cambridge United,0.38,1,,B
 2026-11-06,bristol rovers,cambridge united,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Bristol Rovers,FA Cup,20:30,Cambridge United,0.37,2,,B
-2026-11-06,cambrian clydach,barry town united,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Cambrian & Clydach,Cymru Premier,20:45,Barry Town United FC,0.52,2,,B
-2026-11-06,castellon,eibar,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Castellon,LaLiga 2,20:30,Eibar,0.45,1,,B
-2026-11-06,cliftonville,larne,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Cliftonville FC,Premiership,20:45,Larne,0.65,2,,B
+2026-11-06,cacereno,lugo,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Cacereño,Primera Federación - Gruppo 1,19:00,Lugo,0.36,2,,B
+2026-11-06,cambrian clydach,barry town united,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Cambrian & Clydach,Cymru Premier,20:45,Barry Town United FC,0.44,2,,B
+2026-11-06,cancun,piratas veracruz,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Cancun FC,"Liga De Expansion MX - Apertura, Playoffs",02:00,Piratas Veracruz,0.38,1,,B
+2026-11-06,castellon,eibar,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Castellon,LaLiga 2,20:30,Eibar,0.43,1,,B
+2026-11-06,cliftonville,larne,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Cliftonville FC,Premiership,20:45,Larne,0.55,2,,B
 2026-11-06,cruzeiro,bahia,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Cruzeiro,Brasileirão,01:30,Bahia,0.52,1,,B
-2026-11-06,cwks resovia,gornik leczna,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,CWKS Resovia,2 Liga,18:00,Gornik Leczna,0.5,2,,B
+2026-11-06,cruzeiro,bahia,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Cruzeiro,Brasileirão,01:30,Bahia,0.39,2,,B
+2026-11-06,cwks resovia,gornik leczna,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,CWKS Resovia,2 Liga,18:00,Gornik Leczna,0.42,2,,B
+2026-11-06,derby county,bolton,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Derby County,Championship,21:00,Bolton,0.38,1,,B
 2026-11-06,derby county,bolton,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Derby County,Championship,21:00,Bolton,0.42,2,,B
+2026-11-06,dibba,al hamriyah,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Dibba,Division 1,13:45,AL HAMRIYAH,0.42,1,,B
+2026-11-06,digione,red star,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Digione,Ligue 2,20:00,Red Star,0.39,1,,B
 2026-11-06,digione,red star,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Digione,Ligue 2,20:00,Red Star,0.45,2,,B
-2026-11-06,djurgardens,kopparbergs goteborg d,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Djurgardens,Allsvenskan Femminile - Women,18:00,Kopparbergs/ Göteborg FC D,0.52,2,,B
-2026-11-06,dordrecht,nac breda,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Dordrecht,Eerste Divisie,20:00,NAC Breda,0.56,2,,B
-2026-11-06,eindhoven,ajax b,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,FC Eindhoven,Eerste Divisie,20:00,Ajax B,0.46,1,,B
-2026-11-06,everton,coventry city,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Everton,Premier League,21:00,Coventry City,0.48,1,,B
+2026-11-06,djurgardens,kopparbergs goteborg d,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Djurgardens,Allsvenskan Femminile - Women,18:00,Kopparbergs/ Göteborg FC D,0.73,2,,B
+2026-11-06,dordrecht,nac breda,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Dordrecht,Eerste Divisie,20:00,NAC Breda,0.65,2,,B
+2026-11-06,dukla prague,pribram,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Dukla Prague,FNL,18:00,Pribram,0.57,1,,B
+2026-11-06,eindhoven,ajax b,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,FC Eindhoven,Eerste Divisie,20:00,Ajax B,0.58,1,,B
+2026-11-06,everton,coventry city,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Everton,Premier League,21:00,Coventry City,0.48,1,,B
+2026-11-06,famalicao,arouca,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Famalicao,Liga Portugal,21:45,Arouca,0.43,1,,B
 2026-11-06,famalicao,arouca,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Famalicao,Liga Portugal,21:45,Arouca,0.4,2,,B
-2026-11-06,gallos blancos del queretaro,toluca,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,GALLOS BLANCOS DEL QUERETARO,"Liga MX Femenil - Women, Apertura",02:06,TOLUCA,0.71,2,,B
-2026-11-06,gap connah s quay,flint town united,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,GAP Connah'S Quay,Cymru Premier,21:00,Flint Town United,0.61,1,,B
+2026-11-06,francoforte d,wolfsburg,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Francoforte D,Bundesliga Femminile - Women,18:30,Wolfsburg,0.41,2,,B
+2026-11-06,gallos blancos del queretaro,toluca,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,GALLOS BLANCOS DEL QUERETARO,"Liga MX Femenil - Women, Apertura",02:06,TOLUCA,0.75,2,,B
+2026-11-06,gap connah s quay,flint town united,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,GAP Connah'S Quay,Cymru Premier,21:00,Flint Town United,0.65,1,,B
+2026-11-06,gaziantep,kasimpasa,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Gaziantep FK,Super Lig,18:00,Kasimpasa,0.42,1,,B
 2026-11-06,gaziantep,kasimpasa,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Gaziantep FK,Super Lig,18:00,Kasimpasa,0.49,2,,B
-2026-11-06,grenoble foot 38,reims,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Grenoble Foot 38,Ligue 2,20:00,Reims,0.45,2,,B
+2026-11-06,gnk dinamo zagreb ii,jadran lp,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Gnk Dinamo Zagreb II,2. HNL,14:00,NK JADRAN LP,0.37,1,,B
+2026-11-06,grenoble foot 38,reims,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,Grenoble Foot 38,Ligue 2,20:00,Reims,0.45,2,,B
 2026-11-06,grenoble foot 38,reims,B|X,2026-11-02 02:32,2026-11-03 00:54,3,,Grenoble Foot 38,Ligue 2,20:00,Reims,0.45,X,,B
-2026-11-06,hammarby,elfsborg,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Hammarby,Allsvenskan,19:00,Elfsborg,0.51,1,,B
-2026-11-06,haverfordwest county afc,cardiff metropolitan university,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Haverfordwest County AFC,Cymru Premier,20:45,CARDIFF METROPOLITAN UNIVERSITY,0.47,1,,B
+2026-11-06,hammarby,elfsborg,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Hammarby,Allsvenskan,19:00,Elfsborg,0.52,1,,B
+2026-11-06,haverfordwest county afc,cardiff metropolitan university,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Haverfordwest County AFC,Cymru Premier,20:45,CARDIFF METROPOLITAN UNIVERSITY,0.37,1,,B
 2026-11-06,helmond sport,volendam,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Helmond Sport,Eerste Divisie,20:00,Volendam,0.49,1,,B
-2026-11-06,heracles,roda,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Heracles,Eerste Divisie,20:00,Roda,0.53,1,,B
-2026-11-06,herediano,deportivo saprissa,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Herediano,Liga Promerica - Apertura,03:00,Deportivo Saprissa,0.48,1,,B
-2026-11-06,holywell town,airbus uk broughton,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Holywell Town,Cymru Premier,20:45,Airbus UK Broughton,0.54,2,,B
-2026-11-06,huracan,racing,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Huracan,"Prima Divisione, Femminile - Women - Primera Division A, Women 2024, Clausura",15:00,RACING CLUB,0.58,2,,B
-2026-11-06,independiente,san lorenzo almagro,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Independiente,"Prima Divisione, Femminile - Women - Primera Division A, Women 2024, Clausura",18:00,San Lorenzo De Almagro,0.52,2,,B
-2026-11-06,inter san carlos,cartagines,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Inter San Carlos,Liga Promerica - Apertura,00:00,CS Cartagines,0.41,2,,B
-2026-11-06,jeugd waasland beveren,jeugd rfc seraing united,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Jeugd Waasland Beveren,Pro League Under 21 - Gruppo 1,19:30,Jeugd RFC Seraing United,0.44,1,,B
-2026-11-06,jong az alkmaar,almere city,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Jong AZ Alkmaar,Eerste Divisie,20:00,Almere City,0.52,2,,B
+2026-11-06,helmond sport,volendam,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Helmond Sport,Eerste Divisie,20:00,Volendam,0.59,2,,B
+2026-11-06,heracles,roda,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Heracles,Eerste Divisie,20:00,Roda,0.63,1,,B
+2026-11-06,herediano,deportivo saprissa,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Herediano,Liga Promerica - Apertura,03:00,Deportivo Saprissa,0.39,1,,B
+2026-11-06,holywell town,airbus uk broughton,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Holywell Town,Cymru Premier,20:45,Airbus UK Broughton,0.67,2,,B
+2026-11-06,huracan,racing,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Huracan,"Prima Divisione, Femminile - Women - Primera Division A, Women 2024, Clausura",15:00,RACING CLUB,0.58,2,,B
+2026-11-06,ilirija,triglav kranj,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,NK ILIRIJA,2. Liga,14:00,Triglav Kranj,0.52,2,,B
+2026-11-06,independiente,deportivo riestra,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Independiente,"Liga Profesional Argentina - Clausura, Group A",23:00,Deportivo Riestra,0.5,1,,B
+2026-11-06,independiente,san lorenzo almagro,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Independiente,"Prima Divisione, Femminile - Women - Primera Division A, Women 2024, Clausura",18:00,San Lorenzo De Almagro,0.67,2,,B
+2026-11-06,independiente del valle,delfin,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Independiente Del Valle,Copa Ecuador,01:00,DELFIN SC,0.63,1,,B
+2026-11-06,inter san carlos,cartagines,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,Inter San Carlos,Liga Promerica - Apertura,00:00,CS Cartagines,0.46,2,,B
+2026-11-06,jeugd waasland beveren,jeugd rfc seraing united,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Jeugd Waasland Beveren,Pro League Under 21 - Gruppo 1,19:30,Jeugd RFC Seraing United,0.57,1,,B
+2026-11-06,jong az alkmaar,almere city,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Jong AZ Alkmaar,Eerste Divisie,20:00,Almere City,0.49,2,,B
+2026-11-06,jong krc genk,jeugd kaa gent,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Jong KRC Genk,Challenger Pro League,20:00,Jeugd KAA Gent,0.53,1,,B
 2026-11-06,jong krc genk,jeugd kaa gent,B|X,2026-11-03 02:25,2026-11-03 23:21,6,,Jong KRC Genk,Challenger Pro League,20:00,Jeugd KAA Gent,0.42,X,,B
-2026-11-06,k ge,aalborg,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Køge,1. Division,19:00,Aalborg,0.35,2,,B
-2026-11-06,kif orebro dff d,linkopings d,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,KIF Örebro DFF D,Elitettan Femminile - Women,19:00,Linköpings FC D,0.53,1,,B
-2026-11-06,kriens,rapperswil jona,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Kriens,Challenge League,19:30,Rapperswil Jona,0.46,1,,B
-2026-11-06,kvc westerlo,kfco beerschot wilrijk,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,KVC Westerlo,Pro League Under 21 - Gruppo 1,20:30,Kfco Beerschot Wilrijk,0.66,1,,B
-2026-11-06,lamphun warrior,sukhothai,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Lamphun Warrior,Top League,13:00,Sukhothai,0.5,1,,B
+2026-11-06,k ge,aalborg,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Køge,1. Division,19:00,Aalborg,0.4,2,,B
+2026-11-06,karlovac,vukovar 91,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Karlovac,2. HNL,17:00,Vukovar 91,0.45,1,,B
+2026-11-06,kif orebro dff d,linkopings d,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,KIF Örebro DFF D,Elitettan Femminile - Women,19:00,Linköpings FC D,0.42,1,,B
+2026-11-06,kigezi homeboyz,mbarara,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Kigezi Homeboyz FC,Uganda Premier League,14:00,Mbarara FC,0.41,1,,B
+2026-11-06,kriens,rapperswil jona,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Kriens,Challenge League,19:30,Rapperswil Jona,0.42,1,,B
+2026-11-06,kustosija zagreb,orijent 1919,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,NK Kustosija Zagreb,2. HNL,14:00,HNK Orijent 1919,0.5,1,,B
+2026-11-06,kvc westerlo,kfco beerschot wilrijk,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,KVC Westerlo,Pro League Under 21 - Gruppo 1,20:30,Kfco Beerschot Wilrijk,0.52,1,,B
+2026-11-06,lamphun warrior,sukhothai,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Lamphun Warrior,Top League,13:00,Sukhothai,0.53,1,,B
+2026-11-06,liefering,austria salisburgo,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,FC Liefering,2. Liga,18:30,Austria Salisburgo,0.41,1,,B
 2026-11-06,liefering,austria salisburgo,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,FC Liefering,2. Liga,18:30,Austria Salisburgo,0.49,2,,B
-2026-11-06,lierse,rfc liege,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Lierse SK,Pro League Under 21 - Gruppo 1,20:00,RFC Liege,0.66,1,,B
-2026-11-06,lkp motor lublin,wisla plock,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,LKP Motor Lublin,Ekstraklasa,18:00,Wisla Plock,0.35,1,,B
-2026-11-06,llandudno,the new saints,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Llandudno FC,Cymru Premier,20:45,The New Saints,0.63,2,,B
-2026-11-06,lokomotiva zagabria,rudes zagreb,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Lokomotiva Zagabria,Prva HNL,18:00,NK Rudes Zagreb,0.46,1,,B
-2026-11-06,maccabi tel aviv,maccabi petah tikva,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Maccabi Tel Aviv FC,Ligat ha'Al,13:00,Maccabi Petah Tikva,0.53,1,,B
-2026-11-06,madura united,arema,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Madura United,Liga Indonesia,13:00,Arema FC,0.53,1,,B
-2026-11-06,marathon,platense puerto cortes,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,CD Marathon,Liga Nacional - Apertura,02:30,Platense FC Puerto Cortes,0.62,1,,B
+2026-11-06,lierse,rfc liege,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Lierse SK,Pro League Under 21 - Gruppo 1,20:00,RFC Liege,0.69,1,,B
+2026-11-06,lkp motor lublin,wisla plock,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,LKP Motor Lublin,Ekstraklasa,18:00,Wisla Plock,0.42,1,,B
+2026-11-06,llandudno,the new saints,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Llandudno FC,Cymru Premier,20:45,The New Saints,0.75,2,,B
+2026-11-06,lokomotiv mosca,rubin kazan,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Lokomotiv Mosca,Russian Premier League,17:30,Rubin Kazan',0.37,1,,B
+2026-11-06,lokomotiva zagabria,rudes zagreb,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Lokomotiva Zagabria,Prva HNL,18:00,NK Rudes Zagreb,0.56,1,,B
+2026-11-06,maccabi tel aviv,maccabi petah tikva,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Maccabi Tel Aviv FC,Ligat ha'Al,13:00,Maccabi Petah Tikva,0.77,1,,B
+2026-11-06,madura united,arema,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Madura United,Liga Indonesia,13:00,Arema FC,0.42,1,,B
+2026-11-06,marathon,platense puerto cortes,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,CD Marathon,Liga Nacional - Apertura,02:30,Platense FC Puerto Cortes,0.63,1,,B
 2026-11-06,montpellier,metz,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Montpellier,Ligue 2,20:00,Metz,0.52,1,,B
-2026-11-06,nafta 1903 lendava,lubiana,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Nafta 1903 Lendava,Prva Liga,17:30,Lubiana,0.43,2,,B
+2026-11-06,montpellier,metz,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Montpellier,Ligue 2,20:00,Metz,0.42,2,,B
+2026-11-06,nafta 1903 lendava,lubiana,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Nafta 1903 Lendava,Prva Liga,17:30,Lubiana,0.48,2,,B
 2026-11-06,nancy,sochaux montbeliard,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Nancy,Ligue 2,20:00,Sochaux-Montbeliard,0.41,1,,B
+2026-11-06,nancy,sochaux montbeliard,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Nancy,Ligue 2,20:00,Sochaux-Montbeliard,0.36,2,,B
+2026-11-06,nantes,toulouse,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,FC Nantes,Division 1 Femminile - Women,19:00,Toulouse FC,0.43,2,,B
 2026-11-06,nantes,toulouse,B|X,2026-11-03 02:25,2026-11-03 23:21,6,,FC Nantes,Division 1 Femminile - Women,19:00,Toulouse FC,0.46,X,,B
-2026-11-06,necaxa,atlas,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Necaxa,"Liga MX Femenil - Women, Apertura",00:00,Atlas,0.58,2,,B
-2026-11-06,necaxa u21,tijuana caliente u21,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Necaxa U21,Liga MX - U21 - Apertura,16:00,Club Tijuana De Caliente U21,0.41,1,,B
+2026-11-06,nea salamina famagusta,omonia aradippou,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,NEA Salamina Famagusta,Cyta Championship,18:00,Omonia Aradippou,0.39,2,,B
+2026-11-06,necaxa,atlas,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Necaxa,"Liga MX Femenil - Women, Apertura",00:00,Atlas,0.64,2,,B
+2026-11-06,necaxa u21,tijuana caliente u21,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Necaxa U21,Liga MX - U21 - Apertura,16:00,Club Tijuana De Caliente U21,0.37,1,,B
 2026-11-06,oberwart,wiener,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Oberwart,Regionalliga Ost,19:30,Wiener SK,0.43,1,,B
+2026-11-06,oberwart,wiener,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Oberwart,Regionalliga Ost,19:30,Wiener SK,0.42,2,,B
+2026-11-06,obolon kiev,levy bereg kiev,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,FC Obolon Kiev,Premier League,12:00,FC Levy Bereg Kiev,0.39,2,,B
 2026-11-06,obolon kiev,levy bereg kiev,B|X,2026-11-02 02:32,2026-11-03 23:21,9,,FC Obolon Kiev,Premier League,12:00,FC Levy Bereg Kiev,0.45,X,,B
-2026-11-06,odra opole,unia skierniewice,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Odra Opole,1 Liga,20:30,Unia Skierniewice,0.5,1,,B
-2026-11-06,operario pr,sport recife,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Operario PR,Brasileirão Série B,23:30,Sport Recife,0.4,1,,B
-2026-11-06,oxford city,leicester,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Oxford City,FA Cup,20:45,Leicester,0.39,1,,B
-2026-11-06,paris,montpellier d,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Paris FC,Division 1 Femminile - Women,19:00,Montpellier D,0.55,1,,B
-2026-11-06,paris saint germain,le havre,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Paris Saint-Germain,Division 1 Femminile - Women,21:00,Le Havre AC,0.51,1,,B
+2026-11-06,odra opole,unia skierniewice,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Odra Opole,1 Liga,20:30,Unia Skierniewice,0.46,1,,B
+2026-11-06,operario pr,sport recife,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Operario PR,Brasileirão Série B,23:30,Sport Recife,0.45,1,,B
+2026-11-06,oxford city,leicester,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Oxford City,FA Cup,20:45,Leicester,0.38,1,,B
+2026-11-06,paris,montpellier d,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Paris FC,Division 1 Femminile - Women,19:00,Montpellier D,0.74,1,,B
+2026-11-06,paris saint germain,le havre,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Paris Saint-Germain,Division 1 Femminile - Women,21:00,Le Havre AC,0.77,1,,B
 2026-11-06,penybont,caernarfon town,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Penybont FC,Cymru Premier,20:45,Caernarfon Town FC,0.46,1,,B
-2026-11-06,pfc botev plovdiv,dunav ruse,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,PFC Botev Plovdiv,efbet Liga,18:15,Dunav Ruse,0.65,1,,B
-2026-11-06,polissya,veres rivne,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,FC Polissya,Premier League,12:00,VERES RIVNE,0.56,1,,B
+2026-11-06,penybont,caernarfon town,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Penybont FC,Cymru Premier,20:45,Caernarfon Town FC,0.39,2,,B
+2026-11-06,pfc botev plovdiv,dunav ruse,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,PFC Botev Plovdiv,efbet Liga,18:15,Dunav Ruse,0.61,1,,B
+2026-11-06,polissya,veres rivne,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,FC Polissya,Premier League,12:00,VERES RIVNE,0.6,1,,B
+2026-11-06,puszcza niepolomice,miedz legnica,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Puszcza Niepolomice,1 Liga,18:00,Miedz Legnica,0.39,1,,B
 2026-11-06,puszcza niepolomice,miedz legnica,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Puszcza Niepolomice,1 Liga,18:00,Miedz Legnica,0.52,2,,B
-2026-11-06,qalali,busaiteen,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,QALALI,2nd Division,16:00,Busaiteen,0.62,2,,B
+2026-11-06,qalali,busaiteen,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,QALALI,2nd Division,16:00,Busaiteen,0.75,2,,B
+2026-11-06,raith rovers,dunfermline athletic,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Raith Rovers,Scottish Championship,20:30,Dunfermline Athletic FC,0.42,1,,B
 2026-11-06,raith rovers,dunfermline athletic,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Raith Rovers,Scottish Championship,20:30,Dunfermline Athletic FC,0.42,2,,B
-2026-11-06,rapid vienna,wolfsberger,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,SK Rapid Vienna,Bundesliga Austria,19:30,Wolfsberger AC,0.75,1,,B
-2026-11-06,river plate,gimnasia y esgrima la plata,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,River Plate,"Prima Divisione, Femminile - Women - Primera Division A, Women 2024, Clausura",19:00,Gimnasia Y Esgrima La Plata,0.55,1,,B
-2026-11-06,roskilde,hik hellerup,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,FC Roskilde,2. Division,19:00,HIK Hellerup,0.58,1,,B
-2026-11-06,rwd molenbeek,jeugd kortrijk,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,RWD Molenbeek,Pro League Under 21 - Gruppo 1,20:00,Jeugd Kortrijk,0.5,2,,B
-2026-11-06,san luis,ferro carril oeste,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,San Luis FC,"Prima Divisione, Femminile - Women - Primera Division A, Women 2024, Clausura",19:00,Ferro Carril Oeste,0.61,1,,B
-2026-11-06,santos laguna,tijuana,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Santos Laguna,"Liga MX Femenil - Women, Apertura",04:10,CLUB TIJUANA,0.5,1,,B
+2026-11-06,rapid vienna,wolfsberger,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,SK Rapid Vienna,Bundesliga Austria,19:30,Wolfsberger AC,0.61,1,,B
+2026-11-06,real aviles,extremadura,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Real Aviles,Primera Federación - Gruppo 1,21:15,CD Extremadura,0.37,2,,B
+2026-11-06,river plate,gimnasia y esgrima la plata,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,River Plate,"Prima Divisione, Femminile - Women - Primera Division A, Women 2024, Clausura",19:00,Gimnasia Y Esgrima La Plata,0.61,1,,B
+2026-11-06,roskilde,hik hellerup,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,FC Roskilde,2. Division,19:00,HIK Hellerup,0.59,1,,B
+2026-11-06,rwd molenbeek,jeugd kortrijk,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,RWD Molenbeek,Pro League Under 21 - Gruppo 1,20:00,Jeugd Kortrijk,0.46,2,,B
+2026-11-06,san lorenzo,platense,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,San Lorenzo,"Liga Profesional Argentina - Clausura, Group A",23:00,Platense,0.42,1,,B
+2026-11-06,san luis,ferro carril oeste,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,San Luis FC,"Prima Divisione, Femminile - Women - Primera Division A, Women 2024, Clausura",19:00,Ferro Carril Oeste,0.37,1,,B
+2026-11-06,santarem,mafra,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,UD Santarém,Liga 3 - Gruppo B,20:00,CD Mafra,0.44,2,,B
+2026-11-06,santos laguna,tijuana,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Santos Laguna,"Liga MX Femenil - Women, Apertura",04:10,CLUB TIJUANA,0.38,1,,B
+2026-11-06,sariyer,igdir,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,AS Sariyer,1. Lig,18:00,Igdir FK,0.44,1,,B
 2026-11-06,sariyer,igdir,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,AS Sariyer,1. Lig,18:00,Igdir FK,0.4,2,,B
-2026-11-06,scm argesul pitesti,dinamo bucuresti 1948,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,SCM Argesul Pitesti,Superliga,19:30,FC Dinamo Bucuresti 1948,0.6,2,,B
-2026-11-06,septemvri sofia,lokomotiv sofia,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,FK Septemvri Sofia,efbet Liga,16:00,Lokomotiv Sofia,0.47,2,,B
-2026-11-06,sg dynamo dresden,greuther furth,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,SG Dynamo Dresden,2. Bundesliga,18:30,Greuther Fürth,0.48,1,,B
+2026-11-06,scm argesul pitesti,dinamo bucuresti 1948,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,SCM Argesul Pitesti,Superliga,19:30,FC Dinamo Bucuresti 1948,0.39,2,,B
+2026-11-06,septemvri sofia,lokomotiv sofia,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,FK Septemvri Sofia,efbet Liga,16:00,Lokomotiv Sofia,0.39,2,,B
+2026-11-06,sesvete,bsk bijelo brdo,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,NK Sesvete,2. HNL,14:00,NK BSK Bijelo Brdo,0.46,1,,B
+2026-11-06,sfc opava,sellier bellot vlasim,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,SFC Opava,FNL,18:00,Sellier & Bellot Vlasim,0.42,1,,B
+2026-11-06,sg dynamo dresden,greuther furth,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,SG Dynamo Dresden,2. Bundesliga,18:30,Greuther Fürth,0.41,1,,B
+2026-11-06,silkeborg,lyngby,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Silkeborg,Superliga,19:00,Lyngby,0.52,1,,B
 2026-11-06,silkeborg,lyngby,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Silkeborg,Superliga,19:00,Lyngby,0.36,2,,B
-2026-11-06,siviglia,alaves,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Siviglia,LaLiga,21:00,Alavés,0.47,1,,B
-2026-11-06,sku amstetten,wacker innsbruck,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,SKU Amstetten,2. Liga,18:30,Wacker Innsbruck,0.49,1,,B
-2026-11-06,sporting hasselt,patro eisden maasmechelen,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Sporting Hasselt,Challenger Pro League,20:00,Patro Eisden Maasmechelen,0.5,1,,B
-2026-11-06,stade nyonnais,stade ls ouchy,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Stade Nyonnais,Challenge League,19:30,Stade LS Ouchy,0.61,2,,B
-2026-11-06,standard liegi,beveren,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Standard Liegi,Jupiler Pro League,20:45,Beveren,0.58,1,,B
-2026-11-06,sydney,central coast mariners,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Sydney,A-League,09:40,Central Coast Mariners,0.42,1,,B
-2026-11-06,thisted,fremad amager,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Thisted FC,2. Division,19:00,Fremad Amager,0.51,2,,B
-2026-11-06,tolosa,strasburgo,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Tolosa,Ligue 1,20:45,Strasburgo,0.47,1,,B
+2026-11-06,siviglia,alaves,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Siviglia,LaLiga,21:00,Alavés,0.4,1,,B
+2026-11-06,sku amstetten,wacker innsbruck,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,SKU Amstetten,2. Liga,18:30,Wacker Innsbruck,0.54,1,,B
+2026-11-06,sporting hasselt,patro eisden maasmechelen,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Sporting Hasselt,Challenger Pro League,20:00,Patro Eisden Maasmechelen,0.39,1,,B
+2026-11-06,stade nyonnais,stade ls ouchy,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Stade Nyonnais,Challenge League,19:30,Stade LS Ouchy,0.69,2,,B
+2026-11-06,standard liegi,beveren,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Standard Liegi,Jupiler Pro League,20:45,Beveren,0.44,1,,B
+2026-11-06,strabane athletic,annagh united,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Strabane Athletic FC,Championship 1,20:45,Annagh United,0.67,2,,B
+2026-11-06,sydney,central coast mariners,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Sydney,A-League,09:40,Central Coast Mariners,0.61,1,,B
+2026-11-06,thisted,fremad amager,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,Thisted FC,2. Division,19:00,Fremad Amager,0.45,2,,B
+2026-11-06,tolosa,strasburgo,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Tolosa,Ligue 1,20:45,Strasburgo,0.4,1,,B
 2026-11-06,top oss,waalwijk,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,TOP Oss,Eerste Divisie,20:00,Waalwijk,0.4,1,,B
-2026-11-06,traiskirchen fcm,wiener viktoria,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Traiskirchen Fcm,Regionalliga Ost,19:30,SC Wiener Viktoria,0.49,1,,B
-2026-11-06,union touarga,union sportif amal tiznit,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Union Touarga,Botola Pro,21:00,UNION SPORTIF AMAL TIZNIT,0.37,1,,B
-2026-11-06,universidad concepcion,o higgins,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Universidad de Concepcion,Primera División Cile,00:00,O'Higgins,0.55,2,,B
-2026-11-06,us boulogne cote d opale,annecy,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,US Boulogne Cote D Opale,Ligue 2,20:00,ANNECY FC,0.43,2,,B
-2026-11-06,usl dunkerque,guingamp,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,USL Dunkerque,Ligue 2,20:00,Guingamp,0.41,1,,B
-2026-11-06,uta arad,petrolul ploiesti,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,FC Uta Arad,Superliga,16:30,Petrolul Ploiești,0.52,1,,B
-2026-11-06,van,pyunik,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,FC VAN,Armenian Premier League,12:00,FC Pyunik,0.44,2,,B
+2026-11-06,top oss,waalwijk,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,TOP Oss,Eerste Divisie,20:00,Waalwijk,0.45,2,,B
+2026-11-06,traiskirchen fcm,wiener viktoria,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Traiskirchen Fcm,Regionalliga Ost,19:30,SC Wiener Viktoria,0.53,1,,B
+2026-11-06,union brescia,arzignanochiampo,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Union Brescia,Serie C - Girone A,20:30,ArzignanoChiampo,0.49,1,,B
+2026-11-06,union santa fe,velez sarsfield,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Union de Santa Fe,"Liga Profesional Argentina - Clausura, Group A",23:00,Velez Sarsfield,0.36,2,,B
+2026-11-06,union touarga,union sportif amal tiznit,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Union Touarga,Botola Pro,21:00,UNION SPORTIF AMAL TIZNIT,0.48,1,,B
+2026-11-06,universidad concepcion,o higgins,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Universidad de Concepcion,Primera División Cile,00:00,O'Higgins,0.38,2,,B
+2026-11-06,us boulogne cote d opale,annecy,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,US Boulogne Cote D Opale,Ligue 2,20:00,ANNECY FC,0.38,2,,B
+2026-11-06,usl dunkerque,guingamp,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,USL Dunkerque,Ligue 2,20:00,Guingamp,0.45,1,,B
+2026-11-06,usti nad,viktoria zizkov,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Usti Nad,FNL,18:00,FK Viktoria Zizkov,0.54,1,,B
+2026-11-06,uta arad,petrolul ploiesti,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,FC Uta Arad,Superliga,16:30,Petrolul Ploiești,0.52,1,,B
+2026-11-06,van,pyunik,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,FC VAN,Armenian Premier League,12:00,FC Pyunik,0.74,2,,B
+2026-11-06,vejle,fredericia,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Vejle BK,1. Division,18:00,FC Fredericia,0.4,1,,B
 2026-11-06,vejle,fredericia,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Vejle BK,1. Division,18:00,FC Fredericia,0.37,2,,B
+2026-11-06,venezia,udinese,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Venezia,Serie A,20:45,Udinese,0.42,1,,B
 2026-11-06,venezia,udinese,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Venezia,Serie A,20:45,Udinese,0.44,2,,B
-2026-11-06,venlo,psv eindhoven b,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Venlo,Eerste Divisie,20:00,PSV Eindhoven B,0.52,1,,B
-2026-11-06,viktoria colonia,1 saarbrucken,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Viktoria Colonia,3. Liga,19:00,1. FC Saarbrucken,0.42,1,,B
+2026-11-06,venlo,psv eindhoven b,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Venlo,Eerste Divisie,20:00,PSV Eindhoven B,0.53,1,,B
+2026-11-06,viktoria colonia,1 saarbrucken,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Viktoria Colonia,3. Liga,19:00,1. FC Saarbrucken,0.51,1,,B
+2026-11-06,vysocina jihlava,mfk karvina,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Vysocina Jihlava,FNL,18:00,MFK Karvina,0.4,2,,B
+2026-11-06,willem ii,zwolle,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Willem II,Eredivisie,20:00,Zwolle,0.39,1,,B
 2026-11-06,willem ii,zwolle,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Willem II,Eredivisie,20:00,Zwolle,0.46,2,,B
-2026-11-06,wisla cracovia,cracovia,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Wisla Cracovia,Ekstraklasa,20:30,Cracovia,0.69,1,,B
-2026-11-06,yogyakarta,dewa united,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Yogyakarta,Liga Indonesia,09:30,Dewa United,0.48,2,,B
+2026-11-06,wisla cracovia,cracovia,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Wisla Cracovia,Ekstraklasa,20:30,Cracovia,0.41,1,,B
+2026-11-06,yogyakarta,dewa united,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,Yogyakarta,Liga Indonesia,09:30,Dewa United,0.5,2,,B
 2026-11-06,young violets austria wien,first vienna,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Young Violets FK Austria Wien,2. Liga,18:30,First Vienna,0.43,1,,B
+2026-11-06,young violets austria wien,first vienna,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Young Violets FK Austria Wien,2. Liga,18:30,First Vienna,0.39,2,,B
+2026-11-06,zaglebie ii lubin,lks goczalkowice zdroj,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,ZAGLEBIE II LUBIN,"III Liga, Gruppo 3 - Gruppo 3",12:00,LKS Goczalkowice-Zdroj,0.58,1,,B
 2026-11-07,aberdeen,hibernian,B|2,2026-11-02 02:32,2026-11-03 00:54,3,,Aberdeen,Scottish Premiership,16:00,Hibernian FC,0.39,2,,B
 2026-11-07,accrington stanley,wycombe wanderers,B|X,2026-11-02 02:32,2026-11-03 00:54,3,,Accrington Stanley,FA Cup,16:00,Wycombe Wanderers,0.5,X,,B
-2026-11-07,acs viitorul selimbar,csl stefanestii jos,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,ACS VIITORUL SELIMBAR,Liga 2,10:00,Csl Stefanestii De Jos,0.57,1,,B
+2026-11-07,acs viitorul selimbar,csl stefanestii jos,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,ACS VIITORUL SELIMBAR,Liga 2,10:00,Csl Stefanestii De Jos,0.55,1,,B
+2026-11-07,afumati,acs fotbal bacau 2023,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Afumati,Liga 2,10:00,Acs Fotbal Club Bacau 2023,0.39,1,,B
 2026-11-07,afumati,acs fotbal bacau 2023,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Afumati,Liga 2,10:00,Acs Fotbal Club Bacau 2023,0.42,2,,B
-2026-11-07,aik d,uppsala,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,AIK FF D,Allsvenskan Femminile - Women,13:00,IK Uppsala,0.58,1,,B
-2026-11-07,al dhafra ssc,ittihad kalba,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Al Dhafra SSC,UAE League,13:55,Ittihad Kalba FC,0.38,2,,B
+2026-11-07,aik d,uppsala,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,AIK FF D,Allsvenskan Femminile - Women,13:00,IK Uppsala,0.9,1,,B
+2026-11-07,al dhafra ssc,ittihad kalba,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,Al Dhafra SSC,UAE League,13:55,Ittihad Kalba FC,0.44,2,,B
 2026-11-07,al ettifaq,al hilal,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,AL Ettifaq FC,Saudi Pro League,15:30,Al Hilal,0.69,2,,B
-2026-11-07,al faisaly,diriyah,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,AL Faisaly FC,Saudi Pro League,14:20,Diriyah Club,0.43,2,,B
-2026-11-07,al quwa al jawiya,al karkh,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,AL Quwa AL Jawiya,Iraqi League,14:00,AL KARKH,0.5,1,,B
-2026-11-07,al shamal,al sailiya,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Al-Shamal,Stars League,15:15,Al-Sailiya,0.55,1,,B
-2026-11-07,albirex niigata,imabari,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Albirex Niigata,J. League 2,06:00,Imabari,0.63,1,,B
+2026-11-07,al faisaly,diriyah,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,AL Faisaly FC,Saudi Pro League,14:20,Diriyah Club,0.37,2,,B
+2026-11-07,al quwa al jawiya,al karkh,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,AL Quwa AL Jawiya,Iraqi League,14:00,AL KARKH,0.59,1,,B
+2026-11-07,al shamal,al sailiya,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Al-Shamal,Stars League,15:15,Al-Sailiya,0.66,1,,B
+2026-11-07,albirex niigata,imabari,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Albirex Niigata,J. League 2,06:00,Imabari,0.65,1,,B
+2026-11-07,alianza panama,arabe unido,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Alianza FC Panama,Liga Panamena - Apertura,02:30,Arabe Unido,0.4,2,,B
 2026-11-07,alloa athletic,airdrieonians,B|2,2026-11-03 09:05,2026-11-03 23:21,2,,Alloa Athletic FC,Scottish League One,16:00,Airdrieonians,0.4,2,,B
-2026-11-07,almere city,kozakken boys,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Almere City,Tweede Divisie,15:00,Kozakken Boys,0.5,2,,B
-2026-11-07,ankara keciorengucu,manisa futbol kulubu,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Ankara Keciorengucu,1. Lig,11:30,Manisa Futbol Kulubu,0.47,1,,B
+2026-11-07,almere city,kozakken boys,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,Almere City,Tweede Divisie,15:00,Kozakken Boys,0.44,2,,B
+2026-11-07,ankara keciorengucu,manisa futbol kulubu,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Ankara Keciorengucu,1. Lig,11:30,Manisa Futbol Kulubu,0.6,1,,B
 2026-11-07,arbroath,ayr united,B|2,2026-11-02 02:32,2026-11-03 23:21,7,,Arbroath FC,Scottish Championship,16:00,Ayr United FC,0.38,2,,B
 2026-11-07,arsenal,hull city,B|1,2026-11-02 02:32,2026-11-03 23:21,5,,Arsenal,Premier League,16:00,Hull City,0.73,1,,B
+2026-11-07,atalanta u23,reggiana 1919,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Atalanta U23,Serie C - Girone B,14:30,AC Reggiana 1919,0.38,1,,B
+2026-11-07,atlante,santos laguna,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Atlante,Liga MX - Apertura,04:00,Club Santos Laguna,0.54,1,,B
 2026-11-07,atlante,santos laguna,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Atlante,Liga MX - Apertura,04:00,Club Santos Laguna,0.49,2,,B
-2026-11-07,atmosfera,ekranas,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,FK Atmosfera,1 Lyga,13:00,FK Ekranas,0.58,1,,B
-2026-11-07,aubagne,amiens,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Aubagne,National,14:45,Amiens,0.52,2,,B
-2026-11-07,auckland,wellington phoenix,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Auckland FC,A-League,05:00,Wellington Phoenix,0.39,1,,B
+2026-11-07,atmosfera,ekranas,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,FK Atmosfera,1 Lyga,13:00,FK Ekranas,0.7,1,,B
+2026-11-07,aubagne,amiens,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,Aubagne,National,14:45,Amiens,0.54,2,,B
+2026-11-07,auckland,wellington phoenix,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Auckland FC,A-League,05:00,Wellington Phoenix,0.47,1,,B
 2026-11-07,austria lustenau,grazer ak,B|2,2026-11-02 02:32,2026-11-03 00:54,3,,Austria Lustenau,Bundesliga Austria,17:00,Grazer AK,0.48,2,,B
 2026-11-07,auxerre,paris,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,Auxerre,Ligue 1,17:15,Paris FC,0.46,1,,B
-2026-11-07,avispa fukuoka,v varen nagasaki,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Avispa Fukuoka,J.League,07:00,V-Varen Nagasaki,0.42,2,,B
-2026-11-07,babrungas plunge,fa siauliai b,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,FK BABRUNGAS PLUNGE,1 Lyga,13:00,FA SIAULIAI B,0.66,1,,B
-2026-11-07,baltijos futbolo akademija,kauno zalgiris b,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Baltijos Futbolo Akademija,1 Lyga,13:00,FK Kauno Zalgiris B,0.65,1,,B
+2026-11-07,avispa fukuoka,v varen nagasaki,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Avispa Fukuoka,J.League,07:00,V-Varen Nagasaki,0.41,2,,B
+2026-11-07,babrungas plunge,fa siauliai b,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,FK BABRUNGAS PLUNGE,1 Lyga,13:00,FA SIAULIAI B,0.77,1,,B
+2026-11-07,baltijos futbolo akademija,kauno zalgiris b,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Baltijos Futbolo Akademija,1 Lyga,13:00,FK Kauno Zalgiris B,0.55,1,,B
+2026-11-07,banfield,atletico tucuman,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,CA Banfield,"Liga Profesional Argentina - Clausura, Group A",02:00,Atletico Tucuman,0.38,1,,B
 2026-11-07,bangor,crusaders,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,Bangor FC,Premiership,16:00,Crusaders FC,0.46,1,,B
 2026-11-07,barnet,tranmere rovers,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,Barnet FC,FA Cup,16:00,Tranmere Rovers,0.47,1,,B
 2026-11-07,barnsley,aldershot town,B|2,2026-11-02 02:32,2026-11-03 00:54,3,,Barnsley,FA Cup,16:00,Aldershot Town FC,0.43,2,,B
-2026-11-07,bihor oradea,slatina,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Bihor Oradea,Liga 2,11:30,Slatina,0.49,1,,B
+2026-11-07,bihor oradea,slatina,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Bihor Oradea,Liga 2,11:30,Slatina,0.39,1,,B
 2026-11-07,birmingham,swansea,B|1,2026-11-02 02:32,2026-11-03 23:21,5,,Birmingham,Championship,16:00,Swansea,0.42,1,,B
 2026-11-07,blackburn,west ham united,B|2,2026-11-02 02:32,2026-11-03 23:21,5,,Blackburn,Championship,16:00,West Ham United,0.5,2,,B
+2026-11-07,blaublitz akita,oita trinita,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Blaublitz Akita,J. League 2,06:00,Oita Trinita,0.42,1,,B
 2026-11-07,blaublitz akita,oita trinita,B|X,2026-11-03 02:25,2026-11-03 23:21,6,,Blaublitz Akita,J. League 2,06:00,Oita Trinita,0.41,X,,B
 2026-11-07,boreham wood,wigan,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,Boreham Wood,FA Cup,16:00,Wigan,0.74,1,,B
 2026-11-07,borussia dortmund,sv 07 elversberg,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Borussia Dortmund,Bundesliga,15:30,SV 07 Elversberg,0.59,1,,B
-2026-11-07,bourg peronnas,le puy en velay,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Bourg-Peronnas,National,14:45,Le Puy-En Velay FC,0.46,2,,B
+2026-11-07,bourg peronnas,le puy en velay,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,Bourg-Peronnas,National,14:45,Le Puy-En Velay FC,0.53,2,,B
+2026-11-07,boyaca chico,internacional bogota,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Boyaca Chico,Liga Postobon - Finalizacion,00:00,Internacional De Bogota.,0.5,1,,B
 2026-11-07,bradford city,marine,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,Bradford City,FA Cup,16:00,Marine FC,0.54,1,,B
-2026-11-07,bristol city,norwich,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Bristol City,Championship,13:30,Norwich,0.48,1,,B
+2026-11-07,brage,norrby,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,IK Brage,Superettan,15:00,Norrby IF,0.41,2,,B
+2026-11-07,brisbane roar d,melbourne victory d,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Brisbane Roar FC D,W-League - Women,07:00,Melbourne Victory D,0.57,2,,B
+2026-11-07,bristol city,norwich,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Bristol City,Championship,13:30,Norwich,0.41,1,,B
 2026-11-07,bromley,rotherham,B|2,2026-11-02 02:32,2026-11-03 00:54,3,,Bromley FC,FA Cup,16:00,Rotherham,0.47,2,,B
-2026-11-07,burgos,celta vigo b,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Burgos,LaLiga 2,14:00,Celta Vigo B,0.49,1,,B
+2026-11-07,burgos,celta vigo b,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Burgos,LaLiga 2,14:00,Celta Vigo B,0.59,1,,B
 2026-11-07,burton albion,rushden diamonds,B|X,2026-11-02 02:32,2026-11-03 00:54,3,,Burton Albion,FA Cup,16:00,Rushden & Diamonds,0.43,X,,B
-2026-11-07,busan transportation corporation,jeonbuk ii,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Busan Transportation Corporation FC,National League,06:00,Jeonbuk FC II,0.69,1,,B
-2026-11-07,bvv barendrecht,quick boys,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,BVV Barendrecht,Tweede Divisie,15:00,Quick Boys,0.57,2,,B
+2026-11-07,busan transportation corporation,jeonbuk ii,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Busan Transportation Corporation FC,National League,06:00,Jeonbuk FC II,0.57,1,,B
+2026-11-07,bvv barendrecht,quick boys,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,BVV Barendrecht,Tweede Divisie,15:00,Quick Boys,0.66,2,,B
 2026-11-07,cadice,real oviedo,B|2,2026-11-02 02:32,2026-11-03 00:54,3,,Cadice,LaLiga 2,16:15,Real Oviedo,0.4,2,,B
-2026-11-07,caen,versailles 78,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Caen,National,14:45,FC Versailles 78,0.46,1,,B
-2026-11-07,cagliari calcio,frosinone calcio,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Cagliari Calcio,Serie A,15:00,Frosinone Calcio,0.45,2,,B
+2026-11-07,caen,versailles 78,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Caen,National,14:45,FC Versailles 78,0.39,1,,B
+2026-11-07,cagliari calcio,frosinone calcio,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Cagliari Calcio,Serie A,15:00,Frosinone Calcio,0.44,2,,B
 2026-11-07,cardiff,burnley,B|1,2026-11-02 02:32,2026-11-03 23:21,5,,Cardiff,Championship,16:00,Burnley,0.42,1,,B
 2026-11-07,carlisle united,salford city,B|2,2026-11-02 02:32,2026-11-03 00:54,3,,Carlisle United,FA Cup,16:00,Salford City,0.4,2,,B
 2026-11-07,carrick rangers,glentoran,B|2,2026-11-02 02:32,2026-11-03 00:54,3,,Carrick Rangers,Premiership,16:00,Glentoran FC,0.43,2,,B
-2026-11-07,cesena,us catanzaro 1929,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Cesena,Serie B,15:00,US Catanzaro 1929,0.46,1,,B
-2026-11-07,changwon city,gangneung city,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Changwon City FC,National League,06:00,Gangneung City,0.47,1,,B
+2026-11-07,casertana,s s d casarano calcio,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Casertana FC,Serie C - Girone C,14:30,S.S.D. Casarano Calcio,0.41,1,,B
+2026-11-07,central coast mariners,newcastle jets d,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Central Coast Mariners,W-League - Women,05:00,Newcastle Jets FC D,0.59,1,,B
+2026-11-07,cesena,us catanzaro 1929,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Cesena,Serie B,15:00,US Catanzaro 1929,0.39,1,,B
+2026-11-07,ceska lipa,mas taborsko,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Ceska Lipa,FNL,14:00,Mas Taborsko,0.4,1,,B
+2026-11-07,changwon city,gangneung city,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Changwon City FC,National League,06:00,Gangneung City,0.45,1,,B
 2026-11-07,charlton athletic,sheffield united,B|1,2026-11-02 02:32,2026-11-03 23:21,5,,Charlton Athletic,Championship,16:00,Sheffield United FC,0.41,1,,B
-2026-11-07,chelsea,everton,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Chelsea,Women's Super League,13:45,Everton FC,0.76,1,,B
+2026-11-07,chelsea,everton,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Chelsea,Women's Super League,13:45,Everton FC,0.8,1,,B
 2026-11-07,cheltenham town,halifax town,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,Cheltenham Town,FA Cup,16:00,FC Halifax Town,0.43,1,,B
-2026-11-07,chennaiyin,east bengal,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Chennaiyin FC,Indian Super League,15:00,SC East Bengal,0.51,2,,B
+2026-11-07,chennaiyin,east bengal,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Chennaiyin FC,Indian Super League,15:00,SC East Bengal,0.62,2,,B
 2026-11-07,chesterfield,yeovil town,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,Chesterfield FC,FA Cup,16:00,Yeovil Town,0.37,1,,B
+2026-11-07,clermont,rodez aveyron,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Clermont,Ligue 2,14:00,Rodez Aveyron,0.45,2,,B
 2026-11-07,clermont,rodez aveyron,B|X,2026-11-02 02:32,2026-11-03 23:21,9,,Clermont,Ligue 2,14:00,Rodez Aveyron,0.34,X,,B
 2026-11-07,colchester united,worcester city,B|X,2026-11-02 02:32,2026-11-03 00:54,3,,Colchester United,FA Cup,16:00,Worcester City,0.43,X,,B
-2026-11-07,como 1907,roma,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Como 1907,"Serie A, Femminile - Women",12:30,Roma,0.4,2,,B
-2026-11-07,concarneau,fleury,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Concarneau,National,14:45,Fleury,0.45,1,,B
-2026-11-07,concordia chiajna,targu mures,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Concordia Chiajna,Liga 2,10:00,Targu Mures,0.46,1,,B
+2026-11-07,como 1907,roma,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,Como 1907,"Serie A, Femminile - Women",12:30,Roma,0.55,2,,B
+2026-11-07,concarneau,fleury,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Concarneau,National,14:45,Fleury,0.44,1,,B
+2026-11-07,concordia chiajna,targu mures,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Concordia Chiajna,Liga 2,10:00,Targu Mures,0.6,1,,B
 2026-11-07,cove rangers,hamilton academical,B|2,2026-11-03 09:05,2026-11-03 23:21,2,,Cove Rangers FC,Scottish League One,16:00,Hamilton Academical FC,0.52,2,,B
 2026-11-07,crewe alexandra,wimbledon,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,Crewe Alexandra,FA Cup,16:00,Wimbledon,0.47,1,,B
+2026-11-07,crotone,giugliano 1928,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Crotone,Serie C - Girone C,14:30,FC Giugliano 1928,0.47,1,,B
+2026-11-07,cruz azul,leon,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,CRUZ AZUL,"Liga MX Femenil - Women, Apertura",02:10,Leon,0.54,1,,B
 2026-11-07,cruz azul,leon,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,CRUZ AZUL,"Liga MX Femenil - Women, Apertura",02:10,Leon,0.53,2,,B
-2026-11-07,csikszereda miercurea ciuc,universitatea cluj,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,FK Csikszereda Miercurea Ciuc,Superliga,14:00,FC Universitatea Cluj,0.62,2,,B
-2026-11-07,cukaricki,radnicki nis,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,FK Cukaricki,Serbian Super Liga,15:00,Radnicki Nis,0.54,1,,B
-2026-11-07,daejeon korail,yeoju citizen,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Daejeon Korail,National League,06:00,Yeoju Citizen FC,0.55,1,,B
-2026-11-07,desportivo chaves,penafiel,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Desportivo Chaves,Segunda Liga,15:00,FC Penafiel,0.46,2,,B
+2026-11-07,csikszereda miercurea ciuc,universitatea cluj,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,FK Csikszereda Miercurea Ciuc,Superliga,14:00,FC Universitatea Cluj,0.41,2,,B
+2026-11-07,cukaricki,radnicki nis,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,FK Cukaricki,Serbian Super Liga,15:00,Radnicki Nis,0.45,1,,B
+2026-11-07,daejeon korail,yeoju citizen,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Daejeon Korail,National League,06:00,Yeoju Citizen FC,0.58,1,,B
+2026-11-07,desportivo chaves,penafiel,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,Desportivo Chaves,Segunda Liga,15:00,FC Penafiel,0.45,2,,B
 2026-11-07,dover athletic,wealdstone,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,Dover Athletic,FA Cup,16:00,Wealdstone FC,0.46,1,,B
+2026-11-07,dp kanchanaburi,nakhon ratchasima,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,DP Kanchanaburi FC,Thai League 2,13:30,Nakhon Ratchasima,0.56,1,,B
 2026-11-07,dp kanchanaburi,nakhon ratchasima,B|X,2026-11-03 02:25,2026-11-03 23:21,6,,DP Kanchanaburi FC,Thai League 2,13:30,Nakhon Ratchasima,0.37,X,,B
 2026-11-07,dundee united,motherwell,B|1,2026-11-02 02:32,2026-11-03 23:21,5,,Dundee United,Scottish Premiership,16:00,Motherwell,0.46,1,,B
 2026-11-07,dungannon swifts,limavady united,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,Dungannon Swifts,Premiership,16:00,Limavady United,0.45,1,,B
 2026-11-07,eastleigh,shrewsbury town,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,Eastleigh FC,FA Cup,16:00,Shrewsbury Town,0.37,1,,B
-2026-11-07,epitsentr dunaivtsi,kryvbas kriviy rih,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,FC Epitsentr Dunaivtsi,Premier League,12:00,FC Kryvbas Kriviy Rih,0.43,2,,B
+2026-11-07,epitsentr dunaivtsi,kryvbas kriviy rih,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,FC Epitsentr Dunaivtsi,Premier League,12:00,FC Kryvbas Kriviy Rih,0.36,2,,B
 2026-11-07,es metlaoui,es zarzis,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,ES Metlaoui,Ligue 1,14:30,ES Zarzis,0.46,1,,B
 2026-11-07,espanyol,la coruna,B|2,2026-11-02 02:32,2026-11-03 00:54,3,,Espanyol,LaLiga,16:15,La Coruna,0.34,2,,B
-2026-11-07,eyupspor,kocaelispor,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Eyupspor,Super Lig,11:30,Kocaelispor,0.56,2,,B
-2026-11-07,fa 2000,vsk aarhus,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,FA 2000,2. Division,14:00,Vsk Aarhus,0.46,2,,B
+2026-11-07,eyupspor,kocaelispor,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Eyupspor,Super Lig,11:30,Kocaelispor,0.38,2,,B
+2026-11-07,fa 2000,vsk aarhus,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,FA 2000,2. Division,14:00,Vsk Aarhus,0.47,2,,B
+2026-11-07,fastav zlin,1 slovacko,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Fastav Zlin,Chance Liga,15:00,1 FC Slovacko,0.37,1,,B
 2026-11-07,fastav zlin,1 slovacko,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Fastav Zlin,Chance Liga,15:00,1 FC Slovacko,0.51,2,,B
 2026-11-07,felgueiras,leixoes,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Felgueiras,Segunda Liga,12:00,Leixoes,0.4,1,,B
+2026-11-07,felgueiras,leixoes,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Felgueiras,Segunda Liga,12:00,Leixoes,0.4,2,,B
+2026-11-07,ferrol,logrones,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Ferrol,Primera Federación - Gruppo 1,13:00,UD Logrones,0.41,1,,B
 2026-11-07,fleetwood town,rochdale,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,Fleetwood Town,FA Cup,16:00,Rochdale,0.38,1,,B
-2026-11-07,fortaleza,independiente medellin,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Fortaleza,Liga Postobon - Finalizacion,02:00,Independiente Medellin,0.4,2,,B
+2026-11-07,fortaleza,independiente medellin,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Fortaleza,Liga Postobon - Finalizacion,02:00,Independiente Medellin,0.37,2,,B
 2026-11-07,fortuna sittard,telstar,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,Fortuna Sittard,Eredivisie,16:30,Telstar,0.53,1,,B
 2026-11-07,fulham,newcastle united,B|2,2026-11-02 02:32,2026-11-03 23:21,5,,Fulham FC,Premier League,16:00,Newcastle United,0.43,2,,B
 2026-11-07,galatasaray,diyarbakir bb,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,Galatasaray,Super Lig,17:00,Diyarbakir BB,0.54,1,,B
-2026-11-07,gamla upsala,ifk goteborg,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Gamla Upsala SK,Elitettan Femminile - Women,13:00,IFK Goteborg,0.76,2,,B
+2026-11-07,gamla upsala,ifk goteborg,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,Gamla Upsala SK,Elitettan Femminile - Women,13:00,IFK Goteborg,0.78,2,,B
 2026-11-07,gillingham,barrow afc,B|2,2026-11-02 02:32,2026-11-03 00:54,3,,Gillingham,FA Cup,16:00,Barrow AFC,0.42,2,,B
+2026-11-07,gimcheon sangmu,anyang,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Gimcheon Sangmu,K-League - Relegation Round,08:30,FC Anyang,0.41,1,,B
 2026-11-07,gimcheon sangmu,anyang,B|X,2026-11-02 02:32,2026-11-03 23:21,9,,Gimcheon Sangmu,K-League - Relegation Round,08:30,FC Anyang,0.49,X,,B
+2026-11-07,gimhae,hwaseong,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Gimhae FC,K-League 2,08:30,Hwaseong,0.36,1,,B
 2026-11-07,gimhae,hwaseong,B|X,2026-11-02 02:32,2026-11-03 23:21,9,,Gimhae FC,K-League 2,08:30,Hwaseong,0.42,X,,B
-2026-11-07,gimpo,ansan greeners,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Gimpo FC,K-League 2,08:30,Ansan Greeners,0.49,1,,B
+2026-11-07,gimpo,ansan greeners,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Gimpo FC,K-League 2,08:30,Ansan Greeners,0.5,1,,B
 2026-11-07,gloria bistrita,cetatea 1932 suceava,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,CS Gloria Bistrita,Liga 2,10:00,Cetatea 1932 Suceava,0.41,1,,B
+2026-11-07,gloria bistrita,cetatea 1932 suceava,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,CS Gloria Bistrita,Liga 2,10:00,Cetatea 1932 Suceava,0.36,2,,B
+2026-11-07,gorica,slaven belupo,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,HNK Gorica,Prva HNL,15:00,NK Slaven Belupo,0.45,1,,B
 2026-11-07,gorica,slaven belupo,B|X,2026-11-03 02:25,2026-11-03 23:21,6,,HNK Gorica,Prva HNL,15:00,NK Slaven Belupo,0.37,X,,B
 2026-11-07,goztepe izmir,istanbul basaksehir,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,Goztepe Izmir,Super Lig,17:00,Istanbul Basaksehir FK,0.48,1,,B
+2026-11-07,granada,espanyol d,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Granada,Primera Division Femminile,12:00,Espanyol D,0.44,1,,B
 2026-11-07,granada,espanyol d,B|X,2026-11-03 02:25,2026-11-03 23:21,6,,Granada,Primera Division Femminile,12:00,Espanyol D,0.42,X,,B
 2026-11-07,greenock morton,stenhousemuir,B|2,2026-11-02 02:32,2026-11-03 23:21,5,,Greenock Morton FC,Scottish Championship,16:00,Stenhousemuir FC,0.56,2,,B
-2026-11-07,guadalajara,america,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,GUADALAJARA,"Liga MX Femenil - Women, Apertura",02:06,CLUB AMERICA,0.53,2,,B
-2026-11-07,guangzhou e power,nanjing city,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Guangzhou E-Power FC,Chinese League One,07:30,Nanjing City,0.5,1,,B
+2026-11-07,guadalajara,america,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,GUADALAJARA,"Liga MX Femenil - Women, Apertura",02:06,CLUB AMERICA,0.71,2,,B
+2026-11-07,guangzhou e power,nanjing city,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Guangzhou E-Power FC,Chinese League One,07:30,Nanjing City,0.69,1,,B
+2026-11-07,guastatoya,suchitepequez,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Guastatoya,Liga Nacional - Apertura,02:00,Suchitepequez,0.63,1,,B
 2026-11-07,guiseley afc,sutton united,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,Guiseley AFC,FA Cup,16:00,Sutton United,0.56,1,,B
-2026-11-07,gyeongju korea hydro nuclear power,chuncheon,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Gyeongju Korea Hydro & Nuclear Power,National League,06:00,Chuncheon FC,0.4,1,,B
-2026-11-07,hansa rostock,sonnenhof grossaspach,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,FC Hansa Rostock,3. Liga,14:00,Sonnenhof Grossaspach,0.41,1,,B
+2026-11-07,gyeongju korea hydro nuclear power,chuncheon,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Gyeongju Korea Hydro & Nuclear Power,National League,06:00,Chuncheon FC,0.48,1,,B
+2026-11-07,hansa rostock,sonnenhof grossaspach,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,FC Hansa Rostock,3. Liga,14:00,Sonnenhof Grossaspach,0.52,1,,B
+2026-11-07,hapoel petah tikva,hapoel ramat gan givatayim,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Hapoel Petah Tikva,Ligat ha'Al,14:00,Hapoel Ramat Gan Givatayim FC,0.37,2,,B
 2026-11-07,harrogate town,afc fylde,B|2,2026-11-02 02:32,2026-11-03 00:54,3,,Harrogate Town,FA Cup,16:00,AFC Fylde,0.48,2,,B
+2026-11-07,helsingborg,falkenbergs,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Helsingborg,Superettan,15:00,Falkenbergs FF,0.46,2,,B
 2026-11-07,helsingborg,falkenbergs,B|X,2026-11-03 02:25,2026-11-03 23:21,6,,Helsingborg,Superettan,15:00,Falkenbergs FF,0.4,X,,B
-2026-11-07,hhc hardenberg,rijnsburgse boys,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,HHC Hardenberg,Tweede Divisie,14:30,Rijnsburgse Boys,0.5,1,,B
+2026-11-07,hhc hardenberg,rijnsburgse boys,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,HHC Hardenberg,Tweede Divisie,14:30,Rijnsburgse Boys,0.44,1,,B
+2026-11-07,hillerod fodbold,kolding,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Hillerod Fodbold,1. Division,13:00,Kolding IF,0.45,2,,B
 2026-11-07,hillerod fodbold,kolding,B|X,2026-11-02 02:32,2026-11-03 23:21,9,,Hillerod Fodbold,1. Division,13:00,Kolding IF,0.35,X,,B
 2026-11-07,hobro,esbjerg,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Hobro IK,1. Division,13:30,Esbjerg,0.38,1,,B
+2026-11-07,hobro,esbjerg,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Hobro IK,1. Division,13:30,Esbjerg,0.39,2,,B
+2026-11-07,hoek,ijsselmeervogels,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Hoek,Tweede Divisie,14:30,Ijsselmeervogels,0.38,1,,B
 2026-11-07,hoek,ijsselmeervogels,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Hoek,Tweede Divisie,14:30,Ijsselmeervogels,0.48,2,,B
-2026-11-07,hoenefoss,lillestr m d,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Hoenefoss,Toppserien Femminile - Women,13:00,Lillestrøm D,0.54,1,,B
+2026-11-07,hoenefoss,lillestr m d,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Hoenefoss,Toppserien Femminile - Women,13:00,Lillestrøm D,0.43,1,,B
 2026-11-07,holstein kiel,dsc arminia bielefeld,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Holstein Kiel,2. Bundesliga,13:00,DSC Arminia Bielefeld,0.38,1,,B
+2026-11-07,holstein kiel,dsc arminia bielefeld,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Holstein Kiel,2. Bundesliga,13:00,DSC Arminia Bielefeld,0.4,2,,B
+2026-11-07,honda,verspah oita,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Honda FC,Japan Football League,05:00,Verspah Oita,0.41,1,,B
 2026-11-07,honda,verspah oita,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Honda FC,Japan Football League,05:00,Verspah Oita,0.4,2,,B
 2026-11-07,hornchurch,blackpool,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,Hornchurch FC,FA Cup,16:00,Blackpool,0.61,1,,B
+2026-11-07,hradec kralove,sigma olomouc,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Hradec Kralove,Chance Liga,15:00,Sigma Olomouc,0.38,1,,B
 2026-11-07,hradec kralove,sigma olomouc,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Hradec Kralove,Chance Liga,15:00,Sigma Olomouc,0.45,2,,B
 2026-11-07,huddersfield town,exeter city,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,Huddersfield Town,FA Cup,16:00,Exeter City,0.52,1,,B
-2026-11-07,husqvarna,hacken academy,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,HUSQVARNA FF,Elitettan Femminile - Women,13:00,BK Hacken Academy,0.68,1,,B
-2026-11-07,ifk varnamo,ifk norrkoping,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,IFK Varnamo,Superettan,15:00,IFK Norrköping FK,0.69,2,,B
+2026-11-07,husqvarna,hacken academy,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,HUSQVARNA FF,Elitettan Femminile - Women,13:00,BK Hacken Academy,0.5,1,,B
+2026-11-07,ifk varnamo,ifk norrkoping,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,IFK Varnamo,Superettan,15:00,IFK Norrköping FK,0.55,2,,B
 2026-11-07,inca,ad isidro metapan,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,CD Inca,Primera Division - Apertura,01:00,AD Isidro Metapan,0.39,1,,B
-2026-11-07,independiente petrolero,real tomayapo,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Independiente Petrolero,Liga Profesional Boliviana,00:00,CD REAL TOMAYAPO,0.6,1,,B
+2026-11-07,inca,ad isidro metapan,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,CD Inca,Primera Division - Apertura,01:00,AD Isidro Metapan,0.63,2,,B
+2026-11-07,independiente petrolero,real tomayapo,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Independiente Petrolero,Liga Profesional Boliviana,00:00,CD REAL TOMAYAPO,0.49,1,,B
+2026-11-07,ingolstadt,fortuna dusseldorf,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Ingolstadt,3. Liga,14:00,Fortuna Dusseldorf,0.38,1,,B
 2026-11-07,ingolstadt,fortuna dusseldorf,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Ingolstadt,3. Liga,14:00,Fortuna Dusseldorf,0.38,2,,B
+2026-11-07,inter kashi,sporting delhi,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Inter Kashi FC,Indian Super League,12:30,Sporting Club Delhi,0.36,1,,B
+2026-11-07,inter milano u23,salernitana,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Inter Milano U23,Serie C - Girone C,14:30,Salernitana,0.38,1,,B
 2026-11-07,inverness,livingston,B|1,2026-11-02 02:32,2026-11-03 23:21,5,,Inverness,Scottish Championship,16:00,Livingston,0.37,1,,B
-2026-11-07,iwaki,montedio yamagata,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Iwaki FC,J. League 2,06:00,Montedio Yamagata,0.41,1,,B
-2026-11-07,jalgpallikool tammeka,parnu vaprus,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Jalgpallikool Tammeka,Meistriliiga,11:30,Parnu JK Vaprus,0.58,1,,B
+2026-11-07,iwaki,montedio yamagata,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Iwaki FC,J. League 2,06:00,Montedio Yamagata,0.4,1,,B
+2026-11-07,jalgpallikool tammeka,parnu vaprus,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Jalgpallikool Tammeka,Meistriliiga,11:30,Parnu JK Vaprus,0.4,1,,B
+2026-11-07,jeju united,gwangju,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Jeju United FC,K-League - Relegation Round,06:00,Gwangju,0.57,1,,B
 2026-11-07,jeju united,gwangju,B|X,2026-11-02 02:32,2026-11-03 23:21,9,,Jeju United FC,K-League - Relegation Round,06:00,Gwangju,0.37,X,,B
-2026-11-07,jitex molndal,elfsborg,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Jitex Molndal BK,Elitettan Femminile - Women,13:00,IF Elfsborg,0.6,2,,B
-2026-11-07,jonava,hegelmann litauen b,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,FK Jonava,1 Lyga,13:00,Hegelmann Litauen B,0.44,1,,B
-2026-11-07,jong sparta rotterdam,amsterdamsche,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Jong Sparta Rotterdam,Tweede Divisie,15:00,Amsterdamsche FC,0.48,1,,B
-2026-11-07,juarez,monterrey,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,FC Juarez,"Liga MX Femenil - Women, Apertura",02:06,Monterrey,0.42,2,,B
-2026-11-07,kashiwa reysol,kawasaki,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Kashiwa Reysol,J.League,08:00,Kawasaki,0.46,1,,B
-2026-11-07,kharkiv,karpaty lviv,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,FC Kharkiv,Premier League,12:00,Karpaty Lviv,0.42,1,,B
+2026-11-07,jitex molndal,elfsborg,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,Jitex Molndal BK,Elitettan Femminile - Women,13:00,IF Elfsborg,0.67,2,,B
+2026-11-07,jonava,hegelmann litauen b,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,FK Jonava,1 Lyga,13:00,Hegelmann Litauen B,0.46,1,,B
+2026-11-07,jong sparta rotterdam,amsterdamsche,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Jong Sparta Rotterdam,Tweede Divisie,15:00,Amsterdamsche FC,0.46,1,,B
+2026-11-07,juarez,monterrey,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,FC Juarez,"Liga MX Femenil - Women, Apertura",03:06,Monterrey,0.48,2,,B
+2026-11-07,kashiwa reysol,kawasaki,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Kashiwa Reysol,J.League,08:00,Kawasaki,0.45,1,,B
+2026-11-07,kazincbarcikai,soroksar,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Kazincbarcikai SC,NB II,13:00,Soroksar SC,0.43,1,,B
+2026-11-07,kharkiv,karpaty lviv,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,FC Kharkiv,Premier League,12:00,Karpaty Lviv,0.37,1,,B
+2026-11-07,khon kaen united,songkhla,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Khon Kaen United FC,Thai League 2,12:00,SONGKHLA FC,0.55,1,,B
 2026-11-07,kidderminster harriers,doncaster,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,Kidderminster Harriers FC,FA Cup,16:00,Doncaster,0.48,1,,B
-2026-11-07,koninklijke hfc,rohda raalte,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,KONINKLIJKE HFC,Tweede Divisie,14:00,Rohda Raalte,0.51,1,,B
-2026-11-07,koper,ns mura,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,FC Koper,Prva Liga,15:00,NS MURA,0.41,1,,B
-2026-11-07,korona kielce,rks radomiak radom,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Korona Kielce,Ekstraklasa,12:15,RKS Radomiak Radom,0.48,1,,B
+2026-11-07,koninklijke hfc,rohda raalte,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,KONINKLIJKE HFC,Tweede Divisie,14:00,Rohda Raalte,0.57,1,,B
+2026-11-07,koper,ns mura,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,FC Koper,Prva Liga,15:00,NS MURA,0.56,1,,B
+2026-11-07,korona kielce,rks radomiak radom,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Korona Kielce,Ekstraklasa,12:15,RKS Radomiak Radom,0.58,1,,B
+2026-11-07,kristianstads dff d,eskilstuna united dff d,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Kristianstads DFF D,Allsvenskan Femminile - Women,13:00,Eskilstuna United DFF D,0.55,1,,B
 2026-11-07,kristianstads dff d,eskilstuna united dff d,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Kristianstads DFF D,Allsvenskan Femminile - Women,13:00,Eskilstuna United DFF D,0.48,2,,B
 2026-11-07,kristiansund,valerenga,B|2,2026-11-02 02:32,2026-11-03 23:21,7,,Kristiansund,Eliteserien,16:00,Valerenga IF,0.49,2,,B
 2026-11-07,ks warta poznan,polonia varsavia,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,KS Warta Poznan,1 Liga,15:30,Polonia Varsavia,0.52,2,,B
 2026-11-07,kudrivka irpin,chernomorets odessa,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Kudrivka Irpin,Premier League,12:00,FC Chernomorets Odessa,0.43,1,,B
+2026-11-07,kudrivka irpin,chernomorets odessa,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Kudrivka Irpin,Premier League,12:00,FC Chernomorets Odessa,0.35,2,,B
 2026-11-07,kuressaare,nomme united,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,FC Kuressaare,Meistriliiga,11:30,Nomme United,0.49,1,,B
+2026-11-07,kuressaare,nomme united,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,FC Kuressaare,Meistriliiga,11:30,Nomme United,0.4,2,,B
 2026-11-07,kvc westerlo,charleroi,B|2,2026-11-02 02:32,2026-11-03 00:54,3,,KVC Westerlo,Jupiler Pro League,16:00,Charleroi,0.46,2,,B
-2026-11-07,leeds,tottenham,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Leeds,Premier League,13:30,Tottenham,0.34,1,,B
+2026-11-07,leeds,tottenham,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Leeds,Premier League,13:30,Tottenham,0.64,1,,B
 2026-11-07,leeds,tottenham,B|X,2026-11-02 02:32,2026-11-03 00:54,3,,Leeds,Premier League,13:30,Tottenham,0.34,X,,B
-2026-11-07,levadia tallinn,nomme kalju,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Levadia Tallinn,Meistriliiga,11:30,Nõmme Kalju,0.62,1,,B
+2026-11-07,levadia tallinn,nomme kalju,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Levadia Tallinn,Meistriliiga,11:30,Nõmme Kalju,0.6,1,,B
 2026-11-07,leyton orient,harborough town,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,Leyton Orient,FA Cup,16:00,Harborough Town FC,0.46,1,,B
 2026-11-07,lipsia,augsburg,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Lipsia,Bundesliga,15:30,Augsburg,0.69,1,,B
+2026-11-07,ljungskile,landskrona bois,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Ljungskile SK,Superettan,15:00,Landskrona Bois,0.4,1,,B
 2026-11-07,ljungskile,landskrona bois,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Ljungskile SK,Superettan,15:00,Landskrona Bois,0.6,2,,B
 2026-11-07,luton town,forest green rovers,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,Luton Town,FA Cup,16:00,Forest Green Rovers,0.45,1,,B
-2026-11-07,lyn,stab k d,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Lyn,Toppserien Femminile - Women,13:00,Stabæk FK D,0.44,2,,B
+2026-11-07,lyn,stab k d,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,Lyn,Toppserien Femminile - Women,13:00,Stabæk FK D,0.38,2,,B
 2026-11-07,mainz,bayern monaco,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Mainz,Bundesliga,15:30,Bayern Monaco,0.55,2,,B
-2026-11-07,malaga,racing santander,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Málaga,LaLiga,14:00,Racing Santander,0.36,1,,B
-2026-11-07,manchester city d,west ham united women,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Manchester City D,Women's Super League,13:45,West Ham United FC Women,0.67,1,,B
+2026-11-07,malaga,racing santander,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Málaga,LaLiga,14:00,Racing Santander,0.39,1,,B
+2026-11-07,manchester city d,west ham united women,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Manchester City D,Women's Super League,13:45,West Ham United FC Women,0.87,1,,B
 2026-11-07,mansfield town,macclesfield,B|2,2026-11-02 02:32,2026-11-03 00:54,3,,Mansfield Town,FA Cup,16:00,Macclesfield FC,0.4,2,,B
 2026-11-07,mantova,hellas verona,B|2,2026-11-02 02:32,2026-11-03 00:54,3,,Mantova,Serie B,17:15,Hellas Verona,0.43,2,,B
-2026-11-07,maruyasu okazaki,veertien mie,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Maruyasu Okazaki,Japan Football League,05:00,Veertien Mie,0.63,2,,B
-2026-11-07,melbourne city,western sydney wanderers,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Melbourne City,A-League,09:40,Western Sydney Wanderers FC,0.47,1,,B
-2026-11-07,metaloglobus bucurest,csc dumbravita,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Metaloglobus Bucurest,Liga 2,10:00,CSC Dumbravita,0.64,1,,B
-2026-11-07,mezokovesd zsory,diosgyori vtk,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Mezokovesd Zsory,NB II,13:00,Diosgyori VTK,0.42,1,,B
-2026-11-07,mfk dukla banska bystrica,spartak trnava,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,MFk Dukla Banska Bystrica,Corgon Liga,15:30,Spartak Trnava,0.52,2,,B
-2026-11-07,mfk skalica,msk zilina,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,MFK Skalica,Corgon Liga,15:30,MSK ZILINA,0.51,2,,B
+2026-11-07,maruyasu okazaki,veertien mie,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,Maruyasu Okazaki,Japan Football League,05:00,Veertien Mie,0.41,2,,B
+2026-11-07,melbourne city,western sydney wanderers,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Melbourne City,A-League,09:40,Western Sydney Wanderers FC,0.45,1,,B
+2026-11-07,metaloglobus bucurest,csc dumbravita,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Metaloglobus Bucurest,Liga 2,10:00,CSC Dumbravita,0.7,1,,B
+2026-11-07,mezokovesd zsory,diosgyori vtk,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Mezokovesd Zsory,NB II,13:00,Diosgyori VTK,0.38,1,,B
+2026-11-07,mfk dukla banska bystrica,spartak trnava,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,MFk Dukla Banska Bystrica,Corgon Liga,15:30,Spartak Trnava,0.64,2,,B
+2026-11-07,mfk skalica,msk zilina,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,MFK Skalica,Corgon Liga,15:30,MSK ZILINA,0.45,2,,B
+2026-11-07,middelfart g,n stved,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Middelfart G&bk,2. Division,14:00,Næstved,0.4,2,,B
 2026-11-07,milton keynes dons,swindon town,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,Milton Keynes Dons,FA Cup,16:00,Swindon Town,0.61,1,,B
-2026-11-07,minija kretinga,garliava,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Minija Fc Kretinga,1 Lyga,13:00,FK Garliava,0.62,1,,B
+2026-11-07,minija kretinga,garliava,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Minija Fc Kretinga,1 Lyga,13:00,FK Garliava,0.74,1,,B
 2026-11-07,mks arka gdynia,tsp bielsko biala,B|X,2026-11-03 02:25,2026-11-03 23:21,6,,MKS Arka Gdynia,1 Liga,15:30,TSP Bielsko-Biala,0.43,X,,B
-2026-11-07,mks znicz pruszkow,podhale nowy targ,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,MKS Znicz Pruszkow,2 Liga,12:15,PODHALE NOWY TARG,0.47,1,,B
-2026-11-07,mokpo city,siheung citizen,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Mokpo City,National League,06:00,Siheung Citizen FC,0.44,2,,B
+2026-11-07,mks znicz pruszkow,podhale nowy targ,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,MKS Znicz Pruszkow,2 Liga,12:15,PODHALE NOWY TARG,0.46,1,,B
+2026-11-07,mokpo city,siheung citizen,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,Mokpo City,National League,06:00,Siheung Citizen FC,0.63,2,,B
 2026-11-07,mtk budapest,budapest honved,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,MTK Budapest,NB I,16:45,Budapest Honved FC,0.43,1,,B
 2026-11-07,muangthong united,pattaya discovery united,B|1,2026-11-03 02:25,2026-11-03 04:54,2,,Muangthong United,Thai League 2,12:00,PATTAYA DISCOVERY UNITED,0.5,1,,B
-2026-11-07,muangthong united,pattaya united,B|1,2026-11-03 06:41,2026-11-03 23:21,4,,Muangthong United,Thai League 2,12:00,Pattaya United,0.5,1,,B
+2026-11-07,muangthong united,pattaya united,B|1,2026-11-03 06:41,2026-11-04 03:06,5,,Muangthong United,Thai League 2,12:00,Pattaya United,0.63,1,,B
+2026-11-07,muglaspor,esenler erokspor,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Muglaspor,1. Lig,14:00,Esenler Erokspor,0.45,1,,B
 2026-11-07,muglaspor,esenler erokspor,B|X,2026-11-03 02:25,2026-11-03 23:21,6,,Muglaspor,1. Lig,14:00,Esenler Erokspor,0.5,X,,B
 2026-11-07,nacional madeira,academico viseu,B|2,2026-11-02 02:32,2026-11-03 00:54,3,,Nacional Madeira,Liga Portugal,16:30,Academico Viseu,0.48,2,,B
-2026-11-07,nagoya grampus,kyoto sanga,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,Nagoya Grampus,J.League,06:00,Kyoto Sanga,0.36,1,,B
+2026-11-07,nagoya grampus,kyoto sanga,B|1,2026-11-02 02:32,2026-11-04 03:06,4,,Nagoya Grampus,J.League,06:00,Kyoto Sanga,0.45,1,,B
 2026-11-07,nagoya grampus,kyoto sanga,B|X,2026-11-03 02:25,2026-11-03 23:21,6,,Nagoya Grampus,J.League,06:00,Kyoto Sanga,0.36,X,,B
-2026-11-07,nantong zhiyun,foshan nanshi,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Nantong Zhiyun,Chinese League One,07:30,Foshan Nanshi FC,0.65,1,,B
-2026-11-07,necaxa,tijuana,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Necaxa,Liga MX - Apertura,02:00,Tijuana,0.45,2,,B
+2026-11-07,nantong zhiyun,foshan nanshi,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Nantong Zhiyun,Chinese League One,07:30,Foshan Nanshi FC,0.83,1,,B
+2026-11-07,necaxa,tijuana,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Necaxa,Liga MX - Apertura,02:00,Tijuana,0.44,2,,B
+2026-11-07,neptunas klaipeda,dfk dainava alytus,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,FC NEPTUNAS KLAIPEDA,1 Lyga,13:00,DFK Dainava Alytus,0.39,1,,B
 2026-11-07,neptunas klaipeda,dfk dainava alytus,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,FC NEPTUNAS KLAIPEDA,1 Lyga,13:00,DFK Dainava Alytus,0.52,2,,B
 2026-11-07,newport county,walsall,B|X,2026-11-02 02:32,2026-11-03 00:54,3,,Newport County,FA Cup,16:00,Walsall,0.52,X,,B
-2026-11-07,norimberga,sv darmstadt 98,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Norimberga,2. Bundesliga,13:00,SV Darmstadt 98,0.5,1,,B
-2026-11-07,oks swit skolwin szczecin,slask ii wroclaw,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,OKS Swit Skolwin Szczecin,2 Liga,14:00,Slask II Wroclaw,0.47,1,,B
+2026-11-07,norimberga,sv darmstadt 98,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Norimberga,2. Bundesliga,13:00,SV Darmstadt 98,0.63,1,,B
+2026-11-07,oks swit skolwin szczecin,slask ii wroclaw,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,OKS Swit Skolwin Szczecin,2 Liga,14:00,Slask II Wroclaw,0.41,1,,B
 2026-11-07,orebro,osters,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Orebro,Superettan,15:00,Osters IF,0.37,1,,B
+2026-11-07,orebro,osters,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Orebro,Superettan,15:00,Osters IF,0.37,2,,B
+2026-11-07,ostersunds,oddevold,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Ostersunds FK,Superettan,15:00,IK Oddevold,0.42,1,,B
+2026-11-07,ostiamare,spezia calcio,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Ostiamare,Serie C - Girone B,14:30,Spezia Calcio,0.47,2,,B
 2026-11-07,oxford united,stevenage,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,Oxford United,FA Cup,16:00,Stevenage,0.4,1,,B
 2026-11-07,paderborn,eintracht francoforte,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,SC Paderborn,Bundesliga,15:30,Eintracht Francoforte,0.52,2,,B
-2026-11-07,padova,empoli,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Padova,Serie B,15:00,Empoli,0.44,1,,B
+2026-11-07,padova,empoli,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Padova,Serie B,15:00,Empoli,0.44,1,,B
 2026-11-07,paide linnameeskond,flora tallinn,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Paide Linnameeskond,Meistriliiga,11:30,Flora Tallinn,0.5,1,,B
-2026-11-07,paksi,zalaegerszeg te,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Paksi FC,NB I,13:30,Zalaegerszeg TE,0.52,1,,B
+2026-11-07,paide linnameeskond,flora tallinn,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Paide Linnameeskond,Meistriliiga,11:30,Flora Tallinn,0.39,2,,B
+2026-11-07,paksi,zalaegerszeg te,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Paksi FC,NB I,13:30,Zalaegerszeg TE,0.42,1,,B
+2026-11-07,panthrakikos komotini,ae larissa,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Panthrakikos FC Komotini,Football League,12:00,AE Larissa FC,0.41,2,,B
 2026-11-07,paris 13 atletico,vendee foot la roche sur yon,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Paris 13 Atletico,National,14:45,Vendee Foot Club La Roche Sur Yon,0.35,1,,B
-2026-11-07,persija jakarta,persebaya surabaya,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Persija Jakarta,Liga Indonesia,13:00,Persebaya Surabaya,0.48,1,,B
-2026-11-07,persita tangerang,isenmulang kalteng,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Persita Tangerang,Liga Indonesia,13:00,Isenmulang Kalteng FC,0.58,1,,B
+2026-11-07,paris 13 atletico,vendee foot la roche sur yon,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Paris 13 Atletico,National,14:45,Vendee Foot Club La Roche Sur Yon,0.44,2,,B
+2026-11-07,persija jakarta,persebaya surabaya,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Persija Jakarta,Liga Indonesia,13:00,Persebaya Surabaya,0.57,1,,B
+2026-11-07,persijap jepara,garuda yaksa,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Persijap Jepara,Liga Indonesia,13:00,Garuda Yaksa,0.39,2,,B
+2026-11-07,persita tangerang,isenmulang kalteng,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Persita Tangerang,Liga Indonesia,13:00,Isenmulang Kalteng FC,0.69,1,,B
 2026-11-07,perth glory,newcastle united jets,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Perth Glory,A-League,11:45,Newcastle United Jets,0.43,1,,B
+2026-11-07,perth glory,newcastle united jets,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Perth Glory,A-League,11:45,Newcastle United Jets,0.45,2,,B
+2026-11-07,perth glory d,canberra united d,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Perth Glory FC D,W-League - Women,09:00,Canberra United D,0.46,2,,B
+2026-11-07,pfc slavia sofia,cherno more,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,PFC Slavia Sofia,efbet Liga,15:00,Cherno More,0.46,1,,B
 2026-11-07,pfc slavia sofia,cherno more,B|X,2026-11-02 02:32,2026-11-03 23:21,9,,PFC Slavia Sofia,efbet Liga,15:00,Cherno More,0.39,X,,B
-2026-11-07,pisa,sudtirol,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Pisa,Serie B,15:00,Südtirol,0.43,1,,B
-2026-11-07,pitea d,malmo,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Piteå IF D,Allsvenskan Femminile - Women,13:00,Malmo FF,0.51,2,,B
+2026-11-07,pisa,sudtirol,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Pisa,Serie B,15:00,Südtirol,0.42,1,,B
+2026-11-07,pitea d,malmo,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,Piteå IF D,Allsvenskan Femminile - Women,13:00,Malmo FF,0.63,2,,B
+2026-11-07,plaza amador panama city,af sporting san miguelito,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,CD Plaza Amador Panama City,Liga Panamena - Apertura,02:30,AF Sporting San Miguelito,0.56,1,,B
 2026-11-07,plymouth argyle,alvechurch,B|X,2026-11-02 02:32,2026-11-03 00:54,3,,Plymouth Argyle,FA Cup,16:00,Alvechurch,0.39,X,,B
-2026-11-07,pocheon citizen,ulsan citizen,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Pocheon Citizen FC,National League,06:00,Ulsan Citizen FC,0.58,1,,B
+2026-11-07,pocheon citizen,ulsan citizen,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Pocheon Citizen FC,National League,06:00,Ulsan Citizen FC,0.55,1,,B
+2026-11-07,pofc botev vratsa,lokomotiv plovdiv,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,POFC Botev Vratsa,efbet Liga,12:30,Lokomotiv Plovdiv,0.39,1,,B
 2026-11-07,pofc botev vratsa,lokomotiv plovdiv,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,POFC Botev Vratsa,efbet Liga,12:30,Lokomotiv Plovdiv,0.38,2,,B
-2026-11-07,port,chonburi,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Port FC,Top League,13:00,Chonburi,0.58,1,,B
+2026-11-07,port,chonburi,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Port FC,Top League,13:00,Chonburi,0.63,1,,B
 2026-11-07,port vale,scunthorpe united,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,Port Vale,FA Cup,16:00,Scunthorpe United,0.7,1,,B
 2026-11-07,portadown,ballymena united,B|2,2026-11-02 02:32,2026-11-03 00:54,3,,Portadown,Premiership,16:00,Ballymena United,0.44,2,,B
-2026-11-07,portsmouth,stoke city,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Portsmouth,Championship,13:30,Stoke City,0.41,1,,B
+2026-11-07,portsmouth,stoke city,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Portsmouth,Championship,13:30,Stoke City,0.39,1,,B
 2026-11-07,preston north end,southampton,B|2,2026-11-02 02:32,2026-11-03 00:54,3,,Preston North End,Championship,16:00,Southampton,0.55,2,,B
 2026-11-07,preussen 06 munster,duisburg,B|2,2026-11-02 02:32,2026-11-03 00:54,3,,SC Preussen 06 Münster,3. Liga,16:30,Duisburg,0.45,2,,B
+2026-11-07,pro vercelli 1892,dolomiti bellunesi,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,FC Pro Vercelli 1892,Serie C - Girone A,14:30,Dolomiti Bellunesi,0.42,1,,B
+2026-11-07,proleter zrenjanin 023,ofk vrsac,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,FK Proleter Zrenjanin 023,Mozzart Bet SuperLiga,14:00,Ofk Vrsac,0.36,1,,B
+2026-11-07,pusamania borneo,makassar,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Pusamania Borneo,Liga Indonesia,09:30,Makassar,0.65,1,,B
 2026-11-07,queen of the south,east kilbride,B|1,2026-11-03 09:05,2026-11-03 23:21,2,,Queen Of The South FC,Scottish League One,16:00,East Kilbride,0.42,1,,B
 2026-11-07,queens park,partick thistle,B|2,2026-11-02 02:32,2026-11-03 23:21,5,,Queens Park,Scottish Championship,16:00,Partick Thistle FC,0.56,2,,B
 2026-11-07,queens park rangers,lincoln city,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,Queens Park Rangers,Championship,16:00,Lincoln City,0.43,1,,B
-2026-11-07,r a il d,haugesund,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Røa IL D,Toppserien Femminile - Women,13:00,Haugesund,0.45,2,,B
-2026-11-07,rkav volendam,treffers groesbeek,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Rkav Volendam,Tweede Divisie,14:30,De Treffers Groesbeek,0.51,2,,B
-2026-11-07,rosengard d,hammarby,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Rosengård D,Allsvenskan Femminile - Women,14:00,Hammarby IF,0.53,2,,B
+2026-11-07,r a il d,haugesund,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,Røa IL D,Toppserien Femminile - Women,13:00,Haugesund,0.37,2,,B
+2026-11-07,rkav volendam,treffers groesbeek,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,Rkav Volendam,Tweede Divisie,14:30,De Treffers Groesbeek,0.56,2,,B
+2026-11-07,rosengard d,hammarby,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,Rosengård D,Allsvenskan Femminile - Women,14:00,Hammarby IF,0.65,2,,B
 2026-11-07,ross county,peterhead,B|1,2026-11-03 09:05,2026-11-03 23:21,2,,Ross County,Scottish League One,16:00,Peterhead FC,0.75,1,,B
-2026-11-07,rot weiss essen,aquisgrana,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Rot Weiss Essen,3. Liga,14:00,Aquisgrana,0.43,1,,B
-2026-11-07,rouen,bastia,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Rouen,National,14:45,Bastia,0.37,1,,B
+2026-11-07,rot weiss essen,aquisgrana,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Rot Weiss Essen,3. Liga,14:00,Aquisgrana,0.4,1,,B
+2026-11-07,rouen,bastia,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Rouen,National,14:45,Bastia,0.54,1,,B
 2026-11-07,royal francs borains,rfc seraing,B|1,2026-11-02 02:32,2026-11-03 23:21,5,,Royal Francs Borains,Challenger Pro League,16:00,RFC Seraing,0.5,1,,B
+2026-11-07,sagan tosu,kataller toyama,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Sagan Tosu,J. League 2,06:00,Kataller Toyama,0.48,1,,B
 2026-11-07,sagan tosu,kataller toyama,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Sagan Tosu,J. League 2,06:00,Kataller Toyama,0.5,2,,B
 2026-11-07,salisbury city,sholing,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,Salisbury City,FA Cup,16:00,Sholing,0.53,1,,B
-2026-11-07,samsunspor,konyaspor,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Samsunspor,Super Lig,14:00,Konyaspor,0.44,1,,B
-2026-11-07,san luis,juarez,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,San Luis,Liga MX - Apertura,02:00,FC Juarez,0.55,1,,B
+2026-11-07,samsunspor,konyaspor,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Samsunspor,Super Lig,14:00,Konyaspor,0.57,1,,B
+2026-11-07,san diego wave,utah royals,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,San Diego Wave FC,National Women's Soccer League - Playoffs,04:00,Utah Royals,0.6,1,,B
+2026-11-07,san luis,juarez,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,San Luis,Liga MX - Apertura,02:00,FC Juarez,0.58,1,,B
+2026-11-07,sandvikens,united nordic,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Sandvikens IF,Superettan,15:00,United IK Nordic,0.46,1,,B
 2026-11-07,sandvikens,united nordic,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Sandvikens IF,Superettan,15:00,United IK Nordic,0.46,2,,B
-2026-11-07,sardarapat,ararat yerevan,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Sardarapat FC,Armenian Premier League,12:00,Ararat Yerevan,0.38,1,,B
+2026-11-07,sardarapat,ararat yerevan,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Sardarapat FC,Armenian Premier League,12:00,Ararat Yerevan,0.49,1,,B
 2026-11-07,scheiblingkirchen warth usv,horn,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,SCHEIBLINGKIRCHEN-WARTH USV,Regionalliga Ost,14:00,Horn,0.44,1,,B
+2026-11-07,scheiblingkirchen warth usv,horn,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,SCHEIBLINGKIRCHEN-WARTH USV,Regionalliga Ost,14:00,Horn,0.39,2,,B
 2026-11-07,schwarz weiss bregenz,rapid vienna amatori,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Schwarz Weiss Bregenz,2. Liga,15:30,Rapid Vienna Amatori,0.51,1,,B
-2026-11-07,seongnam ilhwa,daegu,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Seongnam Ilhwa,K-League 2,06:00,Daegu,0.48,2,,B
-2026-11-07,seoul e land,jeonnam dragons,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Seoul E-Land,K-League 2,08:30,Jeonnam Dragons,0.51,1,,B
-2026-11-07,shaanxi union,guangxi hengchen,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Shaanxi Union FC,Chinese League One,07:30,Guangxi Hengchen FC,0.58,1,,B
-2026-11-07,shanghai jiading city dev,heilongjiang lava spring,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Shanghai Jiading City Dev,Chinese League One,07:30,Heilongjiang Lava Spring,0.39,1,,B
+2026-11-07,segesta,opatija,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,HNK Segesta,2. HNL,12:45,Opatija,0.57,1,,B
+2026-11-07,semen padang,adhyaksa bekasi,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Semen Padang,Liga 2 - Gruppo A,13:00,FC Adhyaksa Bekasi,0.6,1,,B
+2026-11-07,seongnam ilhwa,daegu,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Seongnam Ilhwa,K-League 2,06:00,Daegu,0.38,2,,B
+2026-11-07,seoul e land,jeonnam dragons,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Seoul E-Land,K-League 2,08:30,Jeonnam Dragons,0.64,1,,B
+2026-11-07,shaanxi union,guangxi hengchen,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Shaanxi Union FC,Chinese League One,07:30,Guangxi Hengchen FC,0.37,1,,B
+2026-11-07,shanghai jiading city dev,heilongjiang lava spring,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Shanghai Jiading City Dev,Chinese League One,07:30,Heilongjiang Lava Spring,0.49,1,,B
+2026-11-07,shenzhen juniors,suzhou dongwu,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Shenzhen Juniors FC,Chinese League One,07:30,Suzhou Dongwu,0.45,1,,B
 2026-11-07,shenzhen juniors,suzhou dongwu,B|X,2026-11-03 02:25,2026-11-03 23:21,6,,Shenzhen Juniors FC,Chinese League One,07:30,Suzhou Dongwu,0.58,X,,B
-2026-11-07,shimizu s pulse,tokyo verdy,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Shimizu S-Pulse,J.League,05:00,Tokyo Verdy,0.47,1,,B
+2026-11-07,shimizu s pulse,tokyo verdy,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Shimizu S-Pulse,J.League,05:00,Tokyo Verdy,0.46,1,,B
+2026-11-07,siroki brijeg,zeljeznicar sarajevo,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,NK Siroki Brijeg,Premijer Liga BiH,15:00,FK Zeljeznicar Sarajevo,0.45,1,,B
 2026-11-07,siroki brijeg,zeljeznicar sarajevo,B|X,2026-11-03 02:25,2026-11-03 23:21,6,,NK Siroki Brijeg,Premijer Liga BiH,15:00,FK Zeljeznicar Sarajevo,0.43,X,,B
-2026-11-07,slask wroclaw,piast gliwice,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Slask Wroclaw,Ekstraklasa,14:45,Piast Gliwice,0.49,2,,B
+2026-11-07,slask wroclaw,piast gliwice,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Slask Wroclaw,Ekstraklasa,14:45,Piast Gliwice,0.41,2,,B
+2026-11-07,sloga doboj,bsk banja luka,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,FK Sloga Doboj,Premijer Liga BiH,15:00,FK Bsk Banja Luka,0.52,1,,B
 2026-11-07,sloga doboj,bsk banja luka,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,FK Sloga Doboj,Premijer Liga BiH,15:00,FK Bsk Banja Luka,0.35,2,,B
-2026-11-07,slovan bratislava,trencin,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Slovan Bratislava,Corgon Liga,15:30,Trencin,0.5,1,,B
-2026-11-07,slovan liberec,bohemians prague 1905,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,FC Slovan Liberec,Chance Liga,15:00,Bohemians Prague 1905,0.47,1,,B
-2026-11-07,sokol kleczew,sandecja nowy sacz,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Sokol Kleczew,2 Liga,12:00,Sandecja Nowy Sacz,0.4,2,,B
-2026-11-07,spaeri,dinamo batumi,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,FC Spaeri,National League,14:00,Dinamo Batumi,0.62,2,,B
-2026-11-07,spakenburg,vv kloetinge,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Spakenburg,Tweede Divisie,15:00,VV Kloetinge,0.56,1,,B
-2026-11-07,ss juve stabia,arezzo,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,SS Juve Stabia,Serie B,15:00,Arezzo,0.43,1,,B
+2026-11-07,slovan bratislava,trencin,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Slovan Bratislava,Corgon Liga,15:30,Trencin,0.76,1,,B
+2026-11-07,slovan liberec,bohemians prague 1905,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,FC Slovan Liberec,Chance Liga,15:00,Bohemians Prague 1905,0.5,1,,B
+2026-11-07,sokol kleczew,sandecja nowy sacz,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,Sokol Kleczew,2 Liga,12:00,Sandecja Nowy Sacz,0.52,2,,B
+2026-11-07,spaeri,dinamo batumi,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,FC Spaeri,National League,14:00,Dinamo Batumi,0.5,2,,B
+2026-11-07,spakenburg,vv kloetinge,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Spakenburg,Tweede Divisie,15:00,VV Kloetinge,0.63,1,,B
+2026-11-07,ss juve stabia,arezzo,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,SS Juve Stabia,Serie B,15:00,Arezzo,0.44,1,,B
 2026-11-07,st johnstone,dundee,B|1,2026-11-02 02:32,2026-11-03 23:21,5,,St Johnstone FC,Scottish Premiership,16:00,FC Dundee,0.42,1,,B
-2026-11-07,suwon,gyeongnam,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Suwon FC,K-League 2,06:00,Gyeongnam FC,0.4,1,,B
-2026-11-07,sv waldhof mannheim 07,fortuna cologne,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,SV Waldhof Mannheim 07,3. Liga,14:00,SC Fortuna Cologne,0.45,1,,B
-2026-11-07,tauras taurage,transinvest b,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,FK Tauras Tauragė,1 Lyga,13:00,FK Transinvest B,0.62,1,,B
+2026-11-07,sundsvall,varbergs bois,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Sundsvall,Superettan,15:00,Varbergs Bois,0.57,2,,B
+2026-11-07,suwon,gyeongnam,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Suwon FC,K-League 2,06:00,Gyeongnam FC,0.66,1,,B
+2026-11-07,sv waldhof mannheim 07,fortuna cologne,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,SV Waldhof Mannheim 07,3. Liga,14:00,SC Fortuna Cologne,0.43,1,,B
+2026-11-07,tauras taurage,transinvest b,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,FK Tauras Tauragė,1 Lyga,13:00,FK Transinvest B,0.69,1,,B
 2026-11-07,termalica bruk bet nieciecza,chrobry glogow,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Termalica Bruk-Bet Nieciecza,1 Liga,15:30,Chrobry Glogow,0.48,1,,B
-2026-11-07,thionville lusitanos,cannes,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Thionville Lusitanos,National,14:45,Cannes,0.45,2,,B
+2026-11-07,thionville lusitanos,cannes,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,Thionville Lusitanos,National,14:45,Cannes,0.55,2,,B
+2026-11-07,tigre,sarmiento junin,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Tigre,"Liga Profesional Argentina - Clausura, Group A",02:00,CA Sarmiento Junin,0.42,1,,B
 2026-11-07,tokushima vortis,tegevajaro miyazaki,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Tokushima Vortis,J. League 2,06:00,Tegevajaro Miyazaki,0.43,1,,B
-2026-11-07,tokyo,kashima antlers,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,FC Tokyo,J.League,07:00,Kashima Antlers,0.49,1,,B
-2026-11-07,torino,lecce,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Torino,Serie A,15:00,Lecce,0.51,1,,B
-2026-11-07,trans narva,harju laagri,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Trans Narva,Meistriliiga,11:30,HARJU JK LAAGRI,0.57,2,,B
-2026-11-07,uks sms lodz,kks lech poznan,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,UKS SMS Lodz,Ekstraliga Women - Women,12:00,Kks Lech Poznan,0.42,1,,B
+2026-11-07,tokushima vortis,tegevajaro miyazaki,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Tokushima Vortis,J. League 2,06:00,Tegevajaro Miyazaki,0.42,2,,B
+2026-11-07,tokyo,kashima antlers,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,FC Tokyo,J.League,07:00,Kashima Antlers,0.4,1,,B
+2026-11-07,torino,lecce,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Torino,Serie A,15:00,Lecce,0.4,1,,B
+2026-11-07,trans narva,harju laagri,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,Trans Narva,Meistriliiga,11:30,HARJU JK LAAGRI,0.43,2,,B
+2026-11-07,uks sms lodz,kks lech poznan,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,UKS SMS Lodz,Ekstraliga Women - Women,12:00,Kks Lech Poznan,0.53,1,,B
+2026-11-07,umecit,tauro,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,UMECIT,Liga Panamena - Apertura,02:30,Tauro,0.38,1,,B
+2026-11-07,unam,atletico san luis,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,UNAM,"Liga MX Femenil - Women, Apertura",00:00,Atletico San Luis,0.68,1,,B
 2026-11-07,unam,atletico san luis,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,UNAM,"Liga MX Femenil - Women, Apertura",00:00,Atletico San Luis,0.47,2,,B
-2026-11-07,uthai thani,chiangrai united,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Uthai Thani FC,Top League,12:30,Chiangrai United,0.39,1,,B
-2026-11-07,van spor,sivasspor,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Van Spor FK,1. Lig,11:30,Sivasspor,0.4,1,,B
+2026-11-07,unirea 2004 slobozia,csm satu mare,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Unirea 2004 Slobozia,Liga 2,10:00,Csm Satu Mare,0.52,1,,B
+2026-11-07,uthai thani,chiangrai united,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Uthai Thani FC,Top League,12:30,Chiangrai United,0.46,1,,B
+2026-11-07,van spor,sivasspor,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Van Spor FK,1. Lig,11:30,Sivasspor,0.39,1,,B
+2026-11-07,velez mostar,celik zenica,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Velez Mostar,Premijer Liga BiH,15:00,Celik Zenica,0.47,1,,B
 2026-11-07,velez mostar,celik zenica,B|X,2026-11-03 02:25,2026-11-03 23:21,6,,Velez Mostar,Premijer Liga BiH,15:00,Celik Zenica,0.38,X,,B
+2026-11-07,vfl 1899 osnabruck,kaiserslautern,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,VfL 1899 Osnabruck,2. Bundesliga,13:00,Kaiserslautern,0.48,1,,B
 2026-11-07,vfl 1899 osnabruck,kaiserslautern,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,VfL 1899 Osnabruck,2. Bundesliga,13:00,Kaiserslautern,0.59,2,,B
 2026-11-07,villefranche beaujolais,quevilly,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,FC Villefranche-Beaujolais,National,14:45,Quevilly,0.48,1,,B
-2026-11-07,vitoria,fluminense,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Vitória,Brasileirão,00:00,Fluminense,0.44,1,,B
-2026-11-07,vmfd zalgiris b,be1 nfa,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Vmfd Zalgiris B,1 Lyga,13:00,Be1 Nfa,0.44,2,,B
+2026-11-07,villefranche beaujolais,quevilly,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,FC Villefranche-Beaujolais,National,14:45,Quevilly,0.36,2,,B
+2026-11-07,vitoria,fluminense,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Vitória,Brasileirão,00:00,Fluminense,0.36,1,,B
+2026-11-07,vmfd zalgiris b,be1 nfa,B|2,2026-11-03 02:25,2026-11-04 03:06,7,,Vmfd Zalgiris B,1 Lyga,13:00,Be1 Nfa,0.48,2,,B
 2026-11-07,volos nps,ae kifisia,B|2,2026-11-02 02:32,2026-11-03 00:54,3,,Volos NPS,Superleague,16:00,AE Kifisia FC,0.48,2,,B
-2026-11-07,vonds ichihara,yokohama,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Vonds Ichihara,Japan Football League,05:00,Yokohama,0.46,1,,B
+2026-11-07,vonds ichihara,yokohama,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Vonds Ichihara,Japan Football League,05:00,Yokohama,0.49,1,,B
 2026-11-07,watford,middlesbrough,B|2,2026-11-02 02:32,2026-11-03 00:54,3,,Watford,Championship,16:00,Middlesbrough,0.54,2,,B
-2026-11-07,wehen wiesbaden,tsv havelse,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Wehen Wiesbaden,3. Liga,14:00,TSV Havelse,0.57,1,,B
+2026-11-07,wehen wiesbaden,tsv havelse,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Wehen Wiesbaden,3. Liga,14:00,TSV Havelse,0.56,1,,B
 2026-11-07,west bromwich,millwall,B|1,2026-11-02 02:32,2026-11-03 00:54,3,,West Bromwich,Championship,16:00,Millwall,0.44,1,,B
-2026-11-07,wrexham,wolverhampton,B|2,2026-11-02 02:32,2026-11-03 23:21,9,,Wrexham FC,Championship,13:30,Wolverhampton,0.39,2,,B
+2026-11-07,wrexham,wolverhampton,B|2,2026-11-02 02:32,2026-11-04 03:06,10,,Wrexham FC,Championship,13:30,Wolverhampton,0.37,2,,B
 2026-11-07,wsc hertha wels,sturm graz ii,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,WSC Hertha Wels,2. Liga,15:30,Sturm Graz II,0.53,1,,B
 2026-11-07,wuxi wuguo,changchun yatai,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Wuxi Wuguo,Chinese League One,07:30,Changchun Yatai,0.47,1,,B
+2026-11-07,wuxi wuguo,changchun yatai,B|2,2026-11-04 03:06,2026-11-04 03:06,1,,Wuxi Wuguo,Chinese League One,07:30,Changchun Yatai,0.43,2,,B
+2026-11-07,yanbian longding,shijiazhuang gongfu,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Yanbian Longding,Chinese League One,07:30,Shijiazhuang Gongfu FC,0.39,1,,B
 2026-11-07,yanbian longding,shijiazhuang gongfu,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Yanbian Longding,Chinese League One,07:30,Shijiazhuang Gongfu FC,0.47,2,,B
+2026-11-07,yangpyeong,dangjin citizen,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,Yangpyeong FC,National League,06:00,Dangjin Citizen,0.39,1,,B
 2026-11-07,yangpyeong,dangjin citizen,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,Yangpyeong FC,National League,06:00,Dangjin Citizen,0.58,2,,B
-2026-11-07,yokohama,fujieda myfc,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Yokohama FC,J. League 2,06:00,Fujieda Myfc,0.52,1,,B
-2026-11-07,yokohama marinos,fagiano okayama,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Yokohama Marinos,J.League,06:00,Fagiano Okayama,0.46,1,,B
+2026-11-07,yokohama,fujieda myfc,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Yokohama FC,J. League 2,06:00,Fujieda Myfc,0.63,1,,B
+2026-11-07,yokohama marinos,fagiano okayama,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Yokohama Marinos,J.League,06:00,Fagiano Okayama,0.55,1,,B
 2026-11-07,york city,northampton town,B|X,2026-11-02 02:32,2026-11-03 00:54,3,,York City FC,FA Cup,16:00,Northampton Town,0.48,X,,B
+2026-11-07,zemun,imt novi belgrade,B|1,2026-11-04 03:06,2026-11-04 03:06,1,,FK Zemun,Serbian Super Liga,13:00,FK IMT Novi Belgrade,0.43,1,,B
 2026-11-07,zemun,imt novi belgrade,B|2,2026-11-03 02:25,2026-11-03 23:21,6,,FK Zemun,Serbian Super Liga,13:00,FK IMT Novi Belgrade,0.47,2,,B
-2026-11-07,zrinjski mostar,sarajevo,B|1,2026-11-03 02:25,2026-11-03 23:21,6,,Zrinjski Mostar,Premijer Liga BiH,15:00,Sarajevo,0.49,1,,B
-2026-11-08,real cartagena,real soacha cundinamarca,B|1,2026-11-02 02:32,2026-11-03 23:21,9,,Real Cartagena,"Primera B - Clausura, Promotion, Group B",00:10,Real Soacha Cundinamarca,0.38,1,,B
+2026-11-07,zrinjski mostar,sarajevo,B|1,2026-11-03 02:25,2026-11-04 03:06,7,,Zrinjski Mostar,Premijer Liga BiH,15:00,Sarajevo,0.55,1,,B
+2026-11-08,real cartagena,real soacha cundinamarca,B|1,2026-11-02 02:32,2026-11-04 03:06,10,,Real Cartagena,"Primera B - Clausura, Promotion, Group B",00:10,Real Soacha Cundinamarca,0.38,1,,B
