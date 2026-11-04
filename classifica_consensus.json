@@ -1,21 +1,21 @@
 {
  "medio": {
   "copertura": {
-   "1": 20240,
+   "1": 20242,
    "2": 2277,
    "3": 1140,
    "4": 534,
    "5": 205
   },
-  "totale": 24396,
-  "brier": 0.5798,
+  "totale": 24398,
+  "brier": 0.5799,
   "brier_clima": 0.6417,
   "fonti": [
    {
     "nome": "betimate",
-    "partite": 23247,
+    "partite": 23249,
     "brier": 0.5798,
-    "brier_media": 0.5791
+    "brier_media": 0.5792
    },
    {
     "nome": "footymetrics",
@@ -56,7 +56,7 @@
    ]
   }
  },
- "aggiornato": "2026-11-04 02:07",
+ "aggiornato": "2026-11-04 02:43",
  "accordo": {
   "totale": 1669,
   "prende": {

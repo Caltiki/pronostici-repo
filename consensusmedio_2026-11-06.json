@@ -72,8 +72,8 @@
   "Ospite": "Cartagines",
   "Segno": "2",
   "P1": 27.0,
-  "PX": 26.0,
-  "P2": 47.0,
+  "PX": 26.5,
+  "P2": 46.5,
   "Fonti": 2,
   "Elenco": "betimate, ratingbet"
  },
@@ -111,8 +111,8 @@
   "Ospite": "O'Higgins",
   "Segno": "2",
   "P1": 29.0,
-  "PX": 27.5,
-  "P2": 43.5,
+  "PX": 27.0,
+  "P2": 44.0,
   "Fonti": 2,
   "Elenco": "betimate, ratingbet"
  },
@@ -340,19 +340,6 @@
  {
   "Data": "2026-11-06",
   "Ora": "01:30",
-  "Lega": "Brazil - Serie A",
-  "Casa": "Cruzeiro",
-  "Ospite": "Bahia",
-  "Segno": "1",
-  "P1": 58.0,
-  "PX": 22.0,
-  "P2": 20.0,
-  "Fonti": 2,
-  "Elenco": "footymetrics, ratingbet"
- },
- {
-  "Data": "2026-11-06",
-  "Ora": "01:30",
   "Lega": "Série A brasiliana",
   "Casa": "Cruzeiro",
   "Ospite": "EC Bahia",
@@ -362,6 +349,19 @@
   "P2": 22.0,
   "Fonti": 1,
   "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-11-06",
+  "Ora": "01:30",
+  "Lega": "Brazil - Serie A",
+  "Casa": "Cruzeiro",
+  "Ospite": "Bahia",
+  "Segno": "1",
+  "P1": 58.0,
+  "PX": 22.0,
+  "P2": 20.0,
+  "Fonti": 2,
+  "Elenco": "footymetrics, ratingbet"
  },
  {
   "Data": "2026-11-06",
@@ -682,8 +682,8 @@
   "Casa": "Alacranes de Durango",
   "Ospite": "Universidad Guadalajara",
   "Segno": "1",
-  "P1": 53.0,
-  "PX": 22.0,
+  "P1": 54.0,
+  "PX": 21.0,
   "P2": 25.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -1016,19 +1016,6 @@
  {
   "Data": "2026-11-06",
   "Ora": "15:55",
-  "Lega": "Saudi Arabia: Pro League Saudi Arabia",
-  "Casa": "Al Hazem",
-  "Ospite": "Al Nassr FC",
-  "Segno": "2",
-  "P1": 8.0,
-  "PX": 13.0,
-  "P2": 79.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
- },
- {
-  "Data": "2026-11-06",
-  "Ora": "15:55",
   "Lega": "SAUDI ARABIA - SAUDI PRO LEAGUE",
   "Casa": "Al Hazem",
   "Ospite": "Al-Nassr Riyadh",
@@ -1038,6 +1025,19 @@
   "P2": 58.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-06",
+  "Ora": "15:55",
+  "Lega": "Saudi Arabia: Pro League Saudi Arabia",
+  "Casa": "Al Hazem",
+  "Ospite": "Al Nassr FC",
+  "Segno": "2",
+  "P1": 8.0,
+  "PX": 13.0,
+  "P2": 79.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
  },
  {
   "Data": "2026-11-06",
@@ -1068,19 +1068,6 @@
  {
   "Data": "2026-11-06",
   "Ora": "16:00",
-  "Lega": "Bulgaria: Parva liga Bulgaria",
-  "Casa": "Septemvri Sofia",
-  "Ospite": "PFC Lokomotiv Sofia 1929",
-  "Segno": "2",
-  "P1": 31.0,
-  "PX": 28.0,
-  "P2": 41.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
- },
- {
-  "Data": "2026-11-06",
-  "Ora": "16:00",
   "Lega": "Bulgaria - First League",
   "Casa": "Septemvri Sofia",
   "Ospite": "Lokomotiv Sofia 1929",
@@ -1093,16 +1080,16 @@
  },
  {
   "Data": "2026-11-06",
-  "Ora": "16:30",
-  "Lega": "Romania - Superliga",
-  "Casa": "UTA Arad",
-  "Ospite": "Petrolul 52",
-  "Segno": "1",
-  "P1": 56.0,
-  "PX": 24.0,
-  "P2": 20.0,
+  "Ora": "16:00",
+  "Lega": "Bulgaria: Parva liga Bulgaria",
+  "Casa": "Septemvri Sofia",
+  "Ospite": "PFC Lokomotiv Sofia 1929",
+  "Segno": "2",
+  "P1": 31.0,
+  "PX": 28.0,
+  "P2": 41.0,
   "Fonti": 1,
-  "Elenco": "footymetrics"
+  "Elenco": "ratingbet"
  },
  {
   "Data": "2026-11-06",
@@ -1116,6 +1103,19 @@
   "P2": 26.5,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea"
+ },
+ {
+  "Data": "2026-11-06",
+  "Ora": "16:30",
+  "Lega": "Romania - Superliga",
+  "Casa": "UTA Arad",
+  "Ospite": "Petrolul 52",
+  "Segno": "1",
+  "P1": 56.0,
+  "PX": 24.0,
+  "P2": 20.0,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
  },
  {
   "Data": "2026-11-06",
@@ -1263,19 +1263,6 @@
  {
   "Data": "2026-11-06",
   "Ora": "18:00",
-  "Lega": "POLAND - EKSTRAKLASA",
-  "Casa": "Motor Lublin",
-  "Ospite": "Wisla Plock",
-  "Segno": "1",
-  "P1": 46.5,
-  "PX": 26.5,
-  "P2": 27.0,
-  "Fonti": 2,
-  "Elenco": "ratingbet, statarea"
- },
- {
-  "Data": "2026-11-06",
-  "Ora": "18:00",
   "Lega": "Poland - Ekstraklasa",
   "Casa": "Motor Lublin",
   "Ospite": "Wisła Płock",
@@ -1285,6 +1272,19 @@
   "P2": 30.3,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-06",
+  "Ora": "18:00",
+  "Lega": "POLAND - EKSTRAKLASA",
+  "Casa": "Motor Lublin",
+  "Ospite": "Wisla Plock",
+  "Segno": "1",
+  "P1": 46.5,
+  "PX": 26.5,
+  "P2": 27.0,
+  "Fonti": 2,
+  "Elenco": "ratingbet, statarea"
  },
  {
   "Data": "2026-11-06",
@@ -1497,19 +1497,6 @@
  {
   "Data": "2026-11-06",
   "Ora": "18:30",
-  "Lega": "Germany - 2. Bundesliga",
-  "Casa": "Dynamo Dresden",
-  "Ospite": "SpVgg Greuther Fürth",
-  "Segno": "1",
-  "P1": 44.5,
-  "PX": 23.0,
-  "P2": 32.5,
-  "Fonti": 2,
-  "Elenco": "footymetrics, statarea"
- },
- {
-  "Data": "2026-11-06",
-  "Ora": "18:30",
   "Lega": "Germany: 2. Bundesliga Germany",
   "Casa": "Dynamo Dresden",
   "Ospite": "Greuther Fuerth",
@@ -1519,6 +1506,19 @@
   "P2": 25.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-11-06",
+  "Ora": "18:30",
+  "Lega": "Germany - 2. Bundesliga",
+  "Casa": "Dynamo Dresden",
+  "Ospite": "SpVgg Greuther Fürth",
+  "Segno": "1",
+  "P1": 44.5,
+  "PX": 23.0,
+  "P2": 32.5,
+  "Fonti": 2,
+  "Elenco": "footymetrics, statarea"
  },
  {
   "Data": "2026-11-06",
@@ -1796,19 +1796,6 @@
  {
   "Data": "2026-11-06",
   "Ora": "19:30",
-  "Lega": "Switzerland: Challenge League Switzerland",
-  "Casa": "SC Kriens",
-  "Ospite": "FC Rapperswil-Jona",
-  "Segno": "1",
-  "P1": 43.0,
-  "PX": 24.0,
-  "P2": 33.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
- },
- {
-  "Data": "2026-11-06",
-  "Ora": "19:30",
   "Lega": "SWITZERLAND - CHALLENGE LEAGUE",
   "Casa": "SC Kriens",
   "Ospite": "Rapperswil",
@@ -1818,6 +1805,19 @@
   "P2": 24.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-06",
+  "Ora": "19:30",
+  "Lega": "Switzerland: Challenge League Switzerland",
+  "Casa": "SC Kriens",
+  "Ospite": "FC Rapperswil-Jona",
+  "Segno": "1",
+  "P1": 43.0,
+  "PX": 24.0,
+  "P2": 33.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
  },
  {
   "Data": "2026-11-06",
@@ -2121,19 +2121,6 @@
  {
   "Data": "2026-11-06",
   "Ora": "20:30",
-  "Lega": "ITALY - SERIE B",
-  "Casa": "Ascoli",
-  "Ospite": "SSD Palermo",
-  "Segno": "1",
-  "P1": 35.0,
-  "PX": 32.0,
-  "P2": 33.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
- },
- {
-  "Data": "2026-11-06",
-  "Ora": "20:30",
   "Lega": "Italy - Serie B",
   "Casa": "Ascoli",
   "Ospite": "Palermo",
@@ -2147,15 +2134,15 @@
  {
   "Data": "2026-11-06",
   "Ora": "20:30",
-  "Lega": "England: FA Cup England",
-  "Casa": "Bristol Rovers",
-  "Ospite": "Cambridge U",
-  "Segno": "2",
-  "P1": 29.0,
-  "PX": 25.0,
-  "P2": 46.0,
+  "Lega": "ITALY - SERIE B",
+  "Casa": "Ascoli",
+  "Ospite": "SSD Palermo",
+  "Segno": "1",
+  "P1": 35.0,
+  "PX": 32.0,
+  "P2": 33.0,
   "Fonti": 1,
-  "Elenco": "ratingbet"
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-06",
@@ -2169,6 +2156,19 @@
   "P2": 33.5,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea"
+ },
+ {
+  "Data": "2026-11-06",
+  "Ora": "20:30",
+  "Lega": "England: FA Cup England",
+  "Casa": "Bristol Rovers",
+  "Ospite": "Cambridge U",
+  "Segno": "2",
+  "P1": 29.0,
+  "PX": 25.0,
+  "P2": 46.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
  },
  {
   "Data": "2026-11-06",
@@ -2199,19 +2199,6 @@
  {
   "Data": "2026-11-06",
   "Ora": "20:30",
-  "Lega": "Germany: Bundesliga Germany",
-  "Casa": "Hamburger SV",
-  "Ospite": "Borussia Moenchengladbach",
-  "Segno": "1",
-  "P1": 40.0,
-  "PX": 25.0,
-  "P2": 35.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
- },
- {
-  "Data": "2026-11-06",
-  "Ora": "20:30",
   "Lega": "GERMANY - BUNDESLIGA",
   "Casa": "Hamburger SV",
   "Ospite": "Borussia Monchengladbach",
@@ -2221,6 +2208,19 @@
   "P2": 28.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-06",
+  "Ora": "20:30",
+  "Lega": "Germany: Bundesliga Germany",
+  "Casa": "Hamburger SV",
+  "Ospite": "Borussia Moenchengladbach",
+  "Segno": "1",
+  "P1": 40.0,
+  "PX": 25.0,
+  "P2": 35.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
  },
  {
   "Data": "2026-11-06",
@@ -2524,19 +2524,6 @@
  {
   "Data": "2026-11-06",
   "Ora": "23:00",
-  "Lega": "Argentina: Liga Profesional Argentina",
-  "Casa": "San Lorenzo",
-  "Ospite": "Club Atletico Platense",
-  "Segno": "1",
-  "P1": 36.0,
-  "PX": 33.0,
-  "P2": 31.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
- },
- {
-  "Data": "2026-11-06",
-  "Ora": "23:00",
   "Lega": "Argentina - Liga Profesional de Fútbol",
   "Casa": "San Lorenzo",
   "Ospite": "Platense",
@@ -2546,6 +2533,19 @@
   "P2": 35.0,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-06",
+  "Ora": "23:00",
+  "Lega": "Argentina: Liga Profesional Argentina",
+  "Casa": "San Lorenzo",
+  "Ospite": "Club Atletico Platense",
+  "Segno": "1",
+  "P1": 36.0,
+  "PX": 33.0,
+  "P2": 31.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
  },
  {
   "Data": "2026-11-06",
