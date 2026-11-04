@@ -1590,6 +1590,7 @@
     fonteCm: "",
     esito: "",
     stretti: false,
+    secchi: false,
     limite: PASSO
   };
   // La multipla sopravvive al cambio di vista e di data: si compone
@@ -1857,7 +1858,7 @@
     });
     $cont.querySelectorAll("[data-data]").forEach(function (b) {
       b.addEventListener("click", function () {
-        stato.data[sez] = b.dataset.data; stato.limite = PASSO; stato.esito = ""; disegna();
+        stato.data[sez] = b.dataset.data; stato.limite = PASSO; stato.esito = ""; stato.secchi = false; disegna();
       });
     });
     $cont.querySelectorAll("[data-vista]").forEach(function (b) {
@@ -1914,6 +1915,13 @@
     if (sez === "prezzi" && stato.stretti) {
       var stretteF = passano.filter(margineStretto);
       if (stretteF.length) passano = stretteF; else stato.stretti = false;
+    }
+    // Lo stesso per il riquadro "su un segno secco" del Consenso Statarea:
+    // restano le partite in cui il pronostico combinato e' 1, X o 2.
+    baseSecchi = passano;
+    if (sez === "accordo" && stato.secchi) {
+      var secchiF = passano.filter(segnoSecco);
+      if (secchiF.length) passano = secchiF; else stato.secchi = false;
     }
     var q = stato.cerca.toLowerCase();
     var visibili = q ? passano.filter(function (r) { return testoCerca(r).indexOf(q) >= 0; }) : passano;
@@ -1972,6 +1980,12 @@
     $r.querySelectorAll("[data-stretti]").forEach(function (b) {
       b.addEventListener("click", function () {
         stato.stretti = !stato.stretti;
+        stato.limite = PASSO; ridisegnaRighe();
+      });
+    });
+    $r.querySelectorAll("[data-secchi]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        stato.secchi = !stato.secchi;
         stato.limite = PASSO; ridisegnaRighe();
       });
     });
@@ -3710,14 +3724,26 @@
     return v.some(function (x) { return x == null; }) ? null : v.reduce(function (a, b) { return a + b; }, 0);
   }
 
+  var baseSecchi = null;
+  function segnoSecco(r) { return /^[1X2]$/.test(String(r["Pron Combinato"] || "").toUpperCase()); }
+  // Il riquadro centrale e' un pulsante, come quello del 2% nei Pronostici:
+  // toccandolo restano le partite su un segno secco, ritoccandolo tutte. I
+  // conteggi restano quelli di tutta la giornata anche col filtro acceso.
   function riepilogoAccordo(v) {
-    var secchi = v.filter(function (r) { return /^[1X2]$/.test(String(r["Pron Combinato"] || "").toUpperCase()); }).length;
+    var on = stato.secchi;
+    var base = on && baseSecchi ? baseSecchi : v;
+    if (stato.cerca && !on) base = v;
+    var secchi = base.filter(segnoSecco).length;
     var q = mediana(v.map(function (r) { return num(r["Quota WP"]); }));
-    return tessere([
-      [String(v.length), "partite d'accordo"],
-      [String(secchi), "su un segno secco (1, X o 2)"],
-      [q == null ? "-" : q.toFixed(2), "quota WebPronostici mediana"]
-    ]) + legenda();
+    return '<div class="riepilogo">' +
+      "<div><b>" + base.length + "</b><span>partite d'accordo</span></div>" +
+      '<button type="button" class="filtro-esito' + (on ? " attivo" : "") + '" data-secchi="1"' +
+      (secchi ? "" : " disabled") + ' aria-pressed="' + (on ? "true" : "false") + '"><b>' + secchi +
+      '<small style="font-size:.7em;color:var(--tenue)"> / ' + base.length + "</small></b><span>" +
+      (on ? "su un segno secco · mostra tutte" : "su un segno secco (1, X o 2)") + "</span></button>" +
+      "<div><b>" + (q == null ? "-" : q.toFixed(2)) + "</b><span>quota WebPronostici mediana</span></div></div>" +
+      (secchi && !on ? '<p class="conta">Tocca il riquadro centrale per vedere solo quelle.</p>' : "") +
+      legenda();
   }
 
   // Le quote AsianOdds, quando consensus.py ha agganciato la partita: si
@@ -4920,6 +4946,7 @@
     stato.fonteCm = "";
     stato.esito = "";
     stato.stretti = false;
+    stato.secchi = false;
     stato.limite = PASSO;
     FONTI.vista = "riepilogo"; FONTI.data = null; FONTI.fonte = "";
     SCHEDA.interna = false; ritorno = null;
