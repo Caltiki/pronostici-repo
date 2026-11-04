@@ -6,7 +6,7 @@
   "Lega": "Primera División Cile",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.55,
+  "Prob": 0.38,
   "Quota": null
  },
  {
@@ -16,7 +16,7 @@
   "Lega": "Liga Promerica - Apertura",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.41,
+  "Prob": 0.46,
   "Quota": null
  },
  {
@@ -26,7 +26,17 @@
   "Lega": "Liga MX Femenil - Women, Apertura",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.58,
+  "Prob": 0.64,
+  "Quota": null
+ },
+ {
+  "Casa": "Independiente Del Valle",
+  "Ospite": "DELFIN SC",
+  "Ora": "01:00",
+  "Lega": "Copa Ecuador",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.63,
   "Quota": null
  },
  {
@@ -35,8 +45,18 @@
   "Ora": "01:30",
   "Lega": "Brasileirão",
   "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.39,
+  "Quota": null
+ },
+ {
+  "Casa": "Cancun FC",
+  "Ospite": "Piratas Veracruz",
+  "Ora": "02:00",
+  "Lega": "Liga De Expansion MX - Apertura, Playoffs",
+  "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.52,
+  "Prob": 0.38,
   "Quota": null
  },
  {
@@ -46,7 +66,7 @@
   "Lega": "Liga MX Femenil - Women, Apertura",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.71,
+  "Prob": 0.75,
   "Quota": null
  },
  {
@@ -56,7 +76,7 @@
   "Lega": "Liga Nacional - Apertura",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.62,
+  "Prob": 0.63,
   "Quota": null
  },
  {
@@ -66,7 +86,7 @@
   "Lega": "Liga Promerica - Apertura",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.48,
+  "Prob": 0.39,
   "Quota": null
  },
  {
@@ -76,7 +96,7 @@
   "Lega": "Liga MX Femenil - Women, Apertura",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.5,
+  "Prob": 0.38,
   "Quota": null
  },
  {
@@ -85,8 +105,8 @@
   "Ora": "09:00",
   "Lega": "W-League - Women",
   "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.46,
+  "Pronostico": "2",
+  "Prob": 0.45,
   "Quota": null
  },
  {
@@ -96,7 +116,7 @@
   "Lega": "Liga Indonesia",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.48,
+  "Prob": 0.5,
   "Quota": null
  },
  {
@@ -106,7 +126,7 @@
   "Lega": "A-League",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.42,
+  "Prob": 0.61,
   "Quota": null
  },
  {
@@ -116,7 +136,7 @@
   "Lega": "Premier League",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.56,
+  "Prob": 0.6,
   "Quota": null
  },
  {
@@ -125,8 +145,18 @@
   "Ora": "12:00",
   "Lega": "Premier League",
   "Tipo": "B",
-  "Pronostico": "X",
-  "Prob": 0.45,
+  "Pronostico": "2",
+  "Prob": 0.39,
+  "Quota": null
+ },
+ {
+  "Casa": "ZAGLEBIE II LUBIN",
+  "Ospite": "LKS Goczalkowice-Zdroj",
+  "Ora": "12:00",
+  "Lega": "III Liga, Gruppo 3 - Gruppo 3",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.58,
   "Quota": null
  },
  {
@@ -136,7 +166,7 @@
   "Lega": "Armenian Premier League",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.44,
+  "Prob": 0.74,
   "Quota": null
  },
  {
@@ -146,7 +176,7 @@
   "Lega": "Ligat ha'Al",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.53,
+  "Prob": 0.77,
   "Quota": null
  },
  {
@@ -156,7 +186,7 @@
   "Lega": "Top League",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.5,
+  "Prob": 0.53,
   "Quota": null
  },
  {
@@ -166,7 +196,87 @@
   "Lega": "Liga Indonesia",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.53,
+  "Prob": 0.42,
+  "Quota": null
+ },
+ {
+  "Casa": "AL Sarhan",
+  "Ospite": "Sahl Horan SC",
+  "Ora": "13:00",
+  "Lega": "Jordan 1st Division",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.41,
+  "Quota": null
+ },
+ {
+  "Casa": "Dibba",
+  "Ospite": "AL HAMRIYAH",
+  "Ora": "13:45",
+  "Lega": "Division 1",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.42,
+  "Quota": null
+ },
+ {
+  "Casa": "NK ILIRIJA",
+  "Ospite": "Triglav Kranj",
+  "Ora": "14:00",
+  "Lega": "2. Liga",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.52,
+  "Quota": null
+ },
+ {
+  "Casa": "NK Kustosija Zagreb",
+  "Ospite": "HNK Orijent 1919",
+  "Ora": "14:00",
+  "Lega": "2. HNL",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.5,
+  "Quota": null
+ },
+ {
+  "Casa": "NK Sesvete",
+  "Ospite": "NK BSK Bijelo Brdo",
+  "Ora": "14:00",
+  "Lega": "2. HNL",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.46,
+  "Quota": null
+ },
+ {
+  "Casa": "Gnk Dinamo Zagreb II",
+  "Ospite": "NK JADRAN LP",
+  "Ora": "14:00",
+  "Lega": "2. HNL",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.37,
+  "Quota": null
+ },
+ {
+  "Casa": "Kigezi Homeboyz FC",
+  "Ospite": "Mbarara FC",
+  "Ora": "14:00",
+  "Lega": "Uganda Premier League",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.41,
+  "Quota": null
+ },
+ {
+  "Casa": "AL Jazeera Club Amman",
+  "Ospite": "Ramtha",
+  "Ora": "15:00",
+  "Lega": "Jordanian Pro League",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.37,
   "Quota": null
  },
  {
@@ -185,8 +295,18 @@
   "Ora": "15:15",
   "Lega": "Stars League",
   "Tipo": "B",
-  "Pronostico": "X",
-  "Prob": 0.41,
+  "Pronostico": "1",
+  "Prob": 0.53,
+  "Quota": null
+ },
+ {
+  "Casa": "Al-Fahaheel SC",
+  "Ospite": "Al-Salibikhaet",
+  "Ora": "15:25",
+  "Lega": "Kuwait League",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.61,
   "Quota": null
  },
  {
@@ -196,7 +316,7 @@
   "Lega": "Saudi Pro League",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.46,
+  "Prob": 0.36,
   "Quota": null
  },
  {
@@ -206,7 +326,7 @@
   "Lega": "Saudi Pro League",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.59,
+  "Prob": 0.62,
   "Quota": null
  },
  {
@@ -215,8 +335,8 @@
   "Ora": "15:55",
   "Lega": "Prima Divisione",
   "Tipo": "B",
-  "Pronostico": "X",
-  "Prob": 0.38,
+  "Pronostico": "1",
+  "Prob": 0.58,
   "Quota": null
  },
  {
@@ -226,7 +346,7 @@
   "Lega": "efbet Liga",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.47,
+  "Prob": 0.39,
   "Quota": null
  },
  {
@@ -236,7 +356,27 @@
   "Lega": "Liga MX - U21 - Apertura",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.41,
+  "Prob": 0.37,
+  "Quota": null
+ },
+ {
+  "Casa": "AL AQABA",
+  "Ospite": "Jerash",
+  "Ora": "16:00",
+  "Lega": "Jordan 1st Division",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.69,
+  "Quota": null
+ },
+ {
+  "Casa": "Al-Yarmouk",
+  "Ospite": "AL Ahli Jordan",
+  "Ora": "16:00",
+  "Lega": "Jordan 1st Division",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.4,
   "Quota": null
  },
  {
@@ -246,7 +386,7 @@
   "Lega": "2nd Division",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.6,
+  "Prob": 0.67,
   "Quota": null
  },
  {
@@ -256,7 +396,7 @@
   "Lega": "2nd Division",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.62,
+  "Prob": 0.75,
   "Quota": null
  },
  {
@@ -276,7 +416,17 @@
   "Lega": "Iraqi League",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.67,
+  "Prob": 0.69,
+  "Quota": null
+ },
+ {
+  "Casa": "Karlovac",
+  "Ospite": "Vukovar 91",
+  "Ora": "17:00",
+  "Lega": "2. HNL",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.45,
   "Quota": null
  },
  {
@@ -286,7 +436,27 @@
   "Lega": "Prva Liga",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.43,
+  "Prob": 0.48,
+  "Quota": null
+ },
+ {
+  "Casa": "Lokomotiv Mosca",
+  "Ospite": "Rubin Kazan'",
+  "Ora": "17:30",
+  "Lega": "Russian Premier League",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.37,
+  "Quota": null
+ },
+ {
+  "Casa": "Al-Baqaa",
+  "Ospite": "AL Wehdat",
+  "Ora": "17:30",
+  "Lega": "Jordanian Pro League",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.65,
   "Quota": null
  },
  {
@@ -296,7 +466,7 @@
   "Lega": "Stars League",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.51,
+  "Prob": 0.56,
   "Quota": null
  },
  {
@@ -306,7 +476,7 @@
   "Lega": "Allsvenskan Femminile - Women",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.52,
+  "Prob": 0.73,
   "Quota": null
  },
  {
@@ -316,7 +486,7 @@
   "Lega": "Prva HNL",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.46,
+  "Prob": 0.56,
   "Quota": null
  },
  {
@@ -326,7 +496,7 @@
   "Lega": "Ekstraklasa",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.35,
+  "Prob": 0.42,
   "Quota": null
  },
  {
@@ -335,8 +505,8 @@
   "Ora": "18:00",
   "Lega": "1. Division",
   "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.37,
+  "Pronostico": "1",
+  "Prob": 0.4,
   "Quota": null
  },
  {
@@ -345,8 +515,38 @@
   "Ora": "18:00",
   "Lega": "1 Liga",
   "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.52,
+  "Pronostico": "1",
+  "Prob": 0.39,
+  "Quota": null
+ },
+ {
+  "Casa": "SFC Opava",
+  "Ospite": "Sellier & Bellot Vlasim",
+  "Ora": "18:00",
+  "Lega": "FNL",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.42,
+  "Quota": null
+ },
+ {
+  "Casa": "Usti Nad",
+  "Ospite": "FK Viktoria Zizkov",
+  "Ora": "18:00",
+  "Lega": "FNL",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.54,
+  "Quota": null
+ },
+ {
+  "Casa": "Dukla Prague",
+  "Ospite": "Pribram",
+  "Ora": "18:00",
+  "Lega": "FNL",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.57,
   "Quota": null
  },
  {
@@ -356,7 +556,17 @@
   "Lega": "2 Liga",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.5,
+  "Prob": 0.42,
+  "Quota": null
+ },
+ {
+  "Casa": "Vysocina Jihlava",
+  "Ospite": "MFK Karvina",
+  "Ora": "18:00",
+  "Lega": "FNL",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.4,
   "Quota": null
  },
  {
@@ -365,8 +575,8 @@
   "Ora": "18:00",
   "Lega": "Super Lig",
   "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.49,
+  "Pronostico": "1",
+  "Prob": 0.42,
   "Quota": null
  },
  {
@@ -375,8 +585,8 @@
   "Ora": "18:00",
   "Lega": "1. Lig",
   "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.4,
+  "Pronostico": "1",
+  "Prob": 0.44,
   "Quota": null
  },
  {
@@ -385,8 +595,28 @@
   "Ora": "18:00",
   "Lega": "1. Lig",
   "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.45,
+  "Quota": null
+ },
+ {
+  "Casa": "AEK Larnaca",
+  "Ospite": "Karmiotissa FC",
+  "Ora": "18:00",
+  "Lega": "Cyta Championship",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.73,
+  "Quota": null
+ },
+ {
+  "Casa": "NEA Salamina Famagusta",
+  "Ospite": "Omonia Aradippou",
+  "Ora": "18:00",
+  "Lega": "Cyta Championship",
+  "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.63,
+  "Prob": 0.39,
   "Quota": null
  },
  {
@@ -396,7 +626,7 @@
   "Lega": "Prima Divisione, Femminile - Women - Primera Division A, Women 2024, Clausura",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.52,
+  "Prob": 0.67,
   "Quota": null
  },
  {
@@ -406,7 +636,7 @@
   "Lega": "efbet Liga",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.65,
+  "Prob": 0.61,
   "Quota": null
  },
  {
@@ -415,8 +645,8 @@
   "Ora": "18:30",
   "Lega": "2. Liga",
   "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.49,
+  "Pronostico": "1",
+  "Prob": 0.41,
   "Quota": null
  },
  {
@@ -426,7 +656,7 @@
   "Lega": "2. Liga",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.49,
+  "Prob": 0.54,
   "Quota": null
  },
  {
@@ -435,8 +665,8 @@
   "Ora": "18:30",
   "Lega": "2. Liga",
   "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.43,
+  "Pronostico": "2",
+  "Prob": 0.39,
   "Quota": null
  },
  {
@@ -446,7 +676,7 @@
   "Lega": "2. Bundesliga",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.48,
+  "Prob": 0.41,
   "Quota": null
  },
  {
@@ -455,8 +685,28 @@
   "Ora": "18:30",
   "Lega": "2. Bundesliga",
   "Tipo": "B",
-  "Pronostico": "1",
+  "Pronostico": "2",
+  "Prob": 0.42,
+  "Quota": null
+ },
+ {
+  "Casa": "Francoforte D",
+  "Ospite": "Wolfsburg",
+  "Ora": "18:30",
+  "Lega": "Bundesliga Femminile - Women",
+  "Tipo": "B",
+  "Pronostico": "2",
   "Prob": 0.41,
+  "Quota": null
+ },
+ {
+  "Casa": "Bayern Monaco",
+  "Ospite": "Werder Bremen",
+  "Ora": "18:30",
+  "Lega": "Bundesliga Femminile - Women",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.83,
   "Quota": null
  },
  {
@@ -466,7 +716,7 @@
   "Lega": "Saudi Pro League",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.49,
+  "Prob": 0.44,
   "Quota": null
  },
  {
@@ -476,7 +726,7 @@
   "Lega": "Allsvenskan",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.51,
+  "Prob": 0.52,
   "Quota": null
  },
  {
@@ -486,7 +736,7 @@
   "Lega": "Elitettan Femminile - Women",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.53,
+  "Prob": 0.42,
   "Quota": null
  },
  {
@@ -495,8 +745,8 @@
   "Ora": "19:00",
   "Lega": "Superliga",
   "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.36,
+  "Pronostico": "1",
+  "Prob": 0.52,
   "Quota": null
  },
  {
@@ -506,7 +756,7 @@
   "Lega": "1. Division",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.35,
+  "Prob": 0.4,
   "Quota": null
  },
  {
@@ -516,7 +766,7 @@
   "Lega": "1. Division",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.52,
+  "Prob": 0.44,
   "Quota": null
  },
  {
@@ -526,7 +776,7 @@
   "Lega": "2. Division",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.51,
+  "Prob": 0.45,
   "Quota": null
  },
  {
@@ -535,8 +785,8 @@
   "Ora": "19:00",
   "Lega": "2. Division",
   "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.42,
+  "Pronostico": "1",
+  "Prob": 0.46,
   "Quota": null
  },
  {
@@ -546,7 +796,17 @@
   "Lega": "2. Division",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.58,
+  "Prob": 0.59,
+  "Quota": null
+ },
+ {
+  "Casa": "Cacereño",
+  "Ospite": "Lugo",
+  "Ora": "19:00",
+  "Lega": "Primera Federación - Gruppo 1",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.36,
   "Quota": null
  },
  {
@@ -556,7 +816,7 @@
   "Lega": "3. Liga",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.42,
+  "Prob": 0.51,
   "Quota": null
  },
  {
@@ -565,8 +825,8 @@
   "Ora": "19:00",
   "Lega": "Division 1 Femminile - Women",
   "Tipo": "B",
-  "Pronostico": "X",
-  "Prob": 0.46,
+  "Pronostico": "2",
+  "Prob": 0.43,
   "Quota": null
  },
  {
@@ -576,7 +836,17 @@
   "Lega": "Division 1 Femminile - Women",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.55,
+  "Prob": 0.74,
+  "Quota": null
+ },
+ {
+  "Casa": "Barracas Central",
+  "Ospite": "Racing",
+  "Ora": "19:00",
+  "Lega": "Liga Profesional Argentina - Clausura, Group A",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.38,
   "Quota": null
  },
  {
@@ -586,7 +856,7 @@
   "Lega": "Prima Divisione, Femminile - Women - Primera Division A, Women 2024, Clausura",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.55,
+  "Prob": 0.61,
   "Quota": null
  },
  {
@@ -596,7 +866,7 @@
   "Lega": "Prima Divisione, Femminile - Women - Primera Division A, Women 2024, Clausura",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.56,
+  "Prob": 0.62,
   "Quota": null
  },
  {
@@ -606,7 +876,7 @@
   "Lega": "Prima Divisione, Femminile - Women - Primera Division A, Women 2024, Clausura",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.61,
+  "Prob": 0.37,
   "Quota": null
  },
  {
@@ -616,7 +886,7 @@
   "Lega": "Challenge League",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.61,
+  "Prob": 0.69,
   "Quota": null
  },
  {
@@ -626,7 +896,7 @@
   "Lega": "Challenge League",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.46,
+  "Prob": 0.42,
   "Quota": null
  },
  {
@@ -636,7 +906,7 @@
   "Lega": "Bundesliga Austria",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.75,
+  "Prob": 0.61,
   "Quota": null
  },
  {
@@ -646,7 +916,7 @@
   "Lega": "Superliga",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.6,
+  "Prob": 0.39,
   "Quota": null
  },
  {
@@ -656,7 +926,7 @@
   "Lega": "Regionalliga Ost",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.49,
+  "Prob": 0.53,
   "Quota": null
  },
  {
@@ -665,8 +935,8 @@
   "Ora": "19:30",
   "Lega": "Regionalliga Ost",
   "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.43,
+  "Pronostico": "2",
+  "Prob": 0.42,
   "Quota": null
  },
  {
@@ -676,7 +946,7 @@
   "Lega": "Pro League Under 21 - Gruppo 1",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.44,
+  "Prob": 0.57,
   "Quota": null
  },
  {
@@ -686,7 +956,7 @@
   "Lega": "Segunda Liga",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.51,
+  "Prob": 0.5,
   "Quota": null
  },
  {
@@ -696,7 +966,7 @@
   "Lega": "Ligue 2",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.43,
+  "Prob": 0.38,
   "Quota": null
  },
  {
@@ -705,8 +975,8 @@
   "Ora": "20:00",
   "Lega": "Ligue 2",
   "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.45,
+  "Pronostico": "1",
+  "Prob": 0.39,
   "Quota": null
  },
  {
@@ -716,7 +986,7 @@
   "Lega": "Ligue 2",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.41,
+  "Prob": 0.45,
   "Quota": null
  },
  {
@@ -735,8 +1005,8 @@
   "Ora": "20:00",
   "Lega": "Ligue 2",
   "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.52,
+  "Pronostico": "2",
+  "Prob": 0.42,
   "Quota": null
  },
  {
@@ -745,8 +1015,8 @@
   "Ora": "20:00",
   "Lega": "Ligue 2",
   "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.41,
+  "Pronostico": "2",
+  "Prob": 0.36,
   "Quota": null
  },
  {
@@ -755,8 +1025,8 @@
   "Ora": "20:00",
   "Lega": "Eredivisie",
   "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.46,
+  "Pronostico": "1",
+  "Prob": 0.39,
   "Quota": null
  },
  {
@@ -766,7 +1036,7 @@
   "Lega": "Eerste Divisie",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.56,
+  "Prob": 0.65,
   "Quota": null
  },
  {
@@ -776,7 +1046,7 @@
   "Lega": "Eerste Divisie",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.46,
+  "Prob": 0.58,
   "Quota": null
  },
  {
@@ -785,8 +1055,8 @@
   "Ora": "20:00",
   "Lega": "Eerste Divisie",
   "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.49,
+  "Pronostico": "2",
+  "Prob": 0.59,
   "Quota": null
  },
  {
@@ -796,7 +1066,7 @@
   "Lega": "Eerste Divisie",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.53,
+  "Prob": 0.63,
   "Quota": null
  },
  {
@@ -806,7 +1076,7 @@
   "Lega": "Eerste Divisie",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.52,
+  "Prob": 0.49,
   "Quota": null
  },
  {
@@ -815,8 +1085,8 @@
   "Ora": "20:00",
   "Lega": "Eerste Divisie",
   "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.4,
+  "Pronostico": "2",
+  "Prob": 0.45,
   "Quota": null
  },
  {
@@ -826,7 +1096,7 @@
   "Lega": "Eerste Divisie",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.52,
+  "Prob": 0.53,
   "Quota": null
  },
  {
@@ -836,7 +1106,7 @@
   "Lega": "Challenger Pro League",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.5,
+  "Prob": 0.39,
   "Quota": null
  },
  {
@@ -845,8 +1115,18 @@
   "Ora": "20:00",
   "Lega": "Challenger Pro League",
   "Tipo": "B",
-  "Pronostico": "X",
-  "Prob": 0.42,
+  "Pronostico": "1",
+  "Prob": 0.53,
+  "Quota": null
+ },
+ {
+  "Casa": "UD Santarém",
+  "Ospite": "CD Mafra",
+  "Ora": "20:00",
+  "Lega": "Liga 3 - Gruppo B",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.44,
   "Quota": null
  },
  {
@@ -856,7 +1136,7 @@
   "Lega": "Pro League Under 21 - Gruppo 1",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.5,
+  "Prob": 0.46,
   "Quota": null
  },
  {
@@ -866,7 +1146,7 @@
   "Lega": "Pro League Under 21 - Gruppo 1",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.66,
+  "Prob": 0.69,
   "Quota": null
  },
  {
@@ -876,7 +1156,7 @@
   "Lega": "Challenge League",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.38,
+  "Prob": 0.55,
   "Quota": null
  },
  {
@@ -886,7 +1166,7 @@
   "Lega": "Ekstraklasa",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.69,
+  "Prob": 0.41,
   "Quota": null
  },
  {
@@ -895,7 +1175,7 @@
   "Ora": "20:30",
   "Lega": "Scottish Championship",
   "Tipo": "B",
-  "Pronostico": "2",
+  "Pronostico": "1",
   "Prob": 0.42,
   "Quota": null
  },
@@ -906,7 +1186,7 @@
   "Lega": "1 Liga",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.5,
+  "Prob": 0.46,
   "Quota": null
  },
  {
@@ -915,8 +1195,8 @@
   "Ora": "20:30",
   "Lega": "2. Liga",
   "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.43,
+  "Pronostico": "2",
+  "Prob": 0.44,
   "Quota": null
  },
  {
@@ -926,7 +1206,7 @@
   "Lega": "LaLiga 2",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.45,
+  "Prob": 0.43,
   "Quota": null
  },
  {
@@ -935,8 +1215,8 @@
   "Ora": "20:30",
   "Lega": "Bundesliga",
   "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.42,
+  "Pronostico": "1",
+  "Prob": 0.37,
   "Quota": null
  },
  {
@@ -945,8 +1225,28 @@
   "Ora": "20:30",
   "Lega": "Serie B",
   "Tipo": "B",
-  "Pronostico": "2",
+  "Pronostico": "1",
   "Prob": 0.4,
+  "Quota": null
+ },
+ {
+  "Casa": "Asd Alcione Milano",
+  "Ospite": "Lumezzane",
+  "Ora": "20:30",
+  "Lega": "Serie C - Girone A",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.34,
+  "Quota": null
+ },
+ {
+  "Casa": "Union Brescia",
+  "Ospite": "ArzignanoChiampo",
+  "Ora": "20:30",
+  "Lega": "Serie C - Girone A",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.49,
   "Quota": null
  },
  {
@@ -956,7 +1256,7 @@
   "Lega": "Pro League Under 21 - Gruppo 1",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.66,
+  "Prob": 0.52,
   "Quota": null
  },
  {
@@ -965,8 +1265,8 @@
   "Ora": "20:30",
   "Lega": "FA Cup",
   "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.37,
+  "Pronostico": "1",
+  "Prob": 0.38,
   "Quota": null
  },
  {
@@ -975,8 +1275,8 @@
   "Ora": "20:45",
   "Lega": "Serie A",
   "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.44,
+  "Pronostico": "1",
+  "Prob": 0.42,
   "Quota": null
  },
  {
@@ -986,7 +1286,7 @@
   "Lega": "Ligue 1",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.47,
+  "Prob": 0.4,
   "Quota": null
  },
  {
@@ -996,7 +1296,17 @@
   "Lega": "Premiership",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.65,
+  "Prob": 0.55,
+  "Quota": null
+ },
+ {
+  "Casa": "Strabane Athletic FC",
+  "Ospite": "Annagh United",
+  "Ora": "20:45",
+  "Lega": "Championship 1",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.67,
   "Quota": null
  },
  {
@@ -1006,7 +1316,7 @@
   "Lega": "Jupiler Pro League",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.58,
+  "Prob": 0.44,
   "Quota": null
  },
  {
@@ -1016,7 +1326,7 @@
   "Lega": "Cymru Premier",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.52,
+  "Prob": 0.54,
   "Quota": null
  },
  {
@@ -1026,7 +1336,7 @@
   "Lega": "Cymru Premier",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.52,
+  "Prob": 0.44,
   "Quota": null
  },
  {
@@ -1036,7 +1346,7 @@
   "Lega": "Cymru Premier",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.47,
+  "Prob": 0.37,
   "Quota": null
  },
  {
@@ -1046,7 +1356,7 @@
   "Lega": "Cymru Premier",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.54,
+  "Prob": 0.67,
   "Quota": null
  },
  {
@@ -1056,7 +1366,7 @@
   "Lega": "Cymru Premier",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.63,
+  "Prob": 0.75,
   "Quota": null
  },
  {
@@ -1065,8 +1375,8 @@
   "Ora": "20:45",
   "Lega": "Cymru Premier",
   "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.46,
+  "Pronostico": "2",
+  "Prob": 0.39,
   "Quota": null
  },
  {
@@ -1076,7 +1386,7 @@
   "Lega": "FA Cup",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.39,
+  "Prob": 0.38,
   "Quota": null
  },
  {
@@ -1086,7 +1396,7 @@
   "Lega": "Liga 1 - Clausura",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.38,
+  "Prob": 0.39,
   "Quota": null
  },
  {
@@ -1105,8 +1415,8 @@
   "Ora": "21:00",
   "Lega": "Championship",
   "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.42,
+  "Pronostico": "1",
+  "Prob": 0.38,
   "Quota": null
  },
  {
@@ -1116,7 +1426,7 @@
   "Lega": "LaLiga",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.47,
+  "Prob": 0.4,
   "Quota": null
  },
  {
@@ -1126,7 +1436,7 @@
   "Lega": "Cymru Premier",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.61,
+  "Prob": 0.65,
   "Quota": null
  },
  {
@@ -1136,7 +1446,7 @@
   "Lega": "Division 1 Femminile - Women",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.51,
+  "Prob": 0.77,
   "Quota": null
  },
  {
@@ -1146,6 +1456,16 @@
   "Lega": "Botola Pro",
   "Tipo": "B",
   "Pronostico": "1",
+  "Prob": 0.48,
+  "Quota": null
+ },
+ {
+  "Casa": "Real Aviles",
+  "Ospite": "CD Extremadura",
+  "Ora": "21:15",
+  "Lega": "Primera Federación - Gruppo 1",
+  "Tipo": "B",
+  "Pronostico": "2",
   "Prob": 0.37,
   "Quota": null
  },
@@ -1155,8 +1475,38 @@
   "Ora": "21:45",
   "Lega": "Liga Portugal",
   "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.43,
+  "Quota": null
+ },
+ {
+  "Casa": "San Lorenzo",
+  "Ospite": "Platense",
+  "Ora": "23:00",
+  "Lega": "Liga Profesional Argentina - Clausura, Group A",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.42,
+  "Quota": null
+ },
+ {
+  "Casa": "Union de Santa Fe",
+  "Ospite": "Velez Sarsfield",
+  "Ora": "23:00",
+  "Lega": "Liga Profesional Argentina - Clausura, Group A",
+  "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.4,
+  "Prob": 0.36,
+  "Quota": null
+ },
+ {
+  "Casa": "Independiente",
+  "Ospite": "Deportivo Riestra",
+  "Ora": "23:00",
+  "Lega": "Liga Profesional Argentina - Clausura, Group A",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.5,
   "Quota": null
  },
  {
@@ -1166,7 +1516,7 @@
   "Lega": "Brasileirão Série B",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.4,
+  "Prob": 0.45,
   "Quota": null
  }
 ]
