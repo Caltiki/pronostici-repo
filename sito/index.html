@@ -2218,14 +2218,26 @@
     var sbagliate = tutteE.filter(function (r) { return r.Esito === "sbagliata"; }).length;
     if (prese + sbagliate) {
       var attesa = tutteE.filter(function (r) { return !r.Esito; }).length;
+      // LA PERCENTUALE DA SOLA NON DICE SE E' ANDATA BENE: con pronostici
+      // al 70% ci si aspetta di prenderne 7 su 10, con pronostici al 55%
+      // ne bastano 5 e mezzo. Accanto si mette quante ne promettevano le
+      // probabilita' delle stesse partite finite (media dei Prob): e'
+      // il confronto onesto. I rimborsi non contano ne' da una parte ne'
+      // dall'altra.
+      var decise = tutteE.filter(function (r) { return r.Esito === "presa" || r.Esito === "sbagliata"; });
+      var pr = decise.map(function (r) { return num(r.Prob); }).filter(function (x) { return x != null; });
+      var attese = pr.length ? pr.reduce(function (s, x) { return s + x; }, 0) / pr.length : null;
+      var quota = 100 * prese / (prese + sbagliate);
       // I due riquadri sono pulsanti: toccandoli restano solo le prese o
       // solo le sbagliate; ritoccandoli si torna a tutte.
       var p = stato.esito;
       return '<div class="riepilogo">' +
         '<button type="button" class="filtro-esito' + (p === "presa" ? " attivo" : "") + '" data-esito="presa"><b><em style="font-style:normal;color:var(--buono)">\u2713 ' + prese + "</em></b><span>vinte" + (p === "presa" ? " \u00b7 mostra tutte" : "") + "</span></button>" +
         '<button type="button" class="filtro-esito' + (p === "sbagliata" ? " attivo" : "") + '" data-esito="sbagliata"><b><em style="font-style:normal;color:var(--male)">\u2717 ' + sbagliate + "</em></b><span>sbagliate" + (p === "sbagliata" ? " \u00b7 mostra tutte" : "") + "</span></button>" +
-        "<div><b>" + attesa + "</b><span>senza risultato</span></div></div>" +
-        '<p class="conta">Tocca \u2713 o \u2717 per vedere solo quelle. Le partite finite sono in cima.</p>';
+        "<div><b>" + quota.toFixed(0) + "%</b><span>azzeccate" +
+        (attese != null ? " \u00b7 attese " + attese.toFixed(0) + "%" : "") + "</span></div></div>" +
+        '<p class="conta">' + (attesa ? attesa + (attesa === 1 ? " partita ancora senza risultato. " : " partite ancora senza risultato. ") : "") +
+        "Tocca \u2713 o \u2717 per vedere solo quelle. Le partite finite sono in cima.</p>";
     }
     var on = stato.stretti;
     return '<div class="riepilogo">' +
