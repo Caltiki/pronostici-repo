@@ -2962,8 +2962,7 @@
   "Mercato": "OU 1.5",
   "Sel": "Over",
   "Prob": 74.6,
-  "Equa": 1.34,
-  "InSchedina": "si"
+  "Equa": 1.34
  },
  {
   "Data": "2026-11-08",
@@ -4801,7 +4800,8 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 65.8,
-  "Equa": 1.52
+  "Equa": 1.52,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-08",
@@ -20665,26 +20665,6 @@
  },
  {
   "Data": "2026-11-08",
-  "Ora": "15:00",
-  "Campionato": "Romania Superliga",
-  "Partita": "Sepsi - Voluntari",
-  "Casa": "Sepsi",
-  "Ospite": "Voluntari",
-  "Linea_OU": "",
-  "Gol_attesi": 2.67,
-  "Margine": 4.4,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "Under Over",
-  "Mercato": "OU 1.5",
-  "Sel": "Under",
-  "Prob": 25.4,
-  "Equa": 3.93
- },
- {
-  "Data": "2026-11-08",
   "Ora": "14:00",
   "Campionato": "Spain La Liga 2",
   "Partita": "FC Andorra - Mallorca",
@@ -20782,6 +20762,26 @@
   "Sel": "X",
   "Prob": 20.4,
   "Equa": 4.89
+ },
+ {
+  "Data": "2026-11-08",
+  "Ora": "20:15",
+  "Campionato": "Poland Ekstraklasa",
+  "Partita": "Lech Poznań - Zagłębie Lubin",
+  "Casa": "Lech Poznań",
+  "Ospite": "Zagłębie Lubin",
+  "Linea_OU": "",
+  "Gol_attesi": 3.22,
+  "Margine": 1.4,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 20.1,
+  "Equa": 4.97
  },
  {
   "Data": "2026-11-08",
