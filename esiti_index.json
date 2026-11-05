@@ -1,8 +1,9 @@
 {
- "aggiornato": "2026-11-04 23:40",
+ "aggiornato": "2026-11-05 03:24",
  "date": [
   "2026-11-03",
-  "2026-11-04"
+  "2026-11-04",
+  "2026-11-05"
  ],
  "giorni": {
   "2026-11-03": {
@@ -13,187 +14,203 @@
    "righe": 392
   },
   "2026-11-04": {
-   "presa": 233,
-   "sbagliata": 150,
+   "presa": 254,
+   "sbagliata": 165,
    "rimborso": 0,
-   "attesa": 81,
-   "righe": 464
+   "attesa": 16,
+   "righe": 435
+  },
+  "2026-11-05": {
+   "presa": 3,
+   "sbagliata": 2,
+   "rimborso": 0,
+   "attesa": 458,
+   "righe": 463
   }
  },
  "taratura": {
   "totale": {
-   "righe": 775,
-   "partite": 106,
-   "prevista": 55.9,
+   "righe": 816,
+   "partite": 111,
+   "prevista": 56.3,
    "uscita": 57.7,
-   "scarto": 1.7,
-   "errore_std": 1.8
+   "scarto": 1.4,
+   "errore_std": 1.7
   },
   "fasce": [
    {
-    "righe": 138,
-    "partite": 80,
+    "righe": 140,
+    "partite": 83,
     "prevista": 37.3,
-    "uscita": 44.2,
-    "scarto": 6.9,
+    "uscita": 41.4,
+    "scarto": 4.2,
     "errore_std": 4.1,
     "fascia": "35-40%"
    },
    {
-    "righe": 81,
-    "partite": 63,
-    "prevista": 42.2,
-    "uscita": 44.4,
-    "scarto": 2.3,
-    "errore_std": 5.5,
+    "righe": 89,
+    "partite": 66,
+    "prevista": 42.3,
+    "uscita": 43.8,
+    "scarto": 1.6,
+    "errore_std": 5.2,
     "fascia": "40-45%"
    },
    {
-    "righe": 67,
-    "partite": 55,
-    "prevista": 47.5,
-    "uscita": 47.8,
-    "scarto": 0.2,
-    "errore_std": 6.1,
+    "righe": 71,
+    "partite": 57,
+    "prevista": 47.4,
+    "uscita": 45.1,
+    "scarto": -2.3,
+    "errore_std": 5.9,
     "fascia": "45-50%"
    },
    {
-    "righe": 106,
-    "partite": 70,
-    "prevista": 52.3,
-    "uscita": 52.8,
+    "righe": 115,
+    "partite": 73,
+    "prevista": 52.5,
+    "uscita": 53.0,
     "scarto": 0.6,
-    "errore_std": 4.9,
+    "errore_std": 4.7,
     "fascia": "50-55%"
    },
    {
     "righe": 85,
-    "partite": 58,
-    "prevista": 57.4,
-    "uscita": 44.7,
-    "scarto": -12.7,
+    "partite": 57,
+    "prevista": 57.3,
+    "uscita": 49.4,
+    "scarto": -7.9,
     "errore_std": 5.4,
     "fascia": "55-60%"
    },
    {
-    "righe": 60,
-    "partite": 43,
-    "prevista": 62.5,
-    "uscita": 76.7,
-    "scarto": 14.2,
-    "errore_std": 6.3,
+    "righe": 57,
+    "partite": 40,
+    "prevista": 62.6,
+    "uscita": 66.7,
+    "scarto": 4.0,
+    "errore_std": 6.4,
     "fascia": "60-65%"
    },
    {
-    "righe": 58,
-    "partite": 42,
-    "prevista": 67.5,
-    "uscita": 74.1,
-    "scarto": 6.6,
-    "errore_std": 6.2,
+    "righe": 53,
+    "partite": 41,
+    "prevista": 67.6,
+    "uscita": 75.5,
+    "scarto": 7.9,
+    "errore_std": 6.4,
     "fascia": "65-70%"
    },
    {
-    "righe": 52,
-    "partite": 40,
-    "prevista": 72.7,
-    "uscita": 75.0,
-    "scarto": 2.3,
-    "errore_std": 6.2,
+    "righe": 63,
+    "partite": 48,
+    "prevista": 72.8,
+    "uscita": 79.4,
+    "scarto": 6.5,
+    "errore_std": 5.6,
     "fascia": "70-75%"
    },
    {
-    "righe": 43,
-    "partite": 37,
-    "prevista": 77.4,
-    "uscita": 65.1,
-    "scarto": -12.3,
-    "errore_std": 6.4,
+    "righe": 51,
+    "partite": 43,
+    "prevista": 77.6,
+    "uscita": 72.5,
+    "scarto": -5.1,
+    "errore_std": 5.8,
     "fascia": "75-80%"
    },
    {
-    "righe": 30,
-    "partite": 29,
-    "prevista": 82.6,
-    "uscita": 90.0,
-    "scarto": 7.4,
-    "errore_std": 6.9,
+    "righe": 29,
+    "partite": 28,
+    "prevista": 82.7,
+    "uscita": 89.7,
+    "scarto": 7.0,
+    "errore_std": 7.0,
     "fascia": "80-85%"
    },
    {
-    "righe": 27,
-    "partite": 27,
-    "prevista": 87.3,
-    "uscita": 92.6,
-    "scarto": 5.3,
-    "errore_std": 6.4,
+    "righe": 29,
+    "partite": 28,
+    "prevista": 87.5,
+    "uscita": 89.7,
+    "scarto": 2.2,
+    "errore_std": 6.1,
     "fascia": "85-90%"
    },
    {
-    "righe": 13,
-    "partite": 11,
-    "prevista": 92.0,
-    "uscita": 84.6,
-    "scarto": -7.4,
-    "errore_std": 7.5,
+    "righe": 17,
+    "partite": 14,
+    "prevista": 91.9,
+    "uscita": 94.1,
+    "scarto": 2.2,
+    "errore_std": 6.6,
     "fascia": "90-95%"
+   },
+   {
+    "righe": 1,
+    "partite": 1,
+    "prevista": 95.7,
+    "uscita": 100.0,
+    "scarto": 4.3,
+    "errore_std": 20.3,
+    "fascia": "95-100%"
    }
   ],
   "gruppi": [
    {
-    "righe": 325,
-    "partite": 99,
-    "prevista": 46.3,
-    "uscita": 50.8,
-    "scarto": 4.5,
-    "errore_std": 2.8,
+    "righe": 347,
+    "partite": 105,
+    "prevista": 47.1,
+    "uscita": 51.3,
+    "scarto": 4.2,
+    "errore_std": 2.7,
     "nome": "Combo"
    },
    {
-    "righe": 224,
-    "partite": 106,
+    "righe": 233,
+    "partite": 111,
     "prevista": 70.7,
-    "uscita": 71.4,
-    "scarto": 0.8,
+    "uscita": 70.8,
+    "scarto": 0.1,
     "errore_std": 3.0,
     "nome": "Under Over"
    },
    {
-    "righe": 115,
-    "partite": 106,
-    "prevista": 57.5,
-    "uscita": 52.2,
-    "scarto": -5.3,
-    "errore_std": 4.6,
+    "righe": 120,
+    "partite": 111,
+    "prevista": 57.4,
+    "uscita": 52.5,
+    "scarto": -4.9,
+    "errore_std": 4.5,
     "nome": "Gol NoGol"
    },
    {
-    "righe": 111,
-    "partite": 106,
-    "prevista": 52.8,
-    "uscita": 55.9,
-    "scarto": 3.0,
-    "errore_std": 4.7,
+    "righe": 116,
+    "partite": 111,
+    "prevista": 53.8,
+    "uscita": 56.0,
+    "scarto": 2.2,
+    "errore_std": 4.6,
     "nome": "1X2"
    }
   ],
   "fonti": [
    {
-    "righe": 615,
+    "righe": 624,
     "partite": 85,
-    "prevista": 56.6,
-    "uscita": 56.9,
-    "scarto": 0.3,
+    "prevista": 57.1,
+    "uscita": 57.2,
+    "scarto": 0.1,
     "errore_std": 2.0,
     "nome": "FootyMetrics"
    },
    {
-    "righe": 98,
-    "partite": 12,
-    "prevista": 54.1,
-    "uscita": 65.3,
-    "scarto": 11.2,
-    "errore_std": 5.0,
+    "righe": 130,
+    "partite": 17,
+    "prevista": 54.5,
+    "uscita": 62.3,
+    "scarto": 7.8,
+    "errore_std": 4.4,
     "nome": "AsianOdds"
    },
    {
@@ -207,6 +224,6 @@
    }
   ],
   "dal": "2026-11-03",
-  "al": "2026-11-04"
+  "al": "2026-11-05"
  }
 }
