@@ -4357,7 +4357,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 67.5,
-  "Equa": 1.48
+  "Equa": 1.48,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-08",
@@ -4679,7 +4680,8 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 66.3,
-  "Equa": 1.51
+  "Equa": 1.51,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-08",
@@ -5899,8 +5901,7 @@
   "Mercato": "BTTS",
   "Sel": "NoGol",
   "Prob": 62.3,
-  "Equa": 1.61,
-  "InSchedina": "si"
+  "Equa": 1.61
  },
  {
   "Data": "2026-11-08",
@@ -6940,8 +6941,7 @@
   "Mercato": "BTTS",
   "Sel": "NoGol",
   "Prob": 60.0,
-  "Equa": 1.67,
-  "InSchedina": "si"
+  "Equa": 1.67
  },
  {
   "Data": "2026-11-08",
@@ -17025,26 +17025,6 @@
  },
  {
   "Data": "2026-11-08",
-  "Ora": "23:15",
-  "Campionato": "Brazil Serie B",
-  "Partita": "Goiás - Ponte Preta",
-  "Casa": "Goiás",
-  "Ospite": "Ponte Preta",
-  "Linea_OU": "",
-  "Gol_attesi": 3.47,
-  "Margine": 3.6,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "Gol",
-  "Prob": 40.0,
-  "Equa": 2.5
- },
- {
-  "Data": "2026-11-08",
   "Ora": "18:30",
   "Campionato": "Belgium Pro League",
   "Partita": "Union St.Gilloise - Genk",
@@ -18780,26 +18760,6 @@
   "Gruppo": "Combo",
   "Mercato": "Esito + Gol",
   "Sel": "X2 + NoGol",
-  "Prob": 37.7,
-  "Equa": 2.65
- },
- {
-  "Data": "2026-11-08",
-  "Ora": "16:00",
-  "Campionato": "Greece Super League",
-  "Partita": "AEK Athens - Levadiakos",
-  "Casa": "AEK Athens",
-  "Ospite": "Levadiakos",
-  "Linea_OU": "",
-  "Gol_attesi": 3.05,
-  "Margine": 3.4,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "Gol",
   "Prob": 37.7,
   "Equa": 2.65
  },
@@ -20902,6 +20862,26 @@
   "Sel": "X",
   "Prob": 21.0,
   "Equa": 4.76
+ },
+ {
+  "Data": "2026-11-08",
+  "Ora": "16:00",
+  "Campionato": "Belgium Pro League",
+  "Partita": "Gent - KV Kortrijk",
+  "Casa": "Gent",
+  "Ospite": "KV Kortrijk",
+  "Linea_OU": "",
+  "Gol_attesi": 2.86,
+  "Margine": 2.6,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 20.7,
+  "Equa": 4.82
  },
  {
   "Data": "2026-11-08",

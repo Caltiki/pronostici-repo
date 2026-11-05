@@ -3288,6 +3288,27 @@
  },
  {
   "Data": "2026-11-07",
+  "Ora": "16:00",
+  "Campionato": "England FA Cup",
+  "Partita": "Oxford Utd - Stevenage",
+  "Casa": "Oxford Utd",
+  "Ospite": "Stevenage",
+  "Linea_OU": "",
+  "Gol_attesi": 2.57,
+  "Margine": 3.3,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "Under Over",
+  "Mercato": "OU 3.5",
+  "Sel": "Under",
+  "Prob": 74.3,
+  "Equa": 1.35,
+  "InSchedina": "si"
+ },
+ {
+  "Data": "2026-11-07",
   "Ora": "19:00",
   "Campionato": "Portugal Liga Portugal",
   "Partita": "Alverca - Casa Pia",
@@ -4556,8 +4577,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "1X + Over 2.5",
   "Prob": 68.7,
-  "Equa": 1.46,
-  "InSchedina": "si"
+  "Equa": 1.46
  },
  {
   "Data": "2026-11-07",
@@ -5119,7 +5139,8 @@
   "Mercato": "BTTS",
   "Sel": "NoGol",
   "Prob": 66.4,
-  "Equa": 1.51
+  "Equa": 1.51,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-07",
@@ -6160,8 +6181,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "1X + Over 2.5",
   "Prob": 62.9,
-  "Equa": 1.59,
-  "InSchedina": "si"
+  "Equa": 1.59
  },
  {
   "Data": "2026-11-07",
@@ -23722,6 +23742,26 @@
   "Sel": "1",
   "Prob": 34.9,
   "Equa": 2.87
+ },
+ {
+  "Data": "2026-11-07",
+  "Ora": "16:00",
+  "Campionato": "England FA Cup",
+  "Partita": "Burton - AFC Rushden & Diamonds",
+  "Casa": "Burton",
+  "Ospite": "AFC Rushden & Diamonds",
+  "Linea_OU": "",
+  "Gol_attesi": 3.64,
+  "Margine": 4.0,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "Gol NoGol",
+  "Mercato": "BTTS",
+  "Sel": "Gol",
+  "Prob": 33.6,
+  "Equa": 2.97
  },
  {
   "Data": "2026-11-07",
