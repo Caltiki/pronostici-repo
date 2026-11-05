@@ -1,95 +1,5 @@
 [
  {
-  "Casa": "CD Estrella Roja",
-  "Ospite": "FC Motagua",
-  "Ora": "00:15",
-  "Lega": "Liga Nacional - Apertura",
-  "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.55,
-  "Quota": null
- },
- {
-  "Casa": "Metropolitanos FC",
-  "Ospite": "Carabobo",
-  "Ora": "00:30",
-  "Lega": "Primera División - Clausura, Main Round, Group A",
-  "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.47,
-  "Quota": null
- },
- {
-  "Casa": "Cucuta Deportivo",
-  "Ospite": "Santa Fe",
-  "Ora": "00:30",
-  "Lega": "Liga Postobon - Finalizacion",
-  "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.38,
-  "Quota": null
- },
- {
-  "Casa": "Puntarenas FC",
-  "Ospite": "AD San Carlos",
-  "Ora": "01:00",
-  "Lega": "Liga Promerica - Apertura",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.4,
-  "Quota": null
- },
- {
-  "Casa": "LDU Quito",
-  "Ospite": "Universidad Catolica Del Ecuador",
-  "Ora": "01:00",
-  "Lega": "Copa Ecuador",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.56,
-  "Quota": null
- },
- {
-  "Casa": "Ferro Carril FC",
-  "Ospite": "Club Nacional De Football",
-  "Ora": "01:00",
-  "Lega": "Copa Uruguay - Knockout Stage",
-  "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.78,
-  "Quota": null
- },
- {
-  "Casa": "Club Olimpia",
-  "Ospite": "CD Recoleta",
-  "Ora": "01:15",
-  "Lega": "Primera Division - Clausura 2026",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.63,
-  "Quota": null
- },
- {
-  "Casa": "Botafogo",
-  "Ospite": "Atletico MG",
-  "Ora": "01:30",
-  "Lega": "Brasileirão",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.43,
-  "Quota": null
- },
- {
-  "Casa": "São Paulo FC",
-  "Ospite": "Corinthians",
-  "Ora": "01:30",
-  "Lega": "Brasileirão",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.5,
-  "Quota": null
- },
- {
   "Casa": "Municipal Limeno",
   "Ospite": "CD FUERTE SAN FRANCISCO MORAZAN",
   "Ora": "02:00",
@@ -107,6 +17,16 @@
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.5,
+  "Quota": null
+ },
+ {
+  "Casa": "Tlaxcala FC",
+  "Ospite": "Club Atletico La Paz",
+  "Ora": "02:05",
+  "Lega": "Liga De Expansion MX - Apertura, Playoffs",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.41,
   "Quota": null
  },
  {
@@ -150,6 +70,16 @@
   "Quota": null
  },
  {
+  "Casa": "Auckland United FC",
+  "Ospite": "West Coast Rangers FC",
+  "Ora": "07:30",
+  "Lega": "Premier League, Femminile - Women",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.81,
+  "Quota": null
+ },
+ {
   "Casa": "Sydney Olympic",
   "Ospite": "Oakleigh Cannons",
   "Ora": "09:30",
@@ -160,63 +90,13 @@
   "Quota": null
  },
  {
-  "Casa": "Machida Zelvia",
-  "Ospite": "Shanghai Shenhua",
-  "Ora": "11:00",
-  "Lega": "AFC Cup, Gruppo A - Gruppo G",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.64,
-  "Quota": null
- },
- {
-  "Casa": "Kitchee",
-  "Ospite": "Phnom Penh Crown",
-  "Ora": "11:00",
-  "Lega": "AFC Cup, Gruppo A - Gruppo H",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.38,
-  "Quota": null
- },
- {
-  "Casa": "Lion City Sailors FC",
-  "Ospite": "Adelaide United",
-  "Ora": "11:00",
-  "Lega": "AFC Cup, Gruppo A - Gruppo F",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.51,
-  "Quota": null
- },
- {
-  "Casa": "Baku SC",
-  "Ospite": "Khankendi FK",
-  "Ora": "12:00",
-  "Lega": "I Divizion",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.39,
-  "Quota": null
- },
- {
-  "Casa": "Karvan Yevlakh",
-  "Ospite": "Simal",
-  "Ora": "12:00",
-  "Lega": "I Divizion",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.57,
-  "Quota": null
- },
- {
-  "Casa": "Zaqatala FK",
-  "Ospite": "Moik Baku",
-  "Ora": "12:00",
-  "Lega": "I Divizion",
+  "Casa": "Pakistan",
+  "Ospite": "India",
+  "Ora": "10:30",
+  "Lega": "SAFF Championship, Gruppo A - Gruppo B",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.71,
+  "Prob": 0.63,
   "Quota": null
  },
  {
@@ -240,6 +120,16 @@
   "Quota": null
  },
  {
+  "Casa": "AS Far Rabat",
+  "Ospite": "Usfas",
+  "Ora": "13:00",
+  "Lega": "CAF Champions League, Women - CAF Champions League - Women - CAF Champions League, Women 2023, Group B",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.79,
+  "Quota": null
+ },
+ {
   "Casa": "Svay Rieng",
   "Ospite": "Tampines Rovers",
   "Ora": "13:15",
@@ -250,6 +140,16 @@
   "Quota": null
  },
  {
+  "Casa": "Kuching FA",
+  "Ospite": "Gangwon",
+  "Ora": "13:15",
+  "Lega": "AFC Cup, Gruppo A - Gruppo H",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.54,
+  "Quota": null
+ },
+ {
   "Casa": "Bangkok Glass",
   "Ospite": "Tai Po",
   "Ora": "13:15",
@@ -257,6 +157,16 @@
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.64,
+  "Quota": null
+ },
+ {
+  "Casa": "El Gouna",
+  "Ospite": "Ittihad AL Shourta",
+  "Ora": "13:30",
+  "Lega": "Coppa d'Egitto",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.74,
   "Quota": null
  },
  {
@@ -300,6 +210,46 @@
   "Quota": null
  },
  {
+  "Casa": "Napsa Stars",
+  "Ospite": "Power Dynamos",
+  "Ora": "14:00",
+  "Lega": "Zambia Super League - Gruppo A",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.53,
+  "Quota": null
+ },
+ {
+  "Casa": "Chirundu United",
+  "Ospite": "Green Eagles",
+  "Ora": "14:00",
+  "Lega": "Zambia Super League - Gruppo B",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.35,
+  "Quota": null
+ },
+ {
+  "Casa": "Green Buffaloes",
+  "Ospite": "Zesco United",
+  "Ora": "14:00",
+  "Lega": "Zambia Super League - Gruppo B",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.41,
+  "Quota": null
+ },
+ {
+  "Casa": "Mutondo Stars",
+  "Ospite": "Mufulira Wanderers",
+  "Ora": "14:00",
+  "Lega": "Zambia Super League - Gruppo B",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.35,
+  "Quota": null
+ },
+ {
   "Casa": "Hay AL Amir Hassan",
   "Ospite": "AL Sareeh",
   "Ora": "14:00",
@@ -307,6 +257,16 @@
   "Tipo": "B",
   "Pronostico": "2",
   "Prob": 0.4,
+  "Quota": null
+ },
+ {
+  "Casa": "Shams Azar Qazvin",
+  "Ospite": "Sanat Naft Abadan",
+  "Ora": "14:00",
+  "Lega": "Persian Gulf Pro League",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.35,
   "Quota": null
  },
  {
@@ -340,6 +300,16 @@
   "Quota": null
  },
  {
+  "Casa": "FC Bunyodkor",
+  "Ospite": "PFK Xorazm",
+  "Ora": "14:30",
+  "Lega": "PFL",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.38,
+  "Quota": null
+ },
+ {
   "Casa": "Diyala FC",
   "Ospite": "AL Minaa",
   "Ora": "14:45",
@@ -347,6 +317,16 @@
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.36,
+  "Quota": null
+ },
+ {
+  "Casa": "FK Vozdovac",
+  "Ospite": "FK NOVI PAZAR U19",
+  "Ora": "15:00",
+  "Lega": "U19 Serbian League",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.59,
   "Quota": null
  },
  {
@@ -360,6 +340,26 @@
   "Quota": null
  },
  {
+  "Casa": "Al Markhiya",
+  "Ospite": "AL WAAB",
+  "Ora": "15:15",
+  "Lega": "Qatargas League",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.7,
+  "Quota": null
+ },
+ {
+  "Casa": "Qatar",
+  "Ospite": "Al Khor",
+  "Ora": "15:15",
+  "Lega": "Qatargas League",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.39,
+  "Quota": null
+ },
+ {
   "Casa": "AFC Chindia Targoviste",
   "Ospite": "ACS Gloria Popesti Leordeni",
   "Ora": "16:00",
@@ -370,6 +370,16 @@
   "Quota": null
  },
  {
+  "Casa": "DAR AL DAWA",
+  "Ospite": "Al Hashemehya",
+  "Ora": "16:00",
+  "Lega": "Jordan 1st Division",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.58,
+  "Quota": null
+ },
+ {
   "Casa": "Ittihad AL Ramtha",
   "Ospite": "FC Maan",
   "Ora": "16:00",
@@ -377,6 +387,16 @@
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.53,
+  "Quota": null
+ },
+ {
+  "Casa": "Ampem Darkoa",
+  "Ospite": "Kawempe Muslim Ladies",
+  "Ora": "16:00",
+  "Lega": "CAF Champions League, Women - CAF Champions League - Women - CAF Champions League, Women 2023, Group B",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.61,
   "Quota": null
  },
  {
@@ -430,6 +450,26 @@
   "Quota": null
  },
  {
+  "Casa": "Kiryat Gat SC",
+  "Ospite": "Maccabi Holon",
+  "Ora": "17:00",
+  "Lega": "Ligat Al Donne - Women",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.8,
+  "Quota": null
+ },
+ {
+  "Casa": "AL Rayyan Nextgen",
+  "Ospite": "Al Kharaitiyat SC",
+  "Ora": "17:30",
+  "Lega": "Qatargas League",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.78,
+  "Quota": null
+ },
+ {
   "Casa": "VIPERS",
   "Ospite": "Lugazi Municipal FC",
   "Ora": "18:00",
@@ -437,6 +477,16 @@
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.75,
+  "Quota": null
+ },
+ {
+  "Casa": "POLICE XI",
+  "Ospite": "TOWNSHIP ROLLERS FC",
+  "Ora": "18:00",
+  "Lega": "Premier League",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.42,
   "Quota": null
  },
  {
@@ -627,6 +677,86 @@
   "Tipo": "B",
   "Pronostico": "2",
   "Prob": 0.48,
+  "Quota": null
+ },
+ {
+  "Casa": "CA BELGRANO",
+  "Ospite": "CA Platense",
+  "Ora": "19:00",
+  "Lega": "Campeonato De Reserva De Primera Division - Reserves - Premiera LPF, Reserves 2025, Clausura, Group A",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.51,
+  "Quota": null
+ },
+ {
+  "Casa": "Racing Club Avellaneda",
+  "Ospite": "Rosario Central Reserve",
+  "Ora": "19:00",
+  "Lega": "Campeonato De Reserva De Primera Division - Reserves - Premiera LPF, Reserves 2025, Clausura, Group A",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.37,
+  "Quota": null
+ },
+ {
+  "Casa": "CA Huracan",
+  "Ospite": "Colon De Santa Fe Reserve",
+  "Ora": "19:00",
+  "Lega": "Campeonato De Reserva De Primera Division - Reserves - Premiera LPF, Reserves 2025, Clausura, Group A",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.54,
+  "Quota": null
+ },
+ {
+  "Casa": "Defensa Y Justicia Reserve",
+  "Ospite": "BOCA JRS RESERVE",
+  "Ora": "19:00",
+  "Lega": "Campeonato De Reserva De Primera Division - Reserves - Premiera LPF, Reserves 2025, Clausura, Group A",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.46,
+  "Quota": null
+ },
+ {
+  "Casa": "Atletico Tucuman",
+  "Ospite": "Instituto AC Cordoba Reserves",
+  "Ora": "19:00",
+  "Lega": "Campeonato De Reserva De Primera Division - Reserves - Premiera LPF, Reserves 2025, Clausura, Group A",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.41,
+  "Quota": null
+ },
+ {
+  "Casa": "Estudiantes De Rio Cuarto Reserve",
+  "Ospite": "Ferro Carril Oeste",
+  "Ora": "19:00",
+  "Lega": "Campeonato De Reserva De Primera Division - Reserves - Premiera LPF, Reserves 2025, Clausura, Group A",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.43,
+  "Quota": null
+ },
+ {
+  "Casa": "Als Omonia",
+  "Ospite": "Aep Polemidion",
+  "Ora": "19:00",
+  "Lega": "Cyprus Cup",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.75,
+  "Quota": null
+ },
+ {
+  "Casa": "Sao Paulo",
+  "Ospite": "Ceara",
+  "Ora": "19:00",
+  "Lega": "Copa do Brasil Sub-20",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.55,
   "Quota": null
  },
  {
@@ -857,6 +987,16 @@
   "Tipo": "B",
   "Pronostico": "2",
   "Prob": 0.6,
+  "Quota": null
+ },
+ {
+  "Casa": "Paysandu SC",
+  "Ospite": "Palmeiras",
+  "Ora": "21:30",
+  "Lega": "Copa do Brasil Sub-20",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.72,
   "Quota": null
  },
  {

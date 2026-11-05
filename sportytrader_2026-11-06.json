@@ -1,15 +1,5 @@
 [
  {
-  "Casa": "Universidad de Concepcion",
-  "Ospite": "O'Higgins",
-  "Ora": "00:00",
-  "Lega": "Primera División Cile",
-  "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.38,
-  "Quota": null
- },
- {
   "Casa": "Inter San Carlos",
   "Ospite": "CS Cartagines",
   "Ora": "00:00",
@@ -30,10 +20,40 @@
   "Quota": null
  },
  {
+  "Casa": "Club Bolivar",
+  "Ospite": "Real Potosi",
+  "Ora": "00:00",
+  "Lega": "Copa Division Profesional, Playoffs - Playoffs",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.79,
+  "Quota": null
+ },
+ {
+  "Casa": "Atletico Choloma",
+  "Ospite": "CA Independiente Siguatepeque",
+  "Ora": "00:15",
+  "Lega": "Liga Nacional - Apertura",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.42,
+  "Quota": null
+ },
+ {
   "Casa": "Independiente Del Valle",
   "Ospite": "DELFIN SC",
   "Ora": "01:00",
   "Lega": "Copa Ecuador",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.63,
+  "Quota": null
+ },
+ {
+  "Casa": "Union Magdalena",
+  "Ospite": "Independiente Valle Del Cauca",
+  "Ora": "01:00",
+  "Lega": "Primera B - Clausura, Promotion, Group A",
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.63,
@@ -90,6 +110,16 @@
   "Quota": null
  },
  {
+  "Casa": "Alacranes De Durango",
+  "Ospite": "Universidad de Guadalajara",
+  "Ora": "04:05",
+  "Lega": "Liga De Expansion MX - Apertura, Playoffs",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.56,
+  "Quota": null
+ },
+ {
   "Casa": "Santos Laguna",
   "Ospite": "CLUB TIJUANA",
   "Ora": "04:10",
@@ -120,6 +150,26 @@
   "Quota": null
  },
  {
+  "Casa": "Hapoel Karmiel FC",
+  "Ospite": "Hapoel Ironi Baka AL Gharbiyye",
+  "Ora": "09:30",
+  "Lega": "Liga Alef South",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.53,
+  "Quota": null
+ },
+ {
+  "Casa": "Canberra FC",
+  "Ospite": "Sydney United",
+  "Ora": "09:30",
+  "Lega": "NPL Victoria - Gruppo A",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.66,
+  "Quota": null
+ },
+ {
   "Casa": "Sydney",
   "Ospite": "Central Coast Mariners",
   "Ora": "09:40",
@@ -127,6 +177,26 @@
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.61,
+  "Quota": null
+ },
+ {
+  "Casa": "Hapoel Bnei Musmus",
+  "Ospite": "Maccabi Neve Shaanan Eldad",
+  "Ora": "10:00",
+  "Lega": "Liga Alef South",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.41,
+  "Quota": null
+ },
+ {
+  "Casa": "SC TIRA",
+  "Ospite": "Hapoel Nof Hagalil FC",
+  "Ora": "11:40",
+  "Lega": "Liga Alef South",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.39,
   "Quota": null
  },
  {
@@ -160,10 +230,30 @@
   "Quota": null
  },
  {
+  "Casa": "MACCABI NUJEIDAT AHMAD",
+  "Ospite": "HAPOEL TIRAT HACARMEL",
+  "Ora": "12:00",
+  "Lega": "Liga Alef South",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.44,
+  "Quota": null
+ },
+ {
   "Casa": "FC VAN",
   "Ospite": "FC Pyunik",
   "Ora": "12:00",
   "Lega": "Armenian Premier League",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.74,
+  "Quota": null
+ },
+ {
+  "Casa": "Hapoel Bnei Jat United",
+  "Ospite": "Ironi Nesher",
+  "Ora": "12:30",
+  "Lega": "Liga Alef South",
   "Tipo": "B",
   "Pronostico": "2",
   "Prob": 0.74,
@@ -267,6 +357,56 @@
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.41,
+  "Quota": null
+ },
+ {
+  "Casa": "NEWROZ SC",
+  "Ospite": "KARBALAA",
+  "Ora": "14:00",
+  "Lega": "Iraqi League",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.7,
+  "Quota": null
+ },
+ {
+  "Casa": "Lokomotiva Zagreb",
+  "Ospite": "NK Kustosija Zagreb",
+  "Ora": "14:45",
+  "Lega": "U19 Prva NL Juniori - U19 Prva NL Juniori 25/26 - U19 Prva NL Juniori 25/26",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.51,
+  "Quota": null
+ },
+ {
+  "Casa": "Al-Talaba",
+  "Ospite": "Gas Alshimal",
+  "Ora": "14:45",
+  "Lega": "Iraqi League",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.44,
+  "Quota": null
+ },
+ {
+  "Casa": "Qarabag FK",
+  "Ospite": "Turan Tovuz",
+  "Ora": "15:00",
+  "Lega": "Topaz Premier League",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.57,
+  "Quota": null
+ },
+ {
+  "Casa": "Chador Malu Yazd",
+  "Ospite": "Foolad Khuzestan",
+  "Ora": "15:00",
+  "Lega": "Persian Gulf Pro League",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.36,
   "Quota": null
  },
  {
@@ -380,6 +520,16 @@
   "Quota": null
  },
  {
+  "Casa": "FC BKMA Yerevan",
+  "Ospite": "Alashkert",
+  "Ora": "16:00",
+  "Lega": "Armenian Premier League",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.76,
+  "Quota": null
+ },
+ {
   "Casa": "Bouri",
   "Ospite": "Etehad Alreef",
   "Ora": "16:00",
@@ -427,6 +577,16 @@
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.45,
+  "Quota": null
+ },
+ {
+  "Casa": "Neftchi Baku",
+  "Ospite": "Kapaz",
+  "Ora": "17:00",
+  "Lega": "Topaz Premier League",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.75,
   "Quota": null
  },
  {
@@ -557,6 +717,16 @@
   "Tipo": "B",
   "Pronostico": "2",
   "Prob": 0.42,
+  "Quota": null
+ },
+ {
+  "Casa": "Spartak Myjava",
+  "Ospite": "Raca",
+  "Ora": "18:00",
+  "Lega": "3. Liga - West",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.7,
   "Quota": null
  },
  {
@@ -800,6 +970,16 @@
   "Quota": null
  },
  {
+  "Casa": "Warta Sieradz",
+  "Ospite": "Tomaszow Mazowiecki",
+  "Ora": "19:00",
+  "Lega": "III Liga - Gruppo 1 - Gruppo 1",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.55,
+  "Quota": null
+ },
+ {
   "Casa": "Cacereño",
   "Ospite": "Lugo",
   "Ora": "19:00",
@@ -807,6 +987,26 @@
   "Tipo": "B",
   "Pronostico": "2",
   "Prob": 0.36,
+  "Quota": null
+ },
+ {
+  "Casa": "Parndorf",
+  "Ospite": "Young Style SC Wienerberg",
+  "Ora": "19:00",
+  "Lega": "Regionalliga Ost",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.82,
+  "Quota": null
+ },
+ {
+  "Casa": "FC Marchfeld Donauauen",
+  "Ospite": "Donaufeld",
+  "Ora": "19:00",
+  "Lega": "Regionalliga Ost",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.61,
   "Quota": null
  },
  {
@@ -837,6 +1037,16 @@
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.74,
+  "Quota": null
+ },
+ {
+  "Casa": "FC Chambly Oise",
+  "Ospite": "Chantilly",
+  "Ora": "19:00",
+  "Lega": "National 2 - National 2 25/26, Group A - Gruppo A",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.7,
   "Quota": null
  },
  {
@@ -917,6 +1127,16 @@
   "Tipo": "B",
   "Pronostico": "2",
   "Prob": 0.39,
+  "Quota": null
+ },
+ {
+  "Casa": "Arriba Krems",
+  "Ospite": "SV Leobendorf",
+  "Ora": "19:30",
+  "Lega": "Regionalliga Ost",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.65,
   "Quota": null
  },
  {
@@ -1100,6 +1320,16 @@
   "Quota": null
  },
  {
+  "Casa": "JADRAN DEKANI",
+  "Ospite": "NK Bistrica",
+  "Ora": "20:00",
+  "Lega": "2. Liga",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.38,
+  "Quota": null
+ },
+ {
   "Casa": "Sporting Hasselt",
   "Ospite": "Patro Eisden Maasmechelen",
   "Ora": "20:00",
@@ -1117,6 +1347,16 @@
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.53,
+  "Quota": null
+ },
+ {
+  "Casa": "KFC MERELBEKE",
+  "Ospite": "Heist",
+  "Ora": "20:00",
+  "Lega": "Nationale 1 VV - Nationale 1 VV 24/25",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.42,
   "Quota": null
  },
  {
@@ -1217,6 +1457,56 @@
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.37,
+  "Quota": null
+ },
+ {
+  "Casa": "CPD Dinas Bangor City 1876 FC",
+  "Ospite": "Gresford Athletic",
+  "Ora": "20:30",
+  "Lega": "FAW Championship North & Mid",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.77,
+  "Quota": null
+ },
+ {
+  "Casa": "Afan Lido",
+  "Ospite": "Caerphilly Athletic FC",
+  "Ora": "20:30",
+  "Lega": "FAW Championship South & Mid",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.4,
+  "Quota": null
+ },
+ {
+  "Casa": "Baglan Dragons",
+  "Ospite": "Ynyshir Albions",
+  "Ora": "20:30",
+  "Lega": "FAW Championship South & Mid",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.45,
+  "Quota": null
+ },
+ {
+  "Casa": "Llanelli Town",
+  "Ospite": "Pontardawe Town FC",
+  "Ora": "20:30",
+  "Lega": "FAW Championship South & Mid",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.66,
+  "Quota": null
+ },
+ {
+  "Casa": "Newport City FC",
+  "Ospite": "Treowen Stars",
+  "Ora": "20:30",
+  "Lega": "FAW Championship South & Mid",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.5,
   "Quota": null
  },
  {
@@ -1380,6 +1670,76 @@
   "Quota": null
  },
  {
+  "Casa": "Trefelin BGC",
+  "Ospite": "Colwyn Bay",
+  "Ora": "20:45",
+  "Lega": "Cymru Premier",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.75,
+  "Quota": null
+ },
+ {
+  "Casa": "Bala Town",
+  "Ospite": "Guilsfield FC",
+  "Ora": "20:45",
+  "Lega": "FAW Championship North & Mid",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.57,
+  "Quota": null
+ },
+ {
+  "Casa": "Denbigh Town",
+  "Ospite": "Mold Alexandra",
+  "Ora": "20:45",
+  "Lega": "FAW Championship North & Mid",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.38,
+  "Quota": null
+ },
+ {
+  "Casa": "Penrhyncoch FC",
+  "Ospite": "Caersws",
+  "Ora": "20:45",
+  "Lega": "FAW Championship North & Mid",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.6,
+  "Quota": null
+ },
+ {
+  "Casa": "Ruthin Town",
+  "Ospite": "Newtown AFC",
+  "Ora": "20:45",
+  "Lega": "FAW Championship North & Mid",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.65,
+  "Quota": null
+ },
+ {
+  "Casa": "Caerau Ely FC",
+  "Ospite": "Pontypridd Town",
+  "Ora": "20:45",
+  "Lega": "FAW Championship South & Mid",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.47,
+  "Quota": null
+ },
+ {
+  "Casa": "Quorn",
+  "Ospite": "Alfreton Town FC",
+  "Ora": "20:45",
+  "Lega": "Northern Premier League - Premier Division",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.42,
+  "Quota": null
+ },
+ {
   "Casa": "Oxford City",
   "Ospite": "Leicester",
   "Ora": "20:45",
@@ -1450,6 +1810,16 @@
   "Quota": null
  },
  {
+  "Casa": "CF OS Belenenses",
+  "Ospite": "Lusitano GC",
+  "Ora": "21:00",
+  "Lega": "Liga 3 - Gruppo B",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.53,
+  "Quota": null
+ },
+ {
   "Casa": "Union Touarga",
   "Ospite": "UNION SPORTIF AMAL TIZNIT",
   "Ora": "21:00",
@@ -1482,7 +1852,7 @@
  {
   "Casa": "San Lorenzo",
   "Ospite": "Platense",
-  "Ora": "23:00",
+  "Ora": "23:15",
   "Lega": "Liga Profesional Argentina - Clausura, Group A",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1492,7 +1862,7 @@
  {
   "Casa": "Union de Santa Fe",
   "Ospite": "Velez Sarsfield",
-  "Ora": "23:00",
+  "Ora": "23:15",
   "Lega": "Liga Profesional Argentina - Clausura, Group A",
   "Tipo": "B",
   "Pronostico": "2",
@@ -1502,7 +1872,7 @@
  {
   "Casa": "Independiente",
   "Ospite": "Deportivo Riestra",
-  "Ora": "23:00",
+  "Ora": "23:15",
   "Lega": "Liga Profesional Argentina - Clausura, Group A",
   "Tipo": "B",
   "Pronostico": "1",
