@@ -1661,7 +1661,8 @@
     mercato: { indice: "asianodds_index.json", prefisso: "asianodds_", viste: MK_VISTE, ordini: MK_ORDINI,
                tiene: mkTiene, riepilogo: riepilogoMercato, riga: rigaMercato, nota: "", daOggi: true },
     accordo: { indice: "consensus_index.json", prefisso: "consensus_", viste: AC_VISTE, ordini: AC_ORDINI,
-               tiene: function () { return true; }, riepilogo: riepilogoAccordo, riga: rigaAccordo, nota: "" },
+               tiene: function () { return true; }, riepilogo: riepilogoAccordo, riga: rigaAccordo, nota: "",
+               arricchisci: arricchisciAccordo },
     poisson: { indice: "poisson_index.json", prefisso: "poisson_", viste: PO_VISTE, ordini: PO_ORDINI,
                tiene: poTiene, riepilogo: riepilogoPoisson, riga: rigaPoisson, nota: "" },
     wdw: { indice: "footystatswdw_index.json", prefisso: "footystatswdw_", viste: WD_VISTE, ordini: WD_ORDINI,
@@ -3770,6 +3771,42 @@
     return out;
   }
 
+  // XGAURA ACCANTO AL CONSENSO (5/11). Come terza fonte del voto non
+  // aggiungeva niente: d'accordo col consenso il vantaggio sul mercato non
+  // cresceva, e le partite calavano di due terzi. Contro, il consenso andava
+  // male, ma su 20 partite sole: si mostra per vedere se e' un segnale, e
+  // archivio_consensus.py lo segna per misurarlo. Il segno di xGaura viene
+  // dalla scheda della partita, come i pronostici delle altre fonti: solo
+  // il suo 1X2 secco.
+  function arricchisciAccordo(righe, data) {
+    if (!Array.isArray(righe)) return righe;
+    return leggi("scheda_" + data + ".json").catch(function () { return null; }).then(function (s) {
+      if (!s || !s.alias) return righe;
+      var per = {};
+      (s.partite || []).forEach(function (p) { per[p.id] = p; });
+      return righe.map(function (r) {
+        var p = per[s.alias["consensus|" + r.Casa + "|" + r.Ospite]];
+        if (!p) return r;
+        var segni = (p.Pronostici || []).filter(function (x) {
+          return x.Fonte === "xgaura" && x.Mercato === "1X2" && /^[1X2]$/.test(String(x.Sel || ""));
+        }).map(function (x) { return x.Sel; });
+        segni = segni.filter(function (x, i) { return segni.indexOf(x) === i; });
+        if (segni.length !== 1) return r;
+        var o = {};
+        for (var k in r) o[k] = r[k];
+        o._xg = segni[0];
+        return o;
+      });
+    });
+  }
+  function etichettaXgaura(r) {
+    if (!r._xg) return "";
+    var pron = String(r["Pron Combinato"] || "").toUpperCase();
+    var con = pron.indexOf(r._xg) >= 0;
+    return '<span class="pill ' + (con ? "stretto" : "largo") + '" title="xGaura: ' + esc(r._xg) + '">xGaura ' +
+      (con ? "d'accordo" : "contro") + "</span>";
+  }
+
   function rigaAccordo(r) {
     var pron = String(r["Pron Combinato"] || "").toUpperCase();
     var p1 = num(r["P_1 %"]), px = num(r["P_X %"]), p2 = num(r["P_2 %"]);
@@ -3785,11 +3822,16 @@
     if (String(r["xG Casa"] || "").trim() || String(r["xG Ospite"] || "").trim()) {
       det.push("<p>xG: " + esc(r["xG Casa"] || "-") + " \u2013 " + esc(r["xG Ospite"] || "-") + "</p>");
     }
+    if (r._xg) {
+      det.push("<p>xGaura: " + esc(r._xg) + (pron.indexOf(r._xg) >= 0
+        ? ", d'accordo col consenso."
+        : ", contro il consenso. Finora i casi sono pochi: si sta misurando se è un segnale per lasciar perdere la partita.") + "</p>");
+    }
     righeAO(r).forEach(function (x) { det.push(x); });
     return '<div class="riga"><details><summary>' +
       '<span class="segno">' + esc(pron || "?") + "</span>" +
       '<div class="corpo">' +
-      '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" + golHtml(r) + "</div>" +
+      '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" + golHtml(r) + etichettaXgaura(r) + "</div>" +
       '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" +
       '<div class="sel">Statarea ' + esc(r["Pron Statarea"]) + " \u00b7 WebPronostici " + esc(r["Pron WebPron"]) + "</div>" +
       tripla("fonti", p1, px, p2) +
