@@ -401,6 +401,10 @@
     --vx-testo: #f0eeea; --v2-testo: #16151a;
   }
 
+  /* Best picks: titolo di ogni giornata */
+  .giorno-best { margin: 20px 0 6px; font-size: 1rem; }
+  .giorno-best small { color: var(--tenue); font-weight: 400; }
+
   /* Riepilogo tre numeri */
   .riepilogo {
     display: grid; grid-template-columns: repeat(3, 1fr);
@@ -1380,6 +1384,7 @@
     </button>
     <button data-sez="prezzi">Pronostici</button>
     <button data-sez="consensus" class="due">Consenso<br>fonti</button>
+    <button data-sez="best" class="due">Best<br>picks</button>
     <button data-sez="poisson">Poisson</button>
     <button data-sez="sure">Sure Bets</button>
     <button data-sez="fonti" class="due">Statistiche<br>fonti</button>
@@ -1615,6 +1620,7 @@
       try { SCHEDA.chiave = p[2] ? decodeURIComponent(p[2]) : null; } catch (e) { SCHEDA.chiave = null; }
       return;
     }
+    if (p[0] === "best") { stato.sez = "best"; return; }
     if (p[0] === "xg") {
       stato.sez = "xg";
       try { XG.lega = p[1] ? decodeURIComponent(p[1]) : XG.lega; } catch (e) { /* resta quella che c'era */ }
@@ -1636,6 +1642,8 @@
     var h = stato.sez;
     if (stato.sez === "scheda") {
       h += "/" + (SCHEDA.data || "") + "/" + encodeURIComponent(SCHEDA.chiave || "");
+    } else if (stato.sez === "best") {
+      // una pagina sola, senza giornata: tiene sempre oggi e i giorni dopo
     } else if (stato.sez === "xg") {
       h += "/" + encodeURIComponent(XG.lega || "") + "/" + (XG.fonte || "");
     } else if (stato.sez !== "fonti") {
@@ -1761,6 +1769,7 @@
     if (stato.sez === "fonti") return disegnaFonti();
     if (stato.sez === "scheda") return disegnaScheda();
     if (stato.sez === "xg") return disegnaXG();
+    if (stato.sez === "best") return disegnaBest();
     return disegnaGiornata(stato.sez);
   }
 
@@ -3886,6 +3895,188 @@
       "</summary>" +
       '<div class="dettaglio">' + det.join("") + "</div>" +
       "</details></div>";
+  }
+
+  // ------------------------------------------------------- best picks
+  //
+  // BEST PICKS (6/11): i segni SECCHI del consenso Statarea + WebPronostici
+  // di oggi e di tutti i giorni dopo, in una pagina sola. Non e' la
+  // schedina: la schedina sceglie per probabilita' (fascia 50-75% dei
+  // prezzi equi, cioe' del mercato), quindi e' tarata sul mercato e non lo
+  // batte. Qui si sceglie l'unica cosa misurata che il mercato lo batte:
+  // sull'archivio del 6/11, 980 segni secchi chiusi, presi 56.6% contro
+  // il 53.0% che dava il mercato (+3.6 punti, errore 1.5). Il 6/11 si
+  // sovrapponevano alla schedina 3-5 segni al giorno.
+  // La regola del secco e' quella di consensus.py (segnoSecco qui sotto
+  // legge soltanto "Pron Combinato"); la probabilita' di mercato e'
+  // quella della scheda (AsianOdds col de-vig di Shin, la stessa che
+  // archivio_consensus.py usa per misurare). Il conteggio in alto si rifa'
+  // a ogni apertura su consensus_archivio.csv: se il vantaggio sparisce,
+  // si vede qui per primo.
+  function leggiTesto(file) {
+    var k = "testo:" + file;
+    if (!cache[k]) {
+      cache[k] = fetch(BASE + file).then(function (r) {
+        if (!r.ok) throw new Error(file + ": risposta " + r.status);
+        return r.text();
+      });
+      cache[k].catch(function () { delete cache[k]; });
+    }
+    return cache[k];
+  }
+  function csvOggetti(t) {
+    var righe = [], riga = [], campo = "", q = false;
+    for (var i = 0; i < t.length; i++) {
+      var c = t[i];
+      if (q) {
+        if (c === '"') { if (t[i + 1] === '"') { campo += '"'; i++; } else q = false; }
+        else campo += c;
+      } else if (c === '"') q = true;
+      else if (c === ",") { riga.push(campo); campo = ""; }
+      else if (c === "\n") { riga.push(campo); righe.push(riga); riga = []; campo = ""; }
+      else if (c !== "\r") campo += c;
+    }
+    if (campo || riga.length) { riga.push(campo); righe.push(riga); }
+    var testa = righe.shift() || [];
+    return righe.filter(function (r) { return r.length === testa.length; }).map(function (r) {
+      var o = {};
+      testa.forEach(function (k, j) { o[k] = r[j]; });
+      return o;
+    });
+  }
+  // Presi contro attesi dal mercato, sui secchi chiusi che hanno il prezzo.
+  function misuraSecchi(arch, dal) {
+    var d = [], presi = 0, attesi = 0;
+    arch.forEach(function (r) {
+      var s = String(r.Pron_Combinato || "").trim().toUpperCase();
+      if (!/^[1X2]$/.test(s) || !/^[1X2]$/.test(r.Esito || "")) return;
+      if (dal && String(r.Data || "") < dal) return;
+      var pm = num(r["Mercato_P" + s]);
+      if (pm == null) return;
+      var h = r.Esito === s ? 100 : 0;
+      presi += h; attesi += pm; d.push(h - pm);
+    });
+    var n = d.length;
+    if (!n) return null;
+    var m = d.reduce(function (a, b) { return a + b; }, 0) / n;
+    var v = n > 1 ? d.reduce(function (a, b) { return a + (b - m) * (b - m); }, 0) / (n - 1) : 0;
+    return { n: n, presi: presi / n, attesi: attesi / n, diff: m, err: Math.sqrt(v / n) };
+  }
+  function conSegno(x) { return (x >= 0 ? "+" : "−") + Math.abs(x).toFixed(1); }
+
+  // La probabilita' di mercato del segno, dalla scheda della partita.
+  function conMercato(righe, data) {
+    if (!Array.isArray(righe) || !righe.length) return Promise.resolve(righe);
+    return leggi("scheda_" + data + ".json").catch(function () { return null; }).then(function (s) {
+      if (!s || !s.alias) return righe;
+      var per = {};
+      (s.partite || []).forEach(function (p) { per[p.id] = p; });
+      return righe.map(function (r) {
+        var p = per[s.alias["consensus|" + r.Casa + "|" + r.Ospite]];
+        var m = p && p.Mercato;
+        if (!m) return r;
+        var segno = String(r["Pron Combinato"] || "").toUpperCase();
+        var t = {};
+        ["1", "X", "2"].forEach(function (e) {
+          var v = num(m["P" + e + " Shin"]);
+          t[e] = v != null ? v : num(m["P" + e]);
+        });
+        if (t[segno] == null) return r;
+        var o = {};
+        for (var k in r) o[k] = r[k];
+        o._pm = t[segno]; o._pm3 = t; o._marg = num(m.Margine);
+        return o;
+      });
+    });
+  }
+
+  function rigaBest(r) {
+    var segno = String(r["Pron Combinato"] || "").toUpperCase();
+    var h = rigaAccordo(r);
+    var mk = r._pm != null
+      ? '<div class="sel">Mercato <b>' + f0(r._pm) + "%</b> sul " + esc(segno) + " · quota equa <b>" + f2(100 / r._pm) + "</b></div>"
+      : '<div class="sel" style="color:var(--tenue)">Prezzo di mercato non ancora uscito (AsianOdds copre le 24 ore prima)</div>';
+    h = h.replace('<div class="sel">', mk + '<div class="sel">');
+    if (r.Gol_Casa != null && r.Gol_Ospite != null) {
+      var gc = num(r.Gol_Casa), go = num(r.Gol_Ospite);
+      if (gc != null && go != null) {
+        var uscito = gc > go ? "1" : gc < go ? "2" : "X";
+        var pill = uscito === segno ? '<span class="pill stretto">✓ preso</span>' : '<span class="pill largo">✗ perso</span>';
+        h = h.replace('</div><div class="partita">', pill + '</div><div class="partita">');
+      }
+    }
+    if (r._pm3) {
+      var t = r._pm3;
+      h = h.replace('<div class="dettaglio">', '<div class="dettaglio"><p>Mercato AsianOdds, margine tolto: 1 ' + f0(t["1"]) +
+        "% · X " + f0(t["X"]) + "% · 2 " + f0(t["2"]) + "%" +
+        (r._marg != null ? " (margine " + f1(r._marg) + "%)" : "") + ". Quota equa del " + esc(segno) + ": " +
+        f2(100 / r._pm) + "; il bookmaker paga meno, del suo margine.</p>");
+    }
+    return h;
+  }
+
+  function riepilogoBest(tutto, ultimi) {
+    if (!tutto) {
+      return '<p class="conta">Il conteggio sull’archivio non è disponibile in questo momento.</p>';
+    }
+    return '<div class="riepilogo">' +
+      "<div><b>" + conSegno(tutto.diff) + "</b><span>punti sopra il mercato (±" + tutto.err.toFixed(1) +
+      ") su " + tutto.n + " secchi chiusi</span></div>" +
+      "<div><b>" + tutto.presi.toFixed(1) + "%</b><span>presi · il mercato ne dava " + tutto.attesi.toFixed(1) + "%</span></div>" +
+      "<div><b>" + (ultimi ? conSegno(ultimi.diff) : "-") + "</b><span>ultimi 14 giorni" +
+      (ultimi ? ", " + ultimi.n + " partite (±" + ultimi.err.toFixed(1) + ")" : "") + "</span></div></div>";
+  }
+
+  function disegnaBest() {
+    ultime = null;
+    $cont.innerHTML = messaggio("vuoto", "Carico&hellip;");
+    var arch = leggiTesto("consensus_archivio.csv").then(csvOggetti).catch(function () { return null; });
+    Promise.all([leggi("consensus_index.json"), caricaLoghi(), arch]).then(function (a) {
+      if (stato.sez !== "best") return;
+      var ix = a[0], o = oggi();
+      var date = (ix.date || []).filter(function (x) { return x >= o; }).sort();
+      document.getElementById("aggiornato").textContent = "Aggiornato il " + (ix.updated || "?");
+      var tutto = a[2] ? misuraSecchi(a[2], null) : null;
+      var ultimi = a[2] ? misuraSecchi(a[2], giornoRoma(-14)) : null;
+      var testa = '<p class="descr">I segni secchi (1, X o 2) su cui Statarea e WebPronostici concordano, oggi e nei giorni dopo. ' +
+        "Non è la schedina: la schedina sceglie le giocate più probabili secondo il mercato, queste sono quelle dove, " +
+        "misurato sull’archivio, le due fonti ci prendono più spesso di quanto dice il mercato. Il vantaggio è piccolo: " +
+        "con il margine dei bookmaker italiani sulla singola resta vicino a zero, e in multipla il margine si moltiplica e lo mangia. " +
+        "Il prezzo di mercato compare quando AsianOdds quota la partita, di solito il giorno prima.</p>" +
+        riepilogoBest(tutto, ultimi);
+      if (!date.length) {
+        $cont.innerHTML = testa + messaggio("vuoto", "Nessuna giornata da oggi in avanti: arrivano col giro notturno.");
+        return;
+      }
+      $cont.innerHTML = testa + '<div id="best-giorni">' + messaggio("vuoto", "Carico&hellip;") + "</div>";
+      return Promise.all(date.map(function (d) {
+        return leggi("consensus_" + d + ".json").catch(function () { return []; }).then(function (righe) {
+          righe = (Array.isArray(righe) ? righe : []).filter(segnoSecco);
+          return arricchisciAccordo(righe, d);
+        }).then(function (righe) { return conRisultati("accordo", righe, d); })
+          .then(function (righe) { return conMercato(righe, d); })
+          .then(function (righe) { return { data: d, righe: righe || [] }; });
+      })).then(function (giorni) {
+        if (stato.sez !== "best") return;
+        var $g = document.getElementById("best-giorni");
+        if (!$g) return;
+        var tot = 0;
+        $g.innerHTML = giorni.map(function (g) {
+          if (!g.righe.length) return "";
+          tot += g.righe.length;
+          var v = g.righe.slice().sort(function (x, y) { return String(x.Ora || "").localeCompare(String(y.Ora || "")); });
+          var conPrezzo = v.filter(function (r) { return r._pm != null; }).length;
+          return '<h3 class="giorno-best">' + esc(etichettaData(g.data)) + " <small>· " + v.length + " secchi" +
+            (conPrezzo ? ", " + conPrezzo + " col prezzo di mercato" : "") + "</small></h3>" +
+            '<div class="lista" data-giorno="' + esc(g.data) + '">' +
+            v.map(function (r) { return conAggancio(rigaBest(r), "accordo", r); }).join("") + "</div>";
+        }).join("") || messaggio("vuoto", "Nessun segno secco da oggi in avanti.");
+        $g.querySelectorAll(".lista[data-giorno]").forEach(function (l) { collegaAgganci(l, l.dataset.giorno); });
+        rimettiPosto($cont);
+      });
+    }).catch(function (e) {
+      $cont.innerHTML = messaggio("errore", "Non riesco a leggere i dati (" + esc(e.message) + "). Riprova fra qualche minuto.");
+    });
   }
 
   // ------------------------------------------------------- sure bets
