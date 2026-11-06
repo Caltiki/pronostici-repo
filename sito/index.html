@@ -4945,9 +4945,7 @@
   function piedeScheda(p) {
     var visti = {}, nomi = [];
     (p.Fonti || []).forEach(function (k) { var n = nomeFonte(k); if (!visti[n]) { visti[n] = 1; nomi.push(n); } });
-    return '<p class="piccolo piede-scheda">In questa scheda: ' + esc(nomi.join(", ")) + ". " +
-      "Ogni fonte scrive le squadre a modo suo: le righe sono state unite nel giro notturno " +
-      "con regole precise (stemma, nomi parola per parola, ora). Se qui compare una partita che non c'entra, è un'unione sbagliata: segnalala.</p>";
+    return '<p class="piccolo piede-scheda">In questa scheda: ' + esc(nomi.join(", ")) + ".</p>";
   }
 
   function disegnaScheda() {
