@@ -163,27 +163,6 @@
  },
  {
   "Data": "2026-11-09",
-  "Ora": "01:00",
-  "Campionato": "Mexico Liga MX",
-  "Partita": "Querétaro - Puebla",
-  "Casa": "Querétaro",
-  "Ospite": "Puebla",
-  "Linea_OU": "",
-  "Gol_attesi": 2.92,
-  "Margine": 2.8,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "Under Over",
-  "Mercato": "OU 3.5",
-  "Sel": "Under",
-  "Prob": 66.4,
-  "Equa": 1.51,
-  "InSchedina": "si"
- },
- {
-  "Data": "2026-11-09",
   "Ora": "20:30",
   "Campionato": "England FA Cup",
   "Partita": "Plymouth Parkway - Berkhamsted",
@@ -242,7 +221,8 @@
   "Mercato": "BTTS",
   "Sel": "Gol",
   "Prob": 57.9,
-  "Equa": 1.73
+  "Equa": 1.73,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-09",
@@ -563,6 +543,26 @@
   "Sel": "2",
   "Prob": 42.4,
   "Equa": 2.36
+ },
+ {
+  "Data": "2026-11-09",
+  "Ora": "01:00",
+  "Campionato": "Mexico Liga MX",
+  "Partita": "Querétaro - Puebla",
+  "Casa": "Querétaro",
+  "Ospite": "Puebla",
+  "Linea_OU": "",
+  "Gol_attesi": 2.92,
+  "Margine": 2.8,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "Gol NoGol",
+  "Mercato": "BTTS",
+  "Sel": "NoGol",
+  "Prob": 42.1,
+  "Equa": 2.38
  },
  {
   "Data": "2026-11-09",
