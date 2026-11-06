@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-06 03:43",
+ "aggiornato": "2026-11-06 03:55",
  "date": [
   "2026-11-03",
   "2026-11-04",
@@ -32,15 +32,15 @@
    "presa": 7,
    "sbagliata": 0,
    "rimborso": 0,
-   "attesa": 473,
-   "righe": 480
+   "attesa": 466,
+   "righe": 473
   }
  },
  "taratura": {
   "totale": {
    "righe": 1222,
    "partite": 161,
-   "prevista": 56.1,
+   "prevista": 56.0,
    "uscita": 56.7,
    "scarto": 0.7,
    "errore_std": 1.4
@@ -51,7 +51,7 @@
     "partite": 121,
     "prevista": 37.3,
     "uscita": 41.9,
-    "scarto": 4.6,
+    "scarto": 4.7,
     "errore_std": 3.4,
     "fascia": "35-40%"
    },
@@ -204,20 +204,20 @@
   ],
   "fonti": [
    {
-    "righe": 984,
-    "partite": 130,
-    "prevista": 56.7,
-    "uscita": 55.5,
-    "scarto": -1.2,
+    "righe": 991,
+    "partite": 131,
+    "prevista": 56.6,
+    "uscita": 55.8,
+    "scarto": -0.8,
     "errore_std": 1.6,
     "nome": "FootyMetrics"
    },
    {
-    "righe": 176,
-    "partite": 22,
-    "prevista": 54.1,
-    "uscita": 64.8,
-    "scarto": 10.7,
+    "righe": 169,
+    "partite": 21,
+    "prevista": 54.0,
+    "uscita": 63.3,
+    "scarto": 9.3,
     "errore_std": 3.8,
     "nome": "AsianOdds"
    },
