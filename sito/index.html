@@ -1178,6 +1178,9 @@
   .riga .spunta.esito.presa { color: var(--buono); background: var(--buono-tenue); }
   .riga .spunta.esito.sbagliata { color: var(--male); background: color-mix(in srgb, var(--male) 12%, transparent); }
   .riga .spunta.esito.rimborso, .riga .spunta.esito.attesa { color: var(--tenue); }
+  /* LA PROPOSTA (fuori schedina): stesso segno, ma grigio e senza fondo,
+     per non confonderla con l'esito della schedina. */
+  .riga .spunta.esito.proposta { color: var(--tenue); background: transparent; font-weight: 700; }
   /* Stemmi accanto ai nomi delle squadre. */
   img.stemma { width: 18px; height: 18px; object-fit: contain; vertical-align: -3px; margin-right: 5px; }
   img.stemma.grande { width: 28px; height: 28px; vertical-align: -6px; margin-right: 7px; }
@@ -2080,8 +2083,14 @@
         var es = inSch ? (inSch.Esito || (inSch.Data && inSch.Data < oggi() ? "attesa" : null)) : null;
         var segnoEs = es === "presa" ? "\u2713" : es === "sbagliata" ? "\u2717" : es === "attesa" ? "\u2013" : "\u21ba";
         var titoloEs = es === "presa" ? "schedina vinta" : es === "sbagliata" ? "schedina persa" : es === "attesa" ? "risultato non disponibile" : "rimborso";
+        // FUORI SCHEDINA, LA PROPOSTA: spunta grigia, che non conta nei
+        // riquadri (deciso il 6/11). Solo presa o sbagliata.
+        var ep = !es && (top._esito === "presa" || top._esito === "sbagliata") ? top._esito : null;
+        var titoloEp = ep === "presa" ? "proposta uscita (fuori schedina)" : "proposta non uscita (fuori schedina)";
         return '<div class="riga partitona' + (scelte_ ? " scelta" : "") + (es ? " finita" : "") + '">' +
-          (es ? '<span class="spunta esito ' + esc(es) + '" title="' + titoloEs + '" aria-label="' + titoloEs + '">' + segnoEs + "</span>" : "") +
+          (es ? '<span class="spunta esito ' + esc(es) + '" title="' + titoloEs + '" aria-label="' + titoloEs + '">' + segnoEs + "</span>"
+            : ep ? '<span class="spunta esito proposta" title="' + titoloEp + '" aria-label="' + titoloEp + '">' +
+              (ep === "presa" ? "\u2713" : "\u2717") + "</span>" : "") +
           '<details><summary><div class="corpo">' +
           '<div class="alto"><span>' + esc(r0.Ora || "") + "</span>" +
           (gol ? "<span><b>" + esc(gol) + "</b></span>" : "") +
@@ -2437,18 +2446,30 @@
   // misura_fonti.py). Si agganciano per chiave esatta: data, partita,
   // mercato e selezione come le scrive prezzi_equi.py.
   function conEsiti(righe, data) {
-    if (!Array.isArray(righe) || righe.some(function (r) { return r.Esito; })) return Promise.resolve(righe);
-    // Solo la schedina: vedi la nota in disegnaGiornata.
-    return leggi("schedina_" + data + ".json").catch(function () { return null; }).then(function (s) {
-      if (!Array.isArray(s)) return righe;
-      var per = {};
-      s.forEach(function (x) { if (x.Esito) per[chiave(x)] = x; });
+    if (!Array.isArray(righe) || righe.some(function (r) { return r.Esito || r._esito; })) return Promise.resolve(righe);
+    // L'esito vero solo alla schedina (vedi la nota in disegnaGiornata);
+    // alle altre righe resta a parte (_esito), per la spunta grigia della
+    // proposta sulla scheda della partita.
+    return Promise.all([
+      leggi("schedina_" + data + ".json").catch(function () { return null; }),
+      leggi("esiti_" + data + ".json").catch(function () { return null; })
+    ]).then(function (a) {
+      var s = a[0], e = a[1];
+      if (!Array.isArray(s) && !Array.isArray(e)) return righe;
+      var per = {}, tutti = {};
+      (Array.isArray(s) ? s : []).forEach(function (x) { if (x.Esito) per[chiave(x)] = x; });
+      (Array.isArray(e) ? e : []).forEach(function (x) { if (x.Esito) tutti[chiave(x)] = x; });
       return righe.map(function (r) {
-        var x = per[chiave(r)];
-        if (!x) return r;
+        var x = per[chiave(r)], y = tutti[chiave(r)];
+        if (!x && !y) return r;
         var o = {};
         for (var k in r) o[k] = r[k];
-        o.Esito = x.Esito; o.Gol_Casa = x.Gol_Casa; o.Gol_Ospite = x.Gol_Ospite; o.Risultato_Da = x.Risultato_Da;
+        if (x) {
+          o.Esito = x.Esito; o.Gol_Casa = x.Gol_Casa; o.Gol_Ospite = x.Gol_Ospite; o.Risultato_Da = x.Risultato_Da;
+        } else {
+          o._esito = y.Esito;
+          if (o.Gol_Casa == null) { o.Gol_Casa = y.Gol_Casa; o.Gol_Ospite = y.Gol_Ospite; o.Risultato_Da = y.Risultato_Da; }
+        }
         return o;
       });
     });
@@ -2464,7 +2485,7 @@
       var o = {};
       for (var k in r) o[k] = r[k];
       if (file === "schedina_") o.InSchedina = "si";
-      else if (String(o.InSchedina || "") !== "si") delete o.Esito;
+      else if (String(o.InSchedina || "") !== "si") { o._esito = o.Esito; delete o.Esito; }
       return o;
     });
   }
