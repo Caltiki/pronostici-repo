@@ -1181,6 +1181,9 @@
   /* LA PROPOSTA (fuori schedina): stesso segno, ma grigio e senza fondo,
      per non confonderla con l'esito della schedina. */
   .riga .spunta.esito.proposta { color: var(--tenue); background: transparent; font-weight: 700; }
+  /* Classifica e xG delle due squadre (FotMob), sotto i nomi. */
+  .sqinfo { font-size: .74rem; color: var(--tenue); margin-top: 3px; font-variant-numeric: tabular-nums; }
+  .sqinfo .sep { opacity: .5; margin: 0 .35em; }
   /* Stemmi accanto ai nomi delle squadre. */
   img.stemma { width: 18px; height: 18px; object-fit: contain; vertical-align: -3px; margin-right: 5px; }
   img.stemma.grande { width: 28px; height: 28px; vertical-align: -6px; margin-right: 7px; }
@@ -2096,7 +2099,7 @@
           (gol ? "<span><b>" + esc(gol) + "</b></span>" : "") +
           (r0.Campionato ? '<span class="chip">' + esc(r0.Campionato) + "</span>" : "") +
           (r0.Fonte === "Pinnacle" ? '<span class="chip">quota Pinnacle</span>' : "") + "</div>" +
-          '<div class="partita">' + partitaHtml(r0.Casa, r0.Ospite, r0.Partita, campiRiga(r0)) + "</div>" +
+          '<div class="partita">' + partitaHtml(r0.Casa, r0.Ospite, r0.Partita, campiRiga(r0)) + "</div>" + sqHtml(r0) +
           '<div class="sel">' + (inSch ? "In schedina: " : "Proposta: ") + esc(etichettaSel(top)) +
           " · " + f0(num(top.Prob)) + "%" + (scelte_ ? " · " + scelte_ + " nella multipla" : "") + "</div>" +
           '</div><div class="numero"><b>' + g.length + "</b><span>" + (g.length === 1 ? "probabilità" : "probabilità") + "</span></div></summary>" +
@@ -2497,23 +2500,45 @@
   // senza scheda o senza risultato, niente punteggio. Solo oggi e prima.
   var PREFISSO_SCHEDA = { prezzi: "prezzi", consensus: "consensusmedio", mercato: "asianodds",
                           accordo: "consensus", poisson: "poisson" };
+  // Dalla stessa scheda anche CLASSIFICA E xG delle due squadre (6/11,
+  // "Squadre", tabelle FotMob): su tutte le giornate, non solo fino a oggi.
   function conRisultati(sez, righe, data) {
-    if (!PREFISSO_SCHEDA[sez] || !Array.isArray(righe) || data > oggi()) return Promise.resolve(righe);
+    if (!PREFISSO_SCHEDA[sez] || !Array.isArray(righe)) return Promise.resolve(righe);
     return leggi("scheda_" + data + ".json").catch(function () { return null; }).then(function (s) {
       if (!s || !s.alias) return righe;
-      var per = {}, quante = 0;
-      (s.partite || []).forEach(function (p) { if (p.Risultato) { per[p.id] = p.Risultato; quante++; } });
+      var per = {}, quante = 0, passata = data <= oggi();
+      (s.partite || []).forEach(function (p) {
+        if ((passata && p.Risultato) || p.Squadre) { per[p.id] = p; quante++; }
+      });
       if (!quante) return righe;
       return righe.map(function (r) {
-        if (r.Gol_Casa != null && r.Gol_Ospite != null) return r;
-        var x = per[s.alias[PREFISSO_SCHEDA[sez] + "|" + r.Casa + "|" + r.Ospite]];
-        if (!x) return r;
+        var p = per[s.alias[PREFISSO_SCHEDA[sez] + "|" + r.Casa + "|" + r.Ospite]];
+        if (!p) return r;
         var o = {};
         for (var k in r) o[k] = r[k];
-        o.Gol_Casa = x.Gol_Casa; o.Gol_Ospite = x.Gol_Ospite; o.Risultato_Da = x.Fonte;
+        var x = passata ? p.Risultato : null;
+        if (x && (r.Gol_Casa == null || r.Gol_Ospite == null)) {
+          o.Gol_Casa = x.Gol_Casa; o.Gol_Ospite = x.Gol_Ospite; o.Risultato_Da = x.Fonte;
+        }
+        if (p.Squadre) o._sq = p.Squadre;
         return o;
       });
     });
+  }
+  // "3° · xG 1.57–1.33 | 12° · xG 1.31–1.43": posizione e xG fatti-subiti
+  // a partita, casa e ospite. Solo dove la scheda li ha.
+  function parteSq(x) {
+    if (!x) return "\u2013";
+    var t = [];
+    if (x.Pos != null) t.push(esc(x.Pos) + "\u00b0");
+    if (x.xG != null && x.xGA != null) t.push("xG " + f2(num(x.xG)) + "\u2013" + f2(num(x.xGA)));
+    return t.length ? t.join(" \u00b7 ") : "\u2013";
+  }
+  function sqHtml(r) {
+    var q = r && r._sq;
+    if (!q || (!q.Casa && !q.Ospite)) return "";
+    return '<div class="sqinfo" title="Posizione in classifica e xG fatti\u2013subiti a partita (FotMob)">' +
+      parteSq(q.Casa) + '<span class="sep">|</span>' + parteSq(q.Ospite) + "</div>";
   }
   // Il punteggio in testa alla scheda, accanto all'ora.
   function golHtml(r) {
@@ -3327,7 +3352,7 @@
       '<span class="segno">' + esc(segno || "?") + "</span>" +
       '<div class="corpo">' +
       '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" + golHtml(r) + "<span>" + fonti + (fonti === 1 ? " fonte" : " fonti") + "</span></div>" +
-      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" +
+      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" + sqHtml(r) +
       (coda ? '<div class="sel">' + coda + "</div>" : "") +
       (acc ? '<div class="accordo-conta">D\u2019accordo ' + articolo(acc.segno) + ": <b>" + acc.si.length +
         "</b> " + (acc.si.length + acc.no.length === 1 ? "fonte su 1" : "su " + (acc.si.length + acc.no.length) + " fonti") + "</div>" : "") +
@@ -3722,7 +3747,7 @@
       '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" + golHtml(r) +
       (fid ? '<span class="pill ' + fid[0] + '">margine ' + f1(marg) + "%</span>" : "") +
       (aff ? '<span class="chip">affidabile</span>' : "") + "</div>" +
-      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" +
+      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" + sqHtml(r) +
       (verso || nota ? '<div class="sel">' + (nota ? '<span class="scarto-grosso">movimento notevole' + (verso ? " " + esc(verso.testo) : "") + "</span>"
         : '<span class="scarto">' + esc(verso.testo.charAt(0).toUpperCase() + verso.testo.slice(1)) + "</span>") + "</div>" : "") +
       (ap && mov && pp ? tripla("apertura", ap[0], ap[1], ap[2]) + tripla("ora", pp[0], pp[1], pp[2]) : tripla("ora", p1, px, p2)) +
@@ -3853,7 +3878,7 @@
       '<span class="segno">' + esc(pron || "?") + "</span>" +
       '<div class="corpo">' +
       '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" + golHtml(r) + etichettaXgaura(r) + "</div>" +
-      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" +
+      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" + sqHtml(r) +
       '<div class="sel">Statarea ' + esc(r["Pron Statarea"]) + " \u00b7 WebPronostici " + esc(r["Pron WebPron"]) + "</div>" +
       tripla("fonti", p1, px, p2) +
       "</div>" +
@@ -4548,6 +4573,24 @@
         "<div><span>" + (fm.Pos_Casa != null ? esc(fm.Pos_Casa) + "° in classifica" : "casa") + "</span>" + forma(fm.Forma_Casa) + "</div>" +
         "<div><span>" + (fm.Pos_Ospite != null ? esc(fm.Pos_Ospite) + "° in classifica" : "ospite") + "</span>" + forma(fm.Forma_Ospite) + "</div>" +
         '</div><p class="piccolo">Ultime cinque partite, la più recente a destra (FootyMetrics).</p>';
+    }
+    // CLASSIFICA E xG, dalle tabelle FotMob (6/11).
+    var sq = p.Squadre;
+    if (sq && (sq.Casa || sq.Ospite)) {
+      // Il campionato su ogni riga: nelle coppe le due squadre possono
+      // venire da tabelle diverse (la loro lega), e va detto quale.
+      var riga = function (x) {
+        if (!x) return "<div><span>\u2013</span></div>";
+        var t = [];
+        if (x.Lega) t.push(esc(String(x.Lega).replace(/^[^-]+ - /, "")));
+        if (x.Pos != null) t.push("<b>" + esc(x.Pos) + "\u00b0</b>" + (x.Pt != null ? ", " + esc(x.Pt) + " pt" +
+          (x.PG != null ? " in " + esc(x.PG) : "") : ""));
+        if (x.xG != null && x.xGA != null) t.push("xG " + f2(num(x.xG)) + " fatti, " + f2(num(x.xGA)) + " subiti a partita");
+        if (x.xPts != null) t.push("punti attesi " + esc(x.xPts));
+        return "<div><span>" + (t.join(" \u00b7 ") || "\u2013") + "</span></div>";
+      };
+      h += '<div class="forme">' + riga(sq.Casa) + riga(sq.Ospite) + "</div>" +
+        '<p class="piccolo">Classifica, xG a partita e punti attesi da FotMob, nella tabella indicata riga per riga.</p>';
     }
     return h + "</div>";
   }
