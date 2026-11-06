@@ -7,8 +7,8 @@
   "Ospite": "Pachuca",
   "Segno": "1",
   "P1": 39.3,
-  "PX": 27.7,
-  "P2": 33.0,
+  "PX": 28.0,
+  "P2": 32.7,
   "Fonti": 3,
   "Elenco": "betimate, footymetrics, statarea"
  },
@@ -45,8 +45,8 @@
   "Casa": "CD Muxes",
   "Ospite": "CD Novillos Neza",
   "Segno": "1",
-  "P1": 79.0,
-  "PX": 12.0,
+  "P1": 78.0,
+  "PX": 13.0,
   "P2": 9.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -84,9 +84,9 @@
   "Casa": "Cuiaba",
   "Ospite": "EC Juventude",
   "Segno": "2",
-  "P1": 29.0,
+  "P1": 30.0,
   "PX": 32.0,
-  "P2": 39.0,
+  "P2": 38.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -145,6 +145,19 @@
  {
   "Data": "2026-11-08",
   "Ora": "00:00",
+  "Lega": "Liga Premier Messico",
+  "Casa": "Inter Playa del Carmen",
+  "Ospite": "Lobos ULM",
+  "Segno": "1",
+  "P1": 46.0,
+  "PX": 23.0,
+  "P2": 31.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-11-08",
+  "Ora": "00:00",
   "Lega": "NCAA",
   "Casa": "Lehigh Mountain Hawks",
   "Ospite": "Lafayette Leopards",
@@ -162,9 +175,22 @@
   "Casa": "Princeton Women",
   "Ospite": "Brown (W)",
   "Segno": "1",
-  "P1": 60.0,
-  "PX": 20.0,
+  "P1": 59.0,
+  "PX": 21.0,
   "P2": 20.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-11-08",
+  "Ora": "00:00",
+  "Lega": "Suriname Major League",
+  "Casa": "SV Voorwaarts",
+  "Ospite": "SV Coronie Boys",
+  "Segno": "1",
+  "P1": 58.0,
+  "PX": 21.0,
+  "P2": 21.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -175,8 +201,8 @@
   "Casa": "Sacred Heart Pioneers",
   "Ospite": "Niagara Purple Eagles",
   "Segno": "1",
-  "P1": 60.0,
-  "PX": 20.0,
+  "P1": 59.0,
+  "PX": 21.0,
   "P2": 20.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -267,8 +293,8 @@
   "Ospite": "Motagua",
   "Segno": "2",
   "P1": 25.0,
-  "PX": 27.0,
-  "P2": 48.0,
+  "PX": 28.0,
+  "P2": 47.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -384,8 +410,8 @@
   "Ospite": "Xavier (W)",
   "Segno": "2",
   "P1": 17.0,
-  "PX": 18.0,
-  "P2": 65.0,
+  "PX": 19.0,
+  "P2": 64.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -487,8 +513,8 @@
   "Casa": "Louisville City FC",
   "Ospite": "Miami FC",
   "Segno": "1",
-  "P1": 63.0,
-  "PX": 21.5,
+  "P1": 62.5,
+  "PX": 22.0,
   "P2": 15.5,
   "Fonti": 2,
   "Elenco": "betimate, statarea"
@@ -500,8 +526,8 @@
   "Casa": "Marquette University Women",
   "Ospite": "Providence Women",
   "Segno": "2",
-  "P1": 26.0,
-  "PX": 17.0,
+  "P1": 25.0,
+  "PX": 18.0,
   "P2": 57.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -548,19 +574,6 @@
  {
   "Data": "2026-11-08",
   "Ora": "01:00",
-  "Lega": "Major League Soccer statunitense",
-  "Casa": "Real Salt Lake",
-  "Ospite": "LA Galaxy",
-  "Segno": "1",
-  "P1": 52.0,
-  "PX": 22.0,
-  "P2": 26.0,
-  "Fonti": 1,
-  "Elenco": "betimate"
- },
- {
-  "Data": "2026-11-08",
-  "Ora": "01:00",
   "Lega": "USA - MAJOR LEAGUE SOCCER",
   "Casa": "Real Salt Lake",
   "Ospite": "Los Angeles Galaxy",
@@ -570,6 +583,19 @@
   "P2": 24.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-08",
+  "Ora": "01:00",
+  "Lega": "Major League Soccer statunitense",
+  "Casa": "Real Salt Lake",
+  "Ospite": "LA Galaxy",
+  "Segno": "1",
+  "P1": 52.0,
+  "PX": 22.0,
+  "P2": 26.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-11-08",
@@ -696,23 +722,10 @@
   "Ospite": "CRB",
   "Segno": "1",
   "P1": 39.0,
-  "PX": 25.5,
-  "P2": 35.5,
+  "PX": 26.0,
+  "P2": 35.0,
   "Fonti": 2,
   "Elenco": "betimate, footymetrics"
- },
- {
-  "Data": "2026-11-08",
-  "Ora": "02:00",
-  "Lega": "Primera División Apertura salvadoregna",
-  "Casa": "Alianza FC",
-  "Ospite": "CD Aguila",
-  "Segno": "2",
-  "P1": 33.0,
-  "PX": 26.0,
-  "P2": 41.0,
-  "Fonti": 1,
-  "Elenco": "betimate"
  },
  {
   "Data": "2026-11-08",
@@ -735,8 +748,8 @@
   "Ospite": "Napier City Rovers",
   "Segno": "2",
   "P1": 29.0,
-  "PX": 20.0,
-  "P2": 51.0,
+  "PX": 21.0,
+  "P2": 50.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -761,8 +774,8 @@
   "Ospite": "Tigres de Álica FC",
   "Segno": "1",
   "P1": 44.0,
-  "PX": 22.0,
-  "P2": 34.0,
+  "PX": 21.0,
+  "P2": 35.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -813,8 +826,8 @@
   "Ospite": "West Coast Rangers (W)",
   "Segno": "2",
   "P1": 36.0,
-  "PX": 22.0,
-  "P2": 42.0,
+  "PX": 21.0,
+  "P2": 43.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -891,8 +904,8 @@
   "Ospite": "Plaza Amador",
   "Segno": "2",
   "P1": 28.0,
-  "PX": 26.0,
-  "P2": 46.0,
+  "PX": 25.0,
+  "P2": 47.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -955,8 +968,8 @@
   "Casa": "CD Olimpia",
   "Ospite": "Olancho FC",
   "Segno": "1",
-  "P1": 68.0,
-  "PX": 20.0,
+  "P1": 67.0,
+  "PX": 21.0,
   "P2": 12.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -1007,8 +1020,8 @@
   "Casa": "AC Boise",
   "Ospite": "Chattanooga Red Wolves",
   "Segno": "1",
-  "P1": 56.0,
-  "PX": 20.0,
+  "P1": 55.0,
+  "PX": 21.0,
   "P2": 24.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -1020,9 +1033,22 @@
   "Casa": "Alajuelense",
   "Ospite": "Sporting San Jose",
   "Segno": "1",
-  "P1": 57.0,
+  "P1": 58.0,
   "PX": 23.0,
-  "P2": 20.0,
+  "P2": 19.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-11-08",
+  "Ora": "03:00",
+  "Lega": "Primera División Apertura salvadoregna",
+  "Casa": "Alianza FC",
+  "Ospite": "CD Aguila",
+  "Segno": "2",
+  "P1": 34.0,
+  "PX": 25.0,
+  "P2": 41.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -1111,8 +1137,8 @@
   "Casa": "California Baptist Lancers",
   "Ospite": "San Diego State Aztecs",
   "Segno": "1",
-  "P1": 72.0,
-  "PX": 15.0,
+  "P1": 71.0,
+  "PX": 16.0,
   "P2": 13.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -1124,9 +1150,9 @@
   "Casa": "Eastern Suburbs Auckland",
   "Ospite": "Cashmere Technical",
   "Segno": "2",
-  "P1": 18.0,
+  "P1": 17.0,
   "PX": 20.0,
-  "P2": 62.0,
+  "P2": 63.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -1137,24 +1163,11 @@
   "Casa": "Sacramento Republic",
   "Ospite": "El Paso Locomotive FC",
   "Segno": "1",
-  "P1": 55.5,
-  "PX": 25.5,
+  "P1": 55.0,
+  "PX": 26.0,
   "P2": 19.0,
   "Fonti": 2,
   "Elenco": "betimate, statarea"
- },
- {
-  "Data": "2026-11-08",
-  "Ora": "04:00",
-  "Lega": "Messico - Liga MX",
-  "Casa": "Unam Pumas",
-  "Ospite": "Club America",
-  "Segno": "2",
-  "P1": 29.0,
-  "PX": 24.0,
-  "P2": 47.0,
-  "Fonti": 1,
-  "Elenco": "betimate"
  },
  {
   "Data": "2026-11-08",
@@ -1181,6 +1194,19 @@
   "P2": 44.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-08",
+  "Ora": "04:10",
+  "Lega": "Messico - Liga MX",
+  "Casa": "Unam Pumas",
+  "Ospite": "Club America",
+  "Segno": "2",
+  "P1": 28.0,
+  "PX": 25.0,
+  "P2": 47.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-11-08",
@@ -1215,8 +1241,8 @@
   "Casa": "UC San Diego (W)",
   "Ospite": "Cal State Fullerton Women",
   "Segno": "1",
-  "P1": 43.0,
-  "PX": 24.0,
+  "P1": 42.0,
+  "PX": 25.0,
   "P2": 33.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -1315,19 +1341,6 @@
  {
   "Data": "2026-11-08",
   "Ora": "06:00",
-  "Lega": "JAPAN - J. LEAGUE",
-  "Casa": "Vissel Kobe",
-  "Ospite": "Urawa",
-  "Segno": "1",
-  "P1": 46.0,
-  "PX": 26.0,
-  "P2": 28.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
- },
- {
-  "Data": "2026-11-08",
-  "Ora": "06:00",
   "Lega": "Japan - J1 League",
   "Casa": "Vissel Kobe",
   "Ospite": "Urawa Reds",
@@ -1337,6 +1350,19 @@
   "P2": 27.0,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-08",
+  "Ora": "06:00",
+  "Lega": "JAPAN - J. LEAGUE",
+  "Casa": "Vissel Kobe",
+  "Ospite": "Urawa",
+  "Segno": "1",
+  "P1": 46.0,
+  "PX": 26.0,
+  "P2": 28.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-08",
@@ -1705,19 +1731,6 @@
  {
   "Data": "2026-11-08",
   "Ora": "11:30",
-  "Lega": "TURKEY - SUPER LIG",
-  "Casa": "Rizespor",
-  "Ospite": "Erzurum BB",
-  "Segno": "1",
-  "P1": 42.0,
-  "PX": 30.0,
-  "P2": 28.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
- },
- {
-  "Data": "2026-11-08",
-  "Ora": "11:30",
   "Lega": "Turkey - Super Lig",
   "Casa": "Rizespor",
   "Ospite": "Erzurumspor FK",
@@ -1727,6 +1740,19 @@
   "P2": 32.0,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-08",
+  "Ora": "11:30",
+  "Lega": "TURKEY - SUPER LIG",
+  "Casa": "Rizespor",
+  "Ospite": "Erzurum BB",
+  "Segno": "1",
+  "P1": 42.0,
+  "PX": 30.0,
+  "P2": 28.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-08",
@@ -2329,19 +2355,6 @@
  {
   "Data": "2026-11-08",
   "Ora": "13:00",
-  "Lega": "England: FA Cup England",
-  "Casa": "Stafford Rangers",
-  "Ospite": "Grimsby",
-  "Segno": "2",
-  "P1": 12.0,
-  "PX": 18.0,
-  "P2": 70.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
- },
- {
-  "Data": "2026-11-08",
-  "Ora": "13:00",
   "Lega": "England - FA Cup",
   "Casa": "Stafford Rangers",
   "Ospite": "Grimsby Town",
@@ -2351,6 +2364,19 @@
   "P2": 56.4,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-08",
+  "Ora": "13:00",
+  "Lega": "England: FA Cup England",
+  "Casa": "Stafford Rangers",
+  "Ospite": "Grimsby",
+  "Segno": "2",
+  "P1": 12.0,
+  "PX": 18.0,
+  "P2": 70.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
  },
  {
   "Data": "2026-11-08",
@@ -2550,19 +2576,6 @@
  {
   "Data": "2026-11-08",
   "Ora": "14:00",
-  "Lega": "Spain - La Liga",
-  "Casa": "Elche",
-  "Ospite": "Real Betis",
-  "Segno": "2",
-  "P1": 27.5,
-  "PX": 26.0,
-  "P2": 46.5,
-  "Fonti": 2,
-  "Elenco": "footymetrics, ratingbet"
- },
- {
-  "Data": "2026-11-08",
-  "Ora": "14:00",
   "Lega": "SPAIN - LALIGA",
   "Casa": "Elche",
   "Ospite": "Betis",
@@ -2572,6 +2585,19 @@
   "P2": 43.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-08",
+  "Ora": "14:00",
+  "Lega": "Spain - La Liga",
+  "Casa": "Elche",
+  "Ospite": "Real Betis",
+  "Segno": "2",
+  "P1": 27.5,
+  "PX": 26.0,
+  "P2": 46.5,
+  "Fonti": 2,
+  "Elenco": "footymetrics, ratingbet"
  },
  {
   "Data": "2026-11-08",
@@ -3226,19 +3252,6 @@
  {
   "Data": "2026-11-08",
   "Ora": "16:00",
-  "Lega": "Belgium: Pro League Belgium",
-  "Casa": "Gent",
-  "Ospite": "Kortrijk",
-  "Segno": "1",
-  "P1": 66.0,
-  "PX": 21.0,
-  "P2": 13.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
- },
- {
-  "Data": "2026-11-08",
-  "Ora": "16:00",
   "Lega": "Belgium - Pro League",
   "Casa": "Gent",
   "Ospite": "KV Kortrijk",
@@ -3248,6 +3261,19 @@
   "P2": 20.0,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-08",
+  "Ora": "16:00",
+  "Lega": "Belgium: Pro League Belgium",
+  "Casa": "Gent",
+  "Ospite": "Kortrijk",
+  "Segno": "1",
+  "P1": 66.0,
+  "PX": 21.0,
+  "P2": 13.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
  },
  {
   "Data": "2026-11-08",
@@ -4006,19 +4032,6 @@
  {
   "Data": "2026-11-08",
   "Ora": "17:00",
-  "Lega": "Norway - Eliteserien",
-  "Casa": "Viking",
-  "Ospite": "KFUM",
-  "Segno": "1",
-  "P1": 67.3,
-  "PX": 19.8,
-  "P2": 12.9,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
- },
- {
-  "Data": "2026-11-08",
-  "Ora": "17:00",
   "Lega": "NORWAY - ELITESERIEN",
   "Casa": "Viking",
   "Ospite": "KFUM Oslo",
@@ -4028,6 +4041,19 @@
   "P2": 9.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-08",
+  "Ora": "17:00",
+  "Lega": "Norway - Eliteserien",
+  "Casa": "Viking",
+  "Ospite": "KFUM",
+  "Segno": "1",
+  "P1": 67.3,
+  "PX": 19.8,
+  "P2": 12.9,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
  },
  {
   "Data": "2026-11-08",
@@ -4188,19 +4214,6 @@
  {
   "Data": "2026-11-08",
   "Ora": "17:30",
-  "Lega": "GREECE - SUPER LEAGUE",
-  "Casa": "OFI",
-  "Ospite": "Atromitos Athinon",
-  "Segno": "1",
-  "P1": 46.0,
-  "PX": 33.0,
-  "P2": 21.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
- },
- {
-  "Data": "2026-11-08",
-  "Ora": "17:30",
   "Lega": "Greece - Super League",
   "Casa": "OFI",
   "Ospite": "Atromitos",
@@ -4210,6 +4223,19 @@
   "P2": 36.0,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-08",
+  "Ora": "17:30",
+  "Lega": "GREECE - SUPER LEAGUE",
+  "Casa": "OFI",
+  "Ospite": "Atromitos Athinon",
+  "Segno": "1",
+  "P1": 46.0,
+  "PX": 33.0,
+  "P2": 21.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-08",
@@ -4773,19 +4799,6 @@
  {
   "Data": "2026-11-08",
   "Ora": "20:00",
-  "Lega": "Greece: Super League Greece",
-  "Casa": "Olympiacos",
-  "Ospite": "PAOK Thessaloniki FC",
-  "Segno": "1",
-  "P1": 59.0,
-  "PX": 23.0,
-  "P2": 18.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
- },
- {
-  "Data": "2026-11-08",
-  "Ora": "20:00",
   "Lega": "Greece - Super League",
   "Casa": "Olympiacos",
   "Ospite": "PAOK",
@@ -4795,6 +4808,19 @@
   "P2": 20.0,
   "Fonti": 1,
   "Elenco": "footymetrics"
+ },
+ {
+  "Data": "2026-11-08",
+  "Ora": "20:00",
+  "Lega": "Greece: Super League Greece",
+  "Casa": "Olympiacos",
+  "Ospite": "PAOK Thessaloniki FC",
+  "Segno": "1",
+  "P1": 59.0,
+  "PX": 23.0,
+  "P2": 18.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
  },
  {
   "Data": "2026-11-08",
