@@ -137,8 +137,7 @@
   "Mercato": "OU 1.5",
   "Sel": "Over",
   "Prob": 71.7,
-  "Equa": 1.39,
-  "InSchedina": "si"
+  "Equa": 1.39
  },
  {
   "Data": "2026-11-09",
@@ -382,7 +381,8 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 54.5,
-  "Equa": 1.83
+  "Equa": 1.83,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-09",
@@ -979,11 +979,11 @@
   "Principale": "",
   "Schedina": "si",
   "Fonte": "FootyMetrics",
-  "Gruppo": "Under Over",
-  "Mercato": "OU 1.5",
-  "Sel": "Under",
-  "Prob": 28.3,
-  "Equa": 3.53
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 26.0,
+  "Equa": 3.85
  },
  {
   "Data": "2026-11-09",
