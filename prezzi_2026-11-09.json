@@ -117,7 +117,27 @@
   "Mercato": "OU 1.5",
   "Sel": "Over",
   "Prob": 71.7,
-  "Equa": 1.39,
+  "Equa": 1.39
+ },
+ {
+  "Data": "2026-11-09",
+  "Ora": "19:00",
+  "Campionato": "Romania Superliga",
+  "Partita": "Botoşani - Otelul",
+  "Casa": "Botoşani",
+  "Ospite": "Otelul",
+  "Linea_OU": "",
+  "Gol_attesi": 2.79,
+  "Margine": 4.5,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "Under Over",
+  "Mercato": "OU 3.5",
+  "Sel": "Under",
+  "Prob": 69.4,
+  "Equa": 1.44,
   "InSchedina": "si"
  },
  {
@@ -180,8 +200,7 @@
   "Mercato": "BTTS",
   "Sel": "Gol",
   "Prob": 57.9,
-  "Equa": 1.73,
-  "InSchedina": "si"
+  "Equa": 1.73
  },
  {
   "Data": "2026-11-09",
@@ -201,8 +220,7 @@
   "Mercato": "BTTS",
   "Sel": "Gol",
   "Prob": 57.3,
-  "Equa": 1.75,
-  "InSchedina": "si"
+  "Equa": 1.75
  },
  {
   "Data": "2026-11-09",
@@ -302,7 +320,8 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 54.5,
-  "Equa": 1.83
+  "Equa": 1.83,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-09",
@@ -402,7 +421,8 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 51.2,
-  "Equa": 1.95
+  "Equa": 1.95,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-09",
@@ -503,46 +523,6 @@
   "Sel": "1X + Under 2.5",
   "Prob": 43.4,
   "Equa": 2.3
- },
- {
-  "Data": "2026-11-09",
-  "Ora": "19:00",
-  "Campionato": "Romania Superliga",
-  "Partita": "Botoşani - Otelul",
-  "Casa": "Botoşani",
-  "Ospite": "Otelul",
-  "Linea_OU": "",
-  "Gol_attesi": 2.79,
-  "Margine": 4.5,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "NoGol",
-  "Prob": 42.7,
-  "Equa": 2.34
- },
- {
-  "Data": "2026-11-09",
-  "Ora": "01:00",
-  "Campionato": "Mexico Liga MX",
-  "Partita": "Querétaro - Puebla",
-  "Casa": "Querétaro",
-  "Ospite": "Puebla",
-  "Linea_OU": "",
-  "Gol_attesi": 2.92,
-  "Margine": 2.8,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "NoGol",
-  "Prob": 42.1,
-  "Equa": 2.38
  },
  {
   "Data": "2026-11-09",
@@ -838,10 +818,30 @@
   "Principale": "",
   "Schedina": "si",
   "Fonte": "FootyMetrics",
-  "Gruppo": "Under Over",
-  "Mercato": "OU 1.5",
-  "Sel": "Under",
-  "Prob": 28.3,
-  "Equa": 3.53
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 26.0,
+  "Equa": 3.85
+ },
+ {
+  "Data": "2026-11-09",
+  "Ora": "01:00",
+  "Campionato": "Mexico Liga MX",
+  "Partita": "Querétaro - Puebla",
+  "Casa": "Querétaro",
+  "Ospite": "Puebla",
+  "Linea_OU": "",
+  "Gol_attesi": 2.92,
+  "Margine": 2.8,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 25.6,
+  "Equa": 3.9
  }
 ]
