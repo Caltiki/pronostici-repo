@@ -1821,9 +1821,10 @@
     // dove non c'e' (piu' vecchie di 14 giorni) resta schedina_<data>.
     Promise.all([leggi(indice),
                  sez === "prezzi" ? leggi("esiti_index.json").catch(function () { return null; }) : null,
-                 sez === "prezzi" ? leggi("schedina_index.json").catch(function () { return null; }) : null
+                 sez === "prezzi" ? leggi("schedina_index.json").catch(function () { return null; }) : null,
+                 sez === "sm" ? leggi("sportsmole_esiti_index.json").catch(function () { return null; }) : null
     ]).then(function (arr) {
-      var ix = arr[0], ex = arr[1], sx = arr[2];
+      var ix = arr[0], ex = arr[1], sx = arr[2], smx = arr[3];
       var date = (ix.date || []).slice().sort();
       passate = {};
       [[ex, "esiti_"], [sx, "schedina_"]].forEach(function (c) {
@@ -1836,6 +1837,14 @@
       if (conf.daOggi) {
         var futuri = date.filter(function (x) { return x >= oggi(); });
         if (futuri.length) date = futuri;
+      }
+      // SPORTS MOLE, I GIORNI PASSATI (7/11): sportsmole_index.json elenca
+      // solo da oggi in avanti; esiti_sportsmole.py scrive il risultato
+      // dentro i file e in sportsmole_esiti_index.json le giornate passate
+      // che ne hanno almeno uno. Si leggono dallo stesso file del giorno.
+      if (smx && Array.isArray(smx.date)) {
+        smx.date.forEach(function (x) { if (x < oggi() && date.indexOf(x) < 0) date.push(x); });
+        date.sort();
       }
       document.getElementById("aggiornato").textContent =
         "Aggiornato il " + (ix.updated || "?");
@@ -3590,11 +3599,18 @@
     var ws = v.filter(function (r) { return String(r.WeSay || "").trim(); });
     // Quante volte la redazione sceglie lo stesso segno del modello del sito.
     var stessi = ws.filter(function (r) { return r.WeSay_Segno && r.WeSay_Segno === r.Segno; }).length;
+    // Sulle partite finite: quante volte e' uscito il segno della card,
+    // accanto a quante il modello stesso ne attendeva (la media delle sue
+    // probabilita' su quei segni).
+    var fin = v.filter(function (r) { return segnoUscito(r) && r.Segno && r._fav != null; });
+    var presi = fin.filter(function (r) { return segnoUscito(r) === r.Segno; }).length;
+    var attesi = fin.reduce(function (a, r) { return a + r._fav; }, 0);
     return tessere([
       [String(v.length), "partite"],
       [String(ws.length), "con il We say della redazione"],
       [ws.length ? Math.round(100 * stessi / ws.length) + "%" : "-", "We say sullo stesso segno del modello"]
-    ]);
+    ]) + (fin.length ? '<p class="conta">Finite ' + fin.length + ": segno preso " + presi + " volte (" +
+      Math.round(100 * presi / fin.length) + "%), il modello ne attendeva il " + Math.round(attesi / fin.length) + "%.</p>" : "");
   }
 
   function smEsatti(r, lato) {
@@ -3604,6 +3620,20 @@
       .slice(0, 3).map(function (x) { return esc(x[0]) + " " + f1(num(x[1])) + "%"; }).join(" · ");
   }
 
+  // L'ESITO A PARTITA FINITA (7/11): il segno della card, cioe' il piu'
+  // probabile per il modello di Sports Mole, contro il punteggio vero che
+  // esiti_sportsmole.py scrive nel file. Aritmetica, nessuna regola.
+  function segnoUscito(r) {
+    var gc = num(r.Gol_Casa), go = num(r.Gol_Ospite);
+    if (gc == null || go == null) return "";
+    return gc > go ? "1" : gc < go ? "2" : "X";
+  }
+  function esitoSm(r) {
+    var u = segnoUscito(r);
+    if (!u || !r.Segno) return "";
+    return u === r.Segno ? '<span class="pill stretto">\u2713 preso</span>' : '<span class="pill largo">\u2717 perso</span>';
+  }
+
   function rigaSm(r) {
     var p1 = num(r.P1), px = num(r.PX), p2 = num(r.P2), seg = r.Segno || "";
     var ws = String(r.WeSay || "").trim(), wsSeg = String(r.WeSay_Segno || "");
@@ -3611,6 +3641,14 @@
     var det = [];
     if (r.Lega) det.push("<p>" + esc(r.Lega) + (r.Giornata ? " \u2013 " + esc(r.Giornata) : "") + "</p>");
     det.push("<p>1 " + f1(p1) + "% · X " + f1(px) + "% · 2 " + f1(p2) + "%</p>");
+    var usc = segnoUscito(r);
+    if (usc) {
+      det.push("<p>Finita " + esc(r.Gol_Casa + "-" + r.Gol_Ospite) + (r.Risultato_Da ? " (risultato da " + esc(r.Risultato_Da) + ")" : "") +
+        ": il segno del modello, " + esc(seg) + ", " + (usc === seg ? "\u00e8 uscito" : "non \u00e8 uscito") + "." +
+        (ws ? " We say " + esc(ws) + ": " + (ws.replace(/\s/g, "") === String(r.Gol_Casa) + "-" + String(r.Gol_Ospite)
+          ? "risultato esatto preso" : "risultato esatto sbagliato") +
+          (r.WeSay_Segno ? ", segno " + (r.WeSay_Segno === usc ? "preso" : "sbagliato") : "") + "." : "") + "</p>");
+    }
     if (ws) {
       det.push("<p><b>We say della redazione: " + esc(ws) + "</b>" +
         (wsSeg && num(r["P" + wsSeg]) != null ? " \u2013 il " + esc(wsSeg) + " per il loro modello \u00e8 al " + f0(num(r["P" + wsSeg])) + "%" : "") +
@@ -3636,7 +3674,7 @@
       "<details><summary>" +
       '<span class="segno">' + esc(seg || "?") + "</span>" +
       '<div class="corpo">' +
-      '<div class="alto">' + (r.Ora ? "<span><b>" + esc(r.Ora) + "</b></span>" : "") +
+      '<div class="alto">' + (r.Ora ? "<span><b>" + esc(r.Ora) + "</b></span>" : "") + golHtml(r) + esitoSm(r) +
         (r.Lega ? '<span class="chip">' + esc(r.Lega) + "</span>" : "") + "</div>" +
       '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" +
       (sel.length ? '<div class="sel">' + sel.join(" · ") + "</div>" : "") +
