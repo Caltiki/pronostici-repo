@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-07 03:17",
+ "aggiornato": "2026-11-07 03:39",
  "date": [
   "2026-11-03",
   "2026-11-04",
@@ -37,38 +37,38 @@
    "righe": 460
   },
   "2026-11-07": {
-   "presa": 7,
-   "sbagliata": 6,
+   "presa": 4,
+   "sbagliata": 3,
    "rimborso": 0,
-   "attesa": 1520,
-   "righe": 1533
+   "attesa": 1553,
+   "righe": 1560
   }
  },
  "taratura": {
   "totale": {
-   "righe": 1677,
-   "partite": 224,
-   "prevista": 55.2,
-   "uscita": 55.0,
-   "scarto": -0.1,
+   "righe": 1671,
+   "partite": 223,
+   "prevista": 55.1,
+   "uscita": 55.1,
+   "scarto": -0.0,
    "errore_std": 1.2
   },
   "fasce": [
    {
-    "righe": 294,
-    "partite": 178,
+    "righe": 293,
+    "partite": 177,
     "prevista": 37.3,
-    "uscita": 40.1,
-    "scarto": 2.8,
+    "uscita": 39.9,
+    "scarto": 2.7,
     "errore_std": 2.8,
     "fascia": "35-40%"
    },
    {
-    "righe": 196,
+    "righe": 197,
     "partite": 141,
     "prevista": 42.2,
-    "uscita": 42.9,
-    "scarto": 0.6,
+    "uscita": 43.1,
+    "scarto": 0.9,
     "errore_std": 3.5,
     "fascia": "40-45%"
    },
@@ -82,20 +82,20 @@
     "fascia": "45-50%"
    },
    {
-    "righe": 227,
-    "partite": 150,
+    "righe": 226,
+    "partite": 149,
     "prevista": 52.4,
-    "uscita": 50.7,
-    "scarto": -1.7,
+    "uscita": 50.9,
+    "scarto": -1.5,
     "errore_std": 3.3,
     "fascia": "50-55%"
    },
    {
-    "righe": 198,
-    "partite": 140,
+    "righe": 196,
+    "partite": 139,
     "prevista": 57.3,
-    "uscita": 49.0,
-    "scarto": -8.3,
+    "uscita": 49.5,
+    "scarto": -7.8,
     "errore_std": 3.5,
     "fascia": "55-60%"
    },
@@ -145,66 +145,66 @@
     "fascia": "80-85%"
    },
    {
-    "righe": 47,
-    "partite": 45,
+    "righe": 46,
+    "partite": 44,
     "prevista": 87.1,
-    "uscita": 87.2,
-    "scarto": 0.1,
+    "uscita": 87.0,
+    "scarto": -0.1,
     "errore_std": 4.9,
     "fascia": "85-90%"
    },
    {
-    "righe": 23,
-    "partite": 19,
-    "prevista": 91.8,
-    "uscita": 95.7,
-    "scarto": 3.8,
-    "errore_std": 5.7,
+    "righe": 22,
+    "partite": 18,
+    "prevista": 91.7,
+    "uscita": 95.5,
+    "scarto": 3.7,
+    "errore_std": 5.9,
     "fascia": "90-95%"
    },
    {
-    "righe": 2,
-    "partite": 2,
-    "prevista": 95.8,
+    "righe": 1,
+    "partite": 1,
+    "prevista": 95.7,
     "uscita": 100.0,
-    "scarto": 4.2,
-    "errore_std": 14.2,
+    "scarto": 4.3,
+    "errore_std": 20.3,
     "fascia": "95-100%"
    }
   ],
   "gruppi": [
    {
-    "righe": 716,
-    "partite": 213,
-    "prevista": 46.4,
-    "uscita": 47.8,
-    "scarto": 1.4,
+    "righe": 714,
+    "partite": 212,
+    "prevista": 46.3,
+    "uscita": 47.9,
+    "scarto": 1.6,
     "errore_std": 1.9,
     "nome": "Combo"
    },
    {
-    "righe": 474,
-    "partite": 224,
-    "prevista": 69.2,
-    "uscita": 67.5,
-    "scarto": -1.7,
+    "righe": 472,
+    "partite": 223,
+    "prevista": 69.1,
+    "uscita": 67.4,
+    "scarto": -1.8,
     "errore_std": 2.1,
     "nome": "Under Over"
    },
    {
-    "righe": 247,
-    "partite": 224,
+    "righe": 246,
+    "partite": 223,
     "prevista": 56.4,
-    "uscita": 53.4,
-    "scarto": -3.0,
+    "uscita": 53.7,
+    "scarto": -2.7,
     "errore_std": 3.2,
     "nome": "Gol NoGol"
    },
    {
-    "righe": 240,
-    "partite": 224,
-    "prevista": 52.5,
-    "uscita": 53.8,
+    "righe": 239,
+    "partite": 223,
+    "prevista": 52.3,
+    "uscita": 53.6,
     "scarto": 1.3,
     "errore_std": 3.2,
     "nome": "1X2"
@@ -212,20 +212,20 @@
   ],
   "fonti": [
    {
-    "righe": 1333,
-    "partite": 177,
-    "prevista": 55.7,
+    "righe": 1340,
+    "partite": 178,
+    "prevista": 55.6,
     "uscita": 52.9,
-    "scarto": -2.8,
+    "scarto": -2.7,
     "errore_std": 1.4,
     "nome": "FootyMetrics"
    },
    {
-    "righe": 282,
-    "partite": 38,
-    "prevista": 53.5,
-    "uscita": 65.6,
-    "scarto": 12.1,
+    "righe": 269,
+    "partite": 36,
+    "prevista": 53.2,
+    "uscita": 66.2,
+    "scarto": 13.0,
     "errore_std": 3.0,
     "nome": "AsianOdds"
    },

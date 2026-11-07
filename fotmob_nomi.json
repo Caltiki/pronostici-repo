@@ -1,5 +1,5 @@
 {
-"aggiornato": "2026-11-07 03:05",
+"aggiornato": "2026-11-07 03:31",
 "nomi": {
 "07 Vestur": [
 "07 Vestur",
@@ -829,8 +829,8 @@
 "Al Arabi": [
 "Al-Arabi",
 "Kuwait - Premier League",
-"AFC Challenge League",
-"Qatar - Qatar Stars League"
+"Qatar - Qatar Stars League",
+"AFC Challenge League"
 ],
 "Al Bukayriyah": [
 "Al Bukayriyah",
@@ -1573,10 +1573,6 @@
 "Amarante FC",
 "Portogallo - Liga Portugal 2"
 ],
-"Amazulu": [
-"AmaZulu",
-"Sudafrica - League Cup Quarto di finale"
-],
 "Amed": [
 "Amed Sportif",
 "Turchia - Super Lig"
@@ -2282,9 +2278,9 @@
 ],
 "Atletico Torque": [
 "Torque",
+"Uruguay - Cup Ottavi di finale",
 "Copa Sudamericana Semifinale",
-"Uruguay - Liga AUF Uruguaya Clausura",
-"Uruguay - Cup Ottavi di finale"
+"Uruguay - Liga AUF Uruguaya Clausura"
 ],
 "Atletico Tucuman": [
 "Atlético Tucumán",
@@ -2389,6 +2385,10 @@
 "Bolivia - Primera División"
 ],
 "Austin": [
+"Austin FC",
+"Stati Uniti - Major League Soccer"
+],
+"Austin FC": [
 "Austin FC",
 "Stati Uniti - Major League Soccer"
 ],
@@ -3067,8 +3067,8 @@
 ],
 "Berkane": [
 "RS Berkane",
-"CAF Champions League Qualificazione",
-"Marocco - Botola Pro"
+"Marocco - Botola Pro",
+"CAF Champions League Qualificazione"
 ],
 "Beroe": [
 "Beroe",
@@ -3624,8 +3624,8 @@
 ],
 "Bristol Rovers": [
 "Bristol Rovers",
-"Inghilterra - League Two",
-"Inghilterra - FA Cup"
+"Inghilterra - FA Cup",
+"Inghilterra - League Two"
 ],
 "Briton Ferry": [
 "Briton Ferry Llansawel",
@@ -4318,13 +4318,13 @@
 ],
 "Cambridge United": [
 "Cambridge",
-"Inghilterra - League One",
-"Inghilterra - FA Cup"
+"Inghilterra - FA Cup",
+"Inghilterra - League One"
 ],
 "Cambridge Utd": [
 "Cambridge",
-"Inghilterra - League One",
-"Inghilterra - FA Cup"
+"Inghilterra - FA Cup",
+"Inghilterra - League One"
 ],
 "Cambuur": [
 "Cambuur",
@@ -4360,8 +4360,8 @@
 ],
 "Cancun": [
 "Cancún FC",
-"Messico - Liga de Expansión MX",
-"Messico - Liga de Expansión MX - Apertura - Quarter-finals"
+"Messico - Liga de Expansión MX - Apertura - Quarter-finals",
+"Messico - Liga de Expansión MX"
 ],
 "Cancun FC": [
 "Cancún FC",
@@ -4443,8 +4443,8 @@
 ],
 "Cartagines": [
 "C.S. Cartaginés",
-"CONCACAF Central American Cup Semifinale",
-"Costa Rica - Primera Division Apertura"
+"Costa Rica - Primera Division Apertura",
+"CONCACAF Central American Cup Semifinale"
 ],
 "Casa Pia": [
 "Casa Pia AC",
@@ -8993,8 +8993,8 @@
 ],
 "Goa": [
 "FC Goa",
-"AFC Challenge League",
-"India - Indian Super League"
+"India - Indian Super League",
+"AFC Challenge League"
 ],
 "Godoy Cruz": [
 "Godoy Cruz",
@@ -12180,13 +12180,13 @@
 ],
 "Leicester": [
 "Leicester",
-"Inghilterra - League One",
-"Inghilterra - FA Cup"
+"Inghilterra - FA Cup",
+"Inghilterra - League One"
 ],
 "Leicester City": [
 "Leicester",
-"Inghilterra - League One",
-"Inghilterra - FA Cup"
+"Inghilterra - FA Cup",
+"Inghilterra - League One"
 ],
 "Leicester City U21": [
 "Leicester City U21",
@@ -14947,8 +14947,8 @@
 ],
 "Oxford City": [
 "Oxford City",
-"Inghilterra - National League North",
-"Inghilterra - FA Cup"
+"Inghilterra - FA Cup",
+"Inghilterra - National League North"
 ],
 "Oxford United": [
 "Oxford Utd",
@@ -15588,13 +15588,13 @@
 ],
 "Piratas": [
 "Piratas",
-"Messico - Liga de Expansión MX",
-"Messico - Liga de Expansión MX - Apertura - Quarter-finals"
+"Messico - Liga de Expansión MX - Apertura - Quarter-finals",
+"Messico - Liga de Expansión MX"
 ],
 "Piratas Veracruz": [
 "Piratas",
-"Messico - Liga de Expansión MX",
-"Messico - Liga de Expansión MX - Apertura - Quarter-finals"
+"Messico - Liga de Expansión MX - Apertura - Quarter-finals",
+"Messico - Liga de Expansión MX"
 ],
 "Pirin Blagoevgrad": [
 "Pirin Blagoevgrad",
@@ -16748,8 +16748,8 @@
 ],
 "Renaissance Berkane": [
 "RS Berkane",
-"CAF Champions League Qualificazione",
-"Marocco - Botola Pro"
+"Marocco - Botola Pro",
+"CAF Champions League Qualificazione"
 ],
 "Renaissance Sportive de Berkane": [
 "RS Berkane",
@@ -17766,8 +17766,8 @@
 ],
 "Saprissa": [
 "Deportivo Saprissa",
-"CONCACAF Central American Cup Play-In Finale",
-"Costa Rica - Primera Division Apertura"
+"Costa Rica - Primera Division Apertura",
+"CONCACAF Central American Cup Play-In Finale"
 ],
 "Sarasota": [
 "Sarasota Paradise",
@@ -19340,8 +19340,8 @@
 ],
 "Sydney FC": [
 "Sydney FC",
-"Australia - A-League Women",
-"Australia - A-League"
+"Australia - A-League",
+"Australia - A-League Women"
 ],
 "Sydney FC D": [
 "Sydney FC",
@@ -22262,6 +22262,7 @@
 "Al Shabab",
 "Almere City",
 "Alta",
+"Amazulu",
 "Aris",
 "Arsenal",
 "Atenas",
