@@ -404,6 +404,8 @@
   /* Best picks: titolo di ogni giornata */
   .giorno-best { margin: 20px 0 6px; font-size: 1rem; }
   .giorno-best small { color: var(--tenue); font-weight: 400; }
+  .best-nota { color: var(--tenue); font-size: .82rem; margin: 4px 2px 8px; }
+  .lista ~ .giorno-best, #best-giorni .giorno-best { margin-top: 20px; }
 
   /* Riepilogo tre numeri */
   .riepilogo {
@@ -4095,12 +4097,14 @@
     });
   }
   // Presi contro attesi dal mercato, sui secchi chiusi che hanno il prezzo.
-  function misuraSecchi(arch, dal) {
+  function misuraSecchi(arch, dal, segno, prima) {
     var d = [], presi = 0, attesi = 0;
     arch.forEach(function (r) {
       var s = String(r.Pron_Combinato || "").trim().toUpperCase();
       if (!/^[1X2]$/.test(s) || !/^[1X2]$/.test(r.Esito || "")) return;
       if (dal && String(r.Data || "") < dal) return;
+      if (prima && String(r.Data || "") >= prima) return;
+      if (segno && s !== segno) return;
       var pm = num(r["Mercato_P" + s]);
       if (pm == null) return;
       var h = r.Esito === s ? 100 : 0;
@@ -4165,6 +4169,37 @@
     return h;
   }
 
+  // LA VERIFICA PER SEGNO (7/11). Sull'archivio fino al 7/11 il vantaggio
+  // sembrava stare quasi tutto sul segno 1 (+5.5 su 625, il 2 a -0.7 su
+  // 274). Ma quella divisione e' stata cercata DOPO aver visto i dati:
+  // conta solo se regge su partite nuove. Quindi in tabella le partite
+  // dall'8/11 in avanti, e lo storico a parte, piu' piccolo. Con meno di
+  // ~300 partite per segno il margine d'errore e' troppo largo per
+  // decidere qualcosa: si guarda fra qualche settimana, non ogni giorno.
+  var VERIFICA_DAL = "2026-11-08";
+  function tabellaSegni(arch) {
+    if (!arch) return "";
+    var righe = [["1", "Segno 1"], ["X", "Segno X"], ["2", "Segno 2"], ["", "Tutti"]];
+    var cella = function (m) {
+      if (!m) return "<td>0</td><td>-</td><td>-</td><td>-</td>";
+      return "<td>" + m.n + "</td><td>" + m.presi.toFixed(1) + "%</td><td>" + m.attesi.toFixed(1) + "%</td><td><b>" +
+        conSegno(m.diff) + "</b> <small>\u00b1" + m.err.toFixed(1) + "</small></td>";
+    };
+    var corpo = righe.map(function (x) {
+      return "<tr><td>" + x[1] + "</td>" + cella(misuraSecchi(arch, VERIFICA_DAL, x[0], null)) + "</tr>";
+    }).join("");
+    var storico = righe.slice(0, 3).map(function (x) {
+      var m = misuraSecchi(arch, null, x[0], VERIFICA_DAL);
+      return m ? x[0] + " " + conSegno(m.diff) + " (\u00b1" + m.err.toFixed(1) + ", " + m.n + ")" : x[0] + " -";
+    }).join(" \u00b7 ");
+    return '<h3 class="giorno-best">Verifica per segno <small>\u00b7 partite dall\u20198/11</small></h3>' +
+      '<table class="mercati"><thead><tr><th>Segno</th><th>Partite</th><th>Presi</th><th>Attesi</th><th>Differenza</th></tr></thead>' +
+      "<tbody>" + corpo + "</tbody></table>" +
+      '<p class="best-nota">Fino al 7/11 il vantaggio sembrava stare sul segno 1: ' + storico +
+      ". Quella divisione \u00e8 stata trovata guardando quei dati, quindi conta solo se regge qui, su partite nuove. " +
+      "Con meno di trecento partite per segno il margine d\u2019errore \u00e8 troppo largo per decidere: va guardata fra qualche settimana.</p>";
+  }
+
   function riepilogoBest(tutto, ultimi) {
     if (!tutto) {
       return '<p class="conta">Il conteggio sull’archivio non è disponibile in questo momento.</p>';
@@ -4193,7 +4228,7 @@
         "misurato sull’archivio, le due fonti ci prendono più spesso di quanto dice il mercato. Il vantaggio è piccolo: " +
         "con il margine dei bookmaker italiani sulla singola resta vicino a zero, e in multipla il margine si moltiplica e lo mangia. " +
         "Il prezzo di mercato compare quando AsianOdds quota la partita, di solito il giorno prima.</p>" +
-        riepilogoBest(tutto, ultimi);
+        riepilogoBest(tutto, ultimi) + tabellaSegni(a[2]);
       if (!date.length) {
         $cont.innerHTML = testa + messaggio("vuoto", "Nessuna giornata da oggi in avanti: arrivano col giro notturno.");
         return;
