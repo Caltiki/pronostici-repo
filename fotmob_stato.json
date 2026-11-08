@@ -1,5 +1,37 @@
 {
  "giornate": {
+  "2026-10-14": {
+   "letta": "2026-11-08 14:00",
+   "chiusa": true,
+   "partite_fotmob": 128,
+   "nostre": 499,
+   "riconosciute": 261,
+   "finite": 259
+  },
+  "2026-10-15": {
+   "letta": "2026-11-08 14:00",
+   "chiusa": true,
+   "partite_fotmob": 102,
+   "nostre": 378,
+   "riconosciute": 205,
+   "finite": 205
+  },
+  "2026-10-16": {
+   "letta": "2026-11-08 14:00",
+   "chiusa": true,
+   "partite_fotmob": 171,
+   "nostre": 835,
+   "riconosciute": 383,
+   "finite": 383
+  },
+  "2026-10-17": {
+   "letta": "2026-11-08 14:00",
+   "chiusa": true,
+   "partite_fotmob": 761,
+   "nostre": 2958,
+   "riconosciute": 1401,
+   "finite": 1392
+  },
   "2026-10-18": {
    "letta": "2026-11-08 02:37",
    "chiusa": true,
@@ -161,13 +193,21 @@
    "finite": 351
   },
   "2026-11-07": {
-   "letta": "2026-11-08 02:58",
-   "chiusa": false,
+   "letta": "2026-11-08 14:00",
+   "chiusa": true,
    "partite_fotmob": 634,
    "nostre": 2197,
    "riconosciute": 1197,
    "finite": 1184
+  },
+  "2026-11-08": {
+   "letta": "2026-11-08 14:00",
+   "chiusa": false,
+   "partite_fotmob": 524,
+   "nostre": 2522,
+   "riconosciute": 1009,
+   "finite": 172
   }
  },
- "aggiornato": "2026-11-08 02:58"
+ "aggiornato": "2026-11-08 14:00"
 }
