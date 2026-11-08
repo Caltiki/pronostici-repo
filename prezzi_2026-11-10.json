@@ -458,7 +458,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "2 + Over 1.5",
   "Prob": 71.2,
-  "Equa": 1.41
+  "Equa": 1.41,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-10",
@@ -579,8 +580,7 @@
   "Mercato": "BTTS",
   "Sel": "NoGol",
   "Prob": 65.6,
-  "Equa": 1.52,
-  "InSchedina": "si"
+  "Equa": 1.52
  },
  {
   "Data": "2026-11-10",
@@ -1703,25 +1703,5 @@
   "Sel": "X2 + Over 2.5",
   "Prob": 35.2,
   "Equa": 2.84
- },
- {
-  "Data": "2026-11-10",
-  "Ora": "20:00",
-  "Campionato": "Spain Copa Del Rey",
-  "Partita": "Trival Valderas - Leganés",
-  "Casa": "Trival Valderas",
-  "Ospite": "Leganés",
-  "Linea_OU": "",
-  "Gol_attesi": 3.17,
-  "Margine": 5.0,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "Gol",
-  "Prob": 34.4,
-  "Equa": 2.91
  }
 ]
