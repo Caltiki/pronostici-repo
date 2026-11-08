@@ -3462,7 +3462,7 @@
       var att = fin.reduce(function (a, r) { return a + num(r["P" + String(r.Segno).toUpperCase()]); }, 0) / fin.length;
       var fm = fin.filter(function (r) { return num(r["M_P" + String(r.Segno).toUpperCase()]) != null; });
       var mk = fm.length ? fm.reduce(function (a, r) { return a + num(r["M_P" + String(r.Segno).toUpperCase()]); }, 0) / fm.length : null;
-      conta = '<p class="conta">Finite ' + fin.length + ": segno del modello preso " + presi + " volte (" +
+      conta = '<p class="conta">Finite ' + fin.length + ": vinte " + presi + " (" +
         Math.round(100 * presi / fin.length) + "%), il modello ne attendeva il " + Math.round(att) + "%" +
         (mk != null ? ", il mercato il " + Math.round(mk) + "% (su " + fm.length + " col prezzo)" : "") + ".</p>";
     }
@@ -3641,7 +3641,7 @@
       [String(v.length), "partite"],
       [String(ws.length), "con il We say della redazione"],
       [ws.length ? Math.round(100 * stessi / ws.length) + "%" : "-", "We say sullo stesso segno del modello"]
-    ]) + (fin.length ? '<p class="conta">Finite ' + fin.length + ": segno preso " + presi + " volte (" +
+    ]) + (fin.length ? '<p class="conta">Finite ' + fin.length + ": vinte " + presi + " (" +
       Math.round(100 * presi / fin.length) + "%), il modello ne attendeva il " + Math.round(attesi / fin.length) + "%.</p>" : "");
   }
 
@@ -3663,7 +3663,7 @@
   function esitoSm(r) {
     var u = segnoUscito(r);
     if (!u || !r.Segno) return "";
-    return u === r.Segno ? '<span class="pill stretto">\u2713 preso</span>' : '<span class="pill largo">\u2717 perso</span>';
+    return u === r.Segno ? '<span class="pill stretto">\u2713 vinto</span>' : '<span class="pill largo">\u2717 perso</span>';
   }
 
   function rigaSm(r) {
@@ -3678,8 +3678,8 @@
       det.push("<p>Finita " + esc(r.Gol_Casa + "-" + r.Gol_Ospite) + (r.Risultato_Da ? " (risultato da " + esc(r.Risultato_Da) + ")" : "") +
         ": il segno del modello, " + esc(seg) + ", " + (usc === seg ? "\u00e8 uscito" : "non \u00e8 uscito") + "." +
         (ws ? " We say " + esc(ws) + ": " + (ws.replace(/\s/g, "") === String(r.Gol_Casa) + "-" + String(r.Gol_Ospite)
-          ? "risultato esatto preso" : "risultato esatto sbagliato") +
-          (r.WeSay_Segno ? ", segno " + (r.WeSay_Segno === usc ? "preso" : "sbagliato") : "") + "." : "") + "</p>");
+          ? "risultato esatto indovinato" : "risultato esatto sbagliato") +
+          (r.WeSay_Segno ? ", segno " + (r.WeSay_Segno === usc ? "vinto" : "perso") : "") + "." : "") + "</p>");
     }
     if (ws) {
       det.push("<p><b>We say della redazione: " + esc(ws) + "</b>" +
@@ -4185,7 +4185,7 @@
       var gc = num(r.Gol_Casa), go = num(r.Gol_Ospite);
       if (gc != null && go != null) {
         var uscito = gc > go ? "1" : gc < go ? "2" : "X";
-        var pill = uscito === segno ? '<span class="pill stretto">✓ preso</span>' : '<span class="pill largo">✗ perso</span>';
+        var pill = uscito === segno ? '<span class="pill stretto">✓ vinto</span>' : '<span class="pill largo">✗ perso</span>';
         h = h.replace('</div><div class="partita">', pill + '</div><div class="partita">');
       }
     }
@@ -4223,7 +4223,7 @@
       return m ? x[0] + " " + conSegno(m.diff) + " (\u00b1" + m.err.toFixed(1) + ", " + m.n + ")" : x[0] + " -";
     }).join(" \u00b7 ");
     return '<h3 class="giorno-best">Verifica per segno <small>\u00b7 partite dall\u20198/11</small></h3>' +
-      '<table class="mercati"><thead><tr><th>Segno</th><th>Partite</th><th>Presi</th><th>Attesi</th><th>Differenza</th></tr></thead>' +
+      '<table class="mercati"><thead><tr><th>Segno</th><th>Partite</th><th>Vinti</th><th>Attesi</th><th>Differenza</th></tr></thead>' +
       "<tbody>" + corpo + "</tbody></table>" +
       '<p class="best-nota">Fino al 7/11 il vantaggio sembrava stare sul segno 1: ' + storico +
       ". Quella divisione \u00e8 stata trovata guardando quei dati, quindi conta solo se regge qui, su partite nuove. " +
@@ -4237,7 +4237,7 @@
     return '<div class="riepilogo">' +
       "<div><b>" + conSegno(tutto.diff) + "</b><span>punti sopra il mercato (±" + tutto.err.toFixed(1) +
       ") su " + tutto.n + " secchi chiusi</span></div>" +
-      "<div><b>" + tutto.presi.toFixed(1) + "%</b><span>presi · il mercato ne dava " + tutto.attesi.toFixed(1) + "%</span></div>" +
+      "<div><b>" + tutto.presi.toFixed(1) + "%</b><span>vinti · il mercato ne dava " + tutto.attesi.toFixed(1) + "%</span></div>" +
       "<div><b>" + (ultimi ? conSegno(ultimi.diff) : "-") + "</b><span>ultimi 14 giorni" +
       (ultimi ? ", " + ultimi.n + " partite (±" + ultimi.err.toFixed(1) + ")" : "") + "</span></div></div>";
   }
@@ -4564,10 +4564,10 @@
       if (c && c.accordo) h += schedaAccordo(c.accordo);
 
       if (d && d.fonti) {
-        h += '<p class="descr" style="margin-top:24px">Le fonti in ordine di quante partite sono state misurate, non di quante ne prendono: ' +
+        h += '<p class="descr" style="margin-top:24px">Le fonti in ordine di quante partite sono state misurate, non di quante ne vincono: ' +
           "la percentuale più alta la fa sempre chi ha il campione più piccolo. " +
-          "Mercati diversi non si sommano volentieri: una doppia chance si prende molto più spesso di un 1X2 e paga molto meno. " +
-          "Il numero che conta è il confronto col favorito del book: se la fonte non ci sta sopra, seguirla al prezzo del book non conviene, per quante ne prenda. " +
+          "Mercati diversi non si sommano volentieri: una doppia chance si vince molto più spesso di un 1X2 e paga molto meno. " +
+          "Il numero che conta è il confronto col favorito del book: se la fonte non ci sta sopra, seguirla al prezzo del book non conviene, per quante ne vinca. " +
           "La tacca sulle barre segna il 60%.</p>";
         h += d.fonti.map(schedaFonte).join("");
       }
@@ -4593,7 +4593,7 @@
   function pillPron(x) {
     var cls = x.Esito === "presa" ? "presa" : x.Esito === "sbagliata" ? "sbagliata" : "rimborso";
     var segno = x.Esito === "presa" ? "\u2713" : x.Esito === "sbagliata" ? "\u2717" : "\u21ba";
-    var testo = x.Esito === "presa" ? "presa" : x.Esito === "sbagliata" ? "sbagliata" : "rimborso";
+    var testo = x.Esito === "presa" ? "vinta" : x.Esito === "sbagliata" ? "sbagliata" : "rimborso";
     return '<span class="esito-pill ' + cls + '" title="' + esc(x.Nome) + ": " + esc(etichettaPron(x)) + ", " + testo + '">' +
       "<b>" + segno + "</b> " + esc(x.Nome) + " \u00b7 " + esc(etichettaPron(x)) + "</span>";
   }
@@ -4695,7 +4695,7 @@
     });
     var html = tessere([
       [String(vis.length), "partite finite"],
-      [su ? Math.round(100 * prese / su) + "%" : "-", "pronostici presi, " + prese + " su " + su],
+      [su ? Math.round(100 * prese / su) + "%" : "-", "pronostici vinti, " + prese + " su " + su],
       [conM ? Math.round(100 * fav / conM) + "%" : "-", "favorito del book uscito, " + fav + " su " + conM]
     ]);
     if (!vis.length) {
@@ -4703,7 +4703,7 @@
       return;
     }
     var mostrate = vis.slice(0, stato.limite);
-    html += '<p class="conta">' + vis.length + " partite \u00b7 \u2713 presa, \u2717 sbagliata, \u21ba rimborso</p>" +
+    html += '<p class="conta">' + vis.length + " partite \u00b7 \u2713 vinta, \u2717 sbagliata, \u21ba rimborso</p>" +
       '<div class="lista">' + mostrate.map(rigaPartitaFinita).join("") + "</div>";
     if (vis.length > mostrate.length) {
       html += '<button type="button" class="altre" id="altre">Mostra altre ' +
@@ -4790,7 +4790,7 @@
     return '<div class="scheda"><h3>Consensus per accordo</h3>' +
       '<p class="verdetto ' + v[0] + '">Contro il mercato: ' + esc(v[1]) + "</p>" +
       righeMercato(b.mercato) +
-      (righe ? '<p class="sotto-titolo">Quante ne prende</p>' + righe : "") +
+      (righe ? '<p class="sotto-titolo">Quante ne vince</p>' + righe : "") +
       (tt ? "<p>Testa a testa col favorito del mercato, sulle " + esc(tt.partite) +
         " partite dove il consensus ha un pronostico e c'è il prezzo di chiusura: consensus " +
         esc(tt.consensus) + "%, mercato " + esc(tt.mercato) + "%.</p>" : "") +
@@ -4818,9 +4818,9 @@
         }
         return barra(m.mercato, m.pct, "<b>" + esc(m.pct) + "%</b> " + m.prese + "/" + m.su) +
           (m.rimborsi ? '<p class="piccolo" style="margin:-2px 0 4px">' + m.rimborsi +
-            " finite esattamente sulla linea: non contano né come prese né come sbagliate.</p>" : "");
+            " finite esattamente sulla linea: non contano né come vinte né come sbagliate.</p>" : "");
       }).join("");
-      if (mm) h += '<p class="sotto-titolo">Prese per mercato</p>' + mm;
+      if (mm) h += '<p class="sotto-titolo">Vinte per mercato</p>' + mm;
     }
     var conf = f.mercato;
     if (conf && conf.n < MINIMO_MOSTRA) {
