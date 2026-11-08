@@ -619,7 +619,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "2 + Over 1.5",
   "Prob": 64.0,
-  "Equa": 1.56
+  "Equa": 1.56,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-10",
@@ -760,8 +761,7 @@
   "Mercato": "BTTS",
   "Sel": "NoGol",
   "Prob": 60.8,
-  "Equa": 1.65,
-  "InSchedina": "si"
+  "Equa": 1.65
  },
  {
   "Data": "2026-11-10",
@@ -1382,26 +1382,6 @@
   "Sel": "X2 + Under 2.5",
   "Prob": 39.5,
   "Equa": 2.53
- },
- {
-  "Data": "2026-11-10",
-  "Ora": "19:00",
-  "Campionato": "Spain Copa Del Rey",
-  "Partita": "Pamplona - Eibar",
-  "Casa": "Pamplona",
-  "Ospite": "Eibar",
-  "Linea_OU": "",
-  "Gol_attesi": 2.94,
-  "Margine": 6.2,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "Gol",
-  "Prob": 39.2,
-  "Equa": 2.55
  },
  {
   "Data": "2026-11-10",
