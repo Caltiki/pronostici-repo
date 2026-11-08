@@ -1494,9 +1494,7 @@
      "Tutte le selezioni della giornata, ordinate per probabilit\u00e0."]
   ];
   var CM_VISTE = [
-    ["mercato", "Con lo scarto dal mercato",
-     "Solo dove AsianOdds ha la partita: si vede di quanto le fonti si " +
-     "discostano dal prezzo. È l'unica cosa che la media aggiunge."],
+    ["mercato", "Con lo scarto dal mercato", ""],
     ["multi", "Due fonti o più",
      "Solo dove la media è davvero una media. Sul resto del calendario " +
      "c'è una fonte sola, e allora è quella fonte."],
@@ -2323,8 +2321,8 @@
       var p = stato.esito;
       return '<div class="riepilogo">' +
         '<button type="button" class="filtro-esito' + (p === "presa" ? " attivo" : "") + '" data-esito="presa"><b><em style="font-style:normal;color:var(--buono)">\u2713 ' + prese + "</em></b><span>vinte" + (p === "presa" ? " \u00b7 mostra tutte" : "") + "</span></button>" +
-        '<button type="button" class="filtro-esito' + (p === "sbagliata" ? " attivo" : "") + '" data-esito="sbagliata"><b><em style="font-style:normal;color:var(--male)">\u2717 ' + sbagliate + "</em></b><span>sbagliate" + (p === "sbagliata" ? " \u00b7 mostra tutte" : "") + "</span></button>" +
-        "<div><b>" + quota.toFixed(0) + "%</b><span>azzeccate" +
+        '<button type="button" class="filtro-esito' + (p === "sbagliata" ? " attivo" : "") + '" data-esito="sbagliata"><b><em style="font-style:normal;color:var(--male)">\u2717 ' + sbagliate + "</em></b><span>perse" + (p === "sbagliata" ? " \u00b7 mostra tutte" : "") + "</span></button>" +
+        "<div><b>" + quota.toFixed(0) + "%</b><span>vinte" +
         (attese != null ? " \u00b7 attese " + attese.toFixed(0) + "%" : "") + "</span></div></div>" +
         '<p class="conta">' + (attesa ? attesa + (attesa === 1 ? " partita ancora senza risultato. " : " partite ancora senza risultato. ") : "") +
         "Tocca \u2713 o \u2717 per vedere solo quelle. Le partite finite sono in cima.</p>";
@@ -2718,7 +2716,7 @@
     var es = r.Esito || (passata && inSch ? "attesa" : null), gol = (r.Gol_Casa != null && r.Gol_Ospite != null) ? r.Gol_Casa + "-" + r.Gol_Ospite : "";
     var daDove = r.Risultato_Da ? " (risultato da " + esc(r.Risultato_Da) + ")" : "";
     if (es === "attesa") det.unshift("<p>Risultato non disponibile: nessuna delle fonti dei risultati ha questa partita.</p>");
-    else if (es) det.unshift("<p>Finita " + esc(gol) + ": " + (es === "presa" ? "vinta" : es === "sbagliata" ? "sbagliata" : "rimborso") +
+    else if (es) det.unshift("<p>Finita " + esc(gol) + ": " + (es === "presa" ? "vinta" : es === "sbagliata" ? "persa" : "rimborso") +
       daDove + ".</p>");
     else if (gol) det.unshift("<p>Finita " + esc(gol) + daDove + ".</p>");
     else if (passata) det.unshift("<p>Risultato non disponibile: nessuna delle fonti dei risultati ha questa partita.</p>");
@@ -4593,7 +4591,7 @@
   function pillPron(x) {
     var cls = x.Esito === "presa" ? "presa" : x.Esito === "sbagliata" ? "sbagliata" : "rimborso";
     var segno = x.Esito === "presa" ? "\u2713" : x.Esito === "sbagliata" ? "\u2717" : "\u21ba";
-    var testo = x.Esito === "presa" ? "vinta" : x.Esito === "sbagliata" ? "sbagliata" : "rimborso";
+    var testo = x.Esito === "presa" ? "vinta" : x.Esito === "sbagliata" ? "persa" : "rimborso";
     return '<span class="esito-pill ' + cls + '" title="' + esc(x.Nome) + ": " + esc(etichettaPron(x)) + ", " + testo + '">' +
       "<b>" + segno + "</b> " + esc(x.Nome) + " \u00b7 " + esc(etichettaPron(x)) + "</span>";
   }
@@ -4703,7 +4701,7 @@
       return;
     }
     var mostrate = vis.slice(0, stato.limite);
-    html += '<p class="conta">' + vis.length + " partite \u00b7 \u2713 vinta, \u2717 sbagliata, \u21ba rimborso</p>" +
+    html += '<p class="conta">' + vis.length + " partite \u00b7 \u2713 vinta, \u2717 persa, \u21ba rimborso</p>" +
       '<div class="lista">' + mostrate.map(rigaPartitaFinita).join("") + "</div>";
     if (vis.length > mostrate.length) {
       html += '<button type="button" class="altre" id="altre">Mostra altre ' +
@@ -4818,7 +4816,7 @@
         }
         return barra(m.mercato, m.pct, "<b>" + esc(m.pct) + "%</b> " + m.prese + "/" + m.su) +
           (m.rimborsi ? '<p class="piccolo" style="margin:-2px 0 4px">' + m.rimborsi +
-            " finite esattamente sulla linea: non contano né come vinte né come sbagliate.</p>" : "");
+            " finite esattamente sulla linea: non contano né come vinte né come perse.</p>" : "");
       }).join("");
       if (mm) h += '<p class="sotto-titolo">Vinte per mercato</p>' + mm;
     }
