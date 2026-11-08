@@ -1824,7 +1824,8 @@
     Promise.all([leggi(indice),
                  sez === "prezzi" ? leggi("esiti_index.json").catch(function () { return null; }) : null,
                  sez === "prezzi" ? leggi("schedina_index.json").catch(function () { return null; }) : null,
-                 sez === "sm" ? leggi("sportsmole_esiti_index.json").catch(function () { return null; }) : null
+                 sez === "sm" ? leggi("sportsmole_esiti_index.json").catch(function () { return null; }) :
+                   sez === "poisson" ? leggi("poissonesiti_index.json").catch(function () { return null; }) : null
     ]).then(function (arr) {
       var ix = arr[0], ex = arr[1], sx = arr[2], smx = arr[3];
       var date = (ix.date || []).slice().sort();
@@ -1844,8 +1845,15 @@
       // solo da oggi in avanti; esiti_sportsmole.py scrive il risultato
       // dentro i file e in sportsmole_esiti_index.json le giornate passate
       // che ne hanno almeno uno. Si leggono dallo stesso file del giorno.
+      // Lo stesso per POISSON (8/11): le giornate passate le rifa'
+      // esiti_poisson.py dall'archivio, in poissonesiti_<data>.json.
       if (smx && Array.isArray(smx.date)) {
-        smx.date.forEach(function (x) { if (x < oggi() && date.indexOf(x) < 0) date.push(x); });
+        smx.date.forEach(function (x) {
+          if (x < oggi() && date.indexOf(x) < 0) {
+            date.push(x);
+            if (sez === "poisson") passate[x] = "poissonesiti_";
+          }
+        });
         date.sort();
       }
       document.getElementById("aggiornato").textContent =
@@ -2228,7 +2236,7 @@
     }
     var carichi = date.map(function (d) {
       if (d === data) return Promise.resolve([d, partite(righeOggi)]);
-      return leggi(((sez === "prezzi" && passate[d]) || conf.prefisso) + d + ".json")
+      return leggi((passate[d] || conf.prefisso) + d + ".json")
         .then(function (r) { return [d, partite(r)]; }, function () { return [d, null]; });
     });
     Promise.all(carichi).then(function (ris) {
@@ -3444,11 +3452,25 @@
   function riepilogoPoisson(v) {
     var conM = v.filter(function (r) { return num(r.M_P1) != null; });
     var sc = mediana(conM.map(function (r) { var x = num(r.Scarto_Segno); return x == null ? null : Math.abs(x); }));
+    // A PARTITA FINITA (8/11): quante volte e' uscito il segno del modello,
+    // accanto a quante il modello ne attendeva e, dove c'e' il prezzo, a
+    // quante ne dava il mercato sulle stesse partite.
+    var fin = v.filter(function (r) { var s = String(r.Segno || "").toUpperCase(); return segnoUscito(r) && num(r["P" + s]) != null; });
+    var conta = "";
+    if (fin.length) {
+      var presi = fin.filter(function (r) { return segnoUscito(r) === String(r.Segno).toUpperCase(); }).length;
+      var att = fin.reduce(function (a, r) { return a + num(r["P" + String(r.Segno).toUpperCase()]); }, 0) / fin.length;
+      var fm = fin.filter(function (r) { return num(r["M_P" + String(r.Segno).toUpperCase()]) != null; });
+      var mk = fm.length ? fm.reduce(function (a, r) { return a + num(r["M_P" + String(r.Segno).toUpperCase()]); }, 0) / fm.length : null;
+      conta = '<p class="conta">Finite ' + fin.length + ": segno del modello preso " + presi + " volte (" +
+        Math.round(100 * presi / fin.length) + "%), il modello ne attendeva il " + Math.round(att) + "%" +
+        (mk != null ? ", il mercato il " + Math.round(mk) + "% (su " + fm.length + " col prezzo)" : "") + ".</p>";
+    }
     return tessere([
       [String(v.length), "partite"],
       [String(conM.length), "col prezzo del mercato"],
       [sc == null ? "-" : sc.toFixed(1), "scarto tipico sul segno, in punti"]
-    ]) + legenda();
+    ]) + conta + legenda();
   }
 
   // IN EVIDENZA I GOL ATTESI, come in Kodi: i lambda sono quello che il
@@ -3473,10 +3495,18 @@
     if (r.Lega) det.push("<p>" + esc(String(r.Lega).replace(/\s*\[\d+\]$/, "")) + "</p>");
     det.push("<p>Modello: 1 " + f0(p1) + "% \u00b7 X " + f0(px) + "% \u00b7 2 " + f0(p2) + "%" +
       (num(r.Equa_Segno) != null ? " \u2013 quota del modello sul " + esc(segno) + " " + f2(num(r.Equa_Segno)) : "") + "</p>");
+    var usc = segnoUscito(r);
+    if (usc && segno) {
+      det.push("<p>Finita " + esc(r.Gol_Casa + "-" + r.Gol_Ospite) + (r.Risultato_Da ? " (risultato da " + esc(r.Risultato_Da) + ")" : "") +
+        ": il segno del modello, " + esc(segno) + ", " + (usc === segno ? "\u00e8 uscito" : "non \u00e8 uscito") + ".</p>");
+    }
     det.push("<p>Lambda: casa " + f2(lc) + ", ospite " + f2(lo) + " (gol attesi " + f2(gol) + ")</p>");
     if (r.Fonte_xG) det.push("<p>xG da " + esc(r.Fonte_xG) + ".</p>");
-    det.push("<p>xG/90: " + f2(num(r.xG_Casa)) + " \u2013 " + f2(num(r.xG_Osp)) +
-      " \u00b7 xGA/90: " + f2(num(r.xGA_Casa)) + " \u2013 " + f2(num(r.xGA_Osp)) + "</p>");
+    // Le giornate passate vengono dall'archivio, che gli xG/90 non li tiene.
+    if (num(r.xG_Casa) != null || num(r.xG_Osp) != null) {
+      det.push("<p>xG/90: " + f2(num(r.xG_Casa)) + " \u2013 " + f2(num(r.xG_Osp)) +
+        " \u00b7 xGA/90: " + f2(num(r.xGA_Casa)) + " \u2013 " + f2(num(r.xGA_Osp)) + "</p>");
+    }
     var gl = [["Over 1.5", r.P_O15], ["Over 2.5", r.P_O25], ["Over 3.5", r.P_O35], ["Gol", r.P_GG]]
       .filter(function (x) { return num(x[1]) != null; })
       .map(function (x) { return x[0] + " " + f0(num(x[1])) + "%"; });
@@ -3502,7 +3532,7 @@
     return '<div class="riga"><details><summary>' +
       '<span class="segno">' + esc(segno || "?") + "</span>" +
       '<div class="corpo">' +
-      '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" + golHtml(r) + (r.Lega ? '<span class="chip">' + esc(String(r.Lega).replace(/\s*\[\d+\]$/, "")) + "</span>" : "") +
+      '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" + golHtml(r) + esitoSm(r) + (r.Lega ? '<span class="chip">' + esc(String(r.Lega).replace(/\s*\[\d+\]$/, "")) + "</span>" : "") +
         (r.Fonte_xG === "FotMob" ? '<span class="chip">xG FotMob</span>' : "") + "</div>" +
       '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" +
       '<div class="sel">\u03bb ' + f2(lc) + " \u2013 " + f2(lo) + coda + "</div>" +
