@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-08 02:45",
+ "aggiornato": "2026-11-08 03:02",
  "date": [
   "2026-11-03",
   "2026-11-04",
@@ -45,17 +45,17 @@
    "righe": 1225
   },
   "2026-11-08": {
-   "presa": 7,
-   "sbagliata": 7,
+   "presa": 9,
+   "sbagliata": 8,
    "rimborso": 0,
-   "attesa": 1402,
-   "righe": 1416
+   "attesa": 1378,
+   "righe": 1395
   }
  },
  "taratura": {
   "totale": {
-   "righe": 2903,
-   "partite": 398,
+   "righe": 2906,
+   "partite": 399,
    "prevista": 54.7,
    "uscita": 54.3,
    "scarto": -0.4,
@@ -66,26 +66,26 @@
     "righe": 546,
     "partite": 322,
     "prevista": 37.3,
-    "uscita": 37.0,
-    "scarto": -0.3,
+    "uscita": 36.8,
+    "scarto": -0.5,
     "errore_std": 2.1,
     "fascia": "35-40%"
    },
    {
-    "righe": 342,
+    "righe": 343,
     "partite": 246,
     "prevista": 42.2,
-    "uscita": 46.8,
-    "scarto": 4.6,
+    "uscita": 46.6,
+    "scarto": 4.4,
     "errore_std": 2.7,
     "fascia": "40-45%"
    },
    {
-    "righe": 241,
-    "partite": 187,
+    "righe": 240,
+    "partite": 186,
     "prevista": 47.2,
-    "uscita": 44.0,
-    "scarto": -3.3,
+    "uscita": 44.2,
+    "scarto": -3.1,
     "errore_std": 3.2,
     "fascia": "45-50%"
    },
@@ -99,8 +99,8 @@
     "fascia": "50-55%"
    },
    {
-    "righe": 352,
-    "partite": 258,
+    "righe": 354,
+    "partite": 259,
     "prevista": 57.3,
     "uscita": 51.7,
     "scarto": -5.6,
@@ -111,8 +111,8 @@
     "righe": 234,
     "partite": 168,
     "prevista": 62.3,
-    "uscita": 61.5,
-    "scarto": -0.8,
+    "uscita": 62.0,
+    "scarto": -0.4,
     "errore_std": 3.2,
     "fascia": "60-65%"
    },
@@ -144,11 +144,11 @@
     "fascia": "75-80%"
    },
    {
-    "righe": 105,
-    "partite": 103,
+    "righe": 106,
+    "partite": 104,
     "prevista": 82.4,
-    "uscita": 84.8,
-    "scarto": 2.3,
+    "uscita": 84.9,
+    "scarto": 2.5,
     "errore_std": 3.7,
     "fascia": "80-85%"
    },
@@ -191,28 +191,28 @@
     "nome": "Combo"
    },
    {
-    "righe": 830,
-    "partite": 398,
+    "righe": 832,
+    "partite": 399,
     "prevista": 68.8,
-    "uscita": 67.3,
-    "scarto": -1.4,
+    "uscita": 67.4,
+    "scarto": -1.3,
     "errore_std": 1.6,
     "nome": "Under Over"
    },
    {
     "righe": 426,
-    "partite": 398,
-    "prevista": 56.6,
+    "partite": 399,
+    "prevista": 56.7,
     "uscita": 53.8,
     "scarto": -2.9,
     "errore_std": 2.4,
     "nome": "Gol NoGol"
    },
    {
-    "righe": 420,
-    "partite": 398,
+    "righe": 421,
+    "partite": 399,
     "prevista": 51.5,
-    "uscita": 52.1,
+    "uscita": 52.0,
     "scarto": 0.6,
     "errore_std": 2.4,
     "nome": "1X2"
@@ -220,21 +220,21 @@
   ],
   "fonti": [
    {
-    "righe": 2551,
-    "partite": 350,
-    "prevista": 55.0,
+    "righe": 2568,
+    "partite": 353,
+    "prevista": 54.9,
     "uscita": 53.1,
     "scarto": -1.8,
     "errore_std": 1.0,
     "nome": "FootyMetrics"
    },
    {
-    "righe": 290,
-    "partite": 39,
-    "prevista": 53.0,
-    "uscita": 65.2,
-    "scarto": 12.2,
-    "errore_std": 2.9,
+    "righe": 276,
+    "partite": 37,
+    "prevista": 53.1,
+    "uscita": 65.9,
+    "scarto": 12.9,
+    "errore_std": 3.0,
     "nome": "AsianOdds"
    },
    {
