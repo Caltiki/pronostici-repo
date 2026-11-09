@@ -1,5 +1,5 @@
 {
-"aggiornato": "2026-11-08 22:11",
+"aggiornato": "2026-11-09 02:34",
 "nomi": {
 "07 Vestur": [
 "07 Vestur",
@@ -323,15 +323,15 @@
 ],
 "AFC Fylde": [
 "AFC Fylde",
+"Inghilterra - National League",
 "Inghilterra - FA Cup Qualificazione",
-"Inghilterra - FA Cup",
-"Inghilterra - National League"
+"Inghilterra - FA Cup"
 ],
 "AFC Hornchurch": [
 "Hornchurch",
+"Inghilterra - National League",
 "Inghilterra - FA Cup Qualificazione",
-"Inghilterra - FA Cup",
-"Inghilterra - National League"
+"Inghilterra - FA Cup"
 ],
 "AFC Malmo": [
 "AFC Malmoe",
@@ -425,6 +425,10 @@
 "Al Akhdoud",
 "Arabia Saudita - Saudi First Division"
 ],
+"AL Anwar": [
+"Al Anwar",
+"Arabia Saudita - Saudi First Division"
+],
 "AL BIDDA SC": [
 "Al-Bidda SC",
 "Qatar - Second Division"
@@ -448,6 +452,10 @@
 "AL Hazem FC": [
 "Al Hazem",
 "Arabia Saudita - Saudi Pro League"
+],
+"AL Hussein Irbid": [
+"Al-Hussein SC",
+"AFC Champions League Two"
 ],
 "AL Jabalain FC": [
 "Al Jabalain",
@@ -519,6 +527,7 @@
 ],
 "AL Shorta": [
 "Al Shorta",
+"AFC Champions League Two",
 "Iraq - Stars League"
 ],
 "AL Tadhamon": [
@@ -792,9 +801,17 @@
 "Aberdeen",
 "Scozia - Premiership"
 ],
+"Aberdeen B": [
+"Aberdeen B",
+"Scozia - Challenge Cup"
+],
 "Aberdeen Lfc": [
 "Aberdeen",
 "Scozia - SWPL 1"
+],
+"Aberdeen U21": [
+"Aberdeen B",
+"Scozia - Challenge Cup"
 ],
 "Abha": [
 "Abha",
@@ -823,8 +840,8 @@
 ],
 "Abu Qir Semad": [
 "Abo Qir Semad",
-"Egitto - Cup Sedicesimi di finale",
-"Egitto - Premier League"
+"Egitto - Premier League",
+"Egitto - Cup Sedicesimi di finale"
 ],
 "Academia Anzoategui": [
 "Anzoátegui FC",
@@ -832,18 +849,18 @@
 ],
 "Academica": [
 "Académica",
-"Portogallo - Taca de Portugal",
-"Portogallo - Liga Portugal 2"
+"Portogallo - Liga Portugal 2",
+"Portogallo - Taca de Portugal"
 ],
 "Academica Coimbra": [
 "Académica",
-"Portogallo - Taca de Portugal",
-"Portogallo - Liga Portugal 2"
+"Portogallo - Liga Portugal 2",
+"Portogallo - Taca de Portugal"
 ],
 "Academico Viseu": [
 "Académico Viseu",
-"Portogallo - Taca de Portugal",
-"Portogallo - Liga Portugal"
+"Portogallo - Liga Portugal",
+"Portogallo - Taca de Portugal"
 ],
 "Acassuso": [
 "Acassuso",
@@ -1044,6 +1061,7 @@
 ],
 "Akron": [
 "Akron Togliatti",
+"Russia - Russian Cup",
 "Russia - Premier League"
 ],
 "Akron Togliatti": [
@@ -1053,6 +1071,10 @@
 "Aktobe": [
 "Aktobe",
 "Kazakistan - Premier League"
+],
+"Al Adalah": [
+"Al-Adalah",
+"Arabia Saudita - Saudi First Division"
 ],
 "Al Ahli": [
 "Al Ahli",
@@ -1064,6 +1086,7 @@
 ],
 "Al Ahli SC": [
 "Al Ahli",
+"AFC Champions League Elite West",
 "Arabia Saudita - Saudi Pro League"
 ],
 "Al Ahli Tripoli": [
@@ -1072,12 +1095,17 @@
 ],
 "Al Ahly": [
 "Al Ahly SC",
+"Egitto - Premier League",
 "CAF Confed Cup - 2nd Girone preliminare",
-"Egitto - Cup Sedicesimi di finale",
+"Egitto - Cup Sedicesimi di finale"
+],
+"Al Ahly Cairo": [
+"Al Ahly SC",
 "Egitto - Premier League"
 ],
 "Al Ain": [
 "Al-Ain",
+"AFC Champions League Elite West",
 "Emirati Arabi Uniti - Pro League",
 "Emirati Arabi Uniti - President's Cup Ottavi di finale"
 ],
@@ -1147,6 +1175,7 @@
 ],
 "Al Gharafa": [
 "Al-Gharafa",
+"AFC Champions League Elite West",
 "Qatar - Qatar Stars League"
 ],
 "Al Gharafa 2": [
@@ -1167,11 +1196,16 @@
 ],
 "Al Hilal": [
 "Al Hilal",
+"AFC Champions League Elite West",
 "Arabia Saudita - Saudi Pro League"
 ],
 "Al Hilal Omdurman": [
 "Al Hilal Omdurman",
 "CAF Champions League Qualificazione"
+],
+"Al Hussein": [
+"Al-Hussein SC",
+"AFC Champions League Two"
 ],
 "Al Ittihad Aleppo": [
 "Al-Ittihad",
@@ -1187,7 +1221,8 @@
 ],
 "Al Ittihad(KSA)": [
 "Al Ittihad",
-"Arabia Saudita - Saudi Pro League"
+"Arabia Saudita - Saudi Pro League",
+"AFC Champions League Elite West"
 ],
 "Al Jabalain": [
 "Al Jabalain",
@@ -1281,8 +1316,8 @@
 ],
 "Al Masry": [
 "Al Masry SC",
-"Egitto - Cup Sedicesimi di finale",
-"Egitto - Premier League"
+"Egitto - Premier League",
+"Egitto - Cup Sedicesimi di finale"
 ],
 "Al Masry SC": [
 "Al Masry SC",
@@ -1348,6 +1383,10 @@
 "Al-Nasr SC",
 "Emirati Arabi Uniti - Pro League"
 ],
+"Al Nassr": [
+"Al Nassr FC",
+"AFC Champions League Elite West"
+],
 "Al Nejmeh": [
 "Al-Nejmeh",
 "AFC Challenge League"
@@ -1358,6 +1397,7 @@
 ],
 "Al Qadasiya": [
 "Al Qadsiah",
+"AFC Champions League Elite West",
 "Arabia Saudita - Saudi Pro League"
 ],
 "Al Qadisiya": [
@@ -1376,15 +1416,17 @@
 ],
 "Al Qadsiah": [
 "Al Qadsiah",
+"AFC Champions League Elite West",
 "Arabia Saudita - Saudi Pro League"
 ],
 "Al Qanah": [
 "Olympic El Qanah FC",
-"Egitto - Cup Sedicesimi di finale",
-"Egitto - Premier League"
+"Egitto - Premier League",
+"Egitto - Cup Sedicesimi di finale"
 ],
 "Al Quwa Al Jawiya": [
 "Al Quwa Al Jawiya",
+"AFC Champions League Elite West",
 "Iraq - Stars League"
 ],
 "Al Raed": [
@@ -1410,6 +1452,7 @@
 ],
 "Al Sadd": [
 "Al-Sadd",
+"AFC Champions League Elite West",
 "Qatar - Qatar Stars League"
 ],
 "Al Sahel": [
@@ -1436,6 +1479,10 @@
 "Al-Saqer FC",
 "Arabia Saudita - Saudi First Division"
 ],
+"Al Seeb": [
+"Al-Seeb",
+"AFC Champions League Two"
+],
 "Al Sekka": [
 "El Sekka El Hadid",
 "Egitto - Cup Sedicesimi di finale"
@@ -1454,6 +1501,7 @@
 ],
 "Al Shamal": [
 "Al-Shamal",
+"AFC Champions League Elite West",
 "Qatar - Qatar Stars League"
 ],
 "Al Shamal II": [
@@ -1483,8 +1531,8 @@
 ],
 "Al Taawon": [
 "Al-Taawoun",
-"AFC Champions League Two",
-"Arabia Saudita - Saudi Pro League"
+"Arabia Saudita - Saudi Pro League",
+"AFC Champions League Two"
 ],
 "Al Taawoun": [
 "Al-Taawoun",
@@ -1530,6 +1578,7 @@
 ],
 "Al Wasl": [
 "Al-Wasl",
+"AFC Champions League Elite West",
 "Emirati Arabi Uniti - Pro League",
 "Emirati Arabi Uniti - President's Cup Ottavi di finale"
 ],
@@ -1557,12 +1606,17 @@
 "Al-Zulfi",
 "Arabia Saudita - Saudi First Division"
 ],
+"Al-Adalh": [
+"Al-Adalah",
+"Arabia Saudita - Saudi First Division"
+],
 "Al-Ahli": [
 "Al-Ahli",
 "Qatar - Qatar Stars League"
 ],
 "Al-Ahli Jeddah": [
 "Al Ahli",
+"AFC Champions League Elite West",
 "Arabia Saudita - Saudi Pro League"
 ],
 "Al-Ahli Saudi": [
@@ -1626,12 +1680,17 @@
 "Al-Faisaly",
 "Arabia Saudita - Saudi Pro League"
 ],
+"Al-Gharafa": [
+"Al-Gharafa",
+"AFC Champions League Elite West"
+],
 "Al-Gharafa B": [
 "Al-Gharafa II",
 "Qatar - Second Division"
 ],
 "Al-Gharrafa": [
 "Al-Gharafa",
+"AFC Champions League Elite West",
 "Qatar - Qatar Stars League"
 ],
 "Al-Hazem": [
@@ -1652,6 +1711,7 @@
 ],
 "Al-Hilal Saudi FC": [
 "Al Hilal",
+"AFC Champions League Elite West",
 "Arabia Saudita - Saudi Pro League"
 ],
 "Al-Ittihad Alexandria": [
@@ -1718,6 +1778,7 @@
 ],
 "Al-Nassr": [
 "Al Nassr FC",
+"AFC Champions League Elite West",
 "Arabia Saudita - Saudi Pro League"
 ],
 "Al-Nassr Riyadh": [
@@ -1728,12 +1789,17 @@
 "Al-Nejmeh",
 "AFC Challenge League"
 ],
+"Al-Qadasiya": [
+"Al Qadsiah",
+"AFC Champions League Elite West"
+],
 "Al-Qadisiyah": [
 "Al Qadsiah",
 "Arabia Saudita - Saudi Pro League"
 ],
 "Al-Qadisiyah FC": [
 "Al Qadsiah",
+"AFC Champions League Elite West",
 "Arabia Saudita - Saudi Pro League"
 ],
 "Al-Qadsiah": [
@@ -1764,6 +1830,10 @@
 "Al-Salibikhaet",
 "Kuwait - Premier League"
 ],
+"Al-Seeb": [
+"Al-Seeb",
+"AFC Champions League Two"
+],
 "Al-Shabab(KSA)": [
 "Al Shabab",
 "Arabia Saudita - Saudi Pro League"
@@ -1774,6 +1844,7 @@
 ],
 "Al-Shamal": [
 "Al-Shamal",
+"AFC Champions League Elite West",
 "Qatar - Qatar Stars League"
 ],
 "Al-Taawoun": [
@@ -1787,6 +1858,7 @@
 ],
 "Al-Wasl FC": [
 "Al-Wasl",
+"AFC Champions League Elite West",
 "Emirati Arabi Uniti - Pro League",
 "Emirati Arabi Uniti - President's Cup Ottavi di finale"
 ],
@@ -1817,6 +1889,7 @@
 ],
 "Alaves": [
 "Deportivo Alavés",
+"Spagna - Copa del Rey",
 "Spagna - LaLiga"
 ],
 "Alaves B": [
@@ -1835,6 +1908,10 @@
 "Albacete B",
 "Spagna - Segunda Federación"
 ],
+"Albania D": [
+"Albania",
+"Coppa del Mondo femminile Qualificazione UEFA Semifinale"
+],
 "Albert Quévy-Mons": [
 "Renaissance Mons",
 "Belgio - Cup Sedicesimi di finale"
@@ -1845,13 +1922,13 @@
 ],
 "Albion": [
 "Albion",
-"Uruguay - Cup Sedicesimi di finale",
-"Uruguay - Liga AUF Uruguaya Clausura"
+"Uruguay - Liga AUF Uruguaya Clausura",
+"Uruguay - Cup Sedicesimi di finale"
 ],
 "Albion FC": [
 "Albion",
-"Uruguay - Cup Sedicesimi di finale",
-"Uruguay - Liga AUF Uruguaya Clausura"
+"Uruguay - Liga AUF Uruguaya Clausura",
+"Uruguay - Cup Sedicesimi di finale"
 ],
 "Albion Rovers": [
 "Albion Rovers",
@@ -1891,15 +1968,17 @@
 ],
 "Aldershot": [
 "Aldershot Town",
+"Inghilterra - National League Cup",
 "Inghilterra - FA Cup",
 "Inghilterra - FA Cup Qualificazione",
 "Inghilterra - National League"
 ],
 "Aldershot Town": [
 "Aldershot Town",
+"Inghilterra - National League",
+"Inghilterra - National League Cup",
 "Inghilterra - FA Cup Qualificazione",
-"Inghilterra - FA Cup",
-"Inghilterra - National League"
+"Inghilterra - FA Cup"
 ],
 "Aldershot Town FC": [
 "Aldershot Town",
@@ -1937,14 +2016,18 @@
 "Alfreton Town",
 "Inghilterra - Northern Premier Divisione"
 ],
+"Alfreton Town FC": [
+"Alfreton Town",
+"Inghilterra - Northern Premier Divisione"
+],
 "Algeciras": [
 "Algeciras",
 "Spagna - Primera Federación"
 ],
 "Alianza": [
 "Alianza FC",
-"El Salvador - Primera Division - Apertura",
-"Colombia - Primera A"
+"Colombia - Primera A",
+"El Salvador - Primera Division - Apertura"
 ],
 "Alianza Atl.": [
 "Alianza Atlético",
@@ -2000,11 +2083,16 @@
 ],
 "Alloa": [
 "Alloa Athletic",
+"Scozia - Challenge Cup",
 "Scozia - League One"
 ],
 "Alloa Athletic": [
 "Alloa Athletic",
 "Scozia - League One"
+],
+"Alloa Athletic FC": [
+"Alloa Athletic",
+"Scozia - Challenge Cup"
 ],
 "Almagro": [
 "Almagro",
@@ -2041,9 +2129,9 @@
 ],
 "Altrincham": [
 "Altrincham",
+"Inghilterra - National League",
 "Inghilterra - FA Cup Qualificazione",
-"Inghilterra - FA Cup",
-"Inghilterra - National League"
+"Inghilterra - FA Cup"
 ],
 "Aluminij": [
 "Aluminij",
@@ -2059,15 +2147,15 @@
 ],
 "Alvarado": [
 "CA Alvarado",
-"Argentina - Federal A Promotion Quarto di finale",
 "Argentina - Federal A Championship Semifinale",
+"Argentina - Federal A Promotion Quarto di finale",
 "Argentina - Federal A Promotion Ottavi di finale"
 ],
 "Alvechurch": [
 "Alvechurch",
+"Inghilterra - Southern Premier Divisione Central",
 "Inghilterra - FA Cup Qualificazione",
-"Inghilterra - FA Cup",
-"Inghilterra - Southern Premier Divisione Central"
+"Inghilterra - FA Cup"
 ],
 "Alverca": [
 "Alverca",
@@ -2084,8 +2172,8 @@
 ],
 "Amarante": [
 "Amarante FC",
-"Portogallo - Taca de Portugal",
-"Portogallo - Liga Portugal 2"
+"Portogallo - Liga Portugal 2",
+"Portogallo - Taca de Portugal"
 ],
 "Amed": [
 "Amed Sportif",
@@ -2113,6 +2201,10 @@
 "Brasile - Série B"
 ],
 "America Mineiro": [
+"América-MG",
+"Brasile - Série B"
+],
+"America Mineiro MG": [
 "América-MG",
 "Brasile - Série B"
 ],
@@ -2168,6 +2260,10 @@
 "Anagennisi Karditsas",
 "Grecia - Super League 2"
 ],
+"Anaitasuna": [
+"Anaitasuna FT",
+"Spagna - Copa del Rey"
+],
 "Anderlecht": [
 "Anderlecht",
 "Belgio - Belgian Pro League",
@@ -2183,6 +2279,10 @@
 "Uzbekistan - Superliga"
 ],
 "Andorra": [
+"FC Andorra",
+"Spagna - LaLiga2"
+],
+"Andorra CF": [
 "FC Andorra",
 "Spagna - LaLiga2"
 ],
@@ -2220,6 +2320,7 @@
 ],
 "Annan": [
 "Annan Athletic",
+"Scozia - Challenge Cup",
 "Scozia - League Two",
 "Scozia - FA Cup"
 ],
@@ -2227,6 +2328,10 @@
 "Annan Athletic",
 "Scozia - League Two",
 "Scozia - FA Cup"
+],
+"Annan Athletic FC": [
+"Annan Athletic",
+"Scozia - Challenge Cup"
 ],
 "Annecy": [
 "Annecy FC",
@@ -2254,8 +2359,8 @@
 ],
 "Anstey Nomads": [
 "Anstey Nomads",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - Southern Premier Divisione Central"
+"Inghilterra - Southern Premier Divisione Central",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Antalyaspor": [
 "Antalyaspor",
@@ -2292,8 +2397,8 @@
 ],
 "Antwerp": [
 "Royal Antwerp",
-"Belgio - Cup Sedicesimi di finale",
-"Belgio - Belgian Pro League"
+"Belgio - Belgian Pro League",
+"Belgio - Cup Sedicesimi di finale"
 ],
 "Anyang": [
 "FC Anyang",
@@ -2457,6 +2562,10 @@
 "Argentinos Juniors",
 "Argentina - Liga Profesional"
 ],
+"Arges Pitesti": [
+"FC Argeș Pitesti",
+"Romania - Superliga"
+],
 "Ario Eslamshahr": [
 "Ario Islamshahr",
 "Iran - Azadegan League"
@@ -2528,8 +2637,8 @@
 ],
 "Arouca": [
 "Arouca",
-"Portogallo - Taca de Portugal",
-"Portogallo - Liga Portugal"
+"Portogallo - Liga Portugal",
+"Portogallo - Taca de Portugal"
 ],
 "Arsenal Dzerzhinsk": [
 "Arsenal Dzerzhinsk",
@@ -2562,6 +2671,10 @@
 "Arsenal U21": [
 "Arsenal U21",
 "Inghilterra - Premier League 2"
+],
+"Arsenal de Sarandi": [
+"Arsenal Sarandi",
+"Argentina - Primera B Metropolitana"
 ],
 "Arsenal Česká Lípa": [
 "Česká Lípa",
@@ -2731,8 +2844,8 @@
 ],
 "Asyut Petroleum": [
 "Asyut Petroleum",
-"Egitto - Cup Sedicesimi di finale",
-"Egitto - Premier League"
+"Egitto - Premier League",
+"Egitto - Cup Sedicesimi di finale"
 ],
 "Atalanta": [
 "Atalanta",
@@ -2813,8 +2926,8 @@
 ],
 "Atl. Madrid": [
 "Atlético Madrid",
-"Spagna - LaLiga",
-"Champions League"
+"Champions League",
+"Spagna - LaLiga"
 ],
 "Atl. Madrid C": [
 "Atletico Madrid C",
@@ -2826,6 +2939,7 @@
 ],
 "Atl. Morelia": [
 "Atlético Morelia",
+"Messico - Liga de Expansión MX",
 "Messico - Liga de Expansión MX - Apertura - Quarter-finals"
 ],
 "Atl. Nacional": [
@@ -2865,6 +2979,10 @@
 "Atlanta": [
 "Atlanta",
 "Argentina - Primera Nacional"
+],
+"Atlanta United": [
+"Atlanta United",
+"Stati Uniti - Major League Soccer"
 ],
 "Atlanta United 2": [
 "Atlanta United 2",
@@ -2927,6 +3045,10 @@
 "Atlético Rafaela",
 "Argentina - Primera Nacional"
 ],
+"Atletico De Rafaela": [
+"Atlético Rafaela",
+"Argentina - Primera Nacional"
+],
 "Atletico FC": [
 "Atlético FC",
 "Colombia - Primera B"
@@ -2957,8 +3079,12 @@
 ],
 "Atletico La Paz": [
 "Atlético La Paz",
-"Messico - Liga de Expansión MX - Apertura - Quarter-finals",
-"Messico - Liga de Expansión MX"
+"Messico - Liga de Expansión MX",
+"Messico - Liga de Expansión MX - Apertura - Quarter-finals"
+],
+"Atletico Lanus": [
+"Lanús",
+"Argentina - Liga Profesional"
 ],
 "Atletico MG": [
 "Atlético-MG",
@@ -3015,8 +3141,8 @@
 ],
 "Atletico-MG": [
 "Atlético-MG",
-"Copa Sudamericana Semifinale",
 "Brasile - Série A",
+"Copa Sudamericana Semifinale",
 "Brasile - Copa do Brasil Semifinale"
 ],
 "Atlético Baleares": [
@@ -3144,6 +3270,10 @@
 "Austin FC II",
 "Stati Uniti - MLS Next Pro - Conference - Quarter-finals"
 ],
+"Austria D": [
+"Austria",
+"Coppa del Mondo femminile Qualificazione UEFA Semifinale"
+],
 "Austria Lustenau": [
 "Austria Lustenau",
 "Austria - Bundesliga"
@@ -3210,8 +3340,8 @@
 ],
 "Avispa Fukuoka": [
 "Avispa Fukuoka",
-"Giappone - League Cup",
-"Giappone - J. League"
+"Giappone - J. League",
+"Giappone - League Cup"
 ],
 "Avondale": [
 "Avondale FC",
@@ -3538,6 +3668,7 @@
 ],
 "Banks O' Dee": [
 "Banks O'Dee",
+"Scozia - Challenge Cup",
 "Scozia - Highland League",
 "Scozia - FA Cup"
 ],
@@ -3545,6 +3676,10 @@
 "Dukla Banská Bystrica",
 "Slovacchia - FA Cup Sedicesimi di finale",
 "Slovacchia - 1. Liga"
+],
+"Baník Lehota p.Vtáčnikom": [
+"Baník Lehota pod Vtacnikom",
+"Slovacchia - FA Cup Sedicesimi di finale"
 ],
 "Baník Ostrava": [
 "Baník Ostrava",
@@ -3617,6 +3752,7 @@
 ],
 "Barnet": [
 "Barnet",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League Two",
 "Inghilterra - FA Cup"
 ],
@@ -3646,11 +3782,15 @@
 "Colombia - Primera B",
 "Colombia - Cup Quarto di finale"
 ],
+"Barranquilla FC": [
+"Barranquilla FC",
+"Colombia - Primera B"
+],
 "Barrow": [
 "Barrow",
+"Inghilterra - National League",
 "Inghilterra - FA Cup Qualificazione",
-"Inghilterra - FA Cup",
-"Inghilterra - National League"
+"Inghilterra - FA Cup"
 ],
 "Barrow AFC": [
 "Barrow",
@@ -3759,16 +3899,22 @@
 ],
 "Bayern Monaco": [
 "Bayern München",
+"UEFA Women's Champions League",
+"Champions League",
 "Germania - Bundesliga",
-"Germania - Frauen-Bundesliga",
-"Champions League"
+"Germania - Frauen-Bundesliga"
 ],
 "Bayern Monaco II": [
 "Bayern München II",
 "Germania - Regionalliga Bayern"
 ],
+"Bayern Munchen": [
+"Bayern München",
+"Germania - Bundesliga"
+],
 "Bayern Munich": [
 "Bayern München",
+"UEFA Women's Champions League",
 "Germania - Bundesliga",
 "Champions League"
 ],
@@ -3782,8 +3928,8 @@
 ],
 "Bayern München": [
 "Bayern München",
-"Germania - Bundesliga",
-"Champions League"
+"Champions League",
+"Germania - Bundesliga"
 ],
 "Bayern München II": [
 "Bayern München II",
@@ -3828,8 +3974,8 @@
 ],
 "Bedford Town": [
 "Bedford Town",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - National League North"
+"Inghilterra - National League North",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Bedford Town Football Club": [
 "Bedford Town",
@@ -3847,6 +3993,7 @@
 ],
 "Beijing Guoan": [
 "Beijing Guoan",
+"AFC Champions League Elite East",
 "Cina - Super League"
 ],
 "Beijing Sinobo Guoan": [
@@ -3864,6 +4011,10 @@
 "Beith": [
 "Beith Juniors",
 "Scozia - Lowland League West"
+],
+"Belgio D": [
+"Belgio",
+"Coppa del Mondo femminile Qualificazione UEFA Semifinale"
 ],
 "Belgrano": [
 "Belgrano",
@@ -3952,19 +4103,19 @@
 ],
 "Berkane": [
 "RS Berkane",
-"CAF Champions League Qualificazione",
-"Marocco - Botola Pro"
+"Marocco - Botola Pro",
+"CAF Champions League Qualificazione"
 ],
 "Berkhamsted": [
 "Berkhamsted",
-"Inghilterra - FA Cup Qualificazione",
 "Inghilterra - FA Cup",
+"Inghilterra - FA Cup Qualificazione",
 "Inghilterra - Southern Premier Divisione South"
 ],
 "Berkhamsted Town": [
 "Berkhamsted",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - FA Cup"
+"Inghilterra - FA Cup",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Beroe": [
 "Beroe",
@@ -3976,8 +4127,13 @@
 "Bulgaria - Second Professional League",
 "Bulgaria - Cup Sedicesimi di finale"
 ],
+"Berwick": [
+"Berwick Rangers",
+"Scozia - Challenge Cup"
+],
 "Berwick Rangers": [
 "Berwick Rangers",
+"Scozia - Challenge Cup",
 "Scozia - Lowland League East"
 ],
 "Besat Kermanshah": [
@@ -4041,6 +4197,10 @@
 "Argentina - Federal A Promotion Sedicesimi di finale",
 "Argentina - Federal A Promotion Ottavi di finale"
 ],
+"Bielorussia": [
+"Bielorussia",
+"Coppa del Mondo femminile Qualificazione UEFA Semifinale"
+],
 "Bielsko-Biala": [
 "Rekord Bielsko-Biała",
 "Polonia - II Liga"
@@ -4067,6 +4227,7 @@
 ],
 "Birmingham City Reserves": [
 "Birmingham U21",
+"Inghilterra - National League Cup",
 "Inghilterra - Premier League 2"
 ],
 "Birmingham City U18": [
@@ -4075,6 +4236,7 @@
 ],
 "Birmingham City U21": [
 "Birmingham U21",
+"Inghilterra - National League Cup",
 "Inghilterra - Premier League 2"
 ],
 "Birmingham D": [
@@ -4091,6 +4253,7 @@
 ],
 "Birmingham U21": [
 "Birmingham U21",
+"Inghilterra - National League Cup",
 "Inghilterra - Premier League 2"
 ],
 "Bishop's Stortford": [
@@ -4119,8 +4282,8 @@
 ],
 "Bjarg": [
 "Bjarg",
-"Norvegia - 1. Divisjon Qualificazione Semifinale",
-"Norvegia - 2. Divisjon Avd. 1"
+"Norvegia - 2. Divisjon Avd. 1",
+"Norvegia - 1. Divisjon Qualificazione Semifinale"
 ],
 "Bjørkelangen": [
 "Bjørkelangen",
@@ -4265,6 +4428,10 @@
 "Bogotá FC",
 "Colombia - Primera B"
 ],
+"Bogota FC": [
+"Bogotá FC",
+"Colombia - Primera B"
+],
 "Bohemian Dublino": [
 "Bohemian FC",
 "Irlanda - Premier Divisione"
@@ -4283,8 +4450,8 @@
 ],
 "Boise": [
 "Boise",
-"Stati Uniti - USL League One - Championship - Semi-finals",
-"Stati Uniti - USL League One"
+"Stati Uniti - USL League One",
+"Stati Uniti - USL League One - Championship - Semi-finals"
 ],
 "Bokelj": [
 "FK Bokelj",
@@ -4336,10 +4503,12 @@
 ],
 "Bonnyrigg Rose": [
 "Bonnyrigg Rose",
+"Scozia - Challenge Cup",
 "Scozia - Lowland League East"
 ],
 "Bonnyrigg Rose Athletic": [
 "Bonnyrigg Rose",
+"Scozia - Challenge Cup",
 "Scozia - Lowland League East"
 ],
 "Bonnyton Thistle": [
@@ -4394,18 +4563,24 @@
 ],
 "Boston River": [
 "Boston River",
-"Uruguay - Cup Sedicesimi di finale",
-"Uruguay - Liga AUF Uruguaya Clausura"
+"Uruguay - Liga AUF Uruguaya Clausura",
+"Uruguay - Cup Sedicesimi di finale"
 ],
 "Boston United": [
 "Boston United",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - National League"
+"Inghilterra - National League",
+"Inghilterra - National League Cup",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Boston Utd": [
 "Boston United",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - National League"
+"Inghilterra - National League",
+"Inghilterra - National League Cup",
+"Inghilterra - FA Cup Qualificazione"
+],
+"Botafogo PB": [
+"Botafogo-PB",
+"Brasile - Série C"
 ],
 "Botafogo RJ": [
 "Botafogo",
@@ -4421,8 +4596,8 @@
 ],
 "Botev Plovdiv": [
 "Botev Plovdiv",
-"Bulgaria - Cup Sedicesimi di finale",
-"Bulgaria - First Professional League"
+"Bulgaria - First Professional League",
+"Bulgaria - Cup Sedicesimi di finale"
 ],
 "Botev Vratsa": [
 "Botev Vratsa",
@@ -4513,11 +4688,13 @@
 ],
 "Bradford": [
 "Bradford",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League One",
 "Inghilterra - FA Cup"
 ],
 "Bradford City": [
 "Bradford",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League One",
 "Inghilterra - FA Cup"
 ],
@@ -4540,11 +4717,13 @@
 ],
 "Braintree": [
 "Braintree Town",
-"Inghilterra - National League South"
+"Inghilterra - National League South",
+"Inghilterra - National League Cup"
 ],
 "Braintree Town": [
 "Braintree Town",
-"Inghilterra - National League South"
+"Inghilterra - National League South",
+"Inghilterra - National League Cup"
 ],
 "Brann": [
 "Brann",
@@ -4624,6 +4803,7 @@
 ],
 "Brentford Reserve": [
 "Brentford U21",
+"Inghilterra - EFL Trophy",
 "Inghilterra - Premier League 2"
 ],
 "Brentford U18": [
@@ -4632,6 +4812,7 @@
 ],
 "Brentford U21": [
 "Brentford U21",
+"Inghilterra - EFL Trophy",
 "Inghilterra - Premier League 2"
 ],
 "Brentwood": [
@@ -4641,8 +4822,8 @@
 ],
 "Brentwood Town": [
 "Brentwood Town",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - Isthmian Premier Divisione"
+"Inghilterra - Isthmian Premier Divisione",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Brescia": [
 "Union Brescia",
@@ -4659,6 +4840,7 @@
 ],
 "Brighton & Hove Albion U21": [
 "Brighton & Hove Albion U21",
+"Inghilterra - EFL Trophy",
 "Inghilterra - Premier League 2"
 ],
 "Brighton Hove Albion": [
@@ -4672,6 +4854,7 @@
 ],
 "Brighton U21": [
 "Brighton & Hove Albion U21",
+"Inghilterra - EFL Trophy",
 "Inghilterra - Premier League 2"
 ],
 "Brinje-Grosuplje": [
@@ -4697,8 +4880,8 @@
 ],
 "Bristol City": [
 "Bristol City",
-"Inghilterra - WSL 2",
 "Inghilterra - Championship",
+"Inghilterra - WSL 2",
 "Inghilterra - Women's League Cup"
 ],
 "Bristol City WFC": [
@@ -4707,6 +4890,7 @@
 ],
 "Bristol Rovers": [
 "Bristol Rovers",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League Two",
 "Inghilterra - FA Cup"
 ],
@@ -4744,6 +4928,7 @@
 ],
 "Bromley": [
 "Bromley",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League One",
 "Inghilterra - FA Cup"
 ],
@@ -4909,17 +5094,24 @@
 "Burgos CF",
 "Spagna - LaLiga2"
 ],
+"Burgos CF": [
+"Burgos CF",
+"Spagna - LaLiga2"
+],
 "Buriram": [
 "Buriram United",
+"AFC Champions League Elite East",
 "Thailandia - Thai League"
 ],
 "Buriram PEA": [
 "Buriram United",
-"Thailandia - Thai League"
+"Thailandia - Thai League",
+"AFC Champions League Elite East"
 ],
 "Buriram United": [
 "Buriram United",
 "Thailandia - Thai League",
+"AFC Champions League Elite East",
 "Thailandia - FA Cup - 2nd Round"
 ],
 "Burnley": [
@@ -4949,18 +5141,20 @@
 ],
 "Burton": [
 "Burton",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League One",
 "Inghilterra - FA Cup"
 ],
 "Burton Albion": [
 "Burton",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League One",
 "Inghilterra - FA Cup"
 ],
 "Bury": [
 "Bury",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - Northern Premier Divisione"
+"Inghilterra - Northern Premier Divisione",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Bury Town": [
 "Bury Town",
@@ -4971,6 +5165,10 @@
 "Corea del Sud - K League 2"
 ],
 "Busan I Park": [
+"Busan I'Park",
+"Corea del Sud - K League 2"
+],
+"Busan I'Park": [
 "Busan I'Park",
 "Corea del Sud - K League 2"
 ],
@@ -4998,6 +5196,10 @@
 "Buxton",
 "Inghilterra - National League North"
 ],
+"Buxton FC": [
+"Buxton",
+"Inghilterra - National League North"
+],
 "Bvsc Zuglo": [
 "BVSC Zugló",
 "Ungheria - NB II"
@@ -5018,6 +5220,10 @@
 "Cerezo Osaka",
 "Giappone - J. League"
 ],
+"C.A.Bizertin": [
+"CA Bizertin",
+"Tunisia - Ligue I"
+],
 "C.D. Cacahuatique": [
 "CD Cacahuatique",
 "El Salvador - Primera Division - Apertura"
@@ -5033,6 +5239,10 @@
 "CA Bizertin": [
 "CA Bizertin",
 "Tunisia - Ligue I"
+],
+"CA Boston River": [
+"Boston River",
+"Uruguay - Cup Quarto di finale"
 ],
 "CA Brown Adrogue": [
 "Brown de Adrogué",
@@ -5067,9 +5277,21 @@
 "Club Atlético Mitre",
 "Argentina - Primera Nacional"
 ],
+"CA Platense": [
+"Club Atlético Platense",
+"Argentina - Liga Profesional"
+],
 "CA River Ebro": [
 "Ebro",
 "Spagna - Segunda Federación"
+],
+"CA River Plate": [
+"River Plate",
+"Uruguay - Segunda Division"
+],
+"CA San Miguel": [
+"CA San Miguel",
+"Argentina - Primera Nacional"
 ],
 "CA Sarmiento Junin": [
 "Sarmiento",
@@ -5109,11 +5331,16 @@
 ],
 "CD Badajoz": [
 "CD Badajoz",
+"Spagna - Copa del Rey",
 "Spagna - Segunda Federación"
 ],
 "CD Basconia": [
 "CD Basconia",
 "Spagna - Segunda Federación"
+],
+"CD Cacahuatique": [
+"CD Cacahuatique",
+"El Salvador - Primera Division - Apertura"
 ],
 "CD Castellon B": [
 "Castellón B",
@@ -5167,6 +5394,10 @@
 "Fuerte San Francisco",
 "El Salvador - Primera Division - Apertura"
 ],
+"CD Fas": [
+"CD FAS",
+"El Salvador - Primera Division - Apertura"
+],
 "CD Inca": [
 "Inca Aruba",
 "El Salvador - Primera Division - Apertura"
@@ -5183,6 +5414,10 @@
 "Firpo",
 "El Salvador - Primera Division - Apertura"
 ],
+"CD Mafra": [
+"Mafra",
+"Portogallo - Liga 3"
+],
 "CD Magallanes": [
 "Magallanes",
 "Cile - Primera B"
@@ -5196,6 +5431,10 @@
 "FC Motagua",
 "Honduras - Liga Nacional - Apertura"
 ],
+"CD Nublense": [
+"Ñublense",
+"Cile - Primera División"
+],
 "CD Olimpia": [
 "CD Olimpia",
 "Honduras - Liga Nacional - Apertura"
@@ -5208,6 +5447,10 @@
 "Real Tomayapo",
 "Bolivia - Primera División"
 ],
+"CD Recoleta": [
+"Recoleta",
+"Paraguay - Division Profesional"
+],
 "CD Santa Cruz": [
 "Deportes Santa Cruz",
 "Cile - Primera B"
@@ -5215,6 +5458,10 @@
 "CD Tenerife B": [
 "Tenerife B",
 "Spagna - Segunda Federación"
+],
+"CD Tondela": [
+"Tondela",
+"Portogallo - Liga Portugal 2"
 ],
 "CD Tudelano": [
 "Tudelano",
@@ -5267,6 +5514,10 @@
 "CF Locomotiv Balti": [
 "FC Bălți",
 "Moldavia - Super Liga"
+],
+"CF Lorca Deportiva": [
+"Lorca Deportiva",
+"Spagna - Segunda Federación"
 ],
 "CF Montreal": [
 "Montreal",
@@ -5404,6 +5655,14 @@
 "FC Voluntari",
 "Romania - Superliga"
 ],
+"CS.Hammam-Lif": [
+"CS Hammam-Lif",
+"Tunisia - Ligue I"
+],
+"CSA Steaua Bucuresti": [
+"Steaua București",
+"Romania - Liga II"
+],
 "CSA Steaua Bucureşti": [
 "Steaua București",
 "Romania - Liga II"
@@ -5450,8 +5709,8 @@
 ],
 "CSKA 1948": [
 "CSKA 1948",
-"Bulgaria - Cup Sedicesimi di finale",
-"Bulgaria - First Professional League"
+"Bulgaria - First Professional League",
+"Bulgaria - Cup Sedicesimi di finale"
 ],
 "CSKA 1948 Sofia": [
 "CSKA 1948",
@@ -5459,8 +5718,8 @@
 ],
 "CSKA Moscow": [
 "CSKA",
-"Russia - Russian Cup",
-"Russia - Premier League"
+"Russia - Premier League",
+"Russia - Russian Cup"
 ],
 "CSKA Sofia": [
 "CSKA Sofia",
@@ -5511,6 +5770,10 @@
 "Cacereno": [
 "Cacereño",
 "Spagna - Primera Federación"
+],
+"Cadca": [
+"FK Čadca",
+"Slovacchia - FA Cup Sedicesimi di finale"
 ],
 "Cadiz": [
 "Cádiz",
@@ -5695,9 +5958,9 @@
 ],
 "Carlisle United": [
 "Carlisle",
+"Inghilterra - National League",
 "Inghilterra - FA Cup Qualificazione",
-"Inghilterra - FA Cup",
-"Inghilterra - National League"
+"Inghilterra - FA Cup"
 ],
 "Carolina Uslw League": [
 "Carolina Ascent FC",
@@ -5725,6 +5988,10 @@
 "Inghilterra - Isthmian Premier Divisione"
 ],
 "Carshalton Athletic": [
+"Carshalton Athletic",
+"Inghilterra - Isthmian Premier Divisione"
+],
+"Carshalton Athletic FC": [
 "Carshalton Athletic",
 "Inghilterra - Isthmian Premier Divisione"
 ],
@@ -5788,8 +6055,8 @@
 ],
 "Cavalry": [
 "Cavalry FC",
-"Canada - Premier League Semifinale",
-"Canada - Premier League"
+"Canada - Premier League",
+"Canada - Premier League Semifinale"
 ],
 "Cavalry FC": [
 "Cavalry FC",
@@ -5809,6 +6076,10 @@
 "Spagna - Primera Federación"
 ],
 "Ceara": [
+"Ceará",
+"Brasile - Série B"
+],
+"Ceara CE": [
 "Ceará",
 "Brasile - Série B"
 ],
@@ -5836,8 +6107,8 @@
 ],
 "Celtic": [
 "Celtic",
-"Scozia - SWPL 1",
 "Scozia - Premiership",
+"Scozia - SWPL 1",
 "Europa League"
 ],
 "Celtic B": [
@@ -5846,6 +6117,7 @@
 ],
 "Celtic II": [
 "Celtic B",
+"Scozia - Challenge Cup",
 "Scozia - Lowland League West"
 ],
 "Central Coast Mariners FC": [
@@ -5862,8 +6134,8 @@
 ],
 "Central Esp.": [
 "Central Español",
-"Uruguay - Cup Sedicesimi di finale",
-"Uruguay - Liga AUF Uruguaya Clausura"
+"Uruguay - Liga AUF Uruguaya Clausura",
+"Uruguay - Cup Sedicesimi di finale"
 ],
 "Central Espanol": [
 "Central Español",
@@ -5880,8 +6152,8 @@
 ],
 "Ceramica Cleopatra": [
 "Ceramica Cleopatra",
-"Egitto - Cup Sedicesimi di finale",
-"Egitto - Premier League"
+"Egitto - Premier League",
+"Egitto - Cup Sedicesimi di finale"
 ],
 "Cercle Bruges": [
 "Cercle Brugge",
@@ -5890,8 +6162,8 @@
 ],
 "Cercle Brugge": [
 "Cercle Brugge",
-"Belgio - Cup Sedicesimi di finale",
-"Belgio - Belgian Pro League"
+"Belgio - Belgian Pro League",
+"Belgio - Cup Sedicesimi di finale"
 ],
 "Cercle Brugge KSV": [
 "Cercle Brugge",
@@ -5954,6 +6226,10 @@
 "Ucraina - Premier League"
 ],
 "Chacarita Juniors": [
+"Chacarita Juniors",
+"Argentina - Primera Nacional"
+],
+"Chacarita juniors": [
 "Chacarita Juniors",
 "Argentina - Primera Nacional"
 ],
@@ -6032,8 +6308,8 @@
 ],
 "Charleroi": [
 "Sporting Charleroi",
-"Belgio - Cup Sedicesimi di finale",
-"Belgio - Belgian Pro League"
+"Belgio - Belgian Pro League",
+"Belgio - Cup Sedicesimi di finale"
 ],
 "Charleston": [
 "Charleston Battery",
@@ -6042,8 +6318,8 @@
 ],
 "Charleston Battery": [
 "Charleston Battery",
-"Stati Uniti - USL Championship Quarto di finale",
-"Stati Uniti - USL Championship"
+"Stati Uniti - USL Championship",
+"Stati Uniti - USL Championship Quarto di finale"
 ],
 "Charlotte": [
 "Charlotte FC",
@@ -6051,6 +6327,7 @@
 ],
 "Charlotte Independ.": [
 "Charlotte Independence",
+"Stati Uniti - USL League One - Championship - Semi-finals",
 "Stati Uniti - USL League One"
 ],
 "Charlotte Independence": [
@@ -6106,13 +6383,13 @@
 ],
 "Chelmsford": [
 "Chelmsford",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - National League South"
+"Inghilterra - National League South",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Chelmsford City": [
 "Chelmsford",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - National League South"
+"Inghilterra - National League South",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Chelsea": [
 "Chelsea",
@@ -6121,6 +6398,7 @@
 ],
 "Chelsea Reserve": [
 "Chelsea U21",
+"Inghilterra - EFL Trophy",
 "Inghilterra - Premier League 2"
 ],
 "Chelsea U18": [
@@ -6129,20 +6407,24 @@
 ],
 "Chelsea U21": [
 "Chelsea U21",
+"Inghilterra - EFL Trophy",
 "Inghilterra - Premier League 2"
 ],
 "Cheltenham": [
 "Cheltenham",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League Two",
 "Inghilterra - FA Cup"
 ],
 "Cheltenham Town": [
 "Cheltenham",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League Two",
 "Inghilterra - FA Cup"
 ],
 "Chelyabinsk": [
 "FC Chelyabinsk",
+"Russia - Cup",
 "Russia - First League"
 ],
 "Chemie Leipzig": [
@@ -6183,13 +6465,13 @@
 ],
 "Cherno More": [
 "Cherno More Varna",
-"Bulgaria - Cup Sedicesimi di finale",
-"Bulgaria - First Professional League"
+"Bulgaria - First Professional League",
+"Bulgaria - Cup Sedicesimi di finale"
 ],
 "Cherno More Varna": [
 "Cherno More Varna",
-"Bulgaria - Cup Sedicesimi di finale",
-"Bulgaria - First Professional League"
+"Bulgaria - First Professional League",
+"Bulgaria - Cup Sedicesimi di finale"
 ],
 "Chernomorets 1919": [
 "FC Chernomorets Burgas",
@@ -6219,8 +6501,8 @@
 ],
 "Chertsey": [
 "Chertsey Town",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - Southern Premier Divisione South"
+"Inghilterra - Southern Premier Divisione South",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Chertsey Town": [
 "Chertsey Town",
@@ -6233,8 +6515,8 @@
 ],
 "Chesham United": [
 "Chesham United",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - National League South"
+"Inghilterra - National League South",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Chesham Utd": [
 "Chesham United",
@@ -6257,8 +6539,13 @@
 "Chester FC",
 "Inghilterra - National League North"
 ],
+"Chester FC": [
+"Chester FC",
+"Inghilterra - National League North"
+],
 "Chesterfield": [
 "Chesterfield",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League Two",
 "Inghilterra - FA Cup"
 ],
@@ -6404,8 +6691,8 @@
 ],
 "Chorley FC": [
 "Chorley",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - National League North"
+"Inghilterra - National League North",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Chornomorets": [
 "Chornomorets Odesa",
@@ -6461,8 +6748,8 @@
 ],
 "Cipolletti": [
 "Club Cipolletti",
-"Argentina - Federal A Promotion Quarto di finale",
 "Argentina - Federal A Championship Semifinale",
+"Argentina - Federal A Promotion Quarto di finale",
 "Argentina - Federal A Championship Finale"
 ],
 "Cittadella": [
@@ -6491,6 +6778,7 @@
 ],
 "Clachnacuddin": [
 "Clachnacuddin",
+"Scozia - Challenge Cup",
 "Scozia - Highland League",
 "Scozia - FA Cup"
 ],
@@ -6533,8 +6821,8 @@
 ],
 "Club Africain": [
 "Club Africain",
-"CAF Champions League Qualificazione",
-"Tunisia - Ligue I"
+"Tunisia - Ligue I",
+"CAF Champions League Qualificazione"
 ],
 "Club America": [
 "América",
@@ -6550,6 +6838,10 @@
 ],
 "Club Atletico Estudiantes": [
 "Club Atlético Estudiantes",
+"Argentina - Primera Nacional"
+],
+"Club Atletico Guemes": [
+"Atlético Güemes",
 "Argentina - Primera Nacional"
 ],
 "Club Atletico Mitre": [
@@ -6572,17 +6864,21 @@
 "Club Atlético Platense",
 "Argentina - Liga Profesional"
 ],
+"Club Aurora": [
+"Aurora",
+"Bolivia - Primera División"
+],
 "Club Brugge": [
 "Club Brugge",
 "Belgio - Belgian Pro League",
-"Belgio - Cup Sedicesimi di finale",
-"Champions League"
+"Champions League",
+"Belgio - Cup Sedicesimi di finale"
 ],
 "Club Brugge KV": [
 "Club Brugge",
+"Champions League",
 "Belgio - Belgian Pro League",
-"Belgio - Cup Sedicesimi di finale",
-"Champions League"
+"Belgio - Cup Sedicesimi di finale"
 ],
 "Club Brugge U19": [
 "Club Brugge U19",
@@ -6643,8 +6939,8 @@
 ],
 "Club Sp. San Lorenzo": [
 "Sportivo San Lorenzo",
-"Paraguay - Cup Quarto di finale",
-"Paraguay - Division Profesional"
+"Paraguay - Division Profesional",
+"Paraguay - Cup Quarto di finale"
 ],
 "Club Sport Emelec": [
 "Emelec",
@@ -6664,7 +6960,8 @@
 ],
 "Clyde": [
 "Clyde",
-"Scozia - League Two"
+"Scozia - League Two",
+"Scozia - Challenge Cup"
 ],
 "Clydebank": [
 "Clydebank",
@@ -6673,7 +6970,12 @@
 ],
 "Clydebank FC": [
 "Clydebank",
+"Scozia - Challenge Cup",
 "Scozia - FA Cup"
+],
+"Coastal Union": [
+"Coastal Union",
+"Tanzania - Premier League"
 ],
 "Coban Imperial": [
 "Coban Imperial",
@@ -6701,6 +7003,7 @@
 ],
 "Colchester": [
 "Colchester",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League Two",
 "Inghilterra - FA Cup"
 ],
@@ -6734,6 +7037,10 @@
 "Colón",
 "Argentina - Primera Nacional"
 ],
+"Colon de Santa Fe": [
+"Colón",
+"Argentina - Primera Nacional"
+],
 "Colorado": [
 "Colorado",
 "Stati Uniti - Major League Soccer"
@@ -6744,8 +7051,8 @@
 ],
 "Colorado Springs": [
 "Colorado Springs Switchbacks FC",
-"Stati Uniti - USL Championship Quarto di finale",
-"Stati Uniti - USL Championship"
+"Stati Uniti - USL Championship",
+"Stati Uniti - USL Championship Quarto di finale"
 ],
 "Colorado Springs Switchbacks": [
 "Colorado Springs Switchbacks FC",
@@ -6827,11 +7134,17 @@
 ],
 "Cong An": [
 "Công An Hà Nội",
+"AFC Champions League Elite East",
 "Vietnam - V-League"
 ],
 "Cong An Ha Noi": [
 "Công An Hà Nội",
+"AFC Champions League Elite East",
 "Vietnam - V-League"
+],
+"Cong An Nhan Dan": [
+"Công An Hà Nội",
+"AFC Champions League Elite East"
 ],
 "Connah's Quay Nomads": [
 "Connah's Quay Nomads",
@@ -6890,6 +7203,10 @@
 "Copa Libertadores Femenina Quarto di finale"
 ],
 "Coritiba": [
+"Coritiba",
+"Brasile - Série A"
+],
+"Coritiba (PR)": [
 "Coritiba",
 "Brasile - Série A"
 ],
@@ -6959,7 +7276,12 @@
 ],
 "Cove Rangers": [
 "Cove Rangers",
-"Scozia - League One"
+"Scozia - League One",
+"Scozia - Challenge Cup"
+],
+"Cove Rangers FC": [
+"Cove Rangers",
+"Scozia - Challenge Cup"
 ],
 "Coventry": [
 "Coventry",
@@ -6975,11 +7297,13 @@
 ],
 "Cowdenbeath": [
 "Cowdenbeath",
+"Scozia - Challenge Cup",
 "Scozia - Lowland League East",
 "Scozia - FA Cup"
 ],
 "Cp Mijas-Las Lagunas": [
 "Mijas-Las Lagunas",
+"Spagna - Copa del Rey",
 "Spagna - Segunda Federación"
 ],
 "Cp Mijas-las Lagunas": [
@@ -7000,16 +7324,19 @@
 ],
 "Crawley": [
 "Crawley",
+"Inghilterra - EFL Trophy",
 "Inghilterra - FA Cup",
 "Inghilterra - League Two"
 ],
 "Crawley Town": [
 "Crawley",
-"Inghilterra - FA Cup",
-"Inghilterra - League Two"
+"Inghilterra - EFL Trophy",
+"Inghilterra - League Two",
+"Inghilterra - FA Cup"
 ],
 "Cray Wanderers": [
 "Cray Wanderers",
+"Inghilterra - Isthmian Premier Divisione",
 "Inghilterra - FA Cup",
 "Inghilterra - FA Cup Qualificazione"
 ],
@@ -7019,11 +7346,13 @@
 ],
 "Crewe": [
 "Crewe",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League Two",
 "Inghilterra - FA Cup"
 ],
 "Crewe Alexandra": [
 "Crewe",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League Two",
 "Inghilterra - FA Cup"
 ],
@@ -7038,6 +7367,10 @@
 "Criciúma": [
 "Criciúma",
 "Brasile - Série B"
+],
+"Croazia D": [
+"Croazia",
+"Coppa del Mondo femminile Qualificazione UEFA Semifinale"
 ],
 "Crotone": [
 "Crotone",
@@ -7146,6 +7479,7 @@
 ],
 "Cumbernauld Colts": [
 "Cumbernauld Colts",
+"Scozia - Challenge Cup",
 "Scozia - Lowland League West",
 "Scozia - FA Cup"
 ],
@@ -7156,6 +7490,10 @@
 "Curico Unido": [
 "Curicó Unido",
 "Cile - Primera B"
+],
+"Curzon": [
+"Curzon",
+"Inghilterra - Northern Premier Divisione"
 ],
 "Curzon Ashton": [
 "Curzon",
@@ -7183,6 +7521,7 @@
 ],
 "Công An Nhân Dân": [
 "Công An Hà Nội",
+"AFC Champions League Elite East",
 "Vietnam - V-League"
 ],
 "D. Concepcion": [
@@ -7218,6 +7557,10 @@
 "CAF Confed Cup - 2nd Girone preliminare"
 ],
 "DH El Jadida": [
+"Difaâ El Jadida",
+"Marocco - Botola Pro"
+],
+"DHJ Difaa Hassani Jadidi": [
 "Difaâ El Jadida",
 "Marocco - Botola Pro"
 ],
@@ -7275,11 +7618,13 @@
 ],
 "Daejeon": [
 "Daejeon Hana Citizen",
+"AFC Champions League Elite East",
 "Corea del Sud - K-League 1 Final Group A",
 "Corea del Sud - K-League 1"
 ],
 "Daejeon Citizen": [
 "Daejeon Hana Citizen",
+"AFC Champions League Elite East",
 "Corea del Sud - K-League 1 Final Group A",
 "Corea del Sud - K-League 1"
 ],
@@ -7345,6 +7690,7 @@
 ],
 "Danubio": [
 "Danubio",
+"Uruguay - Cup Quarto di finale",
 "Uruguay - Cup Sedicesimi di finale",
 "Uruguay - Liga AUF Uruguaya Clausura"
 ],
@@ -7432,6 +7778,10 @@
 "CA Defensores Unidos",
 "Argentina - Primera B Metropolitana"
 ],
+"Defensores de Belgrano": [
+"CA Defensores de Belgrano",
+"Argentina - Primera Nacional"
+],
 "Defensores de Vilelas": [
 "Defensores de Vilelas",
 "Argentina - Federal A Promotion Sedicesimi di finale"
@@ -7513,6 +7863,10 @@
 "Deportivo Táchira",
 "Venezuela - Primera División"
 ],
+"Dep.Independiente Medellin": [
+"Independiente Medellín",
+"Colombia - Primera A"
+],
 "Deportes Concepcion": [
 "Deportes Concepción",
 "Cile - Primera División"
@@ -7567,8 +7921,8 @@
 ],
 "Deportivo Alaves": [
 "Deportivo Alavés",
-"Spagna - Liga F",
-"Spagna - LaLiga"
+"Spagna - LaLiga",
+"Spagna - Liga F"
 ],
 "Deportivo Alaves B": [
 "Deportivo Alavés B",
@@ -7624,8 +7978,8 @@
 ],
 "Deportivo Maldonado": [
 "Deportivo Maldonado",
-"Uruguay - Cup Sedicesimi di finale",
-"Uruguay - Liga AUF Uruguaya Clausura"
+"Uruguay - Liga AUF Uruguaya Clausura",
+"Uruguay - Cup Sedicesimi di finale"
 ],
 "Deportivo Marquense": [
 "Deportivo Marquense",
@@ -7672,6 +8026,10 @@
 "Costa Rica - Primera Division Apertura",
 "CONCACAF Central American Cup Play-In Finale"
 ],
+"Deportivo Tachira": [
+"Deportivo Táchira",
+"Venezuela - Primera División"
+],
 "Deportivo Tachira FC": [
 "Deportivo Táchira",
 "Venezuela - Primera División"
@@ -7698,7 +8056,8 @@
 ],
 "Derby County Reserve": [
 "Derby County U21",
-"Inghilterra - Premier League 2"
+"Inghilterra - Premier League 2",
+"Inghilterra - National League Cup"
 ],
 "Derby County U18": [
 "Derby U18",
@@ -7706,11 +8065,13 @@
 ],
 "Derby County U21": [
 "Derby County U21",
-"Inghilterra - Premier League 2"
+"Inghilterra - Premier League 2",
+"Inghilterra - National League Cup"
 ],
 "Derby U21": [
 "Derby County U21",
-"Inghilterra - Premier League 2"
+"Inghilterra - Premier League 2",
+"Inghilterra - National League Cup"
 ],
 "Derry City": [
 "Derry City",
@@ -7899,6 +8260,7 @@
 ],
 "Djurgardens": [
 "Djurgården",
+"Svezia - Allsvenskan",
 "Svezia - Damallsvenskan"
 ],
 "Djurgardens IF": [
@@ -7979,8 +8341,8 @@
 ],
 "Dorking Wanderers": [
 "Dorking Wanderers",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - National League South"
+"Inghilterra - National League South",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Dortmund": [
 "Dortmund",
@@ -8001,8 +8363,8 @@
 ],
 "Douglas Haig": [
 "Douglas Haig",
-"Argentina - Federal A Promotion Quarto di finale",
 "Argentina - Federal A Promotion Sedicesimi di finale",
+"Argentina - Federal A Promotion Quarto di finale",
 "Argentina - Federal A Promotion Ottavi di finale"
 ],
 "Dover": [
@@ -8013,9 +8375,9 @@
 ],
 "Dover Athletic": [
 "Dover",
+"Inghilterra - National League South",
 "Inghilterra - FA Cup Qualificazione",
-"Inghilterra - FA Cup",
-"Inghilterra - National League South"
+"Inghilterra - FA Cup"
 ],
 "Doxa": [
 "Doxa Katokopia",
@@ -8069,8 +8431,8 @@
 ],
 "Dukla Banska Bystrica": [
 "Dukla Banská Bystrica",
-"Slovacchia - FA Cup Sedicesimi di finale",
-"Slovacchia - 1. Liga"
+"Slovacchia - 1. Liga",
+"Slovacchia - FA Cup Sedicesimi di finale"
 ],
 "Dukla Banská Bystrica": [
 "Dukla Banská Bystrica",
@@ -8092,6 +8454,7 @@
 "Dumbarton": [
 "Dumbarton",
 "Scozia - League Two",
+"Scozia - Challenge Cup",
 "Scozia - FA Cup"
 ],
 "Dumbravita": [
@@ -8112,8 +8475,8 @@
 ],
 "Dunav Ruse": [
 "Dunav Ruse",
-"Bulgaria - Cup Sedicesimi di finale",
-"Bulgaria - First Professional League"
+"Bulgaria - First Professional League",
+"Bulgaria - Cup Sedicesimi di finale"
 ],
 "Dundalk": [
 "Dundalk",
@@ -8123,9 +8486,17 @@
 "Dundee FC",
 "Scozia - Premiership"
 ],
+"Dundee II": [
+"Dundee FC B",
+"Scozia - Challenge Cup"
+],
 "Dundee United": [
 "Dundee United",
 "Scozia - Premiership"
+],
+"Dundee United II": [
+"Dundee United B",
+"Scozia - Challenge Cup"
 ],
 "Dundee Utd": [
 "Dundee United",
@@ -8136,6 +8507,10 @@
 "Irlanda del Nord - League Cup Sedicesimi di finale"
 ],
 "Dunfermline": [
+"Dunfermline Athletic",
+"Scozia - Championship"
+],
+"Dunfermline Athletic": [
 "Dunfermline Athletic",
 "Scozia - Championship"
 ],
@@ -8169,6 +8544,7 @@
 ],
 "Durban City": [
 "Durban City",
+"Sudafrica - Premier Soccer League",
 "CAF Confed Cup - 2nd Girone preliminare"
 ],
 "Durham W": [
@@ -8287,11 +8663,13 @@
 ],
 "East Fife": [
 "East Fife",
-"Scozia - League One"
+"Scozia - League One",
+"Scozia - Challenge Cup"
 ],
 "East Kilbride": [
 "East Kilbride",
-"Scozia - League One"
+"Scozia - League One",
+"Scozia - Challenge Cup"
 ],
 "East Stirlingshire": [
 "East Stirlingshire",
@@ -8304,8 +8682,8 @@
 ],
 "Eastbourne Borough": [
 "Eastbourne Borough",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - Isthmian Premier Divisione"
+"Inghilterra - Isthmian Premier Divisione",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Eastern Suburbs": [
 "Eastern Suburbs AFC",
@@ -8317,9 +8695,9 @@
 ],
 "Eastleigh": [
 "Eastleigh",
+"Inghilterra - National League",
 "Inghilterra - FA Cup Qualificazione",
-"Inghilterra - FA Cup",
-"Inghilterra - National League"
+"Inghilterra - FA Cup"
 ],
 "Eastleigh FC": [
 "Eastleigh",
@@ -8348,7 +8726,12 @@
 "Edinburgh City": [
 "Edinburgh City",
 "Scozia - League Two",
+"Scozia - Challenge Cup",
 "Scozia - FA Cup"
+],
+"Edinburgh City FC": [
+"Edinburgh City",
+"Scozia - Challenge Cup"
 ],
 "Egersund": [
 "Egersund",
@@ -8361,6 +8744,7 @@
 ],
 "Egnatia Rrogozhine": [
 "Egnatia",
+"Albania - Kategoria Superiore",
 "Conference League"
 ],
 "Egnatia Rrogozhinë": [
@@ -8378,6 +8762,7 @@
 ],
 "Eibar": [
 "Eibar",
+"Spagna - Copa del Rey",
 "Spagna - LaLiga2"
 ],
 "Eibar B": [
@@ -8466,8 +8851,8 @@
 ],
 "El Gaish": [
 "Tala'ea El Gaish",
-"Egitto - Cup Sedicesimi di finale",
-"Egitto - Premier League"
+"Egitto - Premier League",
+"Egitto - Cup Sedicesimi di finale"
 ],
 "El Gouna": [
 "El Gouna FC",
@@ -8476,6 +8861,7 @@
 ],
 "El Gouna FC": [
 "El Gouna FC",
+"Egitto - Premier League",
 "Egitto - Cup Sedicesimi di finale"
 ],
 "El Gounah": [
@@ -8509,8 +8895,8 @@
 ],
 "El Paso Locomotive": [
 "El Paso Locomotive FC",
-"Stati Uniti - USL Championship Quarto di finale",
-"Stati Uniti - USL Championship"
+"Stati Uniti - USL Championship",
+"Stati Uniti - USL Championship Quarto di finale"
 ],
 "El Paso Locomotive FC": [
 "El Paso Locomotive FC",
@@ -8518,8 +8904,8 @@
 ],
 "El Paso Patriots": [
 "El Paso Locomotive FC",
-"Stati Uniti - USL Championship Quarto di finale",
-"Stati Uniti - USL Championship"
+"Stati Uniti - USL Championship",
+"Stati Uniti - USL Championship Quarto di finale"
 ],
 "El Qanah": [
 "Olympic El Qanah FC",
@@ -8532,6 +8918,10 @@
 "El Shorta": [
 "Ittihad Al Shorta",
 "Egitto - Cup Sedicesimi di finale"
+],
+"Elbasani": [
+"Elbasani",
+"Albania - Kategoria Superiore"
 ],
 "Elche": [
 "Elche",
@@ -8552,6 +8942,7 @@
 "Elgin City": [
 "Elgin City",
 "Scozia - League Two",
+"Scozia - Challenge Cup",
 "Scozia - FA Cup"
 ],
 "Elite 3000 Helsingor": [
@@ -8657,6 +9048,10 @@
 "Envigado",
 "Colombia - Primera B"
 ],
+"Envigado FC": [
+"Envigado",
+"Colombia - Primera B"
+],
 "Enyimba": [
 "Enyimba",
 "Nigeria - NPFL"
@@ -8757,6 +9152,10 @@
 "Espanyol B",
 "Spagna - Segunda Federación"
 ],
+"Esperance ST": [
+"Espérance",
+"Tunisia - Ligue I"
+],
 "Esperance Sportive Zarzis": [
 "Zarzis",
 "Tunisia - Ligue I"
@@ -8781,10 +9180,12 @@
 ],
 "Esteghlal F.C.": [
 "Esteghlal",
+"AFC Champions League Elite West",
 "Iran - Persian Gulf"
 ],
 "Esteghlal FC": [
 "Esteghlal",
+"AFC Champions League Elite West",
 "Iran - Persian Gulf"
 ],
 "Esteghlal Khuzestan": [
@@ -8837,8 +9238,8 @@
 ],
 "Estudiantes La Plata": [
 "Estudiantes",
-"Copa Libertadores Semifinale",
-"Argentina - Liga Profesional"
+"Argentina - Liga Profesional",
+"Copa Libertadores Semifinale"
 ],
 "Estudiantes Merida": [
 "Estudiantes Mérida",
@@ -8859,8 +9260,8 @@
 ],
 "Etar 1924 Veliko Tarnovo": [
 "Etar",
-"Bulgaria - Cup Sedicesimi di finale",
-"Bulgaria - Second Professional League"
+"Bulgaria - Second Professional League",
+"Bulgaria - Cup Sedicesimi di finale"
 ],
 "Etar Veliko Tarnovo": [
 "Etar",
@@ -8927,6 +9328,10 @@
 "CE Europa",
 "Spagna - Primera Federación"
 ],
+"Everton CD": [
+"Everton CD",
+"Cile - Primera División"
+],
 "Everton FC": [
 "Everton",
 "Inghilterra - WSL",
@@ -8934,6 +9339,7 @@
 ],
 "Everton Reserve": [
 "Everton U21",
+"Inghilterra - National League Cup",
 "Inghilterra - Premier League 2"
 ],
 "Everton U18": [
@@ -8942,6 +9348,7 @@
 ],
 "Everton U21": [
 "Everton U21",
+"Inghilterra - National League Cup",
 "Inghilterra - Premier League 2"
 ],
 "Everton de Vina": [
@@ -8970,8 +9377,8 @@
 ],
 "Excelsior Virton": [
 "Virton",
-"Belgio - Cup Sedicesimi di finale",
-"Belgio - First Division B"
+"Belgio - First Division B",
+"Belgio - Cup Sedicesimi di finale"
 ],
 "Excursionistas": [
 "Excursionistas",
@@ -9063,6 +9470,7 @@
 ],
 "FC Alverca SAD": [
 "Alverca",
+"Portogallo - Liga Portugal",
 "Portogallo - Taca de Portugal"
 ],
 "FC Andorra": [
@@ -9071,8 +9479,8 @@
 ],
 "FC Anyang": [
 "FC Anyang",
-"Corea del Sud - K-League 1 Final Group B",
-"Corea del Sud - K-League 1"
+"Corea del Sud - K-League 1",
+"Corea del Sud - K-League 1 Final Group B"
 ],
 "FC Ararat-Armenia": [
 "Ararat Armenia",
@@ -9093,6 +9501,10 @@
 "FC Arlanda": [
 "FC Arlanda",
 "Svezia - Ettan Norra"
+],
+"FC Ashdod": [
+"FC Ashdod",
+"Israele - Leumit League"
 ],
 "FC Astana": [
 "FC Astana",
@@ -9242,6 +9654,10 @@
 "Dnyapro Mogilev",
 "Bielorussia - Premier League"
 ],
+"FC Dobrudzha": [
+"Dobrudzha Dobrich",
+"Bulgaria - Second Professional League"
+],
 "FC Dynamo-Makhachkala": [
 "Dynamo Makhachkala",
 "Russia - Premier League"
@@ -9280,6 +9696,7 @@
 ],
 "FC Fratria Varna": [
 "Fratria",
+"Bulgaria - Second Professional League",
 "Bulgaria - Cup Sedicesimi di finale"
 ],
 "FC Fredericia": [
@@ -9328,15 +9745,17 @@
 ],
 "FC Halifax": [
 "FC Halifax Town",
+"Inghilterra - National League Cup",
 "Inghilterra - FA Cup Qualificazione",
 "Inghilterra - FA Cup",
 "Inghilterra - National League"
 ],
 "FC Halifax Town": [
 "FC Halifax Town",
+"Inghilterra - National League",
+"Inghilterra - National League Cup",
 "Inghilterra - FA Cup Qualificazione",
-"Inghilterra - FA Cup",
-"Inghilterra - National League"
+"Inghilterra - FA Cup"
 ],
 "FC Hansa Rostock": [
 "Hansa Rostock",
@@ -9371,7 +9790,15 @@
 "Ingolstadt",
 "Germania - 3. Liga"
 ],
+"FC Inter Turku 2": [
+"FC Inter Turku II",
+"Finlandia - Ykkonen Gruppo di Retrocessione"
+],
 "FC Isloch Minsk R.": [
+"Isloch",
+"Bielorussia - Premier League"
+],
+"FC Isloch Minsk Raion": [
 "Isloch",
 "Bielorussia - Premier League"
 ],
@@ -9425,6 +9852,7 @@
 ],
 "FC Krasnodar": [
 "Krasnodar",
+"Russia - Russian Cup",
 "Russia - Premier League"
 ],
 "FC Kryvbas Kriviy Rih": [
@@ -9470,6 +9898,10 @@
 "FC Magdeburg": [
 "Magdeburg",
 "Germania - 2. Bundesliga"
+],
+"FC Memmingen": [
+"FC Memmingen",
+"Germania - Regionalliga Bayern"
 ],
 "FC Meshakhte Tkibuli": [
 "FC Meshakhte Tkibuli",
@@ -9597,6 +10029,14 @@
 "Pro Vercelli",
 "Italia - Serie C"
 ],
+"FC Pyunik": [
+"Pyunik",
+"Armenia - Premier League"
+],
+"FC Rapid 1923": [
+"Rapid București",
+"Romania - Superliga"
+],
 "FC Rapid Bucuresti": [
 "Rapid București",
 "Romania - Superliga"
@@ -9669,8 +10109,8 @@
 ],
 "FC Seoul": [
 "FC Seoul",
-"Corea del Sud - K-League 1 Final Group A",
-"Corea del Sud - K-League 1"
+"Corea del Sud - K-League 1",
+"Corea del Sud - K-League 1 Final Group A"
 ],
 "FC Shakhtar Donetsk": [
 "Shakhtar Donetsk",
@@ -9683,8 +10123,8 @@
 ],
 "FC Sion": [
 "Sion",
-"Svizzera - Cup Sedicesimi di finale",
-"Svizzera - Super League"
+"Svizzera - Super League",
+"Svizzera - Cup Sedicesimi di finale"
 ],
 "FC Slovan Liberec": [
 "Slovan Liberec",
@@ -9739,12 +10179,16 @@
 ],
 "FC Tokyo": [
 "FC Tokyo",
-"Giappone - League Cup",
-"Giappone - J. League"
+"Giappone - J. League",
+"Giappone - League Cup"
 ],
 "FC Torpedo Moscow": [
 "Torpedo Moscow",
 "Russia - First League"
+],
+"FC Torpedo Zhodino": [
+"Torpedo Zhodino",
+"Bielorussia - Premier League"
 ],
 "FC Tulsa": [
 "FC Tulsa",
@@ -10043,9 +10487,17 @@
 "OFK Mladost Donja Gorica",
 "Montenegro - 1. CFL"
 ],
+"FK Mladost Lucani": [
+"Mladost Lučani",
+"Serbia - Super Liga"
+],
 "FK Neftekhimik": [
 "Neftekhimik",
 "Russia - First League"
+],
+"FK Nove Zamky": [
+"FKM Nové Zámky",
+"Slovacchia - FA Cup Sedicesimi di finale"
 ],
 "FK Otrant": [
 "Otrant",
@@ -10066,6 +10518,10 @@
 "FK Partizani Tirana": [
 "Partizani",
 "Albania - Kategoria Superiore"
+],
+"FK Pribram": [
+"Příbram",
+"Cechia - FNL"
 ],
 "FK Qabala": [
 "FK Qabala",
@@ -10095,6 +10551,10 @@
 "FK Skopje": [
 "FK Skopje",
 "Macedonia del Nord - Prva Liga"
+],
+"FK Sloga Doboj": [
+"Sloga Doboj",
+"Bosnia ed Erzegovina - Premier League"
 ],
 "FK Sochi": [
 "Sochi",
@@ -10170,6 +10630,10 @@
 "Zeleziarne Podbrezová",
 "Slovacchia - 1. Liga"
 ],
+"FK Zeljeznicar": [
+"Željezničar",
+"Bosnia ed Erzegovina - Premier League"
+],
 "FK Zemun": [
 "FK Zemun",
 "Serbia - Super Liga"
@@ -10233,8 +10697,8 @@
 ],
 "Fagiano Okayama": [
 "Fagiano Okayama FC",
-"Giappone - League Cup",
-"Giappone - J. League"
+"Giappone - J. League",
+"Giappone - League Cup"
 ],
 "Fajr Sepasi": [
 "Fajr Sepasi",
@@ -10242,10 +10706,12 @@
 ],
 "Fakel": [
 "Fakel",
+"Russia - Russian Cup",
 "Russia - Premier League"
 ],
 "Fakel Voronezh": [
 "Fakel",
+"Russia - Russian Cup",
 "Russia - Premier League"
 ],
 "Falkenberg": [
@@ -10262,8 +10728,8 @@
 ],
 "Famalicao": [
 "Famalicão",
-"Portogallo - Taca de Portugal",
-"Portogallo - Liga Portugal"
+"Portogallo - Liga Portugal",
+"Portogallo - Taca de Portugal"
 ],
 "Fana": [
 "Fana",
@@ -10358,8 +10824,8 @@
 ],
 "Fenerbahce": [
 "Fenerbahçe",
-"Champions League",
-"Turchia - Super Lig"
+"Turchia - Super Lig",
+"Champions League"
 ],
 "Fenerbahce U19": [
 "Fenerbahçe U19",
@@ -10432,6 +10898,10 @@
 "Feyenoord U19",
 "UEFA Youth League - League Stage"
 ],
+"Finlandia D": [
+"Finlandia",
+"Coppa del Mondo femminile Qualificazione UEFA Semifinale"
+],
 "Finn Harps": [
 "Finn Harps",
 "Irlanda - First Division"
@@ -10463,13 +10933,13 @@
 ],
 "Flamengo": [
 "Flamengo",
-"Copa Libertadores Semifinale",
-"Brasile - Série A"
+"Brasile - Série A",
+"Copa Libertadores Semifinale"
 ],
 "Flamengo RJ": [
 "Flamengo",
-"Copa Libertadores Semifinale",
-"Brasile - Série A"
+"Brasile - Série A",
+"Copa Libertadores Semifinale"
 ],
 "Flandria": [
 "Flandria",
@@ -10525,6 +10995,10 @@
 "Flora Tallinn",
 "Estonia - Premium liiga"
 ],
+"Floresta EC": [
+"Floresta",
+"Brasile - Série C"
+],
 "Florgrade": [
 "Florgrade",
 "Portogallo - Taca de Portugal"
@@ -10539,13 +11013,13 @@
 ],
 "Fluminense": [
 "Fluminense",
-"Copa Libertadores Semifinale",
-"Brasile - Série A"
+"Brasile - Série A",
+"Copa Libertadores Semifinale"
 ],
 "Fluminense RJ": [
 "Fluminense",
-"Copa Libertadores Semifinale",
-"Brasile - Série A"
+"Brasile - Série A",
+"Copa Libertadores Semifinale"
 ],
 "Fløya": [
 "Fløya",
@@ -10593,19 +11067,20 @@
 ],
 "Forest Green": [
 "Forest Green",
+"Inghilterra - National League",
 "Inghilterra - FA Cup Qualificazione",
-"Inghilterra - FA Cup",
-"Inghilterra - National League"
+"Inghilterra - FA Cup"
 ],
 "Forest Green Rovers": [
 "Forest Green",
+"Inghilterra - National League",
 "Inghilterra - FA Cup Qualificazione",
-"Inghilterra - FA Cup",
-"Inghilterra - National League"
+"Inghilterra - FA Cup"
 ],
 "Forfar Athletic": [
 "Forfar Athletic",
 "Scozia - League Two",
+"Scozia - Challenge Cup",
 "Scozia - FA Cup"
 ],
 "Forge": [
@@ -10628,10 +11103,12 @@
 ],
 "Formartine United": [
 "Formartine United",
+"Scozia - Challenge Cup",
 "Scozia - Highland League"
 ],
 "Formartine Utd": [
 "Formartine United",
+"Scozia - Challenge Cup",
 "Scozia - Highland League"
 ],
 "Forres Mechanics": [
@@ -10705,8 +11182,8 @@
 ],
 "Francs Borains": [
 "Francs Borains",
-"Belgio - Cup Sedicesimi di finale",
-"Belgio - First Division B"
+"Belgio - First Division B",
+"Belgio - Cup Sedicesimi di finale"
 ],
 "Frankfurt": [
 "Frankfurt",
@@ -10714,6 +11191,7 @@
 ],
 "Fraserburgh": [
 "Fraserburgh",
+"Scozia - Challenge Cup",
 "Scozia - Highland League"
 ],
 "Fratria": [
@@ -10735,8 +11213,8 @@
 ],
 "Freiburg": [
 "Freiburg",
-"Conference League",
-"Germania - Bundesliga"
+"Germania - Bundesliga",
+"Conference League"
 ],
 "Freiburg II": [
 "Freiburg II",
@@ -10791,6 +11269,10 @@
 "Fukushima United",
 "Giappone - J. League 3"
 ],
+"Fukushima United FC": [
+"Fukushima United",
+"Giappone - J. League 3"
+],
 "Fukushima Utd": [
 "Fukushima United",
 "Giappone - J. League 3"
@@ -10813,6 +11295,7 @@
 ],
 "Fulham U21": [
 "Fulham U21",
+"Inghilterra - EFL Trophy",
 "Inghilterra - Premier League 2"
 ],
 "Fundacion Amigos": [
@@ -10861,8 +11344,8 @@
 ],
 "GD Chaves": [
 "Chaves",
-"Portogallo - Taca de Portugal",
-"Portogallo - Liga Portugal 2"
+"Portogallo - Liga Portugal 2",
+"Portogallo - Taca de Portugal"
 ],
 "GD Vitoria Sernache": [
 "Vitória de Sernache",
@@ -10947,21 +11430,26 @@
 ],
 "Gala Fairydean Rovers": [
 "Gala Fairydean Rovers",
+"Scozia - Challenge Cup",
 "Scozia - Lowland League East"
 ],
 "Galatasaray": [
 "Galatasaray",
-"Turchia - Super Lig",
-"Champions League"
+"Champions League",
+"Turchia - Super Lig"
 ],
 "Galatasaray SK": [
 "Galatasaray",
-"Turchia - Super Lig",
-"Champions League"
+"Champions League",
+"Turchia - Super Lig"
 ],
 "Galatasaray U19": [
 "Galatasaray U19",
 "UEFA Youth League - League Stage"
+],
+"Galles D": [
+"Galles",
+"Coppa del Mondo femminile Qualificazione UEFA Semifinale"
 ],
 "Galway": [
 "Galway United FC",
@@ -10981,6 +11469,7 @@
 ],
 "Gamba Osaka": [
 "Gamba Osaka",
+"AFC Champions League Elite East",
 "Giappone - J. League"
 ],
 "Gamla Upsala SK": [
@@ -11029,8 +11518,13 @@
 ],
 "Gateshead": [
 "Gateshead FC",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - National League"
+"Inghilterra - National League",
+"Inghilterra - National League Cup",
+"Inghilterra - FA Cup Qualificazione"
+],
+"Gateshead FC": [
+"Gateshead FC",
+"Inghilterra - National League Cup"
 ],
 "Gaziantep": [
 "Gaziantep FK",
@@ -11107,6 +11601,10 @@
 "Gençlerbirliği",
 "Turchia - Super Lig"
 ],
+"Germania D": [
+"Germania",
+"Amichevoli donne"
+],
 "Gernika": [
 "SD Gernika",
 "Spagna - Segunda Federación"
@@ -11168,6 +11666,10 @@
 "Giana Erminio",
 "Italia - Serie C"
 ],
+"Giappone D": [
+"Giappone",
+"Amichevoli donne"
+],
 "Gifu": [
 "FC Gifu",
 "Giappone - J. League 3"
@@ -11183,13 +11685,14 @@
 ],
 "Gillingham": [
 "Gillingham",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League Two",
 "Inghilterra - FA Cup"
 ],
 "Gimcheon Sangmu": [
 "Gimcheon Sangmu",
-"Corea del Sud - K-League 1 Final Group B",
-"Corea del Sud - K-League 1"
+"Corea del Sud - K-League 1",
+"Corea del Sud - K-League 1 Final Group B"
 ],
 "Gimcheon Sangmu FC": [
 "Gimcheon Sangmu",
@@ -11345,6 +11848,10 @@
 "Rangers",
 "Scozia - Premiership"
 ],
+"Glasgow Rangers FC B": [
+"Rangers B",
+"Scozia - Challenge Cup"
+],
 "Glenavon": [
 "Glenavon",
 "Irlanda del Nord - League Cup Sedicesimi di finale"
@@ -11486,8 +11993,8 @@
 ],
 "Grasshopper": [
 "Grasshopper",
-"Svizzera - Cup Sedicesimi di finale",
-"Svizzera - Super League"
+"Svizzera - Super League",
+"Svizzera - Cup Sedicesimi di finale"
 ],
 "Grasshopper-Club": [
 "Grasshopper",
@@ -11505,6 +12012,10 @@
 "Grazer AK": [
 "Grazer AK",
 "Austria - Bundesliga"
+],
+"Grecia D": [
+"Grecia",
+"Coppa del Mondo femminile Qualificazione UEFA Semifinale"
 ],
 "Greenock Morton": [
 "Greenock Morton",
@@ -11544,8 +12055,12 @@
 ],
 "Gremio": [
 "Grêmio",
-"Brasile - Copa do Brasil Semifinale",
-"Brasile - Série A"
+"Brasile - Série A",
+"Brasile - Copa do Brasil Semifinale"
+],
+"Gremio Novorizontino SP": [
+"Novorizontino",
+"Brasile - Série B"
 ],
 "Gremio RS": [
 "Grêmio",
@@ -11593,13 +12108,14 @@
 ],
 "Grimsby": [
 "Grimsby",
+"Inghilterra - EFL Trophy",
 "Inghilterra - FA Cup",
 "Inghilterra - League Two"
 ],
 "Grimsby Town": [
 "Grimsby",
-"Inghilterra - FA Cup",
-"Inghilterra - League Two"
+"Inghilterra - League Two",
+"Inghilterra - FA Cup"
 ],
 "Grobina": [
 "Grobiņa",
@@ -11637,7 +12153,15 @@
 "Nk Brinje Grosuplje",
 "Slovenia - Prva Liga"
 ],
+"Grêmio Novorizontino": [
+"Novorizontino",
+"Brasile - Série B"
+],
 "Guabira": [
+"Guabirá",
+"Bolivia - Primera División"
+],
+"Guabira Montero": [
 "Guabirá",
 "Bolivia - Primera División"
 ],
@@ -11674,6 +12198,10 @@
 "Cina - China League"
 ],
 "Guarani": [
+"Guaraní",
+"Paraguay - Division Profesional"
+],
+"Guarani CA": [
 "Guaraní",
 "Paraguay - Division Profesional"
 ],
@@ -11723,17 +12251,18 @@
 ],
 "Guiseley": [
 "Guiseley",
-"Inghilterra - FA Cup",
-"Inghilterra - Northern Premier Divisione"
+"Inghilterra - Northern Premier Divisione",
+"Inghilterra - FA Cup"
 ],
 "Guiseley AFC": [
 "Guiseley",
+"Inghilterra - Northern Premier Divisione",
 "Inghilterra - FA Cup Qualificazione",
-"Inghilterra - FA Cup",
-"Inghilterra - Northern Premier Divisione"
+"Inghilterra - FA Cup"
 ],
 "Guoan": [
 "Beijing Guoan",
+"AFC Champions League Elite East",
 "Cina - Super League"
 ],
 "Gwangju": [
@@ -11747,8 +12276,8 @@
 ],
 "Gwangju FC Gwangsan": [
 "Gwangju FC",
-"Corea del Sud - K-League 1 Final Group B",
-"Corea del Sud - K-League 1"
+"Corea del Sud - K-League 1",
+"Corea del Sud - K-League 1 Final Group B"
 ],
 "Gyeongju H & N": [
 "Gyeongju H & N",
@@ -11813,6 +12342,10 @@
 ],
 "H. Ironi Rishon": [
 "Hapoel Rishon LeZion",
+"Israele - Leumit League"
+],
+"H. Raanana": [
+"Hapoel Raanana",
 "Israele - Leumit League"
 ],
 "HA Noi": [
@@ -11908,6 +12441,10 @@
 "HSV Hoek": [
 "Hoek",
 "Paesi Bassi - Tweede Divisie"
+],
+"HUS Agadir": [
+"Hassania Agadir",
+"Marocco - Botola Pro"
 ],
 "HUSQVARNA FF": [
 "Husqvarna FF",
@@ -12025,7 +12562,8 @@
 ],
 "Hamilton Academical": [
 "Hamilton Academical",
-"Scozia - League One"
+"Scozia - League One",
+"Scozia - Challenge Cup"
 ],
 "Hammam Sousse": [
 "ES Hamam Sousse",
@@ -12231,9 +12769,9 @@
 ],
 "Harborough": [
 "Harborough Town FC",
+"Inghilterra - National League North",
 "Inghilterra - FA Cup Qualificazione",
-"Inghilterra - FA Cup",
-"Inghilterra - National League North"
+"Inghilterra - FA Cup"
 ],
 "Harborough Town": [
 "Harborough Town FC",
@@ -12265,9 +12803,9 @@
 ],
 "Harrogate Town": [
 "Harrogate Town",
+"Inghilterra - National League",
 "Inghilterra - FA Cup Qualificazione",
-"Inghilterra - FA Cup",
-"Inghilterra - National League"
+"Inghilterra - FA Cup"
 ],
 "Harstad": [
 "Harstad",
@@ -12279,18 +12817,19 @@
 ],
 "Hartford Athletic": [
 "Hartford Athletic",
-"Stati Uniti - USL Championship Quarto di finale",
-"Stati Uniti - USL Championship"
+"Stati Uniti - USL Championship",
+"Stati Uniti - USL Championship Quarto di finale"
 ],
 "Hartlepool": [
 "Hartlepool United",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - National League"
+"Inghilterra - National League",
+"Inghilterra - National League Cup",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Hartlepool United": [
 "Hartlepool United",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - National League"
+"Inghilterra - National League",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Hassania Agadir": [
 "Hassania Agadir",
@@ -12532,6 +13071,10 @@
 "Hessen Kassel",
 "Germania - Regionalliga Southwest"
 ],
+"Hibernian U21": [
+"Hibernian B",
+"Scozia - Challenge Cup"
+],
 "Hilden": [
 "VfB Hilden",
 "Germania - Regionalliga West"
@@ -12627,6 +13170,10 @@
 "Danimarca - 3. Division"
 ],
 "Holstebro": [
+"Holstebro Boldklub",
+"Danimarca - 3. Division"
+],
+"Holstebro BK": [
 "Holstebro Boldklub",
 "Danimarca - 3. Division"
 ],
@@ -12748,11 +13295,13 @@
 ],
 "Huddersfield": [
 "Huddersfield",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League One",
 "Inghilterra - FA Cup"
 ],
 "Huddersfield Town": [
 "Huddersfield",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League One",
 "Inghilterra - FA Cup"
 ],
@@ -12863,13 +13412,13 @@
 ],
 "IF Brommapojkarna": [
 "Brommapojkarna",
-"Svezia - Damallsvenskan",
-"Svezia - Allsvenskan"
+"Svezia - Allsvenskan",
+"Svezia - Damallsvenskan"
 ],
 "IF Elfsborg": [
 "Elfsborg",
-"Svezia - Elitettan",
-"Svezia - Allsvenskan"
+"Svezia - Allsvenskan",
+"Svezia - Elitettan"
 ],
 "IF Elfsborg Dam": [
 "Elfsborg",
@@ -12909,9 +13458,17 @@
 "IFK Norrköping",
 "Svezia - Superettan"
 ],
+"IFK Norrköping": [
+"IFK Norrköping",
+"Svezia - Superettan"
+],
 "IFK Norrköping Dfk": [
 "IFK Norrköping",
 "Svezia - Damallsvenskan"
+],
+"IFK Norrköping FK": [
+"IFK Norrköping",
+"Svezia - Superettan"
 ],
 "IFK Stocksund": [
 "IFK Stocksund",
@@ -12959,8 +13516,12 @@
 ],
 "Iberia 1999": [
 "Iberia 1999",
-"Conference League",
-"Georgia - Erovnuli Liga"
+"Georgia - Erovnuli Liga",
+"Conference League"
+],
+"Igdir": [
+"Iğdır FK",
+"Turchia - 1. Lig"
 ],
 "Igdir FK": [
 "Iğdır FK",
@@ -13023,8 +13584,8 @@
 ],
 "Ind. Medellin": [
 "Independiente Medellín",
-"Colombia - Cup Quarto di finale",
-"Colombia - Primera A"
+"Colombia - Primera A",
+"Colombia - Cup Quarto di finale"
 ],
 "Ind. Rivadavia": [
 "Independiente Rivadavia",
@@ -13054,8 +13615,8 @@
 ],
 "Independiente Medellin": [
 "Independiente Medellín",
-"Colombia - Cup Quarto di finale",
-"Colombia - Primera A"
+"Colombia - Primera A",
+"Colombia - Cup Quarto di finale"
 ],
 "Independiente Petrolero": [
 "Independiente Petrolero",
@@ -13096,6 +13657,10 @@
 "Indy Eleven": [
 "Indy Eleven",
 "Stati Uniti - USL Championship"
+],
+"Inghilterra D": [
+"Inghilterra",
+"Coppa del Mondo femminile Qualificazione UEFA Semifinale"
 ],
 "Ingolstadt": [
 "Ingolstadt",
@@ -13138,6 +13703,10 @@
 "Inter Santa Tecla",
 "El Salvador - Primera Division - Apertura"
 ],
+"Inter Fa": [
+"Inter Santa Tecla",
+"El Salvador - Primera Division - Apertura"
+],
 "Inter Kashi": [
 "Inter Kashi",
 "India - Indian Super League"
@@ -13151,6 +13720,10 @@
 "Nigeria - NPFL"
 ],
 "Inter Miami": [
+"Inter Miami CF",
+"Stati Uniti - Major League Soccer"
+],
+"Inter Miami CF": [
 "Inter Miami CF",
 "Stati Uniti - Major League Soccer"
 ],
@@ -13215,6 +13788,10 @@
 "Internacional FC de Palmira",
 "Colombia - Primera B"
 ],
+"Internacional Palmira": [
+"Internacional FC de Palmira",
+"Colombia - Primera B"
+],
 "Internacional RS": [
 "Internacional",
 "Brasile - Série A"
@@ -13256,8 +13833,14 @@
 "Ipswich U18",
 "Inghilterra - Premier League U18"
 ],
+"Ipswich Town U21": [
+"Ipswich Town U21",
+"Inghilterra - EFL Trophy",
+"Inghilterra - National League Cup"
+],
 "Ipswich U21": [
 "Ipswich Town U21",
+"Inghilterra - National League Cup",
 "Inghilterra - Premier League 2"
 ],
 "Iraklis": [
@@ -13279,6 +13862,10 @@
 "Iraklis Yerolakkou": [
 "Iraklis Gerolakkou",
 "Cipro - 2. Division"
+],
+"Irlanda del Nord": [
+"Irlanda del Nord",
+"Coppa del Mondo femminile Qualificazione UEFA Semifinale"
 ],
 "Ironi Kiryat Shmona": [
 "Hapoel Ironi Kiryat Shmona",
@@ -13344,6 +13931,10 @@
 "Isidro Metapan",
 "El Salvador - Primera Division - Apertura"
 ],
+"Islanda D": [
+"Islanda",
+"Coppa del Mondo femminile Qualificazione UEFA Semifinale"
+],
 "Isloch": [
 "Isloch",
 "Bielorussia - Premier League"
@@ -13363,6 +13954,10 @@
 "Istanbul Trabzonspor": [
 "Trabzonspor",
 "Turchia - Super Lig"
+],
+"Istanbulspor": [
+"İstanbulspor",
+"Turchia - 1. Lig"
 ],
 "Istanbulspor AS": [
 "İstanbulspor",
@@ -13387,6 +13982,10 @@
 "Itagui Leones": [
 "Leones",
 "Colombia - Primera B"
+],
+"Italia D": [
+"Italia",
+"Coppa del Mondo femminile Qualificazione UEFA Semifinale"
 ],
 "Ittihad AL Shourta": [
 "Ittihad Al Shorta",
@@ -13539,6 +14138,10 @@
 "Java United F.C.",
 "Indonesia - Super League"
 ],
+"Jazz": [
+"FC Jazz",
+"Finlandia - Ykkonen Gruppo di Retrocessione"
+],
 "Jazz Pori": [
 "FC Jazz",
 "Finlandia - Ykkonen Gruppo di Retrocessione"
@@ -13563,8 +14166,8 @@
 ],
 "Jeju United FC": [
 "Jeju SK",
-"Corea del Sud - K-League 1 Final Group B",
-"Corea del Sud - K-League 1"
+"Corea del Sud - K-League 1",
+"Corea del Sud - K-League 1 Final Group B"
 ],
 "Jelgava": [
 "FK Jelgava",
@@ -13657,6 +14260,7 @@
 ],
 "Johor DT": [
 "Johor Darul Ta'zim",
+"AFC Champions League Elite East",
 "Malesia - Liga Super"
 ],
 "Johor Darul Ta'zim": [
@@ -13667,8 +14271,13 @@
 "Johor Darul Ta'zim",
 "Malesia - Liga Super"
 ],
+"Johor Darul Takzim FC": [
+"Johor Darul Ta'zim",
+"AFC Champions League Elite East"
+],
 "Johor Darul Tazim FC": [
 "Johor Darul Ta'zim",
+"AFC Champions League Elite East",
 "Malesia - Liga Super"
 ],
 "Jong AZ": [
@@ -14010,6 +14619,10 @@
 "Kahrbaa Ismailia",
 "Egitto - Cup Sedicesimi di finale"
 ],
+"Kahrabaa Ismailia": [
+"Kahrbaa Ismailia",
+"Egitto - Cup Sedicesimi di finale"
+],
 "Kahrbaa Ismailia": [
 "Kahrbaa Ismailia",
 "Egitto - Cup Sedicesimi di finale"
@@ -14046,6 +14659,7 @@
 ],
 "Kaizer Chiefs": [
 "Kaizer Chiefs",
+"Sudafrica - Premier Soccer League",
 "Sudafrica - League Cup Quarto di finale",
 "CAF Confed Cup - 2nd Girone preliminare"
 ],
@@ -14260,10 +14874,12 @@
 ],
 "Kashima": [
 "Kashima Antlers",
+"AFC Champions League Elite East",
 "Giappone - J. League"
 ],
 "Kashima Antlers": [
 "Kashima Antlers",
+"AFC Champions League Elite East",
 "Giappone - J. League"
 ],
 "Kashiwa Reysol": [
@@ -14340,8 +14956,12 @@
 ],
 "Kawasaki Frontale": [
 "Kawasaki Frontale",
-"Giappone - League Cup",
-"Giappone - J. League"
+"Giappone - J. League",
+"Giappone - League Cup"
+],
+"Kawkab A.C. Marrakech": [
+"KACM",
+"Marocco - Botola Pro"
 ],
 "Kayserispor": [
 "Kayserispor",
@@ -14395,6 +15015,7 @@
 "Kelty Hearts": [
 "Kelty Hearts",
 "Scozia - League Two",
+"Scozia - Challenge Cup",
 "Scozia - FA Cup"
 ],
 "Kerala Blasters": [
@@ -14424,6 +15045,10 @@
 "Inghilterra - Southern Premier Divisione Central"
 ],
 "Kettering Town": [
+"Kettering Town FC",
+"Inghilterra - Southern Premier Divisione Central"
+],
+"Kettering Town FC": [
 "Kettering Town FC",
 "Inghilterra - Southern Premier Divisione Central"
 ],
@@ -14495,9 +15120,9 @@
 ],
 "Kidderminster Harriers": [
 "Kidderminster Harriers",
+"Inghilterra - National League",
 "Inghilterra - FA Cup Qualificazione",
-"Inghilterra - FA Cup",
-"Inghilterra - National League"
+"Inghilterra - FA Cup"
 ],
 "Kifisia": [
 "Kifisia FC",
@@ -14514,6 +15139,10 @@
 "Kilmarnock": [
 "Kilmarnock",
 "Scozia - Premiership"
+],
+"Kilmarnock II": [
+"Kilmarnock B",
+"Scozia - Challenge Cup"
 ],
 "Kilwinning Rangers": [
 "Kilwinning Rangers",
@@ -14638,6 +15267,10 @@
 "HB Køge",
 "Danimarca - 1. Division"
 ],
+"Koge BK": [
+"HB Køge",
+"Danimarca - 1. Division"
+],
 "Kokand 1912": [
 "Kokand 1912",
 "Uzbekistan - Superliga"
@@ -14653,6 +15286,10 @@
 "Kolbotn IL D": [
 "Kolbotn",
 "Norvegia - 1. Division Kvinner"
+],
+"Kolding FC": [
+"Kolding IF",
+"Danimarca - 1. Division"
 ],
 "Kolding IF": [
 "Kolding IF",
@@ -14740,6 +15377,10 @@
 "Slovacchia - FA Cup Sedicesimi di finale",
 "Slovacchia - 1. Liga"
 ],
+"Kosovo": [
+"Kosovo",
+"Coppa del Mondo femminile Qualificazione UEFA Semifinale"
+],
 "Kostolne Kracany": [
 "TJ Kostolne Kracany",
 "Slovacchia - FA Cup Sedicesimi di finale"
@@ -14780,6 +15421,7 @@
 ],
 "Krasnodar": [
 "Krasnodar",
+"Russia - Russian Cup",
 "Russia - Premier League"
 ],
 "Kriens": [
@@ -14935,11 +15577,13 @@
 ],
 "Kyoto": [
 "Kyoto Sanga FC",
+"AFC Champions League Elite East",
 "Giappone - J. League"
 ],
 "Kyoto Sanga": [
 "Kyoto Sanga FC",
-"Giappone - J. League"
+"Giappone - J. League",
+"AFC Champions League Elite East"
 ],
 "Kyzylzhar": [
 "FC Kyzylzhar Petropavlovsk",
@@ -14984,13 +15628,13 @@
 ],
 "LASK": [
 "LASK",
-"Champions League",
-"Austria - Bundesliga"
+"Austria - Bundesliga",
+"Champions League"
 ],
 "LASK Linz": [
 "LASK",
-"Champions League",
-"Austria - Bundesliga"
+"Austria - Bundesliga",
+"Champions League"
 ],
 "LASK U19": [
 "LASK U19",
@@ -15047,6 +15691,10 @@
 "La Guaira": [
 "Deportivo La Guaira",
 "Venezuela - Primera División"
+],
+"La Louviere": [
+"RAAL La Louvière",
+"Belgio - Belgian Pro League"
 ],
 "La Louvière": [
 "RAAL La Louvière",
@@ -15159,6 +15807,10 @@
 "Larne",
 "Irlanda del Nord - Premiership"
 ],
+"Larne FC": [
+"Larne",
+"Irlanda del Nord - Premiership"
+],
 "Las Palmas": [
 "Las Palmas",
 "Spagna - LaLiga2"
@@ -15240,12 +15892,13 @@
 ],
 "Leatherhead": [
 "Leatherhead",
+"Inghilterra - Isthmian Premier Divisione",
 "Inghilterra - FA Cup Qualificazione"
 ],
 "Leca": [
 "Leça",
-"Portogallo - Taca de Portugal",
-"Portogallo - Liga 3"
+"Portogallo - Liga 3",
+"Portogallo - Taca de Portugal"
 ],
 "Lecce": [
 "Lecce",
@@ -15286,6 +15939,7 @@
 ],
 "Leeds U21": [
 "Leeds United U21",
+"Inghilterra - EFL Trophy",
 "Inghilterra - Premier League 2"
 ],
 "Leeds United": [
@@ -15298,6 +15952,7 @@
 ],
 "Leeds United U21": [
 "Leeds United U21",
+"Inghilterra - EFL Trophy",
 "Inghilterra - Premier League 2"
 ],
 "Leek": [
@@ -15311,6 +15966,10 @@
 "Leganes": [
 "Leganés",
 "Spagna - LaLiga2"
+],
+"Leganés": [
+"Leganés",
+"Spagna - Copa del Rey"
 ],
 "Legia": [
 "Legia Warszawa",
@@ -15340,15 +15999,25 @@
 "Miedź Legnica",
 "Polonia - I Liga"
 ],
+"Lehota p. V.": [
+"Baník Lehota pod Vtacnikom",
+"Slovacchia - FA Cup Sedicesimi di finale"
+],
 "Leicester": [
 "Leicester",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League One",
 "Inghilterra - FA Cup"
 ],
 "Leicester City": [
 "Leicester",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League One",
 "Inghilterra - FA Cup"
+],
+"Leicester City Reserve": [
+"Leicester City U21",
+"Inghilterra - National League Cup"
 ],
 "Leicester City U18": [
 "Leicester U18",
@@ -15356,10 +16025,12 @@
 ],
 "Leicester City U21": [
 "Leicester City U21",
+"Inghilterra - National League Cup",
 "Inghilterra - Premier League 2"
 ],
 "Leicester U21": [
 "Leicester City U21",
+"Inghilterra - National League Cup",
 "Inghilterra - Premier League 2"
 ],
 "Leighton Town": [
@@ -15368,8 +16039,8 @@
 ],
 "Leiria": [
 "União de Leiria",
-"Portogallo - Taca de Portugal",
-"Portogallo - Liga Portugal 2"
+"Portogallo - Liga Portugal 2",
+"Portogallo - Taca de Portugal"
 ],
 "Leiston": [
 "Leiston",
@@ -15381,8 +16052,8 @@
 ],
 "Leixoes": [
 "Leixões",
-"Portogallo - Taca de Portugal",
-"Portogallo - Liga Portugal 2"
+"Portogallo - Liga Portugal 2",
+"Portogallo - Taca de Portugal"
 ],
 "Leningradets": [
 "Leningradets",
@@ -15391,8 +16062,8 @@
 ],
 "Lens": [
 "Lens",
-"Francia - Ligue 1",
-"Champions League"
+"Champions League",
+"Francia - Ligue 1"
 ],
 "Lens U19": [
 "Lens U19",
@@ -15404,8 +16075,8 @@
 ],
 "Leones Negros UDG": [
 "UDG",
-"Messico - Liga de Expansión MX - Apertura - Quarter-finals",
-"Messico - Liga de Expansión MX"
+"Messico - Liga de Expansión MX",
+"Messico - Liga de Expansión MX - Apertura - Quarter-finals"
 ],
 "Leones del Norte": [
 "Leones del Norte",
@@ -15452,6 +16123,7 @@
 ],
 "Leyton Orient": [
 "Leyton Orient",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League One",
 "Inghilterra - FA Cup"
 ],
@@ -15469,8 +16141,8 @@
 ],
 "Libertad": [
 "Libertad",
-"Ecuador - Serie A - Copa Sudamericana Play-off",
-"Paraguay - Division Profesional"
+"Paraguay - Division Profesional",
+"Ecuador - Serie A - Copa Sudamericana Play-off"
 ],
 "Libertad Asuncion": [
 "Libertad",
@@ -15584,11 +16256,19 @@
 "Lincoln Red Imps FC",
 "Conference League"
 ],
+"Lincoln Red Imps U19": [
+"Lincoln Red Imps FC U19",
+"UEFA Youth League - 1st Round"
+],
 "Lindab Stefanesti": [
 "CSL Ștefănești",
 "Romania - Liga II"
 ],
 "Linfield": [
+"Linfield",
+"Irlanda del Nord - Premiership"
+],
+"Linfield FC": [
 "Linfield",
 "Irlanda del Nord - Premiership"
 ],
@@ -15606,8 +16286,8 @@
 ],
 "Lion City": [
 "Lion City Sailors FC",
-"AFC Champions League Two",
-"Singapore - Premier League"
+"Singapore - Premier League",
+"AFC Champions League Two"
 ],
 "Lion City Sailors": [
 "Lion City Sailors FC",
@@ -15629,6 +16309,10 @@
 "Liptovský Mikuláš",
 "Slovacchia - FA Cup Sedicesimi di finale"
 ],
+"Lito": [
+"CA Lito",
+"Uruguay - Cup Quarto di finale"
+],
 "Liverpool": [
 "Liverpool",
 "Inghilterra - Premier League",
@@ -15646,6 +16330,7 @@
 ],
 "Liverpool FC U21": [
 "Liverpool U21",
+"Inghilterra - EFL Trophy",
 "Inghilterra - Premier League 2"
 ],
 "Liverpool M.": [
@@ -15670,6 +16355,7 @@
 ],
 "Liverpool U21": [
 "Liverpool U21",
+"Inghilterra - EFL Trophy",
 "Inghilterra - Premier League 2"
 ],
 "Livingston": [
@@ -15711,13 +16397,13 @@
 ],
 "Llaneros": [
 "Llaneros FC",
-"Colombia - Cup Quarto di finale",
-"Colombia - Primera A"
+"Colombia - Primera A",
+"Colombia - Cup Quarto di finale"
 ],
 "Llaneros FC": [
 "Llaneros FC",
-"Colombia - Cup Quarto di finale",
-"Colombia - Primera A"
+"Colombia - Primera A",
+"Colombia - Cup Quarto di finale"
 ],
 "Lobos Upnfm": [
 "Lobos UPNFM",
@@ -15727,6 +16413,10 @@
 "Lochee United",
 "Scozia - Lowland League East",
 "Scozia - FA Cup"
+],
+"Logrones": [
+"Logroñés",
+"Spagna - Copa del Rey"
 ],
 "Logrono United": [
 "Logroño United",
@@ -15762,6 +16452,7 @@
 ],
 "Lokomotiv": [
 "Lokomotiv",
+"Russia - Russian Cup",
 "Russia - Premier League"
 ],
 "Lokomotiv G. Oryahovitsa": [
@@ -15779,13 +16470,13 @@
 ],
 "Lokomotiv Plovdiv": [
 "Lokomotiv Plovdiv",
-"Bulgaria - Cup Sedicesimi di finale",
-"Bulgaria - First Professional League"
+"Bulgaria - First Professional League",
+"Bulgaria - Cup Sedicesimi di finale"
 ],
 "Lokomotiv Sofia": [
 "PFC Lokomotiv Sofia 1929",
-"Bulgaria - Cup Sedicesimi di finale",
-"Bulgaria - First Professional League"
+"Bulgaria - First Professional League",
+"Bulgaria - Cup Sedicesimi di finale"
 ],
 "Lokomotiv Tashkent": [
 "Lokomotiv Tashkent",
@@ -15869,6 +16560,7 @@
 ],
 "Los Angeles FC 2": [
 "Los Angeles FC II",
+"Stati Uniti - MLS Next Pro - Championship - Final",
 "Stati Uniti - MLS Next Pro - Conference - Quarter-finals"
 ],
 "Los Angeles FC II": [
@@ -15915,8 +16607,8 @@
 ],
 "Louisville City FC": [
 "Louisville City FC",
-"Stati Uniti - USL Championship Quarto di finale",
-"Stati Uniti - USL Championship"
+"Stati Uniti - USL Championship",
+"Stati Uniti - USL Championship Quarto di finale"
 ],
 "Louletano": [
 "Louletano",
@@ -15933,8 +16625,8 @@
 ],
 "Ludogorets": [
 "Ludogorets Razgrad",
-"Bulgaria - Cup Sedicesimi di finale",
-"Bulgaria - First Professional League"
+"Bulgaria - First Professional League",
+"Bulgaria - Cup Sedicesimi di finale"
 ],
 "Ludogorets II": [
 "Ludogorets Razgrad II",
@@ -15942,10 +16634,14 @@
 ],
 "Ludogorets Razgrad": [
 "Ludogorets Razgrad",
-"Bulgaria - Cup Sedicesimi di finale",
-"Bulgaria - First Professional League"
+"Bulgaria - First Professional League",
+"Bulgaria - Cup Sedicesimi di finale"
 ],
 "Ludogorets Razgrad B": [
+"Ludogorets Razgrad II",
+"Bulgaria - Second Professional League"
+],
+"Ludogorets Razgrad II": [
 "Ludogorets Razgrad II",
 "Bulgaria - Second Professional League"
 ],
@@ -16006,8 +16702,8 @@
 ],
 "Lusitania": [
 "Lusitânia Lourosa",
-"Portogallo - Taca de Portugal",
-"Portogallo - Liga Portugal 2"
+"Portogallo - Liga Portugal 2",
+"Portogallo - Taca de Portugal"
 ],
 "Lusitania FC": [
 "Lusitânia Lourosa",
@@ -16048,8 +16744,8 @@
 ],
 "Luzern": [
 "Luzern",
-"Svizzera - Cup Sedicesimi di finale",
-"Svizzera - Super League"
+"Svizzera - Super League",
+"Svizzera - Cup Sedicesimi di finale"
 ],
 "Lyn 1896 FK": [
 "Lyn",
@@ -16087,6 +16783,10 @@
 "M E A P Nisou": [
 "MEAP Nisou",
 "Cipro - 2. Division"
+],
+"M S Minyat Samanod": [
+"Samanod",
+"Egitto - Cup Sedicesimi di finale"
 ],
 "M'Gladbach": [
 "M'gladbach",
@@ -16144,8 +16844,8 @@
 ],
 "MFK Kosice": [
 "FC Košice",
-"Slovacchia - FA Cup Sedicesimi di finale",
-"Slovacchia - 1. Liga"
+"Slovacchia - 1. Liga",
+"Slovacchia - FA Cup Sedicesimi di finale"
 ],
 "MFK Lokomotiva Zvolen": [
 "MFK Zvolen",
@@ -16306,9 +17006,9 @@
 ],
 "Macclesfield Town": [
 "Macclesfield",
+"Inghilterra - National League North",
 "Inghilterra - FA Cup Qualificazione",
-"Inghilterra - FA Cup",
-"Inghilterra - National League North"
+"Inghilterra - FA Cup"
 ],
 "Machida": [
 "Machida Zelvia",
@@ -16453,6 +17153,10 @@
 "Maldon & Tiptree",
 "Inghilterra - Isthmian Premier Divisione"
 ],
+"Maldon Tiptree": [
+"Maldon & Tiptree",
+"Inghilterra - Isthmian Premier Divisione"
+],
 "Maldonado": [
 "Deportivo Maldonado",
 "Uruguay - Cup Sedicesimi di finale",
@@ -16489,6 +17193,7 @@
 ],
 "Mamelodi Sundowns": [
 "Mamelodi Sundowns FC",
+"Sudafrica - Premier Soccer League",
 "CAF Super Cup Finale",
 "CAF Champions League Qualificazione"
 ],
@@ -16502,11 +17207,12 @@
 ],
 "Manchester City": [
 "Man City",
-"Champions League",
-"Inghilterra - Premier League"
+"Inghilterra - Premier League",
+"Champions League"
 ],
 "Manchester City D": [
 "Manchester City",
+"UEFA Women's Champions League",
 "Inghilterra - WSL"
 ],
 "Manchester City U19": [
@@ -16585,11 +17291,13 @@
 ],
 "Mansfield": [
 "Mansfield",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League One",
 "Inghilterra - FA Cup"
 ],
 "Mansfield Town": [
 "Mansfield",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League One",
 "Inghilterra - FA Cup"
 ],
@@ -16658,9 +17366,9 @@
 ],
 "Marine": [
 "Marine",
+"Inghilterra - National League North",
 "Inghilterra - FA Cup Qualificazione",
-"Inghilterra - FA Cup",
-"Inghilterra - National League North"
+"Inghilterra - FA Cup"
 ],
 "Marines Eureka": [
 "Marines",
@@ -16668,6 +17376,7 @@
 ],
 "Maringa FC": [
 "Maringá",
+"Brasile - Série C",
 "Brasile - Série C Finale"
 ],
 "Marino De Luanco": [
@@ -16716,10 +17425,14 @@
 "Mashal Muborak",
 "Uzbekistan - Superliga"
 ],
+"Mashujaa": [
+"Mashujaa",
+"Tanzania - Premier League"
+],
 "Matsumoto Yamaga": [
 "Matsumoto Yamaga",
-"Giappone - League Cup",
-"Giappone - J. League 3"
+"Giappone - J. League 3",
+"Giappone - League Cup"
 ],
 "Matsumoto Yamaga FC": [
 "Matsumoto Yamaga",
@@ -16788,6 +17501,7 @@
 ],
 "Melbourne Victory FC": [
 "Melbourne Victory",
+"Australia - Australia Cup Finale",
 "Australia - A-League"
 ],
 "Melgar": [
@@ -16870,6 +17584,10 @@
 "Metalul Buzău",
 "Romania - Liga II"
 ],
+"Metalul Buzău": [
+"Metalul Buzău",
+"Romania - Liga II"
+],
 "Metapan": [
 "Isidro Metapan",
 "El Salvador - Primera Division - Apertura"
@@ -16908,12 +17626,13 @@
 ],
 "Miami FC": [
 "Miami FC",
-"Stati Uniti - USL Championship Quarto di finale",
-"Stati Uniti - USL Championship"
+"Stati Uniti - USL Championship",
+"Stati Uniti - USL Championship Quarto di finale"
 ],
 "Michalovce": [
 "Zemplín Michalovce",
-"Slovacchia - 1. Liga"
+"Slovacchia - 1. Liga",
+"Slovacchia - FA Cup Sedicesimi di finale"
 ],
 "Middelfart": [
 "Middelfart",
@@ -16964,6 +17683,7 @@
 ],
 "Mijas Las Lagunas": [
 "Mijas-Las Lagunas",
+"Spagna - Copa del Rey",
 "Spagna - Segunda Federación"
 ],
 "Mikkelin Palloilijat": [
@@ -16996,6 +17716,7 @@
 ],
 "Milton Keynes Dons": [
 "MK Dons",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League One",
 "Inghilterra - FA Cup"
 ],
@@ -17091,6 +17812,10 @@
 "Mjøndalen",
 "Norvegia - 2. Divisjon Avd. 1"
 ],
+"Mjondalen IF": [
+"Mjøndalen",
+"Norvegia - 2. Divisjon Avd. 1"
+],
 "Mjällby": [
 "Mjällby",
 "Svezia - Allsvenskan"
@@ -17133,7 +17858,11 @@
 ],
 "Modern Sport": [
 "Modern Sport FC",
-"Egitto - Cup Sedicesimi di finale",
+"Egitto - Premier League",
+"Egitto - Cup Sedicesimi di finale"
+],
+"Modern Sport FC": [
+"Modern Sport FC",
 "Egitto - Premier League"
 ],
 "Moghreb Tetouan": [
@@ -17244,6 +17973,10 @@
 "Montpellier FC",
 "Francia - Premiere Ligue"
 ],
+"Montreal": [
+"Montreal",
+"Stati Uniti - Major League Soccer"
+],
 "Montreal Impact": [
 "Montreal",
 "Stati Uniti - Major League Soccer",
@@ -17251,7 +17984,8 @@
 ],
 "Montrose": [
 "Montrose",
-"Scozia - League One"
+"Scozia - League One",
+"Scozia - Challenge Cup"
 ],
 "Montrose FC": [
 "Montrose",
@@ -17267,8 +18001,8 @@
 ],
 "Morecambe": [
 "Morecambe",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - National League North"
+"Inghilterra - National League North",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Moreirense": [
 "Moreirense",
@@ -17302,8 +18036,12 @@
 ],
 "Motherwell": [
 "Motherwell",
-"Scozia - SWPL 1",
-"Scozia - Premiership"
+"Scozia - Premiership",
+"Scozia - SWPL 1"
+],
+"Motherwell U21": [
+"Motherwell B",
+"Scozia - Challenge Cup"
 ],
 "Motor Lublin": [
 "Motor Lublin",
@@ -17485,6 +18223,10 @@
 "Nafta",
 "Slovenia - Prva Liga"
 ],
+"NK Olimpija Ljubljana": [
+"Olimpija Ljubljana",
+"Slovenia - Prva Liga"
+],
 "NK Osijek": [
 "Osijek",
 "Croazia - HNL"
@@ -17528,10 +18270,10 @@
 ],
 "Nacional": [
 "Nacional",
-"Uruguay - Cup Sedicesimi di finale",
-"Portogallo - Taca de Portugal",
 "Uruguay - Liga AUF Uruguaya Clausura",
-"Portogallo - Liga Portugal"
+"Portogallo - Liga Portugal",
+"Uruguay - Cup Sedicesimi di finale",
+"Portogallo - Taca de Portugal"
 ],
 "Nacional Potosi": [
 "Nacional Potosí",
@@ -17615,8 +18357,8 @@
 ],
 "Nagoya Grampus": [
 "Nagoya Grampus",
-"Giappone - League Cup",
-"Giappone - J. League"
+"Giappone - J. League",
+"Giappone - League Cup"
 ],
 "Nagykanizsa": [
 "Nagykanizsa",
@@ -17737,6 +18479,10 @@
 "National Bank",
 "Egitto - Premier League"
 ],
+"National Bank Of Egypt SC": [
+"National Bank",
+"Egitto - Premier League"
+],
 "National Bank of Egypt": [
 "National Bank",
 "Egitto - Premier League",
@@ -17790,14 +18536,20 @@
 ],
 "Neftchi": [
 "Neftchi Fargona",
+"AFC Champions League Elite West",
 "Uzbekistan - Superliga"
 ],
 "Neftchi Baku": [
 "FK Neftchi",
 "Azerbaigian - Premier League"
 ],
+"Neftchi Farg'ona": [
+"Neftchi Fargona",
+"AFC Champions League Elite West"
+],
 "Neftchi Fargona": [
 "Neftchi Fargona",
+"AFC Champions League Elite West",
 "Uzbekistan - Superliga"
 ],
 "Neftekhimik": [
@@ -17921,6 +18673,7 @@
 ],
 "Newcastle Jets": [
 "Newcastle Jets",
+"AFC Champions League Elite East",
 "Australia - A-League Women",
 "Australia - A-League"
 ],
@@ -17938,6 +18691,7 @@
 ],
 "Newcastle United Jets": [
 "Newcastle Jets",
+"AFC Champions League Elite East",
 "Australia - A-League"
 ],
 "Newcastle United U18": [
@@ -17946,6 +18700,7 @@
 ],
 "Newcastle United U21": [
 "Newcastle United U21",
+"Inghilterra - National League Cup",
 "Inghilterra - Premier League 2"
 ],
 "Newcastle United Wfc": [
@@ -17955,6 +18710,7 @@
 ],
 "Newcastle Utd U21": [
 "Newcastle United U21",
+"Inghilterra - National League Cup",
 "Inghilterra - Premier League 2"
 ],
 "Newell's Old Boys": [
@@ -18049,6 +18805,10 @@
 "FC Noah",
 "Armenia - Premier League"
 ],
+"Nomme JK Kalju": [
+"Nõmme JK Kalju",
+"Estonia - Premium liiga"
+],
 "Nomme United": [
 "Nõmme United",
 "Estonia - Premium liiga"
@@ -18116,13 +18876,19 @@
 ],
 "Northampton": [
 "Northampton",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League Two",
 "Inghilterra - FA Cup"
 ],
 "Northampton Town": [
 "Northampton",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League Two",
 "Inghilterra - FA Cup"
+],
+"Norvegia D": [
+"Norvegia",
+"Coppa del Mondo femminile Qualificazione UEFA Semifinale"
 ],
 "Norwich": [
 "Norwich",
@@ -18138,10 +18904,12 @@
 ],
 "Norwich City U21": [
 "Norwich City U21",
+"Inghilterra - National League Cup",
 "Inghilterra - Premier League 2"
 ],
 "Norwich U21": [
 "Norwich City U21",
+"Inghilterra - National League Cup",
 "Inghilterra - Premier League 2"
 ],
 "Notodden": [
@@ -18162,11 +18930,13 @@
 ],
 "Nottingham Forest U21": [
 "Nottingham Forest U21",
+"Inghilterra - EFL Trophy",
 "Inghilterra - Premier League 2",
 "Inghilterra - National League Cup"
 ],
 "Nottingham U21": [
 "Nottingham Forest U21",
+"Inghilterra - EFL Trophy",
 "Inghilterra - Premier League 2",
 "Inghilterra - National League Cup"
 ],
@@ -18176,10 +18946,12 @@
 ],
 "Notts Co.": [
 "Notts County",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League One"
 ],
 "Notts County": [
 "Notts County",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League One",
 "Inghilterra - FA Cup"
 ],
@@ -18363,6 +19135,10 @@
 "OLS",
 "Finlandia - Ykkonen Championship Gruppo"
 ],
+"OS Belenenses": [
+"CF Os Belenenses",
+"Portogallo - Liga 3"
+],
 "OS TF": [
 "Os",
 "Norvegia - Norsk Tipping-ligaen"
@@ -18380,6 +19156,10 @@
 "Germania - Regionalliga West"
 ],
 "Obolon": [
+"Obolon Kyiv",
+"Ucraina - Premier League"
+],
+"Obolon Brovar": [
 "Obolon Kyiv",
 "Ucraina - Premier League"
 ],
@@ -18443,6 +19223,10 @@
 "Kickers Offenbach",
 "Germania - Regionalliga Southwest"
 ],
+"Ofk Banik Lehota Pod Vtacnikom": [
+"Baník Lehota pod Vtacnikom",
+"Slovacchia - FA Cup Sedicesimi di finale"
+],
 "Ogre United": [
 "Ogre United",
 "Lettonia - Virsliga"
@@ -18486,13 +19270,15 @@
 ],
 "Oldham": [
 "Oldham",
+"Inghilterra - EFL Trophy",
 "Inghilterra - FA Cup",
 "Inghilterra - League Two"
 ],
 "Oldham Athletic": [
 "Oldham",
-"Inghilterra - FA Cup",
-"Inghilterra - League Two"
+"Inghilterra - League Two",
+"Inghilterra - EFL Trophy",
+"Inghilterra - FA Cup"
 ],
 "Olhanense": [
 "Olhanense",
@@ -18630,6 +19416,10 @@
 "One Knoxville SC",
 "Stati Uniti - USL League One"
 ],
+"One Knoxville Sc": [
+"One Knoxville SC",
+"Stati Uniti - USL League One"
+],
 "Opava": [
 "Opava",
 "Cechia - FNL"
@@ -18657,6 +19447,10 @@
 "Oran": [
 "MC Oran",
 "Algeria - Ligue 1"
+],
+"Orange County": [
+"Orange County SC",
+"Stati Uniti - USL Championship"
 ],
 "Orange County SC": [
 "Orange County SC",
@@ -18711,6 +19505,10 @@
 "Orihuela",
 "Spagna - Segunda Federación"
 ],
+"Orihuela CF": [
+"Orihuela",
+"Spagna - Segunda Federación"
+],
 "Orkla": [
 "Orkla",
 "Norvegia - Norsk Tipping-ligaen"
@@ -18729,6 +19527,7 @@
 ],
 "Orlando Pirates": [
 "Orlando Pirates",
+"Sudafrica - Premier Soccer League",
 "CAF Champions League Qualificazione",
 "Sudafrica - League Cup Quarto di finale"
 ],
@@ -18753,6 +19552,10 @@
 "Norvegia - Norsk Tipping-ligaen"
 ],
 "Orsomarso": [
+"Orsomarso",
+"Colombia - Primera B"
+],
+"Orsomarso SC": [
 "Orsomarso",
 "Colombia - Primera B"
 ],
@@ -18863,17 +19666,19 @@
 ],
 "Oxford": [
 "Oxford Utd",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League One",
 "Inghilterra - FA Cup"
 ],
 "Oxford City": [
 "Oxford City",
+"Inghilterra - National League North",
 "Inghilterra - FA Cup Qualificazione",
-"Inghilterra - FA Cup",
-"Inghilterra - National League North"
+"Inghilterra - FA Cup"
 ],
 "Oxford United": [
 "Oxford Utd",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League One",
 "Inghilterra - FA Cup"
 ],
@@ -18917,6 +19722,10 @@
 "PAOK II": [
 "PAOK Thessaloniki B",
 "Grecia - Super League 2"
+],
+"PAOK Salonicco": [
+"PAOK Thessaloniki",
+"Grecia - Super League"
 ],
 "PAOK Thessaloniki B": [
 "PAOK Thessaloniki B",
@@ -19036,8 +19845,8 @@
 ],
 "PSV": [
 "PSV Eindhoven",
-"Paesi Bassi - Eredivisie",
-"Champions League"
+"Champions League",
+"Paesi Bassi - Eredivisie"
 ],
 "PSV U19": [
 "PSV Eindhoven U19",
@@ -19115,10 +19924,12 @@
 ],
 "Pakhtakor": [
 "Pakhtakor Tashkent",
+"AFC Champions League Elite West",
 "Uzbekistan - Superliga"
 ],
 "Pakhtakor Tashkent": [
 "Pakhtakor Tashkent",
+"AFC Champions League Elite West",
 "Uzbekistan - Superliga"
 ],
 "Pakistan": [
@@ -19147,9 +19958,9 @@
 ],
 "Palmeiras": [
 "Palmeiras",
+"Brasile - Série A",
 "Brasile - Copa do Brasil Semifinale",
-"Copa Libertadores Semifinale",
-"Brasile - Série A"
+"Copa Libertadores Semifinale"
 ],
 "Pamba": [
 "Pamba Jiji",
@@ -19158,6 +19969,10 @@
 "Pamba Jiji": [
 "Pamba Jiji",
 "Tanzania - Premier League"
+],
+"Pamplona": [
+"Pamplona",
+"Spagna - Copa del Rey"
 ],
 "Panaitolikos": [
 "Panetolikos",
@@ -19239,13 +20054,9 @@
 ],
 "Paris FC": [
 "Paris FC",
+"UEFA Women's Champions League",
 "Francia - Ligue 1",
 "Francia - Premiere Ligue"
-],
-"Paris Saint Germain": [
-"PSG",
-"Champions League",
-"Francia - Ligue 1"
 ],
 "Parma": [
 "Parma",
@@ -19321,10 +20132,14 @@
 "Patriotas",
 "Colombia - Primera B"
 ],
+"Patriotas FC": [
+"Patriotas",
+"Colombia - Primera B"
+],
 "Patro Eisden": [
 "Patro Eisden",
-"Belgio - Cup Sedicesimi di finale",
-"Belgio - First Division B"
+"Belgio - First Division B",
+"Belgio - Cup Sedicesimi di finale"
 ],
 "Patro Eisden Maasmechelen": [
 "Patro Eisden",
@@ -19535,7 +20350,12 @@
 ],
 "Peterhead": [
 "Peterhead",
-"Scozia - League One"
+"Scozia - League One",
+"Scozia - Challenge Cup"
+],
+"Peterhead FC": [
+"Peterhead",
+"Scozia - Challenge Cup"
 ],
 "Petro Atletico De Luanda": [
 "Petro Atlético",
@@ -19547,8 +20367,8 @@
 ],
 "Petrojet": [
 "Petrojet-Suez",
-"Egitto - Cup Sedicesimi di finale",
-"Egitto - Premier League"
+"Egitto - Premier League",
+"Egitto - Cup Sedicesimi di finale"
 ],
 "Petrojet-Suez": [
 "Petrojet-Suez",
@@ -19723,19 +20543,21 @@
 ],
 "Plymouth": [
 "Plymouth",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League One",
 "Inghilterra - FA Cup"
 ],
 "Plymouth Argyle": [
 "Plymouth",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League One",
 "Inghilterra - FA Cup"
 ],
 "Plymouth Parkway": [
 "Plymouth Parkway",
-"Inghilterra - FA Cup Qualificazione",
+"Inghilterra - FA Cup",
 "Inghilterra - Southern Premier Divisione South",
-"Inghilterra - FA Cup"
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Plzen": [
 "Viktoria Plzeň",
@@ -19796,11 +20618,13 @@
 ],
 "Pohang": [
 "Pohang Steelers",
+"AFC Champions League Elite East",
 "Corea del Sud - K-League 1 Final Group B",
 "Corea del Sud - K-League 1"
 ],
 "Pohang Steelers": [
 "Pohang Steelers",
+"AFC Champions League Elite East",
 "Corea del Sud - K-League 1 Final Group B",
 "Corea del Sud - K-League 1"
 ],
@@ -19856,6 +20680,10 @@
 "Polonia Bytom",
 "Polonia - I Liga"
 ],
+"Polonia D": [
+"Polonia",
+"Coppa del Mondo femminile Qualificazione UEFA Semifinale"
+],
 "Polonia Varsavia": [
 "Polonia Warszawa",
 "Polonia - I Liga"
@@ -19885,6 +20713,10 @@
 "Inghilterra - Southern Premier Divisione South"
 ],
 "Poole Town": [
+"Poole Town FC",
+"Inghilterra - Southern Premier Divisione South"
+],
+"Poole Town FC": [
 "Poole Town FC",
 "Inghilterra - Southern Premier Divisione South"
 ],
@@ -19923,8 +20755,8 @@
 ],
 "Port MTI FC": [
 "Port FC",
-"AFC Champions League Elite East",
 "Thailandia - Thai League",
+"AFC Champions League Elite East",
 "Thailandia - FA Cup - 2nd Round"
 ],
 "Port Vale": [
@@ -19978,6 +20810,10 @@
 "Porto U19": [
 "FC Porto U19",
 "UEFA Youth League - League Stage"
+],
+"Portogallo D": [
+"Portogallo",
+"Coppa del Mondo femminile Qualificazione UEFA Semifinale"
 ],
 "Portsmouth": [
 "Portsmouth",
@@ -20124,6 +20960,10 @@
 "Punjab FC",
 "India - Indian Super League"
 ],
+"Puntarenas": [
+"Puntarenas FC",
+"Costa Rica - Primera Division Apertura"
+],
 "Puntarenas FC": [
 "Puntarenas FC",
 "Costa Rica - Primera Division Apertura"
@@ -20164,9 +21004,9 @@
 ],
 "Pyramids FC": [
 "Pyramids FC",
+"Egitto - Premier League",
 "CAF Champions League Qualificazione",
-"Egitto - Cup Sedicesimi di finale",
-"Egitto - Premier League"
+"Egitto - Cup Sedicesimi di finale"
 ],
 "Pyrgos": [
 "Pyrgos AFC",
@@ -20240,9 +21080,14 @@
 "Queen of the South",
 "Scozia - League One"
 ],
+"Queen Of The South FC": [
+"Queen of the South",
+"Scozia - Challenge Cup"
+],
 "Queen of South": [
 "Queen of the South",
-"Scozia - League One"
+"Scozia - League One",
+"Scozia - Challenge Cup"
 ],
 "Queen's Park": [
 "Queen's Park",
@@ -20314,8 +21159,8 @@
 ],
 "RAAL La Louviere": [
 "RAAL La Louvière",
-"Belgio - Cup Sedicesimi di finale",
-"Belgio - Belgian Pro League"
+"Belgio - Belgian Pro League",
+"Belgio - Cup Sedicesimi di finale"
 ],
 "RAAL La Louvière": [
 "RAAL La Louvière",
@@ -20383,6 +21228,10 @@
 ],
 "RFC Seraing": [
 "RFC Seraing",
+"Belgio - First Division B"
+],
+"RFC de Liege": [
+"FC Liège",
 "Belgio - First Division B"
 ],
 "RFS": [
@@ -20471,8 +21320,8 @@
 ],
 "Racing Genk": [
 "Genk",
-"Belgio - Cup Sedicesimi di finale",
-"Belgio - Belgian Pro League"
+"Belgio - Belgian Pro League",
+"Belgio - Cup Sedicesimi di finale"
 ],
 "Racing Louisville FC": [
 "Racing Louisville",
@@ -20601,11 +21450,16 @@
 ],
 "Rangers": [
 "Rangers",
-"Cile - Primera B",
-"Scozia - Premiership"
+"Scozia - Premiership",
+"Cile - Primera B"
+],
+"Rangers B": [
+"Rangers B",
+"Scozia - Challenge Cup"
 ],
 "Rangers Int'l": [
 "Enugu Rangers",
+"Nigeria - NPFL",
 "CAF Champions League Qualificazione"
 ],
 "Rangers Lfc": [
@@ -20615,6 +21469,10 @@
 "Rangers Talca": [
 "Rangers",
 "Cile - Primera B"
+],
+"Rangers U21": [
+"Rangers B",
+"Scozia - Challenge Cup"
 ],
 "Ranheim": [
 "Ranheim",
@@ -20678,6 +21536,7 @@
 ],
 "Ratchaburi": [
 "Ratchaburi FC",
+"AFC Champions League Elite East",
 "Thailandia - Thai League",
 "Thailandia - FA Cup - 2nd Round"
 ],
@@ -20736,6 +21595,7 @@
 ],
 "Reading": [
 "Reading",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League One",
 "Inghilterra - FA Cup"
 ],
@@ -20800,14 +21660,23 @@
 "Real Jaén",
 "Spagna - Primera Federación"
 ],
+"Real Jaen CF": [
+"Real Jaén",
+"Spagna - Copa del Rey"
+],
+"Real Jaén": [
+"Real Jaén",
+"Spagna - Copa del Rey"
+],
 "Real Kashmir": [
 "Real Kashmir FC",
 "India - I League"
 ],
 "Real Madrid": [
 "Real Madrid",
-"Champions League",
+"UEFA Women's Champions League",
 "Spagna - LaLiga",
+"Champions League",
 "Spagna - Liga F"
 ],
 "Real Madrid C": [
@@ -20948,6 +21817,10 @@
 "Red Star",
 "Francia - Ligue 2"
 ],
+"Red Star FC 93": [
+"Red Star",
+"Francia - Ligue 2"
+],
 "Redcar Athletic": [
 "Redcar Athletic",
 "Inghilterra - Northern Premier Divisione"
@@ -21021,6 +21894,10 @@
 "Renaissance Club Zemamra",
 "Marocco - Botola Pro"
 ],
+"Renaissance de Berkane": [
+"RS Berkane",
+"Marocco - Botola Pro"
+],
 "Renate": [
 "Renate",
 "Italia - Serie C"
@@ -21077,6 +21954,7 @@
 ],
 "Richards Bay": [
 "Richards Bay",
+"Sudafrica - Premier Soccer League",
 "Sudafrica - League Cup - 1st Round"
 ],
 "Richards Bay Fc": [
@@ -21115,8 +21993,8 @@
 ],
 "Rilski Sportist": [
 "Rilski Sportist",
-"Bulgaria - Cup Sedicesimi di finale",
-"Bulgaria - Second Professional League"
+"Bulgaria - Second Professional League",
+"Bulgaria - Cup Sedicesimi di finale"
 ],
 "Rilski sportist": [
 "Rilski Sportist",
@@ -21141,9 +22019,9 @@
 ],
 "River Plate": [
 "River Plate",
-"Uruguay - Cup Sedicesimi di finale",
+"Uruguay - Segunda Division",
 "Argentina - Liga Profesional",
-"Uruguay - Segunda Division"
+"Uruguay - Cup Sedicesimi di finale"
 ],
 "Rivers United": [
 "Rivers United FC",
@@ -21213,9 +22091,14 @@
 ],
 "Roma": [
 "Roma",
+"UEFA Women's Champions League",
 "Champions League",
 "Italia - Serie A",
 "Italia - Serie A Femminile"
+],
+"Romania": [
+"Romania",
+"Coppa del Mondo femminile Qualificazione UEFA Semifinale"
 ],
 "Romklao United": [
 "Romklao United",
@@ -21256,7 +22139,8 @@
 ],
 "Ross County": [
 "Ross County",
-"Scozia - League One"
+"Scozia - League One",
+"Scozia - Challenge Cup"
 ],
 "Rostov FK": [
 "Rostov",
@@ -21314,8 +22198,8 @@
 ],
 "Royal Antwerp": [
 "Royal Antwerp",
-"Belgio - Cup Sedicesimi di finale",
-"Belgio - Belgian Pro League"
+"Belgio - Belgian Pro League",
+"Belgio - Cup Sedicesimi di finale"
 ],
 "Royal Excelsior Virton": [
 "Virton",
@@ -21425,6 +22309,7 @@
 ],
 "S. Kostroma": [
 "Spartak Kostroma",
+"Russia - Cup",
 "Russia - First League"
 ],
 "S. Rzeszow": [
@@ -21474,6 +22359,10 @@
 "SC Delhi": [
 "SC Delhi",
 "India - Indian Super League"
+],
+"SC East Bengal": [
+"East Bengal FC",
+"AFC Champions League Two"
 ],
 "SC Eltersdorf": [
 "SC Eltersdorf",
@@ -21571,8 +22460,13 @@
 ],
 "SCU Torreense": [
 "Torreense",
-"Europa League",
-"Portogallo - Liga Portugal 2"
+"Portogallo - Liga Portugal 2",
+"Europa League"
+],
+"SD Amorebieta": [
+"SD Amorebieta",
+"Spagna - Copa del Rey",
+"Spagna - Segunda Federación"
 ],
 "SD Eibar": [
 "Eibar",
@@ -21758,8 +22652,8 @@
 ],
 "SSC Napoli": [
 "Napoli",
-"Italia - Serie A",
-"Champions League"
+"Champions League",
+"Italia - Serie A"
 ],
 "SSD Palermo": [
 "Palermo",
@@ -21853,6 +22747,10 @@
 "Zulte Waregem",
 "Belgio - Cup Sedicesimi di finale"
 ],
+"SVATY JUR": [
+"Svaty Jur",
+"Slovacchia - FA Cup Sedicesimi di finale"
+],
 "Saarbrucken": [
 "Saarbrücken",
 "Germania - 3. Liga"
@@ -21867,8 +22765,8 @@
 ],
 "Sabah Baku": [
 "Sabah FK",
-"Azerbaigian - Premier League",
-"Champions League"
+"Champions League",
+"Azerbaigian - Premier League"
 ],
 "Sabah Baku U19": [
 "Sabah FK U19",
@@ -21877,6 +22775,10 @@
 "Sabah FC": [
 "Sabah FK",
 "Azerbaigian - Premier League"
+],
+"Sabah FK": [
+"Sabah FK",
+"Champions League"
 ],
 "Sabah Masazir": [
 "Sabah FK",
@@ -21889,8 +22791,8 @@
 ],
 "Sacramento Republic": [
 "Sacramento Republic FC",
-"Stati Uniti - USL Championship Quarto di finale",
-"Stati Uniti - USL Championship"
+"Stati Uniti - USL Championship",
+"Stati Uniti - USL Championship Quarto di finale"
 ],
 "Sacramento Republic FC": [
 "Sacramento Republic FC",
@@ -21902,8 +22804,8 @@
 ],
 "Sagan Tosu": [
 "Sagan Tosu",
-"Giappone - League Cup",
-"Giappone - J. League 2"
+"Giappone - J. League 2",
+"Giappone - League Cup"
 ],
 "SaiPa": [
 "Saipa",
@@ -21990,14 +22892,14 @@
 ],
 "Salisbury": [
 "Salisbury",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - National League South"
+"Inghilterra - National League South",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Salisbury City": [
 "Salisbury",
+"Inghilterra - National League South",
 "Inghilterra - FA Cup Qualificazione",
-"Inghilterra - FA Cup",
-"Inghilterra - National League South"
+"Inghilterra - FA Cup"
 ],
 "Salisbury FC": [
 "Salisbury",
@@ -22207,6 +23109,10 @@
 "Sandefjord 2",
 "Norvegia - Norsk Tipping-ligaen"
 ],
+"Sandefjord Fotball 2": [
+"Sandefjord 2",
+"Norvegia - Norsk Tipping-ligaen"
+],
 "Sandefjord II": [
 "Sandefjord 2",
 "Norvegia - Norsk Tipping-ligaen"
@@ -22238,8 +23144,8 @@
 ],
 "Sangju Sangmu FC": [
 "Gimcheon Sangmu",
-"Corea del Sud - K-League 1 Final Group B",
-"Corea del Sud - K-League 1"
+"Corea del Sud - K-League 1",
+"Corea del Sud - K-League 1 Final Group B"
 ],
 "Sanjoanense": [
 "Sanjoanense",
@@ -22262,8 +23168,13 @@
 "Portogallo - Liga Portugal",
 "Portogallo - Taca de Portugal"
 ],
+"Santa Cruz RN": [
+"Santa Cruz",
+"Brasile - Série C"
+],
 "Santa Fe": [
 "Santa Fe",
+"Colombia - Cup Ottavi di finale",
 "Colombia - Primera A"
 ],
 "Santarem": [
@@ -22338,13 +23249,17 @@
 ],
 "Sarmiento de La Banda": [
 "Sarmiento de La Banda",
-"Argentina - Federal A Promotion Quarto di finale",
 "Argentina - Federal A Promotion Sedicesimi di finale",
+"Argentina - Federal A Promotion Quarto di finale",
 "Argentina - Federal A Promotion Ottavi di finale"
 ],
 "Sarpsborg 08": [
 "Sarpsborg 08",
 "Norvegia - Eliteserien"
+],
+"Sarpsborg 08 2": [
+"Sarpsborg 08 2",
+"Norvegia - Norsk Tipping-ligaen"
 ],
 "Sarpsborg 08 FF": [
 "Sarpsborg 08",
@@ -22452,15 +23367,17 @@
 ],
 "Scunthorpe": [
 "Scunthorpe",
+"Inghilterra - National League",
+"Inghilterra - National League Cup",
 "Inghilterra - FA Cup Qualificazione",
-"Inghilterra - FA Cup",
-"Inghilterra - National League"
+"Inghilterra - FA Cup"
 ],
 "Scunthorpe United": [
 "Scunthorpe",
+"Inghilterra - National League",
+"Inghilterra - National League Cup",
 "Inghilterra - FA Cup Qualificazione",
-"Inghilterra - FA Cup",
-"Inghilterra - National League"
+"Inghilterra - FA Cup"
 ],
 "Seattle Sounders": [
 "Seattle Sounders",
@@ -22565,13 +23482,13 @@
 ],
 "Septemvri Sofia": [
 "Septemvri Sofia",
-"Bulgaria - Cup Sedicesimi di finale",
-"Bulgaria - First Professional League"
+"Bulgaria - First Professional League",
+"Bulgaria - Cup Sedicesimi di finale"
 ],
 "Seraing": [
 "RFC Seraing",
-"Belgio - Cup Sedicesimi di finale",
-"Belgio - First Division B"
+"Belgio - First Division B",
+"Belgio - Cup Sedicesimi di finale"
 ],
 "Seraing United": [
 "RFC Seraing",
@@ -22580,16 +23497,26 @@
 ],
 "Seraing Utd": [
 "RFC Seraing",
-"Belgio - Cup Sedicesimi di finale",
-"Belgio - First Division B"
+"Belgio - First Division B",
+"Belgio - Cup Sedicesimi di finale"
+],
+"Serbia": [
+"Serbia",
+"Coppa del Mondo femminile Qualificazione UEFA Semifinale"
 ],
 "Servette": [
 "Servette",
+"UEFA Women's Champions League",
+"Svizzera - Super League",
 "Svizzera - Cup Sedicesimi di finale"
 ],
 "Servette FC": [
 "Servette",
 "Svizzera - Super League"
+],
+"Servette Geneva": [
+"Servette",
+"UEFA Women's Champions League"
 ],
 "Sestao": [
 "Sestao",
@@ -22633,8 +23560,17 @@
 ],
 "Shabab Al Ahli Dubai": [
 "Shabab Al-Ahli Dubai FC",
+"AFC Champions League Elite West",
 "Emirati Arabi Uniti - Pro League",
 "Emirati Arabi Uniti - President's Cup Ottavi di finale"
+],
+"Shabab Al Hussein": [
+"Al-Hussein SC",
+"AFC Champions League Two"
+],
+"Shabab Al-Ahli Dubai": [
+"Shabab Al-Ahli Dubai FC",
+"AFC Champions League Elite West"
 ],
 "Shahin Bandar Ameri": [
 "Shahin Bandar Ameri",
@@ -22660,6 +23596,7 @@
 ],
 "Shamal": [
 "Al-Shamal",
+"AFC Champions League Elite West",
 "Qatar - Qatar Stars League"
 ],
 "Shamal 2": [
@@ -22696,6 +23633,7 @@
 ],
 "Shanghai Port": [
 "Shanghai Port",
+"AFC Champions League Elite East",
 "Cina - Super League"
 ],
 "Shanghai Shenhua": [
@@ -22729,13 +23667,13 @@
 ],
 "Sheffield Wed": [
 "Sheff Wed",
-"Inghilterra - FA Cup",
-"Inghilterra - League One"
+"Inghilterra - League One",
+"Inghilterra - FA Cup"
 ],
 "Sheffield Wednesday": [
 "Sheff Wed",
-"Inghilterra - FA Cup",
-"Inghilterra - League One"
+"Inghilterra - League One",
+"Inghilterra - FA Cup"
 ],
 "Shelbourne": [
 "Shelbourne",
@@ -22791,13 +23729,13 @@
 ],
 "Shimizu S-Pulse": [
 "Shimizu S-Pulse",
-"Giappone - League Cup",
-"Giappone - J. League"
+"Giappone - J. League",
+"Giappone - League Cup"
 ],
 "Shinnik Yaroslavl": [
 "Shinnik Yaroslavl",
-"Russia - Cup",
-"Russia - First League"
+"Russia - First League",
+"Russia - Cup"
 ],
 "Shirak": [
 "Shirak",
@@ -22821,9 +23759,9 @@
 ],
 "Sholing": [
 "Sholing",
+"Inghilterra - Southern Premier Divisione South",
 "Inghilterra - FA Cup Qualificazione",
-"Inghilterra - FA Cup",
-"Inghilterra - Southern Premier Divisione South"
+"Inghilterra - FA Cup"
 ],
 "Sholing FC": [
 "Sholing",
@@ -22885,10 +23823,12 @@
 ],
 "Simba": [
 "Simba SC",
+"Tanzania - Premier League",
 "CAF Champions League Qualificazione"
 ],
 "Singida Black Stars": [
 "Singida Black Stars",
+"Tanzania - Premier League",
 "CAF Confed Cup - 2nd Girone preliminare"
 ],
 "Sint Truiden": [
@@ -23040,13 +23980,13 @@
 ],
 "Slavia Praga": [
 "Slavia Prague",
-"Cechia - 1. Liga",
-"Champions League"
+"Champions League",
+"Cechia - 1. Liga"
 ],
 "Slavia Prague": [
 "Slavia Prague",
-"Cechia - 1. Liga",
-"Champions League"
+"Champions League",
+"Cechia - 1. Liga"
 ],
 "Slavia Prague B": [
 "Slavia Prague B",
@@ -23058,8 +23998,8 @@
 ],
 "Slavia Praha": [
 "Slavia Prague",
-"Cechia - 1. Liga",
-"Champions League"
+"Champions League",
+"Cechia - 1. Liga"
 ],
 "Slavia Praha B": [
 "Slavia Prague B",
@@ -23075,8 +24015,8 @@
 ],
 "Slavia Sofia": [
 "Slavia Sofia",
-"Bulgaria - Cup Sedicesimi di finale",
-"Bulgaria - First Professional League"
+"Bulgaria - First Professional League",
+"Bulgaria - Cup Sedicesimi di finale"
 ],
 "Sligo Rovers": [
 "Sligo Rovers",
@@ -23098,14 +24038,18 @@
 "Slough Town",
 "Inghilterra - National League South"
 ],
+"Slovacchia D": [
+"Slovacchia",
+"Coppa del Mondo femminile Qualificazione UEFA Semifinale"
+],
 "Slovacko": [
 "Slovácko",
 "Cechia - 1. Liga"
 ],
 "Slovan Bratislava": [
 "Slovan Bratislava",
-"Champions League",
-"Slovacchia - 1. Liga"
+"Slovacchia - 1. Liga",
+"Champions League"
 ],
 "Slovan Bratislava U19": [
 "Slovan Bratislava U19",
@@ -23114,6 +24058,10 @@
 "Slovan Liberec": [
 "Slovan Liberec",
 "Cechia - 1. Liga"
+],
+"Slovenia": [
+"Slovenia",
+"Coppa del Mondo femminile Qualificazione UEFA Semifinale"
 ],
 "Smouha": [
 "Smouha SC",
@@ -23170,8 +24118,13 @@
 ],
 "Solihull Moors": [
 "Solihull Moors",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - National League"
+"Inghilterra - National League",
+"Inghilterra - National League Cup",
+"Inghilterra - FA Cup Qualificazione"
+],
+"Solihull Moors F.c.": [
+"Solihull Moors",
+"Inghilterra - National League Cup"
 ],
 "Sollentuna": [
 "Sollentuna FK",
@@ -23228,12 +24181,13 @@
 ],
 "South Melbourne": [
 "South Melbourne",
+"Australia - Australia Cup Finale",
 "Australia - Australia Championship"
 ],
 "South Shields": [
 "South Shields",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - National League North"
+"Inghilterra - National League North",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Southampton": [
 "Southampton",
@@ -23245,17 +24199,18 @@
 ],
 "Southampton U21": [
 "Southampton U21",
+"Inghilterra - National League Cup",
 "Inghilterra - Premier League 2"
 ],
 "Southend": [
 "Southend",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - National League"
+"Inghilterra - National League",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Southend United": [
 "Southend",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - National League"
+"Inghilterra - National League",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Southport": [
 "Southport",
@@ -23263,8 +24218,8 @@
 ],
 "Sp. Hasselt": [
 "Sporting Hasselt",
-"Belgio - Cup Sedicesimi di finale",
-"Belgio - First Division B"
+"Belgio - First Division B",
+"Belgio - Cup Sedicesimi di finale"
 ],
 "Sp. Luqueno": [
 "Luqueño",
@@ -23300,8 +24255,8 @@
 ],
 "Spalding United": [
 "Spalding United",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - National League North"
+"Inghilterra - National League North",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Sparta Praga": [
 "Sparta Prague",
@@ -23324,6 +24279,7 @@
 ],
 "Spartak Kostroma": [
 "Spartak Kostroma",
+"Russia - Cup",
 "Russia - First League"
 ],
 "Spartak Myjava": [
@@ -23362,10 +24318,12 @@
 "Spartans": [
 "Spartans FC",
 "Scozia - League Two",
+"Scozia - Challenge Cup",
 "Scozia - FA Cup"
 ],
 "Spartans Edinburgh": [
 "Spartans FC",
+"Scozia - Challenge Cup",
 "Scozia - League Two"
 ],
 "Spartans Wfc": [
@@ -23379,8 +24337,8 @@
 ],
 "Spennymoor Town": [
 "Spennymoor Town FC",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - National League North"
+"Inghilterra - National League North",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Spezia": [
 "Spezia",
@@ -23441,8 +24399,8 @@
 ],
 "Sporting CP": [
 "Sporting CP",
-"Portogallo - Liga Portugal",
-"Champions League"
+"Champions League",
+"Portogallo - Liga Portugal"
 ],
 "Sporting CP B": [
 "Sporting CP B",
@@ -23540,8 +24498,8 @@
 ],
 "Sportivo San Lorenzo": [
 "Sportivo San Lorenzo",
-"Paraguay - Cup Quarto di finale",
-"Paraguay - Division Profesional"
+"Paraguay - Division Profesional",
+"Paraguay - Cup Quarto di finale"
 ],
 "Sportivo Trinidense": [
 "Sportivo Trinidense",
@@ -23583,6 +24541,10 @@
 "St. Mirren",
 "Scozia - Premiership"
 ],
+"St Mirren B": [
+"St. Mirren B",
+"Scozia - Challenge Cup"
+],
 "St Patrick's Athl.": [
 "St. Patrick's Athletic",
 "Irlanda - Premier Divisione"
@@ -23593,6 +24555,7 @@
 ],
 "St Truiden": [
 "St.Truiden",
+"Belgio - Belgian Pro League",
 "Conference League"
 ],
 "St. Albans": [
@@ -23620,6 +24583,10 @@
 "St. Louis City II": [
 "St. Louis City 2",
 "Stati Uniti - MLS Next Pro - Conference - Quarter-finals"
+],
+"St. Mirren U21": [
+"St. Mirren B",
+"Scozia - Challenge Cup"
 ],
 "St. Patrick's Athletic": [
 "St. Patrick's Athletic",
@@ -23707,6 +24674,10 @@
 "Stade Tunisien",
 "Tunisia - Ligue I"
 ],
+"Stade tunisien": [
+"Stade Tunisien",
+"Tunisia - Ligue I"
+],
 "Stafford": [
 "Stafford Rangers",
 "Inghilterra - FA Cup"
@@ -23738,8 +24709,8 @@
 ],
 "Standard Liege": [
 "Standard Liège",
-"Belgio - Cup Sedicesimi di finale",
-"Belgio - Belgian Pro League"
+"Belgio - Belgian Pro League",
+"Belgio - Cup Sedicesimi di finale"
 ],
 "Standard Liegi": [
 "Standard Liège",
@@ -23774,6 +24745,10 @@
 "Start",
 "Norvegia - Eliteserien"
 ],
+"Start IK": [
+"Start",
+"Norvegia - Eliteserien"
+],
 "Steaua Bucuresti": [
 "Steaua București",
 "Romania - Liga II"
@@ -23788,6 +24763,7 @@
 ],
 "Stellenbosch": [
 "Stellenbosch FC",
+"Sudafrica - Premier Soccer League",
 "Sudafrica - League Cup Quarto di finale"
 ],
 "Stenhousemuir": [
@@ -23800,6 +24776,7 @@
 ],
 "Stevenage": [
 "Stevenage",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League One",
 "Inghilterra - FA Cup"
 ],
@@ -23815,6 +24792,7 @@
 "Stirling Albion": [
 "Stirling Albion",
 "Scozia - League Two",
+"Scozia - Challenge Cup",
 "Scozia - FA Cup"
 ],
 "Stirling University": [
@@ -23852,13 +24830,15 @@
 ],
 "Stockport": [
 "Stockport County",
-"Inghilterra - FA Cup",
-"Inghilterra - League One"
+"Inghilterra - EFL Trophy",
+"Inghilterra - League One",
+"Inghilterra - FA Cup"
 ],
 "Stockport County": [
 "Stockport County",
-"Inghilterra - FA Cup",
-"Inghilterra - League One"
+"Inghilterra - EFL Trophy",
+"Inghilterra - League One",
+"Inghilterra - FA Cup"
 ],
 "Stocksund": [
 "IFK Stocksund",
@@ -23882,6 +24862,7 @@
 ],
 "Stoke City Reserve": [
 "Stoke City U21",
+"Inghilterra - National League Cup",
 "Inghilterra - Premier League 2"
 ],
 "Stoke City U18": [
@@ -23890,6 +24871,7 @@
 ],
 "Stoke City U21": [
 "Stoke City U21",
+"Inghilterra - National League Cup",
 "Inghilterra - Premier League 2"
 ],
 "Stord": [
@@ -23900,13 +24882,18 @@
 "Stourbridge",
 "Inghilterra - Southern Premier Divisione Central"
 ],
+"Stourbridge FC": [
+"Stourbridge",
+"Inghilterra - Southern Premier Divisione Central"
+],
 "Strabane Athletic": [
 "Strabane Athletic",
 "Irlanda del Nord - League Cup Sedicesimi di finale"
 ],
 "Stranraer": [
 "Stranraer",
-"Scozia - League Two"
+"Scozia - League Two",
+"Scozia - Challenge Cup"
 ],
 "Stranraer FC": [
 "Stranraer",
@@ -23938,6 +24925,10 @@
 "Isole Faroe - Premier League"
 ],
 "Strindheim": [
+"Strindheim",
+"Norvegia - Norsk Tipping-ligaen"
+],
+"Strindheim TF": [
 "Strindheim",
 "Norvegia - Norsk Tipping-ligaen"
 ],
@@ -24029,8 +25020,8 @@
 ],
 "Suez Petrojet": [
 "Petrojet-Suez",
-"Egitto - Cup Sedicesimi di finale",
-"Egitto - Premier League"
+"Egitto - Premier League",
+"Egitto - Cup Sedicesimi di finale"
 ],
 "Sukhothai": [
 "Sukhothai FC",
@@ -24131,18 +25122,21 @@
 ],
 "Sutton": [
 "Sutton United",
+"Inghilterra - National League Cup",
 "Inghilterra - FA Cup Qualificazione",
 "Inghilterra - FA Cup",
 "Inghilterra - National League"
 ],
 "Sutton United": [
 "Sutton United",
+"Inghilterra - National League Cup",
 "Inghilterra - FA Cup Qualificazione",
 "Inghilterra - FA Cup",
 "Inghilterra - National League"
 ],
 "Sutton Utd": [
 "Sutton United",
+"Inghilterra - National League Cup",
 "Inghilterra - FA Cup Qualificazione",
 "Inghilterra - FA Cup",
 "Inghilterra - National League"
@@ -24201,11 +25195,13 @@
 ],
 "Swindon": [
 "Swindon",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League Two",
 "Inghilterra - FA Cup"
 ],
 "Swindon Town": [
 "Swindon",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League Two",
 "Inghilterra - FA Cup"
 ],
@@ -24354,6 +25350,10 @@
 "Tromsø",
 "Norvegia - 1. Division Kvinner"
 ],
+"TS Galaxy": [
+"TS Galaxy",
+"Sudafrica - Premier Soccer League"
+],
 "TSG Hoffenheim": [
 "Hoffenheim",
 "Germania - Bundesliga",
@@ -24441,8 +25441,8 @@
 ],
 "Talaea El Gaish": [
 "Tala'ea El Gaish",
-"Egitto - Cup Sedicesimi di finale",
-"Egitto - Premier League"
+"Egitto - Premier League",
+"Egitto - Cup Sedicesimi di finale"
 ],
 "Talleres": [
 "Talleres",
@@ -24503,13 +25503,13 @@
 ],
 "Tampines Rovers FC": [
 "Tampines Rovers FC",
-"AFC Champions League Two",
-"Singapore - Premier League"
+"Singapore - Premier League",
+"AFC Champions League Two"
 ],
 "Tamworth": [
 "Tamworth",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - National League"
+"Inghilterra - National League",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Tanjong Pagar": [
 "Tanjong Pagar United FC",
@@ -24547,6 +25547,10 @@
 "Tasmania Berlin",
 "Germania - Regionalliga Northeast"
 ],
+"Tatran Presov": [
+"Tatran Prešov",
+"Slovacchia - FA Cup Sedicesimi di finale"
+],
 "Taunton": [
 "Taunton Town",
 "Inghilterra - Southern Premier Divisione South"
@@ -24562,6 +25566,10 @@
 "Tauro FC": [
 "Tauro FC",
 "Panama - LPF Apertura"
+],
+"Tavernes": [
+"Tavernes de la Valldigna",
+"Spagna - Copa del Rey"
 ],
 "Team Altamura": [
 "Team Altamura",
@@ -24614,6 +25622,7 @@
 ],
 "Tenerife": [
 "Tenerife",
+"Spagna - Copa del Rey",
 "Spagna - LaLiga2"
 ],
 "Tenerife B": [
@@ -24812,8 +25821,8 @@
 ],
 "Tlaxcala": [
 "Tlaxcala FC",
-"Messico - Liga de Expansión MX - Apertura - Quarter-finals",
-"Messico - Liga de Expansión MX"
+"Messico - Liga de Expansión MX",
+"Messico - Liga de Expansión MX - Apertura - Quarter-finals"
 ],
 "Tlaxcala FC": [
 "Tlaxcala FC",
@@ -24919,23 +25928,24 @@
 ],
 "Torquay": [
 "Torquay United",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - National League South"
+"Inghilterra - National League South",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Torquay United": [
 "Torquay United",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - National League South"
+"Inghilterra - National League South",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Torque": [
 "Torque",
+"Uruguay - Cup Quarto di finale",
 "Copa Sudamericana Semifinale",
 "Uruguay - Liga AUF Uruguaya Clausura"
 ],
 "Torreense": [
 "Torreense",
-"Europa League",
-"Portogallo - Liga Portugal 2"
+"Portogallo - Liga Portugal 2",
+"Europa League"
 ],
 "Torremolinos": [
 "Juventud Torremolinos CF",
@@ -24959,10 +25969,12 @@
 ],
 "Tottenham Hotspur U21": [
 "Tottenham Hotspur U21",
+"Inghilterra - EFL Trophy",
 "Inghilterra - Premier League 2"
 ],
 "Tottenham U21": [
 "Tottenham Hotspur U21",
+"Inghilterra - EFL Trophy",
 "Inghilterra - Premier League 2"
 ],
 "Toulouse": [
@@ -24984,14 +25996,17 @@
 ],
 "Tractor": [
 "Tractor",
+"AFC Champions League Elite West",
 "Iran - Persian Gulf"
 ],
 "Tractor Sazi": [
 "Tractor",
+"AFC Champions League Elite West",
 "Iran - Persian Gulf"
 ],
 "Tractor Sport Club": [
 "Tractor",
+"AFC Champions League Elite West",
 "Iran - Persian Gulf"
 ],
 "Traeff": [
@@ -25010,11 +26025,13 @@
 ],
 "Tranmere": [
 "Tranmere",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League Two",
 "Inghilterra - FA Cup"
 ],
 "Tranmere Rovers": [
 "Tranmere",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League Two",
 "Inghilterra - FA Cup"
 ],
@@ -25084,10 +26101,14 @@
 "Tristán Suárez",
 "Argentina - Primera Nacional"
 ],
+"Trival Valderas": [
+"Trival Valderas",
+"Spagna - Copa del Rey"
+],
 "Trnava": [
 "Spartak Trnava",
-"Slovacchia - FA Cup Sedicesimi di finale",
-"Slovacchia - 1. Liga"
+"Slovacchia - 1. Liga",
+"Slovacchia - FA Cup Sedicesimi di finale"
 ],
 "Trofense": [
 "Trofense",
@@ -25147,13 +26168,15 @@
 ],
 "Truro": [
 "Truro City",
+"Inghilterra - National League Cup",
 "Inghilterra - FA Cup Qualificazione",
 "Inghilterra - National League South"
 ],
 "Truro City": [
 "Truro City",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - National League South"
+"Inghilterra - National League South",
+"Inghilterra - National League Cup",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Trygg-lade": [
 "Trygg/Lade",
@@ -25194,6 +26217,10 @@
 "Turan Tovuz": [
 "Turan Tovuz",
 "Azerbaigian - Premier League"
+],
+"Turchia D": [
+"Turchia",
+"Coppa del Mondo femminile Qualificazione UEFA Semifinale"
 ],
 "Turku II": [
 "FC Inter Turku II",
@@ -25247,8 +26274,8 @@
 ],
 "U. Catolica": [
 "Universidad Católica",
-"Cile - Primera División",
-"Ecuador - Serie A - Championship Round"
+"Ecuador - Serie A - Championship Round",
+"Cile - Primera División"
 ],
 "U. Cluj": [
 "Universitatea Cluj",
@@ -25258,6 +26285,10 @@
 "Universidad de Chile",
 "Cile - Primera División",
 "Cile - Cup Quarto di finale"
+],
+"U. De Concepcion": [
+"Universidad de Concepción",
+"Cile - Primera División"
 ],
 "U. Espanola": [
 "Unión Española",
@@ -25351,6 +26382,10 @@
 "UE Olot",
 "Spagna - Segunda Federación"
 ],
+"UE Tavernes": [
+"Tavernes de la Valldigna",
+"Spagna - Copa del Rey"
+],
 "UMECIT": [
 "UMECIT FC",
 "Panama - LPF Apertura"
@@ -25370,6 +26405,10 @@
 "UNAM Pumas": [
 "Pumas",
 "Messico - Liga MX"
+],
+"UNIV DE VINTO": [
+"Universitario de Vinto",
+"Bolivia - Primera División"
 ],
 "UPNFM": [
 "Lobos UPNFM",
@@ -25437,8 +26476,8 @@
 ],
 "USM Alger": [
 "USM Alger",
-"CAF Super Cup Finale",
 "Algeria - Ligue 1",
+"CAF Super Cup Finale",
 "CAF Confed Cup - 2nd Girone preliminare"
 ],
 "USM Khenchela": [
@@ -25452,6 +26491,10 @@
 "UTC Cajamarca": [
 "CD UT Cajamarca",
 "Perù - Liga 1"
+],
+"Ucraina": [
+"Ucraina",
+"Coppa del Mondo femminile Qualificazione UEFA Semifinale"
 ],
 "Udinese": [
 "Udinese",
@@ -25525,8 +26568,8 @@
 ],
 "Ulsan Hyundai Horang-i": [
 "Ulsan HD FC",
-"Corea del Sud - K-League 1 Final Group A",
-"Corea del Sud - K-League 1"
+"Corea del Sud - K-League 1",
+"Corea del Sud - K-League 1 Final Group A"
 ],
 "Ulyanovsk": [
 "Volga Ulyanovsk",
@@ -25567,8 +26610,8 @@
 ],
 "Uniao Leiria": [
 "União de Leiria",
-"Portogallo - Taca de Portugal",
-"Portogallo - Liga Portugal 2"
+"Portogallo - Liga Portugal 2",
+"Portogallo - Taca de Portugal"
 ],
 "Uniao Serra": [
 "União Serra",
@@ -25714,8 +26757,8 @@
 ],
 "Universidad Catolica": [
 "Universidad Católica",
-"Cile - Primera División",
-"Ecuador - Serie A - Championship Round"
+"Ecuador - Serie A - Championship Round",
+"Cile - Primera División"
 ],
 "Universidad Catolica Del Ecuador": [
 "Universidad Católica",
@@ -25725,9 +26768,17 @@
 "Universidad Central",
 "Venezuela - Primera División"
 ],
+"Universidad Central de Venezuela": [
+"Universidad Central",
+"Venezuela - Primera División"
+],
 "Universidad De Chile": [
 "Universidad de Chile",
 "Copa Libertadores Femenina"
+],
+"Universidad De Concepcion": [
+"Universidad de Concepción",
+"Cile - Primera División"
 ],
 "Universidad de Chile": [
 "Universidad de Chile",
@@ -25776,6 +26827,10 @@
 "União de Leiria",
 "Portogallo - Taca de Portugal",
 "Portogallo - Liga Portugal 2"
+],
+"Unión San Felipe": [
+"Unión San Felipe",
+"Cile - Primera B"
 ],
 "Unterhaching": [
 "Unterhaching",
@@ -25884,8 +26939,8 @@
 ],
 "Uxbridge": [
 "Uxbridge",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - Southern Premier Divisione South"
+"Inghilterra - Southern Premier Divisione South",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Uxbridge FC": [
 "Uxbridge",
@@ -25951,6 +27006,10 @@
 "Vado",
 "Italia - Serie C"
 ],
+"Vaduz": [
+"FC Vaduz",
+"Svizzera - Super League"
+],
 "Vaesteraas IK": [
 "Västerås SK",
 "Svezia - Allsvenskan"
@@ -25961,6 +27020,7 @@
 ],
 "Valencia": [
 "Valencia",
+"Spagna - Copa del Rey",
 "Spagna - LaLiga"
 ],
 "Valencia B": [
@@ -26129,9 +27189,9 @@
 ],
 "Vasco da Gama": [
 "Vasco da Gama",
+"Brasile - Série A",
 "Copa Sudamericana Semifinale",
-"Brasile - Copa do Brasil Semifinale",
-"Brasile - Série A"
+"Brasile - Copa do Brasil Semifinale"
 ],
 "Vasteras SK": [
 "Västerås SK",
@@ -26184,8 +27244,8 @@
 ],
 "Venados FC": [
 "Venados",
-"Messico - Liga de Expansión MX - Apertura - Quarter-finals",
-"Messico - Liga de Expansión MX"
+"Messico - Liga de Expansión MX",
+"Messico - Liga de Expansión MX - Apertura - Quarter-finals"
 ],
 "Vendee Foot Club La Roche Sur Yon": [
 "La Roche VF",
@@ -26281,9 +27341,9 @@
 ],
 "VfB Stuttgart": [
 "VfB Stuttgart",
+"Germania - Bundesliga",
 "Germania - Frauen-Bundesliga",
-"Champions League",
-"Germania - Bundesliga"
+"Champions League"
 ],
 "VfB Stuttgart II": [
 "VfB Stuttgart II",
@@ -26323,8 +27383,8 @@
 ],
 "Vianense": [
 "Vianense",
-"Portogallo - Taca de Portugal",
-"Portogallo - Liga 3"
+"Portogallo - Liga 3",
+"Portogallo - Taca de Portugal"
 ],
 "Viborg": [
 "Viborg",
@@ -26375,8 +27435,8 @@
 ],
 "Viking": [
 "Viking",
-"Norvegia - Eliteserien",
-"Champions League"
+"Champions League",
+"Norvegia - Eliteserien"
 ],
 "Viking 2": [
 "Viking 2",
@@ -26384,6 +27444,7 @@
 ],
 "Viking FK": [
 "Viking",
+"Champions League",
 "Norvegia - 1. Division Kvinner"
 ],
 "Viking II": [
@@ -26508,8 +27569,8 @@
 ],
 "Viseu": [
 "Académico Viseu",
-"Portogallo - Taca de Portugal",
-"Portogallo - Liga Portugal"
+"Portogallo - Liga Portugal",
+"Portogallo - Taca de Portugal"
 ],
 "Vision": [
 "Vision FC",
@@ -26546,8 +27607,8 @@
 ],
 "Vitoria Guimaraes": [
 "Vitória de Guimarães",
-"Portogallo - Taca de Portugal",
-"Portogallo - Liga Portugal"
+"Portogallo - Liga Portugal",
+"Portogallo - Taca de Portugal"
 ],
 "Vitoria Guimaraes B": [
 "Vitória de Guimarães B",
@@ -26555,8 +27616,8 @@
 ],
 "Vitoria Sernache": [
 "Vitória de Sernache",
-"Portogallo - Taca de Portugal",
-"Portogallo - Liga 3"
+"Portogallo - Liga 3",
+"Portogallo - Taca de Portugal"
 ],
 "Vitoria Setubal": [
 "Vitória de Setúbal",
@@ -26756,6 +27817,7 @@
 ],
 "Walsall": [
 "Walsall",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League Two",
 "Inghilterra - FA Cup"
 ],
@@ -26770,6 +27832,14 @@
 "Walton And Hersham": [
 "Walton and Hersham",
 "Inghilterra - National League South"
+],
+"Walton Hersham": [
+"Walton and Hersham",
+"Inghilterra - National League South"
+],
+"Wanderers FC": [
+"Montevideo Wanderers",
+"Uruguay - Liga AUF Uruguaya Clausura"
 ],
 "Waregem": [
 "Zulte Waregem",
@@ -26838,6 +27908,7 @@
 ],
 "Wealdstone FC": [
 "Wealdstone",
+"Inghilterra - National League",
 "Inghilterra - FA Cup"
 ],
 "Wehen": [
@@ -26898,6 +27969,10 @@
 "West Brom",
 "Inghilterra - Championship"
 ],
+"West Brom U21": [
+"West Bromwich Albion U21",
+"Inghilterra - National League Cup"
+],
 "West Bromwich": [
 "West Brom",
 "Inghilterra - Championship"
@@ -26908,10 +27983,12 @@
 ],
 "West Bromwich Albion U21": [
 "West Bromwich Albion U21",
+"Inghilterra - National League Cup",
 "Inghilterra - Premier League 2"
 ],
 "West Bromwich Reserve": [
 "West Bromwich Albion U21",
+"Inghilterra - National League Cup",
 "Inghilterra - Premier League 2"
 ],
 "West Bromwich U21": [
@@ -26924,6 +28001,7 @@
 ],
 "West Ham U21": [
 "West Ham United U21",
+"Inghilterra - National League Cup",
 "Inghilterra - Premier League 2"
 ],
 "West Ham United": [
@@ -26932,6 +28010,7 @@
 ],
 "West Ham United Reserve": [
 "West Ham United U21",
+"Inghilterra - National League Cup",
 "Inghilterra - Premier League 2"
 ],
 "West Ham United U18": [
@@ -26940,6 +28019,7 @@
 ],
 "West Ham United U21": [
 "West Ham United U21",
+"Inghilterra - National League Cup",
 "Inghilterra - Premier League 2"
 ],
 "Westchester": [
@@ -26952,8 +28032,8 @@
 ],
 "Westerlo": [
 "Westerlo",
-"Belgio - Cup Sedicesimi di finale",
-"Belgio - Belgian Pro League"
+"Belgio - Belgian Pro League",
+"Belgio - Cup Sedicesimi di finale"
 ],
 "Western Sydney": [
 "Western Sydney",
@@ -27053,6 +28133,7 @@
 ],
 "Wigan": [
 "Wigan",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League One",
 "Inghilterra - FA Cup"
 ],
@@ -27088,15 +28169,15 @@
 ],
 "Wimborne": [
 "Wimborne Town",
+"Inghilterra - Southern Premier Divisione South",
 "Inghilterra - FA Cup",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - Southern Premier Divisione South"
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Wimborne Town": [
 "Wimborne Town",
+"Inghilterra - Southern Premier Divisione South",
 "Inghilterra - FA Cup",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - Southern Premier Divisione South"
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Wingate  Finchley": [
 "Wingate & Finchley",
@@ -27149,8 +28230,9 @@
 ],
 "Woking": [
 "Woking",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - National League"
+"Inghilterra - National League",
+"Inghilterra - National League Cup",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Wolfsberger AC": [
 "Wolfsberger AC",
@@ -27174,6 +28256,7 @@
 ],
 "Wolverhampton Wanderers Reserve": [
 "Wolverhampton Wanderers U21",
+"Inghilterra - National League Cup",
 "Inghilterra - Premier League 2"
 ],
 "Wolverhampton Wanderers Wfc": [
@@ -27190,15 +28273,18 @@
 ],
 "Wolves U21": [
 "Wolverhampton Wanderers U21",
+"Inghilterra - National League Cup",
 "Inghilterra - Premier League 2"
 ],
 "Worcester": [
 "Worcester",
+"Inghilterra - Southern Premier Divisione Central",
 "Inghilterra - FA Cup Qualificazione",
 "Inghilterra - FA Cup"
 ],
 "Worcester City": [
 "Worcester",
+"Inghilterra - Southern Premier Divisione Central",
 "Inghilterra - FA Cup Qualificazione",
 "Inghilterra - FA Cup"
 ],
@@ -27216,8 +28302,9 @@
 ],
 "Worthing": [
 "Worthing",
-"Inghilterra - FA Cup Qualificazione",
-"Inghilterra - National League"
+"Inghilterra - National League",
+"Inghilterra - National League Cup",
+"Inghilterra - FA Cup Qualificazione"
 ],
 "Wrexham": [
 "Wrexham",
@@ -27328,18 +28415,18 @@
 ],
 "Yantra": [
 "Yantra",
-"Bulgaria - Cup Sedicesimi di finale",
-"Bulgaria - Second Professional League"
+"Bulgaria - Second Professional League",
+"Bulgaria - Cup Sedicesimi di finale"
 ],
 "Yantra 2019": [
 "Yantra",
-"Bulgaria - Cup Sedicesimi di finale",
-"Bulgaria - Second Professional League"
+"Bulgaria - Second Professional League",
+"Bulgaria - Cup Sedicesimi di finale"
 ],
 "Yantra Gabrovo": [
 "Yantra",
-"Bulgaria - Cup Sedicesimi di finale",
-"Bulgaria - Second Professional League"
+"Bulgaria - Second Professional League",
+"Bulgaria - Cup Sedicesimi di finale"
 ],
 "Yate Town": [
 "Yate Town",
@@ -27387,9 +28474,9 @@
 ],
 "Yeovil Town": [
 "Yeovil",
+"Inghilterra - National League",
 "Inghilterra - FA Cup Qualificazione",
-"Inghilterra - FA Cup",
-"Inghilterra - National League"
+"Inghilterra - FA Cup"
 ],
 "Yogyakarta": [
 "PSIM Yogyakarta",
@@ -27406,13 +28493,13 @@
 ],
 "Yokohama FC": [
 "Yokohama FC",
-"Giappone - League Cup",
-"Giappone - J. League 2"
+"Giappone - J. League 2",
+"Giappone - League Cup"
 ],
 "Yokohama Marinos": [
 "Yokohama F.Marinos",
-"Giappone - League Cup",
-"Giappone - J. League"
+"Giappone - J. League",
+"Giappone - League Cup"
 ],
 "Yongin": [
 "Yongin FC",
@@ -27432,6 +28519,7 @@
 ],
 "York": [
 "York City",
+"Inghilterra - EFL Trophy",
 "Inghilterra - League Two",
 "Inghilterra - FA Cup"
 ],
@@ -27442,6 +28530,7 @@
 ],
 "York City FC": [
 "York City",
+"Inghilterra - EFL Trophy",
 "Inghilterra - FA Cup",
 "Inghilterra - League Two"
 ],
@@ -27495,8 +28584,8 @@
 ],
 "ZED": [
 "ZED FC",
-"CAF Confed Cup - 2nd Girone preliminare",
-"Egitto - Premier League"
+"Egitto - Premier League",
+"CAF Confed Cup - 2nd Girone preliminare"
 ],
 "ZKS Stal Stalowa Wola": [
 "Stal Stalowa Wola",
@@ -27556,8 +28645,8 @@
 ],
 "Zamalek": [
 "Zamalek SC",
-"CAF Champions League Qualificazione",
-"Egitto - Premier League"
+"Egitto - Premier League",
+"CAF Champions League Qualificazione"
 ],
 "Zamalek SC": [
 "Zamalek SC",
@@ -27565,6 +28654,10 @@
 "Egitto - Cup Sedicesimi di finale"
 ],
 "Zamora Barinas": [
+"Zamora FC",
+"Venezuela - Primera División"
+],
+"Zamora FC": [
 "Zamora FC",
 "Venezuela - Primera División"
 ],
@@ -27589,6 +28682,11 @@
 "FC Zbrojovka Brno",
 "Cechia - 1. Liga"
 ],
+"Zed FC": [
+"ZED FC",
+"Egitto - Cup Sedicesimi di finale",
+"Egitto - Premier League"
+],
 "Zeledon": [
 "Municipal Pérez Zeledón",
 "Costa Rica - Primera Division Apertura"
@@ -27611,10 +28709,12 @@
 ],
 "Zemplin Michalovce": [
 "Zemplín Michalovce",
-"Slovacchia - 1. Liga"
+"Slovacchia - 1. Liga",
+"Slovacchia - FA Cup Sedicesimi di finale"
 ],
 "Zemplín Michalovce": [
 "Zemplín Michalovce",
+"Slovacchia - FA Cup Sedicesimi di finale",
 "Slovacchia - 1. Liga"
 ],
 "Zemun": [
@@ -27632,8 +28732,8 @@
 ],
 "Zenit St. Petersburg": [
 "Zenit",
-"Russia - Russian Cup",
-"Russia - Premier League"
+"Russia - Premier League",
+"Russia - Russian Cup"
 ],
 "Zhejiang Professional": [
 "Zhejiang Professional",
@@ -27669,8 +28769,8 @@
 ],
 "Zilina": [
 "Žilina",
-"Slovacchia - FA Cup Sedicesimi di finale",
-"Slovacchia - 1. Liga"
+"Slovacchia - 1. Liga",
+"Slovacchia - FA Cup Sedicesimi di finale"
 ],
 "Zimbru": [
 "Zimbru",
@@ -27728,6 +28828,10 @@
 "Zrinjski Mostar",
 "Bosnia ed Erzegovina - Premier League"
 ],
+"Zrinjski U19": [
+"Zrinjski Mostar U19",
+"UEFA Youth League - 1st Round"
+],
 "Zulte Waregem": [
 "Zulte Waregem",
 "Belgio - Cup Sedicesimi di finale",
@@ -27753,6 +28857,10 @@
 "coruxo FC": [
 "Coruxo FC",
 "Spagna - Segunda Federación"
+],
+"lewes": [
+"Lewes",
+"Inghilterra - Isthmian Premier Divisione"
 ],
 "naft gachsaran": [
 "Naft Gachsaran",
@@ -27888,6 +28996,7 @@
 "Olympiakos",
 "Ourense",
 "PSV Eindhoven",
+"Paris Saint Germain",
 "Paris Saint-Germain",
 "Platense",
 "Racing Club",
