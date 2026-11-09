@@ -1,20 +1,20 @@
 {
  "medio": {
   "copertura": {
-   "1": 23750,
+   "1": 23751,
    "2": 2832,
-   "3": 1452,
+   "3": 1453,
    "4": 670,
    "5": 257
   },
-  "totale": 28961,
-  "brier": 0.5785,
+  "totale": 28963,
+  "brier": 0.5786,
   "brier_clima": 0.6409,
   "fonti": [
    {
     "nome": "betimate",
-    "partite": 27581,
-    "brier": 0.5784,
+    "partite": 27583,
+    "brier": 0.5785,
     "brier_media": 0.5777
    },
    {
@@ -31,69 +31,69 @@
    },
    {
     "nome": "soccersite",
-    "partite": 3498,
+    "partite": 3499,
     "brier": 0.5939,
     "brier_media": 0.5857
    },
    {
     "nome": "statarea",
-    "partite": 2526,
-    "brier": 0.6067,
+    "partite": 2527,
+    "brier": 0.6066,
     "brier_media": 0.599
    }
   ],
   "mercato": {
-   "partite": 4596,
+   "partite": 4597,
    "poche": false,
    "brier": 0.5878,
    "brier_mercato": 0.5731,
    "diff": 0.0147,
    "es": 0.0021,
-   "t": 6.94,
+   "t": 6.95,
    "ic": [
-    0.0105,
+    0.0106,
     0.0188
    ]
   }
  },
- "aggiornato": "2026-11-09 01:41",
+ "aggiornato": "2026-11-09 02:02",
  "accordo": {
-  "totale": 2410,
+  "totale": 2514,
   "prende": {
    "statarea": {
-    "prese": 987,
-    "su": 1771,
+    "prese": 1030,
+    "su": 1849,
     "pct": 55.7
    },
    "webpronostici": {
-    "prese": 493,
-    "su": 935,
-    "pct": 52.7
+    "prese": 520,
+    "su": 983,
+    "pct": 52.9
    },
    "consensus": {
-    "prese": 1096,
-    "su": 2073,
+    "prese": 1145,
+    "su": 2164,
     "pct": 52.9
    }
   },
   "mercato": {
-   "partite": 1433,
+   "partite": 1451,
    "poche": false,
-   "brier": 0.5773,
-   "brier_mercato": 0.5659,
+   "brier": 0.5766,
+   "brier_mercato": 0.5651,
    "diff": 0.0114,
-   "es": 0.0033,
-   "t": 3.49,
+   "es": 0.0032,
+   "t": 3.52,
    "ic": [
-    0.005,
+    0.0051,
     0.0178
    ]
   },
-  "favorito_mercato": 56.2,
+  "favorito_mercato": 56.4,
   "testa_a_testa": {
-   "partite": 1220,
-   "consensus": 55.7,
-   "mercato": 58.3
+   "partite": 1233,
+   "consensus": 55.8,
+   "mercato": 58.4
   }
  }
 }
