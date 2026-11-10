@@ -1972,8 +1972,7 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 64.6,
-  "Equa": 1.55,
-  "InSchedina": "si"
+  "Equa": 1.55
  },
  {
   "Data": "2026-11-14",
@@ -2213,7 +2212,8 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 61.7,
-  "Equa": 1.62
+  "Equa": 1.62,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-14",
@@ -3236,7 +3236,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 57.5,
-  "Equa": 1.74
+  "Equa": 1.74,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-14",
@@ -4038,8 +4039,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 54.1,
-  "Equa": 1.85,
-  "InSchedina": "si"
+  "Equa": 1.85
  },
  {
   "Data": "2026-11-14",
@@ -9205,6 +9205,26 @@
  },
  {
   "Data": "2026-11-14",
+  "Ora": "16:30",
+  "Campionato": "Netherlands Eerste Divisie",
+  "Partita": "NAC Breda - FC Emmen",
+  "Casa": "NAC Breda",
+  "Ospite": "FC Emmen",
+  "Linea_OU": "",
+  "Gol_attesi": 3.37,
+  "Margine": 3.2,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 20.6,
+  "Equa": 4.85
+ },
+ {
+  "Data": "2026-11-14",
   "Ora": "20:00",
   "Campionato": "Netherlands Eerste Divisie",
   "Partita": "FC Dordrecht - Heracles",
@@ -9222,25 +9242,5 @@
   "Sel": "X",
   "Prob": 19.1,
   "Equa": 5.25
- },
- {
-  "Data": "2026-11-14",
-  "Ora": "16:00",
-  "Campionato": "England Enterprise National League",
-  "Partita": "Carlisle United - Boston United",
-  "Casa": "Carlisle United",
-  "Ospite": "Boston United",
-  "Linea_OU": "",
-  "Gol_attesi": 3.5,
-  "Margine": 5.3,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 19.0,
-  "Equa": 5.26
  }
 ]
