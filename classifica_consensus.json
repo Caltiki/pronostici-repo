@@ -56,44 +56,44 @@
    ]
   }
  },
- "aggiornato": "2026-11-10 22:39",
+ "aggiornato": "2026-11-10 22:45",
  "accordo": {
-  "totale": 2554,
+  "totale": 2565,
   "prende": {
    "statarea": {
-    "prese": 1051,
-    "su": 1876,
+    "prese": 1055,
+    "su": 1885,
     "pct": 56.0
    },
    "webpronostici": {
-    "prese": 534,
-    "su": 1007,
-    "pct": 53.0
+    "prese": 538,
+    "su": 1013,
+    "pct": 53.1
    },
    "consensus": {
-    "prese": 1166,
-    "su": 2198,
-    "pct": 53.0
+    "prese": 1172,
+    "su": 2209,
+    "pct": 53.1
    }
   },
   "mercato": {
-   "partite": 1460,
+   "partite": 1470,
    "poche": false,
-   "brier": 0.5763,
-   "brier_mercato": 0.5654,
-   "diff": 0.011,
-   "es": 0.0032,
-   "t": 3.37,
+   "brier": 0.5765,
+   "brier_mercato": 0.5642,
+   "diff": 0.0124,
+   "es": 0.0033,
+   "t": 3.78,
    "ic": [
-    0.0046,
-    0.0173
+    0.0059,
+    0.0188
    ]
   },
-  "favorito_mercato": 56.4,
+  "favorito_mercato": 56.6,
   "testa_a_testa": {
-   "partite": 1241,
+   "partite": 1251,
    "consensus": 55.8,
-   "mercato": 58.3
+   "mercato": 58.5
   }
  }
 }

@@ -1197,7 +1197,8 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 59.9,
-  "Equa": 1.67
+  "Equa": 1.67,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-11",
@@ -1297,6 +1298,26 @@
   "Mercato": "BTTS",
   "Sel": "Gol",
   "Prob": 58.9,
+  "Equa": 1.7
+ },
+ {
+  "Data": "2026-11-11",
+  "Ora": "21:00",
+  "Campionato": "Europe UEFA Women's Champions League",
+  "Partita": "Juventus W - OL Lyonnes W",
+  "Casa": "Juventus W",
+  "Ospite": "OL Lyonnes W",
+  "Linea_OU": "",
+  "Gol_attesi": 4.02,
+  "Margine": 2.8,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "Gol NoGol",
+  "Mercato": "BTTS",
+  "Sel": "NoGol",
+  "Prob": 58.7,
   "Equa": 1.7
  },
  {
@@ -1641,26 +1662,6 @@
  },
  {
   "Data": "2026-11-11",
-  "Ora": "21:00",
-  "Campionato": "Europe UEFA Women's Champions League",
-  "Partita": "Juventus W - OL Lyonnes W",
-  "Casa": "Juventus W",
-  "Ospite": "OL Lyonnes W",
-  "Linea_OU": "",
-  "Gol_attesi": 4.02,
-  "Margine": 2.8,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "NoGol",
-  "Prob": 53.8,
-  "Equa": 1.86
- },
- {
-  "Data": "2026-11-11",
   "Ora": "14:00",
   "Campionato": "Europe: Euro U19 - Qualification - Round 2 - League B",
   "Partita": "Germany U19 - Sweden U19",
@@ -1817,8 +1818,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 50.6,
-  "Equa": 1.98,
-  "InSchedina": "si"
+  "Equa": 1.98
  },
  {
   "Data": "2026-11-11",
@@ -2679,5 +2679,25 @@
   "Sel": "1X + NoGol",
   "Prob": 35.0,
   "Equa": 2.85
+ },
+ {
+  "Data": "2026-11-11",
+  "Ora": "23:00",
+  "Campionato": "Brazil Serie B",
+  "Partita": "Londrina - Náutico",
+  "Casa": "Londrina",
+  "Ospite": "Náutico",
+  "Linea_OU": "",
+  "Gol_attesi": 3.07,
+  "Margine": 3.0,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 22.4,
+  "Equa": 4.46
  }
 ]

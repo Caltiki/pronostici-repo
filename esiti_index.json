@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-10 23:39",
+ "aggiornato": "2026-11-10 23:44",
  "date": [
   "2026-11-03",
   "2026-11-04",
@@ -61,17 +61,17 @@
    "righe": 55
   },
   "2026-11-10": {
-   "presa": 35,
-   "sbagliata": 26,
+   "presa": 41,
+   "sbagliata": 29,
    "rimborso": 0,
    "attesa": 0,
-   "righe": 61
+   "righe": 70
   }
  },
  "taratura": {
   "totale": {
-   "righe": 4093,
-   "partite": 563,
+   "righe": 4102,
+   "partite": 564,
    "prevista": 54.7,
    "uscita": 54.3,
    "scarto": -0.4,
@@ -82,44 +82,44 @@
     "righe": 750,
     "partite": 450,
     "prevista": 37.3,
-    "uscita": 36.1,
-    "scarto": -1.2,
+    "uscita": 36.0,
+    "scarto": -1.3,
     "errore_std": 1.8,
     "fascia": "35-40%"
    },
    {
-    "righe": 505,
-    "partite": 355,
+    "righe": 507,
+    "partite": 356,
     "prevista": 42.1,
-    "uscita": 44.8,
-    "scarto": 2.6,
+    "uscita": 45.0,
+    "scarto": 2.8,
     "errore_std": 2.2,
     "fascia": "40-45%"
    },
    {
-    "righe": 333,
-    "partite": 261,
+    "righe": 336,
+    "partite": 264,
     "prevista": 47.3,
-    "uscita": 44.4,
-    "scarto": -2.9,
+    "uscita": 44.3,
+    "scarto": -3.0,
     "errore_std": 2.7,
     "fascia": "45-50%"
    },
    {
     "righe": 580,
-    "partite": 388,
+    "partite": 389,
     "prevista": 52.3,
-    "uscita": 51.7,
-    "scarto": -0.6,
+    "uscita": 51.9,
+    "scarto": -0.4,
     "errore_std": 2.1,
     "fascia": "50-55%"
    },
    {
-    "righe": 511,
+    "righe": 509,
     "partite": 374,
     "prevista": 57.3,
-    "uscita": 51.9,
-    "scarto": -5.5,
+    "uscita": 51.7,
+    "scarto": -5.6,
     "errore_std": 2.2,
     "fascia": "55-60%"
    },
@@ -127,17 +127,17 @@
     "righe": 326,
     "partite": 239,
     "prevista": 62.3,
-    "uscita": 64.7,
-    "scarto": 2.4,
+    "uscita": 65.0,
+    "scarto": 2.7,
     "errore_std": 2.7,
     "fascia": "60-65%"
    },
    {
-    "righe": 255,
-    "partite": 196,
+    "righe": 256,
+    "partite": 198,
     "prevista": 67.4,
-    "uscita": 72.9,
-    "scarto": 5.6,
+    "uscita": 73.0,
+    "scarto": 5.7,
     "errore_std": 2.9,
     "fascia": "65-70%"
    },
@@ -151,29 +151,29 @@
     "fascia": "70-75%"
    },
    {
-    "righe": 231,
-    "partite": 213,
+    "righe": 232,
+    "partite": 214,
     "prevista": 77.6,
-    "uscita": 71.9,
-    "scarto": -5.7,
+    "uscita": 71.6,
+    "scarto": -6.0,
     "errore_std": 2.7,
     "fascia": "75-80%"
    },
    {
-    "righe": 154,
+    "righe": 155,
     "partite": 152,
     "prevista": 82.3,
-    "uscita": 85.1,
-    "scarto": 2.7,
+    "uscita": 85.2,
+    "scarto": 2.8,
     "errore_std": 3.1,
     "fascia": "80-85%"
    },
    {
-    "righe": 110,
-    "partite": 105,
+    "righe": 109,
+    "partite": 104,
     "prevista": 87.1,
-    "uscita": 87.3,
-    "scarto": 0.2,
+    "uscita": 87.2,
+    "scarto": 0.0,
     "errore_std": 3.2,
     "fascia": "85-90%"
    },
@@ -187,19 +187,19 @@
     "fascia": "90-95%"
    },
    {
-    "righe": 2,
-    "partite": 2,
-    "prevista": 95.5,
+    "righe": 5,
+    "partite": 3,
+    "prevista": 96.5,
     "uscita": 100.0,
-    "scarto": 4.5,
-    "errore_std": 14.7,
+    "scarto": 3.5,
+    "errore_std": 8.2,
     "fascia": "95-100%"
    }
   ],
   "gruppi": [
    {
-    "righe": 1731,
-    "partite": 517,
+    "righe": 1735,
+    "partite": 518,
     "prevista": 45.5,
     "uscita": 46.2,
     "scarto": 0.7,
@@ -207,17 +207,17 @@
     "nome": "Combo"
    },
    {
-    "righe": 1168,
-    "partite": 563,
-    "prevista": 68.8,
+    "righe": 1170,
+    "partite": 564,
+    "prevista": 68.9,
     "uscita": 68.2,
     "scarto": -0.7,
     "errore_std": 1.4,
     "nome": "Under Over"
    },
    {
-    "righe": 599,
-    "partite": 563,
+    "righe": 601,
+    "partite": 564,
     "prevista": 56.8,
     "uscita": 53.6,
     "scarto": -3.2,
@@ -225,10 +225,10 @@
     "nome": "Gol NoGol"
    },
    {
-    "righe": 595,
-    "partite": 563,
-    "prevista": 51.5,
-    "uscita": 51.4,
+    "righe": 596,
+    "partite": 564,
+    "prevista": 51.6,
+    "uscita": 51.5,
     "scarto": -0.1,
     "errore_std": 2.0,
     "nome": "1X2"
@@ -236,8 +236,8 @@
   ],
   "fonti": [
    {
-    "righe": 3701,
-    "partite": 510,
+    "righe": 3710,
+    "partite": 511,
     "prevista": 54.9,
     "uscita": 53.6,
     "scarto": -1.3,
