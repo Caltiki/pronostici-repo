@@ -7,8 +7,8 @@
   "Ospite": "Uruguay",
   "Segno": "1",
   "P1": 64.0,
-  "PX": 22.0,
-  "P2": 14.0,
+  "PX": 22.5,
+  "P2": 13.5,
   "Fonti": 2,
   "Elenco": "footymetrics, ratingbet"
  },
@@ -59,10 +59,10 @@
   "Ospite": "Bolivia",
   "Segno": "1",
   "P1": 64.0,
-  "PX": 21.0,
-  "P2": 15.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
+  "PX": 22.0,
+  "P2": 14.0,
+  "Fonti": 2,
+  "Elenco": "footymetrics, ratingbet"
  },
  {
   "Data": "2026-11-14",
@@ -84,8 +84,8 @@
   "Casa": "Melbourne City FC",
   "Ospite": "Newcastle Jets",
   "Segno": "1",
-  "P1": 78.0,
-  "PX": 14.0,
+  "P1": 77.0,
+  "PX": 15.0,
   "P2": 8.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
@@ -110,9 +110,9 @@
   "Casa": "Melbourne Victory",
   "Ospite": "Adelaide United",
   "Segno": "1",
-  "P1": 57.0,
+  "P1": 56.0,
   "PX": 24.0,
-  "P2": 19.0,
+  "P2": 20.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
  },
@@ -145,6 +145,19 @@
  {
   "Data": "2026-11-14",
   "Ora": "06:00",
+  "Lega": "Japan: J. League 3 Japan",
+  "Casa": "FC Gifu",
+  "Ospite": "Matsumoto Yamaga",
+  "Segno": "1",
+  "P1": 42.0,
+  "PX": 27.0,
+  "P2": 31.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-11-14",
+  "Ora": "06:00",
   "Lega": "Japan: J. League 2 Japan",
   "Casa": "Fujieda MYFC",
   "Ospite": "Ventforet Kofu",
@@ -158,13 +171,26 @@
  {
   "Data": "2026-11-14",
   "Ora": "06:00",
+  "Lega": "Japan: J. League 3 Japan",
+  "Casa": "Fukushima United",
+  "Ospite": "SC Sagamihara",
+  "Segno": "2",
+  "P1": 32.0,
+  "PX": 26.0,
+  "P2": 42.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-11-14",
+  "Ora": "06:00",
   "Lega": "Japan: J. League 2 Japan",
   "Casa": "Oita Trinita",
   "Ospite": "Tochigi City FC",
   "Segno": "1",
-  "P1": 42.0,
-  "PX": 26.0,
-  "P2": 32.0,
+  "P1": 43.0,
+  "PX": 27.0,
+  "P2": 30.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
  },
@@ -1550,19 +1576,6 @@
   "Data": "2026-11-14",
   "Ora": "20:30",
   "Lega": "Brazil - Serie B",
-  "Casa": "Ponte Preta",
-  "Ospite": "Operário PR",
-  "Segno": "2",
-  "P1": 28.0,
-  "PX": 27.0,
-  "P2": 45.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
- },
- {
-  "Data": "2026-11-14",
-  "Ora": "20:30",
-  "Lega": "Brazil - Serie B",
   "Casa": "Sport Recife",
   "Ospite": "Goiás",
   "Segno": "2",
@@ -1692,19 +1705,6 @@
  {
   "Data": "2026-11-14",
   "Ora": "22:30",
-  "Lega": "Brazil - Serie A",
-  "Casa": "Mirassol",
-  "Ospite": "Atlético Mineiro",
-  "Segno": "1",
-  "P1": 56.0,
-  "PX": 25.0,
-  "P2": 19.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
- },
- {
-  "Data": "2026-11-14",
-  "Ora": "22:30",
   "Lega": "Brazil: Serie A Brazil",
   "Casa": "Mirassol",
   "Ospite": "Atletico MG",
@@ -1714,6 +1714,19 @@
   "P2": 26.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-11-14",
+  "Ora": "22:30",
+  "Lega": "Brazil - Serie A",
+  "Casa": "Mirassol",
+  "Ospite": "Atlético Mineiro",
+  "Segno": "1",
+  "P1": 56.0,
+  "PX": 25.0,
+  "P2": 19.0,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
  },
  {
   "Data": "2026-11-14",

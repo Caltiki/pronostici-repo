@@ -188,9 +188,9 @@
   "Casa": "DC Power (W)",
   "Ospite": "Brooklyn (W)",
   "Segno": "1",
-  "P1": 57.0,
+  "P1": 56.0,
   "PX": 20.0,
-  "P2": 23.0,
+  "P2": 24.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -370,8 +370,8 @@
   "Casa": "Eastern Kentucky (W)",
   "Ospite": "Tarleton State (W)",
   "Segno": "1",
-  "P1": 44.0,
-  "PX": 21.0,
+  "P1": 43.0,
+  "PX": 22.0,
   "P2": 35.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -409,8 +409,8 @@
   "Casa": "Tulsa Golden Hurricane",
   "Ospite": "Memphis",
   "Segno": "1",
-  "P1": 44.0,
-  "PX": 20.0,
+  "P1": 43.0,
+  "PX": 21.0,
   "P2": 36.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -474,9 +474,9 @@
   "Casa": "Pachuca",
   "Ospite": "Monterrey",
   "Segno": "2",
-  "P1": 32.0,
-  "PX": 25.0,
-  "P2": 43.0,
+  "P1": 27.0,
+  "PX": 24.0,
+  "P2": 49.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
  },
@@ -552,8 +552,8 @@
   "Casa": "DR Congo",
   "Ospite": "Sierra Leone",
   "Segno": "1",
-  "P1": 75.0,
-  "PX": 17.0,
+  "P1": 74.0,
+  "PX": 18.0,
   "P2": 8.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
@@ -565,9 +565,9 @@
   "Casa": "Equatorial Guinea",
   "Ospite": "Zimbabwe",
   "Segno": "1",
-  "P1": 41.0,
+  "P1": 42.0,
   "PX": 31.0,
-  "P2": 28.0,
+  "P2": 27.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
  },
@@ -717,19 +717,6 @@
  {
   "Data": "2026-11-12",
   "Ora": "19:00",
-  "Lega": "Spain - Copa Del Rey",
-  "Casa": "Navalcarnero",
-  "Ospite": "Real Betis",
-  "Segno": "2",
-  "P1": 17.5,
-  "PX": 18.5,
-  "P2": 64.0,
-  "Fonti": 2,
-  "Elenco": "footymetrics, ratingbet"
- },
- {
-  "Data": "2026-11-12",
-  "Ora": "19:00",
   "Lega": "SPAIN - COPA DEL REY",
   "Casa": "Navalcarnero",
   "Ospite": "Betis",
@@ -739,6 +726,19 @@
   "P2": 56.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-12",
+  "Ora": "19:00",
+  "Lega": "Spain - Copa Del Rey",
+  "Casa": "Navalcarnero",
+  "Ospite": "Real Betis",
+  "Segno": "2",
+  "P1": 17.5,
+  "PX": 18.5,
+  "P2": 64.0,
+  "Fonti": 2,
+  "Elenco": "footymetrics, ratingbet"
  },
  {
   "Data": "2026-11-12",
@@ -773,8 +773,8 @@
   "Casa": "Cameroon",
   "Ospite": "Namibia",
   "Segno": "1",
-  "P1": 75.0,
-  "PX": 18.0,
+  "P1": 74.0,
+  "PX": 19.0,
   "P2": 7.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
@@ -812,9 +812,9 @@
   "Casa": "Senegal",
   "Ospite": "Sudan",
   "Segno": "1",
-  "P1": 86.0,
+  "P1": 87.0,
   "PX": 10.0,
-  "P2": 4.0,
+  "P2": 3.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
  },
@@ -916,9 +916,9 @@
   "Casa": "Italy",
   "Ospite": "France",
   "Segno": "2",
-  "P1": 24.5,
+  "P1": 25.0,
   "PX": 24.0,
-  "P2": 51.5,
+  "P2": 51.0,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea"
  },
@@ -1103,5 +1103,18 @@
   "P2": 26.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-11-12",
+  "Ora": "23:00",
+  "Lega": "Brazil - Serie B",
+  "Casa": "Ponte Preta",
+  "Ospite": "Operário PR",
+  "Segno": "2",
+  "P1": 28.0,
+  "PX": 27.0,
+  "P2": 45.0,
+  "Fonti": 1,
+  "Elenco": "footymetrics"
  }
 ]
