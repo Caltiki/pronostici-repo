@@ -2399,8 +2399,7 @@
   "Mercato": "BTTS",
   "Sel": "Gol",
   "Prob": 54.8,
-  "Equa": 1.83,
-  "InSchedina": "si"
+  "Equa": 1.83
  },
  {
   "Data": "2026-11-12",
@@ -2640,7 +2639,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "2 + Over 1.5",
   "Prob": 52.3,
-  "Equa": 1.91
+  "Equa": 1.91,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-12",
@@ -3380,26 +3380,6 @@
   "Mercato": "Esito + Gol",
   "Sel": "1X + NoGol",
   "Prob": 45.3,
-  "Equa": 2.21
- },
- {
-  "Data": "2026-11-12",
-  "Ora": "18:30",
-  "Campionato": "Spain Copa Del Rey",
-  "Partita": "Calvo Sotelo - Albacete",
-  "Casa": "Calvo Sotelo",
-  "Ospite": "Albacete",
-  "Linea_OU": "",
-  "Gol_attesi": 3.02,
-  "Margine": 2.8,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "NoGol",
-  "Prob": 45.2,
   "Equa": 2.21
  },
  {

@@ -1989,8 +1989,7 @@
   "Mercato": "1X2",
   "Sel": "2",
   "Prob": 66.6,
-  "Equa": 1.5,
-  "InSchedina": "si"
+  "Equa": 1.5
  },
  {
   "Data": "2026-11-14",
@@ -2873,7 +2872,8 @@
   "Mercato": "1X2",
   "Sel": "2",
   "Prob": 61.0,
-  "Equa": 1.64
+  "Equa": 1.64,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-14",
@@ -3214,7 +3214,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "2 + Over 1.5",
   "Prob": 59.5,
-  "Equa": 1.68
+  "Equa": 1.68,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-14",
@@ -5579,8 +5580,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "2 + Over 1.5",
   "Prob": 51.9,
-  "Equa": 1.93,
-  "InSchedina": "si"
+  "Equa": 1.93
  },
  {
   "Data": "2026-11-14",
@@ -10605,6 +10605,26 @@
  },
  {
   "Data": "2026-11-14",
+  "Ora": "16:00",
+  "Campionato": "England Enterprise National League",
+  "Partita": "Gateshead - Barrow",
+  "Casa": "Gateshead",
+  "Ospite": "Barrow",
+  "Linea_OU": "",
+  "Gol_attesi": 3.0,
+  "Margine": 5.8,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 21.8,
+  "Equa": 4.58
+ },
+ {
+  "Data": "2026-11-14",
   "Ora": "20:30",
   "Campionato": "Brazil Serie B",
   "Partita": "Juventude - Botafogo SP",
@@ -10682,25 +10702,5 @@
   "Sel": "X",
   "Prob": 20.6,
   "Equa": 4.85
- },
- {
-  "Data": "2026-11-14",
-  "Ora": "20:00",
-  "Campionato": "Netherlands Eerste Divisie",
-  "Partita": "FC Dordrecht - Heracles",
-  "Casa": "FC Dordrecht",
-  "Ospite": "Heracles",
-  "Linea_OU": "",
-  "Gol_attesi": 3.37,
-  "Margine": 2.9,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 19.1,
-  "Equa": 5.25
  }
 ]
