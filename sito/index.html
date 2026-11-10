@@ -1561,7 +1561,7 @@
   ];
   var MK_ORDINI = [["file", "Per orario"], ["mov", "Per movimento"], ["margine", "Per margine"]];
   var GRUPPO_PRONOSTICI_TUTTI = [["prezzi", "Probabilit\u00e0 reali"], ["mercato", "Mercato"], ["wdw", "FootyStats"],
-                                 ["sm", "Sports Mole"]];
+                                 ["sm", "Sports Mole"], ["hp", "HeroPredict"]];
   // Il tasto FootyStats compare solo quando i dati ci sono davvero
   // (footystatswdw_index.json con almeno una data): finche' FootyStats
   // rifiuta i server di GitHub, un tasto che porta a una pagina vuota
@@ -1570,10 +1570,13 @@
   // Stessa regola per Sports Mole: il tasto compare quando
   // sportsmole_index.json ha almeno una data.
   var SM_PRONTO = false;
+  // E per HeroPredict: heropredict_index.json con almeno una data.
+  var HP_PRONTO = false;
   function gruppoPronostici(sez) {
     return GRUPPO_PRONOSTICI_TUTTI.filter(function (g) {
       if (g[0] === "wdw") return WDW_PRONTO || sez === "wdw";
       if (g[0] === "sm") return SM_PRONTO || sez === "sm";
+      if (g[0] === "hp") return HP_PRONTO || sez === "hp";
       return true;
     });
   }
@@ -1609,6 +1612,22 @@
      "Solo le partite in cui il segno pi\u00f9 probabile supera il 60%."]
   ];
   var SM_ORDINI = [["prob", "Per probabilit\u00e0"], ["ora", "Per orario"], ["paese", "Per campionato"]];
+
+  // HEROPREDICT (heropredict_scraper.py). Un tip per partita, 1X2 o doppia
+  // chance, sempre la selezione piu' corta del book (quote 1.17-1.25). La
+  // "probabilita'" che il sito mostra e' 100/quota con il margine dentro:
+  // verificato su 39 tip su 39. E' un lettore del mercato, NON vota nel
+  // consenso. Qui si mostrano il tip, la quota, la probabilita' senza
+  // margine ricavata dalle quote 1X2 del file, e l'esito.
+  var HP_VISTE = [
+    ["tutte", "Tutti i tip",
+     "I tip di HeroPredict: un segno o una doppia chance per partita, sempre la quota pi\u00f9 corta del book. " +
+     "La percentuale che il sito chiama probabilit\u00e0 \u00e8 solo 100 diviso la quota, margine compreso: qui accanto c\u2019\u00e8 quella senza margine. " +
+     "Solo informativi: non entrano nel consenso."],
+    ["secco", "Segno secco", "Solo i tip su 1, X o 2."],
+    ["doppia", "Doppia chance", "Solo i tip su 1X, X2 o 12."]
+  ];
+  var HP_ORDINI = [["ora", "Per orario"], ["prob", "Per probabilit\u00e0"], ["paese", "Per campionato"]];
   // Gli xG delle squadre stanno dentro "Poisson": sono i numeri da cui il
   // Poisson parte, e la barra in alto non ha posto per un'altra voce.
   var GRUPPO_POISSON = [["poisson", "Partite"], ["xg", "xG squadre"]];
@@ -1619,9 +1638,9 @@
 
   var stato = {
     sez: "prezzi",
-    data: { prezzi: null, mercato: null, consensus: null, accordo: null, poisson: null, sure: null, wdw: null, sm: null },
-    vista: { wdw: "tutte", sm: "tutte", prezzi: "partite", mercato: "aff", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" },
-    ordine: { wdw: "prob", sm: "prob", prezzi: "ora", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" },
+    data: { prezzi: null, mercato: null, consensus: null, accordo: null, poisson: null, sure: null, wdw: null, sm: null, hp: null },
+    vista: { wdw: "tutte", sm: "tutte", hp: "tutte", prezzi: "partite", mercato: "aff", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" },
+    ordine: { wdw: "prob", sm: "prob", hp: "ora", prezzi: "ora", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" },
     cerca: "",
     fonteCm: "",
     esito: "",
@@ -1709,6 +1728,8 @@
     sm: { indice: "sportsmole_index.json", prefisso: "sportsmole_", viste: SM_VISTE, ordini: SM_ORDINI,
           tiene: smTiene, riepilogo: riepilogoSm, riga: rigaSm, arricchisci: arricchisciSm, nota: "",
           daOggi: true },
+    hp: { indice: "heropredict_index.json", prefisso: "heropredict_", viste: HP_VISTE, ordini: HP_ORDINI,
+          tiene: hpTiene, riepilogo: riepilogoHp, riga: rigaHp, arricchisci: arricchisciHp, nota: "" },
     sure: { indice: "fpnet_index.json", prefisso: "fpnet_", viste: SB_VISTE, ordini: SB_ORDINI,
             tiene: sbTiene, riepilogo: riepilogoSure, riga: rigaSure, arricchisci: arricchisciSure,
             nota: " \u00b7 la tacca sulle barre segna il 60%" }
@@ -1790,7 +1811,7 @@
   function disegna() {
     scriviHash();
     document.querySelectorAll("nav.sezioni button[data-sez]").forEach(function (b) {
-      var accesa = stato.sez === "accordo" ? "consensus" : (stato.sez === "mercato" || stato.sez === "wdw" || stato.sez === "sm") ? "prezzi" :
+      var accesa = stato.sez === "accordo" ? "consensus" : (stato.sez === "mercato" || stato.sez === "wdw" || stato.sez === "sm" || stato.sez === "hp") ? "prezzi" :
         stato.sez === "xg" ? "poisson" : stato.sez;
       b.setAttribute("aria-current", String(b.dataset.sez === accesa));
     });
@@ -1867,7 +1888,7 @@
 
       var vista = viste.filter(function (v) { return v[0] === stato.vista[sez]; })[0];
       var testa = (sez === "consensus" || sez === "accordo" ? chipsHtml(GRUPPO_CONSENSO, sez, "data-gruppo") : "") +
-        (sez === "prezzi" || sez === "mercato" || sez === "wdw" || sez === "sm" ? chipsHtml(gruppoPronostici(sez), sez, "data-gruppo") : "") +
+        (sez === "prezzi" || sez === "mercato" || sez === "wdw" || sez === "sm" || sez === "hp" ? chipsHtml(gruppoPronostici(sez), sez, "data-gruppo") : "") +
         (sez === "poisson" ? chipsHtml(GRUPPO_POISSON, sez, "data-gruppo") : "") +
         chipsHtml(date.map(function (x) { return [x, etichettaData(x)]; }), d, "data-data") +
         (viste.length > 1 ? chipsHtml(viste, vista[0], "data-vista") : "") +
@@ -1887,9 +1908,9 @@
         disegnaRighe(sez, righe, d);
       });
     }).catch(function (e) {
-      if (sez === "wdw" || sez === "sm") {
+      if (sez === "wdw" || sez === "sm" || sez === "hp") {
         // Prima del primo giro l'indice non c'e': non e' un guasto.
-        var chi = sez === "sm" ? "Sports Mole" : "FootyStats";
+        var chi = sez === "sm" ? "Sports Mole" : sez === "hp" ? "HeroPredict" : "FootyStats";
         $cont.innerHTML = chipsHtml(gruppoPronostici(sez), sez, "data-gruppo") +
           messaggio("vuoto", chi + " non \u00e8 ancora stato pubblicato: arriva col giro notturno. " +
             "Se non compare nemmeno domani, il motivo \u00e8 nel log del passo \u201cScarica " + chi + "\u201d su GitHub Actions.");
@@ -2447,6 +2468,10 @@
     if (sez === "sm") {
       if (vista === "wesay") return "Nessuna delle " + n + " partite del " + data + " ha la preview con il We say. Prova \u201cTutte\u201d.";
       return "Nessuna delle " + n + " partite del " + data + " ha una favorita sopra il 60%. Prova \u201cTutte\u201d.";
+    }
+    if (sez === "hp") {
+      return "Nessuno dei " + n + " tip del " + data + (vista === "secco" ? " \u00e8 su un segno secco" : " \u00e8 su una doppia chance") +
+        ". Prova \u201cTutti i tip\u201d.";
     }
     if (sez === "poisson") {
       return "Nessuna delle " + n + " partite del " + data + " ha il prezzo: AsianOdds copre le prossime 24 ore. Prova \u201cTutte\u201d.";
@@ -3711,6 +3736,161 @@
       tripla("Sports Mole", p1, px, p2) +
       "</div>" +
       '<div class="numero"><b>' + f0(r._fav) + '%</b><span>sul ' + esc(seg) + "</span></div>" +
+      "</summary>" +
+      '<div class="dettaglio">' + det.join("") + "</div>" +
+      "</details></div>";
+  }
+
+  // ------------------------------------------------- HeroPredict
+
+  // La probabilita' SENZA margine del tip, dalle percentuali 1X2 che lo
+  // scraper ricava dalle quote (P1, PX, P2): per la doppia chance la somma
+  // dei due segni. Serve all'ordinamento comune (_prob) e al confronto con
+  // la "probabilita'" del sito, che e' 100/quota.
+  function hpPulita(r) {
+    var t = String(r.Tip || "").toUpperCase();
+    var p = { "1": num(r.P1), "X": num(r.PX), "2": num(r.P2) };
+    if (t.length === 1) return p[t] != null ? p[t] : null;
+    if (t.length === 2 && p[t[0]] != null && p[t[1]] != null) return p[t[0]] + p[t[1]];
+    return null;
+  }
+  // L'esito: quello calcolato dallo scraper dal risultato, altrimenti
+  // quello dichiarato dal sito (i due coincidono, verificato sul 9/11).
+  function hpEsito(r) { return r.Esito || r.Esito_Sito || ""; }
+
+  function arricchisciHp(righe) {
+    return (Array.isArray(righe) ? righe : []).map(function (r) {
+      var pul = hpPulita(r);
+      return Object.assign({}, r, { Segno: r.Tip, _pulita: pul,
+        _prob: (pul != null ? pul : num(r.Prob_Implicita)) / 100 });
+    });
+  }
+
+  function hpTiene(r, tipo) {
+    var t = String(r.Tip || "");
+    if (tipo === "secco") return t.length === 1;
+    if (tipo === "doppia") return t.length === 2;
+    return true;
+  }
+
+  function riepilogoHp(v) {
+    var fin = v.filter(function (r) { var e = hpEsito(r); return e === "vinto" || e === "perso"; });
+    var vinte = fin.filter(function (r) { return hpEsito(r) === "vinto"; });
+    // Rendimento a puntata fissa di 1 su ogni tip finito, alla quota del
+    // tip: aritmetica su quello che c'e', non una previsione.
+    var guad = fin.reduce(function (a, r) {
+      var q = num(r.Quota_Tip);
+      return a + (hpEsito(r) === "vinto" && q != null ? q - 1 : -1);
+    }, 0);
+    var att = fin.filter(function (r) { return r._pulita != null; });
+    var attesa = att.length ? att.reduce(function (a, r) { return a + r._pulita; }, 0) / att.length : null;
+    var mq = mediana(v.map(function (r) { return num(r.Quota_Tip); }));
+    return tessere([
+      [String(v.length), "tip"],
+      [fin.length ? vinte.length + " su " + fin.length : "-", "vinti, fra quelli finiti"],
+      [fin.length ? (guad >= 0 ? "+" : "") + (100 * guad / fin.length).toFixed(1) + "%" : "-",
+       "rendimento a puntata fissa"]
+    ]) + (fin.length
+      ? '<p class="conta">Vinti il ' + Math.round(100 * vinte.length / fin.length) + "%" +
+        (attesa != null ? "; le quote senza margine ne attendevano il " + Math.round(attesa) + "%" : "") +
+        ". Quota mediana " + (mq == null ? "-" : mq.toFixed(2)) + ". Su pochi tip il rendimento \u00e8 rumore.</p>"
+      : "");
+  }
+
+  // LA SCHEDA DELLA PARTITA (heropredict_scraper.py --dettagli): forma
+  // delle due squadre dalla piu' recente, medie gol, precedenti. Over 2.5 e
+  // Gol/Gol si contano qui sulle stesse partite della forma: aritmetica.
+  var HP_ESITO = { W: "V", D: "N", L: "P" };
+  function hpPunteggio(p) {
+    return num(p.gol_casa) != null && num(p.gol_ospite) != null ? p.gol_casa + "-" + p.gol_ospite : "?";
+  }
+  // Una partita per riga, il punteggio mai spezzato a capo.
+  function hpRiga(p) {
+    return '<span style="white-space:nowrap">' + esc(p.data || "") + "</span> " + esc(p.casa || "") +
+      ' <b style="white-space:nowrap">' + hpPunteggio(p) + "</b> " + esc(p.ospite || "") +
+      (HP_ESITO[p.esito] ? " (" + HP_ESITO[p.esito] + ")" : "");
+  }
+  function hpMedia(d, chiave, lato) {
+    var m = d.medie || {};
+    for (var k in m) if (k.toLowerCase().indexOf(chiave) >= 0 && m[k]) return num(m[k][lato]);
+    return null;
+  }
+  function hpScheda(r) {
+    var d = r.Dettaglio;
+    if (!d) return "";
+    var out = [];
+    (d.forma || []).forEach(function (b, i) {
+      var pp = b.partite || [];
+      if (!pp.length) return;
+      var con = pp.filter(function (p) { return num(p.gol_casa) != null && num(p.gol_ospite) != null; });
+      var o25 = con.filter(function (p) { return p.gol_casa + p.gol_ospite > 2.5; }).length;
+      var gg = con.filter(function (p) { return p.gol_casa > 0 && p.gol_ospite > 0; }).length;
+      var lato = i === 0 ? "casa" : "ospite";
+      var fa = hpMedia(d, "scored", lato), su = hpMedia(d, "conceded", lato);
+      out.push("<p><b>Forma " + esc(b.squadra || "") + "</b> " +
+        pp.map(function (p) { return HP_ESITO[p.esito] || "?"; }).join(" ") + "<br>" +
+        (fa != null && su != null ? "gol " + f1(fa) + " fatti e " + f1(su) + " subiti a partita \u00b7 " : "") +
+        "Over 2.5 " + o25 + "/" + con.length + " \u00b7 Gol/Gol " + gg + "/" + con.length + "</p>" +
+        '<p class="piccolo">' + pp.map(function (p) {
+          return hpRiga(p);
+        }).join("<br>") + "</p>");
+    });
+    var h = d.h2h || [];
+    if (h.length) {
+      var con = h.filter(function (p) { return num(p.gol_casa) != null && num(p.gol_ospite) != null; });
+      var vc = 0, vo = 0, pa = 0, gol = 0;
+      con.forEach(function (p) {
+        gol += p.gol_casa + p.gol_ospite;
+        if (p.gol_casa === p.gol_ospite) { pa++; return; }
+        var vince = p.gol_casa > p.gol_ospite ? p.casa : p.ospite;
+        if (vince === r.Casa) vc++; else vo++;
+      });
+      out.push("<p><b>Precedenti</b> " + esc(r.Casa) + " " + vc + " vinte \u00b7 " + pa + " pari \u00b7 " +
+        esc(r.Ospite) + " " + vo + " vinte" + (con.length ? " \u00b7 " + f1(gol / con.length) + " gol a partita" : "") + "</p>" +
+        '<p class="piccolo">' + h.map(function (p) {
+          return hpRiga(p);
+        }).join("<br>") + "</p>");
+    }
+    return out.join("");
+  }
+
+  function rigaHp(r) {
+    var q = num(r.Quota_Tip), pi = num(r.Prob_Implicita), pul = r._pulita;
+    var e = hpEsito(r);
+    var det = [];
+    det.push("<p>" + esc([r.Paese, r.Lega].filter(Boolean).join(" \u2013 ")) + "</p>");
+    det.push("<p><b>Tip " + esc(r.Tip) + " a " + f2(q) + "</b>. Il sito lo d\u00e0 al " + f1(pi) +
+      "%, cio\u00e8 100 diviso la quota, margine compreso" +
+      (pul != null ? "; senza margine \u00e8 al " + f1(pul) + "%" : "") + ".</p>");
+    if (num(r.Q1) != null) det.push("<p>1X2 " + [r.Q1, r.QX, r.Q2].map(function (x) { return f2(num(x)); }).join(" \u00b7 ") +
+      (num(r.Margine_1X2) != null ? " \u2013 margine del book " + f1(num(r.Margine_1X2)) + "%" : "") + "</p>");
+    if (num(r.Q1X) != null) det.push("<p>Doppia chance 1X " + f2(num(r.Q1X)) + " \u00b7 X2 " + f2(num(r.QX2)) + " \u00b7 12 " + f2(num(r.Q12)) + "</p>");
+    var gol = [["Over 2.5", r.Q_O25], ["Under 2.5", r.Q_U25], ["Gol", r.Q_GG], ["NoGol", r.Q_NG]]
+      .filter(function (x) { return num(x[1]) != null; })
+      .map(function (x) { return x[0] + " " + f2(num(x[1])); });
+    if (gol.length) det.push("<p>" + gol.join(" \u00b7 ") + "</p>");
+    if (r.Gol_Casa != null && r.Gol_Ospite != null) {
+      det.push("<p>Finita " + esc(r.Gol_Casa + "-" + r.Gol_Ospite) +
+        (e ? ": tip " + (e === "vinto" ? "vinto" : e === "perso" ? "perso" : esc(e)) : "") + ".</p>");
+    }
+    det.push(hpScheda(r));
+    if (r.Url) det.push('<p><a href="' + esc(r.Url) + '" target="_blank" rel="noopener">La partita su HeroPredict</a></p>');
+    det.push('<p class="piccolo">HeroPredict \u00e8 informativa: il tip \u00e8 la quota pi\u00f9 corta del book e non entra nel consenso.</p>');
+    var pill = e === "vinto" ? '<span class="pill stretto">\u2713 vinto</span>' :
+      e === "perso" ? '<span class="pill largo">\u2717 perso</span>' : "";
+    var sel = ["quota <b>" + f2(q) + "</b>"];
+    if (pul != null) sel.push("senza margine " + f0(pul) + "%");
+    return '<div class="riga">' +
+      "<details><summary>" +
+      '<span class="segno">' + esc(r.Tip || "?") + "</span>" +
+      '<div class="corpo">' +
+      '<div class="alto">' + (r.Ora ? "<span><b>" + esc(r.Ora) + "</b></span>" : "") + golHtml(r) + pill +
+        (r.Lega ? '<span class="chip">' + esc(r.Lega) + "</span>" : "") + "</div>" +
+      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" +
+      '<div class="sel">' + sel.join(" \u00b7 ") + "</div>" +
+      tripla("Quote senza margine", num(r.P1), num(r.PX), num(r.P2)) +
+      "</div>" +
+      '<div class="numero"><b>' + f0(pi) + '%</b><span>per il sito</span></div>' +
       "</summary>" +
       '<div class="dettaglio">' + det.join("") + "</div>" +
       "</details></div>";
@@ -5608,6 +5788,25 @@
         b.addEventListener("click", function () {
           if (!stato.data.sm) stato.data.sm = stato.data[sez];
           stato.sez = "sm"; stato.cerca = ""; stato.limite = PASSO; disegna();
+        });
+        m.parentNode.appendChild(b);
+      }
+    }
+  }, function () { /* nessun dato: il tasto resta nascosto */ });
+  // HeroPredict: stessa regola. Il tasto va in fondo alla fila.
+  leggi("heropredict_index.json").then(function (ix) {
+    if (!ix || !Array.isArray(ix.date) || !ix.date.length) return;
+    HP_PRONTO = true;
+    if (stato.sez === "prezzi" || stato.sez === "mercato" || stato.sez === "wdw" || stato.sez === "sm") {
+      var m = $cont.querySelector('[data-gruppo="mercato"]');
+      if (m && !$cont.querySelector('[data-gruppo="hp"]')) {
+        var sez = stato.sez;
+        var b = document.createElement("button");
+        b.type = "button"; b.setAttribute("data-gruppo", "hp"); b.setAttribute("aria-pressed", "false");
+        b.textContent = "HeroPredict";
+        b.addEventListener("click", function () {
+          if (!stato.data.hp) stato.data.hp = stato.data[sez];
+          stato.sez = "hp"; stato.cerca = ""; stato.limite = PASSO; disegna();
         });
         m.parentNode.appendChild(b);
       }
