@@ -1335,6 +1335,14 @@
     .chips::-webkit-scrollbar-thumb:hover { background: var(--tenue); }
     .chips::-webkit-scrollbar-track { background: transparent; }
   }
+  /* FILA DEI TASTI A CAPO (10/11): con HeroPredict i tasti dei
+     Pronostici erano cinque e su telefono l'ultimo restava tagliato a
+     destra. Ora la fila va a capo e si vedono tutti senza scorrere.
+     Sta in fondo apposta: vale su telefono e su computer. */
+  .chips {
+    flex-wrap: wrap; overflow-x: visible;
+    margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0;
+  }
   /* BARRA DELLE SEZIONI VERDE nel tema chiaro, lo stesso verde della
      barretta sotto il titolo (--evidenza): stacca dallo sfondo chiaro;
      il tasto acceso resta lime. */
@@ -1792,6 +1800,18 @@
 
   var $cont = document.getElementById("contenuto");
 
+  // I tasti che arrivano dopo (FootyStats, Sports Mole, HeroPredict) si
+  // mettono al loro posto nella fila, non in coda: gli indici arrivano in
+  // ordine sparso e prima HeroPredict finiva davanti a Sports Mole.
+  function inserisciInOrdine(fila, b) {
+    var ordine = GRUPPO_PRONOSTICI_TUTTI.map(function (g) { return g[0]; });
+    var mio = ordine.indexOf(b.getAttribute("data-gruppo"));
+    var dopo = null;
+    for (var i = 0; i < fila.children.length; i++) {
+      if (ordine.indexOf(fila.children[i].getAttribute("data-gruppo")) > mio) { dopo = fila.children[i]; break; }
+    }
+    fila.insertBefore(b, dopo);
+  }
   function chipsHtml(voci, attivo, attr) {
     return '<div class="chips" role="group">' + voci.map(function (v) {
       return '<button type="button" ' + attr + '="' + esc(v[0]) + '" aria-pressed="' +
@@ -5770,7 +5790,7 @@
           if (!stato.data.wdw) stato.data.wdw = stato.data[sez];
           stato.sez = "wdw"; stato.cerca = ""; stato.limite = PASSO; disegna();
         });
-        m.parentNode.appendChild(b);
+        inserisciInOrdine(m.parentNode, b);
       }
     }
   }, function () { /* nessun dato: il tasto resta nascosto */ });
@@ -5789,7 +5809,7 @@
           if (!stato.data.sm) stato.data.sm = stato.data[sez];
           stato.sez = "sm"; stato.cerca = ""; stato.limite = PASSO; disegna();
         });
-        m.parentNode.appendChild(b);
+        inserisciInOrdine(m.parentNode, b);
       }
     }
   }, function () { /* nessun dato: il tasto resta nascosto */ });
@@ -5808,7 +5828,7 @@
           if (!stato.data.hp) stato.data.hp = stato.data[sez];
           stato.sez = "hp"; stato.cerca = ""; stato.limite = PASSO; disegna();
         });
-        m.parentNode.appendChild(b);
+        inserisciInOrdine(m.parentNode, b);
       }
     }
   }, function () { /* nessun dato: il tasto resta nascosto */ });
