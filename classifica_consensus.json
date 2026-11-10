@@ -1,19 +1,19 @@
 {
  "medio": {
   "copertura": {
-   "1": 23876,
+   "1": 23881,
    "2": 2843,
    "3": 1468,
    "4": 675,
    "5": 259
   },
-  "totale": 29121,
+  "totale": 29126,
   "brier": 0.5788,
   "brier_clima": 0.6411,
   "fonti": [
    {
     "nome": "betimate",
-    "partite": 27738,
+    "partite": 27743,
     "brier": 0.5787,
     "brier_media": 0.578
    },
@@ -56,7 +56,7 @@
    ]
   }
  },
- "aggiornato": "2026-11-10 04:23",
+ "aggiornato": "2026-11-10 05:53",
  "accordo": {
   "totale": 2530,
   "prende": {
