@@ -8,17 +8,17 @@
   "Giornata": "",
   "P1": 85.72,
   "PX": 8.94,
-  "P2": 5.36,
+  "P2": 5.33,
   "P_GG": 26.1,
   "P_NG": 73.9,
-  "P_O15": 87.31,
-  "P_U15": 12.69,
+  "P_O15": 87.28,
+  "P_U15": 12.72,
   "P_O25": 72.77,
   "P_U25": 27.23,
-  "P_O35": 55.83,
+  "P_O35": 55.8,
   "P_U35": 44.17,
-  "P_O45": 51.72,
-  "P_U45": 48.28,
+  "P_O45": 51.7,
+  "P_U45": 48.3,
   "PT1": 78.66,
   "PTX": 18.28,
   "PT2": 3.06,
@@ -26,24 +26,24 @@
   "P_Nessun_Gol": 3.45,
   "P_Primo_Ospite": 6.85,
   "Esatto": "3-0",
-  "P_Esatto": 10.88,
+  "P_Esatto": 10.89,
   "Esatti": {
    "casa": [
     [
      "3-0",
-     10.88
+     10.89
     ],
     [
      "2-0",
-     9.14
+     9.13
     ],
     [
      "1-0",
-     6.96
+     6.95
     ],
     [
      "2-1",
-     4.25
+     4.26
     ],
     [
      "3-1",
@@ -65,7 +65,7 @@
     ],
     [
      "2-2",
-     1.15
+     1.14
     ],
     [
      "Other",
@@ -75,7 +75,7 @@
    "ospite": [
     [
      "0-1",
-     2.34
+     2.33
     ],
     [
      "1-2",
@@ -83,7 +83,7 @@
     ],
     [
      "0-2",
-     1.07
+     1.06
     ],
     [
      "Other",
@@ -102,20 +102,20 @@
    "under_10.5": 52.77
   },
   "Linee_Casa": {
-   "over_1.5": 80.04,
-   "under_1.5": 19.96,
+   "over_1.5": 80.02,
+   "under_1.5": 19.98,
    "over_2.5": 65.43,
    "under_2.5": 34.57,
    "over_3.5": 50.87,
    "under_3.5": 49.13
   },
   "Linee_Ospite": {
-   "over_0.5": 18.77,
-   "under_0.5": 81.23,
-   "over_1.5": 4.96,
-   "under_1.5": 95.04,
-   "over_2.5": 0.5,
-   "under_2.5": 99.5,
+   "over_0.5": 18.73,
+   "under_0.5": 81.27,
+   "over_1.5": 4.92,
+   "under_1.5": 95.08,
+   "over_2.5": 0.49,
+   "under_2.5": 99.51,
    "over_3.5": 0.02,
    "under_3.5": 99.98
   },
@@ -125,5 +125,299 @@
   "Url": "https://www.sportsmole.co.uk/football/international-friendlies/vietnam-vs-chinese-taipei_game_262002.html",
   "Url_Preview": "https://www.sportsmole.co.uk/football/vietnam/preview/vietnam-vs-chinese-taipei-prediction-team-news-lineups_608773.html",
   "Id": "262002"
+ },
+ {
+  "Casa": "Barnsley",
+  "Ospite": "Oldham Athletic",
+  "Ora": "20:00",
+  "Data": "2026-11-11",
+  "Lega": "EFL Trophy - Group Stage",
+  "Giornata": "Gameweek 3",
+  "P1": 40.94,
+  "PX": 23.51,
+  "P2": 35.51,
+  "P_GG": 63.75,
+  "P_NG": 36.25,
+  "P_O15": 84.19,
+  "P_U15": 15.81,
+  "P_O25": 64.98,
+  "P_U25": 35.02,
+  "P_O35": 42.05,
+  "P_U35": 57.95,
+  "P_O45": 27.49,
+  "P_U45": 72.51,
+  "PT1": 32.18,
+  "PTX": 40.72,
+  "PT2": 27.1,
+  "P_Primo_Casa": 50.53,
+  "P_Nessun_Gol": 4.25,
+  "P_Primo_Ospite": 45.22,
+  "Esatto": "1-1",
+  "P_Esatto": 9.83,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     8.68
+    ],
+    [
+     "1-0",
+     6.14
+    ],
+    [
+     "2-0",
+     4.9
+    ],
+    [
+     "3-1",
+     4.19
+    ],
+    [
+     "3-2",
+     3.73
+    ],
+    [
+     "3-0",
+     3.49
+    ],
+    [
+     "Other",
+     9.81
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     9.83
+    ],
+    [
+     "2-2",
+     6.5
+    ],
+    [
+     "0-0",
+     4.25
+    ],
+    [
+     "3-3",
+     2.4
+    ],
+    [
+     "Other",
+     0.53
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     8.1
+    ],
+    [
+     "0-1",
+     5.37
+    ],
+    [
+     "0-2",
+     4.48
+    ],
+    [
+     "1-3",
+     3.87
+    ],
+    [
+     "2-3",
+     3.39
+    ],
+    [
+     "0-3",
+     2.66
+    ],
+    [
+     "Other",
+     7.63
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 76.15,
+   "equal_8": 8.02,
+   "under_8": 15.82,
+   "over_9": 66.65,
+   "equal_9": 9.5,
+   "under_9": 23.85,
+   "over_10.5": 56.3,
+   "under_10.5": 43.7
+  },
+  "Linee_Casa": {
+   "over_1.5": 47.62,
+   "under_1.5": 52.38,
+   "over_2.5": 24.15,
+   "under_2.5": 75.85,
+   "over_3.5": 10.34,
+   "under_3.5": 89.66
+  },
+  "Linee_Ospite": {
+   "over_0.5": 71.36,
+   "under_0.5": 28.64,
+   "over_1.5": 43.29,
+   "under_1.5": 56.71,
+   "over_2.5": 20.48,
+   "under_2.5": 79.52,
+   "over_3.5": 8.16,
+   "under_3.5": 91.84
+  },
+  "WeSay": "2-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 11, 2026 7.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/efl-trophy/barnsley-vs-oldham-athletic_game_262005.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/barnsley/efl-trophy/preview/barnsley-vs-oldham-prediction-team-news-lineups_608810.html",
+  "Id": "262005"
+ },
+ {
+  "Casa": "Sheffield Wednesday",
+  "Ospite": "Accrington Stanley",
+  "Ora": "20:00",
+  "Data": "2026-11-11",
+  "Lega": "EFL Trophy - Group Stage",
+  "Giornata": "Gameweek 3",
+  "P1": 41.09,
+  "PX": 24.27,
+  "P2": 34.59,
+  "P_GG": 57.0,
+  "P_NG": 43.0,
+  "P_O15": 78.09,
+  "P_U15": 21.91,
+  "P_O25": 54.88,
+  "P_U25": 45.12,
+  "P_O35": 33.66,
+  "P_U35": 66.34,
+  "P_O45": 19.87,
+  "P_U45": 80.13,
+  "PT1": 34.05,
+  "PTX": 39.2,
+  "PT2": 26.75,
+  "P_Primo_Casa": 52.14,
+  "P_Nessun_Gol": 5.91,
+  "P_Primo_Ospite": 41.95,
+  "Esatto": "1-1",
+  "P_Esatto": 11.49,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     8.81
+    ],
+    [
+     "2-1",
+     8.1
+    ],
+    [
+     "2-0",
+     6.34
+    ],
+    [
+     "3-1",
+     4.43
+    ],
+    [
+     "3-2",
+     3.37
+    ],
+    [
+     "3-0",
+     3.09
+    ],
+    [
+     "Other",
+     6.94
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.49
+    ],
+    [
+     "0-0",
+     5.91
+    ],
+    [
+     "2-2",
+     5.56
+    ],
+    [
+     "3-3",
+     1.25
+    ],
+    [
+     "Other",
+     0.05
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     7.79
+    ],
+    [
+     "0-1",
+     7.12
+    ],
+    [
+     "0-2",
+     5.39
+    ],
+    [
+     "1-3",
+     3.79
+    ],
+    [
+     "2-3",
+     2.84
+    ],
+    [
+     "0-3",
+     2.24
+    ],
+    [
+     "Other",
+     5.42
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 61.07,
+   "equal_8": 10.39,
+   "under_8": 28.54,
+   "over_9": 50.21,
+   "equal_9": 10.86,
+   "under_9": 38.93,
+   "over_10.5": 39.72,
+   "under_10.5": 60.28
+  },
+  "Linee_Casa": {
+   "over_1.5": 41.97,
+   "under_1.5": 58.03,
+   "over_2.5": 19.13,
+   "under_2.5": 80.87,
+   "over_3.5": 6.99,
+   "under_3.5": 93.01
+  },
+  "Linee_Ospite": {
+   "over_0.5": 68.84,
+   "under_0.5": 31.16,
+   "over_1.5": 37.7,
+   "under_1.5": 62.3,
+   "over_2.5": 15.59,
+   "under_2.5": 84.41,
+   "over_3.5": 5.47,
+   "under_3.5": 94.53
+  },
+  "WeSay": "3-2",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 11, 2026 7.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/efl-trophy/sheffield-wednesday-vs-accrington-stanley_game_262004.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/sheffield-wednesday/efl-trophy/preview/sheff-weds-vs-accrington-prediction-team-news-lineups_608795.html",
+  "Id": "262004"
  }
 ]
