@@ -1,0 +1,2981 @@
+[
+ {
+  "Id": "af-1545862",
+  "Id_Interno": 216500,
+  "Data": "2026-11-11",
+  "Ora": "18:00",
+  "Data_Sito": "2026-11-11",
+  "Ora_Sito": "18:00",
+  "Kickoff_UTC": "2026-11-11 17:00",
+  "Paese": "World",
+  "Lega": "Africa Cup of Nations - Qualification",
+  "Casa": "Algeria",
+  "Ospite": "Togo",
+  "Casa_N": "algeria",
+  "Ospite_N": "togo",
+  "Tip": "1",
+  "Mercato": "1X2",
+  "Selezione": "1",
+  "Linea": null,
+  "Quota_Tip": 1.17,
+  "Prob_Implicita": 85.5,
+  "Stato": "NS",
+  "Gol_Casa": null,
+  "Gol_Ospite": null,
+  "Esito": null,
+  "Esito_Sito": null,
+  "Q1": 1.17,
+  "QX": 5.45,
+  "Q2": 14.0,
+  "Q1X": null,
+  "QX2": 3.83,
+  "Q12": 1.06,
+  "Q_O15": 1.21,
+  "Q_U15": 3.75,
+  "Q_O25": 1.78,
+  "Q_U25": 1.88,
+  "Q_O35": 3.15,
+  "Q_U35": 1.29,
+  "Q_GG": 2.55,
+  "Q_NG": 1.43,
+  "P1": 77.03,
+  "PX": 16.54,
+  "P2": 6.44,
+  "Margine_1X2": 10.96,
+  "P_O25": 51.37,
+  "P_U25": 48.63,
+  "Margine_OU25": 9.37,
+  "P_GG": 35.93,
+  "P_NG": 64.07,
+  "Margine_BTTS": 9.15,
+  "API_P1": null,
+  "API_PX": null,
+  "API_P2": null,
+  "API_Consiglio": null,
+  "Pot_O15": null,
+  "Pot_O25": null,
+  "Pot_BTTS": null,
+  "Pot_O05PT": null,
+  "Forma_Casa": null,
+  "Forma_Ospite": null,
+  "Quote": {
+   "odds_1st_half_over05": 1.25,
+   "odds_1st_half_result_1": 1.6,
+   "odds_1st_half_result_2": 10.9,
+   "odds_1st_half_result_x": 2.55,
+   "odds_2h_1": 1.5,
+   "odds_2h_2": 11.3,
+   "odds_2h_over05": 1.18,
+   "odds_2h_over15": 2.14,
+   "odds_2h_under05": 3.86,
+   "odds_2h_under15": 1.6,
+   "odds_2h_x": 2.82,
+   "odds_2nd_half_result_1": 1.5,
+   "odds_2nd_half_result_2": 11.3,
+   "odds_2nd_half_result_x": 2.82,
+   "odds_btts_ht_no": 1.07,
+   "odds_btts_ht_yes": 6.5,
+   "odds_btts_no": 1.43,
+   "odds_btts_yes": 2.55,
+   "odds_doublechance_12": 1.06,
+   "odds_doublechance_x2": 3.83,
+   "odds_even": 1.77,
+   "odds_ft_1": 1.17,
+   "odds_ft_2": 14,
+   "odds_ft_over15": 1.21,
+   "odds_ft_over25": 1.78,
+   "odds_ft_over35": 3.15,
+   "odds_ft_under15": 3.75,
+   "odds_ft_under25": 1.88,
+   "odds_ft_under35": 1.29,
+   "odds_ft_x": 5.45,
+   "odds_ht_1": 1.6,
+   "odds_ht_2": 10.9,
+   "odds_ht_over05": 1.25,
+   "odds_ht_over15": 2.47,
+   "odds_ht_under05": 3.28,
+   "odds_ht_under15": 1.45,
+   "odds_ht_x": 2.55,
+   "odds_odd": 1.79
+  },
+  "Url": "https://heropredict.com/football/prediction/algeria-vs-togo/2026-11-11/1545862",
+  "Pagina": "v1:2026-11-11",
+  "Dettaglio": {
+   "forma": [
+    {
+     "squadra": "Algeria",
+     "riepilogo": "5W 3D 2L in last 10",
+     "partite": [
+      {
+       "data": "6 Oct",
+       "casa": "Algeria",
+       "ospite": "Niger",
+       "gol_casa": 2,
+       "gol_ospite": 1,
+       "esito": "W"
+      },
+      {
+       "data": "29 Sept",
+       "casa": "Burundi",
+       "ospite": "Algeria",
+       "gol_casa": 2,
+       "gol_ospite": 2,
+       "esito": "D"
+      },
+      {
+       "data": "25 Sept",
+       "casa": "Algeria",
+       "ospite": "Zambia",
+       "gol_casa": 3,
+       "gol_ospite": 1,
+       "esito": "W"
+      },
+      {
+       "data": "3 Jul",
+       "casa": "Switzerland",
+       "ospite": "Algeria",
+       "gol_casa": 2,
+       "gol_ospite": 0,
+       "esito": "L"
+      },
+      {
+       "data": "28 Jun",
+       "casa": "Algeria",
+       "ospite": "Austria",
+       "gol_casa": 3,
+       "gol_ospite": 3,
+       "esito": "D"
+      },
+      {
+       "data": "23 Jun",
+       "casa": "Jordan",
+       "ospite": "Algeria",
+       "gol_casa": 1,
+       "gol_ospite": 2,
+       "esito": "W"
+      },
+      {
+       "data": "17 Jun",
+       "casa": "Argentina",
+       "ospite": "Algeria",
+       "gol_casa": 3,
+       "gol_ospite": 0,
+       "esito": "L"
+      },
+      {
+       "data": "11 Jun",
+       "casa": "Bolivia",
+       "ospite": "Algeria",
+       "gol_casa": 0,
+       "gol_ospite": 4,
+       "esito": "W"
+      },
+      {
+       "data": "3 Jun",
+       "casa": "Netherlands",
+       "ospite": "Algeria",
+       "gol_casa": 0,
+       "gol_ospite": 1,
+       "esito": "W"
+      },
+      {
+       "data": "31 Mar",
+       "casa": "Algeria",
+       "ospite": "Uruguay",
+       "gol_casa": 0,
+       "gol_ospite": 0,
+       "esito": "D"
+      }
+     ]
+    },
+    {
+     "squadra": "Togo",
+     "riepilogo": "4W 3D 3L in last 10",
+     "partite": [
+      {
+       "data": "29 Sept",
+       "casa": "Zambia",
+       "ospite": "Togo",
+       "gol_casa": 2,
+       "gol_ospite": 0,
+       "esito": "L"
+      },
+      {
+       "data": "25 Sept",
+       "casa": "Togo",
+       "ospite": "Burundi",
+       "gol_casa": 1,
+       "gol_ospite": 0,
+       "esito": "W"
+      },
+      {
+       "data": "9 Jun",
+       "casa": "Togo",
+       "ospite": "Benin",
+       "gol_casa": 5,
+       "gol_ospite": 1,
+       "esito": "W"
+      },
+      {
+       "data": "5 Jun",
+       "casa": "Central African Republic",
+       "ospite": "Togo",
+       "gol_casa": 1,
+       "gol_ospite": 1,
+       "esito": "D"
+      },
+      {
+       "data": "31 Mar",
+       "casa": "Niger",
+       "ospite": "Togo",
+       "gol_casa": 0,
+       "gol_ospite": 1,
+       "esito": "W"
+      },
+      {
+       "data": "27 Mar",
+       "casa": "Guinea",
+       "ospite": "Togo",
+       "gol_casa": 2,
+       "gol_ospite": 2,
+       "esito": "D"
+      },
+      {
+       "data": "13 Oct",
+       "casa": "South Sudan",
+       "ospite": "Togo",
+       "gol_casa": 0,
+       "gol_ospite": 0,
+       "esito": "D"
+      },
+      {
+       "data": "10 Oct",
+       "casa": "Togo",
+       "ospite": "Congo DR",
+       "gol_casa": 0,
+       "gol_ospite": 1,
+       "esito": "L"
+      },
+      {
+       "data": "9 Sept",
+       "casa": "Togo",
+       "ospite": "Sudan",
+       "gol_casa": 1,
+       "gol_ospite": 0,
+       "esito": "W"
+      },
+      {
+       "data": "5 Sept",
+       "casa": "Mauritania",
+       "ospite": "Togo",
+       "gol_casa": 2,
+       "gol_ospite": 0,
+       "esito": "L"
+      }
+     ]
+    }
+   ],
+   "h2h": [
+    {
+     "data": "14 Oct",
+     "casa": "Togo",
+     "gol_casa": 0,
+     "gol_ospite": 1,
+     "ospite": "Algeria"
+    },
+    {
+     "data": "10 Oct",
+     "casa": "Algeria",
+     "gol_casa": 5,
+     "gol_ospite": 1,
+     "ospite": "Togo"
+    },
+    {
+     "data": "18 Nov",
+     "casa": "Togo",
+     "gol_casa": 1,
+     "gol_ospite": 4,
+     "ospite": "Algeria"
+    },
+    {
+     "data": "11 Jun",
+     "casa": "Algeria",
+     "gol_casa": 1,
+     "gol_ospite": 0,
+     "ospite": "Togo"
+    }
+   ],
+   "h2h_riepilogo": "Algeria 4W · 0D · Togo 0W · 3.3 goals a game",
+   "medie": {
+    "Goals scored (avg)": {
+     "casa": 1.7,
+     "ospite": 1.1
+    },
+    "Goals conceded (avg)": {
+     "casa": 1.3,
+     "ospite": 0.9
+    },
+    "Wins": {
+     "casa": 1.0,
+     "ospite": 1.0
+    },
+    "Played": {
+     "casa": 2.0,
+     "ospite": 2.0
+    }
+   }
+  }
+ },
+ {
+  "Id": "af-1545863",
+  "Id_Interno": 216501,
+  "Data": "2026-11-11",
+  "Ora": "18:00",
+  "Data_Sito": "2026-11-11",
+  "Ora_Sito": "18:00",
+  "Kickoff_UTC": "2026-11-11 17:00",
+  "Paese": "World",
+  "Lega": "Africa Cup of Nations - Qualification",
+  "Casa": "Angola",
+  "Ospite": "South Sudan",
+  "Casa_N": "angola",
+  "Ospite_N": "south sudan",
+  "Tip": "1",
+  "Mercato": "1X2",
+  "Selezione": "1",
+  "Linea": null,
+  "Quota_Tip": 1.22,
+  "Prob_Implicita": 82.0,
+  "Stato": "NS",
+  "Gol_Casa": null,
+  "Gol_Ospite": null,
+  "Esito": null,
+  "Esito_Sito": null,
+  "Q1": 1.22,
+  "QX": 4.66,
+  "Q2": 13.1,
+  "Q1X": null,
+  "QX2": 3.36,
+  "Q12": 1.1,
+  "Q_O15": 1.33,
+  "Q_U15": 2.93,
+  "Q_O25": 2.15,
+  "Q_U25": 1.59,
+  "Q_O35": null,
+  "Q_U35": null,
+  "Q_GG": 2.96,
+  "Q_NG": 1.32,
+  "P1": 73.8,
+  "PX": 19.32,
+  "P2": 6.87,
+  "Margine_1X2": 11.06,
+  "P_O25": 42.51,
+  "P_U25": 57.49,
+  "Margine_OU25": 9.4,
+  "P_GG": 30.84,
+  "P_NG": 69.16,
+  "Margine_BTTS": 9.54,
+  "API_P1": null,
+  "API_PX": null,
+  "API_P2": null,
+  "API_Consiglio": null,
+  "Pot_O15": null,
+  "Pot_O25": null,
+  "Pot_BTTS": null,
+  "Pot_O05PT": null,
+  "Forma_Casa": null,
+  "Forma_Ospite": null,
+  "Quote": {
+   "odds_1st_half_over05": 1.34,
+   "odds_1st_half_result_1": 1.71,
+   "odds_1st_half_result_2": 11.4,
+   "odds_1st_half_result_x": 2.28,
+   "odds_2h_1": 1.61,
+   "odds_2h_2": 11.1,
+   "odds_2h_over05": 1.26,
+   "odds_2h_over15": 2.52,
+   "odds_2h_under05": 3.21,
+   "odds_2h_under15": 1.44,
+   "odds_2h_x": 2.52,
+   "odds_2nd_half_result_1": 1.61,
+   "odds_2nd_half_result_2": 11.1,
+   "odds_2nd_half_result_x": 2.52,
+   "odds_btts_ht_no": 1.03,
+   "odds_btts_ht_yes": 8,
+   "odds_btts_no": 1.32,
+   "odds_btts_yes": 2.96,
+   "odds_doublechance_12": 1.1,
+   "odds_doublechance_x2": 3.36,
+   "odds_even": 1.76,
+   "odds_ft_1": 1.22,
+   "odds_ft_2": 13.1,
+   "odds_ft_over15": 1.33,
+   "odds_ft_over25": 2.15,
+   "odds_ft_under15": 2.93,
+   "odds_ft_under25": 1.59,
+   "odds_ft_x": 4.66,
+   "odds_ht_1": 1.71,
+   "odds_ht_2": 11.4,
+   "odds_ht_over05": 1.34,
+   "odds_ht_over15": 2.93,
+   "odds_ht_under05": 2.79,
+   "odds_ht_under15": 1.33,
+   "odds_ht_x": 2.28,
+   "odds_odd": 1.8
+  },
+  "Url": "https://heropredict.com/football/prediction/angola-vs-south-sudan/2026-11-11/1545863",
+  "Pagina": "v1:2026-11-11",
+  "Dettaglio": {
+   "forma": [
+    {
+     "squadra": "Angola",
+     "riepilogo": "3W 4D 2L in last 9",
+     "partite": [
+      {
+       "data": "6 Oct",
+       "casa": "Angola",
+       "ospite": "Malawi",
+       "gol_casa": 3,
+       "gol_ospite": 1,
+       "esito": "W"
+      },
+      {
+       "data": "25 Sept",
+       "casa": "Egypt",
+       "ospite": "Angola",
+       "gol_casa": 0,
+       "gol_ospite": 0,
+       "esito": "D"
+      },
+      {
+       "data": "9 Jun",
+       "casa": "Angola",
+       "ospite": "Central African Republic",
+       "gol_casa": 3,
+       "gol_ospite": 0,
+       "esito": "W"
+      },
+      {
+       "data": "5 Jun",
+       "casa": "Angola",
+       "ospite": "Mauritania",
+       "gol_casa": 1,
+       "gol_ospite": 1,
+       "esito": "D"
+      },
+      {
+       "data": "29 Dec",
+       "casa": "Angola",
+       "ospite": "Egypt",
+       "gol_casa": 0,
+       "gol_ospite": 0,
+       "esito": "D"
+      },
+      {
+       "data": "26 Dec",
+       "casa": "Angola",
+       "ospite": "Zimbabwe",
+       "gol_casa": 1,
+       "gol_ospite": 1,
+       "esito": "D"
+      },
+      {
+       "data": "22 Dec",
+       "casa": "South Africa",
+       "ospite": "Angola",
+       "gol_casa": 2,
+       "gol_ospite": 1,
+       "esito": "L"
+      },
+      {
+       "data": "18 Nov",
+       "casa": "Angola",
+       "ospite": "Zambia",
+       "gol_casa": 3,
+       "gol_ospite": 2,
+       "esito": "W"
+      },
+      {
+       "data": "14 Nov",
+       "casa": "Angola",
+       "ospite": "Argentina",
+       "gol_casa": 0,
+       "gol_ospite": 2,
+       "esito": "L"
+      }
+     ]
+    },
+    {
+     "squadra": "South Sudan",
+     "riepilogo": "1W 3D 6L in last 10",
+     "partite": [
+      {
+       "data": "29 Sept",
+       "casa": "South Sudan",
+       "ospite": "Egypt",
+       "gol_casa": 0,
+       "gol_ospite": 5,
+       "esito": "L"
+      },
+      {
+       "data": "25 Sept",
+       "casa": "Malawi",
+       "ospite": "South Sudan",
+       "gol_casa": 2,
+       "gol_ospite": 1,
+       "esito": "L"
+      },
+      {
+       "data": "29 Mar",
+       "casa": "South Sudan",
+       "ospite": "Djibouti",
+       "gol_casa": 0,
+       "gol_ospite": 1,
+       "esito": "L"
+      },
+      {
+       "data": "26 Mar",
+       "casa": "Djibouti",
+       "ospite": "South Sudan",
+       "gol_casa": 0,
+       "gol_ospite": 4,
+       "esito": "W"
+      },
+      {
+       "data": "25 Nov",
+       "casa": "Syria",
+       "ospite": "South Sudan",
+       "gol_casa": 2,
+       "gol_ospite": 0,
+       "esito": "L"
+      },
+      {
+       "data": "13 Oct",
+       "casa": "South Sudan",
+       "ospite": "Togo",
+       "gol_casa": 0,
+       "gol_ospite": 0,
+       "esito": "D"
+      },
+      {
+       "data": "10 Oct",
+       "casa": "South Sudan",
+       "ospite": "Senegal",
+       "gol_casa": 0,
+       "gol_ospite": 5,
+       "esito": "L"
+      },
+      {
+       "data": "9 Sept",
+       "casa": "Mauritania",
+       "ospite": "South Sudan",
+       "gol_casa": 0,
+       "gol_ospite": 0,
+       "esito": "D"
+      },
+      {
+       "data": "5 Sept",
+       "casa": "South Sudan",
+       "ospite": "Congo DR",
+       "gol_casa": 1,
+       "gol_ospite": 4,
+       "esito": "L"
+      },
+      {
+       "data": "25 Mar",
+       "casa": "Sudan",
+       "ospite": "South Sudan",
+       "gol_casa": 1,
+       "gol_ospite": 1,
+       "esito": "D"
+      }
+     ]
+    }
+   ],
+   "h2h": [],
+   "h2h_riepilogo": null,
+   "medie": {
+    "Goals scored (avg)": {
+     "casa": 1.3,
+     "ospite": 0.7
+    },
+    "Goals conceded (avg)": {
+     "casa": 1.0,
+     "ospite": 2.0
+    },
+    "Wins": {
+     "casa": 1.0,
+     "ospite": 0.0
+    },
+    "Played": {
+     "casa": 2.0,
+     "ospite": 2.0
+    }
+   }
+  }
+ },
+ {
+  "Id": "af-1545867",
+  "Id_Interno": 216505,
+  "Data": "2026-11-11",
+  "Ora": "18:00",
+  "Data_Sito": "2026-11-11",
+  "Ora_Sito": "18:00",
+  "Kickoff_UTC": "2026-11-11 17:00",
+  "Paese": "World",
+  "Lega": "Africa Cup of Nations - Qualification",
+  "Casa": "Cape Verde Islands",
+  "Ospite": "Liberia",
+  "Casa_N": "cape verde islands",
+  "Ospite_N": "liberia",
+  "Tip": "1",
+  "Mercato": "1X2",
+  "Selezione": "1",
+  "Linea": null,
+  "Quota_Tip": 1.26,
+  "Prob_Implicita": 79.4,
+  "Stato": "NS",
+  "Gol_Casa": null,
+  "Gol_Ospite": null,
+  "Esito": null,
+  "Esito_Sito": null,
+  "Q1": 1.26,
+  "QX": 4.41,
+  "Q2": 10.9,
+  "Q1X": null,
+  "QX2": 3.07,
+  "Q12": 1.11,
+  "Q_O15": 1.33,
+  "Q_U15": 2.95,
+  "Q_O25": 2.14,
+  "Q_U25": 1.6,
+  "Q_O35": null,
+  "Q_U35": null,
+  "Q_GG": 2.71,
+  "Q_NG": 1.38,
+  "P1": 71.36,
+  "PX": 20.39,
+  "P2": 8.25,
+  "Margine_1X2": 11.22,
+  "P_O25": 42.78,
+  "P_U25": 57.22,
+  "Margine_OU25": 9.23,
+  "P_GG": 33.74,
+  "P_NG": 66.26,
+  "Margine_BTTS": 9.36,
+  "API_P1": null,
+  "API_PX": null,
+  "API_P2": null,
+  "API_Consiglio": null,
+  "Pot_O15": null,
+  "Pot_O25": null,
+  "Pot_BTTS": null,
+  "Pot_O05PT": null,
+  "Forma_Casa": null,
+  "Forma_Ospite": null,
+  "Quote": {
+   "odds_1st_half_over05": 1.34,
+   "odds_1st_half_result_1": 1.77,
+   "odds_1st_half_result_2": 9.85,
+   "odds_1st_half_result_x": 2.25,
+   "odds_2h_1": 1.66,
+   "odds_2h_2": 9.6,
+   "odds_2h_over05": 1.26,
+   "odds_2h_over15": 2.5,
+   "odds_2h_under05": 3.23,
+   "odds_2h_under15": 1.44,
+   "odds_2h_x": 2.47,
+   "odds_2nd_half_result_1": 1.66,
+   "odds_2nd_half_result_2": 9.6,
+   "odds_2nd_half_result_x": 2.47,
+   "odds_btts_ht_no": 1.05,
+   "odds_btts_ht_yes": 7.27,
+   "odds_btts_no": 1.38,
+   "odds_btts_yes": 2.71,
+   "odds_doublechance_12": 1.11,
+   "odds_doublechance_x2": 3.07,
+   "odds_even": 1.76,
+   "odds_ft_1": 1.26,
+   "odds_ft_2": 10.9,
+   "odds_ft_over15": 1.33,
+   "odds_ft_over25": 2.14,
+   "odds_ft_under15": 2.95,
+   "odds_ft_under25": 1.6,
+   "odds_ft_x": 4.41,
+   "odds_ht_1": 1.77,
+   "odds_ht_2": 9.85,
+   "odds_ht_over05": 1.34,
+   "odds_ht_over15": 2.92,
+   "odds_ht_under05": 2.8,
+   "odds_ht_under15": 1.33,
+   "odds_ht_x": 2.25,
+   "odds_odd": 1.8
+  },
+  "Url": "https://heropredict.com/football/prediction/cape-verde-islands-vs-liberia/2026-11-11/1545867",
+  "Pagina": "v1:2026-11-11",
+  "Dettaglio": {
+   "forma": [
+    {
+     "squadra": "Cape Verde Islands",
+     "riepilogo": "2W 4D 4L in last 10",
+     "partite": [
+      {
+       "data": "29 Sept",
+       "casa": "Cape Verde Islands",
+       "ospite": "Rwanda",
+       "gol_casa": 1,
+       "gol_ospite": 2,
+       "esito": "L"
+      },
+      {
+       "data": "25 Sept",
+       "casa": "Mali",
+       "ospite": "Cape Verde Islands",
+       "gol_casa": 3,
+       "gol_ospite": 1,
+       "esito": "L"
+      },
+      {
+       "data": "3 Jul",
+       "casa": "Argentina",
+       "ospite": "Cape Verde Islands",
+       "gol_casa": 3,
+       "gol_ospite": 2,
+       "esito": "L"
+      },
+      {
+       "data": "27 Jun",
+       "casa": "Cape Verde Islands",
+       "ospite": "Saudi Arabia",
+       "gol_casa": 0,
+       "gol_ospite": 0,
+       "esito": "D"
+      },
+      {
+       "data": "21 Jun",
+       "casa": "Uruguay",
+       "ospite": "Cape Verde Islands",
+       "gol_casa": 2,
+       "gol_ospite": 2,
+       "esito": "D"
+      },
+      {
+       "data": "15 Jun",
+       "casa": "Spain",
+       "ospite": "Cape Verde Islands",
+       "gol_casa": 0,
+       "gol_ospite": 0,
+       "esito": "D"
+      },
+      {
+       "data": "6 Jun",
+       "casa": "Cape Verde Islands",
+       "ospite": "Bermuda",
+       "gol_casa": 3,
+       "gol_ospite": 0,
+       "esito": "W"
+      },
+      {
+       "data": "31 May",
+       "casa": "Cape Verde Islands",
+       "ospite": "Serbia",
+       "gol_casa": 3,
+       "gol_ospite": 0,
+       "esito": "W"
+      },
+      {
+       "data": "30 Mar",
+       "casa": "Cape Verde Islands",
+       "ospite": "Finland",
+       "gol_casa": 1,
+       "gol_ospite": 1,
+       "esito": "D"
+      },
+      {
+       "data": "27 Mar",
+       "casa": "Chile",
+       "ospite": "Cape Verde Islands",
+       "gol_casa": 4,
+       "gol_ospite": 2,
+       "esito": "L"
+      }
+     ]
+    },
+    {
+     "squadra": "Liberia",
+     "riepilogo": "1W 1D 5L in last 7",
+     "partite": [
+      {
+       "data": "29 Sept",
+       "casa": "Liberia",
+       "ospite": "Mali",
+       "gol_casa": 0,
+       "gol_ospite": 1,
+       "esito": "L"
+      },
+      {
+       "data": "25 Sept",
+       "casa": "Rwanda",
+       "ospite": "Liberia",
+       "gol_casa": 3,
+       "gol_ospite": 1,
+       "esito": "L"
+      },
+      {
+       "data": "9 Jun",
+       "casa": "Liberia",
+       "ospite": "Sierra Leone",
+       "gol_casa": 3,
+       "gol_ospite": 1,
+       "esito": "W"
+      },
+      {
+       "data": "6 Jun",
+       "casa": "Sierra Leone",
+       "ospite": "Liberia",
+       "gol_casa": 1,
+       "gol_ospite": 0,
+       "esito": "L"
+      },
+      {
+       "data": "31 Mar",
+       "casa": "Liberia",
+       "ospite": "Libya",
+       "gol_casa": 2,
+       "gol_ospite": 2,
+       "esito": "D"
+      },
+      {
+       "data": "27 Mar",
+       "casa": "Benin",
+       "ospite": "Liberia",
+       "gol_casa": 1,
+       "gol_ospite": 0,
+       "esito": "L"
+      },
+      {
+       "data": "15 Nov",
+       "casa": "Guinea",
+       "ospite": "Liberia",
+       "gol_casa": 2,
+       "gol_ospite": 0,
+       "esito": "L"
+      }
+     ]
+    }
+   ],
+   "h2h": [
+    {
+     "data": "10 Oct",
+     "casa": "Cape Verde Islands",
+     "gol_casa": 1,
+     "gol_ospite": 0,
+     "ospite": "Liberia"
+    },
+    {
+     "data": "7 Oct",
+     "casa": "Liberia",
+     "gol_casa": 1,
+     "gol_ospite": 2,
+     "ospite": "Cape Verde Islands"
+    }
+   ],
+   "h2h_riepilogo": "Cape Verde Islands 2W · 0D · Liberia 0W · 2 goals a game",
+   "medie": {
+    "Goals scored (avg)": {
+     "casa": 1.5,
+     "ospite": 0.9
+    },
+    "Goals conceded (avg)": {
+     "casa": 1.5,
+     "ospite": 1.6
+    },
+    "Wins": {
+     "casa": 0.0,
+     "ospite": 0.0
+    },
+    "Played": {
+     "casa": 2.0,
+     "ospite": 2.0
+    }
+   }
+  }
+ },
+ {
+  "Id": "af-1545868",
+  "Id_Interno": 216506,
+  "Data": "2026-11-11",
+  "Ora": "18:00",
+  "Data_Sito": "2026-11-11",
+  "Ora_Sito": "18:00",
+  "Kickoff_UTC": "2026-11-11 17:00",
+  "Paese": "World",
+  "Lega": "Africa Cup of Nations - Qualification",
+  "Casa": "Comoros",
+  "Ospite": "Congo",
+  "Casa_N": "comoros",
+  "Ospite_N": "congo",
+  "Tip": "1X",
+  "Mercato": "DC",
+  "Selezione": "1X",
+  "Linea": null,
+  "Quota_Tip": 1.21,
+  "Prob_Implicita": 82.6,
+  "Stato": "NS",
+  "Gol_Casa": null,
+  "Gol_Ospite": null,
+  "Esito": null,
+  "Esito_Sito": null,
+  "Q1": 2.0,
+  "QX": 3.14,
+  "Q2": 3.44,
+  "Q1X": 1.21,
+  "QX2": 1.62,
+  "Q12": 1.24,
+  "Q_O15": 1.4,
+  "Q_U15": 2.65,
+  "Q_O25": 2.37,
+  "Q_U25": 1.49,
+  "Q_O35": null,
+  "Q_U35": null,
+  "Q_GG": 2.06,
+  "Q_NG": 1.65,
+  "P1": 45.08,
+  "PX": 28.71,
+  "P2": 26.21,
+  "Margine_1X2": 10.92,
+  "P_O25": 38.6,
+  "P_U25": 61.4,
+  "Margine_OU25": 9.31,
+  "P_GG": 44.47,
+  "P_NG": 55.53,
+  "Margine_BTTS": 9.15,
+  "API_P1": null,
+  "API_PX": null,
+  "API_P2": null,
+  "API_Consiglio": null,
+  "Pot_O15": null,
+  "Pot_O25": null,
+  "Pot_BTTS": null,
+  "Pot_O05PT": null,
+  "Forma_Casa": null,
+  "Forma_Ospite": null,
+  "Quote": {
+   "odds_1st_half_over05": 1.38,
+   "odds_1st_half_result_1": 2.67,
+   "odds_1st_half_result_2": 4.28,
+   "odds_1st_half_result_x": 1.99,
+   "odds_2h_1": 2.52,
+   "odds_2h_2": 4.07,
+   "odds_2h_over05": 1.3,
+   "odds_2h_over15": 2.71,
+   "odds_2h_under05": 2.99,
+   "odds_2h_under15": 1.38,
+   "odds_2h_x": 2.14,
+   "odds_2nd_half_result_1": 2.52,
+   "odds_2nd_half_result_2": 4.07,
+   "odds_2nd_half_result_x": 2.14,
+   "odds_btts_ht_no": 1.1,
+   "odds_btts_ht_yes": 5.54,
+   "odds_btts_no": 1.65,
+   "odds_btts_yes": 2.06,
+   "odds_doublechance_12": 1.24,
+   "odds_doublechance_1x": 1.21,
+   "odds_doublechance_x2": 1.62,
+   "odds_even": 1.76,
+   "odds_ft_1": 2,
+   "odds_ft_2": 3.44,
+   "odds_ft_over15": 1.4,
+   "odds_ft_over25": 2.37,
+   "odds_ft_under15": 2.65,
+   "odds_ft_under25": 1.49,
+   "odds_ft_x": 3.14,
+   "odds_ht_1": 2.67,
+   "odds_ht_2": 4.28,
+   "odds_ht_over05": 1.38,
+   "odds_ht_over15": 3.17,
+   "odds_ht_under05": 2.61,
+   "odds_ht_under15": 1.29,
+   "odds_ht_x": 1.99,
+   "odds_odd": 1.8
+  },
+  "Url": "https://heropredict.com/football/prediction/comoros-vs-congo/2026-11-11/1545868",
+  "Pagina": "v1:2026-11-11",
+  "Dettaglio": {
+   "forma": [
+    {
+     "squadra": "Comoros",
+     "riepilogo": "2W 2D 4L in last 8",
+     "partite": [
+      {
+       "data": "4 Oct",
+       "casa": "Comoros",
+       "ospite": "Senegal",
+       "gol_casa": 0,
+       "gol_ospite": 1,
+       "esito": "L"
+      },
+      {
+       "data": "29 Sept",
+       "casa": "Comoros",
+       "ospite": "Namibia",
+       "gol_casa": 1,
+       "gol_ospite": 0,
+       "esito": "W"
+      },
+      {
+       "data": "24 Sept",
+       "casa": "Cameroon",
+       "ospite": "Comoros",
+       "gol_casa": 3,
+       "gol_ospite": 1,
+       "esito": "L"
+      },
+      {
+       "data": "9 Jun",
+       "casa": "Equatorial Guinea",
+       "ospite": "Comoros",
+       "gol_casa": 0,
+       "gol_ospite": 1,
+       "esito": "W"
+      },
+      {
+       "data": "6 Jun",
+       "casa": "Morocco U23",
+       "ospite": "Comoros",
+       "gol_casa": 2,
+       "gol_ospite": 1,
+       "esito": "L"
+      },
+      {
+       "data": "31 Mar",
+       "casa": "Kazakhstan",
+       "ospite": "Comoros",
+       "gol_casa": 1,
+       "gol_ospite": 0,
+       "esito": "L"
+      },
+      {
+       "data": "28 Mar",
+       "casa": "Namibia",
+       "ospite": "Comoros",
+       "gol_casa": 0,
+       "gol_ospite": 0,
+       "esito": "D"
+      },
+      {
+       "data": "29 Dec",
+       "casa": "Comoros",
+       "ospite": "Mali",
+       "gol_casa": 0,
+       "gol_ospite": 0,
+       "esito": "D"
+      }
+     ]
+    },
+    {
+     "squadra": "Congo",
+     "riepilogo": "0W 4D 4L in last 8",
+     "partite": [
+      {
+       "data": "29 Sept",
+       "casa": "Congo",
+       "ospite": "Cameroon",
+       "gol_casa": 1,
+       "gol_ospite": 1,
+       "esito": "D"
+      },
+      {
+       "data": "24 Sept",
+       "casa": "Namibia",
+       "ospite": "Congo",
+       "gol_casa": 1,
+       "gol_ospite": 0,
+       "esito": "L"
+      },
+      {
+       "data": "14 Oct",
+       "casa": "Morocco",
+       "ospite": "Congo",
+       "gol_casa": 1,
+       "gol_ospite": 0,
+       "esito": "L"
+      },
+      {
+       "data": "8 Oct",
+       "casa": "Niger",
+       "ospite": "Congo",
+       "gol_casa": 3,
+       "gol_ospite": 1,
+       "esito": "L"
+      },
+      {
+       "data": "5 Sept",
+       "casa": "Congo",
+       "ospite": "Tanzania",
+       "gol_casa": 1,
+       "gol_ospite": 1,
+       "esito": "D"
+      },
+      {
+       "data": "19 Aug",
+       "casa": "Nigeria",
+       "ospite": "Congo",
+       "gol_casa": 2,
+       "gol_ospite": 0,
+       "esito": "L"
+      },
+      {
+       "data": "12 Aug",
+       "casa": "Senegal",
+       "ospite": "Congo",
+       "gol_casa": 1,
+       "gol_ospite": 1,
+       "esito": "D"
+      },
+      {
+       "data": "5 Aug",
+       "casa": "Congo",
+       "ospite": "Sudan",
+       "gol_casa": 1,
+       "gol_ospite": 1,
+       "esito": "D"
+      }
+     ]
+    }
+   ],
+   "h2h": [],
+   "h2h_riepilogo": null,
+   "medie": {
+    "Goals scored (avg)": {
+     "casa": 0.5,
+     "ospite": 0.6
+    },
+    "Goals conceded (avg)": {
+     "casa": 0.9,
+     "ospite": 1.4
+    },
+    "Wins": {
+     "casa": 1.0,
+     "ospite": 0.0
+    },
+    "Played": {
+     "casa": 2.0,
+     "ospite": 2.0
+    }
+   }
+  }
+ },
+ {
+  "Id": "af-1545877",
+  "Id_Interno": 216515,
+  "Data": "2026-11-11",
+  "Ora": "18:00",
+  "Data_Sito": "2026-11-11",
+  "Ora_Sito": "18:00",
+  "Kickoff_UTC": "2026-11-11 17:00",
+  "Paese": "World",
+  "Lega": "Africa Cup of Nations - Qualification",
+  "Casa": "Mali",
+  "Ospite": "Rwanda",
+  "Casa_N": "mali",
+  "Ospite_N": "rwanda",
+  "Tip": "1",
+  "Mercato": "1X2",
+  "Selezione": "1",
+  "Linea": null,
+  "Quota_Tip": 1.17,
+  "Prob_Implicita": 85.5,
+  "Stato": "NS",
+  "Gol_Casa": null,
+  "Gol_Ospite": null,
+  "Esito": null,
+  "Esito_Sito": null,
+  "Q1": 1.17,
+  "QX": 5.23,
+  "Q2": 16.0,
+  "Q1X": null,
+  "QX2": 3.85,
+  "Q12": 1.07,
+  "Q_O15": 1.28,
+  "Q_U15": 3.18,
+  "Q_O25": 2.01,
+  "Q_U25": 1.68,
+  "Q_O35": 3.82,
+  "Q_U35": 1.2,
+  "Q_GG": 3.06,
+  "Q_NG": 1.31,
+  "P1": 77.11,
+  "PX": 17.25,
+  "P2": 5.64,
+  "Margine_1X2": 10.84,
+  "P_O25": 45.53,
+  "P_U25": 54.47,
+  "Margine_OU25": 9.28,
+  "P_GG": 29.98,
+  "P_NG": 70.02,
+  "Margine_BTTS": 9.02,
+  "API_P1": null,
+  "API_PX": null,
+  "API_P2": null,
+  "API_Consiglio": null,
+  "Pot_O15": null,
+  "Pot_O25": null,
+  "Pot_BTTS": null,
+  "Pot_O05PT": null,
+  "Forma_Casa": null,
+  "Forma_Ospite": null,
+  "Quote": {
+   "odds_1st_half_over05": 1.31,
+   "odds_1st_half_result_1": 1.61,
+   "odds_1st_half_result_2": 13,
+   "odds_1st_half_result_x": 2.42,
+   "odds_2h_1": 1.51,
+   "odds_2h_2": 13.5,
+   "odds_2h_over05": 1.23,
+   "odds_2h_over15": 2.37,
+   "odds_2h_under05": 3.42,
+   "odds_2h_under15": 1.49,
+   "odds_2h_x": 2.68,
+   "odds_2nd_half_result_1": 1.51,
+   "odds_2nd_half_result_2": 13.5,
+   "odds_2nd_half_result_x": 2.68,
+   "odds_btts_ht_no": 1.03,
+   "odds_btts_ht_yes": 8.1,
+   "odds_btts_no": 1.31,
+   "odds_btts_yes": 3.06,
+   "odds_doublechance_12": 1.07,
+   "odds_doublechance_x2": 3.85,
+   "odds_even": 1.77,
+   "odds_ft_1": 1.17,
+   "odds_ft_2": 16,
+   "odds_ft_over15": 1.28,
+   "odds_ft_over25": 2.01,
+   "odds_ft_over35": 3.82,
+   "odds_ft_under15": 3.18,
+   "odds_ft_under25": 1.68,
+   "odds_ft_under35": 1.2,
+   "odds_ft_x": 5.23,
+   "odds_ht_1": 1.61,
+   "odds_ht_2": 13,
+   "odds_ht_over05": 1.31,
+   "odds_ht_over15": 2.75,
+   "odds_ht_under05": 2.95,
+   "odds_ht_under15": 1.37,
+   "odds_ht_x": 2.42,
+   "odds_odd": 1.79
+  },
+  "Url": "https://heropredict.com/football/prediction/mali-vs-rwanda/2026-11-11/1545877",
+  "Pagina": "v1:2026-11-11",
+  "Dettaglio": {
+   "forma": [
+    {
+     "squadra": "Mali",
+     "riepilogo": "2W 4D 2L in last 8",
+     "partite": [
+      {
+       "data": "4 Oct",
+       "casa": "Morocco",
+       "ospite": "Mali",
+       "gol_casa": 1,
+       "gol_ospite": 1,
+       "esito": "D"
+      },
+      {
+       "data": "29 Sept",
+       "casa": "Liberia",
+       "ospite": "Mali",
+       "gol_casa": 0,
+       "gol_ospite": 1,
+       "esito": "W"
+      },
+      {
+       "data": "25 Sept",
+       "casa": "Mali",
+       "ospite": "Cape Verde Islands",
+       "gol_casa": 3,
+       "gol_ospite": 1,
+       "esito": "W"
+      },
+      {
+       "data": "4 Jun",
+       "casa": "Iran",
+       "ospite": "Mali",
+       "gol_casa": 2,
+       "gol_ospite": 0,
+       "esito": "L"
+      },
+      {
+       "data": "31 Mar",
+       "casa": "Russia",
+       "ospite": "Mali",
+       "gol_casa": 0,
+       "gol_ospite": 0,
+       "esito": "D"
+      },
+      {
+       "data": "9 Jan",
+       "casa": "Mali",
+       "ospite": "Senegal",
+       "gol_casa": 0,
+       "gol_ospite": 1,
+       "esito": "L"
+      },
+      {
+       "data": "3 Jan",
+       "casa": "Mali",
+       "ospite": "Tunisia",
+       "gol_casa": 1,
+       "gol_ospite": 1,
+       "esito": "D"
+      },
+      {
+       "data": "29 Dec",
+       "casa": "Comoros",
+       "ospite": "Mali",
+       "gol_casa": 0,
+       "gol_ospite": 0,
+       "esito": "D"
+      }
+     ]
+    },
+    {
+     "squadra": "Rwanda",
+     "riepilogo": "5W 1D 2L in last 8",
+     "partite": [
+      {
+       "data": "5 Oct",
+       "casa": "Rwanda",
+       "ospite": "Kenya",
+       "gol_casa": 0,
+       "gol_ospite": 0,
+       "esito": "D"
+      },
+      {
+       "data": "29 Sept",
+       "casa": "Cape Verde Islands",
+       "ospite": "Rwanda",
+       "gol_casa": 1,
+       "gol_ospite": 2,
+       "esito": "W"
+      },
+      {
+       "data": "25 Sept",
+       "casa": "Rwanda",
+       "ospite": "Liberia",
+       "gol_casa": 3,
+       "gol_ospite": 1,
+       "esito": "W"
+      },
+      {
+       "data": "30 Mar",
+       "casa": "Rwanda",
+       "ospite": "Estonia",
+       "gol_casa": 2,
+       "gol_ospite": 0,
+       "esito": "W"
+      },
+      {
+       "data": "27 Mar",
+       "casa": "Rwanda",
+       "ospite": "Grenada",
+       "gol_casa": 4,
+       "gol_ospite": 0,
+       "esito": "W"
+      },
+      {
+       "data": "14 Oct",
+       "casa": "South Africa",
+       "ospite": "Rwanda",
+       "gol_casa": 3,
+       "gol_ospite": 0,
+       "esito": "L"
+      },
+      {
+       "data": "10 Oct",
+       "casa": "Rwanda",
+       "ospite": "Benin",
+       "gol_casa": 0,
+       "gol_ospite": 1,
+       "esito": "L"
+      },
+      {
+       "data": "9 Sept",
+       "casa": "Zimbabwe",
+       "ospite": "Rwanda",
+       "gol_casa": 0,
+       "gol_ospite": 1,
+       "esito": "W"
+      }
+     ]
+    }
+   ],
+   "h2h": [
+    {
+     "data": "11 Nov",
+     "casa": "Rwanda",
+     "gol_casa": 0,
+     "gol_ospite": 3,
+     "ospite": "Mali"
+    },
+    {
+     "data": "1 Sept",
+     "casa": "Mali",
+     "gol_casa": 1,
+     "gol_ospite": 0,
+     "ospite": "Rwanda"
+    }
+   ],
+   "h2h_riepilogo": "Mali 2W · 0D · Rwanda 0W · 2 goals a game",
+   "medie": {
+    "Goals scored (avg)": {
+     "casa": 0.8,
+     "ospite": 1.5
+    },
+    "Goals conceded (avg)": {
+     "casa": 0.8,
+     "ospite": 0.8
+    },
+    "Wins": {
+     "casa": 2.0,
+     "ospite": 2.0
+    },
+    "Played": {
+     "casa": 2.0,
+     "ospite": 2.0
+    }
+   }
+  }
+ },
+ {
+  "Id": "af-1545882",
+  "Id_Interno": 216520,
+  "Data": "2026-11-11",
+  "Ora": "18:00",
+  "Data_Sito": "2026-11-11",
+  "Ora_Sito": "18:00",
+  "Kickoff_UTC": "2026-11-11 17:00",
+  "Paese": "World",
+  "Lega": "Africa Cup of Nations - Qualification",
+  "Casa": "South Africa",
+  "Ospite": "Kenya",
+  "Casa_N": "south africa",
+  "Ospite_N": "kenya",
+  "Tip": "1",
+  "Mercato": "1X2",
+  "Selezione": "1",
+  "Linea": null,
+  "Quota_Tip": 1.19,
+  "Prob_Implicita": 84.0,
+  "Stato": "NS",
+  "Gol_Casa": null,
+  "Gol_Ospite": null,
+  "Esito": null,
+  "Esito_Sito": null,
+  "Q1": 1.19,
+  "QX": 5.03,
+  "Q2": 13.9,
+  "Q1X": null,
+  "QX2": 3.61,
+  "Q12": 1.08,
+  "Q_O15": 1.27,
+  "Q_U15": 3.25,
+  "Q_O25": 1.98,
+  "Q_U25": 1.7,
+  "Q_O35": 3.73,
+  "Q_U35": 1.21,
+  "Q_GG": 2.81,
+  "Q_NG": 1.36,
+  "P1": 75.63,
+  "PX": 17.89,
+  "P2": 6.47,
+  "Margine_1X2": 11.11,
+  "P_O25": 46.2,
+  "P_U25": 53.8,
+  "Margine_OU25": 9.33,
+  "P_GG": 32.61,
+  "P_NG": 67.39,
+  "Margine_BTTS": 9.12,
+  "API_P1": null,
+  "API_PX": null,
+  "API_P2": null,
+  "API_Consiglio": null,
+  "Pot_O15": null,
+  "Pot_O25": null,
+  "Pot_BTTS": null,
+  "Pot_O05PT": null,
+  "Forma_Casa": null,
+  "Forma_Ospite": null,
+  "Quote": {
+   "odds_1st_half_over05": 1.3,
+   "odds_1st_half_result_1": 1.65,
+   "odds_1st_half_result_2": 11.5,
+   "odds_1st_half_result_x": 2.4,
+   "odds_2h_1": 1.55,
+   "odds_2h_2": 11.3,
+   "odds_2h_over05": 1.22,
+   "odds_2h_over15": 2.34,
+   "odds_2h_under05": 3.48,
+   "odds_2h_under15": 1.5,
+   "odds_2h_x": 2.66,
+   "odds_2nd_half_result_1": 1.55,
+   "odds_2nd_half_result_2": 11.3,
+   "odds_2nd_half_result_x": 2.66,
+   "odds_btts_ht_no": 1.04,
+   "odds_btts_ht_yes": 7.4,
+   "odds_btts_no": 1.36,
+   "odds_btts_yes": 2.81,
+   "odds_doublechance_12": 1.08,
+   "odds_doublechance_x2": 3.61,
+   "odds_even": 1.77,
+   "odds_ft_1": 1.19,
+   "odds_ft_2": 13.9,
+   "odds_ft_over15": 1.27,
+   "odds_ft_over25": 1.98,
+   "odds_ft_over35": 3.73,
+   "odds_ft_under15": 3.25,
+   "odds_ft_under25": 1.7,
+   "odds_ft_under35": 1.21,
+   "odds_ft_x": 5.03,
+   "odds_ht_1": 1.65,
+   "odds_ht_2": 11.5,
+   "odds_ht_over05": 1.3,
+   "odds_ht_over15": 2.71,
+   "odds_ht_under05": 2.99,
+   "odds_ht_under15": 1.38,
+   "odds_ht_x": 2.4,
+   "odds_odd": 1.79
+  },
+  "Url": "https://heropredict.com/football/prediction/south-africa-vs-kenya/2026-11-11/1545882",
+  "Pagina": "v1:2026-11-11",
+  "Dettaglio": {
+   "forma": [
+    {
+     "squadra": "South Africa",
+     "riepilogo": "4W 3D 3L in last 10",
+     "partite": [
+      {
+       "data": "4 Oct",
+       "casa": "Egypt",
+       "ospite": "South Africa",
+       "gol_casa": 0,
+       "gol_ospite": 1,
+       "esito": "W"
+      },
+      {
+       "data": "30 Sept",
+       "casa": "Eritrea",
+       "ospite": "South Africa",
+       "gol_casa": 0,
+       "gol_ospite": 5,
+       "esito": "W"
+      },
+      {
+       "data": "26 Sept",
+       "casa": "South Africa",
+       "ospite": "Guinea",
+       "gol_casa": 2,
+       "gol_ospite": 1,
+       "esito": "W"
+      },
+      {
+       "data": "28 Jun",
+       "casa": "South Africa",
+       "ospite": "Canada",
+       "gol_casa": 0,
+       "gol_ospite": 1,
+       "esito": "L"
+      },
+      {
+       "data": "25 Jun",
+       "casa": "South Africa",
+       "ospite": "South Korea",
+       "gol_casa": 1,
+       "gol_ospite": 0,
+       "esito": "W"
+      },
+      {
+       "data": "18 Jun",
+       "casa": "Czechia",
+       "ospite": "South Africa",
+       "gol_casa": 1,
+       "gol_ospite": 1,
+       "esito": "D"
+      },
+      {
+       "data": "11 Jun",
+       "casa": "Mexico",
+       "ospite": "South Africa",
+       "gol_casa": 2,
+       "gol_ospite": 0,
+       "esito": "L"
+      },
+      {
+       "data": "6 Jun",
+       "casa": "Jamaica",
+       "ospite": "South Africa",
+       "gol_casa": 1,
+       "gol_ospite": 1,
+       "esito": "D"
+      },
+      {
+       "data": "29 May",
+       "casa": "South Africa",
+       "ospite": "Nicaragua",
+       "gol_casa": 0,
+       "gol_ospite": 0,
+       "esito": "D"
+      },
+      {
+       "data": "31 Mar",
+       "casa": "South Africa",
+       "ospite": "Panama",
+       "gol_casa": 1,
+       "gol_ospite": 2,
+       "esito": "L"
+      }
+     ]
+    },
+    {
+     "squadra": "Kenya",
+     "riepilogo": "2W 4D 2L in last 8",
+     "partite": [
+      {
+       "data": "5 Oct",
+       "casa": "Rwanda",
+       "ospite": "Kenya",
+       "gol_casa": 0,
+       "gol_ospite": 0,
+       "esito": "D"
+      },
+      {
+       "data": "1 Oct",
+       "casa": "Guinea",
+       "ospite": "Kenya",
+       "gol_casa": 1,
+       "gol_ospite": 0,
+       "esito": "L"
+      },
+      {
+       "data": "26 Sept",
+       "casa": "Kenya",
+       "ospite": "Eritrea",
+       "gol_casa": 1,
+       "gol_ospite": 1,
+       "esito": "D"
+      },
+      {
+       "data": "7 Jun",
+       "casa": "Kenya",
+       "ospite": "Lesotho",
+       "gol_casa": 4,
+       "gol_ospite": 0,
+       "esito": "W"
+      },
+      {
+       "data": "4 Jun",
+       "casa": "Lesotho",
+       "ospite": "Kenya",
+       "gol_casa": 1,
+       "gol_ospite": 1,
+       "esito": "D"
+      },
+      {
+       "data": "30 Mar",
+       "casa": "Grenada",
+       "ospite": "Kenya",
+       "gol_casa": 0,
+       "gol_ospite": 3,
+       "esito": "W"
+      },
+      {
+       "data": "27 Mar",
+       "casa": "Kenya",
+       "ospite": "Estonia",
+       "gol_casa": 1,
+       "gol_ospite": 1,
+       "esito": "D"
+      },
+      {
+       "data": "18 Nov",
+       "casa": "Senegal",
+       "ospite": "Kenya",
+       "gol_casa": 8,
+       "gol_ospite": 0,
+       "esito": "L"
+      }
+     ]
+    }
+   ],
+   "h2h": [],
+   "h2h_riepilogo": null,
+   "medie": {
+    "Goals scored (avg)": {
+     "casa": 1.2,
+     "ospite": 1.3
+    },
+    "Goals conceded (avg)": {
+     "casa": 0.8,
+     "ospite": 1.5
+    },
+    "Wins": {
+     "casa": 2.0,
+     "ospite": 0.0
+    },
+    "Played": {
+     "casa": 2.0,
+     "ospite": 2.0
+    }
+   }
+  }
+ },
+ {
+  "Id": "af-1638318",
+  "Id_Interno": 216542,
+  "Data": "2026-11-11",
+  "Ora": "18:45",
+  "Data_Sito": "2026-11-11",
+  "Ora_Sito": "18:45",
+  "Kickoff_UTC": "2026-11-11 17:45",
+  "Paese": "World",
+  "Lega": "UEFA Champions League Women",
+  "Casa": "OH Leuven W",
+  "Ospite": "Køge W",
+  "Casa_N": "oh leuven w",
+  "Ospite_N": "koge w",
+  "Tip": "X2",
+  "Mercato": "DC",
+  "Selezione": "X2",
+  "Linea": null,
+  "Quota_Tip": 1.18,
+  "Prob_Implicita": 84.7,
+  "Stato": "NS",
+  "Gol_Casa": null,
+  "Gol_Ospite": null,
+  "Esito": null,
+  "Esito_Sito": null,
+  "Q1": 4.0,
+  "QX": 3.5,
+  "Q2": 1.65,
+  "Q1X": 2.05,
+  "QX2": 1.18,
+  "Q12": 1.25,
+  "Q_O15": 1.17,
+  "Q_U15": 4.5,
+  "Q_O25": 1.57,
+  "Q_U25": 2.35,
+  "Q_O35": 2.38,
+  "Q_U35": 1.53,
+  "Q_GG": 1.55,
+  "Q_NG": 2.25,
+  "P1": 21.9,
+  "PX": 25.02,
+  "P2": 53.08,
+  "Margine_1X2": 14.18,
+  "P_O25": 59.95,
+  "P_U25": 40.05,
+  "Margine_OU25": 6.25,
+  "P_GG": 59.21,
+  "P_NG": 40.79,
+  "Margine_BTTS": 8.96,
+  "API_P1": null,
+  "API_PX": null,
+  "API_P2": null,
+  "API_Consiglio": null,
+  "Pot_O15": null,
+  "Pot_O25": null,
+  "Pot_BTTS": null,
+  "Pot_O05PT": null,
+  "Forma_Casa": null,
+  "Forma_Ospite": null,
+  "Quote": {
+   "odds_1st_half_over05": 1.25,
+   "odds_1st_half_result_1": 4.4,
+   "odds_1st_half_result_2": 2.05,
+   "odds_1st_half_result_x": 2.4,
+   "odds_2h_1": 4,
+   "odds_2h_2": 2,
+   "odds_2h_over05": 1.17,
+   "odds_2h_over15": 1.8,
+   "odds_2h_under05": 4.4,
+   "odds_2h_under15": 1.85,
+   "odds_2h_x": 2.6,
+   "odds_2nd_half_result_1": 4,
+   "odds_2nd_half_result_2": 2,
+   "odds_2nd_half_result_x": 2.6,
+   "odds_btts_ht_no": 1.25,
+   "odds_btts_ht_yes": 3.75,
+   "odds_btts_no": 2.25,
+   "odds_btts_yes": 1.55,
+   "odds_dnb_1": 3.25,
+   "odds_dnb_2": 1.29,
+   "odds_doublechance_12": 1.25,
+   "odds_doublechance_1x": 2.05,
+   "odds_doublechance_x2": 1.18,
+   "odds_even": 1.88,
+   "odds_ft_1": 4,
+   "odds_ft_2": 1.65,
+   "odds_ft_over05": 1.01,
+   "odds_ft_over15": 1.17,
+   "odds_ft_over25": 1.57,
+   "odds_ft_over35": 2.38,
+   "odds_ft_over45": 4.33,
+   "odds_ft_under05": 15,
+   "odds_ft_under15": 4.5,
+   "odds_ft_under25": 2.35,
+   "odds_ft_under35": 1.53,
+   "odds_ft_under45": 1.2,
+   "odds_ft_x": 3.5,
+   "odds_ht_1": 4.4,
+   "odds_ht_2": 2.05,
+   "odds_ht_over05": 1.25,
+   "odds_ht_over15": 2.25,
+   "odds_ht_over25": 5,
+   "odds_ht_under05": 3.4,
+   "odds_ht_under15": 1.55,
+   "odds_ht_under25": 1.12,
+   "odds_ht_x": 2.4,
+   "odds_odd": 1.98,
+   "odds_wbh_1": 17,
+   "odds_wbh_2": 4.2,
+   "odds_weh_1": 2.5,
+   "odds_weh_2": 1.35
+  },
+  "Url": "https://heropredict.com/football/prediction/oh-leuven-w-vs-k-ge-w/2026-11-11/1638318",
+  "Pagina": "v1:2026-11-11",
+  "Dettaglio": {
+   "forma": [
+    {
+     "squadra": "OH Leuven W",
+     "riepilogo": "2W 5D 3L in last 10",
+     "partite": [
+      {
+       "data": "7 Nov",
+       "casa": "Club Brugge W",
+       "ospite": "OH Leuven W",
+       "gol_casa": 1,
+       "gol_ospite": 1,
+       "esito": "D"
+      },
+      {
+       "data": "28 Oct",
+       "casa": "Servette Chênois W",
+       "ospite": "OH Leuven W",
+       "gol_casa": 5,
+       "gol_ospite": 1,
+       "esito": "L"
+      },
+      {
+       "data": "24 Oct",
+       "casa": "OH Leuven W",
+       "ospite": "Zulte-Waregem W",
+       "gol_casa": 4,
+       "gol_ospite": 0,
+       "esito": "W"
+      },
+      {
+       "data": "17 Oct",
+       "casa": "Anderlecht W",
+       "ospite": "OH Leuven W",
+       "gol_casa": 3,
+       "gol_ospite": 1,
+       "esito": "L"
+      },
+      {
+       "data": "4 Oct",
+       "casa": "OH Leuven W",
+       "ospite": "RAAL La Louviere W",
+       "gol_casa": 0,
+       "gol_ospite": 0,
+       "esito": "D"
+      },
+      {
+       "data": "1 Oct",
+       "casa": "Paris Saint Germain W",
+       "ospite": "OH Leuven W",
+       "gol_casa": 5,
+       "gol_ospite": 0,
+       "esito": "L"
+      },
+      {
+       "data": "26 Sept",
+       "casa": "OH Leuven W",
+       "ospite": "Club Brugge W",
+       "gol_casa": 1,
+       "gol_ospite": 1,
+       "esito": "D"
+      },
+      {
+       "data": "23 Sept",
+       "casa": "OH Leuven W",
+       "ospite": "Roma W",
+       "gol_casa": 0,
+       "gol_ospite": 0,
+       "esito": "D"
+      },
+      {
+       "data": "19 Sept",
+       "casa": "Standard Liege W",
+       "ospite": "OH Leuven W",
+       "gol_casa": 0,
+       "gol_ospite": 5,
+       "esito": "W"
+      },
+      {
+       "data": "12 Sept",
+       "casa": "Genk W",
+       "ospite": "OH Leuven W",
+       "gol_casa": 0,
+       "gol_ospite": 0,
+       "esito": "D"
+      }
+     ]
+    },
+    {
+     "squadra": "Køge W",
+     "riepilogo": "6W 2D 2L in last 10",
+     "partite": [
+      {
+       "data": "7 Nov",
+       "casa": "Køge W",
+       "ospite": "AGF W",
+       "gol_casa": 6,
+       "gol_ospite": 0,
+       "esito": "W"
+      },
+      {
+       "data": "1 Nov",
+       "casa": "Køge W",
+       "ospite": "Fortuna Hjørring W",
+       "gol_casa": 2,
+       "gol_ospite": 1,
+       "esito": "W"
+      },
+      {
+       "data": "29 Oct",
+       "casa": "Køge W",
+       "ospite": "Barcelona W",
+       "gol_casa": 0,
+       "gol_ospite": 8,
+       "esito": "L"
+      },
+      {
+       "data": "24 Oct",
+       "casa": "KoldingQ W",
+       "ospite": "Køge W",
+       "gol_casa": 2,
+       "gol_ospite": 3,
+       "esito": "W"
+      },
+      {
+       "data": "20 Oct",
+       "casa": "Køge W",
+       "ospite": "Brøndby W",
+       "gol_casa": 1,
+       "gol_ospite": 1,
+       "esito": "D"
+      },
+      {
+       "data": "4 Oct",
+       "casa": "Nordsjælland W",
+       "ospite": "Køge W",
+       "gol_casa": 2,
+       "gol_ospite": 2,
+       "esito": "D"
+      },
+      {
+       "data": "1 Oct",
+       "casa": "Køge W",
+       "ospite": "Servette Chênois W",
+       "gol_casa": 5,
+       "gol_ospite": 1,
+       "esito": "W"
+      },
+      {
+       "data": "26 Sept",
+       "casa": "Køge W",
+       "ospite": "KoldingQ W",
+       "gol_casa": 4,
+       "gol_ospite": 1,
+       "esito": "W"
+      },
+      {
+       "data": "22 Sept",
+       "casa": "Arsenal W",
+       "ospite": "Køge W",
+       "gol_casa": 1,
+       "gol_ospite": 0,
+       "esito": "L"
+      },
+      {
+       "data": "19 Sept",
+       "casa": "Køge W",
+       "ospite": "Midtjylland W",
+       "gol_casa": 4,
+       "gol_ospite": 0,
+       "esito": "W"
+      }
+     ]
+    }
+   ],
+   "h2h": [],
+   "h2h_riepilogo": null,
+   "medie": {
+    "Goals scored (avg)": {
+     "casa": 1.3,
+     "ospite": 2.7
+    },
+    "Goals conceded (avg)": {
+     "casa": 1.5,
+     "ospite": 1.7
+    },
+    "Wins": {
+     "casa": 0.0,
+     "ospite": 1.0
+    },
+    "Played": {
+     "casa": 3.0,
+     "ospite": 3.0
+    }
+   }
+  }
+ },
+ {
+  "Id": "af-1572699",
+  "Id_Interno": 27320,
+  "Data": "2026-11-11",
+  "Ora": "20:30",
+  "Data_Sito": "2026-11-11",
+  "Ora_Sito": "20:30",
+  "Kickoff_UTC": "2026-11-11 19:30",
+  "Paese": "Spain",
+  "Lega": "Segunda División RFEF - Group 3",
+  "Casa": "Cieza",
+  "Ospite": "Valencia II",
+  "Casa_N": "cieza",
+  "Ospite_N": "valencia ii",
+  "Tip": "1X",
+  "Mercato": "DC",
+  "Selezione": "1X",
+  "Linea": null,
+  "Quota_Tip": 1.25,
+  "Prob_Implicita": 80.0,
+  "Stato": "NS",
+  "Gol_Casa": null,
+  "Gol_Ospite": null,
+  "Esito": null,
+  "Esito_Sito": null,
+  "Q1": 1.9,
+  "QX": 3.3,
+  "Q2": 3.4,
+  "Q1X": 1.25,
+  "QX2": 1.8,
+  "Q12": null,
+  "Q_O15": null,
+  "Q_U15": null,
+  "Q_O25": 1.9,
+  "Q_U25": 1.9,
+  "Q_O35": null,
+  "Q_U35": null,
+  "Q_GG": null,
+  "Q_NG": null,
+  "P1": 46.85,
+  "PX": 26.97,
+  "P2": 26.18,
+  "Margine_1X2": 12.35,
+  "P_O25": 50.0,
+  "P_U25": 50.0,
+  "Margine_OU25": 5.26,
+  "P_GG": null,
+  "P_NG": null,
+  "Margine_BTTS": null,
+  "API_P1": null,
+  "API_PX": null,
+  "API_P2": null,
+  "API_Consiglio": null,
+  "Pot_O15": null,
+  "Pot_O25": null,
+  "Pot_BTTS": null,
+  "Pot_O05PT": null,
+  "Forma_Casa": null,
+  "Forma_Ospite": null,
+  "Quote": {
+   "odds_doublechance_1x": 1.25,
+   "odds_doublechance_x2": 1.8,
+   "odds_ft_1": 1.9,
+   "odds_ft_2": 3.4,
+   "odds_ft_over25": 1.9,
+   "odds_ft_under25": 1.9,
+   "odds_ft_x": 3.3,
+   "odds_htft_1_1": 3.1,
+   "odds_htft_1_2": 34,
+   "odds_htft_1_x": 13,
+   "odds_htft_2_1": 23,
+   "odds_htft_2_2": 5.5,
+   "odds_htft_2_x": 17,
+   "odds_htft_x_1": 5,
+   "odds_htft_x_2": 7.5,
+   "odds_htft_x_x": 5.5
+  },
+  "Url": "https://heropredict.com/football/prediction/cieza-vs-valencia-ii/2026-11-11/1572699",
+  "Pagina": "v1:2026-11-11",
+  "Dettaglio": {
+   "forma": [
+    {
+     "squadra": "Cieza",
+     "riepilogo": "4W 2D 4L in last 10",
+     "partite": [
+      {
+       "data": "8 Nov",
+       "casa": "Poblense",
+       "ospite": "Cieza",
+       "gol_casa": 1,
+       "gol_ospite": 0,
+       "esito": "L"
+      },
+      {
+       "data": "1 Nov",
+       "casa": "Cieza",
+       "ospite": "Deportiva Minera",
+       "gol_casa": 0,
+       "gol_ospite": 1,
+       "esito": "L"
+      },
+      {
+       "data": "29 Oct",
+       "casa": "Cieza",
+       "ospite": "Granada CF",
+       "gol_casa": 0,
+       "gol_ospite": 3,
+       "esito": "L"
+      },
+      {
+       "data": "25 Oct",
+       "casa": "Ucam Murcia",
+       "ospite": "Cieza",
+       "gol_casa": 2,
+       "gol_ospite": 4,
+       "esito": "W"
+      },
+      {
+       "data": "11 Oct",
+       "casa": "Cieza",
+       "ospite": "Intercity",
+       "gol_casa": 3,
+       "gol_ospite": 1,
+       "esito": "W"
+      },
+      {
+       "data": "4 Oct",
+       "casa": "Orihuela",
+       "ospite": "Cieza",
+       "gol_casa": 0,
+       "gol_ospite": 4,
+       "esito": "W"
+      },
+      {
+       "data": "27 Sept",
+       "casa": "Cieza",
+       "ospite": "Atlético Baleares",
+       "gol_casa": 1,
+       "gol_ospite": 1,
+       "esito": "D"
+      },
+      {
+       "data": "19 Sept",
+       "casa": "Castellonense",
+       "ospite": "Cieza",
+       "gol_casa": 1,
+       "gol_ospite": 0,
+       "esito": "L"
+      },
+      {
+       "data": "13 Sept",
+       "casa": "Cieza",
+       "ospite": "Elche II",
+       "gol_casa": 1,
+       "gol_ospite": 0,
+       "esito": "W"
+      },
+      {
+       "data": "5 Sept",
+       "casa": "Alcoyano",
+       "ospite": "Cieza",
+       "gol_casa": 1,
+       "gol_ospite": 1,
+       "esito": "D"
+      }
+     ]
+    },
+    {
+     "squadra": "Valencia II",
+     "riepilogo": "1W 4D 5L in last 10",
+     "partite": [
+      {
+       "data": "8 Nov",
+       "casa": "Valencia II",
+       "ospite": "Lorca Deportiva",
+       "gol_casa": 1,
+       "gol_ospite": 1,
+       "esito": "D"
+      },
+      {
+       "data": "31 Oct",
+       "casa": "Valencia II",
+       "ospite": "Castellonense",
+       "gol_casa": 1,
+       "gol_ospite": 1,
+       "esito": "D"
+      },
+      {
+       "data": "24 Oct",
+       "casa": "Orihuela",
+       "ospite": "Valencia II",
+       "gol_casa": 1,
+       "gol_ospite": 1,
+       "esito": "D"
+      },
+      {
+       "data": "10 Oct",
+       "casa": "Elche II",
+       "ospite": "Valencia II",
+       "gol_casa": 4,
+       "gol_ospite": 1,
+       "esito": "L"
+      },
+      {
+       "data": "4 Oct",
+       "casa": "Valencia II",
+       "ospite": "Peña Deportiva",
+       "gol_casa": 3,
+       "gol_ospite": 2,
+       "esito": "W"
+      },
+      {
+       "data": "27 Sept",
+       "casa": "Poblense",
+       "ospite": "Valencia II",
+       "gol_casa": 1,
+       "gol_ospite": 0,
+       "esito": "L"
+      },
+      {
+       "data": "19 Sept",
+       "casa": "Valencia II",
+       "ospite": "Castellón II",
+       "gol_casa": 1,
+       "gol_ospite": 2,
+       "esito": "L"
+      },
+      {
+       "data": "13 Sept",
+       "casa": "Ucam Murcia",
+       "ospite": "Valencia II",
+       "gol_casa": 1,
+       "gol_ospite": 0,
+       "esito": "L"
+      },
+      {
+       "data": "6 Sept",
+       "casa": "Valencia II",
+       "ospite": "Mallorca II",
+       "gol_casa": 1,
+       "gol_ospite": 1,
+       "esito": "D"
+      },
+      {
+       "data": "3 May",
+       "casa": "Olot",
+       "ospite": "Valencia II",
+       "gol_casa": 2,
+       "gol_ospite": 0,
+       "esito": "L"
+      }
+     ]
+    }
+   ],
+   "h2h": [],
+   "h2h_riepilogo": null,
+   "medie": {
+    "Goals scored (avg)": {
+     "casa": 1.4,
+     "ospite": 0.9
+    },
+    "Goals conceded (avg)": {
+     "casa": 1.1,
+     "ospite": 1.6
+    },
+    "Wins": {
+     "casa": 4.0,
+     "ospite": 1.0
+    },
+    "Played": {
+     "casa": 9.0,
+     "ospite": 9.0
+    }
+   }
+  }
+ },
+ {
+  "Id": "af-1596507",
+  "Id_Interno": 216575,
+  "Data": "2026-11-11",
+  "Ora": "20:45",
+  "Data_Sito": "2026-11-11",
+  "Ora_Sito": "20:45",
+  "Kickoff_UTC": "2026-11-11 19:45",
+  "Paese": "England",
+  "Lega": "Non League Premier - Northern",
+  "Casa": "Avro",
+  "Ospite": "Whitby Town",
+  "Casa_N": "avro",
+  "Ospite_N": "whitby town",
+  "Tip": "1X",
+  "Mercato": "DC",
+  "Selezione": "1X",
+  "Linea": null,
+  "Quota_Tip": 1.17,
+  "Prob_Implicita": 85.5,
+  "Stato": "NS",
+  "Gol_Casa": null,
+  "Gol_Ospite": null,
+  "Esito": null,
+  "Esito_Sito": null,
+  "Q1": 1.55,
+  "QX": 4.5,
+  "Q2": 4.0,
+  "Q1X": 1.17,
+  "QX2": 2.3,
+  "Q12": 1.18,
+  "Q_O15": 1.08,
+  "Q_U15": 5.45,
+  "Q_O25": 1.4,
+  "Q_U25": 2.75,
+  "Q_O35": 1.99,
+  "Q_U35": 1.7,
+  "Q_GG": 1.44,
+  "Q_NG": 2.5,
+  "P1": 57.74,
+  "PX": 19.89,
+  "P2": 22.37,
+  "Margine_1X2": 11.74,
+  "P_O25": 66.27,
+  "P_U25": 33.73,
+  "Margine_OU25": 7.79,
+  "P_GG": 63.45,
+  "P_NG": 36.55,
+  "Margine_BTTS": 9.44,
+  "API_P1": null,
+  "API_PX": null,
+  "API_P2": null,
+  "API_Consiglio": null,
+  "Pot_O15": null,
+  "Pot_O25": null,
+  "Pot_BTTS": null,
+  "Pot_O05PT": null,
+  "Forma_Casa": null,
+  "Forma_Ospite": null,
+  "Quote": {
+   "odds_1st_half_over05": 1.18,
+   "odds_1st_half_result_1": 1.95,
+   "odds_1st_half_result_2": 4,
+   "odds_1st_half_result_x": 2.62,
+   "odds_2h_1": 1.85,
+   "odds_2h_2": 4.2,
+   "odds_2h_over05": 1.11,
+   "odds_2h_over15": 1.63,
+   "odds_2h_under05": 5.5,
+   "odds_2h_under15": 2.1,
+   "odds_2h_x": 2.8,
+   "odds_2nd_half_result_1": 1.85,
+   "odds_2nd_half_result_2": 4.2,
+   "odds_2nd_half_result_x": 2.8,
+   "odds_btts_ht_no": 1.28,
+   "odds_btts_ht_yes": 3.14,
+   "odds_btts_no": 2.5,
+   "odds_btts_yes": 1.44,
+   "odds_dnb_1": 1.28,
+   "odds_dnb_2": 3.5,
+   "odds_doublechance_12": 1.18,
+   "odds_doublechance_1x": 1.17,
+   "odds_doublechance_x2": 2.3,
+   "odds_even": 1.9,
+   "odds_ft_1": 1.55,
+   "odds_ft_2": 4,
+   "odds_ft_over15": 1.08,
+   "odds_ft_over25": 1.4,
+   "odds_ft_over35": 1.99,
+   "odds_ft_over45": 3.14,
+   "odds_ft_under05": 17,
+   "odds_ft_under15": 5.45,
+   "odds_ft_under25": 2.75,
+   "odds_ft_under35": 1.7,
+   "odds_ft_under45": 1.27,
+   "odds_ft_x": 4.5,
+   "odds_ht_1": 1.95,
+   "odds_ht_2": 4,
+   "odds_ht_over05": 1.18,
+   "odds_ht_over15": 1.91,
+   "odds_ht_over25": 3.8,
+   "odds_ht_under05": 4.2,
+   "odds_ht_under15": 1.75,
+   "odds_ht_under25": 1.22,
+   "odds_ht_x": 2.62,
+   "odds_odd": 1.95,
+   "odds_wbh_1": 3.75,
+   "odds_wbh_2": 17
+  },
+  "Url": "https://heropredict.com/football/prediction/avro-vs-whitby-town/2026-11-11/1596507",
+  "Pagina": "v1:2026-11-11",
+  "Dettaglio": {
+   "forma": [
+    {
+     "squadra": "Avro",
+     "riepilogo": "4W 1D 5L in last 10",
+     "partite": [
+      {
+       "data": "7 Nov",
+       "casa": "Avro",
+       "ospite": "Warrington Town",
+       "gol_casa": 0,
+       "gol_ospite": 3,
+       "esito": "L"
+      },
+      {
+       "data": "3 Nov",
+       "casa": "Bury",
+       "ospite": "Avro",
+       "gol_casa": 2,
+       "gol_ospite": 2,
+       "esito": "D"
+      },
+      {
+       "data": "31 Oct",
+       "casa": "Cleethorpes Town",
+       "ospite": "Avro",
+       "gol_casa": 1,
+       "gol_ospite": 0,
+       "esito": "L"
+      },
+      {
+       "data": "24 Oct",
+       "casa": "Avro",
+       "ospite": "Hyde United",
+       "gol_casa": 2,
+       "gol_ospite": 1,
+       "esito": "W"
+      },
+      {
+       "data": "21 Oct",
+       "casa": "Avro",
+       "ospite": "Ashton United",
+       "gol_casa": 3,
+       "gol_ospite": 2,
+       "esito": "W"
+      },
+      {
+       "data": "17 Oct",
+       "casa": "Ilkeston Town",
+       "ospite": "Avro",
+       "gol_casa": 2,
+       "gol_ospite": 0,
+       "esito": "L"
+      },
+      {
+       "data": "13 Oct",
+       "casa": "Redcar Athletic",
+       "ospite": "Avro",
+       "gol_casa": 3,
+       "gol_ospite": 1,
+       "esito": "L"
+      },
+      {
+       "data": "10 Oct",
+       "casa": "Avro",
+       "ospite": "Guiseley AFC",
+       "gol_casa": 0,
+       "gol_ospite": 1,
+       "esito": "L"
+      },
+      {
+       "data": "7 Oct",
+       "casa": "Avro",
+       "ospite": "Lancaster City",
+       "gol_casa": 5,
+       "gol_ospite": 3,
+       "esito": "W"
+      },
+      {
+       "data": "26 Sept",
+       "casa": "Dunston UTS",
+       "ospite": "Avro",
+       "gol_casa": 0,
+       "gol_ospite": 2,
+       "esito": "W"
+      }
+     ]
+    },
+    {
+     "squadra": "Whitby Town",
+     "riepilogo": "3W 1D 6L in last 10",
+     "partite": [
+      {
+       "data": "7 Nov",
+       "casa": "AFC Emley",
+       "ospite": "Whitby Town",
+       "gol_casa": 2,
+       "gol_ospite": 1,
+       "esito": "L"
+      },
+      {
+       "data": "31 Oct",
+       "casa": "Whitby Town",
+       "ospite": "Stockton Town",
+       "gol_casa": 0,
+       "gol_ospite": 5,
+       "esito": "L"
+      },
+      {
+       "data": "24 Oct",
+       "casa": "United of Manchester",
+       "ospite": "Whitby Town",
+       "gol_casa": 4,
+       "gol_ospite": 2,
+       "esito": "L"
+      },
+      {
+       "data": "17 Oct",
+       "casa": "Whitby Town",
+       "ospite": "Curzon Ashton",
+       "gol_casa": 1,
+       "gol_ospite": 0,
+       "esito": "W"
+      },
+      {
+       "data": "13 Oct",
+       "casa": "Workington",
+       "ospite": "Whitby Town",
+       "gol_casa": 1,
+       "gol_ospite": 2,
+       "esito": "W"
+      },
+      {
+       "data": "10 Oct",
+       "casa": "Whitby Town",
+       "ospite": "Bamber Bridge",
+       "gol_casa": 0,
+       "gol_ospite": 0,
+       "esito": "D"
+      },
+      {
+       "data": "6 Oct",
+       "casa": "Whitby Town",
+       "ospite": "Gainsborough Trinity",
+       "gol_casa": 2,
+       "gol_ospite": 6,
+       "esito": "L"
+      },
+      {
+       "data": "29 Sept",
+       "casa": "Whitby Town",
+       "ospite": "Lancaster City",
+       "gol_casa": 1,
+       "gol_ospite": 2,
+       "esito": "L"
+      },
+      {
+       "data": "26 Sept",
+       "casa": "Bridlington Town",
+       "ospite": "Whitby Town",
+       "gol_casa": 3,
+       "gol_ospite": 0,
+       "esito": "L"
+      },
+      {
+       "data": "12 Sept",
+       "casa": "Hyde United",
+       "ospite": "Whitby Town",
+       "gol_casa": 1,
+       "gol_ospite": 3,
+       "esito": "W"
+      }
+     ]
+    }
+   ],
+   "h2h": [],
+   "h2h_riepilogo": null,
+   "medie": {
+    "Goals scored (avg)": {
+     "casa": 1.5,
+     "ospite": 1.2
+    },
+    "Goals conceded (avg)": {
+     "casa": 1.8,
+     "ospite": 2.4
+    },
+    "Wins": {
+     "casa": 9.0,
+     "ospite": 6.0
+    },
+    "Played": {
+     "casa": 17.0,
+     "ospite": 17.0
+    }
+   }
+  }
+ },
+ {
+  "Id": "af-1600656",
+  "Id_Interno": 216582,
+  "Data": "2026-11-11",
+  "Ora": "22:30",
+  "Data_Sito": "2026-11-11",
+  "Ora_Sito": "22:30",
+  "Kickoff_UTC": "2026-11-11 21:30",
+  "Paese": "El-Salvador",
+  "Lega": "Primera Division",
+  "Casa": "Fuerte San Francisco",
+  "Ospite": "Alianza",
+  "Casa_N": "fuerte san francisco",
+  "Ospite_N": "alianza",
+  "Tip": "X2",
+  "Mercato": "DC",
+  "Selezione": "X2",
+  "Linea": null,
+  "Quota_Tip": 1.22,
+  "Prob_Implicita": 82.0,
+  "Stato": "NS",
+  "Gol_Casa": null,
+  "Gol_Ospite": null,
+  "Esito": null,
+  "Esito_Sito": null,
+  "Q1": 4.0,
+  "QX": 3.2,
+  "Q2": 1.83,
+  "Q1X": 1.85,
+  "QX2": 1.22,
+  "Q12": 1.3,
+  "Q_O15": 1.24,
+  "Q_U15": 3.34,
+  "Q_O25": 1.9,
+  "Q_U25": 1.9,
+  "Q_O35": 3.05,
+  "Q_U35": 1.28,
+  "Q_GG": 1.72,
+  "Q_NG": 1.93,
+  "P1": 22.54,
+  "PX": 28.18,
+  "P2": 49.28,
+  "Margine_1X2": 10.89,
+  "P_O25": 50.0,
+  "P_U25": 50.0,
+  "Margine_OU25": 5.26,
+  "P_GG": 52.88,
+  "P_NG": 47.12,
+  "Margine_BTTS": 9.95,
+  "API_P1": null,
+  "API_PX": null,
+  "API_P2": null,
+  "API_Consiglio": null,
+  "Pot_O15": null,
+  "Pot_O25": null,
+  "Pot_BTTS": null,
+  "Pot_O05PT": null,
+  "Forma_Casa": null,
+  "Forma_Ospite": null,
+  "Quote": {
+   "odds_1st_half_over05": 1.33,
+   "odds_1st_half_result_1": 4.33,
+   "odds_1st_half_result_2": 2.3,
+   "odds_1st_half_result_x": 2.2,
+   "odds_2h_1": 4,
+   "odds_2h_2": 2.25,
+   "odds_2h_over05": 1.21,
+   "odds_2h_over15": 2.1,
+   "odds_2h_under05": 3.9,
+   "odds_2h_under15": 1.67,
+   "odds_2h_x": 2.4,
+   "odds_2nd_half_result_1": 4,
+   "odds_2nd_half_result_2": 2.25,
+   "odds_2nd_half_result_x": 2.4,
+   "odds_btts_ht_no": 1.15,
+   "odds_btts_ht_yes": 4.33,
+   "odds_btts_no": 1.93,
+   "odds_btts_yes": 1.72,
+   "odds_dnb_1": 3,
+   "odds_dnb_2": 1.35,
+   "odds_doublechance_12": 1.3,
+   "odds_doublechance_1x": 1.85,
+   "odds_doublechance_x2": 1.22,
+   "odds_even": 1.85,
+   "odds_ft_1": 4,
+   "odds_ft_2": 1.83,
+   "odds_ft_over05": 1.04,
+   "odds_ft_over15": 1.24,
+   "odds_ft_over25": 1.9,
+   "odds_ft_over35": 3.05,
+   "odds_ft_over45": 6.5,
+   "odds_ft_under05": 11,
+   "odds_ft_under15": 3.34,
+   "odds_ft_under25": 1.9,
+   "odds_ft_under35": 1.28,
+   "odds_ft_under45": 1.1,
+   "odds_ft_x": 3.2,
+   "odds_ht_1": 4.33,
+   "odds_ht_2": 2.3,
+   "odds_ht_over05": 1.33,
+   "odds_ht_over15": 2.62,
+   "odds_ht_over25": 6.5,
+   "odds_ht_under05": 2.84,
+   "odds_ht_under15": 1.4,
+   "odds_ht_under25": 1.08,
+   "odds_ht_x": 2.2,
+   "odds_odd": 2
+  },
+  "Url": "https://heropredict.com/football/prediction/fuerte-san-francisco-vs-alianza/2026-11-11/1600656",
+  "Pagina": "v1:2026-11-11",
+  "Dettaglio": {
+   "forma": [
+    {
+     "squadra": "Fuerte San Francisco",
+     "riepilogo": "1W 3D 4L in last 8",
+     "partite": [
+      {
+       "data": "9 Nov",
+       "casa": "FAS",
+       "ospite": "Fuerte San Francisco",
+       "gol_casa": 2,
+       "gol_ospite": 2,
+       "esito": "D"
+      },
+      {
+       "data": "5 Nov",
+       "casa": "Municipal Limeño",
+       "ospite": "Fuerte San Francisco",
+       "gol_casa": 1,
+       "gol_ospite": 1,
+       "esito": "D"
+      },
+      {
+       "data": "1 Nov",
+       "casa": "Fuerte San Francisco",
+       "ospite": "Águila",
+       "gol_casa": 3,
+       "gol_ospite": 4,
+       "esito": "L"
+      },
+      {
+       "data": "25 Oct",
+       "casa": "Fuerte San Francisco",
+       "ospite": "Atletico Balboa",
+       "gol_casa": 1,
+       "gol_ospite": 2,
+       "esito": "L"
+      },
+      {
+       "data": "18 Oct",
+       "casa": "Isidro Metapán",
+       "ospite": "Fuerte San Francisco",
+       "gol_casa": 3,
+       "gol_ospite": 2,
+       "esito": "L"
+      },
+      {
+       "data": "10 Oct",
+       "casa": "Fuerte San Francisco",
+       "ospite": "Cacahuatique",
+       "gol_casa": 2,
+       "gol_ospite": 1,
+       "esito": "W"
+      },
+      {
+       "data": "5 Oct",
+       "casa": "Inter",
+       "ospite": "Fuerte San Francisco",
+       "gol_casa": 1,
+       "gol_ospite": 1,
+       "esito": "D"
+      },
+      {
+       "data": "1 Oct",
+       "casa": "Fuerte San Francisco",
+       "ospite": "Firpo",
+       "gol_casa": 0,
+       "gol_ospite": 3,
+       "esito": "L"
+      }
+     ]
+    },
+    {
+     "squadra": "Alianza",
+     "riepilogo": "2W 3D 4L in last 9",
+     "partite": [
+      {
+       "data": "8 Nov",
+       "casa": "Alianza",
+       "ospite": "Águila",
+       "gol_casa": 3,
+       "gol_ospite": 2,
+       "esito": "W"
+      },
+      {
+       "data": "5 Nov",
+       "casa": "Firpo",
+       "ospite": "Alianza",
+       "gol_casa": 2,
+       "gol_ospite": 0,
+       "esito": "L"
+      },
+      {
+       "data": "1 Nov",
+       "casa": "Atletico Balboa",
+       "ospite": "Alianza",
+       "gol_casa": 1,
+       "gol_ospite": 0,
+       "esito": "L"
+      },
+      {
+       "data": "28 Oct",
+       "casa": "Alianza",
+       "ospite": "CD Marathon",
+       "gol_casa": 0,
+       "gol_ospite": 0,
+       "esito": "D"
+      },
+      {
+       "data": "24 Oct",
+       "casa": "Alianza",
+       "ospite": "Isidro Metapán",
+       "gol_casa": 1,
+       "gol_ospite": 0,
+       "esito": "W"
+      },
+      {
+       "data": "21 Oct",
+       "casa": "CD Marathon",
+       "ospite": "Alianza",
+       "gol_casa": 2,
+       "gol_ospite": 1,
+       "esito": "L"
+      },
+      {
+       "data": "17 Oct",
+       "casa": "Cacahuatique",
+       "ospite": "Alianza",
+       "gol_casa": 0,
+       "gol_ospite": 0,
+       "esito": "D"
+      },
+      {
+       "data": "12 Oct",
+       "casa": "Alianza",
+       "ospite": "Inter",
+       "gol_casa": 2,
+       "gol_ospite": 2,
+       "esito": "D"
+      },
+      {
+       "data": "9 Oct",
+       "casa": "FAS",
+       "ospite": "Alianza",
+       "gol_casa": 2,
+       "gol_ospite": 1,
+       "esito": "L"
+      }
+     ]
+    }
+   ],
+   "h2h": [
+    {
+     "data": "24 Sept",
+     "casa": "Alianza",
+     "gol_casa": 2,
+     "gol_ospite": 2,
+     "ospite": "Fuerte San Francisco"
+    },
+    {
+     "data": "1 May",
+     "casa": "Fuerte San Francisco",
+     "gol_casa": 0,
+     "gol_ospite": 1,
+     "ospite": "Alianza"
+    },
+    {
+     "data": "8 Mar",
+     "casa": "Alianza",
+     "gol_casa": 3,
+     "gol_ospite": 2,
+     "ospite": "Fuerte San Francisco"
+    },
+    {
+     "data": "16 Nov",
+     "casa": "Fuerte San Francisco",
+     "gol_casa": 1,
+     "gol_ospite": 3,
+     "ospite": "Alianza"
+    },
+    {
+     "data": "14 Sept",
+     "casa": "Alianza",
+     "gol_casa": 1,
+     "gol_ospite": 0,
+     "ospite": "Fuerte San Francisco"
+    },
+    {
+     "data": "19 May",
+     "casa": "Alianza",
+     "gol_casa": 2,
+     "gol_ospite": 0,
+     "ospite": "Fuerte San Francisco"
+    },
+    {
+     "data": "15 May",
+     "casa": "Fuerte San Francisco",
+     "gol_casa": 0,
+     "gol_ospite": 1,
+     "ospite": "Alianza"
+    },
+    {
+     "data": "23 Apr",
+     "casa": "Fuerte San Francisco",
+     "gol_casa": 1,
+     "gol_ospite": 0,
+     "ospite": "Alianza"
+    },
+    {
+     "data": "27 Feb",
+     "casa": "Alianza",
+     "gol_casa": 2,
+     "gol_ospite": 0,
+     "ospite": "Fuerte San Francisco"
+    },
+    {
+     "data": "1 Nov",
+     "casa": "Alianza",
+     "gol_casa": 2,
+     "gol_ospite": 0,
+     "ospite": "Fuerte San Francisco"
+    }
+   ],
+   "h2h_riepilogo": "Fuerte San Francisco 1W · 1D · Alianza 8W · 2.3 goals a game",
+   "medie": {
+    "Goals scored (avg)": {
+     "casa": 1.5,
+     "ospite": 0.9
+    },
+    "Goals conceded (avg)": {
+     "casa": 2.1,
+     "ospite": 1.2
+    },
+    "Wins": {
+     "casa": 2.0,
+     "ospite": 6.0
+    },
+    "Played": {
+     "casa": 20.0,
+     "ospite": 19.0
+    }
+   }
+  }
+ }
+]
