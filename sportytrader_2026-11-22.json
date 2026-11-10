@@ -1,5 +1,45 @@
 [
  {
+  "Casa": "Pachuca",
+  "Ospite": "Deportivo Toluca FC",
+  "Ora": "00:00",
+  "Lega": "Liga MX - Apertura",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.41,
+  "Quota": null
+ },
+ {
+  "Casa": "Club Santos Laguna",
+  "Ospite": "Leon",
+  "Ora": "00:00",
+  "Lega": "Liga MX - Apertura",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.37,
+  "Quota": null
+ },
+ {
+  "Casa": "Universidad de Concepcion",
+  "Ospite": "Nublense",
+  "Ora": "00:30",
+  "Lega": "Primera División Cile",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.36,
+  "Quota": null
+ },
+ {
+  "Casa": "Pumas UNAM",
+  "Ospite": "Monterrey",
+  "Ora": "02:00",
+  "Lega": "Liga MX - Apertura",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.49,
+  "Quota": null
+ },
+ {
   "Casa": "Wellington Phoenix",
   "Ospite": "Macarthur FC",
   "Ora": "03:00",
@@ -7,6 +47,26 @@
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.44,
+  "Quota": null
+ },
+ {
+  "Casa": "Tigres UANL",
+  "Ospite": "CF America",
+  "Ora": "04:00",
+  "Lega": "Liga MX - Apertura",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.39,
+  "Quota": null
+ },
+ {
+  "Casa": "Erzurumspor FK",
+  "Ospite": "Goztepe Izmir",
+  "Ora": "11:30",
+  "Lega": "Super Lig",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.39,
   "Quota": null
  },
  {
@@ -40,6 +100,86 @@
   "Quota": null
  },
  {
+  "Casa": "Beveren",
+  "Ospite": "Gent",
+  "Ora": "13:30",
+  "Lega": "Jupiler Pro League",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.39,
+  "Quota": null
+ },
+ {
+  "Casa": "Kaiserslautern",
+  "Ospite": "SG Dynamo Dresden",
+  "Ora": "13:30",
+  "Lega": "2. Bundesliga",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.49,
+  "Quota": null
+ },
+ {
+  "Casa": "Karlsruhe",
+  "Ospite": "VfL 1899 Osnabruck",
+  "Ora": "13:30",
+  "Lega": "2. Bundesliga",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.45,
+  "Quota": null
+ },
+ {
+  "Casa": "Energie Cottbus",
+  "Ospite": "Hertha Berlino",
+  "Ora": "13:30",
+  "Lega": "2. Bundesliga",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.49,
+  "Quota": null
+ },
+ {
+  "Casa": "BK Häcken",
+  "Ospite": "Elfsborg",
+  "Ora": "14:00",
+  "Lega": "Allsvenskan",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.46,
+  "Quota": null
+ },
+ {
+  "Casa": "IK Sirius FK",
+  "Ospite": "Djurgarden",
+  "Ora": "14:00",
+  "Lega": "Allsvenskan",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.39,
+  "Quota": null
+ },
+ {
+  "Casa": "Horsens",
+  "Ospite": "Silkeborg",
+  "Ora": "14:00",
+  "Lega": "Superliga",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.4,
+  "Quota": null
+ },
+ {
+  "Casa": "Viborg",
+  "Ospite": "Randers",
+  "Ora": "14:00",
+  "Lega": "Superliga",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.64,
+  "Quota": null
+ },
+ {
   "Casa": "Barcellona",
   "Ospite": "Villarreal",
   "Ora": "14:00",
@@ -47,6 +187,36 @@
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.79,
+  "Quota": null
+ },
+ {
+  "Casa": "Kasimpasa",
+  "Ospite": "Alanyaspor",
+  "Ora": "14:00",
+  "Lega": "Super Lig",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.46,
+  "Quota": null
+ },
+ {
+  "Casa": "Konyaspor",
+  "Ospite": "Besiktas",
+  "Ora": "14:00",
+  "Lega": "Super Lig",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.48,
+  "Quota": null
+ },
+ {
+  "Casa": "Zurigo",
+  "Ospite": "San Gallo 1879",
+  "Ora": "14:00",
+  "Lega": "Super League",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.48,
   "Quota": null
  },
  {
@@ -140,6 +310,26 @@
   "Quota": null
  },
  {
+  "Casa": "US Avellino 1912",
+  "Ospite": "Mantova",
+  "Ora": "15:00",
+  "Lega": "Serie B",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.48,
+  "Quota": null
+ },
+ {
+  "Casa": "FK Kosice",
+  "Ospite": "MFK Skalica",
+  "Ora": "15:30",
+  "Lega": "Corgon Liga",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.49,
+  "Quota": null
+ },
+ {
   "Casa": "Augsburg",
   "Ospite": "Mainz",
   "Ora": "15:30",
@@ -147,6 +337,36 @@
   "Tipo": "B",
   "Pronostico": "2",
   "Prob": 0.38,
+  "Quota": null
+ },
+ {
+  "Casa": "Huachipato",
+  "Ospite": "Concepcion",
+  "Ora": "16:00",
+  "Lega": "Primera División Cile",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.39,
+  "Quota": null
+ },
+ {
+  "Casa": "SonderjyskE",
+  "Ospite": "Odense Boldklub",
+  "Ora": "16:00",
+  "Lega": "Superliga",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.46,
+  "Quota": null
+ },
+ {
+  "Casa": "Courtrai",
+  "Ospite": "Union Saint Gilloise",
+  "Ora": "16:00",
+  "Lega": "Jupiler Pro League",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.75,
   "Quota": null
  },
  {
@@ -170,6 +390,26 @@
   "Quota": null
  },
  {
+  "Casa": "Brommapojkarna",
+  "Ospite": "Halmstads",
+  "Ora": "16:30",
+  "Lega": "Allsvenskan",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.52,
+  "Quota": null
+ },
+ {
+  "Casa": "Vaduz",
+  "Ospite": "Losanna",
+  "Ora": "16:30",
+  "Lega": "Super League",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.48,
+  "Quota": null
+ },
+ {
   "Casa": "Panathinaikos",
   "Ospite": "OFI Creta",
   "Ora": "16:30",
@@ -177,6 +417,16 @@
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.52,
+  "Quota": null
+ },
+ {
+  "Casa": "Basilea",
+  "Ospite": "Lucerna",
+  "Ora": "16:30",
+  "Lega": "Super League",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.43,
   "Quota": null
  },
  {
@@ -200,6 +450,16 @@
   "Quota": null
  },
  {
+  "Casa": "Trabzonspor",
+  "Ospite": "Eyupspor",
+  "Ora": "17:00",
+  "Lega": "Super Lig",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.68,
+  "Quota": null
+ },
+ {
   "Casa": "Lorient",
   "Ospite": "Stade Rennes FC",
   "Ora": "17:15",
@@ -210,12 +470,22 @@
   "Quota": null
  },
  {
+  "Casa": "Arezzo",
+  "Ospite": "Padova",
+  "Ora": "17:15",
+  "Lega": "Serie B",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.45,
+  "Quota": null
+ },
+ {
   "Casa": "Liverpool",
   "Ospite": "Manchester United",
   "Ora": "17:30",
   "Lega": "Premier League",
   "Tipo": "B",
-  "Pronostico": "1",
+  "Pronostico": "2",
   "Prob": 0.38,
   "Quota": null
  },
@@ -230,6 +500,16 @@
   "Quota": null
  },
  {
+  "Casa": "Nordsjaelland",
+  "Ospite": "FC Copenaghen",
+  "Ora": "18:00",
+  "Lega": "Superliga",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.42,
+  "Quota": null
+ },
+ {
   "Casa": "Milan",
   "Ospite": "Frosinone Calcio",
   "Ora": "18:00",
@@ -240,6 +520,16 @@
   "Quota": null
  },
  {
+  "Casa": "Dunajska Streda",
+  "Ospite": "KFC Komarno",
+  "Ora": "18:00",
+  "Lega": "Corgon Liga",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.72,
+  "Quota": null
+ },
+ {
   "Casa": "Olympiacos",
   "Ospite": "P.O.T Iraklis",
   "Ora": "18:00",
@@ -247,6 +537,16 @@
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.65,
+  "Quota": null
+ },
+ {
+  "Casa": "Anderlecht",
+  "Ospite": "OH Leuven",
+  "Ora": "18:30",
+  "Lega": "Jupiler Pro League",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.56,
   "Quota": null
  },
  {
@@ -267,6 +567,16 @@
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.65,
+  "Quota": null
+ },
+ {
+  "Casa": "Lommel SK",
+  "Ospite": "Standard Liegi",
+  "Ora": "19:15",
+  "Lega": "Jupiler Pro League",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.37,
   "Quota": null
  },
  {
@@ -297,6 +607,26 @@
   "Tipo": "B",
   "Pronostico": "2",
   "Prob": 0.53,
+  "Quota": null
+ },
+ {
+  "Casa": "Colo Colo",
+  "Ospite": "Universidad Catolica",
+  "Ora": "22:00",
+  "Lega": "Primera División Cile",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.51,
+  "Quota": null
+ },
+ {
+  "Casa": "CD Palestino",
+  "Ospite": "La Calera",
+  "Ora": "22:00",
+  "Lega": "Primera División Cile",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.62,
   "Quota": null
  }
 ]

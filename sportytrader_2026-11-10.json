@@ -1,45 +1,5 @@
 [
  {
-  "Casa": "Junior",
-  "Ospite": "Cucuta Deportivo",
-  "Ora": "01:00",
-  "Lega": "Liga Postobon - Finalizacion",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.52,
-  "Quota": null
- },
- {
-  "Casa": "Deportivo Maldonado",
-  "Ospite": "Club Nacional De Football",
-  "Ora": "01:00",
-  "Lega": "Copa Uruguay - Knockout Stage",
-  "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.4,
-  "Quota": null
- },
- {
-  "Casa": "Club Aurora",
-  "Ospite": "UNIV DE VINTO",
-  "Ora": "01:30",
-  "Lega": "Liga Profesional Boliviana",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.73,
-  "Quota": null
- },
- {
-  "Casa": "Arnett Gardens",
-  "Ospite": "Waterhouse FC",
-  "Ora": "02:00",
-  "Lega": "Premier League",
-  "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.41,
-  "Quota": null
- },
- {
   "Casa": "Qatar",
   "Ospite": "Singapore",
   "Ora": "09:00",
@@ -57,6 +17,96 @@
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.37,
+  "Quota": null
+ },
+ {
+  "Casa": "Vietnam",
+  "Ospite": "Thailandia",
+  "Ora": "13:00",
+  "Lega": "Amichevoli internazionali Under 23",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.44,
+  "Quota": null
+ },
+ {
+  "Casa": "Cerro Largo",
+  "Ospite": "Liverpool Montevideo",
+  "Ora": "13:00",
+  "Lega": "Primera Division Reserve League - Reserve",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.41,
+  "Quota": null
+ },
+ {
+  "Casa": "Hull City",
+  "Ospite": "Fleetwood Town Reserve",
+  "Ora": "14:00",
+  "Lega": "Professional Development League",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.53,
+  "Quota": null
+ },
+ {
+  "Casa": "Colchester United",
+  "Ospite": "Charlton Athletic",
+  "Ora": "15:00",
+  "Lega": "Professional Development League",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.42,
+  "Quota": null
+ },
+ {
+  "Casa": "JS DJIDJEL",
+  "Ospite": "CR BENI THOUR",
+  "Ora": "15:00",
+  "Lega": "Ligue 2 - Center-East",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.58,
+  "Quota": null
+ },
+ {
+  "Casa": "Tlemcen",
+  "Ospite": "Arbaa",
+  "Ora": "15:00",
+  "Lega": "Ligue 2 - Center-West",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.52,
+  "Quota": null
+ },
+ {
+  "Casa": "MO Bejaia",
+  "Ospite": "Nrb Nezla",
+  "Ora": "15:00",
+  "Lega": "Ligue 2 - Center-East",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.65,
+  "Quota": null
+ },
+ {
+  "Casa": "PARADOU AC",
+  "Ospite": "JSM Skikda",
+  "Ora": "15:00",
+  "Lega": "Ligue 2 - Center-East",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.54,
+  "Quota": null
+ },
+ {
+  "Casa": "AL Mokawloon AL Arab",
+  "Ospite": "Telecom Egypt",
+  "Ora": "16:00",
+  "Lega": "Coppa d'Egitto",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.66,
   "Quota": null
  },
  {
@@ -97,6 +147,86 @@
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.7,
+  "Quota": null
+ },
+ {
+  "Casa": "Atletico Tucuman",
+  "Ospite": "CA UNION SANTA FE",
+  "Ora": "19:00",
+  "Lega": "Campeonato De Reserva De Primera Division - Reserves - Premiera LPF, Reserves 2025, Clausura, Group A",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.4,
+  "Quota": null
+ },
+ {
+  "Casa": "Estudiantes De LP Reserve",
+  "Ospite": "San Martin De San Juan Reserve",
+  "Ora": "19:00",
+  "Lega": "Campeonato De Reserva De Primera Division - Reserves - Premiera LPF, Reserves 2025, Clausura, Group A",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.73,
+  "Quota": null
+ },
+ {
+  "Casa": "Gimnasia De Mendoza Reserve",
+  "Ospite": "CA Aldosivi Reserve",
+  "Ora": "19:00",
+  "Lega": "Campeonato De Reserva De Primera Division - Reserves - Premiera LPF, Reserves 2025, Clausura, Group A",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.49,
+  "Quota": null
+ },
+ {
+  "Casa": "CA Quilmes Reserve",
+  "Ospite": "Independiente Rivadavia De Mendoza Reserve",
+  "Ora": "19:00",
+  "Lega": "Campeonato De Reserva De Primera Division - Reserves - Premiera LPF, Reserves 2025, Clausura, Group A",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.54,
+  "Quota": null
+ },
+ {
+  "Casa": "CA Tigre Reserve",
+  "Ospite": "Velez Sarsfield",
+  "Ora": "19:00",
+  "Lega": "Campeonato De Reserva De Primera Division - Reserves - Premiera LPF, Reserves 2025, Clausura, Group A",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.49,
+  "Quota": null
+ },
+ {
+  "Casa": "Pamplona",
+  "Ospite": "Eibar",
+  "Ora": "19:00",
+  "Lega": "Copa del Rey",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.62,
+  "Quota": null
+ },
+ {
+  "Casa": "CD Anaitasuna FT",
+  "Ospite": "Alavés",
+  "Ora": "19:00",
+  "Lega": "Copa del Rey",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.73,
+  "Quota": null
+ },
+ {
+  "Casa": "Millwall",
+  "Ospite": "Brighton & Hove Albion U21",
+  "Ora": "20:00",
+  "Lega": "Premier League Cup Under 23 - 23/24, Group F",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.46,
   "Quota": null
  },
  {
@@ -257,6 +387,26 @@
   "Tipo": "B",
   "Pronostico": "2",
   "Prob": 0.45,
+  "Quota": null
+ },
+ {
+  "Casa": "Amorebieta",
+  "Ospite": "UD Logrones",
+  "Ora": "20:00",
+  "Lega": "Copa del Rey",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.45,
+  "Quota": null
+ },
+ {
+  "Casa": "Wimborne Town",
+  "Ospite": "Poole Town",
+  "Ora": "20:30",
+  "Lega": "Southern League, Premier Division South - Premier Division South",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.4,
   "Quota": null
  },
  {
@@ -427,6 +577,16 @@
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.46,
+  "Quota": null
+ },
+ {
+  "Casa": "Stamford",
+  "Ospite": "Needham Market",
+  "Ora": "20:45",
+  "Lega": "Southern Football League, Premier Division Central - Premier Division Central",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.63,
   "Quota": null
  },
  {
@@ -660,6 +820,16 @@
   "Quota": null
  },
  {
+  "Casa": "CA Talleres De Cordoba Reserve",
+  "Ospite": "SARMIENTO RESERVE",
+  "Ora": "21:00",
+  "Lega": "Campeonato De Reserva De Primera Division - Reserves - Premiera LPF, Reserves 2025, Clausura, Group A",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.49,
+  "Quota": null
+ },
+ {
   "Casa": "UE Tavernes",
   "Ospite": "Valencia",
   "Ora": "21:00",
@@ -667,6 +837,16 @@
   "Tipo": "B",
   "Pronostico": "2",
   "Prob": 0.66,
+  "Quota": null
+ },
+ {
+  "Casa": "Envigado",
+  "Ospite": "Boca Juniors De Cali",
+  "Ora": "21:30",
+  "Lega": "Primera B - Clausura, Promotion, Group A",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.64,
   "Quota": null
  },
  {
