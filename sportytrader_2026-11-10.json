@@ -1,18 +1,8 @@
 [
  {
-  "Casa": "Qatar",
-  "Ospite": "Singapore",
-  "Ora": "09:00",
-  "Lega": "Amichevoli internazionali Under 23",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.62,
-  "Quota": null
- },
- {
   "Casa": "Santa Clara U23",
   "Ospite": "Torreense U23",
-  "Ora": "12:00",
+  "Ora": "13:00",
   "Lega": "Liga Revelação Under 23 - 1st Phase",
   "Tipo": "B",
   "Pronostico": "1",
@@ -27,6 +17,16 @@
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.44,
+  "Quota": null
+ },
+ {
+  "Casa": "Congo Republic",
+  "Ospite": "Central African Republic",
+  "Ora": "13:00",
+  "Lega": "Amichevole internazionale Femminile - Women",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.65,
   "Quota": null
  },
  {
@@ -200,6 +200,16 @@
   "Quota": null
  },
  {
+  "Casa": "Feyenoord Rotterdam",
+  "Ospite": "Wolfsburg",
+  "Ora": "19:00",
+  "Lega": "UEFA Europa Cup Femminile - Women - UEFA Europa Cup, Women 25/26",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.91,
+  "Quota": null
+ },
+ {
   "Casa": "Pamplona",
   "Ospite": "Eibar",
   "Ora": "19:00",
@@ -217,6 +227,36 @@
   "Tipo": "B",
   "Pronostico": "2",
   "Prob": 0.73,
+  "Quota": null
+ },
+ {
+  "Casa": "Jaguar PE",
+  "Ospite": "Vera Cruz PE",
+  "Ora": "19:00",
+  "Lega": "Pernambucano - Serie A1, Playoffs",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.62,
+  "Quota": null
+ },
+ {
+  "Casa": "America PE",
+  "Ospite": "Serrano PE",
+  "Ora": "19:00",
+  "Lega": "Pernambucano - Serie A1, Playoffs",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.7,
+  "Quota": null
+ },
+ {
+  "Casa": "Ibis PE",
+  "Ospite": "Centro Limoeirense",
+  "Ora": "19:00",
+  "Lega": "Pernambucano - Serie A1, Playoffs",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.41,
   "Quota": null
  },
  {
@@ -857,6 +897,16 @@
   "Tipo": "B",
   "Pronostico": "2",
   "Prob": 0.54,
+  "Quota": null
+ },
+ {
+  "Casa": "Guarani De Juazeiro CE",
+  "Ospite": "Quixada CE",
+  "Ora": "23:00",
+  "Lega": "Taca Fares Lopes - Taca Fares Lopes 2023, Group A - Gruppo A",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.42,
   "Quota": null
  }
 ]
