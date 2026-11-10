@@ -1567,7 +1567,7 @@
   ];
   var MK_ORDINI = [["file", "Per orario"], ["mov", "Per movimento"], ["margine", "Per margine"]];
   var GRUPPO_PRONOSTICI_TUTTI = [["prezzi", "Probabilit\u00e0 reali"], ["mercato", "Mercato"], ["wdw", "FootyStats"],
-                                 ["sm", "Sports Mole"], ["hp", "HeroPredict"]];
+                                 ["sm", "Sports Mole"], ["hp", "HeroPredict"], ["fp", "FootballPark"]];
   // Il tasto FootyStats compare solo quando i dati ci sono davvero
   // (footystatswdw_index.json con almeno una data): finche' FootyStats
   // rifiuta i server di GitHub, un tasto che porta a una pagina vuota
@@ -1578,11 +1578,14 @@
   var SM_PRONTO = false;
   // E per HeroPredict: heropredict_index.json con almeno una data.
   var HP_PRONTO = false;
+  // E per FootballPark: footballpark_index.json con almeno una data.
+  var FP_PRONTO = false;
   function gruppoPronostici(sez) {
     return GRUPPO_PRONOSTICI_TUTTI.filter(function (g) {
       if (g[0] === "wdw") return WDW_PRONTO || sez === "wdw";
       if (g[0] === "sm") return SM_PRONTO || sez === "sm";
       if (g[0] === "hp") return HP_PRONTO || sez === "hp";
+      if (g[0] === "fp") return FP_PRONTO || sez === "fp";
       return true;
     });
   }
@@ -1634,6 +1637,23 @@
     ["doppia", "Doppia chance", "Solo i tip su 1X, X2 o 12."]
   ];
   var HP_ORDINI = [["ora", "Per orario"], ["prob", "Per probabilit\u00e0"], ["paese", "Per campionato"]];
+
+  // FOOTBALLPARK (footballpark_scraper.py, workflow footballpark.yml). Per
+  // ogni partita le probabilita' 1X2 del sito, piu' Over/Gol, primo tempo,
+  // risultato esatto e la scheda (forma, ultimi risultati, precedenti,
+  // corner e cartellini). Sulle pagine del 10/11 il favorito del sito era
+  // quello delle quote che il sito stesso mostra in 110 partite su 112: e'
+  // un lettore del mercato, NON vota nel consenso. Il testo di analisi del
+  // sito non si ripubblica: c'e' il link alla pagina.
+  var FP_VISTE = [
+    ["tutte", "Tutte le partite",
+     "Le previsioni di FootballPark: 1X2 da oggi a una settimana, Over/Gol e primo tempo dove il sito li d\u00e0. " +
+     "Le percentuali stanno quasi sempre attaccate alle quote: \u00e8 un lettore del mercato. Solo informative: non entrano nel consenso."],
+    ["fav", "Favorita sopra il 60%", "Solo le partite in cui il segno indicato dal sito supera il 60%."],
+    ["gol", "Over / Gol", "Solo le partite con le percentuali Over o Gol."],
+    ["sel", "Treble e top tip", "La multipla del giorno (Daily Treble) e i top tip del sito, con la quota e la probabilit\u00e0 che il sito d\u00e0 a ogni evento."]
+  ];
+  var FP_ORDINI = [["ora", "Per orario"], ["prob", "Per probabilit\u00e0"], ["paese", "Per campionato"]];
   // Gli xG delle squadre stanno dentro "Poisson": sono i numeri da cui il
   // Poisson parte, e la barra in alto non ha posto per un'altra voce.
   var GRUPPO_POISSON = [["poisson", "Partite"], ["xg", "xG squadre"]];
@@ -1644,9 +1664,9 @@
 
   var stato = {
     sez: "prezzi",
-    data: { prezzi: null, mercato: null, consensus: null, accordo: null, poisson: null, sure: null, wdw: null, sm: null, hp: null },
-    vista: { wdw: "tutte", sm: "tutte", hp: "tutte", prezzi: "partite", mercato: "aff", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" },
-    ordine: { wdw: "prob", sm: "prob", hp: "ora", prezzi: "ora", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" },
+    data: { prezzi: null, mercato: null, consensus: null, accordo: null, poisson: null, sure: null, wdw: null, sm: null, hp: null, fp: null },
+    vista: { wdw: "tutte", sm: "tutte", hp: "tutte", fp: "tutte", prezzi: "partite", mercato: "aff", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" },
+    ordine: { wdw: "prob", sm: "prob", hp: "ora", fp: "ora", prezzi: "ora", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" },
     cerca: "",
     fonteCm: "",
     esito: "",
@@ -1736,6 +1756,8 @@
           daOggi: true },
     hp: { indice: "heropredict_index.json", prefisso: "heropredict_", viste: HP_VISTE, ordini: HP_ORDINI,
           tiene: hpTiene, riepilogo: riepilogoHp, riga: rigaHp, arricchisci: arricchisciHp, nota: "" },
+    fp: { indice: "footballpark_index.json", prefisso: "footballpark_", viste: FP_VISTE, ordini: FP_ORDINI,
+          tiene: fpTiene, riepilogo: riepilogoFp, riga: rigaFp, arricchisci: arricchisciFp, nota: "" },
     sure: { indice: "fpnet_index.json", prefisso: "fpnet_", viste: SB_VISTE, ordini: SB_ORDINI,
             tiene: sbTiene, riepilogo: riepilogoSure, riga: rigaSure, arricchisci: arricchisciSure,
             nota: " \u00b7 la tacca sulle barre segna il 60%" }
@@ -1829,7 +1851,7 @@
   function disegna() {
     scriviHash();
     document.querySelectorAll("nav.sezioni button[data-sez]").forEach(function (b) {
-      var accesa = stato.sez === "accordo" ? "consensus" : (stato.sez === "mercato" || stato.sez === "wdw" || stato.sez === "sm" || stato.sez === "hp") ? "prezzi" :
+      var accesa = stato.sez === "accordo" ? "consensus" : (stato.sez === "mercato" || stato.sez === "wdw" || stato.sez === "sm" || stato.sez === "hp" || stato.sez === "fp") ? "prezzi" :
         stato.sez === "xg" ? "poisson" : stato.sez;
       b.setAttribute("aria-current", String(b.dataset.sez === accesa));
     });
@@ -1862,6 +1884,7 @@
                  sez === "prezzi" ? leggi("esiti_index.json").catch(function () { return null; }) : null,
                  sez === "prezzi" ? leggi("schedina_index.json").catch(function () { return null; }) : null,
                  sez === "sm" ? leggi("sportsmole_esiti_index.json").catch(function () { return null; }) :
+                   sez === "fp" ? leggi("footballpark_esiti_index.json").catch(function () { return null; }) :
                    sez === "poisson" ? leggi("poissonesiti_index.json").catch(function () { return null; }) : null
     ]).then(function (arr) {
       var ix = arr[0], ex = arr[1], sx = arr[2], smx = arr[3];
@@ -1884,6 +1907,9 @@
       // che ne hanno almeno uno. Si leggono dallo stesso file del giorno.
       // Lo stesso per POISSON (8/11): le giornate passate le rifa'
       // esiti_poisson.py dall'archivio, in poissonesiti_<data>.json.
+      // E per FOOTBALLPARK (10/11): esiti_footballpark.py scrive il
+      // risultato nei file dei giorni passati (non in quello di oggi, che
+      // riscrive il suo workflow) e in footballpark_esiti_index.json.
       if (smx && Array.isArray(smx.date)) {
         smx.date.forEach(function (x) {
           if (x < oggi() && date.indexOf(x) < 0) {
@@ -1906,7 +1932,7 @@
 
       var vista = viste.filter(function (v) { return v[0] === stato.vista[sez]; })[0];
       var testa = (sez === "consensus" || sez === "accordo" ? chipsHtml(GRUPPO_CONSENSO, sez, "data-gruppo") : "") +
-        (sez === "prezzi" || sez === "mercato" || sez === "wdw" || sez === "sm" || sez === "hp" ? chipsHtml(gruppoPronostici(sez), sez, "data-gruppo") : "") +
+        (sez === "prezzi" || sez === "mercato" || sez === "wdw" || sez === "sm" || sez === "hp" || sez === "fp" ? chipsHtml(gruppoPronostici(sez), sez, "data-gruppo") : "") +
         (sez === "poisson" ? chipsHtml(GRUPPO_POISSON, sez, "data-gruppo") : "") +
         chipsHtml(date.map(function (x) { return [x, etichettaData(x)]; }), d, "data-data") +
         (viste.length > 1 ? chipsHtml(viste, vista[0], "data-vista") : "") +
@@ -1926,9 +1952,9 @@
         disegnaRighe(sez, righe, d);
       });
     }).catch(function (e) {
-      if (sez === "wdw" || sez === "sm" || sez === "hp") {
+      if (sez === "wdw" || sez === "sm" || sez === "hp" || sez === "fp") {
         // Prima del primo giro l'indice non c'e': non e' un guasto.
-        var chi = sez === "sm" ? "Sports Mole" : sez === "hp" ? "HeroPredict" : "FootyStats";
+        var chi = sez === "sm" ? "Sports Mole" : sez === "hp" ? "HeroPredict" : sez === "fp" ? "FootballPark" : "FootyStats";
         $cont.innerHTML = chipsHtml(gruppoPronostici(sez), sez, "data-gruppo") +
           messaggio("vuoto", chi + " non \u00e8 ancora stato pubblicato: arriva col giro notturno. " +
             "Se non compare nemmeno domani, il motivo \u00e8 nel log del passo \u201cScarica " + chi + "\u201d su GitHub Actions.");
@@ -2486,6 +2512,11 @@
     if (sez === "sm") {
       if (vista === "wesay") return "Nessuna delle " + n + " partite del " + data + " ha la preview con il We say. Prova \u201cTutte\u201d.";
       return "Nessuna delle " + n + " partite del " + data + " ha una favorita sopra il 60%. Prova \u201cTutte\u201d.";
+    }
+    if (sez === "fp") {
+      if (vista === "fav") return "Nessuna delle " + n + " partite del " + data + " ha il segno del sito sopra il 60%. Prova \u201cTutte le partite\u201d.";
+      if (vista === "gol") return "Nessuna delle " + n + " partite del " + data + " ha le percentuali Over o Gol: il sito le d\u00e0 per oggi e per le partite con la scheda. Prova \u201cTutte le partite\u201d.";
+      return "Nessuna delle " + n + " partite del " + data + " \u00e8 nel Treble o fra i top tip: il sito li pubblica solo per oggi. Prova \u201cTutte le partite\u201d.";
     }
     if (sez === "hp") {
       return "Nessuno dei " + n + " tip del " + data + (vista === "secco" ? " \u00e8 su un segno secco" : " \u00e8 su una doppia chance") +
@@ -3909,6 +3940,148 @@
       tripla("Quote senza margine", num(r.P1), num(r.PX), num(r.P2)) +
       "</div>" +
       '<div class="numero"><b>' + f0(pi) + '%</b><span>per il sito</span></div>' +
+      "</summary>" +
+      '<div class="dettaglio">' + det.join("") + "</div>" +
+      "</details></div>";
+  }
+
+  // ------------------------------------------------- FootballPark
+
+  // Il segno del sito: "Tip" (1, X o 2), altrimenti il piu' probabile.
+  function fpSegno(r) {
+    var t = String(r.Tip || "").toUpperCase();
+    if (t === "1" || t === "X" || t === "2") return t;
+    var p = [num(r.P1), num(r.PX), num(r.P2)];
+    if (p.some(function (x) { return x == null; })) return "";
+    return ["1", "X", "2"][p.indexOf(Math.max.apply(null, p))];
+  }
+  function arricchisciFp(righe) {
+    return (Array.isArray(righe) ? righe : []).map(function (r) {
+      var s = fpSegno(r), p = num(s === "1" ? r.P1 : s === "X" ? r.PX : s === "2" ? r.P2 : null);
+      return Object.assign({}, r, { Segno: s, _fav: p, _prob: p != null ? p / 100 : null });
+    });
+  }
+  function fpTiene(r, tipo) {
+    if (tipo === "fav") return r._fav != null && r._fav > 60;
+    if (tipo === "gol") return [r.P_O15, r.P_O25, r.P_O35, r.P_GG].some(function (x) { return num(x) != null; });
+    if (tipo === "sel") return !!(r.Treble || r.Top_Tip);
+    return true;
+  }
+  function riepilogoFp(v) {
+    var mm = mediana(v.map(function (r) { return num(r.Margine_1X2); }));
+    var sch = v.filter(function (r) { return r.Scheda; }).length;
+    var tr = v.filter(function (r) { return r.Treble; }).sort(function (a, b) {
+      return (num(a.Treble.Evento) || 0) - (num(b.Treble.Evento) || 0);
+    });
+    var qt = tr.reduce(function (a, r) { var q = num(r.Treble.Quota); return q == null ? a : a * q; }, 1);
+    // Sulle partite finite: quante volte e' uscito il segno del sito,
+    // accanto a quante il sito stesso ne attendeva.
+    var fin = v.filter(function (r) { return segnoUscito(r) && r.Segno && r._fav != null; });
+    var vinte = fin.filter(function (r) { return segnoUscito(r) === r.Segno; }).length;
+    var attesi = fin.reduce(function (a, r) { return a + r._fav; }, 0);
+    return tessere([
+      [String(v.length), "partite"],
+      [String(sch), "con la scheda"],
+      [mm == null ? "-" : f1(mm) + "%", "margine mediano 1X2"]
+    ]) + (fin.length ? '<p class="conta">Finite ' + fin.length + ": vinte " + vinte + " (" +
+      Math.round(100 * vinte / fin.length) + "%), il sito ne attendeva il " + Math.round(attesi / fin.length) + "%.</p>" : "") +
+    (tr.length === 3
+      ? '<p class="conta">Treble del giorno: ' + tr.map(function (r) {
+          return esc(r.Casa + "-" + r.Ospite) + " " + esc(r.Treble.Selezione) + " a " + f2(num(r.Treble.Quota));
+        }).join(" · ") + " – quota " + f2(qt) + ".</p>"
+      : "");
+  }
+  // Una riga "Over 2.5 84% a 1.17": la percentuale del sito e, se c'e', la quota.
+  function fpMercato(nome, p, q) {
+    p = num(p); q = num(q);
+    if (p == null && q == null) return "";
+    return nome + " " + (p != null ? f0(p) + "%" : "") + (q != null ? " a " + f2(q) : "");
+  }
+  function fpPartite(lista) {
+    return (lista || []).map(function (p) {
+      return '<span style="white-space:nowrap">' + esc(p.Data || "") + "</span> " + esc(p.Casa || "") +
+        ' <b style="white-space:nowrap">' + esc(p.Risultato || "?") + "</b> " + esc(p.Ospite || "");
+    }).join("<br>");
+  }
+  function fpForma(f) {
+    return String(f || "").toUpperCase().split("").map(function (c) {
+      return c === "W" ? "V" : c === "D" ? "N" : c === "L" ? "P" : c;
+    }).join(" ");
+  }
+  function fpScheda(r) {
+    var d = r.Scheda;
+    if (!d || typeof d !== "object") return "";
+    var out = [];
+    if (d.Esatto || r.Esatto) out.push("<p>Risultato esatto più probabile per il sito: <b>" + esc(d.Esatto || r.Esatto) + "</b></p>");
+    var bb = Array.isArray(d.Best_Bets) ? d.Best_Bets : [];
+    if (bb.length) out.push("<p>Best bet del sito: " + bb.map(function (b) {
+      return esc(b.Selezione || b.Selezione_Sito || "?") + (num(b.Quota) != null ? " a " + f2(num(b.Quota)) : "");
+    }).join(" · ") + "</p>");
+    if (r.Forma_Casa || r.Forma_Ospite) out.push("<p><b>Forma</b> (dalla più recente)<br>" +
+      esc(r.Casa) + " " + esc(fpForma(r.Forma_Casa)) + "<br>" + esc(r.Ospite) + " " + esc(fpForma(r.Forma_Ospite)) + "</p>");
+    if ((d.Ultimi_Casa || []).length) out.push("<p><b>Ultime di " + esc(r.Casa) + "</b></p><p class=\"piccolo\">" + fpPartite(d.Ultimi_Casa) + "</p>");
+    if ((d.Ultimi_Ospite || []).length) out.push("<p><b>Ultime di " + esc(r.Ospite) + "</b></p><p class=\"piccolo\">" + fpPartite(d.Ultimi_Ospite) + "</p>");
+    if ((d.Precedenti || []).length) out.push("<p><b>Precedenti</b></p><p class=\"piccolo\">" + fpPartite(d.Precedenti) + "</p>");
+    var pr = d.Proiezioni || {};
+    [["Corners", "Corner"], ["Cards", "Cartellini"]].forEach(function (c) {
+      (pr[c[0]] || []).forEach(function (x) {
+        var linee = (x.Linee || []).map(function (l) {
+          return "Over " + l.Linea + " " + f0(num(l.P_Over)) + "%";
+        }).join(" · ");
+        out.push("<p>" + c[1] + " attesi" + (x.Squadra ? " (" + esc(x.Squadra) + ")" : "") + ": <b>" + f1(num(x.Attesi)) + "</b>" +
+          (linee ? "<br><span class=\"piccolo\">" + linee + "</span>" : "") + "</p>");
+      });
+    });
+    return out.join("");
+  }
+
+  function rigaFp(r) {
+    var seg = r.Segno || "", pf = r._fav;
+    var det = [];
+    det.push("<p>" + esc(r.Lega || "") + (r.Data ? " – " + esc(r.Data) : "") + "</p>");
+    var usc = segnoUscito(r);
+    if (usc) {
+      var gtot = num(r.Gol_Casa) + num(r.Gol_Ospite);
+      det.push("<p>Finita <b>" + esc(r.Gol_Casa + "-" + r.Gol_Ospite) + "</b>" +
+        (seg ? ": segno " + esc(seg) + " " + (usc === seg ? "vinto" : "perso") : "") +
+        (num(r.P_O25) != null ? " · Over 2.5 " + (gtot > 2.5 ? "uscito" : "non uscito") : "") +
+        (num(r.P_GG) != null ? " · Gol " + (num(r.Gol_Casa) > 0 && num(r.Gol_Ospite) > 0 ? "uscito" : "non uscito") : "") +
+        (r.Risultato_Da ? ' <span class="piccolo">(risultato da ' + esc(r.Risultato_Da) + ")</span>" : "") + ".</p>");
+    }
+    if (num(r.Q1) != null) det.push("<p>Quote 1X2 mostrate dal sito " + [r.Q1, r.QX, r.Q2].map(function (x) { return f2(num(x)); }).join(" · ") +
+      (num(r.Margine_1X2) != null ? " – margine " + f1(num(r.Margine_1X2)) + "%" : "") + "</p>");
+    var gol = [fpMercato("Over 1.5", r.P_O15, r.Q_O15), fpMercato("Over 2.5", r.P_O25, r.Q_O25),
+               fpMercato("Over 3.5", r.P_O35, r.Q_O35), fpMercato("Gol", r.P_GG, r.Q_GG)].filter(Boolean);
+    if (gol.length) det.push("<p>" + gol.join(" · ") + "</p>");
+    if (num(r.PT1) != null) det.push("<p>Primo tempo 1 " + f0(num(r.PT1)) + "% · X " + f0(num(r.PTX)) + "% · 2 " + f0(num(r.PT2)) + "%" +
+      [fpMercato(" · Over 0.5 PT", r.P_O05PT, r.Q_O05PT), fpMercato(" · Over 1.5 PT", r.P_O15PT, r.Q_O15PT)].join("") + "</p>");
+    var sel = [];
+    if (r.Treble) sel.push("Treble, evento " + esc(r.Treble.Evento) + ": " + esc(r.Treble.Selezione) + " a " + f2(num(r.Treble.Quota)) +
+      " (il sito lo dà al " + f1(num(r.Treble.Prob_Modello)) + "%)");
+    if (r.Top_Tip) sel.push("Top tip n. " + esc(r.Top_Tip.Posizione) + ": " + esc(r.Top_Tip.Selezione) + " a " + f2(num(r.Top_Tip.Quota)) +
+      " (il sito lo dà al " + f1(num(r.Top_Tip.Prob_Modello)) + "%)");
+    if (sel.length) det.push("<p>" + sel.join("<br>") + "</p>");
+    det.push(fpScheda(r));
+    if (r.Url) det.push('<p><a href="' + esc(r.Url) + '" target="_blank" rel="noopener">La partita e l’analisi su FootballPark</a></p>');
+    det.push('<p class="piccolo">FootballPark è informativa: le sue percentuali seguono le quote e non entrano nel consenso.</p>');
+    var riga2 = [];
+    var q = num(seg === "1" ? r.Q1 : seg === "X" ? r.QX : seg === "2" ? r.Q2 : null);
+    if (q != null) riga2.push("quota <b>" + f2(q) + "</b>");
+    if (num(r.P_O25) != null) riga2.push("Over 2.5 " + f0(num(r.P_O25)) + "%");
+    if (num(r.P_GG) != null) riga2.push("Gol " + f0(num(r.P_GG)) + "%");
+    if (r.Esatto) riga2.push("esatto " + esc(r.Esatto));
+    var segni = (r.Treble ? '<span class="pill stretto">Treble</span>' : "") + (r.Top_Tip ? '<span class="pill stretto">Top tip</span>' : "");
+    return '<div class="riga">' +
+      "<details><summary>" +
+      '<span class="segno">' + esc(seg || "?") + "</span>" +
+      '<div class="corpo">' +
+      '<div class="alto">' + (r.Ora ? "<span><b>" + esc(r.Ora) + "</b></span>" : "") + golHtml(r) + esitoSm(r) + segni +
+        (r.Lega ? '<span class="chip">' + esc(r.Lega) + "</span>" : "") + "</div>" +
+      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" +
+      (riga2.length ? '<div class="sel">' + riga2.join(" · ") + "</div>" : "") +
+      tripla("Probabilità del sito", num(r.P1), num(r.PX), num(r.P2)) +
+      "</div>" +
+      '<div class="numero"><b>' + f0(pf) + '%</b><span>per il sito</span></div>' +
       "</summary>" +
       '<div class="dettaglio">' + det.join("") + "</div>" +
       "</details></div>";
@@ -5645,9 +5818,9 @@
   function vaiHome(e) {
     if (e) e.preventDefault();
     stato.sez = "prezzi";
-    stato.data = { prezzi: null, mercato: null, consensus: null, accordo: null, poisson: null, sure: null, wdw: null, sm: null };
-    stato.vista = { wdw: "tutte", sm: "tutte", prezzi: "partite", mercato: "aff", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" };
-    stato.ordine = { wdw: "prob", sm: "prob", prezzi: "ora", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" };
+    stato.data = { prezzi: null, mercato: null, consensus: null, accordo: null, poisson: null, sure: null, wdw: null, sm: null, hp: null, fp: null };
+    stato.vista = { wdw: "tutte", sm: "tutte", hp: "tutte", fp: "tutte", prezzi: "partite", mercato: "aff", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" };
+    stato.ordine = { wdw: "prob", sm: "prob", hp: "ora", fp: "ora", prezzi: "ora", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" };
     stato.cerca = "";
     stato.fonteCm = "";
     stato.esito = "";
@@ -5815,7 +5988,7 @@
   leggi("heropredict_index.json").then(function (ix) {
     if (!ix || !Array.isArray(ix.date) || !ix.date.length) return;
     HP_PRONTO = true;
-    if (stato.sez === "prezzi" || stato.sez === "mercato" || stato.sez === "wdw" || stato.sez === "sm") {
+    if (stato.sez === "prezzi" || stato.sez === "mercato" || stato.sez === "wdw" || stato.sez === "sm" || stato.sez === "fp") {
       var m = $cont.querySelector('[data-gruppo="mercato"]');
       if (m && !$cont.querySelector('[data-gruppo="hp"]')) {
         var sez = stato.sez;
@@ -5825,6 +5998,25 @@
         b.addEventListener("click", function () {
           if (!stato.data.hp) stato.data.hp = stato.data[sez];
           stato.sez = "hp"; stato.cerca = ""; stato.limite = PASSO; disegna();
+        });
+        inserisciInOrdine(m.parentNode, b);
+      }
+    }
+  }, function () { /* nessun dato: il tasto resta nascosto */ });
+  // FootballPark: stessa regola.
+  leggi("footballpark_index.json").then(function (ix) {
+    if (!ix || !Array.isArray(ix.date) || !ix.date.length) return;
+    FP_PRONTO = true;
+    if (stato.sez === "prezzi" || stato.sez === "mercato" || stato.sez === "wdw" || stato.sez === "sm" || stato.sez === "hp") {
+      var m = $cont.querySelector('[data-gruppo="mercato"]');
+      if (m && !$cont.querySelector('[data-gruppo="fp"]')) {
+        var sez = stato.sez;
+        var b = document.createElement("button");
+        b.type = "button"; b.setAttribute("data-gruppo", "fp"); b.setAttribute("aria-pressed", "false");
+        b.textContent = "FootballPark";
+        b.addEventListener("click", function () {
+          if (!stato.data.fp) stato.data.fp = stato.data[sez];
+          stato.sez = "fp"; stato.cerca = ""; stato.limite = PASSO; disegna();
         });
         inserisciInOrdine(m.parentNode, b);
       }
