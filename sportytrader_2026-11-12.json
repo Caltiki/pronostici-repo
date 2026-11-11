@@ -1,48 +1,8 @@
 [
  {
-  "Casa": "Real Soacha Cundinamarca",
-  "Ospite": "Real Cartagena",
-  "Ora": "00:00",
-  "Lega": "Primera B - Clausura, Promotion, Group B",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.4,
-  "Quota": null
- },
- {
-  "Casa": "CD Fas",
-  "Ospite": "Fundacion Formado Un Atleta",
-  "Ora": "02:00",
-  "Lega": "Primera Division - Apertura",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.45,
-  "Quota": null
- },
- {
-  "Casa": "CLUB AMERICA",
-  "Ospite": "TOLUCA",
-  "Ora": "02:00",
-  "Lega": "Liga MX Femenil - Women, Apertura Playoffs",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.85,
-  "Quota": null
- },
- {
-  "Casa": "Deportes Quindio",
-  "Ospite": "Tigres FC",
-  "Ora": "02:10",
-  "Lega": "Primera B - Clausura, Promotion, Group B",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.4,
-  "Quota": null
- },
- {
   "Casa": "Piratas Veracruz",
   "Ospite": "Club Atletico La Paz",
-  "Ora": "03:00",
+  "Ora": "00:00",
   "Lega": "Liga De Expansion MX - Apertura, Playoffs",
   "Tipo": "B",
   "Pronostico": "1",
@@ -52,7 +12,7 @@
  {
   "Casa": "PACHUCA",
   "Ospite": "Monterrey",
-  "Ora": "04:00",
+  "Ora": "01:00",
   "Lega": "Liga MX Femenil - Women, Apertura Playoffs",
   "Tipo": "B",
   "Pronostico": "2",
@@ -62,7 +22,7 @@
  {
   "Casa": "Nuova Zelanda",
   "Ospite": "India",
-  "Ora": "07:00",
+  "Ora": "04:00",
   "Lega": "Partite Amichevoli",
   "Tipo": "B",
   "Pronostico": "1",
@@ -70,19 +30,9 @@
   "Quota": null
  },
  {
-  "Casa": "Apia Leichhardt Tigers",
-  "Ospite": "Adelaide City",
-  "Ora": "09:30",
-  "Lega": "NPL Victoria - Gruppo B",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.63,
-  "Quota": null
- },
- {
   "Casa": "Tut Eunkh Amw FC",
   "Ospite": "El Terasanah",
-  "Ora": "13:30",
+  "Ora": "10:30",
   "Lega": "Seconda Divisione",
   "Tipo": "B",
   "Pronostico": "1",
@@ -92,7 +42,7 @@
  {
   "Casa": "DAYROUT",
   "Ospite": "Proxy SC",
-  "Ora": "13:30",
+  "Ora": "10:30",
   "Lega": "Seconda Divisione",
   "Tipo": "B",
   "Pronostico": "2",
@@ -102,7 +52,7 @@
  {
   "Casa": "El Entag El Harby",
   "Ospite": "Baladiyyat AL Mehalla",
-  "Ora": "13:30",
+  "Ora": "10:30",
   "Lega": "Seconda Divisione",
   "Tipo": "B",
   "Pronostico": "1",
@@ -112,7 +62,7 @@
  {
   "Casa": "Delta United FC",
   "Ospite": "EL Sekka EL Hadid",
-  "Ora": "13:30",
+  "Ora": "10:30",
   "Lega": "Seconda Divisione",
   "Tipo": "B",
   "Pronostico": "2",
@@ -122,7 +72,7 @@
  {
   "Casa": "Al Nasr Cairo",
   "Ospite": "Pharco FC",
-  "Ora": "13:30",
+  "Ora": "10:30",
   "Lega": "Seconda Divisione",
   "Tipo": "B",
   "Pronostico": "2",
@@ -130,9 +80,39 @@
   "Quota": null
  },
  {
+  "Casa": "Islanda -21",
+  "Ospite": "Grecia -21",
+  "Ora": "11:00",
+  "Lega": "Europei Under 21 - Qualification, Playoffs",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.37,
+  "Quota": null
+ },
+ {
+  "Casa": "Germania -19",
+  "Ospite": "Svezia -19",
+  "Ora": "11:00",
+  "Lega": "Europei Under 19 - Qualification - U19 UEFA European Championship, Qualification 2027,.",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.63,
+  "Quota": null
+ },
+ {
+  "Casa": "Scozia -21",
+  "Ospite": "Ucraina -21",
+  "Ora": "11:00",
+  "Lega": "Amichevoli internazionali Under 21",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.47,
+  "Quota": null
+ },
+ {
   "Casa": "Kigezi Homeboyz FC",
   "Ospite": "VIPERS",
-  "Ora": "14:00",
+  "Ora": "11:00",
   "Lega": "Uganda Premier League",
   "Tipo": "B",
   "Pronostico": "2",
@@ -142,7 +122,7 @@
  {
   "Casa": "Boca Juniors",
   "Ospite": "SATSAID",
-  "Ora": "15:00",
+  "Ora": "12:00",
   "Lega": "Prima Divisione, Femminile - Women - Primera Division A, Women 2024, Clausura",
   "Tipo": "B",
   "Pronostico": "1",
@@ -152,7 +132,7 @@
  {
   "Casa": "AL Ahli Jordan",
   "Ospite": "DAR AL DAWA",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Jordan 1st Division",
   "Tipo": "B",
   "Pronostico": "2",
@@ -162,7 +142,7 @@
  {
   "Casa": "FC Maan",
   "Ospite": "Al-Yarmouk",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Jordan 1st Division",
   "Tipo": "B",
   "Pronostico": "2",
@@ -172,7 +152,7 @@
  {
   "Casa": "AL AQABA",
   "Ospite": "Hay AL Amir Hassan",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Jordan 1st Division",
   "Tipo": "B",
   "Pronostico": "2",
@@ -182,7 +162,7 @@
  {
   "Casa": "Ghana",
   "Ospite": "Somalia",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Coppa d'Africa - Qualification, Group C",
   "Tipo": "B",
   "Pronostico": "1",
@@ -192,7 +172,7 @@
  {
   "Casa": "Uzbekistan",
   "Ospite": "Russia",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Partite Amichevoli",
   "Tipo": "B",
   "Pronostico": "2",
@@ -200,9 +180,19 @@
   "Quota": null
  },
  {
+  "Casa": "Portogallo -19",
+  "Ospite": "Lituania -19",
+  "Ora": "13:00",
+  "Lega": "Europei Under 19 - Qualification - U19 UEFA European Championship, Qualification 2027,.",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.87,
+  "Quota": null
+ },
+ {
   "Casa": "Guinea",
   "Ospite": "Eritrea",
-  "Ora": "17:00",
+  "Ora": "14:00",
   "Lega": "Coppa d'Africa - Qualification, Group D",
   "Tipo": "B",
   "Pronostico": "1",
@@ -212,7 +202,7 @@
  {
   "Casa": "DR Congo",
   "Ospite": "Sierra Leone",
-  "Ora": "17:00",
+  "Ora": "14:00",
   "Lega": "Coppa d'Africa - Qualification, Group E",
   "Tipo": "B",
   "Pronostico": "1",
@@ -222,7 +212,7 @@
  {
   "Casa": "Guinea Equatoriale",
   "Ospite": "Zimbabwe",
-  "Ora": "17:00",
+  "Ora": "14:00",
   "Lega": "Coppa d'Africa - Qualification, Group E",
   "Tipo": "B",
   "Pronostico": "1",
@@ -232,7 +222,7 @@
  {
   "Casa": "Madagascar",
   "Ospite": "Guinea-Bissau",
-  "Ora": "17:00",
+  "Ora": "14:00",
   "Lega": "Coppa d'Africa - Qualification, Group L",
   "Tipo": "B",
   "Pronostico": "2",
@@ -242,7 +232,7 @@
  {
   "Casa": "Turchia",
   "Ospite": "Belgio",
-  "Ora": "18:00",
+  "Ora": "15:00",
   "Lega": "Nations League - League A, Gr. 1",
   "Tipo": "B",
   "Pronostico": "2",
@@ -252,7 +242,7 @@
  {
   "Casa": "Armenia",
   "Ospite": "Cipro",
-  "Ora": "18:00",
+  "Ora": "15:00",
   "Lega": "Nations League - League C, Gr. 2",
   "Tipo": "B",
   "Pronostico": "1",
@@ -260,9 +250,29 @@
   "Quota": null
  },
  {
+  "Casa": "Lituania",
+  "Ospite": "Suriname",
+  "Ora": "15:00",
+  "Lega": "Partite Amichevoli",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.37,
+  "Quota": null
+ },
+ {
+  "Casa": "Malta",
+  "Ospite": "Eswatini",
+  "Ora": "15:30",
+  "Lega": "Partite Amichevoli",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.38,
+  "Quota": null
+ },
+ {
   "Casa": "Calvo Sotelo Puertollano",
   "Ospite": "Albacete",
-  "Ora": "18:30",
+  "Ora": "15:30",
   "Lega": "Copa del Rey",
   "Tipo": "B",
   "Pronostico": "2",
@@ -272,7 +282,7 @@
  {
   "Casa": "Barcellona",
   "Ospite": "Arsenal",
-  "Ora": "18:45",
+  "Ora": "15:45",
   "Lega": "Champions League Femminile - Women 25/26",
   "Tipo": "B",
   "Pronostico": "1",
@@ -282,7 +292,7 @@
  {
   "Casa": "CDA Navalcarnero",
   "Ospite": "Betis",
-  "Ora": "19:00",
+  "Ora": "16:00",
   "Lega": "Copa del Rey",
   "Tipo": "B",
   "Pronostico": "2",
@@ -290,9 +300,19 @@
   "Quota": null
  },
  {
+  "Casa": "Chambery SF",
+  "Ospite": "Grenoble Foot 38",
+  "Ora": "16:00",
+  "Lega": "Coppa di Francia",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.81,
+  "Quota": null
+ },
+ {
   "Casa": "Bragantino SP",
   "Ospite": "Corinthians",
-  "Ora": "19:00",
+  "Ora": "16:00",
   "Lega": "Campeonato Paulista Under 20 - Playoffs",
   "Tipo": "B",
   "Pronostico": "1",
@@ -302,7 +322,7 @@
  {
   "Casa": "Kimberley De Mar Del Plata",
   "Ospite": "Club Olimpo",
-  "Ora": "19:00",
+  "Ora": "16:00",
   "Lega": "Torneo Federal A - Promotion Playoffs",
   "Tipo": "B",
   "Pronostico": "1",
@@ -312,7 +332,7 @@
  {
   "Casa": "CD TARANCÓN",
   "Ospite": "Levante",
-  "Ora": "19:00",
+  "Ora": "16:00",
   "Lega": "Copa del Rey",
   "Tipo": "B",
   "Pronostico": "2",
@@ -322,7 +342,7 @@
  {
   "Casa": "San Lorenzo De Almagro",
   "Ospite": "Union De Santa Fe",
-  "Ora": "19:00",
+  "Ora": "16:00",
   "Lega": "Prima Divisione, Femminile - Women - Primera Division A, Women 2024, Clausura",
   "Tipo": "B",
   "Pronostico": "1",
@@ -332,7 +352,7 @@
  {
   "Casa": "CA Banfield",
   "Ospite": "River Plate",
-  "Ora": "19:00",
+  "Ora": "16:00",
   "Lega": "Prima Divisione, Femminile - Women - Primera Division A, Women 2024, Clausura",
   "Tipo": "B",
   "Pronostico": "2",
@@ -342,7 +362,7 @@
  {
   "Casa": "Barbados",
   "Ospite": "Guadalupa",
-  "Ora": "20:00",
+  "Ora": "17:00",
   "Lega": "CONCACAF Nations League - League B, Group B",
   "Tipo": "B",
   "Pronostico": "2",
@@ -352,7 +372,7 @@
  {
   "Casa": "Isole Cayman",
   "Ospite": "Guyana",
-  "Ora": "20:00",
+  "Ora": "17:00",
   "Lega": "CONCACAF Nations League - League B, Group A",
   "Tipo": "B",
   "Pronostico": "2",
@@ -362,7 +382,7 @@
  {
   "Casa": "Costa d'Avorio",
   "Ospite": "Gambia",
-  "Ora": "20:00",
+  "Ora": "17:00",
   "Lega": "Coppa d'Africa - Qualification, Group C",
   "Tipo": "B",
   "Pronostico": "1",
@@ -372,7 +392,7 @@
  {
   "Casa": "Benin",
   "Ospite": "Repubblica Centrafricana",
-  "Ora": "20:00",
+  "Ora": "17:00",
   "Lega": "Coppa d'Africa - Qualification, Group F",
   "Tipo": "B",
   "Pronostico": "1",
@@ -382,7 +402,7 @@
  {
   "Casa": "Senegal",
   "Ospite": "Sudan",
-  "Ora": "20:00",
+  "Ora": "17:00",
   "Lega": "Coppa d'Africa - Qualification, Group J",
   "Tipo": "B",
   "Pronostico": "1",
@@ -392,7 +412,7 @@
  {
   "Casa": "Camerun",
   "Ospite": "Namibie",
-  "Ora": "20:00",
+  "Ora": "17:00",
   "Lega": "Coppa d'Africa - Qualification, Group G",
   "Tipo": "B",
   "Pronostico": "1",
@@ -402,7 +422,7 @@
  {
   "Casa": "CA Talleres De Cordoba",
   "Ospite": "San Luis FC",
-  "Ora": "20:00",
+  "Ora": "17:00",
   "Lega": "Prima Divisione, Femminile - Women - Primera Division A, Women 2024, Clausura",
   "Tipo": "B",
   "Pronostico": "1",
@@ -412,7 +432,7 @@
  {
   "Casa": "Gimnasia Y Esgrima La Plata",
   "Ospite": "Belgrano De Cordoba",
-  "Ora": "20:00",
+  "Ora": "17:00",
   "Lega": "Prima Divisione, Femminile - Women - Primera Division A, Women 2024, Clausura",
   "Tipo": "B",
   "Pronostico": "2",
@@ -422,7 +442,7 @@
  {
   "Casa": "Cerrito CS",
   "Ospite": "COLON FC",
-  "Ora": "20:30",
+  "Ora": "17:30",
   "Lega": "Segunda Division",
   "Tipo": "B",
   "Pronostico": "1",
@@ -432,7 +452,7 @@
  {
   "Casa": "CA Atenas De San Carlos",
   "Ospite": "Club Oriental De Football",
-  "Ora": "20:30",
+  "Ora": "17:30",
   "Lega": "Segunda Division",
   "Tipo": "B",
   "Pronostico": "1",
@@ -442,7 +462,7 @@
  {
   "Casa": "Plaza Colonia",
   "Ospite": "Atletico Rentistas",
-  "Ora": "20:30",
+  "Ora": "17:30",
   "Lega": "Segunda Division",
   "Tipo": "B",
   "Pronostico": "1",
@@ -452,7 +472,7 @@
  {
   "Casa": "Italia",
   "Ospite": "Francia",
-  "Ora": "20:45",
+  "Ora": "17:45",
   "Lega": "Nations League - League A, Gr. 1",
   "Tipo": "B",
   "Pronostico": "2",
@@ -462,7 +482,7 @@
  {
   "Casa": "Repubblica Ceca",
   "Ospite": "Spagna",
-  "Ora": "20:45",
+  "Ora": "17:45",
   "Lega": "Nations League - League A, Gr. 3",
   "Tipo": "B",
   "Pronostico": "2",
@@ -472,7 +492,7 @@
  {
   "Casa": "Inghilterra",
   "Ospite": "Croazia",
-  "Ora": "20:45",
+  "Ora": "17:45",
   "Lega": "Nations League - League A, Gr. 3",
   "Tipo": "B",
   "Pronostico": "1",
@@ -482,7 +502,7 @@
  {
   "Casa": "Montenegro",
   "Ospite": "Lettonia",
-  "Ora": "20:45",
+  "Ora": "17:45",
   "Lega": "Nations League - League C, Gr. 2",
   "Tipo": "B",
   "Pronostico": "1",
@@ -492,7 +512,7 @@
  {
   "Casa": "Albania",
   "Ospite": "Finlandia",
-  "Ora": "20:45",
+  "Ora": "17:45",
   "Lega": "Nations League - League C, Gr. 1",
   "Tipo": "B",
   "Pronostico": "X",
@@ -502,7 +522,7 @@
  {
   "Casa": "San Marino",
   "Ospite": "Bielorussia",
-  "Ora": "20:45",
+  "Ora": "17:45",
   "Lega": "Nations League - League C, Gr. 1",
   "Tipo": "B",
   "Pronostico": "2",
@@ -510,9 +530,19 @@
   "Quota": null
  },
  {
+  "Casa": "Benfica",
+  "Ospite": "FK Austria Wien",
+  "Ora": "18:00",
+  "Lega": "Champions League Femminile - Women 25/26",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.56,
+  "Quota": null
+ },
+ {
   "Casa": "Bonaire",
   "Ospite": "Cuba",
-  "Ora": "21:00",
+  "Ora": "18:00",
   "Lega": "CONCACAF Nations League - League B, Group C",
   "Tipo": "B",
   "Pronostico": "2",
@@ -520,29 +550,9 @@
   "Quota": null
  },
  {
-  "Casa": "Millonarios",
-  "Ospite": "Alianza FC Valledupar",
-  "Ora": "22:00",
-  "Lega": "Liga Postobon - Finalizacion",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.6,
-  "Quota": null
- },
- {
-  "Casa": "Rionegro Aguilas",
-  "Ospite": "Independiente Medellin",
-  "Ora": "22:00",
-  "Lega": "Liga Postobon - Finalizacion",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.39,
-  "Quota": null
- },
- {
   "Casa": "Atletico Balboa",
   "Ospite": "CD Inca",
-  "Ora": "22:30",
+  "Ora": "19:30",
   "Lega": "Primera Division - Apertura",
   "Tipo": "B",
   "Pronostico": "1",
@@ -552,7 +562,7 @@
  {
   "Casa": "Aguila",
   "Ospite": "Municipal Limeno",
-  "Ora": "22:30",
+  "Ora": "19:30",
   "Lega": "Primera Division - Apertura",
   "Tipo": "B",
   "Pronostico": "1",
@@ -562,7 +572,7 @@
  {
   "Casa": "Ponte Preta SP",
   "Ospite": "Operario PR",
-  "Ora": "23:00",
+  "Ora": "20:00",
   "Lega": "Brasileirão Série B",
   "Tipo": "B",
   "Pronostico": "2",
@@ -572,11 +582,41 @@
  {
   "Casa": "AURORA FC",
   "Ospite": "Deportivo Mixco",
-  "Ora": "23:00",
+  "Ora": "20:00",
   "Lega": "Liga Nacional - Apertura",
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.5,
+  "Quota": null
+ },
+ {
+  "Casa": "SAO Bernardo FC SP",
+  "Ospite": "Athletic Club Sjdr MG",
+  "Ora": "21:00",
+  "Lega": "Brasileirão Série B",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.51,
+  "Quota": null
+ },
+ {
+  "Casa": "Cerro Largo",
+  "Ospite": "Progreso",
+  "Ora": "21:00",
+  "Lega": "Primera Division - Apertura - Clausura",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.47,
+  "Quota": null
+ },
+ {
+  "Casa": "Curaçao",
+  "Ospite": "Panama",
+  "Ora": "22:00",
+  "Lega": "CONCACAF Nations League - Finals",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.45,
   "Quota": null
  }
 ]

@@ -1,28 +1,8 @@
 [
  {
-  "Casa": "São Paulo FC",
-  "Ospite": "Fluminense",
-  "Ora": "01:30",
-  "Lega": "Brasileirão",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.38,
-  "Quota": null
- },
- {
-  "Casa": "Orlando City",
-  "Ospite": "Cincinnati",
-  "Ora": "01:30",
-  "Lega": "Major League Soccer - Playoffs",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.52,
-  "Quota": null
- },
- {
   "Casa": "Seattle Sounders",
   "Ospite": "Real Salt Lake",
-  "Ora": "04:00",
+  "Ora": "01:00",
   "Lega": "Major League Soccer - Playoffs",
   "Tipo": "B",
   "Pronostico": "1",
@@ -32,7 +12,7 @@
  {
   "Casa": "Western Sydney Wanderers FC",
   "Ospite": "Adelaide United",
-  "Ora": "09:40",
+  "Ora": "06:40",
   "Lega": "A-League",
   "Tipo": "B",
   "Pronostico": "1",
@@ -42,7 +22,7 @@
  {
   "Casa": "FK Septemvri Sofia",
   "Ospite": "Lokomotiv Plovdiv",
-  "Ora": "17:00",
+  "Ora": "14:00",
   "Lega": "efbet Liga",
   "Tipo": "B",
   "Pronostico": "2",
@@ -52,7 +32,7 @@
  {
   "Casa": "SV Darmstadt 98",
   "Ospite": "1. FC Heidenheim 1846",
-  "Ora": "18:30",
+  "Ora": "15:30",
   "Lega": "2. Bundesliga",
   "Tipo": "B",
   "Pronostico": "2",
@@ -62,7 +42,7 @@
  {
   "Casa": "DSC Arminia Bielefeld",
   "Ospite": "Magdeburgo",
-  "Ora": "18:30",
+  "Ora": "15:30",
   "Lega": "2. Bundesliga",
   "Tipo": "B",
   "Pronostico": "1",
@@ -70,9 +50,19 @@
   "Quota": null
  },
  {
+  "Casa": "Molde",
+  "Ospite": "Bodø Glimt",
+  "Ora": "16:00",
+  "Lega": "Eliteserien",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.5,
+  "Quota": null
+ },
+ {
   "Casa": "Aarhus",
   "Ospite": "Lyngby",
-  "Ora": "19:00",
+  "Ora": "16:00",
   "Lega": "Superliga",
   "Tipo": "B",
   "Pronostico": "1",
@@ -80,103 +70,23 @@
   "Quota": null
  },
  {
-  "Casa": "ANNECY FC",
-  "Ospite": "Clermont",
-  "Ora": "20:00",
-  "Lega": "Ligue 2",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.47,
-  "Quota": null
- },
- {
-  "Casa": "Guingamp",
-  "Ospite": "Rodez Aveyron",
-  "Ora": "20:00",
-  "Lega": "Ligue 2",
-  "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.44,
-  "Quota": null
- },
- {
-  "Casa": "Metz",
-  "Ospite": "US Boulogne Cote D Opale",
-  "Ora": "20:00",
-  "Lega": "Ligue 2",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.63,
-  "Quota": null
- },
- {
-  "Casa": "Nancy",
-  "Ospite": "Digione",
-  "Ora": "20:00",
-  "Lega": "Ligue 2",
-  "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.4,
-  "Quota": null
- },
- {
-  "Casa": "Red Star",
-  "Ospite": "PAU",
-  "Ora": "20:00",
-  "Lega": "Ligue 2",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.51,
-  "Quota": null
- },
- {
-  "Casa": "Bayern Monaco",
-  "Ospite": "Colonia",
-  "Ora": "20:30",
-  "Lega": "Bundesliga",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.9,
-  "Quota": null
- },
- {
-  "Casa": "Hellas Verona",
-  "Ospite": "Cesena",
-  "Ora": "20:30",
-  "Lega": "Serie B",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.46,
-  "Quota": null
- },
- {
-  "Casa": "Troyes",
-  "Ospite": "Le Havre AC",
-  "Ora": "20:45",
-  "Lega": "Ligue 1",
+  "Casa": "Kolding IF",
+  "Ospite": "Aalborg",
+  "Ora": "16:00",
+  "Lega": "1. Division",
   "Tipo": "B",
   "Pronostico": "2",
   "Prob": 0.43,
   "Quota": null
  },
  {
-  "Casa": "Cercle Bruges",
-  "Ospite": "KVC Westerlo",
-  "Ora": "20:45",
-  "Lega": "Jupiler Pro League",
-  "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.38,
-  "Quota": null
- },
- {
-  "Casa": "Athletic Bilbao",
-  "Ospite": "Espanyol",
-  "Ora": "21:00",
-  "Lega": "LaLiga",
+  "Casa": "Aarhus Fremad",
+  "Ospite": "Hobro IK",
+  "Ora": "16:00",
+  "Lega": "1. Division",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.59,
+  "Prob": 0.45,
   "Quota": null
  }
 ]

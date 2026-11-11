@@ -1,18 +1,8 @@
 [
  {
-  "Casa": "Internacional De Bogota.",
-  "Ospite": "America De Cali",
-  "Ora": "00:30",
-  "Lega": "Copa Colombia - Knockout Stage",
-  "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.43,
-  "Quota": null
- },
- {
   "Casa": "Liverpool Montevideo",
   "Ospite": "Juventud de Las Piedras",
-  "Ora": "01:00",
+  "Ora": "00:00",
   "Lega": "Copa Uruguay - Knockout Stage",
   "Tipo": "B",
   "Pronostico": "1",
@@ -22,7 +12,7 @@
  {
   "Casa": "AD Isidro Metapan",
   "Ospite": "CD Platense Municipal Zacatecoluca",
-  "Ora": "02:00",
+  "Ora": "01:00",
   "Lega": "Primera Division - Apertura",
   "Tipo": "B",
   "Pronostico": "1",
@@ -32,7 +22,7 @@
  {
   "Casa": "UNAM",
   "Ospite": "UANL",
-  "Ora": "02:00",
+  "Ora": "01:00",
   "Lega": "Liga MX Femenil - Women, Apertura Playoffs",
   "Tipo": "B",
   "Pronostico": "2",
@@ -42,7 +32,7 @@
  {
   "Casa": "Once Caldas",
   "Ospite": "Atlético Nacional",
-  "Ora": "02:30",
+  "Ora": "01:30",
   "Lega": "Copa Colombia - Knockout Stage",
   "Tipo": "B",
   "Pronostico": "2",
@@ -52,7 +42,7 @@
  {
   "Casa": "FC Juarez",
   "Ospite": "GUADALAJARA",
-  "Ora": "04:00",
+  "Ora": "03:00",
   "Lega": "Liga MX Femenil - Women, Apertura Playoffs",
   "Tipo": "B",
   "Pronostico": "1",
@@ -60,19 +50,9 @@
   "Quota": null
  },
  {
-  "Casa": "India",
-  "Ospite": "Maldive",
-  "Ora": "10:30",
-  "Lega": "SAFF Championship, Gruppo A - Gruppo B",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.74,
-  "Quota": null
- },
- {
   "Casa": "Azerbaigian -19",
   "Ospite": "Montenegro",
-  "Ora": "11:00",
+  "Ora": "08:00",
   "Lega": "Europei Under 19 - Qualification - U19 UEFA European Championship, Qualification 2027,.",
   "Tipo": "B",
   "Pronostico": "2",
@@ -82,7 +62,7 @@
  {
   "Casa": "Georgia",
   "Ospite": "Danimarca -19",
-  "Ora": "11:00",
+  "Ora": "08:00",
   "Lega": "Europei Under 19 - Qualification - U19 UEFA European Championship, Qualification 2027,.",
   "Tipo": "B",
   "Pronostico": "2",
@@ -90,9 +70,59 @@
   "Quota": null
  },
  {
+  "Casa": "Vissel Kobe",
+  "Ospite": "Machida Zelvia",
+  "Ora": "08:00",
+  "Lega": "J. League Cup - Playoffs",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.43,
+  "Quota": null
+ },
+ {
+  "Casa": "Yokohama Marinos",
+  "Ospite": "Kashima Antlers",
+  "Ora": "08:00",
+  "Lega": "J. League Cup - Playoffs",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.44,
+  "Quota": null
+ },
+ {
+  "Casa": "Kawasaki",
+  "Ospite": "Kashiwa Reysol",
+  "Ora": "08:00",
+  "Lega": "J. League Cup - Playoffs",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.38,
+  "Quota": null
+ },
+ {
+  "Casa": "Urawa Red Diamonds",
+  "Ospite": "Cerezo Osaka",
+  "Ora": "08:30",
+  "Lega": "J. League Cup - Playoffs",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.52,
+  "Quota": null
+ },
+ {
+  "Casa": "Kucukcekmece Sinop Spor AS",
+  "Ospite": "Fatsa Belediyespor",
+  "Ora": "09:00",
+  "Lega": "Terza Lega, Playoff - Gruppo 1",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.39,
+  "Quota": null
+ },
+ {
   "Casa": "Croazia -19",
   "Ospite": "Ungheria -19",
-  "Ora": "12:00",
+  "Ora": "09:00",
   "Lega": "Europei Under 19 - Qualification - U19 UEFA European Championship, Qualification 2027,.",
   "Tipo": "B",
   "Pronostico": "1",
@@ -102,7 +132,7 @@
  {
   "Casa": "Andorra",
   "Ospite": "Polonia -19",
-  "Ora": "12:00",
+  "Ora": "09:00",
   "Lega": "Europei Under 19 - Qualification - U19 UEFA European Championship, Qualification 2027,.",
   "Tipo": "B",
   "Pronostico": "2",
@@ -112,7 +142,7 @@
  {
   "Casa": "Ucraina -19",
   "Ospite": "Israele -19",
-  "Ora": "12:00",
+  "Ora": "09:00",
   "Lega": "Europei Under 19 - Qualification - U19 UEFA European Championship, Qualification 2027,.",
   "Tipo": "B",
   "Pronostico": "1",
@@ -120,9 +150,89 @@
   "Quota": null
  },
  {
+  "Casa": "VILLARREAL CF",
+  "Ospite": "Fund. Albacete D",
+  "Ora": "09:00",
+  "Lega": "Primera Federacion, Women - Women",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.5,
+  "Quota": null
+ },
+ {
+  "Casa": "Belgio -19",
+  "Ospite": "Kosovo",
+  "Ora": "09:15",
+  "Lega": "Europei Under 19 - Qualification - U19 UEFA European Championship, Qualification 2027,.",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.79,
+  "Quota": null
+ },
+ {
+  "Casa": "India",
+  "Ospite": "Maldive",
+  "Ora": "09:30",
+  "Lega": "SAFF Championship, Gruppo A - Gruppo B",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.74,
+  "Quota": null
+ },
+ {
+  "Casa": "Pazarspor",
+  "Ospite": "Bulvarspor",
+  "Ora": "10:00",
+  "Lega": "Terza Lega, Playoff - Gruppo 1",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.51,
+  "Quota": null
+ },
+ {
+  "Casa": "Bursa Yildirim Spor Kulubu",
+  "Ospite": "Etimesgut Bld Spor",
+  "Ora": "10:00",
+  "Lega": "Terza Lega, Playoff - Gruppo 2",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.4,
+  "Quota": null
+ },
+ {
+  "Casa": "Antalya Kepezspor",
+  "Ospite": "Balikesirspor",
+  "Ora": "10:00",
+  "Lega": "Terza Lega, Playoff - Gruppo 2",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.59,
+  "Quota": null
+ },
+ {
+  "Casa": "Kirsehir Futbol Spor Kulubu",
+  "Ospite": "Mazidagi Fosfat Spor",
+  "Ora": "10:00",
+  "Lega": "Terza Lega, Playoff - Gruppo 3",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.39,
+  "Quota": null
+ },
+ {
+  "Casa": "Beykoz Anadolu Spor AS",
+  "Ospite": "Yalova Yesilovaspor",
+  "Ora": "10:00",
+  "Lega": "Terza Lega, Playoff - Gruppo 1",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.61,
+  "Quota": null
+ },
+ {
   "Casa": "Slovenia",
   "Ospite": "Inghilterra -19",
-  "Ora": "13:00",
+  "Ora": "10:00",
   "Lega": "Europei Under 19 - Qualification - U19 UEFA European Championship, Qualification 2027,.",
   "Tipo": "B",
   "Pronostico": "2",
@@ -130,19 +240,9 @@
   "Quota": null
  },
  {
-  "Casa": "Svizzera -19",
-  "Ospite": "Malta",
-  "Ora": "13:00",
-  "Lega": "Europei Under 19 - Qualification - U19 UEFA European Championship, Qualification 2027,.",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.9,
-  "Quota": null
- },
- {
   "Casa": "Repubblica Di Macedonia -19",
   "Ospite": "Irlanda Del Nord -19",
-  "Ora": "13:00",
+  "Ora": "10:00",
   "Lega": "Europei Under 19 - Qualification - U19 UEFA European Championship, Qualification 2027,.",
   "Tipo": "B",
   "Pronostico": "2",
@@ -150,9 +250,19 @@
   "Quota": null
  },
  {
+  "Casa": "FK Nove Zamky",
+  "Ospite": "Zemplin Michalovce",
+  "Ora": "10:00",
+  "Lega": "Slovensky Pohar",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.79,
+  "Quota": null
+ },
+ {
   "Casa": "Vietnam",
   "Ospite": "Cina Taipei",
-  "Ora": "13:00",
+  "Ora": "10:00",
   "Lega": "Partite Amichevoli",
   "Tipo": "B",
   "Pronostico": "X",
@@ -160,9 +270,19 @@
   "Quota": null
  },
  {
+  "Casa": "Karsiyaka",
+  "Ospite": "Bursa Nilufer Futbol AS",
+  "Ora": "10:30",
+  "Lega": "Terza Lega, Playoff - Gruppo 2",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.5,
+  "Quota": null
+ },
+ {
   "Casa": "Lettonia -19",
   "Ospite": "Moldavia -19",
-  "Ora": "13:30",
+  "Ora": "10:30",
   "Lega": "Europei Under 19 - Qualification - U19 UEFA European Championship, Qualification 2027,.",
   "Tipo": "B",
   "Pronostico": "1",
@@ -172,7 +292,7 @@
  {
   "Casa": "Albania",
   "Ospite": "Cipro- 19",
-  "Ora": "13:30",
+  "Ora": "10:30",
   "Lega": "Europei Under 19 - Qualification - U19 UEFA European Championship, Qualification 2027,.",
   "Tipo": "B",
   "Pronostico": "1",
@@ -180,9 +300,19 @@
   "Quota": null
  },
  {
+  "Casa": "Sutjeska Foca",
+  "Ospite": "FK Leotar Trebinje",
+  "Ora": "10:30",
+  "Lega": "Prva Liga - Republic of Srpska",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.5,
+  "Quota": null
+ },
+ {
   "Casa": "Repubblica Ceca -19",
   "Ospite": "Olanda -19",
-  "Ora": "14:00",
+  "Ora": "11:00",
   "Lega": "Europei Under 19 - Qualification - U19 UEFA European Championship, Qualification 2027,.",
   "Tipo": "B",
   "Pronostico": "2",
@@ -190,29 +320,9 @@
   "Quota": null
  },
  {
-  "Casa": "Belgio -19",
-  "Ospite": "Kosovo",
-  "Ora": "14:00",
-  "Lega": "Europei Under 19 - Qualification - U19 UEFA European Championship, Qualification 2027,.",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.79,
-  "Quota": null
- },
- {
-  "Casa": "Germania -19",
-  "Ospite": "Svezia -19",
-  "Ora": "14:00",
-  "Lega": "Europei Under 19 - Qualification - U19 UEFA European Championship, Qualification 2027,.",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.63,
-  "Quota": null
- },
- {
   "Casa": "RCS Onhaye",
   "Ospite": "RSC Habay",
-  "Ora": "14:30",
+  "Ora": "11:30",
   "Lega": "Nationale 1 ACFF - Nationale 1 ACFF 24/25",
   "Tipo": "B",
   "Pronostico": "2",
@@ -222,7 +332,7 @@
  {
   "Casa": "Repubblica D'Irlanda -19",
   "Ospite": "Grecia -19",
-  "Ora": "15:00",
+  "Ora": "12:00",
   "Lega": "Europei Under 19 - Qualification - Gr. 1",
   "Tipo": "B",
   "Pronostico": "1",
@@ -230,9 +340,19 @@
   "Quota": null
  },
  {
+  "Casa": "Svizzera -19",
+  "Ospite": "Malta",
+  "Ora": "12:00",
+  "Lega": "Europei Under 19 - Qualification - U19 UEFA European Championship, Qualification 2027,.",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.9,
+  "Quota": null
+ },
+ {
   "Casa": "Bangladesh",
   "Ospite": "Sri Lanka",
-  "Ora": "15:00",
+  "Ora": "12:00",
   "Lega": "SAFF Championship, Gruppo A - Gruppo A",
   "Tipo": "B",
   "Pronostico": "1",
@@ -242,7 +362,7 @@
  {
   "Casa": "Newells Old Boys",
   "Ospite": "Huracan",
-  "Ora": "15:00",
+  "Ora": "12:00",
   "Lega": "Prima Divisione, Femminile - Women - Primera Division A, Women 2024, Clausura",
   "Tipo": "B",
   "Pronostico": "1",
@@ -252,7 +372,7 @@
  {
   "Casa": "Italia -19",
   "Ospite": "Romania -19",
-  "Ora": "15:30",
+  "Ora": "12:30",
   "Lega": "Europei Under 19 - Qualification - U19 UEFA European Championship, Qualification 2027,.",
   "Tipo": "B",
   "Pronostico": "1",
@@ -262,7 +382,7 @@
  {
   "Casa": "Saint Priest",
   "Ospite": "Vallieres",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "National 2 - National 2 25/26, Group A - Gruppo C",
   "Tipo": "B",
   "Pronostico": "2",
@@ -272,7 +392,7 @@
  {
   "Casa": "Spagna -19",
   "Ospite": "Islanda -19",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Europei Under 19 - Qualification - U19 UEFA European Championship, Qualification 2027,.",
   "Tipo": "B",
   "Pronostico": "1",
@@ -282,7 +402,7 @@
  {
   "Casa": "CD Ibiza Islas Pitiusas",
   "Ospite": "UD Arenal",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Tercera Federación - Gruppo 11",
   "Tipo": "B",
   "Pronostico": "1",
@@ -290,9 +410,19 @@
   "Quota": null
  },
  {
+  "Casa": "FK Zeleziarne Podbrezova",
+  "Ospite": "FC Vion Zlate Moravce - Vrable",
+  "Ora": "13:00",
+  "Lega": "Slovensky Pohar",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.79,
+  "Quota": null
+ },
+ {
   "Casa": "Bosnia-Erzegovina -19",
   "Ospite": "San Marino",
-  "Ora": "16:30",
+  "Ora": "13:30",
   "Lega": "Europei Under 19 - Qualification - U19 UEFA European Championship, Qualification 2027,.",
   "Tipo": "B",
   "Pronostico": "1",
@@ -302,7 +432,7 @@
  {
   "Casa": "Kazakistan -19",
   "Ospite": "Scozia -19",
-  "Ora": "16:45",
+  "Ora": "13:45",
   "Lega": "Europei Under 19 - Qualification - U19 UEFA European Championship, Qualification 2027,.",
   "Tipo": "B",
   "Pronostico": "2",
@@ -312,7 +442,7 @@
  {
   "Casa": "Bourges",
   "Ospite": "Hyeres",
-  "Ora": "17:00",
+  "Ora": "14:00",
   "Lega": "National 2 - National 2 25/26, Group A - Gruppo C",
   "Tipo": "B",
   "Pronostico": "2",
@@ -322,7 +452,7 @@
  {
   "Casa": "EFC Frejus Saint-Raphael",
   "Ospite": "Estac Troyes 2",
-  "Ora": "17:00",
+  "Ora": "14:00",
   "Lega": "National 2 - National 2 25/26, Group A - Gruppo C",
   "Tipo": "B",
   "Pronostico": "2",
@@ -332,7 +462,7 @@
  {
   "Casa": "Serbia",
   "Ospite": "Isole Faer Oer -19",
-  "Ora": "17:00",
+  "Ora": "14:00",
   "Lega": "Europei Under 19 - Qualification - U19 UEFA European Championship, Qualification 2027,.",
   "Tipo": "B",
   "Pronostico": "1",
@@ -340,9 +470,19 @@
   "Quota": null
  },
  {
+  "Casa": "CZARNI SOSNOWIEC",
+  "Ospite": "Sandviken",
+  "Ora": "14:00",
+  "Lega": "UEFA Europa Cup Femminile - Women - UEFA Europa Cup, Women 25/26",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.73,
+  "Quota": null
+ },
+ {
   "Casa": "Fc Fleury 91",
   "Ospite": "Toulouse FC",
-  "Ora": "17:00",
+  "Ora": "14:00",
   "Lega": "Division 1 Femminile - Women",
   "Tipo": "B",
   "Pronostico": "1",
@@ -350,9 +490,19 @@
   "Quota": null
  },
  {
+  "Casa": "Austria",
+  "Ospite": "Bielorussia -19",
+  "Ora": "15:00",
+  "Lega": "Europei Under 19 - Qualification - U19 UEFA European Championship, Qualification 2027,.",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.72,
+  "Quota": null
+ },
+ {
   "Casa": "Francia -19",
   "Ospite": "Norvegia -19",
-  "Ora": "18:00",
+  "Ora": "15:00",
   "Lega": "Europei Under 19 - Qualification - Gr. 1",
   "Tipo": "B",
   "Pronostico": "1",
@@ -360,9 +510,29 @@
   "Quota": null
  },
  {
+  "Casa": "FENERBAHCE ISTANBUL",
+  "Ospite": "Real Sociedad D",
+  "Ora": "15:00",
+  "Lega": "UEFA Europa Cup Femminile - Women - UEFA Europa Cup, Women 25/26",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.55,
+  "Quota": null
+ },
+ {
+  "Casa": "Brondby",
+  "Ospite": "SK Trondheims-Ørn D",
+  "Ora": "15:00",
+  "Lega": "UEFA Europa Cup Femminile - Women - UEFA Europa Cup, Women 25/26",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.41,
+  "Quota": null
+ },
+ {
   "Casa": "Colombe FC",
   "Ospite": "VICTORIA UNITED LIMBE",
-  "Ora": "18:00",
+  "Ora": "15:00",
   "Lega": "Prima Divisione",
   "Tipo": "B",
   "Pronostico": "1",
@@ -372,7 +542,7 @@
  {
   "Casa": "SK Lisen Brno",
   "Ospite": "FK Jablonec",
-  "Ora": "18:00",
+  "Ora": "15:00",
   "Lega": "Coppa Ceca Pohár ČMFS",
   "Tipo": "B",
   "Pronostico": "2",
@@ -380,19 +550,19 @@
   "Quota": null
  },
  {
-  "Casa": "Portogallo -19",
-  "Ospite": "Lituania -19",
-  "Ora": "18:00",
-  "Lega": "Europei Under 19 - Qualification - U19 UEFA European Championship, Qualification 2027,.",
+  "Casa": "Francoforte D",
+  "Ospite": "PSV Eindhoven",
+  "Ora": "15:30",
+  "Lega": "UEFA Europa Cup Femminile - Women - UEFA Europa Cup, Women 25/26",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.87,
+  "Prob": 0.68,
   "Quota": null
  },
  {
   "Casa": "OH Lovanio",
   "Ospite": "HB Koege",
-  "Ora": "18:45",
+  "Ora": "15:45",
   "Lega": "Champions League Femminile - Women 25/26",
   "Tipo": "B",
   "Pronostico": "2",
@@ -400,9 +570,119 @@
   "Quota": null
  },
  {
+  "Casa": "UD Castellonense",
+  "Ospite": "CF La Nucia",
+  "Ora": "15:45",
+  "Lega": "Segunda Federación - Group III",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.36,
+  "Quota": null
+ },
+ {
+  "Casa": "Olaria AC RJ",
+  "Ospite": "AMERICA RJ",
+  "Ora": "16:00",
+  "Lega": "Carioca Under 20, Serie A2 - Serie A2",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.43,
+  "Quota": null
+ },
+ {
+  "Casa": "CA Banfield",
+  "Ospite": "Racing Club Avellaneda",
+  "Ora": "16:00",
+  "Lega": "Campeonato De Reserva De Primera Division - Reserves - Premiera LPF, Reserves 2025, Clausura, Group A",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.41,
+  "Quota": null
+ },
+ {
+  "Casa": "CA Platense",
+  "Ospite": "Deportivo Riestra Afbc Reserve",
+  "Ora": "16:00",
+  "Lega": "Campeonato De Reserva De Primera Division - Reserves - Premiera LPF, Reserves 2025, Clausura, Group A",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.47,
+  "Quota": null
+ },
+ {
+  "Casa": "Instituto AC Cordoba Reserves",
+  "Ospite": "San Lorenzo De Almagro Res.",
+  "Ora": "16:00",
+  "Lega": "Campeonato De Reserva De Primera Division - Reserves - Premiera LPF, Reserves 2025, Clausura, Group A",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.38,
+  "Quota": null
+ },
+ {
+  "Casa": "Independiente Reserve",
+  "Ospite": "CA Lanus",
+  "Ora": "16:00",
+  "Lega": "Campeonato De Reserva De Primera Division - Reserves - Premiera LPF, Reserves 2025, Clausura, Group A",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.47,
+  "Quota": null
+ },
+ {
+  "Casa": "Ferro Carril Oeste",
+  "Ospite": "Defensa Y Justicia Reserve",
+  "Ora": "16:00",
+  "Lega": "Campeonato De Reserva De Primera Division - Reserves - Premiera LPF, Reserves 2025, Clausura, Group A",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.44,
+  "Quota": null
+ },
+ {
+  "Casa": "At Rafaela Reserve",
+  "Ospite": "CA BELGRANO",
+  "Ora": "16:00",
+  "Lega": "Campeonato De Reserva De Primera Division - Reserves - Premiera LPF, Reserves 2025, Clausura, Group A",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.45,
+  "Quota": null
+ },
+ {
+  "Casa": "Malmo FF",
+  "Ospite": "Ajax",
+  "Ora": "16:00",
+  "Lega": "UEFA Europa Cup Femminile - Women - UEFA Europa Cup, Women 25/26",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.47,
+  "Quota": null
+ },
+ {
+  "Casa": "S.C.U. Torreense",
+  "Ospite": "AC Sparta Praga",
+  "Ora": "16:00",
+  "Lega": "UEFA Europa Cup Femminile - Women - UEFA Europa Cup, Women 25/26",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.61,
+  "Quota": null
+ },
+ {
+  "Casa": "Alcoyano",
+  "Ospite": "Elche Ilicitano",
+  "Ora": "16:30",
+  "Lega": "Segunda Federación - Group III",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.66,
+  "Quota": null
+ },
+ {
   "Casa": "Derby Academie",
   "Ospite": "AS Kayes",
-  "Ora": "19:30",
+  "Ora": "16:30",
   "Lega": "Premier Division",
   "Tipo": "B",
   "Pronostico": "1",
@@ -410,9 +690,29 @@
   "Quota": null
  },
  {
+  "Casa": "Liverpool D",
+  "Ospite": "ASTON VILLA LFC",
+  "Ora": "17:00",
+  "Lega": "FA Women's League Cup - Women 26/27, Northern Group",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.54,
+  "Quota": null
+ },
+ {
+  "Casa": "Tottenham Hotspur FC Women",
+  "Ospite": "CRYSTAL PALACE LADIES",
+  "Ora": "17:00",
+  "Lega": "FA Women's League Cup - Women 26/27, Southern Group",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.77,
+  "Quota": null
+ },
+ {
   "Casa": "Sheffield Wednesday",
   "Ospite": "Accrington Stanley",
-  "Ora": "20:00",
+  "Ora": "17:00",
   "Lega": "EFL Trophy - Northern Group A",
   "Tipo": "B",
   "Pronostico": "1",
@@ -422,7 +722,7 @@
  {
   "Casa": "Barnsley",
   "Ospite": "Oldham Athletic",
-  "Ora": "20:00",
+  "Ora": "17:00",
   "Lega": "EFL Trophy - Northern Group G",
   "Tipo": "B",
   "Pronostico": "1",
@@ -432,7 +732,7 @@
  {
   "Casa": "Galles -19",
   "Ospite": "Finlandia -19",
-  "Ora": "20:00",
+  "Ora": "17:00",
   "Lega": "Europei Under 19 - Qualification - U19 UEFA European Championship, Qualification 2027,.",
   "Tipo": "B",
   "Pronostico": "1",
@@ -440,9 +740,19 @@
   "Quota": null
  },
  {
+  "Casa": "Birmingham D",
+  "Ospite": "Sunderland",
+  "Ora": "17:00",
+  "Lega": "FA Women's League Cup - Women 26/27, Northern Group",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.57,
+  "Quota": null
+ },
+ {
   "Casa": "Ontinyent",
   "Ospite": "CD Utiel",
-  "Ora": "20:00",
+  "Ora": "17:00",
   "Lega": "Tercera Federación - Gruppo 6",
   "Tipo": "B",
   "Pronostico": "1",
@@ -450,9 +760,29 @@
   "Quota": null
  },
  {
+  "Casa": "Charlton Athletic",
+  "Ospite": "Ipswich Town Lfc",
+  "Ora": "17:30",
+  "Lega": "FA Women's League Cup - Women 26/27, Southern Group",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.45,
+  "Quota": null
+ },
+ {
+  "Casa": "CD Cieza",
+  "Ospite": "Valencia Mestalla",
+  "Ora": "17:30",
+  "Lega": "Segunda Federación - Group III",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.48,
+  "Quota": null
+ },
+ {
   "Casa": "La Luz FC",
   "Ospite": "Atletico Fenix Montevideo",
-  "Ora": "20:30",
+  "Ora": "17:30",
   "Lega": "Segunda Division",
   "Tipo": "B",
   "Pronostico": "2",
@@ -462,7 +792,7 @@
  {
   "Casa": "Tacuarembo",
   "Ospite": "Miramar Misiones",
-  "Ora": "20:30",
+  "Ora": "17:30",
   "Lega": "Segunda Division",
   "Tipo": "B",
   "Pronostico": "2",
@@ -472,7 +802,7 @@
  {
   "Casa": "Frome Town",
   "Ospite": "Plymouth Parkway",
-  "Ora": "20:45",
+  "Ora": "17:45",
   "Lega": "Southern League, Premier Division South - Premier Division South",
   "Tipo": "B",
   "Pronostico": "1",
@@ -482,7 +812,7 @@
  {
   "Casa": "Avro FC",
   "Ospite": "Whitby Town",
-  "Ora": "20:45",
+  "Ora": "17:45",
   "Lega": "Northern Premier League - Premier Division",
   "Tipo": "B",
   "Pronostico": "1",
@@ -492,7 +822,7 @@
  {
   "Casa": "Heart Of Midlothian",
   "Ospite": "Montrose FC",
-  "Ora": "20:45",
+  "Ora": "17:45",
   "Lega": "Scottish Women's PL - Women",
   "Tipo": "B",
   "Pronostico": "1",
@@ -502,7 +832,7 @@
  {
   "Casa": "Juventus",
   "Ospite": "OL Lyonnes",
-  "Ora": "21:00",
+  "Ora": "18:00",
   "Lega": "Champions League Femminile - Women 25/26",
   "Tipo": "B",
   "Pronostico": "2",
@@ -510,19 +840,19 @@
   "Quota": null
  },
  {
-  "Casa": "Benfica",
-  "Ospite": "FK Austria Wien",
-  "Ora": "21:00",
-  "Lega": "Champions League Femminile - Women 25/26",
+  "Casa": "CA Talleres De Cordoba Reserve",
+  "Ospite": "SARMIENTO RESERVE",
+  "Ora": "18:00",
+  "Lega": "Campeonato De Reserva De Primera Division - Reserves - Premiera LPF, Reserves 2025, Clausura, Group A",
   "Tipo": "B",
   "Pronostico": "1",
-  "Prob": 0.56,
+  "Prob": 0.49,
   "Quota": null
  },
  {
   "Casa": "CD FUERTE SAN FRANCISCO MORAZAN",
   "Ospite": "Alianza FC San Salvador",
-  "Ora": "22:30",
+  "Ora": "19:00",
   "Lega": "Primera Division - Apertura",
   "Tipo": "B",
   "Pronostico": "2",
@@ -532,11 +862,71 @@
  {
   "Casa": "Londrina",
   "Ospite": "Nautico",
-  "Ora": "23:00",
+  "Ora": "20:00",
   "Lega": "Brasileirão Série B",
   "Tipo": "B",
   "Pronostico": "2",
   "Prob": 0.37,
+  "Quota": null
+ },
+ {
+  "Casa": "Real Soacha Cundinamarca",
+  "Ospite": "Real Cartagena",
+  "Ora": "21:00",
+  "Lega": "Primera B - Clausura, Promotion, Group B",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.4,
+  "Quota": null
+ },
+ {
+  "Casa": "Independiente Petrolero",
+  "Ospite": "Always Ready",
+  "Ora": "21:00",
+  "Lega": "Copa Division Profesional, Playoffs - Playoffs",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.53,
+  "Quota": null
+ },
+ {
+  "Casa": "DC Power FC",
+  "Ospite": "Brooklyn FC",
+  "Ora": "22:00",
+  "Lega": "USL Super League - Women - Women - USL Super League 25/26, Women",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.53,
+  "Quota": null
+ },
+ {
+  "Casa": "CD Fas",
+  "Ospite": "Fundacion Formado Un Atleta",
+  "Ora": "23:00",
+  "Lega": "Primera Division - Apertura",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.45,
+  "Quota": null
+ },
+ {
+  "Casa": "CLUB AMERICA",
+  "Ospite": "TOLUCA",
+  "Ora": "23:00",
+  "Lega": "Liga MX Femenil - Women, Apertura Playoffs",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.85,
+  "Quota": null
+ },
+ {
+  "Casa": "Deportes Quindio",
+  "Ospite": "Tigres FC",
+  "Ora": "23:10",
+  "Lega": "Primera B - Clausura, Promotion, Group B",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.4,
   "Quota": null
  }
 ]

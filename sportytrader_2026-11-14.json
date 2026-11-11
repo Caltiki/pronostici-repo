@@ -1,38 +1,18 @@
 [
  {
-  "Casa": "Argentina",
-  "Ospite": "Uruguay",
+  "Casa": "Guatemala",
+  "Ospite": "Canada",
   "Ora": "00:00",
-  "Lega": "Partite Amichevoli",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.5,
-  "Quota": null
- },
- {
-  "Casa": "Colombia",
-  "Ospite": "Cile",
-  "Ora": "01:00",
-  "Lega": "Partite Amichevoli",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.52,
-  "Quota": null
- },
- {
-  "Casa": "AD Isidro Metapan",
-  "Ospite": "CD Luis Angel Firpo",
-  "Ora": "02:00",
-  "Lega": "Primera Division - Apertura",
+  "Lega": "CONCACAF Nations League - Finals",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.47,
+  "Prob": 0.64,
   "Quota": null
  },
  {
   "Casa": "Okinawa SV",
   "Ospite": "Tokyo Musashino City FC",
-  "Ora": "05:00",
+  "Ora": "02:00",
   "Lega": "Japan Football League",
   "Tipo": "B",
   "Pronostico": "1",
@@ -42,7 +22,7 @@
  {
   "Casa": "Maruyasu Okazaki",
   "Ospite": "Honda Lock",
-  "Ora": "05:00",
+  "Ora": "02:00",
   "Lega": "Japan Football League",
   "Tipo": "B",
   "Pronostico": "1",
@@ -52,7 +32,7 @@
  {
   "Casa": "Criacao Shinjuku",
   "Ospite": "Briobecca Urayasu",
-  "Ora": "05:00",
+  "Ora": "02:00",
   "Lega": "Japan Football League",
   "Tipo": "B",
   "Pronostico": "1",
@@ -62,7 +42,7 @@
  {
   "Casa": "Vonds Ichihara",
   "Ospite": "J-Lease FC",
-  "Ora": "05:00",
+  "Ora": "02:00",
   "Lega": "Japan Football League",
   "Tipo": "B",
   "Pronostico": "1",
@@ -72,7 +52,7 @@
  {
   "Casa": "Melbourne City",
   "Ospite": "Newcastle Jets FC D",
-  "Ora": "05:00",
+  "Ora": "02:00",
   "Lega": "W-League - Women",
   "Tipo": "B",
   "Pronostico": "1",
@@ -82,7 +62,7 @@
  {
   "Casa": "Melbourne Victory D",
   "Ospite": "Adelaide United D",
-  "Ora": "05:00",
+  "Ora": "02:00",
   "Lega": "W-League - Women",
   "Tipo": "B",
   "Pronostico": "1",
@@ -92,7 +72,7 @@
  {
   "Casa": "Sydney United",
   "Ospite": "South Melbourne",
-  "Ora": "05:00",
+  "Ora": "02:00",
   "Lega": "NPL Victoria - Gruppo A",
   "Tipo": "B",
   "Pronostico": "2",
@@ -102,7 +82,7 @@
  {
   "Casa": "South Hobart",
   "Ospite": "Wollongong Wolves",
-  "Ora": "05:00",
+  "Ora": "02:00",
   "Lega": "NPL Victoria - Gruppo D",
   "Tipo": "B",
   "Pronostico": "2",
@@ -112,7 +92,7 @@
  {
   "Casa": "Omiya Ardija",
   "Ospite": "Montedio Yamagata",
-  "Ora": "06:00",
+  "Ora": "03:00",
   "Lega": "J. League 2",
   "Tipo": "B",
   "Pronostico": "1",
@@ -122,7 +102,7 @@
  {
   "Casa": "Shonan Bellmare",
   "Ospite": "Yokohama FC",
-  "Ora": "06:00",
+  "Ora": "03:00",
   "Lega": "J. League 2",
   "Tipo": "B",
   "Pronostico": "2",
@@ -132,7 +112,7 @@
  {
   "Casa": "Albirex Niigata",
   "Ospite": "Tegevajaro Miyazaki",
-  "Ora": "06:00",
+  "Ora": "03:00",
   "Lega": "J. League 2",
   "Tipo": "B",
   "Pronostico": "1",
@@ -142,7 +122,7 @@
  {
   "Casa": "Fujieda Myfc",
   "Ospite": "Ventforet Kofu",
-  "Ora": "06:00",
+  "Ora": "03:00",
   "Lega": "J. League 2",
   "Tipo": "B",
   "Pronostico": "1",
@@ -152,7 +132,7 @@
  {
   "Casa": "Oita Trinita",
   "Ospite": "TOCHIGI UVA",
-  "Ora": "06:00",
+  "Ora": "03:00",
   "Lega": "J. League 2",
   "Tipo": "B",
   "Pronostico": "2",
@@ -162,7 +142,7 @@
  {
   "Casa": "Central Coast Mariners",
   "Ospite": "Perth Glory FC D",
-  "Ora": "07:00",
+  "Ora": "04:00",
   "Lega": "W-League - Women",
   "Tipo": "B",
   "Pronostico": "1",
@@ -170,9 +150,19 @@
   "Quota": null
  },
  {
+  "Casa": "AMAZULU",
+  "Ospite": "MAMELODI SUNDOWNS",
+  "Ora": "06:00",
+  "Lega": "Premier League, Reserve - Reserve",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.53,
+  "Quota": null
+ },
+ {
   "Casa": "Bayswater City",
   "Ospite": "Sydney Olympic",
-  "Ora": "09:30",
+  "Ora": "06:30",
   "Lega": "NPL Victoria - Gruppo C",
   "Tipo": "B",
   "Pronostico": "1",
@@ -182,7 +172,7 @@
  {
   "Casa": "Adana 1954 FK",
   "Ospite": "Düzyurtspor",
-  "Ora": "11:00",
+  "Ora": "08:00",
   "Lega": "2. Lig - Kirmizi Grup",
   "Tipo": "B",
   "Pronostico": "1",
@@ -190,9 +180,19 @@
   "Quota": null
  },
  {
+  "Casa": "Giappone",
+  "Ospite": "Brasile",
+  "Ora": "08:15",
+  "Lega": "Partite Amichevoli",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.39,
+  "Quota": null
+ },
+ {
   "Casa": "Gornik Leczna",
   "Ospite": "Hutnik Cracovia",
-  "Ora": "12:00",
+  "Ora": "09:00",
   "Lega": "2 Liga",
   "Tipo": "B",
   "Pronostico": "1",
@@ -202,7 +202,7 @@
  {
   "Casa": "PODHALE NOWY TARG",
   "Ospite": "AVIA SWIDNIK",
-  "Ora": "12:00",
+  "Ora": "09:00",
   "Lega": "2 Liga",
   "Tipo": "B",
   "Pronostico": "1",
@@ -212,7 +212,7 @@
  {
   "Casa": "Espanyol D",
   "Ospite": "UDG Tenerife",
-  "Ora": "12:00",
+  "Ora": "09:00",
   "Lega": "Primera Division Femminile",
   "Tipo": "B",
   "Pronostico": "2",
@@ -222,7 +222,7 @@
  {
   "Casa": "Kks Lech Poznan",
   "Ospite": "CZARNI SOSNOWIEC",
-  "Ora": "12:00",
+  "Ora": "09:00",
   "Lega": "Ekstraliga Women - Women",
   "Tipo": "B",
   "Pronostico": "2",
@@ -232,7 +232,7 @@
  {
   "Casa": "Marek Dupnica",
   "Ospite": "Chernomorets Burgas",
-  "Ora": "12:30",
+  "Ora": "09:30",
   "Lega": "Second Professional League",
   "Tipo": "B",
   "Pronostico": "2",
@@ -242,7 +242,7 @@
  {
   "Casa": "SSC Napoli",
   "Ospite": "A.C. Milan",
-  "Ora": "12:30",
+  "Ora": "09:30",
   "Lega": "Serie A, Femminile - Women",
   "Tipo": "B",
   "Pronostico": "2",
@@ -252,7 +252,7 @@
  {
   "Casa": "AZS UJ KRAKOW",
   "Ospite": "UKS SMS Lodz",
-  "Ora": "12:45",
+  "Ora": "09:45",
   "Lega": "Ekstraliga Women - Women",
   "Tipo": "B",
   "Pronostico": "1",
@@ -262,7 +262,7 @@
  {
   "Casa": "ALINGSAS FC UNITED",
   "Ospite": "SANDVIKENS IF",
-  "Ora": "13:00",
+  "Ora": "10:00",
   "Lega": "Elitettan Femminile - Women",
   "Tipo": "B",
   "Pronostico": "1",
@@ -272,7 +272,7 @@
  {
   "Casa": "BK Hacken Academy",
   "Ospite": "KIF Örebro DFF D",
-  "Ora": "13:00",
+  "Ora": "10:00",
   "Lega": "Elitettan Femminile - Women",
   "Tipo": "B",
   "Pronostico": "2",
@@ -282,7 +282,7 @@
  {
   "Casa": "IF Elfsborg",
   "Ospite": "HUSQVARNA FF",
-  "Ora": "13:00",
+  "Ora": "10:00",
   "Lega": "Elitettan Femminile - Women",
   "Tipo": "B",
   "Pronostico": "1",
@@ -292,7 +292,7 @@
  {
   "Casa": "IFK Goteborg",
   "Ospite": "Umeå IK FF D",
-  "Ora": "13:00",
+  "Ora": "10:00",
   "Lega": "Elitettan Femminile - Women",
   "Tipo": "B",
   "Pronostico": "1",
@@ -302,7 +302,7 @@
  {
   "Casa": "Linköpings FC D",
   "Ospite": "Gamla Upsala SK",
-  "Ora": "13:00",
+  "Ora": "10:00",
   "Lega": "Elitettan Femminile - Women",
   "Tipo": "B",
   "Pronostico": "1",
@@ -312,7 +312,7 @@
  {
   "Casa": "Trelleborgs FF",
   "Ospite": "Jitex Molndal BK",
-  "Ora": "13:00",
+  "Ora": "10:00",
   "Lega": "Elitettan Femminile - Women",
   "Tipo": "B",
   "Pronostico": "1",
@@ -322,7 +322,7 @@
  {
   "Casa": "Enskede IK",
   "Ospite": "Orebro SK FK",
-  "Ora": "13:00",
+  "Ora": "10:00",
   "Lega": "Elitettan Femminile - Women",
   "Tipo": "B",
   "Pronostico": "2",
@@ -332,7 +332,7 @@
  {
   "Casa": "Slask II Wroclaw",
   "Ospite": "Lechia Zielona Gora",
-  "Ora": "13:00",
+  "Ora": "10:00",
   "Lega": "2 Liga",
   "Tipo": "B",
   "Pronostico": "1",
@@ -340,9 +340,19 @@
   "Quota": null
  },
  {
+  "Casa": "Athletic Bilbao B",
+  "Ospite": "Ferrol",
+  "Ora": "10:00",
+  "Lega": "Primera Federación - Gruppo 1",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.35,
+  "Quota": null
+ },
+ {
   "Casa": "Koldingq",
   "Ospite": "FARUM BK",
-  "Ora": "13:00",
+  "Ora": "10:00",
   "Lega": "A-Liga - Women",
   "Tipo": "B",
   "Pronostico": "2",
@@ -352,7 +362,7 @@
  {
   "Casa": "FK ZVIJEZDA 09",
   "Ospite": "FK Potkozarje Aleksandrovac",
-  "Ora": "13:00",
+  "Ora": "10:00",
   "Lega": "Prva Liga - Republic of Srpska",
   "Tipo": "B",
   "Pronostico": "1",
@@ -362,7 +372,7 @@
  {
   "Casa": "Exeter City",
   "Ospite": "Cheltenham Town",
-  "Ora": "13:30",
+  "Ora": "10:30",
   "Lega": "League Two",
   "Tipo": "B",
   "Pronostico": "1",
@@ -372,7 +382,7 @@
  {
   "Casa": "Vsk Aarhus",
   "Ospite": "Middelfart G&bk",
-  "Ora": "13:30",
+  "Ora": "10:30",
   "Lega": "2. Division",
   "Tipo": "B",
   "Pronostico": "1",
@@ -382,7 +392,7 @@
  {
   "Casa": "REKORD BIELSKO-BIALA",
   "Ospite": "Sleza Wroclaw",
-  "Ora": "13:30",
+  "Ora": "10:30",
   "Lega": "Ekstraliga Women - Women",
   "Tipo": "B",
   "Pronostico": "1",
@@ -392,7 +402,7 @@
  {
   "Casa": "MANCHESTER UNITED",
   "Ospite": "CRYSTAL PALACE LADIES",
-  "Ora": "13:45",
+  "Ora": "10:45",
   "Lega": "Women's Super League",
   "Tipo": "B",
   "Pronostico": "1",
@@ -402,7 +412,7 @@
  {
   "Casa": "Valladolid",
   "Ospite": "Castellon",
-  "Ora": "14:00",
+  "Ora": "11:00",
   "Lega": "LaLiga 2",
   "Tipo": "B",
   "Pronostico": "2",
@@ -412,7 +422,7 @@
  {
   "Casa": "Central Espanol",
   "Ospite": "CA Boston River",
-  "Ora": "14:00",
+  "Ora": "11:00",
   "Lega": "Primera Division - Apertura - Clausura",
   "Tipo": "B",
   "Pronostico": "1",
@@ -420,9 +430,19 @@
   "Quota": null
  },
  {
+  "Casa": "SK Hanacka Slavia Kromeriz",
+  "Ospite": "Fotbal Trinec",
+  "Ora": "11:00",
+  "Lega": "FNL",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.45,
+  "Quota": null
+ },
+ {
   "Casa": "Volga Ulyanovsk",
   "Ospite": "Torpedo Mosca",
-  "Ora": "14:30",
+  "Ora": "11:30",
   "Lega": "Football National League",
   "Tipo": "B",
   "Pronostico": "2",
@@ -432,7 +452,7 @@
  {
   "Casa": "GVVV Veenendaal",
   "Ospite": "Spakenburg",
-  "Ora": "14:30",
+  "Ora": "11:30",
   "Lega": "Tweede Divisie",
   "Tipo": "B",
   "Pronostico": "2",
@@ -442,7 +462,7 @@
  {
   "Casa": "HHC Hardenberg",
   "Ospite": "Rkav Volendam",
-  "Ora": "14:30",
+  "Ora": "11:30",
   "Lega": "Tweede Divisie",
   "Tipo": "B",
   "Pronostico": "1",
@@ -452,7 +472,7 @@
  {
   "Casa": "Rijnsburgse Boys",
   "Ospite": "KONINKLIJKE HFC",
-  "Ora": "14:30",
+  "Ora": "11:30",
   "Lega": "Tweede Divisie",
   "Tipo": "B",
   "Pronostico": "1",
@@ -460,9 +480,69 @@
   "Quota": null
  },
  {
+  "Casa": "AlbinoLeffe",
+  "Ospite": "Union Brescia",
+  "Ora": "11:30",
+  "Lega": "Serie C - Girone A",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.38,
+  "Quota": null
+ },
+ {
+  "Casa": "ArzignanoChiampo",
+  "Ospite": "Asd Alcione Milano",
+  "Ora": "11:30",
+  "Lega": "Serie C - Girone A",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.47,
+  "Quota": null
+ },
+ {
+  "Casa": "Renate",
+  "Ospite": "Desenzano Calvina",
+  "Ora": "11:30",
+  "Lega": "Serie C - Girone A",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.42,
+  "Quota": null
+ },
+ {
+  "Casa": "AC Reggiana 1919",
+  "Ospite": "Livorno",
+  "Ora": "11:30",
+  "Lega": "Serie C - Girone B",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.44,
+  "Quota": null
+ },
+ {
+  "Casa": "Vis Pesaro",
+  "Ospite": "US Pianese",
+  "Ora": "11:30",
+  "Lega": "Serie C - Girone B",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.38,
+  "Quota": null
+ },
+ {
+  "Casa": "S.S.D. Casarano Calcio",
+  "Ospite": "Picerno",
+  "Ora": "11:30",
+  "Lega": "Serie C - Girone C",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.43,
+  "Quota": null
+ },
+ {
   "Casa": "Chelsea",
   "Ospite": "Manchester City D",
-  "Ora": "14:30",
+  "Ora": "11:30",
   "Lega": "Women's Super League",
   "Tipo": "B",
   "Pronostico": "1",
@@ -472,7 +552,7 @@
  {
   "Casa": "Kosovo",
   "Ospite": "Israele",
-  "Ora": "15:00",
+  "Ora": "12:00",
   "Lega": "Nations League - League B, Gr. 3",
   "Tipo": "B",
   "Pronostico": "1",
@@ -482,7 +562,7 @@
  {
   "Casa": "Fremad Amager",
   "Ospite": "Brabrand IF",
-  "Ora": "15:00",
+  "Ora": "12:00",
   "Lega": "2. Division",
   "Tipo": "B",
   "Pronostico": "1",
@@ -492,7 +572,7 @@
  {
   "Casa": "Ijsselmeervogels",
   "Ospite": "BVV Barendrecht",
-  "Ora": "15:00",
+  "Ora": "12:00",
   "Lega": "Tweede Divisie",
   "Tipo": "B",
   "Pronostico": "1",
@@ -502,7 +582,7 @@
  {
   "Casa": "Kozakken Boys",
   "Ospite": "Jong Sparta Rotterdam",
-  "Ora": "15:00",
+  "Ora": "12:00",
   "Lega": "Tweede Divisie",
   "Tipo": "B",
   "Pronostico": "1",
@@ -512,7 +592,7 @@
  {
   "Casa": "Quick Boys",
   "Ospite": "Almere City",
-  "Ora": "15:00",
+  "Ora": "12:00",
   "Lega": "Tweede Divisie",
   "Tipo": "B",
   "Pronostico": "1",
@@ -522,7 +602,7 @@
  {
   "Casa": "Rohda Raalte",
   "Ospite": "Katwijk",
-  "Ora": "15:00",
+  "Ora": "12:00",
   "Lega": "Tweede Divisie",
   "Tipo": "B",
   "Pronostico": "2",
@@ -530,9 +610,19 @@
   "Quota": null
  },
  {
+  "Casa": "Le Havre AC",
+  "Ospite": "Paris FC",
+  "Ora": "12:00",
+  "Lega": "Division 1 Femminile - Women",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.67,
+  "Quota": null
+ },
+ {
   "Casa": "Roma",
   "Ospite": "Parma Calcio",
-  "Ora": "15:00",
+  "Ora": "12:00",
   "Lega": "Serie A, Femminile - Women",
   "Tipo": "B",
   "Pronostico": "1",
@@ -542,7 +632,7 @@
  {
   "Casa": "Amsterdamsche FC",
   "Ospite": "De Treffers Groesbeek",
-  "Ora": "15:15",
+  "Ora": "12:15",
   "Lega": "Tweede Divisie",
   "Tipo": "B",
   "Pronostico": "2",
@@ -550,9 +640,19 @@
   "Quota": null
  },
  {
+  "Casa": "RACING SANTANDER B",
+  "Ospite": "RS Gimnastica De Torrelavega",
+  "Ora": "12:30",
+  "Lega": "Segunda Federación - Gruppo I",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.53,
+  "Quota": null
+ },
+ {
   "Casa": "Ayr United FC",
   "Ospite": "Raith Rovers",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Scottish Championship",
   "Tipo": "B",
   "Pronostico": "2",
@@ -562,7 +662,7 @@
  {
   "Casa": "Livingston",
   "Ospite": "Greenock Morton FC",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Scottish Championship",
   "Tipo": "B",
   "Pronostico": "1",
@@ -572,7 +672,7 @@
  {
   "Casa": "Partick Thistle FC",
   "Ospite": "Inverness",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Scottish Championship",
   "Tipo": "B",
   "Pronostico": "1",
@@ -582,7 +682,7 @@
  {
   "Casa": "Stenhousemuir FC",
   "Ospite": "Queens Park",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Scottish Championship",
   "Tipo": "B",
   "Pronostico": "1",
@@ -592,7 +692,7 @@
  {
   "Casa": "Airdrieonians",
   "Ospite": "Queen Of The South FC",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Scottish League One",
   "Tipo": "B",
   "Pronostico": "1",
@@ -602,7 +702,7 @@
  {
   "Casa": "Cove Rangers FC",
   "Ospite": "Montrose",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Scottish League One",
   "Tipo": "B",
   "Pronostico": "1",
@@ -612,7 +712,7 @@
  {
   "Casa": "East Fife",
   "Ospite": "Peterhead FC",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Scottish League One",
   "Tipo": "B",
   "Pronostico": "1",
@@ -622,7 +722,7 @@
  {
   "Casa": "East Kilbride",
   "Ospite": "Alloa Athletic FC",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Scottish League One",
   "Tipo": "B",
   "Pronostico": "1",
@@ -632,7 +732,7 @@
  {
   "Casa": "Dumbarton FC",
   "Ospite": "Annan Athletic FC",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Scottish League Two",
   "Tipo": "B",
   "Pronostico": "1",
@@ -642,7 +742,7 @@
  {
   "Casa": "Edinburgh City FC",
   "Ospite": "Clyde",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Scottish League Two",
   "Tipo": "B",
   "Pronostico": "2",
@@ -652,7 +752,7 @@
  {
   "Casa": "Forfar Athletic FC",
   "Ospite": "Spartans Edinburgh",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Scottish League Two",
   "Tipo": "B",
   "Pronostico": "2",
@@ -662,7 +762,7 @@
  {
   "Casa": "Kelty Hearts",
   "Ospite": "Stranraer FC",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Scottish League Two",
   "Tipo": "B",
   "Pronostico": "2",
@@ -672,7 +772,7 @@
  {
   "Casa": "Stirling Albion",
   "Ospite": "Elgin City FC",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Scottish League Two",
   "Tipo": "B",
   "Pronostico": "2",
@@ -682,7 +782,7 @@
  {
   "Casa": "Raal La Louviere",
   "Ospite": "Standard Femina De Liege",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Lotto Super League - Women",
   "Tipo": "B",
   "Pronostico": "1",
@@ -692,7 +792,7 @@
  {
   "Casa": "Wimbledon",
   "Ospite": "Blackpool",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "League One",
   "Tipo": "B",
   "Pronostico": "1",
@@ -702,7 +802,7 @@
  {
   "Casa": "Bromley FC",
   "Ospite": "Notts County",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "League One",
   "Tipo": "B",
   "Pronostico": "2",
@@ -712,7 +812,7 @@
  {
   "Casa": "Doncaster",
   "Ospite": "Leyton Orient",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "League One",
   "Tipo": "B",
   "Pronostico": "1",
@@ -722,7 +822,7 @@
  {
   "Casa": "Leicester",
   "Ospite": "Bradford City",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "League One",
   "Tipo": "B",
   "Pronostico": "1",
@@ -732,7 +832,7 @@
  {
   "Casa": "Luton Town",
   "Ospite": "Cambridge United",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "League One",
   "Tipo": "B",
   "Pronostico": "1",
@@ -742,7 +842,7 @@
  {
   "Casa": "Milton Keynes Dons",
   "Ospite": "Burton Albion",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "League One",
   "Tipo": "B",
   "Pronostico": "1",
@@ -752,7 +852,7 @@
  {
   "Casa": "Peterborough",
   "Ospite": "Oxford United",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "League One",
   "Tipo": "B",
   "Pronostico": "2",
@@ -762,7 +862,7 @@
  {
   "Casa": "Sheffield Wednesday",
   "Ospite": "Plymouth Argyle",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "League One",
   "Tipo": "B",
   "Pronostico": "2",
@@ -772,7 +872,7 @@
  {
   "Casa": "Stevenage",
   "Ospite": "Mansfield Town",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "League One",
   "Tipo": "B",
   "Pronostico": "1",
@@ -782,7 +882,7 @@
  {
   "Casa": "Stockport County FC",
   "Ospite": "Reading",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "League One",
   "Tipo": "B",
   "Pronostico": "1",
@@ -792,7 +892,7 @@
  {
   "Casa": "Wigan",
   "Ospite": "Barnsley",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "League One",
   "Tipo": "B",
   "Pronostico": "1",
@@ -802,7 +902,7 @@
  {
   "Casa": "Wycombe Wanderers",
   "Ospite": "Huddersfield Town",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "League One",
   "Tipo": "B",
   "Pronostico": "1",
@@ -812,7 +912,7 @@
  {
   "Casa": "Bristol Rovers",
   "Ospite": "Chesterfield FC",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "League Two",
   "Tipo": "B",
   "Pronostico": "1",
@@ -822,7 +922,7 @@
  {
   "Casa": "Colchester United",
   "Ospite": "Gillingham",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "League Two",
   "Tipo": "B",
   "Pronostico": "1",
@@ -832,7 +932,7 @@
  {
   "Casa": "Crewe Alexandra",
   "Ospite": "Newport County",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "League Two",
   "Tipo": "B",
   "Pronostico": "1",
@@ -842,7 +942,7 @@
  {
   "Casa": "Port Vale",
   "Ospite": "Accrington Stanley",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "League Two",
   "Tipo": "B",
   "Pronostico": "1",
@@ -852,7 +952,7 @@
  {
   "Casa": "Rochdale",
   "Ospite": "York City FC",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "League Two",
   "Tipo": "B",
   "Pronostico": "2",
@@ -862,7 +962,7 @@
  {
   "Casa": "Rotherham",
   "Ospite": "Crawley",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "League Two",
   "Tipo": "B",
   "Pronostico": "1",
@@ -872,7 +972,7 @@
  {
   "Casa": "Salford City",
   "Ospite": "Northampton Town",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "League Two",
   "Tipo": "B",
   "Pronostico": "1",
@@ -882,7 +982,7 @@
  {
   "Casa": "Shrewsbury Town",
   "Ospite": "Oldham Athletic",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "League Two",
   "Tipo": "B",
   "Pronostico": "1",
@@ -892,7 +992,7 @@
  {
   "Casa": "Swindon Town",
   "Ospite": "Grimsby Town",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "League Two",
   "Tipo": "B",
   "Pronostico": "2",
@@ -902,7 +1002,7 @@
  {
   "Casa": "Walsall",
   "Ospite": "Barnet FC",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "League Two",
   "Tipo": "B",
   "Pronostico": "2",
@@ -912,7 +1012,7 @@
  {
   "Casa": "Legia Varsavia II",
   "Ospite": "Sandecja Nowy Sacz",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "2 Liga",
   "Tipo": "B",
   "Pronostico": "2",
@@ -922,7 +1022,7 @@
  {
   "Casa": "Chojniczanka Chojnice",
   "Ospite": "Zawisza Bydgoszcz",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "2 Liga",
   "Tipo": "B",
   "Pronostico": "1",
@@ -930,9 +1030,29 @@
   "Quota": null
  },
  {
+  "Casa": "Amorebieta",
+  "Ospite": "SD Eibar B",
+  "Ora": "13:00",
+  "Lega": "Segunda Federación - Gruppo I",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.48,
+  "Quota": null
+ },
+ {
+  "Casa": "CD EBRO",
+  "Ospite": "Utebo",
+  "Ora": "13:00",
+  "Lega": "Segunda Federación - GROUP II",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.51,
+  "Quota": null
+ },
+ {
   "Casa": "Carlisle United",
   "Ospite": "Boston United FC",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "National League",
   "Tipo": "B",
   "Pronostico": "1",
@@ -942,7 +1062,7 @@
  {
   "Casa": "Eastleigh FC",
   "Ospite": "AFC Fylde",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "National League",
   "Tipo": "B",
   "Pronostico": "1",
@@ -952,7 +1072,7 @@
  {
   "Casa": "Gateshead FC",
   "Ospite": "Barrow AFC",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "National League",
   "Tipo": "B",
   "Pronostico": "2",
@@ -962,7 +1082,7 @@
  {
   "Casa": "Harrogate Town",
   "Ospite": "Altrincham",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "National League",
   "Tipo": "B",
   "Pronostico": "1",
@@ -972,7 +1092,7 @@
  {
   "Casa": "Hartlepool",
   "Ospite": "Wealdstone FC",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "National League",
   "Tipo": "B",
   "Pronostico": "2",
@@ -982,7 +1102,7 @@
  {
   "Casa": "Hornchurch FC",
   "Ospite": "Tamworth",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "National League",
   "Tipo": "B",
   "Pronostico": "2",
@@ -992,7 +1112,7 @@
  {
   "Casa": "Kidderminster Harriers FC",
   "Ospite": "FC Halifax Town",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "National League",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1002,7 +1122,7 @@
  {
   "Casa": "Scunthorpe United",
   "Ospite": "Worthing",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "National League",
   "Tipo": "B",
   "Pronostico": "2",
@@ -1012,7 +1132,7 @@
  {
   "Casa": "Southend United",
   "Ospite": "Aldershot Town FC",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "National League",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1022,7 +1142,7 @@
  {
   "Casa": "Sutton United",
   "Ospite": "Solihull Moors F.c.",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "National League",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1032,7 +1152,7 @@
  {
   "Casa": "Yeovil Town",
   "Ospite": "Boreham Wood",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "National League",
   "Tipo": "B",
   "Pronostico": "2",
@@ -1042,7 +1162,7 @@
  {
   "Casa": "Tottenham Hotspur FC Women",
   "Ospite": "Everton FC",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Women's Super League",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1052,7 +1172,7 @@
  {
   "Casa": "Asteras Tripolis B",
   "Ospite": "PAOK Thessaloniki B",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Football League",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1062,7 +1182,7 @@
  {
   "Casa": "HELLAS SYROU",
   "Ospite": "Panthrakikos FC Komotini",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Football League",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1072,7 +1192,7 @@
  {
   "Casa": "Marko",
   "Ospite": "APS Zakynthos",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Football League",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1082,7 +1202,7 @@
  {
   "Casa": "Apollon Kalamarias",
   "Ospite": "Kallithea FC Athén",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Football League",
   "Tipo": "B",
   "Pronostico": "2",
@@ -1092,7 +1212,7 @@
  {
   "Casa": "AE Larissa FC",
   "Ospite": "Nestos Chrisoupolis",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Football League",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1102,7 +1222,7 @@
  {
   "Casa": "Niki Volou 1924 PAE",
   "Ospite": "Thyella Katarachiou",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Football League",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1110,9 +1230,19 @@
   "Quota": null
  },
  {
+  "Casa": "Panseraikos FC",
+  "Ospite": "Anagennisi Karditsas 1904",
+  "Ora": "13:00",
+  "Lega": "Football League",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.53,
+  "Quota": null
+ },
+ {
   "Casa": "Real Sociedad B",
   "Ospite": "Sporting Gijón",
-  "Ora": "16:15",
+  "Ora": "13:15",
   "Lega": "LaLiga 2",
   "Tipo": "B",
   "Pronostico": "2",
@@ -1122,7 +1252,7 @@
  {
   "Casa": "NAC Breda",
   "Ospite": "Emmen",
-  "Ora": "16:30",
+  "Ora": "13:30",
   "Lega": "Eerste Divisie",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1132,7 +1262,7 @@
  {
   "Casa": "Twente",
   "Ospite": "PSV Eindhoven",
-  "Ora": "16:30",
+  "Ora": "13:30",
   "Lega": "Eredivisie Donne - Women",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1140,9 +1270,59 @@
   "Quota": null
  },
  {
+  "Casa": "Real Unión",
+  "Ospite": "Cultural Deportiva Leonesa",
+  "Ora": "13:30",
+  "Lega": "Primera Federación - Gruppo 1",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.45,
+  "Quota": null
+ },
+ {
+  "Casa": "CF RAYO MAJADAHONDA",
+  "Ospite": "Cda Aguilas",
+  "Ora": "13:30",
+  "Lega": "Primera Federación - Gruppo 2",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.46,
+  "Quota": null
+ },
+ {
+  "Casa": "Ud Ourense",
+  "Ospite": "Merida UD",
+  "Ora": "13:30",
+  "Lega": "Primera Federación - Gruppo 1",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.5,
+  "Quota": null
+ },
+ {
+  "Casa": "Atlético Astorga",
+  "Ospite": "Arosa Sc",
+  "Ora": "13:30",
+  "Lega": "Segunda Federación - Gruppo I",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.41,
+  "Quota": null
+ },
+ {
+  "Casa": "CA Osasuna B",
+  "Ospite": "Logrones",
+  "Ora": "14:00",
+  "Lega": "Segunda Federación - GROUP II",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.48,
+  "Quota": null
+ },
+ {
   "Casa": "Uganda",
   "Ospite": "Botswana",
-  "Ora": "17:00",
+  "Ora": "14:00",
   "Lega": "Coppa d'Africa - Qualification, Group H",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1150,9 +1330,49 @@
   "Quota": null
  },
  {
+  "Casa": "Athletic Carpi",
+  "Ospite": "Giana Erminio",
+  "Ora": "14:30",
+  "Lega": "Serie C - Girone A",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.36,
+  "Quota": null
+ },
+ {
+  "Casa": "Lumezzane",
+  "Ospite": "AC Trento",
+  "Ora": "14:30",
+  "Lega": "Serie C - Girone A",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.35,
+  "Quota": null
+ },
+ {
+  "Casa": "AS Gubbio 1910",
+  "Ospite": "Grosseto",
+  "Ora": "14:30",
+  "Lega": "Serie C - Girone B",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.38,
+  "Quota": null
+ },
+ {
+  "Casa": "Bari",
+  "Ospite": "Foggia",
+  "Ora": "14:30",
+  "Lega": "Serie C - Girone C",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.55,
+  "Quota": null
+ },
+ {
   "Casa": "Busaiteen",
   "Ospite": "Al Ittihad BHR",
-  "Ora": "17:30",
+  "Ora": "14:30",
   "Lega": "2nd Division",
   "Tipo": "B",
   "Pronostico": "2",
@@ -1162,7 +1382,7 @@
  {
   "Casa": "Norvegia",
   "Ospite": "Galles",
-  "Ora": "18:00",
+  "Ora": "15:00",
   "Lega": "Nations League - League A, Gr. 4",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1172,7 +1392,7 @@
  {
   "Casa": "Georgia",
   "Ospite": "Ungheria",
-  "Ora": "18:00",
+  "Ora": "15:00",
   "Lega": "Nations League - League B, Gr. 2",
   "Tipo": "B",
   "Pronostico": "2",
@@ -1182,7 +1402,7 @@
  {
   "Casa": "Deportivo Alaves",
   "Ospite": "SD Eibar",
-  "Ora": "18:00",
+  "Ora": "15:00",
   "Lega": "Primera Division Femminile",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1190,9 +1410,49 @@
   "Quota": null
  },
  {
+  "Casa": "Club Portugalete",
+  "Ospite": "Marino Luanco",
+  "Ora": "15:00",
+  "Lega": "Segunda Federación - Gruppo I",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.56,
+  "Quota": null
+ },
+ {
+  "Casa": "FC Barcelona Atletic",
+  "Ospite": "Girona FC B",
+  "Ora": "15:00",
+  "Lega": "Segunda Federación - GROUP II",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.66,
+  "Quota": null
+ },
+ {
+  "Casa": "Atletico Sanluqueno",
+  "Ospite": "Betis B",
+  "Ora": "15:00",
+  "Lega": "Segunda Federación - Group IV",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.5,
+  "Quota": null
+ },
+ {
+  "Casa": "RC Strasbourg Alsace",
+  "Ospite": "Toulouse FC",
+  "Ora": "15:00",
+  "Lega": "Division 1 Femminile - Women",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.52,
+  "Quota": null
+ },
+ {
   "Casa": "Fiorentina Women Fc",
   "Ospite": "Lazio Rome",
-  "Ora": "18:00",
+  "Ora": "15:00",
   "Lega": "Serie A, Femminile - Women",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1202,7 +1462,7 @@
  {
   "Casa": "Atlanta",
   "Ospite": "Estudiantes De Buenos Aires",
-  "Ora": "18:00",
+  "Ora": "15:00",
   "Lega": "Primera Nacional - Promotion Playoff",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1212,7 +1472,7 @@
  {
   "Casa": "Club Atletico Temperley",
   "Ospite": "Ciudad De Bolivar",
-  "Ora": "18:00",
+  "Ora": "15:00",
   "Lega": "Primera Nacional - Promotion Playoff",
   "Tipo": "B",
   "Pronostico": "X",
@@ -1222,7 +1482,7 @@
  {
   "Casa": "Deportivo Madryn",
   "Ospite": "CD Maipú",
-  "Ora": "18:00",
+  "Ora": "15:00",
   "Lega": "Primera Nacional - Promotion Playoff",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1232,7 +1492,7 @@
  {
   "Casa": "Gimnasia Jujuy",
   "Ospite": "Almirante Brown",
-  "Ora": "18:00",
+  "Ora": "15:00",
   "Lega": "Primera Nacional - Promotion Playoff",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1242,7 +1502,7 @@
  {
   "Casa": "Colon",
   "Ospite": "Ferrocarril Midland",
-  "Ora": "18:00",
+  "Ora": "15:00",
   "Lega": "Primera Nacional - Promotion Playoff",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1250,19 +1510,9 @@
   "Quota": null
  },
  {
-  "Casa": "Deportivo Moron",
-  "Ospite": "Club Atletico Colegiales",
-  "Ora": "18:00",
-  "Lega": "Primera Nacional - Promotion Playoff",
-  "Tipo": "B",
-  "Pronostico": "1",
-  "Prob": 0.42,
-  "Quota": null
- },
- {
   "Casa": "Ferro Carril Oeste",
   "Ospite": "Gimnasia Y Tiro De Salta",
-  "Ora": "18:00",
+  "Ora": "15:00",
   "Lega": "Primera Nacional - Promotion Playoff",
   "Tipo": "B",
   "Pronostico": "X",
@@ -1272,7 +1522,7 @@
  {
   "Casa": "Washington Spirit",
   "Ospite": "Utah Royals",
-  "Ora": "18:00",
+  "Ora": "15:00",
   "Lega": "National Women's Soccer League - Playoffs",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1282,7 +1532,7 @@
  {
   "Casa": "BRIGHTON & HOVE ALBION LFC",
   "Ospite": "Liverpool D",
-  "Ora": "18:15",
+  "Ora": "15:15",
   "Lega": "Women's Super League",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1292,7 +1542,7 @@
  {
   "Casa": "Hamilton Academical FC",
   "Ospite": "Ross County",
-  "Ora": "18:30",
+  "Ora": "15:30",
   "Lega": "Scottish League One",
   "Tipo": "B",
   "Pronostico": "2",
@@ -1302,7 +1552,7 @@
  {
   "Casa": "Fleetwood Town",
   "Ospite": "Tranmere Rovers",
-  "Ora": "18:30",
+  "Ora": "15:30",
   "Lega": "League Two",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1312,7 +1562,7 @@
  {
   "Casa": "Almería",
   "Ospite": "Andorra FC",
-  "Ora": "18:30",
+  "Ora": "15:30",
   "Lega": "LaLiga 2",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1322,7 +1572,7 @@
  {
   "Casa": "Maiorca",
   "Ospite": "Córdoba",
-  "Ora": "18:30",
+  "Ora": "15:30",
   "Lega": "LaLiga 2",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1330,9 +1580,69 @@
   "Quota": null
  },
  {
+  "Casa": "Montpellier D",
+  "Ospite": "Fc Fleury 91",
+  "Ora": "15:30",
+  "Lega": "Division 1 Femminile - Women",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.5,
+  "Quota": null
+ },
+ {
+  "Casa": "CE Europa",
+  "Ospite": "Sant Andreu",
+  "Ora": "15:30",
+  "Lega": "Primera Federación - Gruppo 2",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.39,
+  "Quota": null
+ },
+ {
+  "Casa": "CD Coria",
+  "Ospite": "Unionistas De Salamanca CF",
+  "Ora": "15:45",
+  "Lega": "Primera Federación - Gruppo 1",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.45,
+  "Quota": null
+ },
+ {
+  "Casa": "Deportivo La Coruna B",
+  "Ospite": "FC Barakaldo",
+  "Ora": "15:45",
+  "Lega": "Primera Federación - Gruppo 1",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.48,
+  "Quota": null
+ },
+ {
+  "Casa": "Hercules",
+  "Ospite": "Villarreal B",
+  "Ora": "15:45",
+  "Lega": "Primera Federación - Gruppo 2",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.58,
+  "Quota": null
+ },
+ {
+  "Casa": "Juventud Torremolinos Cf",
+  "Ospite": "Huesca",
+  "Ora": "15:45",
+  "Lega": "Primera Federación - Gruppo 2",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.52,
+  "Quota": null
+ },
+ {
   "Casa": "Sheffield United Community LFC",
   "Ospite": "Bristol City",
-  "Ora": "19:00",
+  "Ora": "16:00",
   "Lega": "Women's Championship - Women",
   "Tipo": "B",
   "Pronostico": "2",
@@ -1340,9 +1650,19 @@
   "Quota": null
  },
  {
+  "Casa": "Canuelas",
+  "Ospite": "CENTRAL CORDOBA DE ROSARIO",
+  "Ora": "16:00",
+  "Lega": "Primera C - Promotion Playoffs",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.37,
+  "Quota": null
+ },
+ {
   "Casa": "Almere City",
   "Ospite": "Helmond Sport",
-  "Ora": "20:00",
+  "Ora": "17:00",
   "Lega": "Eerste Divisie",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1352,7 +1672,7 @@
  {
   "Casa": "De Graafschap",
   "Ospite": "TOP Oss",
-  "Ora": "20:00",
+  "Ora": "17:00",
   "Lega": "Eerste Divisie",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1362,7 +1682,7 @@
  {
   "Casa": "Dordrecht",
   "Ospite": "Heracles",
-  "Ora": "20:00",
+  "Ora": "17:00",
   "Lega": "Eerste Divisie",
   "Tipo": "B",
   "Pronostico": "2",
@@ -1372,7 +1692,7 @@
  {
   "Casa": "Waalwijk",
   "Ospite": "Den Bosch",
-  "Ora": "20:00",
+  "Ora": "17:00",
   "Lega": "Eerste Divisie",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1382,7 +1702,7 @@
  {
   "Casa": "Roda",
   "Ospite": "Volendam",
-  "Ora": "20:00",
+  "Ora": "17:00",
   "Lega": "Eerste Divisie",
   "Tipo": "B",
   "Pronostico": "2",
@@ -1392,7 +1712,7 @@
  {
   "Casa": "Venlo",
   "Ospite": "FC Eindhoven",
-  "Ora": "20:00",
+  "Ora": "17:00",
   "Lega": "Eerste Divisie",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1402,7 +1722,7 @@
  {
   "Casa": "Angola",
   "Ospite": "Sud Sudan",
-  "Ora": "20:00",
+  "Ora": "17:00",
   "Lega": "Coppa d'Africa - Qualification, Group B",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1412,7 +1732,7 @@
  {
   "Casa": "Algeria",
   "Ospite": "Togo",
-  "Ora": "20:00",
+  "Ora": "17:00",
   "Lega": "Coppa d'Africa - Qualification, Group I",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1422,7 +1742,7 @@
  {
   "Casa": "America Mineiro MG",
   "Ospite": "Avai",
-  "Ora": "20:30",
+  "Ora": "17:30",
   "Lega": "Brasileirão Série B",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1432,7 +1752,7 @@
  {
   "Casa": "Fortaleza",
   "Ospite": "Vila Nova",
-  "Ora": "20:30",
+  "Ora": "17:30",
   "Lega": "Brasileirão Série B",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1442,7 +1762,7 @@
  {
   "Casa": "Atletico GO",
   "Ospite": "Cuiaba",
-  "Ora": "20:30",
+  "Ora": "17:30",
   "Lega": "Brasileirão Série B",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1452,7 +1772,7 @@
  {
   "Casa": "Criciuma",
   "Ospite": "Gremio Novorizontino SP",
-  "Ora": "20:30",
+  "Ora": "17:30",
   "Lega": "Brasileirão Série B",
   "Tipo": "B",
   "Pronostico": "2",
@@ -1462,7 +1782,7 @@
  {
   "Casa": "Sport Recife",
   "Ospite": "Goias",
-  "Ora": "20:30",
+  "Ora": "17:30",
   "Lega": "Brasileirão Série B",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1472,7 +1792,7 @@
  {
   "Casa": "Brasil AL",
   "Ospite": "Ceara CE",
-  "Ora": "20:30",
+  "Ora": "17:30",
   "Lega": "Brasileirão Série B",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1482,7 +1802,7 @@
  {
   "Casa": "Juventude",
   "Ospite": "Botafogo",
-  "Ora": "20:30",
+  "Ora": "17:30",
   "Lega": "Brasileirão Série B",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1492,7 +1812,7 @@
  {
   "Casa": "Real Madrid",
   "Ospite": "FC Badalona Women",
-  "Ora": "20:30",
+  "Ora": "17:30",
   "Lega": "Primera Division Femminile",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1502,7 +1822,7 @@
  {
   "Casa": "Deportivo Maldonado",
   "Ospite": "Cerro",
-  "Ora": "20:30",
+  "Ora": "17:30",
   "Lega": "Primera Division - Apertura - Clausura",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1512,7 +1832,7 @@
  {
   "Casa": "Portogallo",
   "Ospite": "Danimarca",
-  "Ora": "20:45",
+  "Ora": "17:45",
   "Lega": "Nations League - League A, Gr. 4",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1522,7 +1842,7 @@
  {
   "Casa": "Austria",
   "Ospite": "Irlanda",
-  "Ora": "20:45",
+  "Ora": "17:45",
   "Lega": "Nations League - League B, Gr. 3",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1532,7 +1852,7 @@
  {
   "Casa": "Irlanda Del Nord",
   "Ospite": "Ucraina",
-  "Ora": "20:45",
+  "Ora": "17:45",
   "Lega": "Nations League - League B, Gr. 2",
   "Tipo": "B",
   "Pronostico": "2",
@@ -1542,7 +1862,7 @@
  {
   "Casa": "Romania",
   "Ospite": "Polonia",
-  "Ora": "20:45",
+  "Ora": "17:45",
   "Lega": "Nations League - League B, Gr. 4",
   "Tipo": "B",
   "Pronostico": "2",
@@ -1552,7 +1872,7 @@
  {
   "Casa": "Svezia",
   "Ospite": "Bosnia-Erzegovina",
-  "Ora": "20:45",
+  "Ora": "17:45",
   "Lega": "Nations League - League B, Gr. 4",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1562,7 +1882,7 @@
  {
   "Casa": "Real Oviedo",
   "Ospite": "Girona",
-  "Ora": "21:00",
+  "Ora": "18:00",
   "Lega": "LaLiga 2",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1572,7 +1892,7 @@
  {
   "Casa": "Les Marseillaises",
   "Ospite": "Paris Saint-Germain",
-  "Ora": "21:00",
+  "Ora": "18:00",
   "Lega": "Division 1 Femminile - Women",
   "Tipo": "B",
   "Pronostico": "2",
@@ -1580,9 +1900,39 @@
   "Quota": null
  },
  {
+  "Casa": "Real Jaen CF",
+  "Ospite": "Saragozza",
+  "Ora": "18:00",
+  "Lega": "Primera Federación - Gruppo 2",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.36,
+  "Quota": null
+ },
+ {
+  "Casa": "Millonarios",
+  "Ospite": "Alianza FC Valledupar",
+  "Ora": "18:30",
+  "Lega": "Liga Postobon - Finalizacion",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.6,
+  "Quota": null
+ },
+ {
+  "Casa": "Rionegro Aguilas",
+  "Ospite": "Independiente Medellin",
+  "Ora": "18:30",
+  "Lega": "Liga Postobon - Finalizacion",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.4,
+  "Quota": null
+ },
+ {
   "Casa": "Club Ada Jaen",
   "Ospite": "Carlos Mannucci",
-  "Ora": "21:30",
+  "Ora": "18:30",
   "Lega": "Segunda Division - Playoffs",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1592,7 +1942,7 @@
  {
   "Casa": "Comunicaciones Bsas",
   "Ospite": "Arsenal Sarandi",
-  "Ora": "22:00",
+  "Ora": "19:00",
   "Lega": "Primera B - Promotion Playoffs",
   "Tipo": "B",
   "Pronostico": "2",
@@ -1602,7 +1952,7 @@
  {
   "Casa": "CD Universitario Penonome",
   "Ospite": "Herrera Fc",
-  "Ora": "22:00",
+  "Ora": "19:00",
   "Lega": "Liga Panamena - Apertura",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1612,7 +1962,7 @@
  {
   "Casa": "Mirassol FC SP",
   "Ospite": "Atletico MG",
-  "Ora": "22:30",
+  "Ora": "19:30",
   "Lega": "Brasileirão",
   "Tipo": "B",
   "Pronostico": "1",
@@ -1620,9 +1970,19 @@
   "Quota": null
  },
  {
+  "Casa": "Haiti",
+  "Ospite": "Stati Uniti",
+  "Ora": "19:30",
+  "Lega": "CONCACAF Nations League - Finals",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.68,
+  "Quota": null
+ },
+ {
   "Casa": "CA Banfield",
   "Ospite": "Boca Juniors",
-  "Ora": "23:00",
+  "Ora": "20:00",
   "Lega": "Copa Argentina",
   "Tipo": "B",
   "Pronostico": "2",
@@ -1632,7 +1992,7 @@
  {
   "Casa": "Real Pilar",
   "Ospite": "Talleres De Remedios De Escalada",
-  "Ora": "23:00",
+  "Ora": "20:00",
   "Lega": "Primera B - Promotion Playoffs",
   "Tipo": "B",
   "Pronostico": "X",
@@ -1642,11 +2002,121 @@
  {
   "Casa": "Paysandu FC",
   "Ospite": "Uruguay Montevideo FC",
-  "Ora": "23:30",
+  "Ora": "20:30",
   "Lega": "Segunda Division",
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.41,
+  "Quota": null
+ },
+ {
+  "Casa": "Comunicaciones",
+  "Ospite": "CSD Coban Imperial",
+  "Ora": "21:00",
+  "Lega": "Liga Nacional - Apertura",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.59,
+  "Quota": null
+ },
+ {
+  "Casa": "Fundacion Formado Un Atleta",
+  "Ospite": "C.D. Cacahuatique",
+  "Ora": "21:00",
+  "Lega": "Primera Division - Apertura",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.57,
+  "Quota": null
+ },
+ {
+  "Casa": "Queretaro",
+  "Ospite": "Monterrey",
+  "Ora": "21:00",
+  "Lega": "Liga MX - Apertura",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.53,
+  "Quota": null
+ },
+ {
+  "Casa": "Club Nacional De Football",
+  "Ospite": "Albion FC",
+  "Ora": "21:00",
+  "Lega": "Primera Division - Apertura - Clausura",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.57,
+  "Quota": null
+ },
+ {
+  "Casa": "Charleston Battery",
+  "Ospite": "Louisville City",
+  "Ora": "21:00",
+  "Lega": "USL, Championship - Championship, Playoffs",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.42,
+  "Quota": null
+ },
+ {
+  "Casa": "Chapecoense SC",
+  "Ospite": "Vasco Da Gama",
+  "Ora": "21:30",
+  "Lega": "Brasileirão",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.37,
+  "Quota": null
+ },
+ {
+  "Casa": "Charlotte Independence",
+  "Ospite": "AC Boise",
+  "Ora": "22:30",
+  "Lega": "USL, League One - League One, Playoffs",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.49,
+  "Quota": null
+ },
+ {
+  "Casa": "Malacateco",
+  "Ospite": "Municipal",
+  "Ora": "23:00",
+  "Lega": "Liga Nacional - Apertura",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.38,
+  "Quota": null
+ },
+ {
+  "Casa": "Alianza FC San Salvador",
+  "Ospite": "CD Fas",
+  "Ora": "23:00",
+  "Lega": "Primera Division - Apertura",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.43,
+  "Quota": null
+ },
+ {
+  "Casa": "Wellington Phoenix",
+  "Ospite": "Sydney FC D",
+  "Ora": "23:00",
+  "Lega": "W-League - Women",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.65,
+  "Quota": null
+ },
+ {
+  "Casa": "Giamaica",
+  "Ospite": "Messico",
+  "Ora": "23:00",
+  "Lega": "CONCACAF Nations League - Finals",
+  "Tipo": "B",
+  "Pronostico": "2",
+  "Prob": 0.53,
   "Quota": null
  }
 ]

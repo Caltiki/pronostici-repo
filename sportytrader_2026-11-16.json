@@ -1,28 +1,18 @@
 [
  {
-  "Casa": "Defensor Sporting",
-  "Ospite": "Penarol De Montevideo",
-  "Ora": "00:00",
-  "Lega": "Primera Division - Apertura - Clausura",
+  "Casa": "FK GRAFICAR BEOGRAD",
+  "Ospite": "FK Vozdovac",
+  "Ora": "10:00",
+  "Lega": "Mozzart Bet SuperLiga",
   "Tipo": "B",
   "Pronostico": "2",
-  "Prob": 0.55,
-  "Quota": null
- },
- {
-  "Casa": "New Mexico United",
-  "Ospite": "Sacramento Republic",
-  "Ora": "01:00",
-  "Lega": "USL, Championship - Championship, Playoffs",
-  "Tipo": "B",
-  "Pronostico": "2",
-  "Prob": 0.39,
+  "Prob": 0.38,
   "Quota": null
  },
  {
   "Casa": "Somalia",
   "Ospite": "Ghana",
-  "Ora": "16:00",
+  "Ora": "13:00",
   "Lega": "Coppa d'Africa - Qualification, Group C",
   "Tipo": "B",
   "Pronostico": "2",
@@ -30,9 +20,19 @@
   "Quota": null
  },
  {
+  "Casa": "Leones De Rosario FC",
+  "Ospite": "Sportivo Barracas",
+  "Ora": "16:00",
+  "Lega": "Primera C - Promotion Playoffs",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.46,
+  "Quota": null
+ },
+ {
   "Casa": "UTC Cajamarca",
   "Ospite": "Los Chankas CYC",
-  "Ora": "19:00",
+  "Ora": "16:00",
   "Lega": "Liga 1 - Clausura",
   "Tipo": "B",
   "Pronostico": "1",
@@ -42,7 +42,7 @@
  {
   "Casa": "Albacete",
   "Ospite": "Celta Vigo B",
-  "Ora": "20:30",
+  "Ora": "17:30",
   "Lega": "LaLiga 2",
   "Tipo": "B",
   "Pronostico": "1",
@@ -50,9 +50,29 @@
   "Quota": null
  },
  {
+  "Casa": "ASD Sorrento 1945",
+  "Ospite": "Monopoli",
+  "Ora": "17:30",
+  "Lega": "Serie C - Girone C",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.35,
+  "Quota": null
+ },
+ {
+  "Casa": "Perugia Calcio Spa",
+  "Ospite": "Torres",
+  "Ora": "17:45",
+  "Lega": "Serie C - Girone B",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.41,
+  "Quota": null
+ },
+ {
   "Casa": "Cusco FC",
   "Ospite": "Asociacion Deportiva Tarma",
-  "Ora": "21:00",
+  "Ora": "18:15",
   "Lega": "Liga 1 - Clausura",
   "Tipo": "B",
   "Pronostico": "1",
@@ -62,11 +82,21 @@
  {
   "Casa": "Ucv Moquegua",
   "Ospite": "Atletico Grau",
-  "Ora": "21:00",
+  "Ora": "18:15",
   "Lega": "Liga 1 - Clausura",
   "Tipo": "B",
   "Pronostico": "1",
   "Prob": 0.53,
+  "Quota": null
+ },
+ {
+  "Casa": "Wanderers",
+  "Ospite": "Juventud de Las Piedras",
+  "Ora": "21:00",
+  "Lega": "Primera Division - Apertura - Clausura",
+  "Tipo": "B",
+  "Pronostico": "1",
+  "Prob": 0.37,
   "Quota": null
  }
 ]
