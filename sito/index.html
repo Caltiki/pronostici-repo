@@ -1114,6 +1114,35 @@
   :root[data-theme="light"] header.testa .tema .sole { display: none; }
   :root[data-theme="light"] header.testa .tema .luna { display: block; }
   @media (max-width: 560px) { header.testa .tema { top: 10px; } }
+  /* REGISTRO DELLE GIOCATE (11/11): il tasto accanto al tema e il pannello
+     nella barra della multipla. */
+  header.testa .giocate-btn {
+    position: absolute; top: 14px; right: 50px; z-index: 2;
+    width: 40px; height: 40px; border-radius: 12px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid var(--bordo); background: var(--scheda); color: var(--testo);
+    box-shadow: var(--ombra);
+  }
+  header.testa .giocate-btn svg { width: 20px; height: 20px; }
+  @media (max-width: 560px) { header.testa .giocate-btn { top: 10px; } }
+  .multipla .reg-modo { display: flex; gap: 6px; margin-bottom: 8px; }
+  .multipla .reg-modo button[aria-pressed="true"] { border-color: var(--evidenza); color: var(--evidenza); }
+  .multipla .reg-modo button[disabled] { opacity: .4; cursor: default; }
+  .reg-campi { display: flex; flex-wrap: wrap; gap: 10px; margin: 6px 0; }
+  .reg-campi label { display: flex; align-items: center; gap: 6px; font-size: .9rem; }
+  .reg-campi input { width: 5.5em; padding: 7px 8px; border: 1px solid var(--bordo); border-radius: 8px; background: var(--scheda); color: var(--testo); font: inherit; }
+  .reg-ev { padding: 6px 0; border-bottom: 1px solid var(--bordo); font-size: .88rem; }
+  .reg-v { min-height: 1.2em; margin: 2px 0; font-size: .88rem; }
+  .reg-val.su { color: #22a35a; font-weight: 700; }
+  .reg-val.giu { color: #e0603a; font-weight: 700; }
+  .reg-eventi { margin: 0 0 8px; padding-left: 18px; font-size: .9rem; }
+  .reg-segna, .reg-strumenti { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .reg-segna button, .reg-strumenti button {
+    padding: 8px 12px; border: 1px solid var(--bordo); border-radius: 9px; cursor: pointer;
+    background: transparent; color: var(--testo); font: inherit; font-size: .85rem;
+  }
+  .reg-segna button:hover, .reg-strumenti button:hover { border-color: var(--evidenza); color: var(--evidenza); }
+  .reg-tit { margin: 18px 0 6px; font-size: 1.25rem; }
 
   /* TEMA CHIARO. Stessa grafica, colori del giorno. Il lime acceso resta
      dove fa da fondo (pulsante attivo), e diventa verde oliva dove e'
@@ -1366,6 +1395,11 @@
 <body>
 <main>
   <header class="testa">
+    <button type="button" class="giocate-btn" id="giocate-btn" aria-label="Le mie giocate" title="Le mie giocate">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="5" y="3.5" width="14" height="17.5" rx="2"/><path d="M9 3.5h6v2.5H9z"/><path d="M8.5 11h7M8.5 15h4.5"/>
+      </svg>
+    </button>
     <button type="button" class="tema" id="tema" aria-label="Tema chiaro o scuro" title="Tema chiaro o scuro">
       <svg class="sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
         <circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/>
@@ -1415,9 +1449,11 @@
     <p id="m-stima"></p>
     <p id="m-avviso" class="avviso" hidden></p>
     <p class="m-azioni">
-      <button id="m-condividi" class="primo" type="button" aria-expanded="false" aria-controls="m-invio">Condividi</button>
+      <button id="m-registra" class="primo" type="button" aria-expanded="false" aria-controls="m-reg">Registra</button>
+      <button id="m-condividi" type="button" aria-expanded="false" aria-controls="m-invio">Condividi</button>
       <button id="m-svuota" type="button">Svuota</button>
     </p>
+    <div id="m-reg" class="m-invio" hidden></div>
     <div id="m-invio" class="m-invio" hidden>
       <div class="m-canali">
         <button type="button" data-invio="nativo" hidden>Condividi&hellip;</button>
@@ -1691,6 +1727,7 @@
       return;
     }
     if (p[0] === "best") { stato.sez = "best"; return; }
+    if (p[0] === "giocate") { stato.sez = "giocate"; return; }
     if (p[0] === "xg") {
       stato.sez = "xg";
       try { XG.lega = p[1] ? decodeURIComponent(p[1]) : XG.lega; } catch (e) { /* resta quella che c'era */ }
@@ -1712,7 +1749,7 @@
     var h = stato.sez;
     if (stato.sez === "scheda") {
       h += "/" + (SCHEDA.data || "") + "/" + encodeURIComponent(SCHEDA.chiave || "");
-    } else if (stato.sez === "best") {
+    } else if (stato.sez === "best" || stato.sez === "giocate") {
       // una pagina sola, senza giornata: tiene sempre oggi e i giorni dopo
     } else if (stato.sez === "xg") {
       h += "/" + encodeURIComponent(XG.lega || "") + "/" + (XG.fonte || "");
@@ -1859,6 +1896,7 @@
     if (stato.sez === "scheda") return disegnaScheda();
     if (stato.sez === "xg") return disegnaXG();
     if (stato.sez === "best") return disegnaBest();
+    if (stato.sez === "giocate") return disegnaGiocate();
     return disegnaGiornata(stato.sez);
   }
 
@@ -2848,12 +2886,12 @@
     var perdita = (pagata / equa - 1) * 100;
     document.getElementById("m-eventi").textContent =
       r.length + (r.length === 1 ? " evento" : " eventi") + " · probabilità " + (prob * 100).toFixed(1) + "%";
-    document.getElementById("m-equa").textContent = "reale " + equa.toFixed(2);
+    document.getElementById("m-equa").textContent = "equa " + equa.toFixed(2);
     document.getElementById("m-stima").textContent =
       "Col margine di ciascuna partita il book pagherebbe circa " + pagata.toFixed(2) +
       " (" + perdita.toFixed(0) + "%)." +
       (senzaMarg ? " " + senzaMarg + " righe senza margine, contate a prezzo pieno." : "") +
-      " Il tuo bookmaker può caricarne di più: confronta la quota che vedi con quella reale.";
+      " Il tuo bookmaker può caricarne di più: confronta la quota che vedi con l'Equa, e se giochi tocca Registra.";
 
     // Una riga per partita: due selezioni sulla stessa gara cadono insieme.
     var conta = {};
@@ -2871,6 +2909,7 @@
     } else $a.hidden = true;
     document.body.style.paddingBottom = $m.offsetHeight + "px";
     if ($invio) preparaSeAperto();
+    if (typeof $reg !== "undefined" && $reg && !$reg.hidden) disegnaPannelloReg();
   }
 
   // ------------------------------------------- condividi la multipla
@@ -3183,12 +3222,369 @@
     $esitoInvio.textContent = "";
   }
   $condividi.addEventListener("click", function () {
+    if ($reg && !$reg.hidden) { $reg.hidden = true; $regBtn.setAttribute("aria-expanded", "false"); }
     var apri = $invio.hidden;
     $invio.hidden = !apri;
     $condividi.setAttribute("aria-expanded", apri ? "true" : "false");
     document.body.style.paddingBottom = $m.offsetHeight + "px";
     preparaSeAperto();
   });
+
+  // ------------------------------------------------ registro delle giocate
+  //
+  // IL REGISTRO DELLE GIOCATE (11/11). Tutto nel telefono: le giocate
+  // stanno nel browser (localStorage), non vanno sul sito pubblico e
+  // nessuno le vede. Se si cancellano i dati del browser si perdono: per
+  // questo "Salva copia" e "Ripristina".
+  //
+  // Per ogni giocata si tiene la quota presa sul book e l'Equa del momento.
+  // Il numero che conta e' il VALORE: quota presa / Equa - 1. Il saldo in
+  // euro per mesi e' dominato dalla fortuna; il valore medio dice gia'
+  // dopo un centinaio di giocate se si sta pagando il prezzo giusto.
+  //
+  // L'esito si prende da esiti_<data>.json e schedina_<data>.json (le
+  // stesse righe dei Pronostici, con le regole di esiti_schedina.py); se
+  // la riga non c'e' piu' ma la partita ha il punteggio, si calcola qui con
+  // le stesse regole (misura_fonti.giusto). Altrimenti si segna a mano.
+
+  var REG_CHIAVE = "caltiki-giocate-v1";
+  function leggiReg() {
+    try {
+      var v = JSON.parse(localStorage.getItem(REG_CHIAVE) || "[]");
+      return Array.isArray(v) ? v : [];
+    } catch (e) { return []; }
+  }
+  function scriviReg(v) {
+    try { localStorage.setItem(REG_CHIAVE, JSON.stringify(v)); return true; } catch (e) { return false; }
+  }
+  function quotaDa(s) {
+    var v = parseFloat(String(s || "").replace(",", ".").trim());
+    return isFinite(v) && v > 1 ? v : null;
+  }
+  function importoDa(s) {
+    var v = parseFloat(String(s || "").replace(",", ".").trim());
+    return isFinite(v) && v > 0 ? v : null;
+  }
+  function euro(v) { return (v < 0 ? "−" : "") + Math.abs(v).toFixed(2).replace(".", ",") + " €"; }
+  function pctV(v) { return (v >= 0 ? "+" : "−") + Math.abs(v * 100).toFixed(1).replace(".", ",") + "%"; }
+  function valoreHtml(v) {
+    if (v == null) return "";
+    return v >= 0
+      ? '<span class="reg-val su">' + pctV(v) + " sopra l’Equa</span>"
+      : '<span class="reg-val giu">' + pctV(v) + ": paghi margine</span>";
+  }
+  function equaEvento(x) { return num(x.Equa); }
+
+  // ---- la barra: "Registra"
+  var $reg = document.getElementById("m-reg");
+  var $regBtn = document.getElementById("m-registra");
+  var regModo = null;
+  function eventiBarra() { return righeScelte(); }
+  function disegnaPannelloReg() {
+    var r = eventiBarra();
+    if (!r.length) { $reg.hidden = true; return; }
+    if (!regModo) regModo = r.length > 1 ? "multipla" : "singole";
+    var h = '<div class="reg-modo" role="group">' +
+      '<button type="button" data-modo="multipla" aria-pressed="' + (regModo === "multipla") + '"' + (r.length < 2 ? " disabled" : "") + ">Multipla</button>" +
+      '<button type="button" data-modo="singole" aria-pressed="' + (regModo === "singole") + '">' + (r.length > 1 ? "Singole" : "Singola") + "</button></div>";
+    if (regModo === "multipla") {
+      var eq = r.reduce(function (a, x) { return a * (equaEvento(x) || 1); }, 1);
+      h += '<p class="piccolo">' + r.length + " eventi · Equa della multipla <b>" + eq.toFixed(2) + "</b></p>" +
+        '<p class="reg-campi"><label>Quota del tuo book <input id="reg-q" inputmode="decimal" autocomplete="off" placeholder="es. 3,25"></label>' +
+        '<label>Importo € <input id="reg-i" inputmode="decimal" autocomplete="off" placeholder="es. 5"></label></p>' +
+        '<p id="reg-v" class="reg-v"></p>';
+    } else {
+      h += r.map(function (x, i) {
+        return '<div class="reg-ev"><span>' + esc(x.Partita || "") + " · <b>" + esc(x.Sel || "") + "</b> · Equa " + f2(equaEvento(x)) + "</span>" +
+          '<p class="reg-campi"><label>Quota <input data-q="' + i + '" inputmode="decimal" autocomplete="off"></label>' +
+          '<label>Importo € <input data-imp="' + i + '" inputmode="decimal" autocomplete="off"></label></p>' +
+          '<p class="reg-v" data-v="' + i + '"></p></div>';
+      }).join("");
+    }
+    h += '<p class="m-azioni"><button type="button" id="reg-salva" class="primo">Salva nel registro</button>' +
+      '<button type="button" id="reg-vai">Le mie giocate</button></p><p id="reg-esito" class="m-esito-invio" role="status" aria-live="polite"></p>';
+    $reg.innerHTML = h;
+    $reg.querySelectorAll("[data-modo]").forEach(function (b) {
+      b.addEventListener("click", function () { regModo = b.dataset.modo; disegnaPannelloReg(); });
+    });
+    $reg.querySelectorAll("input").forEach(function (inp) { inp.addEventListener("input", aggiornaValoriReg); });
+    document.getElementById("reg-salva").addEventListener("click", salvaGiocate);
+    document.getElementById("reg-vai").addEventListener("click", function () {
+      stato.sez = "giocate"; window.scrollTo(0, 0); disegna();
+    });
+    aggiornaValoriReg();
+    document.body.style.paddingBottom = $m.offsetHeight + "px";
+  }
+  function aggiornaValoriReg() {
+    var r = eventiBarra();
+    if (regModo === "multipla") {
+      var eq = r.reduce(function (a, x) { return a * (equaEvento(x) || 1); }, 1);
+      var q = quotaDa((document.getElementById("reg-q") || {}).value);
+      var $v = document.getElementById("reg-v");
+      if ($v) $v.innerHTML = q ? valoreHtml(q / eq - 1) : "Scrivi la quota che vedi sul tuo book.";
+    } else {
+      r.forEach(function (x, i) {
+        var inp = $reg.querySelector('[data-q="' + i + '"]'), $v = $reg.querySelector('[data-v="' + i + '"]');
+        var q = quotaDa(inp && inp.value), eq = equaEvento(x);
+        if ($v) $v.innerHTML = q && eq ? valoreHtml(q / eq - 1) : "";
+      });
+    }
+  }
+  function eventoDa(x) {
+    var o = {};
+    ["Data", "Ora", "Campionato", "Partita", "Casa", "Ospite", "Gruppo", "Mercato", "Sel", "Prob", "Equa", "Margine", "Fonte"]
+      .forEach(function (k) { if (x[k] != null && x[k] !== "") o[k] = x[k]; });
+    return o;
+  }
+  function salvaGiocate() {
+    var r = eventiBarra(), reg = leggiReg(), nuove = [], $e = document.getElementById("reg-esito");
+    var adesso = new Date().toISOString();
+    var id = function () { return Date.now().toString(36) + Math.random().toString(36).slice(2, 7); };
+    if (regModo === "multipla") {
+      var q = quotaDa(document.getElementById("reg-q").value), imp = importoDa(document.getElementById("reg-i").value);
+      if (!q || !imp) { $e.textContent = "Servono la quota (maggiore di 1) e l’importo."; return; }
+      var eq = r.reduce(function (a, x) { return a * (equaEvento(x) || 1); }, 1);
+      nuove.push({ id: id(), creata: adesso, tipo: "multipla", quota: q, importo: imp, equa: +eq.toFixed(4), eventi: r.map(eventoDa) });
+    } else {
+      var manca = false;
+      r.forEach(function (x, i) {
+        var q = quotaDa($reg.querySelector('[data-q="' + i + '"]').value);
+        var imp = importoDa($reg.querySelector('[data-imp="' + i + '"]').value);
+        if (!q && !imp) return;              // evento lasciato vuoto: non giocato
+        if (!q || !imp) { manca = true; return; }
+        nuove.push({ id: id(), creata: adesso, tipo: "singola", quota: q, importo: imp, equa: equaEvento(x), eventi: [eventoDa(x)] });
+      });
+      if (manca || !nuove.length) { $e.textContent = "Per ogni evento giocato servono quota e importo."; return; }
+    }
+    if (!scriviReg(reg.concat(nuove))) { $e.textContent = "Il browser non permette di salvare qui (navigazione privata?)."; return; }
+    scelte = {};
+    regModo = null;
+    $reg.hidden = true;
+    $regBtn.setAttribute("aria-expanded", "false");
+    aggiornaMultipla();
+    ridisegnaRighe();
+    stato.sez = "giocate"; window.scrollTo(0, 0); disegna();
+  }
+  $regBtn.addEventListener("click", function () {
+    var apri = $reg.hidden;
+    chiudiInvio();
+    $reg.hidden = !apri;
+    $regBtn.setAttribute("aria-expanded", String(apri));
+    if (apri) disegnaPannelloReg(); else document.body.style.paddingBottom = $m.offsetHeight + "px";
+  });
+
+  // ---- l'esito di un evento
+  function partiEvento(x) {
+    var merc = String(x.Mercato || ""), sel = String(x.Sel || "");
+    function una(s, mercOu) {
+      s = s.trim();
+      if (s === "1" || s === "X" || s === "2") return ["1X2", s, null];
+      if (s === "1X" || s === "X2" || s === "12") return ["DC", s, null];
+      if (s === "Gol") return ["BTTS", "SI", null];
+      if (s === "NoGol") return ["BTTS", "NO", null];
+      var m = s.match(/^(Over|Under)(?:\s+(\d+(?:\.\d+)?))?$/);
+      if (m) {
+        var lin = parseFloat(m[2] || String(mercOu || "").replace("OU", "").trim());
+        return isFinite(lin) ? ["OU", m[1].toUpperCase(), lin] : null;
+      }
+      return null;
+    }
+    var pezzi = sel.indexOf(" + ") >= 0 ? sel.split(" + ").map(function (s) { return una(s); }) : [una(sel, merc)];
+    return pezzi.some(function (p) { return !p; }) ? null : pezzi;
+  }
+  function giustoJs(p, gc, go) {
+    var e = gc > go ? "1" : gc < go ? "2" : "X";
+    if (p[0] === "1X2") return p[1] === e;
+    if (p[0] === "DC") return p[1].indexOf(e) >= 0;
+    if (p[0] === "BTTS") { var ok = gc > 0 && go > 0; return p[1] === "SI" ? ok : !ok; }
+    if (p[0] === "OU") { var t = gc + go; if (t === p[2]) return null; return p[1] === "OVER" ? t > p[2] : t < p[2]; }
+    return null;
+  }
+  function esitoCalcolato(x, gc, go) {
+    var pz = partiEvento(x);
+    if (!pz) return null;
+    var es_ = pz.map(function (p) { return giustoJs(p, gc, go); });
+    if (es_.some(function (e) { return e === false; })) return "sbagliata";
+    if (es_.some(function (e) { return e === null; })) return "rimborso";
+    return "presa";
+  }
+  var ESITI_GIORNO = {};
+  function esitiDelGiorno(d) {
+    if (!ESITI_GIORNO[d]) {
+      ESITI_GIORNO[d] = Promise.all([
+        leggi("esiti_" + d + ".json").catch(function () { return null; }),
+        leggi("schedina_" + d + ".json").catch(function () { return null; })
+      ]).then(function (a) {
+        var per = {}, partite = {};
+        [a[1], a[0]].forEach(function (lista) {
+          (Array.isArray(lista) ? lista : []).forEach(function (r) {
+            if (r.Esito && !per[chiave(r)]) per[chiave(r)] = r;
+            var p = (r.Data || d) + "|" + String(r.Partita || "").toLowerCase();
+            if (r.Gol_Casa != null && r.Gol_Ospite != null && !partite[p]) partite[p] = r;
+          });
+        });
+        return { per: per, partite: partite };
+      });
+      ESITI_GIORNO[d].catch(function () { delete ESITI_GIORNO[d]; });
+    }
+    return ESITI_GIORNO[d];
+  }
+  function risolviEvento(x) {
+    if (!x.Data || x.Data > oggi()) return Promise.resolve(null);
+    return esitiDelGiorno(x.Data).then(function (g) {
+      var r = g.per[chiave(x)];
+      if (r) return { esito: r.Esito, gol: r.Gol_Casa != null ? r.Gol_Casa + "-" + r.Gol_Ospite : "" };
+      var p = g.partite[(x.Data || "") + "|" + String(x.Partita || "").toLowerCase()];
+      if (p) {
+        var e = esitoCalcolato(x, num(p.Gol_Casa), num(p.Gol_Ospite));
+        if (e) return { esito: e, gol: p.Gol_Casa + "-" + p.Gol_Ospite };
+      }
+      return null;
+    }).catch(function () { return null; });
+  }
+  // vinta / persa / rimborso / controlla / attesa
+  function statoGiocata(g, esiti) {
+    if (g.manuale) return g.manuale;
+    var e = esiti.map(function (x) { return x && x.esito; });
+    if (e.some(function (x) { return x === "sbagliata"; })) return "persa";
+    if (e.some(function (x) { return !x; })) return "attesa";
+    if (e.every(function (x) { return x === "presa"; })) return "vinta";
+    if (e.every(function (x) { return x === "rimborso"; })) return "rimborso";
+    return "controlla";          // multipla con un evento rimborsato: la quota la ricalcola il book
+  }
+  function resaGiocata(g, st) {
+    if (st === "vinta") return g.importo * (g.quota - 1);
+    if (st === "persa") return -g.importo;
+    return st === "rimborso" ? 0 : null;
+  }
+
+  // ---- la sezione "Le mie giocate"
+  var REG_ELIMINA = null;
+  function disegnaGiocate() {
+    document.getElementById("aggiornato").textContent = "Le tue giocate, salvate su questo telefono";
+    var reg = leggiReg();
+    var testa = '<h2 class="reg-tit">Le mie giocate</h2><p class="descr">Le giocate che registri dalla barra della multipla, con la quota presa sul tuo book. ' +
+      "Restano solo su questo telefono, nel browser: nessuno le vede. Il numero che conta è il <b>valore</b>, cioè di quanto la tua quota sta sopra o sotto l’Equa: " +
+      "il saldo in euro per mesi lo decide la fortuna, il valore medio dopo un centinaio di giocate dice già se stai pagando il prezzo giusto.</p>";
+    var strumenti = '<p class="m-azioni reg-strumenti"><button type="button" id="reg-copia">Salva copia</button>' +
+      '<button type="button" id="reg-ripristina">Ripristina</button><input type="file" id="reg-file" accept=".json,application/json" hidden></p>' +
+      '<p id="reg-msg" class="conta"></p>';
+    if (!reg.length) {
+      $cont.innerHTML = testa + messaggio("vuoto", "Nessuna giocata registrata. Scegli le selezioni con la spunta, poi nella barra in basso tocca <b>Registra</b>.") + strumenti;
+      collegaStrumentiReg();
+      return;
+    }
+    $cont.innerHTML = testa + messaggio("vuoto", "Cerco i risultati&hellip;");
+    Promise.all(reg.map(function (g) { return Promise.all(g.eventi.map(risolviEvento)); })).then(function (tutti) {
+      if (stato.sez !== "giocate") return;
+      var righe = reg.map(function (g, i) { var st = statoGiocata(g, tutti[i]); return { g: g, es: tutti[i], st: st, resa: resaGiocata(g, st) }; })
+        .sort(function (a, b) { return a.g.creata < b.g.creata ? 1 : -1; });
+      var puntato = 0, saldo = 0, finite = 0, vinte = 0, pesoV = 0, sommaV = 0, atteso = 0, puntFin = 0;
+      righe.forEach(function (x) {
+        var v = x.g.equa ? x.g.quota / x.g.equa - 1 : null;
+        puntato += x.g.importo;
+        if (v != null) { sommaV += v * x.g.importo; pesoV += x.g.importo; }
+        if (x.resa != null) {
+          finite++; saldo += x.resa; puntFin += x.g.importo; vinte += x.st === "vinta" ? 1 : 0;
+          if (v != null) atteso += v * x.g.importo;
+        }
+      });
+      var vm = pesoV ? sommaV / pesoV : null;
+      var h = testa + tessere([
+        [String(righe.length), "giocate, " + finite + " finite"],
+        [finite ? euro(saldo) : "-", "saldo sulle finite (" + euro(puntFin).replace(" €", "") + " € giocati)"],
+        [vm == null ? "-" : pctV(vm), "valore medio contro l’Equa"]
+      ]) +
+        (finite ? '<p class="conta">Vinte ' + vinte + " su " + finite + ". Se l’Equa è giusta, con quelle quote ti saresti aspettato " + euro(atteso) +
+          ": la differenza dal saldo è fortuna, in un senso o nell’altro." + (righe.length < 100 ? " Con meno di 100 giocate il valore medio è ancora indicativo." : "") + "</p>" : "") +
+        '<div class="lista">' + righe.map(rigaGiocata).join("") + "</div>" + strumenti;
+      $cont.innerHTML = h;
+      $cont.querySelectorAll("[data-segna]").forEach(function (b) {
+        b.addEventListener("click", function () {
+          var v = leggiReg(), g = v.filter(function (x) { return x.id === b.dataset.id; })[0];
+          if (!g) return;
+          if (b.dataset.segna === "auto") delete g.manuale; else g.manuale = b.dataset.segna;
+          scriviReg(v); disegnaGiocate();
+        });
+      });
+      $cont.querySelectorAll("[data-elimina]").forEach(function (b) {
+        b.addEventListener("click", function () {
+          if (REG_ELIMINA !== b.dataset.elimina) { REG_ELIMINA = b.dataset.elimina; b.textContent = "Tocca ancora per eliminare"; return; }
+          REG_ELIMINA = null;
+          scriviReg(leggiReg().filter(function (x) { return x.id !== b.dataset.elimina; }));
+          disegnaGiocate();
+        });
+      });
+      collegaStrumentiReg();
+    });
+  }
+  var REG_ETICHETTE = { vinta: ["stretto", "✓ vinta"], persa: ["largo", "✗ persa"], rimborso: ["", "rimborsata"],
+    controlla: ["", "da controllare"], attesa: ["", "in attesa"] };
+  function rigaGiocata(x) {
+    var g = x.g, et = REG_ETICHETTE[x.st] || ["", x.st];
+    var v = g.equa ? g.quota / g.equa - 1 : null;
+    var quando = String(g.creata || "").slice(0, 10);
+    var eventi = g.eventi.map(function (e, i) {
+      var r = x.es[i], seg = r && r.esito === "presa" ? " ✓" : r && r.esito === "sbagliata" ? " ✗" : r && r.esito === "rimborso" ? " (rimb.)" : "";
+      return "<li>" + esc(e.Data || "") + " " + esc(e.Ora || "") + " · " + esc(e.Partita || "") + " · <b>" + esc(e.Sel || "") + "</b>" +
+        (e.Equa != null ? " · Equa " + f2(num(e.Equa)) : "") + (r && r.gol ? " · " + esc(r.gol) : "") + seg + "</li>";
+    }).join("");
+    var segna = '<p class="m-azioni reg-segna">' +
+      (g.manuale ? '<button type="button" data-segna="auto" data-id="' + esc(g.id) + '">Esito automatico</button>' :
+        '<button type="button" data-segna="vinta" data-id="' + esc(g.id) + '">Segna vinta</button>' +
+        '<button type="button" data-segna="persa" data-id="' + esc(g.id) + '">Segna persa</button>' +
+        '<button type="button" data-segna="rimborso" data-id="' + esc(g.id) + '">Rimborsata</button>') +
+      '<button type="button" data-elimina="' + esc(g.id) + '">Elimina</button></p>';
+    return '<div class="riga"><details><summary>' +
+      '<span class="segno">' + (g.tipo === "multipla" ? g.eventi.length : "1") + "</span>" +
+      '<div class="corpo"><div class="alto"><span><b>' + (g.tipo === "multipla" ? "Multipla" : "Singola") + "</b></span>" +
+      '<span class="pill ' + et[0] + '">' + et[1] + (g.manuale ? " (a mano)" : "") + "</span><span>" + esc(quando) + "</span></div>" +
+      '<div class="partita">' + esc(g.eventi.map(function (e) { return e.Partita + " " + e.Sel; }).join(" · ")) + "</div>" +
+      '<div class="sel">quota <b>' + g.quota.toFixed(2) + "</b> · Equa " + (g.equa ? g.equa.toFixed(2) : "-") + " · " + euro(g.importo) +
+      " " + valoreHtml(v) + "</div></div>" +
+      '<div class="numero"><b>' + (x.resa == null ? "-" : euro(x.resa)) + "</b><span>" + (x.resa == null ? "da decidere" : "resa") + "</span></div>" +
+      "</summary><div class=\"dettaglio\"><ul class=\"reg-eventi\">" + eventi + "</ul>" +
+      (x.st === "controlla" ? "<p>Un evento è rimborsato: il book ricalcola la quota della multipla. Segnala tu com’è finita.</p>" : "") +
+      (x.st === "attesa" ? "<p>Il risultato arriva qualche ora dopo la fine della partita. Se non arriva, segnala tu l’esito.</p>" : "") +
+      segna + "</div></details></div>";
+  }
+  function collegaStrumentiReg() {
+    var $msg = document.getElementById("reg-msg");
+    document.getElementById("reg-copia").addEventListener("click", function () {
+      var testo = JSON.stringify({ registro: "caltiki-giocate", versione: 1, salvato: new Date().toISOString(), giocate: leggiReg() }, null, 1);
+      var nome = "giocate_" + oggi() + ".json";
+      try {
+        var f = new File([testo], nome, { type: "application/json" });
+        if (navigator.canShare && navigator.canShare({ files: [f] })) {
+          navigator.share({ files: [f], title: "Copia delle giocate" }).catch(function () {});
+          $msg.textContent = "Scegli dove salvarla: Telegram, Drive, email…";
+          return;
+        }
+      } catch (e) { /* si scarica */ }
+      scarica(testo, nome, "application/json");
+      $msg.textContent = "Copia scaricata: " + nome + ".";
+    });
+    var $f = document.getElementById("reg-file");
+    document.getElementById("reg-ripristina").addEventListener("click", function () { $f.click(); });
+    $f.addEventListener("change", function () {
+      var file = $f.files && $f.files[0];
+      if (!file) return;
+      var rd = new FileReader();
+      rd.onload = function () {
+        try {
+          var dati = JSON.parse(rd.result), nuove = Array.isArray(dati) ? dati : dati.giocate;
+          if (!Array.isArray(nuove)) throw new Error("formato");
+          var reg = leggiReg(), ci = {};
+          reg.forEach(function (g) { ci[g.id] = 1; });
+          var agg = nuove.filter(function (g) { return g && g.id && Array.isArray(g.eventi) && !ci[g.id]; });
+          scriviReg(reg.concat(agg));
+          disegnaGiocate();
+          setTimeout(function () { var m = document.getElementById("reg-msg"); if (m) m.textContent = "Ripristinate " + agg.length + " giocate (quelle già presenti non si doppiano)."; }, 50);
+        } catch (e) { $msg.textContent = "Il file non è una copia del registro."; }
+      };
+      rd.readAsText(file);
+    });
+  }
 
   function scarica(contenuto, nome, tipo) {
     var url = URL.createObjectURL(contenuto instanceof Blob ? contenuto : new Blob([contenuto], { type: tipo }));
@@ -5810,6 +6206,9 @@
     });
   });
   window.addEventListener("hashchange", function () { leggiHash(); disegna(); });
+  document.getElementById("giocate-btn").addEventListener("click", function () {
+    stato.sez = "giocate"; window.scrollTo(0, 0); disegna();
+  });
 
   // LA HOME e' quello che si vede aprendo il sito: Prezzi equi, vista
   // Schedina, la data di oggi, nessuna ricerca, pagina in cima. Le
