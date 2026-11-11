@@ -1300,6 +1300,11 @@
   /* LE QUOTE IN ROSSO (101): i numeri delle quote si staccano dal testo. */
   .q { color: #ff6b6b; font-weight: 700; font-variant-numeric: tabular-nums; }
   :root[data-theme="light"] .q { color: #c62828; }
+  /* IL MOVIMENTO DAL MATTINO (105): freccia e colore per verso. */
+  .mv-su { color: #22a55b; font-weight: 700; white-space: nowrap; }
+  .mv-giu { color: #e8873a; font-weight: 700; white-space: nowrap; }
+  :root[data-theme="light"] .mv-su { color: #157a3f; }
+  :root[data-theme="light"] .mv-giu { color: #b35a12; }
   /* IL TIMBRO PINNACLE (100): la partita ha le quote Pinnacle. */
   .timbro-pin {
     display: inline-block; padding: 1px 6px; border: 1.5px solid #f5b301; border-radius: 3px;
@@ -4659,12 +4664,39 @@
       [marg == null ? "-" : f1(marg) + "%", "margine mediano"]
     ]);
   }
+  // Solo i segni che si sono mossi di almeno mezzo punto, con freccia:
+  // "1 ▲ +3 · 2 ▼ −2". Vuoto se non si e' mosso niente.
   function diffHtml(d) {
     if (!d) return "";
     return ["1", "X", "2"].map(function (s, i) {
-      var v = d[i], t = (v > 0 ? "+" : "") + f0(v);
-      return Math.abs(v) >= 2 ? "<b>" + s + " " + t + "</b>" : s + " " + t;
-    }).join(" · ");
+      var v = d[i];
+      if (v == null || Math.abs(v) < 0.5) return "";
+      var t = (v > 0 ? "+" : "\u2212") + Math.abs(v).toFixed(Math.abs(v) < 10 ? 1 : 0).replace(".", ",");
+      return '<span class="' + (v > 0 ? "mv-su" : "mv-giu") + '">' + s + " " + (v > 0 ? "\u25b2 " : "\u25bc ") + t + "</span>";
+    }).filter(Boolean).join(" \u00b7 ");
+  }
+  // La frase intera: "Dal mattino (09:23): 1 ▲ +3 · 2 ▼ −2 punti" oppure
+  // "Ferma dal mattino (09:23)".
+  // Con pAdesso (le probabilita' di adesso) aggiunge la riga delle quote
+  // eque: "Quota equa dal mattino: 1 1,92 → 1,82", solo per i segni mossi.
+  // Sono quote senza margine, ricavate dalle probabilita': Pinnacle la
+  // mattina salva le probabilita', non le quote.
+  function movimentoHtml(d, quando, pAdesso) {
+    if (!d) return "";
+    var q = quando ? " (" + esc(quando) + ")" : "";
+    var h = diffHtml(d);
+    if (!h) return "Probabilità ferma dal mattino" + q;
+    var out = "Probabilità dal mattino" + q + ": " + h + " punti";
+    if (pAdesso) {
+      var eq = ["1", "X", "2"].map(function (s, i) {
+        var a = pAdesso[i], v = d[i];
+        if (a == null || v == null || Math.abs(v) < 0.5 || a <= 0 || a - v <= 0) return "";
+        var prima = 100 / (a - v), ora = 100 / a;
+        return '<span class="' + (ora < prima ? "mv-su" : "mv-giu") + '">' + s + " " + f2(prima).replace(".", ",") + " \u2192 " + f2(ora).replace(".", ",") + "</span>";
+      }).filter(Boolean);
+      if (eq.length) out += ".<br>Quota equa dal mattino: " + eq.join(" \u00b7 ");
+    }
+    return out;
   }
   function formazioneHtml(f) {
     if (!f) return "";
@@ -4685,7 +4717,7 @@
     if (num(r.Q1) != null) det.push("<p>Quote Pinnacle " + [r.Q1, r.QX, r.Q2].map(function (x) { return qv(x); }).join(" · ") +
       (num(r.Margine) != null ? " – margine " + mv(r.Margine) : "") + "</p>");
     if (p[0] != null) det.push("<p>Equa adesso: 1 " + qv(100 / p[0]) + " · X " + qv(100 / p[1]) + " · 2 " + qv(100 / p[2]) + "</p>");
-    if (r._diff) det.push("<p>Dal mattino (" + esc(r._mattino || "") + "): " + diffHtml(r._diff) + " punti.</p>");
+    if (r._diff) det.push("<p>" + movimentoHtml(r._diff, r._mattino, r._p) + ".</p>");
     else det.push("<p>Nessuna lettura del mattino per questa partita: il movimento si vede solo per oggi.</p>");
     if (num(r.OU) != null && num(r["P Over"]) != null) det.push("<p>Linea Under/Over " + esc(r.OU) + ": Over " + pv(r["P Over"]) + "</p>");
     det.push(formazioneHtml(r._form));
@@ -4698,7 +4730,7 @@
         (r._form && r._form.titolari ? '<span class="pill stretto">formazioni</span>' : "") +
         (r._form && r._form.assenti && r._form.assenti.length ? '<span class="pill largo">' + r._form.assenti.length + " assenti</span>" : "") + "</div>" +
       '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" +
-      (r._diff ? '<div class="sel">dal mattino ' + diffHtml(r._diff) + "</div>" : "") +
+      (r._diff ? '<div class="sel">' + movimentoHtml(r._diff, "") + "</div>" : "") +
       tripla("Pinnacle adesso", p[0], p[1], p[2]) +
       "</div>" +
       '<div class="numero"><b>' + esc(mv) + "</b><span>punti sul " + esc(r._segnoMov || "-") + "</span></div>" +
@@ -4751,7 +4783,7 @@
       if (r) {
         var p = [num(r["P1 Shin"]), num(r["PX Shin"]), num(r["P2 Shin"])], mt = pinMattino(x.pro, data, id);
         out.push("<p><b>Pinnacle adesso</b>: 1 " + pv(p[0]) + " · X " + pv(p[1]) + " · 2 " + pv(p[2]) +
-          (mt ? " – dal mattino (" + esc(mt[3] || "") + "): " + diffHtml([p[0] - mt[0], p[1] - mt[1], p[2] - mt[2]]) + " punti" : "") + "</p>");
+          "</p>" + (mt ? "<p>" + movimentoHtml([p[0] - mt[0], p[1] - mt[1], p[2] - mt[2]], mt[3] || "", p) + ".</p>" : ""));
       }
       out.push(formazioneHtml(x.form[String(id)]));
       box.innerHTML = out.join("");
@@ -6065,8 +6097,7 @@
     var dm = mt ? [pr[0] - mt[0], pr[1] - mt[1], pr[2] - mt[2]] : null;
     var mosso = dm && dm.some(function (v) { return Math.abs(v) >= 0.5; });
     h += (mosso ? tripla("mattino", mt[0], mt[1], mt[2]) + tripla("ora", pr[0], pr[1], pr[2]) : tripla("Pinnacle", pr[0], pr[1], pr[2])) + legenda();
-    if (mosso) h += "<p>Dal mattino (" + esc(mt[3] || "") + "): " + diffHtml(dm) + " punti.</p>";
-    else if (mt) h += "<p>Ferma dal mattino (" + esc(mt[3] || "") + ").</p>";
+    if (mt) h += "<p>" + movimentoHtml(dm, mt[3] || "", pr) + ".</p>";
     var q = [["1", r.Q1], ["X", r.QX], ["2", r.Q2]].filter(function (x) { return num(x[1]) != null; });
     var marg = num(r.Margine), fid = fiducia(marg);
     if (q.length) h += "<p>Quote: " + q.map(function (x) { return x[0] + " " + qv(x[1]); }).join(" · ") +
@@ -6787,6 +6818,10 @@
   function timbraPinnacle() {
     if (stato.sez === "pin") return;          // in Mosse Pinnacle lo sono tutte
     $cont.querySelectorAll("[data-lc]").forEach(function (el) {
+      // Solo la riga della partita, non le righe dei prezzi che stanno
+      // dentro il suo dettaglio: quelle hanno il loro prezzo (AsianOdds,
+      // per esempio) e il timbro li' direbbe una cosa falsa.
+      if (el.closest(".dettaglio") || el.closest(".dentro-partita")) return;
       var riga = el.closest(".riga") || el.closest(".scheda");
       var alto = riga ? riga.querySelector(".alto") : null;
       if (!alto || alto.querySelector(".timbro-pin") || alto.dataset.pinVisto === el.getAttribute("data-lc")) return;
