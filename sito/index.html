@@ -4700,12 +4700,10 @@
   // NELLA SCHEDA DI OGNI PARTITA dei Pronostici: Pinnacle adesso e dal
   // mattino, assenti e formazioni. Il numero della partita viene dalla riga
   // (ID_API, righe Pinnacle) o da partite_api_<data>.json.
-  function riempiInfoApi(det, data) {
-    var box = det.querySelector(".info-api");
-    if (!box || box.dataset.fatto) return;
-    box.dataset.fatto = "1";
-    var casa = box.dataset.casa, osp = box.dataset.ospite, idr = box.dataset.id, ora = box.dataset.ora;
-    Promise.all([
+  // La riga Pinnacle di una partita: {x: pinExtra, id, r: riga o null}.
+  // La usano le card dei Pronostici e la scheda della partita (98).
+  function trovaPinnacle(data, casa, osp, ora, idr) {
+    return Promise.all([
       pinExtra(data),
       leggi("partite_api_" + data + ".json").catch(function () { return null; }),
       leggiUrl(BASE + "pinnacle_" + data + ".json?t=" + Math.floor(Date.now() / 600000), "pinnacle_" + data).catch(function () { return null; })
@@ -4728,8 +4726,17 @@
         });
         if (cand.length === 1) id = cand[0].ID_API;
       }
+      var r = id ? lista.filter(function (y) { return String(y.ID_API) === String(id); })[0] || null : null;
+      return { x: x, id: id || null, r: r };
+    });
+  }
+  function riempiInfoApi(det, data) {
+    var box = det.querySelector(".info-api");
+    if (!box || box.dataset.fatto) return;
+    box.dataset.fatto = "1";
+    trovaPinnacle(data, box.dataset.casa, box.dataset.ospite, box.dataset.ora, box.dataset.id).then(function (t) {
+      var x = t.x, id = t.id, r = t.r;
       if (!id) return;
-      var r = lista.filter(function (y) { return String(y.ID_API) === String(id); })[0];
       var out = [];
       if (r) {
         var p = [num(r["P1 Shin"]), num(r["PX Shin"]), num(r["P2 Shin"])], mt = pinMattino(x.pro, data, id);
@@ -5945,8 +5952,13 @@
 
   // Le probabilita' 1X2 del mercato: AsianOdds (Shin se c'e') o, oltre le
   // 24 ore, FootyMetrics senza margine. Sono quelle dei file, non ricalcolate.
+  // Lo stesso ordine dei prezzi equi: Pinnacle, AsianOdds, FootyMetrics.
   function mercatoScheda(p) {
-    var a = p.Mercato, f = p.FM;
+    var a = p.Mercato, f = p.FM, pin = p.Pin;
+    if (pin) {
+      var q = [num(pin["P1 Shin"]), num(pin["PX Shin"]), num(pin["P2 Shin"])];
+      if (q[0] != null && q[1] != null && q[2] != null) return { "1": q[0], "X": q[1], "2": q[2], da: "Pinnacle" };
+    }
     if (a) {
       var s = [num(a["P1 Shin"]), num(a["PX Shin"]), num(a["P2 Shin"])];
       if (s[0] == null) s = [num(a.P1), num(a.PX), num(a.P2)];
@@ -6024,13 +6036,57 @@
     return h + "</div>";
   }
 
+  // IL MERCATO DA PINNACLE (98). Probabilita' Shin, quote, linea gol e lo
+  // spostamento dal mattino; sotto, se c'e', AsianOdds in breve col suo
+  // movimento, che Pinnacle qui non ha (si legge da stamattina).
+  function mercatoPinnacle(p, a) {
+    var r = p.Pin, h = "";
+    var pr = [num(r["P1 Shin"]), num(r["PX Shin"]), num(r["P2 Shin"])];
+    var mt = p.PinX ? pinMattino(p.PinX.pro, p.PinData, r.ID_API) : null;
+    // Le due barre solo se dal mattino qualcosa si e' mosso (mezzo punto).
+    var dm = mt ? [pr[0] - mt[0], pr[1] - mt[1], pr[2] - mt[2]] : null;
+    var mosso = dm && dm.some(function (v) { return Math.abs(v) >= 0.5; });
+    h += (mosso ? tripla("mattino", mt[0], mt[1], mt[2]) + tripla("ora", pr[0], pr[1], pr[2]) : tripla("Pinnacle", pr[0], pr[1], pr[2])) + legenda();
+    if (mosso) h += "<p>Dal mattino (" + esc(mt[3] || "") + "): " + diffHtml(dm) + " punti.</p>";
+    else if (mt) h += "<p>Ferma dal mattino (" + esc(mt[3] || "") + ").</p>";
+    var q = [["1", r.Q1], ["X", r.QX], ["2", r.Q2]].filter(function (x) { return num(x[1]) != null; });
+    var marg = num(r.Margine), fid = fiducia(marg);
+    if (q.length) h += "<p>Quote: " + q.map(function (x) { return x[0] + " " + f2(num(x[1])); }).join(" · ") +
+      (marg != null ? " (margine " + f1(marg) + "%)" : "") + "</p>";
+    var L = num(r.OU), po = num(r["P Over"]), pg = num(r["P Gol"]);
+    var gg = [];
+    if (L != null && po != null) gg.push("Over " + L + " " + f0(po) + "%");
+    if (pg != null) gg.push("Gol " + f0(pg) + "%");
+    if (gg.length) h += "<p>" + gg.join(" · ") + "</p>";
+    if (fid) h += "<p>Margine del book " + f1(marg) + "%: " + fid[1] + ".</p>";
+    if (a) {
+      var s = [num(a["P1 Shin"]), num(a["PX Shin"]), num(a["P2 Shin"])];
+      if (s[0] == null) s = [num(a.P1), num(a.PX), num(a.P2)];
+      if (s[0] != null) {
+        var ma = num(a.Margine);
+        h += "<p>AsianOdds: 1 " + f0(s[0]) + "% · X " + f0(s[1]) + "% · 2 " + f0(s[2]) + "%" + (ma != null ? " (margine " + f1(ma) + "%)" : "") +
+          (num(a.Mov) ? "; " + (a.Notevole ? "movimento notevole" : "movimento") + " di " + f1(num(a.Mov)) + " punti dall'apertura" : "") + ".</p>";
+      }
+    }
+    // "Aggiornato" e' l'orario di API-Football, in UTC: qui in ora di Roma.
+    var quando = "";
+    var t = /^(\d{4}-\d{2}-\d{2})[T ](\d{2}:\d{2})/.exec(String(r.Aggiornato || ""));
+    if (t) {
+      try {
+        quando = new Date(t[1] + "T" + t[2] + ":00Z").toLocaleTimeString("it-IT", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Rome" });
+      } catch (e) { quando = ""; }
+    }
+    h += '<p class="piccolo">Pinnacle, senza margine' + (quando ? " · aggiornata alle " + esc(quando) : "") + ".</p>";
+    return h;
+  }
+
   function bloccoMercato(p, m) {
     var a = p.Mercato, f = p.FM;
     var h = '<div class="scheda"><h3>Il mercato</h3>';
     if (!m) {
-      return h + '<p class="piccolo">Nessuna quota per questa partita: AsianOdds copre le prossime 24 ore, ' +
-        "FootyMetrics le giornate dopo, e qui non c'è nessuno dei due.</p></div>";
+      return h + '<p class="piccolo">Nessuna quota per questa partita.</p></div>';
     }
+    if (m.da === "Pinnacle") return h + mercatoPinnacle(p, a) + "</div>";
     if (a) {
       var ap = apertura(a), marg = num(a.Margine), fid = fiducia(marg);
       var pp = oraComeApertura(a), vm = num(a.Mov) ? versoMercato(a) : null;
@@ -6049,20 +6105,19 @@
       if (a.Notevole) chip.push('<span class="scarto-grosso">movimento notevole</span>');
       if (a.Affidabile) chip.push('<span class="chip">affidabile</span>');
       if (chip.length) h += "<p>" + chip.join(" ") + "</p>";
-      h += '<p class="piccolo">Quote AsianOdds, probabilità senza margine.</p>';
+      h += '<p class="piccolo">AsianOdds, senza margine. Pinnacle non c’è ancora.</p>';
     } else {
       var or = num(f.Overround);
-      h += tripla("book", m["1"], m.X, m["2"]) + legenda();
+      h += tripla("migliori", m["1"], m.X, m["2"]) + legenda();
       var q = [["1", f.Q1], ["X", f.QX], ["2", f.Q2]].filter(function (x) { return num(x[1]) != null; });
-      if (q.length) h += "<p>Quote: " + q.map(function (x) { return x[0] + " " + f2(num(x[1])); }).join(" · ") +
-        (or != null ? " (margine " + f1(or - 100) + "%)" : "") + "</p>";
+      if (q.length) h += "<p>Quote migliori: " + q.map(function (x) { return x[0] + " " + f2(num(x[1])); }).join(" · ") + "</p>";
       var due = [["Over 2.5", f.Q_O25, f.Q_U25], ["Over 1.5", f.Q_O15, f.Q_U15], ["Gol", f.Q_GG, f.Q_NG]].map(function (x) {
         var s = num(x[1]), n = num(x[2]);
         if (!s || !n || s <= 1 || n <= 1) return null;
         return x[0] + " " + f0(100 * (1 / s) / (1 / s + 1 / n)) + "%";
       }).filter(Boolean);
       if (due.length) h += "<p>" + due.join(" · ") + "</p>";
-      h += '<p class="piccolo">Quote FootyMetrics, probabilità senza margine. AsianOdds arriva nelle 24 ore prima della partita.</p>';
+      h += '<p class="piccolo">Migliori quote fra più book, senza margine. Pinnacle e AsianOdds non ci sono ancora.</p>';
     }
     return h + "</div>";
   }
@@ -6205,29 +6260,45 @@
         $cont.innerHTML = '<div class="scheda"><button type="button" class="indietro" id="indietro">← Indietro</button>' +
           "<p>Questa partita non c'è nelle schede del " + esc(etichettaData(d)) +
           ". Le schede si rifanno a ogni giro: torna alla lista e riaprila da lì.</p></div>";
-      } else {
-        var m = mercatoScheda(p);
-        $cont.innerHTML = testaScheda(p, d) + bloccoMercato(p, m) + bloccoPrezzi(p, d) + bloccoPoisson(p) +
-          bloccoFonti(p, m) + bloccoSure(p) + bloccoAltro(p) + piedeScheda(p);
-        $cont.querySelectorAll("input[data-sp]").forEach(function (cb) {
-          cb.addEventListener("change", function () {
-            var r = righeSchedaPrezzi[Number(cb.dataset.sp)];
-            var k = chiave(r);
-            if (cb.checked) scelte[k] = r; else delete scelte[k];
-            cb.closest(".riga-prezzo").classList.toggle("scelta", cb.checked);
-            aggiornaMultipla();
-          });
-        });
+        collegaIndietro();
+        return;
       }
-      var b = document.getElementById("indietro");
-      if (b) b.addEventListener("click", function () {
-        if (SCHEDA.interna) history.back();
-        else vaiHome();
+      // Pinnacle prima di disegnare (98): Il mercato e i "% book" delle
+      // fonti partono da li' quando c'e'. Se il file non si legge, la scheda
+      // si disegna lo stesso con AsianOdds o FootyMetrics.
+      return trovaPinnacle(d, p.Casa, p.Ospite, p.Ora, p.ID_API).catch(function () { return null; }).then(function (t) {
+        if (stato.sez !== "scheda" || SCHEDA.data !== d || SCHEDA.chiave !== al) return;
+        p.Pin = t && t.r ? t.r : null;
+        p.PinX = t ? t.x : null;
+        p.PinData = d;
+        disegnaSchedaPartita(p, d);
       });
     }).catch(function (e) {
       $cont.innerHTML = messaggio("errore", "Non riesco a leggere la scheda (" + esc(e.message) + "). " +
         "Le schede ci sono da oggi in avanti: per le partite passate c'è “Statistiche fonti”, partita per partita.");
     });
+  }
+  function collegaIndietro() {
+    var b = document.getElementById("indietro");
+    if (b) b.addEventListener("click", function () {
+      if (SCHEDA.interna) history.back();
+      else vaiHome();
+    });
+  }
+  function disegnaSchedaPartita(p, d) {
+    var m = mercatoScheda(p);
+    $cont.innerHTML = testaScheda(p, d) + bloccoMercato(p, m) + bloccoPrezzi(p, d) + bloccoPoisson(p) +
+      bloccoFonti(p, m) + bloccoSure(p) + bloccoAltro(p) + piedeScheda(p);
+    $cont.querySelectorAll("input[data-sp]").forEach(function (cb) {
+      cb.addEventListener("change", function () {
+        var r = righeSchedaPrezzi[Number(cb.dataset.sp)];
+        var k = chiave(r);
+        if (cb.checked) scelte[k] = r; else delete scelte[k];
+        cb.closest(".riga-prezzo").classList.toggle("scelta", cb.checked);
+        aggiornaMultipla();
+      });
+    });
+    collegaIndietro();
   }
 
   // ------------------------------------------------------------ xG squadre
