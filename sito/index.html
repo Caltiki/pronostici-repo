@@ -1475,11 +1475,11 @@
   // completo della giornata. La Schedina viene dopo.
   var PE_VISTE = [
     ["partite", "Tutte le partite",
-     "Probabilit\u00e0 reali: quelle delle quote del bookmaker, tolto il suo guadagno. " +
+     "Probabilit\u00e0 senza margine: quelle delle quote del bookmaker, tolto il suo guadagno. " +
      "Ogni partita della giornata, una per riga: toccala per vedere tutte le sue probabilit\u00e0 " +
      "e aggiungere quelle che vuoi alla multipla."],
     ["schedina", "Schedina",
-     "Probabilit\u00e0 reali: quelle delle quote del bookmaker, tolto il suo guadagno. " +
+     "Probabilit\u00e0 senza margine: quelle delle quote del bookmaker, tolto il suo guadagno. " +
      "Le righe che il sistema ha messo in schedina: una per partita. " +
      "Spunta quelle che vuoi combinare e in fondo vedi quanto vale la multipla."],
     ["stretto", "Pi\u00f9 affidabili",
@@ -1566,7 +1566,7 @@
      "Tutte le partite delle prossime 24 ore. Quote 1xBet, solo informative: non entrano nel pronostico."]
   ];
   var MK_ORDINI = [["file", "Per orario"], ["mov", "Per movimento"], ["margine", "Per margine"]];
-  var GRUPPO_PRONOSTICI_TUTTI = [["prezzi", "Probabilit\u00e0 reali"], ["mercato", "Mercato"], ["wdw", "FootyStats"],
+  var GRUPPO_PRONOSTICI_TUTTI = [["prezzi", "Probabilit\u00e0 senza margine"], ["mercato", "Mercato"], ["wdw", "FootyStats"],
                                  ["sm", "Sports Mole"], ["hp", "HeroPredict"], ["fp", "FootballPark"]];
   // Il tasto FootyStats compare solo quando i dati ci sono davvero
   // (footystatswdw_index.json con almeno una data): finche' FootyStats
@@ -2322,7 +2322,7 @@
       $a.innerHTML = voci.length
         ? '<p class="piccolo">“' + esc(cerca) + "” si trova qui:</p>" + voci.join("")
         : '<p class="piccolo">Nemmeno negli altri giorni pubblicati in questa sezione.' +
-          (sez === "mercato" ? " Il Mercato ha solo le partite delle prossime 24 ore: le altre si trovano in Probabilit\u00e0 reali." : "") + "</p>";
+          (sez === "mercato" ? " Il Mercato ha solo le partite delle prossime 24 ore: le altre si trovano in Probabilit\u00e0 senza margine." : "") + "</p>";
       $a.querySelectorAll("[data-vai-data]").forEach(function (b) {
         b.addEventListener("click", function () {
           stato.data[sez] = b.dataset.vaiData;
@@ -5281,7 +5281,7 @@
   }
 
   var NOMI_SCHEDA = {
-    asianodds: "AsianOdds", footymetrics: "FootyMetrics", prezzi: "Probabilit\u00e0 reali", poisson: "Poisson",
+    asianodds: "AsianOdds", footymetrics: "FootyMetrics", prezzi: "Probabilit\u00e0 senza margine", poisson: "Poisson",
     accordo: "Statarea + WebPronostici", consenso: "Consenso medio", statarea: "Statarea",
     wp_1x2: "WebPronostici", wp_ou: "WebPronostici", wp_ggng: "WebPronostici", wp_misti: "WebPronostici",
     webpronostici: "WebPronostici", betimate: "Betimate", xgaura: "xGaura", sportytrader: "Sportytrader",
@@ -5427,7 +5427,7 @@
       return o;
     }).sort(function (x, y) { return (num(y.Prob) || 0) - (num(x.Prob) || 0); });
     var marg = num(P.Margine), fid = fiducia(marg);
-    var h = '<div class="scheda"><h3>Probabilit\u00e0 reali</h3>' +
+    var h = '<div class="scheda"><h3>Probabilit\u00e0 senza margine</h3>' +
       '<p class="piccolo">La quota sotto cui non conviene giocare. Spunta per metterla nella multipla.</p>';
     h += righeSchedaPrezzi.map(function (r, i) {
       var k = chiave(r), on = !!scelte[k];
