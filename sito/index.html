@@ -3365,7 +3365,7 @@
   }
   function eventoDa(x) {
     var o = {};
-    ["Data", "Ora", "Campionato", "Partita", "Casa", "Ospite", "Gruppo", "Mercato", "Sel", "Prob", "Equa", "Margine", "Fonte"]
+    ["Data", "Ora", "Campionato", "Partita", "Casa", "Ospite", "Gruppo", "Mercato", "Sel", "Prob", "Equa", "Margine", "Fonte", "ID_API"]
       .forEach(function (k) { if (x[k] != null && x[k] !== "") o[k] = x[k]; });
     return o;
   }
@@ -3491,6 +3491,48 @@
     return st === "rimborso" ? 0 : null;
   }
 
+  // ---- LA CHIUSURA PINNACLE (11/11). pinnacle_archivio.csv tiene, per ogni
+  // partita letta col piano PRO, l'ultima quota prima del via. Per un
+  // evento con ID_API (cioe' preso da una riga Pinnacle) si ricava la
+  // probabilita' alla chiusura della SUA selezione: 1X2, doppia chance,
+  // Under/Over sulla stessa linea della chiusura. Le combo no.
+  // Battere la chiusura in media e' il segno che le giocate valgono,
+  // molto prima che lo dica il saldo.
+  var CHIUSURE = null;
+  function caricaChiusure() {
+    if (CHIUSURE) return Promise.resolve(CHIUSURE);
+    return leggiTesto("pinnacle_archivio.csv").then(csvOggetti).then(function (v) {
+      CHIUSURE = {};
+      (v || []).forEach(function (r) { if (r.ID_API && r.Congelata === "si") CHIUSURE[String(r.ID_API)] = r; });
+      return CHIUSURE;
+    }).catch(function () { CHIUSURE = {}; return CHIUSURE; });
+  }
+  function probChiusura(e, ch) {
+    var r = e.ID_API != null ? ch[String(e.ID_API)] : null;
+    if (!r) return null;
+    var p = { "1": num(r["P1 Shin"]), "X": num(r["PX Shin"]), "2": num(r["P2 Shin"]) };
+    var sel = String(e.Sel || ""), merc = String(e.Mercato || "");
+    if (sel.indexOf(" + ") >= 0) return null;
+    if (p[sel] != null) return p[sel];
+    if (sel === "1X" || sel === "X2" || sel === "12") {
+      return p[sel[0]] != null && p[sel[1]] != null ? p[sel[0]] + p[sel[1]] : null;
+    }
+    var m = merc.match(/^OU\s+(\d+(?:\.\d+)?)$/), po = num(r["P Over"]), lin = num(r.OU);
+    if (m && po != null && lin != null && Math.abs(parseFloat(m[1]) - lin) < 1e-6) {
+      return sel === "Over" ? po : sel === "Under" ? 100 - po : null;
+    }
+    return null;
+  }
+  function clvGiocata(g, ch) {
+    var eq = 1;
+    for (var i = 0; i < g.eventi.length; i++) {
+      var pc = probChiusura(g.eventi[i], ch);
+      if (pc == null || pc <= 0) return null;
+      eq *= 100 / pc;
+    }
+    return { equa: eq, clv: g.quota / eq - 1 };
+  }
+
   // ---- la sezione "Le mie giocate"
   var REG_ELIMINA = null;
   function disegnaGiocate() {
@@ -3508,9 +3550,10 @@
       return;
     }
     $cont.innerHTML = testa + messaggio("vuoto", "Cerco i risultati&hellip;");
-    Promise.all(reg.map(function (g) { return Promise.all(g.eventi.map(risolviEvento)); })).then(function (tutti) {
+    Promise.all([caricaChiusure(), Promise.all(reg.map(function (g) { return Promise.all(g.eventi.map(risolviEvento)); }))]).then(function (aa) {
       if (stato.sez !== "giocate") return;
-      var righe = reg.map(function (g, i) { var st = statoGiocata(g, tutti[i]); return { g: g, es: tutti[i], st: st, resa: resaGiocata(g, st) }; })
+      var ch = aa[0], tutti = aa[1];
+      var righe = reg.map(function (g, i) { var st = statoGiocata(g, tutti[i]); return { g: g, es: tutti[i], st: st, resa: resaGiocata(g, st), cl: clvGiocata(g, ch) }; })
         .sort(function (a, b) { return a.g.creata < b.g.creata ? 1 : -1; });
       var puntato = 0, saldo = 0, finite = 0, vinte = 0, pesoV = 0, sommaV = 0, atteso = 0, puntFin = 0;
       righe.forEach(function (x) {
@@ -3523,6 +3566,9 @@
         }
       });
       var vm = pesoV ? sommaV / pesoV : null;
+      var conCl = righe.filter(function (x) { return x.cl; });
+      var pesoC = conCl.reduce(function (a, x) { return a + x.g.importo; }, 0);
+      var clm = pesoC ? conCl.reduce(function (a, x) { return a + x.cl.clv * x.g.importo; }, 0) / pesoC : null;
       var h = testa + tessere([
         [String(righe.length), "giocate, " + finite + " finite"],
         [finite ? euro(saldo) : "-", "saldo sulle finite (" + euro(puntFin).replace(" €", "") + " € giocati)"],
@@ -3530,6 +3576,8 @@
       ]) +
         (finite ? '<p class="conta">Vinte ' + vinte + " su " + finite + ". Se l’Equa è giusta, con quelle quote ti saresti aspettato " + euro(atteso) +
           ": la differenza dal saldo è fortuna, in un senso o nell’altro." + (righe.length < 100 ? " Con meno di 100 giocate il valore medio è ancora indicativo." : "") + "</p>" : "") +
+        (conCl.length ? '<p class="conta">Contro la chiusura Pinnacle (' + conCl.length + (conCl.length === 1 ? " giocata" : " giocate") + "): <b>" + pctV(clm) +
+          "</b> in media. È il numero più onesto: sopra zero vuol dire che hai preso quote migliori del prezzo finale del mercato.</p>" : "") +
         '<div class="lista">' + righe.map(rigaGiocata).join("") + "</div>" + strumenti;
       $cont.innerHTML = h;
       $cont.querySelectorAll("[data-segna]").forEach(function (b) {
@@ -3577,6 +3625,8 @@
       " " + valoreHtml(v) + "</div></div>" +
       '<div class="numero"><b>' + (x.resa == null ? "-" : euro(x.resa)) + "</b><span>" + (x.resa == null ? "da decidere" : "resa") + "</span></div>" +
       "</summary><div class=\"dettaglio\"><ul class=\"reg-eventi\">" + eventi + "</ul>" +
+      (x.cl ? "<p>Chiusura Pinnacle: equa " + x.cl.equa.toFixed(2) + " – la tua quota " + g.quota.toFixed(2) + " " +
+        (x.cl.clv >= 0 ? '<span class="reg-val su">' + pctV(x.cl.clv) + " sopra la chiusura</span>" : '<span class="reg-val giu">' + pctV(x.cl.clv) + " sotto la chiusura</span>") + "</p>" : "") +
       (x.st === "controlla" ? "<p>Un evento è rimborsato: il book ricalcola la quota della multipla. Segnala tu com’è finita.</p>" : "") +
       (x.st === "attesa" ? "<p>Il risultato arriva qualche ora dopo la fine della partita. Se non arriva, segnala tu l’esito.</p>" : "") +
       segna + "</div></details></div>";
