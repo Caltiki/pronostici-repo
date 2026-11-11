@@ -1305,6 +1305,9 @@
   .mv-giu { color: #e8873a; font-weight: 700; white-space: nowrap; }
   :root[data-theme="light"] .mv-su { color: #157a3f; }
   :root[data-theme="light"] .mv-giu { color: #b35a12; }
+  /* Il blocco Pinnacle nel dettaglio delle partite delle altre sezioni. */
+  .pin-info { border-bottom: 1px dashed var(--bordo); margin-bottom: 8px; padding-bottom: 4px; }
+  .pin-info:empty { display: none; }
   /* IL TIMBRO PINNACLE (100): la partita ha le quote Pinnacle. */
   .timbro-pin {
     display: inline-block; padding: 1px 6px; border: 1.5px solid #f5b301; border-radius: 3px;
@@ -4772,6 +4775,20 @@
       return { x: x, id: id || null, r: r };
     });
   }
+  // IL BLOCCO PINNACLE DI UNA PARTITA (107): quote col margine,
+  // probabilita' senza margine, movimento dal mattino. Lo stesso nelle card
+  // dei Pronostici e nel dettaglio delle partite delle altre sezioni.
+  function pinInfoHtml(r, x, data) {
+    if (!r) return "";
+    var p = [num(r["P1 Shin"]), num(r["PX Shin"]), num(r["P2 Shin"])];
+    var out = [];
+    if (num(r.Q1) != null) out.push("<p><b>Quote Pinnacle</b>: 1 " + qv(r.Q1) + " · X " + qv(r.QX) + " · 2 " + qv(r.Q2) +
+      (num(r.Margine) != null ? " (margine " + mv(r.Margine) + ")" : "") + "</p>");
+    if (p[0] != null) out.push("<p><b>Pinnacle senza margine</b>: 1 " + pv(p[0]) + " · X " + pv(p[1]) + " · 2 " + pv(p[2]) + "</p>");
+    var mt = x ? pinMattino(x.pro, data || r.Data, r.ID_API) : null;
+    if (mt && p[0] != null) out.push("<p>" + movimentoHtml([p[0] - mt[0], p[1] - mt[1], p[2] - mt[2]], mt[3] || "", p) + ".</p>");
+    return out.join("");
+  }
   function riempiInfoApi(det, data) {
     var box = det.querySelector(".info-api");
     if (!box || box.dataset.fatto) return;
@@ -4780,11 +4797,7 @@
       var x = t.x, id = t.id, r = t.r;
       if (!id) return;
       var out = [];
-      if (r) {
-        var p = [num(r["P1 Shin"]), num(r["PX Shin"]), num(r["P2 Shin"])], mt = pinMattino(x.pro, data, id);
-        out.push("<p><b>Pinnacle adesso</b>: 1 " + pv(p[0]) + " · X " + pv(p[1]) + " · 2 " + pv(p[2]) +
-          "</p>" + (mt ? "<p>" + movimentoHtml([p[0] - mt[0], p[1] - mt[1], p[2] - mt[2]], mt[3] || "", p) + ".</p>" : ""));
-      }
+      if (r) out.push(pinInfoHtml(r, x, data));
       out.push(formazioneHtml(x.form[String(id)]));
       box.innerHTML = out.join("");
     });
@@ -6834,6 +6847,17 @@
       span.innerHTML = timbroPin(r);
       var t = span.firstChild, primo = alto.firstElementChild;
       if (primo && primo.nextSibling) alto.insertBefore(t, primo.nextSibling); else alto.appendChild(t);
+      // Nel dettaglio della partita (le sezioni che non hanno gia' il
+      // riquadro di API-Football dei Pronostici): quote, margine,
+      // probabilita' e movimento di Pinnacle, in cima.
+      var det = riga.querySelector(":scope > details > .dettaglio") || riga.querySelector(".dettaglio");
+      if (det && !riga.querySelector(".info-api") && !det.querySelector(".pin-info")) {
+        var box = document.createElement("div");
+        box.className = "pin-info";
+        det.insertBefore(box, det.firstChild);
+        pinExtra(r.Data).then(function (x) { box.innerHTML = pinInfoHtml(r, x, r.Data); })
+          .catch(function () { box.innerHTML = pinInfoHtml(r, null, r.Data); });
+      }
     });
   }
   function avviaTimbri() {
