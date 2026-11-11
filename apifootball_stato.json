@@ -257,8 +257,24 @@
    "letta": "2026-11-11 01:42",
    "chiusa": true,
    "errore": "{\"plan\": \"Free plans do not have access to this date, try from 2026-11-10 to 2026-11-12.\"}"
+  },
+  "2026-11-10": {
+   "letta": "2026-11-11 18:11",
+   "chiusa": true,
+   "partite_api": 113,
+   "nostre": 270,
+   "riconosciute": 200,
+   "finite": 191
+  },
+  "2026-11-11": {
+   "letta": "2026-11-11 18:11",
+   "chiusa": false,
+   "partite_api": 197,
+   "nostre": 405,
+   "riconosciute": 261,
+   "finite": 127
   }
  },
- "aggiornato": "2026-11-11 01:42",
+ "aggiornato": "2026-11-11 18:11",
  "nomi_annotati": "2026-11-04"
 }
