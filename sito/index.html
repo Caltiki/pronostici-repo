@@ -1297,6 +1297,16 @@
   .live.fresco { box-shadow: 0 0 0 2px var(--evidenza); animation: liveGol 1.2s ease-in-out 3; }
   @keyframes liveGol { 50% { box-shadow: 0 0 0 5px var(--evidenza-tenue, rgba(94,168,255,.35)); } }
   @media (prefers-reduced-motion: reduce) { .live::before, .live.fresco { animation: none; } }
+  /* LE QUOTE IN ROSSO (101): i numeri delle quote si staccano dal testo. */
+  .q { color: #ff6b6b; font-weight: 700; font-variant-numeric: tabular-nums; }
+  :root[data-theme="light"] .q { color: #c62828; }
+  /* IL TIMBRO PINNACLE (100): la partita ha le quote Pinnacle. */
+  .timbro-pin {
+    display: inline-block; padding: 1px 6px; border: 1.5px solid #f5b301; border-radius: 3px;
+    color: #f5b301; font-size: .66rem; font-weight: 800; letter-spacing: .08em; line-height: 1.35;
+    text-transform: uppercase; white-space: nowrap;
+  }
+  :root[data-theme="light"] .timbro-pin { border-color: #a36b00; color: #a36b00; }
   /* Il live nelle giocate in attesa. */
   .reg-live:empty { display: none; }
   .reg-live .live { margin-left: 6px; text-transform: none; letter-spacing: .01em; }
@@ -4672,12 +4682,12 @@
   function rigaPin(r) {
     var p = r._p, det = [];
     det.push("<p>" + esc(r.Lega || "") + "</p>");
-    if (num(r.Q1) != null) det.push("<p>Quote Pinnacle " + [r.Q1, r.QX, r.Q2].map(function (x) { return f2(num(x)); }).join(" · ") +
-      (num(r.Margine) != null ? " – margine " + f1(num(r.Margine)) + "%" : "") + "</p>");
-    if (p[0] != null) det.push("<p>Equa adesso: 1 " + f2(100 / p[0]) + " · X " + f2(100 / p[1]) + " · 2 " + f2(100 / p[2]) + "</p>");
+    if (num(r.Q1) != null) det.push("<p>Quote Pinnacle " + [r.Q1, r.QX, r.Q2].map(function (x) { return qv(x); }).join(" · ") +
+      (num(r.Margine) != null ? " – margine " + mv(r.Margine) : "") + "</p>");
+    if (p[0] != null) det.push("<p>Equa adesso: 1 " + qv(100 / p[0]) + " · X " + qv(100 / p[1]) + " · 2 " + qv(100 / p[2]) + "</p>");
     if (r._diff) det.push("<p>Dal mattino (" + esc(r._mattino || "") + "): " + diffHtml(r._diff) + " punti.</p>");
     else det.push("<p>Nessuna lettura del mattino per questa partita: il movimento si vede solo per oggi.</p>");
-    if (num(r.OU) != null && num(r["P Over"]) != null) det.push("<p>Linea Under/Over " + esc(r.OU) + ": Over " + f0(num(r["P Over"])) + "%</p>");
+    if (num(r.OU) != null && num(r["P Over"]) != null) det.push("<p>Linea Under/Over " + esc(r.OU) + ": Over " + pv(r["P Over"]) + "</p>");
     det.push(formazioneHtml(r._form));
     var mv = r._diff ? (r._diff["1X2".indexOf(r._segnoMov)] > 0 ? "+" : "") + f0(r._diff["1X2".indexOf(r._segnoMov)]) : "-";
     return '<div class="riga"><details><summary>' +
@@ -4740,7 +4750,7 @@
       var out = [];
       if (r) {
         var p = [num(r["P1 Shin"]), num(r["PX Shin"]), num(r["P2 Shin"])], mt = pinMattino(x.pro, data, id);
-        out.push("<p><b>Pinnacle adesso</b>: 1 " + f0(p[0]) + "% · X " + f0(p[1]) + "% · 2 " + f0(p[2]) + "%" +
+        out.push("<p><b>Pinnacle adesso</b>: 1 " + pv(p[0]) + " · X " + pv(p[1]) + " · 2 " + pv(p[2]) +
           (mt ? " – dal mattino (" + esc(mt[3] || "") + "): " + diffHtml([p[0] - mt[0], p[1] - mt[1], p[2] - mt[2]]) + " punti" : "") + "</p>");
       }
       out.push(formazioneHtml(x.form[String(id)]));
@@ -4931,7 +4941,7 @@
       .map(function (k) {
         var a = num(r[k[1]]), c = num(r[k[2]]), d = num(r[k[3]]);
         if (c == null) return "";
-        var t = k[0] + ": " + (a != null && a !== c ? a.toFixed(2) + " \u2192 " : "") + c.toFixed(2);
+        var t = k[0] + ": " + (a != null && a !== c ? a.toFixed(2) + " \u2192 " : "") + qv(c);
         return t + (d != null && d !== 0 ? " (" + (d > 0 ? "+" : "") + d.toFixed(0) + "%)" : "");
       }).filter(Boolean);
     var versi = ["1", "X", "2"].map(function (e) { return versoQuota(r, e); }).filter(Boolean);
@@ -5179,17 +5189,21 @@
   function conSegno(x) { return (x >= 0 ? "+" : "−") + Math.abs(x).toFixed(1); }
 
   // La probabilita' di mercato del segno, dalla scheda della partita.
+  // Pinnacle prima (100), poi AsianOdds dalla scheda.
   function conMercato(righe, data) {
     if (!Array.isArray(righe) || !righe.length) return Promise.resolve(righe);
-    return leggi("scheda_" + data + ".json").catch(function () { return null; }).then(function (s) {
-      if (!s || !s.alias) return righe;
-      var per = {};
-      (s.partite || []).forEach(function (p) { per[p.id] = p; });
+    return Promise.all([leggi("scheda_" + data + ".json").catch(function () { return null; }), caricaPinGlobale()]).then(function (a) {
+      var s = a[0], per = {};
+      if (s) (s.partite || []).forEach(function (p) { per[p.id] = p; });
       return righe.map(function (r) {
-        var p = per[s.alias["consensus|" + r.Casa + "|" + r.Ospite]];
-        var m = p && p.Mercato;
-        if (!m) return r;
         var segno = String(r["Pron Combinato"] || "").toUpperCase();
+        var pin = pinDi(r.Casa, r.Ospite, r.Ora), m = null, da = "";
+        if (pin) { m = pin; da = "Pinnacle"; }
+        else {
+          var p = s && s.alias ? per[s.alias["consensus|" + r.Casa + "|" + r.Ospite]] : null;
+          if (p && p.Mercato) { m = p.Mercato; da = "AsianOdds"; }
+        }
+        if (!m) return r;
         var t = {};
         ["1", "X", "2"].forEach(function (e) {
           var v = num(m["P" + e + " Shin"]);
@@ -5198,7 +5212,7 @@
         if (t[segno] == null) return r;
         var o = {};
         for (var k in r) o[k] = r[k];
-        o._pm = t[segno]; o._pm3 = t; o._marg = num(m.Margine);
+        o._pm = t[segno]; o._pm3 = t; o._marg = num(m.Margine); o._da = da;
         return o;
       });
     });
@@ -5209,7 +5223,7 @@
     var h = rigaAccordo(r);
     var mk = r._pm != null
       ? '<div class="sel">Mercato <b>' + f0(r._pm) + "%</b> sul " + esc(segno) + " · quota equa <b>" + f2(100 / r._pm) + "</b></div>"
-      : '<div class="sel" style="color:var(--tenue)">Prezzo di mercato non ancora uscito (AsianOdds copre le 24 ore prima)</div>';
+      : '<div class="sel" style="color:var(--tenue)">Prezzo di mercato non ancora uscito</div>';
     h = h.replace('<div class="sel">', mk + '<div class="sel">');
     if (r.Gol_Casa != null && r.Gol_Ospite != null) {
       var gc = num(r.Gol_Casa), go = num(r.Gol_Ospite);
@@ -5221,7 +5235,7 @@
     }
     if (r._pm3) {
       var t = r._pm3;
-      h = h.replace('<div class="dettaglio">', '<div class="dettaglio"><p>Mercato AsianOdds, margine tolto: 1 ' + f0(t["1"]) +
+      h = h.replace('<div class="dettaglio">', '<div class="dettaglio"><p>Mercato ' + esc(r._da || "AsianOdds") + ', margine tolto: 1 ' + f0(t["1"]) +
         "% · X " + f0(t["X"]) + "% · 2 " + f0(t["2"]) + "%" +
         (r._marg != null ? " (margine " + f1(r._marg) + "%)" : "") + ". Quota equa del " + esc(segno) + ": " +
         f2(100 / r._pm) + "; il bookmaker paga meno, del suo margine.</p>");
@@ -6039,6 +6053,10 @@
   // IL MERCATO DA PINNACLE (98). Probabilita' Shin, quote, linea gol e lo
   // spostamento dal mattino; sotto, se c'e', AsianOdds in breve col suo
   // movimento, che Pinnacle qui non ha (si legge da stamattina).
+  function qv(v) { return '<span class="q">' + f2(num(v)) + "</span>"; }
+  function pv(v) { return '<span class="q">' + f0(num(v)) + "%</span>"; }
+  function mv(v) { return '<span class="q">' + f1(num(v)) + "%</span>"; }
+  function nv(v) { return '<span class="q">' + f1(num(v)) + "</span>"; }
   function mercatoPinnacle(p, a) {
     var r = p.Pin, h = "";
     var pr = [num(r["P1 Shin"]), num(r["PX Shin"]), num(r["P2 Shin"])];
@@ -6051,21 +6069,21 @@
     else if (mt) h += "<p>Ferma dal mattino (" + esc(mt[3] || "") + ").</p>";
     var q = [["1", r.Q1], ["X", r.QX], ["2", r.Q2]].filter(function (x) { return num(x[1]) != null; });
     var marg = num(r.Margine), fid = fiducia(marg);
-    if (q.length) h += "<p>Quote: " + q.map(function (x) { return x[0] + " " + f2(num(x[1])); }).join(" · ") +
-      (marg != null ? " (margine " + f1(marg) + "%)" : "") + "</p>";
+    if (q.length) h += "<p>Quote: " + q.map(function (x) { return x[0] + " " + qv(x[1]); }).join(" · ") +
+      (marg != null ? " (margine " + mv(marg) + ")" : "") + "</p>";
     var L = num(r.OU), po = num(r["P Over"]), pg = num(r["P Gol"]);
     var gg = [];
-    if (L != null && po != null) gg.push("Over " + L + " " + f0(po) + "%");
-    if (pg != null) gg.push("Gol " + f0(pg) + "%");
+    if (L != null && po != null) gg.push("Over " + L + " " + pv(po));
+    if (pg != null) gg.push("Gol " + pv(pg));
     if (gg.length) h += "<p>" + gg.join(" · ") + "</p>";
-    if (fid) h += "<p>Margine del book " + f1(marg) + "%: " + fid[1] + ".</p>";
+    if (fid) h += "<p>Margine del book " + mv(marg) + ": " + fid[1] + ".</p>";
     if (a) {
       var s = [num(a["P1 Shin"]), num(a["PX Shin"]), num(a["P2 Shin"])];
       if (s[0] == null) s = [num(a.P1), num(a.PX), num(a.P2)];
       if (s[0] != null) {
         var ma = num(a.Margine);
-        h += "<p>AsianOdds: 1 " + f0(s[0]) + "% · X " + f0(s[1]) + "% · 2 " + f0(s[2]) + "%" + (ma != null ? " (margine " + f1(ma) + "%)" : "") +
-          (num(a.Mov) ? "; " + (a.Notevole ? "movimento notevole" : "movimento") + " di " + f1(num(a.Mov)) + " punti dall'apertura" : "") + ".</p>";
+        h += "<p>AsianOdds: 1 " + pv(s[0]) + " · X " + pv(s[1]) + " · 2 " + pv(s[2]) + (ma != null ? " (margine " + mv(ma) + ")" : "") +
+          (num(a.Mov) ? "; " + (a.Notevole ? "movimento notevole" : "movimento") + " di " + nv(a.Mov) + " punti dall'apertura" : "") + ".</p>";
       }
     }
     // "Aggiornato" e' l'orario di API-Football, in UTC: qui in ora di Roma.
@@ -6090,7 +6108,7 @@
     if (a) {
       var ap = apertura(a), marg = num(a.Margine), fid = fiducia(marg);
       var pp = oraComeApertura(a), vm = num(a.Mov) ? versoMercato(a) : null;
-      if (num(a.Mov)) h += "<p><b>" + (a.Notevole ? "Movimento notevole" : "Movimento") + " di " + f1(num(a.Mov)) + " punti" +
+      if (num(a.Mov)) h += "<p><b>" + (a.Notevole ? "Movimento notevole" : "Movimento") + " di " + nv(a.Mov) + " punti" +
         (vm ? " " + esc(vm.testo) : "") + "</b></p>";
       h += (ap && num(a.Mov) && pp ? tripla("apertura", ap[0], ap[1], ap[2]) + tripla("ora", pp[0], pp[1], pp[2])
         : tripla("ora", m["1"], m.X, m["2"])) + legenda();
@@ -6100,7 +6118,7 @@
       var aa = num(a["AH Apre"]), ah = num(a.AH);
       var sg = function (x) { return (x > 0 ? "+" : "") + x.toFixed(2); };
       if (ah != null) h += "<p>Handicap asiatico " + (aa != null && aa !== ah ? sg(aa) + " → " : "") + sg(ah) + ".</p>";
-      if (fid) h += "<p>Margine del book " + f1(marg) + "%: " + fid[1] + ".</p>";
+      if (fid) h += "<p>Margine del book " + mv(marg) + ": " + fid[1] + ".</p>";
       var chip = [];
       if (a.Notevole) chip.push('<span class="scarto-grosso">movimento notevole</span>');
       if (a.Affidabile) chip.push('<span class="chip">affidabile</span>');
@@ -6110,11 +6128,11 @@
       var or = num(f.Overround);
       h += tripla("migliori", m["1"], m.X, m["2"]) + legenda();
       var q = [["1", f.Q1], ["X", f.QX], ["2", f.Q2]].filter(function (x) { return num(x[1]) != null; });
-      if (q.length) h += "<p>Quote migliori: " + q.map(function (x) { return x[0] + " " + f2(num(x[1])); }).join(" · ") + "</p>";
+      if (q.length) h += "<p>Quote migliori: " + q.map(function (x) { return x[0] + " " + qv(x[1]); }).join(" · ") + "</p>";
       var due = [["Over 2.5", f.Q_O25, f.Q_U25], ["Over 1.5", f.Q_O15, f.Q_U15], ["Gol", f.Q_GG, f.Q_NG]].map(function (x) {
         var s = num(x[1]), n = num(x[2]);
         if (!s || !n || s <= 1 || n <= 1) return null;
-        return x[0] + " " + f0(100 * (1 / s) / (1 / s + 1 / n)) + "%";
+        return x[0] + " " + pv(100 * (1 / s) / (1 / s + 1 / n));
       }).filter(Boolean);
       if (due.length) h += "<p>" + due.join(" · ") + "</p>";
       h += '<p class="piccolo">Migliori quote fra più book, senza margine. Pinnacle e AsianOdds non ci sono ancora.</p>';
@@ -6146,7 +6164,7 @@
     }).join("");
     var nota = [];
     if (righeSchedaPrezzi.some(function (r) { return r.InSchedina === "si"; })) nota.push("★ = nella schedina del giorno");
-    if (fid) nota.push("margine " + f1(marg) + "%, " + fid[1]);
+    if (fid) nota.push("margine " + mv(marg) + ", " + fid[1]);
     if (num(P.Gol_attesi) != null) nota.push("gol attesi " + f2(num(P.Gol_attesi)) + (P.Linea_OU != null ? " (linea " + esc(P.Linea_OU) + ")" : ""));
     nota.push("da " + esc(P.Fonte || "?"));
     return h + '<p class="piccolo">' + nota.join(" · ") + ". La tacca segna il 60%.</p></div>";
@@ -6713,6 +6731,87 @@
       aggiornaLive();
     }).catch(function () { /* il ponte non risponde: niente live, il resto va */ });
   }
+  // ------------------------------------------------------------ PINNACLE
+  // IL TIMBRO "PINNACLE" (100) accanto all'ora di ogni partita che ha le
+  // quote Pinnacle, in tutte le viste. Si leggono pinnacle_<data>.json e
+  // partite_api_<data>.json da ieri a fra tre giorni (quelli che Pinnacle
+  // copre). La partita si riconosce come nelle schede: col numero di
+  // API-Football dalla mappa dei nomi, oppure, con prudenza, con stessa ora
+  // (entro 20 minuti) e nomi uguali o uno dentro l'altro, e una sola
+  // candidata. Nel dubbio niente timbro.
+  var PIN_G = { perNome: {}, lista: [], pronto: null };
+  function caricaPinGlobale() {
+    if (PIN_G.pronto) return PIN_G.pronto;
+    var giorni = [-1, 0, 1, 2, 3].map(giornoRoma), t = Math.floor(Date.now() / 600000);
+    PIN_G.pronto = Promise.all(giorni.map(function (d) {
+      return Promise.all([
+        leggiUrl(BASE + "pinnacle_" + d + ".json?t=" + t, "pinnacle_" + d).catch(function () { return null; }),
+        leggi("partite_api_" + d + ".json").catch(function () { return null; })
+      ]);
+    })).then(function (a) {
+      a.forEach(function (x) {
+        var lista = Array.isArray(x[0]) ? x[0] : [], mappa = x[1] && typeof x[1] === "object" ? x[1] : {};
+        var perId = {};
+        lista.forEach(function (r) {
+          if (!r || r.ID_API == null) return;
+          perId[String(r.ID_API)] = r;
+          PIN_G.lista.push(r);
+          PIN_G.perNome[(r.Casa || "") + "|" + (r.Ospite || "")] = r;
+        });
+        for (var k in mappa) { var r = perId[String(mappa[k])]; if (r) PIN_G.perNome[k] = r; }
+      });
+      return PIN_G;
+    });
+    return PIN_G.pronto;
+  }
+  function pinDi(casa, osp, ora) {
+    var r = PIN_G.perNome[(casa || "") + "|" + (osp || "")];
+    if (r) return r;
+    var min = function (t) { var m = /(\d{1,2}):(\d{2})/.exec(t || ""); return m ? +m[1] * 60 + +m[2] : null; };
+    var mo = min(ora);
+    if (mo == null) return null;
+    var pulisci = function (t) { return String(t || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]/g, ""); };
+    var simile = function (a, b) { a = pulisci(a); b = pulisci(b); return a.length >= 3 && b.length >= 3 && (a === b || a.indexOf(b) >= 0 || b.indexOf(a) >= 0); };
+    var cand = PIN_G.lista.filter(function (y) {
+      var my = min(y.Ora);
+      return my != null && Math.abs(mo - my) <= 20 && simile(casa, y.Casa) && simile(osp, y.Ospite);
+    });
+    return cand.length === 1 ? cand[0] : null;
+  }
+  function timbroPin(r) {
+    var p = [num(r["P1 Shin"]), num(r["PX Shin"]), num(r["P2 Shin"])];
+    var t = "Quote Pinnacle" + (p[0] != null ? ": 1 " + f0(p[0]) + "% \u00b7 X " + f0(p[1]) + "% \u00b7 2 " + f0(p[2]) + "%" : "") +
+      (num(r.Margine) != null ? " (margine " + f1(num(r.Margine)) + "%)" : "");
+    return '<span class="timbro-pin" title="' + esc(t) + '">Pinnacle</span>';
+  }
+  function timbraPinnacle() {
+    if (stato.sez === "pin") return;          // in Mosse Pinnacle lo sono tutte
+    $cont.querySelectorAll("[data-lc]").forEach(function (el) {
+      var riga = el.closest(".riga") || el.closest(".scheda");
+      var alto = riga ? riga.querySelector(".alto") : null;
+      if (!alto || alto.querySelector(".timbro-pin") || alto.dataset.pinVisto === el.getAttribute("data-lc")) return;
+      alto.dataset.pinVisto = el.getAttribute("data-lc");
+      var k = el.getAttribute("data-lc").split("|"), ora = "";
+      Array.prototype.some.call(alto.children, function (c) { if (/^\s*\d{1,2}:\d{2}\s*$/.test(c.textContent)) { ora = c.textContent; return true; } return false; });
+      var r = pinDi(k[0], k.slice(1).join("|"), ora);
+      if (!r) return;
+      var span = document.createElement("span");
+      span.innerHTML = timbroPin(r);
+      var t = span.firstChild, primo = alto.firstElementChild;
+      if (primo && primo.nextSibling) alto.insertBefore(t, primo.nextSibling); else alto.appendChild(t);
+    });
+  }
+  function avviaTimbri() {
+    caricaPinGlobale().then(function () {
+      timbraPinnacle();
+      var attesa = null;
+      new MutationObserver(function () {
+        if (attesa) return;
+        attesa = setTimeout(function () { attesa = null; timbraPinnacle(); }, 200);
+      }).observe($cont, { childList: true, subtree: true });
+    });
+  }
+
   function avviaLive() {
     if (!URL_LIVE) return;
     // Le mappe di ieri (partite dopo mezzanotte), oggi e domani.
@@ -6767,6 +6866,7 @@
   leggiHash();
   disegna();
   avviaLive();
+  avviaTimbri();
   leggi("footystatswdw_index.json").then(function (ix) {
     if (!ix || !Array.isArray(ix.date) || !ix.date.length) return;
     WDW_PRONTO = true;
