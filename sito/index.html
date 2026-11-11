@@ -1293,7 +1293,16 @@
     border-radius: 50%; background: #fff; animation: livePulsa 1.4s ease-in-out infinite;
   }
   @keyframes livePulsa { 50% { opacity: .25; } }
-  @media (prefers-reduced-motion: reduce) { .live::before { animation: none; } }
+  /* Gol da meno di cinque minuti: la pillola si accende per qualche minuto. */
+  .live.fresco { box-shadow: 0 0 0 2px var(--evidenza); animation: liveGol 1.2s ease-in-out 3; }
+  @keyframes liveGol { 50% { box-shadow: 0 0 0 5px var(--evidenza-tenue, rgba(94,168,255,.35)); } }
+  @media (prefers-reduced-motion: reduce) { .live::before, .live.fresco { animation: none; } }
+  /* Il live nelle giocate in attesa. */
+  .reg-live:empty { display: none; }
+  .reg-live .live { margin-left: 6px; text-transform: none; letter-spacing: .01em; }
+  .reg-live .ora-si, .reg-live .ora-no { text-transform: none; white-space: nowrap; }
+  .reg-live .ora-si { color: var(--evidenza); font-weight: 700; }
+  .reg-live .ora-no { color: #d1342f; font-weight: 700; }
   /* CONDIVIDI LA MULTIPLA. I canali stanno in una fila che va a capo. */
   .multipla .m-azioni { display: flex; gap: 8px; margin-top: 8px; }
   .multipla button.primo { border-color: var(--evidenza); color: var(--evidenza); background: var(--evidenza-tenue); }
@@ -1620,7 +1629,7 @@
   ];
   var MK_ORDINI = [["file", "Per orario"], ["mov", "Per movimento"], ["margine", "Per margine"]];
   var GRUPPO_PRONOSTICI_TUTTI = [["prezzi", "Probabilit\u00e0 senza margine"], ["mercato", "Mercato"], ["wdw", "FootyStats"],
-                                 ["sm", "Sports Mole"], ["fp", "FootballPark"]];
+                                 ["sm", "Sports Mole"], ["fp", "FootballPark"], ["pin", "Mosse Pinnacle"]];
   // Il tasto FootyStats compare solo quando i dati ci sono davvero
   // (footystatswdw_index.json con almeno una data): finche' FootyStats
   // rifiuta i server di GitHub, un tasto che porta a una pagina vuota
@@ -1633,12 +1642,15 @@
   var HP_PRONTO = false;
   // E per FootballPark: footballpark_index.json con almeno una data.
   var FP_PRONTO = false;
+  // E per le Mosse Pinnacle: pinnacle_index.json con almeno una data.
+  var PIN_PRONTO = false;
   function gruppoPronostici(sez) {
     return GRUPPO_PRONOSTICI_TUTTI.filter(function (g) {
       if (g[0] === "wdw") return WDW_PRONTO || sez === "wdw";
       if (g[0] === "sm") return SM_PRONTO || sez === "sm";
       if (g[0] === "hp") return HP_PRONTO || sez === "hp";
       if (g[0] === "fp") return FP_PRONTO || sez === "fp";
+      if (g[0] === "pin") return PIN_PRONTO || sez === "pin";
       return true;
     });
   }
@@ -1707,6 +1719,19 @@
     ["sel", "Treble e top tip", "La multipla del giorno (Daily Treble) e i top tip del sito, con la quota e la probabilit\u00e0 che il sito d\u00e0 a ogni evento."]
   ];
   var FP_ORDINI = [["ora", "Per orario"], ["prob", "Per probabilit\u00e0"], ["paese", "Per campionato"]];
+
+  // MOSSE PINNACLE (11/11, piano PRO di API-Football). pinnacle_<data>.json
+  // lo riscrive ogni ora pinnacle.yml; apifootball_pro.json tiene la prima
+  // lettura del giorno di ogni partita. Il movimento e' la differenza in
+  // punti fra adesso e il mattino, segno per segno: quando Pinnacle si
+  // muove molto vicino al via sono arrivate notizie o soldi informati.
+  var PIN_VISTE = [
+    ["mosse", "Si sono mosse",
+     "Le partite di oggi che Pinnacle ha mosso di almeno 2 punti dalla prima lettura del mattino, dalla pi\u00f9 mossa. " +
+     "Un movimento forte vicino al via vuol dire notizie (formazioni, infortuni) o soldi informati: guarda se il tuo book si \u00e8 gi\u00e0 adeguato."],
+    ["tutte", "Tutte", "Tutte le partite con la quota Pinnacle, con la probabilit\u00e0 senza margine di adesso."]
+  ];
+  var PIN_ORDINI = [["mov", "Per movimento"], ["ora", "Per orario"], ["paese", "Per campionato"]];
   // Gli xG delle squadre stanno dentro "Poisson": sono i numeri da cui il
   // Poisson parte, e la barra in alto non ha posto per un'altra voce.
   var GRUPPO_POISSON = [["poisson", "Partite"], ["xg", "xG squadre"]];
@@ -1717,9 +1742,9 @@
 
   var stato = {
     sez: "prezzi",
-    data: { prezzi: null, mercato: null, consensus: null, accordo: null, poisson: null, sure: null, wdw: null, sm: null, hp: null, fp: null },
-    vista: { wdw: "tutte", sm: "tutte", hp: "tutte", fp: "tutte", prezzi: "partite", mercato: "aff", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" },
-    ordine: { wdw: "prob", sm: "prob", hp: "ora", fp: "ora", prezzi: "ora", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" },
+    data: { prezzi: null, mercato: null, consensus: null, accordo: null, poisson: null, sure: null, wdw: null, sm: null, hp: null, fp: null, pin: null },
+    vista: { wdw: "tutte", sm: "tutte", hp: "tutte", fp: "tutte", pin: "mosse", prezzi: "partite", mercato: "aff", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" },
+    ordine: { wdw: "prob", sm: "prob", hp: "ora", fp: "ora", pin: "mov", prezzi: "ora", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" },
     cerca: "",
     fonteCm: "",
     esito: "",
@@ -1812,6 +1837,8 @@
           tiene: hpTiene, riepilogo: riepilogoHp, riga: rigaHp, arricchisci: arricchisciHp, nota: "" },
     fp: { indice: "footballpark_index.json", prefisso: "footballpark_", viste: FP_VISTE, ordini: FP_ORDINI,
           tiene: fpTiene, riepilogo: riepilogoFp, riga: rigaFp, arricchisci: arricchisciFp, nota: "" },
+    pin: { indice: "pinnacle_index.json", prefisso: "pinnacle_", viste: PIN_VISTE, ordini: PIN_ORDINI,
+           tiene: pinTiene, riepilogo: riepilogoPin, riga: rigaPin, arricchisci: arricchisciPin, nota: "" },
     sure: { indice: "fpnet_index.json", prefisso: "fpnet_", viste: SB_VISTE, ordini: SB_ORDINI,
             tiene: sbTiene, riepilogo: riepilogoSure, riga: rigaSure, arricchisci: arricchisciSure,
             nota: " \u00b7 la tacca sulle barre segna il 60%" }
@@ -1905,7 +1932,7 @@
   function disegna() {
     scriviHash();
     document.querySelectorAll("nav.sezioni button[data-sez]").forEach(function (b) {
-      var accesa = stato.sez === "accordo" ? "consensus" : (stato.sez === "mercato" || stato.sez === "wdw" || stato.sez === "sm" || stato.sez === "hp" || stato.sez === "fp") ? "prezzi" :
+      var accesa = stato.sez === "accordo" ? "consensus" : (stato.sez === "mercato" || stato.sez === "wdw" || stato.sez === "sm" || stato.sez === "hp" || stato.sez === "fp" || stato.sez === "pin") ? "prezzi" :
         stato.sez === "xg" ? "poisson" : stato.sez;
       b.setAttribute("aria-current", String(b.dataset.sez === accesa));
     });
@@ -1987,7 +2014,7 @@
 
       var vista = viste.filter(function (v) { return v[0] === stato.vista[sez]; })[0];
       var testa = (sez === "consensus" || sez === "accordo" ? chipsHtml(GRUPPO_CONSENSO, sez, "data-gruppo") : "") +
-        (sez === "prezzi" || sez === "mercato" || sez === "wdw" || sez === "sm" || sez === "hp" || sez === "fp" ? chipsHtml(gruppoPronostici(sez), sez, "data-gruppo") : "") +
+        (sez === "prezzi" || sez === "mercato" || sez === "wdw" || sez === "sm" || sez === "hp" || sez === "fp" || sez === "pin" ? chipsHtml(gruppoPronostici(sez), sez, "data-gruppo") : "") +
         (sez === "poisson" ? chipsHtml(GRUPPO_POISSON, sez, "data-gruppo") : "") +
         chipsHtml(date.map(function (x) { return [x, etichettaData(x)]; }), d, "data-data") +
         (viste.length > 1 ? chipsHtml(viste, vista[0], "data-vista") : "") +
@@ -2007,9 +2034,9 @@
         disegnaRighe(sez, righe, d);
       });
     }).catch(function (e) {
-      if (sez === "wdw" || sez === "sm" || sez === "hp" || sez === "fp") {
+      if (sez === "wdw" || sez === "sm" || sez === "hp" || sez === "fp" || sez === "pin") {
         // Prima del primo giro l'indice non c'e': non e' un guasto.
-        var chi = sez === "sm" ? "Sports Mole" : sez === "hp" ? "HeroPredict" : sez === "fp" ? "FootballPark" : "FootyStats";
+        var chi = sez === "sm" ? "Sports Mole" : sez === "hp" ? "HeroPredict" : sez === "fp" ? "FootballPark" : sez === "pin" ? "Pinnacle" : "FootyStats";
         $cont.innerHTML = chipsHtml(gruppoPronostici(sez), sez, "data-gruppo") +
           messaggio("vuoto", chi + " non \u00e8 ancora stato pubblicato: arriva col giro notturno. " +
             "Se non compare nemmeno domani, il motivo \u00e8 nel log del passo \u201cScarica " + chi + "\u201d su GitHub Actions.");
@@ -2279,7 +2306,8 @@
           '<div class="sel">' + (inSch ? "In schedina: " : "Proposta: ") + esc(etichettaSel(top)) +
           " · " + f0(num(top.Prob)) + "%" + (scelte_ ? " · " + scelte_ + " nella multipla" : "") + "</div>" +
           '</div><div class="numero"><b>' + g.length + "</b><span>" + (g.length === 1 ? "probabilità" : "probabilità") + "</span></div></summary>" +
-          '<div class="dentro-partita">' + dentro +
+          '<div class="dentro-partita">' +
+          '<div class="info-api" data-casa="' + esc(r0.Casa || "") + '" data-ospite="' + esc(r0.Ospite || "") + '" data-ora="' + esc(r0.Ora || "") + '" data-id="' + esc(r0.ID_API || "") + '"></div>' + dentro +
           (r0.Casa && r0.Ospite ? '<p class="aggancio" data-alias="' + esc(aliasDi(sez, r0)) + '"></p>' : "") +
           "</div></details></div>";
       }).join("") + "</div>";
@@ -2293,7 +2321,7 @@
     if (a) a.addEventListener("click", function () { stato.limite += PASSO; ridisegnaRighe(); });
     // Il link alla scheda si riempie quando si apre la partita.
     $r.querySelectorAll(".partitona > details").forEach(function (det) {
-      det.addEventListener("toggle", function () { if (det.open) riempiAggancio(det, data); });
+      det.addEventListener("toggle", function () { if (det.open) { riempiAggancio(det, data); riempiInfoApi(det, data); } });
     });
     $r.querySelectorAll("[data-esito]").forEach(function (b) {
       b.addEventListener("click", function () {
@@ -2569,6 +2597,7 @@
       if (vista === "wesay") return "Nessuna delle " + n + " partite del " + data + " ha la preview con il We say. Prova \u201cTutte\u201d.";
       return "Nessuna delle " + n + " partite del " + data + " ha una favorita sopra il 60%. Prova \u201cTutte\u201d.";
     }
+    if (sez === "pin") return "Nessuna delle " + n + " partite del " + data + " si \u00e8 mossa di 2 punti dal mattino. Prova \u201cTutte\u201d.";
     if (sez === "fp") {
       if (vista === "fav") return "Nessuna delle " + n + " partite del " + data + " ha il segno del sito sopra il 60%. Prova \u201cTutte le partite\u201d.";
       if (vista === "gol") return "Nessuna delle " + n + " partite del " + data + " ha le percentuali Over o Gol: il sito le d\u00e0 per oggi e per le partite con la scheda. Prova \u201cTutte le partite\u201d.";
@@ -2828,8 +2857,8 @@
         "): AsianOdds non ha ancora questa partita, copre solo le prossime 24 ore.</p>");
     }
     if (r.Fonte === "Pinnacle") {
-      det.push("<p>Prezzo da Pinnacle (via API-Football): AsianOdds non ha questa partita. " +
-        "Sulle partite che hanno tutte e due, le probabilit\u00e0 differiscono di 1-2 punti.</p>");
+      det.push("<p>Prezzo da Pinnacle (via API-Football), il book di riferimento dei professionisti: " +
+        "\u00e8 la fonte principale dell\u2019Equa, AsianOdds riempie le partite che Pinnacle non quota.</p>");
     }
     if (r.Fonte === "FootyMetrics") {
       det.push("<p>Prezzo da FootyMetrics: AsianOdds copre solo le prossime 24 ore. " +
@@ -3553,6 +3582,7 @@
     Promise.all([caricaChiusure(), Promise.all(reg.map(function (g) { return Promise.all(g.eventi.map(risolviEvento)); }))]).then(function (aa) {
       if (stato.sez !== "giocate") return;
       var ch = aa[0], tutti = aa[1];
+      REG_LIVE = [];
       var righe = reg.map(function (g, i) { var st = statoGiocata(g, tutti[i]); return { g: g, es: tutti[i], st: st, resa: resaGiocata(g, st), cl: clvGiocata(g, ch) }; })
         .sort(function (a, b) { return a.g.creata < b.g.creata ? 1 : -1; });
       var puntato = 0, saldo = 0, finite = 0, vinte = 0, pesoV = 0, sommaV = 0, atteso = 0, puntFin = 0;
@@ -3605,11 +3635,17 @@
     var g = x.g, et = REG_ETICHETTE[x.st] || ["", x.st];
     var v = g.equa ? g.quota / g.equa - 1 : null;
     var quando = String(g.creata || "").slice(0, 10);
+    // Gli eventi ancora senza esito prendono un posto per il live
+    // (data-lg, riempito da aggiornaLive): vuoto finche' non sono in corso.
+    var lg = [];
     var eventi = g.eventi.map(function (e, i) {
       var r = x.es[i], seg = r && r.esito === "presa" ? " ✓" : r && r.esito === "sbagliata" ? " ✗" : r && r.esito === "rimborso" ? " (rimb.)" : "";
+      var vivo = "";
+      if (!(r && r.esito) && !g.manuale) { REG_LIVE.push(e); lg.push(REG_LIVE.length - 1); vivo = '<span class="reg-live" data-lg="' + (REG_LIVE.length - 1) + '"></span>'; }
       return "<li>" + esc(e.Data || "") + " " + esc(e.Ora || "") + " · " + esc(e.Partita || "") + " · <b>" + esc(e.Sel || "") + "</b>" +
-        (e.Equa != null ? " · Equa " + f2(num(e.Equa)) : "") + (r && r.gol ? " · " + esc(r.gol) : "") + seg + "</li>";
+        (e.Equa != null ? " · Equa " + f2(num(e.Equa)) : "") + (r && r.gol ? " · " + esc(r.gol) : "") + seg + vivo + "</li>";
     }).join("");
+    var vivoTot = x.st === "attesa" && lg.length ? '<span class="reg-live" data-lgs="' + lg.join(",") + '"></span>' : "";
     var segna = '<p class="m-azioni reg-segna">' +
       (g.manuale ? '<button type="button" data-segna="auto" data-id="' + esc(g.id) + '">Esito automatico</button>' :
         '<button type="button" data-segna="vinta" data-id="' + esc(g.id) + '">Segna vinta</button>' +
@@ -3619,7 +3655,7 @@
     return '<div class="riga"><details><summary>' +
       '<span class="segno">' + (g.tipo === "multipla" ? g.eventi.length : "1") + "</span>" +
       '<div class="corpo"><div class="alto"><span><b>' + (g.tipo === "multipla" ? "Multipla" : "Singola") + "</b></span>" +
-      '<span class="pill ' + et[0] + '">' + et[1] + (g.manuale ? " (a mano)" : "") + "</span><span>" + esc(quando) + "</span></div>" +
+      '<span class="pill ' + et[0] + '">' + et[1] + (g.manuale ? " (a mano)" : "") + "</span>" + vivoTot + "<span>" + esc(quando) + "</span></div>" +
       '<div class="partita">' + esc(g.eventi.map(function (e) { return e.Partita + " " + e.Sel; }).join(" · ")) + "</div>" +
       '<div class="sel">quota <b>' + g.quota.toFixed(2) + "</b> · Equa " + (g.equa ? g.equa.toFixed(2) : "-") + " · " + euro(g.importo) +
       " " + valoreHtml(v) + "</div></div>" +
@@ -4564,6 +4600,145 @@
       "</summary>" +
       '<div class="dettaglio">' + det.join("") + "</div>" +
       "</details></div>";
+  }
+
+  // ------------------------------------------------- Mosse Pinnacle
+  //
+  // Formazioni e prima lettura del mattino: dai file di pinnacle.yml.
+  // apifootball_pro.json e' piccolo e si rilegge a ogni apertura (cambia
+  // ogni ora); formazioni_<data>.json lo stesso.
+  function pinExtra(data) {
+    return Promise.all([
+      leggiUrl(BASE + "apifootball_pro.json?t=" + Math.floor(Date.now() / 600000), "apifootball_pro.json").catch(function () { return null; }),
+      leggiUrl(BASE + "formazioni_" + data + ".json?t=" + Math.floor(Date.now() / 600000), "formazioni").catch(function () { return null; })
+    ]).then(function (a) { return { pro: a[0] || {}, form: a[1] || {} }; });
+  }
+  function pinMattino(pro, data, id) {
+    var m = pro && pro.mattino;
+    if (!m || m.data !== data || !m.p) return null;
+    var v = m.p[String(id)];
+    return Array.isArray(v) && v.length >= 3 ? v : null;
+  }
+  function arricchisciPin(righe, data) {
+    return pinExtra(data).then(function (x) {
+      return (Array.isArray(righe) ? righe : []).map(function (r) {
+        var p = [num(r["P1 Shin"]), num(r["PX Shin"]), num(r["P2 Shin"])];
+        var mt = pinMattino(x.pro, data, r.ID_API);
+        var d = mt ? [p[0] - mt[0], p[1] - mt[1], p[2] - mt[2]] : null;
+        var i = d ? [0, 1, 2].reduce(function (a, b) { return Math.abs(d[b]) > Math.abs(d[a]) ? b : a; }, 0) : null;
+        var top = p.indexOf(Math.max.apply(null, p.map(function (v) { return v == null ? -1 : v; })));
+        return Object.assign({}, r, {
+          Segno: "1X2"[top], _prob: p[top] != null ? p[top] / 100 : null, _p: p,
+          _diff: d, _mattino: mt ? mt[3] : null, Mov: d ? Math.abs(d[i]) : 0, _segnoMov: i != null ? "1X2"[i] : "",
+          _form: x.form[String(r.ID_API)] || null
+        });
+      });
+    });
+  }
+  function pinTiene(r, tipo) {
+    if (tipo === "mosse") return r.Mov >= 2;
+    return true;
+  }
+  function riepilogoPin(v) {
+    var mosse = v.filter(function (r) { return r.Mov >= 2; });
+    var forti = v.filter(function (r) { return r.Mov >= 4; });
+    var marg = mediana(v.map(function (r) { return num(r.Margine); }));
+    return tessere([
+      [String(v.length), "partite in questa vista"],
+      [String(mosse.length) + (forti.length ? " / " + forti.length : ""), "mosse di 2 punti" + (forti.length ? " / di 4 o più" : "")],
+      [marg == null ? "-" : f1(marg) + "%", "margine mediano"]
+    ]);
+  }
+  function diffHtml(d) {
+    if (!d) return "";
+    return ["1", "X", "2"].map(function (s, i) {
+      var v = d[i], t = (v > 0 ? "+" : "") + f0(v);
+      return Math.abs(v) >= 2 ? "<b>" + s + " " + t + "</b>" : s + " " + t;
+    }).join(" · ");
+  }
+  function formazioneHtml(f) {
+    if (!f) return "";
+    var out = [];
+    if (Array.isArray(f.assenti) && f.assenti.length) out.push("<p><b>Assenti</b> (infortunati e squalificati): " + esc(f.assenti.join(", ")) + "</p>");
+    if (f.titolari && typeof f.titolari === "object") {
+      Object.keys(f.titolari).forEach(function (sq) {
+        var t = f.titolari[sq] || {};
+        if (!t.titolari || !t.titolari.length) return;
+        out.push('<p><b>' + esc(sq) + "</b>" + (t.modulo ? " (" + esc(t.modulo) + ")" : "") + ': <span class="piccolo">' + esc(t.titolari.join(", ")) + "</span></p>");
+      });
+    }
+    return out.join("");
+  }
+  function rigaPin(r) {
+    var p = r._p, det = [];
+    det.push("<p>" + esc(r.Lega || "") + "</p>");
+    if (num(r.Q1) != null) det.push("<p>Quote Pinnacle " + [r.Q1, r.QX, r.Q2].map(function (x) { return f2(num(x)); }).join(" · ") +
+      (num(r.Margine) != null ? " – margine " + f1(num(r.Margine)) + "%" : "") + "</p>");
+    if (p[0] != null) det.push("<p>Equa adesso: 1 " + f2(100 / p[0]) + " · X " + f2(100 / p[1]) + " · 2 " + f2(100 / p[2]) + "</p>");
+    if (r._diff) det.push("<p>Dal mattino (" + esc(r._mattino || "") + "): " + diffHtml(r._diff) + " punti.</p>");
+    else det.push("<p>Nessuna lettura del mattino per questa partita: il movimento si vede solo per oggi.</p>");
+    if (num(r.OU) != null && num(r["P Over"]) != null) det.push("<p>Linea Under/Over " + esc(r.OU) + ": Over " + f0(num(r["P Over"])) + "%</p>");
+    det.push(formazioneHtml(r._form));
+    var mv = r._diff ? (r._diff["1X2".indexOf(r._segnoMov)] > 0 ? "+" : "") + f0(r._diff["1X2".indexOf(r._segnoMov)]) : "-";
+    return '<div class="riga"><details><summary>' +
+      '<span class="segno">' + esc(r._segnoMov || r.Segno || "?") + "</span>" +
+      '<div class="corpo">' +
+      '<div class="alto">' + (r.Ora ? "<span><b>" + esc(r.Ora) + "</b></span>" : "") +
+        (r.Lega ? '<span class="chip">' + esc(r.Lega) + "</span>" : "") +
+        (r._form && r._form.titolari ? '<span class="pill stretto">formazioni</span>' : "") +
+        (r._form && r._form.assenti && r._form.assenti.length ? '<span class="pill largo">' + r._form.assenti.length + " assenti</span>" : "") + "</div>" +
+      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" +
+      (r._diff ? '<div class="sel">dal mattino ' + diffHtml(r._diff) + "</div>" : "") +
+      tripla("Pinnacle adesso", p[0], p[1], p[2]) +
+      "</div>" +
+      '<div class="numero"><b>' + esc(mv) + "</b><span>punti sul " + esc(r._segnoMov || "-") + "</span></div>" +
+      "</summary>" +
+      '<div class="dettaglio">' + det.join("") + "</div>" +
+      "</details></div>";
+  }
+
+  // NELLA SCHEDA DI OGNI PARTITA dei Pronostici: Pinnacle adesso e dal
+  // mattino, assenti e formazioni. Il numero della partita viene dalla riga
+  // (ID_API, righe Pinnacle) o da partite_api_<data>.json.
+  function riempiInfoApi(det, data) {
+    var box = det.querySelector(".info-api");
+    if (!box || box.dataset.fatto) return;
+    box.dataset.fatto = "1";
+    var casa = box.dataset.casa, osp = box.dataset.ospite, idr = box.dataset.id, ora = box.dataset.ora;
+    Promise.all([
+      pinExtra(data),
+      leggi("partite_api_" + data + ".json").catch(function () { return null; }),
+      leggiUrl(BASE + "pinnacle_" + data + ".json?t=" + Math.floor(Date.now() / 600000), "pinnacle_" + data).catch(function () { return null; })
+    ]).then(function (a) {
+      var x = a[0], mappa = a[1] || {}, pin = a[2] || [];
+      var lista = Array.isArray(pin) ? pin : [];
+      var id = idr || mappa[casa + "|" + osp];
+      // ULTIMA STRADA, PRUDENTE: stessa ora (entro 20 minuti) e nomi uguali
+      // o uno dentro l'altro per TUTTE E DUE le squadre, e una sola
+      // candidata. Nel dubbio niente: meglio nessun riquadro che quello di
+      // un'altra partita.
+      if (!id) {
+        var pulisci = function (t) { return String(t || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]/g, ""); };
+        var simile = function (a, b) { a = pulisci(a); b = pulisci(b); return a.length >= 3 && b.length >= 3 && (a === b || a.indexOf(b) >= 0 || b.indexOf(a) >= 0); };
+        var min = function (t) { var m = /(\d{1,2}):(\d{2})/.exec(t || ""); return m ? +m[1] * 60 + +m[2] : null; };
+        var mo = min(ora);
+        var cand = lista.filter(function (y) {
+          var my = min(y.Ora);
+          return mo != null && my != null && Math.abs(mo - my) <= 20 && simile(casa, y.Casa) && simile(osp, y.Ospite);
+        });
+        if (cand.length === 1) id = cand[0].ID_API;
+      }
+      if (!id) return;
+      var r = lista.filter(function (y) { return String(y.ID_API) === String(id); })[0];
+      var out = [];
+      if (r) {
+        var p = [num(r["P1 Shin"]), num(r["PX Shin"]), num(r["P2 Shin"])], mt = pinMattino(x.pro, data, id);
+        out.push("<p><b>Pinnacle adesso</b>: 1 " + f0(p[0]) + "% · X " + f0(p[1]) + "% · 2 " + f0(p[2]) + "%" +
+          (mt ? " – dal mattino (" + esc(mt[3] || "") + "): " + diffHtml([p[0] - mt[0], p[1] - mt[1], p[2] - mt[2]]) + " punti" : "") + "</p>");
+      }
+      out.push(formazioneHtml(x.form[String(id)]));
+      box.innerHTML = out.join("");
+    });
   }
 
   // ------------------------------------------------- aggancio al mercato
@@ -6300,9 +6475,9 @@
   function vaiHome(e) {
     if (e) e.preventDefault();
     stato.sez = "prezzi";
-    stato.data = { prezzi: null, mercato: null, consensus: null, accordo: null, poisson: null, sure: null, wdw: null, sm: null, hp: null, fp: null };
-    stato.vista = { wdw: "tutte", sm: "tutte", hp: "tutte", fp: "tutte", prezzi: "partite", mercato: "aff", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" };
-    stato.ordine = { wdw: "prob", sm: "prob", hp: "ora", fp: "ora", prezzi: "ora", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" };
+    stato.data = { prezzi: null, mercato: null, consensus: null, accordo: null, poisson: null, sure: null, wdw: null, sm: null, hp: null, fp: null, pin: null };
+    stato.vista = { wdw: "tutte", sm: "tutte", hp: "tutte", fp: "tutte", pin: "mosse", prezzi: "partite", mercato: "aff", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" };
+    stato.ordine = { wdw: "prob", sm: "prob", hp: "ora", fp: "ora", pin: "mov", prezzi: "ora", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" };
     stato.cerca = "";
     stato.fonteCm = "";
     stato.esito = "";
@@ -6321,8 +6496,10 @@
   // Il punteggio delle partite in corso, accanto ai nomi, ovunque.
   //
   // DA DOVE ARRIVA: dal ponte su Cloudflare (worker.js), che tiene la chiave
-  // di API-Football e chiede le partite in corso ogni 30 minuti. Il sito
-  // legge l'ultima risposta salvata: le visite non consumano richieste.
+  // di API-Football e chiede le partite in corso ogni 3 minuti col piano
+  // PRO (ogni 30 minuti, dalle 12 all'1:30, col piano gratuito), con i gol
+  // e gli espulsi. Il sito legge l'ultima risposta salvata: le visite non
+  // consumano richieste.
   // COME SI AGGANCIA: partite_api_<data>.json (scritto da apifootball.py)
   // dice, per ogni "Casa|Ospite" come lo scrivono i nostri file, il numero
   // della partita in API-Football; la risposta del ponte porta lo stesso
@@ -6330,6 +6507,7 @@
   // URL_LIVE vuoto = live spenti, il sito resta come prima.
   var URL_LIVE = "https://caltiki-live.caltiki.workers.dev";
   var MAPPA_LIVE = {}, DATI_LIVE = null, LIVE_ORA = "";
+  var REG_LIVE = [];             // gli eventi del registro, per indice (data-lg)
   var IN_CORSO = { "1H": 1, "2H": 1, "HT": 1, "ET": 1, "BT": 1, "P": 1, "LIVE": 1, "INT": 1, "SUSP": 1 };
   function giornoRoma(delta) {
     var t = new Date(Date.now() + delta * 86400000);
@@ -6337,13 +6515,69 @@
       return new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Rome", year: "numeric", month: "2-digit", day: "2-digit" }).format(t);
     } catch (e) { return t.toISOString().slice(0, 10); }
   }
+  // I gol del ponte si mostrano solo se tornano col punteggio (un gol
+  // annullato dal VAR che API-Football non ha ancora tolto, per esempio,
+  // li farebbe sbagliare): meglio niente che un minuto sbagliato.
+  function golLive(x) {
+    var n = (num(x.gc) || 0) + (num(x.go) || 0);
+    return Array.isArray(x.gol) && x.gol.length && x.gol.length === n ? x.gol : null;
+  }
+  function inDieci(x) {
+    var c = num(x.rc) || 0, o = num(x.ro) || 0;
+    if (c && o) return (11 - c) + " contro " + (11 - o);
+    if (c) return "casa in " + (11 - c);
+    if (o) return "ospite in " + (11 - o);
+    return "";
+  }
   function testoLive(x) {
     var g = (x.gc == null ? "-" : x.gc) + "\u2013" + (x.go == null ? "-" : x.go);
-    if (x.stato === "HT") return "intervallo " + g;
-    if (x.stato === "BT") return "pausa " + g;
-    if (x.stato === "P") return "rigori " + g;
-    if (x.stato === "INT" || x.stato === "SUSP") return "sospesa " + g;
-    return (x.min != null ? x.min + (x.extra ? "+" + x.extra : "") + "\u2032 " : "") + g;
+    var t;
+    if (x.stato === "HT") t = "intervallo " + g;
+    else if (x.stato === "BT") t = "pausa " + g;
+    else if (x.stato === "P") t = "rigori " + g;
+    else if (x.stato === "INT" || x.stato === "SUSP") t = "sospesa " + g;
+    else t = (x.min != null ? x.min + (x.extra ? "+" + x.extra : "") + "\u2032 " : "") + g;
+    var gl = golLive(x), r = inDieci(x);
+    if (gl) t += " \u00b7 gol " + gl[gl.length - 1].m + "\u2032";
+    if (r) t += " \u00b7 " + r;
+    return t;
+  }
+  // Il gol e' di meno di cinque minuti fa (minuti di gioco)?
+  function golFresco(x) {
+    var gl = golLive(x);
+    if (!gl || x.min == null || x.stato === "HT" || x.stato === "BT") return false;
+    var m = parseInt(String(gl[gl.length - 1].m), 10);
+    return isFinite(m) && x.min - m >= 0 && x.min - m < 5;
+  }
+  function titoloLive(x) {
+    var t = "In corso" + (LIVE_ORA ? " \u00b7 aggiornato alle " + LIVE_ORA : "");
+    var gl = golLive(x);
+    if (gl) t += "\nGol: " + gl.map(function (g) {
+      return g.m + "\u2032 " + (g.g || "?") + (g.t === "rig" ? " (rigore)" : g.t === "aut" ? " (autogol)" : "");
+    }).join(", ");
+    var c = num(x.rc) || 0, o = num(x.ro) || 0;
+    if (c || o) t += "\nEspulsi: " + (x.casa || "casa") + " " + c + ", " + (x.ospite || "ospite") + " " + o;
+    return t;
+  }
+  function pillolaLive(x) {
+    return '<span class="live' + (golFresco(x) ? " fresco" : "") + '" title="' + esc(titoloLive(x)) + '">' + esc(testoLive(x)) + "</span>";
+  }
+  // La partita in corso di un evento del registro: col numero di
+  // API-Football se l'evento l'ha (righe Pinnacle), altrimenti con la mappa.
+  function liveDiEvento(e) {
+    if (!DATI_LIVE || !e) return null;
+    var id = e.ID_API != null && e.ID_API !== "" ? e.ID_API : MAPPA_LIVE[(e.Casa || "") + "|" + (e.Ospite || "")];
+    var x = id != null ? DATI_LIVE[id] : null;
+    return x && IN_CORSO[x.stato] ? x : null;
+  }
+  // "per ora" col punteggio di adesso: le stesse regole dell'esito finale.
+  function perOra(e, x) {
+    var pz = partiEvento(e), gc = num(x.gc), go = num(x.go);
+    if (!pz || gc == null || go == null) return "";
+    var es_ = pz.map(function (p) { return giustoJs(p, gc, go); });
+    if (es_.some(function (v) { return v === false; })) return ' <span class="ora-no">per ora \u2717</span>';
+    if (es_.every(function (v) { return v === true; })) return ' <span class="ora-si">per ora \u2713</span>';
+    return "";
   }
   function aggiornaLive() {
     if (!DATI_LIVE) return;
@@ -6355,11 +6589,33 @@
       if (!x || !IN_CORSO[x.stato]) { if (pill) pill.remove(); return; }
       if (!pill) {
         pill = document.createElement("span");
-        pill.className = "live";
         box.appendChild(pill);
       }
-      pill.textContent = testoLive(x);
-      pill.title = "In corso" + (LIVE_ORA ? " \u00b7 aggiornato alle " + LIVE_ORA : "");
+      pill.className = "live" + (golFresco(x) ? " fresco" : "");
+      var t = testoLive(x), ti = titoloLive(x);
+      if (pill.textContent !== t) pill.textContent = t;
+      if (pill.title !== ti) pill.title = ti;
+    });
+    // Le giocate in attesa: il punteggio di ogni evento in corso e, nel
+    // riassunto, quello della singola o quanti eventi della multipla sono
+    // in corso. Si riscrive solo se e' cambiato (il MutationObserver
+    // richiama questa funzione a ogni modifica della pagina).
+    $cont.querySelectorAll("[data-lg]").forEach(function (el) {
+      var e = REG_LIVE[+el.getAttribute("data-lg")], x = liveDiEvento(e);
+      var h = x ? pillolaLive(x) + perOra(e, x) : "";
+      if (el.innerHTML !== h) el.innerHTML = h;
+    });
+    $cont.querySelectorAll("[data-lgs]").forEach(function (el) {
+      var ev = String(el.getAttribute("data-lgs")).split(",").map(function (k) { return REG_LIVE[+k]; });
+      var vivi = ev.map(function (e) { return { e: e, x: liveDiEvento(e) }; }).filter(function (v) { return v.x; });
+      var h = "";
+      if (vivi.length === 1 && ev.length === 1) h = pillolaLive(vivi[0].x) + perOra(vivi[0].e, vivi[0].x);
+      else if (vivi.length) {
+        var no = vivi.filter(function (v) { return perOra(v.e, v.x).indexOf("ora-no") >= 0; }).length;
+        h = '<span class="live">' + vivi.length + (vivi.length === 1 ? " in corso" : " in corso") + "</span>" +
+          (no ? ' <span class="ora-no">per ora ' + no + " \u2717</span>" : "");
+      }
+      if (el.innerHTML !== h) el.innerHTML = h;
     });
   }
   function caricaLive() {
@@ -6389,8 +6645,8 @@
       if (attesa) return;
       attesa = setTimeout(function () { attesa = null; aggiornaLive(); }, 150);
     }).observe($cont, { childList: true, subtree: true });
-    // Il ponte si aggiorna ogni 30 minuti: rileggerlo ogni 2 basta.
-    setInterval(function () { if (!document.hidden) caricaLive(); }, 120000);
+    // Il ponte si aggiorna ogni 3 minuti: rileggerlo ogni minuto basta.
+    setInterval(function () { if (!document.hidden) caricaLive(); }, 60000);
     document.addEventListener("visibilitychange", function () { if (!document.hidden) caricaLive(); });
   }
 
@@ -6469,6 +6725,24 @@
   // HeroPredict tolto l'11/11: ripete il mercato (tip = quota piu' corta
   // del book) e il job non gira piu'. La sezione resta nel codice ma senza
   // tasto; lo storico e' su gh-data.
+  // Mosse Pinnacle: stessa regola.
+  leggi("pinnacle_index.json").then(function (ix) {
+    if (!ix || !Array.isArray(ix.date) || !ix.date.length) return;
+    PIN_PRONTO = true;
+    if (stato.sez === "prezzi" || stato.sez === "mercato" || stato.sez === "wdw" || stato.sez === "sm" || stato.sez === "fp") {
+      var m = $cont.querySelector('[data-gruppo="mercato"]');
+      if (m && !$cont.querySelector('[data-gruppo="pin"]')) {
+        var sez = stato.sez;
+        var b = document.createElement("button");
+        b.type = "button"; b.setAttribute("data-gruppo", "pin"); b.setAttribute("aria-pressed", "false");
+        b.textContent = "Mosse Pinnacle";
+        b.addEventListener("click", function () {
+          stato.sez = "pin"; stato.cerca = ""; stato.limite = PASSO; disegna();
+        });
+        inserisciInOrdine(m.parentNode, b);
+      }
+    }
+  }, function () { /* nessun dato: il tasto resta nascosto */ });
   // FootballPark: stessa regola.
   leggi("footballpark_index.json").then(function (ix) {
     if (!ix || !Array.isArray(ix.date) || !ix.date.length) return;
