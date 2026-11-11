@@ -1311,6 +1311,28 @@
   /* Le date prima di ieri, sotto il tasto "Giorni precedenti" (108). */
   .chips.giorni-vecchi { margin-top: -4px; }
   .chips.giorni-vecchi[hidden] { display: none; }
+  /* PARTITE LIVE (111). */
+  .lv-riga { display: flex; gap: 12px; align-items: center; padding: 12px 14px; background: var(--scheda);
+    border: 1px solid var(--bordo); border-radius: var(--raggio); box-shadow: var(--ombra); margin-bottom: 10px; }
+  .lv-riga .corpo { flex: 1; min-width: 0; }
+  .lv-riga .alto { font-size: .75rem; color: var(--tenue); display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 4px; }
+  .lv-riga .alto .live { margin-left: 0; }
+  .lv-riga .squadre { font-weight: 600; font-size: .98rem; }
+  .lv-riga .info { font-size: .85rem; color: var(--tenue); margin-top: 3px; }
+  .lv-riga .info b { color: var(--testo); }
+  .lv-ris { font-family: var(--titoli, inherit); font-weight: 800; font-size: 1.6rem; white-space: nowrap; letter-spacing: .02em; }
+  .lv-gruppo { margin: 18px 0 8px; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--tenue); font-weight: 700; }
+  .lv-altre summary { cursor: pointer; font-weight: 700; margin: 18px 0 8px; }
+  .lv-lega { font-size: .78rem; color: var(--tenue); margin: 12px 0 4px; font-weight: 600; }
+  .lv-mini { display: grid; grid-template-columns: 64px 1fr auto; gap: 8px; padding: 6px 10px; border-bottom: 1px solid var(--bordo); font-size: .9rem; align-items: center; }
+  .lv-mini .m { color: #d1342f; font-weight: 700; font-size: .8rem; }
+  .lv-mini .r { font-weight: 800; white-space: nowrap; }
+  /* La fonte della quota nelle righe dei prezzi (112). */
+  .fonte-q { display: inline-block; padding: 1px 6px; border: 1px solid #5ea8ff; border-radius: 3px; color: #5ea8ff;
+    font-size: .66rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; }
+  .fonte-q.pin { border-color: #f5b301; color: #f5b301; }
+  :root[data-theme="light"] .fonte-q { border-color: #0b4a86; color: #0b4a86; }
+  :root[data-theme="light"] .fonte-q.pin { border-color: #a36b00; color: #a36b00; }
   /* IL TIMBRO PINNACLE (100): la partita ha le quote Pinnacle. */
   .timbro-pin {
     display: inline-block; padding: 1px 6px; border: 1.5px solid #f5b301; border-radius: 3px;
@@ -1472,6 +1494,7 @@
       </svg>
     </button>
     <button data-sez="prezzi">Pronostici</button>
+    <button data-sez="live" class="due">Partite<br>live</button>
     <button data-sez="consensus" class="due">Consenso<br>fonti</button>
     <button data-sez="best" class="due">Best<br>picks</button>
     <button data-sez="poisson">Poisson</button>
@@ -1609,12 +1632,12 @@
   // il conto di quando la sezione e' nata).
   var SB_VISTE = [
     ["tutte", "Tutte",
-     "Le Sure Bets di FootballPredictions, con accanto la quota equa del mercato. Misurate " +
+     "Le Sure Bets del giorno, con accanto la quota equa del mercato. Misurate " +
      "sull'archivio: la selezione del sito era il favorito del book in 147 casi su 147. " +
      "Il pronostico non aggiunge niente al prezzo, e il prezzo \u00e8 questo."],
     ["prezzo", "Con il prezzo",
-     "Solo quelle che hanno il prezzo del mercato. AsianOdds copre le prossime 24 ore: " +
-     "per i giorni dopo questa vista resta vuota, ed \u00e8 normale."]
+     "Solo quelle che hanno il prezzo del mercato, da Pinnacle o da AsianOdds. " +
+     "Le partite dei giorni dopo il prezzo lo prendono man mano che i book le quotano."]
   ];
   var SB_ORDINI = [["file", "Per orario"], ["prob", "Per probabilit\u00e0"]];
 
@@ -1791,6 +1814,7 @@
     }
     if (p[0] === "best") { stato.sez = "best"; return; }
     if (p[0] === "giocate") { stato.sez = "giocate"; return; }
+    if (p[0] === "live") { stato.sez = "live"; return; }
     if (p[0] === "xg") {
       stato.sez = "xg";
       try { XG.lega = p[1] ? decodeURIComponent(p[1]) : XG.lega; } catch (e) { /* resta quella che c'era */ }
@@ -1812,7 +1836,7 @@
     var h = stato.sez;
     if (stato.sez === "scheda") {
       h += "/" + (SCHEDA.data || "") + "/" + encodeURIComponent(SCHEDA.chiave || "");
-    } else if (stato.sez === "best" || stato.sez === "giocate") {
+    } else if (stato.sez === "best" || stato.sez === "giocate" || stato.sez === "live") {
       // una pagina sola, senza giornata: tiene sempre oggi e i giorni dopo
     } else if (stato.sez === "xg") {
       h += "/" + encodeURIComponent(XG.lega || "") + "/" + (XG.fonte || "");
@@ -1992,6 +2016,7 @@
     if (stato.sez === "xg") return disegnaXG();
     if (stato.sez === "best") return disegnaBest();
     if (stato.sez === "giocate") return disegnaGiocate();
+    if (stato.sez === "live") return disegnaPartiteLive();
     return disegnaGiornata(stato.sez);
   }
 
@@ -2641,7 +2666,7 @@
       if (vista === "mov") return "Nessun movimento notevole fra le " + n + " partite del " + data + ". Prova \u201cTutte\u201d.";
     }
     if (sez === "sure") {
-      return "Nessuna delle " + n + " Sure Bets del " + data + " ha il prezzo: AsianOdds copre le prossime 24 ore. Prova \u201cTutte\u201d.";
+      return "Nessuna delle " + n + " Sure Bets del " + data + " ha ancora il prezzo. Prova \u201cTutte\u201d.";
     }
     if (sez === "wdw") return "Nessuna delle " + n + " partite del " + data + " ha una favorita sopra il 60%. Prova \u201cTutte\u201d.";
     if (sez === "sm") {
@@ -2882,6 +2907,12 @@
     return [r.Data, r.Partita, r.Mercato, r.Sel].join("|");
   }
 
+  var NOMI_QUOTA = { Pinnacle: "Pinnacle", AsianOdds: "AsianOdds", OddsAPI: "Betfair", FootyMetrics: "più book" };
+  function fonteQuotaHtml(f) {
+    var n = NOMI_QUOTA[f];
+    if (!n) return "";
+    return '<span class="fonte-q' + (f === "Pinnacle" ? " pin" : "") + '" title="Quota e margine di ' + esc(n) + '">' + esc(n) + "</span>";
+  }
   function rigaPrezzo(r, i) {
     var prob = num(r.Prob), equa = num(r.Equa), marg = num(r.Margine);
     var linea = r.Linea_OU, gol = num(r.Gol_attesi), mov = num(r.Movimento);
@@ -2955,10 +2986,9 @@
       // Dentro la scheda della partita il punteggio sta gia' in testa.
       (gol && stato.vista.prezzi !== "partite" ? "<span><b>" + esc(gol) + "</b></span>" : "") +
       (r.Gruppo ? '<span class="chip">' + esc(r.Gruppo) + "</span>" : "") +
-      (r.Fonte === "Pinnacle" && stato.vista.prezzi !== "partite" && stato.vista.prezzi !== "stretto"
-        ? '<span class="chip">quota Pinnacle</span>' : "") +
-      (r.Fonte === "OddsAPI" && stato.vista.prezzi !== "partite" && stato.vista.prezzi !== "stretto"
-        ? '<span class="chip">quota Betfair</span>' : "") +
+      // DA DOVE VIENE LA QUOTA (112), accanto al margine: e' il margine di
+      // quel book. "più book" = la migliore fra piu' bookmaker.
+      fonteQuotaHtml(r.Fonte) +
       (fid ? '<span class="pill ' + fid[0] + '">margine ' + f1(marg) + "%</span>" : "") +
       "</div>" +
       '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, r.Partita, campiRiga(r)) + "</div>" +
@@ -4840,7 +4870,7 @@
   //
   // VERSIONE PRUDENTE DELL'AGGANCIO DI KODI, NON UNA COPIA.
   //
-  // Kodi riconosce la stessa partita fra FootballPredictions e AsianOdds
+  // Kodi riconosce la stessa partita fra le Sure Bets e AsianOdds
   // passando dagli stemmi: due squadre che prendono lo stesso stemma sono
   // la stessa squadra (_chiave_incontro / _riga_mercato in default.py).
   // Per trovare lo stemma usa loghi.json e, quando il nome esatto non c'e',
@@ -5593,9 +5623,6 @@
     } else if (esito) {
       det.push("<p>Nessun prezzo: né Pinnacle né AsianOdds quotano questa partita, oppure i nomi non combaciano abbastanza da esserne sicuri.</p>");
     }
-    if (/^https:\/\/(www\.)?footballpredictions\.net\//.test(String(r.Link || ""))) {
-      det.push('<p><a href="' + esc(r.Link) + '" target="_blank" rel="noopener noreferrer">Apri su FootballPredictions</a></p>');
-    }
 
     var sel = squadra ? "Vince " + esc(squadra) : esc(lista || "Sure Bet");
     return '<div class="riga' + (scelta ? " scelta" : "") + '">' +
@@ -6042,7 +6069,7 @@
     accordo: "Statarea + WebPronostici", consenso: "Consenso medio", statarea: "Statarea",
     wp_1x2: "WebPronostici", wp_ou: "WebPronostici", wp_ggng: "WebPronostici", wp_misti: "WebPronostici",
     webpronostici: "WebPronostici", betimate: "Betimate", xgaura: "xGaura", sportytrader: "Sportytrader",
-    soccersite: "SoccerSite", ratingbet: "RatingBet", fpnet: "FootballPredictions"
+    soccersite: "SoccerSite", ratingbet: "RatingBet", fpnet: "Sure Bets"
   };
   function nomeFonte(k) { return NOMI_SCHEDA[k] || k; }
 
@@ -6314,9 +6341,7 @@
   function bloccoSure(p) {
     if (!p.Sure || !p.Sure.length) return "";
     var t = p.Sure.map(function (r) { return esc(r.Lista || r.Sure || "Sure Bet"); }).join(" · ");
-    return '<div class="scheda"><h3>Sure Bet</h3><p>FootballPredictions la mette fra le Sure Bets: <b>' + t + "</b>.</p>" +
-      (p.SureLink ? '<p class="piccolo"><a href="' + esc(p.SureLink) + '" target="_blank" rel="noopener">La pagina della fonte ↗</a></p>' : "") +
-      "</div>";
+    return '<div class="scheda"><h3>Sure Bet</h3><p>È fra le Sure Bets del giorno: <b>' + t + "</b>.</p></div>";
   }
 
   function bloccoAltro(p) {
@@ -6812,6 +6837,114 @@
       aggiornaLive();
     }).catch(function () { /* il ponte non risponde: niente live, il resto va */ });
   }
+  // ------------------------------------------------------- PARTITE LIVE
+  // LA PAGINA DELLE PARTITE IN CORSO (111). Dal ponte: /tutte da' tutte le
+  // partite che API-Football segue in diretta, con n:1 sulle nostre (quelle
+  // dei file del sito). Se il ponte non ha ancora /tutte (worker vecchio)
+  // si usa /live, solo le nostre. Prima le nostre, una per riga, col
+  // Pinnacle di prima del via se c'e'; sotto, chiuse, tutte le altre per
+  // campionato. Si rilegge ogni minuto finche' si sta sulla pagina.
+  var LIVE_PAG = { dati: null, ora: "", cerca: "", altreAperte: false, timer: null };
+  function caricaTutteLive() {
+    var base = URL_LIVE.replace(/\/$/, "");
+    var prendi = function (u) { return fetch(base + u, { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); };
+    return prendi("/tutte").catch(function () { return prendi("/live"); });
+  }
+  function nostraLive(x) {
+    if (x.n) return true;
+    for (var k in MAPPA_LIVE) if (String(MAPPA_LIVE[k]) === String(x.id)) return true;
+    return false;
+  }
+  function golTesto(x) {
+    var gl = golLive(x);
+    if (!gl) return "";
+    return gl.map(function (g) {
+      var chi = g.s === "c" ? x.casa : g.s === "o" ? x.ospite : "";
+      return g.m + "\u2032 " + esc(g.g || "?") + (g.t === "rig" ? " (rig.)" : g.t === "aut" ? " (aut.)" : "") + (chi && g.t !== "aut" ? " \u2013 " + esc(chi) : "");
+    }).join(" \u00b7 ");
+  }
+  function rigaLive(x) {
+    var pin = PIN_G.perId[String(x.id)];
+    var info = [];
+    var gt = golTesto(x);
+    if (gt) info.push("<div class=\"info\">Gol: " + gt + "</div>");
+    var rr = inDieci(x);
+    if (rr) info.push("<div class=\"info\">Espulsioni: <b>" + esc(rr) + "</b></div>");
+    if (pin) {
+      var pp = [num(pin["P1 Shin"]), num(pin["PX Shin"]), num(pin["P2 Shin"])];
+      info.push("<div class=\"info\">Pinnacle prima del via: 1 " + qv(pin.Q1) + " · X " + qv(pin.QX) + " · 2 " + qv(pin.Q2) +
+        (pp[0] != null ? " (1 " + pv(pp[0]) + " · X " + pv(pp[1]) + " · 2 " + pv(pp[2]) + ")" : "") + "</div>");
+    }
+    var g = (x.gc == null ? "-" : x.gc) + "\u2013" + (x.go == null ? "-" : x.go);
+    var pill = '<span class="live' + (golFresco(x) ? " fresco" : "") + '" title="' + esc(titoloLive(x)) + '">' + esc(minutoLive(x)) + "</span>";
+    return '<div class="lv-riga"><div class="corpo"><div class="alto">' + pill +
+      (pin ? timbroPin(pin) : "") +
+      ((x.paese || x.lega) ? '<span class="chip">' + esc([x.paese, x.lega].filter(Boolean).join(" \u00b7 ")) + "</span>" : "") + "</div>" +
+      '<div class="squadre">' + logo(x.casa, false, x.lega) + esc(x.casa) + " \u2013 " + logo(x.ospite, false, x.lega) + esc(x.ospite) + "</div>" +
+      info.join("") + '</div><div class="lv-ris">' + esc(g) + "</div></div>";
+  }
+  function minutoLive(x) {
+    if (x.stato === "HT") return "intervallo";
+    if (x.stato === "BT") return "pausa";
+    if (x.stato === "P") return "rigori";
+    if (x.stato === "INT" || x.stato === "SUSP") return "sospesa";
+    return x.min != null ? x.min + (x.extra ? "+" + x.extra : "") + "\u2032" : x.stato;
+  }
+  function disegnaListaLive() {
+    var $l = document.getElementById("live-lista");
+    if (!$l || !LIVE_PAG.dati) return;
+    var q = LIVE_PAG.cerca.trim().toLowerCase();
+    var tiene = function (x) { return !q || [x.casa, x.ospite, x.lega, x.paese].join(" ").toLowerCase().indexOf(q) >= 0; };
+    var tutte = (LIVE_PAG.dati.partite || []).filter(function (x) { return x && IN_CORSO[x.stato] && tiene(x); });
+    var perInizio = function (a, b) { return String(a.inizio || "").localeCompare(String(b.inizio || "")) || String(a.casa).localeCompare(String(b.casa)); };
+    var nostre = tutte.filter(nostraLive).sort(perInizio);
+    var altre = tutte.filter(function (x) { return !nostraLive(x); });
+    var h = '<p class="conta">' + nostre.length + (nostre.length === 1 ? " nostra partita" : " nostre partite") + " in corso" +
+      (LIVE_PAG.dati.partite && LIVE_PAG.dati.partite.some(function (x) { return "lega" in x; }) ? " · " + altre.length + " altre" : "") +
+      (LIVE_PAG.ora ? " · aggiornato alle " + esc(LIVE_PAG.ora) : "") + "</p>";
+    h += nostre.length ? nostre.map(rigaLive).join("") : messaggio("vuoto", q ? "Nessuna delle nostre partite in corso corrisponde alla ricerca." : "Nessuna delle partite del sito è in corso adesso.");
+    if (altre.length) {
+      var gruppi = {};
+      altre.forEach(function (x) { var k = [x.paese, x.lega].filter(Boolean).join(" \u00b7 ") || "Altro"; (gruppi[k] = gruppi[k] || []).push(x); });
+      h += '<details class="lv-altre"' + (LIVE_PAG.altreAperte || q ? " open" : "") + "><summary>Tutte le altre partite in corso (" + altre.length + ")</summary>" +
+        Object.keys(gruppi).sort().map(function (k) {
+          return '<div class="lv-lega">' + esc(k) + "</div>" + gruppi[k].sort(perInizio).map(function (x) {
+            return '<div class="lv-mini"><span class="m">' + esc(minutoLive(x)) + "</span><span>" + esc(x.casa) + " \u2013 " + esc(x.ospite) +
+              (inDieci(x) ? ' <small style="color:var(--tenue)">(' + esc(inDieci(x)) + ")</small>" : "") + '</span><span class="r">' +
+              esc((x.gc == null ? "-" : x.gc) + "\u2013" + (x.go == null ? "-" : x.go)) + "</span></div>";
+          }).join("");
+        }).join("") + "</details>";
+    }
+    $l.innerHTML = h;
+    var d = $l.querySelector(".lv-altre");
+    if (d) d.addEventListener("toggle", function () { LIVE_PAG.altreAperte = d.open; });
+  }
+  function aggiornaPaginaLive() {
+    return Promise.all([caricaTutteLive(), caricaPinGlobale().catch(function () { return null; })]).then(function (a) {
+      var d = a[0];
+      if (!d || !Array.isArray(d.partite)) throw new Error("dati");
+      LIVE_PAG.dati = d;
+      LIVE_PAG.ora = d.aggiornato ? new Date(d.aggiornato).toLocaleTimeString("it-IT", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Rome" }) : "";
+      if (stato.sez === "live") disegnaListaLive();
+    });
+  }
+  function disegnaPartiteLive() {
+    document.getElementById("aggiornato").textContent = "Le partite in corso adesso";
+    $cont.innerHTML = '<h2 class="reg-tit">Partite live</h2>' +
+      '<p class="descr">Le partite in corso, aggiornate ogni pochi minuti: prima quelle del sito, poi tutte le altre che si possono seguire in diretta. ' +
+      "Alcuni campionati minori non sono seguiti in diretta e il risultato arriva solo a fine partita.</p>" +
+      '<div class="strumenti"><input type="search" id="cerca-live" placeholder="Squadra o campionato" value="' + esc(LIVE_PAG.cerca) + '" autocomplete="off"></div>' +
+      '<div id="live-lista">' + messaggio("vuoto", "Carico&hellip;") + "</div>";
+    document.getElementById("cerca-live").addEventListener("input", function (e) { LIVE_PAG.cerca = e.target.value; disegnaListaLive(); });
+    aggiornaPaginaLive().catch(function () {
+      var $l = document.getElementById("live-lista");
+      if ($l) $l.innerHTML = messaggio("errore", "Il ponte dei live non risponde. Riprova fra qualche minuto.");
+    });
+    if (!LIVE_PAG.timer) LIVE_PAG.timer = setInterval(function () {
+      if (stato.sez === "live" && !document.hidden) aggiornaPaginaLive().catch(function () {});
+    }, 60000);
+  }
+
   // ------------------------------------------------------------ PINNACLE
   // IL TIMBRO "PINNACLE" (100) accanto all'ora di ogni partita che ha le
   // quote Pinnacle, in tutte le viste. Si leggono pinnacle_<data>.json e
@@ -6820,7 +6953,7 @@
   // API-Football dalla mappa dei nomi, oppure, con prudenza, con stessa ora
   // (entro 20 minuti) e nomi uguali o uno dentro l'altro, e una sola
   // candidata. Nel dubbio niente timbro.
-  var PIN_G = { perNome: {}, lista: [], pronto: null };
+  var PIN_G = { perNome: {}, perId: {}, lista: [], pronto: null };
   function caricaPinGlobale() {
     if (PIN_G.pronto) return PIN_G.pronto;
     var giorni = [-1, 0, 1, 2, 3].map(giornoRoma), t = Math.floor(Date.now() / 600000);
@@ -6836,6 +6969,7 @@
         lista.forEach(function (r) {
           if (!r || r.ID_API == null) return;
           perId[String(r.ID_API)] = r;
+          PIN_G.perId[String(r.ID_API)] = r;
           PIN_G.lista.push(r);
           PIN_G.perNome[(r.Casa || "") + "|" + (r.Ospite || "")] = r;
         });
