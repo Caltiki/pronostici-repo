@@ -6270,6 +6270,7 @@
         if (stato.sez !== "scheda" || SCHEDA.data !== d || SCHEDA.chiave !== al) return;
         p.Pin = t && t.r ? t.r : null;
         p.PinX = t ? t.x : null;
+        p.PinId = t ? t.id : null;
         p.PinData = d;
         disegnaSchedaPartita(p, d);
       });
@@ -6285,9 +6286,20 @@
       else vaiHome();
     });
   }
+  // ASSENTI E FORMAZIONI (99), gli stessi delle card dei Pronostici:
+  // assenti delle partite di oggi (ogni sei ore), formazioni entro 75
+  // minuti dal via. Per le partite di oggi senza dati, una riga corta.
+  function bloccoFormazioni(p, d) {
+    var f = p.PinX && p.PinId != null ? (p.PinX.form || {})[String(p.PinId)] : null;
+    var h = formazioneHtml(f);
+    if (!h && (d !== oggi() || p.PinId == null)) return "";
+    return '<div class="scheda"><h3>Assenti e formazioni</h3>' +
+      (h || '<p class="piccolo">Ancora niente: gli assenti arrivano in giornata, le formazioni un’ora prima del via.</p>') + "</div>";
+  }
+
   function disegnaSchedaPartita(p, d) {
     var m = mercatoScheda(p);
-    $cont.innerHTML = testaScheda(p, d) + bloccoMercato(p, m) + bloccoPrezzi(p, d) + bloccoPoisson(p) +
+    $cont.innerHTML = testaScheda(p, d) + bloccoMercato(p, m) + bloccoFormazioni(p, d) + bloccoPrezzi(p, d) + bloccoPoisson(p) +
       bloccoFonti(p, m) + bloccoSure(p) + bloccoAltro(p) + piedeScheda(p);
     $cont.querySelectorAll("input[data-sp]").forEach(function (cb) {
       cb.addEventListener("change", function () {
