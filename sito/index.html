@@ -2007,6 +2007,22 @@
       }).join("") + "</select></div>";
   }
 
+  // L'ORA IN ALTO DICE DI CHE COSA (117): ogni sezione ha i suoi dati e il
+  // suo ritmo, e passando dall'una all'altra l'ora sembrava tornare
+  // indietro. "Statarea + WebPronostici · aggiornato oggi alle 00:29".
+  var NOMI_AGG = { prezzi: "Prezzi", mercato: "AsianOdds", consensus: "Media delle fonti",
+    accordo: "Statarea + WebPronostici", poisson: "Poisson", sure: "Quote", pin: "Pinnacle",
+    sm: "Sports Mole", fp: "FootballPark", wdw: "FootyStats", hp: "HeroPredict" };
+  function testoAggiornato(nome, t) {
+    var m = /^(\d{4}-\d{2}-\d{2})[ T](\d{2}:\d{2})/.exec(String(t || ""));
+    var quando;
+    if (!m) quando = "aggiornato: ?";
+    else {
+      var g = m[1] === oggi() ? "oggi" : m[1] === giornoRoma(-1) ? "ieri" : "il " + m[1].slice(8, 10) + "/" + m[1].slice(5, 7);
+      quando = "aggiornato " + g + " alle " + m[2];
+    }
+    return (nome ? nome + " \u00b7 " : "") + quando;
+  }
   function disegna() {
     scriviHash();
     document.querySelectorAll("nav.sezioni button[data-sez]").forEach(function (b) {
@@ -2096,8 +2112,7 @@
         });
         date.sort();
       }
-      document.getElementById("aggiornato").textContent =
-        "Aggiornato il " + (ix.updated || "?");
+      document.getElementById("aggiornato").textContent = testoAggiornato(NOMI_AGG[sez] || "", ix.updated);
       if (!date.length) {
         $cont.innerHTML = messaggio("vuoto", "Nessuna giornata pubblicata.");
         return;
@@ -5438,7 +5453,7 @@
       if (stato.sez !== "best") return;
       var ix = a[0], o = oggi();
       var date = (ix.date || []).filter(function (x) { return x >= o; }).sort();
-      document.getElementById("aggiornato").textContent = "Aggiornato il " + (ix.updated || "?");
+      document.getElementById("aggiornato").textContent = testoAggiornato("Best picks", ix.updated);
       var tutto = a[2] ? misuraSecchi(a[2], null) : null;
       var ultimi = a[2] ? misuraSecchi(a[2], giornoRoma(-14)) : null;
       var testa = '<p class="descr">I segni secchi (1, X o 2) su cui Statarea e WebPronostici concordano, oggi e nei giorni dopo. ' +
@@ -6437,7 +6452,7 @@
       return;
     }
     leggi("scheda_index.json").then(function (ix) {
-      document.getElementById("aggiornato").textContent = "Aggiornato il " + (ix.aggiornato || "?");
+      document.getElementById("aggiornato").textContent = testoAggiornato("Scheda", ix.aggiornato);
     }).catch(function () {});
     Promise.all([leggi("scheda_" + d + ".json"), caricaLoghi()]).then(function (a) { return a[0]; }).then(function (s) {
       if (stato.sez !== "scheda" || SCHEDA.data !== d || SCHEDA.chiave !== al) return;
