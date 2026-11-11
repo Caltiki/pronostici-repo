@@ -1308,6 +1308,9 @@
   /* Il blocco Pinnacle nel dettaglio delle partite delle altre sezioni. */
   .pin-info { border-bottom: 1px dashed var(--bordo); margin-bottom: 8px; padding-bottom: 4px; }
   .pin-info:empty { display: none; }
+  /* Le date prima di ieri, sotto il tasto "Giorni precedenti" (108). */
+  .chips.giorni-vecchi { margin-top: -4px; }
+  .chips.giorni-vecchi[hidden] { display: none; }
   /* IL TIMBRO PINNACLE (100): la partita ha le quote Pinnacle. */
   .timbro-pin {
     display: inline-block; padding: 1px 6px; border: 1.5px solid #f5b301; border-radius: 3px;
@@ -1931,6 +1934,36 @@
     }
     fila.insertBefore(b, dopo);
   }
+  // LE DATE (108): ieri, oggi e i giorni dopo in fila; quelli prima di
+  // ieri sotto un tasto "Giorni precedenti" che apre una seconda fila, dal
+  // piu' recente. Se il giorno scelto e' fra quelli, il tasto ne porta il
+  // nome e la fila resta aperta.
+  var GIORNI_PREC_APERTI = false;
+  function chipsDateHtml(date, attivo, attr) {
+    var t = new Date(oggi() + "T12:00:00Z");
+    t.setUTCDate(t.getUTCDate() - 1);
+    var ieri = t.toISOString().slice(0, 10);
+    var vecchie = date.filter(function (d) { return d < ieri; }).sort().reverse();
+    var resto = date.filter(function (d) { return d >= ieri; });
+    if (!vecchie.length) return chipsHtml(date.map(function (x) { return [x, etichettaData(x)]; }), attivo, attr);
+    var scelta = vecchie.indexOf(attivo) >= 0, aperto = scelta || GIORNI_PREC_APERTI;
+    var tasto = '<button type="button" class="giorni-prec" aria-expanded="' + aperto + '" aria-pressed="' + scelta + '">' +
+      esc(scelta ? etichettaData(attivo) : "Giorni precedenti") + " \u25be</button>";
+    var fila = chipsHtml(resto.map(function (x) { return [x, etichettaData(x)]; }), attivo, attr).replace('role="group">', 'role="group">' + tasto);
+    var sotto = chipsHtml(vecchie.map(function (x) { return [x, etichettaData(x)]; }), attivo, attr)
+      .replace('<div class="chips"', '<div class="chips giorni-vecchi"' + (aperto ? "" : " hidden"));
+    return fila + sotto;
+  }
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest ? e.target.closest(".giorni-prec") : null;
+    if (!b) return;
+    var fila = b.parentNode && b.parentNode.nextElementSibling;
+    if (!fila || !fila.classList.contains("giorni-vecchi")) return;
+    var apri = fila.hidden;
+    fila.hidden = !apri;
+    b.setAttribute("aria-expanded", String(apri));
+    GIORNI_PREC_APERTI = apri;
+  });
   function chipsHtml(voci, attivo, attr) {
     return '<div class="chips" role="group">' + voci.map(function (v) {
       return '<button type="button" ' + attr + '="' + esc(v[0]) + '" aria-pressed="' +
@@ -2034,7 +2067,7 @@
       var testa = (sez === "consensus" || sez === "accordo" ? chipsHtml(GRUPPO_CONSENSO, sez, "data-gruppo") : "") +
         (sez === "prezzi" || sez === "mercato" || sez === "wdw" || sez === "sm" || sez === "hp" || sez === "fp" || sez === "pin" ? chipsHtml(gruppoPronostici(sez), sez, "data-gruppo") : "") +
         (sez === "poisson" ? chipsHtml(GRUPPO_POISSON, sez, "data-gruppo") : "") +
-        chipsHtml(date.map(function (x) { return [x, etichettaData(x)]; }), d, "data-data") +
+        chipsDateHtml(date, d, "data-data") +
         (viste.length > 1 ? chipsHtml(viste, vista[0], "data-vista") : "") +
         (vista[2] ? '<p class="descr">' + esc(vista[2]) + "</p>" : "") +
         (sez === "poisson" ? notaCampo(ix) : "") +
@@ -5482,10 +5515,12 @@
   // data. Se AsianOdds non ha il file (oltre le 24 ore) le righe restano
   // senza prezzo; se manca la mappa, idem: nessun prezzo e' meglio di un
   // prezzo agganciato a caso.
+  // PINNACLE PRIMA (109), come nei prezzi equi: se la partita ha le quote
+  // Pinnacle il prezzo e' quello; altrimenti AsianOdds come prima.
   function arricchisciSure(righe, data) {
     var mercato = leggi("asianodds_" + data + ".json").catch(function () { return null; });
     var loghi = leggiUrl(URL_LOGHI, "loghi.json").catch(function () { return null; });
-    return Promise.all([mercato, loghi]).then(function (x) {
+    return Promise.all([mercato, loghi, caricaPinGlobale().catch(function () { return null; })]).then(function (x) {
       var ao = Array.isArray(x[0]) ? x[0] : null, lg = x[1] && x[1].mappa ? x[1] : null;
       return (Array.isArray(righe) ? righe : []).map(function (r) {
         var o = {};
@@ -5493,7 +5528,9 @@
         o.Data = o.Data || data;
         o._esito = esitoSure(r);
         o._mercato = ao ? (ao.length ? "si" : "vuoto") : "no";
-        var a = ao && lg ? rigaMercato(r, ao, lg) : null;
+        var pin = pinDi(r.Casa, r.Ospite, r.Ora);
+        var a = pin && probMercato(o._esito, pin) ? pin : (ao && lg ? rigaMercato(r, ao, lg) : null);
+        o._da = a === pin && pin ? "Pinnacle" : a ? "AsianOdds" : "";
         var p = a ? probMercato(o._esito, a) : null;
         if (p) {
           o._prob = p.prob;
@@ -5506,7 +5543,9 @@
           o.Partita = a.Casa + " - " + a.Ospite;
           o.Mercato = "1X2";
           o.Sel = o._esito;
-          o.Lega = a.Lega;
+          o.Lega = a.Lega || o.Lega;
+          o.Fonte = o._da;
+          if (o._da === "Pinnacle" && a.ID_API != null) o.ID_API = a.ID_API;
         }
         return o;
       });
@@ -5549,12 +5588,10 @@
       det.push("<p>" + t + "</p>");
     });
     if (conPrezzo) {
-      det.push("<p>Quota equa del mercato: " + f2(equa) + " (" + f0(prob * 100) + "%)" +
-        (marg != null ? ", margine " + f1(marg) + "%" : "") + ". Sopra quella quota prendi valore, sotto paghi margine.</p>");
+      det.push("<p>Quota equa " + esc(r._da || "del mercato") + ": " + qv(equa) + " (" + pv(prob * 100) + ")" +
+        (marg != null ? ", margine " + mv(marg) : "") + ". Sopra quella quota prendi valore, sotto paghi margine.</p>");
     } else if (esito) {
-      det.push("<p>" + (r._mercato === "si"
-        ? "Nessun prezzo: AsianOdds non ha questa partita, oppure i nomi non combaciano abbastanza da esserne sicuri."
-        : "Nessun prezzo: AsianOdds copre le prossime 24 ore, oltre non arriva.") + "</p>");
+      det.push("<p>Nessun prezzo: né Pinnacle né AsianOdds quotano questa partita, oppure i nomi non combaciano abbastanza da esserne sicuri.</p>");
     }
     if (/^https:\/\/(www\.)?footballpredictions\.net\//.test(String(r.Link || ""))) {
       det.push('<p><a href="' + esc(r.Link) + '" target="_blank" rel="noopener noreferrer">Apri su FootballPredictions</a></p>');
@@ -5730,7 +5767,7 @@
       scriviHash();
       var opz = [["", "Tutte le fonti"]].concat(Object.keys(NOMI_FONTI).map(function (k) { return [k, NOMI_FONTI[k]]; }));
       var testa = testaFonti() +
-        chipsHtml(date.map(function (x) { return [x, etichettaData(x)]; }), d, "data-fdata") +
+        chipsDateHtml(date, d, "data-fdata") +
         '<div class="strumenti">' +
         '<input type="search" id="cerca" placeholder="Squadra o campionato" value="' + esc(stato.cerca) + '" autocomplete="off">' +
         '<select id="fonte-sel" aria-label="Fonte">' + opz.map(function (o) {
