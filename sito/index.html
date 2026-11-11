@@ -2969,8 +2969,7 @@
         "\u00e8 la fonte principale dell\u2019Equa, AsianOdds riempie le partite che Pinnacle non quota.</p>");
     }
     if (r.Fonte === "FootyMetrics") {
-      det.push("<p>Prezzo da FootyMetrics: AsianOdds copre solo le prossime 24 ore. " +
-        "Sulle partite che hanno tutte e due, le due fonti differiscono di 0.7 punti in mediana.</p>");
+      det.push("<p>Prezzo dalle migliori quote fra più book: Pinnacle e AsianOdds non quotano ancora questa partita.</p>");
     }
     if (fid) det.push("<p>Margine del book: " + f1(marg) + "% (" + fid[1] + ")</p>");
     if (linea !== null && linea !== undefined && linea !== "") {
@@ -6177,7 +6176,7 @@
       h += '<div class="forme">' +
         "<div><span>" + (fm.Pos_Casa != null ? esc(fm.Pos_Casa) + "° in classifica" : "casa") + "</span>" + forma(fm.Forma_Casa) + "</div>" +
         "<div><span>" + (fm.Pos_Ospite != null ? esc(fm.Pos_Ospite) + "° in classifica" : "ospite") + "</span>" + forma(fm.Forma_Ospite) + "</div>" +
-        '</div><p class="piccolo">Ultime cinque partite, la più recente a destra (FootyMetrics).</p>';
+        '</div><p class="piccolo">Ultime cinque partite, la più recente a destra.</p>';
     }
     // CLASSIFICA E xG, dalle tabelle FotMob (6/11).
     var sq = p.Squadre;
