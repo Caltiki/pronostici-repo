@@ -822,7 +822,8 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 57.7,
-  "Equa": 1.73
+  "Equa": 1.73,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-15",
@@ -1063,8 +1064,7 @@
   "Mercato": "BTTS",
   "Sel": "Gol",
   "Prob": 52.9,
-  "Equa": 1.89,
-  "InSchedina": "si"
+  "Equa": 1.89
  },
  {
   "Data": "2026-11-15",
@@ -1525,26 +1525,6 @@
   "Mercato": "Esito + Gol",
   "Sel": "1X + Over 2.5",
   "Prob": 47.3,
-  "Equa": 2.12
- },
- {
-  "Data": "2026-11-15",
-  "Ora": "18:30",
-  "Campionato": "Spain La Liga 2",
-  "Partita": "Eibar - Cádiz",
-  "Casa": "Eibar",
-  "Ospite": "Cádiz",
-  "Linea_OU": "",
-  "Gol_attesi": 2.78,
-  "Margine": 2.0,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "NoGol",
-  "Prob": 47.1,
   "Equa": 2.12
  },
  {
@@ -2746,6 +2726,26 @@
   "Sel": "Under",
   "Prob": 30.8,
   "Equa": 3.24
+ },
+ {
+  "Data": "2026-11-15",
+  "Ora": "18:30",
+  "Campionato": "Spain La Liga 2",
+  "Partita": "Eibar - Cádiz",
+  "Casa": "Eibar",
+  "Ospite": "Cádiz",
+  "Linea_OU": "",
+  "Gol_attesi": 2.78,
+  "Margine": 2.0,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 24.5,
+  "Equa": 4.08
  },
  {
   "Data": "2026-11-15",
