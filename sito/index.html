@@ -5561,8 +5561,31 @@
     return ["Lega", "Paese", "Competizione", "Campionato"].map(function (c) { return r && r[c] ? String(r[c]) : ""; })
       .filter(Boolean).join(" ");
   }
+  // OMONIMI PRIMA DI TUTTO (116). stemmi_api.json lega il nome allo stemma
+  // senza guardare il campionato: "Inter" e' l'Inter di Milano anche per
+  // l'Inter di El Salvador. Per i nomi che loghi.json sa ambigui, se il
+  // campionato della riga corrisponde a una voce precisa (per esempio
+  // "salvador") vale quella, anche quando dice "nessuno stemma"; solo se
+  // non corrisponde a niente si passa a API-Football e poi alla voce
+  // generica.
+  function stemmaOmonimo(nome, dove) {
+    if (!LOGHI || !LOGHI.ambigue) return null;
+    var k = normalizza(nome);
+    if (!k || !Object.prototype.hasOwnProperty.call(LOGHI.ambigue, k)) return null;
+    var contesto = senzaAccenti(String(dove || "").toLowerCase()), voci = LOGHI.ambigue[k] || [];
+    for (var i = 0; i < voci.length; i++) {
+      if (voci[i][0] && contesto.indexOf(voci[i][0]) >= 0) return { file: voci[i][1] || null };
+    }
+    return { file: undefined };          // ambiguo, ma nessuna voce precisa
+  }
   function logo(nome, grande, dove) {
     if (!nome) return "";
+    var om = stemmaOmonimo(nome, dove);
+    if (om && om.file !== undefined) {
+      if (!om.file) return "";
+      return '<img class="stemma' + (grande ? " grande" : "") + '" src="' + URL_STEMMI + encodeURIComponent(om.file) +
+        '" alt="" loading="lazy" decoding="async" onerror="this.remove()">';
+    }
     var api = STEMMI_API && Object.prototype.hasOwnProperty.call(STEMMI_API, nome) ? STEMMI_API[nome] : null;
     var f = api || (LOGHI ? stemmaDove(nome, LOGHI, dove) : null);
     if (!f) return "";
