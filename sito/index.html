@@ -1603,7 +1603,7 @@
   ];
   var MK_ORDINI = [["file", "Per orario"], ["mov", "Per movimento"], ["margine", "Per margine"]];
   var GRUPPO_PRONOSTICI_TUTTI = [["prezzi", "Probabilit\u00e0 senza margine"], ["mercato", "Mercato"], ["wdw", "FootyStats"],
-                                 ["sm", "Sports Mole"], ["hp", "HeroPredict"], ["fp", "FootballPark"]];
+                                 ["sm", "Sports Mole"], ["fp", "FootballPark"]];
   // Il tasto FootyStats compare solo quando i dati ci sono davvero
   // (footystatswdw_index.json con almeno una data): finche' FootyStats
   // rifiuta i server di GitHub, un tasto che porta a una pagina vuota
@@ -2256,7 +2256,8 @@
           '<div class="alto"><span>' + esc(r0.Ora || "") + "</span>" +
           (gol ? "<span><b>" + esc(gol) + "</b></span>" : "") +
           (r0.Campionato ? '<span class="chip">' + esc(r0.Campionato) + "</span>" : "") +
-          (r0.Fonte === "Pinnacle" ? '<span class="chip">quota Pinnacle</span>' : "") + "</div>" +
+          (r0.Fonte === "Pinnacle" ? '<span class="chip">quota Pinnacle</span>' : "") +
+          (r0.Fonte === "OddsAPI" ? '<span class="chip">quota Betfair</span>' : "") + "</div>" +
           '<div class="partita">' + partitaHtml(r0.Casa, r0.Ospite, r0.Partita, campiRiga(r0)) + "</div>" + sqHtml(r0) +
           '<div class="sel">' + (inSch ? "In schedina: " : "Proposta: ") + esc(etichettaSel(top)) +
           " · " + f0(num(top.Prob)) + "%" + (scelte_ ? " · " + scelte_ + " nella multipla" : "") + "</div>" +
@@ -2794,8 +2795,21 @@
 
     var det = [];
     if (r.Campionato) det.push("<p>" + esc(r.Campionato) + "</p>");
-    det.push("<p>Quota reale " + f2(equa) + " – probabilità " + f0(prob) + "%. " +
+    det.push("<p>Quota equa " + f2(equa) + " – probabilità " + f0(prob) + "%. " +
       "Sopra quella quota prendi valore, sotto paghi margine.</p>");
+    // IL RIFERIMENTO SHARP (11/11): sulle righe 1X2 di AsianOdds, il prezzo
+    // del book di riferimento di The Odds API (Betfair Exchange sul piano
+    // gratuito), quando la partita c'e' tutte e due.
+    if (num(r.Rif_Equa) != null) {
+      var dRif = num(r.Rif_Prob) - prob;
+      det.push("<p>" + esc(r.Rif_Book || "Riferimento") + ": probabilit\u00e0 " + f0(num(r.Rif_Prob)) + "%, equa " + f2(num(r.Rif_Equa)) +
+        (Math.abs(dRif) >= 3 ? " \u2013 <b>" + (dRif > 0 ? "+" : "") + f0(dRif) + " punti</b> rispetto ad AsianOdds: i due mercati non sono d\u2019accordo, prudenza." :
+          " \u2013 d\u2019accordo con AsianOdds.") + "</p>");
+    }
+    if (r.Fonte === "OddsAPI") {
+      det.push("<p>Prezzo da The Odds API (" + esc(r.Rif_Book || "Betfair Exchange o il miglior book disponibile") +
+        "): AsianOdds non ha ancora questa partita, copre solo le prossime 24 ore.</p>");
+    }
     if (r.Fonte === "Pinnacle") {
       det.push("<p>Prezzo da Pinnacle (via API-Football): AsianOdds non ha questa partita. " +
         "Sulle partite che hanno tutte e due, le probabilit\u00e0 differiscono di 1-2 punti.</p>");
@@ -2846,6 +2860,8 @@
       (r.Gruppo ? '<span class="chip">' + esc(r.Gruppo) + "</span>" : "") +
       (r.Fonte === "Pinnacle" && stato.vista.prezzi !== "partite" && stato.vista.prezzi !== "stretto"
         ? '<span class="chip">quota Pinnacle</span>' : "") +
+      (r.Fonte === "OddsAPI" && stato.vista.prezzi !== "partite" && stato.vista.prezzi !== "stretto"
+        ? '<span class="chip">quota Betfair</span>' : "") +
       (fid ? '<span class="pill ' + fid[0] + '">margine ' + f1(marg) + "%</span>" : "") +
       "</div>" +
       '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, r.Partita, campiRiga(r)) + "</div>" +
@@ -6383,25 +6399,9 @@
       }
     }
   }, function () { /* nessun dato: il tasto resta nascosto */ });
-  // HeroPredict: stessa regola. Il tasto va in fondo alla fila.
-  leggi("heropredict_index.json").then(function (ix) {
-    if (!ix || !Array.isArray(ix.date) || !ix.date.length) return;
-    HP_PRONTO = true;
-    if (stato.sez === "prezzi" || stato.sez === "mercato" || stato.sez === "wdw" || stato.sez === "sm" || stato.sez === "fp") {
-      var m = $cont.querySelector('[data-gruppo="mercato"]');
-      if (m && !$cont.querySelector('[data-gruppo="hp"]')) {
-        var sez = stato.sez;
-        var b = document.createElement("button");
-        b.type = "button"; b.setAttribute("data-gruppo", "hp"); b.setAttribute("aria-pressed", "false");
-        b.textContent = "HeroPredict";
-        b.addEventListener("click", function () {
-          if (!stato.data.hp) stato.data.hp = stato.data[sez];
-          stato.sez = "hp"; stato.cerca = ""; stato.limite = PASSO; disegna();
-        });
-        inserisciInOrdine(m.parentNode, b);
-      }
-    }
-  }, function () { /* nessun dato: il tasto resta nascosto */ });
+  // HeroPredict tolto l'11/11: ripete il mercato (tip = quota piu' corta
+  // del book) e il job non gira piu'. La sezione resta nel codice ma senza
+  // tasto; lo storico e' su gh-data.
   // FootballPark: stessa regola.
   leggi("footballpark_index.json").then(function (ix) {
     if (!ix || !Array.isArray(ix.date) || !ix.date.length) return;
