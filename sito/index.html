@@ -1364,12 +1364,11 @@
     .chips::-webkit-scrollbar-thumb:hover { background: var(--tenue); }
     .chips::-webkit-scrollbar-track { background: transparent; }
   }
-  /* LARGHEZZA PIENA (10/11): sul PC la pagina restava una colonna di
-     820 px in mezzo allo schermo. Ora occupa tutta la larghezza della
-     finestra, con un margine ai lati che cresce un po' sugli schermi
-     larghi. Sul telefono non cambia niente. */
-  main { max-width: none; padding-left: clamp(16px, 3vw, 48px); padding-right: clamp(16px, 3vw, 48px); }
-  .multipla .dentro { max-width: none; }
+  /* LARGHEZZA (11/11): a 820 px la colonna era troppo stretta sul PC, a
+     tutto schermo (10/11) troppo larga. Si allarga con la finestra fino a
+     1200 px, poi resta in mezzo. Sul telefono non cambia niente. */
+  main { max-width: 1200px; padding-left: clamp(16px, 3vw, 32px); padding-right: clamp(16px, 3vw, 32px); }
+  .multipla .dentro { max-width: 1200px; }
   /* BARRA DELLE SEZIONI VERDE nel tema chiaro, lo stesso verde della
      barretta sotto il titolo (--evidenza): stacca dallo sfondo chiaro;
      il tasto acceso resta lime. */
@@ -1562,7 +1561,7 @@
   // il conto di quando la sezione e' nata).
   var SB_VISTE = [
     ["tutte", "Tutte",
-     "Le Sure Bets di FootballPredictions, con accanto la quota reale del mercato. Misurate " +
+     "Le Sure Bets di FootballPredictions, con accanto la quota equa del mercato. Misurate " +
      "sull'archivio: la selezione del sito era il favorito del book in 147 casi su 147. " +
      "Il pronostico non aggiunge niente al prezzo, e il prezzo \u00e8 questo."],
     ["prezzo", "Con il prezzo",
@@ -2433,7 +2432,7 @@
     }
     var on = stato.stretti;
     return '<div class="riepilogo">' +
-      "<div><b>" + (eq == null ? "-" : eq.toFixed(2)) + "</b><span>quota reale mediana</span></div>" +
+      "<div><b>" + (eq == null ? "-" : eq.toFixed(2)) + "</b><span>quota equa mediana</span></div>" +
       "<div><b>" + (mg == null ? "-" : mg.toFixed(1) + "%") + "</b><span>margine mediano</span></div>" +
       '<button type="button" class="filtro-esito' + (on ? " attivo" : "") + '" data-stretti="1"' +
       (strette ? "" : " disabled") + ' aria-pressed="' + (on ? "true" : "false") + '"><b>' + strette +
@@ -2829,7 +2828,7 @@
     if (merc.indexOf("OU") === 0) {
       det.push('<p class="avviso">Su 563 partite finite il modello ha sottostimato gli Over di 4.6 punti: qui semmai il numero è basso.</p>');
     } else if (sel.indexOf("1X") >= 0 || sel.indexOf("X2") >= 0) {
-      det.push('<p class="avviso">Le doppie con la X sono le meno affidabili: Poisson sottostima i pareggi, quindi la quota reale è un po\' troppo generosa.</p>');
+      det.push('<p class="avviso">Le doppie con la X sono le meno affidabili: Poisson sottostima i pareggi, quindi la quota equa è un po\' troppo generosa.</p>');
     } else if (merc === "BTTS") {
       det.push("<p>È il mercato tarato meglio: fascia 55-65%, 238 partite, previsto 60.0% e uscito 60.1%.</p>");
     }
@@ -2931,7 +2930,7 @@
   // ------------------------------------------- condividi la multipla
   //
   // TUTTO NEL TELEFONO, NIENTE SERVER: il testo si compone qui dalle righe
-  // scelte, con gli stessi numeri della barra (quota reale, probabilita',
+  // scelte, con gli stessi numeri della barra (quota equa, probabilita',
   // stima col margine). Poi:
   //   - "Condividi..." apre il menu di condivisione del telefono
   //     (navigator.share): WhatsApp, Telegram, email, Messaggi, Drive...;
@@ -2984,14 +2983,14 @@
       }
       out.push((x.Ora ? x.Ora + "  " : "") + (x.Partita || ""));
       if (x.Campionato) out.push("    " + x.Campionato);
-      out.push("    " + etichettaSel(x) + " -> quota reale " + f2(num(x.Equa)) +
+      out.push("    " + etichettaSel(x) + " -> quota equa " + f2(num(x.Equa)) +
         " (" + f0(num(x.Prob)) + "%)");
     });
     out.push("");
     out.push(r.length + (r.length === 1 ? " evento" : " eventi") + " · probabilità " +
-      c.prob.toFixed(1) + "% · quota reale " + c.equa.toFixed(2));
+      c.prob.toFixed(1) + "% · quota equa " + c.equa.toFixed(2));
     out.push("Col margine del bookmaker pagherebbe circa " + c.pagata.toFixed(2) + ".");
-    out.push("Quota reale = quella del bookmaker senza il suo guadagno: se la tua è più bassa, ci perdi.");
+    out.push("Quota equa = quella del bookmaker senza il suo guadagno: se la tua è più bassa, ci perdi.");
     out.push("");
     out.push(SITO);
     return out.join("\n");
@@ -3004,7 +3003,7 @@
       return /[;"\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v;
     }
     function dec(v, n) { return v == null ? "" : v.toFixed(n).replace(".", ","); }
-    var righe = [["Data", "Ora", "Campionato", "Partita", "Giocata", "Probabilità %", "Quota reale", "Margine book %"]];
+    var righe = [["Data", "Ora", "Campionato", "Partita", "Giocata", "Probabilità %", "Quota equa", "Margine book %"]];
     r.forEach(function (x) {
       righe.push([x.Data, x.Ora, x.Campionato, x.Partita, etichettaSel(x),
         dec(num(x.Prob), 1), dec(num(x.Equa), 2), dec(num(x.Margine), 1)]);
@@ -3105,7 +3104,7 @@
     var r = righeScelte(), c = conti(r), P = 56, y = P;
     function fill(f) { if (disegnaDavvero) f(); }
 
-    // Testa: titolo a sinistra, quota reale a destra.
+    // Testa: titolo a sinistra, quota equa a destra.
     ctx.textBaseline = "alphabetic";
     fill(function () {
       ctx.fillStyle = col.tenue; ctx.font = "800 26px " + MAN; ctx.textAlign = "left";
@@ -3115,7 +3114,7 @@
       ctx.textAlign = "right"; ctx.fillStyle = col.evidenza; ctx.font = "700 104px " + BAR;
       ctx.fillText(c.equa.toFixed(2), W - P, y + 84);
       ctx.fillStyle = col.tenue; ctx.font = "700 22px " + MAN;
-      ctx.fillText("QUOTA REALE", W - P, y + 116);
+      ctx.fillText("QUOTA EQUA", W - P, y + 116);
     });
     y += 150;
     fill(function () {
@@ -3180,7 +3179,7 @@
     y += 22;
     fill(function () {
       ctx.textAlign = "left"; ctx.fillStyle = col.tenue; ctx.font = "500 22px " + MAN;
-      ctx.fillText("Quota reale = quella del bookmaker senza il suo guadagno.", P, y + 22);
+      ctx.fillText("Quota equa = quella del bookmaker senza il suo guadagno.", P, y + 22);
       ctx.fillText("Se quella che ti offre è più bassa, ci perdi.", P, y + 52);
       ctx.fillStyle = col.testo; ctx.font = "700 22px " + MAN;
       ctx.fillText(SITO.replace(/^https:\/\//, "").replace(/\/$/, ""), P, y + 92);
@@ -5216,7 +5215,7 @@
     return tessere([
       [String(v.length), "Sure Bets"],
       [String(con.length), "con il prezzo del mercato"],
-      [eq == null ? "-" : eq.toFixed(2), "quota reale mediana"]
+      [eq == null ? "-" : eq.toFixed(2), "quota equa mediana"]
     ]);
   }
 
@@ -5241,7 +5240,7 @@
       det.push("<p>" + t + "</p>");
     });
     if (conPrezzo) {
-      det.push("<p>Quota reale del mercato: " + f2(equa) + " (" + f0(prob * 100) + "%)" +
+      det.push("<p>Quota equa del mercato: " + f2(equa) + " (" + f0(prob * 100) + "%)" +
         (marg != null ? ", margine " + f1(marg) + "%" : "") + ". Sopra quella quota prendi valore, sotto paghi margine.</p>");
     } else if (esito) {
       det.push("<p>" + (r._mercato === "si"
