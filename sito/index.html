@@ -1495,6 +1495,7 @@
     </button>
     <button data-sez="prezzi">Pronostici</button>
     <button data-sez="live" class="due">Partite<br>live</button>
+    <button data-sez="pin">Pinnacle</button>
     <button data-sez="consensus" class="due">Consenso<br>fonti</button>
     <button data-sez="best" class="due">Best<br>picks</button>
     <button data-sez="poisson">Poisson</button>
@@ -1694,7 +1695,7 @@
       if (g[0] === "sm") return SM_PRONTO || sez === "sm";
       if (g[0] === "hp") return HP_PRONTO || sez === "hp";
       if (g[0] === "fp") return FP_PRONTO || sez === "fp";
-      if (g[0] === "pin") return PIN_PRONTO || sez === "pin";
+      if (g[0] === "pin") return false;          // dal 113 e' una pagina sua, nella barra
       return true;
     });
   }
@@ -1770,12 +1771,13 @@
   // punti fra adesso e il mattino, segno per segno: quando Pinnacle si
   // muove molto vicino al via sono arrivate notizie o soldi informati.
   var PIN_VISTE = [
+    ["tutte", "Tutte le partite", "Tutte le partite del sito quotate da Pinnacle: quote, margine e probabilit\u00e0 senza margine."],
     ["mosse", "Si sono mosse",
      "Le partite di oggi che Pinnacle ha mosso di almeno 2 punti dalla prima lettura del mattino, dalla pi\u00f9 mossa. " +
      "Un movimento forte vicino al via vuol dire notizie (formazioni, infortuni) o soldi informati: guarda se il tuo book si \u00e8 gi\u00e0 adeguato."],
-    ["tutte", "Tutte", "Tutte le partite con la quota Pinnacle, con la probabilit\u00e0 senza margine di adesso."]
   ];
-  var PIN_ORDINI = [["mov", "Per movimento"], ["ora", "Per orario"], ["paese", "Per campionato"]];
+  var PIN_ORDINI = [["ora", "Per orario"], ["prob", "Per probabilit\u00e0"], ["margine", "Per margine"],
+    ["over", "Per gol attesi"], ["mov", "Per movimento"], ["paese", "Per campionato"]];
   // Gli xG delle squadre stanno dentro "Poisson": sono i numeri da cui il
   // Poisson parte, e la barra in alto non ha posto per un'altra voce.
   var GRUPPO_POISSON = [["poisson", "Partite"], ["xg", "xG squadre"]];
@@ -1787,8 +1789,8 @@
   var stato = {
     sez: "prezzi",
     data: { prezzi: null, mercato: null, consensus: null, accordo: null, poisson: null, sure: null, wdw: null, sm: null, hp: null, fp: null, pin: null },
-    vista: { wdw: "tutte", sm: "tutte", hp: "tutte", fp: "tutte", pin: "mosse", prezzi: "partite", mercato: "aff", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" },
-    ordine: { wdw: "prob", sm: "prob", hp: "ora", fp: "ora", pin: "mov", prezzi: "ora", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" },
+    vista: { wdw: "tutte", sm: "tutte", hp: "tutte", fp: "tutte", pin: "tutte", prezzi: "partite", mercato: "aff", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" },
+    ordine: { wdw: "prob", sm: "prob", hp: "ora", fp: "ora", pin: "ora", prezzi: "ora", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" },
     cerca: "",
     fonteCm: "",
     esito: "",
@@ -2007,7 +2009,7 @@
   function disegna() {
     scriviHash();
     document.querySelectorAll("nav.sezioni button[data-sez]").forEach(function (b) {
-      var accesa = stato.sez === "accordo" ? "consensus" : (stato.sez === "mercato" || stato.sez === "wdw" || stato.sez === "sm" || stato.sez === "hp" || stato.sez === "fp" || stato.sez === "pin") ? "prezzi" :
+      var accesa = stato.sez === "accordo" ? "consensus" : (stato.sez === "mercato" || stato.sez === "wdw" || stato.sez === "sm" || stato.sez === "hp" || stato.sez === "fp") ? "prezzi" :
         stato.sez === "xg" ? "poisson" : stato.sez;
       b.setAttribute("aria-current", String(b.dataset.sez === accesa));
     });
@@ -2026,6 +2028,22 @@
 
   var passate = {};
   var DATE_SEZ = {};
+  // Se pinnacle_index.json non c'e' ancora (apifootball.py vecchio), le
+  // date della pagina Pinnacle si trovano provando i file da ieri a fra tre giorni.
+  function indicePinDaFile() {
+    var giorni = [-1, 0, 1, 2, 3].map(giornoRoma);
+    return Promise.all(giorni.map(function (d) {
+      return leggiUrl(BASE + "pinnacle_" + d + ".json?t=" + Math.floor(Date.now() / 600000), "pinnacle_" + d)
+        .then(function (v) { return Array.isArray(v) && v.length ? d : null; }).catch(function () { return null; });
+    })).then(function (v) {
+      var date = v.filter(Boolean);
+      if (!date.length) throw new Error("pinnacle: nessun file");
+      // L'ora dell'ultimo giro completo, da apifootball_pro.json.
+      return leggiUrl(BASE + "apifootball_pro.json?t=" + Math.floor(Date.now() / 600000), "apifootball_pro.json")
+        .then(function (pro) { return { date: date, updated: pro && pro.pieno ? pro.pieno : null }; })
+        .catch(function () { return { date: date }; });
+    });
+  }
   function disegnaGiornata(sez) {
     var conf = SEZ[sez];
     var indice = conf.indice, prefisso = conf.prefisso, viste = conf.viste, ordini = conf.ordini;
@@ -2038,7 +2056,7 @@
     // si legge esiti_<data> (tutte le partite della giornata, scritto da
     // esiti_schedina.py) togliendo l'esito alle righe fuori schedina;
     // dove non c'e' (piu' vecchie di 14 giorni) resta schedina_<data>.
-    Promise.all([leggi(indice),
+    Promise.all([sez === "pin" ? leggi(indice).catch(indicePinDaFile) : leggi(indice),
                  sez === "prezzi" ? leggi("esiti_index.json").catch(function () { return null; }) : null,
                  sez === "prezzi" ? leggi("schedina_index.json").catch(function () { return null; }) : null,
                  sez === "sm" ? leggi("sportsmole_esiti_index.json").catch(function () { return null; }) :
@@ -2090,7 +2108,7 @@
 
       var vista = viste.filter(function (v) { return v[0] === stato.vista[sez]; })[0];
       var testa = (sez === "consensus" || sez === "accordo" ? chipsHtml(GRUPPO_CONSENSO, sez, "data-gruppo") : "") +
-        (sez === "prezzi" || sez === "mercato" || sez === "wdw" || sez === "sm" || sez === "hp" || sez === "fp" || sez === "pin" ? chipsHtml(gruppoPronostici(sez), sez, "data-gruppo") : "") +
+        (sez === "prezzi" || sez === "mercato" || sez === "wdw" || sez === "sm" || sez === "hp" || sez === "fp" ? chipsHtml(gruppoPronostici(sez), sez, "data-gruppo") : "") +
         (sez === "poisson" ? chipsHtml(GRUPPO_POISSON, sez, "data-gruppo") : "") +
         chipsDateHtml(date, d, "data-data") +
         (viste.length > 1 ? chipsHtml(viste, vista[0], "data-vista") : "") +
@@ -2637,6 +2655,11 @@
       return ((probOrdine(b) || 0) - (probOrdine(a) || 0)) || ((num(b.Fonti) || 0) - (num(a.Fonti) || 0));
     });
     else if (o === "mov") v.sort(function (a, b) { return (num(b.Mov) || 0) - (num(a.Mov) || 0); });
+    // Gol attesi: la linea Under/Over principale e' quella dove Over e Under
+    // si equivalgono, quindi conta la linea (2.25, 2.5, 3...), poi l'Over.
+    else if (o === "over") v.sort(function (a, b) {
+      return ((num(b.OU) || 0) - (num(a.OU) || 0)) || ((num(b["P Over"]) || 0) - (num(a["P Over"]) || 0));
+    });
     else if (o === "gol") v.sort(function (a, b) { return (num(b.Gol_Attesi) || 0) - (num(a.Gol_Attesi) || 0); });
     else if (o === "fonti") v.sort(function (a, b) { return (num(b.Fonti) || 0) - (num(a.Fonti) || 0); });
     // "file": l'ordine del file, che e' quello che mostra Kodi.
@@ -4787,19 +4810,30 @@
     else det.push("<p>Nessuna lettura del mattino per questa partita: il movimento si vede solo per oggi.</p>");
     if (num(r.OU) != null && num(r["P Over"]) != null) det.push("<p>Linea Under/Over " + esc(r.OU) + ": Over " + pv(r["P Over"]) + "</p>");
     det.push(formazioneHtml(r._form));
-    var mv = r._diff ? (r._diff["1X2".indexOf(r._segnoMov)] > 0 ? "+" : "") + f0(r._diff["1X2".indexOf(r._segnoMov)]) : "-";
+    // (113) si chiamava "mv" e copriva la funzione mv() del margine qui
+    // sopra: dal 103 la sezione si fermava con un errore.
+    var punti = r._diff ? (r._diff["1X2".indexOf(r._segnoMov)] > 0 ? "+" : "") + f0(r._diff["1X2".indexOf(r._segnoMov)]) : "-";
+    var mosse = stato.vista.pin === "mosse";
+    var fid = fiducia(num(r.Margine));
+    var quote = num(r.Q1) != null ? '<div class="sel">1 ' + qv(r.Q1) + " · X " + qv(r.QX) + " · 2 " + qv(r.Q2) +
+      (num(r.OU) != null && num(r["P Over"]) != null ? " · Over " + esc(r.OU) + " " + pv(r["P Over"]) : "") + "</div>" : "";
+    var top = r.Segno, pt = r._prob != null ? r._prob * 100 : null;
     return '<div class="riga"><details><summary>' +
-      '<span class="segno">' + esc(r._segnoMov || r.Segno || "?") + "</span>" +
+      '<span class="segno">' + esc((mosse ? r._segnoMov : top) || r.Segno || "?") + "</span>" +
       '<div class="corpo">' +
       '<div class="alto">' + (r.Ora ? "<span><b>" + esc(r.Ora) + "</b></span>" : "") +
         (r.Lega ? '<span class="chip">' + esc(r.Lega) + "</span>" : "") +
+        (fid ? '<span class="pill ' + fid[0] + '">margine ' + f1(num(r.Margine)) + "%</span>" : "") +
         (r._form && r._form.titolari ? '<span class="pill stretto">formazioni</span>' : "") +
         (r._form && r._form.assenti && r._form.assenti.length ? '<span class="pill largo">' + r._form.assenti.length + " assenti</span>" : "") + "</div>" +
       '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" +
-      (r._diff ? '<div class="sel">' + movimentoHtml(r._diff, "") + "</div>" : "") +
-      tripla("Pinnacle adesso", p[0], p[1], p[2]) +
+      quote +
+      (r._diff && diffHtml(r._diff) ? '<div class="sel">' + movimentoHtml(r._diff, "") + "</div>" : "") +
+      tripla("senza margine", p[0], p[1], p[2]) +
       "</div>" +
-      '<div class="numero"><b>' + esc(mv) + "</b><span>punti sul " + esc(r._segnoMov || "-") + "</span></div>" +
+      (mosse || pt == null
+        ? '<div class="numero"><b>' + esc(punti) + "</b><span>punti sul " + esc(r._segnoMov || "-") + "</span></div>"
+        : '<div class="numero"><b>' + f0(pt) + "%</b><span>" + (/^[1X2]$/.test(top) ? articolo(top) : esc(top)) + " · equa " + f2(100 / pt) + "</span></div>") +
       "</summary>" +
       '<div class="dettaglio">' + det.join("") + "</div>" +
       "</details></div>";
@@ -6683,8 +6717,8 @@
     if (e) e.preventDefault();
     stato.sez = "prezzi";
     stato.data = { prezzi: null, mercato: null, consensus: null, accordo: null, poisson: null, sure: null, wdw: null, sm: null, hp: null, fp: null, pin: null };
-    stato.vista = { wdw: "tutte", sm: "tutte", hp: "tutte", fp: "tutte", pin: "mosse", prezzi: "partite", mercato: "aff", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" };
-    stato.ordine = { wdw: "prob", sm: "prob", hp: "ora", fp: "ora", pin: "mov", prezzi: "ora", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" };
+    stato.vista = { wdw: "tutte", sm: "tutte", hp: "tutte", fp: "tutte", pin: "tutte", prezzi: "partite", mercato: "aff", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "tutte" };
+    stato.ordine = { wdw: "prob", sm: "prob", hp: "ora", fp: "ora", pin: "ora", prezzi: "ora", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "file" };
     stato.cerca = "";
     stato.fonteCm = "";
     stato.esito = "";
@@ -7142,7 +7176,7 @@
   leggi("pinnacle_index.json").then(function (ix) {
     if (!ix || !Array.isArray(ix.date) || !ix.date.length) return;
     PIN_PRONTO = true;
-    if (stato.sez === "prezzi" || stato.sez === "mercato" || stato.sez === "wdw" || stato.sez === "sm" || stato.sez === "fp") {
+    if (false) {                                   // dal 113 Pinnacle sta nella barra in alto
       var m = $cont.querySelector('[data-gruppo="mercato"]');
       if (m && !$cont.querySelector('[data-gruppo="pin"]')) {
         var sez = stato.sez;
