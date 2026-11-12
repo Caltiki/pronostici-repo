@@ -1532,6 +1532,9 @@
   ul.assenti li { padding: 5px 0; border-bottom: 1px solid var(--bordo); }
   ul.assenti li:last-child { border-bottom: 0; }
   p.ass-sq { margin: 8px 0 0; }
+  /* (141) Best picks: lo storico AsianOdds, chiuso */
+  details.best-storico { margin: 10px 0 4px; }
+  details.best-storico summary { cursor: pointer; color: var(--evidenza); font-weight: 600; }
   /* (140) l'Elo sotto i nomi, in ogni card */
   .sel.elo-mini { font-size: .85rem; color: var(--tenue); }
   /* (133) la classifica Elo */
@@ -5607,6 +5610,46 @@
     return { n: n, presi: presi / n, attesi: attesi / n, diff: m, err: Math.sqrt(v / n) };
   }
   function conSegno(x) { return (x >= 0 ? "+" : "−") + Math.abs(x).toFixed(1); }
+  // (141) LE BEST PICKS CONTRO PINNACLE: best_archivio.csv (apifootball.py,
+  // ogni ora). Due misure: vinte contro la probabilita' di chiusura, e lo
+  // spostamento del mercato fra l'entrata in lista e la chiusura (CLV, in
+  // punti di probabilita' sul segno). Media e margine d'errore.
+  function mediaErr(v) {
+    var n = v.length;
+    if (!n) return null;
+    var m = v.reduce(function (a, b) { return a + b; }, 0) / n;
+    var s2 = n > 1 ? v.reduce(function (a, b) { return a + (b - m) * (b - m); }, 0) / (n - 1) : 0;
+    return { n: n, m: m, err: Math.sqrt(s2 / n) };
+  }
+  function misuraPinnacle(best) {
+    if (!best) return null;
+    var vinte = [], attese = [], diff = [], clv = [];
+    best.forEach(function (r) {
+      var pc = num(r.P_Chiusura), pe = num(r.P_Entrata);
+      if (pc != null && /^[1X2]$/.test(r.Esito || "")) {
+        var h = r.Esito === r.Segno ? 100 : 0;
+        vinte.push(h); attese.push(pc); diff.push(h - pc);
+      }
+      if (pc != null && pe != null) clv.push(pc - pe);
+    });
+    return { esito: mediaErr(diff), vinte: mediaErr(vinte), attese: mediaErr(attese), clv: mediaErr(clv) };
+  }
+  function riepilogoPinnacle(M) {
+    if (!M || (!M.esito && !M.clv)) {
+      return '<p class="conta">Contro Pinnacle: le prime pick si misurano da oggi. I numeri compaiono quando le prime partite sono finite.</p>';
+    }
+    var c = M.clv, e = M.esito;
+    return '<div class="riepilogo">' +
+      "<div><b>" + (c ? conSegno(c.m) : "-") + "</b><span>mercato verso le pick, in punti" +
+        (c ? " (±" + c.err.toFixed(1) + ", " + c.n + " pick)" : "") + "</span></div>" +
+      "<div><b>" + (M.vinte ? M.vinte.m.toFixed(1) + "%" : "-") + "</b><span>vinte · Pinnacle alla chiusura ne dava " +
+        (M.attese ? M.attese.m.toFixed(1) + "%" : "-") + "</span></div>" +
+      "<div><b>" + (e ? conSegno(e.m) : "-") + "</b><span>punti sopra la chiusura" + (e ? " (±" + e.err.toFixed(1) + ", " + e.n + " chiuse)" : "") + "</span></div></div>" +
+      '<p class="best-nota">Il primo numero dice quanti punti di probabilità Pinnacle ha guadagnato sul segno fra l’entrata della pick in lista e il via. ' +
+      "È quello che conta prima: se il mercato si muove verso le pick dopo che sono entrate in lista, " +
+      "hanno informazione che il mercato non aveva ancora. Vicino a zero vuol dire che sono favorite e basta. " +
+      "Il terzo dice se vincono più di quanto il prezzo finale prometteva, ma per vederlo servono molte più partite.</p>";
+  }
 
   // La probabilita' di mercato del segno, dalla scheda della partita.
   // Pinnacle prima (100), poi AsianOdds dalla scheda.
@@ -5638,11 +5681,20 @@
     });
   }
 
+  var BEST_ARCH = {};
   function rigaBest(r) {
     var segno = String(r["Pron Combinato"] || "").toUpperCase();
     var h = rigaAccordo(r);
+    // (141) da quando e' in lista: la prima lettura Pinnacle e l'ultima
+    var g = PIN_G.idNome[(r.Casa || "") + "|" + (r.Ospite || "")];
+    var ba = g ? BEST_ARCH[String(g.id) + "|" + segno] : null;
+    var pe = ba ? num(ba.P_Entrata) : null, pu = ba ? (num(ba.P_Chiusura) != null ? num(ba.P_Chiusura) : num(ba.P_Ultima)) : null;
+    var mov = pe != null && pu != null && Math.abs(pu - pe) >= 0.5
+      ? ' · <span class="' + (pu > pe ? "mv-su" : "mv-giu") + '">' + (pu > pe ? "\u25b2 " : "\u25bc ") + conSegno(pu - pe) +
+        " da quando è in lista (" + f0(pe) + "%" + (num(ba.P_Chiusura) != null ? " → chiusura " : " → ") + f0(pu) + "%)</span>"
+      : (pe != null ? ' · <span class="piccolo">fermo da quando è in lista</span>' : "");
     var mk = r._pm != null
-      ? '<div class="sel">Mercato <b>' + f0(r._pm) + "%</b> sul " + esc(segno) + " · quota equa <b>" + f2(100 / r._pm) + "</b></div>"
+      ? '<div class="sel">Mercato <b>' + f0(r._pm) + "%</b> sul " + esc(segno) + " · quota equa <b>" + f2(100 / r._pm) + "</b>" + mov + "</div>"
       : '<div class="sel" style="color:var(--tenue)">Prezzo di mercato non ancora uscito</div>';
     h = h.replace('<div class="sel">', mk + '<div class="sel">');
     if (r.Gol_Casa != null && r.Gol_Ospite != null) {
@@ -5710,7 +5762,10 @@
     ultime = null;
     $cont.innerHTML = messaggio("vuoto", "Carico&hellip;");
     var arch = leggiTesto("consensus_archivio.csv").then(csvOggetti).catch(function () { return null; });
-    Promise.all([leggi("consensus_index.json"), caricaLoghi(), arch]).then(function (a) {
+    var bestA = leggiTesto("best_archivio.csv").then(csvOggetti).catch(function () { return null; });
+    Promise.all([leggi("consensus_index.json"), caricaLoghi(), arch, bestA, caricaPinGlobale().catch(function () { return null; })]).then(function (a) {
+      BEST_ARCH = {};
+      (a[3] || []).forEach(function (r) { BEST_ARCH[r.ID_API + "|" + r.Segno] = r; });
       if (stato.sez !== "best") return;
       var ix = a[0], o = oggi();
       var date = (ix.date || []).filter(function (x) { return x >= o; }).sort();
@@ -5718,11 +5773,11 @@
       var tutto = a[2] ? misuraSecchi(a[2], null) : null;
       var ultimi = a[2] ? misuraSecchi(a[2], giornoRoma(-14)) : null;
       var testa = '<p class="descr">I segni secchi (1, X o 2) su cui Statarea e WebPronostici concordano, oggi e nei giorni dopo. ' +
-        "Non è la schedina: la schedina sceglie le giocate più probabili secondo il mercato, queste sono quelle dove, " +
-        "misurato sull’archivio, le due fonti ci prendono più spesso di quanto dice il mercato. Il vantaggio è piccolo: " +
-        "con il margine dei bookmaker italiani sulla singola resta vicino a zero, e in multipla il margine si moltiplica e lo mangia. " +
-        "Il prezzo di mercato compare quando AsianOdds quota la partita, di solito il giorno prima.</p>" +
-        riepilogoBest(tutto, ultimi) + tabellaSegni(a[2]);
+        "Il prezzo è quello di Pinnacle senza margine: da quando una pick entra in lista si segue come si muove fino al via. " +
+        "Con il margine dei bookmaker italiani la singola conviene solo se la tua quota supera la quota equa; in multipla il margine si moltiplica.</p>" +
+        '<h3 class="giorno-best">Contro Pinnacle <small>· dal 13/11</small></h3>' + riepilogoPinnacle(misuraPinnacle(a[3])) +
+        '<details class="best-storico"><summary>Lo storico fino al 12/11, contro AsianOdds</summary>' +
+        riepilogoBest(tutto, ultimi) + tabellaSegni(a[2]) + "</details>";
       if (!date.length) {
         $cont.innerHTML = testa + messaggio("vuoto", "Nessuna giornata da oggi in avanti: arrivano col giro notturno.");
         return;
