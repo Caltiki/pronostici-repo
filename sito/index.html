@@ -1470,6 +1470,41 @@
   :root:not([data-theme="light"]) nav.sezioni button { color: #e8f1fc; }
   :root:not([data-theme="light"]) nav.sezioni button:hover { background: rgba(255,255,255,.12); color: #fff; }
   :root:not([data-theme="light"]) nav.sezioni button[aria-current="true"] { background: #5ea8ff; color: #06182e; box-shadow: 0 6px 18px rgba(0,0,0,.35); }
+  /* LE FRECCE DELLA BARRA (12/11): sui telefoni le sezioni non ci stanno
+     tutte e niente diceva che la barra si trascina. Ora la barra sta in
+     un guscio (che resta fermo in alto al posto suo) e, dove c'e' altro
+     fuori schermo, il bordo sfuma col colore della barra e compare una
+     freccia: toccandola la barra scorre. In fondo la freccia sparisce;
+     se ci sta tutto (schermo largo) non compare nessuna delle due. */
+  .sez-guscio { position: sticky; top: 8px; z-index: 5; margin: 0 -8px; }
+  .sez-guscio > nav.sezioni { position: relative; top: 0; margin: 0; --nav-sfondo: #0c4580; }
+  :root[data-theme="light"] .sez-guscio > nav.sezioni { --nav-sfondo: var(--evidenza); }
+  .freccia-sez {
+    position: absolute; top: 1px; bottom: 1px; width: 40px; z-index: 6;
+    display: flex; align-items: center; cursor: pointer;
+    opacity: 0; pointer-events: none; transition: opacity .18s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .freccia-sez.dopo {
+    right: 1px; justify-content: flex-end; padding-right: 3px;
+    border-radius: 0 14px 14px 0;
+    background: linear-gradient(to right, transparent, #0c4580 55%);
+  }
+  .freccia-sez.prima {
+    left: 1px; justify-content: flex-start; padding-left: 3px;
+    border-radius: 14px 0 0 14px;
+    background: linear-gradient(to left, transparent, #0c4580 55%);
+  }
+  :root[data-theme="light"] .freccia-sez.dopo { background: linear-gradient(to right, transparent, var(--evidenza) 55%); }
+  :root[data-theme="light"] .freccia-sez.prima { background: linear-gradient(to left, transparent, var(--evidenza) 55%); }
+  .freccia-sez svg {
+    width: 22px; height: 22px; padding: 3px; border-radius: 999px;
+    background: rgba(255,255,255,.92); box-shadow: 0 2px 6px rgba(0,0,0,.3);
+    fill: none; stroke: #072f57; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+  }
+  .sez-guscio.ha-prima .freccia-sez.prima,
+  .sez-guscio.ha-dopo .freccia-sez.dopo { opacity: 1; pointer-events: auto; }
+  @media (prefers-reduced-motion: reduce) { .freccia-sez { transition: none; } }
 </style>
 </head>
 <body>
@@ -1498,6 +1533,7 @@
     </a>
   </header>
 
+  <div class="sez-guscio">
   <nav class="sezioni" aria-label="Sezioni">
     <button type="button" class="casa" id="casa" aria-label="Home" title="Home">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -1514,6 +1550,9 @@
     <button data-sez="sure">Sure Bets</button>
     <button data-sez="fonti" class="due">Statistiche<br>fonti</button>
   </nav>
+  <span class="freccia-sez prima" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></span>
+  <span class="freccia-sez dopo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></span>
+  </div>
 
   <section id="contenuto"></section>
 
@@ -2041,6 +2080,39 @@
     }
     return (nome ? nome + " \u00b7 " : "") + quando;
   }
+  // LA BARRA DELLE SEZIONI: frecce dove c'e' altro fuori schermo, e la
+  // sezione accesa sempre in vista (12/11).
+  function frecceBarra() {
+    var nav = document.querySelector("nav.sezioni"), g = nav && nav.parentNode;
+    if (!g || !g.classList.contains("sez-guscio")) return;
+    function aggiorna() {
+      var max = nav.scrollWidth - nav.clientWidth;
+      g.classList.toggle("ha-prima", nav.scrollLeft > 4);
+      g.classList.toggle("ha-dopo", max > 4 && nav.scrollLeft < max - 4);
+    }
+    nav.addEventListener("scroll", aggiorna, { passive: true });
+    window.addEventListener("resize", aggiorna);
+    g.querySelectorAll(".freccia-sez").forEach(function (f) {
+      f.addEventListener("click", function () {
+        var verso = f.classList.contains("dopo") ? 1 : -1;
+        nav.scrollBy({ left: verso * Math.max(120, nav.clientWidth * 0.6), behavior: "smooth" });
+      });
+    });
+    aggiorna();
+    setTimeout(aggiorna, 400);       // dopo i caratteri, che cambiano le misure
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(aggiorna);
+  }
+  function sezioneInVista() {
+    var nav = document.querySelector("nav.sezioni");
+    var b = nav && nav.querySelector('button[aria-current="true"]');
+    if (!b || nav.scrollWidth <= nav.clientWidth + 4) return;
+    var margine = 44;                 // la larghezza della freccia
+    var sx = b.offsetLeft - nav.scrollLeft, dx = sx + b.offsetWidth;
+    if (sx >= margine && dx <= nav.clientWidth - margine) return;
+    var meta = b.offsetLeft + b.offsetWidth / 2 - nav.clientWidth / 2;
+    var liscio = !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    nav.scrollTo({ left: Math.max(0, meta), behavior: liscio ? "smooth" : "auto" });
+  }
   function disegna() {
     scriviHash();
     document.querySelectorAll("nav.sezioni button[data-sez]").forEach(function (b) {
@@ -2048,6 +2120,7 @@
         stato.sez === "xg" ? "poisson" : stato.sez;
       b.setAttribute("aria-current", String(b.dataset.sez === accesa));
     });
+    sezioneInVista();
     if (stato.sez === "fonti") return disegnaFonti();
     if (stato.sez === "scheda") return disegnaScheda();
     if (stato.sez === "xg") return disegnaXG();
@@ -6814,6 +6887,7 @@
     disegna();
   }
   document.getElementById("casa").addEventListener("click", vaiHome);
+  frecceBarra();
   document.getElementById("titolo").addEventListener("click", vaiHome);
 
   // ------------------------------------------------------------- LIVE
