@@ -1366,10 +1366,12 @@
   :root[data-theme="light"] .fonte-q.pin { border-color: #a36b00; color: #a36b00; }
   /* IL TIMBRO PINNACLE (100): la partita ha le quote Pinnacle. */
   .timbro-pin {
-    display: inline-block; padding: 1px 6px; border: 1.5px solid #f5b301; border-radius: 3px;
-    color: #f5b301; font-size: .66rem; font-weight: 800; letter-spacing: .08em; line-height: 1.35;
-    text-transform: uppercase; white-space: nowrap;
+    display: inline-block; padding: 0 5px; border: 1px solid #f5b301; border-radius: 3px;
+    color: #f5b301; font-size: .56rem; font-weight: 700; letter-spacing: .06em; line-height: 1.45;
+    text-transform: uppercase; white-space: nowrap; vertical-align: middle;
   }
+  /* (150) piu' piccolo: e' un'indicazione, non il titolo della riga */
+  .fonte-q.pin { font-size: .56rem; padding: 0 5px; }
   :root[data-theme="light"] .timbro-pin { border-color: #a36b00; color: #a36b00; }
   /* Il live nelle giocate in attesa. */
   .reg-live:empty { display: none; }
@@ -1733,7 +1735,7 @@
      "di tutti i dati, mai le due fonti nella stessa partita. Nessuna delle fonti " +
      "misurate finora batte il book: questo \u00e8 da misurare, non da dare per buono."],
     ["mercato", "Con il mercato",
-     "Solo dove AsianOdds ha la partita. Lo scarto dal prezzo \u00e8 la cosa interessante: " +
+     "Solo dove c'\u00e8 il prezzo del mercato: Pinnacle, o un altro book sharp dove Pinnacle manca. Lo scarto dal prezzo \u00e8 la cosa interessante: " +
      "questa \u00e8 l'unica stima del sistema che possa discostarsi dal book per un motivo suo."]
   ];
   // Le stesse frasi dell'addon 1.19.0. Il conteggio del favorito e' quello
@@ -2892,14 +2894,14 @@
         ". Prova \u201cTutti i tip\u201d.";
     }
     if (sez === "poisson") {
-      return "Nessuna delle " + n + " partite del " + data + " ha il prezzo: AsianOdds copre le prossime 24 ore. Prova \u201cTutte\u201d.";
+      return "Nessuna delle " + n + " partite del " + data + " ha il prezzo del mercato (Pinnacle o un altro book). Prova \u201cTutte\u201d.";
     }
     if (sez === "prezzi") {
       if (vista === "schedina") return "Nessuna delle " + n + " selezioni del " + data + " è finita in schedina.";
       if (vista === "stretto") return "Nessuna delle " + n + " selezioni del " + data + " ha il margine sotto il 2%. Prova un'altra vista.";
       return "Nessuna selezione di questo tipo fra le " + n + " del " + data + ". Prova “Tutto”.";
     }
-    if (vista === "mercato") return "Nessuna delle " + n + " partite del " + data + " ha la linea di chiusura: AsianOdds copre le prossime 24 ore.";
+    if (vista === "mercato") return "Nessuna delle " + n + " partite del " + data + " ha la linea del mercato.";
     return "Su tutte e " + n + " le partite del " + data + " si esprime una fonte sola. Prova “Tutte”.";
   }
 
@@ -4414,7 +4416,7 @@
       .map(function (x) { return x[0] + " " + f0(num(x[1])) + "%"; });
     if (gl.length) det.push("<p>" + gl.join(" \u00b7 ") + "</p>");
     if (m1 != null) {
-      det.push("<p>Mercato" + (mmarg != null ? " (margine " + f1(mmarg) + "%)" : "") + ": 1 " + f0(m1) +
+      det.push("<p>Mercato" + (r.M_Fonte ? " " + esc(r.M_Fonte) : "") + (mmarg != null ? " (margine " + f1(mmarg) + "%)" : "") + ": 1 " + f0(m1) +
         "% \u00b7 X " + f0(mx) + "% \u00b7 2 " + f0(m2) + "%" +
         (mgol != null ? ", gol attesi " + f2(mgol) + (mlin != null ? " dalla linea " + esc(mlin) : "") : "") + "</p>");
       if (ds != null) {
