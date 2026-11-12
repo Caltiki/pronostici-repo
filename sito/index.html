@@ -1336,6 +1336,8 @@
   .lv-riga .squadre { font-weight: 600; font-size: .98rem; }
   .lv-riga .info { font-size: .85rem; color: var(--tenue); margin-top: 3px; }
   .lv-riga .info b { color: var(--testo); }
+  /* (142) 1, X e 2 in grassetto accanto alle quote e alle percentuali */
+  b.seg { font-weight: 800; color: var(--testo); }
   .lv-ris { font-family: var(--titoli, inherit); font-weight: 800; font-size: 1.6rem; white-space: nowrap; letter-spacing: .02em; }
   .lv-gruppo { margin: 18px 0 8px; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--tenue); font-weight: 700; }
   .lv-altre summary { cursor: pointer; font-weight: 700; margin: 18px 0 8px; }
@@ -5078,7 +5080,7 @@
     det.push("<p>" + esc(r.Lega || "") + "</p>");
     if (num(r.Q1) != null) det.push("<p>Quote Pinnacle " + [r.Q1, r.QX, r.Q2].map(function (x) { return qv(x); }).join(" · ") +
       (num(r.Margine) != null ? " – margine " + mv(r.Margine) : "") + "</p>");
-    if (p[0] != null) det.push("<p>Equa adesso: 1 " + qv(100 / p[0]) + " · X " + qv(100 / p[1]) + " · 2 " + qv(100 / p[2]) + "</p>");
+    if (p[0] != null) det.push("<p>Equa adesso: <b class=seg>1</b> " + qv(100 / p[0]) + " · <b class=seg>X</b> " + qv(100 / p[1]) + " · <b class=seg>2</b> " + qv(100 / p[2]) + "</p>");
     if (r._diff) det.push("<p>" + movimentoHtml(r._diff, r._mattino, r._p) + ".</p>");
     else det.push("<p>Nessuna lettura del mattino per questa partita: il movimento si vede solo per oggi.</p>");
     if (num(r.OU) != null && num(r["P Over"]) != null) det.push("<p>Linea Under/Over " + esc(r.OU) + ": Over " + pv(r["P Over"]) + "</p>");
@@ -5090,7 +5092,7 @@
     var punti = r._diff ? (r._diff["1X2".indexOf(r._segnoMov)] > 0 ? "+" : "") + f0(r._diff["1X2".indexOf(r._segnoMov)]) : "-";
     var mosse = stato.vista.pin === "mosse";
     var fid = fiducia(num(r.Margine));
-    var quote = num(r.Q1) != null ? '<div class="sel">1 ' + qv(r.Q1) + " · X " + qv(r.QX) + " · 2 " + qv(r.Q2) +
+    var quote = num(r.Q1) != null ? '<div class="sel"><b class=seg>1</b> ' + qv(r.Q1) + " · <b class=seg>X</b> " + qv(r.QX) + " · <b class=seg>2</b> " + qv(r.Q2) +
       (num(r.OU) != null && num(r["P Over"]) != null ? " · Over " + esc(r.OU) + " " + pv(r["P Over"]) : "") + "</div>" : "";
     var top = r.Segno, pt = r._prob != null ? r._prob * 100 : null;
     return '<div class="riga"><details><summary>' +
@@ -5156,9 +5158,9 @@
     if (!r) return "";
     var p = [num(r["P1 Shin"]), num(r["PX Shin"]), num(r["P2 Shin"])];
     var out = [];
-    if (num(r.Q1) != null) out.push("<p><b>Quote Pinnacle</b>: 1 " + qv(r.Q1) + " · X " + qv(r.QX) + " · 2 " + qv(r.Q2) +
+    if (num(r.Q1) != null) out.push("<p><b>Quote Pinnacle</b>: <b class=seg>1</b> " + qv(r.Q1) + " · <b class=seg>X</b> " + qv(r.QX) + " · <b class=seg>2</b> " + qv(r.Q2) +
       (num(r.Margine) != null ? " (margine " + mv(r.Margine) + ")" : "") + "</p>");
-    if (p[0] != null) out.push("<p><b>Pinnacle senza margine</b>: 1 " + pv(p[0]) + " · X " + pv(p[1]) + " · 2 " + pv(p[2]) + "</p>");
+    if (p[0] != null) out.push("<p><b>Pinnacle senza margine</b>: <b class=seg>1</b> " + pv(p[0]) + " · <b class=seg>X</b> " + pv(p[1]) + " · <b class=seg>2</b> " + pv(p[2]) + "</p>");
     var mt = x ? pinMattino(x.pro, data || r.Data, r.ID_API) : null;
     if (mt && p[0] != null) out.push("<p>" + movimentoHtml([p[0] - mt[0], p[1] - mt[1], p[2] - mt[2]], mt[3] || "", p) + ".</p>");
     return out.join("");
@@ -6041,9 +6043,9 @@
     var p = r._p || [];
     var det = [];
     if (r.Lega) det.push("<p>" + esc(r.Lega) + "</p>");
-    det.push("<p>Quote " + esc(r.Fonte) + ": 1 " + qv(r.Q1) + " · X " + qv(r.QX) + " · 2 " + qv(r.Q2) +
+    det.push("<p>Quote " + esc(r.Fonte) + ": <b class=seg>1</b> " + qv(r.Q1) + " · <b class=seg>X</b> " + qv(r.QX) + " · <b class=seg>2</b> " + qv(r.Q2) +
       (marg != null ? " (margine " + mv(marg) + ")" : "") + "</p>");
-    if (p[0] != null) det.push("<p>Senza margine: 1 " + pv(p[0]) + " · X " + pv(p[1]) + " · 2 " + pv(p[2]) + "</p>");
+    if (p[0] != null) det.push("<p>Senza margine: <b class=seg>1</b> " + pv(p[0]) + " · <b class=seg>X</b> " + pv(p[1]) + " · <b class=seg>2</b> " + pv(p[2]) + "</p>");
     det.push("<p>Quota equa " + articolo(esito) + ": " + qv(equa) + (r._quota ? " – il book la paga " + qv(r._quota) : "") +
       ". Sopra l’equa prendi valore, sotto paghi margine.</p>");
     var sel = squadra ? "Vince " + esc(squadra) : "Pareggio";
@@ -6610,7 +6612,7 @@
       logoId(p.Ospite, p.Pin && p.Pin.ID_Ospite, true, campiRiga(p)) + esc(p.Ospite) + "</h2>";
     if (p.Elo) {
       h += '<p class="elo-mini">Elo ' + ev(p.Elo.c.elo) + " \u2013 " + ev(p.Elo.o.elo) + " (" + p.Elo.c.pos + "° e " + p.Elo.o.pos + "° su " +
-        ELO.dati.lista.length + ") · 1 " + pv(p.Elo.p[0]) + " · X " + pv(p.Elo.p[1]) + " · 2 " + pv(p.Elo.p[2]) + "</p>";
+        ELO.dati.lista.length + ") · <b class=seg>1</b> " + pv(p.Elo.p[0]) + " · <b class=seg>X</b> " + pv(p.Elo.p[1]) + " · <b class=seg>2</b> " + pv(p.Elo.p[2]) + "</p>";
     }
     var st = String(fm.Stato || "").toUpperCase(), gc = num(fm.Gol_Casa), go = num(fm.Gol_Ospite);
     var fine = finaleScheda(p);
@@ -6684,7 +6686,7 @@
       if (s[0] == null) s = [num(a.P1), num(a.PX), num(a.P2)];
       if (s[0] != null) {
         var ma = num(a.Margine);
-        h += "<p>AsianOdds: 1 " + pv(s[0]) + " · X " + pv(s[1]) + " · 2 " + pv(s[2]) + (ma != null ? " (margine " + mv(ma) + ")" : "") +
+        h += "<p>AsianOdds: <b class=seg>1</b> " + pv(s[0]) + " · <b class=seg>X</b> " + pv(s[1]) + " · <b class=seg>2</b> " + pv(s[2]) + (ma != null ? " (margine " + mv(ma) + ")" : "") +
           (num(a.Mov) ? "; " + (a.Notevole ? "movimento notevole" : "movimento") + " di " + nv(a.Mov) + " punti dall'apertura" : "") + ".</p>";
       }
     }
@@ -7804,8 +7806,8 @@
       det.push("<p>" + esc(x.lega || "") + "</p>");
       det.push("<p><b>" + esc(x.casa) + "</b>: " + (r.c ? "Elo " + ev(r.c.elo) + " · " + r.c.pos + "° di " + ELO.dati.lista.length + (r.c.camp ? " · " + esc(r.c.camp) : "") : "non nello storico") + "</p>");
       det.push("<p><b>" + esc(x.ospite) + "</b>: " + (r.o ? "Elo " + ev(r.o.elo) + " · " + r.o.pos + "° di " + ELO.dati.lista.length + (r.o.camp ? " · " + esc(r.o.camp) : "") : "non nello storico") + "</p>");
-      if (p) det.push("<p>Elo: 1 " + pv(p[0]) + " · X " + pv(p[1]) + " · 2 " + pv(p[2]) + " — equa 1 " + qv(100 / p[0]) + " · X " + qv(100 / p[1]) + " · 2 " + qv(100 / p[2]) + "</p>");
-      if (r.pp) det.push("<p>Pinnacle senza margine: 1 " + pv(r.pp[0]) + " · X " + pv(r.pp[1]) + " · 2 " + pv(r.pp[2]) + "</p>");
+      if (p) det.push("<p>Elo: <b class=seg>1</b> " + pv(p[0]) + " · <b class=seg>X</b> " + pv(p[1]) + " · <b class=seg>2</b> " + pv(p[2]) + " — equa <b class=seg>1</b> " + qv(100 / p[0]) + " · <b class=seg>X</b> " + qv(100 / p[1]) + " · <b class=seg>2</b> " + qv(100 / p[2]) + "</p>");
+      if (r.pp) det.push("<p>Pinnacle senza margine: <b class=seg>1</b> " + pv(r.pp[0]) + " · <b class=seg>X</b> " + pv(r.pp[1]) + " · <b class=seg>2</b> " + pv(r.pp[2]) + "</p>");
       if (r.sc) det.push("<p>Scarto più grande: sul " + "1X2"[r.sc.i] + " l’Elo dice " + (r.sc.v > 0 ? "+" : "−") + f0(Math.abs(r.sc.v)) + " punti rispetto a Pinnacle. " +
         '<span class="piccolo">Di solito ha ragione il mercato: l’Elo non sa di assenti, formazioni e motivazioni.</span></p>');
       var lk = sito[String(x.id)];
@@ -7942,8 +7944,8 @@
     if (rr) info.push("<div class=\"info\">Espulsioni: <b>" + esc(rr) + "</b></div>");
     if (pin) {
       var pp = [num(pin["P1 Shin"]), num(pin["PX Shin"]), num(pin["P2 Shin"])];
-      info.push("<div class=\"info\">Pinnacle prima del via: 1 " + qv(pin.Q1) + " · X " + qv(pin.QX) + " · 2 " + qv(pin.Q2) +
-        (pp[0] != null ? " (1 " + pv(pp[0]) + " · X " + pv(pp[1]) + " · 2 " + pv(pp[2]) + ")" : "") + "</div>");
+      info.push("<div class=\"info\">Pinnacle prima del via: <b class=seg>1</b> " + qv(pin.Q1) + " · <b class=seg>X</b> " + qv(pin.QX) + " · <b class=seg>2</b> " + qv(pin.Q2) +
+        (pp[0] != null ? " (<b class=seg>1</b> " + pv(pp[0]) + " · <b class=seg>X</b> " + pv(pp[1]) + " · <b class=seg>2</b> " + pv(pp[2]) + ")" : "") + "</div>");
     }
     var g = (x.gc == null ? "-" : x.gc) + "\u2013" + (x.go == null ? "-" : x.go);
     var pill = '<span class="live' + (golFresco(x) ? " fresco" : "") + '" title="' + esc(titoloLive(x)) + '">' + esc(minutoLive(x)) + "</span>";
@@ -8168,7 +8170,7 @@
         div.className = "sel elo-mini";
         div.title = "Elo del sistema: " + c.nome + " " + Math.round(c.elo) + ", " + o.nome + " " + Math.round(o.elo);
         div.innerHTML = "Elo " + ev(c.elo) + " \u2013 " + ev(o.elo) + ' <span class="piccolo">(' + (c.elo >= o.elo ? "+" : "\u2212") +
-          f0(Math.abs(c.elo - o.elo)) + ")</span> · 1 " + pv(p[0]) + " · X " + pv(p[1]) + " · 2 " + pv(p[2]);
+          f0(Math.abs(c.elo - o.elo)) + ")</span> · <b class=seg>1</b> " + pv(p[0]) + " · <b class=seg>X</b> " + pv(p[1]) + " · <b class=seg>2</b> " + pv(p[2]);
         dove.parentNode.insertBefore(div, dove.nextSibling);
       };
       if (pin && pin.ID_Casa != null && pin.ID_Ospite != null && String(pin.ID_API) === String(fid)) return metti(pin.ID_Casa, pin.ID_Ospite);
