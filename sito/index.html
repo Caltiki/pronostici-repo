@@ -1760,7 +1760,9 @@
   ];
   var MK_ORDINI = [["file", "Per orario"], ["mov", "Per movimento"], ["margine", "Per margine"]];
   var GRUPPO_PRONOSTICI_TUTTI = [["prezzi", "Probabilit\u00e0 senza margine"], ["mercato", "Mercato"], ["wdw", "FootyStats"],
-                                 ["sm", "Sports Mole"], ["fp", "FootballPark"], ["pin", "Mosse Pinnacle"]];
+                                 ["sm", "Sports Mole"], ["pin", "Mosse Pinnacle"]];
+  // (135) FootballPark tolto: il suo workflow e' spento dall'11/11 e la
+  // fonte non serviva. I vecchi indirizzi #fp portano ai Pronostici.
   // Il tasto FootyStats compare solo quando i dati ci sono davvero
   // (footystatswdw_index.json con almeno una data): finche' FootyStats
   // rifiuta i server di GitHub, un tasto che porta a una pagina vuota
@@ -1920,6 +1922,7 @@
       if (p[2] === "fotmob" || p[2] === "understat") XG.fonte = p[2];
       return;
     }
+    if (p[0] === "fp") p = ["prezzi"];
     if (SEZ[p[0]] || p[0] === "fonti") stato.sez = p[0];
     if (stato.sez === "fonti") {
       FONTI.vista = p[1] === "partite" ? "partite" : "riepilogo";
@@ -8131,25 +8134,6 @@
         b.textContent = "Mosse Pinnacle";
         b.addEventListener("click", function () {
           stato.sez = "pin"; stato.cerca = ""; stato.limite = PASSO; disegna();
-        });
-        inserisciInOrdine(m.parentNode, b);
-      }
-    }
-  }, function () { /* nessun dato: il tasto resta nascosto */ });
-  // FootballPark: stessa regola.
-  leggi("footballpark_index.json").then(function (ix) {
-    if (!ix || !Array.isArray(ix.date) || !ix.date.length) return;
-    FP_PRONTO = true;
-    if (stato.sez === "prezzi" || stato.sez === "mercato" || stato.sez === "wdw" || stato.sez === "sm" || stato.sez === "hp") {
-      var m = $cont.querySelector('[data-gruppo="mercato"]');
-      if (m && !$cont.querySelector('[data-gruppo="fp"]')) {
-        var sez = stato.sez;
-        var b = document.createElement("button");
-        b.type = "button"; b.setAttribute("data-gruppo", "fp"); b.setAttribute("aria-pressed", "false");
-        b.textContent = "FootballPark";
-        b.addEventListener("click", function () {
-          if (!stato.data.fp) stato.data.fp = stato.data[sez];
-          stato.sez = "fp"; stato.cerca = ""; stato.limite = PASSO; disegna();
         });
         inserisciInOrdine(m.parentNode, b);
       }
