@@ -1,0 +1,144 @@
+name: Pinnacle
+
+# =========================================================
+# PINNACLE (piano PRO di API-Football) - workflow a se'
+# =========================================================
+# apifootball.py pinnaclepro: le quote Pinnacle di tutte le partite del
+# sito (oggi a ogni giro, i tre giorni dopo nei giri pieni), tutti i loro
+# mercati (pinmercati_<data>.json), la chiusura in pinnacle_archivio.csv,
+# gli infortunati, le formazioni entro 75 minuti dal via, le statistiche
+# delle partite finite con gli xG (statistiche_archivio.csv) e l'avviso su
+# Telegram quando una partita che comincia entro tre ore si muove di almeno
+# 4 punti dal mattino.
+#
+# PERCHE' UN FILE A PARTE: gira fino a ogni ora, mentre statarea.yml gira poche
+# volte al giorno. Pubblica SOLO i suoi file (pinnacle_*, formazioni_*,
+# apifootball_pro.json, partite_api_*): nessun altro giro li scrive, quindi il push non
+# si contende niente con Statarea. I prezzi equi del sito li rifanno i giri
+# di Statarea (AsianOdds, quattro volte al giorno) leggendo questi file.
+#
+# QUANDO IL MESE FINISCE: lo script chiede il piano a /status (gratis) e,
+# se non e' il PRO, non fa niente. Si puo' anche disattivare il workflow:
+# Actions -> Pinnacle -> "..." -> Disable workflow.
+#
+# La chiave e' il secret APIFOOTBALL_KEY, la stessa del resto del sistema.
+# QUANDO GIRA (12/11; dall'orologio, vedi sotto). Era ogni ora: GitHub conta almeno un minuto di
+# Actions per ogni giro, e i minuti inclusi del piano gratuito (2.000 al
+# mese sui repository privati) non bastavano. Adesso, in UTC:
+#   06, 08, 10, 12          ogni due ore la mattina (7, 9, 11, 13 in Italia)
+#   12, 13, ... 22          ogni ora dal primo pomeriggio (13-23 in Italia),
+#                           quando giocano quasi tutte le partite e conta
+#                           la quota di chiusura
+# 14 giri al giorno. Fra le 23 e le 06 UTC non gira: le partite della notte
+# italiana (Sudamerica) prendono la chiusura dall'ultimo giro delle 22 UTC.
+# I giri pieni (i giorni dopo) partono quando sono passate almeno 5 ore e
+# mezza dal precedente (vedi apifootball.py).
+# (12/11) Niente piu' "schedule": GitHub lo faceva partire quasi mai (4
+# giri in due giorni). Lo avvia l'orologio su Cloudflare (live/orologio.js)
+# al minuto 07 delle stesse ore UTC. A mano: Actions -> Pinnacle -> Run
+# workflow.
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: pinnacle
+  cancel-in-progress: false
+
+env:
+  REPO_DATI: Caltiki/pronostici-repo
+  BRANCH_DATI: gh-data
+
+jobs:
+  pinnacle:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Scarica i dati esistenti dal repository pubblico
+        id: clone
+        env:
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+        run: |
+          set -uo pipefail
+          if [ -z "${TOKEN_DATI:-}" ]; then
+            echo "::error::Secret TOKEN_REPO_DATI assente."
+            exit 1
+          fi
+          URL="https://x-access-token:${TOKEN_DATI}@github.com/${REPO_DATI}"
+          rm -rf ghdata
+          if ! git ls-remote --exit-code --heads "$URL" "${BRANCH_DATI}" >/dev/null 2>&1; then
+            echo "::error::${REPO_DATI} irraggiungibile o branch ${BRANCH_DATI} assente."
+            exit 1
+          fi
+          git clone --branch "${BRANCH_DATI}" --depth 1 "$URL" ghdata
+
+      - name: Quote Pinnacle, formazioni e avvisi
+        id: pinnacle
+        if: steps.clone.outcome == 'success'
+        env:
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+          TG_TOKEN: ${{ secrets.TG_TOKEN }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+        run: |
+          if [ ! -f apifootball.py ]; then
+            echo "::warning::apifootball.py non e' nel repository: passo saltato."
+            exit 1
+          fi
+          python apifootball.py pinnaclepro --dati ghdata --giorni 3 --soglia 4
+
+      - name: Pubblica i file Pinnacle sul repository pubblico
+        if: steps.pinnacle.outcome == 'success'
+        env:
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+        run: |
+          set -uo pipefail
+          URL="https://x-access-token:${TOKEN_DATI}@github.com/${REPO_DATI}"
+          cd ghdata
+          git config user.name "caltiki-bot"
+          git config user.email "caltiki-bot@users.noreply.github.com"
+          git remote remove origin 2>/dev/null || true
+          git remote add origin "$URL"
+          # SOLO I FILE DI QUESTO WORKFLOW (anche quelli cancellati, le
+          # giornate passate). apifootball_squadre.json, che lo script tocca
+          # di passaggio, lo pubblicano i giri di Statarea.
+          # partite_api_<data>.json SI' (11/11): col PRO li scrive solo questo
+          # workflow (il modo "pinnacle" dei giri di Statarea col PRO non
+          # gira), e senza di loro il sito non aggancia i live. Prima non si
+          # pubblicavano: su gh-data non ce n'era nessuno.
+          # Uno per volta: git si ferma se un nome non trova file (le
+          # formazioni, per esempio, la mattina non ci sono ancora).
+          # calendario_* (12/11): il calendario completo per la pagina
+          # Calendario del sito; anche questo lo scrive solo questo workflow.
+          # pinmercati_* e statistiche_* (12/11): tutti i mercati Pinnacle
+          # delle nostre partite e le statistiche (xG compresi) di quelle
+          # finite, con il loro archivio. forma_* (12/11): le ultime partite
+          # delle squadre di oggi e domani, per le icone della forma.
+          # bookmakers_api.json (12/11): quali bookmaker ha API-Football.
+          # rose_api.json (12/11): le statistiche dei giocatori delle squadre
+          # con assenti, per il peso degli assenti.
+          for f in 'pinnacle_*.json' 'pinnacle_archivio.csv' 'formazioni_*.json' 'apifootball_pro.json' 'partite_api_*.json' 'calendario_*.json' 'pinmercati_*.json' 'statistiche_*.json' 'statistiche_archivio.csv' 'forma_*.json' 'bookmakers_api.json' 'rose_api.json'; do
+            git add -A -- "$f" 2>/dev/null || true
+          done
+          if git diff --cached --quiet; then
+            echo "Nessuna modifica"
+            exit 0
+          fi
+          git commit -q -m "Update pinnacle $(date -u +'%Y-%m-%d %H:%M') UTC"
+          git stash -q --include-untracked || true
+          for i in 1 2 3; do
+            git pull -q --rebase origin "${BRANCH_DATI}" && git push -q origin "HEAD:${BRANCH_DATI}" && { echo "Pubblicato."; exit 0; }
+            echo "push non riuscito, riprovo fra 15 secondi ($i/3)"
+            git rebase --abort 2>/dev/null || true
+            sleep 15
+          done
+          echo "::error::Push su ${BRANCH_DATI} non riuscito dopo tre tentativi."
+          exit 1
