@@ -1311,6 +1311,17 @@
   /* Le date prima di ieri, sotto il tasto "Giorni precedenti" (108). */
   .chips.giorni-vecchi { margin-top: -4px; }
   .chips.giorni-vecchi[hidden] { display: none; }
+  /* CALENDARIO (122). */
+  .cal-lega { margin-bottom: 6px; border: 1px solid var(--bordo); border-radius: var(--raggio); background: var(--scheda); }
+  .cal-lega > summary { cursor: pointer; padding: 10px 12px; font-weight: 700; font-size: .9rem; }
+  .cal-lega > summary small { color: var(--tenue); font-weight: 500; margin-left: 6px; }
+  .cal-riga { display: grid; grid-template-columns: 48px 1fr auto; gap: 8px; padding: 7px 12px; border-top: 1px solid var(--bordo); font-size: .9rem; align-items: center; }
+  .cal-riga .m { color: var(--tenue); font-variant-numeric: tabular-nums; font-size: .82rem; }
+  .cal-riga .r { white-space: nowrap; }
+  .cal-riga .r .live { margin-left: 0; }
+  .cal-riga.cal-sito { font-weight: 600; }
+  .cal-riga .chip, .cal-riga .timbro-pin { margin-left: 4px; vertical-align: middle; }
+  .lv-ris-mini { font-weight: 800; }
   /* PARTITE LIVE (111). */
   .lv-riga { display: flex; gap: 12px; align-items: center; padding: 12px 14px; background: var(--scheda);
     border: 1px solid var(--bordo); border-radius: var(--raggio); box-shadow: var(--ombra); margin-bottom: 10px; }
@@ -1495,6 +1506,7 @@
     </button>
     <button data-sez="prezzi">Pronostici</button>
     <button data-sez="live" class="due">Partite<br>live</button>
+    <button data-sez="cal">Calendario</button>
     <button data-sez="pin">Pinnacle</button>
     <button data-sez="consensus" class="due">Consenso<br>fonti</button>
     <button data-sez="best" class="due">Best<br>picks</button>
@@ -1805,6 +1817,9 @@
 
   // "Statistiche fonti" ha due viste: il riepilogo e le partite una per una.
   var FONTI = { vista: "riepilogo", data: null, fonte: "" };
+  // La pagina Calendario (122): dichiarata qui perche' leggiHash la usa
+  // gia' all'avvio.
+  var CAL = { data: null, filtro: "tutte", cerca: "", aperti: {} };
 
   function leggiHash() {
     var p = location.hash.replace(/^#/, "").split("/");
@@ -1818,6 +1833,7 @@
     if (p[0] === "best") { stato.sez = "best"; return; }
     if (p[0] === "giocate") { stato.sez = "giocate"; return; }
     if (p[0] === "live") { stato.sez = "live"; return; }
+    if (p[0] === "cal") { stato.sez = "cal"; if (/^\d{4}-\d{2}-\d{2}$/.test(p[1] || "")) CAL.data = p[1]; return; }
     if (p[0] === "xg") {
       stato.sez = "xg";
       try { XG.lega = p[1] ? decodeURIComponent(p[1]) : XG.lega; } catch (e) { /* resta quella che c'era */ }
@@ -1839,6 +1855,8 @@
     var h = stato.sez;
     if (stato.sez === "scheda") {
       h += "/" + (SCHEDA.data || "") + "/" + encodeURIComponent(SCHEDA.chiave || "");
+    } else if (stato.sez === "cal") {
+      h += "/" + (CAL.data || "");
     } else if (stato.sez === "best" || stato.sez === "giocate" || stato.sez === "live") {
       // una pagina sola, senza giornata: tiene sempre oggi e i giorni dopo
     } else if (stato.sez === "xg") {
@@ -2036,6 +2054,7 @@
     if (stato.sez === "best") return disegnaBest();
     if (stato.sez === "giocate") return disegnaGiocate();
     if (stato.sez === "live") return disegnaPartiteLive();
+    if (stato.sez === "cal") return disegnaCalendario();
     return disegnaGiornata(stato.sez);
   }
 
@@ -6935,6 +6954,123 @@
       aggiornaLive();
     }).catch(function () { /* il ponte non risponde: niente live, il resto va */ });
   }
+  // ---------------------------------------------------------- CALENDARIO
+  // TUTTE LE PARTITE DEL GIORNO (122), da API-Football: calendario_<data>.json
+  // lo scrive apifootball.py (pinnacle_pro) col calendario che legge gia'.
+  // Per ogni partita: se e' anche sul sito (partite_api_<data>.json), se ha
+  // le quote Pinnacle, e il live se e' in corso. I campionati con partite
+  // del sito vengono prima e aperti; gli altri chiusi.
+  function indiceCalendario() {
+    return leggi("calendario_index.json").catch(function () {
+      var t = Math.floor(Date.now() / 600000);
+      return Promise.all([-1, 0, 1, 2, 3].map(function (k) {
+        var d = giornoRoma(k);
+        return leggiUrl(BASE + "calendario_" + d + ".json?t=" + t, "calendario_" + d)
+          .then(function (v) { return Array.isArray(v) && v.length ? d : null; }).catch(function () { return null; });
+      })).then(function (v) {
+        var date = v.filter(Boolean);
+        if (!date.length) throw new Error("calendario non pubblicato");
+        return { date: date };
+      });
+    });
+  }
+  function disegnaCalendario() {
+    $cont.innerHTML = messaggio("vuoto", "Carico&hellip;");
+    Promise.all([indiceCalendario(), caricaLoghi(), caricaPinGlobale().catch(function () { return null; })]).then(function (a) {
+      if (stato.sez !== "cal") return;
+      var ix = a[0], date = (ix.date || []).filter(function (d) { return d >= giornoRoma(-1); }).sort();
+      if (!date.length) throw new Error("nessuna data");
+      if (date.indexOf(CAL.data) < 0) CAL.data = date.indexOf(oggi()) >= 0 ? oggi() : date[0];
+      var d = CAL.data;
+      document.getElementById("aggiornato").textContent = testoAggiornato("Calendario", ix.updated);
+      var t = Math.floor(Date.now() / 600000);
+      return Promise.all([
+        leggiUrl(BASE + "calendario_" + d + ".json?t=" + t, "calendario_" + d),
+        leggi("partite_api_" + d + ".json").catch(function () { return {}; })
+      ]).then(function (b) {
+        if (stato.sez !== "cal" || CAL.data !== d) return;
+        var lista = Array.isArray(b[0]) ? b[0] : [], mappa = b[1] && typeof b[1] === "object" ? b[1] : {};
+        var sito = {};
+        for (var k in mappa) sito[String(mappa[k])] = true;
+        $cont.innerHTML = '<h2 class="reg-tit">Calendario</h2>' +
+          '<p class="descr">Tutte le partite del giorno, anche quelle che le fonti del sito non seguono. ' +
+          "<b>sul sito</b> = la partita ha pronostici o prezzi nelle altre sezioni; il timbro dice se ha le quote Pinnacle.</p>" +
+          chipsHtml(date.map(function (x) { return [x, etichettaData(x)]; }), d, "data-cdata") +
+          chipsHtml([["tutte", "Tutte"], ["sito", "Sul sito"], ["pin", "Con Pinnacle"], ["live", "In corso"]], CAL.filtro, "data-cfiltro") +
+          '<div class="strumenti"><input type="search" id="cerca-cal" placeholder="Squadra, campionato o paese" value="' + esc(CAL.cerca) + '" autocomplete="off"></div>' +
+          '<div id="cal-lista"></div>';
+        $cont.querySelectorAll("[data-cdata]").forEach(function (x) {
+          x.addEventListener("click", function () { CAL.data = x.dataset.cdata; CAL.aperti = {}; disegna(); });
+        });
+        $cont.querySelectorAll("[data-cfiltro]").forEach(function (x) {
+          x.addEventListener("click", function () {
+            CAL.filtro = x.dataset.cfiltro;
+            $cont.querySelectorAll("[data-cfiltro]").forEach(function (y) { y.setAttribute("aria-pressed", String(y === x)); });
+            listaCalendario(lista, sito);
+          });
+        });
+        document.getElementById("cerca-cal").addEventListener("input", function (e) { CAL.cerca = e.target.value; listaCalendario(lista, sito); });
+        listaCalendario(lista, sito);
+      });
+    }).catch(function () {
+      $cont.innerHTML = messaggio("vuoto", "Il calendario non è ancora pubblicato: lo scrive il giro di Pinnacle, entro un paio d’ore.");
+    });
+  }
+  function statoCal(x) {
+    var vivo = DATI_LIVE && DATI_LIVE[x.id] && IN_CORSO[DATI_LIVE[x.id].stato] ? DATI_LIVE[x.id] : null;
+    if (vivo) return { vivo: true, html: pillolaLive(vivo) };
+    var st = String(x.stato || "").toUpperCase();
+    var g = x.gc != null && x.go != null ? x.gc + "–" + x.go : "";
+    if (st === "FT" || st === "AET" || st === "PEN") return { html: '<span class="lv-ris-mini">' + esc(g) + "</span>" };
+    if (IN_CORSO[st]) return { vivo: true, html: '<span class="live">' + esc(g || "in corso") + "</span>" };
+    if (st === "PST") return { html: '<span class="pill">rinviata</span>' };
+    if (st === "CANC" || st === "ABD") return { html: '<span class="pill">annullata</span>' };
+    return { html: "" };
+  }
+  function listaCalendario(lista, sito) {
+    var $l = document.getElementById("cal-lista");
+    if (!$l) return;
+    var q = CAL.cerca.trim().toLowerCase();
+    var righe = lista.filter(function (x) {
+      if (q && [x.casa, x.ospite, x.lega].join(" ").toLowerCase().indexOf(q) < 0) return false;
+      if (CAL.filtro === "sito") return !!sito[String(x.id)];
+      if (CAL.filtro === "pin") return !!PIN_G.perId[String(x.id)];
+      if (CAL.filtro === "live") return !!statoCal(x).vivo;
+      return true;
+    });
+    var gruppi = {}, conSito = {};
+    righe.forEach(function (x) {
+      var k = x.lega || "Altro";
+      (gruppi[k] = gruppi[k] || []).push(x);
+      if (sito[String(x.id)]) conSito[k] = true;
+    });
+    var leghe = Object.keys(gruppi).sort(function (a, b) {
+      return (conSito[b] ? 1 : 0) - (conSito[a] ? 1 : 0) || a.localeCompare(b);
+    });
+    var nSito = righe.filter(function (x) { return sito[String(x.id)]; }).length;
+    var h = '<p class="conta">' + righe.length + (righe.length === 1 ? " partita" : " partite") + " in " + leghe.length +
+      (leghe.length === 1 ? " campionato" : " campionati") + " · " + nSito + " sul sito</p>";
+    if (!righe.length) h += messaggio("vuoto", "Nessuna partita con questi filtri.");
+    var apri = q || CAL.filtro !== "tutte";
+    h += leghe.map(function (k) {
+      var v = gruppi[k].sort(function (a, b) { return String(a.ora).localeCompare(String(b.ora)) || String(a.casa).localeCompare(String(b.casa)); });
+      var aperto = CAL.aperti[k] != null ? CAL.aperti[k] : (apri || !!conSito[k]);
+      return '<details class="cal-lega" data-lega="' + esc(k) + '"' + (aperto ? " open" : "") + "><summary>" + esc(k) +
+        ' <small>' + v.length + (conSito[k] ? " · sul sito" : "") + "</small></summary>" +
+        v.map(function (x) {
+          var pin = PIN_G.perId[String(x.id)], s = statoCal(x), ns = !!sito[String(x.id)];
+          return '<div class="cal-riga' + (ns ? " cal-sito" : "") + '"><span class="m">' + esc(x.ora || "") + "</span>" +
+            "<span>" + logo(x.casa, false, x.lega) + esc(x.casa) + " – " + logo(x.ospite, false, x.lega) + esc(x.ospite) +
+            (ns ? ' <span class="chip">sul sito</span>' : "") + (pin ? " " + timbroPin(pin) : "") + "</span>" +
+            '<span class="r">' + s.html + "</span></div>";
+        }).join("") + "</details>";
+    }).join("");
+    $l.innerHTML = h;
+    $l.querySelectorAll(".cal-lega").forEach(function (det) {
+      det.addEventListener("toggle", function () { CAL.aperti[det.dataset.lega] = det.open; });
+    });
+  }
+
   // ------------------------------------------------------- PARTITE LIVE
   // LA PAGINA DELLE PARTITE IN CORSO (111). Dal ponte: /tutte da' tutte le
   // partite che API-Football segue in diretta, con n:1 sulle nostre (quelle
