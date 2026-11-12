@@ -1294,6 +1294,8 @@
     border-radius: 50%; background: #fff; animation: livePulsa 1.4s ease-in-out infinite;
   }
   @keyframes livePulsa { 50% { opacity: .25; } }
+  /* (144) il puntino fra tempo e punteggio */
+  .live .lv-sep { font-weight: 900; margin: 0 .35em; }
   /* Gol da meno di cinque minuti: la pillola si accende per qualche minuto. */
   .live.fresco { box-shadow: 0 0 0 2px var(--evidenza); animation: liveGol 1.2s ease-in-out 3; }
   @keyframes liveGol { 50% { box-shadow: 0 0 0 5px var(--evidenza-tenue, rgba(94,168,255,.35)); } }
@@ -7390,19 +7392,25 @@
     if (o) return "ospite in " + (11 - o);
     return "";
   }
-  function testoLive(x) {
+  // (144) I pezzi della pillola: tempo, punteggio, ultimo gol, espulsioni.
+  // Fra un pezzo e l'altro un puntino in grassetto (htmlLive), per non
+  // leggere "5' 0-0" come un numero solo.
+  function pezziLive(x) {
     var g = (x.gc == null ? "-" : x.gc) + "\u2013" + (x.go == null ? "-" : x.go);
-    var t;
-    if (x.stato === "HT") t = "intervallo " + g;
-    else if (x.stato === "BT") t = "pausa " + g;
-    else if (x.stato === "P") t = "rigori " + g;
-    else if (x.stato === "INT" || x.stato === "SUSP") t = "sospesa " + g;
-    else t = (x.min != null ? x.min + (x.extra ? "+" + x.extra : "") + "\u2032 " : "") + g;
+    var a = [];
+    if (x.stato === "HT") a.push("intervallo");
+    else if (x.stato === "BT") a.push("pausa");
+    else if (x.stato === "P") a.push("rigori");
+    else if (x.stato === "INT" || x.stato === "SUSP") a.push("sospesa");
+    else if (x.min != null) a.push(x.min + (x.extra ? "+" + x.extra : "") + "\u2032");
+    a.push(g);
     var gl = golLive(x), r = inDieci(x);
-    if (gl) t += " \u00b7 gol " + gl[gl.length - 1].m + "\u2032";
-    if (r) t += " \u00b7 " + r;
-    return t;
+    if (gl) a.push("gol " + gl[gl.length - 1].m + "\u2032");
+    if (r) a.push(r);
+    return a;
   }
+  function testoLive(x) { return pezziLive(x).join(" \u00b7 "); }
+  function htmlLive(x) { return pezziLive(x).map(esc).join('<b class="lv-sep">\u00b7</b>'); }
   // Il gol e' di meno di cinque minuti fa (minuti di gioco)?
   function golFresco(x) {
     var gl = golLive(x);
@@ -7421,7 +7429,7 @@
     return t;
   }
   function pillolaLive(x) {
-    return '<span class="live' + (golFresco(x) ? " fresco" : "") + '" title="' + esc(titoloLive(x)) + '">' + esc(testoLive(x)) + "</span>";
+    return '<span class="live' + (golFresco(x) ? " fresco" : "") + '" title="' + esc(titoloLive(x)) + '">' + htmlLive(x) + "</span>";
   }
   // La partita in corso di un evento del registro: col numero di
   // API-Football se l'evento l'ha (righe Pinnacle), altrimenti con la mappa.
@@ -7453,8 +7461,8 @@
         box.appendChild(pill);
       }
       pill.className = "live" + (golFresco(x) ? " fresco" : "");
-      var t = testoLive(x), ti = titoloLive(x);
-      if (pill.textContent !== t) pill.textContent = t;
+      var t = htmlLive(x), ti = titoloLive(x);
+      if (pill.innerHTML !== t) pill.innerHTML = t;
       if (pill.title !== ti) pill.title = ti;
     });
     // Le giocate in attesa: il punteggio di ogni evento in corso e, nel
