@@ -1552,6 +1552,9 @@
   details.best-storico summary { cursor: pointer; color: var(--evidenza); font-weight: 600; }
   /* (140) l'Elo sotto i nomi, in ogni card */
   .sel.elo-mini { font-size: .85rem; color: var(--tenue); }
+  /* (148) sulle card l'Elo sta in una riga: il carattere si stringe col
+     telefono stretto invece di andare a capo */
+  .riga .sel.elo-mini { white-space: nowrap; font-size: clamp(.66rem, 3.25vw, .85rem); overflow: hidden; text-overflow: ellipsis; }
   /* (133) la classifica Elo */
   .elo-r { display: grid; grid-template-columns: 2.6em 1fr auto; gap: 8px; align-items: center; padding: 7px 4px; border-bottom: 1px solid var(--bordo); }
   .elo-r .m { color: var(--tenue); font-variant-numeric: tabular-nums; text-align: right; }
@@ -8297,6 +8300,16 @@
     }
     return ELO_CAL[d];
   }
+  // (148) Se la riga dell'Elo non ci sta, il carattere si stringe quanto
+  // basta (mai sotto i 9 pixel) invece di andare a capo o tagliarsi.
+  function stringiRiga(div) {
+    requestAnimationFrame(function () {
+      var w = div.clientWidth, sw = div.scrollWidth;
+      if (!w || sw <= w + 1) return;
+      var fs = parseFloat(getComputedStyle(div).fontSize) || 13;
+      div.style.fontSize = Math.max(9, Math.floor(fs * w / sw * 10) / 10 - 0.2) + "px";
+    });
+  }
   function timbraElo() {
     if (stato.sez === "elo" || stato.sez === "cal" || !ELO.dati || !ELO.info) return;
     var lg = ELO.info.logit;
@@ -8316,9 +8329,11 @@
         var div = document.createElement("div");
         div.className = "sel elo-mini";
         div.title = "Elo del sistema: " + c.nome + " " + Math.round(c.elo) + ", " + o.nome + " " + Math.round(o.elo);
-        div.innerHTML = "Elo " + ev(c.elo) + " \u2013 " + ev(o.elo) + ' <span class="piccolo">(' + (c.elo >= o.elo ? "+" : "\u2212") +
-          f0(Math.abs(c.elo - o.elo)) + ")</span> · <b class=seg>1</b> " + pv(p[0]) + " · <b class=seg>X</b> " + pv(p[1]) + " · <b class=seg>2</b> " + pv(p[2]);
+        // (148) una riga sola: trattini stretti, scarto fra parentesi piccolo
+        div.innerHTML = "Elo " + ev(c.elo) + "\u2013" + ev(o.elo) + ' <span class="piccolo">(' + (c.elo >= o.elo ? "+" : "\u2212") +
+          f0(Math.abs(c.elo - o.elo)) + ")</span>\u2009·\u2009<b class=seg>1</b> " + pv(p[0]) + "\u2009·\u2009<b class=seg>X</b> " + pv(p[1]) + "\u2009·\u2009<b class=seg>2</b> " + pv(p[2]);
         dove.parentNode.insertBefore(div, dove.nextSibling);
+        stringiRiga(div);
       };
       if (pin && pin.ID_Casa != null && pin.ID_Ospite != null && String(pin.ID_API) === String(fid)) return metti(pin.ID_Casa, pin.ID_Ospite);
       calendarioIds(d).then(function (per) { var v = per[String(fid)]; if (v) metti(v[0], v[1]); });
