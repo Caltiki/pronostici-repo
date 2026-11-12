@@ -1157,8 +1157,7 @@
   "Sel": "2",
   "Prob": 61.3,
   "Equa": 1.63,
-  "ID_API": 1492312,
-  "InSchedina": "si"
+  "ID_API": 1492312
  },
  {
   "Data": "2026-11-15",
@@ -2403,7 +2402,8 @@
   "Sel": "2 + Over 1.5",
   "Prob": 52.0,
   "Equa": 1.92,
-  "ID_API": 1492312
+  "ID_API": 1492312,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-15",
@@ -5278,27 +5278,6 @@
   "Prob": 24.0,
   "Equa": 4.17,
   "ID_API": 1606762
- },
- {
-  "Data": "2026-11-15",
-  "Ora": "00:30",
-  "Campionato": "Brazil Serie A",
-  "Partita": "Chapecoense-sc - Vasco DA Gama",
-  "Casa": "Chapecoense-sc",
-  "Ospite": "Vasco DA Gama",
-  "Linea_OU": 2.75,
-  "Gol_attesi": 2.99,
-  "Margine": 5.0,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "Pinnacle",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 21.8,
-  "Equa": 4.59,
-  "ID_API": 1492312
  },
  {
   "Data": "2026-11-15",
