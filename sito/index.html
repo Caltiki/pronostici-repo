@@ -1532,6 +1532,8 @@
   ul.assenti li { padding: 5px 0; border-bottom: 1px solid var(--bordo); }
   ul.assenti li:last-child { border-bottom: 0; }
   p.ass-sq { margin: 8px 0 0; }
+  /* (140) l'Elo sotto i nomi, in ogni card */
+  .sel.elo-mini { font-size: .85rem; color: var(--tenue); }
   /* (133) la classifica Elo */
   .elo-r { display: grid; grid-template-columns: 2.6em 1fr auto; gap: 8px; align-items: center; padding: 7px 4px; border-bottom: 1px solid var(--bordo); }
   .elo-r .m { color: var(--tenue); font-variant-numeric: tabular-nums; text-align: right; }
@@ -2556,7 +2558,8 @@
           (r0.Fonte === "Pinnacle" ? '<span class="timbro-pin" title="Prezzi da Pinnacle">Pinnacle</span>' : "") +
           (gol ? "<span><b>" + esc(gol) + "</b></span>" : "") +
           (r0.Campionato ? '<span class="chip">' + esc(r0.Campionato) + "</span>" : "") +
-          (r0.Fonte === "OddsAPI" ? '<span class="chip">quota Betfair</span>' : "") + "</div>" +
+          (r0.Fonte === "OddsAPI" ? '<span class="chip">quota Betfair</span>' : "") +
+          (eAltroBook(r0.Fonte) ? '<span class="chip" title="Pinnacle non quota questa partita: prezzo da ' + esc(r0.Fonte) + '">quota ' + esc(r0.Fonte) + "</span>" : "") + "</div>" +
           '<div class="partita">' + partitaHtml(r0.Casa, r0.Ospite, r0.Partita, campiRiga(r0)) + "</div>" + sqHtml(r0) +
           '<div class="sel">' + (inSch ? "<b>In schedina:</b> " : "<b>Proposta:</b> ") + '<span class="q">' + esc(etichettaSel(top)) +
           " · " + f0(num(top.Prob)) + "%</span>" + (scelte_ ? " · " + scelte_ + " nella multipla" : "") + "</div>" +
@@ -3112,8 +3115,12 @@
   }
 
   var NOMI_QUOTA = { Pinnacle: "Pinnacle", AsianOdds: "AsianOdds", OddsAPI: "Betfair", FootyMetrics: "più book" };
+  // (139) GLI ALTRI BOOK dove Pinnacle manca (altribook_<data>.json): la
+  // fonte e' il nome del book, o "media di N book".
+  var LIBRI_SHARP = ["SBO", "Betfair", "Marathonbet", "Dafabet", "188Bet", "1xBet"];
+  function eAltroBook(f) { return LIBRI_SHARP.indexOf(String(f || "")) >= 0 || /^media di \d+ book$/.test(String(f || "")); }
   function fonteQuotaHtml(f) {
-    var n = NOMI_QUOTA[f];
+    var n = NOMI_QUOTA[f] || (eAltroBook(f) ? f : null);
     if (!n) return "";
     return '<span class="fonte-q' + (f === "Pinnacle" ? " pin" : "") + '" title="Quota e margine di ' + esc(n) + '">' + esc(n) + "</span>";
   }
@@ -3143,11 +3150,14 @@
         "): AsianOdds non ha ancora questa partita, copre solo le prossime 24 ore.</p>");
     }
     if (r.Fonte === "Pinnacle") {
-      det.push("<p>Prezzo da Pinnacle (via API-Football), il book di riferimento dei professionisti: " +
-        "\u00e8 la fonte principale dell\u2019Equa, AsianOdds riempie le partite che Pinnacle non quota.</p>");
+      det.push("<p>Prezzo da Pinnacle, il book di riferimento dei professionisti: \u00e8 la fonte principale dell\u2019Equa.</p>");
+    }
+    if (eAltroBook(r.Fonte)) {
+      det.push("<p>Pinnacle non quota questa partita: prezzo da " + esc(r.Fonte) +
+        (/^media/.test(r.Fonte) ? " (le loro probabilit\u00e0 senza margine, in media)" : ", il book pi\u00f9 affidabile fra quelli che la quotano") + ".</p>");
     }
     if (r.Fonte === "FootyMetrics") {
-      det.push("<p>Prezzo dalle migliori quote fra più book: Pinnacle e AsianOdds non quotano ancora questa partita.</p>");
+      det.push("<p>Prezzo dalle migliori quote fra più book: Pinnacle e gli altri book non quotano ancora questa partita.</p>");
     }
     if (fid) det.push("<p>Margine del book: " + f1(marg) + "% (" + fid[1] + ")</p>");
     if (linea !== null && linea !== undefined && linea !== "") {
@@ -6543,6 +6553,10 @@
       (p.Lega ? " · " + esc(p.Lega) : "") + "</p>" +
       "<h2>" + logoId(p.Casa, p.Pin && p.Pin.ID_Casa, true, campiRiga(p)) + esc(p.Casa) + " – " +
       logoId(p.Ospite, p.Pin && p.Pin.ID_Ospite, true, campiRiga(p)) + esc(p.Ospite) + "</h2>";
+    if (p.Elo) {
+      h += '<p class="elo-mini">Elo ' + ev(p.Elo.c.elo) + " \u2013 " + ev(p.Elo.o.elo) + " (" + p.Elo.c.pos + "° e " + p.Elo.o.pos + "° su " +
+        ELO.dati.lista.length + ") · 1 " + pv(p.Elo.p[0]) + " · X " + pv(p.Elo.p[1]) + " · 2 " + pv(p.Elo.p[2]) + "</p>";
+    }
     var st = String(fm.Stato || "").toUpperCase(), gc = num(fm.Gol_Casa), go = num(fm.Gol_Ospite);
     var fine = finaleScheda(p);
     if (fine) {
@@ -6827,8 +6841,15 @@
         var tt = Math.floor(Date.now() / 600000);
         return Promise.all([calendarioPer(d), p.PinId != null ? formaFile(d) : null,
           p.PinId != null ? leggiUrl(BASE + "pinmercati_" + d + ".json?t=" + tt, "pinmercati_" + d).catch(function () { return null; }) : null,
-          p.PinId != null && d <= oggi() ? leggiUrl(BASE + "statistiche_" + d + ".json?t=" + tt, "statistiche_" + d).catch(function () { return null; }) : null
+          p.PinId != null && d <= oggi() ? leggiUrl(BASE + "statistiche_" + d + ".json?t=" + tt, "statistiche_" + d).catch(function () { return null; }) : null,
+          p.PinId != null ? Promise.all([caricaElo().catch(function () { return null; }), calendarioIds(d)]) : null
         ]).then(function (a2) {
+          // (140) l'Elo delle due squadre, per numero
+          var ids = a2[4] && a2[4][1] ? a2[4][1][String(p.PinId)] : null;
+          if (ids && ELO.dati && ELO.info) {
+            var ec = ELO.dati.per[String(ids[0])], eo = ELO.dati.per[String(ids[1])];
+            if (ec && eo) p.Elo = { c: ec, o: eo, p: eloProb(ec.elo, eo.elo, ELO.info.logit) };
+          }
           var cal = a2[0];
           var pm = a2[2] && a2[2].partite ? a2[2].partite[String(p.PinId)] : null;
           p.PinMercati = pm || null;
@@ -8054,13 +8075,59 @@
       }
     });
   }
+  // L'ELO SU OGNI CARD (140). Sotto i nomi delle squadre, in tutte le
+  // sezioni con le card delle partite: Elo del sistema delle due squadre e
+  // le sue probabilita' 1X2. La partita si trova come per il timbro
+  // Pinnacle (nomi esattamente uguali in partite_api, o la riga Pinnacle),
+  // le due squadre per NUMERO dal calendario del giorno (ic, io), il rating
+  // per numero da elo_rating.json. Senza tutti e tre, niente riga.
+  var ELO_CAL = {};
+  function calendarioIds(d) {
+    if (!ELO_CAL[d]) {
+      ELO_CAL[d] = leggiUrl(BASE + "calendario_" + d + ".json?t=" + Math.floor(Date.now() / 600000), "calendario_" + d)
+        .catch(function () { return []; }).then(function (l) {
+          var per = {};
+          (Array.isArray(l) ? l : []).forEach(function (x) { if (x && x.id != null && x.ic != null && x.io != null) per[String(x.id)] = [x.ic, x.io]; });
+          return per;
+        });
+    }
+    return ELO_CAL[d];
+  }
+  function timbraElo() {
+    if (stato.sez === "elo" || stato.sez === "cal" || !ELO.dati || !ELO.info) return;
+    var lg = ELO.info.logit;
+    $cont.querySelectorAll("[data-lc]").forEach(function (el) {
+      if (el.closest(".dettaglio") || el.closest(".dentro-partita")) return;
+      var riga = el.closest(".riga") || el.closest(".scheda");
+      if (!riga || riga.dataset.elo) return;
+      var k = el.getAttribute("data-lc"), g = PIN_G.idNome[k], pin = PIN_G.perNome[k];
+      var fid = g ? g.id : pin ? pin.ID_API : null, d = g ? g.d : pin ? pin.Data : null;
+      if (fid == null || !d) return;
+      riga.dataset.elo = "1";
+      var dove = el.closest(".partita") || el;
+      var metti = function (ic, io) {
+        var c = ELO.dati.per[String(ic)], o = ELO.dati.per[String(io)];
+        if (!c || !o) return;
+        var p = eloProb(c.elo, o.elo, lg);
+        var div = document.createElement("div");
+        div.className = "sel elo-mini";
+        div.title = "Elo del sistema: " + c.nome + " " + Math.round(c.elo) + ", " + o.nome + " " + Math.round(o.elo);
+        div.innerHTML = "Elo " + ev(c.elo) + " \u2013 " + ev(o.elo) + ' <span class="piccolo">(' + (c.elo >= o.elo ? "+" : "\u2212") +
+          f0(Math.abs(c.elo - o.elo)) + ")</span> · 1 " + pv(p[0]) + " · X " + pv(p[1]) + " · 2 " + pv(p[2]);
+        dove.parentNode.insertBefore(div, dove.nextSibling);
+      };
+      if (pin && pin.ID_Casa != null && pin.ID_Ospite != null && String(pin.ID_API) === String(fid)) return metti(pin.ID_Casa, pin.ID_Ospite);
+      calendarioIds(d).then(function (per) { var v = per[String(fid)]; if (v) metti(v[0], v[1]); });
+    });
+  }
   function avviaTimbri() {
     caricaPinGlobale().then(function () {
       timbraPinnacle();
+      caricaElo().then(timbraElo).catch(function () {});
       var attesa = null;
       new MutationObserver(function () {
         if (attesa) return;
-        attesa = setTimeout(function () { attesa = null; timbraPinnacle(); }, 200);
+        attesa = setTimeout(function () { attesa = null; timbraPinnacle(); timbraElo(); }, 200);
       }).observe($cont, { childList: true, subtree: true });
     });
   }
