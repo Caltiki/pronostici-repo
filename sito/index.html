@@ -7455,6 +7455,22 @@
       var x = id != null ? DATI_LIVE[id] : null;
       var box = el.parentNode;
       var pill = box ? box.querySelector(":scope > .live") : null;
+      // (145) UNA PILLOLA SOLA: se la riga ne ha gia' una sua (pagina Elo,
+      // Calendario: accanto all'ora), non se ne aggiunge un'altra accanto
+      // ai nomi; si aggiorna quella col minuto e il punteggio di adesso.
+      var riga = el.closest(".riga, .cal-riga, .scheda");
+      var sua = riga ? Array.prototype.filter.call(riga.querySelectorAll(".live"), function (q) {
+        return q !== pill && q.parentNode !== box && !q.closest(".dettaglio");
+      })[0] : null;
+      if (sua) {
+        if (pill) pill.remove();
+        if (x && IN_CORSO[x.stato]) {
+          var t0 = htmlLive(x);
+          if (sua.innerHTML !== t0) sua.innerHTML = t0;
+          sua.title = titoloLive(x);
+        }
+        return;
+      }
       if (!x || !IN_CORSO[x.stato]) { if (pill) pill.remove(); return; }
       if (!pill) {
         pill = document.createElement("span");
