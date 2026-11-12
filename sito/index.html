@@ -2281,7 +2281,7 @@
       : visibili.length + " righe su " + tutte.length;
     var html = SEZ[sez].riepilogo(visibili) +
       '<p class="conta">' + conta + SEZ[sez].nota + "</p><div class=\"lista\">" +
-      mostrate.map(function (r, i) { return conAggancio(SEZ[sez].riga(r, i), sez, r); }).join("") + "</div>";
+      mostrate.map(function (r, i) { return conAggancio(spuntaRisultato(SEZ[sez].riga(r, i), r), sez, r); }).join("") + "</div>";
     if (visibili.length > mostrate.length) {
       html += '<button type="button" class="altre" id="altre">Mostra altre ' +
         Math.min(PASSO, visibili.length - mostrate.length) + " (ne restano " +
@@ -2878,6 +2878,26 @@
       parteSq(q.Casa) + '<span class="sep">|</span>' + parteSq(q.Ospite) + "</div>";
   }
   // Il punteggio in testa alla scheda, accanto all'ora.
+  // LA ✓/✗ GRIGIA SU OGNI PARTITA FINITA (121), come la "proposta" dei
+  // Pronostici: dice se il segno della riga (quello nel quadratino a
+  // sinistra: 1, X, 2 o una doppia) e' uscito. Solo per le righe che hanno
+  // il risultato e un segno 1X2; non tocca quelle che una spunta o un esito
+  // ce l'hanno gia' (le Sure Bets da spuntare, Best picks col suo "vinto").
+  function spuntaRisultato(html, r) {
+    var gc = num(r.Gol_Casa), go = num(r.Gol_Ospite);
+    if (gc == null || go == null) return html;
+    if (html.indexOf('class="spunta') >= 0) return html;
+    var m = /<span class="segno">([^<]*)<\/span>/.exec(html);
+    var segno = m ? m[1].trim().toUpperCase() : "";
+    if (!/^(1|X|2|1X|X2|12)$/.test(segno)) return html;
+    var e = gc > go ? "1" : gc < go ? "2" : "X";
+    var ok = segno.indexOf(e) >= 0;
+    var t = ok ? "segno uscito" : "segno non uscito";
+    return html.replace(/^<div class="riga([^"]*)">/, function (x, c) {
+      return '<div class="riga' + c + ' finita"><span class="spunta esito proposta" title="' + t + '" aria-label="' + t + '">' +
+        (ok ? "\u2713" : "\u2717") + "</span>";
+    });
+  }
   function golHtml(r) {
     if (r.Gol_Casa == null || r.Gol_Ospite == null) return "";
     var t = "risultato finale" + (r.Risultato_Da ? ", da " + r.Risultato_Da : "");
@@ -4370,11 +4390,9 @@
     if (gc == null || go == null) return "";
     return gc > go ? "1" : gc < go ? "2" : "X";
   }
-  function esitoSm(r) {
-    var u = segnoUscito(r);
-    if (!u || !r.Segno) return "";
-    return u === r.Segno ? '<span class="pill stretto">\u2713 vinto</span>' : '<span class="pill largo">\u2717 perso</span>';
-  }
+  // (121) L'esito non e' piu' una pillola colorata in alto: e' la ✓/✗
+  // grigia a sinistra, la stessa per tutte le sezioni (spuntaRisultato).
+  function esitoSm(r) { return ""; }
 
   function rigaSm(r) {
     var p1 = num(r.P1), px = num(r.PX), p2 = num(r.P2), seg = r.Segno || "";
@@ -5390,8 +5408,8 @@
       var gc = num(r.Gol_Casa), go = num(r.Gol_Ospite);
       if (gc != null && go != null) {
         var uscito = gc > go ? "1" : gc < go ? "2" : "X";
-        var pill = uscito === segno ? '<span class="pill stretto">✓ vinto</span>' : '<span class="pill largo">✗ perso</span>';
-        h = h.replace('</div><div class="partita">', pill + '</div><div class="partita">');
+        // (121) niente pillola: la ✓/✗ grigia a sinistra la mette spuntaRisultato
+        void uscito;
       }
     }
     if (r._pm3) {
