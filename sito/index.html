@@ -1321,7 +1321,11 @@
   .cal-riga .r { white-space: nowrap; }
   .cal-riga .r .live { margin-left: 0; }
   .cal-riga.cal-sito { font-weight: 600; }
-  .cal-riga .chip, .cal-riga .timbro-pin { margin-left: 4px; vertical-align: middle; }
+  /* (131) il pulsante sta dopo i nomi; la tabella sotto la riga */
+  .cal-riga .cal-stat-btn { font: inherit; font-size: .75rem; cursor: pointer; background: transparent; }
+  .cal-stat { padding: 4px 12px 10px 68px; font-size: .88rem; }
+  @media (max-width: 520px) { .cal-stat { padding-left: 12px; } }
+  .cal-riga .chip, .cal-riga .timbro-pin { margin-left: 4px; vertical-align: middle; white-space: nowrap; }
   .lv-ris-mini { font-weight: 800; }
   /* PARTITE LIVE (111). */
   .lv-riga { display: flex; gap: 12px; align-items: center; padding: 12px 14px; background: var(--scheda);
@@ -6878,7 +6882,12 @@
     return isNaN(n) ? null : n;
   }
   function bloccoStatistiche(p) {
-    var st = p.Stat;
+    var r = righeStatistiche(p.Stat, p.Casa, p.Ospite);
+    if (!r) return "";
+    return '<div class="scheda"><h3>Statistiche</h3>' + r + "</div>";
+  }
+  // Le righe della tabella, anche per il Calendario (131).
+  function righeStatistiche(st, casa, ospite) {
     if (!st || !st.casa || !st.ospite) return "";
     var righe = STAT_VOCI.map(function (v) {
       var a = valStat(st.casa[v[1]]), b = valStat(st.ospite[v[1]]);
@@ -6889,9 +6898,9 @@
         '<div class="stat-barra"><i style="width:' + qa.toFixed(1) + '%"></i></div></div>';
     }).filter(Boolean);
     if (!righe.length) return "";
-    return '<div class="scheda"><h3>Statistiche</h3><div class="stat-testa"><span>' + esc(p.Casa || "casa") + "</span><span>" +
-      esc(p.Ospite || "ospite") + "</span></div>" + righe.join("") +
-      '<p class="piccolo">Dove un valore manca, non è disponibile per questa partita.</p></div>';
+    return '<div class="stat-testa"><span>' + esc(casa || "casa") + "</span><span>" +
+      esc(ospite || "ospite") + "</span></div>" + righe.join("") +
+      '<p class="piccolo">Dove un valore manca, non è disponibile per questa partita.</p>';
   }
 
   function disegnaSchedaPartita(p, d) {
@@ -7344,10 +7353,12 @@
       return Promise.all([
         leggiUrl(BASE + "calendario_" + d + ".json?t=" + t, "calendario_" + d),
         leggi("partite_api_" + d + ".json").catch(function () { return {}; }),
-        d >= oggi() ? leggi("scheda_" + d + ".json").catch(function () { return null; }) : null
+        d >= oggi() ? leggi("scheda_" + d + ".json").catch(function () { return null; }) : null,
+        d <= oggi() ? leggiUrl(BASE + "statistiche_" + d + ".json?t=" + t, "statistiche_" + d).catch(function () { return null; }) : null
       ]).then(function (b) {
         if (stato.sez !== "cal" || CAL.data !== d) return;
         var lista = Array.isArray(b[0]) ? b[0] : [], mappa = b[1] && typeof b[1] === "object" ? b[1] : {};
+        CAL.stat = b[3] && typeof b[3] === "object" ? b[3] : {};
         var sito = {};
         for (var k in mappa) sito[String(mappa[k])] = true;
         // IL COLLEGAMENTO ALLA SCHEDA (130): "sul sito" porta alla scheda
@@ -7364,9 +7375,10 @@
         }
         $cont.innerHTML = '<h2 class="reg-tit">Calendario</h2>' +
           '<p class="descr">Tutte le partite del giorno, anche quelle che le fonti del sito non seguono. ' +
-          "<b>sul sito</b> = la partita ha pronostici o prezzi nelle altre sezioni: toccalo per aprirne la scheda. Il timbro dice se ha le quote Pinnacle.</p>" +
+          "<b>sul sito</b> = la partita ha pronostici o prezzi nelle altre sezioni: toccalo per aprirne la scheda. Il timbro dice se ha le quote Pinnacle; " +
+          "<b>statistiche</b>, sulle nostre partite finite, apre tiri, possesso, xG e il resto.</p>" +
           chipsHtml(date.map(function (x) { return [x, etichettaData(x)]; }), d, "data-cdata") +
-          chipsHtml([["tutte", "Tutte"], ["sito", "Sul sito"], ["pin", "Con Pinnacle"], ["live", "In corso"]], CAL.filtro, "data-cfiltro") +
+          chipsHtml([["tutte", "Tutte"], ["sito", "Sul sito"], ["pin", "Con Pinnacle"], ["live", "In corso"], ["stat", "Con statistiche"]], CAL.filtro, "data-cfiltro") +
           '<div class="strumenti"><input type="search" id="cerca-cal" placeholder="Squadra, campionato o paese" value="' + esc(CAL.cerca) + '" autocomplete="off"></div>' +
           '<div id="cal-lista"></div>';
         $cont.querySelectorAll("[data-cdata]").forEach(function (x) {
@@ -7407,6 +7419,7 @@
       if (CAL.filtro === "sito") return !!sito[String(x.id)];
       if (CAL.filtro === "pin") return !!PIN_G.perId[String(x.id)];
       if (CAL.filtro === "live") return !!statoCal(x).vivo;
+      if (CAL.filtro === "stat") return !!(CAL.stat || {})[String(x.id)];
       return true;
     });
     var gruppi = {}, conSito = {};
@@ -7430,17 +7443,32 @@
         ' <small>' + v.length + (conSito[k] ? " · sul sito" : "") + "</small></summary>" +
         v.map(function (x) {
           var pin = PIN_G.perId[String(x.id)], s = statoCal(x), ns = !!sito[String(x.id)];
+          var st = (CAL.stat || {})[String(x.id)];
+          var stH = st ? righeStatistiche(st, x.casa, x.ospite) : "";
           return '<div class="cal-riga' + (ns ? " cal-sito" : "") + '"><span class="m">' + esc(x.ora || "") + "</span>" +
             "<span>" + logo(x.casa, false, x.lega) + esc(x.casa) + " – " + logo(x.ospite, false, x.lega) + esc(x.ospite) +
             (ns ? (typeof sito[String(x.id)] === "string"
               ? ' <a class="chip chip-link" href="' + esc(sito[String(x.id)]) + '">sul sito \u2192</a>'
-              : ' <span class="chip">sul sito</span>') : "") + (pin ? " " + timbroPin(pin) : "") + "</span>" +
-            '<span class="r">' + s.html + "</span></div>";
+              : ' <span class="chip">sul sito</span>') : "") + (pin ? " " + timbroPin(pin) : "") +
+            (stH ? ' <button type="button" class="chip chip-link cal-stat-btn" data-sid="' + esc(x.id) + '" aria-expanded="false">statistiche \u25be</button>' : "") +
+            "</span>" +
+            '<span class="r">' + s.html + "</span></div>" +
+            (stH ? '<div class="cal-stat" id="cst-' + esc(x.id) + '" hidden>' + stH + "</div>" : "");
         }).join("") + "</details>";
     }).join("");
     $l.innerHTML = h;
     $l.querySelectorAll(".cal-lega").forEach(function (det) {
       det.addEventListener("toggle", function () { CAL.aperti[det.dataset.lega] = det.open; });
+    });
+    // LE STATISTICHE DELLE PARTITE FINITE (131): si aprono sotto la riga.
+    $l.querySelectorAll(".cal-stat-btn").forEach(function (bt) {
+      bt.addEventListener("click", function () {
+        var box = document.getElementById("cst-" + bt.dataset.sid);
+        if (!box) return;
+        box.hidden = !box.hidden;
+        bt.setAttribute("aria-expanded", String(!box.hidden));
+        bt.textContent = "statistiche " + (box.hidden ? "\u25be" : "\u25b4");
+      });
     });
     // Dalla scheda, "Indietro" torna qui, allo stesso punto.
     $l.querySelectorAll("a.chip-link").forEach(function (a) {
