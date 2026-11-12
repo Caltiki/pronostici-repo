@@ -5090,7 +5090,7 @@
         (fid ? '<span class="pill ' + fid[0] + '">margine ' + f1(num(r.Margine)) + "%</span>" : "") +
         (r._form && r._form.titolari ? '<span class="pill stretto">formazioni</span>' : "") +
         (r._form && r._form.assenti && r._form.assenti.length ? '<span class="pill largo">' + r._form.assenti.length + " assenti</span>" : "") + "</div>" +
-      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" +
+      '<div class="partita">' + partitaHtmlId(r.Casa, r.Ospite, r.ID_Casa, r.ID_Ospite, campiRiga(r)) + "</div>" +
       quote +
       (r._diff && diffHtml(r._diff) ? '<div class="sel">' + movimentoHtml(r._diff, "") + "</div>" : "") +
       tripla("senza margine", p[0], p[1], p[2]) +
@@ -5790,15 +5790,23 @@
   // Vengono PRIMA di loghi.json; se il file non c'e', tutto come prima.
   var URL_STEMMI_API = "https://raw.githubusercontent.com/" + REPO + "/stemmi-api/";
   var STEMMI_API = null;
+  // (138) GLI STEMMI PER NUMERO: stemmi_id.json elenca le squadre (numero
+  // di API-Football) che hanno <numero>.png nel ramo stemmi-api. Dove il
+  // sito conosce il numero (Calendario, Elo, Pinnacle, scheda) lo stemma
+  // viene da li' e il nome non conta: niente piu' Athletic Bilbao al posto
+  // dell'Athletic Club brasiliano.
+  var STEMMI_ID = null;
   function caricaLoghi() {
     if (!loghiPronti) {
       loghiPronti = Promise.all([
         leggiUrl(URL_LOGHI, "loghi.json").catch(function () { return null; }),
-        leggi("stemmi_api.json").catch(function () { return null; })
+        leggi("stemmi_api.json").catch(function () { return null; }),
+        leggi("stemmi_id.json").catch(function () { return null; })
       ]).then(function (a) {
         var l = a[0];
         LOGHI = l; if (l) aggiungiOmonimi(l);
         STEMMI_API = a[1] && typeof a[1] === "object" ? a[1] : null;
+        if (Array.isArray(a[2])) { STEMMI_ID = {}; a[2].forEach(function (i) { STEMMI_ID[String(i)] = true; }); }
         return l;
       });
     }
@@ -5857,6 +5865,19 @@
     if (!f) return "";
     return '<img class="stemma' + (grande ? " grande" : "") + '" src="' + (api ? URL_STEMMI_API : URL_STEMMI) +
       encodeURIComponent(f) + '" alt="" loading="lazy" decoding="async" onerror="this.remove()">';
+  }
+  // Lo stemma col numero della squadra quando c'e', altrimenti per nome.
+  function logoId(nome, id, grande, dove) {
+    if (id != null && STEMMI_ID && STEMMI_ID[String(id)]) {
+      return '<img class="stemma' + (grande ? " grande" : "") + '" src="' + URL_STEMMI_API + encodeURIComponent(String(id) + ".png") +
+        '" alt="" loading="lazy" decoding="async" onerror="this.remove()">';
+    }
+    return logo(nome, grande, dove);
+  }
+  function partitaHtmlId(casa, ospite, ic, io, dove) {
+    if (!casa || !ospite) return "";
+    return '<span class="sq" data-lc="' + esc(casa + "|" + ospite) + '">' + logoId(casa, ic, false, dove) + esc(casa) +
+      '</span> \u2013 <span class="sq">' + logoId(ospite, io, false, dove) + esc(ospite) + "</span>";
   }
   function partitaHtml(casa, ospite, testo, dove) {
     if (!casa || !ospite) return esc(testo || "");
@@ -6520,7 +6541,8 @@
       '<button type="button" class="indietro" id="indietro">← Indietro</button>' +
       '<p class="piccolo">' + esc(etichettaData(d)) + (p.Ora ? " · " + esc(p.Ora) : "") +
       (p.Lega ? " · " + esc(p.Lega) : "") + "</p>" +
-      "<h2>" + logo(p.Casa, true, campiRiga(p)) + esc(p.Casa) + " – " + logo(p.Ospite, true, campiRiga(p)) + esc(p.Ospite) + "</h2>";
+      "<h2>" + logoId(p.Casa, p.Pin && p.Pin.ID_Casa, true, campiRiga(p)) + esc(p.Casa) + " – " +
+      logoId(p.Ospite, p.Pin && p.Pin.ID_Ospite, true, campiRiga(p)) + esc(p.Ospite) + "</h2>";
     var st = String(fm.Stato || "").toUpperCase(), gc = num(fm.Gol_Casa), go = num(fm.Gol_Ospite);
     var fine = finaleScheda(p);
     if (fine) {
@@ -7431,14 +7453,7 @@
         // della partita. partite_api da' i nomi come li scrive ogni fonte;
         // si cerca la riga nella tabella "alias" delle schede, con i nomi
         // esattamente uguali. Se non c'e', l'etichetta resta senza link.
-        var al = b[2] && b[2].alias ? b[2].alias : {}, PRE = ["prezzi", "consensusmedio", "asianodds", "poisson", "consensus", "fpnet"];
-        for (var k2 in mappa) {
-          var idk = String(mappa[k2]);
-          if (sito[idk] !== true) continue;
-          for (var j = 0; j < PRE.length; j++) {
-            if (al[PRE[j] + "|" + k2] != null) { sito[idk] = "#scheda/" + d + "/" + encodeURIComponent(PRE[j] + "|" + k2); break; }
-          }
-        }
+        linkSchede(sito, mappa, b[2], d);
         $cont.innerHTML = '<h2 class="reg-tit">Calendario</h2>' +
           '<p class="descr">Tutte le partite del giorno, anche quelle che le fonti del sito non seguono. ' +
           "<b>sul sito</b> = la partita ha pronostici o prezzi nelle altre sezioni: toccalo per aprirne la scheda. Il timbro dice se ha le quote Pinnacle; " +
@@ -7464,6 +7479,22 @@
     }).catch(function () {
       $cont.innerHTML = messaggio("vuoto", "Il calendario non è ancora pubblicato: lo scrive il giro di Pinnacle, entro un paio d’ore.");
     });
+  }
+  // IL LINK ALLA SCHEDA DI UNA PARTITA DEL CALENDARIO (130, comune dal
+  // 137 con la pagina Elo). partite_api da' i nomi come li scrive ogni
+  // fonte; si cerca la riga nella tabella "alias" delle schede, con i nomi
+  // esattamente uguali. sito[id] diventa l'indirizzo della scheda; se non
+  // c'e', resta true (sul sito, senza link).
+  function linkSchede(sito, mappa, scheda, d) {
+    var al = scheda && scheda.alias ? scheda.alias : {}, PRE = ["prezzi", "consensusmedio", "asianodds", "poisson", "consensus", "fpnet"];
+    for (var k2 in mappa) {
+      var idk = String(mappa[k2]);
+      if (sito[idk] !== true) continue;
+      for (var j = 0; j < PRE.length; j++) {
+        if (al[PRE[j] + "|" + k2] != null) { sito[idk] = "#scheda/" + d + "/" + encodeURIComponent(PRE[j] + "|" + k2); break; }
+      }
+    }
+    return sito;
   }
   function statoCal(x) {
     var vivo = DATI_LIVE && DATI_LIVE[x.id] && IN_CORSO[DATI_LIVE[x.id].stato] ? DATI_LIVE[x.id] : null;
@@ -7512,7 +7543,7 @@
           var st = (CAL.stat || {})[String(x.id)];
           var stH = st ? righeStatistiche(st, x.casa, x.ospite) : "";
           return '<div class="cal-riga' + (ns ? " cal-sito" : "") + '"><span class="m">' + esc(x.ora || "") + "</span>" +
-            "<span>" + logo(x.casa, false, x.lega) + esc(x.casa) + " – " + logo(x.ospite, false, x.lega) + esc(x.ospite) +
+            "<span>" + logoId(x.casa, x.ic, false, x.lega) + esc(x.casa) + " – " + logoId(x.ospite, x.io, false, x.lega) + esc(x.ospite) +
             (ns ? (typeof sito[String(x.id)] === "string"
               ? ' <a class="chip chip-link" href="' + esc(sito[String(x.id)]) + '">sul sito \u2192</a>'
               : ' <span class="chip">sul sito</span>') : "") + (pin ? " " + timbroPin(pin) : "") +
@@ -7625,11 +7656,14 @@
       var d = ELO.data, t = Math.floor(Date.now() / 600000);
       return Promise.all([
         leggiUrl(BASE + "calendario_" + d + ".json?t=" + t, "calendario_" + d),
-        leggi("partite_api_" + d + ".json").catch(function () { return {}; })
+        leggi("partite_api_" + d + ".json").catch(function () { return {}; }),
+        leggi("scheda_" + d + ".json").catch(function () { return null; })
       ]).then(function (b) {
         if (stato.sez !== "elo" || ELO.vista !== "partite" || ELO.data !== d) return;
         var lista = Array.isArray(b[0]) ? b[0] : [], sito = {};
         for (var k in (b[1] || {})) sito[String(b[1][k])] = true;
+        // (137) "Tutto su questa partita": stesso aggancio del Calendario
+        linkSchede(sito, b[1] || {}, b[2], d);
         var conId = lista.filter(function (x) { return x.ic != null && x.io != null; }).length;
         $c.innerHTML = chipsHtml(date.map(function (x) { return [x, etichettaData(x)]; }), d, "data-edata") +
           chipsHtml([["sito", "Sul sito"], ["tutte", "Tutte"]], ELO.filtro, "data-efiltro") +
@@ -7650,12 +7684,14 @@
         document.getElementById("cerca-elo").addEventListener("input", function (e) { ELO.cerca = e.target.value; listaEloPartite(lista, sito); });
         document.getElementById("ordine-elo").addEventListener("change", function (e) { ELO.ordine = e.target.value; listaEloPartite(lista, sito); });
         listaEloPartite(lista, sito);
+        rimettiPosto($cont);
       });
     }).catch(function () {
       $c.innerHTML = messaggio("vuoto", "Il calendario non è ancora pubblicato.");
     });
   }
   function listaEloPartite(lista, sito) {
+    ELO.sito = sito;
     var $l = document.getElementById("elo-lista");
     if (!$l) return;
     var lg = ELO.info.logit, q = ELO.cerca.trim().toLowerCase();
@@ -7696,12 +7732,14 @@
       if (r.pp) det.push("<p>Pinnacle senza margine: 1 " + pv(r.pp[0]) + " · X " + pv(r.pp[1]) + " · 2 " + pv(r.pp[2]) + "</p>");
       if (r.sc) det.push("<p>Scarto più grande: sul " + "1X2"[r.sc.i] + " l’Elo dice " + (r.sc.v > 0 ? "+" : "−") + f0(Math.abs(r.sc.v)) + " punti rispetto a Pinnacle. " +
         '<span class="piccolo">Di solito ha ragione il mercato: l’Elo non sa di assenti, formazioni e motivazioni.</span></p>');
+      var lk = sito[String(x.id)];
+      if (typeof lk === "string") det.push('<p><a class="apri-scheda" href="' + esc(lk) + '">Tutto su questa partita →</a></p>');
       var st = statoCal(x);
       return '<div class="riga"><details><summary>' +
         '<span class="segno">' + esc(segno) + "</span>" +
         '<div class="corpo"><div class="alto">' + (x.ora ? "<span><b>" + esc(x.ora) + "</b></span>" : "") +
           (x.lega ? '<span class="chip">' + esc(x.lega) + "</span>" : "") + (r.pin ? timbroPin(r.pin) : "") + (st.html ? " " + st.html : "") + "</div>" +
-          '<div class="partita">' + partitaHtml(x.casa, x.ospite, "", x.lega) + "</div>" +
+          '<div class="partita">' + partitaHtmlId(x.casa, x.ospite, x.ic, x.io, x.lega) + "</div>" +
           (r.c && r.o ? '<div class="sel">Elo ' + ev(r.c.elo) + " – " + ev(r.o.elo) + " (" + (r.c.elo >= r.o.elo ? "+" : "−") + f0(Math.abs(r.c.elo - r.o.elo)) + ")" +
             (r.sc && Math.abs(r.sc.v) >= 5 ? ' · <span class="' + (r.sc.v > 0 ? "mv-su" : "mv-giu") + '">' + "1X2"[r.sc.i] + " " + (r.sc.v > 0 ? "+" : "−") + f0(Math.abs(r.sc.v)) + " vs Pinnacle</span>" : "") + "</div>" : "") +
           (p ? tripla("Elo", p[0], p[1], p[2]) : '<div class="sel piccolo">Elo non disponibile per ' + (!r.c && !r.o ? "le due squadre" : !r.c ? esc(x.casa) : esc(x.ospite)) + "</div>") +
@@ -7732,7 +7770,7 @@
       var h = '<p class="conta">' + v.length + " squadre · rating dopo le partite fino al " + esc(D.ultima || "?") + "</p>" +
         '<div class="elo-tab">' + v.slice(0, ELO.quante).map(function (s) {
           var pos = ELO.dati.per[String(s[0])].pos;
-          return '<div class="elo-r"><span class="m">' + pos + "</span><span>" + logo(s[1], false, D.campionati[s[5]]) + "<b>" + esc(s[1]) + "</b>" +
+          return '<div class="elo-r"><span class="m">' + pos + "</span><span>" + logoId(s[1], s[0], false, D.campionati[s[5]]) + "<b>" + esc(s[1]) + "</b>" +
             '<br><span class="piccolo">' + esc(D.campionati[s[5]] || "") + " · " + s[3] + " partite · ultima " + esc(String(s[4]).slice(8, 10) + "/" + String(s[4]).slice(5, 7)) + "</span></span>" +
             '<span class="r"><b class="q">' + f0(s[2]) + "</b></span></div>";
         }).join("") + "</div>" +
