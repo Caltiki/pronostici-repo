@@ -1312,6 +1312,7 @@
   /* (152) le frecce dentro l'etichetta Pinnacle e nella barra */
   .mov-in { margin-left: .6em; letter-spacing: .02em; font-weight: 700; color: var(--tenue); }
   .mov-in b { margin-left: .1em; font-weight: 900; }
+  .mov-in .ferme { text-transform: none; font-weight: 600; letter-spacing: 0; }
   .mov-in b.giu, .barre b.fr.giu { color: #22a55b; } .mov-in b.su, .barre b.fr.su { color: #e8873a; } .mov-in b.fermo { color: var(--tenue); }
   :root[data-theme="light"] .mov-in b.giu { color: #157a3f; } :root[data-theme="light"] .mov-in b.su { color: #b35a12; }
   .quote-pin b.fr { margin-left: .1em; font-weight: 900; } .quote-pin b.fr.giu { color: #22a55b; } .quote-pin b.fr.su { color: #e8873a; } .quote-pin b.fr.fermo { color: var(--tenue); }
@@ -1363,7 +1364,7 @@
   .lv-riga .info b { color: var(--testo); }
   /* (142) 1, X e 2 in grassetto accanto alle quote e alle percentuali */
   b.seg { font-weight: 800; color: var(--testo); }
-  .lv-ris { font-family: var(--titoli, inherit); font-weight: 800; font-size: 1.6rem; white-space: nowrap; letter-spacing: .02em; }
+  .lv-ris { font-family: var(--titoli, inherit); font-weight: 800; font-size: 1.15rem; white-space: nowrap; letter-spacing: .02em; }
   .lv-gruppo { margin: 18px 0 8px; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--tenue); font-weight: 700; }
   .lv-altre summary { cursor: pointer; font-weight: 700; margin: 18px 0 8px; }
   .lv-lega { font-size: .78rem; color: var(--tenue); margin: 12px 0 4px; font-weight: 600; }
@@ -1568,9 +1569,12 @@
   .sel.elo-mini { font-size: .85rem; color: var(--tenue); }
   /* (148) sulle card l'Elo sta in una riga: il carattere si stringe col
      telefono stretto invece di andare a capo */
-  .elo-mini .nw { white-space: nowrap; }
+  /* (153) "1 1.63" non si spezza mai: si va a capo solo fra un segno e l'altro */
+  .nw, .elo-mini .nw { white-space: nowrap; }
+  .quote-pin .q3 { display: block; white-space: nowrap; }
+  .quote-pin .ov { display: block; }
   .riga summary.con-elo-largo { flex-wrap: wrap; row-gap: 2px; }
-  .riga summary .elo-largo { flex: 0 0 100%; box-sizing: border-box; padding-right: 0; margin-top: -4px; }
+  .riga summary .elo-largo { flex: 0 0 100%; box-sizing: border-box; padding-right: 0; margin-top: -4px; min-width: 0; }
   .riga .sel.elo-mini { white-space: nowrap; font-size: clamp(.66rem, 3.25vw, .85rem); overflow: hidden; text-overflow: ellipsis; }
   /* (133) la classifica Elo */
   .elo-r { display: grid; grid-template-columns: 2.6em 1fr auto; gap: 8px; align-items: center; padding: 7px 4px; border-bottom: 1px solid var(--bordo); }
@@ -5113,7 +5117,7 @@
     det.push("<p>" + esc(r.Lega || "") + "</p>");
     if (num(r.Q1) != null) det.push("<p>Quote Pinnacle " + [r.Q1, r.QX, r.Q2].map(function (x) { return qv(x); }).join(" · ") +
       (num(r.Margine) != null ? " – margine " + mv(r.Margine) : "") + "</p>");
-    if (p[0] != null) det.push("<p>Equa adesso: <b class=seg>1</b> " + qv(100 / p[0]) + " · <b class=seg>X</b> " + qv(100 / p[1]) + " · <b class=seg>2</b> " + qv(100 / p[2]) + "</p>");
+    if (p[0] != null) det.push("<p>Equa adesso: <span class=nw><b class=seg>1</b> " + qv(100 / p[0]) + "</span>" + " · <span class=nw><b class=seg>X</b> " + qv(100 / p[1]) + "</span>" + " · <span class=nw><b class=seg>2</b> " + qv(100 / p[2]) + "</span>" + "</p>");
     if (r._diff) det.push("<p>" + movimentoHtml(r._diff, r._mattino, r._p) + ".</p>");
     else det.push("<p>Nessuna lettura del mattino per questa partita: il movimento si vede solo per oggi.</p>");
     if (num(r.OU) != null && num(r["P Over"]) != null) det.push("<p>Linea Under/Over " + esc(r.OU) + ": Over " + pv(r["P Over"]) + "</p>");
@@ -5125,8 +5129,9 @@
     var punti = r._diff ? (r._diff["1X2".indexOf(r._segnoMov)] > 0 ? "+" : "") + f0(r._diff["1X2".indexOf(r._segnoMov)]) : "-";
     var mosse = stato.vista.pin === "mosse";
     var fid = fiducia(num(r.Margine));
-    var quote = num(r.Q1) != null ? '<div class="sel quote-pin"><b class=seg>1</b> ' + qv(r.Q1) + " · <b class=seg>X</b> " + qv(r.QX) + " · <b class=seg>2</b> " + qv(r.Q2) +
-      (num(r.OU) != null && num(r["P Over"]) != null ? " · Over " + esc(r.OU) + " " + pv(r["P Over"]) : "") + "</div>" : "";
+    // (154) le tre quote 1X2 sempre su una riga, l'Over sotto
+    var quote = num(r.Q1) != null ? '<div class="sel quote-pin"><span class="q3"><span class=nw><b class=seg>1</b> ' + qv(r.Q1) + '</span>' + " · <span class=nw><b class=seg>X</b> " + qv(r.QX) + "</span>" + " · <span class=nw><b class=seg>2</b> " + qv(r.Q2) + "</span></span>" +
+      (num(r.OU) != null && num(r["P Over"]) != null ? '<span class="ov">Over ' + esc(r.OU) + " " + pv(r["P Over"]) + "</span>" : "") + "</div>" : "";
     var top = r.Segno, pt = r._prob != null ? r._prob * 100 : null;
     return '<div class="riga"><details><summary>' +
       // Nella vista "Mosse" il segno e' quello che si e' mosso (anche in
@@ -5191,9 +5196,9 @@
     if (!r) return "";
     var p = [num(r["P1 Shin"]), num(r["PX Shin"]), num(r["P2 Shin"])];
     var out = [];
-    if (num(r.Q1) != null) out.push("<p><b>Quote Pinnacle</b>: <b class=seg>1</b> " + qv(r.Q1) + " · <b class=seg>X</b> " + qv(r.QX) + " · <b class=seg>2</b> " + qv(r.Q2) +
+    if (num(r.Q1) != null) out.push("<p><b>Quote Pinnacle</b>: <span class=nw><b class=seg>1</b> " + qv(r.Q1) + "</span>" + " · <span class=nw><b class=seg>X</b> " + qv(r.QX) + "</span>" + " · <span class=nw><b class=seg>2</b> " + qv(r.Q2) + "</span>" +
       (num(r.Margine) != null ? " (margine " + mv(r.Margine) + ")" : "") + "</p>");
-    if (p[0] != null) out.push("<p><b>Pinnacle senza margine</b>: <b class=seg>1</b> " + pv(p[0]) + " · <b class=seg>X</b> " + pv(p[1]) + " · <b class=seg>2</b> " + pv(p[2]) + "</p>");
+    if (p[0] != null) out.push("<p><b>Pinnacle senza margine</b>: <span class=nw><b class=seg>1</b> " + pv(p[0]) + "</span>" + " · <span class=nw><b class=seg>X</b> " + pv(p[1]) + "</span>" + " · <span class=nw><b class=seg>2</b> " + pv(p[2]) + "</span>" + "</p>");
     var mt = x ? pinMattino(x.pro, data || r.Data, r.ID_API) : null;
     if (mt && p[0] != null) out.push("<p>" + movimentoHtml([p[0] - mt[0], p[1] - mt[1], p[2] - mt[2]], mt[3] || "", p) + ".</p>");
     return out.join("");
@@ -6076,9 +6081,9 @@
     var p = r._p || [];
     var det = [];
     if (r.Lega) det.push("<p>" + esc(r.Lega) + "</p>");
-    det.push("<p>Quote " + esc(r.Fonte) + ": <b class=seg>1</b> " + qv(r.Q1) + " · <b class=seg>X</b> " + qv(r.QX) + " · <b class=seg>2</b> " + qv(r.Q2) +
+    det.push("<p>Quote " + esc(r.Fonte) + ": <span class=nw><b class=seg>1</b> " + qv(r.Q1) + "</span>" + " · <span class=nw><b class=seg>X</b> " + qv(r.QX) + "</span>" + " · <span class=nw><b class=seg>2</b> " + qv(r.Q2) + "</span>" +
       (marg != null ? " (margine " + mv(marg) + ")" : "") + "</p>");
-    if (p[0] != null) det.push("<p>Senza margine: <b class=seg>1</b> " + pv(p[0]) + " · <b class=seg>X</b> " + pv(p[1]) + " · <b class=seg>2</b> " + pv(p[2]) + "</p>");
+    if (p[0] != null) det.push("<p>Senza margine: <span class=nw><b class=seg>1</b> " + pv(p[0]) + "</span>" + " · <span class=nw><b class=seg>X</b> " + pv(p[1]) + "</span>" + " · <span class=nw><b class=seg>2</b> " + pv(p[2]) + "</span>" + "</p>");
     det.push("<p>Quota equa " + articolo(esito) + ": " + qv(equa) + (r._quota ? " – il book la paga " + qv(r._quota) : "") +
       ". Sopra l’equa prendi valore, sotto paghi margine.</p>");
     var sel = squadra ? "Vince " + esc(squadra) : "Pareggio";
@@ -6645,7 +6650,7 @@
       logoId(p.Ospite, p.Pin && p.Pin.ID_Ospite, true, campiRiga(p)) + esc(p.Ospite) + "</h2>";
     if (p.Elo) {
       h += '<p class="elo-mini">Elo ' + ev(p.Elo.c.elo) + " \u2013 " + ev(p.Elo.o.elo) + " (" + p.Elo.c.pos + "° e " + p.Elo.o.pos + "° su " +
-        ELO.dati.lista.length + ") · <b class=seg>1</b> " + pv(p.Elo.p[0]) + " · <b class=seg>X</b> " + pv(p.Elo.p[1]) + " · <b class=seg>2</b> " + pv(p.Elo.p[2]) + "</p>";
+        ELO.dati.lista.length + ") · <span class=nw><b class=seg>1</b> " + pv(p.Elo.p[0]) + "</span>" + " · <span class=nw><b class=seg>X</b> " + pv(p.Elo.p[1]) + "</span>" + " · <span class=nw><b class=seg>2</b> " + pv(p.Elo.p[2]) + "</span>" + "</p>";
     }
     var st = String(fm.Stato || "").toUpperCase(), gc = num(fm.Gol_Casa), go = num(fm.Gol_Ospite);
     var fine = finaleScheda(p);
@@ -6721,7 +6726,7 @@
       if (s[0] == null) s = [num(a.P1), num(a.PX), num(a.P2)];
       if (s[0] != null) {
         var ma = num(a.Margine);
-        h += "<p>AsianOdds: <b class=seg>1</b> " + pv(s[0]) + " · <b class=seg>X</b> " + pv(s[1]) + " · <b class=seg>2</b> " + pv(s[2]) + (ma != null ? " (margine " + mv(ma) + ")" : "") +
+        h += "<p>AsianOdds: <span class=nw><b class=seg>1</b> " + pv(s[0]) + "</span>" + " · <span class=nw><b class=seg>X</b> " + pv(s[1]) + "</span>" + " · <span class=nw><b class=seg>2</b> " + pv(s[2]) + "</span>" + (ma != null ? " (margine " + mv(ma) + ")" : "") +
           (num(a.Mov) ? "; " + (a.Notevole ? "movimento notevole" : "movimento") + " di " + nv(a.Mov) + " punti dall'apertura" : "") + ".</p>";
       }
     }
@@ -7866,8 +7871,8 @@
       det.push("<p>" + esc(x.lega || "") + "</p>");
       det.push("<p><b>" + esc(x.casa) + "</b>: " + (r.c ? "Elo " + ev(r.c.elo) + " · " + r.c.pos + "° di " + ELO.dati.lista.length + (r.c.camp ? " · " + esc(r.c.camp) : "") : "non nello storico") + "</p>");
       det.push("<p><b>" + esc(x.ospite) + "</b>: " + (r.o ? "Elo " + ev(r.o.elo) + " · " + r.o.pos + "° di " + ELO.dati.lista.length + (r.o.camp ? " · " + esc(r.o.camp) : "") : "non nello storico") + "</p>");
-      if (p) det.push("<p>Elo: <b class=seg>1</b> " + pv(p[0]) + " · <b class=seg>X</b> " + pv(p[1]) + " · <b class=seg>2</b> " + pv(p[2]) + " — equa <b class=seg>1</b> " + qv(100 / p[0]) + " · <b class=seg>X</b> " + qv(100 / p[1]) + " · <b class=seg>2</b> " + qv(100 / p[2]) + "</p>");
-      if (r.pp) det.push("<p>Pinnacle senza margine: <b class=seg>1</b> " + pv(r.pp[0]) + " · <b class=seg>X</b> " + pv(r.pp[1]) + " · <b class=seg>2</b> " + pv(r.pp[2]) + "</p>");
+      if (p) det.push("<p>Elo: <span class=nw><b class=seg>1</b> " + pv(p[0]) + "</span>" + " · <span class=nw><b class=seg>X</b> " + pv(p[1]) + "</span>" + " · <span class=nw><b class=seg>2</b> " + pv(p[2]) + "</span>" + " — equa <span class=nw><b class=seg>1</b> " + qv(100 / p[0]) + "</span>" + " · <span class=nw><b class=seg>X</b> " + qv(100 / p[1]) + "</span>" + " · <span class=nw><b class=seg>2</b> " + qv(100 / p[2]) + "</span>" + "</p>");
+      if (r.pp) det.push("<p>Pinnacle senza margine: <span class=nw><b class=seg>1</b> " + pv(r.pp[0]) + "</span>" + " · <span class=nw><b class=seg>X</b> " + pv(r.pp[1]) + "</span>" + " · <span class=nw><b class=seg>2</b> " + pv(r.pp[2]) + "</span>" + "</p>");
       if (r.sc) det.push("<p>Scarto più grande: sul " + "1X2"[r.sc.i] + " l’Elo dice " + (r.sc.v > 0 ? "+" : "−") + f0(Math.abs(r.sc.v)) + " punti rispetto a Pinnacle. " +
         '<span class="piccolo">Di solito ha ragione il mercato: l’Elo non sa di assenti, formazioni e motivazioni.</span></p>');
       var lk = sito[String(x.id)];
@@ -8004,8 +8009,8 @@
     if (rr) info.push("<div class=\"info\">Espulsioni: <b>" + esc(rr) + "</b></div>");
     if (pin) {
       var pp = [num(pin["P1 Shin"]), num(pin["PX Shin"]), num(pin["P2 Shin"])];
-      info.push("<div class=\"info\">Pinnacle prima del via: <b class=seg>1</b> " + qv(pin.Q1) + " · <b class=seg>X</b> " + qv(pin.QX) + " · <b class=seg>2</b> " + qv(pin.Q2) +
-        (pp[0] != null ? " (<b class=seg>1</b> " + pv(pp[0]) + " · <b class=seg>X</b> " + pv(pp[1]) + " · <b class=seg>2</b> " + pv(pp[2]) + ")" : "") + "</div>");
+      info.push("<div class=\"info\">Pinnacle prima del via: <span class=nw><b class=seg>1</b> " + qv(pin.Q1) + "</span>" + " · <span class=nw><b class=seg>X</b> " + qv(pin.QX) + "</span>" + " · <span class=nw><b class=seg>2</b> " + qv(pin.Q2) + "</span>" +
+        (pp[0] != null ? " (<span class=nw><b class=seg>1</b> " + pv(pp[0]) + "</span>" + " · <span class=nw><b class=seg>X</b> " + pv(pp[1]) + "</span>" + " · <span class=nw><b class=seg>2</b> " + pv(pp[2]) + "</span>" + ")" : "") + "</div>");
     }
     var g = (x.gc == null ? "-" : x.gc) + "\u2013" + (x.go == null ? "-" : x.go);
     var pill = '<span class="live' + (golFresco(x) ? " fresco" : "") + '" title="' + esc(titoloLive(x)) + '">' + esc(minutoLive(x)) + "</span>";
@@ -8188,21 +8193,26 @@
     riga.dataset.frecce = "1";
     proFrecce().then(function (pro) {
       var x = frecceDati(r, pro);
-      if (!x) return;
+      if (!x) { stringiQ3(riga); return; }
       var et = alto.querySelector(".timbro-pin") || alto.querySelector(".fonte-q.pin");
       var qp = riga.querySelector("summary .quote-pin");
-      var qs = qp ? qp.querySelectorAll(":scope > .q") : [];
+      var qs = qp ? qp.querySelectorAll(".q") : [];
+      // (155) SOLO LE QUOTE CHE SI SONO MOSSE: il "=" dopo una quota
+      // ("4.79=") sembrava un'uguaglianza. Nessuna freccia = ferma; se sono
+      // ferme tutte e tre, nell'etichetta c'e' scritto "ferme".
+      var mosse = x.pz.filter(function (p) { return p.c !== "fermo"; });
+      var testo = mosse.length ? mosse.map(function (p) { return p.seg + '<b class="' + p.c + '">' + p.f + "</b>"; }).join(" ")
+        : '<span class="ferme">ferme</span>';
       if (et) {
-        et.insertAdjacentHTML("beforeend", '<span class="mov-in">' + x.pz.map(function (p) {
-          return p.seg + '<b class="' + p.c + '">' + p.f + "</b>"; }).join(" ") + "</span>");
+        et.insertAdjacentHTML("beforeend", '<span class="mov-in">' + testo + "</span>");
         et.title = (et.title ? et.title + "\n" : "") + x.titolo;
       } else if (qs.length >= 3) {
-        // pagina Pinnacle: la freccia subito dopo ogni quota (1 2.45\u2193)
-        x.pz.forEach(function (p, i) { qs[i].insertAdjacentHTML("afterend", '<b class="fr ' + p.c + '">' + p.f + "</b>"); });
+        // pagina Pinnacle: la freccia subito dopo la quota che si e' mossa
+        x.pz.forEach(function (p, i) { if (p.c !== "fermo") qs[i].insertAdjacentHTML("afterend", '<b class="fr ' + p.c + '">' + p.f + "</b>"); });
         qp.title = x.titolo;
+        stringiQ3(riga);
       } else {
-        alto.insertAdjacentHTML("beforeend", '<span class="mov-q" title="' + esc(x.titolo) + '">' + x.pz.map(function (p) {
-          return "<span>" + p.seg + '<b class="' + p.c + '">' + p.f + "</b></span>"; }).join("") + "</span>");
+        alto.insertAdjacentHTML("beforeend", '<span class="mov-q" title="' + esc(x.titolo) + '">' + testo + "</span>");
       }
     });
   }
@@ -8336,6 +8346,28 @@
   }
   // (148) Se la riga dell'Elo non ci sta, il carattere si stringe quanto
   // basta (mai sotto i 9 pixel) invece di andare a capo o tagliarsi.
+  // (155) I CARATTERI DEL SITO ARRIVANO DOPO: la misura fatta prima trovava
+  // il testo piu' stretto di quello vero, e sul telefono l'Elo usciva a
+  // destra. Si rimisura quando i caratteri sono pronti e quando cambia la
+  // larghezza dello schermo.
+  function rimisuraRighe() {
+    $cont.querySelectorAll(".riga .sel.elo-mini").forEach(function (d) {
+      d.style.fontSize = ""; d.style.whiteSpace = ""; d.style.overflow = "";
+      stringiRiga(d);
+    });
+    $cont.querySelectorAll(".quote-pin .q3").forEach(function (q) {
+      q.style.fontSize = ""; q.style.whiteSpace = "";
+      stringiQ3(q.closest(".riga"));
+    });
+  }
+  (function () {
+    var t = null;
+    var dopo = function () { clearTimeout(t); t = setTimeout(rimisuraRighe, 150); };
+    try { if (document.fonts && document.fonts.ready) document.fonts.ready.then(dopo); } catch (e) {}
+    try { if (document.fonts && document.fonts.addEventListener) document.fonts.addEventListener("loadingdone", dopo); } catch (e) {}
+    window.addEventListener("resize", dopo);
+    window.addEventListener("load", dopo);
+  })();
   function stringiRiga(div) {
     requestAnimationFrame(function () {
       var w = div.clientWidth, sw = div.scrollWidth;
@@ -8356,6 +8388,8 @@
           sm.classList.add("con-elo-largo");
           div.classList.add("elo-largo");
           div.style.marginLeft = Math.max(0, Math.round(sx)) + "px";
+          // (153) larga quanto resta, non il 100% piu' il margine (usciva a destra)
+          div.style.flexBasis = "calc(100% - " + Math.max(0, Math.round(sx)) + "px)";
           sm.appendChild(div);
           stringiRiga(div);
           return;
@@ -8365,6 +8399,21 @@
         return;
       }
       div.style.fontSize = nuovo + "px";
+    });
+  }
+  // (154) Le tre quote della pagina Pinnacle su una riga: se non ci stanno,
+  // il carattere si stringe quanto basta (mai sotto i 10 pixel).
+  function stringiQ3(riga) {
+    var q3 = riga && riga.querySelector("summary .quote-pin .q3");
+    if (!q3) return;
+    requestAnimationFrame(function () {
+      var w = q3.clientWidth, sw = q3.scrollWidth;
+      if (!w || sw <= w + 1) return;
+      var fs = parseFloat(getComputedStyle(q3).fontSize) || 13;
+      var nuovo = Math.floor(fs * w / sw * 10) / 10 - 0.2;
+      // schermo troppo stretto: si va a capo, ma solo fra una quota e l'altra
+      if (nuovo < 10) { q3.style.whiteSpace = "normal"; return; }
+      q3.style.fontSize = nuovo + "px";
     });
   }
   function timbraElo() {
@@ -8389,8 +8438,8 @@
         // (148) una riga sola: trattini stretti, scarto fra parentesi piccolo
         // (151) a capo solo fra un pezzo e l'altro, mai fra "1" e "55%"
         div.innerHTML = '<span class="nw">Elo ' + ev(c.elo) + "\u2013" + ev(o.elo) + ' <span class="piccolo">(' + (c.elo >= o.elo ? "+" : "\u2212") +
-          f0(Math.abs(c.elo - o.elo)) + ")</span></span>\u2009· " + '<span class="nw"><b class=seg>1</b> ' + pv(p[0]) + "</span>\u2009· " +
-          '<span class="nw"><b class=seg>X</b> ' + pv(p[1]) + "</span>\u2009· " + '<span class="nw"><b class=seg>2</b> ' + pv(p[2]) + "</span>";
+          f0(Math.abs(c.elo - o.elo)) + ")</span></span>\u2009· " + '<span class="nw"><span class=nw><b class=seg>1</b> ' + pv(p[0]) + '</span>' + "</span>\u2009· " +
+          '<span class="nw"><span class=nw><b class=seg>X</b> ' + pv(p[1]) + '</span>' + "</span>\u2009· " + '<span class="nw"><span class=nw><b class=seg>2</b> ' + pv(p[2]) + '</span>' + "</span>";
         dove.parentNode.insertBefore(div, dove.nextSibling);
         stringiRiga(div);
       };
