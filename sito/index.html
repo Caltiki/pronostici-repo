@@ -1556,6 +1556,7 @@
   .sel.elo-mini { font-size: .85rem; color: var(--tenue); }
   /* (148) sulle card l'Elo sta in una riga: il carattere si stringe col
      telefono stretto invece di andare a capo */
+  .elo-mini .nw { white-space: nowrap; }
   .riga .sel.elo-mini { white-space: nowrap; font-size: clamp(.66rem, 3.25vw, .85rem); overflow: hidden; text-overflow: ellipsis; }
   /* (133) la classifica Elo */
   .elo-r { display: grid; grid-template-columns: 2.6em 1fr auto; gap: 8px; align-items: center; padding: 7px 4px; border-bottom: 1px solid var(--bordo); }
@@ -8309,7 +8310,16 @@
       var w = div.clientWidth, sw = div.scrollWidth;
       if (!w || sw <= w + 1) return;
       var fs = parseFloat(getComputedStyle(div).fontSize) || 13;
-      div.style.fontSize = Math.max(9, Math.floor(fs * w / sw * 10) / 10 - 0.2) + "px";
+      var nuovo = Math.floor(fs * w / sw * 10) / 10 - 0.2;
+      // (151) dove la colonna e' troppo stretta (pagina Pinnacle: segno a
+      // sinistra, percentuale a destra) il carattere diventerebbe
+      // illeggibile: meglio due righe a grandezza normale.
+      if (nuovo < 10.5) {
+        div.style.whiteSpace = "normal";
+        div.style.overflow = "visible";
+        return;
+      }
+      div.style.fontSize = nuovo + "px";
     });
   }
   function timbraElo() {
@@ -8332,8 +8342,10 @@
         div.className = "sel elo-mini";
         div.title = "Elo del sistema: " + c.nome + " " + Math.round(c.elo) + ", " + o.nome + " " + Math.round(o.elo);
         // (148) una riga sola: trattini stretti, scarto fra parentesi piccolo
-        div.innerHTML = "Elo " + ev(c.elo) + "\u2013" + ev(o.elo) + ' <span class="piccolo">(' + (c.elo >= o.elo ? "+" : "\u2212") +
-          f0(Math.abs(c.elo - o.elo)) + ")</span>\u2009·\u2009<b class=seg>1</b> " + pv(p[0]) + "\u2009·\u2009<b class=seg>X</b> " + pv(p[1]) + "\u2009·\u2009<b class=seg>2</b> " + pv(p[2]);
+        // (151) a capo solo fra un pezzo e l'altro, mai fra "1" e "55%"
+        div.innerHTML = '<span class="nw">Elo ' + ev(c.elo) + "\u2013" + ev(o.elo) + ' <span class="piccolo">(' + (c.elo >= o.elo ? "+" : "\u2212") +
+          f0(Math.abs(c.elo - o.elo)) + ")</span></span>\u2009· " + '<span class="nw"><b class=seg>1</b> ' + pv(p[0]) + "</span>\u2009· " +
+          '<span class="nw"><b class=seg>X</b> ' + pv(p[1]) + "</span>\u2009· " + '<span class="nw"><b class=seg>2</b> ' + pv(p[2]) + "</span>";
         dove.parentNode.insertBefore(div, dove.nextSibling);
         stringiRiga(div);
       };
