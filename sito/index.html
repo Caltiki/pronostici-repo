@@ -1506,6 +1506,23 @@
   .sez-guscio.ha-prima .freccia-sez.prima,
   .sez-guscio.ha-dopo .freccia-sez.dopo { opacity: 1; pointer-events: auto; }
   @media (prefers-reduced-motion: reduce) { .freccia-sez { transition: none; } }
+  /* Statistiche della partita (129): casa a sinistra, ospite a destra,
+     sotto una barra con la quota della casa. */
+  .stat-testa { display: flex; justify-content: space-between; font-weight: 700; font-size: .85rem; margin: 4px 0 8px; }
+  .stat-riga { display: grid; grid-template-columns: 3.5em 1fr 3.5em; align-items: center; gap: 2px 8px; margin: 6px 0; }
+  .stat-riga > span { text-align: center; color: var(--tenue); font-size: .85rem; }
+  .stat-riga > b:last-of-type { text-align: right; }
+  .stat-barra { grid-column: 1 / -1; height: 5px; border-radius: 3px; background: var(--bordo); overflow: hidden; }
+  .mk { padding: 7px 0; border-bottom: 1px solid var(--bordo); }
+  .mk > span { display: block; font-size: .78rem; font-weight: 700; color: var(--tenue); text-transform: uppercase; letter-spacing: .02em; }
+  .mk p { margin: 2px 0 0; }
+  .stat-barra i { display: block; height: 100%; background: var(--evidenza); }
+  .tab-scorre { overflow-x: auto; }
+  details.tutte-linee { margin-top: 8px; }
+  details.tutte-linee summary { cursor: pointer; color: var(--evidenza); font-weight: 600; }
+  details.tutte-linee p { font-size: .85rem; margin: 6px 0; }
+  a.chip-link { text-decoration: none; color: var(--evidenza); border-color: color-mix(in srgb, var(--evidenza) 45%, transparent); font-weight: 600; }
+  a.chip-link:hover { background: color-mix(in srgb, var(--evidenza) 12%, transparent); }
   /* ✓/✗ grigia sui pronostici delle fonti nella scheda (125). */
   .spunta-pron { color: var(--tenue); font-weight: 800; }
 </style>
@@ -6715,8 +6732,16 @@
         p.PinX = t ? t.x : null;
         p.PinId = t ? t.id : null;
         p.PinData = d;
-        return Promise.all([calendarioPer(d), p.PinId != null ? formaFile(d) : null]).then(function (a2) {
+        var tt = Math.floor(Date.now() / 600000);
+        return Promise.all([calendarioPer(d), p.PinId != null ? formaFile(d) : null,
+          p.PinId != null ? leggiUrl(BASE + "pinmercati_" + d + ".json?t=" + tt, "pinmercati_" + d).catch(function () { return null; }) : null,
+          p.PinId != null && d <= oggi() ? leggiUrl(BASE + "statistiche_" + d + ".json?t=" + tt, "statistiche_" + d).catch(function () { return null; }) : null
+        ]).then(function (a2) {
           var cal = a2[0];
+          var pm = a2[2] && a2[2].partite ? a2[2].partite[String(p.PinId)] : null;
+          p.PinMercati = pm || null;
+          p.PinMercatiOra = pm ? a2[2].aggiornato : null;
+          p.Stat = a2[3] ? a2[3][String(p.PinId)] || null : null;
           if (stato.sez !== "scheda" || SCHEDA.data !== d || SCHEDA.chiave !== al) return;
           p.Cal = p.PinId != null ? cal[String(p.PinId)] || null : null;
           p.Forma = p.PinId != null ? formaDi(a2[1], p.PinId) : null;
@@ -6746,9 +6771,132 @@
       (h || '<p class="piccolo">Ancora niente: gli assenti arrivano in giornata, le formazioni un’ora prima del via.</p>') + "</div>";
   }
 
+  // ------------------------------------------- ALTRI MERCATI PINNACLE (129)
+  // pinmercati_<data>.json: tutti i mercati che Pinnacle quota per la
+  // partita, coi nomi di API-Football (verificati sui dati del 12/11).
+  // Per ogni mercato a due esiti si mostra la linea piu' equilibrata
+  // (quella col prezzo senza margine piu' vicino al 50%), sotto tutte.
+  // Senza margine = margine tolto in proporzione fra i due esiti.
+  //
+  // L'HANDICAP ASIATICO DI API-FOOTBALL scrive la linea della CASA anche
+  // sulla selezione dell'ospite: "Home -0.5" e "Away -0.5" sono le due
+  // facce della stessa linea (casa -0.5, ospite +0.5). Verificato il 12/11
+  // sulle quote: "Away -0.5" pagava 1.28 come il X2, non 1.85 come il 2.
+  var MERCATI_PIN = [
+    ["Asian Handicap", "Handicap asiatico", "ah"],
+    ["Goals Over/Under", "Gol Under/Over", "ou"],
+    ["Total - Home", "Gol della casa", "ou"],
+    ["Total - Away", "Gol dell'ospite", "ou"],
+    ["First Half Winner", "1X2 primo tempo", "1x2"],
+    ["Asian Handicap First Half", "Handicap primo tempo", "ah"],
+    ["Goals Over/Under First Half", "Under/Over primo tempo", "ou"],
+    ["Home Team Total Goals(1st Half)", "Gol casa primo tempo", "ou"],
+    ["Away Team Total Goals(1st Half)", "Gol ospite primo tempo", "ou"],
+    ["Corners Over Under", "Corner Under/Over", "ou"],
+    ["Corners Asian Handicap", "Handicap corner", "ah"],
+    ["Total Corners (1st Half)", "Corner primo tempo", "ou"],
+    ["Home Corners Over/Under", "Corner della casa", "ou"],
+    ["Away Corners Over/Under", "Corner dell'ospite", "ou"],
+    ["Cards Over/Under", "Cartellini Under/Over", "ou"],
+    ["Cards Asian Handicap", "Handicap cartellini", "ah"]
+  ];
+  function lineeDi(m, tipo) {
+    var per = {};
+    Object.keys(m || {}).forEach(function (k) {
+      var x = tipo === "ou" ? /^(Over|Under)\s+([+-]?\d+(?:\.\d+)?)$/.exec(k) : /^(Home|Away)\s+([+-]?\d+(?:\.\d+)?)$/.exec(k);
+      if (!x) return;
+      var L = Number(x[2]), q = num(m[k]);
+      if (q == null || q <= 1) return;
+      var c = per[L] || (per[L] = { L: L });
+      c[x[1] === "Over" || x[1] === "Home" ? "a" : "b"] = q;
+    });
+    return Object.keys(per).map(function (k) { return per[k]; }).filter(function (c) { return c.a && c.b; })
+      .map(function (c) { c.pa = (1 / c.a) / (1 / c.a + 1 / c.b); return c; })
+      .sort(function (x, y) { return x.L - y.L; });
+  }
+  function segnoLinea(v) {
+    if (Math.abs(v) < 1e-9) return "0";
+    return (v > 0 ? "+" : "\u2212") + String(Math.abs(v));
+  }
+  function nomeLinea(c, tipo) {
+    return tipo === "ah" ? "casa " + segnoLinea(c.L) + " · ospite " + segnoLinea(-c.L) : String(c.L);
+  }
+  // Una faccia per lato, quota e probabilita' accanto:
+  // "casa +0.5 2.06 (47%) · ospite −0.5 1.85 (53%)", "Over 3.25 2.05 (47%) · Under ..."
+  function facceLinea(c, tipo) {
+    var la = tipo === "ah" ? "casa " + segnoLinea(c.L) : "Over " + c.L;
+    var lb = tipo === "ah" ? "ospite " + segnoLinea(-c.L) : "Under " + c.L;
+    return esc(la) + " " + qv(c.a) + " (" + pv(100 * c.pa) + ") · " + esc(lb) + " " + qv(c.b) + " (" + pv(100 * (1 - c.pa)) + ")";
+  }
+  function bloccoAltriMercati(p) {
+    var mm = p.PinMercati;
+    if (!mm) return "";
+    var righe = [], tutte = [];
+    MERCATI_PIN.forEach(function (d) {
+      var m = mm[d[0]];
+      if (!m) return;
+      if (d[2] === "1x2") {
+        var q = [num(m.Home), num(m.Draw), num(m.Away)];
+        if (q.some(function (v) { return v == null || v <= 1; })) return;
+        var inv = q.map(function (v) { return 1 / v; }), t = inv[0] + inv[1] + inv[2];
+        righe.push('<div class="mk"><span>' + esc(d[1]) + "</span><p>" + ["1", "X", "2"].map(function (sg, i) {
+          return sg + " " + qv(q[i]) + " (" + pv(100 * inv[i] / t) + ")";
+        }).join(" · ") + "</p></div>");
+        return;
+      }
+      var ll = lineeDi(m, d[2]);
+      if (!ll.length) return;
+      var eq = ll.slice().sort(function (x, y) { return Math.abs(x.pa - 0.5) - Math.abs(y.pa - 0.5); })[0];
+      righe.push('<div class="mk"><span>' + esc(d[1]) + "</span><p>" + facceLinea(eq, d[2]) + "</p></div>");
+      if (ll.length > 1) {
+        tutte.push("<p><b>" + esc(d[1]) + "</b>: " + ll.map(function (c) {
+          return esc(nomeLinea(c, d[2])) + " " + qv(c.a) + "/" + qv(c.b) + " (" + (d[2] === "ah" ? "casa " : "Over ") + pv(100 * c.pa) + ")";
+        }).join(" · ") + "</p>");
+      }
+    });
+    if (!righe.length) return "";
+    return '<div class="scheda"><h3>Altri mercati Pinnacle</h3>' +
+      righe.join("") +
+      (tutte.length ? '<details class="tutte-linee"><summary>Tutte le linee</summary>' + tutte.join("") + "</details>" : "") +
+      '<p class="piccolo">Per ogni mercato la linea più equilibrata: quota e, fra parentesi, probabilità senza margine ' +
+      "(il guadagno del book tolto in proporzione fra gli esiti)." +
+      (p.PinMercatiOra ? " Lettura delle " + esc(String(p.PinMercatiOra).slice(11, 16)) + "." : "") + "</p></div>";
+  }
+
+  // ------------------------------------------------ STATISTICHE (129)
+  // statistiche_<data>.json (ieri e oggi): per le nostre partite finite,
+  // tutte le voci di /fixtures/statistics con i nomi di API-Football. Un
+  // valore che API-Football non da' (null) resta "–": non si scrive 0.
+  var STAT_VOCI = [
+    ["xG (gol attesi)", "expected_goals", 2], ["Tiri", "Total Shots"], ["Tiri in porta", "Shots on Goal"],
+    ["Possesso", "Ball Possession", "%"], ["Corner", "Corner Kicks"], ["Falli", "Fouls"],
+    ["Gialli", "Yellow Cards"], ["Rossi", "Red Cards"], ["Parate", "Goalkeeper Saves"], ["Passaggi riusciti", "Passes %", "%"]
+  ];
+  function valStat(v) {
+    if (v == null || v === "") return null;
+    var n = parseFloat(String(v).replace("%", "").replace(",", "."));
+    return isNaN(n) ? null : n;
+  }
+  function bloccoStatistiche(p) {
+    var st = p.Stat;
+    if (!st || !st.casa || !st.ospite) return "";
+    var righe = STAT_VOCI.map(function (v) {
+      var a = valStat(st.casa[v[1]]), b = valStat(st.ospite[v[1]]);
+      if (a == null && b == null) return "";
+      var fa = function (x) { return x == null ? "\u2013" : (v[2] === 2 ? x.toFixed(2) : String(Math.round(x * 10) / 10)) + (v[2] === "%" ? "%" : ""); };
+      var tot = (a || 0) + (b || 0), qa = tot > 0 ? 100 * (a || 0) / tot : 50;
+      return '<div class="stat-riga"><b>' + fa(a) + "</b><span>" + esc(v[0]) + "</span><b>" + fa(b) + "</b>" +
+        '<div class="stat-barra"><i style="width:' + qa.toFixed(1) + '%"></i></div></div>';
+    }).filter(Boolean);
+    if (!righe.length) return "";
+    return '<div class="scheda"><h3>Statistiche</h3><div class="stat-testa"><span>' + esc(p.Casa || "casa") + "</span><span>" +
+      esc(p.Ospite || "ospite") + "</span></div>" + righe.join("") +
+      '<p class="piccolo">Dove un valore manca, non è disponibile per questa partita.</p></div>';
+  }
+
   function disegnaSchedaPartita(p, d) {
     var m = mercatoScheda(p);
-    $cont.innerHTML = testaScheda(p, d) + bloccoMercato(p, m) + bloccoFormazioni(p, d) + bloccoPrezzi(p, d) + bloccoPoisson(p) +
+    $cont.innerHTML = testaScheda(p, d) + bloccoStatistiche(p) + bloccoMercato(p, m) + bloccoAltriMercati(p) + bloccoFormazioni(p, d) + bloccoPrezzi(p, d) + bloccoPoisson(p) +
       bloccoFonti(p, m) + bloccoSure(p) + bloccoAltro(p) + piedeScheda(p);
     $cont.querySelectorAll("input[data-sp]").forEach(function (cb) {
       cb.addEventListener("change", function () {
@@ -7195,15 +7343,28 @@
       var t = Math.floor(Date.now() / 600000);
       return Promise.all([
         leggiUrl(BASE + "calendario_" + d + ".json?t=" + t, "calendario_" + d),
-        leggi("partite_api_" + d + ".json").catch(function () { return {}; })
+        leggi("partite_api_" + d + ".json").catch(function () { return {}; }),
+        d >= oggi() ? leggi("scheda_" + d + ".json").catch(function () { return null; }) : null
       ]).then(function (b) {
         if (stato.sez !== "cal" || CAL.data !== d) return;
         var lista = Array.isArray(b[0]) ? b[0] : [], mappa = b[1] && typeof b[1] === "object" ? b[1] : {};
         var sito = {};
         for (var k in mappa) sito[String(mappa[k])] = true;
+        // IL COLLEGAMENTO ALLA SCHEDA (130): "sul sito" porta alla scheda
+        // della partita. partite_api da' i nomi come li scrive ogni fonte;
+        // si cerca la riga nella tabella "alias" delle schede, con i nomi
+        // esattamente uguali. Se non c'e', l'etichetta resta senza link.
+        var al = b[2] && b[2].alias ? b[2].alias : {}, PRE = ["prezzi", "consensusmedio", "asianodds", "poisson", "consensus", "fpnet"];
+        for (var k2 in mappa) {
+          var idk = String(mappa[k2]);
+          if (sito[idk] !== true) continue;
+          for (var j = 0; j < PRE.length; j++) {
+            if (al[PRE[j] + "|" + k2] != null) { sito[idk] = "#scheda/" + d + "/" + encodeURIComponent(PRE[j] + "|" + k2); break; }
+          }
+        }
         $cont.innerHTML = '<h2 class="reg-tit">Calendario</h2>' +
           '<p class="descr">Tutte le partite del giorno, anche quelle che le fonti del sito non seguono. ' +
-          "<b>sul sito</b> = la partita ha pronostici o prezzi nelle altre sezioni; il timbro dice se ha le quote Pinnacle.</p>" +
+          "<b>sul sito</b> = la partita ha pronostici o prezzi nelle altre sezioni: toccalo per aprirne la scheda. Il timbro dice se ha le quote Pinnacle.</p>" +
           chipsHtml(date.map(function (x) { return [x, etichettaData(x)]; }), d, "data-cdata") +
           chipsHtml([["tutte", "Tutte"], ["sito", "Sul sito"], ["pin", "Con Pinnacle"], ["live", "In corso"]], CAL.filtro, "data-cfiltro") +
           '<div class="strumenti"><input type="search" id="cerca-cal" placeholder="Squadra, campionato o paese" value="' + esc(CAL.cerca) + '" autocomplete="off"></div>' +
@@ -7220,6 +7381,7 @@
         });
         document.getElementById("cerca-cal").addEventListener("input", function (e) { CAL.cerca = e.target.value; listaCalendario(lista, sito); });
         listaCalendario(lista, sito);
+        rimettiPosto($cont);
       });
     }).catch(function () {
       $cont.innerHTML = messaggio("vuoto", "Il calendario non è ancora pubblicato: lo scrive il giro di Pinnacle, entro un paio d’ore.");
@@ -7270,13 +7432,19 @@
           var pin = PIN_G.perId[String(x.id)], s = statoCal(x), ns = !!sito[String(x.id)];
           return '<div class="cal-riga' + (ns ? " cal-sito" : "") + '"><span class="m">' + esc(x.ora || "") + "</span>" +
             "<span>" + logo(x.casa, false, x.lega) + esc(x.casa) + " – " + logo(x.ospite, false, x.lega) + esc(x.ospite) +
-            (ns ? ' <span class="chip">sul sito</span>' : "") + (pin ? " " + timbroPin(pin) : "") + "</span>" +
+            (ns ? (typeof sito[String(x.id)] === "string"
+              ? ' <a class="chip chip-link" href="' + esc(sito[String(x.id)]) + '">sul sito \u2192</a>'
+              : ' <span class="chip">sul sito</span>') : "") + (pin ? " " + timbroPin(pin) : "") + "</span>" +
             '<span class="r">' + s.html + "</span></div>";
         }).join("") + "</details>";
     }).join("");
     $l.innerHTML = h;
     $l.querySelectorAll(".cal-lega").forEach(function (det) {
       det.addEventListener("toggle", function () { CAL.aperti[det.dataset.lega] = det.open; });
+    });
+    // Dalla scheda, "Indietro" torna qui, allo stesso punto.
+    $l.querySelectorAll("a.chip-link").forEach(function (a) {
+      a.addEventListener("click", function () { ritorno = { y: window.scrollY, alias: null }; daClic = true; });
     });
   }
 
