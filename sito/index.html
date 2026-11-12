@@ -6622,17 +6622,19 @@
       var fin = ["FT", "AET", "PEN"].indexOf(st) >= 0;
       h += '<p class="punteggio"><b>' + gc + " – " + go + "</b> " + (fin ? "finita" : "in corso (" + esc(st) + ")") + "</p>";
     }
-    if (!fm.Forma_Casa && p.Forma) {
+    // FORMA E POSIZIONE (143): FootyMetrics se le ha, altrimenti API-Football
+    // (forma_<data>.json e classifiche_api.json), anche una sola delle due.
+    var cl = p.Classe || {};
+    var posC = fm.Pos_Casa != null ? esc(fm.Pos_Casa) + "° in classifica" : etichettaPos(cl.c);
+    var posO = fm.Pos_Ospite != null ? esc(fm.Pos_Ospite) + "° in classifica" : etichettaPos(cl.o);
+    var fC = fm.Forma_Casa ? forma(fm.Forma_Casa) : (p.Forma ? formaApi(p.Forma.casa) : "");
+    var fO = fm.Forma_Casa ? forma(fm.Forma_Ospite) : (p.Forma ? formaApi(p.Forma.ospite) : "");
+    if (posC || posO || fC || fO) {
       h += '<div class="forme">' +
-        "<div><span>casa</span>" + (formaApi(p.Forma.casa) || "\u2013") + "</div>" +
-        "<div><span>ospite</span>" + (formaApi(p.Forma.ospite) || "\u2013") + "</div>" +
-        '</div><p class="piccolo">Ultime cinque partite, tutte le competizioni, la più recente a destra: toccane una per vederla.</p>';
-    }
-    if (fm.Forma_Casa || fm.Pos_Casa != null) {
-      h += '<div class="forme">' +
-        "<div><span>" + (fm.Pos_Casa != null ? esc(fm.Pos_Casa) + "° in classifica" : "casa") + "</span>" + forma(fm.Forma_Casa) + "</div>" +
-        "<div><span>" + (fm.Pos_Ospite != null ? esc(fm.Pos_Ospite) + "° in classifica" : "ospite") + "</span>" + forma(fm.Forma_Ospite) + "</div>" +
-        '</div><p class="piccolo">Ultime cinque partite, la più recente a destra.</p>';
+        "<div><span>" + esc(posC || "casa") + "</span>" + (fC || (fO ? "\u2013" : "")) + "</div>" +
+        "<div><span>" + esc(posO || "ospite") + "</span>" + (fO || (fC ? "\u2013" : "")) + "</div></div>";
+      if (fm.Forma_Casa) h += '<p class="piccolo">Ultime cinque partite, la più recente a destra.</p>';
+      else if (fC || fO) h += '<p class="piccolo">Ultime cinque partite, tutte le competizioni, la più recente a destra: toccane una per vederla.</p>';
     }
     // CLASSIFICA E xG, dalle tabelle FotMob (6/11).
     var sq = p.Squadre;
@@ -6899,10 +6901,13 @@
         return Promise.all([calendarioPer(d), p.PinId != null ? formaFile(d) : null,
           p.PinId != null ? leggiUrl(BASE + "pinmercati_" + d + ".json?t=" + tt, "pinmercati_" + d).catch(function () { return null; }) : null,
           p.PinId != null && d <= oggi() ? leggiUrl(BASE + "statistiche_" + d + ".json?t=" + tt, "statistiche_" + d).catch(function () { return null; }) : null,
-          p.PinId != null ? Promise.all([caricaElo().catch(function () { return null; }), calendarioIds(d)]) : null
+          p.PinId != null ? Promise.all([caricaElo().catch(function () { return null; }), calendarioIds(d)]) : null,
+          p.PinId != null ? classificheApi() : null
         ]).then(function (a2) {
           // (140) l'Elo delle due squadre, per numero
           var ids = a2[4] && a2[4][1] ? a2[4][1][String(p.PinId)] : null;
+          // (143) le posizioni in classifica, per numero di squadra
+          if (ids && a2[5]) p.Classe = { c: posizioneApi(a2[5], ids[0], ids[2]), o: posizioneApi(a2[5], ids[1], ids[2]) };
           if (ids && ELO.dati && ELO.info) {
             var ec = ELO.dati.per[String(ids[0])], eo = ELO.dati.per[String(ids[1])];
             if (ec && eo) p.Elo = { c: ec, o: eo, p: eloProb(ec.elo, eo.elo, ELO.info.logit) };
@@ -8139,12 +8144,57 @@
   // le due squadre per NUMERO dal calendario del giorno (ic, io), il rating
   // per numero da elo_rating.json. Senza tutti e tre, niente riga.
   var ELO_CAL = {};
+  // (143) LE CLASSIFICHE DI API-FOOTBALL (classifiche_api.json, apifootball.py):
+  // per numero di squadra, prima nella lega della partita, altrimenti in
+  // un'altra (nelle coppe: il campionato della squadra, detto quale).
+  var CLASSI = null;
+  function classificheApi() {
+    if (!CLASSI) {
+      CLASSI = leggiUrl(BASE + "classifiche_api.json?t=" + Math.floor(Date.now() / 600000), "classifiche_api")
+        .catch(function () { return null; }).then(function (x) {
+          var perLega = {}, perSq = {};
+          var leghe = x && x.leghe ? x.leghe : {};
+          Object.keys(leghe).forEach(function (li) {
+            var v = leghe[li];
+            if (!v || !Array.isArray(v.t)) return;
+            var tab = perLega[li] = {};
+            v.t.forEach(function (r) {
+              var e = { li: li, n: v.n || "", pos: r[1], pt: r[2], g: r[3], dr: r[4], gr: r[5] || "", tot: v.t.length };
+              tab[String(r[0])] = e;
+              (perSq[String(r[0])] = perSq[String(r[0])] || []).push(e);
+            });
+          });
+          return { perLega: perLega, perSq: perSq };
+        });
+    }
+    return CLASSI;
+  }
+  function posizioneApi(cl, sq, li) {
+    if (!cl || sq == null) return null;
+    var e = li != null && cl.perLega[String(li)] ? cl.perLega[String(li)][String(sq)] : null;
+    if (e) return { e: e, altra: false };
+    var tutte = cl.perSq[String(sq)] || [];
+    // in un'altra lega: quella con piu' squadre (il campionato, non un girone di coppa)
+    tutte = tutte.slice().sort(function (a, b) { return b.tot - a.tot; });
+    return tutte.length ? { e: tutte[0], altra: true } : null;
+  }
+  function etichettaPos(x) {
+    if (!x) return null;
+    var e = x.e, dove = "";
+    if (x.altra) dove = " in " + String(e.gr || e.n).replace(/^[^:]*:\s*/, "");
+    else if (e.gr && /gir|group|grupo|zona|conf/i.test(e.gr)) {
+      var g = String(e.gr).replace(/^[^:]*:\s*/, "");
+      // il girone si dice solo se il nome della lega non lo dice gia'
+      if (String(e.n).toLowerCase().indexOf(g.toLowerCase()) < 0) dove = " (" + g + ")";
+    }
+    return e.pos + "° in classifica" + dove + (e.pt != null ? " · " + e.pt + " pt" : "");
+  }
   function calendarioIds(d) {
     if (!ELO_CAL[d]) {
       ELO_CAL[d] = leggiUrl(BASE + "calendario_" + d + ".json?t=" + Math.floor(Date.now() / 600000), "calendario_" + d)
         .catch(function () { return []; }).then(function (l) {
           var per = {};
-          (Array.isArray(l) ? l : []).forEach(function (x) { if (x && x.id != null && x.ic != null && x.io != null) per[String(x.id)] = [x.ic, x.io]; });
+          (Array.isArray(l) ? l : []).forEach(function (x) { if (x && x.id != null && x.ic != null && x.io != null) per[String(x.id)] = [x.ic, x.io, x.li]; });
           return per;
         });
     }
