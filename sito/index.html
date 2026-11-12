@@ -1305,6 +1305,12 @@
   :root[data-theme="light"] .q { color: #c62828; }
   /* IL MOVIMENTO DAL MATTINO (105): freccia e colore per verso. */
   .mv-su { color: #22a55b; font-weight: 700; white-space: nowrap; }
+  /* (146) le frecce del movimento Pinnacle sulle card */
+  .mov-q { display: inline-flex; gap: .55em; align-items: baseline; padding: 1px 7px; border: 1px solid var(--bordo);
+    border-radius: 4px; font-size: .8em; font-weight: 700; white-space: nowrap; color: var(--tenue); }
+  .mov-q b { margin-left: .12em; font-weight: 900; }
+  .mov-q b.giu { color: #22a55b; } .mov-q b.su { color: #e8873a; } .mov-q b.fermo { color: var(--tenue); }
+  :root[data-theme="light"] .mov-q b.giu { color: #157a3f; } :root[data-theme="light"] .mov-q b.su { color: #b35a12; }
   .mv-giu { color: #e8873a; font-weight: 700; white-space: nowrap; }
   :root[data-theme="light"] .mv-su { color: #157a3f; }
   :root[data-theme="light"] .mv-giu { color: #b35a12; }
@@ -8106,10 +8112,62 @@
       (num(r.Margine) != null ? " (margine " + f1(num(r.Margine)) + "%)" : "");
     return '<span class="timbro-pin" title="' + esc(t) + '">Pinnacle</span>';
   }
+  // (146) LE FRECCE DEL MOVIMENTO, su ogni card con Pinnacle: per 1, X e 2
+  // la quota di adesso contro la prima letta (il campo "Prima" di
+  // pinnacle_<data>.json; per le partite di oggi anche la lettura del
+  // mattino, se e' piu' vecchia). Freccia giu' = la quota e' scesa (il
+  // mercato ci crede di piu'), su = e' salita, "=" = ferma (meno di un
+  // punto di probabilita'). Doppia freccia da 3 punti in su.
+  var PRO_FRECCE = null;
+  function proFrecce() {
+    if (!PRO_FRECCE) PRO_FRECCE = leggiUrl(BASE + "apifootball_pro.json?t=" + Math.floor(Date.now() / 600000), "apifootball_pro.json")
+      .catch(function () { return null; });
+    return PRO_FRECCE;
+  }
+  function baseMovimento(r, pro) {
+    var basi = [];
+    var pr = r.Prima;
+    if (Array.isArray(pr) && num(pr[0]) != null && pr[3]) basi.push({ p: [num(pr[0]), num(pr[1]), num(pr[2])], t: String(pr[3]), q: [num(pr[4]), num(pr[5]), num(pr[6])] });
+    var mt = pinMattino(pro, r.Data, r.ID_API);
+    if (mt && num(mt[0]) != null) basi.push({ p: [num(mt[0]), num(mt[1]), num(mt[2])], t: r.Data + " " + (mt[3] || "00:00"), q: null });
+    basi.sort(function (a, b) { return a.t < b.t ? -1 : a.t > b.t ? 1 : 0; });
+    var b = basi[0];
+    // stessa lettura di adesso: niente movimento da mostrare
+    if (!b || (r.Letto && b.t >= String(r.Letto).slice(0, 16))) return null;
+    return b;
+  }
+  function frecceHtml(r, pro) {
+    var b = baseMovimento(r, pro);
+    var ora = [num(r["P1 Shin"]), num(r["PX Shin"]), num(r["P2 Shin"])];
+    if (!b || ora[0] == null) return "";
+    var q = [num(r.Q1), num(r.QX), num(r.Q2)], seg = ["1", "X", "2"], tit = [], h = [];
+    for (var i = 0; i < 3; i++) {
+      var d = ora[i] - b.p[i], c, f;
+      if (d >= 1) { c = "giu"; f = d >= 3 ? "\u2193\u2193" : "\u2193"; }
+      else if (d <= -1) { c = "su"; f = d <= -3 ? "\u2191\u2191" : "\u2191"; }
+      else { c = "fermo"; f = "="; }
+      h.push("<span>" + seg[i] + '<b class="' + c + '">' + f + "</b></span>");
+      tit.push(seg[i] + " " + (b.q && b.q[i] != null && q[i] != null ? f2(b.q[i]) + "\u2192" + f2(q[i]) + " " : "") +
+        "(" + f0(b.p[i]) + "\u2192" + f0(ora[i]) + "%)");
+    }
+    var quando = b.t.slice(8, 10) + "/" + b.t.slice(5, 7) + " " + b.t.slice(11, 16);
+    return '<span class="mov-q" title="' + esc("Pinnacle dalla prima lettura (" + quando + ") a ora: " + tit.join(" \u00b7 ") +
+      ". Freccia gi\u00f9 = quota scesa, su = salita, = ferma.") + '">' + h.join("") + "</span>";
+  }
+  function aggiungiFrecce(alto, r) {
+    if (!alto || alto.querySelector(".mov-q")) return;
+    var posto = document.createElement("span");
+    posto.className = "mov-q-posto";
+    alto.appendChild(posto);
+    proFrecce().then(function (pro) {
+      var h = frecceHtml(r, pro);
+      if (h) posto.outerHTML = h; else posto.remove();
+    });
+  }
   function timbraPinnacle() {
-    // Nella pagina Pinnacle lo sono tutte; in Sure Bets la fonte e il
-    // dettaglio delle quote ci sono gia' nella riga.
-    if (stato.sez === "pin" || stato.sez === "sure") return;
+    // Nella pagina Pinnacle e in Sure Bets il timbro e il dettaglio delle
+    // quote ci sono gia' nella riga: li' solo le frecce (146).
+    var soloFrecce = stato.sez === "pin" || stato.sez === "sure";
     $cont.querySelectorAll("[data-lc]").forEach(function (el) {
       // Solo la riga della partita, non le righe dei prezzi che stanno
       // dentro il suo dettaglio: quelle hanno il loro prezzo (AsianOdds,
@@ -8117,12 +8175,18 @@
       if (el.closest(".dettaglio") || el.closest(".dentro-partita")) return;
       var riga = el.closest(".riga") || el.closest(".scheda");
       var alto = riga ? riga.querySelector(".alto") : null;
-      if (!alto || alto.querySelector(".timbro-pin") || alto.dataset.pinVisto === el.getAttribute("data-lc")) return;
+      if (!alto || alto.dataset.pinVisto === el.getAttribute("data-lc")) return;
+      // (146) il timbro c'era gia' (pagina Elo, Sure Bets...) o la riga dice
+      // gia' "Pinnacle" accanto al margine (righe dei prezzi): niente doppione
+      var giaTimbro = !!alto.querySelector(".timbro-pin");
+      var giaFonte = !!(riga && riga.querySelector(".alto .fonte-q.pin"));
+      if (giaTimbro && !soloFrecce && alto.querySelector(".mov-q")) return;
       alto.dataset.pinVisto = el.getAttribute("data-lc");
       var k = el.getAttribute("data-lc").split("|"), ora = "";
       Array.prototype.some.call(alto.children, function (c) { if (/^\s*\d{1,2}:\d{2}\s*$/.test(c.textContent)) { ora = c.textContent; return true; } return false; });
       var r = pinDi(k[0], k.slice(1).join("|"), ora);
       if (!r) {
+        if (soloFrecce) return;
         // SENZA PINNACLE (128): niente timbro, ma se la partita ha il suo
         // numero in partite_api (nomi esattamente uguali) il dettaglio
         // mostra lo stesso la forma delle due squadre.
@@ -8139,10 +8203,14 @@
         }
         return;
       }
-      var span = document.createElement("span");
-      span.innerHTML = timbroPin(r);
-      var t = span.firstChild, primo = alto.firstElementChild;
-      if (primo && primo.nextSibling) alto.insertBefore(t, primo.nextSibling); else alto.appendChild(t);
+      aggiungiFrecce(alto, r);
+      if (soloFrecce || giaTimbro) return;
+      if (!giaFonte) {
+        var span = document.createElement("span");
+        span.innerHTML = timbroPin(r);
+        var t = span.firstChild, primo = alto.firstElementChild;
+        if (primo && primo.nextSibling) alto.insertBefore(t, primo.nextSibling); else alto.appendChild(t);
+      }
       // Nel dettaglio della partita (le sezioni che non hanno gia' il
       // riquadro di API-Football dei Pronostici): quote, margine,
       // probabilita' e movimento di Pinnacle, in cima.
