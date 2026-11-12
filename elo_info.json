@@ -1,0 +1,40 @@
+{
+ "calcolato": "2026-11-12 16:12 UTC",
+ "periodi": {
+  "taratura": "2018-07-01",
+  "prova": "2023-07-01"
+ },
+ "elo": {
+  "K": 25,
+  "campo": 50,
+  "margine": true,
+  "partite_provvisorie": 15
+ },
+ "logit": {
+  "soglia1": -0.8712883845210311,
+  "soglia2": 0.26241816392566686,
+  "pendenza": 0.48769455297635367,
+  "nota": "x = (elo casa - elo ospite)/100; p2 = sig(s1 - g x); p1 = 1 - sig(s2 - g x)"
+ },
+ "prova": {
+  "frequenze di lega": {
+   "brier": 0.6430346349143538,
+   "rps": 0.2301855502052976,
+   "logloss": 1.0628825240555144
+  },
+  "Elo logit": {
+   "brier": 0.6011277788746494,
+   "rps": 0.20935502683994506,
+   "logloss": 1.0058575822877778
+  },
+  "Elo Poisson": {
+   "brier": 0.5986555327628036,
+   "rps": 0.20860126697222683,
+   "logloss": 1.0017798518443348
+  }
+ },
+ "partite_prova": 448481,
+ "ultima_partita": "2026-11-11",
+ "squadre_pubblicate": 11012,
+ "squadre_totali": 21883
+}
