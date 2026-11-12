@@ -6227,6 +6227,13 @@
     p.dataset.fatto = "1";
     leggi("scheda_" + data + ".json").then(function (s) {
       var al = p.dataset.alias;
+      // LA PAGINA PINNACLE (12/11): la scheda non ha righe "pinnacle", ma
+      // i prezzi equi di una partita quotata da Pinnacle portano gli stessi
+      // nomi (li prendono da quel file): si cerca la riga dei prezzi, con
+      // i nomi esattamente uguali. Se non c'e', il collegamento non compare.
+      if (s && s.alias && !s.alias[al] && al.indexOf("pinnacle|") === 0 && s.alias["prezzi|" + al.slice(9)]) {
+        al = "prezzi|" + al.slice(9);
+      }
       if (!s || !s.alias || !s.alias[al]) { p.remove(); return; }
       p.innerHTML = '<a class="apri-scheda" href="#scheda/' + data + "/" + encodeURIComponent(al) + '">' +
         "Tutto su questa partita →</a>";
