@@ -607,6 +607,7 @@
   .forme { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
   .forme div { min-width: 0; }
   .forme span { display: block; font-size: .76rem; color: var(--tenue); margin-bottom: 3px; }
+  .forme i[title] { cursor: pointer; }
   .forme i {
     display: inline-flex; width: 20px; height: 20px; margin-right: 3px; border-radius: 5px;
     align-items: center; justify-content: center; font-style: normal; font-size: .7rem; font-weight: 700;
@@ -1505,6 +1506,8 @@
   .sez-guscio.ha-prima .freccia-sez.prima,
   .sez-guscio.ha-dopo .freccia-sez.dopo { opacity: 1; pointer-events: auto; }
   @media (prefers-reduced-motion: reduce) { .freccia-sez { transition: none; } }
+  /* ✓/✗ grigia sui pronostici delle fonti nella scheda (125). */
+  .spunta-pron { color: var(--tenue); font-weight: 800; }
 </style>
 </head>
 <body>
@@ -4852,8 +4855,45 @@
     var v = m.p[String(id)];
     return Array.isArray(v) && v.length >= 3 ? v : null;
   }
+  // IL RISULTATO DAL CALENDARIO (125). calendario_<data>.json (ieri, oggi)
+  // si rifa' a ogni giro di Pinnacle col punteggio di ogni partita di
+  // API-Football; le righe Pinnacle hanno il numero della partita, quindi
+  // nessun riconoscimento per nome. Solo le partite finite (FT, AET, PEN:
+  // il punteggio e' quello dei 90 minuti).
+  var FINITE_CAL = { FT: 1, AET: 1, PEN: 1 };
+  function calendarioPer(data) {
+    if (!data || data > oggi()) return Promise.resolve({});
+    return leggiUrl(BASE + "calendario_" + data + ".json?t=" + Math.floor(Date.now() / 600000), "calendario_" + data)
+      .catch(function () { return null; }).then(function (l) {
+        var per = {};
+        (Array.isArray(l) ? l : []).forEach(function (x) {
+          if (x && x.id != null && FINITE_CAL[String(x.stato || "").toUpperCase()] && x.gc != null && x.go != null) per[String(x.id)] = x;
+        });
+        return per;
+      });
+  }
+  // Vinto (true), perso (false) o non si dice (null: mercato che non si
+  // valuta qui, linea con rimborso o mezza vincita).
+  function esitoPron(x, gc, go) {
+    var s = String(x.Sel || "").toUpperCase(), m = x.Mercato;
+    if (m === "1X2" || m === "DC") {
+      if (!/^(1|X|2|1X|X2|12)$/.test(s)) return null;
+      return s.indexOf(gc > go ? "1" : gc < go ? "2" : "X") >= 0;
+    }
+    if (m === "OU") {
+      var L = num(x.Linea);
+      if (L == null) return null;
+      var d = gc + go - L;
+      if (Math.abs(d) < 0.5) return null;
+      return s === "OVER" ? d > 0 : d < 0;
+    }
+    if (m === "BTTS") return (gc > 0 && go > 0) === (s === "SI");
+    if (m === "SEGNA") return s === "CASA" ? gc > 0 : s === "OSPITE" ? go > 0 : null;
+    return null;
+  }
   function arricchisciPin(righe, data) {
-    return pinExtra(data).then(function (x) {
+    return Promise.all([pinExtra(data), calendarioPer(data), formaFile(data)]).then(function (a) {
+      var x = a[0], cal = a[1], ff = a[2];
       return (Array.isArray(righe) ? righe : []).map(function (r) {
         var p = [num(r["P1 Shin"]), num(r["PX Shin"]), num(r["P2 Shin"])];
         var mt = pinMattino(x.pro, data, r.ID_API);
@@ -4863,8 +4903,12 @@
         return Object.assign({}, r, {
           Segno: "1X2"[top], _prob: p[top] != null ? p[top] / 100 : null, _p: p,
           _diff: d, _mattino: mt ? mt[3] : null, Mov: d ? Math.abs(d[i]) : 0, _segnoMov: i != null ? "1X2"[i] : "",
-          _form: x.form[String(r.ID_API)] || null
-        });
+          _form: x.form[String(r.ID_API)] || null,
+          _forma: formaDi(ff, r.ID_API)
+        }, (function () {
+          var c = cal[String(r.ID_API)];
+          return c && (r.Gol_Casa == null || r.Gol_Ospite == null) ? { Gol_Casa: c.gc, Gol_Ospite: c.go } : {};
+        })());
       });
     });
   }
@@ -4938,6 +4982,9 @@
     if (r._diff) det.push("<p>" + movimentoHtml(r._diff, r._mattino, r._p) + ".</p>");
     else det.push("<p>Nessuna lettura del mattino per questa partita: il movimento si vede solo per oggi.</p>");
     if (num(r.OU) != null && num(r["P Over"]) != null) det.push("<p>Linea Under/Over " + esc(r.OU) + ": Over " + pv(r["P Over"]) + "</p>");
+    if (r.Gol_Casa != null && r.Gol_Ospite != null) det.unshift("<p>Finita <b>" + esc(r.Gol_Casa + "-" + r.Gol_Ospite) + "</b>.</p>");
+    if (r._forma) det.push('<div class="forme"><div><span>forma casa</span>' + (formaApi(r._forma.casa) || "\u2013") +
+      '</div><div><span>forma ospite</span>' + (formaApi(r._forma.ospite) || "\u2013") + "</div></div>");
     det.push(formazioneHtml(r._form));
     // (113) si chiamava "mv" e copriva la funzione mv() del margine qui
     // sopra: dal 103 la sezione si fermava con un errore.
@@ -4948,7 +4995,9 @@
       (num(r.OU) != null && num(r["P Over"]) != null ? " · Over " + esc(r.OU) + " " + pv(r["P Over"]) : "") + "</div>" : "";
     var top = r.Segno, pt = r._prob != null ? r._prob * 100 : null;
     return '<div class="riga"><details><summary>' +
-      '<span class="segno">' + esc((mosse ? r._segnoMov : top) || r.Segno || "?") + "</span>" +
+      // Nella vista "Mosse" il segno e' quello che si e' mosso (anche in
+      // giu'): niente ✓/✗ li', non direbbe se la mossa era giusta.
+      '<span class="segno' + (mosse ? " mosso" : "") + '">' + esc((mosse ? r._segnoMov : top) || r.Segno || "?") + "</span>" +
       '<div class="corpo">' +
       '<div class="alto">' + (r.Ora ? "<span><b>" + esc(r.Ora) + "</b></span>" : "") +
         (r.Lega ? '<span class="chip">' + esc(r.Lega) + "</span>" : "") +
@@ -6316,7 +6365,58 @@
       return f ? '<i class="fm-' + f[2] + '" title="' + f[1] + '">' + f[0] + "</i>" : "";
     }).join("");
   }
+  // LA FORMA DA API-FOOTBALL (126): forma_<data>.json, scritto dal giro
+  // Pinnacle, ha le ultime partite di ogni squadra per numero (la riga
+  // Pinnacle porta il numero della partita, il file le due squadre).
+  // u = [[data, avversario, "C"/"T", fatti, subiti], ...], la piu' recente
+  // per prima. Le icone: le ultime n, la piu' recente a destra, e su
+  // ognuna la partita.
+  function formaFile(data) {
+    return leggiUrl(BASE + "forma_" + data + ".json?t=" + Math.floor(Date.now() / 600000), "forma_" + data)
+      .catch(function () { return null; });
+  }
+  function formaDi(ff, id) {
+    var pp = ff && ff.partite && ff.partite[String(id)];
+    if (!pp) return null;
+    var c = (ff.squadre || {})[pp[0]], o = (ff.squadre || {})[pp[1]];
+    return (c && c.u && c.u.length) || (o && o.u && o.u.length) ? { casa: c ? c.u : [], ospite: o ? o.u : [] } : null;
+  }
+  // Sul telefono il "title" non si vede: toccando un'icona la partita si
+  // scrive sotto le icone.
+  document.addEventListener("click", function (e) {
+    var i = e.target.closest && e.target.closest(".forme i[title]");
+    if (!i) return;
+    var box = i.closest(".forme"), p = box.nextElementSibling;
+    if (!p || !p.classList.contains("forma-dett")) {
+      p = document.createElement("p");
+      p.className = "piccolo forma-dett";
+      box.parentNode.insertBefore(p, box.nextSibling);
+    }
+    var lato = i.parentNode.querySelector("span");
+    p.textContent = (lato ? lato.textContent + ": " : "") + i.getAttribute("title");
+  });
+  function formaApi(u, n) {
+    return (u || []).slice(0, n || 5).reverse().map(function (x) {
+      var f = x[3] > x[4] ? FORMA.W : x[3] < x[4] ? FORMA.L : FORMA.D;
+      var g = String(x[0] || "").split("-");
+      var t = f[0] + " " + x[3] + "-" + x[4] + (x[2] === "C" ? " in casa" : " fuori") + " con " + x[1] +
+        (g.length === 3 ? ", " + Number(g[2]) + "/" + Number(g[1]) : "");
+      return '<i class="fm-' + f[2] + '" title="' + esc(t) + '">' + f[0] + "</i>";
+    }).join("");
+  }
 
+  // IL RISULTATO FINALE DELLA SCHEDA (125): quello deciso da scheda_partite
+  // ("Risultato", dalle fonti dei risultati), altrimenti il calendario di
+  // API-Football (riga Pinnacle, per numero), altrimenti FootyMetrics.
+  function finaleScheda(p) {
+    var r = p.Risultato, c = p.Cal, fm = p.FM || {};
+    if (r && num(r.Gol_Casa) != null && num(r.Gol_Ospite) != null) return { gc: num(r.Gol_Casa), go: num(r.Gol_Ospite) };
+    if (c && num(c.gc) != null && num(c.go) != null) return { gc: num(c.gc), go: num(c.go) };
+    var st = String(fm.Stato || "").toUpperCase();
+    if (["FT", "AET", "PEN"].indexOf(st) >= 0 && num(fm.Gol_Casa) != null && num(fm.Gol_Ospite) != null)
+      return { gc: num(fm.Gol_Casa), go: num(fm.Gol_Ospite) };
+    return null;
+  }
   function testaScheda(p, d) {
     var fm = p.FM || {};
     var h = '<div class="scheda testa-partita">' +
@@ -6325,9 +6425,18 @@
       (p.Lega ? " · " + esc(p.Lega) : "") + "</p>" +
       "<h2>" + logo(p.Casa, true, campiRiga(p)) + esc(p.Casa) + " – " + logo(p.Ospite, true, campiRiga(p)) + esc(p.Ospite) + "</h2>";
     var st = String(fm.Stato || "").toUpperCase(), gc = num(fm.Gol_Casa), go = num(fm.Gol_Ospite);
-    if (gc != null && go != null && st && st !== "NS") {
+    var fine = finaleScheda(p);
+    if (fine) {
+      h += '<p class="punteggio"><b>' + fine.gc + " – " + fine.go + "</b> finita</p>";
+    } else if (gc != null && go != null && st && st !== "NS") {
       var fin = ["FT", "AET", "PEN"].indexOf(st) >= 0;
       h += '<p class="punteggio"><b>' + gc + " – " + go + "</b> " + (fin ? "finita" : "in corso (" + esc(st) + ")") + "</p>";
+    }
+    if (!fm.Forma_Casa && p.Forma) {
+      h += '<div class="forme">' +
+        "<div><span>casa</span>" + (formaApi(p.Forma.casa) || "\u2013") + "</div>" +
+        "<div><span>ospite</span>" + (formaApi(p.Forma.ospite) || "\u2013") + "</div>" +
+        '</div><p class="piccolo">Ultime cinque partite, tutte le competizioni, la più recente a destra: toccane una per vederla.</p>';
     }
     if (fm.Forma_Casa || fm.Pos_Casa != null) {
       h += '<div class="forme">' +
@@ -6510,7 +6619,7 @@
       h += "<p>Statarea " + esc(ac["Pron Statarea"]) + " · WebPronostici " + esc(ac["Pron WebPron"]) +
         " → d'accordo su <b>" + esc(ac["Pron Combinato"]) + "</b>" + (pc != null ? " (" + f0(pc) + "%)" : "") + "</p>";
     }
-    var pr = (p.Pronostici || []).slice();
+    var pr = (p.Pronostici || []).slice(), fine = finaleScheda(p);
     if (pr.length) {
       var ord = { "1X2": 0, "DC": 1, "OU": 2, "BTTS": 3, "SEGNA": 4 };
       pr.sort(function (x, y) {
@@ -6521,7 +6630,10 @@
         pr.map(function (x) {
           var mp = mercatoSu(p, m, x);
           var lab = x.Mercato ? etichettaPron(x) : (x.Testo || "?");
-          return "<tr><td>" + esc(nomeFonte(x.Fonte)) + "</td><td><b>" + esc(lab) + "</b></td><td>" +
+          var es = fine && x.Mercato ? esitoPron(x, fine.gc, fine.go) : null;
+          var sp = es == null ? "" : '<span class="spunta-pron" title="' + (es ? "vinta" : "persa") + '" aria-label="' +
+            (es ? "vinta" : "persa") + '">' + (es ? "\u2713" : "\u2717") + "</span> ";
+          return "<tr><td>" + esc(nomeFonte(x.Fonte)) + "</td><td>" + sp + "<b>" + esc(lab) + "</b></td><td>" +
             (num(x.Prob) != null ? f0(num(x.Prob)) : "–") + "</td><td>" +
             (num(x.Quota) != null ? f2(num(x.Quota)) : "–") + "</td><td>" +
             (mp != null ? f0(mp) : "–") + "</td></tr>";
@@ -6593,7 +6705,13 @@
         p.PinX = t ? t.x : null;
         p.PinId = t ? t.id : null;
         p.PinData = d;
-        disegnaSchedaPartita(p, d);
+        return Promise.all([calendarioPer(d), p.PinId != null ? formaFile(d) : null]).then(function (a2) {
+          var cal = a2[0];
+          if (stato.sez !== "scheda" || SCHEDA.data !== d || SCHEDA.chiave !== al) return;
+          p.Cal = p.PinId != null ? cal[String(p.PinId)] || null : null;
+          p.Forma = p.PinId != null ? formaDi(a2[1], p.PinId) : null;
+          disegnaSchedaPartita(p, d);
+        });
       });
     }).catch(function (e) {
       $cont.innerHTML = messaggio("errore", "Non riesco a leggere la scheda (" + esc(e.message) + "). " +
@@ -6613,7 +6731,7 @@
   function bloccoFormazioni(p, d) {
     var f = p.PinX && p.PinId != null ? (p.PinX.form || {})[String(p.PinId)] : null;
     var h = formazioneHtml(f);
-    if (!h && (d !== oggi() || p.PinId == null)) return "";
+    if (!h && (d !== oggi() || p.PinId == null || finaleScheda(p))) return "";
     return '<div class="scheda"><h3>Assenti e formazioni</h3>' +
       (h || '<p class="piccolo">Ancora niente: gli assenti arrivano in giornata, le formazioni un’ora prima del via.</p>') + "</div>";
   }
