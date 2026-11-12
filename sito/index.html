@@ -1759,7 +1759,9 @@
      "Tutte le partite delle prossime 24 ore. Quote 1xBet, solo informative: non entrano nel pronostico."]
   ];
   var MK_ORDINI = [["file", "Per orario"], ["mov", "Per movimento"], ["margine", "Per margine"]];
-  var GRUPPO_PRONOSTICI_TUTTI = [["prezzi", "Probabilit\u00e0 senza margine"], ["mercato", "Mercato"], ["wdw", "FootyStats"],
+  // (136) "Mercato" era AsianOdds, tolto il 12/11 (quote passate a
+  // pagamento): il mercato adesso e' Pinnacle, nella sua pagina.
+  var GRUPPO_PRONOSTICI_TUTTI = [["prezzi", "Probabilit\u00e0 senza margine"], ["wdw", "FootyStats"],
                                  ["sm", "Sports Mole"], ["pin", "Mosse Pinnacle"]];
   // (135) FootballPark tolto: il suo workflow e' spento dall'11/11 e la
   // fonte non serviva. I vecchi indirizzi #fp portano ai Pronostici.
@@ -1922,7 +1924,7 @@
       if (p[2] === "fotmob" || p[2] === "understat") XG.fonte = p[2];
       return;
     }
-    if (p[0] === "fp") p = ["prezzi"];
+    if (p[0] === "fp" || p[0] === "mercato") p = ["prezzi"];
     if (SEZ[p[0]] || p[0] === "fonti") stato.sez = p[0];
     if (stato.sez === "fonti") {
       FONTI.vista = p[1] === "partite" ? "partite" : "riepilogo";
@@ -7597,7 +7599,7 @@
       var h = '<h2 class="reg-tit">Elo</h2>' +
         '<p class="descr">La forza di ogni squadra in un numero, calcolata dal sistema sui risultati di API-Football dal 2016: ' +
         "sale quando una squadra fa meglio del previsto, scende quando fa peggio. Da due rating escono le probabilità 1X2. " +
-        "Non è l’Elo di AsianOdds che vedi nel mercato: è il nostro.</p>" +
+        "È calcolato dal sistema, non preso da un sito.</p>" +
         chipsHtml([["partite", "Partite"], ["classifica", "Classifica"], ["info", "Come funziona"]], ELO.vista, "data-evista") +
         '<div id="elo-corpo"></div>';
       $cont.innerHTML = h;
