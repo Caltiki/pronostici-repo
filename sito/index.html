@@ -1295,7 +1295,7 @@
   }
   @keyframes livePulsa { 50% { opacity: .25; } }
   /* (144) il puntino fra tempo e punteggio */
-  .live .lv-sep { font-weight: 900; margin: 0 .35em; }
+  .live .lv-sep { font-weight: 900; margin: 0 .1em; }
   /* Gol da meno di cinque minuti: la pillola si accende per qualche minuto. */
   .live.fresco { box-shadow: 0 0 0 2px var(--evidenza); animation: liveGol 1.2s ease-in-out 3; }
   @keyframes liveGol { 50% { box-shadow: 0 0 0 5px var(--evidenza-tenue, rgba(94,168,255,.35)); } }
@@ -1328,6 +1328,11 @@
   .cal-riga .m { color: var(--tenue); font-variant-numeric: tabular-nums; font-size: .82rem; }
   .cal-riga .r { white-space: nowrap; }
   .cal-riga .r .live { margin-left: 0; }
+  /* (147) nel Calendario la pillola lunga (gol, espulsioni) va a capo fra
+     un pezzo e l'altro invece di schiacciare i nomi delle squadre */
+  .cal-riga .r { max-width: 34vw; text-align: right; }
+  .cal-riga .r .live { white-space: normal; border-radius: 12px; text-align: left; }
+  .live .lv-p { white-space: nowrap; }
   .cal-riga.cal-sito { font-weight: 600; }
   /* (131) il pulsante sta dopo i nomi; la tabella sotto la riga */
   .cal-riga .cal-stat-btn { font: inherit; font-size: .75rem; cursor: pointer; background: transparent; }
@@ -7416,7 +7421,7 @@
     return a;
   }
   function testoLive(x) { return pezziLive(x).join(" \u00b7 "); }
-  function htmlLive(x) { return pezziLive(x).map(esc).join('<b class="lv-sep">\u00b7</b>'); }
+  function htmlLive(x) { return pezziLive(x).map(function (t) { return '<span class="lv-p">' + esc(t) + "</span>"; }).join(' <b class="lv-sep">\u00b7</b> '); }
   // Il gol e' di meno di cinque minuti fa (minuti di gioco)?
   function golFresco(x) {
     var gl = golLive(x);
