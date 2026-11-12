@@ -1527,6 +1527,15 @@
   details.tutte-linee p { font-size: .85rem; margin: 6px 0; }
   a.chip-link { text-decoration: none; color: var(--evidenza); border-color: color-mix(in srgb, var(--evidenza) 45%, transparent); font-weight: 600; }
   a.chip-link:hover { background: color-mix(in srgb, var(--evidenza) 12%, transparent); }
+  /* (132) gli assenti col loro peso */
+  ul.assenti { list-style: none; padding: 0; margin: 4px 0 8px; }
+  ul.assenti li { padding: 5px 0; border-bottom: 1px solid var(--bordo); }
+  ul.assenti li:last-child { border-bottom: 0; }
+  p.ass-sq { margin: 8px 0 0; }
+  /* (133) la classifica Elo */
+  .elo-r { display: grid; grid-template-columns: 2.6em 1fr auto; gap: 8px; align-items: center; padding: 7px 4px; border-bottom: 1px solid var(--bordo); }
+  .elo-r .m { color: var(--tenue); font-variant-numeric: tabular-nums; text-align: right; }
+  .elo-r .r b { font-size: 1.05rem; }
   /* ✓/✗ grigia sui pronostici delle fonti nella scheda (125). */
   .spunta-pron { color: var(--tenue); font-weight: 800; }
 </style>
@@ -1571,6 +1580,7 @@
     <button data-sez="consensus" class="due">Consenso<br>fonti</button>
     <button data-sez="best" class="due">Best<br>picks</button>
     <button data-sez="poisson">Poisson</button>
+    <button data-sez="elo">Elo</button>
     <button data-sez="sure">Sure Bets</button>
     <button data-sez="fonti" class="due">Statistiche<br>fonti</button>
   </nav>
@@ -1883,6 +1893,7 @@
   // La pagina Calendario (122): dichiarata qui perche' leggiHash la usa
   // gia' all'avvio.
   var CAL = { data: null, filtro: "tutte", cerca: "", aperti: {} };
+  var ELO = { vista: "partite", data: null, filtro: "sito", ordine: "ora", cerca: "", camp: "", quante: 100, dati: null, info: null };
 
   function leggiHash() {
     var p = location.hash.replace(/^#/, "").split("/");
@@ -1897,6 +1908,12 @@
     if (p[0] === "giocate") { stato.sez = "giocate"; return; }
     if (p[0] === "live") { stato.sez = "live"; return; }
     if (p[0] === "cal") { stato.sez = "cal"; if (/^\d{4}-\d{2}-\d{2}$/.test(p[1] || "")) CAL.data = p[1]; return; }
+    if (p[0] === "elo") {
+      stato.sez = "elo";
+      if (["partite", "classifica", "info"].indexOf(p[1]) >= 0) ELO.vista = p[1];
+      if (/^\d{4}-\d{2}-\d{2}$/.test(p[2] || "")) ELO.data = p[2];
+      return;
+    }
     if (p[0] === "xg") {
       stato.sez = "xg";
       try { XG.lega = p[1] ? decodeURIComponent(p[1]) : XG.lega; } catch (e) { /* resta quella che c'era */ }
@@ -1920,6 +1937,8 @@
       h += "/" + (SCHEDA.data || "") + "/" + encodeURIComponent(SCHEDA.chiave || "");
     } else if (stato.sez === "cal") {
       h += "/" + (CAL.data || "");
+    } else if (stato.sez === "elo") {
+      h += "/" + ELO.vista + (ELO.vista === "partite" && ELO.data ? "/" + ELO.data : "");
     } else if (stato.sez === "best" || stato.sez === "giocate" || stato.sez === "live") {
       // una pagina sola, senza giornata: tiene sempre oggi e i giorni dopo
     } else if (stato.sez === "xg") {
@@ -2152,6 +2171,7 @@
     if (stato.sez === "giocate") return disegnaGiocate();
     if (stato.sez === "live") return disegnaPartiteLive();
     if (stato.sez === "cal") return disegnaCalendario();
+    if (stato.sez === "elo") return disegnaElo();
     return disegnaGiornata(stato.sez);
   }
 
@@ -4981,10 +5001,51 @@
     }
     return out;
   }
+  // IL PESO DEGLI ASSENTI (132): formazioni_<data>.json "assenti_peso",
+  // scritto dal giro Pinnacle con le statistiche stagionali del giocatore
+  // (tutte le competizioni con quella squadra). Per squadra, dal piu'
+  // impiegato. "titolare fisso" e "goleador" sono soglie dichiarate qui
+  // sotto, non giudizi: titolare in almeno 7 partite su 10 della squadra,
+  // almeno un quinto dei gol della squadra.
+  function motivoAssente(a) {
+    var m = String(a.motivo || ""), ml = m.toLowerCase();
+    var perche = /suspen|red card|yellow card/.test(ml) ? "squalificato" : /injur|knock|surgery/.test(ml) ? "infortunato" :
+      /illness|ill\b|sick/.test(ml) ? "malato" : "assente";
+    var stato = /question|doubt/i.test(a.tipo || "") ? "in dubbio" : "fuori";
+    return '<span title="' + esc(m || a.tipo || "") + '">' + stato + (perche !== "assente" ? ", " + perche : "") + "</span>";
+  }
+  function assentiPesoHtml(lista) {
+    var per = {}, ordine = [];
+    lista.forEach(function (a) {
+      var k = a.squadra || "";
+      if (!per[k]) { per[k] = []; ordine.push(k); }
+      per[k].push(a);
+    });
+    return ordine.map(function (k) {
+      return '<p class="ass-sq"><b>' + esc(k || "Assenti") + "</b></p><ul class=\"assenti\">" + per[k].map(function (a) {
+        var t = [];
+        if (a.min == null) t.push('<span class="piccolo">numeri non disponibili</span>');
+        else {
+          if (a.pres != null) t.push(a.pres + (a.pres === 1 ? " presenza" : " presenze") + (a.tit != null ? ", " + a.tit + " da titolare" : ""));
+          t.push(a.min + "'");
+          if (a.gol) t.push(a.gol + " gol" + (a.quota_gol != null ? " (" + a.quota_gol + "% della squadra)" : ""));
+          if (a.ass) t.push(a.ass + " assist");
+          if (a.voto) t.push("voto " + Number(a.voto).toFixed(1));
+        }
+        var tag = [];
+        if (a.partite_squadra >= 3 && a.tit != null && a.tit >= 0.7 * a.partite_squadra) tag.push('<span class="pill largo">titolare fisso</span>');
+        if (a.quota_gol != null && a.quota_gol >= 20 && a.gol >= 2) tag.push('<span class="pill largo">goleador</span>');
+        return "<li><b>" + esc(a.nome || "?") + "</b> · " + motivoAssente(a) + (tag.length ? " " + tag.join(" ") : "") +
+          '<br><span class="piccolo">' + t.join(" · ") + "</span></li>";
+      }).join("") + "</ul>";
+    }).join("") + '<p class="piccolo">Numeri della stagione con quella squadra, tutte le competizioni. ' +
+      "Titolare fisso: titolare in almeno 7 partite su 10; goleador: almeno un quinto dei gol della squadra.</p>";
+  }
   function formazioneHtml(f) {
     if (!f) return "";
     var out = [];
-    if (Array.isArray(f.assenti) && f.assenti.length) out.push("<p><b>Assenti</b> (infortunati e squalificati): " + esc(f.assenti.join(", ")) + "</p>");
+    if (Array.isArray(f.assenti_peso) && f.assenti_peso.length) out.push("<p><b>Assenti</b> (infortunati e squalificati, dal più impiegato):</p>" + assentiPesoHtml(f.assenti_peso));
+    else if (Array.isArray(f.assenti) && f.assenti.length) out.push("<p><b>Assenti</b> (infortunati e squalificati): " + esc(f.assenti.join(", ")) + "</p>");
     if (f.titolari && typeof f.titolari === "object") {
       Object.keys(f.titolari).forEach(function (sq) {
         var t = f.titolari[sq] || {};
@@ -7474,6 +7535,257 @@
     $l.querySelectorAll("a.chip-link").forEach(function (a) {
       a.addEventListener("click", function () { ritorno = { y: window.scrollY, alias: null }; daClic = true; });
     });
+  }
+
+
+  // --------------------------------------------------------------- ELO
+  // L'ELO DEL SISTEMA (133). Lo calcola elo_calcolo.py sullo storico di
+  // API-Football (ramo privato); elo_pubblica.py porta su gh-data
+  // elo_rating.json (rating delle squadre attive, per numero di
+  // API-Football) ed elo_info.json (parametri e prova).
+  //
+  // Le probabilita' 1X2 di una partita il sito le calcola con la STESSA
+  // formula di elo_calcolo.py (logit ordinato): x = (Elo casa - Elo
+  // ospite) / 100; p2 = sig(s1 - g x); p1 = 1 - sig(s2 - g x); pX = resto.
+  // Il vantaggio del campo sta nelle soglie s1, s2.
+  //
+  // Le partite: calendario_<data>.json, che porta i numeri delle due
+  // squadre (ic, io). La squadra si riconosce dal numero, mai dal nome.
+  // E' un ALTRO Elo da quello che AsianOdds scrive nel mercato.
+  function ev(v) { return '<span class="q">' + f0(num(v)) + "</span>"; }
+  function sig(z) { return 1 / (1 + Math.exp(-z)); }
+  function eloProb(ec, eo, lg) {
+    if (ec == null || eo == null || !lg) return null;
+    var x = (ec - eo) / 100, p2 = sig(lg.soglia1 - lg.pendenza * x), p2x = sig(lg.soglia2 - lg.pendenza * x);
+    return [100 * (1 - p2x), 100 * (p2x - p2), 100 * p2];
+  }
+  // "2026-11-12 16:10 UTC" (il calcolo intero) -> "2026-11-12 17:10", ora di Roma
+  function utcARoma(t) {
+    var m = /^(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}) UTC/.exec(String(t || ""));
+    if (!m) return t;
+    var d = new Date(Date.UTC(+m[1], +m[2] - 1, +m[3], +m[4], +m[5]));
+    var p = {};
+    new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Rome", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23" })
+      .formatToParts(d).forEach(function (x) { p[x.type] = x.value; });
+    return p.year + "-" + p.month + "-" + p.day + " " + p.hour + ":" + p.minute;
+  }
+  function caricaElo() {
+    if (ELO.dati && ELO.info) return Promise.resolve();
+    var t = Math.floor(Date.now() / 3600000);
+    return Promise.all([
+      leggiUrl(BASE + "elo_rating.json?t=" + t, "elo_rating"),
+      leggiUrl(BASE + "elo_info.json?t=" + t, "elo_info"),
+      leggiUrl(BASE + "elo_confronto.json?t=" + t, "elo_confronto").catch(function () { return null; })
+    ]).then(function (a) {
+      ELO.confronto = a[2];
+      var r = a[0] || {}, per = {};
+      (r.squadre || []).forEach(function (s, i) {
+        per[String(s[0])] = { id: s[0], nome: s[1], elo: s[2], partite: s[3], ultima: s[4], camp: (r.campionati || [])[s[5]] || "", pos: i + 1 };
+      });
+      ELO.dati = { per: per, lista: r.squadre || [], campionati: r.campionati || [], calcolato: r.aggiornato || utcARoma(r.calcolato), ultima: r.ultima_partita };
+      ELO.info = a[1] || {};
+    });
+  }
+  function disegnaElo() {
+    $cont.innerHTML = messaggio("vuoto", "Carico&hellip;");
+    caricaElo().then(function () {
+      if (stato.sez !== "elo") return;
+      document.getElementById("aggiornato").textContent = testoAggiornato("Elo", ELO.dati.calcolato);
+      var h = '<h2 class="reg-tit">Elo</h2>' +
+        '<p class="descr">La forza di ogni squadra in un numero, calcolata dal sistema sui risultati di API-Football dal 2016: ' +
+        "sale quando una squadra fa meglio del previsto, scende quando fa peggio. Da due rating escono le probabilità 1X2. " +
+        "Non è l’Elo di AsianOdds che vedi nel mercato: è il nostro.</p>" +
+        chipsHtml([["partite", "Partite"], ["classifica", "Classifica"], ["info", "Come funziona"]], ELO.vista, "data-evista") +
+        '<div id="elo-corpo"></div>';
+      $cont.innerHTML = h;
+      $cont.querySelectorAll("[data-evista]").forEach(function (b) {
+        b.addEventListener("click", function () { ELO.vista = b.dataset.evista; ELO.quante = 100; disegna(); });
+      });
+      if (ELO.vista === "classifica") return eloClassifica();
+      if (ELO.vista === "info") return eloInfo();
+      return eloPartite();
+    }).catch(function () {
+      $cont.innerHTML = messaggio("vuoto", "L’Elo non è ancora pubblicato: lo porta sul sito il workflow “Elo - calcolo e prova”.");
+    });
+  }
+
+  // ---- le partite del giorno, con l'Elo e le probabilita'
+  var ELO_ORDINI = [["ora", "Per orario"], ["scarto", "Elo contro Pinnacle"], ["diff", "Per differenza di Elo"], ["fav", "Per favorita"]];
+  function eloPartite() {
+    var $c = document.getElementById("elo-corpo");
+    Promise.all([indiceCalendario(), caricaPinGlobale().catch(function () { return null; })]).then(function (a) {
+      var date = (a[0].date || []).filter(function (d) { return d >= oggi(); }).sort();
+      if (!date.length) throw new Error("nessuna data");
+      if (date.indexOf(ELO.data) < 0) ELO.data = date[0];
+      var d = ELO.data, t = Math.floor(Date.now() / 600000);
+      return Promise.all([
+        leggiUrl(BASE + "calendario_" + d + ".json?t=" + t, "calendario_" + d),
+        leggi("partite_api_" + d + ".json").catch(function () { return {}; })
+      ]).then(function (b) {
+        if (stato.sez !== "elo" || ELO.vista !== "partite" || ELO.data !== d) return;
+        var lista = Array.isArray(b[0]) ? b[0] : [], sito = {};
+        for (var k in (b[1] || {})) sito[String(b[1][k])] = true;
+        var conId = lista.filter(function (x) { return x.ic != null && x.io != null; }).length;
+        $c.innerHTML = chipsHtml(date.map(function (x) { return [x, etichettaData(x)]; }), d, "data-edata") +
+          chipsHtml([["sito", "Sul sito"], ["tutte", "Tutte"]], ELO.filtro, "data-efiltro") +
+          '<div class="strumenti"><input type="search" id="cerca-elo" placeholder="Squadra o campionato" value="' + esc(ELO.cerca) + '" autocomplete="off">' +
+          '<select id="ordine-elo" aria-label="Ordine">' + ELO_ORDINI.map(function (o) {
+            return '<option value="' + o[0] + '"' + (o[0] === ELO.ordine ? " selected" : "") + ">" + esc(o[1]) + "</option>";
+          }).join("") + "</select></div>" +
+          (conId ? "" : messaggio("avviso", "Il calendario di questo giorno non ha ancora i numeri delle squadre: arrivano col prossimo giro di Pinnacle.")) +
+          '<div id="elo-lista"></div>';
+        $c.querySelectorAll("[data-edata]").forEach(function (x) { x.addEventListener("click", function () { ELO.data = x.dataset.edata; disegna(); }); });
+        $c.querySelectorAll("[data-efiltro]").forEach(function (x) {
+          x.addEventListener("click", function () {
+            ELO.filtro = x.dataset.efiltro;
+            $c.querySelectorAll("[data-efiltro]").forEach(function (y) { y.setAttribute("aria-pressed", String(y === x)); });
+            listaEloPartite(lista, sito);
+          });
+        });
+        document.getElementById("cerca-elo").addEventListener("input", function (e) { ELO.cerca = e.target.value; listaEloPartite(lista, sito); });
+        document.getElementById("ordine-elo").addEventListener("change", function (e) { ELO.ordine = e.target.value; listaEloPartite(lista, sito); });
+        listaEloPartite(lista, sito);
+      });
+    }).catch(function () {
+      $c.innerHTML = messaggio("vuoto", "Il calendario non è ancora pubblicato.");
+    });
+  }
+  function listaEloPartite(lista, sito) {
+    var $l = document.getElementById("elo-lista");
+    if (!$l) return;
+    var lg = ELO.info.logit, q = ELO.cerca.trim().toLowerCase();
+    var righe = lista.map(function (x) {
+      var c = ELO.dati.per[String(x.ic)], o = ELO.dati.per[String(x.io)];
+      var p = c && o ? eloProb(c.elo, o.elo, lg) : null;
+      var pin = PIN_G.perId[String(x.id)] || null;
+      var pp = pin ? [num(pin["P1 Shin"]), num(pin["PX Shin"]), num(pin["P2 Shin"])] : null;
+      if (pp && pp.some(function (v) { return v == null; })) pp = null;
+      var sc = null;
+      if (p && pp) {
+        var i = [0, 1, 2].reduce(function (a2, b2) { return Math.abs(p[b2] - pp[b2]) > Math.abs(p[a2] - pp[a2]) ? b2 : a2; }, 0);
+        sc = { i: i, v: p[i] - pp[i] };
+      }
+      return { x: x, c: c, o: o, p: p, pin: pin, pp: pp, sc: sc };
+    }).filter(function (r) {
+      if (ELO.filtro === "sito" && !sito[String(r.x.id)]) return false;
+      if (q && [r.x.casa, r.x.ospite, r.x.lega].join(" ").toLowerCase().indexOf(q) < 0) return false;
+      return true;
+    });
+    var ord = {
+      ora: function (a, b) { return String(a.x.ora).localeCompare(String(b.x.ora)); },
+      scarto: function (a, b) { return (b.sc ? Math.abs(b.sc.v) : -1) - (a.sc ? Math.abs(a.sc.v) : -1); },
+      diff: function (a, b) { return (b.p ? Math.abs(b.c.elo - b.o.elo) : -1) - (a.p ? Math.abs(a.c.elo - a.o.elo) : -1); },
+      fav: function (a, b) { return (b.p ? Math.max(b.p[0], b.p[2]) : -1) - (a.p ? Math.max(a.p[0], a.p[2]) : -1); }
+    };
+    righe.sort(ord[ELO.ordine] || ord.ora);
+    var conElo = righe.filter(function (r) { return r.p; }).length;
+    var h = '<p class="conta">' + righe.length + (righe.length === 1 ? " partita" : " partite") + " · " + conElo + " con l’Elo di tutte e due</p>";
+    if (!righe.length) h += messaggio("vuoto", "Nessuna partita con questi filtri.");
+    h += righe.map(function (r) {
+      var x = r.x, p = r.p, segno = p ? "1X2"[[0, 1, 2].reduce(function (a2, b2) { return p[b2] > p[a2] ? b2 : a2; }, 0)] : "–";
+      var det = [];
+      det.push("<p>" + esc(x.lega || "") + "</p>");
+      det.push("<p><b>" + esc(x.casa) + "</b>: " + (r.c ? "Elo " + ev(r.c.elo) + " · " + r.c.pos + "° di " + ELO.dati.lista.length + (r.c.camp ? " · " + esc(r.c.camp) : "") : "non nello storico") + "</p>");
+      det.push("<p><b>" + esc(x.ospite) + "</b>: " + (r.o ? "Elo " + ev(r.o.elo) + " · " + r.o.pos + "° di " + ELO.dati.lista.length + (r.o.camp ? " · " + esc(r.o.camp) : "") : "non nello storico") + "</p>");
+      if (p) det.push("<p>Elo: 1 " + pv(p[0]) + " · X " + pv(p[1]) + " · 2 " + pv(p[2]) + " — equa 1 " + qv(100 / p[0]) + " · X " + qv(100 / p[1]) + " · 2 " + qv(100 / p[2]) + "</p>");
+      if (r.pp) det.push("<p>Pinnacle senza margine: 1 " + pv(r.pp[0]) + " · X " + pv(r.pp[1]) + " · 2 " + pv(r.pp[2]) + "</p>");
+      if (r.sc) det.push("<p>Scarto più grande: sul " + "1X2"[r.sc.i] + " l’Elo dice " + (r.sc.v > 0 ? "+" : "−") + f0(Math.abs(r.sc.v)) + " punti rispetto a Pinnacle. " +
+        '<span class="piccolo">Di solito ha ragione il mercato: l’Elo non sa di assenti, formazioni e motivazioni.</span></p>');
+      var st = statoCal(x);
+      return '<div class="riga"><details><summary>' +
+        '<span class="segno">' + esc(segno) + "</span>" +
+        '<div class="corpo"><div class="alto">' + (x.ora ? "<span><b>" + esc(x.ora) + "</b></span>" : "") +
+          (x.lega ? '<span class="chip">' + esc(x.lega) + "</span>" : "") + (r.pin ? timbroPin(r.pin) : "") + (st.html ? " " + st.html : "") + "</div>" +
+          '<div class="partita">' + partitaHtml(x.casa, x.ospite, "", x.lega) + "</div>" +
+          (r.c && r.o ? '<div class="sel">Elo ' + ev(r.c.elo) + " – " + ev(r.o.elo) + " (" + (r.c.elo >= r.o.elo ? "+" : "−") + f0(Math.abs(r.c.elo - r.o.elo)) + ")" +
+            (r.sc && Math.abs(r.sc.v) >= 5 ? ' · <span class="' + (r.sc.v > 0 ? "mv-su" : "mv-giu") + '">' + "1X2"[r.sc.i] + " " + (r.sc.v > 0 ? "+" : "−") + f0(Math.abs(r.sc.v)) + " vs Pinnacle</span>" : "") + "</div>" : "") +
+          (p ? tripla("Elo", p[0], p[1], p[2]) : '<div class="sel piccolo">Elo non disponibile per ' + (!r.c && !r.o ? "le due squadre" : !r.c ? esc(x.casa) : esc(x.ospite)) + "</div>") +
+          (r.pp ? tripla("Pinnacle", r.pp[0], r.pp[1], r.pp[2]) : "") +
+        "</div>" +
+        (p ? '<div class="numero"><b>' + f0(Math.max(p[0], p[1], p[2])) + "%</b><span>" + articolo(segno) + "</span></div>" : "") +
+        "</summary>" + '<div class="dettaglio">' + det.join("") + "</div></details></div>";
+    }).join("");
+    $l.innerHTML = h;
+  }
+
+  // ---- la classifica
+  function eloClassifica() {
+    var $c = document.getElementById("elo-corpo"), D = ELO.dati;
+    var conta = {};
+    D.lista.forEach(function (s) { var c = D.campionati[s[5]] || ""; conta[c] = (conta[c] || 0) + 1; });
+    var camps = Object.keys(conta).filter(Boolean).sort(function (a, b) { return a.localeCompare(b); });
+    $c.innerHTML = '<div class="strumenti"><input type="search" id="cerca-elo" placeholder="Squadra" value="' + esc(ELO.cerca) + '" autocomplete="off">' +
+      '<select id="camp-elo" aria-label="Campionato"><option value="">Tutti i campionati</option>' + camps.map(function (c) {
+        return '<option value="' + esc(c) + '"' + (c === ELO.camp ? " selected" : "") + ">" + esc(c) + " (" + conta[c] + ")</option>";
+      }).join("") + "</select></div>" + '<div id="elo-lista"></div>';
+    var disegnaL = function () {
+      var q = ELO.cerca.trim().toLowerCase();
+      var v = D.lista.filter(function (s) {
+        if (ELO.camp && (D.campionati[s[5]] || "") !== ELO.camp) return false;
+        return !q || String(s[1]).toLowerCase().indexOf(q) >= 0;
+      });
+      var h = '<p class="conta">' + v.length + " squadre · rating dopo le partite fino al " + esc(D.ultima || "?") + "</p>" +
+        '<div class="elo-tab">' + v.slice(0, ELO.quante).map(function (s) {
+          var pos = ELO.dati.per[String(s[0])].pos;
+          return '<div class="elo-r"><span class="m">' + pos + "</span><span>" + logo(s[1], false, D.campionati[s[5]]) + "<b>" + esc(s[1]) + "</b>" +
+            '<br><span class="piccolo">' + esc(D.campionati[s[5]] || "") + " · " + s[3] + " partite · ultima " + esc(String(s[4]).slice(8, 10) + "/" + String(s[4]).slice(5, 7)) + "</span></span>" +
+            '<span class="r"><b class="q">' + f0(s[2]) + "</b></span></div>";
+        }).join("") + "</div>" +
+        (v.length > ELO.quante ? '<button type="button" class="chip chip-link" id="elo-altre">Mostra altre ' + Math.min(100, v.length - ELO.quante) + "</button>" : "");
+      document.getElementById("elo-lista").innerHTML = h;
+      var b = document.getElementById("elo-altre");
+      if (b) b.addEventListener("click", function () { ELO.quante += 100; disegnaL(); });
+    };
+    document.getElementById("cerca-elo").addEventListener("input", function (e) { ELO.cerca = e.target.value; ELO.quante = 100; disegnaL(); });
+    document.getElementById("camp-elo").addEventListener("change", function (e) { ELO.camp = e.target.value; ELO.quante = 100; disegnaL(); });
+    disegnaL();
+  }
+
+  // ---- contro la chiusura di Pinnacle (elo_confronto.json)
+  function confrontoHtml(C) {
+    if (!C || !C.partite) return '<p class="piccolo">Il confronto con la chiusura di Pinnacle comparirà quando le partite in comune ci saranno.</p>';
+    var h = '<h3 style="margin-top:14px">Contro Pinnacle</h3>' +
+      "<p>Sulle <b>" + C.partite + "</b> partite che hanno sia la previsione dell’Elo sia la quota di chiusura di Pinnacle (dal " + esc(C.dal) + " al " + esc(C.al) + "): " +
+      "Brier Elo <b>" + Number(C.brier_elo).toFixed(4) + "</b>, Pinnacle <b>" + Number(C.brier_pinnacle).toFixed(4) + "</b>. " +
+      (C.diff > 0 ? "Pinnacle sbaglia meno" : "L’Elo sbaglia meno") + " (differenza " + (C.diff > 0 ? "+" : "") + Number(C.diff).toFixed(4) + ", t " + Number(C.t).toFixed(1) + ").</p>";
+    var m = C.miscele || {}, m10 = m["10"];
+    if (m10) h += "<p>Pinnacle corretto con il 10% di Elo: Brier " + Number(m10.brier).toFixed(4) + " (" + (m10.diff < 0 ? "meglio" : "peggio") +
+      " di Pinnacle da solo, t " + Number(m10.t).toFixed(1) + "). Se diventa stabilmente meglio, l’Elo aggiunge qualcosa al mercato.</p>";
+    if (C.disaccordi) h += "<p>Quando i due si scostano di almeno 5 punti su un segno (" + C.disaccordi.partite + " partite): l’Elo diceva in media " +
+      f0(100 * C.disaccordi.elo) + "%, Pinnacle " + f0(100 * C.disaccordi.pinnacle) + "%, è uscito il " + f0(100 * C.disaccordi.uscita) + "%.</p>";
+    if (C.gioco) h += "<p>Giocando il segno dove l’Elo è sopra Pinnacle di 5 punti, alla quota vera di chiusura: " + C.gioco.puntate +
+      " puntate, rendimento " + (C.gioco.rendimento > 0 ? "+" : "") + f1(100 * C.gioco.rendimento) + "%.</p>";
+    if (C.partite < 1000) h += '<p class="avviso">Sono ancora poche partite: i numeri ballano. Si potrà dire qualcosa dopo almeno un migliaio.</p>';
+    return h;
+  }
+  // ---- come funziona e quanto vale
+  function eloInfo() {
+    var I = ELO.info || {}, e = I.elo || {}, pr = I.prova || {};
+    var nomi = { "frequenze di lega": "Solo le frequenze del campionato", "Elo logit": "Elo (logit, quello del sito)", "Elo Poisson": "Elo (Poisson)" };
+    var tab = Object.keys(pr).map(function (k) {
+      var v = pr[k] || {};
+      return "<tr><td>" + esc(nomi[k] || k) + "</td><td>" + (v.brier != null ? Number(v.brier).toFixed(4) : "–") + "</td><td>" +
+        (v.rps != null ? Number(v.rps).toFixed(4) : "–") + "</td><td>" + (v.logloss != null ? Number(v.logloss).toFixed(4) : "–") + "</td></tr>";
+    }).join("");
+    document.getElementById("elo-corpo").innerHTML = '<div class="scheda"><h3>Come funziona</h3>' +
+      "<p>Ogni squadra ha un rating. Dopo ogni partita chi ha fatto meglio del previsto guadagna punti e chi ha fatto peggio li perde, " +
+      "tanti quanti ne guadagna l’altra. La differenza fra due rating dice chi è favorito e di quanto.</p>" +
+      "<p>Parametri scelti dal calcolo: K <b>" + esc(e.K) + "</b> (quanto si muove il rating a ogni partita), vantaggio del campo <b>" + esc(e.campo) +
+      "</b> punti, margine di gol " + (e.margine ? "<b>conta</b> (una vittoria larga sposta di più)" : "<b>non conta</b>") +
+      ", le prime " + esc(e.partite_provvisorie) + " partite di una squadra contano una volta e mezza.</p>" +
+      "<p>Le squadre nuove partono dalla media del loro campionato, non da 1500: una squadra di quinta serie e una di Serie A non partono pari.</p>" +
+      "</div>" +
+      '<div class="scheda"><h3>Quanto vale</h3>' +
+      "<p>Misurato su <b>" + esc(I.partite_prova) + "</b> partite dal " + esc(((I.periodi || {}).prova || "").split("-").reverse().join("/")) +
+      " in poi, che il calcolo non ha usato per scegliere i parametri. Più basso è meglio.</p>" +
+      '<div class="tab-scorre"><table class="mercati"><thead><tr><th>Modello</th><th>Brier</th><th>RPS</th><th>Log loss</th></tr></thead><tbody>' + tab + "</tbody></table></div>" +
+      '<p class="piccolo">La prima riga è il metro minimo: le probabilità che vengono solo da quanto spesso, in quel campionato, vincono le squadre di casa, ' +
+      "pareggiano o vincono le ospiti. L’Elo vale qualcosa solo se fa meglio di quella. Il mercato (Pinnacle) di solito fa meglio dell’Elo: " +
+      "l’Elo è utile come secondo parere e dove il mercato non c’è.</p>" +
+      confrontoHtml(ELO.confronto) +
+      "<p>Calcolo completo del " + esc(String(I.calcolato || "?")) + (I.aggiornato ? "; aggiornato ogni mattina coi risultati del giorno prima, l’ultima volta il " + esc(I.aggiornato) : "") +
+      ". Partite fino al " + esc(I.ultima_partita || "?") + ". " +
+      esc(I.squadre_pubblicate) + " squadre attive sul sito (su " + esc(I.squadre_totali) + " nello storico).</p></div>";
   }
 
   // ------------------------------------------------------- PARTITE LIVE
