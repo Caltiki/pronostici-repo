@@ -1309,6 +1309,18 @@
   .mov-q { display: inline-flex; gap: .55em; align-items: baseline; padding: 1px 7px; border: 1px solid var(--bordo);
     border-radius: 4px; font-size: .8em; font-weight: 700; white-space: nowrap; color: var(--tenue); }
   .mov-q b { margin-left: .12em; font-weight: 900; }
+  /* (152) le frecce dentro l'etichetta Pinnacle e nella barra */
+  .mov-in { margin-left: .6em; letter-spacing: .02em; font-weight: 700; color: var(--tenue); }
+  .mov-in b { margin-left: .1em; font-weight: 900; }
+  .mov-in b.giu, .barre b.fr.giu { color: #22a55b; } .mov-in b.su, .barre b.fr.su { color: #e8873a; } .mov-in b.fermo { color: var(--tenue); }
+  :root[data-theme="light"] .mov-in b.giu { color: #157a3f; } :root[data-theme="light"] .mov-in b.su { color: #b35a12; }
+  .quote-pin b.fr { margin-left: .1em; font-weight: 900; } .quote-pin b.fr.giu { color: #22a55b; } .quote-pin b.fr.su { color: #e8873a; } .quote-pin b.fr.fermo { color: var(--tenue); }
+  :root[data-theme="light"] .quote-pin b.fr.giu { color: #157a3f; } :root[data-theme="light"] .quote-pin b.fr.su { color: #b35a12; }
+  /* (152) la riga in alto delle card: ora, campionato, margine sulla stessa
+     riga quando ci stanno */
+  .riga .alto { gap: 6px; }
+  .riga .alto .chip { font-size: .6rem; padding: 1px 5px; }
+  .riga .alto .pill { font-size: .58rem; padding: 2px 6px; }
   .mov-q b.giu { color: #22a55b; } .mov-q b.su { color: #e8873a; } .mov-q b.fermo { color: var(--tenue); }
   :root[data-theme="light"] .mov-q b.giu { color: #157a3f; } :root[data-theme="light"] .mov-q b.su { color: #b35a12; }
   .mv-giu { color: #e8873a; font-weight: 700; white-space: nowrap; }
@@ -1557,6 +1569,8 @@
   /* (148) sulle card l'Elo sta in una riga: il carattere si stringe col
      telefono stretto invece di andare a capo */
   .elo-mini .nw { white-space: nowrap; }
+  .riga summary.con-elo-largo { flex-wrap: wrap; row-gap: 2px; }
+  .riga summary .elo-largo { flex: 0 0 100%; box-sizing: border-box; padding-right: 0; margin-top: -4px; }
   .riga .sel.elo-mini { white-space: nowrap; font-size: clamp(.66rem, 3.25vw, .85rem); overflow: hidden; text-overflow: ellipsis; }
   /* (133) la classifica Elo */
   .elo-r { display: grid; grid-template-columns: 2.6em 1fr auto; gap: 8px; align-items: center; padding: 7px 4px; border-bottom: 1px solid var(--bordo); }
@@ -5111,7 +5125,7 @@
     var punti = r._diff ? (r._diff["1X2".indexOf(r._segnoMov)] > 0 ? "+" : "") + f0(r._diff["1X2".indexOf(r._segnoMov)]) : "-";
     var mosse = stato.vista.pin === "mosse";
     var fid = fiducia(num(r.Margine));
-    var quote = num(r.Q1) != null ? '<div class="sel"><b class=seg>1</b> ' + qv(r.Q1) + " · <b class=seg>X</b> " + qv(r.QX) + " · <b class=seg>2</b> " + qv(r.Q2) +
+    var quote = num(r.Q1) != null ? '<div class="sel quote-pin"><b class=seg>1</b> ' + qv(r.Q1) + " · <b class=seg>X</b> " + qv(r.QX) + " · <b class=seg>2</b> " + qv(r.Q2) +
       (num(r.OU) != null && num(r["P Over"]) != null ? " · Over " + esc(r.OU) + " " + pv(r["P Over"]) : "") + "</div>" : "";
     var top = r.Segno, pt = r._prob != null ? r._prob * 100 : null;
     return '<div class="riga"><details><summary>' +
@@ -8147,32 +8161,49 @@
     if (!b || (r.Letto && b.t >= String(r.Letto).slice(0, 16))) return null;
     return b;
   }
-  function frecceHtml(r, pro) {
+  function frecceDati(r, pro) {
     var b = baseMovimento(r, pro);
     var ora = [num(r["P1 Shin"]), num(r["PX Shin"]), num(r["P2 Shin"])];
-    if (!b || ora[0] == null) return "";
-    var q = [num(r.Q1), num(r.QX), num(r.Q2)], seg = ["1", "X", "2"], tit = [], h = [];
+    if (!b || ora[0] == null) return null;
+    var q = [num(r.Q1), num(r.QX), num(r.Q2)], seg = ["1", "X", "2"], tit = [], pz = [];
     for (var i = 0; i < 3; i++) {
       var d = ora[i] - b.p[i], c, f;
       if (d >= 1) { c = "giu"; f = d >= 3 ? "\u2193\u2193" : "\u2193"; }
       else if (d <= -1) { c = "su"; f = d <= -3 ? "\u2191\u2191" : "\u2191"; }
       else { c = "fermo"; f = "="; }
-      h.push("<span>" + seg[i] + '<b class="' + c + '">' + f + "</b></span>");
+      pz.push({ seg: seg[i], c: c, f: f });
       tit.push(seg[i] + " " + (b.q && b.q[i] != null && q[i] != null ? f2(b.q[i]) + "\u2192" + f2(q[i]) + " " : "") +
         "(" + f0(b.p[i]) + "\u2192" + f0(ora[i]) + "%)");
     }
     var quando = b.t.slice(8, 10) + "/" + b.t.slice(5, 7) + " " + b.t.slice(11, 16);
-    return '<span class="mov-q" title="' + esc("Pinnacle dalla prima lettura (" + quando + ") a ora: " + tit.join(" \u00b7 ") +
-      ". Freccia gi\u00f9 = quota scesa, su = salita, = ferma.") + '">' + h.join("") + "</span>";
+    return { pz: pz, titolo: "Movimento dalla prima lettura (" + quando + ") a ora: " + tit.join(" \u00b7 ") +
+      ". Freccia gi\u00f9 = quota scesa, su = salita, = ferma." };
   }
-  function aggiungiFrecce(alto, r) {
-    if (!alto || alto.querySelector(".mov-q")) return;
-    var posto = document.createElement("span");
-    posto.className = "mov-q-posto";
-    alto.appendChild(posto);
+  // (152) Le frecce dentro l'etichetta Pinnacle ("PINNACLE 1\u2193 X= 2\u2191"),
+  // e nella pagina Pinnacle, che l'etichetta non ce l'ha, accanto ai numeri
+  // della barra "senza margine". Niente riga in piu'.
+  function aggiungiFrecce(alto, r, riga) {
+    riga = riga || alto;
+    if (!riga || riga.dataset.frecce) return;
+    riga.dataset.frecce = "1";
     proFrecce().then(function (pro) {
-      var h = frecceHtml(r, pro);
-      if (h) posto.outerHTML = h; else posto.remove();
+      var x = frecceDati(r, pro);
+      if (!x) return;
+      var et = alto.querySelector(".timbro-pin") || alto.querySelector(".fonte-q.pin");
+      var qp = riga.querySelector("summary .quote-pin");
+      var qs = qp ? qp.querySelectorAll(":scope > .q") : [];
+      if (et) {
+        et.insertAdjacentHTML("beforeend", '<span class="mov-in">' + x.pz.map(function (p) {
+          return p.seg + '<b class="' + p.c + '">' + p.f + "</b>"; }).join(" ") + "</span>");
+        et.title = (et.title ? et.title + "\n" : "") + x.titolo;
+      } else if (qs.length >= 3) {
+        // pagina Pinnacle: la freccia subito dopo ogni quota (1 2.45\u2193)
+        x.pz.forEach(function (p, i) { qs[i].insertAdjacentHTML("afterend", '<b class="fr ' + p.c + '">' + p.f + "</b>"); });
+        qp.title = x.titolo;
+      } else {
+        alto.insertAdjacentHTML("beforeend", '<span class="mov-q" title="' + esc(x.titolo) + '">' + x.pz.map(function (p) {
+          return "<span>" + p.seg + '<b class="' + p.c + '">' + p.f + "</b></span>"; }).join("") + "</span>");
+      }
     });
   }
   function timbraPinnacle() {
@@ -8214,14 +8245,14 @@
         }
         return;
       }
-      aggiungiFrecce(alto, r);
-      if (soloFrecce || giaTimbro) return;
+      if (soloFrecce || giaTimbro) { aggiungiFrecce(alto, r, riga); return; }
       if (!giaFonte) {
         var span = document.createElement("span");
         span.innerHTML = timbroPin(r);
         var t = span.firstChild, primo = alto.firstElementChild;
         if (primo && primo.nextSibling) alto.insertBefore(t, primo.nextSibling); else alto.appendChild(t);
       }
+      aggiungiFrecce(alto, r, riga);
       // Nel dettaglio della partita (le sezioni che non hanno gia' il
       // riquadro di API-Football dei Pronostici): quote, margine,
       // probabilita' e movimento di Pinnacle, in cima.
@@ -8315,6 +8346,20 @@
       // sinistra, percentuale a destra) il carattere diventerebbe
       // illeggibile: meglio due righe a grandezza normale.
       if (nuovo < 10.5) {
+        // (152) colonna stretta (pagina Pinnacle): la riga dell'Elo scende
+        // in fondo alla card, larga quanto la card dal bordo dei nomi in
+        // poi, e si riprova. Solo se neanche cosi' ci sta, due righe.
+        var sm = div.closest("summary"), corpo = div.closest(".corpo");
+        if (sm && corpo && !div.classList.contains("elo-largo")) {
+          var pl = parseFloat(getComputedStyle(sm).paddingLeft) || 0;
+          var sx = corpo.getBoundingClientRect().left - sm.getBoundingClientRect().left - pl;
+          sm.classList.add("con-elo-largo");
+          div.classList.add("elo-largo");
+          div.style.marginLeft = Math.max(0, Math.round(sx)) + "px";
+          sm.appendChild(div);
+          stringiRiga(div);
+          return;
+        }
         div.style.whiteSpace = "normal";
         div.style.overflow = "visible";
         return;
