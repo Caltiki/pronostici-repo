@@ -2417,7 +2417,7 @@
           (r0.Campionato ? '<span class="chip">' + esc(r0.Campionato) + "</span>" : "") +
           (r0.Fonte === "OddsAPI" ? '<span class="chip">quota Betfair</span>' : "") + "</div>" +
           '<div class="partita">' + partitaHtml(r0.Casa, r0.Ospite, r0.Partita, campiRiga(r0)) + "</div>" + sqHtml(r0) +
-          '<div class="sel">' + (inSch ? "In schedina: " : "Proposta: ") + '<span class="q">' + esc(etichettaSel(top)) +
+          '<div class="sel">' + (inSch ? "<b>In schedina:</b> " : "<b>Proposta:</b> ") + '<span class="q">' + esc(etichettaSel(top)) +
           " · " + f0(num(top.Prob)) + "%</span>" + (scelte_ ? " · " + scelte_ + " nella multipla" : "") + "</div>" +
           '</div><div class="numero"><b>' + g.length + "</b><span>" + (g.length === 1 ? "probabilità" : "probabilità") + "</span></div></summary>" +
           '<div class="dentro-partita">' +
