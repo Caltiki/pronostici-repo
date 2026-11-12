@@ -1574,6 +1574,16 @@
   .quote-pin .q3 { display: block; white-space: nowrap; }
   .quote-pin .ov { display: block; }
   .riga summary.con-elo-largo { flex-wrap: wrap; row-gap: 2px; }
+  #contenuto[data-sez="pin"] .riga summary .tripla .nome, #contenuto[data-sez="consensus"] .riga summary .tripla .nome, #contenuto[data-sez="accordo"] .riga summary .tripla .nome, #contenuto[data-sez="poisson"] .riga summary .tripla .nome { width: auto; min-width: 54px; white-space: nowrap; }
+  /* (156) CARD LARGHE in Pinnacle, Consenso e Poisson: il numero grande sale
+     nella prima riga, a destra, e la colonna centrale prende tutta la
+     larghezza (prima ~215 pixel: i nomi corti andavano a capo). */
+  #contenuto[data-sez="pin"] .riga > details > summary, #contenuto[data-sez="consensus"] .riga > details > summary, #contenuto[data-sez="accordo"] .riga > details > summary, #contenuto[data-sez="poisson"] .riga > details > summary { position: relative; }
+  #contenuto[data-sez="pin"] .riga > details > summary > .numero, #contenuto[data-sez="consensus"] .riga > details > summary > .numero, #contenuto[data-sez="accordo"] .riga > details > summary > .numero, #contenuto[data-sez="poisson"] .riga > details > summary > .numero { position: absolute; top: 12px; right: 16px; min-width: 0; text-align: right; }
+  #contenuto[data-sez="pin"] .riga > details > summary > .numero b, #contenuto[data-sez="consensus"] .riga > details > summary > .numero b, #contenuto[data-sez="accordo"] .riga > details > summary > .numero b, #contenuto[data-sez="poisson"] .riga > details > summary > .numero b { font-size: 1.25rem; line-height: 1.1; }
+  #contenuto[data-sez="pin"] .riga > details > summary > .numero span, #contenuto[data-sez="consensus"] .riga > details > summary > .numero span, #contenuto[data-sez="accordo"] .riga > details > summary > .numero span, #contenuto[data-sez="poisson"] .riga > details > summary > .numero span { font-size: .62rem; display: block; }
+  #contenuto[data-sez="pin"] .riga > details > summary > .corpo > .alto, #contenuto[data-sez="consensus"] .riga > details > summary > .corpo > .alto, #contenuto[data-sez="accordo"] .riga > details > summary > .corpo > .alto, #contenuto[data-sez="poisson"] .riga > details > summary > .corpo > .alto { padding-right: 100px; min-height: 38px; align-content: flex-start; }
+
   .riga summary .elo-largo { flex: 0 0 100%; box-sizing: border-box; padding-right: 0; margin-top: -4px; min-width: 0; }
   .riga .sel.elo-mini { white-space: nowrap; font-size: clamp(.66rem, 3.25vw, .85rem); overflow: hidden; text-overflow: ellipsis; }
   /* (133) la classifica Elo */
@@ -2206,6 +2216,8 @@
     nav.scrollTo({ left: Math.max(0, meta), behavior: liscio ? "smooth" : "auto" });
   }
   function disegna() {
+    // (156) la pagina in cui si e' (per lo stile delle card larghe)
+    $cont.setAttribute("data-sez", stato.sez || "");
     scriviHash();
     document.querySelectorAll("nav.sezioni button[data-sez]").forEach(function (b) {
       var accesa = stato.sez === "accordo" ? "consensus" : (stato.sez === "mercato" || stato.sez === "wdw" || stato.sez === "sm" || stato.sez === "hp" || stato.sez === "fp") ? "prezzi" :
