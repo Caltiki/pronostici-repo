@@ -1,64 +1,64 @@
 {
  "medio": {
   "copertura": {
-   "1": 23995,
-   "2": 2871,
-   "3": 1482,
-   "4": 687,
+   "1": 24210,
+   "2": 2894,
+   "3": 1483,
+   "4": 688,
    "5": 259
   },
-  "totale": 29294,
-  "brier": 0.5786,
-  "brier_clima": 0.6411,
+  "totale": 29534,
+  "brier": 0.5782,
+  "brier_clima": 0.6408,
   "fonti": [
    {
     "nome": "betimate",
-    "partite": 27903,
-    "brier": 0.5786,
-    "brier_media": 0.5778
+    "partite": 28143,
+    "brier": 0.5781,
+    "brier_media": 0.5774
    },
    {
     "nome": "footymetrics",
-    "partite": 2845,
+    "partite": 2846,
     "brier": 0.5983,
     "brier_media": 0.5892
    },
    {
     "nome": "ratingbet",
-    "partite": 1359,
-    "brier": 0.564,
-    "brier_media": 0.5696
+    "partite": 1369,
+    "brier": 0.5636,
+    "brier_media": 0.5695
    },
    {
     "nome": "soccersite",
-    "partite": 3559,
-    "brier": 0.5937,
+    "partite": 3574,
+    "brier": 0.5938,
     "brier_media": 0.5855
    },
    {
     "nome": "statarea",
-    "partite": 2560,
-    "brier": 0.6068,
-    "brier_media": 0.599
+    "partite": 2562,
+    "brier": 0.6067,
+    "brier_media": 0.5989
    }
   ],
   "mercato": {
-   "partite": 4669,
+   "partite": 4707,
    "poche": false,
-   "brier": 0.5879,
-   "brier_mercato": 0.5733,
-   "diff": 0.0146,
+   "brier": 0.5871,
+   "brier_mercato": 0.5722,
+   "diff": 0.0148,
    "es": 0.0021,
-   "t": 6.94,
+   "t": 7.06,
    "ic": [
-    0.0105,
-    0.0187
+    0.0107,
+    0.0189
    ]
   }
  },
- "aggiornato": "2026-11-11 22:42",
+ "aggiornato": "2026-11-12 00:59",
  "accordo": {
-  "totale": 2565,
+  "totale": 2567,
   "prende": {
    "statarea": {
     "prese": 1055,
@@ -77,19 +77,19 @@
    }
   },
   "mercato": {
-   "partite": 1470,
+   "partite": 1472,
    "poche": false,
-   "brier": 0.5765,
-   "brier_mercato": 0.5642,
-   "diff": 0.0124,
+   "brier": 0.5768,
+   "brier_mercato": 0.5639,
+   "diff": 0.0128,
    "es": 0.0033,
-   "t": 3.78,
+   "t": 3.89,
    "ic": [
-    0.0059,
-    0.0188
+    0.0064,
+    0.0193
    ]
   },
-  "favorito_mercato": 56.6,
+  "favorito_mercato": 56.7,
   "testa_a_testa": {
    "partite": 1251,
    "consensus": 55.8,
