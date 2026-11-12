@@ -4983,8 +4983,7 @@
     else det.push("<p>Nessuna lettura del mattino per questa partita: il movimento si vede solo per oggi.</p>");
     if (num(r.OU) != null && num(r["P Over"]) != null) det.push("<p>Linea Under/Over " + esc(r.OU) + ": Over " + pv(r["P Over"]) + "</p>");
     if (r.Gol_Casa != null && r.Gol_Ospite != null) det.unshift("<p>Finita <b>" + esc(r.Gol_Casa + "-" + r.Gol_Ospite) + "</b>.</p>");
-    if (r._forma) det.push('<div class="forme"><div><span>forma casa</span>' + (formaApi(r._forma.casa) || "\u2013") +
-      '</div><div><span>forma ospite</span>' + (formaApi(r._forma.ospite) || "\u2013") + "</div></div>");
+    if (r._forma) det.push(formaBloccoHtml(r._forma));
     det.push(formazioneHtml(r._form));
     // (113) si chiamava "mv" e copriva la funzione mv() del margine qui
     // sopra: dal 103 la sezione si fermava con un errore.
@@ -5075,6 +5074,10 @@
       if (r) out.push(pinInfoHtml(r, x, data));
       out.push(formazioneHtml(x.form[String(id)]));
       box.innerHTML = out.join("");
+      formaFile(data).then(function (ff) {
+        var h = formaBloccoHtml(formaDi(ff, id));
+        if (h) box.insertAdjacentHTML("beforeend", h);
+      });
     });
   }
 
@@ -6395,6 +6398,13 @@
     var lato = i.parentNode.querySelector("span");
     p.textContent = (lato ? lato.textContent + ": " : "") + i.getAttribute("title");
   });
+  // Il blocco della forma nel dettaglio delle righe (127): pagina
+  // Pinnacle, Pronostici e tutte le sezioni col timbro Pinnacle.
+  function formaBloccoHtml(f) {
+    if (!f) return "";
+    return '<div class="forme"><div><span>forma casa</span>' + (formaApi(f.casa) || "\u2013") +
+      '</div><div><span>forma ospite</span>' + (formaApi(f.ospite) || "\u2013") + "</div></div>";
+  }
   function formaApi(u, n) {
     return (u || []).slice(0, n || 5).reverse().map(function (x) {
       var f = x[3] > x[4] ? FORMA.W : x[3] < x[4] ? FORMA.L : FORMA.D;
@@ -7386,14 +7396,15 @@
   // API-Football dalla mappa dei nomi, oppure, con prudenza, con stessa ora
   // (entro 20 minuti) e nomi uguali o uno dentro l'altro, e una sola
   // candidata. Nel dubbio niente timbro.
-  var PIN_G = { perNome: {}, perId: {}, lista: [], pronto: null };
+  var PIN_G = { perNome: {}, perId: {}, lista: [], pronto: null, idNome: {} };
   function caricaPinGlobale() {
     if (PIN_G.pronto) return PIN_G.pronto;
     var giorni = [-1, 0, 1, 2, 3].map(giornoRoma), t = Math.floor(Date.now() / 600000);
     PIN_G.pronto = Promise.all(giorni.map(function (d) {
       return Promise.all([
         leggiUrl(BASE + "pinnacle_" + d + ".json?t=" + t, "pinnacle_" + d).catch(function () { return null; }),
-        leggi("partite_api_" + d + ".json").catch(function () { return null; })
+        leggi("partite_api_" + d + ".json").catch(function () { return null; }),
+        d
       ]);
     })).then(function (a) {
       a.forEach(function (x) {
@@ -7406,7 +7417,12 @@
           PIN_G.lista.push(r);
           PIN_G.perNome[(r.Casa || "") + "|" + (r.Ospite || "")] = r;
         });
-        for (var k in mappa) { var r = perId[String(mappa[k])]; if (r) PIN_G.perNome[k] = r; }
+        for (var k in mappa) {
+          var r = perId[String(mappa[k])];
+          if (r) PIN_G.perNome[k] = r;
+          // (128) il numero della partita anche senza Pinnacle: serve alla forma
+          if (!PIN_G.idNome[k]) PIN_G.idNome[k] = { id: mappa[k], d: x[2] };
+        }
       });
       return PIN_G;
     });
@@ -7448,7 +7464,23 @@
       var k = el.getAttribute("data-lc").split("|"), ora = "";
       Array.prototype.some.call(alto.children, function (c) { if (/^\s*\d{1,2}:\d{2}\s*$/.test(c.textContent)) { ora = c.textContent; return true; } return false; });
       var r = pinDi(k[0], k.slice(1).join("|"), ora);
-      if (!r) return;
+      if (!r) {
+        // SENZA PINNACLE (128): niente timbro, ma se la partita ha il suo
+        // numero in partite_api (nomi esattamente uguali) il dettaglio
+        // mostra lo stesso la forma delle due squadre.
+        var g = PIN_G.idNome[k[0] + "|" + k.slice(1).join("|")];
+        var dt = riga ? riga.querySelector(":scope > details > .dettaglio") || riga.querySelector(".dettaglio") : null;
+        if (g && dt && !riga.querySelector(".info-api") && !dt.querySelector(".pin-info")) {
+          var bx = document.createElement("div");
+          bx.className = "pin-info";
+          dt.insertBefore(bx, dt.firstChild);
+          formaFile(g.d).then(function (ff) {
+            var h = formaBloccoHtml(formaDi(ff, g.id));
+            if (h) bx.innerHTML = h; else bx.remove();
+          });
+        }
+        return;
+      }
       var span = document.createElement("span");
       span.innerHTML = timbroPin(r);
       var t = span.firstChild, primo = alto.firstElementChild;
@@ -7462,7 +7494,12 @@
         box.className = "pin-info";
         det.insertBefore(box, det.firstChild);
         pinExtra(r.Data).then(function (x) { box.innerHTML = pinInfoHtml(r, x, r.Data); })
-          .catch(function () { box.innerHTML = pinInfoHtml(r, null, r.Data); });
+          .catch(function () { box.innerHTML = pinInfoHtml(r, null, r.Data); })
+          .then(function () { return formaFile(r.Data); })
+          .then(function (ff) {
+            var h = formaBloccoHtml(formaDi(ff, r.ID_API));
+            if (h) box.insertAdjacentHTML("beforeend", h);
+          });
       }
     });
   }
