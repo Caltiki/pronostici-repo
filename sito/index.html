@@ -2410,13 +2410,15 @@
               (ep === "presa" ? "\u2713" : "\u2717") + "</span>" : "") +
           '<details><summary><div class="corpo">' +
           '<div class="alto"><span>' + esc(r0.Ora || "") + "</span>" +
+          // (119) Prezzo da Pinnacle: lo dice il timbro, non piu' la scritta
+          // "quota Pinnacle" accanto (erano due cose uguali).
+          (r0.Fonte === "Pinnacle" ? '<span class="timbro-pin" title="Prezzi da Pinnacle">Pinnacle</span>' : "") +
           (gol ? "<span><b>" + esc(gol) + "</b></span>" : "") +
           (r0.Campionato ? '<span class="chip">' + esc(r0.Campionato) + "</span>" : "") +
-          (r0.Fonte === "Pinnacle" ? '<span class="chip">quota Pinnacle</span>' : "") +
           (r0.Fonte === "OddsAPI" ? '<span class="chip">quota Betfair</span>' : "") + "</div>" +
           '<div class="partita">' + partitaHtml(r0.Casa, r0.Ospite, r0.Partita, campiRiga(r0)) + "</div>" + sqHtml(r0) +
-          '<div class="sel">' + (inSch ? "In schedina: " : "Proposta: ") + esc(etichettaSel(top)) +
-          " · " + f0(num(top.Prob)) + "%" + (scelte_ ? " · " + scelte_ + " nella multipla" : "") + "</div>" +
+          '<div class="sel">' + (inSch ? "In schedina: " : "Proposta: ") + '<span class="q">' + esc(etichettaSel(top)) +
+          " · " + f0(num(top.Prob)) + "%</span>" + (scelte_ ? " · " + scelte_ + " nella multipla" : "") + "</div>" +
           '</div><div class="numero"><b>' + g.length + "</b><span>" + (g.length === 1 ? "probabilità" : "probabilità") + "</span></div></summary>" +
           '<div class="dentro-partita">' +
           '<div class="info-api" data-casa="' + esc(r0.Casa || "") + '" data-ospite="' + esc(r0.Ospite || "") + '" data-ora="' + esc(r0.Ora || "") + '" data-id="' + esc(r0.ID_API || "") + '"></div>' + dentro +
