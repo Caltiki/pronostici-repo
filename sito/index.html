@@ -1561,6 +1561,14 @@
   .conf .chips { margin: 4px 0 6px; }
   .conf h4 { margin: 14px 0 2px; font-size: .9rem; }
   /* (167) CAMPIONATI */
+  .chips-scorri { position: relative; }
+  .freccia-chips { position: absolute; top: 0; bottom: 0; width: 46px; z-index: 2; display: flex; align-items: center; cursor: pointer;
+    opacity: 0; pointer-events: none; transition: opacity .18s ease; -webkit-tap-highlight-color: transparent; }
+  .freccia-chips.dopo { right: 0; justify-content: flex-end; background: linear-gradient(to right, transparent, var(--sfondo) 60%); }
+  .freccia-chips.prima { left: 0; justify-content: flex-start; background: linear-gradient(to left, transparent, var(--sfondo) 60%); }
+  .freccia-chips svg { width: 24px; height: 24px; padding: 4px; border-radius: 999px; background: var(--evidenza);
+    fill: none; stroke: #fff; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; box-shadow: 0 2px 6px rgba(0,0,0,.25); }
+  .chips-scorri.ha-prima .freccia-chips.prima, .chips-scorri.ha-dopo .freccia-chips.dopo { opacity: 1; pointer-events: auto; }
   .chips-scorri .chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
   .chips-scorri .chips::-webkit-scrollbar { display: none; }
   .chips-scorri .chips button { flex: 0 0 auto; white-space: nowrap; }
@@ -1589,9 +1597,10 @@
   .stat-riga.forma { grid-template-columns: auto 1fr auto; }
   .stat-riga .fm { display: inline-block; min-width: 1.15em; text-align: center; border-radius: 3px; font-size: .72rem; margin-right: 2px; padding: 0 1px; }
   .stat-riga > b:last-of-type .fm { margin: 0 0 0 2px; }
-  .fm-v { background: var(--buono-tenue); color: var(--buono); }
-  .fm-n { background: var(--bordo); color: var(--tenue); }
-  .fm-p { background: color-mix(in srgb, var(--male) 15%, transparent); color: var(--male); }
+  /* (169) colori pieni e brillanti per V / N / P */
+  .fm-v { background: #16a34a; color: #fff; font-weight: 700; }
+  .fm-n { background: #94a3b8; color: #fff; font-weight: 700; }
+  .fm-p { background: #e11d48; color: #fff; font-weight: 700; }
   .tab-scorre { overflow-x: auto; }
   details.tutte-linee { margin-top: 8px; }
   details.tutte-linee summary { cursor: pointer; color: var(--evidenza); font-weight: 600; }
@@ -1675,7 +1684,7 @@
     <button data-sez="pin">Pinnacle</button>
     <button data-sez="consensus" class="due">Consenso<br>fonti</button>
     <button data-sez="best" class="due">Best<br>picks</button>
-    <button data-sez="poisson">Poisson</button>
+    <button data-sez="poisson" class="due">Gol<br>attesi</button>
     <button data-sez="elo">Elo</button>
     <button data-sez="sure">Sure Bets</button>
     <button data-sez="fonti" class="due">Statistiche<br>fonti</button>
@@ -1801,10 +1810,7 @@
   // l'addon ripete in fondo a ogni partita sta qui, letta una volta.
   var PO_VISTE = [
     ["tutte", "Tutte",
-     "Lambda calcolati dagli xG, senza guardare le quote: Understat per i primi cinque " +
-     "campionati europei, FotMob per gli altri dove ha la tabella xG. Solo partite complete " +
-     "di tutti i dati, mai le due fonti nella stessa partita. Nessuna delle fonti " +
-     "misurate finora batte il book: questo \u00e8 da misurare, non da dare per buono."],
+     "Lambda calcolati dagli xG."],
     ["mercato", "Con il mercato",
      "Solo dove c'\u00e8 il prezzo del mercato: Pinnacle, o un altro book sharp dove Pinnacle manca. Lo scarto dal prezzo \u00e8 la cosa interessante: " +
      "questa \u00e8 l'unica stima del sistema che possa discostarsi dal book per un motivo suo."]
@@ -2223,7 +2229,7 @@
   // suo ritmo, e passando dall'una all'altra l'ora sembrava tornare
   // indietro. "Statarea + WebPronostici · aggiornato oggi alle 00:29".
   var NOMI_AGG = { prezzi: "Prezzi", mercato: "AsianOdds", consensus: "Media delle fonti",
-    accordo: "Statarea + WebPronostici", poisson: "Poisson", sure: "Quote", pin: "Pinnacle",
+    accordo: "Statarea + WebPronostici", poisson: "Gol attesi", sure: "Quote", pin: "Pinnacle",
     sm: "Sports Mole", fp: "FootballPark", wdw: "FootyStats", hp: "HeroPredict" };
   function testoAggiornato(nome, t) {
     var m = /^(\d{4}-\d{2}-\d{2})[ T](\d{2}:\d{2})/.exec(String(t || ""));
@@ -3278,7 +3284,7 @@
     if (merc.indexOf("OU") === 0) {
       det.push('<p class="avviso">Su 563 partite finite il modello ha sottostimato gli Over di 4.6 punti: qui semmai il numero è basso.</p>');
     } else if (sel.indexOf("1X") >= 0 || sel.indexOf("X2") >= 0) {
-      det.push('<p class="avviso">Le doppie con la X sono le meno affidabili: Poisson sottostima i pareggi, quindi la quota equa è un po\' troppo generosa.</p>');
+      det.push('<p class="avviso">Le doppie con la X sono le meno affidabili: il modello dei gol attesi sottostima i pareggi, quindi la quota equa è un po\' troppo generosa.</p>');
     } else if (merc === "BTTS") {
       det.push("<p>È il mercato tarato meglio: fascia 55-65%, 238 partite, previsto 60.0% e uscito 60.1%.</p>");
     }
@@ -6720,7 +6726,7 @@
   }
 
   var NOMI_SCHEDA = {
-    asianodds: "AsianOdds", footymetrics: "FootyMetrics", prezzi: "Probabilit\u00e0 senza margine", poisson: "Poisson",
+    asianodds: "AsianOdds", footymetrics: "FootyMetrics", prezzi: "Probabilit\u00e0 senza margine", poisson: "Gol attesi",
     accordo: "Statarea + WebPronostici", consenso: "Consenso medio", statarea: "Statarea",
     wp_1x2: "WebPronostici", wp_ou: "WebPronostici", wp_ggng: "WebPronostici", wp_misti: "WebPronostici",
     webpronostici: "WebPronostici", betimate: "Betimate", xgaura: "xGaura", sportytrader: "Sportytrader",
@@ -7016,7 +7022,7 @@
     var gl = [["Over 2.5", r.P_O25], ["Gol", r.P_GG]].filter(function (x) { return num(x[1]) != null; })
       .map(function (x) { return x[0] + " " + f0(num(x[1])) + "%"; });
     var ds = num(r.Scarto_Segno);
-    var h = '<div class="scheda"><h3>Poisson (xG)</h3>' + tripla("modello", num(r.P1), num(r.PX), num(r.P2)) +
+    var h = '<div class="scheda"><h3>Gol attesi (xG)</h3>' + tripla("modello", num(r.P1), num(r.PX), num(r.P2)) +
       "<p>Gol attesi " + f2(num(r.Gol_Attesi)) + (gl.length ? " · " + gl.join(" · ") : "") + "</p>";
     if (ds != null) h += "<p>Sul " + esc(r.Segno) + " il modello dà " + Math.abs(ds).toFixed(1) + " punti " +
       (ds >= 0 ? "più" : "meno") + " del mercato.</p>";
@@ -7777,7 +7783,9 @@
         '<div class="strumenti xgs"><select id="camp-lega" aria-label="Campionato">' + leghe.map(function (l) {
           return '<option value="' + esc(l.id) + '"' + (String(l.id) === String(CAMP.lega) ? " selected" : "") + ">" + esc(l.nome) + "</option>";
         }).join("") + "</select></div>" +
-        '<div class="chips-scorri">' + chipsHtml(CAMP_SCHEDE, CAMP.scheda, "data-cscheda") + "</div>" +
+        '<div class="chips-scorri">' + chipsHtml(CAMP_SCHEDE, CAMP.scheda, "data-cscheda") +
+        '<span class="freccia-chips prima" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></span>' +
+        '<span class="freccia-chips dopo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></span></div>' +
         '<div id="camp-corpo">' + messaggio("vuoto", "Carico&hellip;") + "</div>";
       document.getElementById("camp-lega").addEventListener("change", function (e) { CAMP.lega = e.target.value; CAMP.ordine = null; scriviHash(); corpoCampionato(); });
       $cont.querySelectorAll("[data-cscheda]").forEach(function (b) {
@@ -7788,12 +7796,41 @@
           scriviHash(); corpoCampionato();
         });
       });
+      frecceChips($cont.querySelector(".chips-scorri"));
       var att = $cont.querySelector('[data-cscheda][aria-pressed="true"]');
       if (att && att.scrollIntoView) try { att.scrollIntoView({ block: "nearest", inline: "center" }); } catch (e) {}
       corpoCampionato();
     }).catch(function () {
       $cont.innerHTML = messaggio("vuoto", "I campionati non sono ancora pubblicati: li calcola il giro notturno delle statistiche storiche.");
     });
+  }
+  // (168) La fila delle schede non ci sta tutta (anche sul PC): come la barra
+  // delle sezioni, ai bordi una sfumatura e una freccia dove c'e' altro, e
+  // la rotella del mouse la fa scorrere di lato.
+  function frecceChips(g) {
+    if (!g) return;
+    var r = g.querySelector(".chips");
+    if (!r) return;
+    var aggiorna = function () {
+      var max = r.scrollWidth - r.clientWidth;
+      g.classList.toggle("ha-prima", r.scrollLeft > 4);
+      g.classList.toggle("ha-dopo", max > 4 && r.scrollLeft < max - 4);
+    };
+    r.addEventListener("scroll", aggiorna, { passive: true });
+    window.addEventListener("resize", aggiorna);
+    r.addEventListener("wheel", function (e) {
+      if (r.scrollWidth <= r.clientWidth + 4 || Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
+      r.scrollLeft += e.deltaY;
+      e.preventDefault();
+    }, { passive: false });
+    g.querySelectorAll(".freccia-chips").forEach(function (f) {
+      f.addEventListener("click", function () {
+        r.scrollBy({ left: (f.classList.contains("dopo") ? 1 : -1) * Math.max(120, r.clientWidth * 0.6), behavior: "smooth" });
+      });
+    });
+    aggiorna();
+    setTimeout(aggiorna, 400);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(aggiorna);
   }
   function corpoCampionato() {
     var $c = document.getElementById("camp-corpo");
