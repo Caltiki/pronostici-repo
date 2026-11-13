@@ -1560,6 +1560,12 @@
   .stat-riga b.meglio { color: var(--buono); }
   .conf .chips { margin: 4px 0 6px; }
   .conf h4 { margin: 14px 0 2px; font-size: .9rem; }
+  .stat-riga.forma { grid-template-columns: auto 1fr auto; }
+  .stat-riga .fm { display: inline-block; min-width: 1.15em; text-align: center; border-radius: 3px; font-size: .72rem; margin-right: 2px; padding: 0 1px; }
+  .stat-riga > b:last-of-type .fm { margin: 0 0 0 2px; }
+  .fm-v { background: var(--buono-tenue); color: var(--buono); }
+  .fm-n { background: var(--bordo); color: var(--tenue); }
+  .fm-p { background: color-mix(in srgb, var(--male) 15%, transparent); color: var(--male); }
   .tab-scorre { overflow-x: auto; }
   details.tutte-linee { margin-top: 8px; }
   details.tutte-linee summary { cursor: pointer; color: var(--evidenza); font-weight: 600; }
@@ -6271,10 +6277,11 @@
     Promise.all([
       leggi("classifica_fonti.json").catch(function () { return null; }),
       leggi("classifica_consensus.json").catch(function () { return null; }),
-      leggi("esiti_index.json").catch(function () { return null; })
+      leggi("esiti_index.json").catch(function () { return null; }),
+      leggiUrl(BASE + "predizioni_misura.json?t=" + Math.floor(Date.now() / 600000), "predizioni_misura").catch(function () { return null; })
     ]).then(function (res) {
       if (stato.sez !== "fonti") return;
-      var d = res[0], c = res[1], ei = res[2];
+      var d = res[0], c = res[1], ei = res[2], pm = res[3];
       if (!d && !c) {
         $cont.innerHTML = messaggio("errore", "Il consuntivo non è ancora stato pubblicato: arriva col primo giro notturno.");
         return;
@@ -6289,6 +6296,7 @@
       if (ei && ei.taratura) h += schedaTaratura(ei.taratura);
       if (c && c.medio) h += schedaMedio(c.medio);
       if (c && c.accordo) h += schedaAccordo(c.accordo);
+      if (pm && pm.tutto) h += schedaPredApi(pm);
 
       if (d && d.fonti) {
         h += '<p class="descr" style="margin-top:24px">Le fonti in ordine di quante partite sono state misurate, non di quante ne vincono: ' +
@@ -6453,6 +6461,27 @@
   // (161) AsianOdds non arriva piu' dal 12/11: le sue righe restano come
   // storico, ma si vede che la fonte e' chiusa.
   var FONTI_CHIUSE = { AsianOdds: "fino al 12/11" };
+  // (166) IL PRONOSTICO DI API-FOOTBALL CONTRO PINNACLE, sulle stesse
+  // partite (predizioni_misura.json, apifootball_predizioni.py). Brier: piu'
+  // basso = meglio. Si legge dal 13/11, solo prima del via.
+  function schedaPredApi(m) {
+    var t = m.tutto, n = t.con_pinnacle || 0;
+    var f3 = function (x) { return x == null ? "\u2013" : Number(x).toFixed(3); };
+    var pc = function (x) { return x == null ? "\u2013" : Math.round(100 * x) + "%"; };
+    var poche = n < 100;
+    var verd = !n ? "Ancora nessuna partita finita: la misura comincia dalle partite del 13/11." :
+      poche ? "Ancora poche partite: " + n + ". I numeri ballano." :
+      (t.t != null && Math.abs(t.t) > 2 ? (t.diff_brier > 0 ? "Pinnacle è più preciso, e non per caso" : "API-Football è più preciso di Pinnacle, e non per caso") :
+        "Nessuna differenza che non possa essere caso") + " (su " + n + " partite).";
+    return '<div class="scheda"><h3>Il pronostico di API-Football</h3>' +
+      '<p class="verdetto' + (poche ? " rumore" : "") + '">' + esc(verd) + "</p>" +
+      "<p>Le percentuali 1X2 che API-Football dà per ogni partita, lette prima del via, contro quelle di Pinnacle nello stesso momento, sulle stesse partite.</p>" +
+      '<table class="mercati"><tr><th></th><th>Brier</th><th>Log-loss</th><th>Segno giusto</th></tr>' +
+      "<tr><td>API-Football</td><td>" + f3(t.api_brier_stesse) + "</td><td>" + f3(t.api_logloss_stesse) + "</td><td>" + pc(t.api_segno_giusto_stesse) + "</td></tr>" +
+      "<tr><td>Pinnacle</td><td>" + f3(t.pin_brier) + "</td><td>" + f3(t.pin_logloss) + "</td><td>" + pc(t.pin_segno_giusto) + "</td></tr></table>" +
+      '<p class="piccolo">Brier e log-loss: più bassi = più precisi. ' + (t.partite > n ? "Su tutte le " + t.partite + " partite lette, anche senza Pinnacle, il Brier di API-Football è " + f3(t.brier) + ". " : "") +
+      "Aggiornato il " + esc(m.aggiornato || "") + ".</p></div>";
+  }
   function schedaTaratura(t) {
     var tot = t.totale;
     if (!tot) return "";
@@ -7071,9 +7100,13 @@
           p.PinId != null ? Promise.all([caricaElo().catch(function () { return null; }), calendarioIds(d)]) : null,
           p.PinId != null ? classificheApi() : null,
           // (165) il confronto squadre: per numero di squadra, dal calendario
-          (p.PinId != null || p.ID_API != null) ? Promise.all([caricaConfronto(), calendarioIds(d)]) : null
+          (p.PinId != null || p.ID_API != null) ? Promise.all([caricaConfronto(), calendarioIds(d)]) : null,
+          // (166) il pronostico di API-Football e le statistiche delle squadre nel campionato
+          (p.PinId != null || p.ID_API != null) ? leggiUrl(BASE + "predizioni_" + d + ".json?t=" + tt, "predizioni_" + d).catch(function () { return null; }) : null
         ]).then(function (a2) {
-          p.Conf = confrontoDi(a2[6], p.PinId != null ? p.PinId : p.ID_API);
+          var fidC = p.PinId != null ? p.PinId : p.ID_API;
+          p.Pred = a2[7] && a2[7].partite && fidC != null ? a2[7].partite[String(fidC)] || null : null;
+          p.Conf = confrontoDi(a2[6], fidC, p.Pred);
           // (140) l'Elo delle due squadre, per numero
           var ids = a2[4] && a2[4][1] ? a2[4][1][String(p.PinId)] : null;
           // (143) le posizioni in classifica, per numero di squadra
@@ -7271,15 +7304,18 @@
     }
     return CONF.prom;
   }
-  function confrontoDi(x, fid) {
-    if (!x || fid == null || !x[0] || !x[1]) return null;
-    var ids = x[1][String(fid)], A = x[0].api, S = x[0].sofa;
-    if (!ids || !A || !A.squadre) return null;
-    var c = A.squadre[String(ids[0])], o = A.squadre[String(ids[1])];
-    var sc = S && S.squadre ? S.squadre[String(ids[0])] : null, so = S && S.squadre ? S.squadre[String(ids[1])] : null;
-    if (!(c && o) && !(sc && so)) return null;
-    return { campi: A.campi || [], leghe: A.leghe || {}, agg: A.aggiornato, c: c && o ? c : null, o: c && o ? o : null,
-      scampi: S ? S.campi || [] : [], sagg: S ? S.aggiornato : null, sc: sc && so ? sc : null, so: sc && so ? so : null };
+  function confrontoDi(x, fid, pred) {
+    var ids = x && fid != null && x[1] ? x[1][String(fid)] : null;
+    var A = x && x[0] ? x[0].api : null, S = x && x[0] ? x[0].sofa : null;
+    var c = ids && A && A.squadre ? A.squadre[String(ids[0])] : null, o = ids && A && A.squadre ? A.squadre[String(ids[1])] : null;
+    var sc = ids && S && S.squadre ? S.squadre[String(ids[0])] : null, so = ids && S && S.squadre ? S.squadre[String(ids[1])] : null;
+    // (166) dalle predizioni: le due squadre nel campionato della partita, tutti i campionati
+    var pc = pred && pred.sq ? pred.sq.c : null, po = pred && pred.sq ? pred.sq.o : null;
+    var conP = pc && po && pc.pg && po.pg && pc.pg[2] && po.pg[2];
+    if (!(c && o) && !(sc && so) && !conP) return null;
+    return { campi: A ? A.campi || [] : [], leghe: A ? A.leghe || {} : {}, agg: A ? A.aggiornato : null, c: c && o ? c : null, o: c && o ? o : null,
+      scampi: S ? S.campi || [] : [], sagg: S ? S.aggiornato : null, sc: sc && so ? sc : null, so: sc && so ? so : null,
+      pc: conP ? pc : null, po: conP ? po : null, plega: pred && pred.lega ? pred.lega.nome : "", pletto: pred ? pred.letto : null };
   }
   // un lato ("c" casa, "f" fuori) o la stagione intera ("t"), media pesata sulle partite
   function confValore(q, campi, k, dove) {
@@ -7324,6 +7360,7 @@
       var xc = cf ? C.c.c : null, xo = cf ? C.o.f : null;
       if (xc && xo && (xc.nx < xc.n || xo.nx < xo.n)) h += '<p class="piccolo">Gli xG sono la media delle partite che li hanno (' + xc.nx + " e " + xo.nx + ").</p>";
     }
+    if (C.pc && C.po) h += sezioneCampionato(p, C, !!(C.c && C.o));
     if (C.sc && C.so) {
       var ix = function (k) { return C.scampi.indexOf(k); };
       h += "<h4>Da Sofascore</h4>" + '<p class="piccolo">Tutta la stagione, casa e fuori insieme, a partita (' + C.sc.pg + " e " + C.so.pg + " partite).</p>";
@@ -7339,13 +7376,74 @@
       }
     }
     var fonti = [];
-    if (C.c && C.o) fonti.push("API-Football (" + esc(String(C.agg || "").slice(0, 10)) + ")");
+    if (C.c && C.o) fonti.push("API-Football, partita per partita (" + esc(String(C.agg || "").slice(0, 10)) + ")");
+    if (C.pc && C.po) fonti.push("API-Football, statistiche del campionato (" + esc(String(C.pletto || "").slice(0, 10)) + ")");
     if (C.sc && C.so) fonti.push("Sofascore (" + esc(String(C.sagg || "").slice(0, 10)) + ")");
     return h + '<p class="piccolo">Fonti: ' + fonti.join(", ") + ".</p>";
   }
+  // (166) La parte "dal campionato": dalle statistiche che API-Football
+  // manda insieme al suo pronostico (predizioni_<data>.json). In casa / fuori:
+  // la squadra di casa nelle sue partite in casa, l'ospite in quelle fuori;
+  // alcune voci API-Football le da' solo sulla stagione intera, e lo si dice.
+  function sezioneCampionato(p, C, giaApi) {
+    var cf = CONF.vista === "cf", jc = cf ? 0 : 2, jo = cf ? 1 : 2;
+    var A = C.pc, B = C.po;
+    var pc = function (n, d) { return n != null && d ? 100 * n / d : null; };
+    var h = "<h4>Dal campionato" + (C.plega ? " (" + esc(C.plega) + ")" : "") + "</h4>" +
+      '<p class="piccolo">' + esc(p.Casa) + " " + (cf ? "in casa" : "in tutto") + " (" + (A.pg[jc] || 0) + " partite), " +
+      esc(p.Ospite) + " " + (cf ? "fuori" : "in tutto") + " (" + (B.pg[jo] || 0) + " partite).</p>";
+    if (!(C.c && C.o)) h += '<div class="stat-testa"><span>' + esc(p.Casa) + "</span><span>" + esc(p.Ospite) + "</span></div>";
+    if (!giaApi) {
+      h += rigaConfronto("Gol fatti", A.gf[jc], B.gf[jo], 1, 2) + rigaConfronto("Gol subiti", A.gs[jc], B.gs[jo], -1, 2);
+    }
+    h += rigaConfronto("Porta inviolata", pc(A.cs[jc], A.pg[jc]), pc(B.cs[jo], B.pg[jo]), 1, "%") +
+      rigaConfronto("Partite senza segnare", pc(A.fts[jc], A.pg[jc]), pc(B.fts[jo], B.pg[jo]), -1, "%");
+    var uo = function (q, k, soglia) { var v = q[k] && q[k][soglia]; return v ? pc(v[0], q.pg[2]) : null; };
+    h += rigaConfronto("Ha segnato 2 o più gol \u00b7 stagione", uo(A, "uof", "1.5"), uo(B, "uof", "1.5"), 1, "%") +
+      rigaConfronto("Ha subito 2 o più gol \u00b7 stagione", uo(A, "uoa", "1.5"), uo(B, "uoa", "1.5"), -1, "%") +
+      rigaConfronto("Gialli a partita \u00b7 stagione", A.pg[2] ? A.gialli / A.pg[2] : null, B.pg[2] ? B.gialli / B.pg[2] : null, 0, 1);
+    var forma = function (f) {
+      return String(f || "").split("").map(function (x) {
+        var t = x === "W" ? "V" : x === "D" ? "N" : x === "L" ? "P" : x;
+        return '<span class="fm fm-' + (x === "W" ? "v" : x === "D" ? "n" : "p") + '">' + esc(t) + "</span>";
+      }).join("");
+    };
+    if (A.forma || B.forma) h += '<div class="stat-riga forma"><b>' + forma(A.forma) + "</b><span>Ultime partite</span><b>" + forma(B.forma) + "</b></div>";
+    return h;
+  }
+  // (166) IL PRONOSTICO DI API-FOOTBALL, letto prima del via
+  // (apifootball_predizioni.py): percentuali 1X2 e consiglio, tradotto.
+  function consiglioIt(t) {
+    if (!t) return "";
+    var s = String(t);
+    s = s.replace(/No predictions available/i, "nessun consiglio")
+      .replace(/Combo\s+Double chance\s*:/i, "Combo doppia chance:")
+      .replace(/Double chance\s*:/i, "Doppia chance:")
+      .replace(/Winner\s*:/i, "Vincente:")
+      .replace(/\s+or draw/i, " o pareggio").replace(/draw or\s+/i, "pareggio o ")
+      .replace(/\s+and\s+([+-])(\d+)\.(\d)\s+goals/i, function (m, seg, a, b) { return " e " + (seg === "+" ? "più" : "meno") + " di " + a + "," + b + " gol"; });
+    return s;
+  }
+  function uoIt(t) {
+    var m = /^([+-])(\d+)\.(\d)$/.exec(String(t || "").trim());
+    return m ? (m[1] === "+" ? "più" : "meno") + " di " + m[2] + "," + m[3] + " gol" : "";
+  }
+  function bloccoPredApi(p) {
+    var P = p.Pred;
+    if (!P || !P.p || P.p[0] == null) return "";
+    var q = P.p;
+    var h = '<div class="scheda"><h3>Il pronostico di API-Football</h3>' +
+      "<p><span class=nw><b class=seg>1</b> " + pv(q[0]) + "</span> \u00b7 <span class=nw><b class=seg>X</b> " + pv(q[1]) +
+      "</span> \u00b7 <span class=nw><b class=seg>2</b> " + pv(q[2]) + "</span></p>";
+    var c = consiglioIt(P.consiglio), u = uoIt(P.uo);
+    if (c) h += "<p>Consiglio: " + esc(c) + "</p>";
+    if (u && !/gol/.test(c)) h += "<p>Gol: " + esc(u) + "</p>";
+    return h + '<p class="piccolo">È il pronostico del fornitore dei dati, letto alle ' + esc(String(P.letto || "").slice(11, 16)) +
+      ", prima del via. Non entra nei prezzi del sito: si misura contro Pinnacle in Statistiche fonti.</p></div>";
+  }
   function bloccoConfronto(p) {
     if (!p.Conf) return "";
-    var bott = p.Conf.c && p.Conf.o ? '<div class="chips">' +
+    var bott = (p.Conf.c && p.Conf.o) || (p.Conf.pc && p.Conf.po) ? '<div class="chips">' +
       '<button type="button" data-cv="cf" aria-pressed="' + (CONF.vista === "cf") + '">In casa / fuori</button>' +
       '<button type="button" data-cv="t" aria-pressed="' + (CONF.vista === "t") + '">Tutta la stagione</button></div>' : "";
     return '<div class="scheda conf"><h3>Confronto squadre</h3>' + bott + '<div class="conf-corpo">' + corpoConfronto(p) + "</div></div>";
@@ -7364,7 +7462,7 @@
 
   function disegnaSchedaPartita(p, d) {
     var m = mercatoScheda(p);
-    $cont.innerHTML = testaScheda(p, d) + bloccoStatistiche(p) + bloccoMercato(p, m) + bloccoAltriMercati(p) + bloccoFormazioni(p, d) + bloccoConfronto(p) + bloccoPrezzi(p, d) + bloccoPoisson(p) +
+    $cont.innerHTML = testaScheda(p, d) + bloccoStatistiche(p) + bloccoMercato(p, m) + bloccoAltriMercati(p) + bloccoFormazioni(p, d) + bloccoConfronto(p) + bloccoPrezzi(p, d) + bloccoPoisson(p) + bloccoPredApi(p) +
       bloccoFonti(p, m) + bloccoSure(p) + bloccoAltro(p) + piedeScheda(p);
     collegaConfronto(p);
     $cont.querySelectorAll("input[data-sp]").forEach(function (cb) {
