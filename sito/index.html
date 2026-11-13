@@ -1564,8 +1564,15 @@
   .chips-scorri { position: relative; }
   .freccia-chips { position: absolute; top: 0; bottom: 0; width: 46px; z-index: 2; display: flex; align-items: center; cursor: pointer;
     opacity: 0; pointer-events: none; transition: opacity .18s ease; -webkit-tap-highlight-color: transparent; }
-  .freccia-chips.dopo { right: 0; justify-content: flex-end; background: linear-gradient(to right, transparent, var(--sfondo) 60%); }
-  .freccia-chips.prima { left: 0; justify-content: flex-start; background: linear-gradient(to left, transparent, var(--sfondo) 60%); }
+  .freccia-chips.dopo { right: 0; justify-content: flex-end; background: linear-gradient(to right, transparent, var(--sfondo) 45%); }
+  .freccia-chips.prima { left: 0; justify-content: flex-start; background: linear-gradient(to left, transparent, var(--sfondo) 45%); }
+  /* (169) sul telefono la fila arriva al bordo dello schermo (margini -16px):
+     la freccia sta li', al bordo, e copre del tutto il tasto che c'e' sotto */
+  @media (max-width: 560px) and (not ((hover: hover) and (pointer: fine))) {
+    .freccia-chips { width: 52px; }
+    .freccia-chips.dopo { right: -16px; padding-right: 8px; }
+    .freccia-chips.prima { left: -16px; padding-left: 8px; }
+  }
   .freccia-chips svg { width: 24px; height: 24px; padding: 4px; border-radius: 999px; background: var(--evidenza);
     fill: none; stroke: #fff; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; box-shadow: 0 2px 6px rgba(0,0,0,.25); }
   .chips-scorri.ha-prima .freccia-chips.prima, .chips-scorri.ha-dopo .freccia-chips.dopo { opacity: 1; pointer-events: auto; }
