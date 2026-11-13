@@ -8106,7 +8106,35 @@
   // si usa /live, solo le nostre. Prima le nostre, una per riga, col
   // Pinnacle di prima del via se c'e'; sotto, chiuse, tutte le altre per
   // campionato. Si rilegge ogni minuto finche' si sta sulla pagina.
-  var LIVE_PAG = { dati: null, ora: "", cerca: "", altreAperte: false, timer: null };
+  var LIVE_PAG = { dati: null, ora: "", cerca: "", altreAperte: false, timer: null, link: {}, linkPronto: null };
+  // (164) IL LINK ALLA SCHEDA anche nelle partite live, come nel
+  // Calendario: stessa regola (linkSchede), su ieri e oggi, perche' una
+  // partita iniziata prima di mezzanotte e' nei file del giorno prima.
+  // Si rilegge ogni 10 minuti, le schede si rifanno durante il giorno.
+  function caricaLinkLive() {
+    var t = Math.floor(Date.now() / 600000);
+    if (LIVE_PAG.linkPronto && LIVE_PAG.linkT === t) return LIVE_PAG.linkPronto;
+    LIVE_PAG.linkT = t;
+    LIVE_PAG.linkPronto = Promise.all([-1, 0].map(function (k) {
+      var d = giornoRoma(k);
+      return Promise.all([
+        leggi("partite_api_" + d + ".json").catch(function () { return null; }),
+        leggiUrl(BASE + "scheda_" + d + ".json?t=" + t, "scheda_" + d).catch(function () { return null; }),
+        d
+      ]);
+    })).then(function (a) {
+      var link = {};
+      a.forEach(function (x) {
+        var mappa = x[0] && typeof x[0] === "object" ? x[0] : {}, sito = {};
+        for (var k in mappa) sito[String(mappa[k])] = true;
+        linkSchede(sito, mappa, x[1], x[2]);
+        for (var id in sito) if (typeof sito[id] === "string") link[id] = sito[id];
+      });
+      LIVE_PAG.link = link;
+      return link;
+    }).catch(function () { return LIVE_PAG.link; });
+    return LIVE_PAG.linkPronto;
+  }
   function caricaTutteLive() {
     var base = URL_LIVE.replace(/\/$/, "");
     var prendi = function (u) { return fetch(base + u, { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); };
@@ -8141,7 +8169,8 @@
     var pill = '<span class="live' + (golFresco(x) ? " fresco" : "") + '" title="' + esc(titoloLive(x)) + '">' + esc(minutoLive(x)) + "</span>";
     return '<div class="lv-riga"><div class="corpo"><div class="alto">' + pill +
       (pin ? timbroPin(pin) : "") +
-      ((x.paese || x.lega) ? '<span class="chip">' + esc([x.paese, x.lega].filter(Boolean).join(" \u00b7 ")) + "</span>" : "") + "</div>" +
+      ((x.paese || x.lega) ? '<span class="chip">' + esc([x.paese, x.lega].filter(Boolean).join(" \u00b7 ")) + "</span>" : "") +
+      (LIVE_PAG.link[String(x.id)] ? '<a class="chip chip-link" href="' + esc(LIVE_PAG.link[String(x.id)]) + '">scheda \u2192</a>' : "") + "</div>" +
       '<div class="squadre">' + logo(x.casa, false, x.lega) + esc(x.casa) + " \u2013 " + logo(x.ospite, false, x.lega) + esc(x.ospite) + "</div>" +
       info.join("") + '</div><div class="lv-ris">' + esc(g) + "</div></div>";
   }
@@ -8180,9 +8209,13 @@
     $l.innerHTML = h;
     var d = $l.querySelector(".lv-altre");
     if (d) d.addEventListener("toggle", function () { LIVE_PAG.altreAperte = d.open; });
+    // Dalla scheda, "Indietro" torna qui, allo stesso punto.
+    $l.querySelectorAll("a.chip-link").forEach(function (a) {
+      a.addEventListener("click", function () { ritorno = { y: window.scrollY, alias: null }; daClic = true; });
+    });
   }
   function aggiornaPaginaLive() {
-    return Promise.all([caricaTutteLive(), caricaPinGlobale().catch(function () { return null; })]).then(function (a) {
+    return Promise.all([caricaTutteLive(), caricaPinGlobale().catch(function () { return null; }), caricaLinkLive()]).then(function (a) {
       var d = a[0];
       if (!d || !Array.isArray(d.partite)) throw new Error("dati");
       LIVE_PAG.dati = d;
