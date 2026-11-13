@@ -1964,7 +1964,7 @@
   ];
   var FP_ORDINI = [["ora", "Per orario"], ["prob", "Per probabilit\u00e0"], ["paese", "Per campionato"]];
 
-  // MOSSE PINNACLE (11/11, piano PRO di AP). pinnacle_<data>.json
+  // MOSSE PINNACLE (11/11, piano PRO di il fornitore dei dati). pinnacle_<data>.json
   // lo riscrive ogni ora pinnacle.yml; apifootball_pro.json tiene la prima
   // lettura del giorno di ogni partita. Il movimento e' la differenza in
   // punti fra adesso e il mattino, segno per segno: quando Pinnacle si
@@ -5085,7 +5085,7 @@
   }
   // IL RISULTATO DAL CALENDARIO (125). calendario_<data>.json (ieri, oggi)
   // si rifa' a ogni giro di Pinnacle col punteggio di ogni partita di
-  // AP; le righe Pinnacle hanno il numero della partita, quindi
+  // il fornitore dei dati; le righe Pinnacle hanno il numero della partita, quindi
   // nessun riconoscimento per nome. Solo le partite finite (FT, AET, PEN:
   // il punteggio e' quello dei 90 minuti).
   var FINITE_CAL = { FT: 1, AET: 1, PEN: 1 };
@@ -6019,7 +6019,7 @@
       }));
     });
   }
-  // GLI STEMMI DI AP (ramo stemmi-api), solo per i nomi a cui
+  // GLI STEMMI DI DEL FORNITORE DEI DATI (ramo stemmi-api), solo per i nomi a cui
   // loghi.json non ne da' uno sicuro. stemmi_api.json li lega al nome
   // ESATTO come lo scrive la fonte, perche' viene dalle partite
   // riconosciute una per una (apifootball.py): "FC Inter" -> Inter Turku.
@@ -6027,7 +6027,7 @@
   var URL_STEMMI_API = "https://raw.githubusercontent.com/" + REPO + "/stemmi-api/";
   var STEMMI_API = null;
   // (138) GLI STEMMI PER NUMERO: stemmi_id.json elenca le squadre (numero
-  // di AP) che hanno <numero>.png nel ramo stemmi-api. Dove il
+  // di il fornitore dei dati) che hanno <numero>.png nel ramo stemmi-api. Dove il
   // sito conosce il numero (Calendario, Elo, Pinnacle, scheda) lo stemma
   // viene da li' e il nome non conta: niente piu' Athletic Bilbao al posto
   // dell'Athletic Club brasiliano.
@@ -6076,7 +6076,7 @@
   // l'Inter di El Salvador. Per i nomi che loghi.json sa ambigui, se il
   // campionato della riga corrisponde a una voce precisa (per esempio
   // "salvador") vale quella, anche quando dice "nessuno stemma"; solo se
-  // non corrisponde a niente si passa a AP e poi alla voce
+  // non corrisponde a niente si passa a il fornitore dei dati e poi alla voce
   // generica.
   function stemmaOmonimo(nome, dove) {
     if (!LOGHI || !LOGHI.ambigue) return null;
@@ -6168,7 +6168,7 @@
       leggi("footymetrics_" + d + ".json").catch(function () { return null; }),
       leggi("partite_api_" + d + ".json").catch(function () { return null; })
     ]).then(function (a) {
-      // "Casa|Ospite" come li scrive ogni fonte -> numero AP
+      // "Casa|Ospite" come li scrive ogni fonte -> numero il fornitore dei dati
       var mappa = a[4] && typeof a[4] === "object" ? a[4] : {};
       var pin = Array.isArray(a[0]) ? a[0] : [], ao = Array.isArray(a[1]) ? a[1] : [];
       var altri = Array.isArray(a[2]) ? a[2] : [], fm = Array.isArray(a[3]) ? a[3] : [];
@@ -6512,7 +6512,7 @@
   // (161) AsianOdds non arriva piu' dal 12/11: le sue righe restano come
   // storico, ma si vede che la fonte e' chiusa.
   var FONTI_CHIUSE = { AsianOdds: "fino al 12/11" };
-  // (166) IL PRONOSTICO DI AP CONTRO PINNACLE, sulle stesse
+  // (166) IL PRONOSTICO DI DEL FORNITORE DEI DATI CONTRO PINNACLE, sulle stesse
   // partite (predizioni_misura.json, apifootball_predizioni.py). Brier: piu'
   // basso = meglio. Si legge dal 13/11, solo prima del via.
   function schedaPredApi(m) {
@@ -6522,15 +6522,15 @@
     var poche = n < 100;
     var verd = !n ? "Ancora nessuna partita finita: la misura comincia dalle partite del 13/11." :
       poche ? "Ancora poche partite: " + n + ". I numeri ballano." :
-      (t.t != null && Math.abs(t.t) > 2 ? (t.diff_brier > 0 ? "Pinnacle è più preciso, e non per caso" : "AP è più preciso di Pinnacle, e non per caso") :
+      (t.t != null && Math.abs(t.t) > 2 ? (t.diff_brier > 0 ? "Pinnacle è più preciso, e non per caso" : "Il pronostico del sito è più preciso di Pinnacle, e non per caso") :
         "Nessuna differenza che non possa essere caso") + " (su " + n + " partite).";
-    return '<div class="scheda"><h3>Il pronostico di AP</h3>' +
+    return '<div class="scheda"><h3>Il pronostico del sito</h3>' +
       '<p class="verdetto' + (poche ? " rumore" : "") + '">' + esc(verd) + "</p>" +
-      "<p>Le percentuali 1X2 che AP dà per ogni partita, lette prima del via, contro quelle di Pinnacle nello stesso momento, sulle stesse partite.</p>" +
+      "<p>Le percentuali 1X2 del pronostico del sito per ogni partita, lette prima del via, contro quelle di Pinnacle nello stesso momento, sulle stesse partite.</p>" +
       '<table class="mercati"><tr><th></th><th>Brier</th><th>Log-loss</th><th>Segno giusto</th></tr>' +
-      "<tr><td>AP</td><td>" + f3(t.api_brier_stesse) + "</td><td>" + f3(t.api_logloss_stesse) + "</td><td>" + pc(t.api_segno_giusto_stesse) + "</td></tr>" +
+      "<tr><td>Pronostico del sito</td><td>" + f3(t.api_brier_stesse) + "</td><td>" + f3(t.api_logloss_stesse) + "</td><td>" + pc(t.api_segno_giusto_stesse) + "</td></tr>" +
       "<tr><td>Pinnacle</td><td>" + f3(t.pin_brier) + "</td><td>" + f3(t.pin_logloss) + "</td><td>" + pc(t.pin_segno_giusto) + "</td></tr></table>" +
-      '<p class="piccolo">Brier e log-loss: più bassi = più precisi. ' + (t.partite > n ? "Su tutte le " + t.partite + " partite lette, anche senza Pinnacle, il Brier di AP è " + f3(t.brier) + ". " : "") +
+      '<p class="piccolo">Brier e log-loss: più bassi = più precisi. ' + (t.partite > n ? "Su tutte le " + t.partite + " partite lette, anche senza Pinnacle, il Brier del pronostico del sito è " + f3(t.brier) + ". " : "") +
       "Aggiornato il " + esc(m.aggiornato || "") + ".</p></div>";
   }
   function schedaTaratura(t) {
@@ -6787,7 +6787,7 @@
       return f ? '<i class="fm-' + f[2] + '" title="' + f[1] + '">' + f[0] + "</i>" : "";
     }).join("");
   }
-  // LA FORMA DA AP (126): forma_<data>.json, scritto dal giro
+  // LA FORMA DA DEL FORNITORE DEI DATI (126): forma_<data>.json, scritto dal giro
   // Pinnacle, ha le ultime partite di ogni squadra per numero (la riga
   // Pinnacle porta il numero della partita, il file le due squadre).
   // u = [[data, avversario, "C"/"T", fatti, subiti], ...], la piu' recente
@@ -6836,7 +6836,7 @@
 
   // IL RISULTATO FINALE DELLA SCHEDA (125): quello deciso da scheda_partite
   // ("Risultato", dalle fonti dei risultati), altrimenti il calendario di
-  // AP (riga Pinnacle, per numero), altrimenti FootyMetrics.
+  // il fornitore dei dati (riga Pinnacle, per numero), altrimenti FootyMetrics.
   function finaleScheda(p) {
     var r = p.Risultato, c = p.Cal, fm = p.FM || {};
     if (r && num(r.Gol_Casa) != null && num(r.Gol_Ospite) != null) return { gc: num(r.Gol_Casa), go: num(r.Gol_Ospite) };
@@ -6869,7 +6869,7 @@
       var fin = ["FT", "AET", "PEN"].indexOf(st) >= 0;
       h += '<p class="punteggio"><b>' + gc + " – " + go + "</b> " + (fin ? "finita" : "in corso (" + esc(st) + ")") + "</p>";
     }
-    // FORMA E POSIZIONE (143): FootyMetrics se le ha, altrimenti AP
+    // FORMA E POSIZIONE (143): FootyMetrics se le ha, altrimenti il fornitore dei dati
     // (forma_<data>.json e classifiche_api.json), anche una sola delle due.
     var cl = p.Classe || {};
     var posC = fm.Pos_Casa != null ? esc(fm.Pos_Casa) + "° in classifica" : etichettaPos(cl.c);
@@ -6939,7 +6939,7 @@
           (num(a.Mov) ? "; " + (a.Notevole ? "movimento notevole" : "movimento") + " di " + nv(a.Mov) + " punti dall'apertura" : "") + ".</p>";
       }
     }
-    // "Aggiornato" e' l'orario di AP, in UTC: qui in ora di Roma.
+    // "Aggiornato" e' l'orario di il fornitore dei dati, in UTC: qui in ora di Roma.
     var quando = "";
     var t = /^(\d{4}-\d{2}-\d{2})[T ](\d{2}:\d{2})/.exec(String(r.Aggiornato || ""));
     if (t) {
@@ -7152,7 +7152,7 @@
           p.PinId != null ? classificheApi() : null,
           // (165) il confronto squadre: per numero di squadra, dal calendario
           (p.PinId != null || p.ID_API != null) ? Promise.all([caricaConfronto(), calendarioIds(d)]) : null,
-          // (166) il pronostico di AP e le statistiche delle squadre nel campionato
+          // (166) il pronostico di il fornitore dei dati e le statistiche delle squadre nel campionato
           (p.PinId != null || p.ID_API != null) ? leggiUrl(BASE + "predizioni_" + d + ".json?t=" + tt, "predizioni_" + d).catch(function () { return null; }) : null
         ]).then(function (a2) {
           var fidC = p.PinId != null ? p.PinId : p.ID_API;
@@ -7202,12 +7202,12 @@
 
   // ------------------------------------------- ALTRI MERCATI PINNACLE (129)
   // pinmercati_<data>.json: tutti i mercati che Pinnacle quota per la
-  // partita, coi nomi di AP (verificati sui dati del 12/11).
+  // partita, coi nomi di il fornitore dei dati (verificati sui dati del 12/11).
   // Per ogni mercato a due esiti si mostra la linea piu' equilibrata
   // (quella col prezzo senza margine piu' vicino al 50%), sotto tutte.
   // Senza margine = margine tolto in proporzione fra i due esiti.
   //
-  // L'HANDICAP ASIATICO DI AP scrive la linea della CASA anche
+  // L'HANDICAP ASIATICO DI DEL FORNITORE DEI DATI scrive la linea della CASA anche
   // sulla selezione dell'ospite: "Home -0.5" e "Away -0.5" sono le due
   // facce della stessa linea (casa -0.5, ospite +0.5). Verificato il 12/11
   // sulle quote: "Away -0.5" pagava 1.28 come il X2, non 1.85 come il 2.
@@ -7294,8 +7294,8 @@
 
   // ------------------------------------------------ STATISTICHE (129)
   // statistiche_<data>.json (ieri e oggi): per le nostre partite finite,
-  // tutte le voci di /fixtures/statistics con i nomi di AP. Un
-  // valore che AP non da' (null) resta "–": non si scrive 0.
+  // tutte le voci di /fixtures/statistics con i nomi di il fornitore dei dati. Un
+  // valore che il fornitore dei dati non da' (null) resta "–": non si scrive 0.
   var STAT_VOCI = [
     ["xG (gol attesi)", "expected_goals", 2], ["Tiri", "Total Shots"], ["Tiri in porta", "Shots on Goal"],
     ["Possesso", "Ball Possession", "%"], ["Corner", "Corner Kicks"], ["Falli", "Fouls"],
@@ -7331,10 +7331,10 @@
   // ---------------------------------------------------- CONFRONTO SQUADRE
   // (165) Le medie di stagione delle due squadre, a partita:
   //   - squadre_stat.json (confronto_squadre.py, dallo storico delle
-  //     statistiche di AP): in casa e fuori, gol, xG, tiri, tiri
+  //     statistiche di il fornitore dei dati): in casa e fuori, gol, xG, tiri, tiri
   //     in porta, possesso, angoli, cartellini, falli;
   //   - sofascore_squadre.json (sofascore_squadre_ci.py): quello che
-  //     AP non da', grandi occasioni, xG dei tiri in porta, gol
+  //     il fornitore dei dati non da', grandi occasioni, xG dei tiri in porta, gol
   //     rispetto agli xG. Sofascore da' la stagione intera, casa e fuori
   //     insieme.
   // Si vede solo se ci sono tutte e due le squadre (i nostri 30 campionati).
@@ -7427,15 +7427,15 @@
       }
     }
     var fonti = [];
-    if (C.c && C.o) fonti.push("AP, partita per partita (" + esc(String(C.agg || "").slice(0, 10)) + ")");
-    if (C.pc && C.po) fonti.push("AP, statistiche del campionato (" + esc(String(C.pletto || "").slice(0, 10)) + ")");
+    if (C.c && C.o) fonti.push("dati del sito, partita per partita (" + esc(String(C.agg || "").slice(0, 10)) + ")");
+    if (C.pc && C.po) fonti.push("dati del sito, statistiche del campionato (" + esc(String(C.pletto || "").slice(0, 10)) + ")");
     if (C.sc && C.so) fonti.push("Sofascore (" + esc(String(C.sagg || "").slice(0, 10)) + ")");
     return h + '<p class="piccolo">Fonti: ' + fonti.join(", ") + ".</p>";
   }
-  // (166) La parte "dal campionato": dalle statistiche che AP
+  // (166) La parte "dal campionato": dalle statistiche che il fornitore dei dati
   // manda insieme al suo pronostico (predizioni_<data>.json). In casa / fuori:
   // la squadra di casa nelle sue partite in casa, l'ospite in quelle fuori;
-  // alcune voci AP le da' solo sulla stagione intera, e lo si dice.
+  // alcune voci il fornitore dei dati le da' solo sulla stagione intera, e lo si dice.
   function sezioneCampionato(p, C, giaApi) {
     var cf = CONF.vista === "cf", jc = cf ? 0 : 2, jo = cf ? 1 : 2;
     var A = C.pc, B = C.po;
@@ -7462,7 +7462,7 @@
     if (A.forma || B.forma) h += '<div class="stat-riga forma"><b>' + forma(A.forma) + "</b><span>Ultime partite</span><b>" + forma(B.forma) + "</b></div>";
     return h;
   }
-  // (166) IL PRONOSTICO DI AP, letto prima del via
+  // (166) IL PRONOSTICO DI DEL FORNITORE DEI DATI, letto prima del via
   // (apifootball_predizioni.py): percentuali 1X2 e consiglio, tradotto.
   function consiglioIt(t) {
     if (!t) return "";
@@ -7483,7 +7483,7 @@
     var P = p.Pred;
     if (!P || !P.p || P.p[0] == null) return "";
     var q = P.p;
-    var h = '<div class="scheda"><h3>Il pronostico di AP</h3>' +
+    var h = '<div class="scheda"><h3>Il pronostico del sito</h3>' +
       "<p><span class=nw><b class=seg>1</b> " + pv(q[0]) + "</span> \u00b7 <span class=nw><b class=seg>X</b> " + pv(q[1]) +
       "</span> \u00b7 <span class=nw><b class=seg>2</b> " + pv(q[2]) + "</span></p>";
     var c = consiglioIt(P.consiglio), u = uoIt(P.uo);
@@ -7755,7 +7755,7 @@
   // ------------------------------------------------------------ CAMPIONATI
   // (167) LA SEZIONE CAMPIONATI: un campionato alla volta, con le schede.
   // I dati sono in campionato_<lega>.json (campionati.py, ogni notte dallo
-  // storico di AP: i 30 campionati piu' forti per Elo). Gli
+  // storico di il fornitore dei dati: i 30 campionati piu' forti per Elo). Gli
   // assenti si leggono dai file delle formazioni di oggi e domani; l'xG di
   // FotMob e Understat resta nella sua pagina (link).
   var CAMP_SCHEDE = [["classifica", "Classifica"], ["stat", "Statistiche"], ["gol", "Gol e Over"], ["minuti", "Quando segna"],
@@ -7789,7 +7789,7 @@
       }
       document.getElementById("aggiornato").textContent = testoAggiornato("Campionati", ix.aggiornato);
       $cont.innerHTML = '<h2 class="reg-tit">Campionati</h2>' +
-        '<p class="descr">Classifiche e statistiche dei campionati più forti, calcolate ogni notte partita per partita dai dati di AP.</p>' +
+        '<p class="descr">Classifiche e statistiche dei campionati più forti, calcolate ogni notte partita per partita dai dati del sito.</p>' +
         '<div class="strumenti xgs"><select id="camp-lega" aria-label="Campionato">' + leghe.map(function (l) {
           return '<option value="' + esc(l.id) + '"' + (String(l.id) === String(CAMP.lega) ? " selected" : "") + ">" + esc(l.nome) + "</option>";
         }).join("") + "</select></div>" +
@@ -7965,7 +7965,7 @@
           return "<tr><td>" + (i + 1) + '</td><td class="sq"><div>' + logoId(nomeSq(D, x.sq), x.sq, false, D.nome) + "<span>" + esc(x.nome) +
             "<small>" + esc(nomeSq(D, x.sq)) + "</small></span></div></td><td>" + x.pres + "</td><td>" + x.min + '</td><td class="pt">' + esc(v) + "</td></tr>";
         }).join("") + "</tbody></table></div>" +
-        notaPiccola(k === "voto" ? "Voto medio di AP, solo chi ha giocato almeno il 40% dei minuti del più presente." : "Partite di campionato della stagione.");
+        notaPiccola(k === "voto" ? "Voto medio del sito, solo chi ha giocato almeno il 40% dei minuti del più presente." : "Partite di campionato della stagione.");
     },
     xpts: function (D) {
       if (!D.xpts || !Object.keys(D.xpts).length) return messaggio("vuoto", "Servono gli xG partita per partita.");
@@ -8142,13 +8142,13 @@
   // Il punteggio delle partite in corso, accanto ai nomi, ovunque.
   //
   // DA DOVE ARRIVA: dal ponte su Cloudflare (worker.js), che tiene la chiave
-  // di AP e chiede le partite in corso ogni 3 minuti col piano
+  // di il fornitore dei dati e chiede le partite in corso ogni 3 minuti col piano
   // PRO (ogni 30 minuti, dalle 12 all'1:30, col piano gratuito), con i gol
   // e gli espulsi. Il sito legge l'ultima risposta salvata: le visite non
   // consumano richieste.
   // COME SI AGGANCIA: partite_api_<data>.json (scritto da apifootball.py)
   // dice, per ogni "Casa|Ospite" come lo scrivono i nostri file, il numero
-  // della partita in AP; la risposta del ponte porta lo stesso
+  // della partita in il fornitore dei dati; la risposta del ponte porta lo stesso
   // numero. Nessun nome da riconoscere qui.
   // URL_LIVE vuoto = live spenti, il sito resta come prima.
   var URL_LIVE = "https://caltiki-live.caltiki.workers.dev";
@@ -8162,7 +8162,7 @@
     } catch (e) { return t.toISOString().slice(0, 10); }
   }
   // I gol del ponte si mostrano solo se tornano col punteggio (un gol
-  // annullato dal VAR che AP non ha ancora tolto, per esempio,
+  // annullato dal VAR che il fornitore dei dati non ha ancora tolto, per esempio,
   // li farebbe sbagliare): meglio niente che un minuto sbagliato.
   function golLive(x) {
     var n = (num(x.gc) || 0) + (num(x.go) || 0);
@@ -8215,7 +8215,7 @@
     return '<span class="live' + (golFresco(x) ? " fresco" : "") + '" title="' + esc(titoloLive(x)) + '">' + htmlLive(x) + "</span>";
   }
   // La partita in corso di un evento del registro: col numero di
-  // AP se l'evento l'ha (righe Pinnacle), altrimenti con la mappa.
+  // il fornitore dei dati se l'evento l'ha (righe Pinnacle), altrimenti con la mappa.
   function liveDiEvento(e) {
     if (!DATI_LIVE || !e) return null;
     var id = e.ID_API != null && e.ID_API !== "" ? e.ID_API : MAPPA_LIVE[(e.Casa || "") + "|" + (e.Ospite || "")];
@@ -8299,7 +8299,7 @@
     }).catch(function () { /* il ponte non risponde: niente live, il resto va */ });
   }
   // ---------------------------------------------------------- CALENDARIO
-  // TUTTE LE PARTITE DEL GIORNO (122), da AP: calendario_<data>.json
+  // TUTTE LE PARTITE DEL GIORNO (122), da il fornitore dei dati: calendario_<data>.json
   // lo scrive apifootball.py (pinnacle_pro) col calendario che legge gia'.
   // Per ogni partita: se e' anche sul sito (partite_api_<data>.json), se ha
   // le quote Pinnacle, e il live se e' in corso. I campionati con partite
@@ -8466,9 +8466,9 @@
 
   // --------------------------------------------------------------- ELO
   // L'ELO DEL SISTEMA (133). Lo calcola elo_calcolo.py sullo storico di
-  // AP (ramo privato); elo_pubblica.py porta su gh-data
+  // il fornitore dei dati (ramo privato); elo_pubblica.py porta su gh-data
   // elo_rating.json (rating delle squadre attive, per numero di
-  // AP) ed elo_info.json (parametri e prova).
+  // il fornitore dei dati) ed elo_info.json (parametri e prova).
   //
   // Le probabilita' 1X2 di una partita il sito le calcola con la STESSA
   // formula di elo_calcolo.py (logit ordinato): x = (Elo casa - Elo
@@ -8518,7 +8518,7 @@
       if (stato.sez !== "elo") return;
       document.getElementById("aggiornato").textContent = testoAggiornato("Elo", ELO.dati.calcolato);
       var h = '<h2 class="reg-tit">Elo</h2>' +
-        '<p class="descr">La forza di ogni squadra in un numero, calcolata dal sistema sui risultati di AP dal 2016: ' +
+        '<p class="descr">La forza di ogni squadra in un numero, calcolata dal sistema sui risultati raccolti dal sito dal 2016: ' +
         "sale quando una squadra fa meglio del previsto, scende quando fa peggio. Da due rating escono le probabilità 1X2. " +
         "È calcolato dal sistema, non preso da un sito.</p>" +
         chipsHtml([["partite", "Partite"], ["classifica", "Classifica"], ["info", "Come funziona"]], ELO.vista, "data-evista") +
@@ -8723,7 +8723,7 @@
 
   // ------------------------------------------------------- PARTITE LIVE
   // LA PAGINA DELLE PARTITE IN CORSO (111). Dal ponte: /tutte da' tutte le
-  // partite che AP segue in diretta, con n:1 sulle nostre (quelle
+  // partite che il fornitore dei dati segue in diretta, con n:1 sulle nostre (quelle
   // dei file del sito). Se il ponte non ha ancora /tutte (worker vecchio)
   // si usa /live, solo le nostre. Prima le nostre, una per riga, col
   // Pinnacle di prima del via se c'e'; sotto, chiuse, tutte le altre per
@@ -8867,7 +8867,7 @@
   // quote Pinnacle, in tutte le viste. Si leggono pinnacle_<data>.json e
   // partite_api_<data>.json da ieri a fra tre giorni (quelli che Pinnacle
   // copre). La partita si riconosce come nelle schede: col numero di
-  // AP dalla mappa dei nomi, oppure, con prudenza, con stessa ora
+  // il fornitore dei dati dalla mappa dei nomi, oppure, con prudenza, con stessa ora
   // (entro 20 minuti) e nomi uguali o uno dentro l'altro, e una sola
   // candidata. Nel dubbio niente timbro.
   var PIN_G = { perNome: {}, perId: {}, lista: [], pronto: null, idNome: {} };
@@ -9046,7 +9046,7 @@
       }
       aggiungiFrecce(alto, r, riga);
       // Nel dettaglio della partita (le sezioni che non hanno gia' il
-      // riquadro di AP dei Pronostici): quote, margine,
+      // riquadro di il fornitore dei dati dei Pronostici): quote, margine,
       // probabilita' e movimento di Pinnacle, in cima.
       var det = riga.querySelector(":scope > details > .dettaglio") || riga.querySelector(".dettaglio");
       if (det && !riga.querySelector(".info-api") && !det.querySelector(".pin-info")) {
@@ -9070,7 +9070,7 @@
   // le due squadre per NUMERO dal calendario del giorno (ic, io), il rating
   // per numero da elo_rating.json. Senza tutti e tre, niente riga.
   var ELO_CAL = {};
-  // (143) LE CLASSIFICHE DI AP (classifiche_api.json, apifootball.py):
+  // (143) LE CLASSIFICHE DI DEL FORNITORE DEI DATI (classifiche_api.json, apifootball.py):
   // per numero di squadra, prima nella lega della partita, altrimenti in
   // un'altra (nelle coppe: il campionato della squadra, detto quale).
   var CLASSI = null;
