@@ -830,6 +830,28 @@
  },
  {
   "Data": "2026-11-28",
+  "Ora": "20:45",
+  "Campionato": "France: Ligue 1",
+  "Partita": "Nice - Troyes",
+  "Casa": "Nice",
+  "Ospite": "Troyes",
+  "Linea_OU": 2.75,
+  "Gol_attesi": 2.99,
+  "Margine": 5.1,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "OddsAPI",
+  "Gruppo": "Under Over",
+  "Mercato": "OU 3.5",
+  "Sel": "Under",
+  "Prob": 64.9,
+  "Equa": 1.54,
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
+ },
+ {
+  "Data": "2026-11-28",
   "Ora": "15:30",
   "Campionato": "Germany: Bundesliga",
   "Partita": "1. FC Köln - Elversberg",
@@ -954,7 +976,8 @@
   "Sel": "1",
   "Prob": 63.6,
   "Equa": 1.57,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-28",
@@ -1357,8 +1380,7 @@
   "Sel": "1",
   "Prob": 57.9,
   "Equa": 1.73,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-28",
@@ -1758,8 +1780,7 @@
   "Sel": "1 + Over 1.5",
   "Prob": 54.5,
   "Equa": 1.84,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-28",
@@ -3444,27 +3465,6 @@
  },
  {
   "Data": "2026-11-28",
-  "Ora": "20:45",
-  "Campionato": "France: Ligue 1",
-  "Partita": "Nice - Troyes",
-  "Casa": "Nice",
-  "Ospite": "Troyes",
-  "Linea_OU": 2.75,
-  "Gol_attesi": 2.99,
-  "Margine": 5.1,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 22.9,
-  "Equa": 4.37,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-11-28",
   "Ora": "16:00",
   "Campionato": "England: Premier League",
   "Partita": "Leeds United - Coventry City",
@@ -3482,6 +3482,27 @@
   "Sel": "X",
   "Prob": 21.8,
   "Equa": 4.59,
+  "Rif_Book": "Pinnacle"
+ },
+ {
+  "Data": "2026-11-28",
+  "Ora": "14:00",
+  "Campionato": "Spain: Laliga",
+  "Partita": "Real Betis - Rayo Vallecano",
+  "Casa": "Real Betis",
+  "Ospite": "Rayo Vallecano",
+  "Linea_OU": 3.0,
+  "Gol_attesi": 3.16,
+  "Margine": 5.5,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "OddsAPI",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 20.2,
+  "Equa": 4.95,
   "Rif_Book": "Pinnacle"
  },
  {

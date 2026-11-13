@@ -721,8 +721,7 @@
   "Sel": "1",
   "Prob": 62.1,
   "Equa": 1.61,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-29",
@@ -1396,7 +1395,8 @@
   "Sel": "1 + Over 1.5",
   "Prob": 53.1,
   "Equa": 1.88,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-29",
@@ -2658,27 +2658,6 @@
   "Sel": "1",
   "Prob": 21.8,
   "Equa": 4.59,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-11-29",
-  "Ora": "15:05",
-  "Campionato": "England: Premier League",
-  "Partita": "Brighton and Hove Albion - Newcastle United",
-  "Casa": "Brighton and Hove Albion",
-  "Ospite": "Newcastle United",
-  "Linea_OU": 3.0,
-  "Gol_attesi": 3.16,
-  "Margine": 5.1,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 20.9,
-  "Equa": 4.78,
   "Rif_Book": "Pinnacle"
  }
 ]

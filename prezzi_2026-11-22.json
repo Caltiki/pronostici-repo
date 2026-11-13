@@ -593,7 +593,8 @@
   "Sel": "Over",
   "Prob": 67.6,
   "Equa": 1.48,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-22",
@@ -914,8 +915,7 @@
   "Sel": "Over",
   "Prob": 61.2,
   "Equa": 1.64,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-22",
@@ -1548,8 +1548,7 @@
   "Sel": "NoGol",
   "Prob": 52.8,
   "Equa": 1.89,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-22",
@@ -2011,27 +2010,6 @@
   "Sel": "1 + Over 2.5",
   "Prob": 47.7,
   "Equa": 2.1,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-11-22",
-  "Ora": "17:15",
-  "Campionato": "Italy: Serie B",
-  "Partita": "Arezzo - Padova",
-  "Casa": "Arezzo",
-  "Ospite": "Padova",
-  "Linea_OU": 2.25,
-  "Gol_attesi": 2.33,
-  "Margine": 4.8,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "Gol",
-  "Prob": 47.2,
-  "Equa": 2.12,
   "Rif_Book": "Pinnacle"
  },
  {
@@ -2783,27 +2761,6 @@
   "Principale": "si",
   "Schedina": "si",
   "Fonte": "OddsAPI",
-  "Gruppo": "Under Over",
-  "Mercato": "OU 2.5",
-  "Sel": "Under",
-  "Prob": 38.8,
-  "Equa": 2.57,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-11-22",
-  "Ora": "17:30",
-  "Campionato": "England: Premier League",
-  "Partita": "Liverpool - Manchester United",
-  "Casa": "Liverpool",
-  "Ospite": "Manchester United",
-  "Linea_OU": 3.0,
-  "Gol_attesi": 3.16,
-  "Margine": 3.9,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
   "Gruppo": "Combo",
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 2.5",
@@ -3187,6 +3144,27 @@
   "Sel": "NoGol",
   "Prob": 34.3,
   "Equa": 2.92,
+  "Rif_Book": "Pinnacle"
+ },
+ {
+  "Data": "2026-11-22",
+  "Ora": "17:15",
+  "Campionato": "Italy: Serie B",
+  "Partita": "Arezzo - Padova",
+  "Casa": "Arezzo",
+  "Ospite": "Padova",
+  "Linea_OU": 2.25,
+  "Gol_attesi": 2.33,
+  "Margine": 4.8,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "OddsAPI",
+  "Gruppo": "Under Over",
+  "Mercato": "OU 1.5",
+  "Sel": "Under",
+  "Prob": 32.4,
+  "Equa": 3.09,
   "Rif_Book": "Pinnacle"
  },
  {
