@@ -2000,7 +2000,7 @@
   // gia' all'avvio.
   var CAL = { data: null, filtro: "tutte", cerca: "", aperti: {} };
   // (167) la sezione Campionati: dichiarata qui perche' leggiHash la usa gia' all'avvio
-  var CAMP = { lega: "", scheda: "classifica", vista: "t", gioc: "marcatori", min: "f", ordine: null, verso: -1, idx: null, dati: {} };
+  var CAMP = { versoXG: false, lega: "", scheda: "classifica", vista: "t", gioc: "marcatori", min: "f", ordine: null, verso: -1, idx: null, dati: {} };
   var ELO = { vista: "partite", data: null, filtro: "sito", ordine: "ora", cerca: "", camp: "", quante: 100, dati: null, info: null };
 
   function leggiHash() {
@@ -2280,7 +2280,7 @@
     scriviHash();
     document.querySelectorAll("nav.sezioni button[data-sez]").forEach(function (b) {
       var accesa = stato.sez === "accordo" ? "consensus" : (stato.sez === "mercato" || stato.sez === "wdw" || stato.sez === "sm" || stato.sez === "hp" || stato.sez === "fp") ? "prezzi" :
-        stato.sez === "xg" ? "poisson" : stato.sez;
+        stato.sez === "xg" ? (CAMP.versoXG ? "camp" : "poisson") : stato.sez;
       b.setAttribute("aria-current", String(b.dataset.sez === accesa));
     });
     sezioneInVista();
@@ -7665,7 +7665,8 @@
       nomi.forEach(function (n) { if (leghe[n].fotmob) piu.push(leghe[n].fotmob.data); });
       document.getElementById("aggiornato").textContent = "xG letti il " + (piu.sort().pop() || "?");
 
-      var h = chipsHtml(GRUPPO_POISSON, "xg", "data-gruppo") +
+      var h = (CAMP.versoXG ? '<button type="button" class="indietro" id="torna-camp">\u2190 Campionati</button>' : "") +
+        chipsHtml(GRUPPO_POISSON, "xg", "data-gruppo") +
         '<p class="descr">Gol attesi a partita: quanto valevano le occasioni create (xG) e quelle concesse (xGA). ' +
         "Con poche partite giocate (PG) sono inaffidabili.</p>" +
         '<div class="strumenti xgs">' +
@@ -7725,9 +7726,12 @@
   }
 
   function collegaXG() {
+    var tc = document.getElementById("torna-camp");
+    if (tc) tc.addEventListener("click", function () { CAMP.versoXG = false; stato.sez = "camp"; window.scrollTo(0, 0); disegna(); });
     $cont.querySelectorAll("[data-gruppo]").forEach(function (b) {
       b.addEventListener("click", function () {
         if (b.dataset.gruppo === "xg") return;
+        CAMP.versoXG = false;
         stato.sez = b.dataset.gruppo; stato.cerca = ""; stato.limite = PASSO; disegna();
       });
     });
@@ -7790,7 +7794,8 @@
       document.getElementById("camp-lega").addEventListener("change", function (e) { CAMP.lega = e.target.value; CAMP.ordine = null; scriviHash(); corpoCampionato(); });
       $cont.querySelectorAll("[data-cscheda]").forEach(function (b) {
         b.addEventListener("click", function () {
-          if (b.dataset.cscheda === "xg") { location.hash = "#xg"; return; }
+          // (169) all'xG si va e si torna: un tasto "Campionati" in cima
+          if (b.dataset.cscheda === "xg") { CAMP.versoXG = true; location.hash = "#xg"; return; }
           CAMP.scheda = b.dataset.cscheda; CAMP.ordine = null;
           $cont.querySelectorAll("[data-cscheda]").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
           scriviHash(); corpoCampionato();
@@ -8089,6 +8094,7 @@
   document.querySelectorAll("nav.sezioni button[data-sez]").forEach(function (b) {
     b.addEventListener("click", function () {
       if (stato.sez === b.dataset.sez) return;
+      CAMP.versoXG = false;
       stato.sez = b.dataset.sez;
       stato.cerca = "";
       stato.limite = PASSO;
