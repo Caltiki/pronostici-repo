@@ -1778,9 +1778,9 @@
   // quote, Pinnacle prima e AsianOdds dove Pinnacle non c'e'. La vista e' la
   // soglia di probabilita' senza margine.
   var SB_VISTE = [
-    ["70", "Sopra il 70%", "I favoriti netti del giorno: l\u2019esito pi\u00f9 probabile di ogni partita quando supera il 70%, senza margine. Quote Pinnacle, AsianOdds dove Pinnacle non c\u2019\u00e8."],
-    ["75", "Sopra il 75%", "I favoriti netti del giorno: l\u2019esito pi\u00f9 probabile di ogni partita quando supera il 75%, senza margine. Quote Pinnacle, AsianOdds dove Pinnacle non c\u2019\u00e8."],
-    ["80", "Sopra l\u201980%", "I favoriti netti del giorno: l\u2019esito pi\u00f9 probabile di ogni partita quando supera l\u201980%, senza margine. Quote Pinnacle, AsianOdds dove Pinnacle non c\u2019\u00e8."]
+    ["70", "Sopra il 70%", "I favoriti netti del giorno: l\u2019esito pi\u00f9 probabile di ogni partita quando supera il 70%, senza margine. Quote Pinnacle; dove Pinnacle non c\u2019\u00e8, un altro book sharp o FootyMetrics."],
+    ["75", "Sopra il 75%", "I favoriti netti del giorno: l\u2019esito pi\u00f9 probabile di ogni partita quando supera il 75%, senza margine. Quote Pinnacle; dove Pinnacle non c\u2019\u00e8, un altro book sharp o FootyMetrics."],
+    ["80", "Sopra l\u201980%", "I favoriti netti del giorno: l\u2019esito pi\u00f9 probabile di ogni partita quando supera l\u201980%, senza margine. Quote Pinnacle; dove Pinnacle non c\u2019\u00e8, un altro book sharp o FootyMetrics."]
   ];
   var SB_ORDINI = [["prob", "Per probabilit\u00e0"], ["ora", "Per orario"], ["margine", "Per margine"]];
 
@@ -6099,9 +6099,15 @@
     var t = Math.floor(Date.now() / 600000);
     return Promise.all([
       leggiUrl(BASE + "pinnacle_" + d + ".json?t=" + t, "pinnacle_" + d).catch(function () { return null; }),
-      leggi("asianodds_" + d + ".json").catch(function () { return null; })
+      leggi("asianodds_" + d + ".json").catch(function () { return null; }),
+      leggiUrl(BASE + "altribook_" + d + ".json?t=" + t, "altribook_" + d).catch(function () { return null; }),
+      leggi("footymetrics_" + d + ".json").catch(function () { return null; }),
+      leggi("partite_api_" + d + ".json").catch(function () { return null; })
     ]).then(function (a) {
+      // "Casa|Ospite" come li scrive ogni fonte -> numero API-Football
+      var mappa = a[4] && typeof a[4] === "object" ? a[4] : {};
       var pin = Array.isArray(a[0]) ? a[0] : [], ao = Array.isArray(a[1]) ? a[1] : [];
+      var altri = Array.isArray(a[2]) ? a[2] : [], fm = Array.isArray(a[3]) ? a[3] : [];
       var righe = [];
       pin.forEach(function (r) { var o = favoritoDa(r, "Pinnacle", d); if (o) righe.push(o); });
       // AsianOdds solo dove Pinnacle non c'e': stessa partita = nomi uguali,
@@ -6118,6 +6124,38 @@
         });
         if (gia) return;
         var o = favoritoDa(r, "AsianOdds", d);
+        if (o) righe.push(o);
+      });
+      // (162) I RIPIEGHI, solo dove Pinnacle (e AsianOdds) non c'e': prima il
+      // book sharp degli altri book, poi FootyMetrics. Stessa regola di
+      // "stessa partita" di sopra, contro tutte le righe gia' prese.
+      var idsPin = {};
+      pin.forEach(function (y) { if (y && y.ID_API != null) idsPin[String(y.ID_API)] = 1; });
+      var presa = function (r) {
+        // la stessa partita per numero: quello della riga, o quello che la
+        // mappa da' al nome scritto dalla fonte. Presa se e' di Pinnacle o
+        // se e' gia' fra le righe (un altro book).
+        var id = r.ID_API != null ? r.ID_API : mappa[(r.Casa || "") + "|" + (r.Ospite || "")];
+        if (id != null && (idsPin[String(id)] || righe.some(function (y) { return y.ID_API != null && String(y.ID_API) === String(id); }))) return true;
+        return righe.some(function (y) {
+          if (r.ID_API != null && y.ID_API != null && String(r.ID_API) === String(y.ID_API)) return true;
+          if (y.Casa === r.Casa && y.Ospite === r.Ospite) return true;
+          var a1 = min(r.Ora), b1 = min(y.Ora);
+          return a1 != null && b1 != null && Math.abs(a1 - b1) <= 20 && simile(r.Casa, y.Casa) && simile(r.Ospite, y.Ospite);
+        });
+      };
+      altri.forEach(function (r) {
+        if (presa(r)) return;
+        var o = favoritoDa(r, r.Book || "altri book", d);
+        if (o) righe.push(o);
+      });
+      fm.forEach(function (r) {
+        var ov = num(r.Overround);
+        var x = { Casa: r.Casa, Ospite: r.Ospite, Ora: r.Ora, Lega: [r.Paese, r.Lega].filter(Boolean).join(" - "),
+                  "P1 Shin": num(r.Devig1), "PX Shin": num(r.DevigX), "P2 Shin": num(r.Devig2),
+                  Q1: num(r.Q1), QX: num(r.QX), Q2: num(r.Q2), Margine: ov != null && ov >= 100 ? Math.round((ov - 100) * 10) / 10 : null };
+        if (presa(x)) return;
+        var o = favoritoDa(x, "FootyMetrics", d);
         if (o) righe.push(o);
       });
       return righe.sort(function (x, y) { return String(x.Ora || "").localeCompare(String(y.Ora || "")); });
@@ -6190,7 +6228,14 @@
       '<p class="piccolo">Differenza partita per partita ' + segnato(m.diff) + ", errore standard " + esc(m.es) +
       ", t " + segnato(m.t) + ".";
     if (m.ic && m.ic.length === 2) h += " Intervallo al 95%: da " + segnato(m.ic[0]) + " a " + segnato(m.ic[1]) + ".";
-    return h + "</p>";
+    h += "</p>";
+    // (162) da dove viene il prezzo del mercato: Pinnacle prima, poi i ripieghi
+    if (Array.isArray(m.per_fonte) && m.per_fonte.length) {
+      h += '<p class="piccolo">Prezzo del mercato: ' + m.per_fonte.map(function (x) {
+        return esc(x.fonte) + " " + esc(x.partite) + (x.partite >= 50 ? " (t " + segnato(x.t) + ")" : "");
+      }).join(" · ") + ". Pinnacle in chiusura dove c\u2019\u00e8; AsianOdds fino al 12/11; poi altri book e FootyMetrics solo dove Pinnacle manca.</p>";
+    }
+    return h;
   }
 
   var FO_VISTE = [
