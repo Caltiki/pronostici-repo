@@ -6661,8 +6661,11 @@
       "<h2>" + logoId(p.Casa, p.Pin && p.Pin.ID_Casa, true, campiRiga(p)) + esc(p.Casa) + " – " +
       logoId(p.Ospite, p.Pin && p.Pin.ID_Ospite, true, campiRiga(p)) + esc(p.Ospite) + "</h2>";
     if (p.Elo) {
-      h += '<p class="elo-mini">Elo ' + ev(p.Elo.c.elo) + " \u2013 " + ev(p.Elo.o.elo) + " (" + p.Elo.c.pos + "° e " + p.Elo.o.pos + "° su " +
-        ELO.dati.lista.length + ") · <span class=nw><b class=seg>1</b> " + pv(p.Elo.p[0]) + "</span>" + " · <span class=nw><b class=seg>X</b> " + pv(p.Elo.p[1]) + "</span>" + " · <span class=nw><b class=seg>2</b> " + pv(p.Elo.p[2]) + "</span>" + "</p>";
+      // (159) lo scarto fra le due, come nelle card, non la posizione su 11 mila
+      var dElo = p.Elo.c.elo - p.Elo.o.elo;
+      h += '<p class="elo-mini">Elo ' + ev(p.Elo.c.elo) + " \u2013 " + ev(p.Elo.o.elo) + ' <span class="piccolo">(' + (dElo >= 0 ? "+" : "\u2212") + f0(Math.abs(dElo)) + ")</span>" +
+        // (158) le probabilita' sotto, su una riga loro
+        "<br><span class=nw><b class=seg>1</b> " + pv(p.Elo.p[0]) + "</span>" + " · <span class=nw><b class=seg>X</b> " + pv(p.Elo.p[1]) + "</span>" + " · <span class=nw><b class=seg>2</b> " + pv(p.Elo.p[2]) + "</span>" + "</p>";
     }
     var st = String(fm.Stato || "").toUpperCase(), gc = num(fm.Gol_Casa), go = num(fm.Gol_Ospite);
     var fine = finaleScheda(p);
