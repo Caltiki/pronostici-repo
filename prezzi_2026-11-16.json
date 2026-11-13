@@ -88,7 +88,7 @@
   "Ospite": "Senegal",
   "Linea_OU": "",
   "Gol_attesi": 2.67,
-  "Margine": 3.9,
+  "Margine": 4.1,
   "Movimento": null,
   "Principale": "",
   "Schedina": "",
@@ -96,7 +96,7 @@
   "Gruppo": "1X2",
   "Mercato": "1X2",
   "Sel": "2",
-  "Prob": 78.9,
+  "Prob": 78.8,
   "Equa": 1.27
  },
  {
@@ -188,7 +188,7 @@
   "Ospite": "Senegal",
   "Linea_OU": "",
   "Gol_attesi": 2.67,
-  "Margine": 3.9,
+  "Margine": 4.1,
   "Movimento": null,
   "Principale": "",
   "Schedina": "",
@@ -276,7 +276,7 @@
   "Gruppo": "Under Over",
   "Mercato": "OU 1.5",
   "Sel": "Over",
-  "Prob": 70.9,
+  "Prob": 70.8,
   "Equa": 1.41
  },
  {
@@ -308,7 +308,7 @@
   "Ospite": "Senegal",
   "Linea_OU": "",
   "Gol_attesi": 2.67,
-  "Margine": 3.9,
+  "Margine": 4.1,
   "Movimento": null,
   "Principale": "",
   "Schedina": "",
@@ -316,8 +316,8 @@
   "Gruppo": "Gol NoGol",
   "Mercato": "BTTS",
   "Sel": "NoGol",
-  "Prob": 68.9,
-  "Equa": 1.45
+  "Prob": 68.6,
+  "Equa": 1.46
  },
  {
   "Data": "2026-11-16",
@@ -328,7 +328,7 @@
   "Ospite": "Senegal",
   "Linea_OU": "",
   "Gol_attesi": 2.67,
-  "Margine": 3.9,
+  "Margine": 4.1,
   "Movimento": null,
   "Principale": "",
   "Schedina": "",
@@ -388,7 +388,7 @@
   "Ospite": "Senegal",
   "Linea_OU": "",
   "Gol_attesi": 2.67,
-  "Margine": 3.9,
+  "Margine": 4.1,
   "Movimento": null,
   "Principale": "",
   "Schedina": "",
@@ -608,7 +608,7 @@
   "Ospite": "Senegal",
   "Linea_OU": "",
   "Gol_attesi": 2.67,
-  "Margine": 3.9,
+  "Margine": 4.1,
   "Movimento": null,
   "Principale": "",
   "Schedina": "",
@@ -616,7 +616,7 @@
   "Gruppo": "Combo",
   "Mercato": "Esito + Gol",
   "Sel": "2 + NoGol",
-  "Prob": 61.0,
+  "Prob": 61.1,
   "Equa": 1.64
  },
  {
@@ -798,7 +798,8 @@
   "Mercato": "1X2",
   "Sel": "2",
   "Prob": 55.8,
-  "Equa": 1.79
+  "Equa": 1.79,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-16",
@@ -837,7 +838,7 @@
   "Gruppo": "Under Over",
   "Mercato": "OU 2.5",
   "Sel": "Under",
-  "Prob": 54.8,
+  "Prob": 55.0,
   "Equa": 1.82
  },
  {
@@ -858,8 +859,7 @@
   "Mercato": "BTTS",
   "Sel": "NoGol",
   "Prob": 54.3,
-  "Equa": 1.84,
-  "InSchedina": "si"
+  "Equa": 1.84
  },
  {
   "Data": "2026-11-16",
@@ -990,7 +990,7 @@
   "Ospite": "Senegal",
   "Linea_OU": "",
   "Gol_attesi": 2.67,
-  "Margine": 3.9,
+  "Margine": 4.1,
   "Movimento": null,
   "Principale": "",
   "Schedina": "",
@@ -1050,7 +1050,7 @@
   "Ospite": "Senegal",
   "Linea_OU": "",
   "Gol_attesi": 2.67,
-  "Margine": 3.9,
+  "Margine": 4.1,
   "Movimento": null,
   "Principale": "",
   "Schedina": "",
@@ -1090,7 +1090,7 @@
   "Ospite": "Senegal",
   "Linea_OU": "",
   "Gol_attesi": 2.67,
-  "Margine": 3.9,
+  "Margine": 4.1,
   "Movimento": null,
   "Principale": "",
   "Schedina": "",
@@ -1110,7 +1110,7 @@
   "Ospite": "Senegal",
   "Linea_OU": "",
   "Gol_attesi": 2.67,
-  "Margine": 3.9,
+  "Margine": 4.1,
   "Movimento": null,
   "Principale": "",
   "Schedina": "",
@@ -1163,26 +1163,6 @@
  },
  {
   "Data": "2026-11-16",
-  "Ora": "00:00",
-  "Campionato": "Uruguay Primera Division",
-  "Partita": "Defensor Sporting - Peñarol",
-  "Casa": "Defensor Sporting",
-  "Ospite": "Peñarol",
-  "Linea_OU": "",
-  "Gol_attesi": 2.48,
-  "Margine": 5.5,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "Gol",
-  "Prob": 45.7,
-  "Equa": 2.19
- },
- {
-  "Data": "2026-11-16",
   "Ora": "18:00",
   "Campionato": "Africa Africa Cup of Nations Qualifications",
   "Partita": "Eritrea - Guinea",
@@ -1218,8 +1198,8 @@
   "Gruppo": "Combo",
   "Mercato": "Esito + Gol",
   "Sel": "X2 + Under 2.5",
-  "Prob": 44.9,
-  "Equa": 2.23
+  "Prob": 45.0,
+  "Equa": 2.22
  },
  {
   "Data": "2026-11-16",
@@ -1318,8 +1298,8 @@
   "Gruppo": "Combo",
   "Mercato": "Esito + Gol",
   "Sel": "X2 + NoGol",
-  "Prob": 43.3,
-  "Equa": 2.31
+  "Prob": 43.4,
+  "Equa": 2.3
  },
  {
   "Data": "2026-11-16",
@@ -1358,7 +1338,7 @@
   "Gruppo": "Combo",
   "Mercato": "Esito + Gol",
   "Sel": "2 + Over 1.5",
-  "Prob": 42.8,
+  "Prob": 42.7,
   "Equa": 2.34
  },
  {
@@ -1578,8 +1558,48 @@
   "Gruppo": "Combo",
   "Mercato": "Esito + Gol",
   "Sel": "X2 + Over 2.5",
-  "Prob": 36.1,
-  "Equa": 2.77
+  "Prob": 36.0,
+  "Equa": 2.78
+ },
+ {
+  "Data": "2026-11-16",
+  "Ora": "00:00",
+  "Campionato": "Uruguay Primera Division",
+  "Partita": "Defensor Sporting - Peñarol",
+  "Casa": "Defensor Sporting",
+  "Ospite": "Peñarol",
+  "Linea_OU": "",
+  "Gol_attesi": 2.48,
+  "Margine": 5.5,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "Combo",
+  "Mercato": "Esito + Gol",
+  "Sel": "2 + NoGol",
+  "Prob": 35.0,
+  "Equa": 2.86
+ },
+ {
+  "Data": "2026-11-16",
+  "Ora": "00:00",
+  "Campionato": "Uruguay Primera Division",
+  "Partita": "Defensor Sporting - Peñarol",
+  "Casa": "Defensor Sporting",
+  "Ospite": "Peñarol",
+  "Linea_OU": "",
+  "Gol_attesi": 2.48,
+  "Margine": 5.5,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 25.3,
+  "Equa": 3.96
  },
  {
   "Data": "2026-11-16",
