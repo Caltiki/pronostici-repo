@@ -490,6 +490,8 @@
 
   /* Brier */
   .brier { margin: 10px 0 6px; }
+  table.mercati tr.fonte-chiusa td { color: var(--tenue); font-weight: 400; }
+  table.mercati tr.fonte-chiusa td b { font-weight: 600; }
   .brier .r {
     display: flex; align-items: center; gap: 10px;
     height: 28px; font-size: .82rem;
@@ -6396,18 +6398,25 @@
   // probabilita' dei giorni passati dal 3 novembre (prima si teneva solo la
   // schedina). Uno scarto conta solo se supera di molto l'errore standard,
   // che qui e' anche ottimista: le righe della stessa partita vanno insieme.
+  // (161) AsianOdds non arriva piu' dal 12/11: le sue righe restano come
+  // storico, ma si vede che la fonte e' chiusa.
+  var FONTI_CHIUSE = { AsianOdds: "fino al 12/11" };
   function schedaTaratura(t) {
     var tot = t.totale;
     if (!tot) return "";
     function riga(x, nome) {
       var sc = num(x.scarto), es = num(x.errore_std) || 0;
       var forte = sc != null && Math.abs(sc) > 2 * es && x.righe >= 30;
-      return "<tr><td>" + esc(nome) + "</td><td>" + esc(x.righe) + " <span class=\"piccolo\">(" + esc(x.partite) + ")</span></td><td>" +
+      // (161) le fonti che non ci sono piu': storico, in grigio
+      var chiusa = FONTI_CHIUSE[nome];
+      return "<tr" + (chiusa ? ' class="fonte-chiusa"' : "") + "><td>" + esc(chiusa ? nome + " (" + chiusa + ")" : nome) + "</td><td>" + esc(x.righe) + " <span class=\"piccolo\">(" + esc(x.partite) + ")</span></td><td>" +
         esc(x.prevista) + "%</td><td>" + esc(x.uscita) + "%</td><td>" +
         (forte ? "<b>" : "") + (sc > 0 ? "+" : "") + esc(x.scarto) + (forte ? "</b>" : "") + "</td></tr>";
     }
     function tabella(titolo, voci, nome) {
       if (!voci || !voci.length) return "";
+      // le fonti chiuse in fondo
+      voci = voci.slice().sort(function (a, b) { return (FONTI_CHIUSE[a[nome]] ? 1 : 0) - (FONTI_CHIUSE[b[nome]] ? 1 : 0); });
       return '<p class="sotto-titolo">' + titolo + "</p>" +
         '<table class="mercati"><tr><th></th><th>Righe (partite)</th><th>Previsto</th><th>Uscito</th><th>Scarto</th></tr>' +
         voci.map(function (x) { return riga(x, x[nome]); }).join("") + "</table>";
