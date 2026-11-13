@@ -2047,7 +2047,8 @@
     pin: { indice: "pinnacle_index.json", prefisso: "pinnacle_", viste: PIN_VISTE, ordini: PIN_ORDINI,
            tiene: pinTiene, riepilogo: riepilogoPin, riga: rigaPin, arricchisci: arricchisciPin, nota: "" },
     sure: { indice: "pinnacle_index.json", prefisso: "pinnacle_", viste: SB_VISTE, ordini: SB_ORDINI,
-            tiene: sbTiene, riepilogo: riepilogoSure, riga: rigaSure, arricchisci: null,
+            tiene: sbTiene, riepilogo: riepilogoSure, riga: rigaSure,
+            arricchisci: function (righe) { return freschePinnacle().then(function (fq) { return applicaFresche(righe, fq); }); },
             nota: " \u00b7 la tacca sulle barre segna il 60%" }
   };
 
@@ -4953,11 +4954,62 @@
   // Formazioni e prima lettura del mattino: dai file di pinnacle.yml.
   // apifootball_pro.json e' piccolo e si rilegge a ogni apertura (cambia
   // ogni ora); formazioni_<data>.json lo stesso.
+  // (160) QUOTE PINNACLE FRESCHE E FORMAZIONI DAL PONTE LIVE (/quote): il
+  // ponte su Cloudflare rilegge ogni 9-24 minuti le quote delle nostre
+  // partite che cominciano entro tre ore, e le formazioni da 70 minuti
+  // prima del via. Qui si sovrappongono alle righe dei file Pinnacle (che
+  // il workflow rifa' una volta l'ora) quando sono piu' recenti.
+  var URL_LIVE_Q = "https://caltiki-live.caltiki.workers.dev";
+  var FRESCHE = { t: 0, p: null };
+  function freschePinnacle() {
+    var b = Math.floor(Date.now() / 120000);
+    if (!FRESCHE.p || FRESCHE.t !== b) {
+      FRESCHE.t = b;
+      FRESCHE.p = fetch(URL_LIVE_Q + "/quote?t=" + b).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+    }
+    return FRESCHE.p;
+  }
+  function romaDaIso(iso) {
+    try {
+      var p = new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Rome", year: "numeric", month: "2-digit", day: "2-digit",
+        hour: "2-digit", minute: "2-digit", hour12: false }).formatToParts(new Date(iso));
+      var g = {}; p.forEach(function (x) { g[x.type] = x.value; });
+      return g.year + "-" + g.month + "-" + g.day + " " + (g.hour === "24" ? "00" : g.hour) + ":" + g.minute;
+    } catch (e) { return null; }
+  }
+  function applicaFresche(righe, fq) {
+    var q = fq && fq.quote;
+    if (!q) return righe;
+    (Array.isArray(righe) ? righe : []).forEach(function (r) {
+      var x = r && r.ID_API != null ? q[String(r.ID_API)] : null;
+      if (!x || !Array.isArray(x.q) || !Array.isArray(x.p)) return;
+      var letto = romaDaIso(x.t);
+      if (!letto || (r.Letto && String(r.Letto).slice(0, 16) >= letto)) return;
+      r.Q1 = x.q[0]; r.QX = x.q[1]; r.Q2 = x.q[2];
+      r["P1 Shin"] = x.p[0]; r["PX Shin"] = x.p[1]; r["P2 Shin"] = x.p[2];
+      if (x.m != null) r.Margine = x.m;
+      if (x.ou != null && x.po != null) { r.OU = x.ou; r["P Over"] = x.po; }
+      r.Letto = letto;
+      r.Aggiornato = String(x.t).slice(0, 16);
+      r._fresca = true;
+    });
+    return righe;
+  }
   function pinExtra(data) {
     return Promise.all([
       leggiUrl(BASE + "apifootball_pro.json?t=" + Math.floor(Date.now() / 600000), "apifootball_pro.json").catch(function () { return null; }),
-      leggiUrl(BASE + "formazioni_" + data + ".json?t=" + Math.floor(Date.now() / 600000), "formazioni").catch(function () { return null; })
-    ]).then(function (a) { return { pro: a[0] || {}, form: a[1] || {} }; });
+      leggiUrl(BASE + "formazioni_" + data + ".json?t=" + Math.floor(Date.now() / 600000), "formazioni").catch(function () { return null; }),
+      data === oggi() ? freschePinnacle() : null
+    ]).then(function (a) {
+      var form = a[1] || {}, fq = a[2];
+      // (160) le formazioni uscite dopo l'ultimo giro del workflow
+      if (fq && fq.form) Object.keys(fq.form).forEach(function (id) {
+        var f = fq.form[id];
+        if (!f || !f.titolari) return;
+        if (!form[id] || !form[id].titolari) form[id] = Object.assign({}, form[id] || {}, { titolari: f.titolari });
+      });
+      return { pro: a[0] || {}, form: form };
+    });
   }
   function pinMattino(pro, data, id) {
     var m = pro && pro.mattino;
@@ -5002,8 +5054,9 @@
     return null;
   }
   function arricchisciPin(righe, data) {
-    return Promise.all([pinExtra(data), calendarioPer(data), formaFile(data)]).then(function (a) {
+    return Promise.all([pinExtra(data), calendarioPer(data), formaFile(data), freschePinnacle()]).then(function (a) {
       var x = a[0], cal = a[1], ff = a[2];
+      applicaFresche(righe, a[3]);
       return (Array.isArray(righe) ? righe : []).map(function (r) {
         var p = [num(r["P1 Shin"]), num(r["PX Shin"]), num(r["P2 Shin"])];
         var mt = pinMattino(x.pro, data, r.ID_API);
@@ -5174,7 +5227,7 @@
   // La riga Pinnacle di una partita: {x: pinExtra, id, r: riga o null}.
   // La usano le card dei Pronostici e la scheda della partita (98).
   function trovaPinnacle(data, casa, osp, ora, idr) {
-    return Promise.all([
+    return caricaPinGlobale().catch(function () { return null; }).then(function () { return Promise.all([
       pinExtra(data),
       leggi("partite_api_" + data + ".json").catch(function () { return null; }),
       leggiUrl(BASE + "pinnacle_" + data + ".json?t=" + Math.floor(Date.now() / 600000), "pinnacle_" + data).catch(function () { return null; })
@@ -5199,7 +5252,7 @@
       }
       var r = id ? lista.filter(function (y) { return String(y.ID_API) === String(id); })[0] || null : null;
       return { x: x, id: id || null, r: r };
-    });
+    }); });
   }
   // IL BLOCCO PINNACLE DI UNA PARTITA (107): quote col margine,
   // probabilita' senza margine, movimento dal mattino. Lo stesso nelle card
@@ -8113,7 +8166,8 @@
       return Promise.all([
         leggiUrl(BASE + "pinnacle_" + d + ".json?t=" + t, "pinnacle_" + d).catch(function () { return null; }),
         leggi("partite_api_" + d + ".json").catch(function () { return null; }),
-        d
+        d,
+        freschePinnacle()
       ]);
     })).then(function (a) {
       a.forEach(function (x) {
@@ -8126,6 +8180,7 @@
           PIN_G.lista.push(r);
           PIN_G.perNome[(r.Casa || "") + "|" + (r.Ospite || "")] = r;
         });
+        applicaFresche(lista, x[3]);
         for (var k in mappa) {
           var r = perId[String(mappa[k])];
           if (r) PIN_G.perNome[k] = r;
