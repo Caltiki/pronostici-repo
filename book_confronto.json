@@ -1,66 +1,66 @@
 {
- "aggiornato": "2026-11-13 11:07",
+ "aggiornato": "2026-11-13 13:07",
  "nota": "scarto medio in punti percentuali dall'1X2 senza margine di Pinnacle, per segno",
  "book": [
   {
-   "book": "Betfair",
-   "partite": 92,
-   "scarto_medio": 0.78,
-   "margine_medio": 9.4
-  },
-  {
    "book": "media dei book",
-   "partite": 92,
-   "scarto_medio": 0.8,
+   "partite": 103,
+   "scarto_medio": 0.77,
    "margine_medio": null
   },
   {
-   "book": "Marathonbet",
-   "partite": 92,
-   "scarto_medio": 0.93,
-   "margine_medio": 5.16
+   "book": "Betfair",
+   "partite": 103,
+   "scarto_medio": 0.79,
+   "margine_medio": 9.38
   },
   {
-   "book": "BetVictor",
-   "partite": 92,
-   "scarto_medio": 0.93,
-   "margine_medio": 9.57
+   "book": "Marathonbet",
+   "partite": 103,
+   "scarto_medio": 0.9,
+   "margine_medio": 5.14
   },
   {
    "book": "1xBet",
-   "partite": 92,
-   "scarto_medio": 0.95,
-   "margine_medio": 4.47
+   "partite": 103,
+   "scarto_medio": 0.92,
+   "margine_medio": 4.41
+  },
+  {
+   "book": "BetVictor",
+   "partite": 103,
+   "scarto_medio": 0.94,
+   "margine_medio": 9.43
   },
   {
    "book": "Betano",
-   "partite": 92,
-   "scarto_medio": 1.01,
-   "margine_medio": 3.71
+   "partite": 103,
+   "scarto_medio": 0.99,
+   "margine_medio": 3.67
   },
   {
    "book": "William Hill",
-   "partite": 92,
-   "scarto_medio": 1.05,
-   "margine_medio": 9.62
-  },
-  {
-   "book": "Bet365",
-   "partite": 92,
-   "scarto_medio": 1.13,
-   "margine_medio": 6.97
+   "partite": 103,
+   "scarto_medio": 1.02,
+   "margine_medio": 9.61
   },
   {
    "book": "Dafabet",
-   "partite": 92,
-   "scarto_medio": 1.14,
-   "margine_medio": 4.25
+   "partite": 103,
+   "scarto_medio": 1.07,
+   "margine_medio": 4.24
+  },
+  {
+   "book": "Bet365",
+   "partite": 103,
+   "scarto_medio": 1.13,
+   "margine_medio": 6.94
   },
   {
    "book": "SBO",
-   "partite": 92,
-   "scarto_medio": 2.07,
-   "margine_medio": 13.91
+   "partite": 103,
+   "scarto_medio": 1.97,
+   "margine_medio": 13.56
   }
  ]
 }
