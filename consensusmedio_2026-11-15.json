@@ -7,8 +7,8 @@
   "Ospite": "Coban Imperial",
   "Segno": "1",
   "P1": 52.0,
-  "PX": 27.0,
-  "P2": 21.0,
+  "PX": 26.0,
+  "P2": 22.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -45,9 +45,9 @@
   "Casa": "Gimnasia Jujuy",
   "Ospite": "Almirante Brown",
   "Segno": "1",
-  "P1": 49.0,
+  "P1": 49.5,
   "PX": 28.5,
-  "P2": 22.5,
+  "P2": 22.0,
   "Fonti": 2,
   "Elenco": "betimate, ratingbet"
  },
@@ -266,9 +266,9 @@
   "Casa": "Deportivo Ocotal",
   "Ospite": "Xilotepelt FC",
   "Segno": "1",
-  "P1": 45.0,
+  "P1": 44.0,
   "PX": 20.0,
-  "P2": 35.0,
+  "P2": 36.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -422,8 +422,8 @@
   "Casa": "Charlotte Independence",
   "Ospite": "AC Boise",
   "Segno": "1",
-  "P1": 52.0,
-  "PX": 19.0,
+  "P1": 51.0,
+  "PX": 20.0,
   "P2": 29.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -449,8 +449,8 @@
   "Ospite": "Metropolitan FA",
   "Segno": "2",
   "P1": 9.0,
-  "PX": 14.0,
-  "P2": 77.0,
+  "PX": 13.0,
+  "P2": 78.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -487,8 +487,8 @@
   "Casa": "Atletico Choloma",
   "Ospite": "Real Espana",
   "Segno": "2",
-  "P1": 19.0,
-  "PX": 25.0,
+  "P1": 20.0,
+  "PX": 24.0,
   "P2": 56.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -514,8 +514,8 @@
   "Ospite": "Genesis de Comayagua",
   "Segno": "1",
   "P1": 58.0,
-  "PX": 23.0,
-  "P2": 19.0,
+  "PX": 24.0,
+  "P2": 18.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -786,8 +786,8 @@
   "Casa": "Eastern Suburbs Auckland (W)",
   "Ospite": "Canterbury United (W)",
   "Segno": "1",
-  "P1": 97.0,
-  "PX": 2.0,
+  "P1": 98.0,
+  "PX": 1.0,
   "P2": 1.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -2485,19 +2485,6 @@
  {
   "Data": "2026-11-15",
   "Ora": "20:30",
-  "Lega": "URUGUAY - LIGA AUF CLAUSURA",
-  "Casa": "Danubio",
-  "Ospite": "Liverpool Montevideo",
-  "Segno": "2",
-  "P1": 27.0,
-  "PX": 29.0,
-  "P2": 44.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
- },
- {
-  "Data": "2026-11-15",
-  "Ora": "20:30",
   "Lega": "Uruguay - Primera Division",
   "Casa": "Danubio",
   "Ospite": "Liverpool",
@@ -2507,6 +2494,19 @@
   "P2": 49.5,
   "Fonti": 2,
   "Elenco": "footymetrics, ratingbet"
+ },
+ {
+  "Data": "2026-11-15",
+  "Ora": "20:30",
+  "Lega": "URUGUAY - LIGA AUF CLAUSURA",
+  "Casa": "Danubio",
+  "Ospite": "Liverpool Montevideo",
+  "Segno": "2",
+  "P1": 27.0,
+  "PX": 29.0,
+  "P2": 44.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-15",
@@ -2524,19 +2524,6 @@
  {
   "Data": "2026-11-15",
   "Ora": "20:45",
-  "Lega": "INTERNATIONAL - UEFA NATIONS LEAGUE A GRP. 3",
-  "Casa": "Croatia",
-  "Ospite": "Czech Republic",
-  "Segno": "1",
-  "P1": 59.0,
-  "PX": 21.0,
-  "P2": 20.0,
-  "Fonti": 1,
-  "Elenco": "statarea"
- },
- {
-  "Data": "2026-11-15",
-  "Ora": "20:45",
   "Lega": "International: UEFA Nations League A",
   "Casa": "Croatia",
   "Ospite": "Czechia",
@@ -2546,6 +2533,19 @@
   "P2": 12.0,
   "Fonti": 1,
   "Elenco": "ratingbet"
+ },
+ {
+  "Data": "2026-11-15",
+  "Ora": "20:45",
+  "Lega": "INTERNATIONAL - UEFA NATIONS LEAGUE A GRP. 3",
+  "Casa": "Croatia",
+  "Ospite": "Czech Republic",
+  "Segno": "1",
+  "P1": 59.0,
+  "PX": 21.0,
+  "P2": 20.0,
+  "Fonti": 1,
+  "Elenco": "statarea"
  },
  {
   "Data": "2026-11-15",

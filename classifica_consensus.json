@@ -1,37 +1,37 @@
 {
  "medio": {
   "copertura": {
-   "1": 24399,
-   "2": 2910,
-   "3": 1501,
+   "1": 24419,
+   "2": 2911,
+   "3": 1502,
    "4": 695,
    "5": 259
   },
-  "totale": 29764,
-  "brier": 0.5778,
-  "brier_clima": 0.6406,
+  "totale": 29786,
+  "brier": 0.5779,
+  "brier_clima": 0.6407,
   "fonti": [
    {
     "nome": "betimate",
-    "partite": 28357,
+    "partite": 28377,
     "brier": 0.5779,
     "brier_media": 0.5772
    },
    {
     "nome": "footymetrics",
-    "partite": 2857,
-    "brier": 0.5985,
-    "brier_media": 0.5888
+    "partite": 2859,
+    "brier": 0.5986,
+    "brier_media": 0.5889
    },
    {
     "nome": "ratingbet",
-    "partite": 1397,
-    "brier": 0.5612,
-    "brier_media": 0.567
+    "partite": 1399,
+    "brier": 0.5613,
+    "brier_media": 0.5672
    },
    {
     "nome": "soccersite",
-    "partite": 3608,
+    "partite": 3609,
     "brier": 0.5922,
     "brier_media": 0.5841
    },
@@ -43,47 +43,47 @@
    }
   ],
   "mercato": {
-   "partite": 4745,
+   "partite": 4746,
    "poche": false,
    "brier": 0.5867,
    "brier_mercato": 0.5718,
    "diff": 0.0149,
    "es": 0.0021,
-   "t": 7.12,
+   "t": 7.13,
    "ic": [
     0.0108,
     0.019
    ]
   }
  },
- "aggiornato": "2026-11-13 01:07",
+ "aggiornato": "2026-11-13 03:33",
  "accordo": {
-  "totale": 2572,
+  "totale": 2573,
   "prende": {
    "statarea": {
     "prese": 1059,
-    "su": 1890,
+    "su": 1891,
     "pct": 56.0
    },
    "webpronostici": {
     "prese": 539,
-    "su": 1015,
+    "su": 1016,
     "pct": 53.1
    },
    "consensus": {
     "prese": 1176,
-    "su": 2214,
+    "su": 2215,
     "pct": 53.1
    }
   },
   "mercato": {
-   "partite": 1475,
+   "partite": 1476,
    "poche": false,
-   "brier": 0.5761,
-   "brier_mercato": 0.5632,
-   "diff": 0.0129,
+   "brier": 0.5763,
+   "brier_mercato": 0.5635,
+   "diff": 0.0128,
    "es": 0.0033,
-   "t": 3.91,
+   "t": 3.9,
    "ic": [
     0.0064,
     0.0193
@@ -91,7 +91,7 @@
   },
   "favorito_mercato": 56.7,
   "testa_a_testa": {
-   "partite": 1254,
+   "partite": 1255,
    "consensus": 55.9,
    "mercato": 58.6
   }
