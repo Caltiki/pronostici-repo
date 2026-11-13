@@ -971,7 +971,8 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 58.2,
-  "Equa": 1.72
+  "Equa": 1.72,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-16",
@@ -991,8 +992,7 @@
   "Mercato": "BTTS",
   "Sel": "Gol",
   "Prob": 57.7,
-  "Equa": 1.73,
-  "InSchedina": "si"
+  "Equa": 1.73
  },
  {
   "Data": "2026-11-16",
@@ -1874,26 +1874,6 @@
  },
  {
   "Data": "2026-11-16",
-  "Ora": "20:30",
-  "Campionato": "Spain La Liga 2",
-  "Partita": "Albacete - Celta Fortuna",
-  "Casa": "Albacete",
-  "Ospite": "Celta Fortuna",
-  "Linea_OU": "",
-  "Gol_attesi": 3.03,
-  "Margine": 2.2,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "NoGol",
-  "Prob": 42.3,
-  "Equa": 2.37
- },
- {
-  "Data": "2026-11-16",
   "Ora": "20:45",
   "Campionato": "Italy Serie C - Girone B",
   "Partita": "Perugia - Torres",
@@ -2280,5 +2260,25 @@
   "Prob": 34.1,
   "Equa": 2.93,
   "ID_API": 1609130
+ },
+ {
+  "Data": "2026-11-16",
+  "Ora": "20:30",
+  "Campionato": "Spain La Liga 2",
+  "Partita": "Albacete - Celta Fortuna",
+  "Casa": "Albacete",
+  "Ospite": "Celta Fortuna",
+  "Linea_OU": "",
+  "Gol_attesi": 3.03,
+  "Margine": 2.2,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 22.6,
+  "Equa": 4.43
  }
 ]
