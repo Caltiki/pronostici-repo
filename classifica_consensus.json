@@ -1,39 +1,39 @@
 {
  "medio": {
   "copertura": {
-   "1": 24419,
-   "2": 2911,
-   "3": 1502,
-   "4": 695,
+   "1": 24431,
+   "2": 2915,
+   "3": 1503,
+   "4": 697,
    "5": 259
   },
-  "totale": 29786,
+  "totale": 29805,
   "brier": 0.5779,
-  "brier_clima": 0.6407,
+  "brier_clima": 0.6406,
   "fonti": [
    {
     "nome": "betimate",
-    "partite": 28377,
+    "partite": 28391,
     "brier": 0.5779,
     "brier_media": 0.5772
    },
    {
     "nome": "footymetrics",
-    "partite": 2859,
-    "brier": 0.5986,
-    "brier_media": 0.5889
+    "partite": 2864,
+    "brier": 0.5988,
+    "brier_media": 0.5892
    },
    {
     "nome": "ratingbet",
-    "partite": 1399,
-    "brier": 0.5613,
-    "brier_media": 0.5672
+    "partite": 1405,
+    "brier": 0.563,
+    "brier_media": 0.5684
    },
    {
     "nome": "soccersite",
-    "partite": 3609,
-    "brier": 0.5922,
-    "brier_media": 0.5841
+    "partite": 3615,
+    "brier": 0.5925,
+    "brier_media": 0.5844
    },
    {
     "nome": "statarea",
@@ -43,20 +43,43 @@
    }
   ],
   "mercato": {
-   "partite": 4746,
+   "partite": 4838,
    "poche": false,
-   "brier": 0.5867,
-   "brier_mercato": 0.5718,
+   "brier": 0.5857,
+   "brier_mercato": 0.5708,
    "diff": 0.0149,
    "es": 0.0021,
-   "t": 7.13,
+   "t": 7.21,
    "ic": [
-    0.0108,
+    0.0109,
     0.019
+   ],
+   "per_fonte": [
+    {
+     "fonte": "AsianOdds",
+     "partite": 4684,
+     "diff": 0.0143,
+     "es": 0.0021,
+     "t": 6.81
+    },
+    {
+     "fonte": "Pinnacle",
+     "partite": 152,
+     "diff": 0.0353,
+     "es": 0.0124,
+     "t": 2.84
+    },
+    {
+     "fonte": "FootyMetrics",
+     "partite": 2,
+     "diff": -0.0716,
+     "es": 0.0912,
+     "t": -0.78
+    }
    ]
   }
  },
- "aggiornato": "2026-11-13 03:33",
+ "aggiornato": "2026-11-13 17:16",
  "accordo": {
   "totale": 2573,
   "prende": {
@@ -77,22 +100,38 @@
    }
   },
   "mercato": {
-   "partite": 1476,
+   "partite": 1478,
    "poche": false,
    "brier": 0.5763,
-   "brier_mercato": 0.5635,
-   "diff": 0.0128,
+   "brier_mercato": 0.5633,
+   "diff": 0.013,
    "es": 0.0033,
-   "t": 3.9,
+   "t": 3.96,
    "ic": [
-    0.0064,
-    0.0193
+    0.0066,
+    0.0194
+   ],
+   "per_fonte": [
+    {
+     "fonte": "AsianOdds",
+     "partite": 1470,
+     "diff": 0.0124,
+     "es": 0.0033,
+     "t": 3.78
+    },
+    {
+     "fonte": "Pinnacle",
+     "partite": 8,
+     "diff": 0.1241,
+     "es": 0.0551,
+     "t": 2.25
+    }
    ]
   },
-  "favorito_mercato": 56.7,
+  "favorito_mercato": 56.6,
   "testa_a_testa": {
-   "partite": 1255,
-   "consensus": 55.9,
+   "partite": 1257,
+   "consensus": 55.8,
    "mercato": 58.6
   }
  }

@@ -699,6 +699,28 @@
  },
  {
   "Data": "2026-11-28",
+  "Ora": "16:15",
+  "Campionato": "Spain: Laliga",
+  "Partita": "Málaga - Athletic Bilbao",
+  "Casa": "Málaga",
+  "Ospite": "Athletic Bilbao",
+  "Linea_OU": 2.5,
+  "Gol_attesi": 2.79,
+  "Margine": 5.0,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "OddsAPI",
+  "Gruppo": "Under Over",
+  "Mercato": "OU 3.5",
+  "Sel": "Under",
+  "Prob": 69.3,
+  "Equa": 1.44,
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
+ },
+ {
+  "Data": "2026-11-28",
   "Ora": "21:00",
   "Campionato": "Spain: Laliga",
   "Partita": "Real Madrid - Alavés",
@@ -1694,8 +1716,7 @@
   "Sel": "2",
   "Prob": 54.6,
   "Equa": 1.83,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-28",
@@ -3398,27 +3419,6 @@
   "Sel": "Under",
   "Prob": 25.0,
   "Equa": 3.99,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-11-28",
-  "Ora": "16:15",
-  "Campionato": "Spain: Laliga",
-  "Partita": "Málaga - Athletic Bilbao",
-  "Casa": "Málaga",
-  "Ospite": "Athletic Bilbao",
-  "Linea_OU": 2.5,
-  "Gol_attesi": 2.79,
-  "Margine": 5.0,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 24.6,
-  "Equa": 4.07,
   "Rif_Book": "Pinnacle"
  },
  {
