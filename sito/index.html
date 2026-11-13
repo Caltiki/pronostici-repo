@@ -1556,6 +1556,10 @@
   .mk > span { display: block; font-size: .78rem; font-weight: 700; color: var(--tenue); text-transform: uppercase; letter-spacing: .02em; }
   .mk p { margin: 2px 0 0; }
   .stat-barra i { display: block; height: 100%; background: var(--evidenza); }
+  /* (165) confronto squadre: il valore migliore in evidenza */
+  .stat-riga b.meglio { color: var(--buono); }
+  .conf .chips { margin: 4px 0 6px; }
+  .conf h4 { margin: 14px 0 2px; font-size: .9rem; }
   .tab-scorre { overflow-x: auto; }
   details.tutte-linee { margin-top: 8px; }
   details.tutte-linee summary { cursor: pointer; color: var(--evidenza); font-weight: 600; }
@@ -7065,8 +7069,11 @@
           p.PinId != null ? leggiUrl(BASE + "pinmercati_" + d + ".json?t=" + tt, "pinmercati_" + d).catch(function () { return null; }) : null,
           p.PinId != null && d <= oggi() ? leggiUrl(BASE + "statistiche_" + d + ".json?t=" + tt, "statistiche_" + d).catch(function () { return null; }) : null,
           p.PinId != null ? Promise.all([caricaElo().catch(function () { return null; }), calendarioIds(d)]) : null,
-          p.PinId != null ? classificheApi() : null
+          p.PinId != null ? classificheApi() : null,
+          // (165) il confronto squadre: per numero di squadra, dal calendario
+          (p.PinId != null || p.ID_API != null) ? Promise.all([caricaConfronto(), calendarioIds(d)]) : null
         ]).then(function (a2) {
+          p.Conf = confrontoDi(a2[6], p.PinId != null ? p.PinId : p.ID_API);
           // (140) l'Elo delle due squadre, per numero
           var ids = a2[4] && a2[4][1] ? a2[4][1][String(p.PinId)] : null;
           // (143) le posizioni in classifica, per numero di squadra
@@ -7237,10 +7244,129 @@
       '<p class="piccolo">Dove un valore manca, non è disponibile per questa partita.</p>';
   }
 
+  // ---------------------------------------------------- CONFRONTO SQUADRE
+  // (165) Le medie di stagione delle due squadre, a partita:
+  //   - squadre_stat.json (confronto_squadre.py, dallo storico delle
+  //     statistiche di API-Football): in casa e fuori, gol, xG, tiri, tiri
+  //     in porta, possesso, angoli, cartellini, falli;
+  //   - sofascore_squadre.json (sofascore_squadre_ci.py): quello che
+  //     API-Football non da', grandi occasioni, xG dei tiri in porta, gol
+  //     rispetto agli xG. Sofascore da' la stagione intera, casa e fuori
+  //     insieme.
+  // Si vede solo se ci sono tutte e due le squadre (i nostri 30 campionati).
+  var CONF = { prom: null, vista: "cf" };
+  var CONF_VOCI = [["Gol fatti", "gf", 1, 2], ["Gol subiti", "gs", -1, 2], ["xG fatti", "xg", 1, 2], ["xG subiti", "xga", -1, 2],
+    ["Tiri", "tiri", 1, 1], ["Tiri subiti", "tiri_s", -1, 1], ["Tiri in porta", "porta", 1, 1], ["Tiri in porta subiti", "porta_s", -1, 1],
+    ["Possesso", "pos", 1, "%"], ["Angoli", "ang", 1, 1], ["Angoli subiti", "ang_s", -1, 1],
+    ["Gialli", "gialli", 0, 1], ["Rossi", "rossi", 0, 2], ["Falli", "falli", 0, 1]];
+  var CONF_SOFA = [["Grandi occasioni create", "bc", 1, 1], ["Grandi occasioni sprecate", "bcm", 0, 1], ["xG dei tiri in porta (xGOT)", "xgot", 1, 2]];
+  function caricaConfronto() {
+    if (!CONF.prom) {
+      var t = Math.floor(Date.now() / 600000);
+      CONF.prom = Promise.all([
+        leggiUrl(BASE + "squadre_stat.json?t=" + t, "squadre_stat").catch(function () { return null; }),
+        leggiUrl(BASE + "sofascore_squadre.json?t=" + t, "sofascore_squadre").catch(function () { return null; })
+      ]).then(function (a) { return { api: a[0], sofa: a[1] }; });
+      CONF.prom.catch(function () { CONF.prom = null; });
+    }
+    return CONF.prom;
+  }
+  function confrontoDi(x, fid) {
+    if (!x || fid == null || !x[0] || !x[1]) return null;
+    var ids = x[1][String(fid)], A = x[0].api, S = x[0].sofa;
+    if (!ids || !A || !A.squadre) return null;
+    var c = A.squadre[String(ids[0])], o = A.squadre[String(ids[1])];
+    var sc = S && S.squadre ? S.squadre[String(ids[0])] : null, so = S && S.squadre ? S.squadre[String(ids[1])] : null;
+    if (!(c && o) && !(sc && so)) return null;
+    return { campi: A.campi || [], leghe: A.leghe || {}, agg: A.aggiornato, c: c && o ? c : null, o: c && o ? o : null,
+      scampi: S ? S.campi || [] : [], sagg: S ? S.aggiornato : null, sc: sc && so ? sc : null, so: sc && so ? so : null };
+  }
+  // un lato ("c" casa, "f" fuori) o la stagione intera ("t"), media pesata sulle partite
+  function confValore(q, campi, k, dove) {
+    var i = campi.indexOf(k);
+    if (i < 0 || !q) return null;
+    var pesa = function (lato) { var L = q[lato]; return L ? (k === "xg" || k === "xga" ? L.nx : L.n) || 0 : 0; };
+    if (dove !== "t") { var L = q[dove]; return L && L.v ? L.v[i] : null; }
+    var tot = 0, w = 0;
+    ["c", "f"].forEach(function (lato) {
+      var v = q[lato] && q[lato].v ? q[lato].v[i] : null, n = pesa(lato);
+      if (v != null && n) { tot += v * n; w += n; }
+    });
+    return w ? tot / w : null;
+  }
+  function rigaConfronto(nome, a, b, verso, fmt) {
+    if (a == null && b == null) return "";
+    var fa = function (x) { return x == null ? "\u2013" : (fmt === "%" ? Math.round(x) + "%" : x.toFixed(fmt)); };
+    var tot = Math.abs(a || 0) + Math.abs(b || 0), qa = tot > 0 ? 100 * Math.abs(a || 0) / tot : 50;
+    var ma = "", mb = "";
+    if (verso && a != null && b != null && Math.abs(a - b) > 1e-9) {
+      var meglioA = verso > 0 ? a > b : a < b;
+      ma = meglioA ? ' class="meglio"' : ""; mb = meglioA ? "" : ' class="meglio"';
+    }
+    return '<div class="stat-riga"><b' + ma + ">" + fa(a) + "</b><span>" + esc(nome) + "</span><b" + mb + ">" + fa(b) + "</b>" +
+      '<div class="stat-barra"><i style="width:' + qa.toFixed(1) + '%"></i></div></div>';
+  }
+  function corpoConfronto(p) {
+    var C = p.Conf, h = "";
+    if (C.c && C.o) {
+      var cf = CONF.vista === "cf", dc = cf ? "c" : "t", dof = cf ? "f" : "t";
+      var nc = cf ? C.c.c.n : C.c.c.n + C.c.f.n, no = cf ? C.o.f.n : C.o.c.n + C.o.f.n;
+      h += '<p class="piccolo">Media a partita nella stagione in corso: <b>' + esc(p.Casa) + "</b> " + (cf ? "in casa" : "in tutto") +
+        " (" + nc + " partite), <b>" + esc(p.Ospite) + "</b> " + (cf ? "fuori casa" : "in tutto") + " (" + no + " partite). In verde il valore migliore.</p>";
+      if (String(C.c.l) !== String(C.o.l)) {
+        var nl = function (q) { var L = C.leghe[String(q.l)]; return L && L.n ? L.n : "il suo campionato"; };
+        h += '<p class="piccolo">Squadre di campionati diversi: ' + esc(p.Casa) + " in " + esc(nl(C.c)) + ", " + esc(p.Ospite) + " in " + esc(nl(C.o)) + ".</p>";
+      }
+      h += '<div class="stat-testa"><span>' + esc(p.Casa) + "</span><span>" + esc(p.Ospite) + "</span></div>";
+      h += CONF_VOCI.map(function (v) {
+        return rigaConfronto(v[0], confValore(C.c, C.campi, v[1], dc), confValore(C.o, C.campi, v[1], dof), v[2], v[3]);
+      }).join("");
+      var xc = cf ? C.c.c : null, xo = cf ? C.o.f : null;
+      if (xc && xo && (xc.nx < xc.n || xo.nx < xo.n)) h += '<p class="piccolo">Gli xG sono la media delle partite che li hanno (' + xc.nx + " e " + xo.nx + ").</p>";
+    }
+    if (C.sc && C.so) {
+      var ix = function (k) { return C.scampi.indexOf(k); };
+      h += "<h4>Da Sofascore</h4>" + '<p class="piccolo">Tutta la stagione, casa e fuori insieme, a partita (' + C.sc.pg + " e " + C.so.pg + " partite).</p>";
+      if (!(C.c && C.o)) h += '<div class="stat-testa"><span>' + esc(p.Casa) + "</span><span>" + esc(p.Ospite) + "</span></div>";
+      h += CONF_SOFA.map(function (v) {
+        var i = ix(v[1]);
+        return i < 0 ? "" : rigaConfronto(v[0], C.sc.v[i], C.so.v[i], v[2], v[3]);
+      }).join("");
+      if (C.sc.gol_meno_xg != null || C.so.gol_meno_xg != null) {
+        var sg = function (x) { return x == null ? "\u2013" : (x > 0 ? "+" : x < 0 ? "\u2212" : "") + Math.abs(x).toFixed(1); };
+        h += '<div class="stat-riga"><b>' + sg(C.sc.gol_meno_xg) + "</b><span>Gol meno xG nella stagione</span><b>" + sg(C.so.gol_meno_xg) + "</b></div>" +
+          '<p class="piccolo">Gol meno xG: sopra zero la squadra ha segnato più di quanto valevano le occasioni (precisione o fortuna), sotto zero meno.</p>';
+      }
+    }
+    var fonti = [];
+    if (C.c && C.o) fonti.push("API-Football (" + esc(String(C.agg || "").slice(0, 10)) + ")");
+    if (C.sc && C.so) fonti.push("Sofascore (" + esc(String(C.sagg || "").slice(0, 10)) + ")");
+    return h + '<p class="piccolo">Fonti: ' + fonti.join(", ") + ".</p>";
+  }
+  function bloccoConfronto(p) {
+    if (!p.Conf) return "";
+    var bott = p.Conf.c && p.Conf.o ? '<div class="chips">' +
+      '<button type="button" data-cv="cf" aria-pressed="' + (CONF.vista === "cf") + '">In casa / fuori</button>' +
+      '<button type="button" data-cv="t" aria-pressed="' + (CONF.vista === "t") + '">Tutta la stagione</button></div>' : "";
+    return '<div class="scheda conf"><h3>Confronto squadre</h3>' + bott + '<div class="conf-corpo">' + corpoConfronto(p) + "</div></div>";
+  }
+  function collegaConfronto(p) {
+    if (!p.Conf) return;
+    $cont.querySelectorAll(".conf [data-cv]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        CONF.vista = b.dataset.cv;
+        $cont.querySelectorAll(".conf [data-cv]").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+        var c = $cont.querySelector(".conf .conf-corpo");
+        if (c) c.innerHTML = corpoConfronto(p);
+      });
+    });
+  }
+
   function disegnaSchedaPartita(p, d) {
     var m = mercatoScheda(p);
-    $cont.innerHTML = testaScheda(p, d) + bloccoStatistiche(p) + bloccoMercato(p, m) + bloccoAltriMercati(p) + bloccoFormazioni(p, d) + bloccoPrezzi(p, d) + bloccoPoisson(p) +
+    $cont.innerHTML = testaScheda(p, d) + bloccoStatistiche(p) + bloccoMercato(p, m) + bloccoAltriMercati(p) + bloccoFormazioni(p, d) + bloccoConfronto(p) + bloccoPrezzi(p, d) + bloccoPoisson(p) +
       bloccoFonti(p, m) + bloccoSure(p) + bloccoAltro(p) + piedeScheda(p);
+    collegaConfronto(p);
     $cont.querySelectorAll("input[data-sp]").forEach(function (cb) {
       cb.addEventListener("change", function () {
         var r = righeSchedaPrezzi[Number(cb.dataset.sp)];
