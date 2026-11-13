@@ -1339,6 +1339,9 @@
   .cal-lega { margin-bottom: 6px; border: 1px solid var(--bordo); border-radius: var(--raggio); background: var(--scheda); }
   .cal-lega > summary { cursor: pointer; padding: 10px 12px; font-weight: 700; font-size: .9rem; }
   .cal-lega > summary small { color: var(--tenue); font-weight: 500; margin-left: 6px; }
+  /* (163) nome della lega in rosso, stesso rosso delle percentuali */
+  .cal-lega > summary .nome-lega { color: #ff6b6b; }
+  :root[data-theme="light"] .cal-lega > summary .nome-lega { color: #c62828; }
   .cal-riga { display: grid; grid-template-columns: 48px 1fr auto; gap: 8px; padding: 7px 12px; border-top: 1px solid var(--bordo); font-size: .9rem; align-items: center; }
   .cal-riga .m { color: var(--tenue); font-variant-numeric: tabular-nums; font-size: .82rem; }
   .cal-riga .r { white-space: nowrap; }
@@ -7801,7 +7804,7 @@
     h += leghe.map(function (k) {
       var v = gruppi[k].sort(function (a, b) { return String(a.ora).localeCompare(String(b.ora)) || String(a.casa).localeCompare(String(b.casa)); });
       var aperto = CAL.aperti[k] != null ? CAL.aperti[k] : (apri || !!conSito[k]);
-      return '<details class="cal-lega" data-lega="' + esc(k) + '"' + (aperto ? " open" : "") + "><summary>" + esc(k) +
+      return '<details class="cal-lega" data-lega="' + esc(k) + '"' + (aperto ? " open" : "") + "><summary><span class=\"nome-lega\">" + esc(k) + "</span>" +
         ' <small>' + v.length + (conSito[k] ? " · sul sito" : "") + "</small></summary>" +
         v.map(function (x) {
           var pin = PIN_G.perId[String(x.id)], s = statoCal(x), ns = !!sito[String(x.id)];
