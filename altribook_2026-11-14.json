@@ -1,6 +1,40 @@
 [
  {
   "Data": "2026-11-14",
+  "Ora": "06:00",
+  "Lega": "Japan J3 League",
+  "Casa": "Kitakyushu",
+  "Ospite": "Thespakusatsu Gunma",
+  "P1 Shin": 51.6,
+  "PX Shin": 23.5,
+  "P2 Shin": 25.0,
+  "Margine": 14.7,
+  "OU": 3.25,
+  "P Over": 51.9,
+  "P Gol": null,
+  "Linee OU": {
+   "3": [
+    1.64,
+    2.13
+   ],
+   "3.25": [
+    1.82,
+    1.96
+   ]
+  },
+  "Aggiornato": "2026-11-14T04:34",
+  "ID_API": 1555803,
+  "ID_Casa": 805,
+  "ID_Ospite": 756,
+  "Letto": "2026-11-14 15:08",
+  "Book": "SBO",
+  "Q1": 1.75,
+  "QX": 3.57,
+  "Q2": 3.38,
+  "Stato": "FT"
+ },
+ {
+  "Data": "2026-11-14",
   "Ora": "11:00",
   "Lega": "Russia Supreme Division Women",
   "Casa": "Lokomotiv Moskva W",
@@ -90,7 +124,7 @@
   "ID_API": 1530043,
   "ID_Casa": 14132,
   "ID_Ospite": 16490,
-  "Letto": "2026-11-14 14:08",
+  "Letto": "2026-11-14 15:08",
   "Book": "Marathonbet",
   "Q1": 1.11,
   "QX": 7.0,
@@ -192,7 +226,7 @@
   "ID_API": 1530041,
   "ID_Casa": 14133,
   "ID_Ospite": 14134,
-  "Letto": "2026-11-14 14:08",
+  "Letto": "2026-11-14 15:08",
   "Book": "1xBet",
   "Q1": 75.0,
   "QX": 12.0,
@@ -238,7 +272,7 @@
   "ID_API": 1534554,
   "ID_Casa": 379,
   "ID_Ospite": 392,
-  "Letto": "2026-11-14 14:08",
+  "Letto": "2026-11-14 15:08",
   "Book": "1xBet",
   "Q1": 1.43,
   "QX": 4.34,
@@ -280,7 +314,7 @@
   "ID_API": 1534509,
   "ID_Casa": 3392,
   "ID_Ospite": 3387,
-  "Letto": "2026-11-14 14:08",
+  "Letto": "2026-11-14 15:08",
   "Book": "1xBet",
   "Q1": 3.16,
   "QX": 3.7,
@@ -362,12 +396,12 @@
   "ID_API": 1501530,
   "ID_Casa": 20820,
   "ID_Ospite": 11078,
-  "Letto": "2026-11-14 14:08",
+  "Letto": "2026-11-14 15:08",
   "Book": "1xBet",
   "Q1": 19.0,
   "QX": 7.8,
   "Q2": 1.09,
-  "Stato": "2H"
+  "Stato": "FT"
  },
  {
   "Data": "2026-11-14",
@@ -456,12 +490,12 @@
   "ID_API": 1530042,
   "ID_Casa": 14135,
   "ID_Ospite": 16492,
-  "Letto": "2026-11-14 14:08",
+  "Letto": "2026-11-14 15:08",
   "Book": "Marathonbet",
   "Q1": 2.0,
   "QX": 3.24,
   "Q2": 3.24,
-  "Stato": "2H"
+  "Stato": "FT"
  },
  {
   "Data": "2026-11-14",
@@ -506,12 +540,12 @@
   "ID_API": 1559417,
   "ID_Casa": 3750,
   "ID_Ospite": 3743,
-  "Letto": "2026-11-14 14:08",
+  "Letto": "2026-11-14 15:08",
   "Book": "Betfair",
   "Q1": 1.2,
   "QX": 5.5,
   "Q2": 10.0,
-  "Stato": "2H"
+  "Stato": "FT"
  },
  {
   "Data": "2026-11-14",
@@ -556,11 +590,45 @@
   "ID_API": 1559421,
   "ID_Casa": 676,
   "ID_Ospite": 3739,
-  "Letto": "2026-11-14 14:08",
+  "Letto": "2026-11-14 15:08",
   "Book": "Betfair",
   "Q1": 2.15,
   "QX": 3.1,
   "Q2": 3.1,
+  "Stato": "FT"
+ },
+ {
+  "Data": "2026-11-14",
+  "Ora": "13:30",
+  "Lega": "England League Two",
+  "Casa": "Exeter City",
+  "Ospite": "Cheltenham",
+  "P1 Shin": 47.1,
+  "PX Shin": 27.9,
+  "P2 Shin": 25.0,
+  "Margine": 15.0,
+  "OU": 2.5,
+  "P Over": 49.5,
+  "P Gol": null,
+  "Linee OU": {
+   "2.25": [
+    1.69,
+    2.14
+   ],
+   "2.5": [
+    1.93,
+    1.89
+   ]
+  },
+  "Aggiornato": "2026-11-14T12:01",
+  "ID_API": 1563854,
+  "ID_Casa": 1364,
+  "ID_Ospite": 1372,
+  "Letto": "2026-11-14 15:08",
+  "Book": "SBO",
+  "Q1": 1.9,
+  "QX": 3.06,
+  "Q2": 3.37,
   "Stato": "2H"
  },
  {
@@ -598,11 +666,11 @@
     1.33
    ]
   },
-  "Aggiornato": "2026-11-14T06:01",
+  "Aggiornato": "2026-11-14T12:01",
   "ID_API": 1566860,
   "ID_Casa": 12898,
   "ID_Ospite": 9336,
-  "Letto": "2026-11-14 14:09",
+  "Letto": "2026-11-14 15:09",
   "Book": "1xBet",
   "Q1": 1.73,
   "QX": 4.3,
@@ -676,7 +744,7 @@
   "ID_API": 1534507,
   "ID_Casa": 11266,
   "ID_Ospite": 2433,
-  "Letto": "2026-11-14 14:08",
+  "Letto": "2026-11-14 15:08",
   "Book": "Marathonbet",
   "Q1": 4.5,
   "QX": 3.44,
@@ -762,16 +830,50 @@
     1.07
    ]
   },
-  "Aggiornato": "2026-11-14T08:54",
+  "Aggiornato": "2026-11-14T12:51",
   "ID_API": 1564404,
   "ID_Casa": 1832,
   "ID_Ospite": 1376,
-  "Letto": "2026-11-14 14:08",
+  "Letto": "2026-11-14 15:08",
   "Book": "Marathonbet",
   "Q1": 2.95,
   "QX": 3.15,
   "Q2": 2.39,
   "Stato": "PST"
+ },
+ {
+  "Data": "2026-11-14",
+  "Ora": "16:00",
+  "Lega": "England League Two",
+  "Casa": "Crewe",
+  "Ospite": "Newport County",
+  "P1 Shin": 42.4,
+  "PX Shin": 29.1,
+  "P2 Shin": 28.5,
+  "Margine": 15.2,
+  "OU": 2.5,
+  "P Over": 47.6,
+  "P Gol": null,
+  "Linee OU": {
+   "2.25": [
+    1.74,
+    2.08
+   ],
+   "2.5": [
+    2.0,
+    1.82
+   ]
+  },
+  "Aggiornato": "2026-11-14T12:50",
+  "ID_API": 1563853,
+  "ID_Casa": 1363,
+  "ID_Ospite": 1367,
+  "Letto": "2026-11-14 15:08",
+  "Book": "SBO",
+  "Q1": 2.09,
+  "QX": 2.94,
+  "Q2": 3.0,
+  "Stato": "NS"
  },
  {
   "Data": "2026-11-14",
@@ -796,7 +898,7 @@
   "ID_API": 1564405,
   "ID_Casa": 1354,
   "ID_Ospite": 1373,
-  "Letto": "2026-11-14 14:08",
+  "Letto": "2026-11-14 15:08",
   "Book": "SBO",
   "Q1": 2.38,
   "QX": 2.85,
@@ -886,11 +988,11 @@
     1.01
    ]
   },
-  "Aggiornato": "2026-11-14T08:54",
+  "Aggiornato": "2026-11-14T12:51",
   "ID_API": 1564406,
   "ID_Casa": 46,
   "ID_Ospite": 1343,
-  "Letto": "2026-11-14 14:08",
+  "Letto": "2026-11-14 15:08",
   "Book": "Marathonbet",
   "Q1": 1.62,
   "QX": 3.94,
@@ -980,11 +1082,11 @@
     1.02
    ]
   },
-  "Aggiornato": "2026-11-14T08:54",
+  "Aggiornato": "2026-11-14T12:51",
   "ID_API": 1564407,
   "ID_Casa": 1359,
   "ID_Ospite": 1370,
-  "Letto": "2026-11-14 14:08",
+  "Letto": "2026-11-14 15:08",
   "Book": "Marathonbet",
   "Q1": 1.64,
   "QX": 4.05,
@@ -1078,7 +1180,7 @@
   "ID_API": 1563858,
   "ID_Casa": 73,
   "ID_Ospite": 1362,
-  "Letto": "2026-11-14 14:08",
+  "Letto": "2026-11-14 15:08",
   "Book": "Marathonbet",
   "Q1": 1.81,
   "QX": 3.62,
@@ -1168,16 +1270,50 @@
     1.02
    ]
   },
-  "Aggiornato": "2026-11-14T08:53",
+  "Aggiornato": "2026-11-14T12:50",
   "ID_API": 1563862,
   "ID_Casa": 1342,
   "ID_Ospite": 1369,
-  "Letto": "2026-11-14 14:08",
+  "Letto": "2026-11-14 15:08",
   "Book": "Marathonbet",
   "Q1": 2.79,
   "QX": 3.45,
   "Q2": 2.28,
   "Stato": "PST"
+ },
+ {
+  "Data": "2026-11-14",
+  "Ora": "18:30",
+  "Lega": "England League Two",
+  "Casa": "Fleetwood Town",
+  "Ospite": "Tranmere",
+  "P1 Shin": 46.9,
+  "PX Shin": 27.5,
+  "P2 Shin": 25.7,
+  "Margine": 15.0,
+  "OU": 2.5,
+  "P Over": 51.6,
+  "P Gol": null,
+  "Linee OU": {
+   "2.5": [
+    1.85,
+    1.97
+   ],
+   "2.75": [
+    2.09,
+    1.73
+   ]
+  },
+  "Aggiornato": "2026-11-14T12:50",
+  "ID_API": 1563855,
+  "ID_Casa": 1336,
+  "ID_Ospite": 1381,
+  "Letto": "2026-11-14 15:08",
+  "Book": "SBO",
+  "Q1": 1.91,
+  "QX": 3.1,
+  "Q2": 3.29,
+  "Stato": "NS"
  },
  {
   "Data": "2026-11-14",
@@ -1258,7 +1394,7 @@
   "ID_API": 1549554,
   "ID_Casa": 2560,
   "ID_Ospite": 2554,
-  "Letto": "2026-11-14 14:08",
+  "Letto": "2026-11-14 15:08",
   "Book": "Marathonbet",
   "Q1": 2.99,
   "QX": 3.38,
