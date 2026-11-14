@@ -1320,6 +1320,8 @@
   :root[data-theme="light"] .mov-in b.giu { color: #d6283f; } :root[data-theme="light"] .mov-in b.su { color: #1d63d8; }
   .quote-pin b.fr { margin-left: .1em; font-weight: 900; } .quote-pin b.fr.giu { color: #ff5470; } .quote-pin b.fr.su { color: #5ea8ff; } .quote-pin b.fr.fermo { color: var(--tenue); }
   :root[data-theme="light"] .quote-pin b.fr.giu { color: #d6283f; } :root[data-theme="light"] .quote-pin b.fr.su { color: #1d63d8; }
+  .lv-fermo { margin: 6px 0 12px; padding: 8px 12px; border-radius: 10px; font-weight: 700; color: #ff8a9a; background: rgba(255,84,112,.12); border: 1px solid rgba(255,84,112,.4); }
+  :root[data-theme="light"] .lv-fermo { color: #b4232f; background: rgba(225,29,72,.08); border-color: rgba(225,29,72,.35); }
   .mov-riga { margin-top: 3px; font-size: .86rem; font-variant-numeric: tabular-nums; line-height: 1.5; }
   .mov-riga .ap { color: var(--tenue); }
   .mov-riga .giu { color: #ff5470; font-weight: 800; }
@@ -1412,7 +1414,8 @@
   .reg-live .ora-si { color: var(--evidenza); font-weight: 700; }
   .reg-live .ora-no { color: #d1342f; font-weight: 700; }
   /* CONDIVIDI LA MULTIPLA. I canali stanno in una fila che va a capo. */
-  .multipla .m-azioni { display: flex; gap: 8px; margin-top: 8px; }
+  .multipla .m-azioni { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+  .multipla .m-chiudi { margin-left: auto; }
   .multipla button.primo { border-color: var(--evidenza); color: var(--evidenza); background: var(--evidenza-tenue); }
   .multipla .m-invio { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--bordo); }
   .multipla .m-invio[hidden] { display: none; }
@@ -1750,6 +1753,7 @@
         <button type="button" data-invio="csv">Scarica .csv</button>
       </div>
       <p id="m-esito-invio" class="m-esito-invio" role="status" aria-live="polite"></p>
+      <p class="m-azioni"><button type="button" class="m-chiudi" data-chiudi="invio">Chiudi</button></p>
     </div>
   </div>
 </div>
@@ -3830,7 +3834,8 @@
       }).join("");
     }
     h += '<p class="m-azioni"><button type="button" id="reg-salva" class="primo">Salva nel registro</button>' +
-      '<button type="button" id="reg-vai">Le mie giocate</button></p><p id="reg-esito" class="m-esito-invio" role="status" aria-live="polite"></p>';
+      '<button type="button" id="reg-vai">Le mie giocate</button>' +
+      '<button type="button" class="m-chiudi" data-chiudi="reg">Chiudi</button></p><p id="reg-esito" class="m-esito-invio" role="status" aria-live="polite"></p>';
     $reg.innerHTML = h;
     $reg.querySelectorAll("[data-modo]").forEach(function (b) {
       b.addEventListener("click", function () { regModo = b.dataset.modo; disegnaPannelloReg(); });
@@ -3893,6 +3898,20 @@
     ridisegnaRighe();
     stato.sez = "giocate"; window.scrollTo(0, 0); disegna();
   }
+  // (171) USCIRE DAL PANNELLO: prima si chiudeva solo ritoccando
+  // "Registra" o "Condividi", e non si capiva. Ora c'e' "Chiudi" in fondo
+  // a ciascun pannello, e su PC anche il tasto Esc. Le scelte restano.
+  function chiudiPannelli() {
+    if ($reg && !$reg.hidden) { $reg.hidden = true; $regBtn.setAttribute("aria-expanded", "false"); }
+    chiudiInvio();
+    document.body.style.paddingBottom = $m.offsetHeight + "px";
+  }
+  $m.addEventListener("click", function (e) {
+    if (e.target.closest && e.target.closest("[data-chiudi]")) chiudiPannelli();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && (($reg && !$reg.hidden) || ($invio && !$invio.hidden))) chiudiPannelli();
+  });
   $regBtn.addEventListener("click", function () {
     var apri = $reg.hidden;
     chiudiInvio();
@@ -8252,8 +8271,22 @@
     var m = parseInt(String(gl[gl.length - 1].m), 10);
     return isFinite(m) && x.min - m >= 0 && x.min - m < 5;
   }
+  // (171) IL PONTE FERMO. Se l'ultimo aggiornamento ha piu' di 10 minuti
+  // i risultati sono vecchi: lo si dice, col motivo se il ponte lo sa
+  // (per esempio "troppe richieste al minuto" ad API-Football).
+  var LIVE_FERMO = "";
+  function fermoPonte(d) {
+    if (!d || !d.aggiornato) return "";
+    var eta = (Date.now() - Date.parse(d.aggiornato)) / 60000;
+    if (!(eta > 10)) return "";
+    var e = String(d.errore || "").toLowerCase(), perche = "";
+    if (e.indexOf("per minute") >= 0 || e.indexOf("ratelimit") >= 0) perche = "troppe richieste al minuto alla fonte";
+    else if (e.indexOf("request") >= 0 || e.indexOf("limit") >= 0) perche = "richieste del giorno finite";
+    else if (e) perche = "errore della fonte";
+    return "risultati fermi da " + Math.round(eta) + " minuti" + (perche ? " (" + perche + ")" : "");
+  }
   function titoloLive(x) {
-    var t = "In corso" + (LIVE_ORA ? " \u00b7 aggiornato alle " + LIVE_ORA : "");
+    var t = "In corso" + (LIVE_ORA ? " \u00b7 aggiornato alle " + LIVE_ORA : "") + (LIVE_FERMO ? "\nATTENZIONE: " + LIVE_FERMO : "");
     var gl = golLive(x);
     if (gl) t += "\nGol: " + gl.map(function (g) {
       return g.m + "\u2032 " + (g.g || "?") + (g.t === "rig" ? " (rigore)" : g.t === "aut" ? " (autogol)" : "");
@@ -8346,6 +8379,7 @@
       d.partite.forEach(function (x) { if (x && x.id != null) per[x.id] = x; });
       DATI_LIVE = per;
       LIVE_ORA = d.aggiornato ? new Date(d.aggiornato).toLocaleTimeString("it-IT", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Rome" }) : "";
+      LIVE_FERMO = fermoPonte(d);
       aggiornaLive();
     }).catch(function () { /* il ponte non risponde: niente live, il resto va */ });
   }
@@ -8866,6 +8900,8 @@
     var h = '<p class="conta">' + nostre.length + (nostre.length === 1 ? " nostra partita" : " nostre partite") + " in corso" +
       (LIVE_PAG.dati.partite && LIVE_PAG.dati.partite.some(function (x) { return "lega" in x; }) ? " · " + altre.length + " altre" : "") +
       (LIVE_PAG.ora ? " · aggiornato alle " + esc(LIVE_PAG.ora) : "") + "</p>";
+    var fermo = fermoPonte(LIVE_PAG.dati);
+    if (fermo) h += '<p class="lv-fermo">\u26a0 Attenzione: ' + esc(fermo) + ". I punteggi qui sotto potrebbero non essere quelli di adesso; il ponte riprova da solo ogni 3 minuti.</p>";
     h += nostre.length ? nostre.map(rigaLive).join("") : messaggio("vuoto", q ? "Nessuna delle nostre partite in corso corrisponde alla ricerca." : "Nessuna delle partite del sito è in corso adesso.");
     if (altre.length) {
       var gruppi = {};
