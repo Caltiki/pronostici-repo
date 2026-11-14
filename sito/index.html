@@ -7905,7 +7905,7 @@
       document.getElementById("aggiornato").textContent = testoAggiornato("Campionati", ix.aggiornato);
       $cont.innerHTML = '<h2 class="reg-tit">Campionati</h2>' +
         '<p class="descr">Classifiche e statistiche dei campionati più forti, calcolate ogni notte partita per partita dai dati del sito.</p>' +
-        '<div class="camp-cerca"><div class="strumenti"><input id="camp-cerca" type="search" autocomplete="off" placeholder="Cerca una squadra (es. Carlisle)" aria-label="Cerca una squadra" value="' + esc(CAMP.cercaSq) + '"></div>' +
+        '<div class="camp-cerca"><div class="strumenti"><input id="camp-cerca" type="search" autocomplete="off" placeholder="Cerca una squadra" aria-label="Cerca una squadra" value="' + esc(CAMP.cercaSq) + '"></div>' +
         '<div id="camp-sugg" class="camp-sugg" role="listbox"></div></div>' +
         '<div class="strumenti xgs"><select id="camp-lega" aria-label="Campionato">' + leghe.map(function (l) {
           return '<option value="' + esc(l.id) + '"' + (String(l.id) === String(CAMP.lega) ? " selected" : "") + ">" + esc(l.nome) + "</option>";
