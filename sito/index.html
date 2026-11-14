@@ -1455,8 +1455,8 @@
   .pill.cons { background: color-mix(in srgb, var(--evidenza) 14%, transparent); color: var(--evidenza); font-weight: 700; }
   .pill.fresca { background: color-mix(in srgb, var(--buono) 16%, transparent); color: var(--buono); font-weight: 700; }
   .timbro-pin {
-    display: inline-block; padding: 0 5px; border: 1px solid #f5b301; border-radius: 3px;
-    color: #f5b301; font-size: .56rem; font-weight: 700; letter-spacing: .06em; line-height: 1.45;
+    display: inline-block; padding: 0 3px; border: 1px solid #f5b301; border-radius: 2px;
+    color: #f5b301; font-size: .38rem; font-weight: 700; letter-spacing: .05em; line-height: 1.45;
     text-transform: uppercase; white-space: nowrap; vertical-align: middle;
   }
   /* (150) piu' piccolo: e' un'indicazione, non il titolo della riga */
@@ -8958,10 +8958,9 @@
       }).join(" \u00b7 ");
     };
     return '<div class="cal-prob">' +
-      (P.pin ? '<span class="nw"><span class="et">Pinnacle</span> ' + tre(P.pin) + "</span>" : "") +
-      (P.pin && P.elo ? '<span class="sep"> | </span>' : "") +
-      (P.elo ? '<span class="nw"><span class="et">Elo</span> ' + tre(P.elo) +
-        (P.diff != null ? ' <span class="piccolo">(' + (P.diff >= 0 ? "+" : "\u2212") + f0(Math.abs(P.diff)) + ")</span>" : "") + "</span>" : "") +
+      (P.pin ? '<div class="nw"><span class="et">Pinnacle</span> ' + tre(P.pin) + "</div>" : "") +
+      (P.elo ? '<div class="nw"><span class="et">Elo</span> ' + tre(P.elo) +
+        (P.diff != null ? ' <span class="piccolo">(' + (P.diff >= 0 ? "+" : "\u2212") + f0(Math.abs(P.diff)) + ")</span>" : "") + "</div>" : "") +
       "</div>";
   }
   function listaCalendario(lista, sito) {
