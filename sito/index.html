@@ -1446,6 +1446,7 @@
   :root[data-theme="light"] .fonte-q { border-color: #0b4a86; color: #0b4a86; }
   :root[data-theme="light"] .fonte-q.pin { border-color: #a36b00; color: #a36b00; }
   /* IL TIMBRO PINNACLE (100): la partita ha le quote Pinnacle. */
+  .pill.cons { background: color-mix(in srgb, var(--evidenza) 14%, transparent); color: var(--evidenza); font-weight: 700; }
   .pill.fresca { background: color-mix(in srgb, var(--buono) 16%, transparent); color: var(--buono); font-weight: 700; }
   .timbro-pin {
     display: inline-block; padding: 0 5px; border: 1px solid #f5b301; border-radius: 3px;
@@ -1755,7 +1756,7 @@
     <button data-sez="camp">Campionati</button>
     <button data-sez="pin">Pinnacle</button>
     <button data-sez="consensus" class="due">Consenso<br>fonti</button>
-    <button data-sez="best" class="due">Best<br>picks</button>
+    <!-- (172) Best picks tolta dalla barra (14/11): il consenso e' una pillola nei Pronostici, la misura in Statistiche fonti -->
     <button data-sez="poisson" class="due">Gol<br>attesi</button>
     <button data-sez="elo">Elo</button>
     <!-- (172) Sure Bets tolta dalla barra (14/11): favoriti a quota bassa, gia' in Pronostici -->
@@ -2085,7 +2086,7 @@
       try { SCHEDA.chiave = p[2] ? decodeURIComponent(p[2]) : null; } catch (e) { SCHEDA.chiave = null; }
       return;
     }
-    if (p[0] === "best") { stato.sez = "best"; return; }
+    if (p[0] === "best") { stato.sez = "prezzi"; return; }
     if (p[0] === "giocate") { stato.sez = "giocate"; return; }
     if (p[0] === "live") { stato.sez = "live"; return; }
     if (p[0] === "camp") {
@@ -2761,6 +2762,7 @@
           (gol ? "<span><b>" + esc(gol) + "</b></span>" : "") +
           (r0.Campionato ? '<span class="chip">' + esc(r0.Campionato) + "</span>" : "") +
           (r0.Fonte === "OddsAPI" ? '<span class="chip">quota Betfair</span>' : "") +
+          pillConsenso(g.filter(function (x) { return x._cons; })[0]) +
           (eAltroBook(r0.Fonte) ? '<span class="chip" title="Pinnacle non quota questa partita: prezzo da ' + esc(r0.Fonte) + '">quota ' + esc(r0.Fonte) + "</span>" : "") + "</div>" +
           '<div class="partita">' + partitaHtml(r0.Casa, r0.Ospite, r0.Partita, campiRiga(r0)) + "</div>" + sqHtml(r0) +
           '<div class="sel">' + (inSch ? "<b>In schedina:</b> " : "<b>Proposta:</b> ") + '<span class="q-n' + (margineStretto(top) ? ' verde" title="Prezzo affidabile: margine stretto' : "") + '">' + esc(etichettaSel(top)) +
@@ -3261,7 +3263,33 @@
 
   function arricchisciPrezzi(righe, data) {
     return conEsiti(righe, data).then(function (r2) { return arricchisciAO(r2, data); })
-      .then(function (r3) { return data === oggi() ? frescheInPronostici(r3) : r3; });
+      .then(function (r3) { return data === oggi() ? frescheInPronostici(r3) : r3; })
+      .then(function (r4) { return conConsenso(r4, data); });
+  }
+  // (172) STATAREA E WEBPRONOSTICI D'ACCORDO (prima "Best picks"): il segno
+  // secco su cui concordano, agganciato alla partita col numero di Pinnacle
+  // (stessa ricerca di Best picks). Sulle righe diventa una pillola.
+  function conConsenso(righe, data) {
+    if (!Array.isArray(righe) || !righe.length) return Promise.resolve(righe);
+    return Promise.all([leggi("consensus_" + data + ".json").catch(function () { return []; }), caricaPinGlobale().catch(function () { return null; })]).then(function (a) {
+      var per = {};
+      (Array.isArray(a[0]) ? a[0] : []).filter(segnoSecco).forEach(function (c) {
+        var pin = pinDi(c.Casa, c.Ospite, c.Ora);
+        if (pin && pin.ID_API != null) per[String(pin.ID_API)] = String(c["Pron Combinato"]).toUpperCase();
+      });
+      if (!Object.keys(per).length) return righe;
+      return righe.map(function (r) {
+        var k = r && r.ID_API != null ? per[String(r.ID_API)] : null;
+        if (!k) return r;
+        var o = {};
+        for (var x in r) o[x] = r[x];
+        o._cons = k;
+        return o;
+      });
+    });
+  }
+  function pillConsenso(r) {
+    return r && r._cons ? '<span class="pill cons" title="Statarea e WebPronostici concordano su questo segno secco">S+W: ' + esc(r._cons) + "</span>" : "";
   }
   // (171) LE QUOTE FRESCHE ANCHE IN PRONOSTICI. I prezzi si ricalcolano tre
   // volte al giorno (giri dei prezzi); il ponte di Cloudflare rilegge
@@ -5986,11 +6014,52 @@
         var o = {};
         for (var k in r) o[k] = r[k];
         o._pm = t[segno]; o._pm3 = t; o._marg = num(m.Margine); o._da = da;
+        // (14/11) per i filtri: il campionato (Pinnacle) e il movimento del
+        // segno, da quando e' consigliato o, se no, dalla prima lettura
+        if (da === "Pinnacle") {
+          o._lega = m.Lega || null;
+          var g = PIN_G.idNome[(r.Casa || "") + "|" + (r.Ospite || "")];
+          var ba = g ? BEST_ARCH[String(g.id) + "|" + segno] : null;
+          var pe = ba ? num(ba.P_Entrata) : null;
+          var pr = Array.isArray(m.Prima) ? num(m.Prima[{ "1": 0, "X": 1, "2": 2 }[segno]]) : null;
+          if (pe != null) o._mov = t[segno] - pe;
+          else if (pr != null) o._mov = t[segno] - pr;
+        }
         return o;
       });
     });
   }
 
+  // (14/11) I FILTRI DI BEST PICKS, gli stessi della schedina
+  // (prezzi_equi.py): campionati che Max gioca (la lista SISAL, copiata qui:
+  // se cambia la' va cambiata anche qui), niente giovanili/femminili/riserve,
+  // margine al massimo 5%, probabilita' 50-75% (quota equa 1,33-2,00), fuori
+  // le pick su cui il mercato si e' mosso contro di almeno 2 punti.
+  var LEGHE_GIOCABILI = {};
+  ["italy serie a", "italy serie b", "italy serie c", "italy coppa italia", "england premier league", "england championship", "england league one", "england league two", "england carabao cup", "england fa cup", "england enterprise national league", "england national league", "spain laliga", "spain laliga2", "spain la liga", "spain la liga 2", "spain copa del rey", "germany bundesliga", "germany 2 bundesliga", "germany dfb pokal", "france ligue 1", "france ligue 2", "france coupe de france", "netherlands eredivisie", "netherlands eerste divisie", "portugal liga portugal", "portugal liga portugal 2", "belgium jupiler pro league", "belgium pro league", "scotland premiership", "scotland championship", "turkey super lig", "turkey 1 lig", "greece super league", "switzerland super league", "austria bundesliga", "denmark superliga", "norway eliteserien", "norway obos ligaen", "sweden allsvenskan", "sweden superettan", "finland veikkausliiga", "poland ekstraklasa", "czech republic chance liga", "croatia 1 hnl", "romania superliga", "bulgaria first league", "serbia superliga", "russia premier league", "ukraine premier league", "slovakia nike liga", "cyprus cyprus league", "cyprus league", "hungary nb i", "israel ligat haal", "europe uefa champions league", "europe uefa europa league", "europe uefa conference league", "europe champions league", "europe europa league", "europe conference league", "brazil serie a", "brazil serie b", "argentina liga profesional", "argentina liga profesional de futbol", "argentina liga profesional clausura", "mexico liga mx", "mexico liga mx apertura", "united states major league soccer", "usa major league soccer", "usa mls", "japan j1 league", "japan j2 league", "south korea k league 1", "saudi arabia pro league", "uruguay primera division", "colombia primera a", "colombia primera a clausura", "peru liga 1", "peru liga 1 clausura", "chile primera division", "ecuador liga pro", "ecuador liga pro championship group", "australia a league", "Campionati", "albania superliga", "argentina liga profesional argentina", "austria 2 liga", "belarus premier league", "croatia hnl", "cyprus 1 division", "czech republic czech liga", "czech republic fnl", "denmark 1 division", "england national league north", "england national league south", "france national 1", "germany 3 liga", "greece super league 1", "israel ligat ha al", "italy serie c girone a", "italy serie c girone b", "italy serie c girone c", "italy serie d girone a", "italy serie d girone b", "italy serie d girone c", "italy serie d girone d", "italy serie d girone e", "italy serie d girone f", "italy serie d girone g", "italy serie d girone h", "italy serie d girone i", "japan j3 league", "japan j league cup", "south korea k league 2", "lithuania a lyga", "macedonia first league", "norway 1 division", "peru primera division", "portugal primeira liga", "portugal segunda liga", "romania liga i", "slovakia super liga", "slovenia 1 snl", "south korea k league 1", "spain segunda division", "switzerland challenge league", "turkey super lig", "usa major league soccer", "venezuela primera division", "finland veikkausliiga", "ireland premier division", "ireland first division", "scotland league one", "scotland league two", "brazil serie c", "mexico liga de expansion mx", "uruguay primera division", "world uefa nations league", "world concacaf nations league"].forEach(function (k) { LEGHE_GIOCABILI[k] = true; });
+  function chiaveLega(t) {
+    t = String(t || "");
+    try { t = t.normalize("NFKD").replace(/[\u0300-\u036f]/g, ""); } catch (e) {}
+    return t.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  }
+  function legaGiocabile(l) {
+    var k = chiaveLega(l);
+    if (!k) return null;
+    if (LEGHE_GIOCABILI[k]) return true;
+    if (/women|femenil|femenina|feminine|frauen|u17|u19|u20|u21|u23/.test(k)) return false;
+    return [["world cup", "qualification"], ["euro championship", "qualification"], ["africa cup of nations", "qualification"]]
+      .some(function (p) { return p.every(function (w) { return k.indexOf(w) >= 0; }); });
+  }
+  var RX_GIOVANILI = /(\bu ?(17|18|19|20|21|23)\b|\bwomen\b|\bw\b|\bii\b|\breserves?\b|\bb team\b)/i;
+  function escluseBest(r) {
+    if (RX_GIOVANILI.test(String(r.Casa || "")) || RX_GIOVANILI.test(String(r.Ospite || ""))) return "giovanili o femminili";
+    if (r._pm == null) return "";                       // prezzo non ancora uscito: si vede
+    if (r._lega != null && legaGiocabile(r._lega) === false) return "campionato";
+    if (r._marg != null && r._marg > 5) return "margine";
+    if (r._pm < 50 || r._pm > 75) return "quota";
+    if (r._mov != null && r._mov <= -2) return "mercato contro";
+    return "";
+  }
   var BEST_ARCH = {};
   function rigaBest(r) {
     var segno = String(r["Pron Combinato"] || "").toUpperCase();
@@ -6084,7 +6153,8 @@
       var ultimi = a[2] ? misuraSecchi(a[2], giornoRoma(-14)) : null;
       var testa = '<p class="descr">I segni secchi (1, X o 2) su cui Statarea e WebPronostici concordano, oggi e nei giorni dopo. ' +
         "Il prezzo è quello di Pinnacle senza margine: da quando una pick entra in lista si segue come si muove fino al via. " +
-        "Con il margine dei bookmaker italiani la singola conviene solo se la tua quota supera la quota equa; in multipla il margine si moltiplica.</p>" +
+        "Con il margine dei bookmaker italiani la singola conviene solo se la tua quota supera la quota equa; in multipla il margine si moltiplica. " +
+        "Restano solo le pick che passano gli stessi filtri della schedina: campionati giocabili, margine fino al 5%, quota equa fra 1,33 e 2,00, mercato non contro.</p>" +
         '<h3 class="giorno-best">Contro Pinnacle <small>· dal 13/11</small></h3>' + riepilogoPinnacle(misuraPinnacle(a[3])) +
         '<details class="best-storico"><summary>Lo storico fino al 12/11, contro AsianOdds</summary>' +
         riepilogoBest(tutto, ultimi) + tabellaSegni(a[2]) + "</details>";
@@ -6107,11 +6177,21 @@
         var tot = 0;
         $g.innerHTML = giorni.map(function (g) {
           if (!g.righe.length) return "";
-          tot += g.righe.length;
-          var v = g.righe.slice().sort(function (x, y) { return String(x.Ora || "").localeCompare(String(y.Ora || "")); });
+          var fuori = {}, nFuori = 0;
+          var tenute = g.righe.filter(function (r) {
+            var m = escluseBest(r);
+            if (m) { fuori[m] = (fuori[m] || 0) + 1; nFuori++; }
+            return !m;
+          });
+          var motivi = Object.keys(fuori).map(function (k) { return k + " " + fuori[k]; }).join(", ");
+          if (!tenute.length) return '<h3 class="giorno-best">' + esc(etichettaData(g.data)) + " <small>· nessun secco passa i filtri" +
+            (nFuori ? " (esclusi: " + esc(motivi) + ")" : "") + "</small></h3>";
+          tot += tenute.length;
+          var v = tenute.slice().sort(function (x, y) { return String(x.Ora || "").localeCompare(String(y.Ora || "")); });
           var conPrezzo = v.filter(function (r) { return r._pm != null; }).length;
           return '<h3 class="giorno-best">' + esc(etichettaData(g.data)) + " <small>· " + v.length + " secchi" +
-            (conPrezzo ? ", " + conPrezzo + " col prezzo di mercato" : "") + "</small></h3>" +
+            (conPrezzo ? ", " + conPrezzo + " col prezzo di mercato" : "") +
+            (nFuori ? " · " + nFuori + " esclusi dai filtri (" + esc(motivi) + ")" : "") + "</small></h3>" +
             '<div class="lista" data-giorno="' + esc(g.data) + '">' +
             v.map(function (r) { return conAggancio(rigaBest(r), "accordo", r); }).join("") + "</div>";
         }).join("") || messaggio("vuoto", "Nessun segno secco da oggi in avanti.");
@@ -6468,10 +6548,11 @@
       leggi("classifica_fonti.json").catch(function () { return null; }),
       leggi("classifica_consensus.json").catch(function () { return null; }),
       leggi("esiti_index.json").catch(function () { return null; }),
-      leggiUrl(BASE + "predizioni_misura.json?t=" + Math.floor(Date.now() / 600000), "predizioni_misura").catch(function () { return null; })
+      leggiUrl(BASE + "predizioni_misura.json?t=" + Math.floor(Date.now() / 600000), "predizioni_misura").catch(function () { return null; }),
+      leggiTesto("best_archivio.csv").then(csvOggetti).catch(function () { return null; })
     ]).then(function (res) {
       if (stato.sez !== "fonti") return;
-      var d = res[0], c = res[1], ei = res[2], pm = res[3];
+      var d = res[0], c = res[1], ei = res[2], pm = res[3], ba = res[4];
       if (!d && !c) {
         $cont.innerHTML = messaggio("errore", "Il consuntivo non è ancora stato pubblicato: arriva col primo giro notturno.");
         return;
@@ -6487,6 +6568,9 @@
       if (c && c.medio) h += schedaMedio(c.medio);
       if (c && c.accordo) h += schedaAccordo(c.accordo);
       if (pm && pm.tutto) h += schedaPredApi(pm);
+      // (172) l'ex Best picks: Statarea e WebPronostici d'accordo, contro Pinnacle
+      if (ba && ba.length) h += '<div class="scheda"><h3>Statarea + WebPronostici d\u2019accordo, contro Pinnacle <small>\u00b7 dal 13/11</small></h3>' +
+        riepilogoPinnacle(misuraPinnacle(ba)) + "</div>";
 
       if (d && d.fonti) {
         h += '<p class="descr" style="margin-top:24px">Le fonti in ordine di quante partite sono state misurate, non di quante ne vincono: ' +
