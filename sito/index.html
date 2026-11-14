@@ -1325,10 +1325,11 @@
   .mov-in b { margin-left: .1em; font-weight: 900; }
   .mov-in .ferme { text-transform: none; font-weight: 600; letter-spacing: 0; }
   /* (172) come AsianOdds: quota scesa = rosso, quota salita = blu */
-  .mov-in b.giu, .barre b.fr.giu { color: #ff5470; } .mov-in b.su, .barre b.fr.su { color: #5ea8ff; } .mov-in b.fermo { color: var(--tenue); }
-  :root[data-theme="light"] .mov-in b.giu { color: #d6283f; } :root[data-theme="light"] .mov-in b.su { color: #1d63d8; }
-  .quote-pin b.fr { margin-left: .1em; font-weight: 900; } .quote-pin b.fr.giu { color: #ff5470; } .quote-pin b.fr.su { color: #5ea8ff; } .quote-pin b.fr.fermo { color: var(--tenue); }
-  :root[data-theme="light"] .quote-pin b.fr.giu { color: #d6283f; } :root[data-theme="light"] .quote-pin b.fr.su { color: #1d63d8; }
+  /* (171) quota SCESA = verde (il mercato ci crede di piu', come l'Elo piu' alto), SALITA = rosso */
+  .mov-in b.giu, .barre b.fr.giu { color: #4ade80; } .mov-in b.su, .barre b.fr.su { color: #ff5470; } .mov-in b.fermo { color: var(--tenue); }
+  :root[data-theme="light"] .mov-in b.giu { color: #15803d; } :root[data-theme="light"] .mov-in b.su { color: #d6283f; }
+  .quote-pin b.fr { margin-left: .1em; font-weight: 900; } .quote-pin b.fr.giu { color: #4ade80; } .quote-pin b.fr.su { color: #ff5470; } .quote-pin b.fr.fermo { color: var(--tenue); }
+  :root[data-theme="light"] .quote-pin b.fr.giu { color: #15803d; } :root[data-theme="light"] .quote-pin b.fr.su { color: #d6283f; }
   .camp-cerca { position: relative; margin: 6px 0 10px; }
   .camp-cerca .strumenti { margin: 10px 0 4px; }
   .camp-cerca input { width: 100%; box-sizing: border-box; flex: 1 1 100%; }
@@ -1357,13 +1358,13 @@
   :root[data-theme="light"] .lv-fermo { color: #b4232f; background: rgba(225,29,72,.08); border-color: rgba(225,29,72,.35); }
   .mov-riga { margin-top: 3px; font-size: .86rem; font-variant-numeric: tabular-nums; line-height: 1.5; }
   .mov-riga .ap { color: var(--tenue); }
-  .mov-riga .giu { color: #ff5470; font-weight: 800; }
-  .mov-riga .su { color: #5ea8ff; font-weight: 800; }
+  .mov-riga .giu { color: #4ade80; font-weight: 800; }
+  .mov-riga .su { color: #ff5470; font-weight: 800; }
   .mov-riga .fermo { font-weight: 600; }
   .mov-riga .sep { color: var(--tenue); }
   .mov-riga .ferme { color: var(--tenue); font-size: .78rem; }
-  :root[data-theme="light"] .mov-riga .giu { color: #d6283f; }
-  :root[data-theme="light"] .mov-riga .su { color: #1d63d8; }
+  :root[data-theme="light"] .mov-riga .giu { color: #15803d; }
+  :root[data-theme="light"] .mov-riga .su { color: #d6283f; }
   .mov-riga b.seg { display: inline-block; min-width: 1.15em; text-align: center; padding: 0 3px; border-radius: 4px; background: rgba(245,185,66,.16); color: #f5b942; font-weight: 800; }
   .mov-riga .uguale { color: var(--tenue); font-weight: 700; }
   :root[data-theme="light"] .mov-riga b.seg { background: rgba(161,98,7,.12); color: #a16207; }
@@ -1372,8 +1373,8 @@
   .riga .alto { gap: 6px; }
   .riga .alto .chip { font-size: .6rem; padding: 1px 5px; }
   .riga .alto .pill { font-size: .58rem; padding: 2px 6px; }
-  .mov-q b.giu { color: #ff5470; } .mov-q b.su { color: #5ea8ff; } .mov-q b.fermo { color: var(--tenue); }
-  :root[data-theme="light"] .mov-q b.giu { color: #d6283f; } :root[data-theme="light"] .mov-q b.su { color: #1d63d8; }
+  .mov-q b.giu { color: #4ade80; } .mov-q b.su { color: #ff5470; } .mov-q b.fermo { color: var(--tenue); }
+  :root[data-theme="light"] .mov-q b.giu { color: #15803d; } :root[data-theme="light"] .mov-q b.su { color: #d6283f; }
   .mv-giu { color: #e8873a; font-weight: 700; white-space: nowrap; }
   :root[data-theme="light"] .mv-su { color: #157a3f; }
   :root[data-theme="light"] .mv-giu { color: #b35a12; }
