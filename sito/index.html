@@ -1310,6 +1310,10 @@
   /* LE QUOTE IN ROSSO (101): i numeri delle quote si staccano dal testo. */
   .q { color: #ff6b6b; font-weight: 700; font-variant-numeric: tabular-nums; }
   :root[data-theme="light"] .q { color: #c62828; }
+  .q.elo-su { color: #4ade80; }
+  .q.elo-giu { color: #ff6b6b; }
+  :root[data-theme="light"] .q.elo-su { color: #15803d; }
+  :root[data-theme="light"] .q.elo-giu { color: #c62828; }
   /* IL MOVIMENTO DAL MATTINO (105): freccia e colore per verso. */
   .mv-su { color: #22a55b; font-weight: 700; white-space: nowrap; }
   /* (146) le frecce del movimento Pinnacle sulle card */
@@ -4613,7 +4617,8 @@
         ": il segno del modello, " + esc(segno) + ", " + (usc === segno ? "\u00e8 uscito" : "non \u00e8 uscito") + ".</p>");
     }
     det.push("<p>Lambda: casa " + f2(lc) + ", ospite " + f2(lo) + " (gol attesi " + f2(gol) + ")</p>");
-    if (r.Fonte_xG) det.push("<p>xG da " + esc(r.Fonte_xG) + ".</p>");
+    // (171) gli xG partita per partita dello storico: sul sito "del sito"
+    if (r.Fonte_xG) det.push("<p>" + (r.Fonte_xG === "API-Football" ? "xG del sito, partita per partita" : "xG da " + esc(r.Fonte_xG)) + ".</p>");
     // Le giornate passate vengono dall'archivio, che gli xG/90 non li tiene.
     if (num(r.xG_Casa) != null || num(r.xG_Osp) != null) {
       det.push("<p>xG/90: " + f2(num(r.xG_Casa)) + " \u2013 " + f2(num(r.xG_Osp)) +
@@ -4645,7 +4650,7 @@
       '<span class="segno">' + esc(segno || "?") + "</span>" +
       '<div class="corpo">' +
       '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" + golHtml(r) + esitoSm(r) + (r.Lega ? '<span class="chip">' + esc(String(r.Lega).replace(/\s*\[\d+\]$/, "")) + "</span>" : "") +
-        (r.Fonte_xG === "FotMob" ? '<span class="chip">xG FotMob</span>' : "") + "</div>" +
+        (r.Fonte_xG === "FotMob" ? '<span class="chip">xG FotMob</span>' : r.Fonte_xG === "API-Football" ? '<span class="chip">xG del sito</span>' : "") + "</div>" +
       '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" +
       '<div class="sel">\u03bb ' + f2(lc) + " \u2013 " + f2(lo) + coda + "</div>" +
       tripla("modello", p1, px, p2) +
@@ -6978,7 +6983,7 @@
     if (p.Elo) {
       // (159) lo scarto fra le due, come nelle card, non la posizione su 11 mila
       var dElo = p.Elo.c.elo - p.Elo.o.elo;
-      h += '<p class="elo-mini">Elo ' + ev(p.Elo.c.elo) + " \u2013 " + ev(p.Elo.o.elo) + ' <span class="piccolo">(' + (dElo >= 0 ? "+" : "\u2212") + f0(Math.abs(dElo)) + ")</span>" +
+      h += '<p class="elo-mini">Elo ' + evCoppia(p.Elo.c.elo, p.Elo.o.elo, " \u2013 ") + ' <span class="piccolo">(' + (dElo >= 0 ? "+" : "\u2212") + f0(Math.abs(dElo)) + ")</span>" +
         // (158) le probabilita' sotto, su una riga loro
         "<br><span class=nw><b class=seg>1</b> " + pv(p.Elo.p[0]) + "</span>" + " · <span class=nw><b class=seg>X</b> " + pv(p.Elo.p[1]) + "</span>" + " · <span class=nw><b class=seg>2</b> " + pv(p.Elo.p[2]) + "</span>" + "</p>";
     }
@@ -8857,6 +8862,12 @@
   // squadre (ic, io). La squadra si riconosce dal numero, mai dal nome.
   // E' un ALTRO Elo da quello che AsianOdds scrive nel mercato.
   function ev(v) { return '<span class="q">' + f0(num(v)) + "</span>"; }
+  // (171) la coppia di Elo: il piu' alto in verde, il piu' basso in rosso
+  function evCoppia(a, b, sep) {
+    var x = num(a), y = num(b);
+    var cl = function (u, w) { return u == null || w == null || Math.round(u) === Math.round(w) ? "q" : u > w ? "q elo-su" : "q elo-giu"; };
+    return '<span class="' + cl(x, y) + '">' + f0(x) + "</span>" + sep + '<span class="' + cl(y, x) + '">' + f0(y) + "</span>";
+  }
   function sig(z) { return 1 / (1 + Math.exp(-z)); }
   function eloProb(ec, eo, lg) {
     if (ec == null || eo == null || !lg) return null;
@@ -9009,7 +9020,7 @@
         '<div class="corpo"><div class="alto">' + (x.ora ? "<span><b>" + esc(x.ora) + "</b></span>" : "") +
           (x.lega ? '<span class="chip">' + esc(x.lega) + "</span>" : "") + (r.pin ? timbroPin(r.pin) : "") + (st.html ? " " + st.html : "") + "</div>" +
           '<div class="partita">' + partitaHtmlId(x.casa, x.ospite, x.ic, x.io, x.lega) + "</div>" +
-          (r.c && r.o ? '<div class="sel">Elo ' + ev(r.c.elo) + " – " + ev(r.o.elo) + " (" + (r.c.elo >= r.o.elo ? "+" : "−") + f0(Math.abs(r.c.elo - r.o.elo)) + ")" +
+          (r.c && r.o ? '<div class="sel">Elo ' + evCoppia(r.c.elo, r.o.elo, " – ") + " (" + (r.c.elo >= r.o.elo ? "+" : "−") + f0(Math.abs(r.c.elo - r.o.elo)) + ")" +
             (r.sc && Math.abs(r.sc.v) >= 5 ? ' · <span class="' + (r.sc.v > 0 ? "mv-su" : "mv-giu") + '">' + "1X2"[r.sc.i] + " " + (r.sc.v > 0 ? "+" : "−") + f0(Math.abs(r.sc.v)) + " vs Pinnacle</span>" : "") + "</div>" : "") +
           (p ? tripla("Elo", p[0], p[1], p[2]) : '<div class="sel piccolo">Elo non disponibile per ' + (!r.c && !r.o ? "le due squadre" : !r.c ? esc(x.casa) : esc(x.ospite)) + "</div>") +
           (r.pp ? tripla("Pinnacle", r.pp[0], r.pp[1], r.pp[2]) : "") +
@@ -9663,7 +9674,7 @@
         div.title = "Elo del sistema: " + c.nome + " " + Math.round(c.elo) + ", " + o.nome + " " + Math.round(o.elo);
         // (148) una riga sola: trattini stretti, scarto fra parentesi piccolo
         // (151) a capo solo fra un pezzo e l'altro, mai fra "1" e "55%"
-        div.innerHTML = '<span class="nw">Elo ' + ev(c.elo) + "\u2013" + ev(o.elo) + ' <span class="piccolo">(' + (c.elo >= o.elo ? "+" : "\u2212") +
+        div.innerHTML = '<span class="nw">Elo ' + evCoppia(c.elo, o.elo, "\u2013") + ' <span class="piccolo">(' + (c.elo >= o.elo ? "+" : "\u2212") +
           f0(Math.abs(c.elo - o.elo)) + ")</span></span>\u2009· " + '<span class="nw"><span class=nw><b class=seg>1</b> ' + pv(p[0]) + '</span>' + "</span>\u2009· " +
           '<span class="nw"><span class=nw><b class=seg>X</b> ' + pv(p[1]) + '</span>' + "</span>\u2009· " + '<span class="nw"><span class=nw><b class=seg>2</b> ' + pv(p[2]) + '</span>' + "</span>";
         dove.parentNode.insertBefore(div, dove.nextSibling);
