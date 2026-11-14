@@ -2333,7 +2333,7 @@
   // L'ORA IN ALTO DICE DI CHE COSA (117): ogni sezione ha i suoi dati e il
   // suo ritmo, e passando dall'una all'altra l'ora sembrava tornare
   // indietro. "Statarea + WebPronostici · aggiornato oggi alle 00:29".
-  var NOMI_AGG = { prezzi: "Pronostici", mercato: "AsianOdds", consensus: "Media delle fonti",
+  var NOMI_AGG = { prezzi: "Pronostici", mercato: "Mercato", consensus: "Media delle fonti",
     accordo: "Statarea + WebPronostici", poisson: "Gol attesi", sure: "Quote", pin: "Pinnacle",
     sm: "Sports Mole", fp: "FootballPark", wdw: "FootyStats", hp: "HeroPredict" };
   function testoAggiornato(nome, t) {
@@ -3610,12 +3610,20 @@
   // anni di football-data (mercato_storico.json, resa alla quota media del
   // mercato): fra 70 e 80% quasi zero, fra 60 e 65% circa -1%. A parita'
   // di costo: margine stretto, mercato non contro, meno eventi.
-  var COSTR = { quota: 3, eventi: 0, margine: 5, ms: null, msPronto: null };
+  // (173) IL BONUS MULTIPLA dei book italiani: la vincita aumenta di una
+  // percentuale se la multipla ha almeno N eventi. Si scrive com'e' nelle
+  // condizioni del book (che cambiano: vanno lette la'), e il costruttore lo
+  // conta sia nella scelta sia nel conto finale.
+  var COSTR = { quota: 3, eventi: 0, margine: 5, bonus: 0, bonusDa: 0, ms: null, msPronto: null };
   try {
     var cq = parseFloat(localStorage.getItem("caltiki-costr-quota")), cm = parseFloat(localStorage.getItem("caltiki-costr-margine"));
+    var cb = parseFloat(localStorage.getItem("caltiki-costr-bonus")), cbd = parseInt(localStorage.getItem("caltiki-costr-bonusda"), 10);
     if (cq > 1) COSTR.quota = cq;
     if (cm >= 0 && cm < 20) COSTR.margine = cm;
+    if (cb >= 0 && cb <= 200) COSTR.bonus = cb;
+    if (cbd >= 0 && cbd <= 20) COSTR.bonusDa = cbd;
   } catch (e) {}
+  function bonusPer(n) { return COSTR.bonus > 0 && n >= (COSTR.bonusDa || 1) ? COSTR.bonus / 100 : 0; }
   var RESA_DEFAULT = { "60-65": -1.1, "65-70": -0.7, "70-75": 0.0, "75-80": -0.5, "80-85": -3.3 };
   // Il costo misurato vale per quello che e' stato misurato: l'1X2 (segno
   // 1 o 2) per fasce, e l'Over 2.5. Per gli altri mercati (Over 1.5,
@@ -3656,6 +3664,7 @@
     function valuta(scelta) {
       var eq = 1, val = 1, punti = 0;
       scelta.forEach(function (x) { eq *= x.e; val *= 1 + x.resa / 100; punti += x.punti; });
+      val *= 1 + bonusPer(scelta.length);
       var dist = fissi ? 0 : Math.abs(Math.log(eq / obiettivo));
       // fuori di +-8% dalla quota voluta: penalita' forte; dentro, piu'
       // vicino e' meglio (un punto di costo vale circa il 5% di quota)
@@ -3678,22 +3687,29 @@
     h += '<p class="reg-campi"><label>Quota totale <input id="costr-q" inputmode="decimal" value="' + String(COSTR.quota).replace(".", ",") + '"></label>' +
       '<label>oppure eventi <select id="costr-n"><option value="0"' + (!COSTR.eventi ? " selected" : "") + '>come viene</option>' +
       [2, 3, 4, 5, 6].map(function (k) { return '<option value="' + k + '"' + (COSTR.eventi === k ? " selected" : "") + ">" + k + "</option>"; }).join("") + "</select></label>" +
-      '<label>Margine del tuo book a evento % <input id="costr-m" inputmode="decimal" value="' + String(COSTR.margine).replace(".", ",") + '"></label></p>';
+      '<label>Margine del tuo book a evento % <input id="costr-m" inputmode="decimal" value="' + String(COSTR.margine).replace(".", ",") + '"></label>' +
+      '<label>Bonus multipla % <input id="costr-b" inputmode="decimal" value="' + String(COSTR.bonus).replace(".", ",") + '"></label>' +
+      '<label>dal <select id="costr-bd">' + [0, 2, 3, 4, 5, 6, 7, 8, 10].map(function (k) {
+        return '<option value="' + k + '"' + (COSTR.bonusDa === k ? " selected" : "") + ">" + (k ? k + "\u00b0 evento" : "primo evento") + "</option>"; }).join("") + "</select></label></p>";
     var m = proponiSchedina(c);
     if (!m) return h + "<p>Nessuna combinazione possibile.</p></details>";
     var nEv = m.scelta.length, pr = m.scelta.reduce(function (a, x) { return a * x.p; }, 1);
     var tipica = m.scelta.reduce(function (a, x) { return a * x.e / (1 + COSTR.margine / 100); }, 1);
-    var perdita = tipica * pr - 1;
+    var bon = bonusPer(nEv), conBonus = tipica * (1 + bon);
+    var perdita = conBonus * pr - 1;
     h += '<ol class="costr-lista">' + m.scelta.map(function (x) {
       return "<li><b>" + esc(x.r.Partita || "") + "</b> <span class=\"piccolo\">" + esc(x.r.Ora || "") + "</span><br>" + esc(etichettaSel(x.r)) + " \u00b7 " +
         pv(x.p * 100) + " \u00b7 quota minima <b>" + f2(x.e) + "</b></li>";
     }).join("") + "</ol>" +
       '<div class="riepilogo"><div><b>' + pv(pr * 100).replace(/<[^>]+>/g, "") + "</b><span>probabilit\u00e0 di vincerla</span></div>" +
       "<div><b>" + f2(m.eq) + "</b><span>quota minima della multipla (Equa)</span></div>" +
-      "<div><b>" + f2(tipica) + "</b><span>quanto la pagherebbe un book col " + String(COSTR.margine).replace(".", ",") + "% a evento</span></div></div>" +
-      '<p class="conta">Gioca solo se il tuo book paga <b>almeno ' + f2(m.eq) + "</b> la multipla (o almeno la quota minima di ogni evento): sotto, perdi in media. " +
-      "Alla quota di un book col " + String(COSTR.margine).replace(".", ",") + "% a evento la perdita media sarebbe del " + Math.abs(perdita * 100).toFixed(1).replace(".", ",") + "%" +
-      (perdita >= 0 ? " (qui in pari o meglio)" : "") + ". Sui dieci anni, i segni 1 o 2 fra 70 e 80% sono stati pagati un po\u2019 pi\u00f9 del giusto: a parit\u00e0 di quota la scelta li preferisce. Per Over 1.5, Gol/NoGol e combinate una misura cos\u00ec non c\u2019\u00e8.</p>" +
+      "<div><b>" + f2(conBonus) + "</b><span>quanto la pagherebbe un book col " + String(COSTR.margine).replace(".", ",") + "% a evento" + (bon ? ", bonus compreso" : "") + "</span></div></div>" +
+      '<p class="conta">' + (bon
+        ? "Col bonus del " + String(COSTR.bonus).replace(".", ",") + "% basta che il tuo book paghi la multipla <b>almeno " + f2(m.eq / (1 + bon)) + "</b> prima del bonus: sotto, perdi in media. "
+        : "Gioca solo se il tuo book paga <b>almeno " + f2(m.eq) + "</b> la multipla (o almeno la quota minima di ogni evento): sotto, perdi in media. " +
+          (COSTR.bonus > 0 && COSTR.bonusDa > nEv ? "Il bonus non vale: servono almeno " + COSTR.bonusDa + " eventi. " : "")) +
+      "Alla quota di un book col " + String(COSTR.margine).replace(".", ",") + "% a evento" + (bon ? ", bonus compreso," : "") + " " +
+      (perdita >= 0 ? "saresti in attivo del " + (perdita * 100).toFixed(1).replace(".", ",") + "% in media" : "la perdita media sarebbe del " + Math.abs(perdita * 100).toFixed(1).replace(".", ",") + "%") + ". Sui dieci anni, i segni 1 o 2 fra 70 e 80% sono stati pagati un po\u2019 pi\u00f9 del giusto: a parit\u00e0 di quota la scelta li preferisce. Per Over 1.5, Gol/NoGol e combinate una misura cos\u00ec non c\u2019\u00e8.</p>" +
       '<p class="m-azioni"><button type="button" class="primo" id="costr-metti" data-chiavi="' + esc(JSON.stringify(m.scelta.map(function (x) { return chiave(x.r); }))) + '">Metti nella multipla</button></p>';
     return h + "</details>";
   }
@@ -3705,18 +3721,23 @@
       .then(function (d) { COSTR.ms = d; if (COSTR.aperto) ridisegnaRighe(); }).catch(function () {});
     var cambia = function () {
       var q = quotaDa((document.getElementById("costr-q") || {}).value), mg = parseFloat(String((document.getElementById("costr-m") || {}).value || "").replace(",", "."));
+      var bo = parseFloat(String((document.getElementById("costr-b") || {}).value || "").replace(",", "."));
       if (q) COSTR.quota = q;
       if (isFinite(mg) && mg >= 0 && mg < 20) COSTR.margine = mg;
+      COSTR.bonus = isFinite(bo) && bo >= 0 && bo <= 200 ? bo : 0;
+      COSTR.bonusDa = parseInt((document.getElementById("costr-bd") || {}).value, 10) || 0;
       COSTR.eventi = parseInt((document.getElementById("costr-n") || {}).value, 10) || 0;
-      try { localStorage.setItem("caltiki-costr-quota", String(COSTR.quota)); localStorage.setItem("caltiki-costr-margine", String(COSTR.margine)); } catch (e) {}
+      try {
+        localStorage.setItem("caltiki-costr-quota", String(COSTR.quota)); localStorage.setItem("caltiki-costr-margine", String(COSTR.margine));
+        localStorage.setItem("caltiki-costr-bonus", String(COSTR.bonus)); localStorage.setItem("caltiki-costr-bonusda", String(COSTR.bonusDa));
+      } catch (e) {}
       COSTR.aperto = true;
       var y = window.scrollY;
       ridisegnaRighe();
       window.scrollTo(0, y);
     };
-    ["costr-q", "costr-m"].forEach(function (id) { var el = document.getElementById(id); if (el) el.addEventListener("change", cambia); });
-    var sel = document.getElementById("costr-n");
-    if (sel) sel.addEventListener("change", cambia);
+    ["costr-q", "costr-m", "costr-b"].forEach(function (id) { var el = document.getElementById(id); if (el) el.addEventListener("change", cambia); });
+    ["costr-n", "costr-bd"].forEach(function (id) { var el = document.getElementById(id); if (el) el.addEventListener("change", cambia); });
     var b = document.getElementById("costr-metti");
     if (b) b.addEventListener("click", function () {
       var ch = JSON.parse(b.dataset.chiavi || "[]");
@@ -3731,7 +3752,8 @@
     return [r.Data, r.Partita, r.Mercato, r.Sel].join("|");
   }
 
-  var NOMI_QUOTA = { Pinnacle: "Pinnacle", AsianOdds: "AsianOdds", OddsAPI: "Betfair", FootyMetrics: "più book" };
+  // (173) AsianOdds non c'e' piu' (12/11): le sue righe vecchie si chiamano "altro book"
+  var NOMI_QUOTA = { Pinnacle: "Pinnacle", AsianOdds: "altro book", OddsAPI: "Betfair", FootyMetrics: "più book" };
   // (139) GLI ALTRI BOOK dove Pinnacle manca (altribook_<data>.json): la
   // fonte e' il nome del book, o "media di N book".
   var LIBRI_SHARP = ["SBO", "Betfair", "Marathonbet", "Dafabet", "188Bet", "1xBet"];
@@ -3759,12 +3781,12 @@
     if (num(r.Rif_Equa) != null) {
       var dRif = num(r.Rif_Prob) - prob;
       det.push("<p>" + esc(r.Rif_Book || "Riferimento") + ": probabilit\u00e0 " + f0(num(r.Rif_Prob)) + "%, equa " + f2(num(r.Rif_Equa)) +
-        (Math.abs(dRif) >= 3 ? " \u2013 <b>" + (dRif > 0 ? "+" : "") + f0(dRif) + " punti</b> rispetto ad AsianOdds: i due mercati non sono d\u2019accordo, prudenza." :
-          " \u2013 d\u2019accordo con AsianOdds.") + "</p>");
+        (Math.abs(dRif) >= 3 ? " \u2013 <b>" + (dRif > 0 ? "+" : "") + f0(dRif) + " punti</b> rispetto a questo prezzo: i due mercati non sono d\u2019accordo, prudenza." :
+          " \u2013 d\u2019accordo con questo prezzo.") + "</p>");
     }
     if (r.Fonte === "OddsAPI") {
       det.push("<p>Prezzo da The Odds API (" + esc(r.Rif_Book || "Betfair Exchange o il miglior book disponibile") +
-        "): AsianOdds non ha ancora questa partita, copre solo le prossime 24 ore.</p>");
+        ").</p>");
     }
     if (r.Fonte === "Pinnacle") {
       det.push("<p>Prezzo da Pinnacle, il book di riferimento dei professionisti: \u00e8 la fonte principale dell\u2019Equa.</p>");
@@ -6207,7 +6229,7 @@
     var d = ["1", "X", "2"].map(function (e) { return [e, num(r["AO Drift " + e])]; })
       .filter(function (x) { return x[1] != null; });
     if (d.length) {
-      out.push("<p>Quote AsianOdds dall'apertura: " + d.map(function (x) {
+      out.push("<p>Quote dall'apertura: " + d.map(function (x) {
         return x[0] + " " + (x[1] > 0 ? "+" : "") + x[1].toFixed(0) + "%";
       }).join(" \u00b7 ") + " (quota salita = il mercato ci crede meno).</p>");
     }
@@ -6419,7 +6441,7 @@
         if (pin) { m = pin; da = "Pinnacle"; }
         else {
           var p = s && s.alias ? per[s.alias["consensus|" + r.Casa + "|" + r.Ospite]] : null;
-          if (p && p.Mercato) { m = p.Mercato; da = "AsianOdds"; }
+          if (p && p.Mercato) { m = p.Mercato; da = "altro book"; }
         }
         if (!m) return r;
         var t = {};
@@ -6503,7 +6525,7 @@
     }
     if (r._pm3) {
       var t = r._pm3;
-      h = h.replace('<div class="dettaglio">', '<div class="dettaglio"><p>Mercato ' + esc(r._da || "AsianOdds") + ', margine tolto: 1 ' + f0(t["1"]) +
+      h = h.replace('<div class="dettaglio">', '<div class="dettaglio"><p>Mercato ' + esc(r._da || "altro book") + ', margine tolto: 1 ' + f0(t["1"]) +
         "% · X " + f0(t["X"]) + "% · 2 " + f0(t["2"]) + "%" +
         (r._marg != null ? " (margine " + f1(r._marg) + "%)" : "") + ". Quota equa del " + esc(segno) + ": " +
         f2(100 / r._pm) + "; il bookmaker paga meno, del suo margine.</p>");
@@ -6573,7 +6595,7 @@
         "Con il margine dei bookmaker italiani la singola conviene solo se la tua quota supera la quota equa; in multipla il margine si moltiplica. " +
         "Restano solo le pick che passano gli stessi filtri della schedina: campionati giocabili, margine fino al 5%, quota equa fra 1,25 e 1,67, mercato non contro.</p>" +
         '<h3 class="giorno-best">Contro Pinnacle <small>· dal 13/11</small></h3>' + riepilogoPinnacle(misuraPinnacle(a[3])) +
-        '<details class="best-storico"><summary>Lo storico fino al 12/11, contro AsianOdds</summary>' +
+        '<details class="best-storico"><summary>Lo storico fino al 12/11, contro il mercato di allora</summary>' +
         riepilogoBest(tutto, ultimi) + tabellaSegni(a[2]) + "</details>";
       if (!date.length) {
         $cont.innerHTML = testa + messaggio("vuoto", "Nessuna giornata da oggi in avanti: arrivano col giro notturno.");
@@ -6886,7 +6908,7 @@
     var p = r._p || [];
     var det = [];
     if (r.Lega) det.push("<p>" + esc(r.Lega) + "</p>");
-    det.push("<p>Quote " + esc(r.Fonte) + ": <span class=nw><b class=seg>1</b> " + qv(r.Q1) + "</span>" + " · <span class=nw><b class=seg>X</b> " + qv(r.QX) + "</span>" + " · <span class=nw><b class=seg>2</b> " + qv(r.Q2) + "</span>" +
+    det.push("<p>Quote " + esc(r.Fonte === "AsianOdds" ? "di un altro book" : r.Fonte) + ": <span class=nw><b class=seg>1</b> " + qv(r.Q1) + "</span>" + " · <span class=nw><b class=seg>X</b> " + qv(r.QX) + "</span>" + " · <span class=nw><b class=seg>2</b> " + qv(r.Q2) + "</span>" +
       (marg != null ? " (margine " + mv(marg) + ")" : "") + "</p>");
     if (p[0] != null) det.push("<p>Senza margine: <span class=nw><b class=seg>1</b> " + pv(p[0]) + "</span>" + " · <span class=nw><b class=seg>X</b> " + pv(p[1]) + "</span>" + " · <span class=nw><b class=seg>2</b> " + pv(p[2]) + "</span>" + "</p>");
     det.push("<p>Quota equa " + articolo(esito) + ": " + qv(equa) + (r._quota ? " – il book la paga " + qv(r._quota) : "") +
@@ -6931,9 +6953,9 @@
     h += "</p>";
     // (162) da dove viene il prezzo del mercato: Pinnacle prima, poi i ripieghi
     if (Array.isArray(m.per_fonte) && m.per_fonte.length) {
-      h += '<p class="piccolo">Prezzo del mercato: ' + m.per_fonte.map(function (x) {
+      h += '<p class="piccolo">Prezzo del mercato: ' + m.per_fonte.filter(function (x) { return !/asian ?odds/i.test(String(x.fonte || "")); }).map(function (x) {
         return esc(x.fonte) + " " + esc(x.partite) + (x.partite >= 50 ? " (t " + segnato(x.t) + ")" : "");
-      }).join(" · ") + ". Pinnacle in chiusura dove c\u2019\u00e8; AsianOdds fino al 12/11; poi altri book e FootyMetrics solo dove Pinnacle manca.</p>";
+      }).join(" · ") + ". Pinnacle in chiusura dove c\u2019\u00e8; altri book e FootyMetrics solo dove Pinnacle manca.</p>";
     }
     return h;
   }
@@ -6998,7 +7020,7 @@
           "Mercati diversi non si sommano volentieri: una doppia chance si vince molto più spesso di un 1X2 e paga molto meno. " +
           "Il numero che conta è il confronto col favorito del book: se la fonte non ci sta sopra, seguirla al prezzo del book non conviene, per quante ne vinca. " +
           "La tacca sulle barre segna il 60%.</p>";
-        h += d.fonti.map(schedaFonte).join("");
+        h += d.fonti.filter(function (x) { return !/asian ?odds/i.test(String((x && (x.nome || x.fonte)) || "")); }).map(schedaFonte).join("");
       }
       $cont.innerHTML = testaFonti() + h;
       collegaTestaFonti();
@@ -7255,7 +7277,8 @@
     function tabella(titolo, voci, nome) {
       if (!voci || !voci.length) return "";
       // le fonti chiuse in fondo
-      voci = voci.slice().sort(function (a, b) { return (FONTI_CHIUSE[a[nome]] ? 1 : 0) - (FONTI_CHIUSE[b[nome]] ? 1 : 0); });
+      voci = voci.filter(function (x) { return !/asian ?odds/i.test(String(x[nome] || "")); })
+        .sort(function (a, b) { return (FONTI_CHIUSE[a[nome]] ? 1 : 0) - (FONTI_CHIUSE[b[nome]] ? 1 : 0); });
       return '<p class="sotto-titolo">' + titolo + "</p>" +
         '<table class="mercati"><tr><th></th><th>Righe (partite)</th><th>Previsto</th><th>Uscito</th><th>Scarto</th></tr>' +
         voci.map(function (x) { return riga(x, x[nome]); }).join("") + "</table>";
@@ -7451,7 +7474,7 @@
   }
 
   var NOMI_SCHEDA = {
-    asianodds: "AsianOdds", footymetrics: "FootyMetrics", prezzi: "Probabilit\u00e0 senza margine", poisson: "Gol attesi",
+    asianodds: "altro book", footymetrics: "FootyMetrics", prezzi: "Probabilit\u00e0 senza margine", poisson: "Gol attesi",
     accordo: "Statarea + WebPronostici", consenso: "Consenso medio", statarea: "Statarea",
     wp_1x2: "WebPronostici", wp_ou: "WebPronostici", wp_ggng: "WebPronostici", wp_misti: "WebPronostici",
     webpronostici: "WebPronostici", betimate: "Betimate", xgaura: "xGaura", sportytrader: "Sportytrader",
@@ -7471,7 +7494,7 @@
     if (a) {
       var s = [num(a["P1 Shin"]), num(a["PX Shin"]), num(a["P2 Shin"])];
       if (s[0] == null) s = [num(a.P1), num(a.PX), num(a.P2)];
-      if (s[0] != null) return { "1": s[0], "X": s[1], "2": s[2], da: "AsianOdds" };
+      if (s[0] != null) return { "1": s[0], "X": s[1], "2": s[2], da: "altro book" };
     }
     if (f && num(f.Devig1) != null) {
       return { "1": num(f.Devig1), "X": num(f.DevigX), "2": num(f.Devig2), da: "FootyMetrics" };
@@ -7668,7 +7691,7 @@
       if (s[0] == null) s = [num(a.P1), num(a.PX), num(a.P2)];
       if (s[0] != null) {
         var ma = num(a.Margine);
-        h += "<p>AsianOdds: <span class=nw><b class=seg>1</b> " + pv(s[0]) + "</span>" + " · <span class=nw><b class=seg>X</b> " + pv(s[1]) + "</span>" + " · <span class=nw><b class=seg>2</b> " + pv(s[2]) + "</span>" + (ma != null ? " (margine " + mv(ma) + ")" : "") +
+        h += "<p>Un altro book: <span class=nw><b class=seg>1</b> " + pv(s[0]) + "</span>" + " · <span class=nw><b class=seg>X</b> " + pv(s[1]) + "</span>" + " · <span class=nw><b class=seg>2</b> " + pv(s[2]) + "</span>" + (ma != null ? " (margine " + mv(ma) + ")" : "") +
           (num(a.Mov) ? "; " + (a.Notevole ? "movimento notevole" : "movimento") + " di " + nv(a.Mov) + " punti dall'apertura" : "") + ".</p>";
       }
     }
@@ -7709,7 +7732,7 @@
       if (a.Notevole) chip.push('<span class="scarto-grosso">movimento notevole</span>');
       if (a.Affidabile) chip.push('<span class="chip">affidabile</span>');
       if (chip.length) h += "<p>" + chip.join(" ") + "</p>";
-      h += '<p class="piccolo">AsianOdds, senza margine. Pinnacle non c’è ancora.</p>';
+      h += '<p class="piccolo">Un altro book, senza margine. Pinnacle non c’è ancora.</p>';
     } else {
       var or = num(f.Overround);
       h += tripla("migliori", m["1"], m.X, m["2"]) + legenda();
@@ -7721,7 +7744,7 @@
         return x[0] + " " + pv(100 * (1 / s) / (1 / s + 1 / n));
       }).filter(Boolean);
       if (due.length) h += "<p>" + due.join(" · ") + "</p>";
-      h += '<p class="piccolo">Migliori quote fra più book, senza margine. Pinnacle e AsianOdds non ci sono ancora.</p>';
+      h += '<p class="piccolo">Migliori quote fra più book, senza margine. Pinnacle non c’è ancora.</p>';
     }
     return h + "</div>";
   }
