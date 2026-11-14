@@ -2,6 +2,24 @@
  {
   "Data": "2026-11-16",
   "Ora": "00:00",
+  "Lega": "Uruguay - Primera Division",
+  "Casa": "Defensor Sporting",
+  "Ospite": "Peñarol",
+  "Segno": "2",
+  "P1": 21.9,
+  "PX": 28.6,
+  "P2": 49.5,
+  "Fonti": 3,
+  "Elenco": "betimate, footymetrics, statarea",
+  "MP1": 18.0,
+  "MPX": 24.4,
+  "MP2": 57.6,
+  "Scarto": -8.0,
+  "Segno_Mercato": "2"
+ },
+ {
+  "Data": "2026-11-16",
+  "Ora": "00:00",
   "Lega": "Uruguay: Primera Division Uruguay",
   "Casa": "Defensor Sporting",
   "Ospite": "Club Atletico Penarol",
@@ -15,24 +33,6 @@
   "MPX": 24.4,
   "MP2": 57.6,
   "Scarto": -0.6,
-  "Segno_Mercato": "2"
- },
- {
-  "Data": "2026-11-16",
-  "Ora": "00:00",
-  "Lega": "Uruguay - Primera Division",
-  "Casa": "Defensor Sporting",
-  "Ospite": "Peñarol",
-  "Segno": "2",
-  "P1": 21.9,
-  "PX": 28.2,
-  "P2": 49.9,
-  "Fonti": 3,
-  "Elenco": "betimate, footymetrics, statarea",
-  "MP1": 18.0,
-  "MPX": 24.4,
-  "MP2": 57.6,
-  "Scarto": -7.7,
   "Segno_Mercato": "2"
  },
  {
@@ -99,15 +99,15 @@
   "Casa": "Ferro Carril Oeste",
   "Ospite": "Gimnasia y Tiro",
   "Segno": "1",
-  "P1": 51.5,
-  "PX": 29.0,
+  "P1": 51.0,
+  "PX": 29.5,
   "P2": 19.5,
   "Fonti": 2,
   "Elenco": "betimate, ratingbet",
   "MP1": 62.1,
   "MPX": 25.9,
   "MP2": 12.0,
-  "Scarto": -10.6,
+  "Scarto": -11.1,
   "Segno_Mercato": "1"
  },
  {
@@ -154,8 +154,8 @@
   "Ospite": "Juventus Managua",
   "Segno": "1",
   "P1": 57.0,
-  "PX": 23.0,
-  "P2": 20.0,
+  "PX": 22.0,
+  "P2": 21.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -289,19 +289,6 @@
  {
   "Data": "2026-11-16",
   "Ora": "13:45",
-  "Lega": "Greece: Super League 2 Greece",
-  "Casa": "Panionios",
-  "Ospite": "Olympiacos B",
-  "Segno": "1",
-  "P1": 78.0,
-  "PX": 16.0,
-  "P2": 6.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
- },
- {
-  "Data": "2026-11-16",
-  "Ora": "13:45",
   "Lega": "GREECE - SUPER LEAGUE 2",
   "Casa": "Panionios",
   "Ospite": "Olympiacos Piraeus B",
@@ -311,6 +298,19 @@
   "P2": 10.0,
   "Fonti": 1,
   "Elenco": "statarea"
+ },
+ {
+  "Data": "2026-11-16",
+  "Ora": "13:45",
+  "Lega": "Greece: Super League 2 Greece",
+  "Casa": "Panionios",
+  "Ospite": "Olympiacos B",
+  "Segno": "1",
+  "P1": 78.0,
+  "PX": 16.0,
+  "P2": 6.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
  },
  {
   "Data": "2026-11-16",
@@ -337,10 +337,10 @@
   "P2": 72.0,
   "Fonti": 1,
   "Elenco": "ratingbet",
-  "MP1": 10.5,
-  "MPX": 22.3,
-  "MP2": 67.2,
-  "Scarto": 4.8,
+  "MP1": 11.3,
+  "MPX": 22.1,
+  "MP2": 66.6,
+  "Scarto": 5.4,
   "Segno_Mercato": "2"
  },
  {
@@ -417,10 +417,10 @@
   "P2": 89.0,
   "Fonti": 1,
   "Elenco": "ratingbet",
-  "MP1": 2.8,
+  "MP1": 3.1,
   "MPX": 9.1,
-  "MP2": 88.1,
-  "Scarto": 0.9,
+  "MP2": 87.8,
+  "Scarto": 1.2,
   "Segno_Mercato": "2"
  },
  {

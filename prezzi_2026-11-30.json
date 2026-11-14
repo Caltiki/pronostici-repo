@@ -60,7 +60,8 @@
   "Sel": "Over",
   "Prob": 63.5,
   "Equa": 1.58,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-30",
@@ -144,8 +145,7 @@
   "Sel": "NoGol",
   "Prob": 57.3,
   "Equa": 1.74,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-30",
@@ -338,27 +338,6 @@
  },
  {
   "Data": "2026-11-30",
-  "Ora": "21:00",
-  "Campionato": "Spain: Laliga",
-  "Partita": "Espanyol - Getafe",
-  "Casa": "Espanyol",
-  "Ospite": "Getafe",
-  "Linea_OU": 2.0,
-  "Gol_attesi": 2.16,
-  "Margine": 4.7,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "Gol",
-  "Prob": 42.7,
-  "Equa": 2.34,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-11-30",
   "Ora": "20:45",
   "Campionato": "Italy: Serie A",
   "Partita": "Cagliari - AC Milan",
@@ -460,6 +439,27 @@
   "Sel": "X2 + NoGol",
   "Prob": 39.0,
   "Equa": 2.56,
+  "Rif_Book": "Pinnacle"
+ },
+ {
+  "Data": "2026-11-30",
+  "Ora": "21:00",
+  "Campionato": "Spain: Laliga",
+  "Partita": "Espanyol - Getafe",
+  "Casa": "Espanyol",
+  "Ospite": "Getafe",
+  "Linea_OU": 2.0,
+  "Gol_attesi": 2.16,
+  "Margine": 4.7,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "OddsAPI",
+  "Gruppo": "Under Over",
+  "Mercato": "OU 1.5",
+  "Sel": "Under",
+  "Prob": 36.5,
+  "Equa": 2.74,
   "Rif_Book": "Pinnacle"
  },
  {

@@ -81,7 +81,8 @@
   "Sel": "Over",
   "Prob": 79.9,
   "Equa": 1.25,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-20",
@@ -102,7 +103,8 @@
   "Sel": "1X + Over 2.5",
   "Prob": 78.6,
   "Equa": 1.27,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-20",
@@ -144,7 +146,8 @@
   "Sel": "Over",
   "Prob": 76.1,
   "Equa": 1.31,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-20",
@@ -166,28 +169,6 @@
   "Prob": 76.1,
   "Equa": 1.31,
   "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-11-20",
-  "Ora": "20:45",
-  "Campionato": "France: Ligue 1",
-  "Partita": "Troyes - Le Havre",
-  "Casa": "Troyes",
-  "Ospite": "Le Havre",
-  "Linea_OU": 2.5,
-  "Gol_attesi": 2.75,
-  "Margine": 3.7,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "Under Over",
-  "Mercato": "OU 3.5",
-  "Sel": "Under",
-  "Prob": 70.3,
-  "Equa": 1.42,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
  },
  {
   "Data": "2026-11-20",
@@ -272,8 +253,7 @@
   "Sel": "1",
   "Prob": 55.5,
   "Equa": 1.8,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-20",
@@ -420,8 +400,7 @@
   "Sel": "1X + NoGol",
   "Prob": 51.7,
   "Equa": 1.93,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-20",
@@ -719,23 +698,23 @@
  },
  {
   "Data": "2026-11-20",
-  "Ora": "20:30",
-  "Campionato": "Italy: Serie B",
-  "Partita": "Hellas Verona - Cesena FC",
-  "Casa": "Hellas Verona",
-  "Ospite": "Cesena FC",
-  "Linea_OU": 2.75,
-  "Gol_attesi": 2.99,
-  "Margine": 5.0,
+  "Ora": "20:45",
+  "Campionato": "France: Ligue 1",
+  "Partita": "Troyes - Le Havre",
+  "Casa": "Troyes",
+  "Ospite": "Le Havre",
+  "Linea_OU": 2.5,
+  "Gol_attesi": 2.75,
+  "Margine": 3.7,
   "Movimento": null,
   "Principale": "si",
   "Schedina": "si",
   "Fonte": "OddsAPI",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 25.6,
-  "Equa": 3.91,
+  "Gruppo": "Under Over",
+  "Mercato": "OU 1.5",
+  "Sel": "Under",
+  "Prob": 23.9,
+  "Equa": 4.18,
   "Rif_Book": "Pinnacle"
  },
  {
@@ -757,6 +736,27 @@
   "Sel": "X",
   "Prob": 20.9,
   "Equa": 4.78,
+  "Rif_Book": "Pinnacle"
+ },
+ {
+  "Data": "2026-11-20",
+  "Ora": "20:30",
+  "Campionato": "Italy: Serie B",
+  "Partita": "Hellas Verona - Cesena FC",
+  "Casa": "Hellas Verona",
+  "Ospite": "Cesena FC",
+  "Linea_OU": 2.75,
+  "Gol_attesi": 2.99,
+  "Margine": 5.0,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "OddsAPI",
+  "Gruppo": "Under Over",
+  "Mercato": "OU 1.5",
+  "Sel": "Under",
+  "Prob": 20.1,
+  "Equa": 4.99,
   "Rif_Book": "Pinnacle"
  }
 ]

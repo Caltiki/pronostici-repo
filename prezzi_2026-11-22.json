@@ -207,7 +207,8 @@
   "Sel": "Over",
   "Prob": 79.9,
   "Equa": 1.25,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-22",
@@ -228,7 +229,8 @@
   "Sel": "Over",
   "Prob": 79.9,
   "Equa": 1.25,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-22",
@@ -270,7 +272,30 @@
   "Sel": "Over",
   "Prob": 79.9,
   "Equa": 1.25,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
+ },
+ {
+  "Data": "2026-11-22",
+  "Ora": "17:15",
+  "Campionato": "Italy: Serie B",
+  "Partita": "Arezzo - Padova",
+  "Casa": "Arezzo",
+  "Ospite": "Padova",
+  "Linea_OU": 2.25,
+  "Gol_attesi": 2.33,
+  "Margine": 4.8,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "OddsAPI",
+  "Gruppo": "Under Over",
+  "Mercato": "OU 3.5",
+  "Sel": "Under",
+  "Prob": 79.3,
+  "Equa": 1.26,
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-22",
@@ -377,8 +402,7 @@
   "Sel": "Over",
   "Prob": 74.0,
   "Equa": 1.35,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-22",
@@ -399,30 +423,7 @@
   "Sel": "Over",
   "Prob": 73.8,
   "Equa": 1.36,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
- },
- {
-  "Data": "2026-11-22",
-  "Ora": "21:00",
-  "Campionato": "Spain: Laliga",
-  "Partita": "Getafe - Atlético Madrid",
-  "Casa": "Getafe",
-  "Ospite": "Atlético Madrid",
-  "Linea_OU": 2.5,
-  "Gol_attesi": 2.6,
-  "Margine": 3.9,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "Under Over",
-  "Mercato": "OU 3.5",
-  "Sel": "Under",
-  "Prob": 73.6,
-  "Equa": 1.36,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-22",
@@ -592,8 +593,7 @@
   "Sel": "Over",
   "Prob": 67.6,
   "Equa": 1.48,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-22",
@@ -706,28 +706,6 @@
  },
  {
   "Data": "2026-11-22",
-  "Ora": "13:00",
-  "Campionato": "England: Championship",
-  "Partita": "Burnley - Blackburn Rovers",
-  "Casa": "Burnley",
-  "Ospite": "Blackburn Rovers",
-  "Linea_OU": 2.75,
-  "Gol_attesi": 2.99,
-  "Margine": 5.0,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "Under Over",
-  "Mercato": "OU 3.5",
-  "Sel": "Under",
-  "Prob": 64.9,
-  "Equa": 1.54,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
- },
- {
-  "Data": "2026-11-22",
   "Ora": "15:30",
   "Campionato": "Germany: Bundesliga",
   "Partita": "Augsburg - FSV Mainz 05",
@@ -808,8 +786,7 @@
   "Sel": "2",
   "Prob": 64.2,
   "Equa": 1.56,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-22",
@@ -977,7 +954,8 @@
   "Sel": "Gol",
   "Prob": 60.8,
   "Equa": 1.65,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-22",
@@ -1019,7 +997,8 @@
   "Sel": "2",
   "Prob": 60.2,
   "Equa": 1.66,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-22",
@@ -1040,8 +1019,7 @@
   "Sel": "Gol",
   "Prob": 60.0,
   "Equa": 1.67,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-22",
@@ -1146,8 +1124,7 @@
   "Sel": "1",
   "Prob": 58.0,
   "Equa": 1.72,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-22",
@@ -1567,8 +1544,7 @@
   "Sel": "2 + Over 1.5",
   "Prob": 52.7,
   "Equa": 1.9,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-22",
@@ -2538,27 +2514,6 @@
  },
  {
   "Data": "2026-11-22",
-  "Ora": "17:15",
-  "Campionato": "France: Ligue 1",
-  "Partita": "Lorient - Rennes",
-  "Casa": "Lorient",
-  "Ospite": "Rennes",
-  "Linea_OU": 2.75,
-  "Gol_attesi": 2.99,
-  "Margine": 3.7,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "NoGol",
-  "Prob": 40.0,
-  "Equa": 2.5,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-11-22",
   "Ora": "15:30",
   "Campionato": "Germany: Bundesliga",
   "Partita": "Augsburg - FSV Mainz 05",
@@ -2660,6 +2615,27 @@
   "Sel": "1X + NoGol",
   "Prob": 39.4,
   "Equa": 2.54,
+  "Rif_Book": "Pinnacle"
+ },
+ {
+  "Data": "2026-11-22",
+  "Ora": "20:45",
+  "Campionato": "Italy: Serie A",
+  "Partita": "Atalanta BC - Inter Milan",
+  "Casa": "Atalanta BC",
+  "Ospite": "Inter Milan",
+  "Linea_OU": 3.25,
+  "Gol_attesi": 3.33,
+  "Margine": 4.2,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "OddsAPI",
+  "Gruppo": "Gol NoGol",
+  "Mercato": "BTTS",
+  "Sel": "NoGol",
+  "Prob": 39.2,
+  "Equa": 2.55,
   "Rif_Book": "Pinnacle"
  },
  {
@@ -3147,69 +3123,6 @@
  },
  {
   "Data": "2026-11-22",
-  "Ora": "17:15",
-  "Campionato": "Italy: Serie B",
-  "Partita": "Arezzo - Padova",
-  "Casa": "Arezzo",
-  "Ospite": "Padova",
-  "Linea_OU": 2.25,
-  "Gol_attesi": 2.33,
-  "Margine": 4.8,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "Under Over",
-  "Mercato": "OU 1.5",
-  "Sel": "Under",
-  "Prob": 32.4,
-  "Equa": 3.09,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-11-22",
-  "Ora": "15:00",
-  "Campionato": "Italy: Serie A",
-  "Partita": "Sassuolo - Genoa",
-  "Casa": "Sassuolo",
-  "Ospite": "Genoa",
-  "Linea_OU": 2.5,
-  "Gol_attesi": 2.63,
-  "Margine": 3.6,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "Under Over",
-  "Mercato": "OU 1.5",
-  "Sel": "Under",
-  "Prob": 26.2,
-  "Equa": 3.81,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-11-22",
-  "Ora": "18:30",
-  "Campionato": "Spain: Laliga",
-  "Partita": "CA Osasuna - Málaga",
-  "Casa": "CA Osasuna",
-  "Ospite": "Málaga",
-  "Linea_OU": 2.5,
-  "Gol_attesi": 2.64,
-  "Margine": 3.8,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "Under Over",
-  "Mercato": "OU 1.5",
-  "Sel": "Under",
-  "Prob": 26.0,
-  "Equa": 3.84,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-11-22",
   "Ora": "15:00",
   "Campionato": "Italy: Serie A",
   "Partita": "Bologna - Udinese",
@@ -3231,14 +3144,14 @@
  },
  {
   "Data": "2026-11-22",
-  "Ora": "17:30",
-  "Campionato": "Germany: Bundesliga",
-  "Partita": "Werder Bremen - Hamburger SV",
-  "Casa": "Werder Bremen",
-  "Ospite": "Hamburger SV",
-  "Linea_OU": 3.0,
-  "Gol_attesi": 3.16,
-  "Margine": 4.0,
+  "Ora": "21:00",
+  "Campionato": "Spain: Laliga",
+  "Partita": "Getafe - Atlético Madrid",
+  "Casa": "Getafe",
+  "Ospite": "Atlético Madrid",
+  "Linea_OU": 2.5,
+  "Gol_attesi": 2.6,
+  "Margine": 3.9,
   "Movimento": null,
   "Principale": "si",
   "Schedina": "si",
@@ -3246,8 +3159,29 @@
   "Gruppo": "1X2",
   "Mercato": "1X2",
   "Sel": "X",
-  "Prob": 21.3,
-  "Equa": 4.69,
+  "Prob": 23.7,
+  "Equa": 4.22,
+  "Rif_Book": "Pinnacle"
+ },
+ {
+  "Data": "2026-11-22",
+  "Ora": "17:15",
+  "Campionato": "France: Ligue 1",
+  "Partita": "Lorient - Rennes",
+  "Casa": "Lorient",
+  "Ospite": "Rennes",
+  "Linea_OU": 2.75,
+  "Gol_attesi": 2.99,
+  "Margine": 3.7,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "OddsAPI",
+  "Gruppo": "Under Over",
+  "Mercato": "OU 1.5",
+  "Sel": "Under",
+  "Prob": 20.1,
+  "Equa": 4.99,
   "Rif_Book": "Pinnacle"
  },
  {
@@ -3264,11 +3198,32 @@
   "Principale": "si",
   "Schedina": "si",
   "Fonte": "OddsAPI",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 20.8,
-  "Equa": 4.81,
+  "Gruppo": "Under Over",
+  "Mercato": "OU 1.5",
+  "Sel": "Under",
+  "Prob": 20.1,
+  "Equa": 4.99,
+  "Rif_Book": "Pinnacle"
+ },
+ {
+  "Data": "2026-11-22",
+  "Ora": "13:00",
+  "Campionato": "England: Championship",
+  "Partita": "Burnley - Blackburn Rovers",
+  "Casa": "Burnley",
+  "Ospite": "Blackburn Rovers",
+  "Linea_OU": 2.75,
+  "Gol_attesi": 2.99,
+  "Margine": 5.0,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "OddsAPI",
+  "Gruppo": "Under Over",
+  "Mercato": "OU 1.5",
+  "Sel": "Under",
+  "Prob": 20.1,
+  "Equa": 4.99,
   "Rif_Book": "Pinnacle"
  },
  {

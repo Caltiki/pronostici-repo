@@ -18,7 +18,8 @@
   "Sel": "Over",
   "Prob": 79.9,
   "Equa": 1.25,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-23",
@@ -39,7 +40,8 @@
   "Sel": "Over",
   "Prob": 79.9,
   "Equa": 1.25,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-23",
@@ -60,7 +62,8 @@
   "Sel": "Over",
   "Prob": 79.9,
   "Equa": 1.25,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-23",
@@ -81,8 +84,7 @@
   "Sel": "Gol",
   "Prob": 59.7,
   "Equa": 1.68,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-23",
@@ -103,8 +105,7 @@
   "Sel": "Gol",
   "Prob": 59.4,
   "Equa": 1.68,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-23",
@@ -125,8 +126,7 @@
   "Sel": "Gol",
   "Prob": 58.4,
   "Equa": 1.71,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-23",
@@ -289,74 +289,11 @@
   "Principale": "si",
   "Schedina": "si",
   "Fonte": "OddsAPI",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "NoGol",
-  "Prob": 41.6,
-  "Equa": 2.4,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-11-23",
-  "Ora": "20:45",
-  "Campionato": "Italy: Serie A",
-  "Partita": "Monza - Fiorentina",
-  "Casa": "Monza",
-  "Ospite": "Fiorentina",
-  "Linea_OU": 2.75,
-  "Gol_attesi": 2.99,
-  "Margine": 3.8,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
   "Gruppo": "Combo",
   "Mercato": "Esito + Gol",
   "Sel": "X2 + Over 2.5",
   "Prob": 41.2,
   "Equa": 2.43,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-11-23",
-  "Ora": "21:00",
-  "Campionato": "England: Premier League",
-  "Partita": "Brentford - Everton",
-  "Casa": "Brentford",
-  "Ospite": "Everton",
-  "Linea_OU": 2.75,
-  "Gol_attesi": 2.99,
-  "Margine": 3.7,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "NoGol",
-  "Prob": 40.6,
-  "Equa": 2.46,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-11-23",
-  "Ora": "21:00",
-  "Campionato": "Spain: Laliga",
-  "Partita": "Levante - Elche CF",
-  "Casa": "Levante",
-  "Ospite": "Elche CF",
-  "Linea_OU": 2.75,
-  "Gol_attesi": 2.99,
-  "Margine": 3.7,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "NoGol",
-  "Prob": 40.3,
-  "Equa": 2.48,
   "Rif_Book": "Pinnacle"
  },
  {
@@ -441,6 +378,69 @@
   "Sel": "1 + Over 1.5",
   "Prob": 36.2,
   "Equa": 2.76,
+  "Rif_Book": "Pinnacle"
+ },
+ {
+  "Data": "2026-11-23",
+  "Ora": "21:00",
+  "Campionato": "England: Premier League",
+  "Partita": "Brentford - Everton",
+  "Casa": "Brentford",
+  "Ospite": "Everton",
+  "Linea_OU": 2.75,
+  "Gol_attesi": 2.99,
+  "Margine": 3.7,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "OddsAPI",
+  "Gruppo": "Under Over",
+  "Mercato": "OU 1.5",
+  "Sel": "Under",
+  "Prob": 20.1,
+  "Equa": 4.99,
+  "Rif_Book": "Pinnacle"
+ },
+ {
+  "Data": "2026-11-23",
+  "Ora": "21:00",
+  "Campionato": "Spain: Laliga",
+  "Partita": "Levante - Elche CF",
+  "Casa": "Levante",
+  "Ospite": "Elche CF",
+  "Linea_OU": 2.75,
+  "Gol_attesi": 2.99,
+  "Margine": 3.7,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "OddsAPI",
+  "Gruppo": "Under Over",
+  "Mercato": "OU 1.5",
+  "Sel": "Under",
+  "Prob": 20.1,
+  "Equa": 4.99,
+  "Rif_Book": "Pinnacle"
+ },
+ {
+  "Data": "2026-11-23",
+  "Ora": "20:45",
+  "Campionato": "Italy: Serie A",
+  "Partita": "Monza - Fiorentina",
+  "Casa": "Monza",
+  "Ospite": "Fiorentina",
+  "Linea_OU": 2.75,
+  "Gol_attesi": 2.99,
+  "Margine": 3.8,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "OddsAPI",
+  "Gruppo": "Under Over",
+  "Mercato": "OU 1.5",
+  "Sel": "Under",
+  "Prob": 20.1,
+  "Equa": 4.99,
   "Rif_Book": "Pinnacle"
  }
 ]
