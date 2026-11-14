@@ -9712,7 +9712,10 @@
         // (148) una riga sola: trattini stretti, scarto fra parentesi piccolo
         // (151) a capo solo fra un pezzo e l'altro, mai fra "1" e "55%"
         div.innerHTML = '<span class="nw">Elo ' + evCoppia(c.elo, o.elo, "\u2013") + ' <span class="piccolo">(' + (c.elo >= o.elo ? "+" : "\u2212") +
-          f0(Math.abs(c.elo - o.elo)) + ")</span></span>\u2009· " + '<span class="nw"><span class=nw><b class=seg>1</b> ' + pvE(p[0]) + '</span>' + "</span>\u2009· " +
+          f0(Math.abs(c.elo - o.elo)) + ")</span></span>" +
+          // (172) le probabilita' dell'Elo sotto, con la loro etichetta:
+          // accanto ai due rating sembravano quelle del mercato
+          '<br><span class="piccolo">secondo l\u2019Elo</span> ' + '<span class="nw"><span class=nw><b class=seg>1</b> ' + pvE(p[0]) + '</span>' + "</span>\u2009· " +
           '<span class="nw"><span class=nw><b class=seg>X</b> ' + pvE(p[1]) + '</span>' + "</span>\u2009· " + '<span class="nw"><span class=nw><b class=seg>2</b> ' + pvE(p[2]) + '</span>' + "</span>";
         dove.parentNode.insertBefore(div, dove.nextSibling);
         stringiRiga(div);
