@@ -15,7 +15,12 @@
     if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
   } catch (e) {}
 </script>
-<link rel="icon" type="image/png" id="favicon">
+<!-- (171) L'ICONA SULLA SCHERMATA HOME: file veri accanto alla pagina
+     (icona-192/512/180.png e manifest.json, in sito/), cosi' il telefono
+     usa il logo invece della lettera di GitHub. -->
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icona-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icona-192.png" id="favicon">
 <!--
   IL SITO LEGGE GLI STESSI FILE DELL'ADDON KODI, E NON NE CALCOLA DI NUOVI.
 
