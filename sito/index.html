@@ -1383,6 +1383,7 @@
   :root[data-theme="light"] .fonte-q { border-color: #0b4a86; color: #0b4a86; }
   :root[data-theme="light"] .fonte-q.pin { border-color: #a36b00; color: #a36b00; }
   /* IL TIMBRO PINNACLE (100): la partita ha le quote Pinnacle. */
+  .pill.fresca { background: color-mix(in srgb, var(--buono) 16%, transparent); color: var(--buono); font-weight: 700; }
   .timbro-pin {
     display: inline-block; padding: 0 5px; border: 1px solid #f5b301; border-radius: 3px;
     color: #f5b301; font-size: .56rem; font-weight: 700; letter-spacing: .06em; line-height: 1.45;
@@ -2677,6 +2678,8 @@
           // (119) Prezzo da Pinnacle: lo dice il timbro, non piu' la scritta
           // "quota Pinnacle" accanto (erano due cose uguali).
           (r0.Fonte === "Pinnacle" ? '<span class="timbro-pin" title="Prezzi da Pinnacle">Pinnacle</span>' : "") +
+          // (171) l'1X2 aggiornato col ponte dopo l'ultimo calcolo dei prezzi
+          (function () { var f = g.filter(function (x) { return x._fresca; })[0]; return f ? '<span class="pill fresca" title="1X2 aggiornato con la quota Pinnacle">\u21bb ' + esc(f._fresca) + "</span>" : ""; })() +
           (gol ? "<span><b>" + esc(gol) + "</b></span>" : "") +
           (r0.Campionato ? '<span class="chip">' + esc(r0.Campionato) + "</span>" : "") +
           (r0.Fonte === "OddsAPI" ? '<span class="chip">quota Betfair</span>' : "") +
@@ -3170,7 +3173,36 @@
   }
 
   function arricchisciPrezzi(righe, data) {
-    return conEsiti(righe, data).then(function (r2) { return arricchisciAO(r2, data); });
+    return conEsiti(righe, data).then(function (r2) { return arricchisciAO(r2, data); })
+      .then(function (r3) { return data === oggi() ? frescheInPronostici(r3) : r3; });
+  }
+  // (171) LE QUOTE FRESCHE ANCHE IN PRONOSTICI. I prezzi si ricalcolano tre
+  // volte al giorno (giri dei prezzi); il ponte di Cloudflare rilegge
+  // Pinnacle ogni 9-24 minuti per le partite che cominciano entro tre ore.
+  // Sulle righe 1X2 di Pinnacle di oggi, se la lettura del ponte e' piu'
+  // recente del calcolo dei prezzi, probabilita', quota equa e margine
+  // diventano quelli freschi, con l'ora. Gli altri mercati (Over/Under,
+  // Gol/NoGol, combo) restano quelli del giro: il ponte legge solo l'1X2.
+  function frescheInPronostici(righe) {
+    return Promise.all([freschePinnacle(), leggi("prezzi_index.json").catch(function () { return null; })]).then(function (a) {
+      var q = a[0] && a[0].quote, calc = a[1] && a[1].updated ? String(a[1].updated).slice(0, 16) : "";
+      if (!q || !Array.isArray(righe)) return righe;
+      return righe.map(function (r) {
+        if (!r || r.Fonte !== "Pinnacle" || r.Mercato !== "1X2" || r.ID_API == null) return r;
+        var x = q[String(r.ID_API)], i = { "1": 0, "X": 1, "2": 2 }[String(r.Sel)];
+        if (!x || i == null || !Array.isArray(x.p) || num(x.p[i]) == null || !(num(x.p[i]) > 0)) return r;
+        var letto = romaDaIso(x.t);
+        if (!letto || (calc && letto <= calc)) return r;
+        var o = {};
+        for (var k in r) o[k] = r[k];
+        o._prob_giro = r.Prob;
+        o.Prob = Math.round(num(x.p[i]) * 10) / 10;
+        o.Equa = Math.round(100 / num(x.p[i]) * 100) / 100;
+        if (x.m != null) o.Margine = x.m;
+        o._fresca = letto.slice(11, 16);
+        return o;
+      });
+    });
   }
   function arricchisciAO(righe, data) {
     return leggi("asianodds_" + data + ".json").catch(function () { return null; }).then(function (ao) {
@@ -3273,6 +3305,9 @@
     if (r.Fonte === "Pinnacle") {
       det.push("<p>Prezzo da Pinnacle, il book di riferimento dei professionisti: \u00e8 la fonte principale dell\u2019Equa.</p>");
     }
+    if (r._fresca) {
+      det.push("<p>Quota Pinnacle aggiornata alle " + esc(r._fresca) + (num(r._prob_giro) != null ? " (all\u2019ultimo calcolo dei prezzi era " + f0(num(r._prob_giro)) + "%)" : "") + ".</p>");
+    }
     if (eAltroBook(r.Fonte)) {
       det.push("<p>Pinnacle non quota questa partita: prezzo da " + esc(r.Fonte) +
         (/^media/.test(r.Fonte) ? " (le loro probabilit\u00e0 senza margine, in media)" : ", il book pi\u00f9 affidabile fra quelli che la quotano") + ".</p>");
@@ -3324,6 +3359,7 @@
       // quel book. "più book" = la migliore fra piu' bookmaker.
       fonteQuotaHtml(r.Fonte) +
       (fid ? '<span class="pill ' + fid[0] + '">margine ' + f1(marg) + "%</span>" : "") +
+      (r._fresca ? '<span class="pill fresca" title="Quota Pinnacle aggiornata">\u21bb ' + esc(r._fresca) + "</span>" : "") +
       "</div>" +
       '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, r.Partita, campiRiga(r)) + "</div>" +
       '<div class="sel">' + esc(etichettaSel(r)) + "</div>" +
