@@ -2755,7 +2755,7 @@
     function proposta(g) {
       var cand = g.filter(function (r) {
         var p = num(r.Prob), mv = num(r.Mov_Sel);
-        return p != null && p >= 55 && p <= 80 && !(mv != null && mv <= -2);
+        return p != null && p >= 60 && p <= 80 && !(mv != null && mv <= -2);      // (14/11) come la schedina
       });
       if (!cand.length) return g.slice().sort(function (a, b) { return (num(b.Prob) || 0) - (num(a.Prob) || 0); })[0];
       var mg = function (r) { var m = num(r.Margine); return m == null ? 99 : m; };
@@ -6166,7 +6166,7 @@
   //
   // BEST PICKS (6/11): i segni SECCHI del consenso Statarea + WebPronostici
   // di oggi e di tutti i giorni dopo, in una pagina sola. Non e' la
-  // schedina: la schedina sceglie per probabilita' (fascia 50-75% dei
+  // schedina: la schedina sceglie per probabilita' (fascia 60-80% dei
   // prezzi equi, cioe' del mercato), quindi e' tarata sul mercato e non lo
   // batte. Qui si sceglie l'unica cosa misurata che il mercato lo batte:
   // sull'archivio del 6/11, 980 segni secchi chiusi, presi 56.6% contro
@@ -6317,7 +6317,7 @@
   // (14/11) I FILTRI DI BEST PICKS, gli stessi della schedina
   // (prezzi_equi.py): campionati che Max gioca (la lista SISAL, copiata qui:
   // se cambia la' va cambiata anche qui), niente giovanili/femminili/riserve,
-  // margine al massimo 5%, probabilita' 50-75% (quota equa 1,33-2,00), fuori
+  // margine al massimo 5%, probabilita' 60-80% (quota equa 1,25-1,67), fuori
   // le pick su cui il mercato si e' mosso contro di almeno 2 punti.
   var LEGHE_GIOCABILI = {};
   ["italy serie a", "italy serie b", "italy serie c", "italy coppa italia", "england premier league", "england championship", "england league one", "england league two", "england carabao cup", "england fa cup", "england enterprise national league", "england national league", "spain laliga", "spain laliga2", "spain la liga", "spain la liga 2", "spain copa del rey", "germany bundesliga", "germany 2 bundesliga", "germany dfb pokal", "france ligue 1", "france ligue 2", "france coupe de france", "netherlands eredivisie", "netherlands eerste divisie", "portugal liga portugal", "portugal liga portugal 2", "belgium jupiler pro league", "belgium pro league", "scotland premiership", "scotland championship", "turkey super lig", "turkey 1 lig", "greece super league", "switzerland super league", "austria bundesliga", "denmark superliga", "norway eliteserien", "norway obos ligaen", "sweden allsvenskan", "sweden superettan", "finland veikkausliiga", "poland ekstraklasa", "czech republic chance liga", "croatia 1 hnl", "romania superliga", "bulgaria first league", "serbia superliga", "russia premier league", "ukraine premier league", "slovakia nike liga", "cyprus cyprus league", "cyprus league", "hungary nb i", "israel ligat haal", "europe uefa champions league", "europe uefa europa league", "europe uefa conference league", "europe champions league", "europe europa league", "europe conference league", "brazil serie a", "brazil serie b", "argentina liga profesional", "argentina liga profesional de futbol", "argentina liga profesional clausura", "mexico liga mx", "mexico liga mx apertura", "united states major league soccer", "usa major league soccer", "usa mls", "japan j1 league", "japan j2 league", "south korea k league 1", "saudi arabia pro league", "uruguay primera division", "colombia primera a", "colombia primera a clausura", "peru liga 1", "peru liga 1 clausura", "chile primera division", "ecuador liga pro", "ecuador liga pro championship group", "australia a league", "Campionati", "albania superliga", "argentina liga profesional argentina", "austria 2 liga", "belarus premier league", "croatia hnl", "cyprus 1 division", "czech republic czech liga", "czech republic fnl", "denmark 1 division", "england national league north", "england national league south", "france national 1", "germany 3 liga", "greece super league 1", "israel ligat ha al", "italy serie c girone a", "italy serie c girone b", "italy serie c girone c", "italy serie d girone a", "italy serie d girone b", "italy serie d girone c", "italy serie d girone d", "italy serie d girone e", "italy serie d girone f", "italy serie d girone g", "italy serie d girone h", "italy serie d girone i", "japan j3 league", "japan j league cup", "south korea k league 2", "lithuania a lyga", "macedonia first league", "norway 1 division", "peru primera division", "portugal primeira liga", "portugal segunda liga", "romania liga i", "slovakia super liga", "slovenia 1 snl", "south korea k league 1", "spain segunda division", "switzerland challenge league", "turkey super lig", "usa major league soccer", "venezuela primera division", "finland veikkausliiga", "ireland premier division", "ireland first division", "scotland league one", "scotland league two", "brazil serie c", "mexico liga de expansion mx", "uruguay primera division", "world uefa nations league", "world concacaf nations league"].forEach(function (k) { LEGHE_GIOCABILI[k] = true; });
@@ -6340,7 +6340,7 @@
     if (r._pm == null) return "";                       // prezzo non ancora uscito: si vede
     if (r._lega != null && legaGiocabile(r._lega) === false) return "campionato";
     if (r._marg != null && r._marg > 5) return "margine";
-    if (r._pm < 50 || r._pm > 75) return "quota";
+    if (r._pm < 60 || r._pm > 80) return "quota";       // (14/11) come la schedina: 60-80%
     if (r._mov != null && r._mov <= -2) return "mercato contro";
     return "";
   }
@@ -6438,7 +6438,7 @@
       var testa = '<p class="descr">I segni secchi (1, X o 2) su cui Statarea e WebPronostici concordano, oggi e nei giorni dopo. ' +
         "Il prezzo è quello di Pinnacle senza margine: da quando una pick entra in lista si segue come si muove fino al via. " +
         "Con il margine dei bookmaker italiani la singola conviene solo se la tua quota supera la quota equa; in multipla il margine si moltiplica. " +
-        "Restano solo le pick che passano gli stessi filtri della schedina: campionati giocabili, margine fino al 5%, quota equa fra 1,33 e 2,00, mercato non contro.</p>" +
+        "Restano solo le pick che passano gli stessi filtri della schedina: campionati giocabili, margine fino al 5%, quota equa fra 1,25 e 1,67, mercato non contro.</p>" +
         '<h3 class="giorno-best">Contro Pinnacle <small>· dal 13/11</small></h3>' + riepilogoPinnacle(misuraPinnacle(a[3])) +
         '<details class="best-storico"><summary>Lo storico fino al 12/11, contro AsianOdds</summary>' +
         riepilogoBest(tutto, ultimi) + tabellaSegni(a[2]) + "</details>";
