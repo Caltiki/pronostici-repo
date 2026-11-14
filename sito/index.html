@@ -3155,16 +3155,38 @@
     // proposta sulla scheda della partita.
     return Promise.all([
       leggi("schedina_" + data + ".json").catch(function () { return null; }),
-      leggi("esiti_" + data + ".json").catch(function () { return null; })
+      leggi("esiti_" + data + ".json").catch(function () { return null; }),
+      data <= oggi() ? leggiUrl(BASE + "calendario_" + data + ".json?t=" + Math.floor(Date.now() / 600000), "calendario_" + data).catch(function () { return null; }) : null
     ]).then(function (a) {
       var s = a[0], e = a[1];
-      if (!Array.isArray(s) && !Array.isArray(e)) return righe;
+      // (172) IL RISULTATO DAL CALENDARIO, subito. esiti_<data>.json si rifa'
+      // tre volte al giorno e prende i risultati dalle fonti (Betimate,
+      // FootyMetrics): una partita finita poteva restare senza spunta per
+      // ore, o per sempre se le fonti non la seguivano. Il calendario
+      // (stato e punteggio, aggiornato ogni ora) chiude le righe che hanno il
+      // numero della partita: solo le finite ai 90 minuti (FT), con le
+      // stesse regole del registro delle giocate.
+      var cal = {};
+      (Array.isArray(a[2]) ? a[2] : []).forEach(function (x) {
+        if (String(x.stato || "").toUpperCase() === "FT" && x.gc != null && x.go != null) cal[String(x.id)] = x;
+      });
+      if (Object.keys(cal).length) righe = righe.map(function (r) {
+        var x = r && r.ID_API != null ? cal[String(r.ID_API)] : null;
+        if (!x) return r;
+        var es = esitoCalcolato(r, num(x.gc), num(x.go));
+        if (!es) return r;
+        var o = {};
+        for (var k in r) o[k] = r[k];
+        o._esito_cal = es; o._gc_cal = x.gc; o._go_cal = x.go;
+        return o;
+      });
+      if (!Array.isArray(s) && !Array.isArray(e)) return righe.map(daCalendario);
       var per = {}, tutti = {};
       (Array.isArray(s) ? s : []).forEach(function (x) { if (x.Esito) per[chiave(x)] = x; });
       (Array.isArray(e) ? e : []).forEach(function (x) { if (x.Esito) tutti[chiave(x)] = x; });
       return righe.map(function (r) {
         var x = per[chiave(r)], y = tutti[chiave(r)];
-        if (!x && !y) return r;
+        if (!x && !y) return daCalendario(r);
         var o = {};
         for (var k in r) o[k] = r[k];
         if (x) {
@@ -3178,6 +3200,15 @@
     });
   }
 
+  // se l'archivio non ha ancora l'esito, quello calcolato dal calendario
+  function daCalendario(r) {
+    if (!r || !r._esito_cal || r.Esito || r._esito) return r;
+    var o = {};
+    for (var k in r) o[k] = r[k];
+    if (String(r.InSchedina || "") === "si") o.Esito = r._esito_cal; else o._esito = r._esito_cal;
+    if (o.Gol_Casa == null) { o.Gol_Casa = r._gc_cal; o.Gol_Ospite = r._go_cal; o.Risultato_Da = "calendario"; }
+    return o;
+  }
   // Le righe di una giornata passata dei Pronostici. Da esiti_: l'esito
   // resta solo sulle righe in schedina, il punteggio su tutte. Da
   // schedina_: sono tutte righe della schedina (i file vecchi potrebbero
