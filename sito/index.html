@@ -1446,6 +1446,12 @@
   :root[data-theme="light"] .fonte-q { border-color: #0b4a86; color: #0b4a86; }
   :root[data-theme="light"] .fonte-q.pin { border-color: #a36b00; color: #a36b00; }
   /* IL TIMBRO PINNACLE (100): la partita ha le quote Pinnacle. */
+  .cal-prob { font-size: .8rem; color: var(--tenue); margin-top: 2px; line-height: 1.5; }
+  .cal-prob .et { font-size: .7rem; text-transform: uppercase; letter-spacing: .03em; margin-right: 2px; }
+  .cal-prob b.seg { font-weight: 800; color: var(--testo); }
+  .cal-prob .sep { color: var(--tenue); }
+  .cal-lega-nome { display: block; color: var(--tenue); font-size: .72rem; }
+  .cal-prev { padding: 4px 0; }
   .pill.cons { background: color-mix(in srgb, var(--evidenza) 14%, transparent); color: var(--evidenza); font-weight: 700; }
   .pill.fresca { background: color-mix(in srgb, var(--buono) 16%, transparent); color: var(--buono); font-weight: 700; }
   .timbro-pin {
@@ -8818,7 +8824,8 @@
   }
   function disegnaCalendario() {
     $cont.innerHTML = messaggio("vuoto", "Carico&hellip;");
-    Promise.all([indiceCalendario(), caricaLoghi(), caricaPinGlobale().catch(function () { return null; })]).then(function (a) {
+    Promise.all([indiceCalendario(), caricaLoghi(), caricaPinGlobale().catch(function () { return null; }),
+      caricaElo().catch(function () { return null; })]).then(function (a) {
       if (stato.sez !== "cal") return;
       var ix = a[0], date = (ix.date || []).filter(function (d) { return d >= giornoRoma(-1); }).sort();
       if (!date.length) throw new Error("nessuna data");
@@ -8845,9 +8852,11 @@
         $cont.innerHTML = '<h2 class="reg-tit">Calendario</h2>' +
           '<p class="descr">Tutte le partite del giorno, anche quelle che le fonti del sito non seguono. ' +
           "<b>sul sito</b> = la partita ha pronostici o prezzi nelle altre sezioni: toccalo per aprirne la scheda. Il timbro dice se ha le quote Pinnacle; " +
-          "<b>statistiche</b>, sulle nostre partite finite, apre tiri, possesso, xG e il resto.</p>" +
+          "<b>statistiche</b>, sulle nostre partite finite, apre tiri, possesso, xG e il resto. " +
+          "Sotto ogni partita, dove ci sono, le probabilità 1X2 di Pinnacle (senza margine) e quelle dell’Elo; " +
+          "<b>Più prevedibili</b> mette in fila le partite in cui un esito supera il 60%. Prevedibile non vuol dire conveniente: conta la quota del tuo book contro l’equa.</p>" +
           chipsHtml(date.map(function (x) { return [x, etichettaData(x)]; }), d, "data-cdata") +
-          chipsHtml([["tutte", "Tutte"], ["sito", "Sul sito"], ["pin", "Con Pinnacle"], ["live", "In corso"], ["stat", "Con statistiche"]], CAL.filtro, "data-cfiltro") +
+          chipsHtml([["tutte", "Tutte"], ["prev", "Più prevedibili"], ["sito", "Sul sito"], ["pin", "Con Pinnacle"], ["live", "In corso"], ["stat", "Con statistiche"]], CAL.filtro, "data-cfiltro") +
           '<div class="strumenti"><input type="search" id="cerca-cal" placeholder="Squadra, campionato o paese" value="' + esc(CAL.cerca) + '" autocomplete="off"></div>' +
           '<div id="cal-lista"></div>';
         $cont.querySelectorAll("[data-cdata]").forEach(function (x) {
@@ -8895,6 +8904,35 @@
     if (st === "CANC" || st === "ABD") return { html: '<span class="pill">annullata</span>' };
     return { html: "" };
   }
+  // (172) LE PROBABILITA' 1X2 DI UNA PARTITA DEL CALENDARIO: Pinnacle senza
+  // margine (se c'e') e l'Elo del sistema (se ha le due squadre).
+  function probCal(x) {
+    var pin = PIN_G.perId[String(x.id)], pp = null, pe = null, d = null;
+    if (pin) {
+      var a = [num(pin["P1 Shin"]), num(pin["PX Shin"]), num(pin["P2 Shin"])];
+      if (a[0] != null && a[1] != null && a[2] != null) pp = a;
+    }
+    if (ELO.dati && ELO.info && ELO.info.logit) {
+      var c = ELO.dati.per[String(x.ic)], o = ELO.dati.per[String(x.io)];
+      if (c && o) { pe = eloProb(c.elo, o.elo, ELO.info.logit); d = c.elo - o.elo; }
+    }
+    var rif = pp || pe, max = rif ? Math.max(rif[0], rif[1], rif[2]) : null;
+    return { pin: pp, elo: pe, diff: d, max: max };
+  }
+  function probCalHtml(P) {
+    if (!P.pin && !P.elo) return "";
+    var tre = function (v) {
+      return ["1", "X", "2"].map(function (sg, i) {
+        return '<span class="nw"><b class="seg">' + sg + "</b> " + pvE(v[i]) + "</span>";
+      }).join(" \u00b7 ");
+    };
+    return '<div class="cal-prob">' +
+      (P.pin ? '<span class="nw"><span class="et">Pinnacle</span> ' + tre(P.pin) + "</span>" : "") +
+      (P.pin && P.elo ? '<span class="sep"> | </span>' : "") +
+      (P.elo ? '<span class="nw"><span class="et">Elo</span> ' + tre(P.elo) +
+        (P.diff != null ? ' <span class="piccolo">(' + (P.diff >= 0 ? "+" : "\u2212") + f0(Math.abs(P.diff)) + ")</span>" : "") + "</span>" : "") +
+      "</div>";
+  }
   function listaCalendario(lista, sito) {
     var $l = document.getElementById("cal-lista");
     if (!$l) return;
@@ -8905,8 +8943,24 @@
       if (CAL.filtro === "pin") return !!PIN_G.perId[String(x.id)];
       if (CAL.filtro === "live") return !!statoCal(x).vivo;
       if (CAL.filtro === "stat") return !!(CAL.stat || {})[String(x.id)];
+      if (CAL.filtro === "prev") {
+        // solo le partite ancora da giocare: niente finite, in corso, rinviate o annullate
+        var st = String(x.stato || "").toUpperCase();
+        if (st && st !== "NS" && st !== "TBD") return false;
+        if (statoCal(x).vivo) return false;
+        var P = probCal(x); return P.max != null && P.max >= 60;
+      }
       return true;
     });
+    // (172) PIU' PREVEDIBILI: una lista sola, dall'esito piu' probabile in giu'
+    if (CAL.filtro === "prev") {
+      righe.sort(function (a, b) { return probCal(b).max - probCal(a).max; });
+      $l.innerHTML = '<p class="conta">' + righe.length + (righe.length === 1 ? " partita" : " partite") +
+        " ancora da giocare con un esito oltre il 60% (Pinnacle; dove manca, l\u2019Elo)</p>" +
+        (righe.length ? '<div class="cal-lega cal-prev">' + righe.map(function (x) { return rigaCal(x, sito, true); }).join("") + "</div>" : messaggio("vuoto", "Nessuna partita con un esito oltre il 60%."));
+      collegaRigheCal($l);
+      return;
+    }
     var gruppi = {}, conSito = {};
     righe.forEach(function (x) {
       var k = x.lega || "Altro";
@@ -8926,25 +8980,31 @@
       var aperto = CAL.aperti[k] != null ? CAL.aperti[k] : (apri || !!conSito[k]);
       return '<details class="cal-lega" data-lega="' + esc(k) + '"' + (aperto ? " open" : "") + "><summary><span class=\"nome-lega\">" + esc(k) + "</span>" +
         ' <small>' + v.length + (conSito[k] ? " · sul sito" : "") + "</small></summary>" +
-        v.map(function (x) {
-          var pin = PIN_G.perId[String(x.id)], s = statoCal(x), ns = !!sito[String(x.id)];
-          var st = (CAL.stat || {})[String(x.id)];
-          var stH = st ? righeStatistiche(st, x.casa, x.ospite) : "";
-          return '<div class="cal-riga' + (ns ? " cal-sito" : "") + '"><span class="m">' + esc(x.ora || "") + "</span>" +
-            "<span>" + logoId(x.casa, x.ic, false, x.lega) + esc(x.casa) + " – " + logoId(x.ospite, x.io, false, x.lega) + esc(x.ospite) +
-            (ns ? (typeof sito[String(x.id)] === "string"
-              ? ' <a class="chip chip-link" href="' + esc(sito[String(x.id)]) + '">sul sito \u2192</a>'
-              : ' <span class="chip">sul sito</span>') : "") + (pin ? " " + timbroPin(pin) : "") +
-            (stH ? ' <button type="button" class="chip chip-link cal-stat-btn" data-sid="' + esc(x.id) + '" aria-expanded="false">statistiche \u25be</button>' : "") +
-            "</span>" +
-            '<span class="r">' + s.html + "</span></div>" +
-            (stH ? '<div class="cal-stat" id="cst-' + esc(x.id) + '" hidden>' + stH + "</div>" : "");
-        }).join("") + "</details>";
+        v.map(function (x) { return rigaCal(x, sito, false); }).join("") + "</details>";
     }).join("");
     $l.innerHTML = h;
     $l.querySelectorAll(".cal-lega").forEach(function (det) {
       det.addEventListener("toggle", function () { CAL.aperti[det.dataset.lega] = det.open; });
     });
+    collegaRigheCal($l);
+  }
+  function rigaCal(x, sito, conLega) {
+    var pin = PIN_G.perId[String(x.id)], s = statoCal(x), ns = !!sito[String(x.id)];
+    var st = (CAL.stat || {})[String(x.id)];
+    var stH = st ? righeStatistiche(st, x.casa, x.ospite) : "";
+    return '<div class="cal-riga' + (ns ? " cal-sito" : "") + '"><span class="m">' + esc(x.ora || "") + "</span>" +
+      "<span>" + (conLega && x.lega ? '<small class="cal-lega-nome">' + esc(x.lega) + "</small>" : "") +
+      logoId(x.casa, x.ic, false, x.lega) + esc(x.casa) + " – " + logoId(x.ospite, x.io, false, x.lega) + esc(x.ospite) +
+      (ns ? (typeof sito[String(x.id)] === "string"
+        ? ' <a class="chip chip-link" href="' + esc(sito[String(x.id)]) + '">sul sito \u2192</a>'
+        : ' <span class="chip">sul sito</span>') : "") + (pin ? " " + timbroPin(pin) : "") +
+      (stH ? ' <button type="button" class="chip chip-link cal-stat-btn" data-sid="' + esc(x.id) + '" aria-expanded="false">statistiche \u25be</button>' : "") +
+      probCalHtml(probCal(x)) +
+      "</span>" +
+      '<span class="r">' + s.html + "</span></div>" +
+      (stH ? '<div class="cal-stat" id="cst-' + esc(x.id) + '" hidden>' + stH + "</div>" : "");
+  }
+  function collegaRigheCal($l) {
     // LE STATISTICHE DELLE PARTITE FINITE (131): si aprono sotto la riga.
     $l.querySelectorAll(".cal-stat-btn").forEach(function (bt) {
       bt.addEventListener("click", function () {
