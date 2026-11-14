@@ -3659,8 +3659,14 @@
     else if (gol) det.unshift("<p>Finita " + esc(gol) + daDove + ".</p>");
     else if (passata) det.unshift("<p>Risultato non disponibile: nessuna delle fonti dei risultati ha questa partita.</p>");
     var segnoEsito = es === "presa" ? "\u2713" : es === "sbagliata" ? "\u2717" : es === "attesa" ? "\u2013" : "\u21ba";
-    return '<div class="riga' + (scelta ? " scelta" : "") + (es ? " finita" : "") + '">' +
+    // (173) FUORI SCHEDINA, A PARTITA FINITA: la spunta grigia della
+    // proposta (come sulla scheda chiusa di "Tutte le partite") al posto
+    // della casella per la multipla, che a partita finita non serve piu'.
+    var ep = !es && (r._esito === "presa" || r._esito === "sbagliata") ? r._esito : null;
+    var tEp = ep === "presa" ? "uscita (fuori schedina)" : "non uscita (fuori schedina)";
+    return '<div class="riga' + (scelta ? " scelta" : "") + (es || ep ? " finita" : "") + '">' +
       (es ? '<span class="spunta esito ' + esc(es) + '" title="' + esc(es === "presa" ? "vinta" : es) + '" aria-label="' + esc(es === "presa" ? "vinta" : es) + '">' + segnoEsito + "</span>"
+        : ep ? '<span class="spunta esito proposta" title="' + tEp + '" aria-label="' + tEp + '">' + (ep === "presa" ? "\u2713" : "\u2717") + "</span>"
         : passata ? '<span class="spunta vuota" aria-hidden="true"></span>'
         : '<label class="spunta" title="Aggiungi alla multipla"><input type="checkbox" data-chiave="' +
       esc(k) + '" data-i="' + i + '"' + (scelta ? " checked" : "") + ' aria-label="Aggiungi alla multipla"></label>') +
