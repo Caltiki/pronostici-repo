@@ -1017,6 +1017,11 @@
   .reg-campi { display: flex; flex-wrap: wrap; gap: 10px; margin: 6px 0; }
   .reg-campi select { font: inherit; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--bordo); background: var(--scheda); color: var(--testo); }
   .reg-analisi { margin: 10px 0 14px; }
+  .costruttore { margin: 10px 0 14px; }
+  .costruttore > summary { cursor: pointer; }
+  .costruttore .reg-campi input { width: 5.5em; font: inherit; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--bordo); background: var(--scheda); color: var(--testo); }
+  .costr-lista { margin: 8px 0 10px 1.2em; padding: 0; }
+  .costr-lista li { margin: 6px 0; line-height: 1.4; }
   /* (173) tabelle larghe: piu' piccole e, se serve, scorrono di lato */
   .tab-scorre { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -4px; }
   table.ms-tab, .reg-analisi table.mercati { font-size: .72rem; width: 100%; }
@@ -2649,6 +2654,7 @@
       ? visibili.length + " righe"
       : visibili.length + " righe su " + tutte.length;
     var html = SEZ[sez].riepilogo(visibili) + tessereEsito(sez, visibili) +
+      (sez === "prezzi" && vista === "schedina" ? costruttoreHtml(passano) : "") +
       '<p class="conta">' + conta + SEZ[sez].nota + "</p><div class=\"lista\">" +
       mostrate.map(function (r, i) {
         var h = SEZ[sez].riga(r, i), e = ESITO_SEZ[sez] ? ESITO_SEZ[sez](r) : null;
@@ -2666,6 +2672,7 @@
     var a = document.getElementById("altre");
     if (a) a.addEventListener("click", function () { stato.limite += PASSO; ridisegnaRighe(); });
     collegaAgganci($r, data);
+    if (sez === "prezzi" && vista === "schedina") collegaCostruttore($r, passano);
     $r.querySelectorAll("[data-esito]").forEach(function (b) {
       b.addEventListener("click", function () {
         stato.esito = stato.esito === b.dataset.esito ? "" : b.dataset.esito;
@@ -3594,6 +3601,132 @@
     return out.filter(Boolean);
   }
 
+  // (173) IL COSTRUTTORE DELLA SCHEDINA. Dalle righe della Schedina di
+  // oggi ancora da giocare sceglie la combinazione che arriva alla quota
+  // totale voluta (o al numero di eventi voluto) col costo atteso piu'
+  // basso. Con l'Equa giusta la probabilita' di una multipla a quota Q e'
+  // sempre circa 1/Q, comunque la si componga: quello che cambia e' quanto
+  // margine si paga. Il costo per fascia di probabilita' viene dai dieci
+  // anni di football-data (mercato_storico.json, resa alla quota media del
+  // mercato): fra 70 e 80% quasi zero, fra 60 e 65% circa -1%. A parita'
+  // di costo: margine stretto, mercato non contro, meno eventi.
+  var COSTR = { quota: 3, eventi: 0, margine: 5, ms: null, msPronto: null };
+  try {
+    var cq = parseFloat(localStorage.getItem("caltiki-costr-quota")), cm = parseFloat(localStorage.getItem("caltiki-costr-margine"));
+    if (cq > 1) COSTR.quota = cq;
+    if (cm >= 0 && cm < 20) COSTR.margine = cm;
+  } catch (e) {}
+  var RESA_DEFAULT = { "60-65": -1.1, "65-70": -0.7, "70-75": 0.0, "75-80": -0.5, "80-85": -3.3 };
+  // Il costo misurato vale per quello che e' stato misurato: l'1X2 (segno
+  // 1 o 2) per fasce, e l'Over 2.5. Per gli altri mercati (Over 1.5,
+  // Gol/NoGol, combo, doppie) non c'e' una misura: si mette un costo
+  // prudente del 3%, cosi' a parita' vince la selezione misurata.
+  function resaFascia(p, r) {
+    var b = Math.floor(Math.min(p, 99.9) / 5) * 5, k = b + "-" + (b + 5);
+    var sel = String((r && r.Sel) || ""), merc = String((r && r.Mercato) || "");
+    if (r && !(merc === "1X2" && /^[12]$/.test(sel))) {
+      var ou = merc === "OU 2.5" && sel === "Over" && COSTR.ms && COSTR.ms.ou && COSTR.ms.ou["over|" + k];
+      return ou && ou.resa_media != null ? ou.resa_media : -3;
+    }
+    var t = COSTR.ms && COSTR.ms.taratura && COSTR.ms.taratura[k];
+    if (t && t.resa_media != null) return t.resa_media;
+    return RESA_DEFAULT[k] != null ? RESA_DEFAULT[k] : -4;
+  }
+  function candidatiCostr(righe) {
+    var ora = Date.now(), visti = {};
+    return righe.filter(function (r) {
+      if (String(r.InSchedina || "") !== "si" || r.Esito || r._esito || r.Gol_Casa != null) return false;
+      var e = num(r.Equa), p = num(r.Prob);
+      if (!e || e <= 1 || p == null) return false;
+      var ko = kickoff(r);
+      if (ko != null && ko < ora + 5 * 60000) return false;          // gia' cominciata o quasi
+      var k = (r.Data || "") + "|" + String(r.Partita || "").toLowerCase();
+      if (visti[k]) return false;                                     // una selezione per partita
+      visti[k] = 1;
+      return true;
+    }).map(function (r) {
+      var rs = resaFascia(num(r.Prob), r);
+      var sc = rs + (margineStretto(r) ? 0.5 : 0) + ((num(r.Mov_Sel) || 0) > 0 ? 0.3 : 0);
+      return { r: r, e: num(r.Equa), p: num(r.Prob) / 100, resa: rs, punti: sc };
+    }).sort(function (a, b) { return b.punti - a.punti || b.p - a.p; }).slice(0, 16);
+  }
+  function proponiSchedina(c) {
+    var meglio = null, n = c.length, obiettivo = COSTR.quota, fissi = COSTR.eventi;
+    var minN = fissi || 1, maxN = fissi || Math.min(6, n);
+    function valuta(scelta) {
+      var eq = 1, val = 1, punti = 0;
+      scelta.forEach(function (x) { eq *= x.e; val *= 1 + x.resa / 100; punti += x.punti; });
+      var dist = fissi ? 0 : Math.abs(Math.log(eq / obiettivo));
+      // fuori di +-8% dalla quota voluta: penalita' forte; dentro, piu'
+      // vicino e' meglio (un punto di costo vale circa il 5% di quota)
+      var pen = fissi ? 0 : (eq < obiettivo * 0.92 || eq > obiettivo * 1.08 ? 1 + dist : dist * 2);
+      var s = (val - 1) * 100 - pen * 10 - scelta.length * 0.15 + punti * 0.01;
+      if (!meglio || s > meglio.s) meglio = { s: s, scelta: scelta.slice(), eq: eq, val: val };
+    }
+    (function giro(i, scelta) {
+      if (scelta.length >= minN && scelta.length <= maxN) valuta(scelta);
+      if (scelta.length >= maxN) return;
+      for (var j = i; j < n; j++) { scelta.push(c[j]); giro(j + 1, scelta); scelta.pop(); }
+    })(0, []);
+    return meglio;
+  }
+  function costruttoreHtml(righe) {
+    var c = candidatiCostr(righe);
+    var h = '<details class="scheda costruttore"' + (COSTR.aperto ? " open" : "") + '><summary><b>Costruisci la schedina</b> <span class="piccolo">\u00b7 ' +
+      c.length + (c.length === 1 ? " selezione ancora da giocare" : " selezioni ancora da giocare") + "</span></summary>";
+    if (c.length < 2) return h + "<p>Servono almeno due selezioni della Schedina non ancora cominciate.</p></details>";
+    h += '<p class="reg-campi"><label>Quota totale <input id="costr-q" inputmode="decimal" value="' + String(COSTR.quota).replace(".", ",") + '"></label>' +
+      '<label>oppure eventi <select id="costr-n"><option value="0"' + (!COSTR.eventi ? " selected" : "") + '>come viene</option>' +
+      [2, 3, 4, 5, 6].map(function (k) { return '<option value="' + k + '"' + (COSTR.eventi === k ? " selected" : "") + ">" + k + "</option>"; }).join("") + "</select></label>" +
+      '<label>Margine del tuo book a evento % <input id="costr-m" inputmode="decimal" value="' + String(COSTR.margine).replace(".", ",") + '"></label></p>';
+    var m = proponiSchedina(c);
+    if (!m) return h + "<p>Nessuna combinazione possibile.</p></details>";
+    var nEv = m.scelta.length, pr = m.scelta.reduce(function (a, x) { return a * x.p; }, 1);
+    var tipica = m.scelta.reduce(function (a, x) { return a * x.e / (1 + COSTR.margine / 100); }, 1);
+    var perdita = tipica * pr - 1;
+    h += '<ol class="costr-lista">' + m.scelta.map(function (x) {
+      return "<li><b>" + esc(x.r.Partita || "") + "</b> <span class=\"piccolo\">" + esc(x.r.Ora || "") + "</span><br>" + esc(etichettaSel(x.r)) + " \u00b7 " +
+        pv(x.p * 100) + " \u00b7 quota minima <b>" + f2(x.e) + "</b></li>";
+    }).join("") + "</ol>" +
+      '<div class="riepilogo"><div><b>' + pv(pr * 100).replace(/<[^>]+>/g, "") + "</b><span>probabilit\u00e0 di vincerla</span></div>" +
+      "<div><b>" + f2(m.eq) + "</b><span>quota minima della multipla (Equa)</span></div>" +
+      "<div><b>" + f2(tipica) + "</b><span>quanto la pagherebbe un book col " + String(COSTR.margine).replace(".", ",") + "% a evento</span></div></div>" +
+      '<p class="conta">Gioca solo se il tuo book paga <b>almeno ' + f2(m.eq) + "</b> la multipla (o almeno la quota minima di ogni evento): sotto, perdi in media. " +
+      "Alla quota di un book col " + String(COSTR.margine).replace(".", ",") + "% a evento la perdita media sarebbe del " + Math.abs(perdita * 100).toFixed(1).replace(".", ",") + "%" +
+      (perdita >= 0 ? " (qui in pari o meglio)" : "") + ". Sui dieci anni, i segni 1 o 2 fra 70 e 80% sono stati pagati un po\u2019 pi\u00f9 del giusto: a parit\u00e0 di quota la scelta li preferisce. Per Over 1.5, Gol/NoGol e combinate una misura cos\u00ec non c\u2019\u00e8.</p>" +
+      '<p class="m-azioni"><button type="button" class="primo" id="costr-metti" data-chiavi="' + esc(JSON.stringify(m.scelta.map(function (x) { return chiave(x.r); }))) + '">Metti nella multipla</button></p>';
+    return h + "</details>";
+  }
+  function collegaCostruttore($r, righe) {
+    var det = $r.querySelector(".costruttore");
+    if (!det) return;
+    det.addEventListener("toggle", function () { COSTR.aperto = det.open; });
+    if (!COSTR.msPronto) COSTR.msPronto = leggiUrl(BASE + "mercato_storico.json?t=" + Math.floor(Date.now() / 3600000), "mercato_storico")
+      .then(function (d) { COSTR.ms = d; if (COSTR.aperto) ridisegnaRighe(); }).catch(function () {});
+    var cambia = function () {
+      var q = quotaDa((document.getElementById("costr-q") || {}).value), mg = parseFloat(String((document.getElementById("costr-m") || {}).value || "").replace(",", "."));
+      if (q) COSTR.quota = q;
+      if (isFinite(mg) && mg >= 0 && mg < 20) COSTR.margine = mg;
+      COSTR.eventi = parseInt((document.getElementById("costr-n") || {}).value, 10) || 0;
+      try { localStorage.setItem("caltiki-costr-quota", String(COSTR.quota)); localStorage.setItem("caltiki-costr-margine", String(COSTR.margine)); } catch (e) {}
+      COSTR.aperto = true;
+      var y = window.scrollY;
+      ridisegnaRighe();
+      window.scrollTo(0, y);
+    };
+    ["costr-q", "costr-m"].forEach(function (id) { var el = document.getElementById(id); if (el) el.addEventListener("change", cambia); });
+    var sel = document.getElementById("costr-n");
+    if (sel) sel.addEventListener("change", cambia);
+    var b = document.getElementById("costr-metti");
+    if (b) b.addEventListener("click", function () {
+      var ch = JSON.parse(b.dataset.chiavi || "[]");
+      righe.forEach(function (r) { if (ch.indexOf(chiave(r)) >= 0) scelte[chiave(r)] = r; });
+      aggiornaMultipla();
+      var y = window.scrollY;
+      ridisegnaRighe();
+      window.scrollTo(0, y);
+    });
+  }
   function chiave(r) {
     return [r.Data, r.Partita, r.Mercato, r.Sel].join("|");
   }
