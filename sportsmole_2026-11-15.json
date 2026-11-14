@@ -1,71 +1,365 @@
 [
  {
+  "Casa": "Queretaro",
+  "Ospite": "Monterrey",
+  "Ora": "00:00",
+  "Data": "2026-11-15",
+  "Lega": "Liga MX",
+  "Giornata": "Gameweek 7",
+  "P1": 29.43,
+  "PX": 24.9,
+  "P2": 45.68,
+  "P_GG": 56.34,
+  "P_NG": 43.66,
+  "P_O15": 76.9,
+  "P_U15": 23.1,
+  "P_O25": 53.57,
+  "P_U25": 46.43,
+  "P_O35": 30.62,
+  "P_U35": 69.38,
+  "P_O45": 17.1,
+  "P_U45": 82.9,
+  "PT1": 24.56,
+  "PTX": 41.16,
+  "PT2": 34.28,
+  "P_Primo_Casa": 40.77,
+  "P_Nessun_Gol": 6.16,
+  "P_Primo_Ospite": 53.07,
+  "Esatto": "1-1",
+  "P_Esatto": 11.7,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     7.34
+    ],
+    [
+     "1-0",
+     7.29
+    ],
+    [
+     "2-0",
+     4.36
+    ],
+    [
+     "3-1",
+     2.94
+    ],
+    [
+     "3-2",
+     2.34
+    ],
+    [
+     "3-0",
+     1.85
+    ],
+    [
+     "Other",
+     3.31
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.7
+    ],
+    [
+     "0-0",
+     6.16
+    ],
+    [
+     "2-2",
+     5.78
+    ],
+    [
+     "3-3",
+     1.15
+    ],
+    [
+     "Other",
+     0.11
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     9.81
+    ],
+    [
+     "0-1",
+     9.65
+    ],
+    [
+     "0-2",
+     7.28
+    ],
+    [
+     "1-3",
+     4.8
+    ],
+    [
+     "0-3",
+     3.94
+    ],
+    [
+     "2-3",
+     3.03
+    ],
+    [
+     "Other",
+     7.16
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 66.7,
+   "equal_8": 10.2,
+   "under_8": 23.1,
+   "over_9": 55.53,
+   "equal_9": 11.16,
+   "under_9": 33.3,
+   "over_10.5": 44.33,
+   "under_10.5": 55.67
+  },
+  "Linee_Casa": {
+   "over_1.5": 32.21,
+   "under_1.5": 67.79,
+   "over_2.5": 11.7,
+   "under_2.5": 88.3,
+   "over_3.5": 3.42,
+   "under_3.5": 96.58
+  },
+  "Linee_Ospite": {
+   "over_0.5": 77.03,
+   "under_0.5": 22.97,
+   "over_1.5": 45.4,
+   "under_1.5": 54.6,
+   "over_2.5": 20.19,
+   "under_2.5": 79.81,
+   "over_3.5": 7.27,
+   "under_3.5": 92.73
+  },
+  "WeSay": "",
+  "WeSay_Segno": "",
+  "Ora_Sito": "Nov 14, 2026 11.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/liga-mx/queretaro-vs-monterrey_game_257151.html",
+  "Url_Preview": "",
+  "Id": "257151"
+ },
+ {
+  "Casa": "Chapecoense",
+  "Ospite": "Vasco da Gama",
+  "Ora": "00:30",
+  "Data": "2026-11-15",
+  "Lega": "Brasileiro",
+  "Giornata": "Gameweek 21",
+  "P1": 33.39,
+  "PX": 26.52,
+  "P2": 40.06,
+  "P_GG": 57.17,
+  "P_NG": 42.83,
+  "P_O15": 75.98,
+  "P_U15": 24.02,
+  "P_O25": 51.74,
+  "P_U25": 48.26,
+  "P_O35": 29.51,
+  "P_U35": 70.49,
+  "P_O45": 16.06,
+  "P_U45": 83.94,
+  "PT1": 24.81,
+  "PTX": 47.66,
+  "PT2": 27.53,
+  "P_Primo_Casa": 45.5,
+  "P_Nessun_Gol": 6.52,
+  "P_Primo_Ospite": 47.98,
+  "Esatto": "1-1",
+  "P_Esatto": 12.57,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     8.42
+    ],
+    [
+     "2-1",
+     8.19
+    ],
+    [
+     "2-0",
+     5.31
+    ],
+    [
+     "3-1",
+     3.35
+    ],
+    [
+     "3-2",
+     2.31
+    ],
+    [
+     "3-0",
+     2.06
+    ],
+    [
+     "Other",
+     3.76
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     12.57
+    ],
+    [
+     "0-0",
+     6.52
+    ],
+    [
+     "2-2",
+     6.06
+    ],
+    [
+     "3-3",
+     1.29
+    ],
+    [
+     "Other",
+     0.08
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     9.06
+    ],
+    [
+     "1-2",
+     8.93
+    ],
+    [
+     "0-2",
+     6.35
+    ],
+    [
+     "1-3",
+     4.05
+    ],
+    [
+     "0-3",
+     3.05
+    ],
+    [
+     "2-3",
+     2.94
+    ],
+    [
+     "Other",
+     5.68
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 62.86,
+   "equal_8": 10.67,
+   "under_8": 26.47,
+   "over_9": 51.56,
+   "equal_9": 11.3,
+   "under_9": 37.14,
+   "over_10.5": 40.57,
+   "under_10.5": 59.43
+  },
+  "Linee_Casa": {
+   "over_1.5": 35.35,
+   "under_1.5": 64.65,
+   "over_2.5": 12.85,
+   "under_2.5": 87.15,
+   "over_3.5": 3.84,
+   "under_3.5": 96.16
+  },
+  "Linee_Ospite": {
+   "over_0.5": 73.91,
+   "under_0.5": 26.09,
+   "over_1.5": 40.74,
+   "under_1.5": 59.26,
+   "over_2.5": 17.09,
+   "under_2.5": 82.91,
+   "over_3.5": 5.76,
+   "under_3.5": 94.24
+  },
+  "WeSay": "",
+  "WeSay_Segno": "",
+  "Ora_Sito": "Nov 14, 2026 11.30pm",
+  "Url": "https://www.sportsmole.co.uk/football/brasileiro/chapecoense-vs-vasco_game_252243.html",
+  "Url_Preview": "",
+  "Id": "252243"
+ },
+ {
   "Casa": "Jamaica",
   "Ospite": "Mexico",
   "Ora": "02:00",
   "Data": "2026-11-15",
   "Lega": "CONCACAF Nations League - Quarter-finals",
   "Giornata": "",
-  "P1": 36.97,
-  "PX": 25.07,
-  "P2": 37.89,
-  "P_GG": 53.06,
-  "P_NG": 46.94,
-  "P_O15": 75.61,
-  "P_U15": 24.39,
-  "P_O25": 52.36,
-  "P_U25": 47.64,
-  "P_O35": 29.86,
-  "P_U35": 70.14,
-  "P_O45": 17.04,
-  "P_U45": 82.96,
-  "PT1": 32.04,
-  "PTX": 42.27,
-  "PT2": 25.69,
-  "P_Primo_Casa": 52.7,
-  "P_Nessun_Gol": 7.04,
-  "P_Primo_Ospite": 40.26,
+  "P1": 37.29,
+  "PX": 25.02,
+  "P2": 37.69,
+  "P_GG": 53.14,
+  "P_NG": 46.86,
+  "P_O15": 75.67,
+  "P_U15": 24.33,
+  "P_O25": 52.42,
+  "P_U25": 47.58,
+  "P_O35": 29.97,
+  "P_U35": 70.03,
+  "P_O45": 17.1,
+  "P_U45": 82.9,
+  "PT1": 32.18,
+  "PTX": 42.25,
+  "PT2": 25.57,
+  "P_Primo_Casa": 52.73,
+  "P_Nessun_Gol": 7.03,
+  "P_Primo_Ospite": 40.24,
   "Esatto": "1-1",
-  "P_Esatto": 11.44,
+  "P_Esatto": 11.42,
   "Esatti": {
    "casa": [
     [
      "1-0",
-     8.59
+     8.63
     ],
     [
      "2-1",
-     7.98
+     8.0
     ],
     [
      "2-0",
-     5.74
+     5.8
     ],
     [
      "3-1",
-     3.94
+     3.99
     ],
     [
      "3-0",
-     3.02
+     3.04
     ],
     [
      "3-2",
-     2.61
+     2.65
     ],
     [
      "Other",
-     5.1
+     5.17
     ]
    ],
    "pareggio": [
     [
      "1-1",
-     11.44
+     11.42
     ],
     [
      "0-0",
-     7.04
+     7.03
     ],
     [
      "2-2",
@@ -73,7 +367,861 @@
     ],
     [
      "3-3",
+     1.1
+    ],
+    [
+     "Other",
+     0.27
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     8.66
+    ],
+    [
+     "1-2",
+     8.21
+    ],
+    [
+     "0-2",
+     6.04
+    ],
+    [
+     "1-3",
+     3.67
+    ],
+    [
+     "0-3",
+     3.2
+    ],
+    [
+     "2-3",
+     2.5
+    ],
+    [
+     "Other",
+     5.41
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 38.88,
+   "equal_8": 12.29,
+   "under_8": 48.82,
+   "over_9": 28.12,
+   "equal_9": 10.76,
+   "under_9": 61.12,
+   "over_10.5": 19.45,
+   "under_10.5": 80.55
+  },
+  "Linee_Casa": {
+   "over_1.5": 37.72,
+   "under_1.5": 62.28,
+   "over_2.5": 16.22,
+   "under_2.5": 83.78,
+   "over_3.5": 5.44,
+   "under_3.5": 94.56
+  },
+  "Linee_Ospite": {
+   "over_0.5": 70.32,
+   "under_0.5": 29.68,
+   "over_1.5": 38.25,
+   "under_1.5": 61.75,
+   "over_2.5": 16.15,
+   "under_2.5": 83.85,
+   "over_3.5": 5.68,
+   "under_3.5": 94.32
+  },
+  "WeSay": "1-2",
+  "WeSay_Segno": "2",
+  "Ora_Sito": "Nov 15, 2026 1.00am",
+  "Url": "https://www.sportsmole.co.uk/football/concacaf-nations-league/jamaica-vs-mexico_game_262192.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/jamaica/preview/jamaica-vs-mexico-prediction-team-news-lineups_609017.html",
+  "Id": "262192"
+ },
+ {
+  "Casa": "Cyprus",
+  "Ospite": "Montenegro",
+  "Ora": "15:00",
+  "Data": "2026-11-15",
+  "Lega": "Nations League - League A",
+  "Giornata": "Gameweek 6",
+  "P1": 42.99,
+  "PX": 23.42,
+  "P2": 33.62,
+  "P_GG": 63.12,
+  "P_NG": 36.88,
+  "P_O15": 83.76,
+  "P_U15": 16.24,
+  "P_O25": 64.26,
+  "P_U25": 35.74,
+  "P_O35": 41.8,
+  "P_U35": 58.21,
+  "P_O45": 26.69,
+  "P_U45": 73.31,
+  "PT1": 34.12,
+  "PTX": 40.66,
+  "PT2": 25.21,
+  "P_Primo_Casa": 52.0,
+  "P_Nessun_Gol": 4.18,
+  "P_Primo_Ospite": 43.82,
+  "Esatto": "1-1",
+  "P_Esatto": 9.83,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     8.84
+    ],
+    [
+     "1-0",
+     6.63
+    ],
+    [
+     "2-0",
+     5.51
+    ],
+    [
+     "3-1",
+     4.77
+    ],
+    [
+     "3-2",
+     3.77
+    ],
+    [
+     "3-0",
+     3.62
+    ],
+    [
+     "Other",
+     9.84
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     9.83
+    ],
+    [
+     "2-2",
+     6.64
+    ],
+    [
+     "0-0",
+     4.18
+    ],
+    [
+     "3-3",
+     2.24
+    ],
+    [
+     "Other",
+     0.53
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     7.57
+    ],
+    [
+     "0-1",
+     5.45
+    ],
+    [
+     "0-2",
+     4.18
+    ],
+    [
+     "1-3",
+     3.67
+    ],
+    [
+     "2-3",
+     3.41
+    ],
+    [
+     "0-3",
+     2.44
+    ],
+    [
+     "Other",
+     6.9
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 49.65,
+   "equal_8": 13.08,
+   "under_8": 37.27,
+   "over_9": 37.13,
+   "equal_9": 12.52,
+   "under_9": 50.35,
+   "over_10.5": 26.25,
+   "under_10.5": 73.75
+  },
+  "Linee_Casa": {
+   "over_1.5": 49.17,
+   "under_1.5": 50.83,
+   "over_2.5": 24.77,
+   "under_2.5": 75.23,
+   "over_3.5": 10.37,
+   "under_3.5": 89.63
+  },
+  "Linee_Ospite": {
+   "over_0.5": 70.24,
+   "under_0.5": 29.76,
+   "over_1.5": 41.35,
+   "under_1.5": 58.65,
+   "over_2.5": 19.19,
+   "under_2.5": 80.81,
+   "over_3.5": 7.43,
+   "under_3.5": 92.57
+  },
+  "WeSay": "1-1",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 15, 2026 2.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/nations-league/cyprus-vs-montenegro_game_262242.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/cyprus/uefa-nations-league/preview/cyprus-vs-montenegro-prediction-team-news-lineups_609044.html",
+  "Id": "262242"
+ },
+ {
+  "Casa": "Latvia",
+  "Ospite": "Armenia",
+  "Ora": "15:00",
+  "Data": "2026-11-15",
+  "Lega": "Nations League - League A",
+  "Giornata": "Gameweek 6",
+  "P1": 48.13,
+  "PX": 24.51,
+  "P2": 27.39,
+  "P_GG": 50.08,
+  "P_NG": 49.92,
+  "P_O15": 75.49,
+  "P_U15": 24.51,
+  "P_O25": 51.77,
+  "P_U25": 48.23,
+  "P_O35": 29.92,
+  "P_U35": 70.08,
+  "P_O45": 17.97,
+  "P_U45": 82.03,
+  "PT1": 29.41,
+  "PTX": 45.32,
+  "PT2": 25.27,
+  "P_Primo_Casa": 45.66,
+  "P_Nessun_Gol": 7.01,
+  "P_Primo_Ospite": 47.33,
+  "Esatto": "1-1",
+  "P_Esatto": 11.34,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     10.15
+    ],
+    [
+     "2-1",
+     8.99
+    ],
+    [
+     "2-0",
+     8.09
+    ],
+    [
+     "3-1",
+     4.76
+    ],
+    [
+     "3-0",
+     4.65
+    ],
+    [
+     "3-2",
+     2.64
+    ],
+    [
+     "Other",
+     8.85
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.34
+    ],
+    [
+     "0-0",
+     7.01
+    ],
+    [
+     "2-2",
+     4.78
+    ],
+    [
+     "3-3",
      1.11
+    ],
+    [
+     "Other",
+     0.27
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     7.37
+    ],
+    [
+     "1-2",
+     6.42
+    ],
+    [
+     "0-2",
+     4.31
+    ],
+    [
+     "1-3",
+     2.4
+    ],
+    [
+     "2-3",
+     2.0
+    ],
+    [
+     "0-3",
+     1.78
+    ],
+    [
+     "Other",
+     3.1
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 53.35,
+   "equal_8": 11.05,
+   "under_8": 35.6,
+   "over_9": 42.45,
+   "equal_9": 10.89,
+   "under_9": 46.65,
+   "over_10.5": 32.53,
+   "under_10.5": 67.47
+  },
+  "Linee_Casa": {
+   "over_1.5": 46.14,
+   "under_1.5": 53.86,
+   "over_2.5": 22.28,
+   "under_2.5": 77.72,
+   "over_3.5": 9.12,
+   "under_3.5": 90.88
+  },
+  "Linee_Ospite": {
+   "over_0.5": 61.27,
+   "under_0.5": 38.73,
+   "over_1.5": 28.81,
+   "under_1.5": 71.19,
+   "over_2.5": 10.66,
+   "under_2.5": 89.34,
+   "over_3.5": 3.37,
+   "under_3.5": 96.63
+  },
+  "WeSay": "1-2",
+  "WeSay_Segno": "2",
+  "Ora_Sito": "Nov 15, 2026 2.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/nations-league/latvia-vs-armenia_game_262241.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/latvia/uefa-nations-league/preview/latvia-vs-armenia-prediction-team-news-lineups_609054.html",
+  "Id": "262241"
+ },
+ {
+  "Casa": "Belarus",
+  "Ospite": "Albania",
+  "Ora": "18:00",
+  "Data": "2026-11-15",
+  "Lega": "Nations League - League A",
+  "Giornata": "Gameweek 6",
+  "P1": 21.74,
+  "PX": 23.06,
+  "P2": 55.19,
+  "P_GG": 50.47,
+  "P_NG": 49.53,
+  "P_O15": 76.64,
+  "P_U15": 23.36,
+  "P_O25": 53.19,
+  "P_U25": 46.81,
+  "P_O35": 30.91,
+  "P_U35": 69.09,
+  "P_O45": 18.73,
+  "P_U45": 81.27,
+  "PT1": 19.88,
+  "PTX": 40.3,
+  "PT2": 39.83,
+  "P_Primo_Casa": 35.08,
+  "P_Nessun_Gol": 6.36,
+  "P_Primo_Ospite": 58.56,
+  "Esatto": "1-1",
+  "P_Esatto": 11.08,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     6.47
+    ],
+    [
+     "2-1",
+     5.37
+    ],
+    [
+     "2-0",
+     3.15
+    ],
+    [
+     "3-1",
+     1.91
+    ],
+    [
+     "3-2",
+     1.63
+    ],
+    [
+     "3-0",
+     1.16
+    ],
+    [
+     "Other",
+     2.06
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.08
+    ],
+    [
+     "0-0",
+     6.36
+    ],
+    [
+     "2-2",
+     4.65
+    ],
+    [
+     "Other",
+     0.07
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     10.54
+    ],
+    [
+     "1-2",
+     9.88
+    ],
+    [
+     "0-2",
+     9.21
+    ],
+    [
+     "0-3",
+     5.87
+    ],
+    [
+     "1-3",
+     5.63
+    ],
+    [
+     "2-3",
+     2.93
+    ],
+    [
+     "Other",
+     11.13
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 38.34,
+   "equal_8": 10.88,
+   "under_8": 50.79,
+   "over_9": 28.8,
+   "equal_9": 9.53,
+   "under_9": 61.66,
+   "over_10.5": 21.06,
+   "under_10.5": 78.94
+  },
+  "Linee_Casa": {
+   "over_1.5": 23.84,
+   "under_1.5": 76.16,
+   "over_2.5": 7.74,
+   "under_2.5": 92.26,
+   "over_3.5": 2.13,
+   "under_3.5": 97.87
+  },
+  "Linee_Ospite": {
+   "over_0.5": 80.81,
+   "under_0.5": 19.19,
+   "over_1.5": 51.91,
+   "under_1.5": 48.09,
+   "over_2.5": 26.54,
+   "under_2.5": 73.46,
+   "over_3.5": 11.2,
+   "under_3.5": 88.8
+  },
+  "WeSay": "1-1",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 15, 2026 5.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/nations-league/belarus-vs-albania_game_262259.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/belarus/uefa-nations-league/preview/belarus-vs-albania-prediction-team-news-lineups_609058.html",
+  "Id": "262259"
+ },
+ {
+  "Casa": "Finland",
+  "Ospite": "San Marino",
+  "Ora": "18:00",
+  "Data": "2026-11-15",
+  "Lega": "Nations League - League A",
+  "Giornata": "Gameweek 6",
+  "P1": 84.36,
+  "PX": 10.3,
+  "P2": 5.35,
+  "P_GG": 33.12,
+  "P_NG": 66.88,
+  "P_O15": 85.24,
+  "P_U15": 14.76,
+  "P_O25": 67.89,
+  "P_U25": 32.11,
+  "P_O35": 47.5,
+  "P_U35": 52.5,
+  "P_O45": 42.29,
+  "P_U45": 57.71,
+  "PT1": 71.34,
+  "PTX": 23.82,
+  "PT2": 4.84,
+  "P_Primo_Casa": 85.4,
+  "P_Nessun_Gol": 4.27,
+  "P_Primo_Ospite": 10.33,
+  "Esatto": "3-0",
+  "P_Esatto": 11.79,
+  "Esatti": {
+   "casa": [
+    [
+     "3-0",
+     11.79
+    ],
+    [
+     "2-0",
+     11.59
+    ],
+    [
+     "1-0",
+     8.4
+    ],
+    [
+     "2-1",
+     6.14
+    ],
+    [
+     "3-1",
+     4.19
+    ],
+    [
+     "Other",
+     41.35
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     4.97
+    ],
+    [
+     "0-0",
+     4.27
+    ],
+    [
+     "2-2",
+     1.06
+    ],
+    [
+     "Other",
+     0.01
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     2.15
+    ],
+    [
+     "1-2",
+     1.87
+    ],
+    [
+     "Other",
+     0.01
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 60.26,
+   "equal_8": 11.37,
+   "under_8": 28.36,
+   "over_9": 48.44,
+   "equal_9": 11.82,
+   "under_9": 39.74,
+   "over_10.5": 37.19,
+   "under_10.5": 62.81
+  },
+  "Linee_Casa": {
+   "over_1.5": 77.05,
+   "under_1.5": 22.95,
+   "over_2.5": 58.25,
+   "under_2.5": 41.75,
+   "over_3.5": 41.36,
+   "under_3.5": 58.64
+  },
+  "Linee_Ospite": {
+   "over_0.5": 22.66,
+   "under_0.5": 77.34,
+   "over_1.5": 5.21,
+   "under_1.5": 94.79,
+   "over_2.5": 0.64,
+   "under_2.5": 99.36,
+   "over_3.5": 0.02,
+   "under_3.5": 99.98
+  },
+  "WeSay": "4-0",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 15, 2026 5.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/nations-league/finland-vs-san-marino_game_262258.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/finland/uefa-nations-league/preview/finland-vs-san-marino-prediction-team-news-lineups_609027.html",
+  "Id": "262258"
+ },
+ {
+  "Casa": "Belgium",
+  "Ospite": "Italy",
+  "Ora": "20:45",
+  "Data": "2026-11-15",
+  "Lega": "Nations League - League A",
+  "Giornata": "Gameweek 6",
+  "P1": 46.31,
+  "PX": 23.81,
+  "P2": 29.82,
+  "P_GG": 57.61,
+  "P_NG": 42.39,
+  "P_O15": 79.38,
+  "P_U15": 20.62,
+  "P_O25": 57.4,
+  "P_U25": 42.6,
+  "P_O35": 34.64,
+  "P_U35": 65.36,
+  "P_O45": 21.12,
+  "P_U45": 78.88,
+  "PT1": 37.49,
+  "PTX": 39.13,
+  "PT2": 23.38,
+  "P_Primo_Casa": 53.22,
+  "P_Nessun_Gol": 5.46,
+  "P_Primo_Ospite": 41.32,
+  "Esatto": "1-1",
+  "P_Esatto": 10.86,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     8.95
+    ],
+    [
+     "1-0",
+     8.23
+    ],
+    [
+     "2-0",
+     6.73
+    ],
+    [
+     "3-1",
+     4.9
+    ],
+    [
+     "3-0",
+     4.49
+    ],
+    [
+     "3-2",
+     3.37
+    ],
+    [
+     "Other",
+     9.64
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.86
+    ],
+    [
+     "2-2",
+     5.86
+    ],
+    [
+     "0-0",
+     5.46
+    ],
+    [
+     "3-3",
+     1.38
+    ],
+    [
+     "Other",
+     0.25
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     7.27
+    ],
+    [
+     "0-1",
+     6.86
+    ],
+    [
+     "0-2",
+     4.4
+    ],
+    [
+     "1-3",
+     2.75
+    ],
+    [
+     "2-3",
+     2.49
+    ],
+    [
+     "0-3",
+     2.05
+    ],
+    [
+     "Other",
+     3.99
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 62.0,
+   "equal_8": 10.82,
+   "under_8": 27.17,
+   "over_9": 50.6,
+   "equal_9": 11.4,
+   "under_9": 38.0,
+   "over_10.5": 39.58,
+   "under_10.5": 60.42
+  },
+  "Linee_Casa": {
+   "over_1.5": 48.06,
+   "under_1.5": 51.94,
+   "over_2.5": 24.03,
+   "under_2.5": 75.97,
+   "over_3.5": 9.89,
+   "under_3.5": 90.11
+  },
+  "Linee_Ospite": {
+   "over_0.5": 65.38,
+   "under_0.5": 34.62,
+   "over_1.5": 33.81,
+   "under_1.5": 66.19,
+   "over_2.5": 12.91,
+   "under_2.5": 87.09,
+   "over_3.5": 4.24,
+   "under_3.5": 95.76
+  },
+  "WeSay": "2-2",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 15, 2026 7.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/nations-league/belgium-vs-italy_game_262265.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/belgium/uefa-nations-league/preview/belgium-vs-italy-prediction-team-news-lineups_609039.html",
+  "Id": "262265"
+ },
+ {
+  "Casa": "Croatia",
+  "Ospite": "Czech Republic",
+  "Ora": "20:45",
+  "Data": "2026-11-15",
+  "Lega": "Nations League - League A",
+  "Giornata": "Gameweek 6",
+  "P1": 54.96,
+  "PX": 22.03,
+  "P2": 23.01,
+  "P_GG": 52.49,
+  "P_NG": 47.51,
+  "P_O15": 79.16,
+  "P_U15": 20.84,
+  "P_O25": 57.91,
+  "P_U25": 42.05,
+  "P_O35": 35.58,
+  "P_U35": 64.42,
+  "P_O45": 23.65,
+  "P_U45": 76.35,
+  "PT1": 37.74,
+  "PTX": 37.44,
+  "PT2": 24.82,
+  "P_Primo_Casa": 53.95,
+  "P_Nessun_Gol": 6.25,
+  "P_Primo_Ospite": 39.8,
+  "Esatto": "1-0",
+  "P_Esatto": 9.67,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     9.67
+    ],
+    [
+     "2-1",
+     9.18
+    ],
+    [
+     "2-0",
+     8.92
+    ],
+    [
+     "3-0",
+     6.05
+    ],
+    [
+     "3-1",
+     5.03
+    ],
+    [
+     "3-2",
+     3.12
+    ],
+    [
+     "Other",
+     12.99
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     9.49
+    ],
+    [
+     "0-0",
+     6.25
+    ],
+    [
+     "2-2",
+     4.66
+    ],
+    [
+     "3-3",
+     1.35
     ],
     [
      "Other",
@@ -82,68 +1230,362 @@
    ],
    "ospite": [
     [
-     "0-1",
-     8.69
+     "1-2",
+     5.67
     ],
     [
-     "1-2",
-     8.26
+     "0-1",
+     4.92
     ],
     [
      "0-2",
-     6.07
+     2.83
     ],
     [
      "1-3",
-     3.68
-    ],
-    [
-     "0-3",
-     3.24
+     2.24
     ],
     [
      "2-3",
-     2.51
+     2.0
+    ],
+    [
+     "0-3",
+     1.44
     ],
     [
      "Other",
-     5.43
+     3.91
     ]
    ]
   },
   "Corner": {
-   "over_8": 39.04,
-   "equal_8": 12.28,
-   "under_8": 48.69,
-   "over_9": 28.27,
-   "equal_9": 10.76,
-   "under_9": 60.96,
-   "over_10.5": 19.58,
-   "under_10.5": 80.42
+   "over_8": 57.32,
+   "equal_8": 10.49,
+   "under_8": 32.19,
+   "over_9": 46.64,
+   "equal_9": 10.67,
+   "under_9": 42.68,
+   "over_10.5": 36.6,
+   "under_10.5": 63.4
   },
   "Linee_Casa": {
-   "over_1.5": 37.49,
-   "under_1.5": 62.51,
-   "over_2.5": 16.06,
-   "under_2.5": 83.94,
-   "over_3.5": 5.38,
-   "under_3.5": 94.62
+   "over_1.5": 53.58,
+   "under_1.5": 46.42,
+   "over_2.5": 28.82,
+   "under_2.5": 71.18,
+   "over_3.5": 13.27,
+   "under_3.5": 86.73
   },
   "Linee_Ospite": {
-   "over_0.5": 70.44,
-   "under_0.5": 29.56,
-   "over_1.5": 38.39,
-   "under_1.5": 61.61,
-   "over_2.5": 16.25,
-   "under_2.5": 83.75,
-   "over_3.5": 5.71,
-   "under_3.5": 94.29
+   "over_0.5": 56.12,
+   "under_0.5": 43.88,
+   "over_1.5": 27.5,
+   "under_1.5": 72.5,
+   "over_2.5": 11.22,
+   "under_2.5": 88.78,
+   "over_3.5": 4.19,
+   "under_3.5": 95.81
   },
-  "WeSay": "1-2",
-  "WeSay_Segno": "2",
-  "Ora_Sito": "Nov 15, 2026 1.00am",
-  "Url": "https://www.sportsmole.co.uk/football/concacaf-nations-league/jamaica-vs-mexico_game_262192.html",
-  "Url_Preview": "https://www.sportsmole.co.uk/football/jamaica/preview/jamaica-vs-mexico-prediction-team-news-lineups_609017.html",
-  "Id": "262192"
+  "WeSay": "2-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 15, 2026 7.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/nations-league/croatia-vs-czech-republic_game_262263.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/croatia/preview/croatia-vs-czech-republic-prediction-team-news-lineups_609075.html",
+  "Id": "262263"
+ },
+ {
+  "Casa": "France",
+  "Ospite": "Turkey",
+  "Ora": "20:45",
+  "Data": "2026-11-15",
+  "Lega": "Nations League - League A",
+  "Giornata": "Gameweek 6",
+  "P1": 60.37,
+  "PX": 19.64,
+  "P2": 19.99,
+  "P_GG": 61.33,
+  "P_NG": 38.67,
+  "P_O15": 85.12,
+  "P_U15": 14.88,
+  "P_O25": 66.43,
+  "P_U25": 33.54,
+  "P_O35": 43.96,
+  "P_U35": 56.04,
+  "P_O45": 29.51,
+  "P_U45": 70.49,
+  "PT1": 39.76,
+  "PTX": 38.22,
+  "PT2": 22.03,
+  "P_Primo_Casa": 61.63,
+  "P_Nessun_Gol": 3.52,
+  "P_Primo_Ospite": 34.85,
+  "Esatto": "2-1",
+  "P_Esatto": 9.9,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     9.9
+    ],
+    [
+     "2-0",
+     7.71
+    ],
+    [
+     "1-0",
+     7.49
+    ],
+    [
+     "3-1",
+     6.8
+    ],
+    [
+     "3-0",
+     6.23
+    ],
+    [
+     "3-2",
+     4.29
+    ],
+    [
+     "Other",
+     17.95
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     8.62
+    ],
+    [
+     "2-2",
+     5.69
+    ],
+    [
+     "0-0",
+     3.52
+    ],
+    [
+     "3-3",
+     1.54
+    ],
+    [
+     "Other",
+     0.28
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     5.31
+    ],
+    [
+     "0-1",
+     3.89
+    ],
+    [
+     "0-2",
+     2.35
+    ],
+    [
+     "2-3",
+     2.16
+    ],
+    [
+     "1-3",
+     1.97
+    ],
+    [
+     "0-3",
+     1.03
+    ],
+    [
+     "Other",
+     3.29
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 50.13,
+   "equal_8": 10.49,
+   "under_8": 39.38,
+   "over_9": 39.98,
+   "equal_9": 10.15,
+   "under_9": 49.87,
+   "over_10.5": 30.87,
+   "under_10.5": 69.13
+  },
+  "Linee_Casa": {
+   "over_1.5": 62.55,
+   "under_1.5": 37.45,
+   "over_2.5": 37.09,
+   "under_2.5": 62.91,
+   "over_3.5": 18.23,
+   "under_3.5": 81.77
+  },
+  "Linee_Ospite": {
+   "over_0.5": 57.12,
+   "under_0.5": 42.88,
+   "over_1.5": 27.91,
+   "under_1.5": 72.09,
+   "over_2.5": 10.27,
+   "under_2.5": 89.73,
+   "over_3.5": 3.57,
+   "under_3.5": 96.43
+  },
+  "WeSay": "3-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 15, 2026 7.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/nations-league/france-vs-turkey_game_262264.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/france/uefa-nations-league/preview/france-vs-turkey-prediction-team-news-lineups_609038.html",
+  "Id": "262264"
+ },
+ {
+  "Casa": "Spain",
+  "Ospite": "England",
+  "Ora": "20:45",
+  "Data": "2026-11-15",
+  "Lega": "Nations League - League A",
+  "Giornata": "Gameweek 6",
+  "P1": 43.78,
+  "PX": 21.84,
+  "P2": 34.39,
+  "P_GG": 62.52,
+  "P_NG": 37.48,
+  "P_O15": 83.99,
+  "P_U15": 16.01,
+  "P_O25": 64.12,
+  "P_U25": 35.88,
+  "P_O35": 42.14,
+  "P_U35": 57.86,
+  "P_O45": 28.69,
+  "P_U45": 71.31,
+  "PT1": 28.82,
+  "PTX": 36.21,
+  "PT2": 34.97,
+  "P_Primo_Casa": 49.15,
+  "P_Nessun_Gol": 4.18,
+  "P_Primo_Ospite": 46.67,
+  "Esatto": "1-1",
+  "P_Esatto": 9.84,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     8.26
+    ],
+    [
+     "1-0",
+     7.02
+    ],
+    [
+     "2-0",
+     5.54
+    ],
+    [
+     "3-1",
+     4.76
+    ],
+    [
+     "3-0",
+     3.95
+    ],
+    [
+     "3-2",
+     3.67
+    ],
+    [
+     "Other",
+     10.57
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     9.84
+    ],
+    [
+     "2-2",
+     5.71
+    ],
+    [
+     "0-0",
+     4.18
+    ],
+    [
+     "3-3",
+     1.81
+    ],
+    [
+     "Other",
+     0.3
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     7.84
+    ],
+    [
+     "0-1",
+     4.8
+    ],
+    [
+     "0-2",
+     4.51
+    ],
+    [
+     "1-3",
+     2.97
+    ],
+    [
+     "2-3",
+     2.82
+    ],
+    [
+     "0-3",
+     1.92
+    ],
+    [
+     "Other",
+     9.52
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 57.02,
+   "equal_8": 9.11,
+   "under_8": 33.86,
+   "over_9": 47.6,
+   "equal_9": 9.42,
+   "under_9": 42.98,
+   "over_10.5": 38.55,
+   "under_10.5": 61.45
+  },
+  "Linee_Casa": {
+   "over_1.5": 47.39,
+   "under_1.5": 52.61,
+   "over_2.5": 25.06,
+   "under_2.5": 74.94,
+   "over_3.5": 10.87,
+   "under_3.5": 89.13
+  },
+  "Linee_Ospite": {
+   "over_0.5": 68.73,
+   "under_0.5": 31.27,
+   "over_1.5": 41.07,
+   "under_1.5": 58.93,
+   "over_2.5": 19.34,
+   "under_2.5": 80.66,
+   "over_3.5": 9.82,
+   "under_3.5": 90.18
+  },
+  "WeSay": "3-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 15, 2026 7.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/nations-league/spain-vs-england_game_262262.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/spain/uefa-nations-league/preview/spain-vs-england-prediction-team-news-lineups_609045.html",
+  "Id": "262262"
  }
 ]
