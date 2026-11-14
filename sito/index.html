@@ -1429,6 +1429,12 @@
   @media (max-width: 520px) { .cal-stat { padding-left: 12px; } }
   .cal-riga .chip, .cal-riga .timbro-pin { margin-left: 4px; vertical-align: middle; white-space: nowrap; }
   .lv-ris-mini { font-weight: 800; }
+  /* (172) il risultato: grassetto, nero; verde se il pronostico e' uscito, rosso se no */
+  .ris, .riga .alto span.ris, .riga .numero b.ris { font-weight: 800; color: var(--testo); }
+  .ris.ris-si, .riga .alto span.ris.ris-si { color: #4ade80; }
+  .ris.ris-no, .riga .alto span.ris.ris-no { color: #ff5470; }
+  :root[data-theme="light"] .ris.ris-si, :root[data-theme="light"] .riga .alto span.ris.ris-si { color: #15803d; }
+  :root[data-theme="light"] .ris.ris-no, :root[data-theme="light"] .riga .alto span.ris.ris-no { color: #d6283f; }
   /* PARTITE LIVE (111). */
   .lv-riga { display: flex; gap: 12px; align-items: center; padding: 12px 14px; background: var(--scheda);
     border: 1px solid var(--bordo); border-radius: var(--raggio); box-shadow: var(--ombra); margin-bottom: 10px; }
@@ -2675,7 +2681,11 @@
       : visibili.length + " righe su " + tutte.length;
     var html = SEZ[sez].riepilogo(visibili) + tessereEsito(sez, visibili) +
       '<p class="conta">' + conta + SEZ[sez].nota + "</p><div class=\"lista\">" +
-      mostrate.map(function (r, i) { return conAggancio(spuntaRisultato(SEZ[sez].riga(r, i), r), sez, r); }).join("") + "</div>";
+      mostrate.map(function (r, i) {
+        var h = SEZ[sez].riga(r, i), e = ESITO_SEZ[sez] ? ESITO_SEZ[sez](r) : null;
+        if (e) h = coloraRis(h, e.esito);
+        return conAggancio(spuntaRisultato(h, r), sez, r);
+      }).join("") + "</div>";
     if (visibili.length > mostrate.length) {
       html += '<button type="button" class="altre" id="altre">Mostra altre ' +
         Math.min(PASSO, visibili.length - mostrate.length) + " (ne restano " +
@@ -2818,7 +2828,7 @@
           (r0.Fonte === "Pinnacle" ? '<span class="timbro-pin" title="Prezzi da Pinnacle">Pinnacle</span>' : "") +
           // (171) l'1X2 aggiornato col ponte dopo l'ultimo calcolo dei prezzi
           (function () { var f = g.filter(function (x) { return x._fresca; })[0]; return f ? '<span class="pill fresca" title="1X2 aggiornato con la quota Pinnacle">\u21bb ' + esc(f._fresca) + "</span>" : ""; })() +
-          (gol ? "<span><b>" + esc(gol) + "</b></span>" : "") +
+          (gol ? risHtml(gol, es || ep, es === "presa" || ep === "presa" ? "proposta uscita" : es === "sbagliata" || ep === "sbagliata" ? "proposta non uscita" : "risultato finale") : "") +
           (r0.Campionato ? '<span class="chip">' + esc(r0.Campionato) + "</span>" : "") +
           (r0.Fonte === "OddsAPI" ? '<span class="chip">quota Betfair</span>' : "") +
           pillConsenso(g.filter(function (x) { return x._cons; })[0]) +
@@ -3443,15 +3453,28 @@
     var e = gc > go ? "1" : gc < go ? "2" : "X";
     var ok = segno.indexOf(e) >= 0;
     var t = ok ? "segno uscito" : "segno non uscito";
+    html = coloraRis(html, ok ? "presa" : "sbagliata");
     return html.replace(/^<div class="riga([^"]*)">/, function (x, c) {
       return '<div class="riga' + c + ' finita"><span class="spunta esito proposta" title="' + t + '" aria-label="' + t + '">' +
         (ok ? "\u2713" : "\u2717") + "</span>";
     });
   }
+  // (172) IL RISULTATO, uguale in ogni pagina: grassetto; VERDE se il
+  // pronostico della riga e' uscito, ROSSO se no; nero dove la riga non ha
+  // un pronostico (Calendario, Campionati, rimborsi, risultato senza esito).
+  function risHtml(testo, esito, titolo, cls) {
+    var c = esito === "presa" ? " ris-si" : esito === "sbagliata" ? " ris-no" : "";
+    return '<span class="' + (cls ? cls + " " : "") + "ris" + c + '"' + (titolo ? ' title="' + esc(titolo) + '"' : "") + ">" + esc(testo) + "</span>";
+  }
+  // colora il risultato di una riga gia' scritta (solo se e' ancora nero)
+  function coloraRis(html, esito) {
+    if (esito !== "presa" && esito !== "sbagliata") return html;
+    return html.replace('class="finale ris"', 'class="finale ris ' + (esito === "presa" ? "ris-si" : "ris-no") + '"');
+  }
   function golHtml(r) {
     if (r.Gol_Casa == null || r.Gol_Ospite == null) return "";
     var t = "risultato finale" + (r.Risultato_Da ? ", da " + r.Risultato_Da : "");
-    return '<span class="finale" title="' + esc(t) + '"><b>' + esc(r.Gol_Casa + "-" + r.Gol_Ospite) + "</b></span>";
+    return risHtml(r.Gol_Casa + "-" + r.Gol_Ospite, null, t, "finale");
   }
 
   function arricchisciPrezzi(righe, data) {
@@ -3661,7 +3684,7 @@
       '<div class="corpo">' +
       '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" +
       // Dentro la scheda della partita il punteggio sta gia' in testa.
-      (gol && stato.vista.prezzi !== "partite" ? "<span><b>" + esc(gol) + "</b></span>" : "") +
+      (gol && stato.vista.prezzi !== "partite" ? risHtml(gol, es || r._esito) : "") +
       (r.Gruppo ? '<span class="chip">' + esc(r.Gruppo) + "</span>" : "") +
       // DA DOVE VIENE LA QUOTA (112), accanto al margine: e' il margine di
       // quel book. "più book" = la migliore fra piu' bookmaker.
@@ -6805,7 +6828,7 @@
       '<div class="pron-lista">' + prons.map(pillPron).join("") + "</div>" +
       (m ? tripla("mercato", m.P1, m.PX, m.P2) : "") +
       "</div>" +
-      '<div class="numero"><b>' + esc(p.Gol_Casa) + "\u2013" + esc(p.Gol_Ospite) + "</b><span>finale</span></div>" +
+      '<div class="numero"><b class="ris">' + esc(p.Gol_Casa) + "\u2013" + esc(p.Gol_Ospite) + "</b><span>finale</span></div>" +
       "</summary>" +
       '<div class="dettaglio">' + det.join("") + "</div>" +
       "</details></div>";
@@ -8687,7 +8710,7 @@
     if (FO && FO.length) h += sez("Ultime partite", tab(["Data", "", "Avversaria", "Ris.", "xG"], FO.slice().reverse().map(function (x) {
       var e = esito3(x[3], x[4]);
       return [esc(String(x[0]).slice(8, 10) + "/" + String(x[0]).slice(5, 7)), x[2] === "c" ? "casa" : "fuori", esc(nomeSq(D, x[1])),
-        '<span class="fm fm-' + e.toLowerCase() + '">' + e + "</span> " + x[3] + "-" + x[4],
+        '<span class="fm fm-' + e.toLowerCase() + '">' + e + "</span> " + risHtml(x[3] + "-" + x[4]),
         x[5] != null && x[6] != null ? Number(x[5]).toFixed(2) + " - " + Number(x[6]).toFixed(2) : "–"];
     }), [1, 2]));
 
@@ -9073,12 +9096,17 @@
     }
     return sito;
   }
-  function statoCal(x) {
+  function statoCal(x, segno) {
     var vivo = DATI_LIVE && DATI_LIVE[x.id] && IN_CORSO[DATI_LIVE[x.id].stato] ? DATI_LIVE[x.id] : null;
     if (vivo) return { vivo: true, html: pillolaLive(vivo) };
     var st = String(x.stato || "").toUpperCase();
     var g = x.gc != null && x.go != null ? x.gc + "–" + x.go : "";
-    if (st === "FT" || st === "AET" || st === "PEN") return { html: '<span class="lv-ris-mini">' + esc(g) + "</span>" };
+    if (st === "FT" || st === "AET" || st === "PEN") {
+      // nella pagina Elo il pronostico e' il segno piu' probabile per l'Elo
+      var u = num(x.gc) > num(x.go) ? "1" : num(x.gc) < num(x.go) ? "2" : "X";
+      var es = segno && /^[1X2]$/.test(segno) && g ? (segno === u ? "presa" : "sbagliata") : null;
+      return { html: risHtml(g, es, es ? (es === "presa" ? "segno dell'Elo uscito" : "segno dell'Elo non uscito") : "risultato finale", "lv-ris-mini") };
+    }
     if (IN_CORSO[st]) return { vivo: true, html: '<span class="live">' + esc(g || "in corso") + "</span>" };
     if (st === "PST") return { html: '<span class="pill">rinviata</span>' };
     if (st === "CANC" || st === "ABD") return { html: '<span class="pill">annullata</span>' };
@@ -9368,7 +9396,7 @@
         '<span class="piccolo">Di solito ha ragione il mercato: l’Elo non sa di assenti, formazioni e motivazioni.</span></p>');
       var lk = sito[String(x.id)];
       if (typeof lk === "string") det.push('<p><a class="apri-scheda" href="' + esc(lk) + '">Tutto su questa partita →</a></p>');
-      var st = statoCal(x);
+      var st = statoCal(x, segno);
       return '<div class="riga"><details><summary>' +
         '<span class="segno">' + esc(segno) + "</span>" +
         '<div class="corpo"><div class="alto">' + (x.ora ? "<span><b>" + esc(x.ora) + "</b></span>" : "") +
