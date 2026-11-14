@@ -1415,6 +1415,16 @@
   .riga.partitona .dentro-partita .riga .sel { font-weight: 600; font-size: .95rem; color: var(--testo); margin-top: 2px; }
   .riga.partitona .dentro-partita p.aggancio { margin: 4px 4px 0; }
   .riga.partitona .dentro-partita p.aggancio:empty { display: none; }
+  /* (173) 1X2 e altri mercati per orario: la partita una volta, gli esiti sotto */
+  .riga.partitona.mercato { display: flex; }
+  .riga.partitona.mercato > .mercato-corpo { flex: 1; min-width: 0; }
+  .riga.partitona.mercato .dentro-partita.esiti { border-top: 1px dashed var(--bordo); }
+  .riga.partitona.mercato .dentro-partita.esiti .riga .alto { display: none; }
+  .riga.partitona.mercato .dentro-partita.esiti .riga summary { padding-top: 10px; padding-bottom: 10px; }
+  .riga.partitona.mercato details[open] .apri-info { display: none; }
+  .riga.partitona.mercato .apri-info { margin-top: 4px; font-size: .7rem; }
+  /* (173) una riga per esito, compatta: niente xG sulla riga */
+  .riga.compatta .sqinfo { display: none; }
   /* CON IL MOUSE LE FILE DI TASTI SCORRONO CON LA ROTELLA E HANNO LA
      BARRA. Sul telefono scorrono col dito e la barra non serve; sul PC la
      rotella andava in verticale e i giorni oltre il bordo restavano
@@ -2613,6 +2623,10 @@
     // seconda una partita ben quotata aveva sei righe una sotto l'altra e
     // copriva tutte le altre.
     if (sez === "prezzi" && (vista === "partite" || vista === "stretto")) return disegnaPerPartita(sez, visibili, tutte, data, $r);
+    // (173) 1X2, UNDER/OVER, GOL/NOGOL E COMBINATE: per orario una scheda per
+    // partita con gli esiti gia' visibili dentro; negli altri ordini una
+    // riga per esito, compatta (quote ed Elo nel dettaglio).
+    if (sez === "prezzi" && VISTE_MERCATO[vista] && stato.ordine.prezzi === "ora") return disegnaPerPartita(sez, visibili, tutte, data, $r, true);
 
     var mostrate = visibili.slice(0, stato.limite);
     var conta = visibili.length === tutte.length
@@ -2622,6 +2636,7 @@
       '<p class="conta">' + conta + SEZ[sez].nota + "</p><div class=\"lista\">" +
       mostrate.map(function (r, i) {
         var h = SEZ[sez].riga(r, i), e = ESITO_SEZ[sez] ? ESITO_SEZ[sez](r) : null;
+        if (sez === "prezzi" && VISTE_MERCATO[vista]) h = h.replace('<div class="riga', '<div class="riga compatta');
         if (e) h = coloraRis(h, e.esito);
         return conAggancio(spuntaRisultato(h, r), sez, r);
       }).join("") + "</div>";
@@ -2676,7 +2691,8 @@
   // vede tutte le sue probabilita' con la spunta per la multipla.
   var ORDINE_GRUPPO = { "1X2": 0, "Combo": 1, "Gol NoGol": 2, "Under Over": 3 };
 
-  function disegnaPerPartita(sez, visibili, tutte, data, $r) {
+  var VISTE_MERCATO = { "1x2": 1, ou: 1, btts: 1, combo: 1 };
+  function disegnaPerPartita(sez, visibili, tutte, data, $r, mercato) {
     var gruppi = [], dove = {};
     visibili.forEach(function (r) {
       var k = (r.Data || "") + "|" + String(r.Partita || (r.Casa + " - " + r.Ospite)).toLowerCase();
@@ -2756,6 +2772,34 @@
         // riquadri (deciso il 6/11). Solo presa o sbagliata.
         var ep = !es && (top._esito === "presa" || top._esito === "sbagliata") ? top._esito : null;
         var titoloEp = ep === "presa" ? "proposta uscita (fuori schedina)" : "proposta non uscita (fuori schedina)";
+        // (173) una partita con un esito solo resta la riga di sempre: la
+        // scheda con dentro un esito solo sarebbe piu' lunga, non piu' corta
+        if (mercato && g.length === 1) return conAggancio(dentro, sez, r0);
+        if (mercato) {
+          // (173) la partita una volta sola, gli esiti sotto gia' aperti; il
+          // margine e' lo stesso per tutti: sta in testa, una volta
+          var fidM = fiducia(num(r0.Margine), r0.Fonte);
+          return '<div class="riga partitona mercato' + (scelte_ ? " scelta" : "") + (es ? " finita" : "") + '">' +
+            (es ? '<span class="spunta esito ' + esc(es) + '" title="' + titoloEs + '" aria-label="' + titoloEs + '">' + segnoEs + "</span>"
+              : ep ? '<span class="spunta esito proposta" title="' + titoloEp + '" aria-label="' + titoloEp + '">' +
+                (ep === "presa" ? "\u2713" : "\u2717") + "</span>" : "") +
+            '<div class="mercato-corpo"><details><summary><div class="corpo">' +
+            '<div class="alto"><span>' + esc(r0.Ora || "") + "</span>" +
+            (r0.Fonte === "Pinnacle" ? '<span class="timbro-pin" title="Prezzi da Pinnacle">Pinnacle</span>' : "") +
+            (gol ? risHtml(gol, es || ep, "risultato finale") : "") +
+            (r0.Campionato ? '<span class="chip">' + esc(r0.Campionato) + "</span>" : "") +
+            (eAltroBook(r0.Fonte) ? '<span class="chip" title="Pinnacle non quota questa partita: prezzo da ' + esc(r0.Fonte) + '">quota ' + esc(r0.Fonte) + "</span>" : "") +
+            (fidM ? '<span class="pill ' + fidM[0] + '" title="' + esc(fidM[1]) + '">margine ' + f1(num(r0.Margine)) + "%</span>" : "") +
+            pillConsenso(g.filter(function (x) { return x._cons; })[0]) + "</div>" +
+            '<div class="partita">' + partitaHtml(r0.Casa, r0.Ospite, r0.Partita, campiRiga(r0)) + "</div>" + sqHtml(r0) +
+            (inSch ? '<div class="sel"><b>In schedina:</b> <span class="q-n' + (eVerde(num(inSch.Prob)) ? " verde" : "") + '">' + esc(etichettaSel(inSch)) + " · " + f0(num(inSch.Prob)) + "%</span></div>" : "") +
+            "</div></summary>" +
+            '<div class="dentro-partita">' +
+            '<div class="info-api" data-casa="' + esc(r0.Casa || "") + '" data-ospite="' + esc(r0.Ospite || "") + '" data-ora="' + esc(r0.Ora || "") + '" data-id="' + esc(r0.ID_API || "") + '"></div>' +
+            (r0.Casa && r0.Ospite ? '<p class="aggancio" data-alias="' + esc(aliasDi(sez, r0)) + '"></p>' : "") +
+            "</div></details>" +
+            '<div class="dentro-partita esiti">' + dentro + "</div></div></div>";
+        }
         return '<div class="riga partitona' + (scelte_ ? " scelta" : "") + (es ? " finita" : "") + '">' +
           (es ? '<span class="spunta esito ' + esc(es) + '" title="' + titoloEs + '" aria-label="' + titoloEs + '">' + segnoEs + "</span>"
             : ep ? '<span class="spunta esito proposta" title="' + titoloEp + '" aria-label="' + titoloEp + '">' +
@@ -2789,6 +2833,7 @@
     $r.innerHTML = html;
     var a = document.getElementById("altre");
     if (a) a.addEventListener("click", function () { stato.limite += PASSO; ridisegnaRighe(); });
+    if (mercato) collegaAgganci($r, data);
     // Il link alla scheda si riempie quando si apre la partita.
     $r.querySelectorAll(".partitona > details").forEach(function (det) {
       det.addEventListener("toggle", function () { if (det.open) { riempiAggancio(det, data); riempiInfoApi(det, data); } });
@@ -9764,7 +9809,12 @@
       // restano le frecce accanto ai numeri.
       var sotto = riga.querySelector("summary .partita") || riga.querySelector("summary .squadre");
       if (!qs.length && sotto && x.pz.every(function (p) { return p.q1 != null; })) {
-        if (!riga.querySelector(".mov-riga")) sotto.insertAdjacentHTML("afterend", movRigaHtml(x));
+        // (173) riga compatta: quote prima/ora nel dettaglio, non sulla riga
+        var detQ = riga.classList.contains("compatta") ? riga.querySelector(".dettaglio") : null;
+        if (!riga.querySelector(".mov-riga")) {
+          if (detQ) detQ.insertAdjacentHTML("afterbegin", movRigaHtml(x));
+          else sotto.insertAdjacentHTML("afterend", movRigaHtml(x));
+        }
         return;
       }
       // (155) SOLO LE QUOTE CHE SI SONO MOSSE: il "=" dopo una quota
@@ -10022,6 +10072,7 @@
       if (fid == null || !d) return;
       riga.dataset.elo = "1";
       var dove = el.closest(".partita") || el;
+      var detC = riga.classList.contains("compatta") ? riga.querySelector(".dettaglio") : null;
       var metti = function (ic, io) {
         var c = ELO.dati.per[String(ic)], o = ELO.dati.per[String(io)];
         if (!c || !o) return;
@@ -10037,6 +10088,7 @@
           // accanto ai due rating sembravano quelle del mercato
           '<br><span class="piccolo">secondo l\u2019Elo</span> ' + '<span class="nw"><span class=nw><b class=seg>1</b> ' + pvE(p[0]) + '</span>' + "</span>\u2009· " +
           '<span class="nw"><span class=nw><b class=seg>X</b> ' + pvE(p[1]) + '</span>' + "</span>\u2009· " + '<span class="nw"><span class=nw><b class=seg>2</b> ' + pvE(p[2]) + '</span>' + "</span>";
+        if (detC) { detC.insertBefore(div, detC.firstChild); return; }
         dove.parentNode.insertBefore(div, dove.nextSibling);
         stringiRiga(div);
       };
