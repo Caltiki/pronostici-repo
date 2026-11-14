@@ -1310,6 +1310,9 @@
   /* LE QUOTE IN ROSSO (101): i numeri delle quote si staccano dal testo. */
   .q { color: #ff6b6b; font-weight: 700; font-variant-numeric: tabular-nums; }
   :root[data-theme="light"] .q { color: #c62828; }
+  .q-n { font-weight: 700; color: var(--testo); font-variant-numeric: tabular-nums; }
+  .q-n.verde { color: #4ade80; }
+  :root[data-theme="light"] .q-n.verde { color: #15803d; }
   .q.elo-su { color: #4ade80; }
   .q.elo-giu { color: #ff6b6b; }
   :root[data-theme="light"] .q.elo-su { color: #15803d; }
@@ -2740,7 +2743,7 @@
           (r0.Fonte === "OddsAPI" ? '<span class="chip">quota Betfair</span>' : "") +
           (eAltroBook(r0.Fonte) ? '<span class="chip" title="Pinnacle non quota questa partita: prezzo da ' + esc(r0.Fonte) + '">quota ' + esc(r0.Fonte) + "</span>" : "") + "</div>" +
           '<div class="partita">' + partitaHtml(r0.Casa, r0.Ospite, r0.Partita, campiRiga(r0)) + "</div>" + sqHtml(r0) +
-          '<div class="sel">' + (inSch ? "<b>In schedina:</b> " : "<b>Proposta:</b> ") + '<span class="q">' + esc(etichettaSel(top)) +
+          '<div class="sel">' + (inSch ? "<b>In schedina:</b> " : "<b>Proposta:</b> ") + '<span class="q-n' + (margineStretto(top) ? ' verde" title="Prezzo affidabile: margine stretto' : "") + '">' + esc(etichettaSel(top)) +
           " · " + f0(num(top.Prob)) + "%</span>" + (scelte_ ? " · " + scelte_ + " nella multipla" : "") + "</div>" +
           '</div><div class="numero"><b>' + g.length + "</b><span>" + (g.length === 1 ? "probabilità" : "probabilità") + "</span></div></summary>" +
           '<div class="dentro-partita">' +
@@ -6986,7 +6989,7 @@
       var dElo = p.Elo.c.elo - p.Elo.o.elo;
       h += '<p class="elo-mini">Elo ' + evCoppia(p.Elo.c.elo, p.Elo.o.elo, " \u2013 ") + ' <span class="piccolo">(' + (dElo >= 0 ? "+" : "\u2212") + f0(Math.abs(dElo)) + ")</span>" +
         // (158) le probabilita' sotto, su una riga loro
-        "<br><span class=nw><b class=seg>1</b> " + pv(p.Elo.p[0]) + "</span>" + " · <span class=nw><b class=seg>X</b> " + pv(p.Elo.p[1]) + "</span>" + " · <span class=nw><b class=seg>2</b> " + pv(p.Elo.p[2]) + "</span>" + "</p>";
+        "<br><span class=nw><b class=seg>1</b> " + pvE(p.Elo.p[0]) + "</span>" + " · <span class=nw><b class=seg>X</b> " + pvE(p.Elo.p[1]) + "</span>" + " · <span class=nw><b class=seg>2</b> " + pvE(p.Elo.p[2]) + "</span>" + "</p>";
     }
     var st = String(fm.Stato || "").toUpperCase(), gc = num(fm.Gol_Casa), go = num(fm.Gol_Ospite);
     var fine = finaleScheda(p);
@@ -7036,6 +7039,8 @@
   // movimento, che Pinnacle qui non ha (si legge da stamattina).
   function qv(v) { return '<span class="q">' + f2(num(v)) + "</span>"; }
   function pv(v) { return '<span class="q">' + f0(num(v)) + "%</span>"; }
+  // (171) le probabilita' 1X2 dell'Elo: colore neutro, verde dal 55% (favorita netta)
+  function pvE(v) { var x = num(v); return '<span class="q-n' + (x != null && x >= 55 ? " verde" : "") + '">' + f0(x) + "%</span>"; }
   function mv(v) { return '<span class="q">' + f1(num(v)) + "%</span>"; }
   function nv(v) { return '<span class="q">' + f1(num(v)) + "</span>"; }
   function mercatoPinnacle(p, a) {
@@ -9009,7 +9014,7 @@
       det.push("<p>" + esc(x.lega || "") + "</p>");
       det.push("<p><b>" + esc(x.casa) + "</b>: " + (r.c ? "Elo " + ev(r.c.elo) + " · " + r.c.pos + "° di " + ELO.dati.lista.length + (r.c.camp ? " · " + esc(r.c.camp) : "") : "non nello storico") + "</p>");
       det.push("<p><b>" + esc(x.ospite) + "</b>: " + (r.o ? "Elo " + ev(r.o.elo) + " · " + r.o.pos + "° di " + ELO.dati.lista.length + (r.o.camp ? " · " + esc(r.o.camp) : "") : "non nello storico") + "</p>");
-      if (p) det.push("<p>Elo: <span class=nw><b class=seg>1</b> " + pv(p[0]) + "</span>" + " · <span class=nw><b class=seg>X</b> " + pv(p[1]) + "</span>" + " · <span class=nw><b class=seg>2</b> " + pv(p[2]) + "</span>" + " — equa <span class=nw><b class=seg>1</b> " + qv(100 / p[0]) + "</span>" + " · <span class=nw><b class=seg>X</b> " + qv(100 / p[1]) + "</span>" + " · <span class=nw><b class=seg>2</b> " + qv(100 / p[2]) + "</span>" + "</p>");
+      if (p) det.push("<p>Elo: <span class=nw><b class=seg>1</b> " + pvE(p[0]) + "</span>" + " · <span class=nw><b class=seg>X</b> " + pvE(p[1]) + "</span>" + " · <span class=nw><b class=seg>2</b> " + pvE(p[2]) + "</span>" + " — equa <span class=nw><b class=seg>1</b> " + qv(100 / p[0]) + "</span>" + " · <span class=nw><b class=seg>X</b> " + qv(100 / p[1]) + "</span>" + " · <span class=nw><b class=seg>2</b> " + qv(100 / p[2]) + "</span>" + "</p>");
       if (r.pp) det.push("<p>Pinnacle senza margine: <span class=nw><b class=seg>1</b> " + pv(r.pp[0]) + "</span>" + " · <span class=nw><b class=seg>X</b> " + pv(r.pp[1]) + "</span>" + " · <span class=nw><b class=seg>2</b> " + pv(r.pp[2]) + "</span>" + "</p>");
       if (r.sc) det.push("<p>Scarto più grande: sul " + "1X2"[r.sc.i] + " l’Elo dice " + (r.sc.v > 0 ? "+" : "−") + f0(Math.abs(r.sc.v)) + " punti rispetto a Pinnacle. " +
         '<span class="piccolo">Di solito ha ragione il mercato: l’Elo non sa di assenti, formazioni e motivazioni.</span></p>');
@@ -9676,8 +9681,8 @@
         // (148) una riga sola: trattini stretti, scarto fra parentesi piccolo
         // (151) a capo solo fra un pezzo e l'altro, mai fra "1" e "55%"
         div.innerHTML = '<span class="nw">Elo ' + evCoppia(c.elo, o.elo, "\u2013") + ' <span class="piccolo">(' + (c.elo >= o.elo ? "+" : "\u2212") +
-          f0(Math.abs(c.elo - o.elo)) + ")</span></span>\u2009· " + '<span class="nw"><span class=nw><b class=seg>1</b> ' + pv(p[0]) + '</span>' + "</span>\u2009· " +
-          '<span class="nw"><span class=nw><b class=seg>X</b> ' + pv(p[1]) + '</span>' + "</span>\u2009· " + '<span class="nw"><span class=nw><b class=seg>2</b> ' + pv(p[2]) + '</span>' + "</span>";
+          f0(Math.abs(c.elo - o.elo)) + ")</span></span>\u2009· " + '<span class="nw"><span class=nw><b class=seg>1</b> ' + pvE(p[0]) + '</span>' + "</span>\u2009· " +
+          '<span class="nw"><span class=nw><b class=seg>X</b> ' + pvE(p[1]) + '</span>' + "</span>\u2009· " + '<span class="nw"><span class=nw><b class=seg>2</b> ' + pvE(p[2]) + '</span>' + "</span>";
         dove.parentNode.insertBefore(div, dove.nextSibling);
         stringiRiga(div);
       };
