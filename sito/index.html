@@ -1015,6 +1015,18 @@
   .multipla .reg-modo button[aria-pressed="true"] { border-color: var(--evidenza); color: var(--evidenza); }
   .multipla .reg-modo button[disabled] { opacity: .4; cursor: default; }
   .reg-campi { display: flex; flex-wrap: wrap; gap: 10px; margin: 6px 0; }
+  .reg-campi select { font: inherit; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--bordo); background: var(--scheda); color: var(--testo); }
+  .reg-analisi { margin: 10px 0 14px; }
+  /* (173) tabelle larghe: piu' piccole e, se serve, scorrono di lato */
+  .tab-scorre { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -4px; }
+  table.ms-tab, .reg-analisi table.mercati { font-size: .72rem; width: 100%; }
+  table.ms-tab th, table.ms-tab td, .reg-analisi table.mercati th, .reg-analisi table.mercati td { padding: 6px 5px; white-space: nowrap; }
+  table.ms-tab td:first-child { white-space: normal; min-width: 64px; }
+  table.ms-tab th { white-space: normal; text-transform: none; letter-spacing: 0; font-size: .68rem; line-height: 1.2; vertical-align: bottom; }
+  table.ms-tab td:nth-child(3) { white-space: normal; }
+  table.ms-tab td .piccolo { font-size: .62rem; }
+  .reg-analisi > summary { cursor: pointer; }
+  .reg-analisi table.mercati th[colspan] { text-align: left; padding-top: 10px; color: var(--evidenza); }
   .reg-campi label { display: flex; align-items: center; gap: 6px; font-size: .9rem; }
   .reg-campi input { width: 5.5em; padding: 7px 8px; border: 1px solid var(--bordo); border-radius: 8px; background: var(--scheda); color: var(--testo); font: inherit; }
   .reg-ev { padding: 6px 0; border-bottom: 1px solid var(--bordo); font-size: .88rem; }
@@ -4139,6 +4151,10 @@
           '<p class="reg-v" data-v="' + i + '"></p></div>';
       }).join("");
     }
+    // (173) su quale book: serve all'analisi delle giocate per book
+    var bk = bookScelto();
+    h += '<p class="reg-campi"><label>Book <select id="reg-book">' + ["Sisal", "Lottomatica", "Altro"].map(function (b) {
+      return '<option' + (b === bk ? " selected" : "") + ">" + b + "</option>"; }).join("") + "</select></label></p>";
     h += '<p class="m-azioni"><button type="button" id="reg-salva" class="primo">Salva nel registro</button>' +
       '<button type="button" id="reg-vai">Le mie giocate</button>' +
       '<button type="button" class="m-chiudi" data-chiudi="reg">Chiudi</button></p><p id="reg-esito" class="m-esito-invio" role="status" aria-live="polite"></p>';
@@ -4169,6 +4185,9 @@
       });
     }
   }
+  function bookScelto() {
+    try { return localStorage.getItem("caltiki-book") || "Sisal"; } catch (e) { return "Sisal"; }
+  }
   function eventoDa(x) {
     var o = {};
     ["Data", "Ora", "Campionato", "Partita", "Casa", "Ospite", "Gruppo", "Mercato", "Sel", "Prob", "Equa", "Margine", "Fonte", "ID_API"]
@@ -4178,12 +4197,14 @@
   function salvaGiocate() {
     var r = eventiBarra(), reg = leggiReg(), nuove = [], $e = document.getElementById("reg-esito");
     var adesso = new Date().toISOString();
+    var book = (document.getElementById("reg-book") || {}).value || bookScelto();
+    try { localStorage.setItem("caltiki-book", book); } catch (e) {}
     var id = function () { return Date.now().toString(36) + Math.random().toString(36).slice(2, 7); };
     if (regModo === "multipla") {
       var q = quotaDa(document.getElementById("reg-q").value), imp = importoDa(document.getElementById("reg-i").value);
       if (!q || !imp) { $e.textContent = "Servono la quota (maggiore di 1) e l’importo."; return; }
       var eq = r.reduce(function (a, x) { return a * (equaEvento(x) || 1); }, 1);
-      nuove.push({ id: id(), creata: adesso, tipo: "multipla", quota: q, importo: imp, equa: +eq.toFixed(4), eventi: r.map(eventoDa) });
+      nuove.push({ id: id(), creata: adesso, tipo: "multipla", book: book, quota: q, importo: imp, equa: +eq.toFixed(4), eventi: r.map(eventoDa) });
     } else {
       var manca = false;
       r.forEach(function (x, i) {
@@ -4191,7 +4212,7 @@
         var imp = importoDa($reg.querySelector('[data-imp="' + i + '"]').value);
         if (!q && !imp) return;              // evento lasciato vuoto: non giocato
         if (!q || !imp) { manca = true; return; }
-        nuove.push({ id: id(), creata: adesso, tipo: "singola", quota: q, importo: imp, equa: equaEvento(x), eventi: [eventoDa(x)] });
+        nuove.push({ id: id(), creata: adesso, tipo: "singola", book: book, quota: q, importo: imp, equa: equaEvento(x), eventi: [eventoDa(x)] });
       });
       if (manca || !nuove.length) { $e.textContent = "Per ogni evento giocato servono quota e importo."; return; }
     }
@@ -4399,6 +4420,7 @@
           ": la differenza dal saldo è fortuna, in un senso o nell’altro." + (righe.length < 100 ? " Con meno di 100 giocate il valore medio è ancora indicativo." : "") + "</p>" : "") +
         (conCl.length ? '<p class="conta">Contro la chiusura Pinnacle (' + conCl.length + (conCl.length === 1 ? " giocata" : " giocate") + "): <b>" + pctV(clm) +
           "</b> in media. È il numero più onesto: sopra zero vuol dire che hai preso quote migliori del prezzo finale del mercato.</p>" : "") +
+        analisiGiocate(righe) +
         '<div class="lista">' + righe.map(rigaGiocata).join("") + "</div>" + strumenti;
       $cont.innerHTML = h;
       $cont.querySelectorAll("[data-segna]").forEach(function (b) {
@@ -4419,6 +4441,73 @@
       });
       collegaStrumentiReg();
     });
+  }
+  // (173) LE GIOCATE PER GRUPPI: per tipo, book, mercato, fascia di
+  // probabilita' e anticipo sul via. Per ogni gruppo il valore medio contro
+  // l'Equa (pesato sull'importo), il confronto con la chiusura Pinnacle dove
+  // c'e', il saldo e quanto ci si aspettava con quelle quote. Il saldo di un
+  // gruppo piccolo e' fortuna; il valore e la chiusura sono il segnale.
+  function kickoff(e) {
+    if (!e || !e.Data || !/^\d{1,2}:\d{2}$/.test(String(e.Ora || ""))) return null;
+    var m = parseInt(String(e.Data).slice(5, 7), 10);
+    var off = m >= 4 && m <= 10 ? "+02:00" : "+01:00";   // ora legale circa: basta per i gruppi
+    var t = Date.parse(e.Data + "T" + ("0" + e.Ora).slice(-5) + ":00" + off);
+    return isFinite(t) ? t : null;
+  }
+  function gruppiGiocata(g) {
+    var e0 = g.eventi[0] || {}, out = [];
+    var nEv = g.eventi.length;
+    out.push(["Tipo", g.tipo === "multipla" ? (nEv >= 3 ? "Multiple da 3 o pi\u00f9" : "Multiple da 2") : "Singole"]);
+    out.push(["Book", g.book || "non indicato"]);
+    if (g.tipo !== "multipla") {
+      var gr = String(e0.Gruppo || ""), sel = String(e0.Sel || "");
+      var merc = sel.indexOf(" + ") >= 0 || gr === "Combo" ? "Combinate" : /^(1|X|2)$/.test(sel) ? "1X2" : /^(1X|X2|12)$/.test(sel) ? "Doppia chance" :
+        /^(Over|Under)/.test(sel) ? "Under/Over" : /^(Gol|NoGol)$/.test(sel) ? "Gol/NoGol" : (gr || "altro");
+      out.push(["Mercato", merc]);
+      var p = num(e0.Prob);
+      if (p != null) out.push(["Probabilit\u00e0", p < 55 ? "sotto il 55%" : p < 65 ? "55\u201365%" : p < 75 ? "65\u201375%" : "dal 75%"]);
+    }
+    var ko = g.eventi.map(kickoff).filter(function (x) { return x != null; });
+    var cr = Date.parse(g.creata || "");
+    if (ko.length && isFinite(cr)) {
+      var ore = (Math.min.apply(null, ko) - cr) / 3600000;
+      out.push(["Anticipo sul via", ore < 0 ? "registrata dopo il via" : ore < 1 ? "meno di 1 ora" : ore < 6 ? "1\u20136 ore" : ore < 24 ? "6\u201324 ore" : "pi\u00f9 di un giorno"]);
+    }
+    return out;
+  }
+  function analisiGiocate(righe) {
+    if (righe.length < 2) return "";
+    var G = {}, ordine = [];
+    righe.forEach(function (x) {
+      var v = x.g.equa ? x.g.quota / x.g.equa - 1 : null;
+      gruppiGiocata(x.g).forEach(function (k) {
+        var id = k[0] + "|" + k[1];
+        if (!G[id]) { G[id] = { dim: k[0], nome: k[1], n: 0, imp: 0, sv: 0, pv: 0, ncl: 0, scl: 0, pcl: 0, fin: 0, saldo: 0, atteso: 0 }; ordine.push(id); }
+        var a = G[id], imp = x.g.importo;
+        a.n++; a.imp += imp;
+        if (v != null) { a.sv += v * imp; a.pv += imp; }
+        if (x.cl) { a.ncl++; a.scl += x.cl.clv * imp; a.pcl += imp; }
+        if (x.resa != null) { a.fin++; a.saldo += x.resa; if (v != null) a.atteso += v * imp; }
+      });
+    });
+    var dims = ["Tipo", "Book", "Mercato", "Probabilit\u00e0", "Anticipo sul via"];
+    var h = dims.map(function (d) {
+      var ids = ordine.filter(function (id) { return G[id].dim === d; });
+      if (ids.length < 2 && d !== "Tipo") return "";
+      return "<tr><th colspan=\"6\">" + d + "</th></tr>" + ids.sort(function (a, b) { return G[b].n - G[a].n; }).map(function (id) {
+        var a = G[id];
+        return "<tr><td>" + esc(a.nome) + "</td><td>" + a.n + "</td><td>" + (a.pv ? pctV(a.sv / a.pv) : "\u2013") + "</td><td>" +
+          (a.pcl ? pctV(a.scl / a.pcl) + ' <span class="piccolo">(' + a.ncl + ")</span>" : "\u2013") + "</td><td>" +
+          (a.fin ? euro(a.saldo) : "\u2013") + "</td><td>" + (a.fin ? euro(a.atteso) : "\u2013") + "</td></tr>";
+      }).join("");
+    }).join("");
+    return '<details class="scheda reg-analisi"><summary><b>Le tue giocate per gruppi</b> <span class="piccolo">\u00b7 tipo, book, mercato, probabilit\u00e0, anticipo</span></summary>' +
+      '<div class="tab-scorre"><table class="mercati"><tr><th></th><th>giocate</th><th>valore</th><th>chiusura</th><th>saldo</th><th>atteso</th></tr>' + h + "</table></div>" +
+      '<p class="piccolo"><b>Valore</b>: di quanto la tua quota stava sopra o sotto l\u2019Equa, in media pesata sull\u2019importo. ' +
+      "<b>Contro chiusura</b>: lo stesso confronto con l\u2019ultimo prezzo di Pinnacle prima del via, fra parentesi su quante giocate (solo 1X2, doppie e Under/Over di partite Pinnacle). " +
+      "<b>Atteso</b>: il saldo che ti saresti dovuto aspettare con quelle quote se l\u2019Equa \u00e8 giusta. " +
+      "Un gruppo con valore e chiusura sopra zero \u00e8 dove stai prendendo prezzi buoni; il saldo di pochi euro e poche giocate lo decide la fortuna. " +
+      "Il book si registra dalle giocate del 14/11 in poi.</p></details>";
   }
   var REG_ETICHETTE = { vinta: ["stretto", "✓ vinta"], persa: ["largo", "✗ persa"], rimborso: ["", "rimborsata"],
     controlla: ["", "da controllare"], attesa: ["", "in attesa"] };
@@ -6744,10 +6833,11 @@
       leggi("classifica_consensus.json").catch(function () { return null; }),
       leggi("esiti_index.json").catch(function () { return null; }),
       leggiUrl(BASE + "predizioni_misura.json?t=" + Math.floor(Date.now() / 600000), "predizioni_misura").catch(function () { return null; }),
-      leggiTesto("best_archivio.csv").then(csvOggetti).catch(function () { return null; })
+      leggiTesto("best_archivio.csv").then(csvOggetti).catch(function () { return null; }),
+      leggiUrl(BASE + "mercato_storico.json?t=" + Math.floor(Date.now() / 3600000), "mercato_storico").catch(function () { return null; })
     ]).then(function (res) {
       if (stato.sez !== "fonti") return;
-      var d = res[0], c = res[1], ei = res[2], pm = res[3], ba = res[4];
+      var d = res[0], c = res[1], ei = res[2], pm = res[3], ba = res[4], ms = res[5];
       if (!d && !c) {
         $cont.innerHTML = messaggio("errore", "Il consuntivo non è ancora stato pubblicato: arriva col primo giro notturno.");
         return;
@@ -6766,6 +6856,8 @@
       // (172) l'ex Best picks: Statarea e WebPronostici d'accordo, contro Pinnacle
       if (ba && ba.length) h += '<div class="scheda"><h3>Statarea + WebPronostici d\u2019accordo, contro Pinnacle <small>\u00b7 dal 13/11</small></h3>' +
         riepilogoPinnacle(misuraPinnacle(ba)) + "</div>";
+      // (173) dieci anni di quote da football-data.co.uk
+      if (ms && ms.taratura) h += schedaMercatoStorico(ms);
 
       if (d && d.fonti) {
         h += '<p class="descr" style="margin-top:24px">Le fonti in ordine di quante partite sono state misurate, non di quante ne vincono: ' +
@@ -6933,6 +7025,70 @@
   // (166) IL PRONOSTICO DI DEL FORNITORE DEI DATI CONTRO PINNACLE, sulle stesse
   // partite (predizioni_misura.json, apifootball_predizioni.py). Brier: piu'
   // basso = meglio. Si legge dal 13/11, solo prima del via.
+  // (173) DIECI ANNI DI QUOTE (mercato_storico.py, football-data.co.uk):
+  // la chiusura Pinnacle contro i risultati, presto o tardi, il movimento,
+  // il pareggio, casa o fuori, inizio stagione, campionati, Over 2.5.
+  // Ogni scarto col suo errore; in grassetto solo quelli larghi (|t| >= 3).
+  function schedaMercatoStorico(m) {
+    var sg = function (v) { return v == null ? "\u2013" : (v > 0 ? "+" : v < 0 ? "\u2212" : "") + Math.abs(v).toFixed(1).replace(".", ","); };
+    var pc = function (v) { return v == null ? "\u2013" : Number(v).toFixed(1).replace(".", ",") + "%"; };
+    var forte = function (x) { return x && x.t != null && Math.abs(x.t) >= 3; };
+    var diff = function (x) { return (forte(x) ? "<b>" : "") + sg(x.diff) + (forte(x) ? "</b>" : "") + ' <span class="piccolo">\u00b1' + Number(x.se).toFixed(1).replace(".", ",") + "</span>"; };
+    var resa = function (x, k) { var v = x["resa_" + k]; return v == null ? "\u2013" : sg(v) + "%"; };
+    function tab(titolo, testa, righe) {
+      if (!righe.length) return "";
+      return "<h4>" + titolo + '</h4><div class="tab-scorre"><table class="mercati ms-tab"><tr>' + testa.map(function (t) { return "<th>" + t + "</th>"; }).join("") + "</tr>" +
+        righe.map(function (r) { return "<tr>" + r.map(function (c) { return "<td>" + c + "</td>"; }).join("") + "</tr>"; }).join("") + "</table></div>";
+    }
+    var T = ["", "n", "promessa \u2192 uscita", "scarto", "resa al book medio", "resa alla max"];
+    var rT = function (nome, x) { return [nome, x.n, pc(x.promessa) + " \u2192 " + pc(x.uscita), diff(x), resa(x, "media"), resa(x, "max")]; };
+    var fasce = Object.keys(m.taratura).filter(function (k) { var a = parseInt(k, 10); return a >= 30 && a < 85; })
+      .sort(function (a, b) { return parseInt(a, 10) - parseInt(b, 10); });
+    var h = '<div class="scheda"><h3>Dieci anni di quote <small>\u00b7 football-data.co.uk</small></h3>' +
+      "<p>" + (m.con_chiusura || 0).toLocaleString("it-IT") + " partite di " + Object.keys(m.campionati_nomi || {}).length +
+      " campionati europei, stagioni dal 20" + esc(String(m.stagioni[0]).slice(0, 2)) + " al 20" + esc(String(m.stagioni[1]).slice(2, 4)) +
+      ", con la quota Pinnacle di chiusura. <b>Promessa</b>: la probabilit\u00e0 senza margine di Pinnacle. <b>Uscita</b>: quante volte \u00e8 uscito davvero. " +
+      "<b>Resa</b>: guadagno medio per euro giocando tutto alla quota media del mercato (il book tipico) o alla migliore in giro. " +
+      "In grassetto solo gli scarti larghi (almeno tre volte il loro errore).</p>";
+    h += tab("La chiusura Pinnacle, 1X2, per fasce", T, fasce.map(function (k) { return rT(k.replace("-", "\u2013") + "%", m.taratura[k]); }));
+    var pr = m.presto || {};
+    var fp = Object.keys(pr).filter(function (k) { return k.indexOf("|") < 0 && k !== "fav5575" && parseInt(k, 10) >= 30 && parseInt(k, 10) < 80; })
+      .sort(function (a, b) { return parseInt(a, 10) - parseInt(b, 10); });
+    var rP = function (nome, x) { return [nome, x.n, (Math.abs(x.t || 0) >= 3 ? "<b>" : "") + sg(x.media) + "%" + (Math.abs(x.t || 0) >= 3 ? "</b>" : "") + ' <span class="piccolo">\u00b1' + Number(x.se).toFixed(2).replace(".", ",") + "</span>"]; };
+    h += tab("Presto o tardi: la quota a 1\u20132 giorni dal via contro la chiusura",
+      ["probabilit\u00e0 a 1\u20132 giorni", "esiti", "quota presto rispetto alla chiusura"],
+      (pr.fav5575 ? [rP("favorite 55\u201375%", pr.fav5575)] : []).concat(fp.map(function (k) { return rP(k.replace("-", "\u2013") + "%", pr[k]); })));
+    h += '<p class="piccolo">Sopra zero: in media la quota scende verso il via, quindi giocare presto paga di pi\u00f9. Sotto zero: conviene aspettare.</p>';
+    var mv = m.movimento || {}, ordMv = ["accorciata 3+", "accorciata 1-3", "ferma", "allungata 1-3", "allungata 3+"];
+    h += tab("Il movimento prima del via dice ancora qualcosa?", ["quota", "n", "promessa \u2192 uscita", "scarto", "resa Pinnacle", "resa max"],
+      ordMv.filter(function (k) { return mv[k]; }).map(function (k) { var x = mv[k]; return [k.replace("-", "\u2013") + " punti", x.n, pc(x.promessa) + " \u2192 " + pc(x.uscita), diff(x), resa(x, "pin"), resa(x, "max")]; }));
+    h += '<p class="piccolo">Scarto vicino a zero: la chiusura ha gi\u00e0 incorporato il movimento, e seguirlo dopo non paga.</p>';
+    var pa = m.pareggio || {};
+    h += tab("Il pareggio", T, Object.keys(pa).filter(function (k) { return pa[k].n >= 200; }).sort(function (a, b) { return parseInt(a, 10) - parseInt(b, 10); })
+      .map(function (k) { return rT(k.replace("-", "\u2013") + "%", pa[k]); }));
+    var cf = m.casa_fuori || {}, ini = m.inizio || {}, lv = m.livello || {};
+    var varie = [];
+    if (cf.casa) varie.push(rT("favorita in casa, 55\u201375%", cf.casa));
+    if (cf.fuori) varie.push(rT("favorita fuori, 55\u201375%", cf.fuori));
+    if (ini.prime4) varie.push(rT("prime 4 giornate, 50\u201380%", ini.prime4));
+    if (ini.resto) varie.push(rT("dalla 5\u00aa giornata, 50\u201380%", ini.resto));
+    if (lv["1"]) varie.push(rT("le cinque massime serie, 50\u201380%", lv["1"]));
+    if (lv["2"]) varie.push(rT("gli altri campionati, 50\u201380%", lv["2"]));
+    h += tab("Situazioni", T, varie);
+    var ca = m.campionati || {}, nomi = m.campionati_nomi || {};
+    var lc = Object.keys(ca).filter(function (k) { return k.indexOf("|") < 0; }).sort(function (a, b) { return (ca[b].diff || 0) - (ca[a].diff || 0); });
+    h += tab("Per campionato, esiti dati fra 50 e 80%", T, lc.map(function (k) { return rT(esc(nomi[k] || k), ca[k]); }));
+    var ou = m.ou || {};
+    h += tab("Over 2.5", T, Object.keys(ou).filter(function (k) { return k.indexOf("over|") === 0 && ou[k].n >= 200; })
+      .sort(function (a, b) { return parseInt(a.split("|")[1], 10) - parseInt(b.split("|")[1], 10); })
+      .map(function (k) { return rT(k.split("|")[1].replace("-", "\u2013") + "%", ou[k]); }));
+    var seg = m.segnali || [];
+    h += "<h4>Segnali</h4><p>" + (seg.length
+      ? "Scarti larghi e nello stesso verso sia fino al 2018-19 sia dopo: " + seg.map(function (x) { return esc(x.analisi + " " + x.chiave) + " (" + sg(x.diff) + ", su " + x.n + ")"; }).join(" \u00b7 ") + "."
+      : "Nessuno scarto largo che si ripeta nelle due met\u00e0 delle stagioni: la chiusura Pinnacle non lascia buchi sistematici.") + "</p>";
+    h += '<p class="piccolo">Aggiornato il ' + esc(m.aggiornato || "") + ". Si rif\u00e0 a mano dal workflow \u201cMercato \u2013 dieci anni di quote\u201d.</p></div>";
+    return h;
+  }
   function schedaPredApi(m) {
     var t = m.tutto, n = t.con_pinnacle || 0;
     var f3 = function (x) { return x == null ? "\u2013" : Number(x).toFixed(3); };
