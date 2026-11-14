@@ -1343,6 +1343,8 @@
   .link-storico { color: var(--evidenza); font-weight: 700; white-space: nowrap; text-decoration: none; }
   .cal-lega-nome { display: block; color: var(--tenue); font-size: .72rem; }
   .cal-prev { padding: 4px 0; }
+  .cal-fascia { padding: 8px 12px 6px; font-weight: 800; font-size: .9rem; color: var(--evidenza); letter-spacing: .01em; }
+  .cal-fascia small { color: var(--tenue); font-weight: 500; margin-left: 6px; }
   .pill.cons { background: color-mix(in srgb, var(--evidenza) 14%, transparent); color: var(--evidenza); font-weight: 700; }
   .pill.fresca { background: color-mix(in srgb, var(--buono) 16%, transparent); color: var(--buono); font-weight: 700; }
   .timbro-pin {
@@ -9179,24 +9181,24 @@
     });
     // (172) PIU' PREVEDIBILI: una lista sola, dall'esito piu' probabile in giu'
     if (CAL.filtro === "prev") {
-      righe.sort(function (a, b) { return probCal(b).max - probCal(a).max; });
+      // (173) col menu su "Per orario" anche qui si va per orario, a fasce;
+      // su "Per campionato" dall'esito piu' probabile in giu', come prima
+      var perOra = CAL.ordine === "ora";
+      if (perOra) ordinaPerOra(righe); else righe.sort(function (a, b) { return probCal(b).max - probCal(a).max; });
       $l.innerHTML = '<p class="conta">' + righe.length + (righe.length === 1 ? " partita" : " partite") +
-        " ancora da giocare con un esito oltre il 60% (Pinnacle; dove manca, l\u2019Elo)</p>" +
-        (righe.length ? '<div class="cal-lega cal-prev">' + righe.map(function (x) { return rigaCal(x, sito, true); }).join("") + "</div>" : messaggio("vuoto", "Nessuna partita con un esito oltre il 60%."));
+        " ancora da giocare con un esito oltre il 60% (Pinnacle; dove manca, l\u2019Elo)" + (perOra ? ", per orario" : ", dalla pi\u00f9 probabile") + "</p>" +
+        (righe.length ? (perOra ? listaPerOra(righe, sito) : '<div class="cal-lega cal-prev">' + righe.map(function (x) { return rigaCal(x, sito, true); }).join("") + "</div>")
+          : messaggio("vuoto", "Nessuna partita con un esito oltre il 60%."));
       collegaRigheCal($l);
       return;
     }
     // (173) PER ORARIO: una lista sola dalla prima all'ultima partita, col
     // campionato scritto piccolo sopra le squadre
     if (CAL.ordine === "ora") {
-      righe.sort(function (a, b) {
-        return String(a.ora || "").localeCompare(String(b.ora || "")) || String(a.lega || "").localeCompare(String(b.lega || "")) ||
-          String(a.casa).localeCompare(String(b.casa));
-      });
+      ordinaPerOra(righe);
       var nS = righe.filter(function (x) { return sito[String(x.id)]; }).length;
       $l.innerHTML = '<p class="conta">' + righe.length + (righe.length === 1 ? " partita" : " partite") + " per orario · " + nS + " sul sito</p>" +
-        (righe.length ? '<div class="cal-lega cal-prev">' + righe.map(function (x) { return rigaCal(x, sito, true); }).join("") + "</div>"
-          : messaggio("vuoto", "Nessuna partita con questi filtri."));
+        (righe.length ? listaPerOra(righe, sito) : messaggio("vuoto", "Nessuna partita con questi filtri."));
       collegaRigheCal($l);
       return;
     }
@@ -9226,6 +9228,28 @@
       det.addEventListener("toggle", function () { CAL.aperti[det.dataset.lega] = det.open; });
     });
     collegaRigheCal($l);
+  }
+  // (173) PER ORARIO, DIVISA PER FASCE: un titolo per ogni ora ("ore 14 ·
+  // 37 partite") e sotto le partite in ordine di calcio d'inizio. Senza i
+  // titoli la lista di mille righe sembrava mescolata.
+  function ordinaPerOra(righe) {
+    return righe.sort(function (a, b) {
+      return String(a.ora || "").localeCompare(String(b.ora || "")) || String(a.lega || "").localeCompare(String(b.lega || "")) ||
+        String(a.casa).localeCompare(String(b.casa));
+    });
+  }
+  function listaPerOra(righe, sito) {
+    var fasce = [], dove = {};
+    righe.forEach(function (x) {
+      var h = /^\d{1,2}:/.test(String(x.ora || "")) ? String(x.ora).split(":")[0].padStart(2, "0") : "--";
+      if (!(h in dove)) { dove[h] = fasce.length; fasce.push({ h: h, v: [] }); }
+      fasce[dove[h]].v.push(x);
+    });
+    return fasce.map(function (f) {
+      return '<div class="cal-lega cal-prev"><div class="cal-fascia">' + (f.h === "--" ? "Orario da definire" : "Ore " + f.h) +
+        " <small>" + f.v.length + (f.v.length === 1 ? " partita" : " partite") + "</small></div>" +
+        f.v.map(function (x) { return rigaCal(x, sito, true); }).join("") + "</div>";
+    }).join("");
   }
   function rigaCal(x, sito, conLega) {
     var pin = PIN_G.perId[String(x.id)], s = statoCal(x), ns = !!sito[String(x.id)];
