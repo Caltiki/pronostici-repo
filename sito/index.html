@@ -1325,6 +1325,24 @@
   :root[data-theme="light"] .mov-in b.giu { color: #d6283f; } :root[data-theme="light"] .mov-in b.su { color: #1d63d8; }
   .quote-pin b.fr { margin-left: .1em; font-weight: 900; } .quote-pin b.fr.giu { color: #ff5470; } .quote-pin b.fr.su { color: #5ea8ff; } .quote-pin b.fr.fermo { color: var(--tenue); }
   :root[data-theme="light"] .quote-pin b.fr.giu { color: #d6283f; } :root[data-theme="light"] .quote-pin b.fr.su { color: #1d63d8; }
+  .camp-cerca { position: relative; margin: 6px 0 10px; }
+  .camp-cerca .strumenti { margin: 10px 0 4px; }
+  .camp-cerca input { width: 100%; box-sizing: border-box; flex: 1 1 100%; }
+  .camp-sugg { display: flex; flex-direction: column; gap: 4px; margin-top: 6px; }
+  .camp-sugg:empty { display: none; }
+  .camp-sugg-r { display: flex; align-items: center; gap: 10px; text-align: left; padding: 8px 12px; border-radius: 12px; border: 1px solid var(--bordo); background: var(--scheda); color: var(--testo); cursor: pointer; font: inherit; }
+  .camp-sugg-r span { display: flex; flex-direction: column; }
+  .camp-sugg-r small { color: var(--tenue); }
+  .camp-sugg-r img { width: 24px; height: 24px; object-fit: contain; }
+  .camp-sugg-msg { color: var(--tenue); padding: 6px 4px; }
+  .sq-testa { display: flex; align-items: center; gap: 14px; margin: 4px 0 8px; }
+  .sq-testa img { width: 56px; height: 56px; object-fit: contain; }
+  .sq-testa .reg-tit { margin: 0; }
+  .sq-h { margin: 18px 0 4px; font-size: 1.05rem; }
+  .sq-tab td.sq-lab, .sq-tab th.sq-lab { font-weight: 700; white-space: nowrap; text-align: left; }
+  .sq-tab td.sx, .sq-tab th.sx { text-align: left; white-space: nowrap; }
+  .sq-testa { align-items: center; }
+  .sq-serie { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0; }
   .lv-fermo { margin: 6px 0 12px; padding: 8px 12px; border-radius: 10px; font-weight: 700; color: #ff8a9a; background: rgba(255,84,112,.12); border: 1px solid rgba(255,84,112,.4); }
   :root[data-theme="light"] .lv-fermo { color: #b4232f; background: rgba(225,29,72,.08); border-color: rgba(225,29,72,.35); }
   .mov-riga { margin-top: 3px; font-size: .86rem; font-variant-numeric: tabular-nums; line-height: 1.5; }
@@ -2030,7 +2048,7 @@
   // gia' all'avvio.
   var CAL = { data: null, filtro: "tutte", cerca: "", aperti: {} };
   // (167) la sezione Campionati: dichiarata qui perche' leggiHash la usa gia' all'avvio
-  var CAMP = { versoXG: false, lega: "", scheda: "classifica", vista: "t", gioc: "marcatori", min: "f", ordine: null, verso: -1, idx: null, dati: {} };
+  var CAMP = { squadra: null, cercaSq: "", indiceSq: null, versoXG: false, lega: "", scheda: "classifica", vista: "t", gioc: "marcatori", min: "f", ordine: null, verso: -1, idx: null, dati: {} };
   var ELO = { vista: "partite", data: null, filtro: "sito", ordine: "ora", cerca: "", camp: "", quante: 100, dati: null, info: null };
 
   function leggiHash() {
@@ -2048,6 +2066,8 @@
     if (p[0] === "camp") {
       stato.sez = "camp";
       if (/^\d+$/.test(p[1] || "")) CAMP.lega = p[1];
+      // (171) la pagina di una squadra: #camp/<lega>/squadra/<id>
+      CAMP.squadra = p[2] === "squadra" && /^\d+$/.test(p[3] || "") ? p[3] : null;
       if (p[2] && CAMP_SCHEDE.some(function (x) { return x[0] === p[2] && x[0] !== "xg"; })) CAMP.scheda = p[2];
       return;
     }
@@ -2083,7 +2103,7 @@
     } else if (stato.sez === "cal") {
       h += "/" + (CAL.data || "");
     } else if (stato.sez === "camp") {
-      h += "/" + (CAMP.lega || "") + "/" + CAMP.scheda;
+      h += "/" + (CAMP.lega || "") + "/" + (CAMP.squadra ? "squadra/" + CAMP.squadra : CAMP.scheda);
     } else if (stato.sez === "elo") {
       h += "/" + ELO.vista + (ELO.vista === "partite" && ELO.data ? "/" + ELO.data : "");
     } else if (stato.sez === "best" || stato.sez === "giocate" || stato.sez === "live") {
@@ -6789,6 +6809,17 @@
       if (s && s.alias && !s.alias[al] && al.indexOf("pinnacle|") === 0 && s.alias["prezzi|" + al.slice(9)]) {
         al = "prezzi|" + al.slice(9);
       }
+      // (171) LE SEZIONI CHE LA SCHEDA NON CONTIENE (Sports Mole, e le altre
+      // fonti informative): si cerca la stessa partita, con i nomi
+      // ESATTAMENTE uguali, fra le righe che la scheda ha (prezzi, media
+      // delle fonti...). Se i nomi sono scritti diversi, niente link.
+      if (s && s.alias && !s.alias[al]) {
+        var nomi = al.slice(al.indexOf("|") + 1);
+        ["prezzi", "consensusmedio", "asianodds", "poisson", "consensus", "fpnet"].some(function (pre) {
+          if (s.alias[pre + "|" + nomi] != null) { al = pre + "|" + nomi; return true; }
+          return false;
+        });
+      }
       if (!s || !s.alias || !s.alias[al]) { p.remove(); return; }
       p.innerHTML = '<a class="apri-scheda" href="#scheda/' + data + "/" + encodeURIComponent(al) + '">' +
         "Tutto su questa partita →</a>";
@@ -7874,6 +7905,8 @@
       document.getElementById("aggiornato").textContent = testoAggiornato("Campionati", ix.aggiornato);
       $cont.innerHTML = '<h2 class="reg-tit">Campionati</h2>' +
         '<p class="descr">Classifiche e statistiche dei campionati più forti, calcolate ogni notte partita per partita dai dati del sito.</p>' +
+        '<div class="camp-cerca"><div class="strumenti"><input id="camp-cerca" type="search" autocomplete="off" placeholder="Cerca una squadra (es. Carlisle)" aria-label="Cerca una squadra" value="' + esc(CAMP.cercaSq) + '"></div>' +
+        '<div id="camp-sugg" class="camp-sugg" role="listbox"></div></div>' +
         '<div class="strumenti xgs"><select id="camp-lega" aria-label="Campionato">' + leghe.map(function (l) {
           return '<option value="' + esc(l.id) + '"' + (String(l.id) === String(CAMP.lega) ? " selected" : "") + ">" + esc(l.nome) + "</option>";
         }).join("") + "</select></div>" +
@@ -7881,12 +7914,13 @@
         '<span class="freccia-chips prima" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></span>' +
         '<span class="freccia-chips dopo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></span></div>' +
         '<div id="camp-corpo">' + messaggio("vuoto", "Carico&hellip;") + "</div>";
-      document.getElementById("camp-lega").addEventListener("change", function (e) { CAMP.lega = e.target.value; CAMP.ordine = null; scriviHash(); corpoCampionato(); });
+      document.getElementById("camp-lega").addEventListener("change", function (e) { CAMP.lega = e.target.value; CAMP.ordine = null; CAMP.squadra = null; scriviHash(); corpoCampionato(); });
+      collegaCercaSquadra(leghe);
       $cont.querySelectorAll("[data-cscheda]").forEach(function (b) {
         b.addEventListener("click", function () {
           // (169) all'xG si va e si torna: un tasto "Campionati" in cima
           if (b.dataset.cscheda === "xg") { CAMP.versoXG = true; location.hash = "#xg"; return; }
-          CAMP.scheda = b.dataset.cscheda; CAMP.ordine = null;
+          CAMP.scheda = b.dataset.cscheda; CAMP.ordine = null; CAMP.squadra = null;
           $cont.querySelectorAll("[data-cscheda]").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
           scriviHash(); corpoCampionato();
         });
@@ -7932,8 +7966,17 @@
     if (!$c) return;
     $c.innerHTML = messaggio("vuoto", "Carico&hellip;");
     var L = CAMP.lega;
+    var chips = $cont.querySelector(".chips-scorri");
+    if (chips) chips.style.display = CAMP.squadra ? "none" : "";
     campDati(L).then(function (D) {
       if (stato.sez !== "camp" || CAMP.lega !== L) return;
+      if (CAMP.squadra) {
+        $c.innerHTML = paginaSquadra(D, CAMP.squadra);
+        var t = document.getElementById("sq-torna");
+        if (t) t.addEventListener("click", function () { CAMP.squadra = null; scriviHash(); corpoCampionato(); window.scrollTo(0, 0); });
+        assentiSquadra(D, CAMP.squadra);
+        return;
+      }
       var f = CAMP_DISEGNA[CAMP.scheda] || CAMP_DISEGNA.classifica;
       var h = f(D);
       $c.innerHTML = h instanceof Promise ? messaggio("vuoto", "Carico&hellip;") : h;
@@ -8176,6 +8219,230 @@
       });
     }
   };
+
+  // ------------------------------------------------ LA PAGINA DI UNA SQUADRA
+  // (171) Si cerca una squadra per nome (tutti i campionati della sezione)
+  // e si vede tutto quello che i dati hanno su di lei, in una pagina sola.
+  // L'elenco delle squadre arriva da campionati_index.json (campo "sq",
+  // scritto da campionati.py); finche' l'indice non lo ha, si leggono una
+  // volta i file dei campionati.
+  function normNome(t) {
+    t = String(t || "").toLowerCase();
+    try { t = t.normalize("NFD").replace(/[̀-ͯ]/g, ""); } catch (e) {}
+    return t.replace(/[^a-z0-9]+/g, " ").trim();
+  }
+  function indiceSquadre(leghe) {
+    if (CAMP.indiceSq) return CAMP.indiceSq;
+    var conSq = leghe.every(function (l) { return l.sq && typeof l.sq === "object"; });
+    var fatto = function (lista) { lista.forEach(function (x) { x.k = normNome(x.n); }); return lista; };
+    if (conSq) {
+      var v = [];
+      leghe.forEach(function (l) { for (var id in l.sq) v.push({ n: l.sq[id], id: id, L: String(l.id), lega: l.nome }); });
+      CAMP.indiceSq = Promise.resolve(fatto(v));
+    } else {
+      CAMP.indiceSq = Promise.all(leghe.map(function (l) {
+        return campDati(String(l.id)).then(function (D) {
+          return Object.keys(D.squadre || {}).map(function (id) { return { n: D.squadre[id].nome, id: id, L: String(l.id), lega: l.nome }; });
+        }).catch(function () { return []; });
+      })).then(function (a) { return fatto([].concat.apply([], a)); });
+    }
+    CAMP.indiceSq.catch(function () { CAMP.indiceSq = null; });
+    return CAMP.indiceSq;
+  }
+  function collegaCercaSquadra(leghe) {
+    var $i = document.getElementById("camp-cerca"), $s = document.getElementById("camp-sugg");
+    if (!$i || !$s) return;
+    var mostra = function () {
+      var q = normNome($i.value);
+      CAMP.cercaSq = $i.value;
+      if (q.length < 3) { $s.innerHTML = ""; return; }
+      $s.innerHTML = '<div class="camp-sugg-msg">Cerco&hellip;</div>';
+      indiceSquadre(leghe).then(function (v) {
+        if (normNome($i.value) !== q) return;
+        var r = v.filter(function (x) { return x.k.indexOf(q) >= 0; }).sort(function (a, b) {
+          return (b.k.indexOf(q) === 0) - (a.k.indexOf(q) === 0) || a.n.localeCompare(b.n);
+        }).slice(0, 12);
+        $s.innerHTML = r.length ? r.map(function (x) {
+          return '<button type="button" class="camp-sugg-r" data-sql="' + esc(x.L) + '" data-sqid="' + esc(x.id) + '">' +
+            logoId(x.n, x.id, false, x.lega) + "<span><b>" + esc(x.n) + "</b><small>" + esc(x.lega) + "</small></span></button>";
+        }).join("") : '<div class="camp-sugg-msg">Nessuna squadra con questo nome nei campionati della sezione.</div>';
+      }).catch(function () { $s.innerHTML = '<div class="camp-sugg-msg">L’elenco delle squadre non si legge adesso.</div>'; });
+    };
+    var attesa = null;
+    $i.addEventListener("input", function () { clearTimeout(attesa); attesa = setTimeout(mostra, 200); });
+    $s.addEventListener("click", function (e) {
+      var b = e.target.closest && e.target.closest("[data-sqid]");
+      if (!b) return;
+      CAMP.lega = b.dataset.sql; CAMP.squadra = b.dataset.sqid; CAMP.cercaSq = ""; $i.value = ""; $s.innerHTML = "";
+      var sel = document.getElementById("camp-lega");
+      if (sel) sel.value = CAMP.lega;
+      scriviHash(); corpoCampionato();
+    });
+    if ($i.value) mostra();
+  }
+  function posizione(D, id, v) {
+    var r = D.classifica && D.classifica.righe ? D.classifica.righe[v] : null;
+    if (!r) return null;
+    for (var i = 0; i < r.length; i++) if (String(r[i][0]) === String(id)) return { pos: i + 1, di: r.length, x: r[i] };
+    return null;
+  }
+  function paginaSquadra(D, id) {
+    id = String(id);
+    var sq = D.squadre && D.squadre[id];
+    if (!sq) return '<p><button type="button" class="chip chip-link" id="sq-torna">← ' + esc(D.nome) + "</button></p>" +
+      messaggio("vuoto", "Questa squadra non c'è nel campionato.");
+    var nome = sq.nome, h = "", tab = function (testa, righe, sx) {
+      sx = sx || [];
+      var cella = function (i, tag) { return "<" + tag + (i === 0 ? ' class="sq-lab"' : sx.indexOf(i) >= 0 ? ' class="sx"' : "") + ">"; };
+      return '<div class="tab-scorri"><table class="mercati xgt camp sq-tab"><thead><tr>' + testa.map(function (t, i) { return cella(i, "th") + esc(t) + "</th>"; }).join("") +
+        "</tr></thead><tbody>" + righe.map(function (r) { return "<tr>" + r.map(function (c, i) { return cella(i, "td") + c + "</td>"; }).join("") + "</tr>"; }).join("") + "</tbody></table></div>";
+    };
+    var sez = function (tit, corpo) { return corpo ? '<h3 class="sq-h">' + esc(tit) + "</h3>" + corpo : ""; };
+    var pc = function (x) { return x == null ? "–" : Math.round(x) + "%"; };
+    var nn = function (x, d) { return x == null ? "–" : Number(x).toFixed(d); };
+    var LATI = [["t", "Totale"], ["c", "In casa"], ["f", "Fuori"]];
+    var pT = posizione(D, id, "t");
+
+    // testa
+    h += '<p><button type="button" class="chip chip-link" id="sq-torna">← ' + esc(D.nome) + "</button></p>" +
+      '<div class="sq-testa">' + logoId(nome, id, true, D.nome) + '<div><h2 class="reg-tit">' + esc(nome) + "</h2>" +
+      '<p class="piccolo">' + esc(D.nome) + (pT ? " · " + pT.pos + "° su " + pT.di : "") +
+      (sq.elo ? " · Elo " + Math.round(sq.elo) : "") + (D.ultima ? " · dati fino al " + esc(D.ultima) : "") + "</p></div></div>";
+
+    // classifica
+    var rc = LATI.map(function (l) {
+      var p = posizione(D, id, l[0]);
+      if (!p) return null;
+      var x = p.x, dr = x[5] - x[6];
+      return [l[1], p.pos + "°", x[1], x[2], x[3], x[4], x[5] + ":" + x[6], '<span class="' + (dr > 0 ? "piu" : dr < 0 ? "meno" : "") + '">' + (dr > 0 ? "+" : "") + dr + "</span>",
+        "<b>" + x[7] + "</b>", '<span class="ult">' + badgeForma(x[8]) + "</span>"];
+    }).filter(Boolean);
+    h += sez("Classifica", rc.length ? tab(["", "Pos.", "PG", "V", "N", "P", "Gol", "DR", "Pt", "Ultime"], rc) : "");
+
+    // statistiche medie
+    var S = D.stat && D.stat.squadre && D.stat.squadre[id];
+    if (S) {
+      var campi = D.stat.campi, cols = [["gf", "Gol", 2], ["gs", "Subiti", 2], ["xg", "xG", 2], ["xga", "xGA", 2], ["tiri", "Tiri", 1], ["tiri_s", "Tiri subiti", 1],
+        ["porta", "In porta", 1], ["porta_s", "In porta subiti", 1], ["pos", "Poss.", "%"], ["ang", "Angoli", 1], ["ang_s", "Angoli subiti", 1], ["gialli", "Gialli", 1], ["falli", "Falli", 1]];
+      var rs = LATI.map(function (l) {
+        var n = l[0] === "t" ? (S.c ? S.c.n : 0) + (S.f ? S.f.n : 0) : (S[l[0]] ? S[l[0]].n : 0);
+        if (!n) return null;
+        return [l[1], n].concat(cols.map(function (c) { var v = confValore(S, campi, c[0], l[0]); return c[2] === "%" ? pc(v) : nn(v, c[2]); }));
+      }).filter(Boolean);
+      h += sez("Statistiche (medie a partita)", rs.length ? tab(["", "PG"].concat(cols.map(function (c) { return c[1]; })), rs) : "");
+    }
+
+    // gol e over
+    var G = D.gol && D.gol[id];
+    if (G) h += sez("Gol e Over", tab(["", "PG", "Over 1,5", "Over 2,5", "Over 3,5", "Gol/Gol", "Inviolata", "A secco", "Gol 1° t.", "Segna 1° t."],
+      LATI.filter(function (l) { return G[l[0]] && G[l[0]].n; }).map(function (l) {
+        var x = G[l[0]];
+        return [l[1], x.n, pc(x.o15), pc(x.o25), pc(x.o35), pc(x.gg), pc(x.cs), pc(x.fts), pc(x.gol_pt), pc(x.segna_pt)];
+      })));
+
+    // quando segna
+    var M = D.minuti && D.minuti.squadre && D.minuti.squadre[id];
+    if (M) {
+      var F = D.minuti.fasce;
+      h += sez("Quando segna e subisce", tab([""].concat(F.map(function (f) { return f + "'"; })).concat(["Totale"]), [["f", "Gol fatti"], ["s", "Gol subiti"]].map(function (k) {
+        var v = M[k[0]] || [], tot = v.reduce(function (a, b) { return a + b; }, 0);
+        return [k[1]].concat(v.map(function (x) { return x + (tot ? ' <small class="piccolo">' + Math.round(100 * x / tot) + "%</small>" : ""); })).concat(["<b>" + tot + "</b>"]);
+      })) + notaPiccola("Gol in ogni quarto d'ora, su " + M.n + " partite con gli eventi."));
+    }
+
+    // giocatori
+    var GI = D.giocatori;
+    if (GI) {
+      var per = {};
+      ["marcatori", "assist", "voto", "cartellini"].forEach(function (k) {
+        (GI[k] || []).forEach(function (x) { if (String(x.sq) === id) per[x.id] = Object.assign(per[x.id] || {}, x); });
+      });
+      var gv = Object.keys(per).map(function (k) { return per[k]; }).sort(function (a, b) { return (b.gol || 0) - (a.gol || 0) || (b.ass || 0) - (a.ass || 0) || (b.voto || 0) - (a.voto || 0); });
+      if (gv.length) h += sez("Giocatori", tab(["Giocatore", "Pres.", "Min.", "Gol", "Assist", "Voto", "Gialli", "Rossi"], gv.map(function (x) {
+        return ["<b>" + esc(x.nome) + "</b>", x.pres, x.min, x.gol || 0, x.ass || 0, x.voto ? Number(x.voto).toFixed(2) : "–", x.gialli || 0, x.rossi || 0];
+      })) + notaPiccola("Solo i giocatori che entrano nelle classifiche del campionato (marcatori, assist, voto, cartellini: le prime 25 di ognuna)."));
+    }
+
+    // punti attesi e contro le quote
+    var X = D.xpts && D.xpts[id], Q = D.quote && D.quote[id], rpa = [];
+    if (X) rpa.push(["Dagli xG", X.n, X.pts, nn(X.xpts, 1), '<span class="' + cl(X.pts - X.xpts) + '">' + (X.pts - X.xpts >= 0 ? "+" : "−") + Math.abs(X.pts - X.xpts).toFixed(1) + "</span>"]);
+    if (Q) rpa.push(["Dalle quote Pinnacle", Q.n, Q.pts, nn(Q.attesi, 1), '<span class="' + cl(Q.pts - Q.attesi) + '">' + (Q.pts - Q.attesi >= 0 ? "+" : "−") + Math.abs(Q.pts - Q.attesi).toFixed(1) + "</span>"]);
+    if (rpa.length) h += sez("Punti veri e punti attesi", tab(["", "Partite", "Punti", "Attesi", "Diff."], rpa) +
+      notaPiccola("In verde: la squadra ha fatto più punti di quanti ne meritava; in rosso meno."));
+
+    // forma
+    var FO = D.forma && D.forma.squadre && D.forma.squadre[id];
+    if (FO && FO.length) h += sez("Ultime partite", tab(["Data", "", "Avversaria", "Ris.", "xG"], FO.slice().reverse().map(function (x) {
+      var e = esito3(x[3], x[4]);
+      return [esc(String(x[0]).slice(8, 10) + "/" + String(x[0]).slice(5, 7)), x[2] === "c" ? "casa" : "fuori", esc(nomeSq(D, x[1])),
+        '<span class="fm fm-' + e.toLowerCase() + '">' + e + "</span> " + x[3] + "-" + x[4],
+        x[5] != null && x[6] != null ? Number(x[5]).toFixed(2) + " - " + Number(x[6]).toFixed(2) : "–"];
+    }), [1, 2]));
+
+    // primo tempo
+    var PT = D.ptft && D.ptft[id];
+    if (PT) {
+      var m = PT.m, av = m.VV + m.VN + m.VP, pa = m.NV + m.NN + m.NP, so = m.PV + m.PN + m.PP;
+      h += sez("Primo tempo e finale", tab(["All'intervallo", "Partite", "Poi vinte", "Poi pari", "Poi perse"], [
+        ["In vantaggio", av, m.VV, m.VN, m.VP], ["In parità", pa, m.NV, m.NN, m.NP], ["In svantaggio", so, m.PV, m.PN, m.PP]]) +
+        notaPiccola("Rimonte (da sotto a pari o vittoria): " + PT.rimonte + ", vinte " + PT.rimonte_vinte + ". Vantaggi persi: " + PT.subite + "."));
+    }
+
+    // angoli e cartellini
+    var A = D.angoli_cart && D.angoli_cart[id];
+    if (A && A.t && A.t.n) h += sez("Angoli e cartellini", tab(["", "PG", "Angoli", "Subiti", "Ang. >8,5", ">9,5", ">10,5", "Cartellini", "Avversari", "Cart. >3,5", ">4,5"],
+      LATI.filter(function (l) { return A[l[0]] && A[l[0]].n; }).map(function (l) {
+        var x = A[l[0]];
+        return [l[1], x.n, nn(x.ang_f, 1), nn(x.ang_s, 1), pc(x.ang_o85), pc(x.ang_o95), pc(x.ang_o105), nn(x.car_f, 1), nn(x.car_s, 1), pc(x.car_o35), pc(x.car_o45)];
+      })));
+
+    // serie
+    var SE = D.serie && D.serie[id];
+    if (SE) {
+      var tipi = [["vittorie", "Vittorie di fila"], ["imbattuta", "Senza sconfitte"], ["senza_vittorie", "Senza vittorie"], ["sconfitte", "Sconfitte di fila"],
+        ["over25", "Over 2,5 di fila"], ["under25", "Under 2,5 di fila"], ["gg", "Gol/Gol di fila"], ["nogg", "No Gol di fila"],
+        ["porta_inviolata", "Porta inviolata di fila"], ["segna", "Segna da"], ["a_secco", "A secco da"]];
+      var vs = tipi.filter(function (t) { return (SE[t[0]] || 0) >= 2; });
+      if (vs.length) h += sez("Serie in corso", '<div class="sq-serie">' + vs.map(function (t) {
+        return '<span class="chip">' + esc(t[1]) + " <b>" + SE[t[0]] + "</b></span>";
+      }).join("") + "</div>" + notaPiccola("Solo campionato, serie di almeno 2 partite."));
+    }
+
+    // prossime
+    var P = D.prossime && D.prossime[id];
+    if (P && P.partite && P.partite.length) h += sez("Prossime partite", tab(["Data", "", "Avversaria", "Elo avv."], P.partite.map(function (x) {
+      var e = D.squadre[x[1]] && D.squadre[x[1]].elo;
+      return [esc(String(x[0]).slice(8, 10) + "/" + String(x[0]).slice(5, 7)), x[2] === "c" ? "casa" : "fuori", esc(nomeSq(D, x[1])), e ? Math.round(e) : "–"];
+    }), [1, 2]) + (P.elo_medio ? notaPiccola("Elo medio delle prossime avversarie: " + P.elo_medio + (sq.elo ? " (la squadra: " + Math.round(sq.elo) + ")" : "") + ".") : ""));
+
+    h += '<div id="sq-assenti"></div>';
+    return h;
+  }
+  function assentiSquadra(D, id) {
+    var $a = document.getElementById("sq-assenti");
+    if (!$a) return;
+    var t = Math.floor(Date.now() / 600000);
+    Promise.all([oggi(), giornoRoma(1)].map(function (d) {
+      return Promise.all([
+        leggiUrl(BASE + "formazioni_" + d + ".json?t=" + t, "formazioni_" + d).catch(function () { return null; }),
+        leggiUrl(BASE + "calendario_" + d + ".json?t=" + t, "calendario_" + d).catch(function () { return null; }), d]);
+    })).then(function (a) {
+      var h = "";
+      a.forEach(function (x) {
+        var form = x[0] || {}, cal = Array.isArray(x[1]) ? x[1] : [], d = x[2];
+        cal.filter(function (p) { return String(p.ic) === String(id) || String(p.io) === String(id); }).forEach(function (p) {
+          var f = form[String(p.id)] || {}, lista = f.assenti_peso || (f.assenti || []).map(function (n) { return { nome: n }; });
+          if (!lista.length) return;
+          h += '<div class="scheda"><h4>' + esc(etichettaData(d)) + " " + esc(p.ora || "") + " · " + partitaHtmlId(p.casa, p.ospite, p.ic, p.io, D.nome) + '</h4><ul class="assenti">' +
+            lista.map(function (r) {
+              return "<li><b>" + esc(r.nome || "?") + "</b>" + (r.squadra ? " <small>(" + esc(r.squadra) + ")</small>" : "") +
+                (r.tipo || r.motivo ? " – " + esc([r.tipo, r.motivo].filter(Boolean).join(", ")) : "") + "</li>";
+            }).join("") + "</ul></div>";
+        });
+      });
+      if (h && document.getElementById("sq-assenti") === $a) $a.innerHTML = '<h3 class="sq-h">Assenti</h3>' + h;
+    }).catch(function () {});
+  }
   function esito3(f, s) { return f > s ? "V" : f === s ? "N" : "P"; }
   function cl(x) { return x == null ? "" : x > 0.05 ? "piu" : x < -0.05 ? "meno" : ""; }
 
