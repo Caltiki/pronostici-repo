@@ -2080,7 +2080,9 @@
   var FONTI = { vista: "riepilogo", data: null, fonte: "" };
   // La pagina Calendario (122): dichiarata qui perche' leggiHash la usa
   // gia' all'avvio.
-  var CAL = { data: null, filtro: "tutte", cerca: "", aperti: {} };
+  var CAL = { data: null, filtro: "tutte", cerca: "", aperti: {}, ordine: "lega" };
+  // (173) l'ordine del Calendario si ricorda su questo telefono
+  try { if (localStorage.getItem("caltiki-cal-ordine") === "ora") CAL.ordine = "ora"; } catch (e) {}
   // (167) la sezione Campionati: dichiarata qui perche' leggiHash la usa gia' all'avvio
   var CAMP = { squadra: null, cercaSq: "", indiceSq: null, versoXG: false, lega: "", scheda: "classifica", vista: "t", gioc: "marcatori", min: "f", ordine: null, verso: -1, idx: null, dati: {} };
   var ELO = { vista: "partite", data: null, filtro: "sito", ordine: "ora", cerca: "", camp: "", quante: 100, dati: null, info: null };
@@ -9051,7 +9053,9 @@
           "<b>Più prevedibili</b> mette in fila le partite in cui un esito supera il 60%. Prevedibile non vuol dire conveniente: conta la quota del tuo book contro l’equa.</p>" +
           chipsHtml(date.map(function (x) { return [x, etichettaData(x)]; }), d, "data-cdata") +
           chipsHtml([["tutte", "Tutte"], ["prev", "Più prevedibili"], ["sito", "Sul sito"], ["pin", "Con Pinnacle"], ["live", "In corso"], ["stat", "Con statistiche"]], CAL.filtro, "data-cfiltro") +
-          '<div class="strumenti"><input type="search" id="cerca-cal" placeholder="Squadra, campionato o paese" value="' + esc(CAL.cerca) + '" autocomplete="off"></div>' +
+          '<div class="strumenti"><input type="search" id="cerca-cal" placeholder="Squadra, campionato o paese" value="' + esc(CAL.cerca) + '" autocomplete="off">' +
+          '<select id="ordine-cal" aria-label="Ordine"><option value="lega"' + (CAL.ordine === "lega" ? " selected" : "") + '>Per campionato</option>' +
+          '<option value="ora"' + (CAL.ordine === "ora" ? " selected" : "") + ">Per orario</option></select></div>" +
           '<div id="cal-lista"></div>';
         $cont.querySelectorAll("[data-cdata]").forEach(function (x) {
           x.addEventListener("click", function () { CAL.data = x.dataset.cdata; CAL.aperti = {}; disegna(); });
@@ -9064,6 +9068,11 @@
           });
         });
         document.getElementById("cerca-cal").addEventListener("input", function (e) { CAL.cerca = e.target.value; listaCalendario(lista, sito); });
+        document.getElementById("ordine-cal").addEventListener("change", function (e) {
+          CAL.ordine = e.target.value === "ora" ? "ora" : "lega";
+          try { localStorage.setItem("caltiki-cal-ordine", CAL.ordine); } catch (er) {}
+          listaCalendario(lista, sito);
+        });
         listaCalendario(lista, sito);
         rimettiPosto($cont);
       });
@@ -9174,6 +9183,20 @@
       $l.innerHTML = '<p class="conta">' + righe.length + (righe.length === 1 ? " partita" : " partite") +
         " ancora da giocare con un esito oltre il 60% (Pinnacle; dove manca, l\u2019Elo)</p>" +
         (righe.length ? '<div class="cal-lega cal-prev">' + righe.map(function (x) { return rigaCal(x, sito, true); }).join("") + "</div>" : messaggio("vuoto", "Nessuna partita con un esito oltre il 60%."));
+      collegaRigheCal($l);
+      return;
+    }
+    // (173) PER ORARIO: una lista sola dalla prima all'ultima partita, col
+    // campionato scritto piccolo sopra le squadre
+    if (CAL.ordine === "ora") {
+      righe.sort(function (a, b) {
+        return String(a.ora || "").localeCompare(String(b.ora || "")) || String(a.lega || "").localeCompare(String(b.lega || "")) ||
+          String(a.casa).localeCompare(String(b.casa));
+      });
+      var nS = righe.filter(function (x) { return sito[String(x.id)]; }).length;
+      $l.innerHTML = '<p class="conta">' + righe.length + (righe.length === 1 ? " partita" : " partite") + " per orario · " + nS + " sul sito</p>" +
+        (righe.length ? '<div class="cal-lega cal-prev">' + righe.map(function (x) { return rigaCal(x, sito, true); }).join("") + "</div>"
+          : messaggio("vuoto", "Nessuna partita con questi filtri."));
       collegaRigheCal($l);
       return;
     }
