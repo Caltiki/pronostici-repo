@@ -614,7 +614,8 @@
   "Sel": "1",
   "Prob": 66.8,
   "Equa": 1.5,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-22",
@@ -1082,8 +1083,7 @@
   "Sel": "2",
   "Prob": 60.0,
   "Equa": 1.67,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-22",
@@ -1273,8 +1273,7 @@
   "Sel": "1 + Over 1.5",
   "Prob": 57.3,
   "Equa": 1.74,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-22",
@@ -1379,8 +1378,7 @@
   "Sel": "1",
   "Prob": 55.0,
   "Equa": 1.82,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-22",
@@ -1569,7 +1567,8 @@
   "Sel": "2 + Over 1.5",
   "Prob": 52.7,
   "Equa": 1.9,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-22",
@@ -3233,27 +3232,6 @@
  {
   "Data": "2026-11-22",
   "Ora": "17:30",
-  "Campionato": "England: Premier League",
-  "Partita": "Liverpool - Manchester United",
-  "Casa": "Liverpool",
-  "Ospite": "Manchester United",
-  "Linea_OU": 3.0,
-  "Gol_attesi": 3.16,
-  "Margine": 3.9,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 23.0,
-  "Equa": 4.35,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-11-22",
-  "Ora": "17:30",
   "Campionato": "Germany: Bundesliga",
   "Partita": "Werder Bremen - Hamburger SV",
   "Casa": "Werder Bremen",
@@ -3296,13 +3274,13 @@
  {
   "Data": "2026-11-22",
   "Ora": "20:45",
-  "Campionato": "Italy: Serie A",
-  "Partita": "Atalanta BC - Inter Milan",
-  "Casa": "Atalanta BC",
-  "Ospite": "Inter Milan",
-  "Linea_OU": 3.25,
-  "Gol_attesi": 3.33,
-  "Margine": 4.2,
+  "Campionato": "France: Ligue 1",
+  "Partita": "Marseille - Le Mans FC",
+  "Casa": "Marseille",
+  "Ospite": "Le Mans FC",
+  "Linea_OU": 3.0,
+  "Gol_attesi": 3.16,
+  "Margine": 4.0,
   "Movimento": null,
   "Principale": "si",
   "Schedina": "si",
@@ -3310,8 +3288,8 @@
   "Gruppo": "1X2",
   "Mercato": "1X2",
   "Sel": "X",
-  "Prob": 20.6,
-  "Equa": 4.85,
+  "Prob": 18.9,
+  "Equa": 5.29,
   "Rif_Book": "Pinnacle"
  },
  {
