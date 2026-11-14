@@ -1313,6 +1313,7 @@
   .riga .numero strong.pct { font-weight: 800; color: var(--testo); }
   .riga .numero strong.pct.verde { color: #4ade80; }
   :root[data-theme="light"] .riga .numero strong.pct.verde { color: #15803d; }
+  .sel b.esito-sel { font-weight: 800; color: var(--testo); }
   .q-n { font-weight: 700; color: var(--testo); font-variant-numeric: tabular-nums; }
   .q-n.verde { color: #4ade80; }
   :root[data-theme="light"] .q-n.verde { color: #15803d; }
@@ -2705,15 +2706,24 @@
     // 1X2, combo, Gol/NoGol, Under/Over - e a parita' la piu' vicina al
     // 65%. Se nella fascia non c'e' niente, resta la piu' probabile.
     // Cambia solo cosa si mostra: le probabilita' sono quelle del file.
-    var usati = {};
+    // (14/11) LA PROPOSTA PER AFFIDABILITA', NON PER VARIETA'. Fra le
+    // probabilita' 55-80% si tolgono quelle su cui il mercato si e' mosso
+    // contro di almeno 2 punti (Mov_Sel, da prezzi_equi.py); poi vince il
+    // prezzo piu' affidabile: margine stretto, margine piu' basso, movimento
+    // a favore, e a parita' la piu' vicina al 65%.
     function proposta(g) {
-      var cand = g.filter(function (r) { var p = num(r.Prob); return p != null && p >= 55 && p <= 80; });
+      var cand = g.filter(function (r) {
+        var p = num(r.Prob), mv = num(r.Mov_Sel);
+        return p != null && p >= 55 && p <= 80 && !(mv != null && mv <= -2);
+      });
       if (!cand.length) return g.slice().sort(function (a, b) { return (num(b.Prob) || 0) - (num(a.Prob) || 0); })[0];
+      var mg = function (r) { var m = num(r.Margine); return m == null ? 99 : m; };
       cand.sort(function (a, b) {
-        return ((usati[a.Gruppo] || 0) - (usati[b.Gruppo] || 0)) ||
+        return ((margineStretto(a) ? 0 : 1) - (margineStretto(b) ? 0 : 1)) ||
+          (Math.round(mg(a) * 2) - Math.round(mg(b) * 2)) ||
+          ((num(b.Mov_Sel) || 0) - (num(a.Mov_Sel) || 0)) ||
           (Math.abs(num(a.Prob) - 65) - Math.abs(num(b.Prob) - 65));
       });
-      usati[cand[0].Gruppo] = (usati[cand[0].Gruppo] || 0) + 1;
       return cand[0];
     }
     var html = SEZ[sez].riepilogo(visibili) +
@@ -3439,7 +3449,7 @@
       (r._fresca ? '<span class="pill fresca" title="Quota Pinnacle aggiornata">\u21bb ' + esc(r._fresca) + "</span>" : "") +
       "</div>" +
       '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, r.Partita, campiRiga(r)) + "</div>" +
-      '<div class="sel">' + esc(etichettaSel(r)) + "</div>" +
+      '<div class="sel"><b class="esito-sel">' + esc(etichettaSel(r)) + "</b></div>" +
       (prob != null ? '<div class="pbar"><i style="width:' + Math.min(100, prob) + '%"></i></div>' : "") +
       "</div>" +
       '<div class="numero"><b>' + f2(equa) + "</b><span>" + pctNumero(prob, margineStretto(r)) + "</span></div>" +
