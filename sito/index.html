@@ -1364,6 +1364,13 @@
   :root[data-theme="light"] .lv-fermo { color: #b4232f; background: rgba(225,29,72,.08); border-color: rgba(225,29,72,.35); }
   .mov-riga { margin-top: 3px; font-size: .86rem; font-variant-numeric: tabular-nums; line-height: 1.5; }
   .mov-riga .ap { color: var(--tenue); }
+  .mov-griglia { display: inline-grid; grid-template-columns: auto repeat(3, auto); column-gap: 10px; row-gap: 0; align-items: baseline; line-height: 1.35; }
+  .mov-griglia .et { color: var(--tenue); font-size: .66rem; text-transform: uppercase; letter-spacing: .03em; }
+  .mov-griglia b.seg { font-size: .8rem; padding: 0 4px; }
+  .mov-griglia i { margin-left: 2px; }
+  .mov-griglia b.seg { justify-self: start; }
+  .mov-griglia i { font-style: normal; margin-left: 3px; }
+  .mov-griglia i.uguale { color: var(--tenue); font-weight: 700; }
   .mov-riga .giu { color: #4ade80; font-weight: 800; }
   .mov-riga .su { color: #ff5470; font-weight: 800; }
   .mov-riga .fermo { font-weight: 600; }
@@ -9460,6 +9467,22 @@
     });
   }
   function movRigaHtml(x) {
+    // (172) COME OPEN/CURR DI ASIANODDS: se almeno una quota si e' mossa,
+    // una griglia coi tre segni in colonna, "prima" sopra e "ora" sotto;
+    // se sono ferme tutte, una riga sola.
+    var mosse = x.pz.some(function (p) { return p.c !== "fermo" && p.q0 != null; });
+    if (mosse) {
+      // ferma = meno di un punto di probabilita': "=" se la quota e' identica,
+      // "\u2248" se si e' mossa di poco (la riga "prima" la mostra diversa)
+      var fr = function (p) { return p.c === "giu" ? (p.f.length > 1 ? "\u2193\u2193" : "\u2193") : p.c === "su" ? (p.f.length > 1 ? "\u2191\u2191" : "\u2191") :
+        (p.q0 != null && f2(p.q0) !== f2(p.q1) ? "\u2248" : "="); };
+      return '<div class="mov-riga mov-griglia" title="' + esc(x.titolo) + '">' +
+        '<span></span>' + x.pz.map(function (p) { return '<b class="seg">' + p.seg + "</b>"; }).join("") +
+        '<span class="et">prima</span>' + x.pz.map(function (p) { return '<span class="ap">' + f2(p.q0 != null ? p.q0 : p.q1) + "</span>"; }).join("") +
+        '<span class="et">ora</span>' + x.pz.map(function (p) {
+          return '<span class="' + p.c + '">' + f2(p.q1) + '<i class="' + (p.c === "fermo" ? "uguale" : "fr") + '">' + fr(p) + "</i></span>";
+        }).join("") + "</div>";
+    }
     return '<div class="mov-riga" title="' + esc(x.titolo) + '">' + x.pz.map(function (p) {
       var freccia = p.c === "giu" ? (p.f.length > 1 ? "\u2193\u2193" : "\u2193") : p.c === "su" ? (p.f.length > 1 ? "\u2191\u2191" : "\u2191") : "";
       return '<span class="nw"><b class="seg">' + p.seg + "</b> " +
