@@ -1339,6 +1339,10 @@
   .sq-testa img { width: 56px; height: 56px; object-fit: contain; }
   .sq-testa .reg-tit { margin: 0; }
   .sq-h { margin: 18px 0 4px; font-size: 1.05rem; }
+  .sq-h4 { margin: 14px 0 2px; font-size: .92rem; color: var(--tenue); }
+  .sq-tab b.piu { color: var(--buono); }
+  .sq-tab b.meno { color: var(--male); }
+  .sq-tab span.tenue { color: var(--tenue); }
   .sq-tab td.sq-lab, .sq-tab th.sq-lab { font-weight: 700; white-space: nowrap; text-align: left; }
   .sq-tab td.sq-sx, .sq-tab th.sq-sx { text-align: left; white-space: nowrap; }
   .sq-tab span.piu { color: var(--buono); font-weight: 700; }
@@ -2076,7 +2080,7 @@
     if (p[0] === "cal") { stato.sez = "cal"; if (/^\d{4}-\d{2}-\d{2}$/.test(p[1] || "")) CAL.data = p[1]; return; }
     if (p[0] === "elo") {
       stato.sez = "elo";
-      if (["partite", "classifica", "info"].indexOf(p[1]) >= 0) ELO.vista = p[1];
+      if (["partite", "classifica", "quanto", "info"].indexOf(p[1]) >= 0) ELO.vista = p[1];
       if (/^\d{4}-\d{2}-\d{2}$/.test(p[2] || "")) ELO.data = p[2];
       return;
     }
@@ -8895,7 +8899,7 @@
         '<p class="descr">La forza di ogni squadra in un numero, calcolata dal sistema sui risultati raccolti dal sito dal 2016: ' +
         "sale quando una squadra fa meglio del previsto, scende quando fa peggio. Da due rating escono le probabilità 1X2. " +
         "È calcolato dal sistema, non preso da un sito.</p>" +
-        chipsHtml([["partite", "Partite"], ["classifica", "Classifica"], ["info", "Come funziona"]], ELO.vista, "data-evista") +
+        chipsHtml([["partite", "Partite"], ["classifica", "Classifica"], ["quanto", "Quanto conta"], ["info", "Come funziona"]], ELO.vista, "data-evista") +
         '<div id="elo-corpo"></div>';
       $cont.innerHTML = h;
       $cont.querySelectorAll("[data-evista]").forEach(function (b) {
@@ -8903,6 +8907,7 @@
       });
       if (ELO.vista === "classifica") return eloClassifica();
       if (ELO.vista === "info") return eloInfo();
+      if (ELO.vista === "quanto") return eloQuanto();
       return eloPartite();
     }).catch(function () {
       $cont.innerHTML = messaggio("vuoto", "L’Elo non è ancora pubblicato: lo porta sul sito il workflow “Elo - calcolo e prova”.");
@@ -9066,6 +9071,51 @@
     return h;
   }
   // ---- come funziona e quanto vale
+  // ---- (171) QUANTO CONTA LA DIFFERENZA: elo_analisi.json (workflow "Elo -
+  // quanto conta la differenza"), misurato sullo storico delle ultime stagioni
+  function eloQuanto() {
+    var $c = document.getElementById("elo-corpo");
+    if (!$c) return;
+    $c.innerHTML = messaggio("vuoto", "Carico&hellip;");
+    leggiUrl(BASE + "elo_analisi.json?t=" + Math.floor(Date.now() / 600000), "elo_analisi").then(function (A) {
+      if (stato.sez !== "elo" || ELO.vista !== "quanto") return;
+      var p = function (x) { return x == null ? "–" : Number(x).toFixed(1).replace(".", ",") + "%"; };
+      var sc = function (b) {
+        if (b.scarto == null) return "–";
+        var t = (b.scarto > 0 ? "+" : b.scarto < 0 ? "−" : "") + Math.abs(b.scarto).toFixed(1).replace(".", ",");
+        return b.conta ? '<b class="' + (b.scarto > 0 ? "piu" : "meno") + '">' + t + "</b>" : '<span class="tenue">' + t + "</span>";
+      };
+      var tab = function (testa, righe) {
+        return '<div class="tab-scorri"><table class="mercati xgt camp sq-tab"><thead><tr>' + testa.map(function (t, i) { return (i ? "<th>" : '<th class="sq-lab">') + t + "</th>"; }).join("") +
+          "</tr></thead><tbody>" + righe.map(function (r) { return "<tr>" + r.map(function (c, i) { return (i ? "<td>" : '<td class="sq-lab">') + c + "</td>"; }).join("") + "</tr>"; }).join("") + "</tbody></table></div>";
+      };
+      var h = '<p class="descr">Misurato su ' + Number(A.partite_prova).toLocaleString("it-IT") + " partite giocate dal " + esc(String(A.prova_dal || "").split("-").reverse().join("/")) +
+        ", con l’Elo di prima della partita. La differenza è Elo casa meno Elo ospite, come nelle partite del sito. " +
+        "“Detto” è quanto prevedeva l’Elo, “successo” quanto è andata davvero: lo scarto in grassetto è troppo grande per essere caso " +
+        "(verde: la favorita ha fatto meglio del previsto, rosso: peggio).</p>";
+      h += '<h3 class="sq-h">Quanto: per differenza di Elo</h3>' + tab(["Differenza", "Favorita vince", "Detto", "Scarto", "Partite", "1", "X", "2", "1 detto", "X detto", "2 detto"],
+        (A.quanto || []).map(function (b) {
+          return [esc(b.fascia), "<b>" + p(b.favorita_vince) + "</b>", p(b.detto_favorita), sc(b), Number(b.partite).toLocaleString("it-IT"),
+            p(b.casa), p(b.pari), p(b.ospite), p(b.detto_casa), p(b.detto_pari), p(b.detto_ospite)];
+        })) + notaPiccola("Scorri di lato per vedere 1, X e 2: com’è andata e cosa diceva l’Elo.");
+      h += '<h3 class="sq-h">Seguire la favorita per Elo</h3>' + tab(["Differenza almeno", "Partite", "Delle partite", "Favorita vince", "Detto", "Pareggi"],
+        (A.soglie || []).map(function (s) {
+          return [esc(s.da), Number(s.partite).toLocaleString("it-IT"), p(s.quota_partite), "<b>" + p(s.favorita_vince) + "</b>", p(s.detto_favorita), p(s.pari)];
+        })) + notaPiccola("Il mercato queste partite le prezza già: vincere spesso non vuol dire guadagnare. Conta dove l’Elo si discosta dalle quote.");
+      h += '<h3 class="sq-h">Quando: le partite con una favorita netta (almeno 100 punti)</h3>';
+      Object.keys(A.quando || {}).forEach(function (k) {
+        h += '<h4 class="sq-h4">' + esc(k.charAt(0).toUpperCase() + k.slice(1).replace("meta'", "metà")) + "</h4>" +
+          tab(["", "Partite", "Favorita vince", "Detto", "Scarto", "Pareggi", "Sorprese"], A.quando[k].map(function (b) {
+            return [esc(String(b.gruppo).replace("meta'", "metà")), Number(b.partite).toLocaleString("it-IT"), "<b>" + p(b.favorita_vince) + "</b>", p(b.detto_favorita), sc(b), p(b.pari), p(b.sorprese)];
+          }));
+      });
+      h += notaPiccola("Brier dell’Elo " + String(A.brier_elo).replace(".", ",") + " contro " + String(A.brier_frequenze).replace(".", ",") +
+        " delle sole frequenze (più basso = meglio). Calcolato il " + esc(String(A.calcolato || "").slice(0, 10)) + ".");
+      $c.innerHTML = h;
+    }).catch(function () {
+      $c.innerHTML = messaggio("vuoto", "L’analisi non è ancora pubblicata: la fa il workflow “Elo - quanto conta la differenza”.");
+    });
+  }
   function eloInfo() {
     var I = ELO.info || {}, e = I.elo || {}, pr = I.prova || {};
     var nomi = { "frequenze di lega": "Solo le frequenze del campionato", "Elo logit": "Elo (logit, quello del sito)", "Elo Poisson": "Elo (Poisson)" };
