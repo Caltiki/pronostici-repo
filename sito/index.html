@@ -1308,8 +1308,16 @@
   @keyframes liveGol { 50% { box-shadow: 0 0 0 5px var(--evidenza-tenue, rgba(94,168,255,.35)); } }
   @media (prefers-reduced-motion: reduce) { .live::before, .live.fresco { animation: none; } }
   /* LE QUOTE IN ROSSO (101): i numeri delle quote si staccano dal testo. */
-  .q { color: #ff6b6b; font-weight: 700; font-variant-numeric: tabular-nums; }
-  :root[data-theme="light"] .q { color: #c62828; }
+  /* (172) UNA SOLA REGOLA DI COLORE: quote, margini e rating in colore neutro;
+     le probabilita' in neutro, VERDI dal 55%, in ogni pagina. */
+  .q { color: var(--testo); font-weight: 700; font-variant-numeric: tabular-nums; }
+  .q.verde { color: #4ade80; }
+  :root[data-theme="light"] .q.verde { color: #15803d; }
+  .riga .numero b.pb { color: var(--testo); }
+  .riga .numero b.pb.verde { color: #4ade80; }
+  :root[data-theme="light"] .riga .numero b.pb.verde { color: #15803d; }
+  .sel b.pb.verde { color: #4ade80; }
+  :root[data-theme="light"] .sel b.pb.verde { color: #15803d; }
   .riga .numero strong.pct { font-weight: 800; color: var(--testo); }
   .riga .numero strong.pct.verde { color: #4ade80; }
   :root[data-theme="light"] .riga .numero strong.pct.verde { color: #15803d; }
@@ -2771,7 +2779,7 @@
           pillConsenso(g.filter(function (x) { return x._cons; })[0]) +
           (eAltroBook(r0.Fonte) ? '<span class="chip" title="Pinnacle non quota questa partita: prezzo da ' + esc(r0.Fonte) + '">quota ' + esc(r0.Fonte) + "</span>" : "") + "</div>" +
           '<div class="partita">' + partitaHtml(r0.Casa, r0.Ospite, r0.Partita, campiRiga(r0)) + "</div>" + sqHtml(r0) +
-          '<div class="sel">' + (inSch ? "<b>In schedina:</b> " : "<b>Proposta:</b> ") + '<span class="q-n' + (margineStretto(top) ? ' verde" title="Prezzo affidabile: margine stretto' : "") + '">' + esc(etichettaSel(top)) +
+          '<div class="sel">' + (inSch ? "<b>In schedina:</b> " : "<b>Proposta:</b> ") + '<span class="q-n' + (eVerde(num(top.Prob)) ? " verde" : "") + '">' + esc(etichettaSel(top)) +
           " · " + f0(num(top.Prob)) + "%</span>" + (scelte_ ? " · " + scelte_ + " nella multipla" : "") + "</div>" +
           '</div><div class="numero"><b>' + g.length + "</b><span>" + (g.length === 1 ? "probabilità" : "probabilità") + "</span></div></summary>" +
           '<div class="dentro-partita">' +
@@ -3233,7 +3241,51 @@
                           accordo: "consensus", poisson: "poisson" };
   // Dalla stessa scheda anche CLASSIFICA E xG delle due squadre (6/11,
   // "Squadre", tabelle FotMob): su tutte le giornate, non solo fino a oggi.
+  // (172) IL RISULTATO DAL CALENDARIO IN TUTTE LE PAGINE. La scheda prende
+  // il risultato dalle fonti (Betimate, FootyMetrics) e si rifa' poche volte
+  // al giorno: molte partite finite restavano senza punteggio. Il calendario
+  // (stato e punteggio, ogni ora) lo da' a ogni riga ancora senza: la partita
+  // si trova col suo numero (ID_API) o con partite_api_<data>.json, che lega
+  // i nomi di ogni fonte al numero ("Wellington Phoenix Reserves|Auckland
+  // City" -> 1639051). Nomi esatti, nessuna somiglianza. Solo le finite ai
+  // 90 minuti (FT).
   function conRisultati(sez, righe, data) {
+    return conRisultatiScheda(sez, righe, data).then(function (r2) { return conRisultatiCal(r2, data); });
+  }
+  function nomiRiga(r) {
+    var c = r.Casa, o = r.Ospite;
+    if ((c == null || o == null) && r.Partita) {
+      var t = String(r.Partita).split(" - ");
+      if (t.length === 2) { c = t[0]; o = t[1]; }
+    }
+    return c != null && o != null ? String(c).trim() + "|" + String(o).trim() : null;
+  }
+  function conRisultatiCal(righe, data) {
+    if (!Array.isArray(righe) || !righe.length || !data || data > oggi()) return Promise.resolve(righe);
+    if (!righe.some(function (r) { return r && (r.Gol_Casa == null || r.Gol_Ospite == null); })) return Promise.resolve(righe);
+    return Promise.all([
+      leggiUrl(BASE + "calendario_" + data + ".json?t=" + Math.floor(Date.now() / 600000), "calendario_" + data).catch(function () { return null; }),
+      leggi("partite_api_" + data + ".json").catch(function () { return null; })
+    ]).then(function (a) {
+      var cal = {}, quante = 0, mappa = a[1] && typeof a[1] === "object" ? a[1] : {};
+      (Array.isArray(a[0]) ? a[0] : []).forEach(function (x) {
+        if (String(x.stato || "").toUpperCase() === "FT" && x.gc != null && x.go != null) { cal[String(x.id)] = x; quante++; }
+      });
+      if (!quante) return righe;
+      return righe.map(function (r) {
+        if (!r || (r.Gol_Casa != null && r.Gol_Ospite != null)) return r;
+        var id = r.ID_API != null && r.ID_API !== "" ? String(r.ID_API) : null;
+        if (!id || !cal[id]) { var n = nomiRiga(r); id = n && mappa[n] != null ? String(mappa[n]) : null; }
+        var x = id ? cal[id] : null;
+        if (!x) return r;
+        var o = {};
+        for (var k in r) o[k] = r[k];
+        o.Gol_Casa = x.gc; o.Gol_Ospite = x.go; o.Risultato_Da = "calendario";
+        return o;
+      });
+    });
+  }
+  function conRisultatiScheda(sez, righe, data) {
     if (!PREFISSO_SCHEDA[sez] || !Array.isArray(righe)) return Promise.resolve(righe);
     return leggi("scheda_" + data + ".json").catch(function () { return null; }).then(function (s) {
       if (!s || !s.alias) return righe;
@@ -4591,7 +4643,7 @@
 
     var det = [];
     if (r.Lega) det.push("<p>" + esc(r.Lega) + "</p>");
-    det.push("<p>Media delle fonti: 1 " + f0(p1) + "% · X " + f0(px) + "% · 2 " + f0(p2) + "%</p>");
+    det.push("<p>Media delle fonti: 1 " + pv(p1) + " · X " + pv(px) + " · 2 " + pv(p2) + "</p>");
     var acc = accordoSegno(r);
     if (acc) {
       det.push("<p>D\u2019accordo " + articolo(acc.segno) + ": " + (acc.si.length ? esc(acc.si.join(", ")) : "nessuna") +
@@ -4601,7 +4653,7 @@
     if (fonti === 1) det.push("<p>Fonte unica: " + esc(r.Elenco) + ". Non è una media, è quella fonte.</p>");
     else det.push("<p>Media di " + fonti + " fonti: " + esc(r.Elenco) + "</p>");
     if (m1 != null) {
-      det.push("<p>Mercato (Shin): 1 " + f0(m1) + "% · X " + f0(mx) + "% · 2 " + f0(m2) + "%</p>");
+      det.push("<p>Mercato (Shin): 1 " + pv(m1) + " · X " + pv(mx) + " · 2 " + pv(m2) + "</p>");
       if (segnoM && segnoM !== segno) {
         det.push('<p class="avviso">Segni diversi: le fonti dicono ' + esc(segno) + ", il mercato " + esc(segnoM) + ".</p>");
       }
@@ -4626,7 +4678,7 @@
       tripla("fonti", p1, px, p2) +
       (m1 != null ? tripla("mercato", m1, mx, m2) : "") +
       "</div>" +
-      '<div class="numero"><b>' + f0(pSegno) + "%</b><span>" + (/^[1X2]$/.test(segno) ? articolo(segno) : "sul " + esc(segno)) + "</span></div>" +
+      '<div class="numero">' + pB(pSegno) + "<span>" + (/^[1X2]$/.test(segno) ? articolo(segno) : "sul " + esc(segno)) + "</span></div>" +
       "</summary>" +
       '<div class="dettaglio">' + det.join("") + "</div>" +
       "</details></div>";
@@ -4794,7 +4846,7 @@
     var es = r.Esito ? (r.Esito === seg ? "presa" : "sbagliata") : null;
     var det = [];
     if (r.Lega) det.push("<p>" + esc(r.Lega) + " (FootyStats non indica il campionato).</p>");
-    det.push("<p>1 " + f1(p1) + "% · X " + f1(px) + "% · 2 " + f1(p2) + "%</p>");
+    det.push("<p>1 " + pv1(p1) + " · X " + pv1(px) + " · 2 " + pv1(p2) + "</p>");
     if (q[0] != null) det.push("<p>Quote " + q.map(f2).join(" · ") + (ov != null ? " – margine del book " + f1(ov - 100) + "%" : "") + "</p>");
     if (r.Esito) det.push("<p>Uscito il " + esc(r.Esito) + (es === "presa" ? ": era la favorita." : ": la favorita era il " + esc(seg) + ".") + "</p>");
     if (r.Url) det.push('<p><a href="' + esc(r.Url) + '" target="_blank" rel="noopener">La partita su FootyStats</a></p>');
@@ -4810,7 +4862,7 @@
       (q[0] != null ? '<div class="sel">quote ' + q.map(f2).join(" · ") + "</div>" : "") +
       tripla("FootyStats", p1, px, p2) +
       "</div>" +
-      '<div class="numero"><b>' + f0(r._fav) + '%</b><span>sul ' + esc(seg) + "</span></div>" +
+      '<div class="numero">' + pB(r._fav) + '<span>sul ' + esc(seg) + "</span></div>" +
       "</summary>" +
       '<div class="dettaglio">' + det.join("") + "</div>" +
       "</details></div>";
@@ -4876,7 +4928,7 @@
     var esatto = String(r.Esatto || ""), pEs = num(r.P_Esatto);
     var det = [];
     if (r.Lega) det.push("<p>" + esc(r.Lega) + (r.Giornata ? " \u2013 " + esc(r.Giornata) : "") + "</p>");
-    det.push("<p>1 " + f1(p1) + "% · X " + f1(px) + "% · 2 " + f1(p2) + "%</p>");
+    det.push("<p>1 " + pv1(p1) + " · X " + pv1(px) + " · 2 " + pv1(p2) + "</p>");
     var usc = segnoUscito(r);
     if (usc) {
       det.push("<p>Finita " + esc(r.Gol_Casa + "-" + r.Gol_Ospite) + (r.Risultato_Da ? " (risultato da " + esc(r.Risultato_Da) + ")" : "") +
@@ -4899,7 +4951,7 @@
       .filter(function (x) { return num(x[1]) != null; })
       .map(function (x) { return x[0] + " " + f0(num(x[1])) + "%"; });
     if (gol.length) det.push("<p>" + gol.join(" · ") + "</p>");
-    if (num(r.PT1) != null) det.push("<p>Primo tempo: 1 " + f0(num(r.PT1)) + "% · X " + f0(num(r.PTX)) + "% · 2 " + f0(num(r.PT2)) + "%</p>");
+    if (num(r.PT1) != null) det.push("<p>Primo tempo: 1 " + pv(r.PT1) + " · X " + pv(r.PTX) + " · 2 " + pv(r.PT2) + "</p>");
     if (r.Url) det.push('<p><a href="' + esc(r.Url) + '" target="_blank" rel="noopener">La partita su Sports Mole</a></p>');
     det.push('<p class="piccolo">Sports Mole \u00e8 informativa: non entra nel consenso.</p>');
     var sel = [];
@@ -4916,7 +4968,7 @@
       (sel.length ? '<div class="sel">' + sel.join(" · ") + "</div>" : "") +
       tripla("Sports Mole", p1, px, p2) +
       "</div>" +
-      '<div class="numero"><b>' + f0(r._fav) + '%</b><span>sul ' + esc(seg) + "</span></div>" +
+      '<div class="numero">' + pB(r._fav) + '<span>sul ' + esc(seg) + "</span></div>" +
       "</summary>" +
       '<div class="dettaglio">' + det.join("") + "</div>" +
       "</details></div>";
@@ -5071,7 +5123,7 @@
       '<div class="sel">' + sel.join(" \u00b7 ") + "</div>" +
       tripla("Quote senza margine", num(r.P1), num(r.PX), num(r.P2)) +
       "</div>" +
-      '<div class="numero"><b>' + f0(pi) + '%</b><span>per il sito</span></div>' +
+      '<div class="numero">' + pB(pi) + '<span>per il sito</span></div>' +
       "</summary>" +
       '<div class="dettaglio">' + det.join("") + "</div>" +
       "</details></div>";
@@ -5213,7 +5265,7 @@
       (riga2.length ? '<div class="sel">' + riga2.join(" · ") + "</div>" : "") +
       tripla("Probabilità del sito", num(r.P1), num(r.PX), num(r.P2)) +
       "</div>" +
-      '<div class="numero"><b>' + f0(pf) + '%</b><span>per il sito</span></div>' +
+      '<div class="numero">' + pB(pf) + '<span>per il sito</span></div>' +
       "</summary>" +
       '<div class="dettaglio">' + det.join("") + "</div>" +
       "</details></div>";
@@ -5473,7 +5525,7 @@
       // giu'): niente ✓/✗ li', non direbbe se la mossa era giusta.
       '<span class="segno' + (mosse ? " mosso" : "") + '">' + esc((mosse ? r._segnoMov : top) || r.Segno || "?") + "</span>" +
       '<div class="corpo">' +
-      '<div class="alto">' + (r.Ora ? "<span><b>" + esc(r.Ora) + "</b></span>" : "") +
+      '<div class="alto">' + (r.Ora ? "<span><b>" + esc(r.Ora) + "</b></span>" : "") + golHtml(r) +
         (r.Lega ? '<span class="chip">' + esc(r.Lega) + "</span>" : "") +
         (fid ? '<span class="pill ' + fid[0] + '">margine ' + f1(num(r.Margine)) + "%</span>" : "") +
         (r._form && r._form.titolari ? '<span class="pill stretto">formazioni</span>' : "") +
@@ -5485,7 +5537,7 @@
       "</div>" +
       (mosse || pt == null
         ? '<div class="numero"><b>' + esc(punti) + "</b><span>punti sul " + esc(r._segnoMov || "-") + "</span></div>"
-        : '<div class="numero"><b>' + f0(pt) + "%</b><span>" + (/^[1X2]$/.test(top) ? articolo(top) : esc(top)) + " · equa " + f2(100 / pt) + "</span></div>") +
+        : '<div class="numero">' + pB(pt) + "<span>" + (/^[1X2]$/.test(top) ? articolo(top) : esc(top)) + " · equa " + f2(100 / pt) + "</span></div>") +
       "</summary>" +
       '<div class="dettaglio">' + det.join("") + "</div>" +
       "</details></div>";
@@ -5889,7 +5941,7 @@
     var det = [];
     det.push("<p>Statarea: " + esc(r["Pron Statarea"]) + " \u00b7 WebPronostici: " + esc(r["Pron WebPron"]) +
       " \u2192 combinato " + esc(pron) + "</p>");
-    det.push("<p>1X2: 1 " + f0(p1) + "% \u00b7 X " + f0(px) + "% \u00b7 2 " + f0(p2) + "%</p>");
+    det.push("<p>1X2: 1 " + pv(p1) + " \u00b7 X " + pv(px) + " \u00b7 2 " + pv(p2) + "</p>");
     var gol = [["Over 1.5", r["Over1.5 %"]], ["Over 2.5", r["Over2.5 %"]], ["Gol", r["BTTS %"]]]
       .filter(function (x) { return num(x[1]) != null; }).map(function (x) { return x[0] + " " + f0(num(x[1])) + "%"; });
     if (gol.length) det.push("<p>" + gol.join(" \u00b7 ") + "</p>");
@@ -5911,7 +5963,7 @@
       '<div class="sel">Statarea ' + esc(r["Pron Statarea"]) + " \u00b7 WebPronostici " + esc(r["Pron WebPron"]) + "</div>" +
       tripla("fonti", p1, px, p2) +
       "</div>" +
-      '<div class="numero"><b>' + f0(pc) + "%</b><span>sul " + esc(pron) + "</span></div>" +
+      '<div class="numero">' + pB(pc) + "<span>sul " + esc(pron) + "</span></div>" +
       "</summary>" +
       '<div class="dettaglio">' + det.join("") + "</div>" +
       "</details></div>";
@@ -6110,7 +6162,7 @@
         " da quando è stato consigliato (" + f0(pe) + "%" + (num(ba.P_Chiusura) != null ? " → chiusura " : " → ") + f0(pu) + "%)</span>"
       : (pe != null ? ' · <span class="piccolo">fermo da quando è stato consigliato</span>' : "");
     var mk = r._pm != null
-      ? '<div class="sel">Mercato <b>' + f0(r._pm) + "%</b> sul " + esc(segno) + " · quota equa <b>" + f2(100 / r._pm) + "</b>" + mov + "</div>"
+      ? '<div class="sel">Mercato ' + pB(r._pm) + " sul " + esc(segno) + " · quota equa <b>" + f2(100 / r._pm) + "</b>" + mov + "</div>"
       : '<div class="sel" style="color:var(--tenue)">Prezzo di mercato non ancora uscito</div>';
     h = h.replace('<div class="sel">', mk + '<div class="sel">');
     if (r.Gol_Casa != null && r.Gol_Ospite != null) {
@@ -7179,14 +7231,22 @@
   // spostamento dal mattino; sotto, se c'e', AsianOdds in breve col suo
   // movimento, che Pinnacle qui non ha (si legge da stamattina).
   function qv(v) { return '<span class="q">' + f2(num(v)) + "</span>"; }
-  function pv(v) { return '<span class="q">' + f0(num(v)) + "%</span>"; }
+  // (172) ogni probabilita' passa di qui: neutra, verde dal 55%
+  var SOGLIA_VERDE = 55;
+  // si confronta il numero COME SI LEGGE (54,6 si legge 55%: verde)
+  function eVerde(x, dec) { return x != null && isFinite(x) && Number(Number(x).toFixed(dec || 0)) >= SOGLIA_VERDE; }
+  function pv(v) { var x = num(v); return '<span class="q' + (eVerde(x) ? " verde" : "") + '">' + f0(x) + "%</span>"; }
+  function pv1(v) { var x = num(v); return '<span class="q' + (eVerde(x, 1) ? " verde" : "") + '">' + f1(x) + "%</span>"; }
+  // la percentuale grande a destra della riga
+  function pB(v) { var x = num(v); return '<b class="pb' + (eVerde(x) ? " verde" : "") + '">' + f0(x) + "%</b>"; }
   // (171) le probabilita' 1X2 dell'Elo: colore neutro, verde dal 55% (favorita netta)
   // (171) la percentuale sotto la quota equa: grassetto, verde se il prezzo
   // e' affidabile (margine stretto), come le proposte
   function pctNumero(v, verde) {
-    return '<strong class="pct' + (verde ? ' verde" title="Prezzo affidabile: margine stretto' : "") + '">' + f0(num(v)) + "%</strong>";
+    var x = num(v);
+    return '<strong class="pct' + (eVerde(x) ? " verde" : "") + '">' + f0(x) + "%</strong>";
   }
-  function pvE(v) { var x = num(v); return '<span class="q-n' + (x != null && x >= 55 ? " verde" : "") + '">' + f0(x) + "%</span>"; }
+  function pvE(v) { return pv(v); }
   function mv(v) { return '<span class="q">' + f1(num(v)) + "%</span>"; }
   function nv(v) { return '<span class="q">' + f1(num(v)) + "</span>"; }
   function mercatoPinnacle(p, a) {
@@ -9230,7 +9290,7 @@
           (p ? tripla("Elo", p[0], p[1], p[2]) : '<div class="sel piccolo">Elo non disponibile per ' + (!r.c && !r.o ? "le due squadre" : !r.c ? esc(x.casa) : esc(x.ospite)) + "</div>") +
           (r.pp ? tripla("Pinnacle", r.pp[0], r.pp[1], r.pp[2]) : "") +
         "</div>" +
-        (p ? '<div class="numero"><b>' + f0(Math.max(p[0], p[1], p[2])) + "%</b><span>" + articolo(segno) + "</span></div>" : "") +
+        (p ? '<div class="numero">' + pB(Math.max(p[0], p[1], p[2])) + "<span>" + articolo(segno) + "</span></div>" : "") +
         "</summary>" + '<div class="dettaglio">' + det.join("") + "</div></details></div>";
     }).join("");
     $l.innerHTML = h;
