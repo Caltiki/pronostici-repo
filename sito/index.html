@@ -1238,6 +1238,16 @@
   .sq-serie { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0; }
   .lv-fermo { margin: 6px 0 12px; padding: 8px 12px; border-radius: 10px; font-weight: 700; color: #ff8a9a; background: rgba(255,84,112,.12); border: 1px solid rgba(255,84,112,.4); }
   :root[data-theme="light"] .lv-fermo { color: #b4232f; background: rgba(225,29,72,.08); border-color: rgba(225,29,72,.35); }
+  .mov-cal { margin-top: 1px; font-size: .7rem; color: var(--tenue); font-variant-numeric: tabular-nums; line-height: 1.5; }
+  .mov-cal .et { font-size: .62rem; text-transform: uppercase; letter-spacing: .03em; margin-right: 2px; }
+  .mov-cal b.seg { font-weight: 800; color: var(--testo); }
+  .mov-cal .ap { opacity: .8; }
+  .mov-cal .giu { color: #4ade80; font-weight: 800; }
+  .mov-cal .su { color: #ff5470; font-weight: 800; }
+  .mov-cal .fermo { color: var(--testo); font-weight: 700; }
+  .mov-cal .uguale { color: var(--tenue); margin-left: 2px; }
+  :root[data-theme="light"] .mov-cal .giu { color: #15803d; }
+  :root[data-theme="light"] .mov-cal .su { color: #d6283f; }
   .mov-riga { margin-top: 3px; font-size: .86rem; font-variant-numeric: tabular-nums; line-height: 1.5; }
   .mov-riga .ap { color: var(--tenue); }
   .mov-griglia { display: inline-grid; grid-template-columns: auto repeat(3, auto); column-gap: 10px; row-gap: 0; align-items: baseline; line-height: 1.35; }
@@ -8941,8 +8951,9 @@
   function disegnaCalendario() {
     $cont.innerHTML = messaggio("vuoto", "Carico&hellip;");
     Promise.all([indiceCalendario(), caricaLoghi(), caricaPinGlobale().catch(function () { return null; }),
-      caricaElo().catch(function () { return null; })]).then(function (a) {
+      caricaElo().catch(function () { return null; }), proFrecce()]).then(function (a) {
       if (stato.sez !== "cal") return;
+      PRO_CAL = a[4] || null;
       var ix = a[0], date = (ix.date || []).filter(function (d) { return d >= giornoRoma(-1); }).sort();
       if (!date.length) throw new Error("nessuna data");
       if (date.indexOf(CAL.data) < 0) CAL.data = date.indexOf(oggi()) >= 0 ? oggi() : date[0];
@@ -9027,6 +9038,24 @@
   }
   // (172) LE PROBABILITA' 1X2 DI UNA PARTITA DEL CALENDARIO: Pinnacle senza
   // margine (se c'e') e l'Elo del sistema (se ha le due squadre).
+  // (173) IL MOVIMENTO DELLE QUOTE PINNACLE NEL CALENDARIO, in piccolo:
+  // una riga sola, dalla prima lettura a ora, con le stesse regole e gli
+  // stessi colori delle schede (verde = scesa, rosso = salita, "=" ferma).
+  var PRO_CAL = null;
+  function movCalHtml(x) {
+    var pin = PIN_G.perId[String(x.id)];
+    if (!pin) return "";
+    var q = [num(pin.Q1), num(pin.QX), num(pin.Q2)];
+    if (q[0] == null || q[1] == null || q[2] == null) return "";
+    var m = frecceDati(pin, PRO_CAL);
+    var pz = m ? m.pz : ["1", "X", "2"].map(function (sg, i) { return { seg: sg, c: "fermo", q0: null, q1: q[i], f: "" }; });
+    return '<div class="mov-cal"' + (m ? ' title="' + esc(m.titolo) + '"' : "") + '><span class="et">quote</span> ' + pz.map(function (p) {
+      var mossa = m && p.c !== "fermo";
+      return '<span class="nw"><b class="seg">' + p.seg + "</b> " +
+        (mossa && p.q0 != null ? '<span class="ap">' + f2(p.q0) + "</span>\u2192" : "") +
+        '<span class="' + p.c + '">' + f2(p.q1) + (mossa ? p.f : m ? '<span class="uguale">=</span>' : "") + "</span></span>";
+    }).join(" \u00b7 ") + "</div>";
+  }
   function probCal(x) {
     var pin = PIN_G.perId[String(x.id)], pp = null, pe = null, d = null;
     if (pin) {
@@ -9119,7 +9148,7 @@
         ? ' <a class="chip chip-link" href="' + esc(sito[String(x.id)]) + '">sul sito \u2192</a>'
         : ' <span class="chip">sul sito</span>') : "") + (pin ? " " + timbroPin(pin) : "") +
       (stH ? ' <button type="button" class="chip chip-link cal-stat-btn" data-sid="' + esc(x.id) + '" aria-expanded="false">statistiche \u25be</button>' : "") +
-      probCalHtml(probCal(x)) +
+      probCalHtml(probCal(x)) + movCalHtml(x) +
       "</span>" +
       '<span class="r">' + s.html + "</span></div>" +
       (stH ? '<div class="cal-stat" id="cst-' + esc(x.id) + '" hidden>' + stH + "</div>" : "");
