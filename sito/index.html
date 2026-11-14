@@ -1458,6 +1458,7 @@
   .cal-prob .et { font-size: .7rem; text-transform: uppercase; letter-spacing: .03em; margin-right: 2px; }
   .cal-prob b.seg { font-weight: 800; color: var(--testo); }
   .cal-prob .sep { color: var(--tenue); }
+  .link-storico { color: var(--evidenza); font-weight: 700; white-space: nowrap; text-decoration: none; }
   .cal-lega-nome { display: block; color: var(--tenue); font-size: .72rem; }
   .cal-prev { padding: 4px 0; }
   .pill.cons { background: color-mix(in srgb, var(--evidenza) 14%, transparent); color: var(--evidenza); font-weight: 700; }
@@ -1840,12 +1841,50 @@
   function leggi(file) {
     return leggiUrl(BASE + file, file);
   }
+  // (172) I CARATTERI ROVINATI. Qualche fonte (Sports Mole fino al 14/11)
+  // ha letto pagine UTF-8 come se fossero Latin-1: "Besançon" e' arrivato
+  // come "BesanÃ§on". Si rimette a posto qui, su tutti i file, anche
+  // sull'archivio gia' scritto: si riprendono i byte e si rileggono come
+  // UTF-8. Solo se la rilettura e' UTF-8 valido (altrimenti il testo resta
+  // com'e'), e al massimo due volte (c'e' qualche nome rovinato due volte).
+  var CP1252 = { 8364: 128, 8218: 130, 402: 131, 8222: 132, 8230: 133, 8224: 134, 8225: 135, 710: 136, 8240: 137, 352: 138,
+    8249: 139, 338: 140, 381: 142, 8216: 145, 8217: 146, 8220: 147, 8221: 148, 8226: 149, 8211: 150, 8212: 151, 732: 152,
+    8482: 153, 353: 154, 8250: 155, 339: 156, 382: 158, 376: 159 };
+  var RX_ROVINATO = /[\u00c2-\u00f4][\u0080-\u00bf\u0152\u0153\u0160\u0161\u0178\u017d\u017e\u0192\u02c6\u02dc\u2013\u2014\u2018-\u201e\u2020-\u2022\u2026\u2030\u2039\u203a\u20ac\u2122]/;
+  var DEC_UTF8 = null;
+  try { DEC_UTF8 = new TextDecoder("utf-8", { fatal: true }); } catch (e) {}
+  function riparaStringa(t) {
+    if (!DEC_UTF8) return t;
+    for (var giro = 0; giro < 2 && RX_ROVINATO.test(t); giro++) {
+      var b = new Uint8Array(t.length);
+      for (var i = 0; i < t.length; i++) {
+        var c = t.charCodeAt(i);
+        if (c > 255) { c = CP1252[c]; if (c == null) return t; }
+        b[i] = c;
+      }
+      try { t = DEC_UTF8.decode(b); } catch (e) { return t; }
+    }
+    return t;
+  }
+  function riparaTesti(x) {
+    if (typeof x === "string") return RX_ROVINATO.test(x) ? riparaStringa(x) : x;
+    if (Array.isArray(x)) { for (var i = 0; i < x.length; i++) x[i] = riparaTesti(x[i]); return x; }
+    if (x && typeof x === "object") {
+      for (var k in x) if (Object.prototype.hasOwnProperty.call(x, k)) {
+        var v = x[k];
+        if (typeof v === "string" || (v && typeof v === "object")) x[k] = riparaTesti(v);
+        // anche le chiavi: le mappe dei nomi ("Casa|Ospite") ce le hanno
+        if (RX_ROVINATO.test(k)) { var k2 = riparaStringa(k); if (k2 !== k && !(k2 in x)) { x[k2] = x[k]; } }
+      }
+    }
+    return x;
+  }
   function leggiUrl(url, nome) {
     var file = url;
     if (!cache[file]) {
       cache[file] = fetch(url).then(function (r) {
         if (!r.ok) throw new Error((nome || file) + ": risposta " + r.status);
-        return r.json();
+        return r.json().then(riparaTesti);
       });
       // Un errore non deve restare in cache: al prossimo giro si riprova.
       cache[file].catch(function () { delete cache[file]; });
@@ -2572,11 +2611,17 @@
     var tutte = Array.isArray(righe) ? righe : [];
     var passano = tutte.filter(function (r) { return tiene(r, vista); });
     if (sez === "consensus" && stato.fonteCm) passano = passano.filter(function (r) { return haFonte(r, stato.fonteCm); });
+    // il filtro vinte/perse vale nella pagina dove lo si e' acceso
+    if (stato.sezEsito !== sez) { stato.esito = ""; stato.sezEsito = sez; }
     baseEsiti = passano;
     if (sez === "prezzi" && stato.esito) {
       var tutteFiltro = passano;
       passano = passano.filter(function (r) { return r.Esito === stato.esito; });
       if (!passano.length) { stato.esito = ""; passano = tutteFiltro; }
+    } else if (ESITO_SEZ[sez] && stato.esito) {
+      var tutteF2 = passano;
+      passano = passano.filter(function (r) { var e = ESITO_SEZ[sez](r); return e && e.esito === stato.esito; });
+      if (!passano.length) { stato.esito = ""; passano = tutteF2; }
     }
     // IL RIQUADRO "CON MARGINE SOTTO IL 2%" E' UN PULSANTE: toccandolo
     // restano solo quelle righe, ritoccandolo si torna a tutte. Se in una
@@ -2628,7 +2673,7 @@
     var conta = visibili.length === tutte.length
       ? visibili.length + " righe"
       : visibili.length + " righe su " + tutte.length;
-    var html = SEZ[sez].riepilogo(visibili) +
+    var html = SEZ[sez].riepilogo(visibili) + tessereEsito(sez, visibili) +
       '<p class="conta">' + conta + SEZ[sez].nota + "</p><div class=\"lista\">" +
       mostrate.map(function (r, i) { return conAggancio(spuntaRisultato(SEZ[sez].riga(r, i), r), sez, r); }).join("") + "</div>";
     if (visibili.length > mostrate.length) {
@@ -2904,6 +2949,65 @@
     var m = Math.floor(a.length / 2);
     return a.length % 2 ? a[m] : (a[m - 1] + a[m]) / 2;
   }
+  // (172) VINTE, PERSE E ATTESE, LE STESSE CASELLE IN OGNI PAGINA che
+  // propone un pronostico per partita con la sua probabilita'. Per ogni
+  // pagina: quale pronostico e con che probabilita' (in %). Le doppie
+  // (1X, X2, 12) valgono se esce uno dei due segni, con la somma delle due
+  // probabilita'. Il risultato e' il punteggio della riga (dalla scheda o
+  // dal calendario). Pinnacle no: e' il mercato, il metro degli altri.
+  function esitoSegno(seg, r, p, prob) {
+    seg = String(seg || "").toUpperCase().trim();
+    if (!/^(1|X|2|1X|X2|12)$/.test(seg)) return null;
+    var u = segnoUscito(r);
+    if (!u) return null;
+    var pr = prob != null ? num(prob) : null;
+    if (pr == null && p) {
+      var tot = 0, ok = true;
+      seg.split("").forEach(function (c) { var x = p["1X2".indexOf(c)]; if (x == null) ok = false; else tot += x; });
+      pr = ok ? tot : null;
+    }
+    return { esito: seg.indexOf(u) >= 0 ? "presa" : "sbagliata", prob: pr };
+  }
+  var ESITO_SEZ = {
+    consensus: function (r) { return esitoSegno(r.Segno, r, [num(r.P1), num(r.PX), num(r.P2)]); },
+    accordo: function (r) { return esitoSegno(r["Pron Combinato"], r, [num(r["P_1 %"]), num(r["P_X %"]), num(r["P_2 %"])]); },
+    poisson: function (r) { return esitoSegno(r.Segno, r, [num(r.P1), num(r.PX), num(r.P2)]); },
+    sm: function (r) { return esitoSegno(r.Segno, r, null, r._fav); },
+    fp: function (r) { return esitoSegno(r.Segno, r, null, r._fav); },
+    wdw: function (r) {
+      var e = esitoSegno(r.Segno, r, null, r._fav);
+      if (e || !/^[1X2]$/.test(String(r.Esito || "")) || !/^[1X2]$/.test(String(r.Segno || ""))) return e;
+      return { esito: r.Esito === r.Segno ? "presa" : "sbagliata", prob: r._fav };
+    },
+    hp: function (r) {
+      var e = hpEsito(r);
+      return e === "vinto" || e === "perso" ? { esito: e === "vinto" ? "presa" : "sbagliata", prob: r._pulita } : null;
+    }
+  };
+  function caselleEsito(prese, sbagliate, attese, etichetta, attivo) {
+    var p = attivo || "", quota = 100 * prese / (prese + sbagliate);
+    return '<div class="riepilogo">' +
+      '<button type="button" class="filtro-esito' + (p === "presa" ? " attivo" : "") + '" data-esito="presa"><b><em style="font-style:normal;color:var(--buono)">\u2713 ' + prese + "</em></b><span>" + etichetta[0] + (p === "presa" ? " \u00b7 mostra tutte" : "") + "</span></button>" +
+      '<button type="button" class="filtro-esito' + (p === "sbagliata" ? " attivo" : "") + '" data-esito="sbagliata"><b><em style="font-style:normal;color:var(--male)">\u2717 ' + sbagliate + "</em></b><span>" + etichetta[1] + (p === "sbagliata" ? " \u00b7 mostra tutte" : "") + "</span></button>" +
+      "<div><b>" + quota.toFixed(0) + "%</b><span>vinte" +
+      (attese != null ? " \u00b7 attese " + attese.toFixed(0) + "%" : "") + "</span></div></div>";
+  }
+  var LINK_STORICO = ' <a href="#fonti" class="link-storico">Lo storico delle fonti \u2192</a>';
+  function tessereEsito(sez, v) {
+    var f = ESITO_SEZ[sez];
+    if (!f) return "";
+    var base = stato.esito && baseEsiti ? baseEsiti : v;
+    if (stato.cerca && !stato.esito) base = v;
+    var es = base.map(f).filter(function (e) { return e && (e.esito === "presa" || e.esito === "sbagliata"); });
+    if (!es.length) return "";
+    var prese = es.filter(function (e) { return e.esito === "presa"; }).length;
+    var pr = es.map(function (e) { return num(e.prob); }).filter(function (x) { return x != null; });
+    var attese = pr.length === es.length ? pr.reduce(function (a, x) { return a + x; }, 0) / pr.length : null;
+    return caselleEsito(prese, es.length - prese, attese, ["vinte", "perse"], stato.esito) +
+      '<p class="conta">Su ' + es.length + (es.length === 1 ? " partita finita" : " partite finite") +
+      " del pronostico di questa pagina. Tocca \u2713 o \u2717 per vedere solo quelle. " +
+      "Un giorno solo \u00e8 quasi tutto caso." + LINK_STORICO + "</p>";
+  }
   function tessere(voci) {
     return '<div class="riepilogo">' + voci.map(function (v) {
       return "<div><b>" + v[0] + "</b><span>" + v[1] + "</span></div>";
@@ -2950,12 +3054,12 @@
       // solo le sbagliate; ritoccandoli si torna a tutte.
       var p = stato.esito;
       return '<div class="riepilogo">' +
-        '<button type="button" class="filtro-esito' + (p === "presa" ? " attivo" : "") + '" data-esito="presa"><b><em style="font-style:normal;color:var(--buono)">\u2713 ' + prese + "</em></b><span>vinte" + (p === "presa" ? " \u00b7 mostra tutte" : "") + "</span></button>" +
-        '<button type="button" class="filtro-esito' + (p === "sbagliata" ? " attivo" : "") + '" data-esito="sbagliata"><b><em style="font-style:normal;color:var(--male)">\u2717 ' + sbagliate + "</em></b><span>perse" + (p === "sbagliata" ? " \u00b7 mostra tutte" : "") + "</span></button>" +
+        '<button type="button" class="filtro-esito' + (p === "presa" ? " attivo" : "") + '" data-esito="presa"><b><em style="font-style:normal;color:var(--buono)">\u2713 ' + prese + "</em></b><span>vinte in schedina" + (p === "presa" ? " \u00b7 mostra tutte" : "") + "</span></button>" +
+        '<button type="button" class="filtro-esito' + (p === "sbagliata" ? " attivo" : "") + '" data-esito="sbagliata"><b><em style="font-style:normal;color:var(--male)">\u2717 ' + sbagliate + "</em></b><span>perse in schedina" + (p === "sbagliata" ? " \u00b7 mostra tutte" : "") + "</span></button>" +
         "<div><b>" + quota.toFixed(0) + "%</b><span>vinte" +
         (attese != null ? " \u00b7 attese " + attese.toFixed(0) + "%" : "") + "</span></div></div>" +
         '<p class="conta">' + (attesa ? attesa + (attesa === 1 ? " partita ancora senza risultato. " : " partite ancora senza risultato. ") : "") +
-        "Tocca \u2713 o \u2717 per vedere solo quelle. Le partite finite sono in cima.</p>";
+        "Tocca \u2713 o \u2717 per vedere solo quelle. Le partite finite sono in cima. Un giorno solo \u00e8 quasi tutto caso." + LINK_STORICO + "</p>";
     }
     var on = stato.stretti;
     return '<div class="riepilogo">' +
@@ -4719,9 +4823,8 @@
       var att = fin.reduce(function (a, r) { return a + num(r["P" + String(r.Segno).toUpperCase()]); }, 0) / fin.length;
       var fm = fin.filter(function (r) { return num(r["M_P" + String(r.Segno).toUpperCase()]) != null; });
       var mk = fm.length ? fm.reduce(function (a, r) { return a + num(r["M_P" + String(r.Segno).toUpperCase()]); }, 0) / fm.length : null;
-      conta = '<p class="conta">Finite ' + fin.length + ": vinte " + presi + " (" +
-        Math.round(100 * presi / fin.length) + "%), il modello ne attendeva il " + Math.round(att) + "%" +
-        (mk != null ? ", il mercato il " + Math.round(mk) + "% (su " + fm.length + " col prezzo)" : "") + ".</p>";
+      // (172) vinte e attese stanno nelle caselle; qui resta il confronto col mercato
+      conta = mk != null ? '<p class="conta">Sulle stesse partite finite il mercato dava al segno del modello il ' + Math.round(mk) + "% (su " + fm.length + " col prezzo).</p>" : "";
     }
     return tessere([
       [String(v.length), "partite"],
@@ -4821,17 +4924,7 @@
   }
 
   function riepilogoWdw(v) {
-    var con = v.filter(function (r) { return r.Esito && r._fav != null; });
-    if (con.length) {
-      // Calibrazione della favorita: quanto la danno in media, quanto esce.
-      var prese = con.filter(function (r) { return r.Esito === r.Segno; }).length;
-      var media = con.reduce(function (s, r) { return s + r._fav; }, 0) / con.length;
-      return tessere([
-        [Math.round(100 * prese / con.length) + "%", "favorita uscita, " + prese + " su " + con.length],
-        [media.toFixed(0) + "%", "probabilità media della favorita"],
-        [String(v.length), "partite"]
-      ]);
-    }
+    // (172) la calibrazione della favorita ora e' nelle caselle vinte/perse/attese
     var mg = mediana(v.map(function (r) { var o = num(r.Overround); return o == null ? null : o - 100; }));
     return tessere([
       [String(v.length), "partite"],
@@ -4899,8 +4992,7 @@
       [String(v.length), "partite"],
       [String(ws.length), "con il We say della redazione"],
       [ws.length ? Math.round(100 * stessi / ws.length) + "%" : "-", "We say sullo stesso segno del modello"]
-    ]) + (fin.length ? '<p class="conta">Finite ' + fin.length + ": vinte " + presi + " (" +
-      Math.round(100 * presi / fin.length) + "%), il modello ne attendeva il " + Math.round(attesi / fin.length) + "%.</p>" : "");
+    ]);
   }
 
   function smEsatti(r, lato) {
@@ -5020,14 +5112,10 @@
     var mq = mediana(v.map(function (r) { return num(r.Quota_Tip); }));
     return tessere([
       [String(v.length), "tip"],
-      [fin.length ? vinte.length + " su " + fin.length : "-", "vinti, fra quelli finiti"],
       [fin.length ? (guad >= 0 ? "+" : "") + (100 * guad / fin.length).toFixed(1) + "%" : "-",
-       "rendimento a puntata fissa"]
-    ]) + (fin.length
-      ? '<p class="conta">Vinti il ' + Math.round(100 * vinte.length / fin.length) + "%" +
-        (attesa != null ? "; le quote senza margine ne attendevano il " + Math.round(attesa) + "%" : "") +
-        ". Quota mediana " + (mq == null ? "-" : mq.toFixed(2)) + ". Su pochi tip il rendimento \u00e8 rumore.</p>"
-      : "");
+       "rendimento a puntata fissa"],
+      [mq == null ? "-" : mq.toFixed(2), "quota mediana"]
+    ]) + (fin.length ? '<p class="conta">Su pochi tip il rendimento \u00e8 rumore.</p>' : "");
   }
 
   // LA SCHEDA DELLA PARTITA (heropredict_scraper.py --dettagli): forma
@@ -5167,8 +5255,7 @@
       [String(v.length), "partite"],
       [String(sch), "con la scheda"],
       [mm == null ? "-" : f1(mm) + "%", "margine mediano 1X2"]
-    ]) + (fin.length ? '<p class="conta">Finite ' + fin.length + ": vinte " + vinte + " (" +
-      Math.round(100 * vinte / fin.length) + "%), il sito ne attendeva il " + Math.round(attesi / fin.length) + "%.</p>" : "") +
+    ]) +
     (tr.length === 3
       ? '<p class="conta">Treble del giorno: ' + tr.map(function (r) {
           return esc(r.Casa + "-" + r.Ospite) + " " + esc(r.Treble.Selezione) + " a " + f2(num(r.Treble.Quota));
@@ -5990,7 +6077,9 @@
     if (!cache[k]) {
       cache[k] = fetch(BASE + file).then(function (r) {
         if (!r.ok) throw new Error(file + ": risposta " + r.status);
-        return r.text();
+        return r.text().then(function (t) {
+          return RX_ROVINATO.test(t) ? t.split("\n").map(function (l) { return RX_ROVINATO.test(l) ? riparaStringa(l) : l; }).join("\n") : t;
+        });
       });
       cache[k].catch(function () { delete cache[k]; });
     }
