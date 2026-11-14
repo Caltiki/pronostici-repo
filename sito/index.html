@@ -2249,7 +2249,7 @@
   // L'ORA IN ALTO DICE DI CHE COSA (117): ogni sezione ha i suoi dati e il
   // suo ritmo, e passando dall'una all'altra l'ora sembrava tornare
   // indietro. "Statarea + WebPronostici · aggiornato oggi alle 00:29".
-  var NOMI_AGG = { prezzi: "Prezzi", mercato: "AsianOdds", consensus: "Media delle fonti",
+  var NOMI_AGG = { prezzi: "Pronostici", mercato: "AsianOdds", consensus: "Media delle fonti",
     accordo: "Statarea + WebPronostici", poisson: "Gol attesi", sure: "Quote", pin: "Pinnacle",
     sm: "Sports Mole", fp: "FootballPark", wdw: "FootyStats", hp: "HeroPredict" };
   function testoAggiornato(nome, t) {
@@ -2258,7 +2258,9 @@
     if (!m) quando = "aggiornato: ?";
     else {
       var g = m[1] === oggi() ? "oggi" : m[1] === giornoRoma(-1) ? "ieri" : "il " + m[1].slice(8, 10) + "/" + m[1].slice(5, 7);
-      quando = "aggiornato " + g + " alle " + m[2];
+      // (171) per i Pronostici l'ora e' quella del calcolo, non della
+      // lettura delle quote (quelle piu' fresche hanno la pillola \u21bb)
+      quando = (nome === "Pronostici" ? "calcolati " : "aggiornato ") + g + " alle " + m[2];
     }
     return (nome ? nome + " \u00b7 " : "") + quando;
   }
