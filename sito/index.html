@@ -8842,7 +8842,7 @@
     if (!(eta > 10)) return "";
     var e = String(d.errore || "").toLowerCase(), perche = "";
     if (e.indexOf("per minute") >= 0 || e.indexOf("ratelimit") >= 0) perche = "troppe richieste al minuto alla fonte";
-    else if (e.indexOf("request") >= 0 || e.indexOf("limit") >= 0) perche = "richieste del giorno finite";
+    else if (e.indexOf("richieste del giorno") >= 0 || e.indexOf("request") >= 0 || e.indexOf("limit") >= 0) perche = "richieste del giorno alla fonte finite: riprende dopo l\u201901:00";
     else if (e) perche = "errore della fonte";
     return "risultati fermi da " + Math.round(eta) + " minuti" + (perche ? " (" + perche + ")" : "");
   }
@@ -9591,7 +9591,8 @@
       (LIVE_PAG.dati.partite && LIVE_PAG.dati.partite.some(function (x) { return "lega" in x; }) ? " · " + altre.length + " altre" : "") +
       (LIVE_PAG.ora ? " · aggiornato alle " + esc(LIVE_PAG.ora) : "") + "</p>";
     var fermo = fermoPonte(LIVE_PAG.dati);
-    if (fermo) h += '<p class="lv-fermo">\u26a0 Attenzione: ' + esc(fermo) + ". I punteggi qui sotto potrebbero non essere quelli di adesso; il ponte riprova da solo ogni 3 minuti.</p>";
+    if (fermo) h += '<p class="lv-fermo">\u26a0 Attenzione: ' + esc(fermo) + ". I punteggi qui sotto potrebbero non essere quelli di adesso" +
+      (/riprende dopo/.test(fermo) ? "." : "; il ponte riprova da solo ogni 3 minuti.") + "</p>";
     h += nostre.length ? nostre.map(rigaLive).join("") : messaggio("vuoto", q ? "Nessuna delle nostre partite in corso corrisponde alla ricerca." : "Nessuna delle partite del sito è in corso adesso.");
     if (altre.length) {
       var gruppi = {};
