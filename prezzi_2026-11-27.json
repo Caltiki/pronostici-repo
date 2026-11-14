@@ -231,8 +231,7 @@
   "Sel": "Gol",
   "Prob": 60.0,
   "Equa": 1.67,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-27",
@@ -317,7 +316,8 @@
   "Sel": "1",
   "Prob": 55.2,
   "Equa": 1.81,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-27",
@@ -506,27 +506,6 @@
   "Sel": "NoGol",
   "Prob": 40.7,
   "Equa": 2.46,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-11-27",
-  "Ora": "20:30",
-  "Campionato": "Germany: Bundesliga",
-  "Partita": "Werder Bremen - Borussia Monchengladbach",
-  "Casa": "Werder Bremen",
-  "Ospite": "Borussia Monchengladbach",
-  "Linea_OU": 3.0,
-  "Gol_attesi": 3.16,
-  "Margine": 4.9,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "NoGol",
-  "Prob": 40.0,
-  "Equa": 2.5,
   "Rif_Book": "Pinnacle"
  },
  {
@@ -737,6 +716,27 @@
   "Sel": "NoGol",
   "Prob": 34.8,
   "Equa": 2.87,
+  "Rif_Book": "Pinnacle"
+ },
+ {
+  "Data": "2026-11-27",
+  "Ora": "20:30",
+  "Campionato": "Germany: Bundesliga",
+  "Partita": "Werder Bremen - Borussia Monchengladbach",
+  "Casa": "Werder Bremen",
+  "Ospite": "Borussia Monchengladbach",
+  "Linea_OU": 3.0,
+  "Gol_attesi": 3.16,
+  "Margine": 4.9,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "OddsAPI",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "2",
+  "Prob": 23.2,
+  "Equa": 4.31,
   "Rif_Book": "Pinnacle"
  }
 ]

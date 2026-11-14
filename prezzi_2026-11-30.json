@@ -43,28 +43,6 @@
  },
  {
   "Data": "2026-11-30",
-  "Ora": "20:45",
-  "Campionato": "Italy: Serie A",
-  "Partita": "Cagliari - AC Milan",
-  "Casa": "Cagliari",
-  "Ospite": "AC Milan",
-  "Linea_OU": 2.5,
-  "Gol_attesi": 2.73,
-  "Margine": 5.1,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "Under Over",
-  "Mercato": "OU 3.5",
-  "Sel": "Under",
-  "Prob": 70.8,
-  "Equa": 1.41,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
- },
- {
-  "Data": "2026-11-30",
   "Ora": "21:00",
   "Campionato": "Spain: Laliga",
   "Partita": "Espanyol - Getafe",
@@ -145,8 +123,7 @@
   "Sel": "Gol",
   "Prob": 61.1,
   "Equa": 1.64,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-30",
@@ -483,27 +460,6 @@
   "Sel": "X2 + NoGol",
   "Prob": 39.0,
   "Equa": 2.56,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-11-30",
-  "Ora": "18:30",
-  "Campionato": "Italy: Serie A",
-  "Partita": "Lecce - Atalanta BC",
-  "Casa": "Lecce",
-  "Ospite": "Atalanta BC",
-  "Linea_OU": 3.0,
-  "Gol_attesi": 3.16,
-  "Margine": 5.1,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "NoGol",
-  "Prob": 38.9,
-  "Equa": 2.57,
   "Rif_Book": "Pinnacle"
  },
  {
