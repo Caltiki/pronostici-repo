@@ -1,0 +1,154 @@
+{
+ "calcolato": "2026-11-14 10:12 UTC",
+ "archivio": [
+  "2026-10-25",
+  "2026-11-18"
+ ],
+ "quota_casa": 0.556,
+ "partite": {
+  "non riconosciuta nello storico": 147,
+  "senza xG di API-Football (o poche partite)": 94,
+  "misurate": 628
+ },
+ "nota": "A = gol attesi del sito (Understat/FotMob), B = stesso modello con gli xG di API-Football, B2 = B con casa e fuori separati. ll piu' alta = meglio; brier ed err_gol piu' bassi = meglio. X_meno_A < 0 su brier/err_gol (> 0 su ll) = X meglio di A; conta se |t| > 2.",
+ "gruppi": {
+  "tutte": {
+   "partite": 628,
+   "ll": {
+    "A": -3.0791,
+    "B": -3.0839,
+    "B2": -3.1009,
+    "B_meno_A": -0.0048,
+    "t_B": -0.76,
+    "B2_meno_A": -0.0218,
+    "t_B2": -2.0
+   },
+   "brier": {
+    "A": 0.5988,
+    "B": 0.5989,
+    "B2": 0.605,
+    "B_meno_A": 0.0001,
+    "t_B": 0.04,
+    "B2_meno_A": 0.0062,
+    "t_B2": 1.54
+   },
+   "brier_o25": {
+    "A": 0.2416,
+    "B": 0.2428,
+    "B2": 0.249,
+    "B_meno_A": 0.0013,
+    "t_B": 0.71,
+    "B2_meno_A": 0.0074,
+    "t_B2": 2.75
+   },
+   "err_gol": {
+    "A": 1.4481,
+    "B": 1.4487,
+    "B2": 1.4695,
+    "B_meno_A": 0.0006,
+    "t_B": 0.07,
+    "B2_meno_A": 0.0215,
+    "t_B2": 1.73
+   },
+   "mercato": {
+    "partite": 157,
+    "brier_M": 0.6044,
+    "brier_A": 0.6308,
+    "brier_B": 0.6287,
+    "brier_B2": 0.6383
+   }
+  },
+  "A da Understat": {
+   "partite": 116,
+   "ll": {
+    "A": -3.0372,
+    "B": -3.0296,
+    "B2": -3.047,
+    "B_meno_A": 0.0076,
+    "t_B": 0.38,
+    "B2_meno_A": -0.0099,
+    "t_B2": -0.34
+   },
+   "brier": {
+    "A": 0.5802,
+    "B": 0.5848,
+    "B2": 0.5896,
+    "B_meno_A": 0.0046,
+    "t_B": 0.75,
+    "B2_meno_A": 0.0094,
+    "t_B2": 0.98
+   },
+   "brier_o25": {
+    "A": 0.2554,
+    "B": 0.2469,
+    "B2": 0.2539,
+    "B_meno_A": -0.0085,
+    "t_B": -1.7,
+    "B2_meno_A": -0.0015,
+    "t_B2": -0.22
+   },
+   "err_gol": {
+    "A": 1.5327,
+    "B": 1.4728,
+    "B2": 1.5013,
+    "B_meno_A": -0.0598,
+    "t_B": -2.52,
+    "B2_meno_A": -0.0314,
+    "t_B2": -1.02
+   },
+   "mercato": {
+    "partite": 30,
+    "brier_M": 0.6122,
+    "brier_A": 0.6537,
+    "brier_B": 0.6443,
+    "brier_B2": 0.6716
+   }
+  },
+  "A da FotMob": {
+   "partite": 512,
+   "ll": {
+    "A": -3.0885,
+    "B": -3.0962,
+    "B2": -3.1131,
+    "B_meno_A": -0.0077,
+    "t_B": -1.2,
+    "B2_meno_A": -0.0245,
+    "t_B2": -2.11
+   },
+   "brier": {
+    "A": 0.603,
+    "B": 0.6021,
+    "B2": 0.6084,
+    "B_meno_A": -0.0009,
+    "t_B": -0.4,
+    "B2_meno_A": 0.0054,
+    "t_B2": 1.23
+   },
+   "brier_o25": {
+    "A": 0.2384,
+    "B": 0.2419,
+    "B2": 0.2479,
+    "B_meno_A": 0.0035,
+    "t_B": 1.83,
+    "B2_meno_A": 0.0095,
+    "t_B2": 3.24
+   },
+   "err_gol": {
+    "A": 1.4289,
+    "B": 1.4432,
+    "B2": 1.4623,
+    "B_meno_A": 0.0143,
+    "t_B": 1.61,
+    "B2_meno_A": 0.0334,
+    "t_B2": 2.48
+   },
+   "mercato": {
+    "partite": 127,
+    "brier_M": 0.6026,
+    "brier_A": 0.6253,
+    "brier_B": 0.6251,
+    "brier_B2": 0.6305
+   }
+  }
+ }
+}
