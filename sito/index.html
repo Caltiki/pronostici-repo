@@ -5991,8 +5991,8 @@
     var pe = ba ? num(ba.P_Entrata) : null, pu = ba ? (num(ba.P_Chiusura) != null ? num(ba.P_Chiusura) : num(ba.P_Ultima)) : null;
     var mov = pe != null && pu != null && Math.abs(pu - pe) >= 0.5
       ? ' · <span class="' + (pu > pe ? "mv-su" : "mv-giu") + '">' + (pu > pe ? "\u25b2 " : "\u25bc ") + conSegno(pu - pe) +
-        " da quando è in lista (" + f0(pe) + "%" + (num(ba.P_Chiusura) != null ? " → chiusura " : " → ") + f0(pu) + "%)</span>"
-      : (pe != null ? ' · <span class="piccolo">fermo da quando è in lista</span>' : "");
+        " da quando è stato consigliato (" + f0(pe) + "%" + (num(ba.P_Chiusura) != null ? " → chiusura " : " → ") + f0(pu) + "%)</span>"
+      : (pe != null ? ' · <span class="piccolo">fermo da quando è stato consigliato</span>' : "");
     var mk = r._pm != null
       ? '<div class="sel">Mercato <b>' + f0(r._pm) + "%</b> sul " + esc(segno) + " · quota equa <b>" + f2(100 / r._pm) + "</b>" + mov + "</div>"
       : '<div class="sel" style="color:var(--tenue)">Prezzo di mercato non ancora uscito</div>';
