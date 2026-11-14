@@ -1310,6 +1310,9 @@
   /* LE QUOTE IN ROSSO (101): i numeri delle quote si staccano dal testo. */
   .q { color: #ff6b6b; font-weight: 700; font-variant-numeric: tabular-nums; }
   :root[data-theme="light"] .q { color: #c62828; }
+  .riga .numero strong.pct { font-weight: 800; color: var(--testo); }
+  .riga .numero strong.pct.verde { color: #4ade80; }
+  :root[data-theme="light"] .riga .numero strong.pct.verde { color: #15803d; }
   .q-n { font-weight: 700; color: var(--testo); font-variant-numeric: tabular-nums; }
   .q-n.verde { color: #4ade80; }
   :root[data-theme="light"] .q-n.verde { color: #15803d; }
@@ -3432,7 +3435,7 @@
       '<div class="sel">' + esc(etichettaSel(r)) + "</div>" +
       (prob != null ? '<div class="pbar"><i style="width:' + Math.min(100, prob) + '%"></i></div>' : "") +
       "</div>" +
-      '<div class="numero"><b>' + f2(equa) + "</b><span>" + f0(prob) + "%</span></div>" +
+      '<div class="numero"><b>' + f2(equa) + "</b><span>" + pctNumero(prob, margineStretto(r)) + "</span></div>" +
       "</summary>" +
       '<div class="dettaglio">' + det.join("") + "</div>" +
       "</details></div>";
@@ -6387,7 +6390,7 @@
       '<div class="sel">' + sel + (r._quota ? " · quota book " + qv(r._quota) : "") + "</div>" +
       '<div class="pbar"><i style="width:' + Math.min(100, prob * 100) + '%"></i></div>' +
       "</div>" +
-      '<div class="numero"><b>' + f2(equa) + "</b><span>" + f0(prob * 100) + "%</span></div>" +
+      '<div class="numero"><b>' + f2(equa) + "</b><span>" + pctNumero(prob * 100, margineStretto(r)) + "</span></div>" +
       "</summary>" +
       '<div class="dettaglio">' + det.join("") + "</div>" +
       "</details></div>";
@@ -7040,6 +7043,11 @@
   function qv(v) { return '<span class="q">' + f2(num(v)) + "</span>"; }
   function pv(v) { return '<span class="q">' + f0(num(v)) + "%</span>"; }
   // (171) le probabilita' 1X2 dell'Elo: colore neutro, verde dal 55% (favorita netta)
+  // (171) la percentuale sotto la quota equa: grassetto, verde se il prezzo
+  // e' affidabile (margine stretto), come le proposte
+  function pctNumero(v, verde) {
+    return '<strong class="pct' + (verde ? ' verde" title="Prezzo affidabile: margine stretto' : "") + '">' + f0(num(v)) + "%</strong>";
+  }
   function pvE(v) { var x = num(v); return '<span class="q-n' + (x != null && x >= 55 ? " verde" : "") + '">' + f0(x) + "%</span>"; }
   function mv(v) { return '<span class="q">' + f1(num(v)) + "%</span>"; }
   function nv(v) { return '<span class="q">' + f1(num(v)) + "</span>"; }
