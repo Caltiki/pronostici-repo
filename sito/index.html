@@ -1340,7 +1340,9 @@
   .sq-testa .reg-tit { margin: 0; }
   .sq-h { margin: 18px 0 4px; font-size: 1.05rem; }
   .sq-tab td.sq-lab, .sq-tab th.sq-lab { font-weight: 700; white-space: nowrap; text-align: left; }
-  .sq-tab td.sx, .sq-tab th.sx { text-align: left; white-space: nowrap; }
+  .sq-tab td.sq-sx, .sq-tab th.sq-sx { text-align: left; white-space: nowrap; }
+  .sq-tab span.piu { color: var(--buono); font-weight: 700; }
+  .sq-tab span.meno { color: var(--male); font-weight: 700; }
   .sq-testa { align-items: center; }
   .sq-serie { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0; }
   .lv-fermo { margin: 6px 0 12px; padding: 8px 12px; border-radius: 10px; font-weight: 700; color: #ff8a9a; background: rgba(255,84,112,.12); border: 1px solid rgba(255,84,112,.4); }
@@ -8293,7 +8295,7 @@
       messaggio("vuoto", "Questa squadra non c'è nel campionato.");
     var nome = sq.nome, h = "", tab = function (testa, righe, sx) {
       sx = sx || [];
-      var cella = function (i, tag) { return "<" + tag + (i === 0 ? ' class="sq-lab"' : sx.indexOf(i) >= 0 ? ' class="sx"' : "") + ">"; };
+      var cella = function (i, tag) { return "<" + tag + (i === 0 ? ' class="sq-lab"' : sx.indexOf(i) >= 0 ? ' class="sq-sx"' : "") + ">"; };
       return '<div class="tab-scorri"><table class="mercati xgt camp sq-tab"><thead><tr>' + testa.map(function (t, i) { return cella(i, "th") + esc(t) + "</th>"; }).join("") +
         "</tr></thead><tbody>" + righe.map(function (r) { return "<tr>" + r.map(function (c, i) { return cella(i, "td") + c + "</td>"; }).join("") + "</tr>"; }).join("") + "</tbody></table></div>";
     };
@@ -8410,9 +8412,15 @@
 
     // prossime
     var P = D.prossime && D.prossime[id];
-    if (P && P.partite && P.partite.length) h += sez("Prossime partite", tab(["Data", "", "Avversaria", "Elo avv."], P.partite.map(function (x) {
-      var e = D.squadre[x[1]] && D.squadre[x[1]].elo;
-      return [esc(String(x[0]).slice(8, 10) + "/" + String(x[0]).slice(5, 7)), x[2] === "c" ? "casa" : "fuori", esc(nomeSq(D, x[1])), e ? Math.round(e) : "–"];
+    if (P && P.partite && P.partite.length) h += sez("Prossime partite", tab(["Data", "", "Avversaria", "Elo"], P.partite.map(function (x) {
+      // (171) l'Elo della squadra accanto a quello dell'avversaria, con la
+      // differenza fra parentesi (come nel resto del sito)
+      var e = D.squadre[x[1]] && D.squadre[x[1]].elo, mio = sq.elo, elo = "–";
+      if (e && mio) {
+        var d = Math.round(mio) - Math.round(e);
+        elo = Math.round(mio) + "–" + Math.round(e) + ' <span class="' + (d > 0 ? "piu" : d < 0 ? "meno" : "") + '">(' + (d > 0 ? "+" : d < 0 ? "−" : "") + Math.abs(d) + ")</span>";
+      } else if (e) elo = "avv. " + Math.round(e);
+      return [esc(String(x[0]).slice(8, 10) + "/" + String(x[0]).slice(5, 7)), x[2] === "c" ? "casa" : "fuori", esc(nomeSq(D, x[1])), elo];
     }), [1, 2]) + (P.elo_medio ? notaPiccola("Elo medio delle prossime avversarie: " + P.elo_medio + (sq.elo ? " (la squadra: " + Math.round(sq.elo) + ")" : "") + ".") : ""));
 
     h += '<div id="sq-assenti"></div>';
