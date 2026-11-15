@@ -294,6 +294,7 @@ ID_API,Data,Ora,Lega,Casa,Ospite,Gol Casa,Gol Ospite,xG Casa,xG Ospite,Tiri Casa
 1530045,2026-11-14,11:00,Russia Supreme Division Women,Spartak Moskva W,CSKA Moskva W,3,1,,,,,,,,,,,,,,,no,2026-11-14 16:07
 1562822,2026-11-14,11:00,Czech-Republic 3. liga - CFL B,Chrudim,Jablonec II,0,2,,,,,,,,,,,,,,,no,2026-11-14 16:07
 1565154,2026-11-14,11:00,Czech-Republic 1. Liga U19,Mladá Boleslav U19,Viktoria Plzeň U19,1,1,,,,,,,,,,,,,,,no,2026-11-14 16:07
+1581974,2026-11-14,11:00,Ukraine Persha Liga,SK Poltava,Ahrobiznes Volochysk,1,4,,,,,,,,,,,,,,,no,2026-11-15 15:07
 1591377,2026-11-14,11:00,Turkey 2. Lig,68 Aksaray Belediyespor,Hatayspor,4,1,,,,,,,,,,,,,,,no,2026-11-14 16:07
 1591378,2026-11-14,11:00,Turkey 2. Lig,Ankaraspor,Aliağa FAŞ,1,1,,,,,,,,,,,,,,,no,2026-11-14 16:07
 1591380,2026-11-14,11:00,Turkey 2. Lig,İnegöl Kafkas Gençlik,Çorluspor 1947,0,0,,,,,,,,,,,,,,,no,2026-11-14 16:07
@@ -679,6 +680,8 @@ ID_API,Data,Ora,Lega,Casa,Ospite,Gol Casa,Gol Ospite,xG Casa,xG Ospite,Tiri Casa
 1520974,2026-11-14,20:30,Brazil Serie B,Fortaleza EC,Vila Nova,1,0,0.53,0.45,11,13,4,5,42,58,3,7,3,4,0,0,si,2026-11-15 11:07
 1520975,2026-11-14,20:30,Brazil Serie B,Juventude,Botafogo SP,2,0,0.82,0.49,20,9,4,2,51,49,7,1,2,3,0,0,si,2026-11-15 13:07
 1520979,2026-11-14,20:30,Brazil Serie B,Sport Recife,Goias,3,0,2.04,1.93,13,21,7,3,43,57,4,9,3,3,1,0,si,2026-11-15 13:07
+1573644,2026-11-14,20:30,Spain Primera División Femenina,Real Madrid W,FC Levante Badalona W,3,3,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1635810,2026-11-14,20:30,World UEFA U19 Championship - Qualification,Scotland U19,Kosovo U19,1,0,,,,,,,,,,,,,,,no,2026-11-15 15:07
 1649059,2026-11-14,20:30,Uruguay Primera División,Deportivo Maldonado,Cerro,0,1,,,8,11,4,5,67,33,4,1,3,3,1,0,si,2026-11-15 13:07
 1528974,2026-11-14,20:45,World UEFA Nations League,Portugal,Denmark,1,4,1.28,2.29,15,17,8,6,52,48,6,7,2,0,0,0,si,2026-11-15 13:07
 1528975,2026-11-14,20:45,World UEFA Nations League,Northern Ireland,Ukraine,1,0,1.68,0.81,15,7,5,2,38,62,4,2,1,0,0,0,si,2026-11-15 13:07
@@ -686,17 +689,79 @@ ID_API,Data,Ora,Lega,Casa,Ospite,Gol Casa,Gol Ospite,xG Casa,xG Ospite,Tiri Casa
 1528977,2026-11-14,20:45,World UEFA Nations League,Romania,Poland,2,1,1.06,1.62,11,15,4,3,44,56,4,7,5,2,0,0,si,2026-11-15 13:07
 1528978,2026-11-14,20:45,World UEFA Nations League,Sweden,Bosnia & Herzegovina,3,2,2.32,1.16,13,16,7,7,42,58,3,7,1,0,0,0,si,2026-11-15 13:07
 1570021,2026-11-14,21:00,Spain Segunda División,Oviedo,Girona,1,2,0.96,2.16,17,17,5,5,50,50,6,6,2,2,0,0,si,2026-11-15 13:07
+1571211,2026-11-14,21:00,Spain Primera División RFEF - Group 2,Real Jaén,Zaragoza,0,4,,,,,,,,,,,,,,,no,2026-11-15 15:07
 1580954,2026-11-14,21:00,France Feminine Division 1,Marseille W,Paris Saint Germain W,0,2,0.5,1.83,6,11,2,4,47,53,4,11,3,1,0,0,si,2026-11-15 13:07
+1640401,2026-11-14,21:00,Brazil Copa Fares Lopes,Icasa,Quixada,1,0,,,,,,,,,,,,,,,no,2026-11-15 15:07
 1549863,2026-11-14,21:30,Colombia Primera A,Águilas Doradas,Independiente Medellin,0,1,1.46,0.94,11,15,3,7,68,32,5,2,1,2,,,si,2026-11-15 13:07
 1549865,2026-11-14,21:30,Colombia Primera A,Bucaramanga,Fortaleza FC,1,0,1.33,0.2,17,9,7,1,55,45,4,3,1,4,,,si,2026-11-15 13:07
 1549866,2026-11-14,21:30,Colombia Primera A,Cucuta,Jaguares,2,0,1.67,0.43,17,12,10,4,43,57,10,6,3,2,,,si,2026-11-15 13:07
 1549867,2026-11-14,21:30,Colombia Primera A,Deportivo Cali,Deportes Tolima,2,2,2.17,0.57,23,14,8,3,60,40,6,3,5,4,0,1,si,2026-11-15 13:07
 1549871,2026-11-14,21:30,Colombia Primera A,Millonarios,Alianza Valledupar,2,0,2.18,0.34,15,10,6,1,60,40,6,1,4,2,,,si,2026-11-15 13:07
 1549872,2026-11-14,21:30,Colombia Primera A,Deportivo Pereira,America de Cali,0,2,0.33,1.65,9,14,3,6,37,63,9,4,4,0,1,0,si,2026-11-15 13:07
+1648332,2026-11-14,21:30,Peru Segunda División,Deportiva Agropecuaria,Carlos A. Mannucci,0,0,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1559708,2026-11-14,22:00,Guatemala Liga Nacional,Xelajú,Guastatoya,4,0,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1583810,2026-11-14,22:00,Panama Liga Panameña de Fútbol,Deportivo Universitario,Herrera,1,2,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1583811,2026-11-14,22:00,Panama Liga Panameña de Fútbol,San Francisco FC,Veraguas,1,1,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1583812,2026-11-14,22:00,Panama Liga Panameña de Fútbol,Union Cocle,Independiente de La Chorrera,0,3,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1600696,2026-11-14,22:00,Chile Segunda División,Colina,Provincial Ovalle,2,1,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1600726,2026-11-14,22:00,Chile Segunda División,Concón National,Santiago City,1,3,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1600727,2026-11-14,22:00,Chile Segunda División,Provincial Osorno,Municipal Salamanca,0,0,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1610592,2026-11-14,22:00,Chile Segunda División,Real San Joaquín,General Velásquez,0,4,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1648401,2026-11-14,22:00,Argentina Primera Nacional,Colon Santa Fe,Midland,1,0,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1648798,2026-11-14,22:00,Argentina Primera B Metropolitana,Comunicaciones,Arsenal Sarandi,2,3,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1649582,2026-11-14,22:00,Paraguay Copa Paraguay,Deportivo Recoleta,Libertad Asuncion,1,1,,,,,,,,,,,,,,,no,2026-11-15 15:07
 1492455,2026-11-14,22:30,Brazil Serie A,Mirassol,Atletico-MG,0,0,0.78,1.2,11,16,2,1,43,57,4,3,3,1,1,0,si,2026-11-15 13:07
+1586139,2026-11-14,22:30,Chile Copa De La Liga,Coquimbo Unido,O'Higgins,3,0,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1636035,2026-11-14,22:30,Mexico Primera Premier,Zacatepec 1948,Montañeses,0,2,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1636036,2026-11-14,22:30,Mexico Primera Premier,Cordobés,Pioneros de Cancún,1,0,,,,,,,,,,,,,,,no,2026-11-15 15:07
 1644693,2026-11-14,22:30,World CONCACAF Nations League,Haiti,USA,0,6,0.8,3.97,4,16,2,10,29,71,1,6,1,2,0,0,si,2026-11-15 13:07
+1600725,2026-11-14,23:00,Chile Segunda División,Colchagua,Linares Unido,2,0,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1636032,2026-11-14,23:00,Mexico Primera Premier,Tritons Vallarta,Tapachula,2,1,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1642329,2026-11-14,23:00,Argentina Copa Argentina,Banfield,Boca Juniors,0,3,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1648800,2026-11-14,23:00,Argentina Primera B Metropolitana,Real Pilar,Talleres Remedios,2,1,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1649145,2026-11-14,23:30,Uruguay Segunda División,Paysandu,Uruguay Montevideo,1,2,,,,,,,,,,,,,,,no,2026-11-15 15:07
 1550951,2026-11-15,00:00,Mexico Liga MX,Club Queretaro,Monterrey,0,1,0.6,1.74,12,16,2,5,28,72,4,6,4,2,2,0,si,2026-11-15 13:07
+1559704,2026-11-15,00:00,Guatemala Liga Nacional,Comunicaciones,Cobán Imperial,2,0,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1648405,2026-11-15,00:00,Argentina Primera Nacional,Gimnasia Jujuy,Almirante Brown,2,0,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1649467,2026-11-15,00:00,Mexico Liga MX Femenil,Tigres UANL W,Pumas UNAM W,0,5,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1649527,2026-11-15,00:00,USA USL Championship,Charleston Battery,Louisville City,0,2,,,,,,,,,,,,,,,no,2026-11-15 15:07
 1492312,2026-11-15,00:30,Brazil Serie A,Chapecoense-sc,Vasco DA Gama,0,2,0.49,2.27,13,16,2,5,39,61,6,4,3,1,,,si,2026-11-15 13:07
+1639053,2026-11-15,00:30,New-Zealand National League - National,Cashmere Technical,Wellington Olympic,3,0,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1600661,2026-11-15,01:00,El-Salvador Primera Division,Inter,Cacahuatique,2,0,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1639052,2026-11-15,01:00,New-Zealand National League - National,Napier City Rovers,Ferrymead Bays,2,2,,,,,,,,,,,,,,,no,2026-11-15 15:07
 1644691,2026-11-15,02:00,World CONCACAF Nations League,Jamaica,Mexico,3,2,1.18,2.24,7,17,3,7,31,69,4,3,0,0,0,0,si,2026-11-15 13:07
+1600660,2026-11-15,03:00,El-Salvador Primera Division,Isidro Metapán,Firpo,3,1,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1600662,2026-11-15,03:00,El-Salvador Primera Division,Alianza,FAS,1,1,,,,,,,,,,,,,,,no,2026-11-15 15:07
 1649519,2026-11-15,04:00,Mexico Liga de Expansión MX,CA La Paz,Piratas,1,1,2.54,0.41,20,7,8,3,62,38,7,3,3,5,0,0,si,2026-11-15 13:07
+1649468,2026-11-15,04:06,Mexico Liga MX Femenil,Guadalajara W,Juárez W,1,1,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1555804,2026-11-15,05:00,Japan J3 League,Kagoshima United,Gainare Tottori,0,3,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1606761,2026-11-15,05:00,Japan J2 League,Consadole Sapporo,Sagan Tosu,1,2,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1606763,2026-11-15,05:00,Japan J2 League,Vanraure Hachinohe,Iwaki,2,2,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1640366,2026-11-15,05:00,Australia Australian Championship,Broadmeadow Magic,Avondale,2,1,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1640367,2026-11-15,05:00,Australia Australian Championship,Sutherland Sharks,Canberra FC,3,0,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1606762,2026-11-15,05:05,Japan J2 League,Vegalta Sendai,Blaublitz Akita,4,0,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1555805,2026-11-15,06:00,Japan J3 League,Kamatamare Sanuki,Renofa Yamaguchi,1,1,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1555806,2026-11-15,06:00,Japan J3 League,Kanazawa,Roasso Kumamoto,3,2,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1555807,2026-11-15,06:00,Japan J3 League,Parceiro Nagano,Ehime FC,1,0,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1555810,2026-11-15,06:00,Japan J3 League,Tochigi SC,Nara Club,1,0,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1606764,2026-11-15,06:00,Japan J2 League,Imabari,Jubilo Iwata,0,2,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1606765,2026-11-15,06:00,Japan J2 League,Kataller Toyama,Tokushima Vortis,2,3,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1648034,2026-11-15,06:00,Japan J-League Cup,Machida Zelvia,Vissel Kobe,1,1,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1648035,2026-11-15,07:00,Japan J-League Cup,Cerezo Osaka,Urawa,1,1,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1648036,2026-11-15,07:00,Japan J-League Cup,Kashima,Yokohama F. Marinos,3,2,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1555809,2026-11-15,08:00,Japan J3 League,FC Ryukyu,Kochi United,1,0,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1644248,2026-11-15,08:00,Hong-Kong League Cup,Eastern District,Eastern,1,0,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1649562,2026-11-15,08:00,China League One,Guizhou Zhucheng,Heilongjiang Lava Spring,3,1,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1640881,2026-11-15,09:00,South-Africa Diski Challenge,Sekhukhune United U23,Stellenbosch U23,1,2,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1648037,2026-11-15,09:00,Japan J-League Cup,Kashiwa Reysol,Kawasaki Frontale,5,4,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1555808,2026-11-15,10:00,Japan J3 League,Biwako Shiga,Osaka,1,1,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1562699,2026-11-15,10:15,Czech-Republic 3. liga - CFL A,Admira Praha,Slavia III,3,1,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1562701,2026-11-15,10:15,Czech-Republic 3. liga - CFL A,Bohemians 1905 II,Králův Dvůr,1,1,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1562826,2026-11-15,10:15,Czech-Republic 3. liga - CFL B,Teplice II,Hradec Králové II,1,0,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1578007,2026-11-15,10:15,Czech-Republic 3. liga - MSFL,Havířov,Blansko,2,1,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1561203,2026-11-15,10:30,Slovakia 2. liga,Slovan Bratislava II,Malženice,2,0,,,,,,,,,,,,,,,no,2026-11-15 15:07
+1561204,2026-11-15,10:30,Slovakia 2. liga,Žilina II,Inter Bratislava,0,1,,,,,,,,,,,,,,,no,2026-11-15 15:07
 1577594,2026-11-15,11:00,Russia First League,Chelyabinsk,Veles,4,2,,,14,13,7,8,48,52,4,1,1,2,0,0,si,2026-11-15 14:07
+1576530,2026-11-15,12:00,Portugal Segunda Liga,Amarante,Felgueiras 1932,1,1,,,18,12,6,5,53,47,7,2,5,3,0,0,si,2026-11-15 15:07
+1576537,2026-11-15,12:00,Portugal Segunda Liga,Tondela,Farense,2,0,,,7,8,5,0,50,50,1,7,5,3,0,0,si,2026-11-15 15:07
+1577600,2026-11-15,12:30,Russia First League,FC UFA,Spartak Kostroma,3,3,,,5,8,3,6,45,55,0,5,5,7,0,0,si,2026-11-15 15:07
