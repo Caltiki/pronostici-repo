@@ -954,8 +954,7 @@
   "Sel": "Gol",
   "Prob": 60.8,
   "Equa": 1.65,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-22",
@@ -1040,7 +1039,8 @@
   "Sel": "Gol",
   "Prob": 60.0,
   "Equa": 1.67,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-22",
@@ -1061,7 +1061,8 @@
   "Sel": "2",
   "Prob": 60.0,
   "Equa": 1.67,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-22",
@@ -2514,6 +2515,27 @@
  },
  {
   "Data": "2026-11-22",
+  "Ora": "17:30",
+  "Campionato": "England: Premier League",
+  "Partita": "Liverpool - Manchester United",
+  "Casa": "Liverpool",
+  "Ospite": "Manchester United",
+  "Linea_OU": 3.0,
+  "Gol_attesi": 3.16,
+  "Margine": 3.9,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "OddsAPI",
+  "Gruppo": "Gol NoGol",
+  "Mercato": "BTTS",
+  "Sel": "NoGol",
+  "Prob": 40.0,
+  "Equa": 2.5,
+  "Rif_Book": "Pinnacle"
+ },
+ {
+  "Data": "2026-11-22",
   "Ora": "15:30",
   "Campionato": "Germany: Bundesliga",
   "Partita": "Augsburg - FSV Mainz 05",
@@ -2615,27 +2637,6 @@
   "Sel": "1X + NoGol",
   "Prob": 39.4,
   "Equa": 2.54,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-11-22",
-  "Ora": "20:45",
-  "Campionato": "Italy: Serie A",
-  "Partita": "Atalanta BC - Inter Milan",
-  "Casa": "Atalanta BC",
-  "Ospite": "Inter Milan",
-  "Linea_OU": 3.25,
-  "Gol_attesi": 3.33,
-  "Margine": 4.2,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "NoGol",
-  "Prob": 39.2,
-  "Equa": 2.55,
   "Rif_Book": "Pinnacle"
  },
  {
@@ -3161,6 +3162,27 @@
   "Sel": "X",
   "Prob": 23.7,
   "Equa": 4.22,
+  "Rif_Book": "Pinnacle"
+ },
+ {
+  "Data": "2026-11-22",
+  "Ora": "20:45",
+  "Campionato": "Italy: Serie A",
+  "Partita": "Atalanta BC - Inter Milan",
+  "Casa": "Atalanta BC",
+  "Ospite": "Inter Milan",
+  "Linea_OU": 3.25,
+  "Gol_attesi": 3.33,
+  "Margine": 4.2,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "OddsAPI",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 20.6,
+  "Equa": 4.85,
   "Rif_Book": "Pinnacle"
  },
  {
