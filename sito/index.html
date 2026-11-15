@@ -8519,16 +8519,30 @@
     ["giocatori", "Giocatori"], ["xpts", "Punti attesi"], ["forma", "Forma"], ["ptft", "1° tempo"], ["angoli", "Angoli e cartellini"],
     ["serie", "Serie"], ["prossime", "Calendario"], ["quote", "Contro le quote"], ["assenti", "Assenti"], ["xg", "xG →"]];
   var CAMP_VISTE = [["t", "Totale"], ["c", "In casa"], ["f", "Fuori"]];
+  // (173) CAMPIONATI SENZA PAESE NEL NOME: a stagione finita il nome viene
+  // dallo storico, che non ha il paese ("Serie C" era quella brasiliana).
+  // Qui il nome giusto per quelli noti; campionati.py lo scrive gia' cosi'
+  // dalla prossima notte.
+  var NOMI_LEGA_FISSI = { "75": "Brazil Serie C", "76": "Brazil Serie D" };
+  function nomeLega(id, nome) { return NOMI_LEGA_FISSI[String(id)] || nome; }
   function campIndice() {
     if (!CAMP.idx) {
-      CAMP.idx = leggiUrl(BASE + "campionati_index.json?t=" + Math.floor(Date.now() / 600000), "campionati_index");
+      CAMP.idx = leggiUrl(BASE + "campionati_index.json?t=" + Math.floor(Date.now() / 600000), "campionati_index")
+        .then(function (ix) {
+          if (ix && Array.isArray(ix.campionati)) {
+            ix.campionati.forEach(function (l) { l.nome = nomeLega(l.id, l.nome); });
+            ix.campionati.sort(function (a, b) { return String(a.nome).localeCompare(String(b.nome)); });
+          }
+          return ix;
+        });
       CAMP.idx.catch(function () { CAMP.idx = null; });
     }
     return CAMP.idx;
   }
   function campDati(L) {
     if (!CAMP.dati[L]) {
-      CAMP.dati[L] = leggiUrl(BASE + "campionato_" + L + ".json?t=" + Math.floor(Date.now() / 600000), "campionato_" + L);
+      CAMP.dati[L] = leggiUrl(BASE + "campionato_" + L + ".json?t=" + Math.floor(Date.now() / 600000), "campionato_" + L)
+        .then(function (D) { if (D && D.nome) D.nome = nomeLega(D.id != null ? D.id : L, D.nome); return D; });
       CAMP.dati[L].catch(function () { delete CAMP.dati[L]; });
     }
     return CAMP.dati[L];
