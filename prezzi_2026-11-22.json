@@ -271,7 +271,8 @@
   "Sel": "Over",
   "Prob": 79.9,
   "Equa": 1.25,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-22",
@@ -465,8 +466,7 @@
   "Sel": "Over",
   "Prob": 73.8,
   "Equa": 1.36,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-22",
@@ -551,8 +551,7 @@
   "Sel": "1",
   "Prob": 71.8,
   "Equa": 1.39,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-22",
@@ -787,8 +786,7 @@
   "Sel": "2",
   "Prob": 64.2,
   "Equa": 1.56,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-22",
@@ -830,7 +828,8 @@
   "Sel": "1 + Over 1.5",
   "Prob": 61.8,
   "Equa": 1.62,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-22",
@@ -3128,27 +3127,6 @@
   "Data": "2026-11-22",
   "Ora": "15:00",
   "Campionato": "Italy: Serie A",
-  "Partita": "Sassuolo - Genoa",
-  "Casa": "Sassuolo",
-  "Ospite": "Genoa",
-  "Linea_OU": 2.5,
-  "Gol_attesi": 2.63,
-  "Margine": 3.5,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "Under Over",
-  "Mercato": "OU 1.5",
-  "Sel": "Under",
-  "Prob": 26.2,
-  "Equa": 3.81,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-11-22",
-  "Ora": "15:00",
-  "Campionato": "Italy: Serie A",
   "Partita": "Bologna - Udinese",
   "Casa": "Bologna",
   "Ospite": "Udinese",
@@ -3189,27 +3167,6 @@
  },
  {
   "Data": "2026-11-22",
-  "Ora": "15:00",
-  "Campionato": "England: Premier League",
-  "Partita": "Hull City - Brighton and Hove Albion",
-  "Casa": "Hull City",
-  "Ospite": "Brighton and Hove Albion",
-  "Linea_OU": 2.75,
-  "Gol_attesi": 2.99,
-  "Margine": 4.0,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 20.8,
-  "Equa": 4.81,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-11-22",
   "Ora": "20:45",
   "Campionato": "Italy: Serie A",
   "Partita": "Atalanta BC - Inter Milan",
@@ -3239,6 +3196,27 @@
   "Linea_OU": 2.75,
   "Gol_attesi": 2.99,
   "Margine": 3.7,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "OddsAPI",
+  "Gruppo": "Under Over",
+  "Mercato": "OU 1.5",
+  "Sel": "Under",
+  "Prob": 20.1,
+  "Equa": 4.99,
+  "Rif_Book": "Pinnacle"
+ },
+ {
+  "Data": "2026-11-22",
+  "Ora": "15:00",
+  "Campionato": "England: Premier League",
+  "Partita": "Hull City - Brighton and Hove Albion",
+  "Casa": "Hull City",
+  "Ospite": "Brighton and Hove Albion",
+  "Linea_OU": 2.75,
+  "Gol_attesi": 2.99,
+  "Margine": 4.0,
   "Movimento": null,
   "Principale": "si",
   "Schedina": "si",
@@ -3311,27 +3289,6 @@
   "Sel": "X",
   "Prob": 17.5,
   "Equa": 5.71,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-11-22",
-  "Ora": "12:30",
-  "Campionato": "Italy: Serie A",
-  "Partita": "Juventus - Venezia",
-  "Casa": "Juventus",
-  "Ospite": "Venezia",
-  "Linea_OU": 3.0,
-  "Gol_attesi": 3.16,
-  "Margine": 3.9,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 17.2,
-  "Equa": 5.81,
   "Rif_Book": "Pinnacle"
  }
 ]

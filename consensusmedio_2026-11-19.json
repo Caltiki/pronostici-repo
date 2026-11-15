@@ -47,29 +47,11 @@
   "P2": 31.8,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 32.8,
+  "MP1": 32.7,
   "MPX": 27.3,
-  "MP2": 39.9,
-  "Scarto": 5.3,
+  "MP2": 40.1,
+  "Scarto": 5.5,
   "Segno_Mercato": "2"
- },
- {
-  "Data": "2026-11-19",
-  "Ora": "00:30",
-  "Lega": "Brazil - Serie A",
-  "Casa": "Flamengo",
-  "Ospite": "Athletico PR",
-  "Segno": "1",
-  "P1": 71.0,
-  "PX": 19.0,
-  "P2": 10.0,
-  "Fonti": 1,
-  "Elenco": "footymetrics",
-  "MP1": 77.6,
-  "MPX": 14.9,
-  "MP2": 7.5,
-  "Scarto": -6.6,
-  "Segno_Mercato": "1"
  },
  {
   "Data": "2026-11-19",
@@ -96,10 +78,28 @@
   "P2": 8.0,
   "Fonti": 1,
   "Elenco": "ratingbet",
-  "MP1": 77.6,
+  "MP1": 77.4,
   "MPX": 14.9,
-  "MP2": 7.5,
-  "Scarto": -0.6,
+  "MP2": 7.7,
+  "Scarto": -0.4,
+  "Segno_Mercato": "1"
+ },
+ {
+  "Data": "2026-11-19",
+  "Ora": "00:30",
+  "Lega": "Brazil - Serie A",
+  "Casa": "Flamengo",
+  "Ospite": "Athletico PR",
+  "Segno": "1",
+  "P1": 71.0,
+  "PX": 19.0,
+  "P2": 10.0,
+  "Fonti": 1,
+  "Elenco": "footymetrics",
+  "MP1": 77.4,
+  "MPX": 14.9,
+  "MP2": 7.7,
+  "Scarto": -6.4,
   "Segno_Mercato": "1"
  },
  {
@@ -181,24 +181,11 @@
   "P2": 9.0,
   "Fonti": 2,
   "Elenco": "footymetrics, ratingbet",
-  "MP1": 82.5,
-  "MPX": 11.2,
+  "MP1": 82.2,
+  "MPX": 11.5,
   "MP2": 6.3,
-  "Scarto": -6.0,
+  "Scarto": -5.7,
   "Segno_Mercato": "1"
- },
- {
-  "Data": "2026-11-19",
-  "Ora": "14:00",
-  "Lega": "Qatar - Stars League",
-  "Casa": "Al-Ahli Doha",
-  "Ospite": "Al Shamal SC",
-  "Segno": "2",
-  "P1": 36.6,
-  "PX": 24.8,
-  "P2": 38.6,
-  "Fonti": 1,
-  "Elenco": "footymetrics"
  },
  {
   "Data": "2026-11-19",
@@ -211,7 +198,12 @@
   "PX": 32.7,
   "P2": 46.5,
   "Fonti": 1,
-  "Elenco": "footymetrics"
+  "Elenco": "footymetrics",
+  "MP1": 34.9,
+  "MPX": 33.5,
+  "MP2": 31.6,
+  "Scarto": 14.9,
+  "Segno_Mercato": "1"
  },
  {
   "Data": "2026-11-19",
@@ -225,10 +217,10 @@
   "P2": 7.5,
   "Fonti": 2,
   "Elenco": "footymetrics, ratingbet",
-  "MP1": 81.7,
+  "MP1": 81.9,
   "MPX": 11.8,
-  "MP2": 6.5,
-  "Scarto": -3.7,
+  "MP2": 6.3,
+  "Scarto": -3.9,
   "Segno_Mercato": "1"
  },
  {
@@ -246,6 +238,24 @@
  },
  {
   "Data": "2026-11-19",
+  "Ora": "16:30",
+  "Lega": "Qatar - Stars League",
+  "Casa": "Al-Ahli Doha",
+  "Ospite": "Al Shamal SC",
+  "Segno": "2",
+  "P1": 36.6,
+  "PX": 24.8,
+  "P2": 38.6,
+  "Fonti": 1,
+  "Elenco": "footymetrics",
+  "MP1": 31.1,
+  "MPX": 24.9,
+  "MP2": 44.0,
+  "Scarto": -5.4,
+  "Segno_Mercato": "2"
+ },
+ {
+  "Data": "2026-11-19",
   "Ora": "18:45",
   "Lega": "Europe - UEFA Women's Champions League",
   "Casa": "Austria Wien W",
@@ -255,7 +265,12 @@
   "PX": 23.0,
   "P2": 52.0,
   "Fonti": 1,
-  "Elenco": "footymetrics"
+  "Elenco": "footymetrics",
+  "MP1": 6.8,
+  "MPX": 13.4,
+  "MP2": 79.8,
+  "Scarto": -27.8,
+  "Segno_Mercato": "2"
  },
  {
   "Data": "2026-11-19",
@@ -268,7 +283,12 @@
   "PX": 24.0,
   "P2": 34.0,
   "Fonti": 1,
-  "Elenco": "footymetrics"
+  "Elenco": "footymetrics",
+  "MP1": 49.2,
+  "MPX": 25.2,
+  "MP2": 25.6,
+  "Scarto": -7.2,
+  "Segno_Mercato": "1"
  },
  {
   "Data": "2026-11-19",
@@ -330,7 +350,12 @@
   "PX": 22.0,
   "P2": 41.0,
   "Fonti": 1,
-  "Elenco": "footymetrics"
+  "Elenco": "footymetrics",
+  "MP1": 33.4,
+  "MPX": 25.7,
+  "MP2": 40.9,
+  "Scarto": 0.1,
+  "Segno_Mercato": "2"
  },
  {
   "Data": "2026-11-19",
@@ -343,7 +368,12 @@
   "PX": 12.1,
   "P2": 7.1,
   "Fonti": 1,
-  "Elenco": "footymetrics"
+  "Elenco": "footymetrics",
+  "MP1": 97.4,
+  "MPX": 1.8,
+  "MP2": 0.8,
+  "Scarto": -16.6,
+  "Segno_Mercato": "1"
  },
  {
   "Data": "2026-11-19",
@@ -356,7 +386,12 @@
   "PX": 23.0,
   "P2": 30.0,
   "Fonti": 1,
-  "Elenco": "footymetrics"
+  "Elenco": "footymetrics",
+  "MP1": 49.2,
+  "MPX": 24.4,
+  "MP2": 26.4,
+  "Scarto": -2.2,
+  "Segno_Mercato": "1"
  },
  {
   "Data": "2026-11-19",
@@ -388,10 +423,10 @@
   "P2": 37.0,
   "Fonti": 1,
   "Elenco": "ratingbet",
-  "MP1": 34.0,
-  "MPX": 28.0,
-  "MP2": 38.0,
-  "Scarto": -1.0,
+  "MP1": 34.2,
+  "MPX": 27.4,
+  "MP2": 38.4,
+  "Scarto": -1.4,
   "Segno_Mercato": "2"
  },
  {
@@ -406,10 +441,10 @@
   "P2": 32.0,
   "Fonti": 1,
   "Elenco": "footymetrics",
-  "MP1": 34.0,
-  "MPX": 28.0,
-  "MP2": 38.0,
-  "Scarto": 9.0,
+  "MP1": 34.2,
+  "MPX": 27.4,
+  "MP2": 38.4,
+  "Scarto": 8.8,
   "Segno_Mercato": "2"
  }
 ]
