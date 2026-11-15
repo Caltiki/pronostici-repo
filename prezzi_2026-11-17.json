@@ -314,8 +314,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "2 + Over 1.5",
   "Prob": 78.7,
-  "Equa": 1.27,
-  "InSchedina": "si"
+  "Equa": 1.27
  },
  {
   "Data": "2026-11-17",
@@ -463,7 +462,8 @@
   "Mercato": "BTTS",
   "Sel": "NoGol",
   "Prob": 73.6,
-  "Equa": 1.36
+  "Equa": 1.36,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-17",
@@ -5193,6 +5193,26 @@
   "Equa": 2.88,
   "Mov_Sel": 0.0,
   "ID_API": 1545891
+ },
+ {
+  "Data": "2026-11-17",
+  "Ora": "21:00",
+  "Campionato": "Africa Africa Cup of Nations Qualifications",
+  "Partita": "Niger - Morocco",
+  "Casa": "Niger",
+  "Ospite": "Morocco",
+  "Linea_OU": "",
+  "Gol_attesi": 3.43,
+  "Margine": 3.8,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "Gol NoGol",
+  "Mercato": "BTTS",
+  "Sel": "Gol",
+  "Prob": 26.4,
+  "Equa": 3.79
  },
  {
   "Data": "2026-11-17",
