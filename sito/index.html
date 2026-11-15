@@ -1290,9 +1290,9 @@
   .riga .alto .pill { font-size: .58rem; padding: 2px 6px; }
   .mov-q b.giu { color: #4ade80; } .mov-q b.su { color: #ff5470; } .mov-q b.fermo { color: var(--tenue); }
   :root[data-theme="light"] .mov-q b.giu { color: #15803d; } :root[data-theme="light"] .mov-q b.su { color: #d6283f; }
-  .mv-giu { color: #e8873a; font-weight: 700; white-space: nowrap; }
+  .mv-giu { color: #ff5470; font-weight: 700; white-space: nowrap; }
   :root[data-theme="light"] .mv-su { color: #157a3f; }
-  :root[data-theme="light"] .mv-giu { color: #b35a12; }
+  :root[data-theme="light"] .mv-giu { color: #d6283f; }
   /* Il blocco Pinnacle nel dettaglio delle partite delle altre sezioni. */
   .pin-info { border-bottom: 1px dashed var(--bordo); margin-bottom: 8px; padding-bottom: 4px; }
   .pin-info:empty { display: none; }
@@ -5880,7 +5880,8 @@
         (r._form && r._form.assenti && r._form.assenti.length ? '<span class="pill largo">' + r._form.assenti.length + " assenti</span>" : "") + "</div>" +
       '<div class="partita">' + partitaHtmlId(r.Casa, r.Ospite, r.ID_Casa, r.ID_Ospite, campiRiga(r)) + "</div>" +
       quote +
-      (r._diff && diffHtml(r._diff) ? '<div class="sel">' + movimentoHtml(r._diff, "") + "</div>" : "") +
+      // (173) il movimento sta nella griglia prima/ora delle quote, come
+      // nelle altre pagine; i punti di probabilita' restano nel dettaglio
       tripla("senza margine", p[0], p[1], p[2]) +
       "</div>" +
       (mosse || pt == null
@@ -10146,7 +10147,11 @@
       if (d >= 1) { c = "giu"; f = d >= 3 ? "\u2193\u2193" : "\u2193"; }
       else if (d <= -1) { c = "su"; f = d <= -3 ? "\u2191\u2191" : "\u2191"; }
       else { c = "fermo"; f = "="; }
-      pz.push({ seg: seg[i], c: c, f: f, q0: b.q && b.q[i] != null ? b.q[i] : null, q1: q[i] });
+      // (173) se la lettura di base ha solo le probabilita' (mattino del
+      // piano PRO), la quota di allora si ricava: stessa quota di adesso
+      // scalata del rapporto fra le probabilita' (stesso margine)
+      var q0 = b.q && b.q[i] != null ? b.q[i] : (q[i] != null && b.p[i] > 0 ? Math.round(100 * q[i] * ora[i] / b.p[i]) / 100 : null);
+      pz.push({ seg: seg[i], c: c, f: f, q0: q0, q1: q[i] });
       tit.push(seg[i] + " " + (b.q && b.q[i] != null && q[i] != null ? f2(b.q[i]) + "\u2192" + f2(q[i]) + " " : "") +
         "(" + f0(b.p[i]) + "\u2192" + f0(ora[i]) + "%)");
     }
@@ -10192,7 +10197,10 @@
         et.insertAdjacentHTML("beforeend", '<span class="mov-in">' + testo + "</span>");
         et.title = (et.title ? et.title + "\n" : "") + x.titolo;
       } else if (qs.length >= 3) {
-        // pagina Pinnacle: la freccia subito dopo la quota che si e' mossa
+        // (173) pagina Pinnacle: la stessa griglia prima/ora delle altre
+        // pagine al posto delle tre quote con la freccia accanto
+        var q3 = qp.querySelector(".q3");
+        if (q3 && x.pz.every(function (p) { return p.q1 != null; })) { q3.outerHTML = movRigaHtml(x); return; }
         x.pz.forEach(function (p, i) { if (p.c !== "fermo") qs[i].insertAdjacentHTML("afterend", '<b class="fr ' + p.c + '">' + p.f + "</b>"); });
         qp.title = x.titolo;
         stringiQ3(riga);
