@@ -6654,16 +6654,6 @@ Data,Ora,Campionato,Partita,Gruppo,Mercato,Sel,Prob,Equa,Margine,Fonte,InSchedin
 2026-11-15,00:00,USA USL Championship,Charleston Battery - Louisville City,Combo,Esito + Gol,1X + Under 2.5,36.4,2.75,4.4,Pinnacle,,sbagliata,0,2
 2026-11-15,00:00,USA USL Championship,Charleston Battery - Louisville City,Under Over,OU 1.5,Over,73.7,1.36,4.4,Pinnacle,,presa,0,2
 2026-11-15,00:00,USA USL Championship,Charleston Battery - Louisville City,Under Over,OU 2.5,Under,50.5,1.98,4.4,Pinnacle,,presa,0,2
-2026-11-15,00:00,Uruguay Primera División,Club Nacional - Albion FC,1X2,1X2,1,65.2,1.53,8.0,Pinnacle,,sbagliata,1,1
-2026-11-15,00:00,Uruguay Primera División,Club Nacional - Albion FC,Gol NoGol,BTTS,Gol,51.8,1.93,8.0,Pinnacle,,presa,1,1
-2026-11-15,00:00,Uruguay Primera División,Club Nacional - Albion FC,Combo,Esito + Gol,1 + NoGol,36.0,2.78,8.0,Pinnacle,,sbagliata,1,1
-2026-11-15,00:00,Uruguay Primera División,Club Nacional - Albion FC,Combo,Esito + Gol,1 + Over 1.5,54.7,1.83,8.0,Pinnacle,,sbagliata,1,1
-2026-11-15,00:00,Uruguay Primera División,Club Nacional - Albion FC,Combo,Esito + Gol,1 + Over 2.5,43.6,2.29,8.0,Pinnacle,,sbagliata,1,1
-2026-11-15,00:00,Uruguay Primera División,Club Nacional - Albion FC,Combo,Esito + Gol,1X + NoGol,41.0,2.44,8.0,Pinnacle,,sbagliata,1,1
-2026-11-15,00:00,Uruguay Primera División,Club Nacional - Albion FC,Combo,Esito + Gol,1X + Over 2.5,49.0,2.04,8.0,Pinnacle,,sbagliata,1,1
-2026-11-15,00:00,Uruguay Primera División,Club Nacional - Albion FC,Combo,Esito + Gol,1X + Under 2.5,36.1,2.77,8.0,Pinnacle,,presa,1,1
-2026-11-15,00:00,Uruguay Primera División,Club Nacional - Albion FC,Under Over,OU 1.5,Over,76.4,1.31,8.0,Pinnacle,,presa,1,1
-2026-11-15,00:00,Uruguay Primera División,Club Nacional - Albion FC,Under Over,OU 2.5,Over,55.1,1.82,8.0,Pinnacle,,sbagliata,1,1
 2026-11-15,00:00,Mexico Liga MX,Club Queretaro - Monterrey,1X2,1X2,2,48.6,2.06,3.2,Pinnacle,,presa,0,1
 2026-11-15,00:00,Mexico Liga MX,Club Queretaro - Monterrey,Gol NoGol,BTTS,Gol,53.9,1.86,3.2,Pinnacle,,sbagliata,0,1
 2026-11-15,00:00,Mexico Liga MX,Club Queretaro - Monterrey,Combo,Esito + Gol,2 + Over 1.5,39.8,2.51,3.2,Pinnacle,,sbagliata,0,1
@@ -6679,14 +6669,17 @@ Data,Ora,Campionato,Partita,Gruppo,Mercato,Sel,Prob,Equa,Margine,Fonte,InSchedin
 2026-11-15,00:00,Argentina Primera Nacional,Gimnasia Jujuy - Almirante Brown,Combo,Esito + Gol,X2 + Under 2.5,36.3,2.75,4.6,Pinnacle,,sbagliata,2,0
 2026-11-15,00:00,Argentina Primera Nacional,Gimnasia Jujuy - Almirante Brown,Under Over,OU 1.5,Over,64.3,1.55,4.6,Pinnacle,,presa,2,0
 2026-11-15,00:00,Argentina Primera Nacional,Gimnasia Jujuy - Almirante Brown,Under Over,OU 2.5,Under,61.8,1.62,4.6,Pinnacle,,presa,2,0
-2026-11-15,00:00,Mexico Liga MX Femenil,Tigres UANL W - Pumas UNAM W,1X2,1X2,1,65.3,1.53,5.6,Pinnacle,,sbagliata,0,5
-2026-11-15,00:00,Mexico Liga MX Femenil,Tigres UANL W - Pumas UNAM W,Gol NoGol,BTTS,Gol,58.2,1.72,5.6,Pinnacle,,sbagliata,0,5
-2026-11-15,00:00,Mexico Liga MX Femenil,Tigres UANL W - Pumas UNAM W,Combo,Esito + Gol,1 + Over 1.5,57.1,1.75,5.6,Pinnacle,,sbagliata,0,5
-2026-11-15,00:00,Mexico Liga MX Femenil,Tigres UANL W - Pumas UNAM W,Combo,Esito + Gol,1 + Over 2.5,47.8,2.09,5.6,Pinnacle,,sbagliata,0,5
-2026-11-15,00:00,Mexico Liga MX Femenil,Tigres UANL W - Pumas UNAM W,Combo,Esito + Gol,1X + NoGol,35.2,2.84,5.6,Pinnacle,,sbagliata,0,5
-2026-11-15,00:00,Mexico Liga MX Femenil,Tigres UANL W - Pumas UNAM W,Combo,Esito + Gol,1X + Over 2.5,54.4,1.84,5.6,Pinnacle,,sbagliata,0,5
-2026-11-15,00:00,Mexico Liga MX Femenil,Tigres UANL W - Pumas UNAM W,Under Over,OU 1.5,Over,84.5,1.18,5.6,Pinnacle,,presa,0,5
-2026-11-15,00:00,Mexico Liga MX Femenil,Tigres UANL W - Pumas UNAM W,Under Over,OU 2.5,Over,65.1,1.54,5.6,Pinnacle,,presa,0,5
+2026-11-15,00:00,Uruguay Primera Division,Nacional - Albion,1X2,1X2,1,64.6,1.55,3.2,FootyMetrics,si,sbagliata,1,1
+2026-11-15,00:00,Uruguay Primera Division,Nacional - Albion,1X2,1X2,X,21.5,4.64,3.2,FootyMetrics,,presa,1,1
+2026-11-15,00:00,Uruguay Primera Division,Nacional - Albion,Gol NoGol,BTTS,Gol,50.3,1.99,3.2,FootyMetrics,,presa,1,1
+2026-11-15,00:00,Uruguay Primera Division,Nacional - Albion,Combo,Esito + Gol,1 + NoGol,37.0,2.7,3.2,FootyMetrics,,sbagliata,1,1
+2026-11-15,00:00,Uruguay Primera Division,Nacional - Albion,Combo,Esito + Gol,1 + Over 1.5,53.2,1.88,3.2,FootyMetrics,,sbagliata,1,1
+2026-11-15,00:00,Uruguay Primera Division,Nacional - Albion,Combo,Esito + Gol,1 + Over 2.5,41.6,2.4,3.2,FootyMetrics,,sbagliata,1,1
+2026-11-15,00:00,Uruguay Primera Division,Nacional - Albion,Combo,Esito + Gol,1X + NoGol,42.7,2.34,3.2,FootyMetrics,,sbagliata,1,1
+2026-11-15,00:00,Uruguay Primera Division,Nacional - Albion,Combo,Esito + Gol,1X + Over 2.5,46.7,2.14,3.2,FootyMetrics,,sbagliata,1,1
+2026-11-15,00:00,Uruguay Primera Division,Nacional - Albion,Combo,Esito + Gol,1X + Under 2.5,38.4,2.61,3.2,FootyMetrics,,presa,1,1
+2026-11-15,00:00,Uruguay Primera Division,Nacional - Albion,Under Over,OU 1.5,Over,78.1,1.28,3.2,FootyMetrics,,presa,1,1
+2026-11-15,00:00,Uruguay Primera Division,Nacional - Albion,Under Over,OU 2.5,Over,54.8,1.83,3.2,FootyMetrics,,sbagliata,1,1
 2026-11-15,00:30,New-Zealand National League - National,Cashmere Technical - Wellington Olympic,1X2,1X2,1,48.9,2.04,7.2,Pinnacle,,presa,3,0
 2026-11-15,00:30,New-Zealand National League - National,Cashmere Technical - Wellington Olympic,Gol NoGol,BTTS,Gol,70.8,1.41,7.2,Pinnacle,,sbagliata,3,0
 2026-11-15,00:30,New-Zealand National League - National,Cashmere Technical - Wellington Olympic,Combo,Esito + Gol,1 + Over 1.5,43.9,2.28,7.2,Pinnacle,,presa,3,0
@@ -6783,6 +6776,12 @@ Data,Ora,Campionato,Partita,Gruppo,Mercato,Sel,Prob,Equa,Margine,Fonte,InSchedin
 2026-11-15,05:00,Australia A-League Women,Canberra United W - Brisbane Roar FC W,Combo,Esito + Gol,1X + Over 2.5,47.7,2.1,4.8,Pinnacle,,sbagliata,1,0
 2026-11-15,05:00,Australia A-League Women,Canberra United W - Brisbane Roar FC W,Under Over,OU 1.5,Over,80.9,1.24,4.8,Pinnacle,,sbagliata,1,0
 2026-11-15,05:00,Australia A-League Women,Canberra United W - Brisbane Roar FC W,Under Over,OU 2.5,Over,61.3,1.63,4.8,Pinnacle,,sbagliata,1,0
+2026-11-15,05:00,Japan J2 League,Consadole Sapporo - Sagan Tosu,1X2,1X2,2,48.1,2.08,4.5,Pinnacle,,presa,1,2
+2026-11-15,05:00,Japan J2 League,Consadole Sapporo - Sagan Tosu,Gol NoGol,BTTS,Gol,52.0,1.92,4.5,Pinnacle,,presa,1,2
+2026-11-15,05:00,Japan J2 League,Consadole Sapporo - Sagan Tosu,Combo,Esito + Gol,2 + Over 1.5,36.4,2.75,4.5,Pinnacle,,presa,1,2
+2026-11-15,05:00,Japan J2 League,Consadole Sapporo - Sagan Tosu,Combo,Esito + Gol,X2 + Under 2.5,39.1,2.56,4.5,Pinnacle,,sbagliata,1,2
+2026-11-15,05:00,Japan J2 League,Consadole Sapporo - Sagan Tosu,Under Over,OU 1.5,Over,72.5,1.38,4.5,Pinnacle,,presa,1,2
+2026-11-15,05:00,Japan J2 League,Consadole Sapporo - Sagan Tosu,Under Over,OU 2.5,Under,51.3,1.95,4.5,Pinnacle,,sbagliata,1,2
 2026-11-15,05:00,Australia Australian Championship,Sutherland Sharks - Canberra FC,1X2,1X2,1,62.9,1.59,7.2,Pinnacle,,presa,3,0
 2026-11-15,05:00,Australia Australian Championship,Sutherland Sharks - Canberra FC,Gol NoGol,BTTS,Gol,59.6,1.68,7.2,Pinnacle,,sbagliata,3,0
 2026-11-15,05:00,Australia Australian Championship,Sutherland Sharks - Canberra FC,Combo,Esito + Gol,1 + Over 1.5,54.9,1.82,7.2,Pinnacle,,presa,3,0
@@ -6790,6 +6789,29 @@ Data,Ora,Campionato,Partita,Gruppo,Mercato,Sel,Prob,Equa,Margine,Fonte,InSchedin
 2026-11-15,05:00,Australia Australian Championship,Sutherland Sharks - Canberra FC,Combo,Esito + Gol,1X + Over 2.5,53.1,1.88,7.2,Pinnacle,,presa,3,0
 2026-11-15,05:00,Australia Australian Championship,Sutherland Sharks - Canberra FC,Under Over,OU 1.5,Over,84.5,1.18,7.2,Pinnacle,,presa,3,0
 2026-11-15,05:00,Australia Australian Championship,Sutherland Sharks - Canberra FC,Under Over,OU 2.5,Over,64.3,1.56,7.2,Pinnacle,,presa,3,0
+2026-11-15,05:00,Japan J2 League,Vanraure Hachinohe - Iwaki,1X2,1X2,2,44.7,2.24,4.5,Pinnacle,,sbagliata,2,2
+2026-11-15,05:00,Japan J2 League,Vanraure Hachinohe - Iwaki,Gol NoGol,BTTS,Gol,52.7,1.9,4.5,Pinnacle,,presa,2,2
+2026-11-15,05:00,Japan J2 League,Vanraure Hachinohe - Iwaki,Combo,Esito + Gol,2 + Over 1.5,35.3,2.83,4.5,Pinnacle,,sbagliata,2,2
+2026-11-15,05:00,Japan J2 League,Vanraure Hachinohe - Iwaki,Combo,Esito + Gol,X2 + Under 2.5,38.3,2.61,4.5,Pinnacle,,sbagliata,2,2
+2026-11-15,05:00,Japan J2 League,Vanraure Hachinohe - Iwaki,Under Over,OU 1.5,Over,73.3,1.36,4.5,Pinnacle,,presa,2,2
+2026-11-15,05:00,Japan J2 League,Vanraure Hachinohe - Iwaki,Under Over,OU 2.5,Under,50.9,1.96,4.5,Pinnacle,,sbagliata,2,2
+2026-11-15,05:05,Japan J2 League,Vegalta Sendai - Blaublitz Akita,1X2,1X2,1,59.4,1.68,4.9,Pinnacle,,presa,4,0
+2026-11-15,05:05,Japan J2 League,Vegalta Sendai - Blaublitz Akita,Gol NoGol,BTTS,NoGol,52.5,1.91,4.9,Pinnacle,,presa,4,0
+2026-11-15,05:05,Japan J2 League,Vegalta Sendai - Blaublitz Akita,Combo,Esito + Gol,1 + NoGol,35.6,2.81,4.9,Pinnacle,,presa,4,0
+2026-11-15,05:05,Japan J2 League,Vegalta Sendai - Blaublitz Akita,Combo,Esito + Gol,1 + Over 1.5,46.5,2.15,4.9,Pinnacle,,presa,4,0
+2026-11-15,05:05,Japan J2 League,Vegalta Sendai - Blaublitz Akita,Combo,Esito + Gol,1 + Over 2.5,35.1,2.85,4.9,Pinnacle,,presa,4,0
+2026-11-15,05:05,Japan J2 League,Vegalta Sendai - Blaublitz Akita,Combo,Esito + Gol,1X + NoGol,42.8,2.34,4.9,Pinnacle,,presa,4,0
+2026-11-15,05:05,Japan J2 League,Vegalta Sendai - Blaublitz Akita,Combo,Esito + Gol,1X + Over 2.5,40.0,2.5,4.9,Pinnacle,,presa,4,0
+2026-11-15,05:05,Japan J2 League,Vegalta Sendai - Blaublitz Akita,Combo,Esito + Gol,1X + Under 2.5,42.5,2.36,4.9,Pinnacle,,sbagliata,4,0
+2026-11-15,05:05,Japan J2 League,Vegalta Sendai - Blaublitz Akita,Under Over,OU 1.5,Over,72.9,1.37,4.9,Pinnacle,,presa,4,0
+2026-11-15,05:05,Japan J2 League,Vegalta Sendai - Blaublitz Akita,Under Over,OU 2.5,Under,51.2,1.95,4.9,Pinnacle,,sbagliata,4,0
+2026-11-15,06:00,Japan J2 League,Imabari - Jubilo Iwata,1X2,1X2,2,51.7,1.93,4.6,Pinnacle,,presa,0,2
+2026-11-15,06:00,Japan J2 League,Imabari - Jubilo Iwata,Gol NoGol,BTTS,Gol,57.7,1.73,4.6,Pinnacle,,sbagliata,0,2
+2026-11-15,06:00,Japan J2 League,Imabari - Jubilo Iwata,Combo,Esito + Gol,2 + Over 1.5,43.8,2.28,4.6,Pinnacle,,presa,0,2
+2026-11-15,06:00,Japan J2 League,Imabari - Jubilo Iwata,Combo,Esito + Gol,2 + Over 2.5,35.4,2.83,4.6,Pinnacle,,sbagliata,0,2
+2026-11-15,06:00,Japan J2 League,Imabari - Jubilo Iwata,Combo,Esito + Gol,X2 + Over 2.5,42.6,2.35,4.6,Pinnacle,,sbagliata,0,2
+2026-11-15,06:00,Japan J2 League,Imabari - Jubilo Iwata,Under Over,OU 1.5,Over,78.3,1.28,4.6,Pinnacle,,presa,0,2
+2026-11-15,06:00,Japan J2 League,Imabari - Jubilo Iwata,Under Over,OU 2.5,Over,56.3,1.78,4.6,Pinnacle,,sbagliata,0,2
 2026-11-15,06:00,Japan J3 League,Kamatamare Sanuki - Renofa Yamaguchi,1X2,1X2,2,51.3,1.95,7.3,Pinnacle,,sbagliata,1,1
 2026-11-15,06:00,Japan J3 League,Kamatamare Sanuki - Renofa Yamaguchi,Gol NoGol,BTTS,Gol,57.5,1.74,7.3,Pinnacle,,presa,1,1
 2026-11-15,06:00,Japan J3 League,Kamatamare Sanuki - Renofa Yamaguchi,Combo,Esito + Gol,2 + Over 1.5,44.1,2.27,7.3,Pinnacle,,sbagliata,1,1
@@ -6801,6 +6823,13 @@ Data,Ora,Campionato,Partita,Gruppo,Mercato,Sel,Prob,Equa,Margine,Fonte,InSchedin
 2026-11-15,06:00,Japan J3 League,Kanazawa - Roasso Kumamoto,Gol NoGol,BTTS,Gol,55.1,1.81,7.1,Pinnacle,,presa,3,2
 2026-11-15,06:00,Japan J3 League,Kanazawa - Roasso Kumamoto,Under Over,OU 1.5,Over,75.4,1.33,7.1,Pinnacle,,presa,3,2
 2026-11-15,06:00,Japan J3 League,Kanazawa - Roasso Kumamoto,Under Over,OU 2.5,Over,51.0,1.96,7.1,Pinnacle,,presa,3,2
+2026-11-15,06:00,Japan J2 League,Kataller Toyama - Tokushima Vortis,1X2,1X2,1,53.4,1.87,4.7,Pinnacle,,sbagliata,2,3
+2026-11-15,06:00,Japan J2 League,Kataller Toyama - Tokushima Vortis,Gol NoGol,BTTS,Gol,57.5,1.74,4.7,Pinnacle,,presa,2,3
+2026-11-15,06:00,Japan J2 League,Kataller Toyama - Tokushima Vortis,Combo,Esito + Gol,1 + Over 1.5,44.2,2.26,4.7,Pinnacle,,sbagliata,2,3
+2026-11-15,06:00,Japan J2 League,Kataller Toyama - Tokushima Vortis,Combo,Esito + Gol,1 + Over 2.5,35.7,2.8,4.7,Pinnacle,,sbagliata,2,3
+2026-11-15,06:00,Japan J2 League,Kataller Toyama - Tokushima Vortis,Combo,Esito + Gol,1X + Over 2.5,42.8,2.33,4.7,Pinnacle,,sbagliata,2,3
+2026-11-15,06:00,Japan J2 League,Kataller Toyama - Tokushima Vortis,Under Over,OU 1.5,Over,78.0,1.28,4.7,Pinnacle,,presa,2,3
+2026-11-15,06:00,Japan J2 League,Kataller Toyama - Tokushima Vortis,Under Over,OU 2.5,Over,56.1,1.78,4.7,Pinnacle,,presa,2,3
 2026-11-15,06:00,Japan J-League Cup,Machida Zelvia - Vissel Kobe,1X2,1X2,1,36.7,2.72,3.6,Pinnacle,,sbagliata,1,1
 2026-11-15,06:00,Japan J-League Cup,Machida Zelvia - Vissel Kobe,Gol NoGol,BTTS,Gol,51.8,1.93,3.6,Pinnacle,,presa,1,1
 2026-11-15,06:00,Japan J-League Cup,Machida Zelvia - Vissel Kobe,Combo,Esito + Gol,1X + Under 2.5,36.9,2.71,3.6,Pinnacle,,presa,1,1
@@ -6821,10 +6850,16 @@ Data,Ora,Campionato,Partita,Gruppo,Mercato,Sel,Prob,Equa,Margine,Fonte,InSchedin
 2026-11-15,06:00,Russia First League,Ska-khabarovsk - Leningradets,Combo,Esito + Gol,1X + Under 2.5,42.5,2.35,5.0,Pinnacle,,presa,1,0
 2026-11-15,06:00,Russia First League,Ska-khabarovsk - Leningradets,Under Over,OU 1.5,Over,72.2,1.39,5.0,Pinnacle,,sbagliata,1,0
 2026-11-15,06:00,Russia First League,Ska-khabarovsk - Leningradets,Under Over,OU 2.5,Under,51.8,1.93,5.0,Pinnacle,,presa,1,0
+2026-11-15,06:00,Japan J3 League,Tochigi SC - Nara Club,1X2,1X2,1,42.1,2.38,7.0,Pinnacle,,presa,1,0
+2026-11-15,06:00,Japan J3 League,Tochigi SC - Nara Club,Gol NoGol,BTTS,Gol,60.0,1.67,7.0,Pinnacle,,sbagliata,1,0
+2026-11-15,06:00,Japan J3 League,Tochigi SC - Nara Club,Combo,Esito + Gol,1X + Over 2.5,35.7,2.8,7.0,Pinnacle,,sbagliata,1,0
+2026-11-15,06:00,Japan J3 League,Tochigi SC - Nara Club,Under Over,OU 1.5,Over,79.9,1.25,7.0,Pinnacle,,sbagliata,1,0
+2026-11-15,06:00,Japan J3 League,Tochigi SC - Nara Club,Under Over,OU 2.5,Over,54.7,1.83,7.0,Pinnacle,,sbagliata,1,0
 2026-11-15,07:00,Japan J-League Cup,Cerezo Osaka - Urawa,1X2,1X2,2,39.7,2.52,3.6,Pinnacle,,sbagliata,1,1
 2026-11-15,07:00,Japan J-League Cup,Cerezo Osaka - Urawa,Gol NoGol,BTTS,Gol,59.9,1.67,3.6,Pinnacle,,presa,1,1
 2026-11-15,07:00,Japan J-League Cup,Cerezo Osaka - Urawa,Combo,Esito + Gol,X2 + Over 2.5,36.4,2.75,3.6,Pinnacle,,sbagliata,1,1
-2026-11-15,07:00,Japan J-League Cup,Cerezo Osaka - Urawa,Under Over,OU 1.5,Over,79.0,1.27,3.6,Pinnacle,,presa,1,1
+2026-11-15,07:00,Japan J-League Cup,Cerezo Osaka - Urawa,Under Over,OU 1.5,Over,79.0,1.27,3.6,Pinnacle,si,presa,1,1
+2026-11-15,07:00,Japan J-League Cup,Cerezo Osaka - Urawa,Under Over,OU 1.5,Under,21.0,4.77,3.6,Pinnacle,,sbagliata,1,1
 2026-11-15,07:00,Japan J-League Cup,Cerezo Osaka - Urawa,Under Over,OU 2.5,Over,56.7,1.76,3.6,Pinnacle,,sbagliata,1,1
 2026-11-15,07:00,Japan J-League Cup,Kashima - Yokohama F. Marinos,1X2,1X2,1,52.0,1.92,3.9,Pinnacle,,presa,3,2
 2026-11-15,07:00,Japan J-League Cup,Kashima - Yokohama F. Marinos,Gol NoGol,BTTS,Gol,61.0,1.64,3.9,Pinnacle,si,presa,3,2
@@ -6834,6 +6869,10 @@ Data,Ora,Campionato,Partita,Gruppo,Mercato,Sel,Prob,Equa,Margine,Fonte,InSchedin
 2026-11-15,07:00,Japan J-League Cup,Kashima - Yokohama F. Marinos,Combo,Esito + Gol,1X + Over 2.5,44.4,2.25,3.9,Pinnacle,,presa,3,2
 2026-11-15,07:00,Japan J-League Cup,Kashima - Yokohama F. Marinos,Under Over,OU 1.5,Over,80.3,1.25,3.9,Pinnacle,,presa,3,2
 2026-11-15,07:00,Japan J-League Cup,Kashima - Yokohama F. Marinos,Under Over,OU 2.5,Over,60.0,1.67,3.9,Pinnacle,,presa,3,2
+2026-11-15,08:00,Japan J3 League,FC Ryukyu - Kochi United,1X2,1X2,1,40.4,2.48,7.8,Pinnacle,,presa,1,0
+2026-11-15,08:00,Japan J3 League,FC Ryukyu - Kochi United,Gol NoGol,BTTS,Gol,60.1,1.66,7.8,Pinnacle,,sbagliata,1,0
+2026-11-15,08:00,Japan J3 League,FC Ryukyu - Kochi United,Under Over,OU 1.5,Over,79.9,1.25,7.8,Pinnacle,,sbagliata,1,0
+2026-11-15,08:00,Japan J3 League,FC Ryukyu - Kochi United,Under Over,OU 2.5,Over,54.7,1.83,7.8,Pinnacle,,sbagliata,1,0
 2026-11-15,08:00,China League One,Guizhou Zhucheng - Heilongjiang Lava Spring,1X2,1X2,1,40.7,2.46,5.7,Pinnacle,,presa,3,1
 2026-11-15,08:00,China League One,Guizhou Zhucheng - Heilongjiang Lava Spring,Gol NoGol,BTTS,NoGol,52.9,1.89,5.7,Pinnacle,,sbagliata,3,1
 2026-11-15,08:00,China League One,Guizhou Zhucheng - Heilongjiang Lava Spring,Combo,Esito + Gol,1X + Under 2.5,42.8,2.33,5.7,Pinnacle,,sbagliata,3,1
@@ -6847,6 +6886,13 @@ Data,Ora,Campionato,Partita,Gruppo,Mercato,Sel,Prob,Equa,Margine,Fonte,InSchedin
 2026-11-15,09:00,Japan J-League Cup,Kashiwa Reysol - Kawasaki Frontale,Combo,Esito + Gol,1X + Over 2.5,43.2,2.31,3.6,Pinnacle,,presa,5,4
 2026-11-15,09:00,Japan J-League Cup,Kashiwa Reysol - Kawasaki Frontale,Under Over,OU 1.5,Over,83.4,1.2,3.6,Pinnacle,,presa,5,4
 2026-11-15,09:00,Japan J-League Cup,Kashiwa Reysol - Kawasaki Frontale,Under Over,OU 2.5,Over,65.0,1.54,3.6,Pinnacle,,presa,5,4
+2026-11-15,10:00,Japan J3 League,Biwako Shiga - Osaka,1X2,1X2,2,51.3,1.95,7.2,Pinnacle,,sbagliata,1,1
+2026-11-15,10:00,Japan J3 League,Biwako Shiga - Osaka,Gol NoGol,BTTS,Gol,57.4,1.74,7.2,Pinnacle,,presa,1,1
+2026-11-15,10:00,Japan J3 League,Biwako Shiga - Osaka,Combo,Esito + Gol,2 + Over 1.5,44.6,2.24,7.2,Pinnacle,,sbagliata,1,1
+2026-11-15,10:00,Japan J3 League,Biwako Shiga - Osaka,Combo,Esito + Gol,2 + Over 2.5,36.0,2.78,7.2,Pinnacle,,sbagliata,1,1
+2026-11-15,10:00,Japan J3 League,Biwako Shiga - Osaka,Combo,Esito + Gol,X2 + Over 2.5,43.1,2.32,7.2,Pinnacle,,sbagliata,1,1
+2026-11-15,10:00,Japan J3 League,Biwako Shiga - Osaka,Under Over,OU 1.5,Over,79.9,1.25,7.2,Pinnacle,,presa,1,1
+2026-11-15,10:00,Japan J3 League,Biwako Shiga - Osaka,Under Over,OU 2.5,Over,54.1,1.85,7.2,Pinnacle,,sbagliata,1,1
 2026-11-15,10:30,Slovakia 2. liga,Slovan Bratislava II - Malženice,1X2,1X2,1,50.5,1.98,7.1,Pinnacle,,presa,2,0
 2026-11-15,10:30,Slovakia 2. liga,Slovan Bratislava II - Malženice,Gol NoGol,BTTS,Gol,58.4,1.71,7.1,Pinnacle,,sbagliata,2,0
 2026-11-15,10:30,Slovakia 2. liga,Slovan Bratislava II - Malženice,Combo,Esito + Gol,1 + Over 1.5,41.6,2.41,7.1,Pinnacle,,presa,2,0
@@ -6892,24 +6938,18 @@ Data,Ora,Campionato,Partita,Gruppo,Mercato,Sel,Prob,Equa,Margine,Fonte,InSchedin
 2026-11-15,12:30,Italy Serie C - Girone C,Giugliano - Savoia,Combo,Esito + Gol,X2 + Under 2.5,35.5,2.81,7.1,Pinnacle,,sbagliata,2,3
 2026-11-15,12:30,Italy Serie C - Girone C,Giugliano - Savoia,Under Over,OU 1.5,Over,73.4,1.36,7.1,Pinnacle,,presa,2,3
 2026-11-15,12:30,Italy Serie C - Girone C,Giugliano - Savoia,Under Over,OU 2.5,Under,51.6,1.94,7.1,Pinnacle,,sbagliata,2,3
+2026-11-15,12:30,Italy Serie C - Girone A,Novara - Lecco,1X2,1X2,2,39.0,2.56,7.1,Pinnacle,,sbagliata,1,1
+2026-11-15,12:30,Italy Serie C - Girone A,Novara - Lecco,Gol NoGol,BTTS,NoGol,53.3,1.88,7.1,Pinnacle,,sbagliata,1,1
+2026-11-15,12:30,Italy Serie C - Girone A,Novara - Lecco,Combo,Esito + Gol,1X + Under 2.5,37.8,2.65,7.1,Pinnacle,,presa,1,1
+2026-11-15,12:30,Italy Serie C - Girone A,Novara - Lecco,Combo,Esito + Gol,X2 + NoGol,35.9,2.78,7.1,Pinnacle,,sbagliata,1,1
+2026-11-15,12:30,Italy Serie C - Girone A,Novara - Lecco,Combo,Esito + Gol,X2 + Under 2.5,43.7,2.29,7.1,Pinnacle,,presa,1,1
+2026-11-15,12:30,Italy Serie C - Girone A,Novara - Lecco,Under Over,OU 1.5,Over,69.8,1.43,7.1,Pinnacle,,presa,1,1
+2026-11-15,12:30,Italy Serie C - Girone A,Novara - Lecco,Under Over,OU 2.5,Under,55.6,1.8,7.1,Pinnacle,,presa,1,1
 2026-11-15,13:00,Lithuania A Lyga,Minija - Šiauliai,1X2,1X2,2,36.7,2.72,7.1,Pinnacle,,presa,0,2
 2026-11-15,13:00,Lithuania A Lyga,Minija - Šiauliai,Gol NoGol,BTTS,Gol,53.8,1.86,7.1,Pinnacle,,sbagliata,0,2
 2026-11-15,13:00,Lithuania A Lyga,Minija - Šiauliai,Combo,Esito + Gol,X2 + Under 2.5,36.4,2.75,7.1,Pinnacle,,presa,0,2
 2026-11-15,13:00,Lithuania A Lyga,Minija - Šiauliai,Under Over,OU 1.5,Over,74.3,1.35,7.1,Pinnacle,,presa,0,2
 2026-11-15,13:00,Lithuania A Lyga,Minija - Šiauliai,Under Over,OU 2.5,Under,50.5,1.98,7.1,Pinnacle,,presa,0,2
-2026-11-15,13:50,United-Arab-Emirates League Cup,Al Wahda FC - Khorfakkan,1X2,1X2,1,55.4,1.81,7.1,Pinnacle,,presa,3,1
-2026-11-15,13:50,United-Arab-Emirates League Cup,Al Wahda FC - Khorfakkan,Gol NoGol,BTTS,Gol,59.9,1.67,7.1,Pinnacle,,presa,3,1
-2026-11-15,13:50,United-Arab-Emirates League Cup,Al Wahda FC - Khorfakkan,Combo,Esito + Gol,1 + Over 1.5,47.0,2.13,7.1,Pinnacle,,presa,3,1
-2026-11-15,13:50,United-Arab-Emirates League Cup,Al Wahda FC - Khorfakkan,Combo,Esito + Gol,1 + Over 2.5,38.8,2.58,7.1,Pinnacle,,presa,3,1
-2026-11-15,13:50,United-Arab-Emirates League Cup,Al Wahda FC - Khorfakkan,Combo,Esito + Gol,1X + Over 2.5,46.4,2.15,7.1,Pinnacle,,presa,3,1
-2026-11-15,13:50,United-Arab-Emirates League Cup,Al Wahda FC - Khorfakkan,Under Over,OU 1.5,Over,82.3,1.21,7.1,Pinnacle,,presa,3,1
-2026-11-15,13:50,United-Arab-Emirates League Cup,Al Wahda FC - Khorfakkan,Under Over,OU 2.5,Over,60.6,1.65,7.1,Pinnacle,,presa,3,1
-2026-11-15,13:50,United-Arab-Emirates League Cup,Dubai United - Sharjah FC,1X2,1X2,2,41.9,2.39,7.1,Pinnacle,,sbagliata,1,1
-2026-11-15,13:50,United-Arab-Emirates League Cup,Dubai United - Sharjah FC,Gol NoGol,BTTS,Gol,62.6,1.6,7.1,Pinnacle,,presa,1,1
-2026-11-15,13:50,United-Arab-Emirates League Cup,Dubai United - Sharjah FC,Combo,Esito + Gol,2 + Over 1.5,37.4,2.67,7.1,Pinnacle,,sbagliata,1,1
-2026-11-15,13:50,United-Arab-Emirates League Cup,Dubai United - Sharjah FC,Combo,Esito + Gol,X2 + Over 2.5,39.7,2.52,7.1,Pinnacle,,sbagliata,1,1
-2026-11-15,13:50,United-Arab-Emirates League Cup,Dubai United - Sharjah FC,Under Over,OU 1.5,Over,82.3,1.21,7.1,Pinnacle,,presa,1,1
-2026-11-15,13:50,United-Arab-Emirates League Cup,Dubai United - Sharjah FC,Under Over,OU 2.5,Over,59.3,1.69,7.1,Pinnacle,,sbagliata,1,1
 2026-11-15,14:00,Sweden Damallsvenskan,Brommapojkarna W - Rosengård W,1X2,1X2,2,52.6,1.9,7.1,Pinnacle,,,,
 2026-11-15,14:00,Sweden Damallsvenskan,Brommapojkarna W - Rosengård W,Gol NoGol,BTTS,Gol,61.1,1.64,7.1,Pinnacle,,,,
 2026-11-15,14:00,Sweden Damallsvenskan,Brommapojkarna W - Rosengård W,Combo,Esito + Gol,2 + Over 1.5,43.6,2.29,7.1,Pinnacle,,,,
@@ -6972,14 +7012,14 @@ Data,Ora,Campionato,Partita,Gruppo,Mercato,Sel,Prob,Equa,Margine,Fonte,InSchedin
 2026-11-15,14:00,Sweden Damallsvenskan,Norrköping W - AIK W,Combo,Esito + Gol,X2 + Over 2.5,36.4,2.74,7.0,Pinnacle,,,,
 2026-11-15,14:00,Sweden Damallsvenskan,Norrköping W - AIK W,Under Over,OU 1.5,Over,82.3,1.21,7.0,Pinnacle,,,,
 2026-11-15,14:00,Sweden Damallsvenskan,Norrköping W - AIK W,Under Over,OU 2.5,Over,58.4,1.71,7.0,Pinnacle,,,,
-2026-11-15,14:00,Spain Segunda División,Tenerife - AD Ceuta FC,1X2,1X2,1,55.5,1.8,3.4,Pinnacle,,presa,2,0
-2026-11-15,14:00,Spain Segunda División,Tenerife - AD Ceuta FC,Gol NoGol,BTTS,NoGol,50.3,1.99,3.4,Pinnacle,,presa,2,0
-2026-11-15,14:00,Spain Segunda División,Tenerife - AD Ceuta FC,Combo,Esito + Gol,1 + Over 1.5,43.3,2.31,3.4,Pinnacle,,presa,2,0
-2026-11-15,14:00,Spain Segunda División,Tenerife - AD Ceuta FC,Combo,Esito + Gol,1X + NoGol,39.3,2.54,3.4,Pinnacle,,presa,2,0
-2026-11-15,14:00,Spain Segunda División,Tenerife - AD Ceuta FC,Combo,Esito + Gol,1X + Over 2.5,38.3,2.61,3.4,Pinnacle,,sbagliata,2,0
-2026-11-15,14:00,Spain Segunda División,Tenerife - AD Ceuta FC,Combo,Esito + Gol,1X + Under 2.5,41.1,2.43,3.4,Pinnacle,,presa,2,0
-2026-11-15,14:00,Spain Segunda División,Tenerife - AD Ceuta FC,Under Over,OU 1.5,Over,73.3,1.36,3.4,Pinnacle,,presa,2,0
-2026-11-15,14:00,Spain Segunda División,Tenerife - AD Ceuta FC,Under Over,OU 2.5,Under,50.9,1.96,3.4,Pinnacle,,presa,2,0
+2026-11-15,14:00,Spain Segunda División,Tenerife - AD Ceuta FC,1X2,1X2,1,53.1,1.88,3.2,Pinnacle,,presa,2,0
+2026-11-15,14:00,Spain Segunda División,Tenerife - AD Ceuta FC,Gol NoGol,BTTS,NoGol,50.1,2.0,3.2,Pinnacle,,presa,2,0
+2026-11-15,14:00,Spain Segunda División,Tenerife - AD Ceuta FC,Combo,Esito + Gol,1 + Over 1.5,41.0,2.44,3.2,Pinnacle,,presa,2,0
+2026-11-15,14:00,Spain Segunda División,Tenerife - AD Ceuta FC,Combo,Esito + Gol,1X + NoGol,38.0,2.63,3.2,Pinnacle,,presa,2,0
+2026-11-15,14:00,Spain Segunda División,Tenerife - AD Ceuta FC,Combo,Esito + Gol,1X + Over 2.5,36.6,2.73,3.2,Pinnacle,,sbagliata,2,0
+2026-11-15,14:00,Spain Segunda División,Tenerife - AD Ceuta FC,Combo,Esito + Gol,1X + Under 2.5,41.1,2.43,3.2,Pinnacle,,presa,2,0
+2026-11-15,14:00,Spain Segunda División,Tenerife - AD Ceuta FC,Under Over,OU 1.5,Over,72.8,1.37,3.2,Pinnacle,,presa,2,0
+2026-11-15,14:00,Spain Segunda División,Tenerife - AD Ceuta FC,Under Over,OU 2.5,Under,51.7,1.94,3.2,Pinnacle,,presa,2,0
 2026-11-15,14:00,Sweden Damallsvenskan,Uppsala W - Växjö W,1X2,1X2,2,81.5,1.23,7.3,Pinnacle,,,,
 2026-11-15,14:00,Sweden Damallsvenskan,Uppsala W - Växjö W,Gol NoGol,BTTS,Gol,57.2,1.75,7.3,Pinnacle,,,,
 2026-11-15,14:00,Sweden Damallsvenskan,Uppsala W - Växjö W,Combo,Esito + Gol,2 + Gol,43.4,2.31,7.3,Pinnacle,,,,
@@ -6990,26 +7030,33 @@ Data,Ora,Campionato,Partita,Gruppo,Mercato,Sel,Prob,Equa,Margine,Fonte,InSchedin
 2026-11-15,14:00,Sweden Damallsvenskan,Uppsala W - Växjö W,Combo,Esito + Gol,X2 + Over 2.5,73.7,1.36,7.3,Pinnacle,,,,
 2026-11-15,14:00,Sweden Damallsvenskan,Uppsala W - Växjö W,Under Over,OU 1.5,Over,92.0,1.09,7.3,Pinnacle,,,,
 2026-11-15,14:00,Sweden Damallsvenskan,Uppsala W - Växjö W,Under Over,OU 2.5,Over,78.5,1.27,7.3,Pinnacle,,,,
-2026-11-15,14:30,Italy Serie C - Girone C,Cavese - Crotone,1X2,1X2,1,46.0,2.17,7.0,Pinnacle,,presa,1,0
-2026-11-15,14:30,Italy Serie C - Girone C,Cavese - Crotone,Gol NoGol,BTTS,Gol,52.0,1.92,7.0,Pinnacle,,sbagliata,1,0
-2026-11-15,14:30,Italy Serie C - Girone C,Cavese - Crotone,Combo,Esito + Gol,1X + Under 2.5,38.9,2.57,7.0,Pinnacle,,presa,1,0
-2026-11-15,14:30,Italy Serie C - Girone C,Cavese - Crotone,Under Over,OU 1.5,Over,70.7,1.42,7.0,Pinnacle,,sbagliata,1,0
-2026-11-15,14:30,Italy Serie C - Girone C,Cavese - Crotone,Under Over,OU 2.5,Under,51.7,1.93,7.0,Pinnacle,,presa,1,0
-2026-11-15,14:30,Netherlands Eerste Divisie,MVV - Vitesse,1X2,1X2,2,44.4,2.25,4.5,Pinnacle,,sbagliata,2,1
-2026-11-15,14:30,Netherlands Eerste Divisie,MVV - Vitesse,Gol NoGol,BTTS,Gol,62.2,1.61,4.5,Pinnacle,,presa,2,1
-2026-11-15,14:30,Netherlands Eerste Divisie,MVV - Vitesse,Combo,Esito + Gol,2 + Over 1.5,39.4,2.54,4.5,Pinnacle,,sbagliata,2,1
-2026-11-15,14:30,Netherlands Eerste Divisie,MVV - Vitesse,Combo,Esito + Gol,X2 + Over 2.5,41.2,2.43,4.5,Pinnacle,,sbagliata,2,1
-2026-11-15,14:30,Netherlands Eerste Divisie,MVV - Vitesse,Under Over,OU 1.5,Over,79.8,1.25,4.5,Pinnacle,si,presa,2,1
-2026-11-15,14:30,Netherlands Eerste Divisie,MVV - Vitesse,Under Over,OU 1.5,Under,20.2,4.96,4.5,Pinnacle,,sbagliata,2,1
-2026-11-15,14:30,Netherlands Eerste Divisie,MVV - Vitesse,Under Over,OU 2.5,Over,58.5,1.71,4.5,Pinnacle,,presa,2,1
-2026-11-15,14:30,Italy Serie C - Girone B,Pescara - Sambenedettese,1X2,1X2,1,63.8,1.57,7.1,Pinnacle,,presa,3,1
-2026-11-15,14:30,Italy Serie C - Girone B,Pescara - Sambenedettese,Gol NoGol,BTTS,Gol,55.9,1.79,7.1,Pinnacle,,presa,3,1
-2026-11-15,14:30,Italy Serie C - Girone B,Pescara - Sambenedettese,Combo,Esito + Gol,1 + Over 1.5,54.6,1.83,7.1,Pinnacle,,presa,3,1
-2026-11-15,14:30,Italy Serie C - Girone B,Pescara - Sambenedettese,Combo,Esito + Gol,1 + Over 2.5,44.7,2.23,7.1,Pinnacle,,presa,3,1
-2026-11-15,14:30,Italy Serie C - Girone B,Pescara - Sambenedettese,Combo,Esito + Gol,1X + NoGol,36.8,2.72,7.1,Pinnacle,,sbagliata,3,1
-2026-11-15,14:30,Italy Serie C - Girone B,Pescara - Sambenedettese,Combo,Esito + Gol,1X + Over 2.5,51.1,1.96,7.1,Pinnacle,,presa,3,1
-2026-11-15,14:30,Italy Serie C - Girone B,Pescara - Sambenedettese,Under Over,OU 1.5,Over,82.3,1.21,7.1,Pinnacle,,presa,3,1
-2026-11-15,14:30,Italy Serie C - Girone B,Pescara - Sambenedettese,Under Over,OU 2.5,Over,59.2,1.69,7.1,Pinnacle,,presa,3,1
+2026-11-15,14:15,Spain Primera División RFEF - Group 1,Zamora - Real Avilés,1X2,1X2,1,48.1,2.08,7.2,Pinnacle,,sbagliata,2,2
+2026-11-15,14:15,Spain Primera División RFEF - Group 1,Zamora - Real Avilés,Gol NoGol,BTTS,Gol,53.4,1.87,7.2,Pinnacle,,presa,2,2
+2026-11-15,14:15,Spain Primera División RFEF - Group 1,Zamora - Real Avilés,Combo,Esito + Gol,1 + Over 1.5,37.4,2.67,7.2,Pinnacle,,sbagliata,2,2
+2026-11-15,14:15,Spain Primera División RFEF - Group 1,Zamora - Real Avilés,Combo,Esito + Gol,1X + Over 2.5,35.4,2.83,7.2,Pinnacle,,presa,2,2
+2026-11-15,14:15,Spain Primera División RFEF - Group 1,Zamora - Real Avilés,Combo,Esito + Gol,1X + Under 2.5,37.8,2.65,7.2,Pinnacle,,sbagliata,2,2
+2026-11-15,14:15,Spain Primera División RFEF - Group 1,Zamora - Real Avilés,Under Over,OU 1.5,Over,75.0,1.33,7.2,Pinnacle,,presa,2,2
+2026-11-15,14:15,Spain Primera División RFEF - Group 1,Zamora - Real Avilés,Under Over,OU 2.5,Over,50.5,1.98,7.2,Pinnacle,,presa,2,2
+2026-11-15,14:30,Italy Serie C - Girone C,Cavese - Crotone,1X2,1X2,1,43.8,2.28,5.9,Pinnacle,,presa,1,0
+2026-11-15,14:30,Italy Serie C - Girone C,Cavese - Crotone,Gol NoGol,BTTS,Gol,52.1,1.92,5.9,Pinnacle,,sbagliata,1,0
+2026-11-15,14:30,Italy Serie C - Girone C,Cavese - Crotone,Combo,Esito + Gol,1X + Under 2.5,38.5,2.59,5.9,Pinnacle,,presa,1,0
+2026-11-15,14:30,Italy Serie C - Girone C,Cavese - Crotone,Under Over,OU 1.5,Over,70.7,1.42,5.9,Pinnacle,,sbagliata,1,0
+2026-11-15,14:30,Italy Serie C - Girone C,Cavese - Crotone,Under Over,OU 2.5,Under,52.1,1.92,5.9,Pinnacle,,presa,1,0
+2026-11-15,14:30,Netherlands Eerste Divisie,MVV - Vitesse,1X2,1X2,2,42.1,2.38,4.4,Pinnacle,,sbagliata,2,1
+2026-11-15,14:30,Netherlands Eerste Divisie,MVV - Vitesse,Gol NoGol,BTTS,Gol,59.8,1.67,4.4,Pinnacle,,presa,2,1
+2026-11-15,14:30,Netherlands Eerste Divisie,MVV - Vitesse,Combo,Esito + Gol,2 + Over 1.5,35.4,2.82,4.4,Pinnacle,,sbagliata,2,1
+2026-11-15,14:30,Netherlands Eerste Divisie,MVV - Vitesse,Combo,Esito + Gol,X2 + Over 2.5,36.7,2.72,4.4,Pinnacle,,sbagliata,2,1
+2026-11-15,14:30,Netherlands Eerste Divisie,MVV - Vitesse,Under Over,OU 1.5,Over,79.2,1.26,4.4,Pinnacle,,presa,2,1
+2026-11-15,14:30,Netherlands Eerste Divisie,MVV - Vitesse,Under Over,OU 2.5,Over,57.5,1.74,4.4,Pinnacle,,presa,2,1
+2026-11-15,14:30,Italy Serie C - Girone B,Pescara - Sambenedettese,1X2,1X2,1,67.1,1.49,5.7,Pinnacle,,presa,3,1
+2026-11-15,14:30,Italy Serie C - Girone B,Pescara - Sambenedettese,Gol NoGol,BTTS,Gol,53.8,1.86,5.7,Pinnacle,,presa,3,1
+2026-11-15,14:30,Italy Serie C - Girone B,Pescara - Sambenedettese,Combo,Esito + Gol,1 + NoGol,35.5,2.82,5.7,Pinnacle,,sbagliata,3,1
+2026-11-15,14:30,Italy Serie C - Girone B,Pescara - Sambenedettese,Combo,Esito + Gol,1 + Over 1.5,57.6,1.74,5.7,Pinnacle,,presa,3,1
+2026-11-15,14:30,Italy Serie C - Girone B,Pescara - Sambenedettese,Combo,Esito + Gol,1 + Over 2.5,47.0,2.13,5.7,Pinnacle,,presa,3,1
+2026-11-15,14:30,Italy Serie C - Girone B,Pescara - Sambenedettese,Combo,Esito + Gol,1X + NoGol,39.7,2.52,5.7,Pinnacle,,sbagliata,3,1
+2026-11-15,14:30,Italy Serie C - Girone B,Pescara - Sambenedettese,Combo,Esito + Gol,1X + Over 2.5,52.7,1.9,5.7,Pinnacle,,presa,3,1
+2026-11-15,14:30,Italy Serie C - Girone B,Pescara - Sambenedettese,Under Over,OU 1.5,Over,82.3,1.21,5.7,Pinnacle,,presa,3,1
+2026-11-15,14:30,Italy Serie C - Girone B,Pescara - Sambenedettese,Under Over,OU 2.5,Over,59.2,1.69,5.7,Pinnacle,,presa,3,1
 2026-11-15,14:30,Italy Serie C - Girone C,Potenza - Scafatese,1X2,1X2,1,59.5,1.68,5.6,Pinnacle,,presa,4,0
 2026-11-15,14:30,Italy Serie C - Girone C,Potenza - Scafatese,Gol NoGol,BTTS,Gol,58.2,1.72,5.6,Pinnacle,,sbagliata,4,0
 2026-11-15,14:30,Italy Serie C - Girone C,Potenza - Scafatese,Combo,Esito + Gol,1 + Over 1.5,50.8,1.97,5.6,Pinnacle,,presa,4,0
@@ -7022,46 +7069,68 @@ Data,Ora,Campionato,Partita,Gruppo,Mercato,Sel,Prob,Equa,Margine,Fonte,InSchedin
 2026-11-15,14:30,Italy Serie C - Girone C,Salernitana - Catania,Combo,Esito + Gol,X2 + Under 2.5,38.0,2.63,5.8,Pinnacle,,sbagliata,1,0
 2026-11-15,14:30,Italy Serie C - Girone C,Salernitana - Catania,Under Over,OU 1.5,Over,73.9,1.35,5.8,Pinnacle,,sbagliata,1,0
 2026-11-15,14:30,Italy Serie C - Girone C,Salernitana - Catania,Under Over,OU 2.5,Under,51.0,1.96,5.8,Pinnacle,,presa,1,0
-2026-11-15,14:30,Italy Serie C - Girone B,Spezia - Vado,1X2,1X2,1,80.1,1.25,7.3,Pinnacle,,presa,3,0
-2026-11-15,14:30,Italy Serie C - Girone B,Spezia - Vado,Gol NoGol,BTTS,NoGol,58.9,1.7,7.3,Pinnacle,,presa,3,0
-2026-11-15,14:30,Italy Serie C - Girone B,Spezia - Vado,Combo,Esito + Gol,1 + NoGol,51.3,1.95,7.3,Pinnacle,,presa,3,0
-2026-11-15,14:30,Italy Serie C - Girone B,Spezia - Vado,Combo,Esito + Gol,1 + Over 1.5,69.2,1.45,7.3,Pinnacle,,presa,3,0
-2026-11-15,14:30,Italy Serie C - Girone B,Spezia - Vado,Combo,Esito + Gol,1 + Over 2.5,55.2,1.81,7.3,Pinnacle,,presa,3,0
-2026-11-15,14:30,Italy Serie C - Girone B,Spezia - Vado,Combo,Esito + Gol,1X + NoGol,55.5,1.8,7.3,Pinnacle,,presa,3,0
-2026-11-15,14:30,Italy Serie C - Girone B,Spezia - Vado,Combo,Esito + Gol,1X + Over 2.5,58.0,1.72,7.3,Pinnacle,,presa,3,0
-2026-11-15,14:30,Italy Serie C - Girone B,Spezia - Vado,Combo,Esito + Gol,1X + Under 2.5,35.6,2.81,7.3,Pinnacle,,sbagliata,3,0
-2026-11-15,14:30,Italy Serie C - Girone B,Spezia - Vado,Under Over,OU 1.5,Over,82.3,1.21,7.3,Pinnacle,,presa,3,0
-2026-11-15,14:30,Italy Serie C - Girone B,Spezia - Vado,Under Over,OU 2.5,Over,59.1,1.69,7.3,Pinnacle,,presa,3,0
-2026-11-15,15:00,England Women's Super League,Aston Villa W - Birmingham City W,1X2,1X2,1,42.9,2.33,4.5,FootyMetrics,,presa,1,0
-2026-11-15,15:00,England Women's Super League,Aston Villa W - Birmingham City W,Gol NoGol,BTTS,Gol,63.0,1.59,4.5,FootyMetrics,,sbagliata,1,0
-2026-11-15,15:00,England Women's Super League,Aston Villa W - Birmingham City W,Combo,Esito + Gol,1 + Over 1.5,35.6,2.81,4.5,FootyMetrics,,sbagliata,1,0
-2026-11-15,15:00,England Women's Super League,Aston Villa W - Birmingham City W,Combo,Esito + Gol,1X + Over 2.5,38.1,2.63,4.5,FootyMetrics,,sbagliata,1,0
-2026-11-15,15:00,England Women's Super League,Aston Villa W - Birmingham City W,Under Over,OU 1.5,Over,82.0,1.22,4.5,FootyMetrics,,sbagliata,1,0
-2026-11-15,15:00,England Women's Super League,Aston Villa W - Birmingham City W,Under Over,OU 2.5,Over,60.7,1.65,4.5,FootyMetrics,,sbagliata,1,0
-2026-11-15,15:00,World UEFA Nations League,Cyprus - Montenegro,1X2,1X2,2,40.4,2.48,3.6,Pinnacle,,presa,1,4
-2026-11-15,15:00,World UEFA Nations League,Cyprus - Montenegro,Gol NoGol,BTTS,Gol,59.8,1.67,3.6,Pinnacle,,presa,1,4
-2026-11-15,15:00,World UEFA Nations League,Cyprus - Montenegro,Combo,Esito + Gol,2 + Over 1.5,35.2,2.84,3.6,Pinnacle,,presa,1,4
-2026-11-15,15:00,World UEFA Nations League,Cyprus - Montenegro,Combo,Esito + Gol,X2 + Over 2.5,36.6,2.73,3.6,Pinnacle,,presa,1,4
-2026-11-15,15:00,World UEFA Nations League,Cyprus - Montenegro,Under Over,OU 1.5,Over,77.5,1.29,3.6,Pinnacle,,presa,1,4
-2026-11-15,15:00,World UEFA Nations League,Cyprus - Montenegro,Under Over,OU 2.5,Over,54.9,1.82,3.6,Pinnacle,,presa,1,4
-2026-11-15,15:00,Russia First League,FC Sochi - Shinnik Yaroslavl,1X2,1X2,1,60.2,1.66,4.9,Pinnacle,,sbagliata,0,0
-2026-11-15,15:00,Russia First League,FC Sochi - Shinnik Yaroslavl,Gol NoGol,BTTS,NoGol,51.9,1.93,4.9,Pinnacle,,presa,0,0
-2026-11-15,15:00,Russia First League,FC Sochi - Shinnik Yaroslavl,Combo,Esito + Gol,1 + NoGol,35.7,2.8,4.9,Pinnacle,,sbagliata,0,0
-2026-11-15,15:00,Russia First League,FC Sochi - Shinnik Yaroslavl,Combo,Esito + Gol,1 + Over 1.5,47.6,2.1,4.9,Pinnacle,,sbagliata,0,0
-2026-11-15,15:00,Russia First League,FC Sochi - Shinnik Yaroslavl,Combo,Esito + Gol,1 + Over 2.5,36.2,2.76,4.9,Pinnacle,,sbagliata,0,0
-2026-11-15,15:00,Russia First League,FC Sochi - Shinnik Yaroslavl,Combo,Esito + Gol,1X + NoGol,42.6,2.35,4.9,Pinnacle,,presa,0,0
-2026-11-15,15:00,Russia First League,FC Sochi - Shinnik Yaroslavl,Combo,Esito + Gol,1X + Over 2.5,41.2,2.43,4.9,Pinnacle,,sbagliata,0,0
-2026-11-15,15:00,Russia First League,FC Sochi - Shinnik Yaroslavl,Combo,Esito + Gol,1X + Under 2.5,41.6,2.4,4.9,Pinnacle,,presa,0,0
-2026-11-15,15:00,Russia First League,FC Sochi - Shinnik Yaroslavl,Under Over,OU 1.5,Over,73.9,1.35,4.9,Pinnacle,,sbagliata,0,0
-2026-11-15,15:00,Russia First League,FC Sochi - Shinnik Yaroslavl,Under Over,OU 2.5,Over,50.0,2.0,4.9,Pinnacle,,sbagliata,0,0
-2026-11-15,15:00,World UEFA Nations League,Latvia - Armenia,1X2,1X2,2,40.9,2.44,3.5,Pinnacle,,sbagliata,0,0
-2026-11-15,15:00,World UEFA Nations League,Latvia - Armenia,Gol NoGol,BTTS,NoGol,53.2,1.88,3.5,Pinnacle,,presa,0,0
-2026-11-15,15:00,World UEFA Nations League,Latvia - Armenia,Combo,Esito + Gol,1X + Under 2.5,37.9,2.64,3.5,Pinnacle,,presa,0,0
-2026-11-15,15:00,World UEFA Nations League,Latvia - Armenia,Combo,Esito + Gol,X2 + NoGol,35.8,2.8,3.5,Pinnacle,,presa,0,0
-2026-11-15,15:00,World UEFA Nations League,Latvia - Armenia,Combo,Esito + Gol,X2 + Under 2.5,43.7,2.29,3.5,Pinnacle,,presa,0,0
+2026-11-15,14:30,Italy Serie C - Girone B,Spezia - Vado,1X2,1X2,1,80.0,1.25,5.9,Pinnacle,,presa,3,0
+2026-11-15,14:30,Italy Serie C - Girone B,Spezia - Vado,Gol NoGol,BTTS,NoGol,58.8,1.7,5.9,Pinnacle,,presa,3,0
+2026-11-15,14:30,Italy Serie C - Girone B,Spezia - Vado,Combo,Esito + Gol,1 + NoGol,51.1,1.96,5.9,Pinnacle,,presa,3,0
+2026-11-15,14:30,Italy Serie C - Girone B,Spezia - Vado,Combo,Esito + Gol,1 + Over 1.5,69.1,1.45,5.9,Pinnacle,,presa,3,0
+2026-11-15,14:30,Italy Serie C - Girone B,Spezia - Vado,Combo,Esito + Gol,1 + Over 2.5,55.1,1.81,5.9,Pinnacle,,presa,3,0
+2026-11-15,14:30,Italy Serie C - Girone B,Spezia - Vado,Combo,Esito + Gol,1X + NoGol,55.4,1.81,5.9,Pinnacle,,presa,3,0
+2026-11-15,14:30,Italy Serie C - Girone B,Spezia - Vado,Combo,Esito + Gol,1X + Over 2.5,58.0,1.72,5.9,Pinnacle,,presa,3,0
+2026-11-15,14:30,Italy Serie C - Girone B,Spezia - Vado,Combo,Esito + Gol,1X + Under 2.5,35.6,2.81,5.9,Pinnacle,,sbagliata,3,0
+2026-11-15,14:30,Italy Serie C - Girone B,Spezia - Vado,Under Over,OU 1.5,Over,82.3,1.21,5.9,Pinnacle,,presa,3,0
+2026-11-15,14:30,Italy Serie C - Girone B,Spezia - Vado,Under Over,OU 2.5,Over,59.0,1.69,5.9,Pinnacle,,presa,3,0
+2026-11-15,15:00,England FA WSL,Aston Villa W - Birmingham City W,1X2,1X2,1,47.2,2.12,5.6,Pinnacle,,presa,1,0
+2026-11-15,15:00,England FA WSL,Aston Villa W - Birmingham City W,Gol NoGol,BTTS,Gol,62.2,1.61,5.6,Pinnacle,,sbagliata,1,0
+2026-11-15,15:00,England FA WSL,Aston Villa W - Birmingham City W,Combo,Esito + Gol,1 + Over 1.5,39.6,2.52,5.6,Pinnacle,,sbagliata,1,0
+2026-11-15,15:00,England FA WSL,Aston Villa W - Birmingham City W,Combo,Esito + Gol,1X + Over 2.5,41.3,2.42,5.6,Pinnacle,,sbagliata,1,0
+2026-11-15,15:00,England FA WSL,Aston Villa W - Birmingham City W,Under Over,OU 1.5,Over,82.3,1.21,5.6,Pinnacle,,sbagliata,1,0
+2026-11-15,15:00,England FA WSL,Aston Villa W - Birmingham City W,Under Over,OU 2.5,Over,60.3,1.66,5.6,Pinnacle,,sbagliata,1,0
+2026-11-15,15:00,Belgium First Amateur Division,Cercle Brugge II - Houtvenne,1X2,1X2,2,42.7,2.34,7.2,Pinnacle,,,,
+2026-11-15,15:00,Belgium First Amateur Division,Cercle Brugge II - Houtvenne,Gol NoGol,BTTS,Gol,65.2,1.53,7.2,Pinnacle,,,,
+2026-11-15,15:00,Belgium First Amateur Division,Cercle Brugge II - Houtvenne,Combo,Esito + Gol,2 + Over 1.5,39.1,2.56,7.2,Pinnacle,,,,
+2026-11-15,15:00,Belgium First Amateur Division,Cercle Brugge II - Houtvenne,Combo,Esito + Gol,X2 + Over 2.5,42.3,2.37,7.2,Pinnacle,,,,
+2026-11-15,15:00,Belgium First Amateur Division,Cercle Brugge II - Houtvenne,Under Over,OU 1.5,Over,84.5,1.18,7.2,Pinnacle,,,,
+2026-11-15,15:00,Belgium First Amateur Division,Cercle Brugge II - Houtvenne,Under Over,OU 2.5,Over,62.6,1.6,7.2,Pinnacle,,,,
+2026-11-15,15:00,World UEFA Nations League,Cyprus - Montenegro,1X2,1X2,2,42.4,2.36,3.6,Pinnacle,,presa,1,4
+2026-11-15,15:00,World UEFA Nations League,Cyprus - Montenegro,Gol NoGol,BTTS,Gol,59.7,1.68,3.6,Pinnacle,,presa,1,4
+2026-11-15,15:00,World UEFA Nations League,Cyprus - Montenegro,Combo,Esito + Gol,2 + Over 1.5,36.5,2.74,3.6,Pinnacle,,presa,1,4
+2026-11-15,15:00,World UEFA Nations League,Cyprus - Montenegro,Combo,Esito + Gol,X2 + Over 2.5,37.5,2.67,3.6,Pinnacle,,presa,1,4
+2026-11-15,15:00,World UEFA Nations League,Cyprus - Montenegro,Under Over,OU 1.5,Over,78.2,1.28,3.6,Pinnacle,,presa,1,4
+2026-11-15,15:00,World UEFA Nations League,Cyprus - Montenegro,Under Over,OU 2.5,Over,56.3,1.78,3.6,Pinnacle,,presa,1,4
+2026-11-15,15:00,Russia First League,FC Sochi - Shinnik Yaroslavl,1X2,1X2,1,58.7,1.7,4.8,Pinnacle,,sbagliata,0,0
+2026-11-15,15:00,Russia First League,FC Sochi - Shinnik Yaroslavl,Gol NoGol,BTTS,NoGol,51.4,1.94,4.8,Pinnacle,,presa,0,0
+2026-11-15,15:00,Russia First League,FC Sochi - Shinnik Yaroslavl,Combo,Esito + Gol,1 + Over 1.5,46.2,2.16,4.8,Pinnacle,,sbagliata,0,0
+2026-11-15,15:00,Russia First League,FC Sochi - Shinnik Yaroslavl,Combo,Esito + Gol,1 + Over 2.5,35.1,2.85,4.8,Pinnacle,,sbagliata,0,0
+2026-11-15,15:00,Russia First League,FC Sochi - Shinnik Yaroslavl,Combo,Esito + Gol,1X + NoGol,41.6,2.41,4.8,Pinnacle,,presa,0,0
+2026-11-15,15:00,Russia First League,FC Sochi - Shinnik Yaroslavl,Combo,Esito + Gol,1X + Over 2.5,40.2,2.49,4.8,Pinnacle,,sbagliata,0,0
+2026-11-15,15:00,Russia First League,FC Sochi - Shinnik Yaroslavl,Combo,Esito + Gol,1X + Under 2.5,41.5,2.41,4.8,Pinnacle,,presa,0,0
+2026-11-15,15:00,Russia First League,FC Sochi - Shinnik Yaroslavl,Under Over,OU 1.5,Over,73.6,1.36,4.8,Pinnacle,,sbagliata,0,0
+2026-11-15,15:00,Russia First League,FC Sochi - Shinnik Yaroslavl,Under Over,OU 2.5,Under,50.4,1.98,4.8,Pinnacle,,presa,0,0
+2026-11-15,15:00,Italy Serie A Women,Inter Milano W - Juventus W,1X2,1X2,1,46.1,2.17,7.3,Pinnacle,,,,
+2026-11-15,15:00,Italy Serie A Women,Inter Milano W - Juventus W,Gol NoGol,BTTS,Gol,59.4,1.68,7.3,Pinnacle,,,,
+2026-11-15,15:00,Italy Serie A Women,Inter Milano W - Juventus W,Combo,Esito + Gol,1 + Over 1.5,37.7,2.66,7.3,Pinnacle,,,,
+2026-11-15,15:00,Italy Serie A Women,Inter Milano W - Juventus W,Combo,Esito + Gol,1X + Over 2.5,38.4,2.61,7.3,Pinnacle,,,,
+2026-11-15,15:00,Italy Serie A Women,Inter Milano W - Juventus W,Under Over,OU 1.5,Over,79.9,1.25,7.3,Pinnacle,,,,
+2026-11-15,15:00,Italy Serie A Women,Inter Milano W - Juventus W,Under Over,OU 2.5,Over,55.3,1.81,7.3,Pinnacle,,,,
+2026-11-15,15:00,Belgium First Amateur Division,Knokke - Tienen,1X2,1X2,1,40.8,2.45,7.2,Pinnacle,,presa,3,2
+2026-11-15,15:00,Belgium First Amateur Division,Knokke - Tienen,Gol NoGol,BTTS,Gol,60.1,1.66,7.2,Pinnacle,,presa,3,2
+2026-11-15,15:00,Belgium First Amateur Division,Knokke - Tienen,Under Over,OU 1.5,Over,79.9,1.25,7.2,Pinnacle,,presa,3,2
+2026-11-15,15:00,Belgium First Amateur Division,Knokke - Tienen,Under Over,OU 2.5,Over,56.2,1.78,7.2,Pinnacle,,presa,3,2
+2026-11-15,15:00,World UEFA Nations League,Latvia - Armenia,1X2,1X2,2,43.0,2.33,3.5,Pinnacle,,sbagliata,0,0
+2026-11-15,15:00,World UEFA Nations League,Latvia - Armenia,Gol NoGol,BTTS,NoGol,53.9,1.85,3.5,Pinnacle,,presa,0,0
+2026-11-15,15:00,World UEFA Nations League,Latvia - Armenia,Combo,Esito + Gol,1X + Under 2.5,36.4,2.75,3.5,Pinnacle,,presa,0,0
+2026-11-15,15:00,World UEFA Nations League,Latvia - Armenia,Combo,Esito + Gol,X2 + NoGol,38.2,2.62,3.5,Pinnacle,,presa,0,0
+2026-11-15,15:00,World UEFA Nations League,Latvia - Armenia,Combo,Esito + Gol,X2 + Under 2.5,44.9,2.23,3.5,Pinnacle,,presa,0,0
 2026-11-15,15:00,World UEFA Nations League,Latvia - Armenia,Under Over,OU 1.5,Over,67.2,1.49,3.5,Pinnacle,,sbagliata,0,0
-2026-11-15,15:00,World UEFA Nations League,Latvia - Armenia,Under Over,OU 2.5,Under,58.8,1.7,3.5,Pinnacle,,presa,0,0
+2026-11-15,15:00,World UEFA Nations League,Latvia - Armenia,Under Over,OU 2.5,Under,59.2,1.69,3.5,Pinnacle,,presa,0,0
 2026-11-15,15:00,World UEFA Nations League,Latvia - Armenia,Under Over,OU 3.5,Under,78.0,1.28,3.5,Pinnacle,si,presa,0,0
+2026-11-15,15:00,Belgium First Amateur Division,Oud-Heverlee Leuven II - Merelbeke,1X2,1X2,1,54.8,1.82,6.9,Pinnacle,,,,
+2026-11-15,15:00,Belgium First Amateur Division,Oud-Heverlee Leuven II - Merelbeke,Gol NoGol,BTTS,Gol,63.1,1.59,6.9,Pinnacle,,,,
+2026-11-15,15:00,Belgium First Amateur Division,Oud-Heverlee Leuven II - Merelbeke,Combo,Esito + Gol,1 + Over 1.5,47.5,2.11,6.9,Pinnacle,,,,
+2026-11-15,15:00,Belgium First Amateur Division,Oud-Heverlee Leuven II - Merelbeke,Combo,Esito + Gol,1 + Over 2.5,40.1,2.5,6.9,Pinnacle,,,,
+2026-11-15,15:00,Belgium First Amateur Division,Oud-Heverlee Leuven II - Merelbeke,Combo,Esito + Gol,1X + Over 2.5,48.4,2.07,6.9,Pinnacle,,,,
+2026-11-15,15:00,Belgium First Amateur Division,Oud-Heverlee Leuven II - Merelbeke,Under Over,OU 1.5,Over,84.5,1.18,6.9,Pinnacle,,,,
+2026-11-15,15:00,Belgium First Amateur Division,Oud-Heverlee Leuven II - Merelbeke,Under Over,OU 2.5,Over,66.5,1.5,6.9,Pinnacle,,,,
 2026-11-15,15:00,Portugal Segunda Liga,Portimonense - Academica,1X2,1X2,1,43.0,2.33,4.6,Pinnacle,,sbagliata,0,0
 2026-11-15,15:00,Portugal Segunda Liga,Portimonense - Academica,Gol NoGol,BTTS,NoGol,53.3,1.88,4.6,Pinnacle,,presa,0,0
 2026-11-15,15:00,Portugal Segunda Liga,Portimonense - Academica,Combo,Esito + Gol,1X + NoGol,35.9,2.78,4.6,Pinnacle,,presa,0,0
@@ -7070,41 +7139,66 @@ Data,Ora,Campionato,Partita,Gruppo,Mercato,Sel,Prob,Equa,Margine,Fonte,InSchedin
 2026-11-15,15:00,Portugal Segunda Liga,Portimonense - Academica,Under Over,OU 1.5,Over,69.6,1.44,4.6,Pinnacle,,sbagliata,0,0
 2026-11-15,15:00,Portugal Segunda Liga,Portimonense - Academica,Under Over,OU 2.5,Under,55.6,1.8,4.6,Pinnacle,,presa,0,0
 2026-11-15,15:00,Portugal Segunda Liga,Portimonense - Academica,Under Over,OU 3.5,Under,75.4,1.33,4.6,Pinnacle,si,presa,0,0
-2026-11-15,15:00,World Friendlies,Scotland U21 - USA U21,1X2,1X2,2,39.2,2.55,7.2,Pinnacle,,,,
-2026-11-15,15:00,World Friendlies,Scotland U21 - USA U21,Gol NoGol,BTTS,Gol,62.9,1.59,7.2,Pinnacle,,,,
-2026-11-15,15:00,World Friendlies,Scotland U21 - USA U21,Combo,Esito + Gol,X2 + Over 2.5,37.0,2.7,7.2,Pinnacle,,,,
-2026-11-15,15:00,World Friendlies,Scotland U21 - USA U21,Under Over,OU 1.5,Over,82.3,1.21,7.2,Pinnacle,,,,
-2026-11-15,15:00,World Friendlies,Scotland U21 - USA U21,Under Over,OU 2.5,Over,58.4,1.71,7.2,Pinnacle,,,,
-2026-11-15,15:00,England Women's Super League,West Ham W - Charlton Athletic W,1X2,1X2,1,67.0,1.49,4.3,FootyMetrics,,presa,2,0
-2026-11-15,15:00,England Women's Super League,West Ham W - Charlton Athletic W,Gol NoGol,BTTS,NoGol,51.5,1.94,4.3,FootyMetrics,,presa,2,0
-2026-11-15,15:00,England Women's Super League,West Ham W - Charlton Athletic W,Combo,Esito + Gol,1 + NoGol,40.0,2.5,4.3,FootyMetrics,,presa,2,0
-2026-11-15,15:00,England Women's Super League,West Ham W - Charlton Athletic W,Combo,Esito + Gol,1 + Over 1.5,55.0,1.82,4.3,FootyMetrics,,presa,2,0
-2026-11-15,15:00,England Women's Super League,West Ham W - Charlton Athletic W,Combo,Esito + Gol,1 + Over 2.5,42.6,2.35,4.3,FootyMetrics,,sbagliata,2,0
-2026-11-15,15:00,England Women's Super League,West Ham W - Charlton Athletic W,Combo,Esito + Gol,1X + NoGol,45.9,2.18,4.3,FootyMetrics,,presa,2,0
-2026-11-15,15:00,England Women's Super League,West Ham W - Charlton Athletic W,Combo,Esito + Gol,1X + Over 2.5,47.1,2.12,4.3,FootyMetrics,,sbagliata,2,0
-2026-11-15,15:00,England Women's Super League,West Ham W - Charlton Athletic W,Combo,Esito + Gol,1X + Under 2.5,39.8,2.51,4.3,FootyMetrics,,presa,2,0
-2026-11-15,15:00,England Women's Super League,West Ham W - Charlton Athletic W,Under Over,OU 1.5,Over,77.5,1.29,4.3,FootyMetrics,,presa,2,0
-2026-11-15,15:00,England Women's Super League,West Ham W - Charlton Athletic W,Under Over,OU 2.5,Over,53.8,1.86,4.3,FootyMetrics,,sbagliata,2,0
-2026-11-15,16:15,Spain Segunda División,Granada CF - Las Palmas,1X2,1X2,1,50.1,2.0,3.2,Pinnacle,,,,
-2026-11-15,16:15,Spain Segunda División,Granada CF - Las Palmas,Gol NoGol,BTTS,Gol,52.1,1.92,3.2,Pinnacle,,,,
-2026-11-15,16:15,Spain Segunda División,Granada CF - Las Palmas,Combo,Esito + Gol,1 + Over 1.5,38.9,2.57,3.2,Pinnacle,,,,
-2026-11-15,16:15,Spain Segunda División,Granada CF - Las Palmas,Combo,Esito + Gol,1X + Over 2.5,36.0,2.78,3.2,Pinnacle,,,,
-2026-11-15,16:15,Spain Segunda División,Granada CF - Las Palmas,Combo,Esito + Gol,1X + Under 2.5,39.0,2.56,3.2,Pinnacle,,,,
-2026-11-15,16:15,Spain Segunda División,Granada CF - Las Palmas,Under Over,OU 1.5,Over,73.9,1.35,3.2,Pinnacle,,,,
-2026-11-15,16:15,Spain Segunda División,Granada CF - Las Palmas,Under Over,OU 2.5,Under,50.3,1.99,3.2,Pinnacle,,,,
+2026-11-15,15:00,Belgium First Amateur Division,Roeselare Daisel - Harelbeke,1X2,1X2,1,76.7,1.3,7.4,Pinnacle,,presa,3,0
+2026-11-15,15:00,Belgium First Amateur Division,Roeselare Daisel - Harelbeke,Gol NoGol,BTTS,NoGol,51.2,1.95,7.4,Pinnacle,,presa,3,0
+2026-11-15,15:00,Belgium First Amateur Division,Roeselare Daisel - Harelbeke,Combo,Esito + Gol,1 + NoGol,43.6,2.29,7.4,Pinnacle,,presa,3,0
+2026-11-15,15:00,Belgium First Amateur Division,Roeselare Daisel - Harelbeke,Combo,Esito + Gol,1 + Over 1.5,67.5,1.48,7.4,Pinnacle,,presa,3,0
+2026-11-15,15:00,Belgium First Amateur Division,Roeselare Daisel - Harelbeke,Combo,Esito + Gol,1 + Over 2.5,55.6,1.8,7.4,Pinnacle,,presa,3,0
+2026-11-15,15:00,Belgium First Amateur Division,Roeselare Daisel - Harelbeke,Combo,Esito + Gol,1X + NoGol,47.1,2.12,7.4,Pinnacle,,presa,3,0
+2026-11-15,15:00,Belgium First Amateur Division,Roeselare Daisel - Harelbeke,Combo,Esito + Gol,1X + Over 2.5,59.8,1.67,7.4,Pinnacle,,presa,3,0
+2026-11-15,15:00,Belgium First Amateur Division,Roeselare Daisel - Harelbeke,Under Over,OU 1.5,Over,84.5,1.18,7.4,Pinnacle,,presa,3,0
+2026-11-15,15:00,Belgium First Amateur Division,Roeselare Daisel - Harelbeke,Under Over,OU 2.5,Over,66.6,1.5,7.4,Pinnacle,,presa,3,0
+2026-11-15,15:00,Belgium First Amateur Division,Sporting Charleroi II - Onhaye,1X2,1X2,1,46.0,2.17,7.0,Pinnacle,,,,
+2026-11-15,15:00,Belgium First Amateur Division,Sporting Charleroi II - Onhaye,Gol NoGol,BTTS,Gol,54.6,1.83,7.0,Pinnacle,,,,
+2026-11-15,15:00,Belgium First Amateur Division,Sporting Charleroi II - Onhaye,Combo,Esito + Gol,1 + Over 1.5,35.9,2.79,7.0,Pinnacle,,,,
+2026-11-15,15:00,Belgium First Amateur Division,Sporting Charleroi II - Onhaye,Combo,Esito + Gol,1X + Under 2.5,36.4,2.75,7.0,Pinnacle,,,,
+2026-11-15,15:00,Belgium First Amateur Division,Sporting Charleroi II - Onhaye,Under Over,OU 1.5,Over,75.7,1.32,7.0,Pinnacle,,,,
+2026-11-15,15:00,Belgium First Amateur Division,Sporting Charleroi II - Onhaye,Under Over,OU 2.5,Over,51.4,1.94,7.0,Pinnacle,,,,
+2026-11-15,15:00,Belgium First Amateur Division,Standard Liège II - Union Saint-Gilloise II,1X2,1X2,2,36.9,2.71,7.2,Pinnacle,,,,
+2026-11-15,15:00,Belgium First Amateur Division,Standard Liège II - Union Saint-Gilloise II,Gol NoGol,BTTS,Gol,60.1,1.66,7.2,Pinnacle,,,,
+2026-11-15,15:00,Belgium First Amateur Division,Standard Liège II - Union Saint-Gilloise II,Under Over,OU 1.5,Over,79.9,1.25,7.2,Pinnacle,,,,
+2026-11-15,15:00,Belgium First Amateur Division,Standard Liège II - Union Saint-Gilloise II,Under Over,OU 2.5,Over,55.7,1.79,7.2,Pinnacle,,,,
+2026-11-15,15:00,Poland II Liga - East,Tychy 71 - Rekord Bielsko-Biała,1X2,1X2,1,66.9,1.49,7.2,Pinnacle,,presa,1,0
+2026-11-15,15:00,Poland II Liga - East,Tychy 71 - Rekord Bielsko-Biała,Gol NoGol,BTTS,Gol,50.6,1.98,7.2,Pinnacle,,sbagliata,1,0
+2026-11-15,15:00,Poland II Liga - East,Tychy 71 - Rekord Bielsko-Biała,Combo,Esito + Gol,1 + NoGol,37.6,2.66,7.2,Pinnacle,,presa,1,0
+2026-11-15,15:00,Poland II Liga - East,Tychy 71 - Rekord Bielsko-Biała,Combo,Esito + Gol,1 + Over 1.5,56.2,1.78,7.2,Pinnacle,,sbagliata,1,0
+2026-11-15,15:00,Poland II Liga - East,Tychy 71 - Rekord Bielsko-Biała,Combo,Esito + Gol,1 + Over 2.5,44.7,2.24,7.2,Pinnacle,,sbagliata,1,0
+2026-11-15,15:00,Poland II Liga - East,Tychy 71 - Rekord Bielsko-Biała,Combo,Esito + Gol,1X + NoGol,42.6,2.35,7.2,Pinnacle,,presa,1,0
+2026-11-15,15:00,Poland II Liga - East,Tychy 71 - Rekord Bielsko-Biała,Combo,Esito + Gol,1X + Over 2.5,49.8,2.01,7.2,Pinnacle,,sbagliata,1,0
+2026-11-15,15:00,Poland II Liga - East,Tychy 71 - Rekord Bielsko-Biała,Combo,Esito + Gol,1X + Under 2.5,36.4,2.75,7.2,Pinnacle,,presa,1,0
+2026-11-15,15:00,Poland II Liga - East,Tychy 71 - Rekord Bielsko-Biała,Under Over,OU 1.5,Over,79.9,1.25,7.2,Pinnacle,,sbagliata,1,0
+2026-11-15,15:00,Poland II Liga - East,Tychy 71 - Rekord Bielsko-Biała,Under Over,OU 2.5,Over,55.9,1.79,7.2,Pinnacle,,sbagliata,1,0
+2026-11-15,15:00,England FA WSL,West Ham W - Charlton Athletic W,1X2,1X2,1,67.7,1.48,5.4,Pinnacle,,presa,2,0
+2026-11-15,15:00,England FA WSL,West Ham W - Charlton Athletic W,Gol NoGol,BTTS,Gol,50.0,2.0,5.4,Pinnacle,,sbagliata,2,0
+2026-11-15,15:00,England FA WSL,West Ham W - Charlton Athletic W,Combo,Esito + Gol,1 + NoGol,38.4,2.6,5.4,Pinnacle,,presa,2,0
+2026-11-15,15:00,England FA WSL,West Ham W - Charlton Athletic W,Combo,Esito + Gol,1 + Over 1.5,56.9,1.76,5.4,Pinnacle,,presa,2,0
+2026-11-15,15:00,England FA WSL,West Ham W - Charlton Athletic W,Combo,Esito + Gol,1 + Over 2.5,45.2,2.21,5.4,Pinnacle,,sbagliata,2,0
+2026-11-15,15:00,England FA WSL,West Ham W - Charlton Athletic W,Combo,Esito + Gol,1X + NoGol,43.4,2.3,5.4,Pinnacle,,presa,2,0
+2026-11-15,15:00,England FA WSL,West Ham W - Charlton Athletic W,Combo,Esito + Gol,1X + Over 2.5,50.2,1.99,5.4,Pinnacle,,sbagliata,2,0
+2026-11-15,15:00,England FA WSL,West Ham W - Charlton Athletic W,Combo,Esito + Gol,1X + Under 2.5,36.6,2.73,5.4,Pinnacle,,presa,2,0
+2026-11-15,15:00,England FA WSL,West Ham W - Charlton Athletic W,Under Over,OU 1.5,Over,79.9,1.25,5.4,Pinnacle,,presa,2,0
+2026-11-15,15:00,England FA WSL,West Ham W - Charlton Athletic W,Under Over,OU 2.5,Over,54.4,1.84,5.4,Pinnacle,,sbagliata,2,0
+2026-11-15,16:15,Spain Segunda División,Granada CF - Las Palmas,1X2,1X2,1,49.9,2.0,3.1,Pinnacle,,,,
+2026-11-15,16:15,Spain Segunda División,Granada CF - Las Palmas,Gol NoGol,BTTS,Gol,51.4,1.94,3.1,Pinnacle,,,,
+2026-11-15,16:15,Spain Segunda División,Granada CF - Las Palmas,Combo,Esito + Gol,1 + Over 1.5,38.4,2.6,3.1,Pinnacle,,,,
+2026-11-15,16:15,Spain Segunda División,Granada CF - Las Palmas,Combo,Esito + Gol,1X + NoGol,35.3,2.84,3.1,Pinnacle,,,,
+2026-11-15,16:15,Spain Segunda División,Granada CF - Las Palmas,Combo,Esito + Gol,1X + Over 2.5,35.3,2.83,3.1,Pinnacle,,,,
+2026-11-15,16:15,Spain Segunda División,Granada CF - Las Palmas,Combo,Esito + Gol,1X + Under 2.5,39.7,2.52,3.1,Pinnacle,,,,
+2026-11-15,16:15,Spain Segunda División,Granada CF - Las Palmas,Under Over,OU 1.5,Over,73.3,1.36,3.1,Pinnacle,,,,
+2026-11-15,16:15,Spain Segunda División,Granada CF - Las Palmas,Under Over,OU 2.5,Under,51.2,1.95,3.1,Pinnacle,,,,
 2026-11-15,16:30,Portugal Segunda Liga,Penafiel - Lusitânia Lourosa,1X2,1X2,1,39.7,2.52,4.6,Pinnacle,,sbagliata,1,2
 2026-11-15,16:30,Portugal Segunda Liga,Penafiel - Lusitânia Lourosa,Gol NoGol,BTTS,Gol,51.6,1.94,4.6,Pinnacle,,presa,1,2
 2026-11-15,16:30,Portugal Segunda Liga,Penafiel - Lusitânia Lourosa,Combo,Esito + Gol,1X + Under 2.5,38.2,2.62,4.6,Pinnacle,,sbagliata,1,2
 2026-11-15,16:30,Portugal Segunda Liga,Penafiel - Lusitânia Lourosa,Combo,Esito + Gol,X2 + Under 2.5,35.8,2.79,4.6,Pinnacle,,sbagliata,1,2
 2026-11-15,16:30,Portugal Segunda Liga,Penafiel - Lusitânia Lourosa,Under Over,OU 1.5,Over,72.2,1.39,4.6,Pinnacle,,presa,1,2
 2026-11-15,16:30,Portugal Segunda Liga,Penafiel - Lusitânia Lourosa,Under Over,OU 2.5,Under,53.4,1.87,4.6,Pinnacle,,sbagliata,1,2
-2026-11-15,17:30,England Women's Super League,Arsenal W - London City Lionesses W,1X2,1X2,1,52.6,1.9,5.6,FootyMetrics,,,,
-2026-11-15,17:30,England Women's Super League,Arsenal W - London City Lionesses W,Gol NoGol,BTTS,Gol,58.9,1.7,5.6,FootyMetrics,,,,
-2026-11-15,17:30,England Women's Super League,Arsenal W - London City Lionesses W,Combo,Esito + Gol,1 + Over 1.5,43.8,2.28,5.6,FootyMetrics,,,,
-2026-11-15,17:30,England Women's Super League,Arsenal W - London City Lionesses W,Combo,Esito + Gol,1 + Over 2.5,35.7,2.8,5.6,FootyMetrics,,,,
-2026-11-15,17:30,England Women's Super League,Arsenal W - London City Lionesses W,Combo,Esito + Gol,1X + Over 2.5,43.2,2.32,5.6,FootyMetrics,,,,
-2026-11-15,17:30,England Women's Super League,Arsenal W - London City Lionesses W,Under Over,OU 1.5,Over,80.7,1.24,5.6,FootyMetrics,,,,
-2026-11-15,17:30,England Women's Super League,Arsenal W - London City Lionesses W,Under Over,OU 2.5,Over,58.7,1.7,5.6,FootyMetrics,,,,
+2026-11-15,17:30,England FA WSL,Arsenal W - London City Lionesses W,1X2,1X2,1,55.7,1.8,7.3,Pinnacle,,,,
+2026-11-15,17:30,England FA WSL,Arsenal W - London City Lionesses W,Gol NoGol,BTTS,Gol,59.8,1.67,7.3,Pinnacle,,,,
+2026-11-15,17:30,England FA WSL,Arsenal W - London City Lionesses W,Combo,Esito + Gol,1 + Over 1.5,47.3,2.11,7.3,Pinnacle,,,,
+2026-11-15,17:30,England FA WSL,Arsenal W - London City Lionesses W,Combo,Esito + Gol,1 + Over 2.5,39.0,2.56,7.3,Pinnacle,,,,
+2026-11-15,17:30,England FA WSL,Arsenal W - London City Lionesses W,Combo,Esito + Gol,1X + Over 2.5,46.6,2.15,7.3,Pinnacle,,,,
+2026-11-15,17:30,England FA WSL,Arsenal W - London City Lionesses W,Under Over,OU 1.5,Over,82.3,1.21,7.3,Pinnacle,,,,
+2026-11-15,17:30,England FA WSL,Arsenal W - London City Lionesses W,Under Over,OU 2.5,Over,61.2,1.63,7.3,Pinnacle,,,,
 2026-11-15,17:30,Italy Serie C - Girone C,Barletta - Team Altamura,1X2,1X2,1,50.8,1.97,7.2,Pinnacle,,,,
 2026-11-15,17:30,Italy Serie C - Girone C,Barletta - Team Altamura,Gol NoGol,BTTS,NoGol,55.3,1.81,7.2,Pinnacle,,,,
 2026-11-15,17:30,Italy Serie C - Girone C,Barletta - Team Altamura,Combo,Esito + Gol,1 + Over 1.5,36.6,2.73,7.2,Pinnacle,,,,
@@ -7112,6 +7206,16 @@ Data,Ora,Campionato,Partita,Gruppo,Mercato,Sel,Prob,Equa,Margine,Fonte,InSchedin
 2026-11-15,17:30,Italy Serie C - Girone C,Barletta - Team Altamura,Combo,Esito + Gol,1X + Under 2.5,46.6,2.15,7.2,Pinnacle,,,,
 2026-11-15,17:30,Italy Serie C - Girone C,Barletta - Team Altamura,Under Over,OU 1.5,Over,69.2,1.45,7.2,Pinnacle,,,,
 2026-11-15,17:30,Italy Serie C - Girone C,Barletta - Team Altamura,Under Over,OU 2.5,Under,55.6,1.8,7.2,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone A,Cittadella - Folgore Caratese,1X2,1X2,1,68.0,1.47,7.0,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone A,Cittadella - Folgore Caratese,Gol NoGol,BTTS,NoGol,58.3,1.71,7.0,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone A,Cittadella - Folgore Caratese,Combo,Esito + Gol,1 + NoGol,44.2,2.26,7.0,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone A,Cittadella - Folgore Caratese,Combo,Esito + Gol,1 + Over 1.5,53.8,1.86,7.0,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone A,Cittadella - Folgore Caratese,Combo,Esito + Gol,1 + Over 2.5,39.9,2.51,7.0,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone A,Cittadella - Folgore Caratese,Combo,Esito + Gol,1X + NoGol,51.5,1.94,7.0,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone A,Cittadella - Folgore Caratese,Combo,Esito + Gol,1X + Over 2.5,43.4,2.3,7.0,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone A,Cittadella - Folgore Caratese,Combo,Esito + Gol,1X + Under 2.5,44.9,2.23,7.0,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone A,Cittadella - Folgore Caratese,Under Over,OU 1.5,Over,73.7,1.36,7.0,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone A,Cittadella - Folgore Caratese,Under Over,OU 2.5,Under,51.3,1.95,7.0,Pinnacle,,,,
 2026-11-15,17:30,Italy Serie C - Girone C,Cosenza - Casertana,1X2,1X2,2,41.4,2.42,7.1,Pinnacle,,,,
 2026-11-15,17:30,Italy Serie C - Girone C,Cosenza - Casertana,Gol NoGol,BTTS,NoGol,53.1,1.88,7.1,Pinnacle,,,,
 2026-11-15,17:30,Italy Serie C - Girone C,Cosenza - Casertana,Combo,Esito + Gol,1X + Under 2.5,38.2,2.62,7.1,Pinnacle,,,,
@@ -7119,35 +7223,43 @@ Data,Ora,Campionato,Partita,Gruppo,Mercato,Sel,Prob,Equa,Margine,Fonte,InSchedin
 2026-11-15,17:30,Italy Serie C - Girone C,Cosenza - Casertana,Combo,Esito + Gol,X2 + Under 2.5,43.4,2.31,7.1,Pinnacle,,,,
 2026-11-15,17:30,Italy Serie C - Girone C,Cosenza - Casertana,Under Over,OU 1.5,Over,68.8,1.45,7.1,Pinnacle,,,,
 2026-11-15,17:30,Italy Serie C - Girone C,Cosenza - Casertana,Under Over,OU 2.5,Under,56.1,1.78,7.1,Pinnacle,,,,
-2026-11-15,17:30,Italy Serie C - Girone A,Pergolettese - PRO Vercelli,1X2,1X2,1,39.5,2.53,7.2,Pinnacle,,,,
-2026-11-15,17:30,Italy Serie C - Girone A,Pergolettese - PRO Vercelli,Gol NoGol,BTTS,Gol,52.9,1.89,7.2,Pinnacle,,,,
-2026-11-15,17:30,Italy Serie C - Girone A,Pergolettese - PRO Vercelli,Combo,Esito + Gol,1X + Under 2.5,36.8,2.72,7.2,Pinnacle,,,,
-2026-11-15,17:30,Italy Serie C - Girone A,Pergolettese - PRO Vercelli,Under Over,OU 1.5,Over,73.4,1.36,7.2,Pinnacle,,,,
-2026-11-15,17:30,Italy Serie C - Girone A,Pergolettese - PRO Vercelli,Under Over,OU 2.5,Under,51.7,1.93,7.2,Pinnacle,,,,
-2026-11-15,17:30,Italy Serie C - Girone B,Ravenna - Forli,1X2,1X2,1,67.9,1.47,7.3,Pinnacle,,,,
-2026-11-15,17:30,Italy Serie C - Girone B,Ravenna - Forli,Gol NoGol,BTTS,NoGol,50.1,2.0,7.3,Pinnacle,,,,
-2026-11-15,17:30,Italy Serie C - Girone B,Ravenna - Forli,Combo,Esito + Gol,1 + NoGol,38.6,2.59,7.3,Pinnacle,,,,
-2026-11-15,17:30,Italy Serie C - Girone B,Ravenna - Forli,Combo,Esito + Gol,1 + Over 1.5,57.0,1.75,7.3,Pinnacle,,,,
-2026-11-15,17:30,Italy Serie C - Girone B,Ravenna - Forli,Combo,Esito + Gol,1 + Over 2.5,45.3,2.21,7.3,Pinnacle,,,,
-2026-11-15,17:30,Italy Serie C - Girone B,Ravenna - Forli,Combo,Esito + Gol,1X + NoGol,43.6,2.29,7.3,Pinnacle,,,,
-2026-11-15,17:30,Italy Serie C - Girone B,Ravenna - Forli,Combo,Esito + Gol,1X + Over 2.5,50.2,1.99,7.3,Pinnacle,,,,
-2026-11-15,17:30,Italy Serie C - Girone B,Ravenna - Forli,Combo,Esito + Gol,1X + Under 2.5,36.6,2.73,7.3,Pinnacle,,,,
-2026-11-15,17:30,Italy Serie C - Girone B,Ravenna - Forli,Under Over,OU 1.5,Over,79.9,1.25,7.3,Pinnacle,,,,
-2026-11-15,17:30,Italy Serie C - Girone B,Ravenna - Forli,Under Over,OU 2.5,Over,54.2,1.84,7.3,Pinnacle,,,,
-2026-11-15,18:00,World UEFA Nations League,Belarus - Albania,1X2,1X2,2,49.1,2.04,3.8,Pinnacle,,,,
-2026-11-15,18:00,World UEFA Nations League,Belarus - Albania,Gol NoGol,BTTS,NoGol,59.4,1.68,3.8,Pinnacle,,,,
-2026-11-15,18:00,World UEFA Nations League,Belarus - Albania,Combo,Esito + Gol,1X + Under 2.5,36.7,2.73,3.8,Pinnacle,,,,
-2026-11-15,18:00,World UEFA Nations League,Belarus - Albania,Combo,Esito + Gol,X2 + NoGol,45.7,2.19,3.8,Pinnacle,,,,
-2026-11-15,18:00,World UEFA Nations League,Belarus - Albania,Combo,Esito + Gol,X2 + Under 2.5,50.8,1.97,3.8,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone A,Juventus U23 - Treviso,1X2,1X2,2,41.2,2.43,7.1,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone A,Juventus U23 - Treviso,Gol NoGol,BTTS,NoGol,53.3,1.88,7.1,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone A,Juventus U23 - Treviso,Combo,Esito + Gol,1X + Under 2.5,37.7,2.65,7.1,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone A,Juventus U23 - Treviso,Combo,Esito + Gol,X2 + NoGol,36.1,2.77,7.1,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone A,Juventus U23 - Treviso,Combo,Esito + Gol,X2 + Under 2.5,43.8,2.28,7.1,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone A,Juventus U23 - Treviso,Under Over,OU 1.5,Over,70.9,1.41,7.1,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone A,Juventus U23 - Treviso,Under Over,OU 2.5,Under,54.1,1.85,7.1,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone A,Pergolettese - PRO Vercelli,1X2,1X2,1,39.9,2.51,7.2,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone A,Pergolettese - PRO Vercelli,Gol NoGol,BTTS,Gol,52.8,1.89,7.2,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone A,Pergolettese - PRO Vercelli,Combo,Esito + Gol,1X + Under 2.5,37.0,2.7,7.2,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone A,Pergolettese - PRO Vercelli,Under Over,OU 1.5,Over,73.3,1.36,7.2,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone A,Pergolettese - PRO Vercelli,Under Over,OU 2.5,Under,51.8,1.93,7.2,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone B,Ravenna - Forli,1X2,1X2,1,67.9,1.47,7.2,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone B,Ravenna - Forli,Gol NoGol,BTTS,NoGol,50.1,2.0,7.2,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone B,Ravenna - Forli,Combo,Esito + Gol,1 + NoGol,38.6,2.59,7.2,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone B,Ravenna - Forli,Combo,Esito + Gol,1 + Over 1.5,57.0,1.75,7.2,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone B,Ravenna - Forli,Combo,Esito + Gol,1 + Over 2.5,45.3,2.21,7.2,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone B,Ravenna - Forli,Combo,Esito + Gol,1X + NoGol,43.6,2.29,7.2,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone B,Ravenna - Forli,Combo,Esito + Gol,1X + Over 2.5,50.2,1.99,7.2,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone B,Ravenna - Forli,Combo,Esito + Gol,1X + Under 2.5,36.6,2.73,7.2,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone B,Ravenna - Forli,Under Over,OU 1.5,Over,79.9,1.25,7.2,Pinnacle,,,,
+2026-11-15,17:30,Italy Serie C - Girone B,Ravenna - Forli,Under Over,OU 2.5,Over,53.9,1.85,7.2,Pinnacle,,,,
+2026-11-15,18:00,World UEFA Nations League,Belarus - Albania,1X2,1X2,2,49.4,2.02,3.8,Pinnacle,,,,
+2026-11-15,18:00,World UEFA Nations League,Belarus - Albania,Gol NoGol,BTTS,NoGol,59.5,1.68,3.8,Pinnacle,,,,
+2026-11-15,18:00,World UEFA Nations League,Belarus - Albania,Combo,Esito + Gol,1X + Under 2.5,36.6,2.73,3.8,Pinnacle,,,,
+2026-11-15,18:00,World UEFA Nations League,Belarus - Albania,Combo,Esito + Gol,2 + Over 1.5,35.0,2.86,3.8,Pinnacle,,,,
+2026-11-15,18:00,World UEFA Nations League,Belarus - Albania,Combo,Esito + Gol,X2 + NoGol,45.8,2.18,3.8,Pinnacle,,,,
+2026-11-15,18:00,World UEFA Nations League,Belarus - Albania,Combo,Esito + Gol,X2 + Under 2.5,50.9,1.97,3.8,Pinnacle,,,,
 2026-11-15,18:00,World UEFA Nations League,Belarus - Albania,Under Over,OU 1.5,Over,64.8,1.54,3.8,Pinnacle,,,,
 2026-11-15,18:00,World UEFA Nations League,Belarus - Albania,Under Over,OU 2.5,Under,61.5,1.63,3.8,Pinnacle,,,,
 2026-11-15,18:00,World UEFA Nations League,Belarus - Albania,Under Over,OU 3.5,Under,80.0,1.25,3.8,Pinnacle,si,,,
-2026-11-15,18:00,Spain Primera División Femenina,Deportivo de La Coruña W - Barcelona W,1X2,1X2,2,95.4,1.05,5.4,Betfair,,,,
-2026-11-15,18:00,Spain Primera División Femenina,Deportivo de La Coruña W - Barcelona W,Gol NoGol,BTTS,NoGol,71.7,1.39,5.4,Betfair,,,,
-2026-11-15,18:00,Spain Primera División Femenina,Deportivo de La Coruña W - Barcelona W,Combo,Esito + Gol,2 + NoGol,71.4,1.4,5.4,Betfair,,,,
-2026-11-15,18:00,Spain Primera División Femenina,Deportivo de La Coruña W - Barcelona W,Combo,Esito + Gol,X2 + NoGol,72.4,1.38,5.4,Betfair,,,,
-2026-11-15,18:00,Spain Primera División Femenina,Deportivo de La Coruña W - Barcelona W,Under Over,OU 1.5,Over,92.1,1.09,5.4,Betfair,,,,
-2026-11-15,18:00,Spain Primera División Femenina,Deportivo de La Coruña W - Barcelona W,Under Over,OU 2.5,Over,83.2,1.2,5.4,Betfair,,,,
+2026-11-15,18:00,Spain Primera División Femenina,Deportivo de La Coruña W - Barcelona W,1X2,1X2,2,95.1,1.05,6.1,Betfair,,,,
+2026-11-15,18:00,Spain Primera División Femenina,Deportivo de La Coruña W - Barcelona W,Gol NoGol,BTTS,NoGol,68.8,1.45,6.1,Betfair,,,,
+2026-11-15,18:00,Spain Primera División Femenina,Deportivo de La Coruña W - Barcelona W,Combo,Esito + Gol,2 + NoGol,74.9,1.34,6.1,Betfair,,,,
+2026-11-15,18:00,Spain Primera División Femenina,Deportivo de La Coruña W - Barcelona W,Combo,Esito + Gol,X2 + NoGol,76.0,1.32,6.1,Betfair,,,,
+2026-11-15,18:00,Spain Primera División Femenina,Deportivo de La Coruña W - Barcelona W,Under Over,OU 1.5,Over,92.1,1.09,6.1,Betfair,,,,
+2026-11-15,18:00,Spain Primera División Femenina,Deportivo de La Coruña W - Barcelona W,Under Over,OU 2.5,Over,82.1,1.22,6.1,Betfair,,,,
 2026-11-15,18:00,World UEFA Nations League,Finland - San Marino,1X2,1X2,1,94.3,1.06,3.8,Pinnacle,,,,
 2026-11-15,18:00,World UEFA Nations League,Finland - San Marino,Gol NoGol,BTTS,NoGol,67.4,1.48,3.8,Pinnacle,,,,
 2026-11-15,18:00,World UEFA Nations League,Finland - San Marino,Combo,Esito + Gol,1 + NoGol,65.4,1.53,3.8,Pinnacle,,,,
@@ -7156,40 +7268,40 @@ Data,Ora,Campionato,Partita,Gruppo,Mercato,Sel,Prob,Equa,Margine,Fonte,InSchedin
 2026-11-15,18:00,World UEFA Nations League,Finland - San Marino,Combo,Esito + Gol,1X + Over 2.5,80.0,1.25,3.8,Pinnacle,si,,,
 2026-11-15,18:00,World UEFA Nations League,Finland - San Marino,Under Over,OU 1.5,Over,93.0,1.08,3.8,Pinnacle,,,,
 2026-11-15,18:00,World UEFA Nations League,Finland - San Marino,Under Over,OU 2.5,Over,77.8,1.29,3.8,Pinnacle,,,,
-2026-11-15,18:00,World Friendly International,Suriname - Eswatini,1X2,1X2,1,66.6,1.5,5.0,FootyMetrics,,,,
-2026-11-15,18:00,World Friendly International,Suriname - Eswatini,Gol NoGol,BTTS,NoGol,55.8,1.79,5.0,FootyMetrics,,,,
-2026-11-15,18:00,World Friendly International,Suriname - Eswatini,Combo,Esito + Gol,1 + NoGol,41.9,2.39,5.0,FootyMetrics,,,,
-2026-11-15,18:00,World Friendly International,Suriname - Eswatini,Combo,Esito + Gol,1 + Over 1.5,53.1,1.88,5.0,FootyMetrics,,,,
-2026-11-15,18:00,World Friendly International,Suriname - Eswatini,Combo,Esito + Gol,1 + Over 2.5,39.9,2.51,5.0,FootyMetrics,,,,
-2026-11-15,18:00,World Friendly International,Suriname - Eswatini,Combo,Esito + Gol,1X + NoGol,48.8,2.05,5.0,FootyMetrics,,,,
-2026-11-15,18:00,World Friendly International,Suriname - Eswatini,Combo,Esito + Gol,1X + Over 2.5,43.9,2.28,5.0,FootyMetrics,,,,
-2026-11-15,18:00,World Friendly International,Suriname - Eswatini,Combo,Esito + Gol,1X + Under 2.5,43.3,2.31,5.0,FootyMetrics,,,,
-2026-11-15,18:00,World Friendly International,Suriname - Eswatini,Under Over,OU 1.5,Over,74.7,1.34,5.0,FootyMetrics,,,,
-2026-11-15,18:00,World Friendly International,Suriname - Eswatini,Under Over,OU 2.5,Over,50.0,2.0,5.0,FootyMetrics,,,,
-2026-11-15,18:30,Spain Segunda División,Eibar - Cadiz,1X2,1X2,1,62.7,1.59,3.3,Pinnacle,si,,,
-2026-11-15,18:30,Spain Segunda División,Eibar - Cadiz,1X2,1X2,X,21.6,4.63,3.3,Pinnacle,,,,
-2026-11-15,18:30,Spain Segunda División,Eibar - Cadiz,Gol NoGol,BTTS,Gol,53.3,1.88,3.3,Pinnacle,,,,
-2026-11-15,18:30,Spain Segunda División,Eibar - Cadiz,Combo,Esito + Gol,1 + Over 1.5,52.4,1.91,3.3,Pinnacle,,,,
-2026-11-15,18:30,Spain Segunda División,Eibar - Cadiz,Combo,Esito + Gol,1 + Over 2.5,42.0,2.38,3.3,Pinnacle,,,,
-2026-11-15,18:30,Spain Segunda División,Eibar - Cadiz,Combo,Esito + Gol,1X + NoGol,38.7,2.58,3.3,Pinnacle,,,,
-2026-11-15,18:30,Spain Segunda División,Eibar - Cadiz,Combo,Esito + Gol,1X + Over 2.5,47.8,2.09,3.3,Pinnacle,,,,
-2026-11-15,18:30,Spain Segunda División,Eibar - Cadiz,Combo,Esito + Gol,1X + Under 2.5,35.5,2.82,3.3,Pinnacle,,,,
-2026-11-15,18:30,Spain Segunda División,Eibar - Cadiz,Under Over,OU 1.5,Over,77.3,1.29,3.3,Pinnacle,,,,
-2026-11-15,18:30,Spain Segunda División,Eibar - Cadiz,Under Over,OU 2.5,Over,55.2,1.81,3.3,Pinnacle,,,,
-2026-11-15,18:30,Spain Segunda División,Eldense - Sabadell,1X2,1X2,1,39.6,2.53,3.2,Pinnacle,,,,
-2026-11-15,18:30,Spain Segunda División,Eldense - Sabadell,Gol NoGol,BTTS,NoGol,56.7,1.76,3.2,Pinnacle,,,,
-2026-11-15,18:30,Spain Segunda División,Eldense - Sabadell,Combo,Esito + Gol,1X + NoGol,37.0,2.7,3.2,Pinnacle,,,,
-2026-11-15,18:30,Spain Segunda División,Eldense - Sabadell,Combo,Esito + Gol,1X + Under 2.5,46.2,2.16,3.2,Pinnacle,,,,
-2026-11-15,18:30,Spain Segunda División,Eldense - Sabadell,Combo,Esito + Gol,X2 + Under 2.5,42.2,2.37,3.2,Pinnacle,,,,
-2026-11-15,18:30,Spain Segunda División,Eldense - Sabadell,Under Over,OU 1.5,Over,62.2,1.61,3.2,Pinnacle,,,,
-2026-11-15,18:30,Spain Segunda División,Eldense - Sabadell,Under Over,OU 2.5,Under,64.8,1.54,3.2,Pinnacle,,,,
-2026-11-15,19:00,Peru Primera División,Comerciantes Unidos - Sport Boys,1X2,1X2,1,52.8,1.89,7.3,Pinnacle,,,,
-2026-11-15,19:00,Peru Primera División,Comerciantes Unidos - Sport Boys,Gol NoGol,BTTS,Gol,57.7,1.73,7.3,Pinnacle,,,,
-2026-11-15,19:00,Peru Primera División,Comerciantes Unidos - Sport Boys,Combo,Esito + Gol,1 + Over 1.5,43.6,2.29,7.3,Pinnacle,,,,
-2026-11-15,19:00,Peru Primera División,Comerciantes Unidos - Sport Boys,Combo,Esito + Gol,1 + Over 2.5,35.3,2.84,7.3,Pinnacle,,,,
-2026-11-15,19:00,Peru Primera División,Comerciantes Unidos - Sport Boys,Combo,Esito + Gol,1X + Over 2.5,42.5,2.35,7.3,Pinnacle,,,,
-2026-11-15,19:00,Peru Primera División,Comerciantes Unidos - Sport Boys,Under Over,OU 1.5,Over,79.9,1.25,7.3,Pinnacle,,,,
-2026-11-15,19:00,Peru Primera División,Comerciantes Unidos - Sport Boys,Under Over,OU 2.5,Over,52.9,1.89,7.3,Pinnacle,,,,
+2026-11-15,18:00,World Friendly International,Suriname - Eswatini,1X2,1X2,1,69.7,1.44,2.5,FootyMetrics,,,,
+2026-11-15,18:00,World Friendly International,Suriname - Eswatini,Gol NoGol,BTTS,NoGol,57.3,1.75,2.5,FootyMetrics,,,,
+2026-11-15,18:00,World Friendly International,Suriname - Eswatini,Combo,Esito + Gol,1 + NoGol,43.6,2.29,2.5,FootyMetrics,,,,
+2026-11-15,18:00,World Friendly International,Suriname - Eswatini,Combo,Esito + Gol,1 + Over 1.5,56.8,1.76,2.5,FootyMetrics,,,,
+2026-11-15,18:00,World Friendly International,Suriname - Eswatini,Combo,Esito + Gol,1 + Over 2.5,43.3,2.31,2.5,FootyMetrics,,,,
+2026-11-15,18:00,World Friendly International,Suriname - Eswatini,Combo,Esito + Gol,1X + NoGol,49.8,2.01,2.5,FootyMetrics,,,,
+2026-11-15,18:00,World Friendly International,Suriname - Eswatini,Combo,Esito + Gol,1X + Over 2.5,47.2,2.12,2.5,FootyMetrics,,,,
+2026-11-15,18:00,World Friendly International,Suriname - Eswatini,Combo,Esito + Gol,1X + Under 2.5,41.5,2.41,2.5,FootyMetrics,,,,
+2026-11-15,18:00,World Friendly International,Suriname - Eswatini,Under Over,OU 1.5,Over,76.6,1.31,2.5,FootyMetrics,,,,
+2026-11-15,18:00,World Friendly International,Suriname - Eswatini,Under Over,OU 2.5,Over,52.6,1.9,2.5,FootyMetrics,,,,
+2026-11-15,18:30,Spain Segunda División,Eibar - Cadiz,1X2,1X2,1,63.1,1.58,3.4,Pinnacle,si,,,
+2026-11-15,18:30,Spain Segunda División,Eibar - Cadiz,1X2,1X2,X,21.3,4.69,3.4,Pinnacle,,,,
+2026-11-15,18:30,Spain Segunda División,Eibar - Cadiz,Gol NoGol,BTTS,Gol,53.1,1.88,3.4,Pinnacle,,,,
+2026-11-15,18:30,Spain Segunda División,Eibar - Cadiz,Combo,Esito + Gol,1 + Over 1.5,52.8,1.89,3.4,Pinnacle,,,,
+2026-11-15,18:30,Spain Segunda División,Eibar - Cadiz,Combo,Esito + Gol,1 + Over 2.5,42.2,2.37,3.4,Pinnacle,,,,
+2026-11-15,18:30,Spain Segunda División,Eibar - Cadiz,Combo,Esito + Gol,1X + NoGol,39.1,2.56,3.4,Pinnacle,,,,
+2026-11-15,18:30,Spain Segunda División,Eibar - Cadiz,Combo,Esito + Gol,1X + Over 2.5,48.0,2.08,3.4,Pinnacle,,,,
+2026-11-15,18:30,Spain Segunda División,Eibar - Cadiz,Combo,Esito + Gol,1X + Under 2.5,35.6,2.81,3.4,Pinnacle,,,,
+2026-11-15,18:30,Spain Segunda División,Eibar - Cadiz,Under Over,OU 1.5,Over,77.4,1.29,3.4,Pinnacle,,,,
+2026-11-15,18:30,Spain Segunda División,Eibar - Cadiz,Under Over,OU 2.5,Over,55.6,1.8,3.4,Pinnacle,,,,
+2026-11-15,18:30,Spain Segunda División,Eldense - Sabadell,1X2,1X2,1,39.2,2.55,3.1,Pinnacle,,,,
+2026-11-15,18:30,Spain Segunda División,Eldense - Sabadell,Gol NoGol,BTTS,NoGol,56.7,1.76,3.1,Pinnacle,,,,
+2026-11-15,18:30,Spain Segunda División,Eldense - Sabadell,Combo,Esito + Gol,1X + NoGol,36.7,2.72,3.1,Pinnacle,,,,
+2026-11-15,18:30,Spain Segunda División,Eldense - Sabadell,Combo,Esito + Gol,1X + Under 2.5,46.1,2.17,3.1,Pinnacle,,,,
+2026-11-15,18:30,Spain Segunda División,Eldense - Sabadell,Combo,Esito + Gol,X2 + Under 2.5,42.4,2.36,3.1,Pinnacle,,,,
+2026-11-15,18:30,Spain Segunda División,Eldense - Sabadell,Under Over,OU 1.5,Over,61.1,1.64,3.1,Pinnacle,,,,
+2026-11-15,18:30,Spain Segunda División,Eldense - Sabadell,Under Over,OU 2.5,Under,65.7,1.52,3.1,Pinnacle,,,,
+2026-11-15,19:00,Peru Primera División,Comerciantes Unidos - Sport Boys,1X2,1X2,1,54.7,1.83,7.1,Pinnacle,,,,
+2026-11-15,19:00,Peru Primera División,Comerciantes Unidos - Sport Boys,Gol NoGol,BTTS,Gol,57.1,1.75,7.1,Pinnacle,,,,
+2026-11-15,19:00,Peru Primera División,Comerciantes Unidos - Sport Boys,Combo,Esito + Gol,1 + Over 1.5,45.3,2.21,7.1,Pinnacle,,,,
+2026-11-15,19:00,Peru Primera División,Comerciantes Unidos - Sport Boys,Combo,Esito + Gol,1 + Over 2.5,36.6,2.73,7.1,Pinnacle,,,,
+2026-11-15,19:00,Peru Primera División,Comerciantes Unidos - Sport Boys,Combo,Esito + Gol,1X + Over 2.5,43.6,2.29,7.1,Pinnacle,,,,
+2026-11-15,19:00,Peru Primera División,Comerciantes Unidos - Sport Boys,Under Over,OU 1.5,Over,79.9,1.25,7.1,Pinnacle,,,,
+2026-11-15,19:00,Peru Primera División,Comerciantes Unidos - Sport Boys,Under Over,OU 2.5,Over,53.4,1.87,7.1,Pinnacle,,,,
 2026-11-15,19:00,Argentina Primera Nacional,Deportivo Moron - Colegiales,1X2,1X2,1,48.0,2.08,4.6,Pinnacle,,,,
 2026-11-15,19:00,Argentina Primera Nacional,Deportivo Moron - Colegiales,Gol NoGol,BTTS,NoGol,62.6,1.6,4.6,Pinnacle,,,,
 2026-11-15,19:00,Argentina Primera Nacional,Deportivo Moron - Colegiales,Combo,Esito + Gol,1X + NoGol,47.4,2.11,4.6,Pinnacle,,,,
@@ -7209,19 +7321,13 @@ Data,Ora,Campionato,Partita,Gruppo,Mercato,Sel,Prob,Equa,Margine,Fonte,InSchedin
 2026-11-15,19:00,Mexico Liga de Expansión MX,Leones Negros UDG - Monarcas,Gol NoGol,BTTS,Gol,56.3,1.78,4.3,Pinnacle,,,,
 2026-11-15,19:00,Mexico Liga de Expansión MX,Leones Negros UDG - Monarcas,Under Over,OU 1.5,Over,76.3,1.31,4.3,Pinnacle,,,,
 2026-11-15,19:00,Mexico Liga de Expansión MX,Leones Negros UDG - Monarcas,Under Over,OU 2.5,Over,52.5,1.91,4.3,Pinnacle,,,,
-2026-11-15,20:00,Colombia Primera B,Popayan - Ind. Yumbo,1X2,1X2,1,36.5,2.74,7.2,Pinnacle,,,,
-2026-11-15,20:00,Colombia Primera B,Popayan - Ind. Yumbo,Gol NoGol,BTTS,NoGol,52.7,1.9,7.2,Pinnacle,,,,
-2026-11-15,20:00,Colombia Primera B,Popayan - Ind. Yumbo,Combo,Esito + Gol,1X + Under 2.5,41.1,2.43,7.2,Pinnacle,,,,
-2026-11-15,20:00,Colombia Primera B,Popayan - Ind. Yumbo,Combo,Esito + Gol,X2 + Under 2.5,40.6,2.46,7.2,Pinnacle,,,,
-2026-11-15,20:00,Colombia Primera B,Popayan - Ind. Yumbo,Under Over,OU 1.5,Over,66.7,1.5,7.2,Pinnacle,,,,
-2026-11-15,20:00,Colombia Primera B,Popayan - Ind. Yumbo,Under Over,OU 2.5,Under,59.1,1.69,7.2,Pinnacle,,,,
-2026-11-15,20:30,Uruguay Primera División,Danubio - Liverpool Montevideo,1X2,1X2,2,41.6,2.4,7.1,Pinnacle,,,,
-2026-11-15,20:30,Uruguay Primera División,Danubio - Liverpool Montevideo,Gol NoGol,BTTS,NoGol,53.4,1.87,7.1,Pinnacle,,,,
-2026-11-15,20:30,Uruguay Primera División,Danubio - Liverpool Montevideo,Combo,Esito + Gol,1X + Under 2.5,37.5,2.67,7.1,Pinnacle,,,,
-2026-11-15,20:30,Uruguay Primera División,Danubio - Liverpool Montevideo,Combo,Esito + Gol,X2 + NoGol,36.4,2.75,7.1,Pinnacle,,,,
-2026-11-15,20:30,Uruguay Primera División,Danubio - Liverpool Montevideo,Combo,Esito + Gol,X2 + Under 2.5,44.0,2.27,7.1,Pinnacle,,,,
-2026-11-15,20:30,Uruguay Primera División,Danubio - Liverpool Montevideo,Under Over,OU 1.5,Over,69.4,1.44,7.1,Pinnacle,,,,
-2026-11-15,20:30,Uruguay Primera División,Danubio - Liverpool Montevideo,Under Over,OU 2.5,Under,56.5,1.77,7.1,Pinnacle,,,,
+2026-11-15,20:30,Uruguay Primera Division,Danubio - Liverpool,1X2,1X2,2,45.7,2.19,5.2,FootyMetrics,,,,
+2026-11-15,20:30,Uruguay Primera Division,Danubio - Liverpool,Gol NoGol,BTTS,Gol,50.0,2.0,5.2,FootyMetrics,,,,
+2026-11-15,20:30,Uruguay Primera Division,Danubio - Liverpool,Combo,Esito + Gol,2 + Over 1.5,35.4,2.83,5.2,FootyMetrics,,,,
+2026-11-15,20:30,Uruguay Primera Division,Danubio - Liverpool,Combo,Esito + Gol,X2 + NoGol,38.2,2.61,5.2,FootyMetrics,,,,
+2026-11-15,20:30,Uruguay Primera Division,Danubio - Liverpool,Combo,Esito + Gol,X2 + Under 2.5,43.9,2.28,5.2,FootyMetrics,,,,
+2026-11-15,20:30,Uruguay Primera Division,Danubio - Liverpool,Under Over,OU 1.5,Over,69.4,1.44,5.2,FootyMetrics,,,,
+2026-11-15,20:30,Uruguay Primera Division,Danubio - Liverpool,Under Over,OU 2.5,Under,56.7,1.76,5.2,FootyMetrics,,,,
 2026-11-15,20:45,World UEFA Nations League,Belgium - Italy,1X2,1X2,1,43.5,2.3,3.1,Pinnacle,,,,
 2026-11-15,20:45,World UEFA Nations League,Belgium - Italy,Gol NoGol,BTTS,Gol,59.8,1.67,3.1,Pinnacle,,,,
 2026-11-15,20:45,World UEFA Nations League,Belgium - Italy,Combo,Esito + Gol,1 + Over 1.5,35.3,2.83,3.1,Pinnacle,,,,
@@ -7229,34 +7335,34 @@ Data,Ora,Campionato,Partita,Gruppo,Mercato,Sel,Prob,Equa,Margine,Fonte,InSchedin
 2026-11-15,20:45,World UEFA Nations League,Belgium - Italy,Under Over,OU 1.5,Over,79.9,1.25,3.1,Pinnacle,si,,,
 2026-11-15,20:45,World UEFA Nations League,Belgium - Italy,Under Over,OU 1.5,Under,20.1,4.99,3.1,Pinnacle,,,,
 2026-11-15,20:45,World UEFA Nations League,Belgium - Italy,Under Over,OU 2.5,Over,56.6,1.77,3.1,Pinnacle,,,,
-2026-11-15,20:45,World UEFA Nations League,Croatia - Czech Republic,1X2,1X2,1,63.5,1.57,3.5,Pinnacle,,,,
-2026-11-15,20:45,World UEFA Nations League,Croatia - Czech Republic,Gol NoGol,BTTS,Gol,52.8,1.89,3.5,Pinnacle,,,,
-2026-11-15,20:45,World UEFA Nations League,Croatia - Czech Republic,Combo,Esito + Gol,1 + Over 1.5,53.1,1.88,3.5,Pinnacle,,,,
-2026-11-15,20:45,World UEFA Nations League,Croatia - Czech Republic,Combo,Esito + Gol,1 + Over 2.5,42.5,2.35,3.5,Pinnacle,,,,
-2026-11-15,20:45,World UEFA Nations League,Croatia - Czech Republic,Combo,Esito + Gol,1X + NoGol,39.5,2.53,3.5,Pinnacle,,,,
-2026-11-15,20:45,World UEFA Nations League,Croatia - Czech Republic,Combo,Esito + Gol,1X + Over 2.5,48.2,2.07,3.5,Pinnacle,,,,
-2026-11-15,20:45,World UEFA Nations League,Croatia - Czech Republic,Combo,Esito + Gol,1X + Under 2.5,35.7,2.8,3.5,Pinnacle,,,,
-2026-11-15,20:45,World UEFA Nations League,Croatia - Czech Republic,Under Over,OU 1.5,Over,79.9,1.25,3.5,Pinnacle,si,,,
-2026-11-15,20:45,World UEFA Nations League,Croatia - Czech Republic,Under Over,OU 1.5,Under,20.1,4.99,3.5,Pinnacle,,,,
-2026-11-15,20:45,World UEFA Nations League,Croatia - Czech Republic,Under Over,OU 2.5,Over,54.8,1.83,3.5,Pinnacle,,,,
-2026-11-15,20:45,World UEFA Nations League,France - Türkiye,1X2,1X2,1,82.3,1.22,3.8,Pinnacle,,,,
-2026-11-15,20:45,World UEFA Nations League,France - Türkiye,Gol NoGol,BTTS,Gol,54.4,1.84,3.8,Pinnacle,,,,
-2026-11-15,20:45,World UEFA Nations League,France - Türkiye,Combo,Esito + Gol,1 + Gol,41.0,2.44,3.8,Pinnacle,,,,
-2026-11-15,20:45,World UEFA Nations League,France - Türkiye,Combo,Esito + Gol,1 + NoGol,41.3,2.42,3.8,Pinnacle,,,,
-2026-11-15,20:45,World UEFA Nations League,France - Türkiye,Combo,Esito + Gol,1 + Over 1.5,76.5,1.31,3.8,Pinnacle,si,,,
-2026-11-15,20:45,World UEFA Nations League,France - Türkiye,Combo,Esito + Gol,1 + Over 2.5,67.3,1.49,3.8,Pinnacle,,,,
-2026-11-15,20:45,World UEFA Nations League,France - Türkiye,Combo,Esito + Gol,1X + NoGol,43.2,2.32,3.8,Pinnacle,,,,
-2026-11-15,20:45,World UEFA Nations League,France - Türkiye,Combo,Esito + Gol,1X + Over 2.5,71.7,1.4,3.8,Pinnacle,,,,
-2026-11-15,20:45,World UEFA Nations League,France - Türkiye,Under Over,OU 1.5,Over,90.8,1.1,3.8,Pinnacle,,,,
-2026-11-15,20:45,World UEFA Nations League,France - Türkiye,Under Over,OU 2.5,Over,73.7,1.36,3.8,Pinnacle,,,,
-2026-11-15,20:45,World UEFA Nations League,Spain - England,1X2,1X2,1,50.3,1.99,3.3,Pinnacle,,,,
-2026-11-15,20:45,World UEFA Nations League,Spain - England,Gol NoGol,BTTS,Gol,61.5,1.63,3.3,Pinnacle,si,,,
-2026-11-15,20:45,World UEFA Nations League,Spain - England,Gol NoGol,BTTS,NoGol,38.5,2.6,3.3,Pinnacle,,,,
-2026-11-15,20:45,World UEFA Nations League,Spain - England,Combo,Esito + Gol,1 + Over 1.5,42.4,2.36,3.3,Pinnacle,,,,
-2026-11-15,20:45,World UEFA Nations League,Spain - England,Combo,Esito + Gol,1 + Over 2.5,35.1,2.85,3.3,Pinnacle,,,,
-2026-11-15,20:45,World UEFA Nations League,Spain - England,Combo,Esito + Gol,1X + Over 2.5,43.3,2.31,3.3,Pinnacle,,,,
-2026-11-15,20:45,World UEFA Nations League,Spain - England,Under Over,OU 1.5,Over,82.3,1.21,3.3,Pinnacle,,,,
-2026-11-15,20:45,World UEFA Nations League,Spain - England,Under Over,OU 2.5,Over,60.6,1.65,3.3,Pinnacle,,,,
+2026-11-15,20:45,World UEFA Nations League,Croatia - Czech Republic,1X2,1X2,1,63.5,1.57,3.4,Pinnacle,,,,
+2026-11-15,20:45,World UEFA Nations League,Croatia - Czech Republic,Gol NoGol,BTTS,Gol,52.8,1.89,3.4,Pinnacle,,,,
+2026-11-15,20:45,World UEFA Nations League,Croatia - Czech Republic,Combo,Esito + Gol,1 + Over 1.5,53.1,1.88,3.4,Pinnacle,,,,
+2026-11-15,20:45,World UEFA Nations League,Croatia - Czech Republic,Combo,Esito + Gol,1 + Over 2.5,42.5,2.35,3.4,Pinnacle,,,,
+2026-11-15,20:45,World UEFA Nations League,Croatia - Czech Republic,Combo,Esito + Gol,1X + NoGol,39.5,2.53,3.4,Pinnacle,,,,
+2026-11-15,20:45,World UEFA Nations League,Croatia - Czech Republic,Combo,Esito + Gol,1X + Over 2.5,48.2,2.07,3.4,Pinnacle,,,,
+2026-11-15,20:45,World UEFA Nations League,Croatia - Czech Republic,Combo,Esito + Gol,1X + Under 2.5,35.7,2.8,3.4,Pinnacle,,,,
+2026-11-15,20:45,World UEFA Nations League,Croatia - Czech Republic,Under Over,OU 1.5,Over,79.9,1.25,3.4,Pinnacle,si,,,
+2026-11-15,20:45,World UEFA Nations League,Croatia - Czech Republic,Under Over,OU 1.5,Under,20.1,4.99,3.4,Pinnacle,,,,
+2026-11-15,20:45,World UEFA Nations League,Croatia - Czech Republic,Under Over,OU 2.5,Over,54.8,1.83,3.4,Pinnacle,,,,
+2026-11-15,20:45,World UEFA Nations League,France - Türkiye,1X2,1X2,1,82.2,1.22,4.1,Pinnacle,,,,
+2026-11-15,20:45,World UEFA Nations League,France - Türkiye,Gol NoGol,BTTS,Gol,54.5,1.83,4.1,Pinnacle,,,,
+2026-11-15,20:45,World UEFA Nations League,France - Türkiye,Combo,Esito + Gol,1 + Gol,41.0,2.44,4.1,Pinnacle,,,,
+2026-11-15,20:45,World UEFA Nations League,France - Türkiye,Combo,Esito + Gol,1 + NoGol,41.2,2.43,4.1,Pinnacle,,,,
+2026-11-15,20:45,World UEFA Nations League,France - Türkiye,Combo,Esito + Gol,1 + Over 1.5,76.4,1.31,4.1,Pinnacle,si,,,
+2026-11-15,20:45,World UEFA Nations League,France - Türkiye,Combo,Esito + Gol,1 + Over 2.5,67.2,1.49,4.1,Pinnacle,,,,
+2026-11-15,20:45,World UEFA Nations League,France - Türkiye,Combo,Esito + Gol,1X + NoGol,43.0,2.32,4.1,Pinnacle,,,,
+2026-11-15,20:45,World UEFA Nations League,France - Türkiye,Combo,Esito + Gol,1X + Over 2.5,71.6,1.4,4.1,Pinnacle,,,,
+2026-11-15,20:45,World UEFA Nations League,France - Türkiye,Under Over,OU 1.5,Over,90.8,1.1,4.1,Pinnacle,,,,
+2026-11-15,20:45,World UEFA Nations League,France - Türkiye,Under Over,OU 2.5,Over,73.5,1.36,4.1,Pinnacle,,,,
+2026-11-15,20:45,World UEFA Nations League,Spain - England,1X2,1X2,1,50.7,1.97,3.1,Pinnacle,,,,
+2026-11-15,20:45,World UEFA Nations League,Spain - England,Gol NoGol,BTTS,Gol,61.4,1.63,3.1,Pinnacle,si,,,
+2026-11-15,20:45,World UEFA Nations League,Spain - England,Gol NoGol,BTTS,NoGol,38.6,2.59,3.1,Pinnacle,,,,
+2026-11-15,20:45,World UEFA Nations League,Spain - England,Combo,Esito + Gol,1 + Over 1.5,42.8,2.34,3.1,Pinnacle,,,,
+2026-11-15,20:45,World UEFA Nations League,Spain - England,Combo,Esito + Gol,1 + Over 2.5,35.4,2.82,3.1,Pinnacle,,,,
+2026-11-15,20:45,World UEFA Nations League,Spain - England,Combo,Esito + Gol,1X + Over 2.5,43.6,2.3,3.1,Pinnacle,,,,
+2026-11-15,20:45,World UEFA Nations League,Spain - England,Under Over,OU 1.5,Over,82.3,1.21,3.1,Pinnacle,,,,
+2026-11-15,20:45,World UEFA Nations League,Spain - England,Under Over,OU 2.5,Over,60.8,1.64,3.1,Pinnacle,,,,
 2026-11-15,21:00,Argentina Primera Nacional,Godoy Cruz - Tristan Suarez,1X2,1X2,1,42.6,2.35,4.5,Pinnacle,,,,
 2026-11-15,21:00,Argentina Primera Nacional,Godoy Cruz - Tristan Suarez,Gol NoGol,BTTS,NoGol,61.2,1.63,4.5,Pinnacle,,,,
 2026-11-15,21:00,Argentina Primera Nacional,Godoy Cruz - Tristan Suarez,Combo,Esito + Gol,1X + NoGol,43.0,2.32,4.5,Pinnacle,,,,
@@ -7268,10 +7374,3 @@ Data,Ora,Campionato,Partita,Gruppo,Mercato,Sel,Prob,Equa,Margine,Fonte,InSchedin
 2026-11-15,21:15,Peru Primera División,Juan Pablo II College - Deportivo Garcilaso,Gol NoGol,BTTS,Gol,55.7,1.8,7.2,Pinnacle,,,,
 2026-11-15,21:15,Peru Primera División,Juan Pablo II College - Deportivo Garcilaso,Under Over,OU 1.5,Over,76.3,1.31,7.2,Pinnacle,,,,
 2026-11-15,21:15,Peru Primera División,Juan Pablo II College - Deportivo Garcilaso,Under Over,OU 2.5,Over,52.2,1.91,7.2,Pinnacle,,,,
-2026-11-15,21:50,Colombia Primera B,Envigado - Union Magdalena,1X2,1X2,1,40.1,2.49,7.0,Pinnacle,,,,
-2026-11-15,21:50,Colombia Primera B,Envigado - Union Magdalena,Gol NoGol,BTTS,NoGol,56.8,1.76,7.0,Pinnacle,,,,
-2026-11-15,21:50,Colombia Primera B,Envigado - Union Magdalena,Combo,Esito + Gol,1X + NoGol,37.4,2.68,7.0,Pinnacle,,,,
-2026-11-15,21:50,Colombia Primera B,Envigado - Union Magdalena,Combo,Esito + Gol,1X + Under 2.5,46.5,2.15,7.0,Pinnacle,,,,
-2026-11-15,21:50,Colombia Primera B,Envigado - Union Magdalena,Combo,Esito + Gol,X2 + Under 2.5,41.9,2.38,7.0,Pinnacle,,,,
-2026-11-15,21:50,Colombia Primera B,Envigado - Union Magdalena,Under Over,OU 1.5,Over,65.7,1.52,7.0,Pinnacle,,,,
-2026-11-15,21:50,Colombia Primera B,Envigado - Union Magdalena,Under Over,OU 2.5,Under,61.5,1.63,7.0,Pinnacle,,,,
