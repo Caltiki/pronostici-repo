@@ -952,7 +952,8 @@
   "Sel": "1",
   "Prob": 75.0,
   "Equa": 1.33,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-21",
@@ -1290,7 +1291,8 @@
   "Sel": "1",
   "Prob": 69.6,
   "Equa": 1.44,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-21",
@@ -1564,8 +1566,7 @@
   "Sel": "1",
   "Prob": 65.4,
   "Equa": 1.53,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-21",
@@ -1712,8 +1713,7 @@
   "Sel": "1 + Over 1.5",
   "Prob": 64.7,
   "Equa": 1.55,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-21",
@@ -1798,8 +1798,7 @@
   "Sel": "1",
   "Prob": 62.9,
   "Equa": 1.59,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-21",
@@ -2181,8 +2180,7 @@
   "Sel": "1 + Over 1.5",
   "Prob": 61.0,
   "Equa": 1.64,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-21",
@@ -6955,27 +6953,6 @@
  },
  {
   "Data": "2026-11-21",
-  "Ora": "16:00",
-  "Campionato": "England: Premier League",
-  "Partita": "Tottenham Hotspur - Ipswich Town",
-  "Casa": "Tottenham Hotspur",
-  "Ospite": "Ipswich Town",
-  "Linea_OU": 3.0,
-  "Gol_attesi": 3.16,
-  "Margine": 4.1,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 20.9,
-  "Equa": 4.78,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-11-21",
   "Ora": "15:30",
   "Campionato": "Germany: Bundesliga",
   "Partita": "Union Berlin - RB Leipzig",
@@ -6993,27 +6970,6 @@
   "Sel": "X",
   "Prob": 20.5,
   "Equa": 4.88,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-11-21",
-  "Ora": "20:45",
-  "Campionato": "Italy: Serie A",
-  "Partita": "Napoli - Torino",
-  "Casa": "Napoli",
-  "Ospite": "Torino",
-  "Linea_OU": 2.75,
-  "Gol_attesi": 2.99,
-  "Margine": 4.0,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 20.3,
-  "Equa": 4.93,
   "Rif_Book": "Pinnacle"
  },
  {
@@ -7123,6 +7079,27 @@
  },
  {
   "Data": "2026-11-21",
+  "Ora": "13:30",
+  "Campionato": "England: Premier League",
+  "Partita": "Manchester City - Fulham",
+  "Casa": "Manchester City",
+  "Ospite": "Fulham",
+  "Linea_OU": 3.25,
+  "Gol_attesi": 3.33,
+  "Margine": 4.3,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "OddsAPI",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 17.5,
+  "Equa": 5.71,
+  "Rif_Book": "Pinnacle"
+ },
+ {
+  "Data": "2026-11-21",
   "Ora": "18:00",
   "Campionato": "Italy: Serie A",
   "Partita": "Parma - AS Roma",
@@ -7140,6 +7117,27 @@
   "Sel": "X",
   "Prob": 15.9,
   "Equa": 6.29,
+  "Rif_Book": "Pinnacle"
+ },
+ {
+  "Data": "2026-11-21",
+  "Ora": "15:00",
+  "Campionato": "Italy: Serie A",
+  "Partita": "Como - Cagliari",
+  "Casa": "Como",
+  "Ospite": "Cagliari",
+  "Linea_OU": 3.0,
+  "Gol_attesi": 3.16,
+  "Margine": 4.4,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "OddsAPI",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 15.7,
+  "Equa": 6.37,
   "Rif_Book": "Pinnacle"
  },
  {
