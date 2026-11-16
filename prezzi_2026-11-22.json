@@ -552,8 +552,7 @@
   "Sel": "1",
   "Prob": 72.3,
   "Equa": 1.38,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-22",
@@ -1021,7 +1020,8 @@
   "Sel": "1 + Over 1.5",
   "Prob": 60.9,
   "Equa": 1.64,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-22",
@@ -3226,27 +3226,6 @@
   "Sel": "X",
   "Prob": 19.4,
   "Equa": 5.15,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-11-22",
-  "Ora": "15:00",
-  "Campionato": "France: Ligue 1",
-  "Partita": "Paris FC - Angers",
-  "Casa": "Paris FC",
-  "Ospite": "Angers",
-  "Linea_OU": 2.75,
-  "Gol_attesi": 2.99,
-  "Margine": 4.0,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 17.5,
-  "Equa": 5.71,
   "Rif_Book": "Pinnacle"
  },
  {
