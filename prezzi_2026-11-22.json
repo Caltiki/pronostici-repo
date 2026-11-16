@@ -551,7 +551,8 @@
   "Sel": "1",
   "Prob": 71.8,
   "Equa": 1.39,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-22",
@@ -828,8 +829,7 @@
   "Sel": "1 + Over 1.5",
   "Prob": 61.8,
   "Equa": 1.62,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-22",
@@ -3289,6 +3289,27 @@
   "Sel": "X",
   "Prob": 17.5,
   "Equa": 5.71,
+  "Rif_Book": "Pinnacle"
+ },
+ {
+  "Data": "2026-11-22",
+  "Ora": "12:30",
+  "Campionato": "Italy: Serie A",
+  "Partita": "Juventus - Venezia",
+  "Casa": "Juventus",
+  "Ospite": "Venezia",
+  "Linea_OU": 3.0,
+  "Gol_attesi": 3.16,
+  "Margine": 3.9,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "OddsAPI",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 17.2,
+  "Equa": 5.81,
   "Rif_Book": "Pinnacle"
  }
 ]
