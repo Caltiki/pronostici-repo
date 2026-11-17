@@ -3908,7 +3908,7 @@
   // con l'apertura. Si agganciano alle nostre partite con lo stesso orario
   // (ora di Roma) e i nomi piu' simili; sotto la somiglianza minima la
   // partita resta senza, meglio niente che la partita sbagliata. Sulle
-  // righe 1X2 si mostra la quota del book accanto all'equa: verde quando
+  // righe 1X2, Over/Under 2.5 e Gol/NoGol si mostra la quota del book accanto all'equa: verde quando
   // il book paga PIU' dell'equa (cioe' c'e' valore rispetto a Pinnacle).
   var BEX = {}, BEX_BOOK = ["Sisal", "Lottomatica"], BEX_SOGLIA = 0.6;
   function caricaBex(d) {
@@ -3939,7 +3939,11 @@
       var perOra = {}, perId = {};
       bx.forEach(function (x) {
         (perOra[x.ora] = perOra[x.ora] || []).push(x);
-        (perId[x.match_id] = perId[x.match_id] || {})[x.bookmaker] = x;
+        // formato del server: una riga per partita, book e mercato
+        // (1x2, ou con la linea, bts), esiti in e1/e2/e3 con quote q1/q2/q3
+        var pm = perId[x.match_id] = perId[x.match_id] || {};
+        var pb = pm[x.bookmaker] = pm[x.bookmaker] || {};
+        pb[String(x.mercato || "1x2") + (x.linea ? " " + x.linea : "")] = x;
       });
       var memo = {};
       righe.forEach(function (r) {
@@ -3957,15 +3961,26 @@
       return righe;
     });
   }
+  // dal mercato del sito al mercato e all'esito del server
+  function bexChiave(r) {
+    var m = String(r.Mercato || ""), sel = String(r.Sel || ""), o;
+    if (m === "1X2" && /^[1X2]$/.test(sel)) return { k: "1x2", e: sel };
+    if ((o = /^OU (\d+(?:\.\d+)?)$/.exec(m)) && /^(Over|Under)$/.test(sel)) return { k: "ou " + o[1], e: sel };
+    if (m === "BTTS" && (sel === "Gol" || sel === "NoGol")) return { k: "bts", e: sel === "Gol" ? "GG" : "NG" };
+    return null;
+  }
   function bexHtml(r) {
-    if (!r || !r._bex || String(r.Mercato || "") !== "1X2") return "";
-    var sel = String(r.Sel || "");
-    if (!/^[1X2]$/.test(sel)) return "";
+    if (!r || !r._bex) return "";
+    var c = bexChiave(r);
+    if (!c) return "";
     var eq = num(r.Equa), pezzi = [];
     BEX_BOOK.forEach(function (b) {
-      var x = r._bex[b];
+      var x = r._bex[b] && r._bex[b][c.k];
       if (!x) return;
-      var q = num(x["q" + sel]), ap = num(x["ap" + sel]);
+      var n = 0;
+      for (var t = 1; t <= 3; t++) if (String(x["e" + t] || "") === c.e) { n = t; break; }
+      if (!n || x["attiva" + n] === 0) return;
+      var q = num(x["q" + n]), ap = num(x["a" + n]);
       if (q == null) return;
       var val = eq != null && q > eq;
       var tit = b + " " + f2(q) + (ap != null ? " (apertura " + f2(ap) + ")" : "") +
