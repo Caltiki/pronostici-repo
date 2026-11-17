@@ -1,0 +1,692 @@
+{
+ "calcolato": "2026-11-17 08:44 UTC",
+ "parametri_elo": {
+  "K": 25,
+  "campo": 50,
+  "margine": true,
+  "partite_provvisorie": 15
+ },
+ "taratura": [
+  "2025-07-01",
+  "2026-06-30"
+ ],
+ "prova_dal": "2026-07-01",
+ "partite_taratura": 127552,
+ "partite_prova": 45018,
+ "valori_fissati": {
+  "regressione_stagione": 0.2,
+  "regressione_categoria": 0.3,
+  "allenatore": [
+   1.5,
+   5
+  ],
+  "prudenza_campo": 300,
+  "prudenza_soglie": 500
+ },
+ "controlli": {
+  "cartellini_per_tipo": {
+   "Yellow Card": 210708,
+   "Red Card": 11417
+  },
+  "partite_con_rosso_eventi": 9982,
+  "campo_lega": {
+   "campionati": 685,
+   "min": [
+    "Premier League 2",
+    "Premier League 7",
+    "Eerste Divisie 8",
+    "Northern NSW NPL 13",
+    "Ligue 1 14"
+   ],
+   "max": [
+    "Liga Nacional 120",
+    "1st League - RS 127",
+    "Premier League 137",
+    "Primera Division 158",
+    "NPFL 170"
+   ]
+  },
+  "coeff_tiri": [
+   0.1932,
+   0.0635
+  ],
+  "cambi_allenatore": {
+   "totale": 4147,
+   "per_stagione": {
+    "2024": 901,
+    "2025": 1743,
+    "2026": 1477,
+    "2027": 26
+   },
+   "squadre": 1359
+  },
+  "eventi_calcolo": {
+   "inizio stagione": 63461,
+   "cambio di campionato": 22233
+  }
+ },
+ "nota": "diff < 0: la variante sbaglia meno del classico sulle stesse partite; conta se |t| > 2. Le misure 'tutte' sono su tutte le partite di prova, le altre sui sottoinsiemi.",
+ "varianti": [
+  {
+   "variante": "classico",
+   "logit": [
+    -0.8496,
+    0.2815,
+    0.4827
+   ],
+   "campionati_con_soglie_proprie": null,
+   "misure": {
+    "tutte": {
+     "partite": 45018,
+     "brier": 0.60237,
+     "rps": 0.2106,
+     "logloss": 1.0076,
+     "diff_brier": 0.0,
+     "t_brier": null,
+     "diff_logloss": 0.0,
+     "t_logloss": null
+    },
+    "campionati_con_statistiche": {
+     "partite": 5908,
+     "brier": 0.60711,
+     "rps": 0.21018,
+     "logloss": 1.01401,
+     "diff_brier": 0.0,
+     "t_brier": null,
+     "diff_logloss": 0.0,
+     "t_logloss": null
+    },
+    "partite_con_xg": {
+     "partite": 4653,
+     "brier": 0.6061,
+     "rps": 0.21002,
+     "logloss": 1.01258,
+     "diff_brier": 0.0,
+     "t_brier": null,
+     "diff_logloss": 0.0,
+     "t_logloss": null
+    }
+   }
+  },
+  {
+   "variante": "campo_lega",
+   "logit": [
+    -0.849,
+    0.2871,
+    0.4895
+   ],
+   "campionati_con_soglie_proprie": null,
+   "misure": {
+    "tutte": {
+     "partite": 45018,
+     "brier": 0.60145,
+     "rps": 0.21013,
+     "logloss": 1.00623,
+     "diff_brier": -0.000921,
+     "t_brier": -6.1,
+     "diff_logloss": -0.001368,
+     "t_logloss": -6.45
+    },
+    "campionati_con_statistiche": {
+     "partite": 5908,
+     "brier": 0.60684,
+     "rps": 0.21005,
+     "logloss": 1.01355,
+     "diff_brier": -0.000269,
+     "t_brier": -0.72,
+     "diff_logloss": -0.000465,
+     "t_logloss": -0.89
+    },
+    "partite_con_xg": {
+     "partite": 4653,
+     "brier": 0.60597,
+     "rps": 0.20993,
+     "logloss": 1.01225,
+     "diff_brier": -0.000123,
+     "t_brier": -0.3,
+     "diff_logloss": -0.000331,
+     "t_logloss": -0.57
+    }
+   }
+  },
+  {
+   "variante": "soglie_lega",
+   "logit": [
+    -0.8496,
+    0.2815,
+    0.4827
+   ],
+   "campionati_con_soglie_proprie": 105,
+   "misure": {
+    "tutte": {
+     "partite": 45018,
+     "brier": 0.60177,
+     "rps": 0.21039,
+     "logloss": 1.00662,
+     "diff_brier": -0.000597,
+     "t_brier": -5.91,
+     "diff_logloss": -0.00098,
+     "t_logloss": -6.15
+    },
+    "campionati_con_statistiche": {
+     "partite": 5908,
+     "brier": 0.60723,
+     "rps": 0.21018,
+     "logloss": 1.01412,
+     "diff_brier": 0.000121,
+     "t_brier": 0.35,
+     "diff_logloss": 0.000106,
+     "t_logloss": 0.2
+    },
+    "partite_con_xg": {
+     "partite": 4653,
+     "brier": 0.60638,
+     "rps": 0.21007,
+     "logloss": 1.01288,
+     "diff_brier": 0.000282,
+     "t_brier": 0.69,
+     "diff_logloss": 0.000299,
+     "t_logloss": 0.47
+    }
+   }
+  },
+  {
+   "variante": "logit_estremi",
+   "logit": [
+    -0.8494,
+    0.2811,
+    0.4181,
+    0.0283
+   ],
+   "campionati_con_soglie_proprie": null,
+   "misure": {
+    "tutte": {
+     "partite": 45018,
+     "brier": 0.60234,
+     "rps": 0.21058,
+     "logloss": 1.00755,
+     "diff_brier": -2.6e-05,
+     "t_brier": -0.47,
+     "diff_logloss": -4.8e-05,
+     "t_logloss": -0.47
+    },
+    "campionati_con_statistiche": {
+     "partite": 5908,
+     "brier": 0.60702,
+     "rps": 0.21012,
+     "logloss": 1.01395,
+     "diff_brier": -9.2e-05,
+     "t_brier": -0.6,
+     "diff_logloss": -6.2e-05,
+     "t_logloss": -0.24
+    },
+    "partite_con_xg": {
+     "partite": 4653,
+     "brier": 0.606,
+     "rps": 0.20995,
+     "logloss": 1.01255,
+     "diff_brier": -9.6e-05,
+     "t_brier": -0.55,
+     "diff_logloss": -3.2e-05,
+     "t_logloss": -0.11
+    }
+   }
+  },
+  {
+   "variante": "pendenza_livello",
+   "logit": [
+    -0.8497,
+    0.2816,
+    0.4888,
+    -0.0094
+   ],
+   "campionati_con_soglie_proprie": null,
+   "misure": {
+    "tutte": {
+     "partite": 45018,
+     "brier": 0.60248,
+     "rps": 0.21066,
+     "logloss": 1.00779,
+     "diff_brier": 0.00011,
+     "t_brier": 3.35,
+     "diff_logloss": 0.000193,
+     "t_logloss": 3.86
+    },
+    "campionati_con_statistiche": {
+     "partite": 5908,
+     "brier": 0.60751,
+     "rps": 0.21037,
+     "logloss": 1.01465,
+     "diff_brier": 0.000397,
+     "t_brier": 2.94,
+     "diff_logloss": 0.000639,
+     "t_logloss": 3.16
+    },
+    "partite_con_xg": {
+     "partite": 4653,
+     "brier": 0.60654,
+     "rps": 0.21022,
+     "logloss": 1.01329,
+     "diff_brier": 0.000445,
+     "t_brier": 2.85,
+     "diff_logloss": 0.000713,
+     "t_logloss": 3.03
+    }
+   }
+  },
+  {
+   "variante": "stagione",
+   "logit": [
+    -0.8521,
+    0.2819,
+    0.5505
+   ],
+   "campionati_con_soglie_proprie": null,
+   "misure": {
+    "tutte": {
+     "partite": 45018,
+     "brier": 0.60109,
+     "rps": 0.21002,
+     "logloss": 1.00579,
+     "diff_brier": -0.001275,
+     "t_brier": -8.71,
+     "diff_logloss": -0.00181,
+     "t_logloss": -8.42
+    },
+    "campionati_con_statistiche": {
+     "partite": 5908,
+     "brier": 0.60679,
+     "rps": 0.21001,
+     "logloss": 1.01346,
+     "diff_brier": -0.000324,
+     "t_brier": -0.98,
+     "diff_logloss": -0.000552,
+     "t_logloss": -1.15
+    },
+    "partite_con_xg": {
+     "partite": 4653,
+     "brier": 0.60586,
+     "rps": 0.2099,
+     "logloss": 1.01215,
+     "diff_brier": -0.000238,
+     "t_brier": -0.64,
+     "diff_logloss": -0.000432,
+     "t_logloss": -0.8
+    }
+   }
+  },
+  {
+   "variante": "categoria",
+   "logit": [
+    -0.8502,
+    0.2812,
+    0.5054
+   ],
+   "campionati_con_soglie_proprie": null,
+   "misure": {
+    "tutte": {
+     "partite": 45018,
+     "brier": 0.60175,
+     "rps": 0.21032,
+     "logloss": 1.00668,
+     "diff_brier": -0.000618,
+     "t_brier": -3.69,
+     "diff_logloss": -0.000916,
+     "t_logloss": -3.83
+    },
+    "campionati_con_statistiche": {
+     "partite": 5908,
+     "brier": 0.60561,
+     "rps": 0.20947,
+     "logloss": 1.01175,
+     "diff_brier": -0.001499,
+     "t_brier": -4.45,
+     "diff_logloss": -0.002265,
+     "t_logloss": -4.67
+    },
+    "partite_con_xg": {
+     "partite": 4653,
+     "brier": 0.60486,
+     "rps": 0.20945,
+     "logloss": 1.0107,
+     "diff_brier": -0.001236,
+     "t_brier": -3.28,
+     "diff_logloss": -0.00188,
+     "t_logloss": -3.48
+    }
+   }
+  },
+  {
+   "variante": "xg_0.25",
+   "logit": [
+    -0.8499,
+    0.2816,
+    0.4869
+   ],
+   "campionati_con_soglie_proprie": null,
+   "misure": {
+    "tutte": {
+     "partite": 45018,
+     "brier": 0.60218,
+     "rps": 0.2105,
+     "logloss": 1.00734,
+     "diff_brier": -0.000184,
+     "t_brier": -4.09,
+     "diff_logloss": -0.000255,
+     "t_logloss": -3.94
+    },
+    "campionati_con_statistiche": {
+     "partite": 5908,
+     "brier": 0.60632,
+     "rps": 0.20977,
+     "logloss": 1.01298,
+     "diff_brier": -0.000792,
+     "t_brier": -2.66,
+     "diff_logloss": -0.001031,
+     "t_logloss": -2.42
+    },
+    "partite_con_xg": {
+     "partite": 4653,
+     "brier": 0.6052,
+     "rps": 0.20955,
+     "logloss": 1.01142,
+     "diff_brier": -0.000895,
+     "t_brier": -2.48,
+     "diff_logloss": -0.001156,
+     "t_logloss": -2.24
+    }
+   }
+  },
+  {
+   "variante": "xg_0.5",
+   "logit": [
+    -0.85,
+    0.2816,
+    0.4901
+   ],
+   "campionati_con_soglie_proprie": null,
+   "misure": {
+    "tutte": {
+     "partite": 45018,
+     "brier": 0.60213,
+     "rps": 0.21047,
+     "logloss": 1.00727,
+     "diff_brier": -0.000237,
+     "t_brier": -2.63,
+     "diff_logloss": -0.000325,
+     "t_logloss": -2.52
+    },
+    "campionati_con_statistiche": {
+     "partite": 5908,
+     "brier": 0.6063,
+     "rps": 0.20972,
+     "logloss": 1.01303,
+     "diff_brier": -0.000813,
+     "t_brier": -1.36,
+     "diff_logloss": -0.000978,
+     "t_logloss": -1.15
+    },
+    "partite_con_xg": {
+     "partite": 4653,
+     "brier": 0.6052,
+     "rps": 0.2095,
+     "logloss": 1.01152,
+     "diff_brier": -0.000897,
+     "t_brier": -1.24,
+     "diff_logloss": -0.001059,
+     "t_logloss": -1.03
+    }
+   }
+  },
+  {
+   "variante": "xg_tiri_0.25",
+   "logit": [
+    -0.8501,
+    0.2817,
+    0.4894
+   ],
+   "campionati_con_soglie_proprie": null,
+   "misure": {
+    "tutte": {
+     "partite": 45018,
+     "brier": 0.6021,
+     "rps": 0.21047,
+     "logloss": 1.00723,
+     "diff_brier": -0.000266,
+     "t_brier": -5.06,
+     "diff_logloss": -0.000365,
+     "t_logloss": -4.82
+    },
+    "campionati_con_statistiche": {
+     "partite": 5908,
+     "brier": 0.60588,
+     "rps": 0.20958,
+     "logloss": 1.01241,
+     "diff_brier": -0.001226,
+     "t_brier": -3.61,
+     "diff_logloss": -0.001604,
+     "t_logloss": -3.3
+    },
+    "partite_con_xg": {
+     "partite": 4653,
+     "brier": 0.60495,
+     "rps": 0.20944,
+     "logloss": 1.01109,
+     "diff_brier": -0.001143,
+     "t_brier": -2.87,
+     "diff_logloss": -0.001488,
+     "t_logloss": -2.61
+    }
+   }
+  },
+  {
+   "variante": "xg_tiri_0.5",
+   "logit": [
+    -0.8503,
+    0.2817,
+    0.4944
+   ],
+   "campionati_con_soglie_proprie": null,
+   "misure": {
+    "tutte": {
+     "partite": 45018,
+     "brier": 0.60201,
+     "rps": 0.21042,
+     "logloss": 1.00711,
+     "diff_brier": -0.000359,
+     "t_brier": -3.41,
+     "diff_logloss": -0.000481,
+     "t_logloss": -3.2
+    },
+    "campionati_con_statistiche": {
+     "partite": 5908,
+     "brier": 0.60564,
+     "rps": 0.20945,
+     "logloss": 1.01221,
+     "diff_brier": -0.001471,
+     "t_brier": -2.14,
+     "diff_logloss": -0.001804,
+     "t_logloss": -1.85
+    },
+    "partite_con_xg": {
+     "partite": 4653,
+     "brier": 0.60488,
+     "rps": 0.20936,
+     "logloss": 1.01113,
+     "diff_brier": -0.001214,
+     "t_brier": -1.51,
+     "diff_logloss": -0.001449,
+     "t_logloss": -1.26
+    }
+   }
+  },
+  {
+   "variante": "espulsioni",
+   "logit": [
+    -0.8497,
+    0.2815,
+    0.4834
+   ],
+   "campionati_con_soglie_proprie": null,
+   "misure": {
+    "tutte": {
+     "partite": 45018,
+     "brier": 0.60237,
+     "rps": 0.2106,
+     "logloss": 1.0076,
+     "diff_brier": 2e-06,
+     "t_brier": 0.07,
+     "diff_logloss": 9e-06,
+     "t_logloss": 0.27
+    },
+    "campionati_con_statistiche": {
+     "partite": 5908,
+     "brier": 0.60722,
+     "rps": 0.21025,
+     "logloss": 1.01421,
+     "diff_brier": 0.000109,
+     "t_brier": 0.77,
+     "diff_logloss": 0.000201,
+     "t_logloss": 1.01
+    },
+    "partite_con_xg": {
+     "partite": 4653,
+     "brier": 0.60614,
+     "rps": 0.21005,
+     "logloss": 1.01267,
+     "diff_brier": 3.8e-05,
+     "t_brier": 0.23,
+     "diff_logloss": 9.3e-05,
+     "t_logloss": 0.41
+    }
+   }
+  },
+  {
+   "variante": "allenatore",
+   "logit": [
+    -0.8497,
+    0.2815,
+    0.4806
+   ],
+   "campionati_con_soglie_proprie": null,
+   "misure": {
+    "tutte": {
+     "partite": 45018,
+     "brier": 0.6024,
+     "rps": 0.21062,
+     "logloss": 1.00764,
+     "diff_brier": 2.8e-05,
+     "t_brier": 0.61,
+     "diff_logloss": 3.9e-05,
+     "t_logloss": 0.61
+    },
+    "campionati_con_statistiche": {
+     "partite": 5908,
+     "brier": 0.60735,
+     "rps": 0.21032,
+     "logloss": 1.01434,
+     "diff_brier": 0.000244,
+     "t_brier": 0.88,
+     "diff_logloss": 0.000325,
+     "t_logloss": 0.83
+    },
+    "partite_con_xg": {
+     "partite": 4653,
+     "brier": 0.60642,
+     "rps": 0.21019,
+     "logloss": 1.01301,
+     "diff_brier": 0.000326,
+     "t_brier": 1.03,
+     "diff_logloss": 0.000433,
+     "t_logloss": 0.97
+    }
+   }
+  },
+  {
+   "variante": "tutte",
+   "logit": [
+    -0.8519,
+    0.2867,
+    0.5055,
+    0.0357,
+    -0.0203
+   ],
+   "campionati_con_soglie_proprie": 105,
+   "misure": {
+    "tutte": {
+     "partite": 45018,
+     "brier": 0.59993,
+     "rps": 0.20953,
+     "logloss": 1.00391,
+     "diff_brier": -0.002441,
+     "t_brier": -7.56,
+     "diff_logloss": -0.003685,
+     "t_logloss": -7.78
+    },
+    "campionati_con_statistiche": {
+     "partite": 5908,
+     "brier": 0.60714,
+     "rps": 0.21015,
+     "logloss": 1.0139,
+     "diff_brier": 2.8e-05,
+     "t_brier": 0.03,
+     "diff_logloss": -0.000115,
+     "t_logloss": -0.09
+    },
+    "partite_con_xg": {
+     "partite": 4653,
+     "brier": 0.60671,
+     "rps": 0.21022,
+     "logloss": 1.0132,
+     "diff_brier": 0.000617,
+     "t_brier": 0.64,
+     "diff_logloss": 0.000624,
+     "t_logloss": 0.44
+    }
+   }
+  },
+  {
+   "variante": "tutte_con_xg",
+   "logit": [
+    -0.8525,
+    0.2872,
+    0.5211,
+    0.035,
+    -0.0082
+   ],
+   "campionati_con_soglie_proprie": 105,
+   "misure": {
+    "tutte": {
+     "partite": 45018,
+     "brier": 0.59937,
+     "rps": 0.20926,
+     "logloss": 1.0031,
+     "diff_brier": -0.002995,
+     "t_brier": -8.89,
+     "diff_logloss": -0.0045,
+     "t_logloss": -9.15
+    },
+    "campionati_con_statistiche": {
+     "partite": 5908,
+     "brier": 0.60489,
+     "rps": 0.20905,
+     "logloss": 1.01084,
+     "diff_brier": -0.002219,
+     "t_brier": -2.08,
+     "diff_logloss": -0.00317,
+     "t_logloss": -2.08
+    },
+    "partite_con_xg": {
+     "partite": 4653,
+     "brier": 0.60468,
+     "rps": 0.2092,
+     "logloss": 1.01045,
+     "diff_brier": -0.001415,
+     "t_brier": -1.16,
+     "diff_logloss": -0.002126,
+     "t_logloss": -1.22
+    }
+   }
+  }
+ ]
+}
