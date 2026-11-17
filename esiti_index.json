@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-17 01:57",
+ "aggiornato": "2026-11-17 06:11",
  "date": [
   "2026-11-03",
   "2026-11-04",
@@ -110,33 +110,33 @@
    "righe": 725
   },
   "2026-11-16": {
-   "presa": 175,
-   "sbagliata": 140,
+   "presa": 176,
+   "sbagliata": 139,
    "rimborso": 0,
    "attesa": 8,
    "righe": 323
   },
   "2026-11-17": {
-   "presa": 0,
-   "sbagliata": 0,
+   "presa": 12,
+   "sbagliata": 13,
    "rimborso": 0,
-   "attesa": 421,
+   "attesa": 396,
    "righe": 421
   }
  },
  "taratura": {
   "totale": {
-   "righe": 7479,
-   "partite": 1010,
+   "righe": 7504,
+   "partite": 1013,
    "prevista": 54.9,
    "uscita": 54.8,
-   "scarto": -0.1,
+   "scarto": -0.2,
    "errore_std": 0.6
   },
   "fasce": [
    {
-    "righe": 1292,
-    "partite": 790,
+    "righe": 1295,
+    "partite": 792,
     "prevista": 37.3,
     "uscita": 35.8,
     "scarto": -1.5,
@@ -153,17 +153,17 @@
     "fascia": "40-45%"
    },
    {
-    "righe": 619,
-    "partite": 481,
+    "righe": 622,
+    "partite": 483,
     "prevista": 47.3,
-    "uscita": 48.3,
-    "scarto": 1.0,
+    "uscita": 48.2,
+    "scarto": 0.9,
     "errore_std": 2.0,
     "fascia": "45-50%"
    },
    {
-    "righe": 1121,
-    "partite": 718,
+    "righe": 1125,
+    "partite": 721,
     "prevista": 52.4,
     "uscita": 52.5,
     "scarto": 0.2,
@@ -171,17 +171,17 @@
     "fascia": "50-55%"
    },
    {
-    "righe": 959,
-    "partite": 671,
+    "righe": 961,
+    "partite": 672,
     "prevista": 57.3,
-    "uscita": 55.0,
+    "uscita": 54.9,
     "scarto": -2.4,
     "errore_std": 1.6,
     "fascia": "55-60%"
    },
    {
-    "righe": 619,
-    "partite": 446,
+    "righe": 622,
+    "partite": 447,
     "prevista": 62.2,
     "uscita": 63.5,
     "scarto": 1.3,
@@ -189,17 +189,17 @@
     "fascia": "60-65%"
    },
    {
-    "righe": 485,
-    "partite": 383,
+    "righe": 486,
+    "partite": 384,
     "prevista": 67.4,
-    "uscita": 70.5,
-    "scarto": 3.1,
+    "uscita": 70.6,
+    "scarto": 3.2,
     "errore_std": 2.1,
     "fascia": "65-70%"
    },
    {
-    "righe": 384,
-    "partite": 317,
+    "righe": 387,
+    "partite": 320,
     "prevista": 72.5,
     "uscita": 70.3,
     "scarto": -2.2,
@@ -207,20 +207,20 @@
     "fascia": "70-75%"
    },
    {
-    "righe": 445,
-    "partite": 399,
+    "righe": 447,
+    "partite": 400,
     "prevista": 77.7,
-    "uscita": 74.6,
-    "scarto": -3.1,
+    "uscita": 74.3,
+    "scarto": -3.4,
     "errore_std": 2.0,
     "fascia": "75-80%"
    },
    {
-    "righe": 286,
-    "partite": 276,
+    "righe": 289,
+    "partite": 278,
     "prevista": 82.5,
-    "uscita": 82.9,
-    "scarto": 0.4,
+    "uscita": 82.7,
+    "scarto": 0.2,
     "errore_std": 2.2,
     "fascia": "80-85%"
    },
@@ -234,11 +234,11 @@
     "fascia": "85-90%"
    },
    {
-    "righe": 65,
-    "partite": 57,
+    "righe": 66,
+    "partite": 58,
     "prevista": 91.7,
-    "uscita": 87.7,
-    "scarto": -4.0,
+    "uscita": 87.9,
+    "scarto": -3.8,
     "errore_std": 3.4,
     "fascia": "90-95%"
    },
@@ -254,17 +254,17 @@
   ],
   "gruppi": [
    {
-    "righe": 3277,
-    "partite": 946,
+    "righe": 3290,
+    "partite": 949,
     "prevista": 46.2,
-    "uscita": 46.8,
-    "scarto": 0.6,
+    "uscita": 46.7,
+    "scarto": 0.5,
     "errore_std": 0.9,
     "nome": "Combo"
    },
    {
-    "righe": 2083,
-    "partite": 1010,
+    "righe": 2089,
+    "partite": 1013,
     "prevista": 68.4,
     "uscita": 67.7,
     "scarto": -0.7,
@@ -272,19 +272,19 @@
     "nome": "Under Over"
    },
    {
-    "righe": 1060,
-    "partite": 1010,
+    "righe": 1063,
+    "partite": 1013,
     "prevista": 57.1,
     "uscita": 53.5,
-    "scarto": -3.6,
+    "scarto": -3.5,
     "errore_std": 1.5,
     "nome": "Gol NoGol"
    },
    {
-    "righe": 1059,
-    "partite": 1010,
+    "righe": 1062,
+    "partite": 1013,
     "prevista": 53.2,
-    "uscita": 55.3,
+    "uscita": 55.4,
     "scarto": 2.1,
     "errore_std": 1.5,
     "nome": "1X2"
@@ -301,11 +301,11 @@
     "nome": "FootyMetrics"
    },
    {
-    "righe": 3227,
-    "partite": 429,
-    "prevista": 54.8,
+    "righe": 3252,
+    "partite": 432,
+    "prevista": 54.9,
     "uscita": 55.6,
-    "scarto": 0.8,
+    "scarto": 0.7,
     "errore_std": 0.9,
     "nome": "Pinnacle"
    },
@@ -338,6 +338,6 @@
    }
   ],
   "dal": "2026-11-03",
-  "al": "2026-11-16"
+  "al": "2026-11-17"
  }
 }
