@@ -118,6 +118,23 @@
   .bex-riga .bex b { font-weight: 700; color: var(--testo); }
   .bex-riga .bex.valore b { color: var(--buono); }
   .bex-riga .bex.valore::after { content: " \25B2"; color: var(--buono); font-size: .75em; }
+  /* (177) le quote dei book in evidenza: la migliore in grassetto pieno,
+     accanto lo scarto dall'equa (verde sopra, rosso sotto il 3%) */
+  .bex-riga .bex.meglio b { text-decoration: underline; text-underline-offset: 3px; }
+  .bex-riga .bex-scarto { margin-left: 6px; font-size: .9em; font-weight: 600; white-space: nowrap; }
+  .bex-riga .bex-scarto.su { color: var(--buono); }
+  .bex-riga .bex-scarto.giu { color: var(--male); }
+  .bex-riga.grande { font-size: .95rem; margin-top: 4px; }
+  .bex-riga.grande .bex b { font-size: 1.1rem; }
+  .costr-lista .bex-scarto { font-weight: 600; }
+  .costr-lista .bex-scarto.su { color: var(--buono); }
+  .costr-lista .bex-scarto.giu { color: var(--male); }
+  #m-book { margin: 4px 0 0; font-weight: 600; }
+  /* (177) la nota del costruttore in testo normale (prima prendeva lo
+     stile dei titoletti) e il bottone visibile anche fuori dalla barra */
+  .costruttore p.costr-nota { font-size: .86rem; line-height: 1.45; color: var(--tenue); margin: 10px 2px; }
+  .costruttore button.primo { font: inherit; font-weight: 700; padding: 9px 14px; border-radius: 10px; cursor: pointer; border: 1px solid var(--evidenza); color: var(--evidenza); background: var(--evidenza-tenue); }
+  :root[data-theme="light"] .costruttore button.primo { border-color: rgba(11,74,134,.35); color: #072f57; background: rgba(94,168,255,.3); }
 </style>
 <style>
   :root {
@@ -1831,6 +1848,7 @@
       <b id="m-equa"></b>
     </div>
     <p id="m-stima"></p>
+    <p id="m-book" hidden></p>
     <p id="m-avviso" class="avviso" hidden></p>
     <p class="m-azioni">
       <button id="m-registra" class="primo" type="button" aria-expanded="false" aria-controls="m-reg">Registra</button>
@@ -3754,7 +3772,8 @@
   // percentuale se la multipla ha almeno N eventi. Si scrive com'e' nelle
   // condizioni del book (che cambiano: vanno lette la'), e il costruttore lo
   // conta sia nella scelta sia nel conto finale.
-  var COSTR = { quota: 3, eventi: 0, margine: 5, bonus: 0, bonusDa: 0, ms: null, msPronto: null };
+  var BEX_BOOK_C = ["Sisal", "Lottomatica"];          // gli stessi di BEX_BOOK, definito piu' sotto
+  var COSTR = { quota: 3, eventi: 0, margine: 5, bonus: 0, bonusDa: 0, book: "auto", ms: null, msPronto: null };
   try {
     var cq = parseFloat(localStorage.getItem("caltiki-costr-quota")), cm = parseFloat(localStorage.getItem("caltiki-costr-margine"));
     var cb = parseFloat(localStorage.getItem("caltiki-costr-bonus")), cbd = parseInt(localStorage.getItem("caltiki-costr-bonusda"), 10);
@@ -3762,6 +3781,8 @@
     if (cm >= 0 && cm < 20) COSTR.margine = cm;
     if (cb >= 0 && cb <= 200) COSTR.bonus = cb;
     if (cbd >= 0 && cbd <= 20) COSTR.bonusDa = cbd;
+    var cbk = localStorage.getItem("caltiki-costr-book");
+    if (cbk === "auto" || cbk === "stima" || BEX_BOOK_C.indexOf(cbk) >= 0) COSTR.book = cbk;
   } catch (e) {}
   function bonusPer(n) { return COSTR.bonus > 0 && n >= (COSTR.bonusDa || 1) ? COSTR.bonus / 100 : 0; }
   var RESA_DEFAULT = { "60-65": -1.1, "65-70": -0.7, "70-75": 0.0, "75-80": -0.5, "80-85": -3.3 };
@@ -3780,7 +3801,10 @@
     if (t && t.resa_media != null) return t.resa_media;
     return RESA_DEFAULT[k] != null ? RESA_DEFAULT[k] : -4;
   }
-  function candidatiCostr(righe) {
+  // (177) Con un book (book = "Sisal"/"Lottomatica") restano solo le
+  // selezioni di cui si e' letta la quota di quel book, e il costo di
+  // ciascuna e' quello vero: quota del book contro quota equa.
+  function candidatiCostr(righe, book) {
     var ora = Date.now(), visti = {};
     return righe.filter(function (r) {
       if (String(r.InSchedina || "") !== "si" || r.Esito || r._esito || r.Gol_Casa != null) return false;
@@ -3790,17 +3814,20 @@
       if (ko != null && ko < ora + 5 * 60000) return false;          // gia' cominciata o quasi
       var k = (r.Data || "") + "|" + String(r.Partita || "").toLowerCase();
       if (visti[k]) return false;                                     // una selezione per partita
+      if (book && !quotaBook(r, book)) return false;
       visti[k] = 1;
       return true;
     }).map(function (r) {
-      var rs = resaFascia(num(r.Prob), r);
+      var e = num(r.Equa), qb = book ? quotaBook(r, book).q : null;
+      var rs = book ? (qb / e - 1) * 100 : resaFascia(num(r.Prob), r);
       var sc = rs + (margineStretto(r) ? 0.5 : 0) + ((num(r.Mov_Sel) || 0) > 0 ? 0.3 : 0);
-      return { r: r, e: num(r.Equa), p: num(r.Prob) / 100, resa: rs, punti: sc };
+      return { r: r, e: e, p: num(r.Prob) / 100, resa: rs, punti: sc, qb: qb };
     }).sort(function (a, b) { return b.punti - a.punti || b.p - a.p; }).slice(0, 16);
   }
-  function proponiSchedina(c) {
+  function proponiSchedina(c, almeno) {
     var meglio = null, n = c.length, obiettivo = COSTR.quota, fissi = COSTR.eventi;
-    var minN = fissi || 1, maxN = fissi || Math.min(6, n);
+    var minN = fissi || almeno || 1, maxN = fissi || Math.min(6, n);
+    if (minN > n) return null;
     function valuta(scelta) {
       var eq = 1, val = 1, punti = 0;
       scelta.forEach(function (x) { eq *= x.e; val *= 1 + x.resa / 100; punti += x.punti; });
@@ -3819,6 +3846,44 @@
     })(0, []);
     return meglio;
   }
+  // (177) sceglie la multipla sulle quote vere: per ogni book con almeno
+  // due selezioni lette, la migliore; con "auto" vince il book che rende di
+  // piu'. Senza quote lette torna la stima col margine.
+  function costrConBook(righe) {
+    if (COSTR.book === "stima") return null;
+    var libri = COSTR.book === "auto" ? BEX_BOOK_C : [COSTR.book], vinto = null;
+    libri.forEach(function (b) {
+      var c = candidatiCostr(righe, b);
+      if (c.length < 2) return;
+      var m = proponiSchedina(c, 2);                     // con un book: una multipla vera, almeno 2
+      if (m && (!vinto || m.s > vinto.m.s)) vinto = { book: b, m: m, c: c };
+    });
+    return vinto;
+  }
+  function costrBookHtml(v) {
+    var m = v.m, B = v.book, altro = BEX_BOOK_C.filter(function (b) { return b !== B; })[0];
+    var nEv = m.scelta.length, pr = m.scelta.reduce(function (a, x) { return a * x.p; }, 1);
+    var qB = m.scelta.reduce(function (a, x) { return a * x.qb; }, 1), bon = bonusPer(nEv), conB = qB * (1 + bon);
+    var qA = m.scelta.reduce(function (a, x) { var y = quotaBook(x.r, altro); return a == null || !y ? null : a * y.q; }, 1);
+    var vLontana = !COSTR.eventi && (m.eq < COSTR.quota * 0.92 || m.eq > COSTR.quota * 1.08);
+    var perdita = conB * pr - 1, d0 = m.scelta[0].r.Data, agg = BEX_AGG[d0] ? String(BEX_AGG[d0]).slice(11, 16) : "";
+    var h = '<ol class="costr-lista">' + m.scelta.map(function (x) {
+      var y = quotaBook(x.r, altro);
+      return "<li><b>" + esc(x.r.Partita || "") + "</b> <span class=\"piccolo\">" + esc(x.r.Ora || "") + "</span><br>" + esc(etichettaSel(x.r)) + " \u00b7 " +
+        pv(x.p * 100) + " \u00b7 equa " + f2(x.e) + " \u00b7 " + esc(B) + " <b>" + f2(x.qb) + "</b> " + scartoHtml(x.qb, x.e) +
+        (y ? ' <span class="piccolo">(' + esc(altro) + " " + f2(y.q) + ")</span>" : "") + "</li>";
+    }).join("") + "</ol>" +
+      '<div class="riepilogo"><div><b>' + pv(pr * 100).replace(/<[^>]+>/g, "") + "</b><span>probabilit\u00e0 di vincerla</span></div>" +
+      "<div><b>" + f2(m.eq) + "</b><span>quota equa della multipla</span></div>" +
+      "<div><b>" + f2(conB) + "</b><span>la paga " + esc(B) + (bon ? ", bonus compreso" : "") + "</span></div></div>" +
+      '<p class="costr-nota">' + (vLontana ? "Con le quote lette non si arriva a quota " + String(COSTR.quota).replace(".", ",") + ": questa \u00e8 la pi\u00f9 vicina. " : "") + (qA != null ? esc(altro) + " la paga " + f2(qA * (1 + bon)) + (bon ? " col bonus" : "") + ". " : "") +
+      "Alla quota di " + esc(B) + (bon ? ", bonus compreso," : "") + " " +
+      (perdita >= 0 ? "saresti in attivo del " + (perdita * 100).toFixed(1).replace(".", ",") + "% in media" : "la perdita media \u00e8 del " + Math.abs(perdita * 100).toFixed(1).replace(".", ",") + "%") +
+      ": a parit\u00e0 di quota totale la scelta prende le selezioni che " + esc(B) + " paga meglio rispetto all\u2019equa. " +
+      "Le quote sono quelle lette " + (agg ? "alle " + esc(agg) : "all\u2019ultimo giro") + ": prima di giocare controllale sul book, se sono scese la multipla vale meno.</p>" +
+      '<p class="m-azioni"><button type="button" class="primo" id="costr-metti" data-chiavi="' + esc(JSON.stringify(m.scelta.map(function (x) { return chiave(x.r); }))) + '">Metti nella multipla</button></p>';
+    return h;
+  }
   function costruttoreHtml(righe) {
     var c = candidatiCostr(righe);
     var h = '<details class="scheda costruttore"' + (COSTR.aperto ? " open" : "") + '><summary><b>Costruisci la schedina</b> <span class="piccolo">\u00b7 ' +
@@ -3827,10 +3892,15 @@
     h += '<p class="reg-campi"><label>Quota totale <input id="costr-q" inputmode="decimal" value="' + String(COSTR.quota).replace(".", ",") + '"></label>' +
       '<label>oppure eventi <select id="costr-n"><option value="0"' + (!COSTR.eventi ? " selected" : "") + '>come viene</option>' +
       [2, 3, 4, 5, 6].map(function (k) { return '<option value="' + k + '"' + (COSTR.eventi === k ? " selected" : "") + ">" + k + "</option>"; }).join("") + "</select></label>" +
+      '<label>Book <select id="costr-book">' + [["auto", "il migliore dei due"]].concat(BEX_BOOK_C.map(function (b) { return [b, b]; })).concat([["stima", "stima col margine"]]).map(function (o) {
+        return '<option value="' + o[0] + '"' + (COSTR.book === o[0] ? " selected" : "") + ">" + o[1] + "</option>"; }).join("") + "</select></label>" +
       '<label>Margine del tuo book a evento % <input id="costr-m" inputmode="decimal" value="' + String(COSTR.margine).replace(".", ",") + '"></label>' +
       '<label>Bonus multipla % <input id="costr-b" inputmode="decimal" value="' + String(COSTR.bonus).replace(".", ",") + '"></label>' +
       '<label>dal <select id="costr-bd">' + [0, 2, 3, 4, 5, 6, 7, 8, 10].map(function (k) {
         return '<option value="' + k + '"' + (COSTR.bonusDa === k ? " selected" : "") + ">" + (k ? k + "\u00b0 evento" : "primo evento") + "</option>"; }).join("") + "</select></label></p>";
+    var vb = costrConBook(righe);
+    if (vb) return h + costrBookHtml(vb) + "</details>";
+    if (COSTR.book !== "stima") h += '<p class="piccolo">Quote di Sisal e Lottomatica non lette per almeno due di queste selezioni: si usa la stima col margine.</p>';
     var m = proponiSchedina(c);
     if (!m) return h + "<p>Nessuna combinazione possibile.</p></details>";
     var nEv = m.scelta.length, pr = m.scelta.reduce(function (a, x) { return a * x.p; }, 1);
@@ -3844,7 +3914,7 @@
       '<div class="riepilogo"><div><b>' + pv(pr * 100).replace(/<[^>]+>/g, "") + "</b><span>probabilit\u00e0 di vincerla</span></div>" +
       "<div><b>" + f2(m.eq) + "</b><span>quota minima della multipla (Equa)</span></div>" +
       "<div><b>" + f2(conBonus) + "</b><span>quanto la pagherebbe un book col " + String(COSTR.margine).replace(".", ",") + "% a evento" + (bon ? ", bonus compreso" : "") + "</span></div></div>" +
-      '<p class="conta">' + (bon
+      '<p class="costr-nota">' + (bon
         ? "Col bonus del " + String(COSTR.bonus).replace(".", ",") + "% basta che il tuo book paghi la multipla <b>almeno " + f2(m.eq / (1 + bon)) + "</b> prima del bonus: sotto, perdi in media. "
         : "Gioca solo se il tuo book paga <b>almeno " + f2(m.eq) + "</b> la multipla (o almeno la quota minima di ogni evento): sotto, perdi in media. " +
           (COSTR.bonus > 0 && COSTR.bonusDa > nEv ? "Il bonus non vale: servono almeno " + COSTR.bonusDa + " eventi. " : "")) +
@@ -3867,9 +3937,11 @@
       COSTR.bonus = isFinite(bo) && bo >= 0 && bo <= 200 ? bo : 0;
       COSTR.bonusDa = parseInt((document.getElementById("costr-bd") || {}).value, 10) || 0;
       COSTR.eventi = parseInt((document.getElementById("costr-n") || {}).value, 10) || 0;
+      COSTR.book = (document.getElementById("costr-book") || {}).value || "auto";
       try {
         localStorage.setItem("caltiki-costr-quota", String(COSTR.quota)); localStorage.setItem("caltiki-costr-margine", String(COSTR.margine));
         localStorage.setItem("caltiki-costr-bonus", String(COSTR.bonus)); localStorage.setItem("caltiki-costr-bonusda", String(COSTR.bonusDa));
+        localStorage.setItem("caltiki-costr-book", COSTR.book);
       } catch (e) {}
       COSTR.aperto = true;
       var y = window.scrollY;
@@ -3877,7 +3949,7 @@
       window.scrollTo(0, y);
     };
     ["costr-q", "costr-m", "costr-b"].forEach(function (id) { var el = document.getElementById(id); if (el) el.addEventListener("change", cambia); });
-    ["costr-n", "costr-bd"].forEach(function (id) { var el = document.getElementById(id); if (el) el.addEventListener("change", cambia); });
+    ["costr-n", "costr-bd", "costr-book"].forEach(function (id) { var el = document.getElementById(id); if (el) el.addEventListener("change", cambia); });
     var b = document.getElementById("costr-metti");
     if (b) b.addEventListener("click", function () {
       var ch = JSON.parse(b.dataset.chiavi || "[]");
@@ -3910,9 +3982,10 @@
   // partita resta senza, meglio niente che la partita sbagliata. Sulle
   // righe 1X2, Over/Under (ogni linea) e Gol/NoGol si mostra la quota del book accanto all'equa: verde quando
   // il book paga PIU' dell'equa (cioe' c'e' valore rispetto a Pinnacle).
-  var BEX = {}, BEX_BOOK = ["Sisal", "Lottomatica"], BEX_SOGLIA = 0.6;
+  var BEX = {}, BEX_AGG = {}, BEX_BOOK = ["Sisal", "Lottomatica"], BEX_SOGLIA = 0.6;
   function caricaBex(d) {
     if (!BEX[d]) BEX[d] = leggi("betexplorer_" + d + ".json").then(function (j) {
+      if (j && j.aggiornato) BEX_AGG[d] = String(j.aggiornato);
       return j && Array.isArray(j.righe) ? j.righe : [];
     }).catch(function () { return []; });
     return BEX[d];
@@ -3969,25 +4042,39 @@
     if (m === "BTTS" && (sel === "Gol" || sel === "NoGol")) return { k: "bts", e: sel === "Gol" ? "GG" : "NG" };
     return null;
   }
+  // la quota di un book per la selezione della riga: { q, a } o null
+  function quotaBook(r, b) {
+    if (!r || !r._bex) return null;
+    var c = bexChiave(r), x = c && r._bex[b] && r._bex[b][c.k];
+    if (!x) return null;
+    for (var t = 1; t <= 3; t++) {
+      if (String(x["e" + t] || "") !== c.e) continue;
+      if (x["attiva" + t] === 0) return null;
+      var q = num(x["q" + t]);
+      return q != null && q > 1 ? { q: q, a: num(x["a" + t]) } : null;
+    }
+    return null;
+  }
+  // scarto della quota dall'equa, in %: "+2%" / "-6%"
+  function scartoHtml(q, eq) {
+    if (q == null || !eq) return "";
+    var d = (q / eq - 1) * 100, t = (d >= 0 ? "+" : "\u2212") + Math.abs(d).toFixed(0) + "%";
+    return '<span class="bex-scarto' + (d >= 0 ? " su" : d <= -3 ? " giu" : "") + '" title="Quanto paga il book rispetto alla quota equa">' + t + "</span>";
+  }
   function bexHtml(r) {
-    if (!r || !r._bex) return "";
-    var c = bexChiave(r);
-    if (!c) return "";
-    var eq = num(r.Equa), pezzi = [];
+    var eq = num(r && r.Equa), pezzi = [], meglio = null;
+    BEX_BOOK.forEach(function (b) { var x = quotaBook(r, b); if (x && (!meglio || x.q > meglio)) meglio = x.q; });
+    if (meglio == null) return "";
     BEX_BOOK.forEach(function (b) {
-      var x = r._bex[b] && r._bex[b][c.k];
+      var x = quotaBook(r, b);
       if (!x) return;
-      var n = 0;
-      for (var t = 1; t <= 3; t++) if (String(x["e" + t] || "") === c.e) { n = t; break; }
-      if (!n || x["attiva" + n] === 0) return;
-      var q = num(x["q" + n]), ap = num(x["a" + n]);
-      if (q == null) return;
-      var val = eq != null && q > eq;
+      var q = x.q, ap = x.a, val = eq != null && q > eq, top = q === meglio;
       var tit = b + " " + f2(q) + (ap != null ? " (apertura " + f2(ap) + ")" : "") +
         (eq != null ? (val ? ": paga piu' della quota equa " : ": sotto la quota equa ") + f2(eq) : "");
-      pezzi.push('<span class="bex' + (val ? " valore" : "") + '" title="' + esc(tit) + '">' + esc(b) + " <b>" + f2(q) + "</b></span>");
+      pezzi.push('<span class="bex' + (val ? " valore" : "") + (top ? " meglio" : "") + '" title="' + esc(tit) + '">' + esc(b) + " <b>" + f2(q) + "</b></span>");
     });
-    return pezzi.length ? '<div class="bex-riga">' + pezzi.join(" \u00b7 ") + "</div>" : "";
+    var grande = stato.sez === "prezzi" && stato.vista.prezzi === "schedina";      // nella Schedina piu' grandi
+    return '<div class="bex-riga' + (grande ? " grande" : "") + '">' + pezzi.join(" \u00b7 ") + scartoHtml(meglio, eq) + "</div>";
   }
   function rigaPrezzo(r, i) {
     var prob = num(r.Prob), equa = num(r.Equa), marg = num(r.Margine);
@@ -4127,6 +4214,16 @@
       " (" + perdita.toFixed(0) + "%)." +
       (senzaMarg ? " " + senzaMarg + " righe senza margine, contate a prezzo pieno." : "") +
       " Il tuo bookmaker può caricarne di più: confronta la quota che vedi con l'Equa, e se giochi tocca Registra.";
+    // (177) le quote vere dei book, se lette per tutte le selezioni
+    var $bk = document.getElementById("m-book"), tb = totaliBook(r);
+    if ($bk) {
+      var pz = tb.map(function (t) {
+        return t.q != null ? t.b + " la paga " + t.q.toFixed(2) + " (" + (t.q >= equa ? "+" : "\u2212") + Math.abs((t.q / equa - 1) * 100).toFixed(0) + "% sull'equa)"
+          : t.manca < r.length ? t.b + ": manca la quota di " + t.manca + (t.manca === 1 ? " selezione" : " selezioni") : "";
+      }).filter(Boolean);
+      $bk.hidden = !pz.length;
+      $bk.textContent = pz.join(" \u00b7 ");
+    }
 
     // Una riga per partita: due selezioni sulla stessa gara cadono insieme.
     var conta = {};
@@ -4174,6 +4271,14 @@
     return GIORNI_LUNGHI[t.getUTCDay()] + " " + t.getUTCDate() + " " + MESI[t.getUTCMonth()];
   }
 
+  // prodotto delle quote di ogni book sulle selezioni; null se ne manca qualcuna
+  function totaliBook(r) {
+    return BEX_BOOK_C.map(function (b) {
+      var q = 1, manca = 0;
+      r.forEach(function (x) { var y = quotaBook(x, b); if (y) q *= y.q; else manca++; });
+      return { b: b, q: manca ? null : q, manca: manca };
+    });
+  }
   function righeScelte() {
     return Object.keys(scelte).map(function (k) { return scelte[k]; }).sort(function (a, b) {
       var x = (a.Data || "") + " " + (a.Ora || ""), y = (b.Data || "") + " " + (b.Ora || "");
@@ -4205,11 +4310,15 @@
       if (x.Campionato) out.push("    " + x.Campionato);
       out.push("    " + etichettaSel(x) + " -> quota equa " + f2(num(x.Equa)) +
         " (" + f0(num(x.Prob)) + "%)");
+      var qb = BEX_BOOK_C.map(function (b) { var y = quotaBook(x, b); return y ? b + " " + f2(y.q) : ""; }).filter(Boolean);
+      if (qb.length) out.push("    " + qb.join(" · "));
     });
     out.push("");
     out.push(r.length + (r.length === 1 ? " evento" : " eventi") + " · probabilità " +
       c.prob.toFixed(1) + "% · quota equa " + c.equa.toFixed(2));
-    out.push("Col margine del bookmaker pagherebbe circa " + c.pagata.toFixed(2) + ".");
+    var tbk = totaliBook(r).filter(function (t) { return t.q != null; });
+    if (tbk.length) out.push(tbk.map(function (t) { return t.b + " la paga " + t.q.toFixed(2); }).join(" · ") + " (quote dell'ultimo giro: controllale prima di giocare).");
+    else out.push("Col margine del bookmaker pagherebbe circa " + c.pagata.toFixed(2) + ".");
     out.push("Quota equa = quella del bookmaker senza il suo guadagno: se la tua è più bassa, ci perdi.");
     out.push("");
     out.push(SITO);
@@ -4223,15 +4332,15 @@
       return /[;"\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v;
     }
     function dec(v, n) { return v == null ? "" : v.toFixed(n).replace(".", ","); }
-    var righe = [["Data", "Ora", "Campionato", "Partita", "Giocata", "Probabilità %", "Quota equa", "Margine book %"]];
+    var righe = [["Data", "Ora", "Campionato", "Partita", "Giocata", "Probabilità %", "Quota equa", "Margine book %"].concat(BEX_BOOK_C)];
     r.forEach(function (x) {
       righe.push([x.Data, x.Ora, x.Campionato, x.Partita, etichettaSel(x),
-        dec(num(x.Prob), 1), dec(num(x.Equa), 2), dec(num(x.Margine), 1)]);
+        dec(num(x.Prob), 1), dec(num(x.Equa), 2), dec(num(x.Margine), 1)].concat(BEX_BOOK_C.map(function (b) { var y = quotaBook(x, b); return y ? dec(y.q, 2) : ""; })));
     });
     righe.push([]);
     righe.push(["Totale", "", "", r.length + (r.length === 1 ? " evento" : " eventi"), "",
       dec(c.prob, 1), dec(c.equa, 2), ""]);
-    righe.push(["Stima col margine", "", "", "", "", "", dec(c.pagata, 2), ""]);
+    righe.push(["Stima col margine", "", "", "", "", "", dec(c.pagata, 2), ""].concat(totaliBook(r).map(function (t) { return t.q != null ? dec(t.q, 2) : ""; })));
     return "\ufeff" + righe.map(function (l) { return l.map(cella).join(";"); }).join("\r\n") + "\r\n";
   }
 
