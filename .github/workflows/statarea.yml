@@ -828,7 +828,7 @@ jobs:
         id: scarica
         continue-on-error: true
         timeout-minutes: 22
-        run: python xgaura_scraper.py --day both --kodi-dir xgkodi
+        run: python xgaura_scraper.py --giorni 3 --kodi-dir xgkodi
 
       - name: Pubblica i JSON xGaura sul repository pubblico
         # Come per le altre fonti: se lo scaricamento fallisce non si
