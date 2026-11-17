@@ -79,6 +79,39 @@
      verde se il pronostico e' uscito, rosso se no, nero se non c'e'. */
   #contenuto .riga .alto span.ris { font-size: 1.08rem; font-weight: 800; letter-spacing: .01em; text-transform: none; white-space: nowrap; }
   #contenuto .riga .alto span.ris::before { content: "Risultato: "; font-size: .78em; font-weight: 700; color: var(--testo); letter-spacing: 0; }
+
+  /* (174) TESTA DELLA SCHEDA PARTITA: stemmi grandi, nomi sotto, centrata */
+  .testa-partita .hero-data { text-align: center; margin: 0 0 4px; }
+  .testa-partita h2.hero {
+    display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: start; column-gap: 10px; margin: 10px 0 14px; text-align: center;
+  }
+  .hero-sq { display: flex; flex-direction: column; align-items: center; min-width: 0; }
+  .hero-stemma { position: relative; width: 84px; height: 84px; display: grid; place-items: center; margin-bottom: 8px; }
+  .hero-stemma img.stemma, .hero-stemma img.stemma.grande {
+    position: relative; z-index: 1; width: 84px; height: 84px; margin: 0; vertical-align: 0;
+    object-fit: contain; filter: drop-shadow(0 6px 12px rgba(15,23,42,.18));
+  }
+  .hero-stemma:has(img) .hero-ini { display: none; }
+  .hero-ini {
+    position: absolute; inset: 6px; border-radius: 50%; display: grid; place-items: center;
+    background: rgba(11,74,134,.12); color: var(--evidenza); font-size: 2rem; font-weight: 800;
+  }
+  .hero-nome { font-size: 1.25rem; line-height: 1.15; overflow-wrap: anywhere; }
+  .hero-centro { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 84px; padding: 0 2px; }
+  .hero-ris { font-size: 2.6rem; line-height: 1; letter-spacing: .02em; white-space: nowrap; }
+  .hero-ris.in-corso { color: var(--buono); }
+  .hero-ora { font-size: 1.6rem; line-height: 1; white-space: nowrap; color: var(--tenue); }
+  .hero-stato { font-family: inherit; font-size: .8rem; font-weight: 600; color: var(--tenue); text-transform: uppercase; letter-spacing: .08em; margin-top: 6px; }
+  .testa-partita > .elo-mini { text-align: center; }
+  .testa-partita .forme > div:last-child { text-align: right; }
+  .testa-partita .forme > div:last-child span { text-align: right; }
+  @media (min-width: 700px) {
+    .hero-stemma, .hero-stemma img.stemma, .hero-stemma img.stemma.grande { width: 104px; height: 104px; }
+    .hero-centro { min-height: 104px; }
+    .hero-nome { font-size: 1.5rem; }
+    .hero-ris { font-size: 3.2rem; }
+  }
 </style>
 <style>
   :root {
@@ -7691,14 +7724,35 @@
       return { gc: num(fm.Gol_Casa), go: num(fm.Gol_Ospite) };
     return null;
   }
+  // (174) LA TESTA SCENOGRAFICA (17/11): i due stemmi grandi ai lati, il
+  // nome sotto ciascuno, tutto centrato; in mezzo il risultato (finita o in
+  // corso) oppure l'ora del via. Senza stemma, un tondo con l'iniziale.
+  function stemmaHero(nome, id, p) {
+    var h = logoId(nome, id, true, campiRiga(p));
+    var ini = esc(String(nome || "?").replace(/^(fc|ac|as|ss|us|cd|cf|sc|fk|sk|nk|afc|cs)\s+/i, "").charAt(0).toUpperCase() || "?");
+    return '<span class="hero-stemma"><span class="hero-ini" aria-hidden="true">' + ini + "</span>" + h + "</span>";
+  }
+  function heroPartita(p) {
+    var fm = p.FM || {}, st = String(fm.Stato || "").toUpperCase(), gc = num(fm.Gol_Casa), go = num(fm.Gol_Ospite);
+    var fine = finaleScheda(p), centro;
+    if (fine) centro = '<b class="hero-ris">' + fine.gc + "\u2013" + fine.go + '</b><span class="hero-stato">finita</span>';
+    else if (gc != null && go != null && st && st !== "NS") {
+      var fin = ["FT", "AET", "PEN"].indexOf(st) >= 0;
+      centro = '<b class="hero-ris' + (fin ? "" : " in-corso") + '">' + gc + "\u2013" + go + '</b><span class="hero-stato">' + (fin ? "finita" : "in corso (" + esc(st) + ")") + "</span>";
+    } else centro = '<b class="hero-ora">' + esc(p.Ora || "vs") + "</b>";
+    return '<h2 class="hero">' +
+      '<span class="hero-sq">' + stemmaHero(p.Casa, p.Pin && p.Pin.ID_Casa, p) + '<span class="hero-nome">' + esc(p.Casa) + "</span></span>" +
+      '<span class="hero-centro">' + centro + "</span>" +
+      '<span class="hero-sq">' + stemmaHero(p.Ospite, p.Pin && p.Pin.ID_Ospite, p) + '<span class="hero-nome">' + esc(p.Ospite) + "</span></span>" +
+      "</h2>";
+  }
   function testaScheda(p, d) {
     var fm = p.FM || {};
     var h = '<div class="scheda testa-partita">' +
       '<button type="button" class="indietro" id="indietro">← Indietro</button>' +
-      '<p class="piccolo">' + esc(etichettaData(d)) + (p.Ora ? " · " + esc(p.Ora) : "") +
+      '<p class="piccolo hero-data">' + esc(etichettaData(d)) + (p.Ora ? " · " + esc(p.Ora) : "") +
       (p.Lega ? " · " + esc(p.Lega) : "") + "</p>" +
-      "<h2>" + logoId(p.Casa, p.Pin && p.Pin.ID_Casa, true, campiRiga(p)) + esc(p.Casa) + " – " +
-      logoId(p.Ospite, p.Pin && p.Pin.ID_Ospite, true, campiRiga(p)) + esc(p.Ospite) + "</h2>";
+      heroPartita(p);
     if (p.Elo) {
       // (159) lo scarto fra le due, come nelle card, non la posizione su 11 mila
       var dElo = p.Elo.c.elo - p.Elo.o.elo;
@@ -7707,13 +7761,7 @@
         "<br><span class=nw><b class=seg>1</b> " + pvE(p.Elo.p[0]) + "</span>" + " · <span class=nw><b class=seg>X</b> " + pvE(p.Elo.p[1]) + "</span>" + " · <span class=nw><b class=seg>2</b> " + pvE(p.Elo.p[2]) + "</span>" + "</p>";
     }
     var st = String(fm.Stato || "").toUpperCase(), gc = num(fm.Gol_Casa), go = num(fm.Gol_Ospite);
-    var fine = finaleScheda(p);
-    if (fine) {
-      h += '<p class="punteggio"><b>' + fine.gc + " – " + fine.go + "</b> finita</p>";
-    } else if (gc != null && go != null && st && st !== "NS") {
-      var fin = ["FT", "AET", "PEN"].indexOf(st) >= 0;
-      h += '<p class="punteggio"><b>' + gc + " – " + go + "</b> " + (fin ? "finita" : "in corso (" + esc(st) + ")") + "</p>";
-    }
+    // (174) il punteggio sta al centro, fra i due stemmi (heroPartita)
     // FORMA E POSIZIONE (143): FootyMetrics se le ha, altrimenti il fornitore dei dati
     // (forma_<data>.json e classifiche_api.json), anche una sola delle due.
     var cl = p.Classe || {};
