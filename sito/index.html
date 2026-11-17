@@ -130,6 +130,10 @@
   .costr-lista .bex-scarto.su { color: var(--buono); }
   .costr-lista .bex-scarto.giu { color: var(--male); }
   #m-book { margin: 4px 0 0; font-weight: 600; }
+  /* (179) partita senza pronostico sopra soglia: c'e', ma in secondo piano */
+  .riga.partitona.senza-pron > details > summary { opacity: .62; }
+  .riga.partitona.senza-pron > details[open] > summary { opacity: 1; }
+  .sel.nessun-pron { color: var(--tenue); font-style: italic; font-size: .9rem; }
   /* (177) la nota del costruttore in testo normale (prima prendeva lo
      stile dei titoletti) e il bottone visibile anche fuori dalla barra */
   .costruttore p.costr-nota { font-size: .86rem; line-height: 1.45; color: var(--tenue); margin: 10px 2px; }
@@ -1953,7 +1957,7 @@
   var PE_VISTE = [
     ["partite", "Tutte le partite",
      "Un pronostico per partita: il pi\u00f9 probabile fra quelli dal 60% in su con quota equa almeno 1.40. " +
-     "Le partite che non ne hanno uno cos\u00ec non compaiono (le trovi in \u201cTutto\u201d). " +
+     "Le partite che non ne hanno uno cos\u00ec restano al loro posto ma in grigio: aprendole vedi comunque le loro probabilit\u00e0. " +
      "Tocca una partita per vedere le altre probabilit\u00e0 e aggiungerle alla multipla."],
     ["schedina", "Schedina",
      "Le righe che il sistema ha messo in schedina: una per partita. " +
@@ -1971,9 +1975,10 @@
      "su 238 partite finite, previsto 60.0% e uscito 60.1%."],
     ["ou", "Under / Over",
      "Sopra o sotto la soglia. Attenzione: su 563 partite il modello ha " +
-     "sottostimato gli Over di 4.6 punti, quindi qui i numeri sono bassi."],
-    ["tutte", "Tutto",
-     "Tutte le selezioni della giornata, ordinate per probabilit\u00e0."]
+     "sottostimato gli Over di 4.6 punti, quindi qui i numeri sono bassi."]
+    // (179) "Tutto" tolto: l'elenco piatto di tutte le selezioni ripeteva
+    // la stessa partita 8-10 volte; le partite stanno in "Tutte le partite",
+    // i mercati nei loro tasti.
   ];
   var CM_VISTE = [
     ["mercato", "Con lo scarto dal mercato", ""],
@@ -2864,20 +2869,15 @@
     // partita mostra un solo pronostico: il piu' probabile fra quelli dal
     // 60% in su con quota equa almeno 1.40 (sotto 1.40 la giocata singola
     // non rende: su Sisal/Lottomatica diventa 1.30 o meno). Le partite
-    // senza un pronostico cosi' non compaiono: sono in "Tutto". Gli altri
+    // senza un pronostico cosi' (179) restano, in grigio e senza pronostico. Gli altri
     // esiti restano dentro la partita. Niente schedina qui: sta nella sua vista.
     var pron = !mercato && stato.vista[sez] === "partite";
     if (pron) {
       gruppi.forEach(function (g) { g._pr = principale(g); });
-      gruppi = gruppi.filter(function (g) { return g._pr; });
-      if (!gruppi.length) {
-        $r.innerHTML = messaggio("vuoto", "Nessuna partita del " + data + " ha un pronostico dal 60% con quota equa almeno 1.40" +
-          (stato.cerca ? " fra quelle cercate" : "") + ". Le altre sono in “Tutto”.");
-        return;
-      }
     }
     function maxProb(g) {
       if (g._pr) return num(g._pr.Prob) || 0;
+      if (pron) return -1;                                   // senza pronostico: in fondo
       return Math.max.apply(null, g.map(function (r) { return num(r.Prob) || 0; }));
     }
     function minMarg(g) { return Math.min.apply(null, g.map(function (r) { var m = num(r.Margine); return m == null ? 99 : m; })); }
@@ -2894,8 +2894,9 @@
     // se se ne e' toccato uno, restano solo quelle partite.
     var gf = pron && stato.esito ? gruppi.filter(function (g) { return esitoDi(g._pr) === stato.esito; }) : null;
     if (gf && !gf.length) { stato.esito = ""; gf = null; }
-    var riep = pron ? riepilogoPronostici(gruppi) : SEZ[sez].riepilogo(visibili);
-    var nTot = gruppi.length;
+    var conPr = pron ? gruppi.filter(function (g) { return g._pr; }) : gruppi;
+    var riep = pron ? (conPr.length ? riepilogoPronostici(conPr) : "") : SEZ[sez].riepilogo(visibili);
+    var nTot = conPr.length, nSenza = gruppi.length - conPr.length;
     if (gf) gruppi = gf;
 
     var mostrateG = gruppi.slice(0, stato.limite), mostrate = [];
@@ -2929,14 +2930,15 @@
     }
     var html = riep +
       '<p class="conta">' + (pron
-        ? (gf ? gruppi.length + " su " : "") + nTot + (nTot === 1 ? " partita con un pronostico" : " partite con un pronostico")
+        ? (gf ? gruppi.length + " su " : "") + nTot + (nTot === 1 ? " partita con un pronostico" : " partite con un pronostico") +
+          (nSenza && !gf ? " \u00b7 " + nSenza + " senza" : "")
         : gruppi.length + (gruppi.length === 1 ? " partita" : " partite") + " · " + visibili.length + " probabilità") +
       SEZ[sez].nota + '</p><div class="lista">' +
       mostrateG.map(function (g) { return cartaPartita(g); }).join("") + "</div>";
     function cartaPartita(g) {
         // (174) qui non si vedono la schedina ne' i suoi segni: sta nella sua vista
         var r0 = g[0], inSch = null;
-        var top = g._pr || proposta(g);
+        var top = g._pr || proposta(g), senzaPr = pron && !g._pr;
         var gol = r0.Gol_Casa != null && r0.Gol_Ospite != null ? r0.Gol_Casa + "-" + r0.Gol_Ospite : "";
         var dentro = g.map(function (r) {
           var i = mostrate.length; mostrate.push(r);
@@ -2951,7 +2953,7 @@
         // FUORI SCHEDINA, LA PROPOSTA: spunta grigia, che non conta nei
         // riquadri (deciso il 6/11). Solo presa o sbagliata.
         var esTop = esitoDi(top);
-        var ep = !es && (esTop === "presa" || esTop === "sbagliata") ? esTop : null;
+        var ep = !es && !senzaPr && (esTop === "presa" || esTop === "sbagliata") ? esTop : null;
         var titoloEp = ep === "presa" ? (pron ? "pronostico uscito" : "proposta uscita") : (pron ? "pronostico non uscito" : "proposta non uscita");
         // (173) una partita con un esito solo resta la riga di sempre: la
         // scheda con dentro un esito solo sarebbe piu' lunga, non piu' corta
@@ -2980,7 +2982,7 @@
         }
         // (173) fuori schedina niente segno a sinistra: basta il risultato colorato
         var epSegno = null;
-        return '<div class="riga partitona' + (scelte_ ? " scelta" : "") + (es ? " finita" : "") + '">' +
+        return '<div class="riga partitona' + (scelte_ ? " scelta" : "") + (es ? " finita" : "") + (senzaPr ? " senza-pron" : "") + '">' +
           (es ? '<span class="spunta esito ' + esc(es) + '" title="' + titoloEs + '" aria-label="' + titoloEs + '">' + segnoEs + "</span>"
             : epSegno ? '<span class="spunta esito proposta" title="' + titoloEp + '" aria-label="' + titoloEp + '">' +
               (epSegno === "presa" ? "\u2713" : "\u2717") + "</span>" : "") +
@@ -2997,9 +2999,11 @@
           pillConsenso(g.filter(function (x) { return x._cons; })[0]) +
           (eAltroBook(r0.Fonte) ? '<span class="chip" title="Pinnacle non quota questa partita: prezzo da ' + esc(r0.Fonte) + '">quota ' + esc(r0.Fonte) + "</span>" : "") + "</div>" +
           '<div class="partita">' + partitaHtml(r0.Casa, r0.Ospite, r0.Partita, campiRiga(r0)) + "</div>" + sqHtml(r0) +
-          '<div class="sel">' + (pron ? "<b>Pronostico:</b> " : "<b>Proposta:</b> ") + '<span class="q-n' + (eVerde(num(top.Prob)) ? " verde" : "") + '">' + esc(etichettaSel(top)) +
+          (senzaPr
+            ? '<div class="sel nessun-pron">Nessun pronostico dal 60% con quota equa almeno 1.40' + (scelte_ ? " · " + scelte_ + " nella multipla" : "") + "</div>"
+            : '<div class="sel">' + (pron ? "<b>Pronostico:</b> " : "<b>Proposta:</b> ") + '<span class="q-n' + (eVerde(num(top.Prob)) ? " verde" : "") + '">' + esc(etichettaSel(top)) +
           " · " + f0(num(top.Prob)) + "%</span>" + (pron && equaDi(top) ? ' <span class="eq-pron">quota equa ' + f2(equaDi(top)) + "</span>" : "") +
-          (scelte_ ? " · " + scelte_ + " nella multipla" : "") + "</div>" + bexHtml(top) +
+          (scelte_ ? " · " + scelte_ + " nella multipla" : "") + "</div>" + bexHtml(top)) +
           '</div><div class="numero"><b>' + g.length + "</b><span>" + (g.length === 1 ? "probabilità" : "probabilità") + "</span></div></summary>" +
           '<div class="dentro-partita">' +
           '<div class="info-api" data-casa="' + esc(r0.Casa || "") + '" data-ospite="' + esc(r0.Ospite || "") + '" data-ora="' + esc(r0.Ora || "") + '" data-id="' + esc(r0.ID_API || "") + '"></div>' + dentro +
@@ -3378,7 +3382,7 @@
     if (sez === "prezzi") {
       if (vista === "schedina") return "Nessuna delle " + n + " selezioni del " + data + " è finita in schedina.";
       if (vista === "stretto") return "Nessuna delle " + n + " selezioni del " + data + " ha il margine sotto il 3%. Prova un'altra vista.";
-      return "Nessuna selezione di questo tipo fra le " + n + " del " + data + ". Prova “Tutto”.";
+      return "Nessuna selezione di questo tipo fra le " + n + " del " + data + ". Prova \u201cTutte le partite\u201d.";
     }
     if (vista === "mercato") return "Nessuna delle " + n + " partite del " + data + " ha la linea del mercato.";
     return "Su tutte e " + n + " le partite del " + data + " si esprime una fonte sola. Prova “Tutte”.";
