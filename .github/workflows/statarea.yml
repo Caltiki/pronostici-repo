@@ -1,0 +1,3126 @@
+name: Statarea Scraper
+
+on:
+  schedule:
+    # ATTENZIONE - orari volutamente ANTICIPATI, non e' un errore.
+    #
+    # GitHub non garantisce l'orario dei cron: l'evento "schedule" viene
+    # ritardato nei periodi di alto carico, e l'inizio di ogni ora e' il
+    # momento peggiore. Con il vecchio '0 5 * * *' (05:00 UTC = 07:00 IT)
+    # i file arrivavano COSTANTEMENTE verso le 11:00 italiane, cioe' con
+    # circa 4 ore di ritardo, misurate su piu' giorni consecutivi.
+    #
+    # Due correzioni insieme:
+    #  1. minuto non tondo (37) per schivare il picco di carico;
+    #  2. anticipo di 4 ore per compensare il ritardo osservato.
+    #
+    # 00:37 UTC + ~4h di ritardo tipico = arrivo verso le 06:30-07:00 IT.
+    #
+    # SE UN GIORNO GITHUB SISTEMA IL RITARDO, questi orari vanno rimessi
+    # indietro, altrimenti i file arriveranno alle 02:37 di notte.
+    # Il modo per accorgersene: i file cominciano ad arrivare molto
+    # prima delle 06:30.
+    #
+    # I TRE ORARI QUOTIDIANI NON SONO TRE ESECUZIONI: sono tre TENTATIVI.
+    # Il job 'controllo' qui sotto guarda se i dati di oggi sono gia'
+    # pubblicati e, se lo sono, ferma tutto in pochi secondi. Servono
+    # perche' GitHub non si limita a ritardare l'evento 'schedule': nei
+    # picchi lo SCARTA del tutto, e in quel caso un cron solo vuol dire
+    # nessun file per tutto il giorno. Misurato il 27/09: cron delle 00:37,
+    # file pubblicati alle 07:31 UTC, quasi sette ore dopo.
+    #
+    # DAL 10/11 L'APPUNTAMENTO VERO LO DA' CLOUDFLARE (live/orologio.js,
+    # pubblicato da deploy_orologio.yml). Il 9 e il 10/11 GitHub ha saltato
+    # due giri di AsianOdds, il giro notturno e il cron del martedi. Il
+    # Worker "caltiki-orologio" ha i suoi orari, puntuali, e a ogni orario
+    # avvia questo workflow (workflow_dispatch) passando in "cron" la
+    # stringa dell'orario: da li' in poi il giro si comporta ESATTAMENTE
+    # come se fosse partito da quel cron. Gli orari PRINCIPALI qui sotto
+    # sono quindi tolti (li fa l'orologio); restano le RISERVE, che si
+    # spengono da sole quando il lavoro e' gia' fatto e recuperano se un
+    # giorno e' l'orologio a non partire.
+    #   orologio 00:37 UTC  -> cron '37 0 * * *'   giro quotidiano
+    #   orologio 06/12/18:23    -> '23 */6 * * *'  prezzi, Poisson e schede (era AsianOdds)
+    #   orologio 17:07 e 22:37  -> '7 17 * * *' e '37 22 * * *'  risultati
+    - cron: '17 2 * * *'     # riserva del giro quotidiano
+    - cron: '47 4 * * *'     # seconda riserva
+    #
+    # AsianOdds ogni SEI ore. NON e' ridondanza con i tre tentativi di
+    # sopra: quelli riguardano Statarea, che di suo non si muove quasi
+    # (misurato fra i due run del 28/09: 17 righe identiche e 0 cambiate
+    # sul file di oggi, 27 identiche e 3 cambiate su domani). AsianOdds
+    # invece cambia TUTTO: negli stessi due run, su 58 partite, zero
+    # identiche, 49 con quote diverse, 7 nuove, 9 sparite - e il file del
+    # giorno dopo passava da 14 a 26 partite man mano che la finestra
+    # 24h avanza. Un dato del genere invecchia in poche ore.
+    #
+    # ERA OGNI TRE ORE, ridotto a sei su richiesta: otto consegne al giorno
+    # su Telegram erano troppe, e cinque cadevano fra le 02:23 e le 06:47
+    # perche' si sommavano ai tentativi di riserva del giro quotidiano.
+    # Il dato su gh-data per Kodi segue lo stesso ritmo: resta fresco entro
+    # le sei ore invece delle tre, che per una finestra 24h e' accettabile.
+    #
+    # TRE ORARI PER FASCIA, NON TRE CONSEGNE - stessa logica dei tentativi
+    # del giro quotidiano qui sopra, e per lo stesso identico motivo.
+    #
+    # Misurato sullo storico dei commit di gh-data dal 29/09 al 02/10: col
+    # cron ogni tre ore, che avrebbe dovuto dare otto pubblicazioni al
+    # giorno, ne sono arrivate 4, 6, 5 e 1. Mai otto. E i ritardi andavano
+    # da 1 a 165 minuti senza nessuna regola. L'evento 'schedule' insomma
+    # non viene solo ritardato: viene scartato circa una volta su due.
+    #
+    # Le riserve si spengono da sole: la guardia nel job 'controllo' guarda
+    # quanto e' vecchio asianodds_index.json e, sotto le quattro ore, le
+    # ferma in due secondi. Quindi nel caso normale costano un minuto di
+    # Actions a vuoto, non un Excel in piu'.
+    #
+    # TRE GIRI AL GIORNO, NON QUATTRO (11/11), per stare nei minuti di
+    # Actions inclusi nel piano gratuito (2.000 al mese sui repository
+    # privati). L'orologio avvia AsianOdds alle 06:23, 12:23 e 18:23 UTC
+    # (7:23, 13:23, 19:23 in Italia d'inverno). Il giro delle 00:23 e'
+    # tolto: il giro quotidiano delle 00:37 rifa' comunque AsianOdds dentro
+    # il job statarea. Le riserve seguono: +100 e +200 minuti dopo ognuno
+    # dei tre.
+    #
+    # ASIANODDS TOLTO (12/11). Dal 12/11 il piano gratuito di AsianOdds da'
+    # solo dati dimostrativi fermi al 2/11: le quote vere sono a pagamento
+    # (Gold) e l'indirizzo che lo scaricamento usava rimbalza sulla home.
+    # Lo scaricamento e' tolto da tutto il workflow. Il giro delle sei ore
+    # (orologio, '23 */6 * * *') RESTA: rifa' prezzi equi, Poisson e schede
+    # con le quote Pinnacle aggiornate da pinnacle.yml. Le due riserve di
+    # AsianOdds sono tolte: l'orologio e' puntuale.
+    #
+    # SOLO RISULTATI, due volte la sera. Betimate e FootyMetrics sono le
+    # due fonti dei risultati: girando solo di notte, le partite del
+    # pomeriggio venivano spuntate il giorno dopo. Questi due giri rifanno
+    # SOLO i job betimate e footymetrics (che dentro aggiornano archivio
+    # dei risultati, esiti della schedina, prezzi, Poisson e schede) e
+    # niente altro: niente Statarea, niente altre fonti, niente Telegram.
+    # Costo misurato sui giri normali: circa 15 minuti di Actions l'uno.
+    # Orari in UTC: d'inverno 18:07 e 23:37 in Italia, d'estate un'ora dopo.
+    # (i due principali, 17:07 e 22:37 UTC, li avvia l'orologio)
+    # RISERVE, 40 minuti dopo: partono solo se betimate_index.json non e'
+    # stato aggiornato nelle ultime due ore (guardia nel job controllo).
+    - cron: '47 17 * * *'       # risultati, sera - riserva
+    - cron: '17 23 * * *'       # risultati, notte - riserva
+  workflow_dispatch:
+    inputs:
+      cron:
+        description: "Lascia VUOTO per il giro completo a mano. Lo riempie l'orologio di Cloudflare."
+        required: false
+        default: ""
+        type: string
+
+# Il martedi entrambi i cron scattano insieme e GitHub avvia DUE run
+# separati che pushano sullo stesso branch gh-data. Senza questo blocco
+# il secondo push fallisce con non-fast-forward (mascherato dai || true).
+# cancel-in-progress: false = il secondo run aspetta invece di essere ucciso.
+concurrency:
+  group: gh-data-publish
+  cancel-in-progress: false
+
+# DOVE VANNO I DATI, e perche' non in questo repository.
+#
+# I JSON che legge l'addon Kodi finiscono su un repository PUBBLICO. Il
+# motivo e' uno solo: un repository privato si legge solo con un token, e
+# quel token andava consegnato a mano a chiunque installasse l'addon -
+# scritto col telecomando, 93 caratteri. Rendendo pubblici i soli JSON
+# giornalieri il token sparisce per tutti.
+#
+# Cosa resta privato: questo repository, cioe' gli scraper e il codice che
+# produce i dati. Escono i risultati, non il modo di ottenerli.
+#
+# I pacchetti dell'addon stanno su main dello stesso repository pubblico;
+# i dati su un branch a parte, gh-data, per non mescolare le due cose.
+env:
+  REPO_DATI: Caltiki/pronostici-repo
+  BRANCH_DATI: gh-data
+
+# IMMAGINE DEL RUNNER FISSATA, NON 'ubuntu-latest'.
+#
+# GitHub ha annunciato che 'ubuntu-latest' passa a Ubuntu 26 dal 19 ottobre
+# 2026 (l'avviso compare come annotazione informativa su ogni job). Sotto
+# cambiano il Python di sistema e le librerie di sistema che servono a
+# Chromium: sei scraper su nove aprono un browser, e se qualcosa si rompe
+# si rompe su tutti lo stesso giorno, senza che sia stata toccata una riga.
+#
+# Fissando 'ubuntu-24.04' la migrazione la si fa quando si vuole, con un
+# run di prova e una sola parola da cambiare. Non e' un rinvio a tempo
+# indeterminato: l'immagine 24.04 verra' ritirata, e quando succede GitHub
+# avvisa allo stesso modo. Si cambia allora, da fermi.
+jobs:
+
+  # GLI STEMMI PER IL SITO. Il sito mostra lo stemma accanto alle squadre:
+  # i file sono quelli del pacchetto Kodi resource.images.pronostici, gia'
+  # pubblicato su main, e il nome della squadra porta al file con
+  # loghi.json, come in Kodi. Il browser pero' non apre uno zip: qui lo zip
+  # si scompatta e i PNG vanno sul ramo "stemmi" di pronostici-repo, da
+  # dove il sito li legge (raw.githubusercontent.com/.../stemmi/<file>.png).
+  #
+  # SI FA SOLO QUANDO IL PACCHETTO CAMBIA VERSIONE: la versione pubblicata
+  # sta in stemmi/versione.txt e si confronta con quella di addons.xml.
+  # Uguali, il job finisce in pochi secondi. Il ramo si riscrive da capo
+  # (un solo commit, push forzato): 9.000 PNG a ogni versione nello storico
+  # farebbero crescere il repository per niente.
+  #
+  # Gira una volta al giorno (il primo tentativo notturno) o a mano. Non
+  # tocca gh-data e non sta nella catena dei push: scrive su un altro ramo.
+  stemmi:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    if: (github.event_name == 'workflow_dispatch' && !github.event.inputs.cron) || (github.event.schedule || github.event.inputs.cron) == '37 0 * * *'
+    steps:
+      - name: Pubblica gli stemmi sul ramo stemmi
+        env:
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+        run: |
+          set -euo pipefail
+          if [ -z "${TOKEN_DATI:-}" ]; then
+            echo "::error::Secret TOKEN_REPO_DATI assente."
+            exit 1
+          fi
+          RAW="https://raw.githubusercontent.com/${REPO_DATI}"
+          VER=$(curl -fsSL "${RAW}/main/addons.xml" | python3 -c '
+          import re, sys
+          t = sys.stdin.read()
+          m = re.search(r"<addon\s+id=\"resource\.images\.pronostici\"[^>]*?version=\"([^\"]+)\"", t, re.S)
+          print(m.group(1) if m else "")')
+          if [ -z "$VER" ]; then
+            echo "::warning::Versione di resource.images.pronostici non trovata in addons.xml: stemmi non aggiornati."
+            exit 0
+          fi
+          ORA=$(curl -fsSL "${RAW}/stemmi/versione.txt" 2>/dev/null || echo "nessuna")
+          echo "pacchetto stemmi: ${VER}   sul ramo stemmi: ${ORA}"
+          if [ "$ORA" = "$VER" ]; then
+            echo "Gia' aggiornati, niente da fare."
+            exit 0
+          fi
+          curl -fsSL -o stemmi.zip "${RAW}/main/resource.images.pronostici/resource.images.pronostici-${VER}.zip"
+          rm -rf zip pub && mkdir zip pub
+          unzip -q stemmi.zip -d zip
+          CART=$(find zip -type d -path "*/resources/loghi" | head -1)
+          if [ -z "$CART" ]; then
+            echo "::error::Nello zip non c'e' la cartella resources/loghi."
+            exit 1
+          fi
+          cp "$CART"/*.png pub/
+          echo -n "$VER" > pub/versione.txt
+          N=$(ls pub/*.png | wc -l)
+          echo "stemmi da pubblicare: $N"
+          cd pub
+          git init -q -b stemmi
+          git config user.name "caltiki-bot"
+          git config user.email "caltiki-bot@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Stemmi ${VER}"
+          git push -q --force "https://x-access-token:${TOKEN_DATI}@github.com/${REPO_DATI}" "HEAD:stemmi"
+          echo "Ramo stemmi aggiornato alla versione ${VER} (${N} file)."
+
+  # =========================================================
+  # GUARDIA: i dati di oggi ci sono gia'?
+  # =========================================================
+  # Costa una decina di secondi e rende innocui i tentativi di riserva:
+  # il secondo e il terzo cron trovano il lavoro gia' fatto e si fermano
+  # qui, senza riscaricare niente.
+  #
+  # Il blocco 'concurrency' di sopra e' quello che lo rende affidabile:
+  # e' a livello di workflow, quindi un run che parte mentre un altro sta
+  # ancora girando ASPETTA il suo turno prima di eseguire qualunque job.
+  # Quando finalmente arriva qui, l'altro ha gia' pubblicato e la guardia
+  # lo vede. Senza quell'attesa, i due si troverebbero a scaricare in
+  # parallelo senza accorgersene.
+  #
+  # Un avvio a mano (workflow_dispatch) ignora la guardia: se lo lanci tu,
+  # e' perche' vuoi rifare il lavoro.
+  controllo:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    outputs:
+      gia_pubblicati: ${{ steps.verifica.outputs.gia }}
+      solo_risultati: ${{ steps.verifica.outputs.solo }}
+      wp_manca: ${{ steps.wp.outputs.manca }}
+    steps:
+      # WEBPRONOSTICI DELLA SETTIMANA (10/11). Si scaricano una volta a
+      # settimana, dal martedi. Prima partivano SOLO col cron delle 00:37
+      # del martedi: il 10/11 GitHub non l'ha avviato e la settimana
+      # sarebbe rimasta senza WebPronostici, quindi senza consenso. Adesso
+      # la domanda e' "questa settimana sono gia' stati scaricati?": se no,
+      # partono nel primo giro notturno utile da martedi in poi (principale
+      # o riserva), e una volta scaricati non ripartono fino al martedi
+      # dopo. L'indice scrive l'ora di Roma: si confronta la data di Roma.
+      - name: WebPronostici di questa settimana?
+        id: wp
+        run: |
+          AGG=$(curl -sf "https://raw.githubusercontent.com/${REPO_DATI}/${BRANCH_DATI}/webpronostici_index.json" \
+                | python3 -c "import sys,json;print(json.load(sys.stdin).get('updated',''))" \
+                2>/dev/null || true)
+          MANCA=$(AGG="$AGG" python3 - <<'PYEOF_WP'
+          import os
+          from datetime import datetime, timedelta
+          from zoneinfo import ZoneInfo
+          oggi = datetime.now(ZoneInfo("Europe/Rome")).date()
+          martedi = oggi - timedelta(days=(oggi.weekday() - 1) % 7)
+          agg = (os.environ.get("AGG") or "").strip()[:10]
+          print("si" if not agg or agg < martedi.isoformat() else "no")
+          print("ultimo aggiornamento {} | martedi di questa settimana {}".format(agg or "mai", martedi))
+          PYEOF_WP
+          )
+          echo "$MANCA" | tail -n 1
+          echo "manca=$(echo "$MANCA" | head -n 1)" >> "$GITHUB_OUTPUT"
+
+      - name: Guarda la data dell'indice gia' pubblicato
+        id: verifica
+        env:
+          EVENTO: ${{ (github.event.schedule || github.event.inputs.cron) }}
+        run: |
+          # I DUE GIRI SERALI "SOLO RISULTATI" (vedi i cron in cima): per il
+          # giro quotidiano valgono come "gia' pubblicato", cosi' Statarea e
+          # le altre fonti non partono nemmeno se stamattina Statarea e'
+          # fallito. Partono solo betimate e footymetrics, che guardano
+          # solo_risultati.
+          # LE RISERVE DEI RISULTATI (10/11): i due giri li avvia l'orologio
+          # di Cloudflare; i cron '47 17' e '17 23' di GitHub sono la
+          # riserva e si fermano se Betimate e' stato aggiornato nelle
+          # ultime due ore (lo aggiorna solo il job betimate, quindi vuol
+          # dire che il giro dei risultati c'e' stato).
+          if [ "${EVENTO:-}" = "47 17 * * *" ] || [ "${EVENTO:-}" = "17 23 * * *" ]; then
+            AGGB=$(curl -sf "https://raw.githubusercontent.com/${REPO_DATI}/${BRANCH_DATI}/betimate_index.json" \
+                  | python3 -c "import sys,json;print(json.load(sys.stdin).get('updated',''))" \
+                  2>/dev/null || true)
+            FRESCO=$(AGGB="$AGGB" python3 -c "
+          import os
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+          try:
+              t = datetime.strptime(os.environ.get('AGGB','').strip(), '%Y-%m-%d %H:%M').replace(tzinfo=ZoneInfo('Europe/Rome'))
+              print('si' if (datetime.now(ZoneInfo('Europe/Rome')) - t).total_seconds() < 7200 else 'no')
+          except Exception:
+              print('no')
+          ")
+            if [ "$FRESCO" = "si" ]; then
+              echo "Riserva dei risultati: Betimate aggiornato alle ${AGGB#* }, il giro c'e' gia' stato. Niente da fare."
+              echo "gia=si" >> "$GITHUB_OUTPUT"
+              echo "solo=no" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            echo "Riserva dei risultati: Betimate fermo alle '${AGGB:-mai}', si recupera."
+            EVENTO="7 17 * * *"
+          fi
+          echo "Avviato da: ${{ github.event_name }}  cron: '${EVENTO:-nessuno}'"
+          if [ "${EVENTO:-}" = "7 17 * * *" ] || [ "${EVENTO:-}" = "37 22 * * *" ]; then
+            echo "Giro serale solo risultati: il giro quotidiano non parte."
+            echo "gia=si" >> "$GITHUB_OUTPUT"
+            echo "solo=si" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "solo=no" >> "$GITHUB_OUTPUT"
+          URL="https://raw.githubusercontent.com/${REPO_DATI}/${BRANCH_DATI}/statarea_index.json"
+          # -f e il '|| true': il primo giorno il file non esiste (404) e
+          # l'assenza NON deve far fallire il passo, deve dire "non fatto".
+          AGG=$(curl -sf "$URL" \
+                | python3 -c "import sys,json;print(json.load(sys.stdin).get('updated',''))" \
+                2>/dev/null || true)
+          OGGI=$(date -u +%F)
+          # Il giro di oggi conta come fatto anche se Statarea e' fallito:
+          # lo dice giro_index.json, scritto dal job statarea quando arriva
+          # a pubblicare. Senza, con Statarea giu' i tentativi successivi
+          # rifacevano tutto il giro (30-31/10: tre volte i minuti).
+          GIRO=$(curl -sf "https://raw.githubusercontent.com/${REPO_DATI}/${BRANCH_DATI}/giro_index.json" \
+                | python3 -c "import sys,json;print(json.load(sys.stdin).get('updated',''))" \
+                2>/dev/null || true)
+          if [ "${GIRO%% *}" = "$OGGI" ]; then
+            echo "giro di oggi gia' fatto alle ${GIRO#* } UTC, con o senza Statarea"
+            AGG="$GIRO"
+          fi
+          echo "indice pubblicato: '${AGG:-nessuno}'  |  oggi (UTC): $OGGI"
+          if [ "${AGG%% *}" = "$OGGI" ]; then
+            echo "I dati di oggi ci sono gia': questo tentativo si ferma."
+            echo "gia=si" >> "$GITHUB_OUTPUT"
+          else
+            echo "Dati di oggi mancanti: si procede."
+            echo "gia=no" >> "$GITHUB_OUTPUT"
+          fi
+
+      # (12/11) La seconda guardia, quella delle quote AsianOdds per le
+      # riserve, e' tolta con AsianOdds.
+
+  # =========================================================
+  # GIORNALIERO: Statarea + Consensus (usa i WP gia su gh-data)
+  # =========================================================
+  statarea:
+    runs-on: ubuntu-24.04
+    # 55 e non 40: il passo FotMob qui sotto ha un tetto suo di 15 minuti,
+    # e se il job sforasse verrebbe ucciso PRIMA della pubblicazione.
+    timeout-minutes: 55
+    permissions:
+      contents: read
+    needs: controllo
+    if: >-
+      (github.event_name == 'workflow_dispatch' && !github.event.inputs.cron) ||
+      needs.controllo.outputs.gia_pubblicati != 'si'
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installa dipendenze
+        run: pip install playwright beautifulsoup4 openpyxl requests pandas
+
+      - name: Installa Chromium
+        run: |
+          playwright install chromium
+          playwright install-deps chromium
+
+      - name: Scarica dati esistenti dal repository pubblico
+        env:
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+        run: |
+          set -uo pipefail
+          if [ -z "${TOKEN_DATI:-}" ]; then
+            echo "::error::Secret TOKEN_REPO_DATI assente. Va creato nelle impostazioni di QUESTO repository (Settings - Secrets and variables - Actions) con un token dell'account Caltiki, permesso Contents write sul solo ${REPO_DATI}."
+            exit 1
+          fi
+          URL="https://x-access-token:${TOKEN_DATI}@github.com/${REPO_DATI}"
+          rm -rf ghdata
+          # DISTINGUERE due casi che si somigliano e vanno trattati in modo
+          # opposto. Prima si faceva "clone || parti-da-vuoto": se il token
+          # era scaduto, il clone falliva, si ripartiva da una cartella
+          # vuota e il push avrebbe RISCRITTO gh-data da zero, cancellando
+          # lo storico. Ora il repository irraggiungibile ferma il run,
+          # mentre il solo branch mancante e' il caso legittimo del primo
+          # giro.
+          if ! git ls-remote --exit-code "$URL" HEAD >/dev/null 2>&1; then
+            echo "::error::${REPO_DATI} irraggiungibile: token assente, scaduto o senza permesso Contents write."
+            exit 1
+          fi
+          if git ls-remote --exit-code --heads "$URL" "${BRANCH_DATI}" >/dev/null 2>&1; then
+            git clone --branch "${BRANCH_DATI}" --depth 1 "$URL" ghdata
+          else
+            echo "Il branch ${BRANCH_DATI} non esiste ancora: verra' creato dal primo push."
+            mkdir -p ghdata
+            git -C ghdata init -q
+            git -C ghdata checkout -q -b "${BRANCH_DATI}"
+          fi
+          echo "File WebPronostici disponibili:"
+          ls ghdata/webpronostici_*.json 2>/dev/null | head -20 || echo "  nessuno"
+
+      # STATAREA PUO' FALLIRE SENZA FERMARE IL RESTO. Il 30/10 statarea.com
+      # ha chiuso le connessioni tutto il giorno: con questo passo rosso
+      # saltavano anche gli xG di Understat e FotMob (il Poisson) e la
+      # pubblicazione. Ora gli xG e AsianOdds girano comunque; Consensus ed
+      # esportazione girano SOLO se Statarea ha scaricato qualcosa, perche'
+      # leggono i suoi file e non si e' verificato cosa farebbero senza:
+      # meglio i dati di ieri su gh-data che file vuoti.
+      - name: Esegui Statarea
+        id: statarea
+        continue-on-error: true
+        run: python statarea_scraper.py --days 4 --out output
+
+      # continue-on-error: l'xG e' un extra di sola visualizzazione, non
+      # deve mai far fallire l'intero run. Se Understat non risponde o
+      # cambia formato, consensus.py gira comunque senza xG (vedi
+      # carica_xg_understat() in consensus.py, tollera il file assente).
+      - name: Scarica xG Understat
+        continue-on-error: true
+        run: python understat_xg.py --out output/understat_xg.json
+
+      # GLI xG DI FOTMOB, per i campionati che Understat non ha. Li usa
+      # poisson_xg.py, che senza questi copre solo i primi cinque
+      # campionati. Stesso trattamento di Understat: se FotMob non
+      # risponde o cambia pagina, il passo fallisce da solo e il resto del
+      # giro non se ne accorge. Il tetto di 11 minuti e' nello script
+      # (allo scadere scrive quello che ha letto), i 15 qui sono la rete.
+      - name: Scarica xG FotMob
+        continue-on-error: true
+        timeout-minutes: 15
+        run: |
+          if [ -f fotmob_xg_ci.py ]; then
+            python fotmob_xg_ci.py --out output/fotmob_xg.json --giorni 3 --minuti 11
+          else
+            echo "::warning::fotmob_xg_ci.py non e' nel repository: passo saltato."
+          fi
+
+      # (12/11) Lo scaricamento di AsianOdds e' tolto (vedi in cima): il
+      # consensus va senza le colonne AsianOdds, che erano solo da vedere.
+      - name: Esegui Consensus
+        if: steps.statarea.outcome == 'success'
+        run: python consensus.py --sa-dir output --wp-dir output --wp-json ghdata --xg-json output/understat_xg.json --out output
+
+      - name: Esporta JSON
+        if: steps.statarea.outcome == 'success'
+        run: python export_json.py --in-dir output --out-dir data
+
+      - name: Pulizia JSON scaduti su gh-data
+        env:
+          RETENTION_DAYS: '30'
+        run: |
+          python - << 'PYEOF_PURGE'
+          import os, re, datetime
+          giorni = int(os.environ.get("RETENTION_DAYS", "30"))
+          limite = datetime.date.today() - datetime.timedelta(days=giorni)
+          # SOLO file dati con data nel nome. Gli indici (*_index.json,
+          # webpronostici_tipi.json, index.json) non vengono mai toccati.
+          rx = re.compile(
+              r"^(statarea|consensus|asianodds|fpnet|xgaura|sportytrader|soccersite|ratingbet|betimate|footymetrics|fotmobxg|footystatswdw|sportsmole|heropredict|"
+              r"webpronostici(?:_[a-z0-9]+)?)_"
+              r"(\d{4}-\d{2}-\d{2})\.json$")
+          rimossi = 0
+          for nome in sorted(os.listdir("ghdata")):
+              m = rx.match(nome)
+              if not m:
+                  continue
+              try:
+                  d = datetime.date.fromisoformat(m.group(2))
+              except ValueError:
+                  continue
+              if d < limite:
+                  os.remove(os.path.join("ghdata", nome))
+                  rimossi += 1
+          print("Retention {} giorni (prima del {}): {} file rimossi".format(
+              giorni, limite.isoformat(), rimossi))
+          # FONTI TOLTE DAL GIRO (11/11): Sportytrader, FPNet, FootyStats,
+          # FootballPark, HeroPredict. I loro file di OGGI e dei GIORNI DOPO
+          # non li riscrive piu' nessuno: restando, finirebbero per giorni
+          # nelle schede delle partite (scheda_partite.py legge quello che
+          # trova). Si tolgono quelli da oggi in avanti; i giorni passati e
+          # gli archivi CSV restano come storico. L'indice di ognuna si
+          # riscrive con le date rimaste.
+          import json
+          oggi = datetime.date.today()
+          # (12/11) Anche AsianOdds: i suoi file di oggi e di domani hanno
+          # quote del mattino che nessuno aggiorna piu', e i prezzi equi le
+          # userebbero come se fossero fresche.
+          tolte = ("sportytrader", "fpnet", "footystatswdw", "footballpark", "heropredict", "asianodds")
+          rx2 = re.compile(r"^(" + "|".join(tolte) + r")_(\d{4}-\d{2}-\d{2})\.json$")
+          via = 0
+          for nome in sorted(os.listdir("ghdata")):
+              m = rx2.match(nome)
+              if m and m.group(2) >= oggi.isoformat():
+                  os.remove(os.path.join("ghdata", nome))
+                  via += 1
+          for f in tolte:
+              p = os.path.join("ghdata", f + "_index.json")
+              if not os.path.exists(p):
+                  continue
+              try:
+                  with open(p, encoding="utf-8") as fh:
+                      ix = json.load(fh)
+              except Exception:
+                  continue
+              if isinstance(ix, dict) and isinstance(ix.get("date"), list):
+                  resta = [d for d in ix["date"] if os.path.exists(os.path.join("ghdata", "{}_{}.json".format(f, d)))]
+                  if resta != ix["date"]:
+                      ix["date"] = resta
+                      with open(p, "w", encoding="utf-8") as fh:
+                          json.dump(ix, fh, ensure_ascii=False, indent=1)
+          print("Fonti tolte dal giro: {} file di oggi e dei giorni dopo rimossi".format(via))
+          PYEOF_PURGE
+
+      - name: Pubblica JSON sul repository pubblico
+        env:
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+        run: |
+          cp -f data/*.json ghdata/ 2>/dev/null || true
+          # GIORNATE STATAREA FINTE. Oltre qualche giorno avanti statarea.com
+          # non da' la giornata chiesta ma quella di OGGI, e lo scraper le
+          # mette la data chiesta: il 31/10 statarea_2026-11-05.json e
+          # _11-06 erano le 374 partite del 31/10, e in Consenso fonti il 6
+          # novembre mostrava Porto-Estoril di oggi. Qui: se due giornate
+          # hanno piu' di meta' delle partite in comune, quella con la data
+          # piu' avanti e' una copia e si toglie, con il suo consensus;
+          # gli indici si riscrivono senza quelle date.
+          python - << 'PYEOF_DOPPIE'
+          import json, os, re
+          rx = re.compile(r"^statarea_(\d{4}-\d{2}-\d{2})\.json$")
+          def leggi(p):
+              try:
+                  with open(p, encoding="utf-8") as f:
+                      return json.load(f)
+              except Exception:
+                  return None
+          date = sorted(m.group(1) for m in map(rx.match, os.listdir("ghdata")) if m)
+          coppie = {}
+          for d in date:
+              r = leggi(os.path.join("ghdata", "statarea_%s.json" % d))
+              if isinstance(r, list):
+                  coppie[d] = {(str(x.get("Casa")), str(x.get("Ospite"))) for x in r if isinstance(x, dict)}
+          via = set()
+          for i, d in enumerate(date):
+              s = coppie.get(d) or set()
+              for prima in date[:i]:
+                  if prima in via:
+                      continue
+                  p = coppie.get(prima) or set()
+                  comuni = len(s & p)
+                  if s and comuni > 0.5 * len(s):
+                      print("statarea_%s.json: %d partite su %d sono quelle del %s -> tolta" % (d, comuni, len(s), prima))
+                      via.add(d)
+                      break
+          for d in sorted(via):
+              for pre in ("statarea", "consensus"):
+                  p = os.path.join("ghdata", "%s_%s.json" % (pre, d))
+                  if os.path.exists(p):
+                      os.remove(p)
+          for pre in ("statarea", "consensus"):
+              p = os.path.join("ghdata", "%s_index.json" % pre)
+              ix = leggi(p)
+              if via and isinstance(ix, dict) and isinstance(ix.get("date"), list):
+                  ix["date"] = [d for d in ix["date"] if d not in via]
+                  with open(p, "w", encoding="utf-8") as f:
+                      json.dump(ix, f, ensure_ascii=False, indent=1)
+          print("giornate Statarea copiate tolte: %s" % (sorted(via) or "nessuna"))
+          PYEOF_DOPPIE
+          # LO STESSO CONTROLLO, PARTITA PER PARTITA, COL CALENDARIO DI
+          # API-FOOTBALL. Una partita di Statarea si toglie solo se nel suo
+          # giorno API-Football non ce l'ha e ce l'ha, alla stessa ora, in
+          # un altro; quelle che non conosce restano. Una richiesta per
+          # giornata, piu' ieri come riferimento. Senza chiave o senza
+          # script si salta: il giro va avanti come prima.
+          if [ -f apifootball.py ]; then
+            python apifootball.py calendario --dati ghdata || \
+              echo "::warning::apifootball.py calendario non e' andato a buon fine: Statarea pubblicato senza il controllo del calendario."
+          else
+            echo "apifootball.py non e' nel repository: controllo del calendario saltato."
+          fi
+          cp -f aokodi/*.json ghdata/ 2>/dev/null || true
+          # GLI xG DI UNDERSTAT, CHE FINORA SI BUTTAVANO.
+          # understat_xg.py gira gia' in questo job e scrive le medie
+          # xG/90 e xGA/90 di tutte le squadre dei primi cinque
+          # campionati. Quel file finiva in output/, lo leggeva
+          # consensus.py per scrivere due colonne nel dettaglio di Kodi,
+          # e moriva li'. Eppure e' l'unico dato nel cloud che non venga
+          # dal mercato: tutto il resto - prezzi equi, consensus medio,
+          # le dieci fonti - legge il prezzo o lo riscrive.
+          #
+          # Se Understat non ha risposto lo script lo dice ed esce senza
+          # errore: non deve mai fermare la pubblicazione del resto.
+          if [ -f archivio_xg.py ]; then
+            python archivio_xg.py --xg output/understat_xg.json --dati ghdata || \
+              echo "::warning::archivio_xg.py non e' andato a buon fine: gli xG di oggi non sono stati archiviati."
+          else
+            echo "::warning::archivio_xg.py non e' nel repository: xG non archiviati."
+          fi
+          # Gli xG di FotMob, in file loro (fotmobxg_*): le due fonti non
+          # si mescolano. Se FotMob non ha risposto il file non c'e' e qui
+          # non succede niente.
+          if [ -f output/fotmob_xg.json ] && [ -f archivio_xg.py ]; then
+            python archivio_xg.py --xg output/fotmob_xg.json --dati ghdata --prefisso fotmobxg || \
+              echo "::warning::archivio_xg.py non e' andato a buon fine sugli xG FotMob."
+          fi
+          # Indice AsianOdds per l'addon Kodi. Si ricostruisce dai file
+          # EFFETTIVAMENTE presenti dopo la pulizia, non da una lista tenuta
+          # a mano: cosi' non elenca mai date i cui file sono stati rimossi,
+          # che nell'addon darebbero un 404.
+          python - << 'PYEOF_AOINDEX'
+          import os, re, json, datetime
+          from zoneinfo import ZoneInfo
+          rx = re.compile(r"^asianodds_(\d{4}-\d{2}-\d{2})\.json$")
+          date = sorted(m.group(1) for m in
+                        (rx.match(n) for n in os.listdir("ghdata")) if m)
+          if date:
+              agg = datetime.datetime.now(ZoneInfo("Europe/Rome")).strftime("%Y-%m-%d %H:%M")
+              with open("ghdata/asianodds_index.json", "w", encoding="utf-8") as f:
+                  json.dump({"date": date, "updated": agg}, f,
+                            ensure_ascii=False, indent=1)
+              print("asianodds_index.json: {} date {}".format(len(date), date))
+          else:
+              print("nessun asianodds_*.json presente, indice non scritto")
+          PYEOF_AOINDEX
+          # IL GIRO DI OGGI E' STATO FATTO: lo legge il job 'controllo' per
+          # non rifare tutto ai tentativi successivi anche quando Statarea
+          # e' fallito (il 30-31/10 il giro intero e' ripartito a ogni
+          # tentativo, tre volte i minuti). Data in UTC, come la guardia.
+          python - << 'PYEOF_GIRO'
+          import json, datetime
+          with open("ghdata/giro_index.json", "w", encoding="utf-8") as f:
+              json.dump({"updated": datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M"),
+                         "statarea": "${{ steps.statarea.outcome }}"}, f, indent=1)
+          PYEOF_GIRO
+          cd ghdata
+          # Autore anonimo: lo storico dei commit e' PUBBLICO, quindi qui non
+          # deve comparire nessun indirizzo reale. L'indirizzo @users.noreply
+          # non recapita nulla e non e' indicizzabile come una email vera.
+          git config user.name "caltiki-bot"
+          git config user.email "caltiki-bot@users.noreply.github.com"
+          URL="https://x-access-token:${TOKEN_DATI}@github.com/${REPO_DATI}"
+          git remote remove origin 2>/dev/null || true
+          git remote add origin "$URL"
+          git add -A
+          git diff --cached --quiet && echo "Nessuna modifica" || \
+            git commit -m "Update statarea+consensus $(date +%Y-%m-%d)"
+          git pull --rebase origin "${BRANCH_DATI}" 2>/dev/null || true
+          git push origin "HEAD:${BRANCH_DATI}"
+
+      - name: Avviso Statarea non scaricato
+        if: steps.statarea.outcome != 'success'
+        run: |
+          echo "::warning::Statarea non ha risposto: pubblicati xG e AsianOdds, Statarea e Consensus restano quelli dell'ultimo giro riuscito."
+
+      # if: always() - senza questo, se statarea_scraper.py esce con codice 1
+      # (nessuna partita) lo step viene saltato e non arriva NESSUNA notifica:
+      # il ramo "nessun file" qui sotto era codice irraggiungibile.
+      - name: Invia su Telegram
+        if: always()
+        env:
+          TG_TOKEN: ${{ secrets.TG_TOKEN }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+        run: |
+          python - << 'EOF'
+          import os, glob, requests, datetime
+          token   = os.environ["TG_TOKEN"]
+          chat_id = os.environ["TG_CHAT_ID"]
+          today   = datetime.date.today().strftime("%d/%m/%Y")
+
+          def send(fpath, caption):
+              fname = os.path.basename(fpath)
+              with open(fpath, "rb") as f:
+                  requests.post(
+                      "https://api.telegram.org/bot{}/sendDocument".format(token),
+                      data={"chat_id": chat_id, "caption": caption},
+                      files={"document": (fname, f)})
+              print("Inviato:", fname)
+
+          def avvisa(testo):
+              requests.post(
+                  "https://api.telegram.org/bot{}/sendMessage".format(token),
+                  data={"chat_id": chat_id, "text": testo})
+
+          # IL MOTIVO, NON UNA SUPPOSIZIONE.
+          #
+          # Prima qui c'erano frasi fisse che AFFERMAVANO una causa senza
+          # conoscerla - "il sito ha bloccato il download" partiva anche
+          # quando il sito aveva cambiato layout, o quando lo step era
+          # morto prima ancora di partire. Una diagnosi sbagliata sul
+          # telefono e' peggio di nessuna diagnosi: manda a cercare dalla
+          # parte sbagliata.
+          #
+          # Ora i due scraper scrivono il motivo vero in output/_errore_*.txt
+          # e qui lo si rilegge. File assente = lo scraper non e' nemmeno
+          # arrivato a fallire per conto suo (token, rete, step precedente),
+          # e si dice quello invece di inventare.
+          def motivo(fonte):
+              p = os.path.join("output", "_errore_{}.txt".format(fonte))
+              try:
+                  with open(p, encoding="utf-8") as f:
+                      t = f.read().strip()
+                  return "\n\nMotivo:\n" + t[:900] if t else ""
+              except Exception:
+                  return ("\n\nNessun motivo registrato: lo scraper non e' "
+                          "arrivato a girare. Guarda gli step PRECEDENTI "
+                          "del job su GitHub Actions.")
+
+          sa = sorted(glob.glob("output/Statarea_*.xlsx"))
+          cs = sorted(glob.glob("output/consensus_*.xlsx"))
+          ao = sorted(glob.glob("output/AsianOdds_*.xlsx"))
+
+          if not sa:
+              avvisa("ATTENZIONE - Statarea {}: nessun file prodotto.{}".format(
+                  today, motivo("statarea")))
+          for f in sa:
+              send(f, "Statarea {}".format(today))
+          for f in cs:
+              send(f, "Consensus {}".format(today))
+          if not cs:
+              # Il consensus nasce dall'incrocio Statarea x WebPronostici:
+              # se Statarea e' mancata non e' un guasto suo, ed e' bene
+              # dirlo invece di lasciar cercare due guasti dove ce n'e' uno.
+              if not sa:
+                  avvisa("Consensus {}: vuoto perche' e' mancata Statarea, "
+                         "non e' un guasto a se'.".format(today))
+              else:
+                  avvisa("Consensus {}: nessuna partita in accordo.".format(today))
+          # AsianOdds: informativo. Blu = quota salita, rosso = quota scesa.
+          # (12/11) AsianOdds tolto: niente file e niente avviso.
+          EOF
+
+      - name: Salva artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: statarea-${{ github.run_id }}
+          path: output/*.xlsx
+          retention-days: 7
+          if-no-files-found: ignore
+
+  # FOOTBALLPREDICTIONS (FPNET) TOLTO (11/11): le sue Sure Bets erano il
+  # favorito del book in 147 casi su 147 e i tip vincevano quanto il mercato
+  # si aspettava (77,4% contro 75,1%, z 1,1). La pagina Sure Bets del sito
+  # adesso si fa da sola con le quote Pinnacle e AsianOdds (favoriti sopra
+  # una soglia), senza scraping. Lo storico resta su gh-data.
+  #
+  # LA CATENA DEI PUSH (spiegata prima qui, nel job fpnet): i job che
+  # pubblicano su gh-data hanno "needs" uno dopo l'altro NON per dipendenza
+  # logica ma per METTERSI IN FILA sul push. Il blocco 'concurrency' in cima
+  # serializza i RUN, non i job dentro lo stesso run: senza la fila due job
+  # clonerebbero gh-data e pusherebbero nello stesso istante, e uno dei due
+  # si prenderebbe un non-fast-forward.
+
+  # =========================================================
+  # UNA VOLTA AL GIORNO: xGaura
+  # =========================================================
+  # Sezione a se' nell'addon, come AsianOdds e FootballPredictions: NON
+  # entra nel consensus e non vota.
+  #
+  # A differenza di FPNET questo sito si lascia leggere anche senza
+  # browser: fetch_statico() usa requests e prende la prima pagina. Il
+  # browser serve solo alla paginazione, che e' client-side - il parametro
+  # ?page=N il server lo ignora. Se Playwright non porta niente, lo script
+  # ripiega da solo sul fetch statico e pubblica le prime 25 righe invece
+  # di niente.
+  #
+  # Quarto anello della catena dei push: statarea -> xgaura ->
+  # asianodds -> webpronostici. Vedi la nota FPNET TOLTO qui sopra.
+  xgaura:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    needs: [controllo, statarea]
+    if: >-
+      !cancelled() && (
+        (github.event_name == 'workflow_dispatch' && !github.event.inputs.cron) ||
+        needs.controllo.outputs.gia_pubblicati != 'si'
+      )
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # beautifulsoup4 serve a questo scraper e NON al job fpnet: li' non
+      # e' installata. Va tenuta qui.
+      - name: Installa dipendenze
+        run: pip install playwright beautifulsoup4 openpyxl requests
+
+      - name: Installa Chromium
+        run: |
+          playwright install chromium
+          playwright install-deps chromium
+
+      - name: Scarica xGaura
+        id: scarica
+        continue-on-error: true
+        timeout-minutes: 22
+        run: python xgaura_scraper.py --day both --kodi-dir xgkodi
+
+      - name: Pubblica i JSON xGaura sul repository pubblico
+        # Come per le altre fonti: se lo scaricamento fallisce non si
+        # pubblica niente, cosi' su gh-data restano i dati di ieri invece
+        # di un file vuoto che nell'addon sembra un guasto.
+        if: steps.scarica.outcome == 'success'
+        env:
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+        run: |
+          set -uo pipefail
+          if [ -z "${TOKEN_DATI:-}" ]; then
+            echo "::error::Secret TOKEN_REPO_DATI assente."
+            exit 1
+          fi
+          URL="https://x-access-token:${TOKEN_DATI}@github.com/${REPO_DATI}"
+          rm -rf ghdata
+          if ! git ls-remote --exit-code "$URL" HEAD >/dev/null 2>&1; then
+            echo "::error::${REPO_DATI} irraggiungibile: token assente, scaduto o senza permesso Contents write."
+            exit 1
+          fi
+          if ! git ls-remote --exit-code --heads "$URL" "${BRANCH_DATI}" >/dev/null 2>&1; then
+            echo "::error::Il branch ${BRANCH_DATI} non esiste ancora. Lancia prima il giro giornaliero."
+            exit 1
+          fi
+          git clone --branch "${BRANCH_DATI}" --depth 1 "$URL" ghdata
+          cp -f xgkodi/*.json ghdata/ 2>/dev/null || true
+          python - << 'PYEOF_XGPULIZIA'
+          import os, re, datetime
+          # Le giornate passate nell'addon sono elenchi di partite gia'
+          # giocate. La pulizia generale a 30 giorni ci metterebbe settimane
+          # a portarle via; qui vanno subito, come per le altre sezioni.
+          oggi = datetime.date.today().isoformat()
+          rx = re.compile(r"^xgaura_(\d{4}-\d{2}-\d{2})\.json$")
+          tolti = 0
+          for nome in sorted(os.listdir("ghdata")):
+              m = rx.match(nome)
+              if m and m.group(1) < oggi:
+                  os.remove(os.path.join("ghdata", nome))
+                  tolti += 1
+          print("giornate passate rimosse: {}".format(tolti))
+          PYEOF_XGPULIZIA
+          python - << 'PYEOF_XGINDEX'
+          import os, re, json, datetime
+          from zoneinfo import ZoneInfo
+          rx = re.compile(r"^xgaura_(\d{4}-\d{2}-\d{2})\.json$")
+          date = sorted(m.group(1) for m in
+                        (rx.match(n) for n in os.listdir("ghdata")) if m)
+          if date:
+              agg = datetime.datetime.now(ZoneInfo("Europe/Rome")).strftime("%Y-%m-%d %H:%M")
+              with open("ghdata/xgaura_index.json", "w", encoding="utf-8") as f:
+                  json.dump({"date": date, "updated": agg}, f,
+                            ensure_ascii=False, indent=1)
+              print("xgaura_index.json: {} date {}".format(len(date), date))
+          else:
+              print("nessun xgaura_*.json presente, indice non scritto")
+          PYEOF_XGINDEX
+          cd ghdata
+          git config user.name "caltiki-bot"
+          git config user.email "caltiki-bot@users.noreply.github.com"
+          git remote remove origin 2>/dev/null || true
+          git remote add origin "$URL"
+          git add -A
+          git diff --cached --quiet && echo "Nessuna modifica" || \
+            git commit -m "Update xgaura $(date +%Y-%m-%d)"
+          git pull --rebase origin "${BRANCH_DATI}" 2>/dev/null || true
+          git push origin "HEAD:${BRANCH_DATI}"
+
+      - name: Invia su Telegram
+        if: always()
+        env:
+          TG_TOKEN: ${{ secrets.TG_TOKEN }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+        run: |
+          python - << 'EOF'
+          import os, glob, requests, datetime
+          token   = os.environ["TG_TOKEN"]
+          chat_id = os.environ["TG_CHAT_ID"]
+          oggi    = datetime.date.today().strftime("%d/%m/%Y")
+
+          # 'archivio' escluso di proposito: e' il cumulativo che lo script
+          # tiene accanto allo snapshot, e su Telegram non serve.
+          xg = sorted(f for f in glob.glob("Output_xlsx/xgaura_*.xlsx")
+                      if "archivio" not in os.path.basename(f))
+          for fpath in xg:
+              with open(fpath, "rb") as f:
+                  requests.post(
+                      "https://api.telegram.org/bot{}/sendDocument".format(token),
+                      data={"chat_id": chat_id,
+                            "caption": "xGaura {} - tip su 1X2, U/O, Gol/NoGol "
+                                       "e doppia chance".format(oggi)},
+                      files={"document": (os.path.basename(fpath), f)})
+              print("Inviato:", os.path.basename(fpath))
+          if not xg:
+              requests.post("https://api.telegram.org/bot{}/sendMessage".format(token),
+                  data={"chat_id": chat_id,
+                        "text": "xGaura {}: nessun file. Il motivo e' nel log "
+                                "dello step 'Scarica xGaura' su GitHub "
+                                "Actions.".format(oggi)})
+          EOF
+
+      - name: Salva artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: xgaura-${{ github.run_id }}
+          path: Output_xlsx/xgaura_*.xlsx
+          retention-days: 7
+          if-no-files-found: ignore
+
+  # SPORTYTRADER TOLTO (11/11): sulla pagella i suoi tip vincevano quanto
+  # il mercato si aspettava (49,3% contro 48,6%, z 1,0), e il job costava
+  # minuti di Actions. Lo storico resta su gh-data.
+
+  # =========================================================
+  # SOCCERSITE
+  # =========================================================
+  # COSA AGGIUNGE rispetto alle fonti gia' presenti: una percentuale
+  # dichiarata su Under/Over 2.5 e Gol/NoGol per tutte le partite del
+  # giorno. Statarea, WebPronostici e AsianOdds danno l'1X2 e basta;
+  # xGaura tocca gli altri mercati ma come tip singoli, non come lista
+  # completa. Sull'1X2 e' una fonte in piu'; sugli altri due mercati e' la
+  # prima.
+  #
+  # CINQUE PAGINE, NON DODICI - vedi la scelta "ci" nello scraper. Le
+  # pagine Double Chance, Over/Under e Gol/NoGol sono una per mercato e
+  # contengono gia' piu' giornate: aprirle una volta per giorno, come fa
+  # il menu interattivo, vuol dire caricare tre volte la stessa pagina.
+  #
+  # IL FUSO ORARIO: lo scraper apre il browser con timezone_id
+  # Europe/Rome. Gli orari di SoccerSite li scrive il JavaScript della
+  # pagina e li prende dal fuso del BROWSER, non del server: senza quella
+  # riga, su questo runner - che vive in UTC - uscirebbero due ore
+  # indietro e le partite serali finirebbero nel giorno sbagliato. E' lo
+  # stesso errore che su Sportytrader e' costato due correzioni.
+  #
+  # --controllo-fuso serve a verificarlo sui dati veri al primo giro:
+  # riapre una pagina con il browser su UTC e dice nel log se gli orari
+  # cambiano. Quando la risposta e' chiara, questa opzione si toglie.
+  soccersite:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    needs: [controllo, statarea, xgaura]
+    if: >-
+      !cancelled() && (
+        (github.event_name == 'workflow_dispatch' && !github.event.inputs.cron) ||
+        needs.controllo.outputs.gia_pubblicati != 'si'
+      )
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installa dipendenze
+        run: pip install playwright openpyxl requests
+
+      - name: Installa Chromium
+        run: |
+          playwright install chromium
+          playwright install-deps chromium
+
+      - name: Scarica SoccerSite
+        id: scarica
+        continue-on-error: true
+        timeout-minutes: 22
+        run: python soccersite_scraper.py --choice ci --kodi-dir sskodi --controllo-fuso
+
+      - name: Pubblica i JSON SoccerSite sul repository pubblico
+        if: steps.scarica.outcome == 'success'
+        env:
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+        run: |
+          set -uo pipefail
+          if [ -z "${TOKEN_DATI:-}" ]; then
+            echo "::error::Secret TOKEN_REPO_DATI assente."
+            exit 1
+          fi
+          URL="https://x-access-token:${TOKEN_DATI}@github.com/${REPO_DATI}"
+          rm -rf ghdata
+          if ! git ls-remote --exit-code "$URL" HEAD >/dev/null 2>&1; then
+            echo "::error::${REPO_DATI} irraggiungibile: token assente, scaduto o senza permesso Contents write."
+            exit 1
+          fi
+          if ! git ls-remote --exit-code --heads "$URL" "${BRANCH_DATI}" >/dev/null 2>&1; then
+            echo "::error::Il branch ${BRANCH_DATI} non esiste ancora. Lancia prima il giro giornaliero."
+            exit 1
+          fi
+          git clone --branch "${BRANCH_DATI}" --depth 1 "$URL" ghdata
+          cp -f sskodi/*.json ghdata/ 2>/dev/null || true
+          python - << 'PYEOF_SSPULIZIA'
+          import os, re, datetime
+          # Le giornate passate non servono a niente nell'addon - sarebbero
+          # elenchi di partite gia' giocate - e la pulizia generale a 30
+          # giorni ci metterebbe due settimane a portarle via.
+          oggi = datetime.date.today().isoformat()
+          rx = re.compile(r"^soccersite_(\d{4}-\d{2}-\d{2})\.json$")
+          tolti = 0
+          for nome in sorted(os.listdir("ghdata")):
+              m = rx.match(nome)
+              if m and m.group(1) < oggi:
+                  os.remove(os.path.join("ghdata", nome))
+                  tolti += 1
+          print("giornate passate rimosse: {}".format(tolti))
+          PYEOF_SSPULIZIA
+          python - << 'PYEOF_SSINDEX'
+          import os, re, json, datetime
+          from zoneinfo import ZoneInfo
+          rx = re.compile(r"^soccersite_(\d{4}-\d{2}-\d{2})\.json$")
+          date = sorted(m.group(1) for m in
+                        (rx.match(n) for n in os.listdir("ghdata")) if m)
+          if date:
+              agg = datetime.datetime.now(ZoneInfo("Europe/Rome")).strftime("%Y-%m-%d %H:%M")
+              with open("ghdata/soccersite_index.json", "w", encoding="utf-8") as f:
+                  json.dump({"date": date, "updated": agg}, f,
+                            ensure_ascii=False, indent=1)
+              print("soccersite_index.json: {} date {}".format(len(date), date))
+          else:
+              print("nessun soccersite_*.json presente, indice non scritto")
+          PYEOF_SSINDEX
+          cd ghdata
+          git config user.name "caltiki-bot"
+          git config user.email "caltiki-bot@users.noreply.github.com"
+          git remote remove origin 2>/dev/null || true
+          git remote add origin "$URL"
+          git add -A
+          git diff --cached --quiet && echo "Nessuna modifica" || \
+            git commit -m "Update soccersite $(date +%Y-%m-%d)"
+          git pull --rebase origin "${BRANCH_DATI}" 2>/dev/null || true
+          git push origin "HEAD:${BRANCH_DATI}"
+
+      - name: Invia su Telegram
+        if: always()
+        env:
+          TG_TOKEN: ${{ secrets.TG_TOKEN }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+        run: |
+          python - << 'EOF'
+          import os, glob, requests, datetime
+          token   = os.environ["TG_TOKEN"]
+          chat_id = os.environ["TG_CHAT_ID"]
+          oggi    = datetime.date.today().strftime("%d/%m/%Y")
+
+          # La cartella si chiama "Output_xlsx": e' quella che crea lo
+          # scraper accanto a se stesso, con la maiuscola e il trattino
+          # basso. Su Linux il nome e' sensibile alle maiuscole.
+          ss = sorted(glob.glob("Output_xlsx/soccersite_*.xlsx"))
+          for fpath in ss:
+              with open(fpath, "rb") as f:
+                  requests.post(
+                      "https://api.telegram.org/bot{}/sendDocument".format(token),
+                      data={"chat_id": chat_id,
+                            "caption": "SoccerSite {} - 1X2, Under/Over, "
+                                       "Gol/NoGol e doppia chance".format(oggi)},
+                      files={"document": (os.path.basename(fpath), f)})
+              print("Inviato:", os.path.basename(fpath))
+          if not ss:
+              requests.post("https://api.telegram.org/bot{}/sendMessage".format(token),
+                  data={"chat_id": chat_id,
+                        "text": "SoccerSite {}: nessun file. Il motivo e' nel "
+                                "log dello step 'Scarica SoccerSite' su "
+                                "GitHub Actions.".format(oggi)})
+          EOF
+
+      - name: Salva artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: soccersite-${{ github.run_id }}
+          path: Output_xlsx/soccersite_*.xlsx
+          retention-days: 7
+          if-no-files-found: ignore
+
+  # =========================================================
+  # RATINGBET
+  # =========================================================
+  # PERCHE' ESISTE QUESTO JOB. Lo scraper locale di ratingbet usa
+  # Playwright e Cloudflare Turnstile lo ferma: headless, visibile e
+  # profilo persistente finiscono tutti nel giro del "verify you are
+  # human", e l'unico modo che funziona e' un Chrome vero gia' aperto
+  # sulla porta 9222 con la verifica passata a mano. Qui non c'e' nessuno
+  # che clicca.
+  #
+  # ratingbet_ci.py prova un'altra strada: NIENTE BROWSER. Misurato il
+  # 30/09, la pagina chiesta con una GET semplice arriva completa - 57
+  # partite, 19 campionati, tutte con pronostico, percentuale e quota, e
+  # senza premere "mostra altre". Turnstile scatta sui segnali di
+  # automazione di un browser pilotato, che una GET non ha.
+  #
+  # QUELLO CHE SOLO QUESTO JOB PUO' DIRE: Cloudflare guarda anche la
+  # reputazione dell'IP, e i runner GitHub sono datacenter. Se la sfida
+  # scatta, lo script lo scrive a chiare lettere nel log e fallisce senza
+  # pubblicare niente.
+  #
+  # IL FUSO NON E' SCRITTO DA NESSUNA PARTE, si misura a ogni giro. Il
+  # sito serve orari diversi a richieste diverse: tre giri dello stesso
+  # pomeriggio hanno dato 7, 6 e 9 ore di scarto. ratingbet_ci.py scarica
+  # il file AsianOdds gia' pubblicato su gh-data, aggancia le partite per
+  # nome e misura lo scarto. Serve quindi che AsianOdds sia gia' stato
+  # pubblicato almeno una volta - lo e'.
+  #
+  # 12/11: l'11 ha pubblicato, il 12 no, e su Telegram non c'era il
+  # perche'. Da qui: curl_cffi (impronta di Chrome, come Betimate) con
+  # requests di ripiego, e lo script scrive il motivo vero in
+  # Output_xlsx/_errore_ratingbet.txt, che il passo Telegram manda.
+  ratingbet:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    needs: [controllo, statarea, xgaura, soccersite]
+    if: >-
+      !cancelled() && (
+        (github.event_name == 'workflow_dispatch' && !github.event.inputs.cron) ||
+        needs.controllo.outputs.gia_pubblicati != 'si'
+      )
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # Niente playwright e niente Chromium: e' tutto il punto di questo
+      # scraper. curl_cffi presenta a Cloudflare l'impronta TLS di Chrome;
+      # se manca, lo script va avanti con requests come prima del 12/11.
+      - name: Installa dipendenze
+        run: pip install requests curl_cffi beautifulsoup4 openpyxl
+
+      - name: Scarica Ratingbet
+        id: scarica
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python ratingbet_ci.py --giorni 7 --kodi-dir rbkodi
+
+      - name: Pubblica i JSON Ratingbet sul repository pubblico
+        if: steps.scarica.outcome == 'success'
+        env:
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+        run: |
+          set -uo pipefail
+          if [ -z "${TOKEN_DATI:-}" ]; then
+            echo "::error::Secret TOKEN_REPO_DATI assente."
+            exit 1
+          fi
+          URL="https://x-access-token:${TOKEN_DATI}@github.com/${REPO_DATI}"
+          rm -rf ghdata
+          if ! git ls-remote --exit-code "$URL" HEAD >/dev/null 2>&1; then
+            echo "::error::${REPO_DATI} irraggiungibile: token assente, scaduto o senza permesso Contents write."
+            exit 1
+          fi
+          if ! git ls-remote --exit-code --heads "$URL" "${BRANCH_DATI}" >/dev/null 2>&1; then
+            echo "::error::Il branch ${BRANCH_DATI} non esiste ancora. Lancia prima il giro giornaliero."
+            exit 1
+          fi
+          git clone --branch "${BRANCH_DATI}" --depth 1 "$URL" ghdata
+          cp -f rbkodi/*.json ghdata/ 2>/dev/null || true
+          python - << 'PYEOF_RBPULIZIA'
+          import os, re, datetime
+          oggi = datetime.date.today().isoformat()
+          rx = re.compile(r"^ratingbet_(\d{4}-\d{2}-\d{2})\.json$")
+          tolti = 0
+          for nome in sorted(os.listdir("ghdata")):
+              m = rx.match(nome)
+              if m and m.group(1) < oggi:
+                  os.remove(os.path.join("ghdata", nome))
+                  tolti += 1
+          print("giornate passate rimosse: {}".format(tolti))
+          PYEOF_RBPULIZIA
+          python - << 'PYEOF_RBINDEX'
+          import os, re, json, datetime
+          from zoneinfo import ZoneInfo
+          rx = re.compile(r"^ratingbet_(\d{4}-\d{2}-\d{2})\.json$")
+          date = sorted(m.group(1) for m in
+                        (rx.match(n) for n in os.listdir("ghdata")) if m)
+          if date:
+              agg = datetime.datetime.now(ZoneInfo("Europe/Rome")).strftime("%Y-%m-%d %H:%M")
+              with open("ghdata/ratingbet_index.json", "w", encoding="utf-8") as f:
+                  json.dump({"date": date, "updated": agg}, f,
+                            ensure_ascii=False, indent=1)
+              print("ratingbet_index.json: {} date {}".format(len(date), date))
+          else:
+              print("nessun ratingbet_*.json presente, indice non scritto")
+          PYEOF_RBINDEX
+          cd ghdata
+          git config user.name "caltiki-bot"
+          git config user.email "caltiki-bot@users.noreply.github.com"
+          git remote remove origin 2>/dev/null || true
+          git remote add origin "$URL"
+          git add -A
+          git diff --cached --quiet && echo "Nessuna modifica" || \
+            git commit -m "Update ratingbet $(date +%Y-%m-%d)"
+          git pull --rebase origin "${BRANCH_DATI}" 2>/dev/null || true
+          git push origin "HEAD:${BRANCH_DATI}"
+
+      - name: Invia su Telegram
+        if: always()
+        env:
+          TG_TOKEN: ${{ secrets.TG_TOKEN }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+        run: |
+          python - << 'EOF'
+          import os, glob, requests, datetime
+          token   = os.environ["TG_TOKEN"]
+          chat_id = os.environ["TG_CHAT_ID"]
+          oggi    = datetime.date.today().strftime("%d/%m/%Y")
+          rb = sorted(glob.glob("Output_xlsx/Ratingbet_*.xlsx"))
+          for fpath in rb:
+              with open(fpath, "rb") as f:
+                  requests.post(
+                      "https://api.telegram.org/bot{}/sendDocument".format(token),
+                      data={"chat_id": chat_id,
+                            "caption": "Ratingbet {} - prova senza browser: "
+                                       "1X2, Over/Under, Gol/NoGol, doppia "
+                                       "chance e previsioni matematiche".format(oggi)},
+                      files={"document": (os.path.basename(fpath), f)})
+              print("Inviato:", os.path.basename(fpath))
+          if not rb:
+              # Il motivo vero, scritto dallo scraper. File assente = non
+              # e' arrivato nemmeno a fallire per conto suo.
+              try:
+                  with open("Output_xlsx/_errore_ratingbet.txt", encoding="utf-8") as f:
+                      t = f.read().strip()
+                  motivo = "\n\nMotivo:\n" + t[:900] if t else ""
+              except Exception:
+                  motivo = ("\n\nNessun motivo registrato: lo scraper non e' "
+                            "arrivato a girare. Guarda gli step PRECEDENTI del "
+                            "job su GitHub Actions.")
+              requests.post("https://api.telegram.org/bot{}/sendMessage".format(token),
+                  data={"chat_id": chat_id,
+                        "text": "Ratingbet {}: nessun file.{}".format(oggi, motivo)})
+          EOF
+
+      - name: Salva artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ratingbet-${{ github.run_id }}
+          path: |
+            Output_xlsx/Ratingbet_*.xlsx
+            Output_xlsx/diagnostica_*.html
+            Output_xlsx/_errore_ratingbet.txt
+            rbkodi/*.json
+          retention-days: 7
+          if-no-files-found: ignore
+
+  # =========================================================
+  # BETIMATE
+  # =========================================================
+  # Nona fonte, e la seconda che gira SENZA BROWSER: come Ratingbet usa
+  # curl_cffi con impersonate="chrome", che presenta l'impronta TLS di un
+  # Chrome vero senza avviarne uno. E' l'unico motivo per cui questo job
+  # dura due minuti invece di dieci.
+  #
+  # QUELLO CHE SOLO QUESTO JOB PUO' DIRE: se Betimate accetta l'IP di un
+  # runner GitHub. curl_cffi batte il controllo sull'impronta, non quello
+  # sulla reputazione dell'indirizzo, e i runner stanno in un datacenter.
+  # Se risponde 403 lo script lo scrive nel log e fallisce senza
+  # pubblicare niente - meglio i dati di ieri che un file vuoto.
+  #
+  # TRE GIORNATE, DA IERI A DOMANI. Ieri non e' uno spreco: e' il giorno
+  # da cui arrivano i RISULTATI delle partite gia' giocate, che servono
+  # all'archivio e non si possono recuperare dopo. Oggi e domani sono i
+  # pronostici che finiscono su Kodi.
+  #
+  # L'ARCHIVIO STA SU gh-data, NON SUL RUNNER. E' il motivo per cui qui il
+  # clone viene PRIMA dello scraper e non dopo, al contrario di tutti gli
+  # altri job: --archivio-dir vuole la cartella gia' pronta, perche' deve
+  # rileggere quello che c'e' e fonderlo con la lettura di adesso. Senza,
+  # Prima_Vista e Prob_Cambiate ripartirebbero da zero ogni giorno, e sono
+  # proprio i campi per cui quell'archivio esiste: Prob_Cambiate dice se
+  # il sito ritocca i pronostici DOPO il calcio d'inizio, cioe' se ci si
+  # puo' fidare per un backtest.
+  #
+  # IL FUSO SI MISURA, come per Ratingbet e Sportytrader. L'originale dava
+  # per scontato che il sito servisse UTC; qui lo scarto si misura contro
+  # AsianOdds gia' pubblicato e, se l'ipotesi regge, il log lo conferma e
+  # non cambia niente.
+  #
+  # INFORMATIVA, NON VOTA. Entra come sezione a se', esattamente come ci
+  # entro' Ratingbet. Solo dopo aver misurato quanto e' correlata con le
+  # fonti che gia' votano si decidera' se farla entrare nel consensus - su
+  # Ratingbet la misura disse di no.
+  betimate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    # Settimo anello della catena dei push (vedi la nota FPNET TOLTO, sopra xgaura):
+    # statarea -> xgaura -> soccersite ->
+    # ratingbet -> betimate -> footymetrics -> asianodds -> webpronostici.
+    needs: [controllo, statarea, xgaura, soccersite, ratingbet]
+    if: >-
+      !cancelled() && (
+        (github.event_name == 'workflow_dispatch' && !github.event.inputs.cron) ||
+        needs.controllo.outputs.gia_pubblicati != 'si' ||
+        needs.controllo.outputs.solo_risultati == 'si'
+      )
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # curl_cffi e' il pacchetto che fa tutto il lavoro: senza, lo script
+      # ripiega su requests e il sito vede un'impronta da script.
+      - name: Installa dipendenze
+        run: pip install requests curl_cffi beautifulsoup4 openpyxl
+
+      # IL CLONE VIENE PRIMA DELLO SCRAPER, al contrario degli altri job:
+      # l'archivio da rileggere sta qui dentro.
+      - name: Prendi l'archivio gia' pubblicato
+        id: clone
+        env:
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+        run: |
+          set -uo pipefail
+          if [ -z "${TOKEN_DATI:-}" ]; then
+            echo "::error::Secret TOKEN_REPO_DATI assente."
+            exit 1
+          fi
+          URL="https://x-access-token:${TOKEN_DATI}@github.com/${REPO_DATI}"
+          rm -rf ghdata
+          if ! git ls-remote --exit-code "$URL" HEAD >/dev/null 2>&1; then
+            echo "::error::${REPO_DATI} irraggiungibile: token assente, scaduto o senza permesso Contents write."
+            exit 1
+          fi
+          if ! git ls-remote --exit-code --heads "$URL" "${BRANCH_DATI}" >/dev/null 2>&1; then
+            echo "::error::Il branch ${BRANCH_DATI} non esiste ancora. Lancia prima il giro giornaliero."
+            exit 1
+          fi
+          git clone --branch "${BRANCH_DATI}" --depth 1 "$URL" ghdata
+          ls -l ghdata/betimate_archivio.csv 2>/dev/null || echo "archivio non ancora presente: questo e' il primo giro"
+
+      - name: Scarica Betimate
+        id: scarica
+        continue-on-error: true
+        timeout-minutes: 15
+        run: |
+          python betimate_ci.py --da ieri --a domani --unisci \
+            --xlsx-dir output --kodi-dir btkodi --archivio-dir ghdata
+
+      - name: Pubblica Betimate sul repository pubblico
+        if: steps.scarica.outcome == 'success'
+        env:
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+        run: |
+          set -uo pipefail
+          URL="https://x-access-token:${TOKEN_DATI}@github.com/${REPO_DATI}"
+          cp -f btkodi/*.json ghdata/ 2>/dev/null || true
+          python - << 'PYEOF_BTPULIZIA'
+          import os, re, datetime
+          # Le giornate passate si tolgono dai SOLI file per Kodi: l'addon
+          # mostra da oggi in avanti e un file di ieri e' peso inutile.
+          # L'archivio CSV non si tocca - li' dentro il passato e' il punto.
+          oggi = datetime.date.today().isoformat()
+          rx = re.compile(r"^betimate_(\d{4}-\d{2}-\d{2})\.json$")
+          tolti = 0
+          for nome in sorted(os.listdir("ghdata")):
+              m = rx.match(nome)
+              if m and m.group(1) < oggi:
+                  os.remove(os.path.join("ghdata", nome))
+                  tolti += 1
+          print("giornate passate rimosse: {}".format(tolti))
+          PYEOF_BTPULIZIA
+          python - << 'PYEOF_BTINDEX'
+          import os, re, json, datetime
+          from zoneinfo import ZoneInfo
+          rx = re.compile(r"^betimate_(\d{4}-\d{2}-\d{2})\.json$")
+          date = sorted(m.group(1) for m in
+                        (rx.match(n) for n in os.listdir("ghdata")) if m)
+          if date:
+              agg = datetime.datetime.now(ZoneInfo("Europe/Rome")).strftime("%Y-%m-%d %H:%M")
+              with open("ghdata/betimate_index.json", "w", encoding="utf-8") as f:
+                  json.dump({"date": date, "updated": agg}, f,
+                            ensure_ascii=False, indent=1)
+              print("betimate_index.json: {} date {}".format(len(date), date))
+          else:
+              print("nessun betimate_*.json presente, indice non scritto")
+          PYEOF_BTINDEX
+          cd ghdata
+          git config user.name "caltiki-bot"
+          git config user.email "caltiki-bot@users.noreply.github.com"
+          git remote remove origin 2>/dev/null || true
+          git remote add origin "$URL"
+          git add -A
+          git diff --cached --quiet && echo "Nessuna modifica" || \
+            git commit -m "Update betimate $(date +%Y-%m-%d)"
+          git pull --rebase origin "${BRANCH_DATI}" 2>/dev/null || true
+          git push origin "HEAD:${BRANCH_DATI}"
+
+      - name: Invia su Telegram
+        # Nei giri serali "solo risultati" niente Telegram: l'Excel e' lo
+        # stesso di stamattina, cambia solo l'archivio dei risultati.
+        if: always() && needs.controllo.outputs.solo_risultati != 'si'
+        env:
+          TG_TOKEN: ${{ secrets.TG_TOKEN }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+        run: |
+          python - << 'EOF'
+          import os, glob, requests, datetime
+          token   = os.environ["TG_TOKEN"]
+          chat_id = os.environ["TG_CHAT_ID"]
+          oggi    = datetime.date.today().strftime("%d/%m/%Y")
+          def motivo():
+              # Il motivo vero, scritto dallo scraper. File assente = non
+              # e' arrivato nemmeno a fallire per conto suo.
+              try:
+                  with open("output/_errore_betimate.txt", encoding="utf-8") as f:
+                      t = f.read().strip()
+                  return "\n\nMotivo:\n" + t[:900] if t else ""
+              except Exception:
+                  return ("\n\nNessun motivo registrato: lo scraper non e' "
+                          "arrivato a girare. Guarda gli step PRECEDENTI del "
+                          "job su GitHub Actions.")
+
+          # minuscolo, e senza l'archivio: lo script scrive
+          # betimate_<da>_<a>.xlsx accanto a betimate_archivio.xlsx, e
+          # quest'ultimo cresce a ogni giro - su Telegram non ci sta.
+          bt = [f for f in sorted(glob.glob("output/betimate_*.xlsx"))
+                if not f.endswith("_archivio.xlsx")]
+          for fpath in bt:
+              with open(fpath, "rb") as f:
+                  requests.post(
+                      "https://api.telegram.org/bot{}/sendDocument".format(token),
+                      data={"chat_id": chat_id,
+                            "caption": "Betimate {} - 1X2, Under/Over, "
+                                       "Gol/NoGol, risultato esatto e media "
+                                       "gol (informativo)".format(oggi)},
+                      files={"document": (os.path.basename(fpath), f)})
+              print("Inviato:", os.path.basename(fpath))
+          if not bt:
+              requests.post("https://api.telegram.org/bot{}/sendMessage".format(token),
+                  data={"chat_id": chat_id,
+                        "text": "Betimate {}: nessun file.{}".format(
+                            oggi, motivo())})
+          EOF
+
+      - name: Salva artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: betimate-${{ github.run_id }}
+          path: |
+            output/betimate_*.xlsx
+            btkodi/*.json
+          retention-days: 7
+          if-no-files-found: ignore
+
+  # =========================================================
+  # FOOTYMETRICS
+  # =========================================================
+  # Ottavo anello della catena dei push. Sta DOPO betimate e PRIMA di
+  # asianodds per lo stesso motivo di tutti gli altri: i job scrivono a
+  # turno sullo stesso branch, e in parallelo si pestano i piedi.
+  #
+  # DUE COSE CHE QUESTO JOB FA DIVERSAMENTE DAGLI ALTRI.
+  #
+  # 1) Scarica anche i GIORNI PASSATI. Il sito tiene solo due giorni
+  #    indietro: una giornata non raccolta non si recupera piu', e
+  #    l'archivio e' l'unica cosa del progetto che non si puo'
+  #    ricostruire. Gli Excel pero' escono solo da oggi in avanti - un
+  #    foglio di partite gia' giocate su Telegram e' peso inutile.
+  #
+  # 2) Clona gh-data PRIMA di scaricare, come betimate, perche' deve
+  #    rileggere l'archivio per sapere di quali partite ha gia' la
+  #    fotografia delle percentuali prima del calcio d'inizio.
+  #
+  # Niente Playwright e niente Cloudflare: e' un'API JSON che risponde a
+  # requests secco, quindi il timeout puo' stare basso.
+  footymetrics:
+    runs-on: ubuntu-24.04
+    # 35 e non 20: dal 4/11 qui dentro gira anche FotMob (browser da
+    # installare e pagine da scorrere, fino a una decina di minuti nel giro
+    # di notte). Se il job sforasse verrebbe ucciso PRIMA della pubblicazione.
+    timeout-minutes: 35
+    permissions:
+      contents: read
+    needs: [controllo, statarea, xgaura, soccersite, ratingbet, betimate]
+    if: >-
+      !cancelled() && (
+        (github.event_name == 'workflow_dispatch' && !github.event.inputs.cron) ||
+        needs.controllo.outputs.gia_pubblicati != 'si' ||
+        needs.controllo.outputs.solo_risultati == 'si'
+      )
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # curl_cffi non serve quasi mai qui, ma lo script ci ripiega da solo
+      # se il sito risponde 403: costa pochi secondi di installazione e
+      # toglie un modo di fallire.
+      - name: Installa dipendenze
+        run: pip install requests curl_cffi openpyxl
+
+      - name: Prendi l'archivio gia' pubblicato
+        id: clone
+        env:
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+        run: |
+          set -uo pipefail
+          if [ -z "${TOKEN_DATI:-}" ]; then
+            echo "::error::Secret TOKEN_REPO_DATI assente."
+            exit 1
+          fi
+          URL="https://x-access-token:${TOKEN_DATI}@github.com/${REPO_DATI}"
+          rm -rf ghdata
+          if ! git ls-remote --exit-code "$URL" HEAD >/dev/null 2>&1; then
+            echo "::error::${REPO_DATI} irraggiungibile: token assente, scaduto o senza permesso Contents write."
+            exit 1
+          fi
+          if ! git ls-remote --exit-code --heads "$URL" "${BRANCH_DATI}" >/dev/null 2>&1; then
+            echo "::error::Il branch ${BRANCH_DATI} non esiste ancora. Lancia prima il giro giornaliero."
+            exit 1
+          fi
+          git clone --branch "${BRANCH_DATI}" --depth 1 "$URL" ghdata
+          ls -l ghdata/footymetrics_archivio.csv 2>/dev/null || echo "archivio non ancora presente: questo e' il primo giro"
+
+      - name: Scarica FootyMetrics
+        id: scarica
+        continue-on-error: true
+        timeout-minutes: 15
+        run: |
+          python footymetrics_ci.py --passati --prossimi 5 --unisci \
+            --xlsx-dir output --kodi-dir fmkodi --archivio-dir ghdata
+
+      # L'ARCHIVIO DEL CONSENSUS VIENE AGGIORNATO QUI, dentro questo
+      # job, e non in uno suo. Tre motivi: il clone di gh-data c'e' gia',
+      # i risultati veri li ha appena scaricati FootyMetrics un minuto fa,
+      # e il push e' quello dello step dopo. Un job a se' vorrebbe dire un
+      # secondo clone, un secondo push e un altro anello nella catena.
+      #
+      # Gira anche se lo scraper e' fallito: fotografare i pronostici del
+      # consensus non dipende da FootyMetrics, e un giorno saltato e' un
+      # giorno perso per sempre.
+      - name: Aggiorna l'archivio del consensus
+        id: archivio
+        if: always() && steps.clone.outcome == 'success'
+        continue-on-error: true
+        run: python archivio_consensus.py --dati ghdata
+
+      # LE ALTRE SETTE FONTI, CHE FINORA NON SI SALVAVANO DA NESSUNA PARTE.
+      # Di dieci fonti solo tre avevano un archivio: betimate, footymetrics e
+      # il consensus. xGaura tiene TRE giornate sul branch, Sportytrader
+      # quattro, Statarea cinque, poi i file vengono cancellati. Su quelle
+      # fonti non si poteva misurare niente, e non per mancanza di tempo: i
+      # dati sparivano. Questo passo le congela tutte prima che succeda.
+      #
+      # STA QUI, nell'ultimo job della catena dei push, perche' e' l'unico
+      # momento in cui ghdata contiene i file di tutte le fonti gia'
+      # pubblicati. Se fallisce non ferma niente: i pronostici di oggi sono
+      # gia' online, questo riguarda solo la memoria storica.
+      - name: Archivia le altre fonti
+        id: archfonti
+        if: always() && steps.clone.outcome == 'success'
+        continue-on-error: true
+        run: python archivio_fonti.py --dati ghdata
+
+      # LE GIORNATE STATAREA COPIATE, DENTRO GLI ARCHIVI.
+      # Chiesto un giorno troppo avanti, statarea.com risponde con la
+      # giornata di oggi e lo scraper la salva con la data chiesta. I file
+      # del giorno vengono gia' ripuliti prima di pubblicarli, ma le copie
+      # entrate prima di quella pulizia erano rimaste in statarea_archivio.csv
+      # (2.776 righe su 6.915 al 3/11): da li' consensus medio e schede del
+      # 3-5 novembre mostravano partite del 29 ottobre.
+      # Regola: stessa partita (casa e ospite normalizzate), stessa ora, data
+      # da 1 a 10 giorni dopo un'altra riga -> e' una copia, resta la data
+      # piu' vecchia. Verificato sui risultati: su 886 copie con un esito
+      # noto, la partita si era giocata nella data vecchia 883 volte; le 3
+      # in cui il risultato sta sulla data nuova non si toccano.
+      #
+      # DUE BUCHI TROVATI IL 4/11, confrontando la data di ogni partita
+      # degli archivi con quella vera (Betimate, FootyMetrics, FotMob):
+      #  1. STATAREA, CAMBIO DELL'ORA LEGALE. 572 copie del 26, 29 e 30
+      #     ottobre erano rimaste perche' l'ora non era uguale: le copie
+      #     fatte dopo il 25/10 hanno gli orari un'ora indietro (20:00 ->
+      #     19:00). Ora vale anche un'ora esatta di differenza.
+      #  2. RATINGBET, UN GIORNO AVANTI. Le sezioni Goals, BTTS e Double
+      #     chance si leggono con "oggi" e "domani" del sito, che e' ore
+      #     indietro rispetto all'Italia: la notte il suo "domani" e' il
+      #     nostro oggi. 727 partite su 2.123 (20/10-3/11) stavano il giorno
+      #     dopo quello vero; l'1X2, letto con la data, era giusto al 96%.
+      #     Spesso e' l'unica riga di quel mercato, quindi NON si toglie: si
+      #     sposta sul giorno prima, se li' la stessa partita c'e' con la
+      #     stessa ora, e si toglie solo se quella riga c'e' gia' o se era
+      #     stata vista dopo il calcio d'inizio.
+      # Prova sugli archivi del 4/11: Statarea da 631 partite con la data
+      # sbagliata a 48, Ratingbet da 727 a 119; quelle con la data giusta
+      # restano (2.043 -> 2.041 e 1.193 -> 1.188). Le rimaste sbagliate non
+      # hanno una riga gemella nel giorno vero: le sistema solo la
+      # correzione alla radice dello scraper.
+      # Sta DOPO l'archiviazione e PRIMA di consensus medio e schede, che
+      # cosi' si rifanno gia' puliti. Al primo giro toglie lo storico, poi
+      # di solito non trova niente. Se fallisce, l'archivio resta com'era.
+      - name: Togli dagli archivi le giornate Statarea copiate
+        id: copie
+        if: always() && steps.clone.outcome == 'success'
+        continue-on-error: true
+        run: |
+          python - << 'PYEOF_COPIE'
+          import csv
+          import os
+          import re
+          import unicodedata
+          from collections import defaultdict
+          from datetime import date, datetime, timedelta
+
+          # (archivio, giorni di distanza massima, cosa fare della copia)
+          #  - Statarea e consensus: la pagina di un giorno ricopiata 5-6 giorni dopo.
+          #    La copia non aggiunge niente: si toglie.
+          #  - Ratingbet: le sezioni Goals, BTTS e Double chance prese con "oggi" e
+          #    "domani" del sito, che e' indietro di ore: la riga finisce sul giorno
+          #    DOPO quello vero. Puo' essere l'unica riga di quel mercato, quindi
+          #    si sposta sul giorno vero; si toglie solo se li' c'e' gia'.
+          ARCHIVI = (("statarea_archivio.csv", 10, "togli"),
+                     ("consensus_archivio.csv", 10, "togli"),
+                     ("ratingbet_archivio.csv", 1, "sposta"))
+
+
+          def norm(s):
+              t = unicodedata.normalize("NFKD", str(s or "")).encode("ascii", "ignore").decode().lower()
+              return re.sub(r"[^a-z0-9]", "", t)
+
+
+          def minuti(t):
+              m = re.match(r"\s*(\d{1,2}):(\d{2})", str(t or ""))
+              return int(m.group(1)) * 60 + int(m.group(2)) if m else None
+
+
+          def stessa_ora(a, b):
+              """Uguale, oppure un'ora esatta di differenza: il cambio dell'ora
+              legale (25/10) sposta di 60 minuti gli orari delle copie fatte dopo."""
+              if (a or "") == (b or ""):
+                  return True
+              ma, mb = minuti(a), minuti(b)
+              return ma is not None and mb is not None and abs(ma - mb) in (60, 1380)
+
+
+          def giocate(dati):
+              """(casa, ospite) -> date in cui la partita ha un risultato."""
+              p = os.path.join(dati, "risultati_archivio.csv")
+              out = defaultdict(set)
+              if not os.path.exists(p):
+                  return out
+              with open(p, encoding="utf-8", newline="") as f:
+                  for r in csv.DictReader(f):
+                      out[(norm(r.get("Casa")), norm(r.get("Ospite")))].add(r.get("Data", ""))
+              return out
+
+
+          def vista_prima(r, giorno):
+              """La riga era stata vista prima del calcio d'inizio nel giorno vero?
+              Se no, spostarla farebbe passare per pronostico una riga del dopo."""
+              try:
+                  vista = datetime.strptime((r.get("Vista_Prima_Il") or "")[:16], "%Y-%m-%d %H:%M")
+              except ValueError:
+                  return False
+              m = minuti(r.get("Ora"))
+              inizio = datetime.combine(giorno, datetime.min.time()) + timedelta(minutes=m if m is not None else 0)
+              return vista < inizio
+
+
+          def pulisci(percorso, giorni, azione, risultati):
+              with open(percorso, encoding="utf-8", newline="") as f:
+                  lettore = csv.DictReader(f)
+                  campi = lettore.fieldnames
+                  righe = list(lettore)
+              nome = os.path.basename(percorso)
+              if not righe or not campi or "Data" not in campi:
+                  print("  {}: vuoto o senza colonna Data, non toccato".format(nome))
+                  return
+              kc = "Norm_Casa" if "Norm_Casa" in campi else "Casa"
+              ko = "Norm_Ospite" if "Norm_Ospite" in campi else "Ospite"
+              kp = "Chiave_Pron" if "Chiave_Pron" in campi else None
+              per = defaultdict(list)
+              for i, r in enumerate(righe):
+                  per[(norm(r.get(kc)), norm(r.get(ko)))].append(i)
+              via, sposta = set(), {}
+              for chiave, idx in per.items():
+                  if len(idx) < 2:
+                      continue
+                  idx.sort(key=lambda i: righe[i].get("Data", ""))
+                  occupate = {(righe[i].get("Data"), righe[i].get(kp) if kp else "") for i in idx}
+                  for a in range(1, len(idx)):
+                      ra = righe[idx[a]]
+                      try:
+                          da = date.fromisoformat(ra["Data"])
+                      except Exception:
+                          continue
+                      for b in range(a):
+                          if idx[b] in via or idx[b] in sposta:
+                              continue
+                          rb = righe[idx[b]]
+                          try:
+                              db = date.fromisoformat(rb["Data"])
+                          except Exception:
+                              continue
+                          if not (0 < (da - db).days <= giorni and stessa_ora(ra.get("Ora"), rb.get("Ora"))):
+                              continue
+                          vere = risultati.get((norm(ra.get("Casa")), norm(ra.get("Ospite"))), set())
+                          if ra["Data"] in vere and rb["Data"] not in vere:
+                              break          # il risultato dice che la nuova e' vera: non si tocca
+                          posto = (rb["Data"], ra.get(kp) if kp else "")
+                          if azione == "sposta" and posto not in occupate and vista_prima(ra, db):
+                              sposta[idx[a]] = rb["Data"]
+                              occupate.add(posto)
+                          else:
+                              via.add(idx[a])
+                          break
+              if not via and not sposta:
+                  print("  {}: {} righe, nessuna copia".format(nome, len(righe)))
+                  return
+              per_data = defaultdict(int)
+              for i in list(via) + list(sposta):
+                  per_data[righe[i]["Data"]] += 1
+              print("  {}: {} righe, {} copie tolte, {} righe spostate al giorno prima".format(
+                  nome, len(righe), len(via), len(sposta)))
+              print("    per data: " + ", ".join("{} {}".format(d, n) for d, n in sorted(per_data.items())))
+              for i, d in sposta.items():
+                  righe[i]["Data"] = d
+              tmp = percorso + ".tmp"
+              with open(tmp, "w", encoding="utf-8", newline="") as f:
+                  w = csv.DictWriter(f, fieldnames=campi)
+                  w.writeheader()
+                  for i, r in enumerate(righe):
+                      if i not in via:
+                          w.writerow(r)
+              os.replace(tmp, percorso)
+
+
+          risultati = giocate("ghdata")
+          print("Copie e date sbagliate negli archivi:")
+          for n, giorni, azione in ARCHIVI:
+              p = os.path.join("ghdata", n)
+              if os.path.exists(p):
+                  pulisci(p, giorni, azione, risultati)
+              else:
+                  print("  {}: assente".format(n))
+          PYEOF_COPIE
+
+      # LE QUOTE PINNACLE, per i prezzi equi dove AsianOdds non arriva
+      # (prezzi_equi.py: prima AsianOdds, poi Pinnacle, poi FootyMetrics).
+      # Una richiesta per partita, solo per le partite di oggi sul sito che
+      # AsianOdds non ha, prima quelle con piu' fonti: al massimo 30 al
+      # giorno, piu' il calendario. Il piano gratuito non permette la
+      # strada per data oltre la pagina 3 (prova del 3/11). I giri dopo il
+      # primo non fanno richieste. Sta PRIMA dei risultati e dei prezzi
+      # equi, che lo leggono; lo legge anche il job asianodds.
+      - name: Quote Pinnacle da API-Football
+        id: pinnacle
+        if: always() && steps.clone.outcome == 'success'
+        continue-on-error: true
+        env:
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+        run: |
+          if [ -f apifootball.py ]; then
+            python apifootball.py pinnacle --dati ghdata || \
+              echo "::warning::apifootball.py pinnacle non e' andato a buon fine: prezzi equi senza Pinnacle."
+          else
+            echo "::warning::apifootball.py non e' nel repository: passo saltato."
+          fi
+
+      # I RISULTATI DA API-FOOTBALL. Finora gli esiti venivano solo da
+      # Betimate e FootyMetrics, e solo se il nome era scritto uguale: il
+      # 3/11 due partite passate su tre delle fonti non avevano esito.
+      # apifootball.py legge il calendario con i punteggi di una giornata
+      # (una richiesta) e cerca li' ogni partita delle fonti, col nome che
+      # usa quella fonte; scrive apifootball_risultati.csv, che
+      # misura_fonti.py usa dove Betimate e FootyMetrics non arrivano.
+      # Sta PRIMA del consuntivo, perche' consuntivo, archivio dei
+      # risultati ed esiti devono contare sulle stesse partite finite.
+      # Le richieste: ieri finche' non e' chiusa, oggi dopo mezzogiorno,
+      # piu' 10 giornate vecchie per giro finche' lo storico non e'
+      # recuperato. Ne lascia sempre 20 libere sulle 100 del giorno.
+      - name: Risultati da API-Football
+        id: apif
+        if: always() && steps.clone.outcome == 'success'
+        continue-on-error: true
+        env:
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+        run: |
+          if [ -f apifootball.py ]; then
+            python apifootball.py risultati --dati ghdata || \
+              echo "::warning::apifootball.py risultati non e' andato a buon fine: esiti solo da Betimate e FootyMetrics."
+          else
+            echo "::warning::apifootball.py non e' nel repository: passo saltato."
+          fi
+
+      # I RISULTATI DA FOTMOB, per le partite delle fonti che Betimate,
+      # FootyMetrics e API-Football non hanno (API-Football e' sospeso dal
+      # 4/11). Misurato sui file del 2 e 3/11: 317 esiti nuovi in due giorni,
+      # punteggio uguale 236 volte su 236 ad API-Football e 220 su 221 a
+      # Betimate/FootyMetrics. fotmob_risultati.py scrive
+      # fotmob_risultati.csv, che misura_fonti.py legge per ultimo.
+      # Sta PRIMA del consuntivo, come i risultati di API-Football.
+      #
+      # QUANTO COSTA: il browser va installato (un minuto e mezzo circa) e
+      # ogni giornata e' una pagina da scorrere (uno-due minuti). Nei giri
+      # serali solo risultati si leggono ieri e oggi; nel giro di notte
+      # anche 4 giornate vecchie, finche' lo storico dal 27/09 non e'
+      # recuperato (una decina di notti), poi niente. Il tetto di minuti e'
+      # nello script: allo scadere non comincia un'altra giornata.
+      # Se FotMob non risponde o il browser non si installa, gli esiti
+      # restano quelli di prima.
+      - name: Installa il browser per FotMob
+        id: chromefm
+        if: always() && steps.clone.outcome == 'success' && hashFiles('fotmob_risultati.py') != ''
+        continue-on-error: true
+        timeout-minutes: 6
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
+
+      - name: Risultati da FotMob
+        id: fotmob
+        if: always() && steps.chromefm.outcome == 'success'
+        continue-on-error: true
+        timeout-minutes: 14
+        env:
+          ARRETRATE: ${{ needs.controllo.outputs.solo_risultati == 'si' && '0' || '4' }}
+          MINUTI: ${{ needs.controllo.outputs.solo_risultati == 'si' && '5' || '10' }}
+        run: |
+          python fotmob_risultati.py --dati ghdata --arretrate "$ARRETRATE" --minuti "$MINUTI" || \
+            echo "::warning::fotmob_risultati.py non e' andato a buon fine: esiti senza FotMob in questo giro."
+
+      # GLI STEMMI CHE MANCANO, DA BESOCCER (8/11). Per le squadre di oggi
+      # che non hanno stemma ne' nel pacchetto ne' da FotMob (Tercera RFEF,
+      # Serie D, giovanili...): stemmi_besoccer.py legge la pagina di oggi
+      # di BeSoccer col browser gia' installato per FotMob e scrive
+      # besoccer_stemmi.json; le immagini le scarica il passo dopo. Solo
+      # nel giro completo, con un tetto di minuti. Senza login: se BeSoccer
+      # rifiuta i server di GitHub, lo dice il log e non succede altro.
+      - name: Stemmi da BeSoccer
+        id: stemmibs
+        if: always() && steps.chromefm.outcome == 'success' && needs.controllo.outputs.solo_risultati != 'si' && hashFiles('stemmi_besoccer.py') != ''
+        continue-on-error: true
+        timeout-minutes: 8
+        run: |
+          python stemmi_besoccer.py --dati ghdata --minuti 4 || \
+            echo "::warning::stemmi_besoccer.py non e' andato a buon fine: stemmi BeSoccer rimandati."
+
+      # GLI STEMMI DI API-FOOTBALL, dove il pacchetto non ne ha uno sicuro.
+      # Le immagini non costano richieste. Si copiano una volta sola nel
+      # ramo "stemmi-api" (non in "stemmi", che il job stemmi riscrive da
+      # zero a ogni versione del pacchetto Kodi), al massimo 400 per giro,
+      # prima quelle delle partite di oggi e dei prossimi giorni.
+      # stemmi_api.json su gh-data dice al sito quale file va con quale
+      # nome. Se il push non riesce, il sito resta col nome senza stemma.
+      - name: Stemmi da API-Football
+        id: stemmiapi
+        if: always() && steps.clone.outcome == 'success'
+        continue-on-error: true
+        env:
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+        run: |
+          set -uo pipefail
+          if [ ! -f apifootball.py ] || [ ! -f prezzi_equi.py ]; then
+            echo "::warning::apifootball.py o prezzi_equi.py non sono nel repository: stemmi saltati."
+            exit 0
+          fi
+          URL="https://x-access-token:${TOKEN_DATI}@github.com/${REPO_DATI}"
+          rm -rf stemmiapi
+          if git ls-remote --exit-code --heads "$URL" stemmi-api >/dev/null 2>&1; then
+            git clone -q --branch stemmi-api --depth 1 "$URL" stemmiapi
+          else
+            mkdir stemmiapi
+            (cd stemmiapi && git init -q -b stemmi-api)
+          fi
+          python apifootball.py stemmi --dati ghdata --cartella stemmiapi || \
+            echo "::warning::apifootball.py stemmi non e' andato a buon fine."
+          cd stemmiapi
+          git config user.name "caltiki-bot"
+          git config user.email "caltiki-bot@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nessuno stemma nuovo."
+          else
+            git commit -q -m "Stemmi API-Football $(date +%Y-%m-%d)"
+            git push -q "$URL" "HEAD:stemmi-api" || echo "::warning::Push del ramo stemmi-api non riuscito."
+          fi
+
+      # IL CONSUNTIVO PER L'ADDON, ogni notte e non solo il lunedi'.
+      # Il rapporto su Telegram e' testo da leggere una volta; questo e' un
+      # JSON che Kodi apre quando vuole, quindi va riscritto tutti i giorni.
+      # Costa un paio di secondi: legge file gia' clonati.
+      - name: Consuntivo delle fonti per Kodi
+        id: classifica
+        if: always() && steps.clone.outcome == 'success'
+        continue-on-error: true
+        run: |
+          python misura_fonti.py --dati ghdata \
+            --json ghdata/classifica_fonti.json > /dev/null 2>&1 || \
+            echo "::warning::misura_fonti.py non e' andato a buon fine: il consuntivo di oggi non e' stato aggiornato."
+          ls -l ghdata/classifica_fonti.json 2>/dev/null || true
+
+      # I RISULTATI, PARTITA PER PARTITA. Un archivio unico delle partite
+      # finite (risultati_archivio.csv) e un file per giornata con cosa
+      # aveva detto ogni fonte, per la pagina del sito.
+      #
+      # STA SUBITO DOPO IL CONSUNTIVO perche' ne usa le stesse regole -
+      # importa misura_fonti.py, non le copia - e alla fine controlla che
+      # le prese per fonte coincidano con classifica_fonti.json appena
+      # scritto. Se non coincidono lo dice nel log; se fallisce non ferma
+      # niente, come gli altri passi di questo job.
+      - name: Archivio dei risultati
+        id: risultati
+        if: always() && steps.clone.outcome == 'success'
+        continue-on-error: true
+        run: |
+          if [ ! -f archivio_risultati.py ]; then
+            echo "::warning::archivio_risultati.py non e' nel repository: passo saltato."
+            exit 0
+          fi
+          python archivio_risultati.py --dati ghdata --giorni 30 || \
+            echo "::warning::archivio_risultati.py non e' andato a buon fine: i risultati di oggi non sono stati aggiornati."
+          ls -l ghdata/risultati_index.json 2>/dev/null || true
+
+      # GLI ESITI DELLA SCHEDINA: la schedina dei giorni passati con presa
+      # o sbagliata, per il sito. DEVE stare prima del passo dei prezzi,
+      # che cancella prezzi_<ieri>.json: e' l'ultimo momento in cui la
+      # schedina di ieri si puo' leggere. Gira anche nel job asianodds,
+      # per lo stesso motivo.
+      - name: Esiti della schedina
+        id: esiti
+        if: always() && steps.clone.outcome == 'success'
+        continue-on-error: true
+        run: |
+          if [ ! -f esiti_schedina.py ]; then
+            echo "::warning::esiti_schedina.py non e' nel repository: passo saltato."
+            exit 0
+          fi
+          python esiti_schedina.py --dati ghdata || \
+            echo "::warning::esiti_schedina.py non e' andato a buon fine: gli esiti di questo giro non sono stati aggiornati."
+
+      # IL RISULTATO DENTRO I FILE DI SPORTS MOLE (7/11): spunta o croce
+      # sul segno del modello di Sports Mole, sul sito. Stesso
+      # riconoscimento delle partite di esiti_schedina.py; scrive
+      # Gol_Casa/Gol_Ospite nei sportsmole_<data>.json degli ultimi 14
+      # giorni e sportsmole_esiti_index.json (le giornate passate). Gira in
+      # ogni giro, compresi quelli dei soli risultati: le partite della
+      # sera si aggiungono al giro dopo.
+      - name: Esiti di Sports Mole
+        id: esitism
+        if: always() && steps.clone.outcome == 'success'
+        continue-on-error: true
+        run: |
+          if [ ! -f esiti_sportsmole.py ]; then
+            echo "::warning::esiti_sportsmole.py non e' nel repository: passo saltato."
+            exit 0
+          fi
+          python esiti_sportsmole.py --dati ghdata || \
+            echo "::warning::esiti_sportsmole.py non e' andato a buon fine: Sports Mole senza risultati in questo giro."
+
+      # GLI ESITI DI FOOTBALLPARK: tolti l'11/11 insieme al workflow
+      # FootballPark (spento per risparmiare minuti di Actions).
+
+      # LE GIORNATE PASSATE DEL POISSON (8/11): poisson_<data>.json c'e'
+      # solo da oggi in avanti. esiti_poisson.py le rifa' da
+      # poisson_archivio.csv per gli ultimi 14 giorni, col risultato, in
+      # poissonesiti_<data>.json: spunta o croce sul segno del modello.
+      - name: Esiti del Poisson
+        id: esitipo
+        if: always() && steps.clone.outcome == 'success'
+        continue-on-error: true
+        run: |
+          if [ ! -f esiti_poisson.py ]; then
+            echo "::warning::esiti_poisson.py non e' nel repository: passo saltato."
+            exit 0
+          fi
+          python esiti_poisson.py --dati ghdata || \
+            echo "::warning::esiti_poisson.py non e' andato a buon fine: Poisson senza giornate passate in questo giro."
+
+      # IL CONSENSUS MEDIO PER L'ADDON.
+      # STA DOPO archivio_fonti.py di proposito: legge gli archivi che
+      # quello step ha appena scritto, quindi invertirli vorrebbe dire
+      # pubblicare la media di ieri. Scrive un file per giornata, solo da
+      # oggi in avanti, piu' l'indice.
+      #
+      # CHE COSA PUBBLICA, PERCHE' NON SI CONFONDA COL CONSENSUS VERO: una
+      # media di probabilita' che, misurata sulle partite finite, PERDE
+      # contro il mercato (Brier 0.6004 contro 0.5755, t = +2.71 su 230
+      # partite). Serve a vedere lo scarto fra i siti e il book, non a
+      # giocarci. Il consensus per accordo resta dov'e' e non viene
+      # toccato da questo passo.
+      - name: Consensus medio per Kodi
+        id: consmedio
+        if: always() && steps.clone.outcome == 'success'
+        continue-on-error: true
+        run: |
+          if [ ! -f consensus_medio.py ]; then
+            echo "::warning::consensus_medio.py non e' nel repository: passo saltato."
+            exit 0
+          fi
+          python - << 'PYEOF_CMPULIZIA'
+          import os, re, datetime
+          # Le giornate passate si tolgono: l'addon mostra da oggi in
+          # avanti, e un file di tre giorni fa non lo apre nessuno. Gli
+          # archivi CSV non si toccano.
+          oggi = datetime.date.today().isoformat()
+          rx = re.compile(r"^consensusmedio_(\d{4}-\d{2}-\d{2})\.json$")
+          tolti = 0
+          for nome in sorted(os.listdir("ghdata")):
+              m = rx.match(nome)
+              if m and m.group(1) < oggi:
+                  os.remove(os.path.join("ghdata", nome))
+                  tolti += 1
+          print("giornate passate rimosse: {}".format(tolti))
+          PYEOF_CMPULIZIA
+          python consensus_medio.py --dati ghdata --kodi ghdata \
+            --json ghdata/classifica_consensus.json || \
+            echo "::warning::consensus_medio.py non e' andato a buon fine: il consensus medio di oggi non e' stato aggiornato."
+          ls -l ghdata/consensusmedio_index.json 2>/dev/null || true
+
+          # IL CONSUNTIVO DEI DUE CONSENSUS, nello stesso file e subito
+          # dopo: i due script scrivono chiavi diverse dello stesso JSON e
+          # girano in sequenza, quindi il secondo trova il lavoro del
+          # primo. Se misura_consensus.py manca o esplode resta il blocco
+          # 'medio' gia' scritto, e in Kodi si vede quello.
+          if [ -f misura_consensus.py ]; then
+            python misura_consensus.py --archivio ghdata/consensus_archivio.csv \
+              --json ghdata/classifica_consensus.json > /dev/null 2>&1 || \
+              echo "::warning::misura_consensus.py non e' andato a buon fine: il blocco 'accordo' non e' stato aggiornato."
+          else
+            echo "::warning::misura_consensus.py non e' nel repository: blocco 'accordo' saltato."
+          fi
+          ls -l ghdata/classifica_consensus.json 2>/dev/null || true
+
+      - name: Prezzi equi e Poisson per Kodi
+        id: prezzipoisson
+        if: always() && steps.clone.outcome == 'success'
+        continue-on-error: true
+        run: |
+          mkdir -p output
+          # PRIMA LE GIORNATE NUOVE DI FOOTYMETRICS, POI I CONTI. Lo scraper
+          # le scrive in fmkodi/ e finivano in ghdata/ solo nel passo di
+          # pubblicazione, DOPO questo: prezzi_equi.py leggeva quelle di
+          # ieri e l'ultima giornata mancava sempre. Il 28 ottobre i
+          # Pronostici arrivavano a sabato con la domenica gia' scaricata.
+          # La stessa copia nel passo di pubblicazione resta, ed e' innocua.
+          cp -f fmkodi/*.json ghdata/ 2>/dev/null || true
+          # PREZZI EQUI E POISSON, qui e non nel job asianodds.
+          #
+          # Stavano li' perche' e' il job con le quote piu' fresche, ma la
+          # sua condizione e' needs.statarea.result != 'success': quando il
+          # giro quotidiano riesce, quel job viene SALTATO. Risultato, il
+          # 25 ottobre: prezzi_index.json e poisson_index.json non sono mai
+          # comparsi su gh-data, e un Run workflow a mano - il modo naturale
+          # di provare - era proprio il gesto che non li produceva.
+          #
+          # Questo job gira sempre nella catena quotidiana ed e' l'ottavo:
+          # quando ci arriva, su ghdata ci sono gia' le quote AsianOdds del
+          # giro di stanotte, la tabella xG e le partite di tutte le fonti.
+          # Il job asianodds li rinfresca comunque ogni sei ore.
+          #
+          # L'Excel finisce in output/ e lo manda il passo Telegram di
+          # QUESTO job: scriverlo qui e mandarlo altrove non funziona,
+          # job diversi sono runner diversi.
+          mkdir -p output
+          if [ -f prezzi_equi.py ]; then
+            python prezzi_equi.py --dati ghdata --xlsx output --kodi ghdata || \
+              echo "::warning::prezzi_equi.py non e' andato a buon fine: i prezzi di questo giro non sono stati aggiornati."
+          else
+            echo "::warning::prezzi_equi.py non e' nel repository: passo saltato."
+          fi
+          python - << 'PYEOF_PEPULIZIA'
+          import os, re, datetime
+          # Le giornate passate si tolgono dai soli file per Kodi, come
+          # nelle altre sezioni: l'addon mostra da oggi in avanti.
+          oggi = datetime.date.today().isoformat()
+          rx = re.compile(r"^prezzi_(\d{4}-\d{2}-\d{2})\.json$")
+          tolti = 0
+          for nome in sorted(os.listdir("ghdata")):
+              m = rx.match(nome)
+              if m and m.group(1) < oggi:
+                  os.remove(os.path.join("ghdata", nome))
+                  tolti += 1
+          print("prezzi, giornate passate rimosse: {}".format(tolti))
+          PYEOF_PEPULIZIA
+          # IL POISSON DAGLI xG, in questo job e non altrove perche' e'
+          # l'unico che ha tutto insieme: la tabella xG pubblicata dal
+          # giro notturno, le partite di FootyMetrics del job
+          # precedente e i suoi stessi dati AsianOdds appena
+          # scaricati. E soprattutto perche' l'Excel va scritto nello
+          # STESSO job che poi lo manda su Telegram: job diversi sono
+          # runner diversi, e un file scritto di la' non parte.
+          #
+          # E' l'unica cosa del sistema che non guarda le quote: i
+          # lambda nascono dagli xG, e le colonne del mercato finiscono
+          # nel file solo per confronto. Se Understat non ha ancora
+          # pubblicato niente lo script lo dice ed esce senza errore.
+          if [ -f poisson_xg.py ]; then
+            python poisson_xg.py --dati ghdata --xlsx output --kodi ghdata || \
+              echo "::warning::poisson_xg.py non e' andato a buon fine: il Poisson di questo giro non e' stato aggiornato."
+          else
+            echo "::warning::poisson_xg.py non e' nel repository: passo saltato."
+          fi
+          python - << 'PYEOF_POPULIZIA'
+          import os, re, datetime
+          oggi = datetime.date.today().isoformat()
+          rx = re.compile(r"^poisson_(\d{4}-\d{2}-\d{2})\.json$")
+          tolti = 0
+          for nome in sorted(os.listdir("ghdata")):
+              m = rx.match(nome)
+              if m and m.group(1) < oggi:
+                  os.remove(os.path.join("ghdata", nome))
+                  tolti += 1
+          print("poisson, giornate passate rimosse: {}".format(tolti))
+          PYEOF_POPULIZIA
+
+      # LA SCHEDA DI OGNI PARTITA PER IL SITO (scheda_<data>.json).
+      # Dopo i prezzi equi e il Poisson perche' li mette dentro, e dopo il
+      # consenso medio per lo stesso motivo: e' l'ultimo che legge ghdata
+      # prima della pubblicazione. Riconosce la stessa partita fra le
+      # fonti con le regole di prezzi_equi.py e legge i pronostici con
+      # quelle di misura_fonti.py: tutti e due devono stare accanto. Se
+      # fallisce non ferma niente: il sito resta senza collegamento alla
+      # scheda, le altre pagine non cambiano.
+      - name: Scheda delle partite
+        id: scheda
+        if: always() && steps.clone.outcome == 'success'
+        continue-on-error: true
+        run: |
+          if [ ! -f scheda_partite.py ]; then
+            echo "::warning::scheda_partite.py non e' nel repository: passo saltato."
+            exit 0
+          fi
+          python scheda_partite.py --dati ghdata || \
+            echo "::warning::scheda_partite.py non e' andato a buon fine: le schede di questo giro non sono state aggiornate."
+          ls -l ghdata/scheda_index.json 2>/dev/null || true
+
+      - name: Pubblica FootyMetrics sul repository pubblico
+        if: steps.scarica.outcome == 'success' || steps.archivio.outcome == 'success' || steps.archfonti.outcome == 'success' || steps.copie.outcome == 'success' || steps.pinnacle.outcome == 'success' || steps.apif.outcome == 'success' || steps.fotmob.outcome == 'success' || steps.stemmiapi.outcome == 'success' || steps.classifica.outcome == 'success' || steps.risultati.outcome == 'success' || steps.consmedio.outcome == 'success' || steps.prezzipoisson.outcome == 'success' || steps.scheda.outcome == 'success' || steps.esiti.outcome == 'success' || steps.esitism.outcome == 'success' || steps.esitipo.outcome == 'success' || steps.stemmibs.outcome == 'success'
+        env:
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+        run: |
+          set -uo pipefail
+          URL="https://x-access-token:${TOKEN_DATI}@github.com/${REPO_DATI}"
+          cp -f fmkodi/*.json ghdata/ 2>/dev/null || true
+          python - << 'PYEOF_FMPULIZIA'
+          import os, re, datetime
+          # Le giornate passate si tolgono dai SOLI file per Kodi: l'addon
+          # mostra da oggi in avanti. L'archivio CSV non si tocca, li'
+          # dentro il passato e' tutto il punto.
+          oggi = datetime.date.today().isoformat()
+          rx = re.compile(r"^footymetrics_(\d{4}-\d{2}-\d{2})\.json$")
+          tolti = 0
+          for nome in sorted(os.listdir("ghdata")):
+              m = rx.match(nome)
+              if m and m.group(1) < oggi:
+                  os.remove(os.path.join("ghdata", nome))
+                  tolti += 1
+          print("giornate passate rimosse: {}".format(tolti))
+          PYEOF_FMPULIZIA
+          python - << 'PYEOF_FMINDEX'
+          import os, re, json, datetime
+          from zoneinfo import ZoneInfo
+          rx = re.compile(r"^footymetrics_(\d{4}-\d{2}-\d{2})\.json$")
+          date = sorted(m.group(1) for m in
+                        (rx.match(n) for n in os.listdir("ghdata")) if m)
+          if date:
+              agg = datetime.datetime.now(ZoneInfo("Europe/Rome")).strftime("%Y-%m-%d %H:%M")
+              with open("ghdata/footymetrics_index.json", "w", encoding="utf-8") as f:
+                  json.dump({"date": date, "updated": agg}, f,
+                            ensure_ascii=False, indent=1)
+              print("footymetrics_index.json: {} date {}".format(len(date), date))
+          else:
+              print("nessun footymetrics_*.json presente, indice non scritto")
+          PYEOF_FMINDEX
+          cd ghdata
+          git config user.name "caltiki-bot"
+          git config user.email "caltiki-bot@users.noreply.github.com"
+          git remote remove origin 2>/dev/null || true
+          git remote add origin "$URL"
+          git add -A
+          git diff --cached --quiet && echo "Nessuna modifica" || \
+            git commit -m "Update footymetrics $(date +%Y-%m-%d)"
+          git pull --rebase origin "${BRANCH_DATI}" 2>/dev/null || true
+          git push origin "HEAD:${BRANCH_DATI}"
+
+      - name: Invia su Telegram
+        # Nei giri serali "solo risultati" niente Telegram: l'Excel e' lo
+        # stesso di stamattina, cambia solo l'archivio dei risultati.
+        if: always() && needs.controllo.outputs.solo_risultati != 'si'
+        env:
+          TG_TOKEN: ${{ secrets.TG_TOKEN }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+        run: |
+          python - << 'EOF'
+          import os, glob, requests, datetime
+          token   = os.environ["TG_TOKEN"]
+          chat_id = os.environ["TG_CHAT_ID"]
+          oggi    = datetime.date.today().strftime("%d/%m/%Y")
+          def motivo():
+              # Il motivo vero, scritto dallo scraper. File assente = non
+              # e' arrivato nemmeno a fallire per conto suo.
+              try:
+                  with open("output/_errore_footymetrics.txt", encoding="utf-8") as f:
+                      t = f.read().strip()
+                  return "\n\nMotivo:\n" + t[:900] if t else ""
+              except Exception:
+                  return ("\n\nNessun motivo registrato: lo scraper non e' "
+                          "arrivato a girare. Guarda gli step PRECEDENTI del "
+                          "job su GitHub Actions.")
+
+          # IL NOME SI CONFRONTA IN MINUSCOLO, non con un glob scritto a
+          # mano. Lo script scrive "FootyMetrics_....xlsx" con due
+          # maiuscole: su Windows un glob minuscolo lo troverebbe lo
+          # stesso, sul runner Linux no, e il risultato e' un job verde
+          # che non manda niente. E' gia' successo con Betimate.
+          # I DUE FILE CHE NON VENGONO DAL MERCATO per primi: il Poisson
+          # e' l'unico calcolato senza guardare le quote, i prezzi equi
+          # sono il metro per giudicarle. FootyMetrics e' informativo e
+          # puo' stare sotto.
+          # L'ASSENZA SI DEVE SENTIRE. Prima, se l'Excel non c'era, questo
+          # ciclo non trovava niente e non diceva niente: su Telegram
+          # arrivava un file in meno e basta, indistinguibile da una
+          # giornata senza partite. FootyMetrics, due blocchi piu' sotto,
+          # il messaggio "nessun file" ce l'aveva gia' - questi due no, ed
+          # erano proprio i due che vale la pena aspettare.
+          for _pat, _nome, _cap in (
+                  ("output/PoissonXG_*.xlsx", "Poisson dagli xG",
+                   "Poisson dagli xG {} - lambda dagli xG di Understat, senza "
+                   "guardare le quote. Le colonne M_ sono il mercato, solo per "
+                   "confronto. Foglio Diagnostica: le partite escluse e perche'."),
+                  ("output/PrezziEqui_*.xlsx", "Prezzi equi",
+                   "Prezzi equi {} - quanto vale ogni selezione secondo il "
+                   "mercato. Sopra la quota equa prendi valore, sotto paghi "
+                   "margine. Guarda prima la colonna Margine.")):
+              _trovati = sorted(glob.glob(_pat))
+              if not _trovati:
+                  print("MANCA:", _pat)
+                  requests.post(
+                      "https://api.telegram.org/bot{}/sendMessage".format(token),
+                      data={"chat_id": chat_id,
+                            "text": "{} {}: nessun file.\n\nLo script non ha "
+                                    "prodotto l'Excel in questo giro. Guarda il "
+                                    "passo 'Prezzi equi e Poisson' del job "
+                                    "footymetrics su GitHub Actions.".format(
+                                        _nome, oggi)})
+              for fpath in _trovati:
+                  with open(fpath, "rb") as f:
+                      requests.post(
+                          "https://api.telegram.org/bot{}/sendDocument".format(token),
+                          data={"chat_id": chat_id, "caption": _cap.format(oggi)},
+                          files={"document": (os.path.basename(fpath), f)})
+                  print("Inviato:", os.path.basename(fpath))
+
+          fm = sorted(f for f in glob.glob("output/*.xlsx")
+                      if os.path.basename(f).lower().startswith("footymetrics_")
+                      and not f.lower().endswith("_archivio.xlsx"))
+          for fpath in fm:
+              with open(fpath, "rb") as f:
+                  requests.post(
+                      "https://api.telegram.org/bot{}/sendDocument".format(token),
+                      data={"chat_id": chat_id,
+                            "caption": "FootyMetrics {} - 1X2, Under/Over 1.5 e "
+                                       "2.5, Gol/NoGol, primo gol, corner e "
+                                       "arbitro (informativo)".format(oggi)},
+                      files={"document": (os.path.basename(fpath), f)})
+              print("Inviato:", os.path.basename(fpath))
+          if not fm:
+              requests.post("https://api.telegram.org/bot{}/sendMessage".format(token),
+                  data={"chat_id": chat_id,
+                        "text": "FootyMetrics {}: nessun file.{}".format(
+                            oggi, motivo())})
+          EOF
+
+
+      # LUNEDI': IL RAPPORTO SU COME STANNO ANDANDO LE FONTI
+      #
+      # PERCHE' QUI DENTRO e non in un job suo: questo job l'archivio se
+      # l'e' gia' clonato allo step "clone" e lo ha appena aggiornato. Un
+      # job a parte dovrebbe riclonare tutto per leggere un CSV.
+      #
+      # PERCHE' UNA VOLTA A SETTIMANA. L'archivio cresce di una trentina di
+      # partite finite al giorno: un rapporto quotidiano sarebbe un numero
+      # che si muove di mezzo punto, e guardarlo tutti i giorni e' il modo
+      # piu' rapido per convincersi di quello che si spera. Di lunedi' e
+      # basta, cosi' quando arriva lo si legge davvero.
+      #
+      # PERCHE' ANCHE SU AVVIO A MANO: se lo lanci tu, lo vuoi vedere.
+      - name: Rapporto settimanale sulle fonti
+        if: always() && steps.clone.outcome == 'success' && needs.controllo.outputs.solo_risultati != 'si'
+        continue-on-error: true
+        env:
+          TG_TOKEN: ${{ secrets.TG_TOKEN }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+        run: |
+          set -uo pipefail
+          GIORNO=$(date -u +%u)
+          if [ "$GIORNO" != "1" ] && [ "${{ github.event_name == 'workflow_dispatch' && !github.event.inputs.cron }}" != "true" ]; then
+            echo "Non e' lunedi' e non e' un avvio a mano: niente rapporto."
+            exit 0
+          fi
+          if [ ! -f misura_consensus.py ]; then
+            echo "::warning::misura_consensus.py non e' nel repository: rapporto saltato."
+            exit 0
+          fi
+          if [ ! -f ghdata/consensus_archivio.csv ]; then
+            echo "::warning::consensus_archivio.csv non ancora presente: rapporto saltato."
+            exit 0
+          fi
+          python misura_consensus.py --archivio ghdata/consensus_archivio.csv \
+            > rapporto.txt 2>&1 || true
+          # Le altre fonti, in coda allo stesso messaggio. Se lo script non
+          # c'e' ancora, il rapporto del consensus parte lo stesso.
+          if [ -f misura_fonti.py ]; then
+            echo "" >> rapporto.txt
+            python misura_fonti.py --dati ghdata >> rapporto.txt 2>&1 || true
+          fi
+          # IL CONSENSUS PER MEDIA, in parallelo a quello per accordo.
+          # Non sostituisce niente: e' la seconda riga di confronto, per
+          # vedere settimana dopo settimana quale dei due regge meglio.
+          # Il giorno che uno dei due batte il mercato, si sapra' quale.
+          if [ -f consensus_medio.py ]; then
+            echo "" >> rapporto.txt
+            python consensus_medio.py --dati ghdata >> rapporto.txt 2>&1 || true
+          fi
+          cat rapporto.txt
+          python - << 'PYEOF_RAPPORTO'
+          import os, html, requests
+          token   = os.environ["TG_TOKEN"]
+          chat_id = os.environ["TG_CHAT_ID"]
+          with open("rapporto.txt", encoding="utf-8") as f:
+              testo = f.read().strip()
+          if not testo:
+              testo = "Il rapporto e' uscito vuoto: guarda il job su GitHub Actions."
+          # Telegram taglia a 4096 caratteri e conta i tag: si spezza in
+          # blocchi da 3500 invece di perdere la coda in silenzio.
+          pezzi, buf = [], ""
+          for riga in testo.splitlines(True):
+              if len(buf) + len(riga) > 3500:
+                  pezzi.append(buf); buf = ""
+              buf += riga
+          if buf:
+              pezzi.append(buf)
+          for i, p in enumerate(pezzi, 1):
+              testa = ("ARCHIVIO PRONOSTICI - come stanno andando le fonti\n\n"
+                       if i == 1 else "")
+              r = requests.post(
+                  "https://api.telegram.org/bot{}/sendMessage".format(token),
+                  data={"chat_id": chat_id,
+                        "parse_mode": "HTML",
+                        "text": testa + "<pre>" + html.escape(p) + "</pre>"})
+              print("parte {}/{}: HTTP {}".format(i, len(pezzi), r.status_code))
+              if r.status_code != 200:
+                  print(r.text[:300])
+          PYEOF_RAPPORTO
+
+      - name: Salva artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: footymetrics-${{ github.run_id }}
+          path: |
+            output/FootyMetrics_*.xlsx
+            output/_errore_footymetrics.txt
+            fmkodi/*.json
+          retention-days: 7
+          if-no-files-found: ignore
+
+  # =========================================================
+  # OGNI SEI ORE: solo AsianOdds
+  # =========================================================
+  # Perche' un job a se' e non un altro giro del giornaliero: AsianOdds
+  # invecchia in fretta, Statarea no, e rifare tutto per aggiornare le sole
+  # quote vorrebbe dire 40 minuti di scraping e un doppione di Statarea e
+  # Consensus su Telegram a ogni giro.
+  #
+  # ATTENZIONE - qui NON si tocca consensus.py. Le colonne AsianOdds dentro
+  # il consensus nascono dal giro giornaliero, che continua a scaricare
+  # AsianOdds per conto suo e a passarlo a consensus.py con --ao-json. Qui
+  # si rinfrescano solo i file che vivono da soli: l'xlsx per Telegram e il
+  # JSON che legge la sezione AsianOdds dell'addon Kodi.
+  #
+  # LA CONDIZIONE, in due pezzi che servono a cose diverse.
+  #
+  # 1) needs.statarea.result != 'success'
+  #    Se il giro quotidiano e' andato a buon fine, AsianOdds l'ha gia'
+  #    scaricato lui un minuto fa e l'Excel l'ha gia' mandato: qui non
+  #    c'e' niente da rifare. Negli altri casi - guardia che ha fermato il
+  #    quotidiano perche' i dati di oggi ci sono gia', oppure Statarea
+  #    fallita - si procede: le quote sono indipendenti dal resto.
+  #
+  # 2) il cron dev'essere uno dei TRE delle quote
+  #    Senza questo pezzo il job partirebbe anche sui due tentativi di
+  #    riserva del quotidiano (02:17 e 04:47 UTC), che esistono per
+  #    recuperare Statarea quando GitHub scarta un cron e non hanno niente
+  #    a che vedere con le quote. Il risultato era un AsianOdds in piu' a
+  #    testa, cioe' tre consegne stipate fra le 04:17 e le 06:47 italiane.
+  #    '(github.event.schedule || github.event.inputs.cron)' porta la stringa esatta del cron che ha
+  #    fatto scattare il run, ed e' l'unico modo per distinguerli.
+  #    L'avvio a mano resta sempre permesso.
+  #
+  #    Fra i tre non sono uguali: il principale parte sempre, le due
+  #    riserve solo se nella fascia non si e' ancora pubblicato. Il perche'
+  #    sta nel commento della guardia, dentro il job 'controllo'.
+  #
+  # Il conto che ne esce, in ora italiana: 02:23 dal giro quotidiano (che
+  # manda l'Excel da se'), poi 08:23, 14:23 e 20:23 da questo job, con le
+  # riserve pronte a +100 e +200 minuti se GitHub scarta l'appuntamento.
+  #
+  # Simulato su 500 giornate con i tassi di scarto e i ritardi misurati:
+  # 3,6 consegne al giorno in media contro le 2,0 del cron singolo, e
+  # quattro esatte nel 60% dei giorni. Non e' una garanzia - nessuno puo'
+  # garantire un cron che non parte - ma e' quasi il doppio di adesso.
+  # =========================================================
+  # OGNI SEI ORE: prezzi equi, Poisson e schede (era il job AsianOdds)
+  # =========================================================
+  # (12/11) AsianOdds e' tolto (vedi in cima). Il job resta, col suo nome
+  # di sempre per non toccare la catena dei 'needs', ma non scarica piu'
+  # niente: con le quote Pinnacle che pinnacle.yml aggiorna ogni ora
+  # rifa' The Odds API (una volta al giorno), esiti della schedina, prezzi
+  # equi, Poisson e schede, e pubblica. Prima pubblicava SOLO se AsianOdds
+  # era stato scaricato: dal 12/11 pomeriggio, con AsianOdds chiuso, i
+  # prezzi non si aggiornavano piu' durante il giorno.
+  asianodds:
+    name: prezzi e schede (ogni 6 ore)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    # Terzo anello della catena dei push (vedi la nota FPNET TOLTO, sopra xgaura):
+    # statarea -> asianodds -> webpronostici. Serve anche nel caso
+    # in cui statarea FALLISCE, perche' li' fpnet e asianodds girerebbero
+    # tutti e due e senza la catena si contenderebbero il push.
+    needs: [controllo, statarea, xgaura, soccersite, ratingbet, betimate, footymetrics]
+    # !cancelled() e non always(): se annulli il run a mano, non deve
+    # partire lo stesso il refresh delle quote. Per il resto si comporta
+    # come always(), cioe' non eredita lo stop di 'needs'.
+    # NB: va in blocco '>-'. Un '!' a inizio valore YAML lo legge come
+    # un tag e il file non si carica piu'.
+    if: >-
+      !cancelled()
+      && needs.statarea.result != 'success'
+      && ((github.event_name != 'schedule' && !github.event.inputs.cron)
+          || (github.event.schedule || github.event.inputs.cron) == '23 */6 * * *')
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installa dipendenze
+        run: pip install beautifulsoup4 openpyxl requests pandas
+
+      - name: Rifai prezzi, Poisson e schede e pubblica
+        env:
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          EVENTO: ${{ github.event_name }}
+          CRON_DISPATCH: ${{ github.event.inputs.cron }}
+        run: |
+          set -uo pipefail
+          if [ -z "${TOKEN_DATI:-}" ]; then
+            echo "::error::Secret TOKEN_REPO_DATI assente."
+            exit 1
+          fi
+          URL="https://x-access-token:${TOKEN_DATI}@github.com/${REPO_DATI}"
+          rm -rf ghdata
+          if ! git ls-remote --exit-code "$URL" HEAD >/dev/null 2>&1; then
+            echo "::error::${REPO_DATI} irraggiungibile: token assente, scaduto o senza permesso Contents write."
+            exit 1
+          fi
+          # Il branch qui deve gia' esistere: lo crea il giro giornaliero.
+          # Se manca, questo job non e' il posto per inventarselo.
+          if ! git ls-remote --exit-code --heads "$URL" "${BRANCH_DATI}" >/dev/null 2>&1; then
+            echo "::error::Il branch ${BRANCH_DATI} non esiste ancora. Lancia prima il giro giornaliero."
+            exit 1
+          fi
+          git clone --branch "${BRANCH_DATI}" --depth 1 "$URL" ghdata
+          # (12/11) Niente piu' file AsianOdds ne' quote_archivio.csv: la
+          # chiusura la tiene pinnacle_archivio.csv (pinnacle.yml).
+          # RINFRESCO dei prezzi equi e del Poisson, senza Excel.
+          #
+          # I due file nascono nel job footymetrics, che gira sempre
+          # nella catena quotidiana. Qui si rifanno solo per aggiornare
+          # i JSON di Kodi con le quote appena scaricate - questo job
+          # parte ogni sei ore - e senza --xlsx, perche' l'Excel su
+          # Telegram lo manda footymetrics e due copie al giorno dello
+          # stesso file sono rumore.
+          #
+          # Il motivo per cui NON basta questo job: la sua condizione e'
+          # needs.statarea.result != 'success', quindi quando il giro
+          # quotidiano riesce viene saltato - e un Run workflow a mano,
+          # che e' il modo naturale di provare, non produceva niente.
+          # Vecchio commento: qui le
+          # linee sono appena scaricate: calcolarli altrove vorrebbe dire
+          # pubblicare il prezzo di sei ore fa su un mercato che in sei
+          # ore si muove tutto. L'Excel finisce in output/ e lo raccoglie
+          # il passo Telegram, i JSON in ghdata e se ne vanno col push.
+          # THE ODDS API (11/11): una lettura al giorno, al primo giro dopo
+          # le 11 UTC (di solito quello delle 12:23), PRIMA dei prezzi equi
+          # che la leggono: Equa oltre le 24 ore, riferimento Betfair accanto
+          # ad AsianOdds, archivio congelato al via. Avviato a mano legge
+          # comunque. I crediti li controlla lo script (piano gratuito, 500
+          # al mese). Se manca la chiave o qualcosa va storto, i prezzi equi
+          # si fanno lo stesso con quello che c'e'.
+          if [ -f oddsapi_ci.py ] && [ -f scraper_oddsapi.py ]; then
+            FORZA=""
+            if [ "${EVENTO}" = "workflow_dispatch" ] && [ -z "${CRON_DISPATCH:-}" ]; then FORZA="--forza"; fi
+            python oddsapi_ci.py --dati ghdata --una-al-giorno $FORZA || \
+              echo "::warning::oddsapi_ci.py non e' andato a buon fine: prezzi equi senza The Odds API in questo giro."
+          else
+            echo "oddsapi_ci.py o scraper_oddsapi.py non sono nel repository: The Odds API saltata."
+          fi
+          # Gli esiti della schedina PRIMA della pulizia qui sotto, che
+          # cancella prezzi_<ieri>.json (vedi il passo nel job footymetrics).
+          if [ -f esiti_schedina.py ]; then
+            python esiti_schedina.py --dati ghdata || \
+              echo "::warning::esiti_schedina.py non e' andato a buon fine."
+          fi
+          mkdir -p output
+          if [ -f prezzi_equi.py ]; then
+            python prezzi_equi.py --dati ghdata --kodi ghdata || \
+              echo "::warning::prezzi_equi.py non e' andato a buon fine: i prezzi di questo giro non sono stati aggiornati."
+          else
+            echo "::warning::prezzi_equi.py non e' nel repository: passo saltato."
+          fi
+          python - << 'PYEOF_PEPULIZIA'
+          import os, re, datetime
+          # Le giornate passate si tolgono dai soli file per Kodi, come
+          # nelle altre sezioni: l'addon mostra da oggi in avanti.
+          oggi = datetime.date.today().isoformat()
+          rx = re.compile(r"^prezzi_(\d{4}-\d{2}-\d{2})\.json$")
+          tolti = 0
+          for nome in sorted(os.listdir("ghdata")):
+              m = rx.match(nome)
+              if m and m.group(1) < oggi:
+                  os.remove(os.path.join("ghdata", nome))
+                  tolti += 1
+          print("prezzi, giornate passate rimosse: {}".format(tolti))
+          PYEOF_PEPULIZIA
+          # IL POISSON DAGLI xG, in questo job e non altrove perche' e'
+          # l'unico che ha tutto insieme: la tabella xG pubblicata dal
+          # giro notturno, le partite di FootyMetrics del job
+          # precedente e i suoi stessi dati AsianOdds appena
+          # scaricati. E soprattutto perche' l'Excel va scritto nello
+          # STESSO job che poi lo manda su Telegram: job diversi sono
+          # runner diversi, e un file scritto di la' non parte.
+          #
+          # E' l'unica cosa del sistema che non guarda le quote: i
+          # lambda nascono dagli xG, e le colonne del mercato finiscono
+          # nel file solo per confronto. Se Understat non ha ancora
+          # pubblicato niente lo script lo dice ed esce senza errore.
+          if [ -f poisson_xg.py ]; then
+            python poisson_xg.py --dati ghdata --kodi ghdata || \
+              echo "::warning::poisson_xg.py non e' andato a buon fine: il Poisson di questo giro non e' stato aggiornato."
+          else
+            echo "::warning::poisson_xg.py non e' nel repository: passo saltato."
+          fi
+          python - << 'PYEOF_POPULIZIA'
+          import os, re, datetime
+          oggi = datetime.date.today().isoformat()
+          rx = re.compile(r"^poisson_(\d{4}-\d{2}-\d{2})\.json$")
+          tolti = 0
+          for nome in sorted(os.listdir("ghdata")):
+              m = rx.match(nome)
+              if m and m.group(1) < oggi:
+                  os.remove(os.path.join("ghdata", nome))
+                  tolti += 1
+          print("poisson, giornate passate rimosse: {}".format(tolti))
+          PYEOF_POPULIZIA
+          # Le schede del sito si rifanno coi prezzi appena calcolati. Se fallisce si pubblica lo stesso.
+          if [ -f scheda_partite.py ]; then
+            python scheda_partite.py --dati ghdata || \
+              echo "::warning::scheda_partite.py non e' andato a buon fine: le schede di questo giro non sono state aggiornate."
+          fi
+          cd ghdata
+          git config user.name "caltiki-bot"
+          git config user.email "caltiki-bot@users.noreply.github.com"
+          git remote remove origin 2>/dev/null || true
+          git remote add origin "$URL"
+          git add -A
+          # L'ora nel messaggio, non solo la data: di commit AsianOdds ce
+          # ne sono otto al giorno e senza ora lo storico e' illeggibile.
+          git diff --cached --quiet && echo "Nessuna modifica" || \
+            git commit -m "Update prezzi $(date -u +'%Y-%m-%d %H:%M') UTC"
+          git pull --rebase origin "${BRANCH_DATI}" 2>/dev/null || true
+          git push origin "HEAD:${BRANCH_DATI}"
+
+  # =========================================================
+  # MARTEDI: WebPronostici settimanali + Consensus aggiornato
+  # =========================================================
+  webpronostici:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    permissions:
+      contents: read
+    # Ultimo anello della catena dei push (vedi la nota FPNET TOLTO, sopra xgaura).
+    needs: [controllo, statarea, xgaura, asianodds]
+    # always() e' obbligatorio: 'needs: statarea' da solo farebbe saltare
+    # anche questo job ogni volta che la guardia salta statarea, e il
+    # martedi i WebPronostici non uscirebbero piu'. La condizione vera e'
+    # quella fra parentesi.
+    #
+    # Dal 10/11 parte anche nei giri notturni normali e nelle loro riserve,
+    # ma solo se questa settimana non e' ancora stato fatto (wp_manca, vedi
+    # il job controllo): se GitHub salta il cron del martedi, recupera il
+    # primo giro notturno dopo. Il cron del martedi resta, alle stesse
+    # condizioni.
+    if: >-
+      always() && (
+        (github.event_name == 'workflow_dispatch' && !github.event.inputs.cron) ||
+        ((github.event_name == 'schedule' || github.event.inputs.cron) && needs.controllo.outputs.wp_manca == 'si' && (
+          (github.event.schedule || github.event.inputs.cron) == '37 0 * * 2' ||
+          (github.event.schedule || github.event.inputs.cron) == '37 0 * * *' ||
+          (github.event.schedule || github.event.inputs.cron) == '17 2 * * *' ||
+          (github.event.schedule || github.event.inputs.cron) == '47 4 * * *'))
+      )
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installa dipendenze
+        run: pip install playwright beautifulsoup4 openpyxl requests pandas
+
+      - name: Installa Chromium
+        run: |
+          playwright install chromium
+          playwright install-deps chromium
+
+      - name: Scarica dati esistenti dal repository pubblico
+        env:
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+        run: |
+          set -uo pipefail
+          if [ -z "${TOKEN_DATI:-}" ]; then
+            echo "::error::Secret TOKEN_REPO_DATI assente. Va creato nelle impostazioni di QUESTO repository (Settings - Secrets and variables - Actions) con un token dell'account Caltiki, permesso Contents write sul solo ${REPO_DATI}."
+            exit 1
+          fi
+          URL="https://x-access-token:${TOKEN_DATI}@github.com/${REPO_DATI}"
+          rm -rf ghdata
+          # DISTINGUERE due casi che si somigliano e vanno trattati in modo
+          # opposto. Prima si faceva "clone || parti-da-vuoto": se il token
+          # era scaduto, il clone falliva, si ripartiva da una cartella
+          # vuota e il push avrebbe RISCRITTO gh-data da zero, cancellando
+          # lo storico. Ora il repository irraggiungibile ferma il run,
+          # mentre il solo branch mancante e' il caso legittimo del primo
+          # giro.
+          if ! git ls-remote --exit-code "$URL" HEAD >/dev/null 2>&1; then
+            echo "::error::${REPO_DATI} irraggiungibile: token assente, scaduto o senza permesso Contents write."
+            exit 1
+          fi
+          if git ls-remote --exit-code --heads "$URL" "${BRANCH_DATI}" >/dev/null 2>&1; then
+            git clone --branch "${BRANCH_DATI}" --depth 1 "$URL" ghdata
+          else
+            echo "Il branch ${BRANCH_DATI} non esiste ancora: verra' creato dal primo push."
+            mkdir -p ghdata
+            git -C ghdata init -q
+            git -C ghdata checkout -q -b "${BRANCH_DATI}"
+          fi
+
+      - name: Esegui WebPronostici
+        run: python webpronostici_scraper.py --days 7 --output-dir output
+
+      - name: Esegui Statarea (7 giorni)
+        run: python statarea_scraper.py --days 7 --out output
+
+      - name: Scarica xG Understat
+        continue-on-error: true
+        run: python understat_xg.py --out output/understat_xg.json
+
+      # (12/11) AsianOdds tolto: il consensus del martedi va senza.
+      - name: Esegui Consensus
+        run: python consensus.py --sa-dir output --wp-dir output --xg-json output/understat_xg.json --out output
+
+      - name: Esporta JSON
+        run: python export_json.py --in-dir output --out-dir data
+
+      - name: Pulizia JSON scaduti su gh-data
+        env:
+          RETENTION_DAYS: '30'
+        run: |
+          python - << 'PYEOF_PURGE'
+          import os, re, datetime
+          giorni = int(os.environ.get("RETENTION_DAYS", "30"))
+          limite = datetime.date.today() - datetime.timedelta(days=giorni)
+          # SOLO file dati con data nel nome. Gli indici (*_index.json,
+          # webpronostici_tipi.json, index.json) non vengono mai toccati.
+          rx = re.compile(
+              r"^(statarea|consensus|asianodds|webpronostici(?:_[a-z0-9]+)?)_"
+              r"(\d{4}-\d{2}-\d{2})\.json$")
+          rimossi = 0
+          for nome in sorted(os.listdir("ghdata")):
+              m = rx.match(nome)
+              if not m:
+                  continue
+              try:
+                  d = datetime.date.fromisoformat(m.group(2))
+              except ValueError:
+                  continue
+              if d < limite:
+                  os.remove(os.path.join("ghdata", nome))
+                  rimossi += 1
+          print("Retention {} giorni (prima del {}): {} file rimossi".format(
+              giorni, limite.isoformat(), rimossi))
+          # FONTI TOLTE DAL GIRO (11/11): Sportytrader, FPNet, FootyStats,
+          # FootballPark, HeroPredict. I loro file di OGGI e dei GIORNI DOPO
+          # non li riscrive piu' nessuno: restando, finirebbero per giorni
+          # nelle schede delle partite (scheda_partite.py legge quello che
+          # trova). Si tolgono quelli da oggi in avanti; i giorni passati e
+          # gli archivi CSV restano come storico. L'indice di ognuna si
+          # riscrive con le date rimaste.
+          import json
+          oggi = datetime.date.today()
+          # (12/11) Anche AsianOdds: i suoi file di oggi e di domani hanno
+          # quote del mattino che nessuno aggiorna piu', e i prezzi equi le
+          # userebbero come se fossero fresche.
+          tolte = ("sportytrader", "fpnet", "footystatswdw", "footballpark", "heropredict", "asianodds")
+          rx2 = re.compile(r"^(" + "|".join(tolte) + r")_(\d{4}-\d{2}-\d{2})\.json$")
+          via = 0
+          for nome in sorted(os.listdir("ghdata")):
+              m = rx2.match(nome)
+              if m and m.group(2) >= oggi.isoformat():
+                  os.remove(os.path.join("ghdata", nome))
+                  via += 1
+          for f in tolte:
+              p = os.path.join("ghdata", f + "_index.json")
+              if not os.path.exists(p):
+                  continue
+              try:
+                  with open(p, encoding="utf-8") as fh:
+                      ix = json.load(fh)
+              except Exception:
+                  continue
+              if isinstance(ix, dict) and isinstance(ix.get("date"), list):
+                  resta = [d for d in ix["date"] if os.path.exists(os.path.join("ghdata", "{}_{}.json".format(f, d)))]
+                  if resta != ix["date"]:
+                      ix["date"] = resta
+                      with open(p, "w", encoding="utf-8") as fh:
+                          json.dump(ix, fh, ensure_ascii=False, indent=1)
+          print("Fonti tolte dal giro: {} file di oggi e dei giorni dopo rimossi".format(via))
+          PYEOF_PURGE
+
+      - name: Pubblica JSON sul repository pubblico
+        env:
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+        run: |
+          cp -f data/*.json ghdata/ 2>/dev/null || true
+          # GIORNATE STATAREA FINTE. Oltre qualche giorno avanti statarea.com
+          # non da' la giornata chiesta ma quella di OGGI, e lo scraper le
+          # mette la data chiesta: il 31/10 statarea_2026-11-05.json e
+          # _11-06 erano le 374 partite del 31/10, e in Consenso fonti il 6
+          # novembre mostrava Porto-Estoril di oggi. Qui: se due giornate
+          # hanno piu' di meta' delle partite in comune, quella con la data
+          # piu' avanti e' una copia e si toglie, con il suo consensus;
+          # gli indici si riscrivono senza quelle date.
+          python - << 'PYEOF_DOPPIE'
+          import json, os, re
+          rx = re.compile(r"^statarea_(\d{4}-\d{2}-\d{2})\.json$")
+          def leggi(p):
+              try:
+                  with open(p, encoding="utf-8") as f:
+                      return json.load(f)
+              except Exception:
+                  return None
+          date = sorted(m.group(1) for m in map(rx.match, os.listdir("ghdata")) if m)
+          coppie = {}
+          for d in date:
+              r = leggi(os.path.join("ghdata", "statarea_%s.json" % d))
+              if isinstance(r, list):
+                  coppie[d] = {(str(x.get("Casa")), str(x.get("Ospite"))) for x in r if isinstance(x, dict)}
+          via = set()
+          for i, d in enumerate(date):
+              s = coppie.get(d) or set()
+              for prima in date[:i]:
+                  if prima in via:
+                      continue
+                  p = coppie.get(prima) or set()
+                  comuni = len(s & p)
+                  if s and comuni > 0.5 * len(s):
+                      print("statarea_%s.json: %d partite su %d sono quelle del %s -> tolta" % (d, comuni, len(s), prima))
+                      via.add(d)
+                      break
+          for d in sorted(via):
+              for pre in ("statarea", "consensus"):
+                  p = os.path.join("ghdata", "%s_%s.json" % (pre, d))
+                  if os.path.exists(p):
+                      os.remove(p)
+          for pre in ("statarea", "consensus"):
+              p = os.path.join("ghdata", "%s_index.json" % pre)
+              ix = leggi(p)
+              if via and isinstance(ix, dict) and isinstance(ix.get("date"), list):
+                  ix["date"] = [d for d in ix["date"] if d not in via]
+                  with open(p, "w", encoding="utf-8") as f:
+                      json.dump(ix, f, ensure_ascii=False, indent=1)
+          print("giornate Statarea copiate tolte: %s" % (sorted(via) or "nessuna"))
+          PYEOF_DOPPIE
+          # LO STESSO CONTROLLO, PARTITA PER PARTITA, COL CALENDARIO DI
+          # API-FOOTBALL. Una partita di Statarea si toglie solo se nel suo
+          # giorno API-Football non ce l'ha e ce l'ha, alla stessa ora, in
+          # un altro; quelle che non conosce restano. Una richiesta per
+          # giornata, piu' ieri come riferimento. Senza chiave o senza
+          # script si salta: il giro va avanti come prima.
+          if [ -f apifootball.py ]; then
+            python apifootball.py calendario --dati ghdata || \
+              echo "::warning::apifootball.py calendario non e' andato a buon fine: Statarea pubblicato senza il controllo del calendario."
+          else
+            echo "apifootball.py non e' nel repository: controllo del calendario saltato."
+          fi
+          cp -f aokodi/*.json ghdata/ 2>/dev/null || true
+          # Indice AsianOdds per l'addon Kodi. Si ricostruisce dai file
+          # EFFETTIVAMENTE presenti dopo la pulizia, non da una lista tenuta
+          # a mano: cosi' non elenca mai date i cui file sono stati rimossi,
+          # che nell'addon darebbero un 404.
+          python - << 'PYEOF_AOINDEX'
+          import os, re, json, datetime
+          from zoneinfo import ZoneInfo
+          rx = re.compile(r"^asianodds_(\d{4}-\d{2}-\d{2})\.json$")
+          date = sorted(m.group(1) for m in
+                        (rx.match(n) for n in os.listdir("ghdata")) if m)
+          if date:
+              agg = datetime.datetime.now(ZoneInfo("Europe/Rome")).strftime("%Y-%m-%d %H:%M")
+              with open("ghdata/asianodds_index.json", "w", encoding="utf-8") as f:
+                  json.dump({"date": date, "updated": agg}, f,
+                            ensure_ascii=False, indent=1)
+              print("asianodds_index.json: {} date {}".format(len(date), date))
+          else:
+              print("nessun asianodds_*.json presente, indice non scritto")
+          PYEOF_AOINDEX
+          cd ghdata
+          # Autore anonimo: lo storico dei commit e' PUBBLICO, quindi qui non
+          # deve comparire nessun indirizzo reale. L'indirizzo @users.noreply
+          # non recapita nulla e non e' indicizzabile come una email vera.
+          git config user.name "caltiki-bot"
+          git config user.email "caltiki-bot@users.noreply.github.com"
+          URL="https://x-access-token:${TOKEN_DATI}@github.com/${REPO_DATI}"
+          git remote remove origin 2>/dev/null || true
+          git remote add origin "$URL"
+          git add -A
+          git diff --cached --quiet && echo "Nessuna modifica" || \
+            git commit -m "Update webpronostici $(date +%Y-%m-%d)"
+          git pull --rebase origin "${BRANCH_DATI}" 2>/dev/null || true
+          git push origin "HEAD:${BRANCH_DATI}"
+
+      # if: always() - senza questo, se statarea_scraper.py esce con codice 1
+      # (nessuna partita) lo step viene saltato e non arriva NESSUNA notifica:
+      # il ramo "nessun file" qui sotto era codice irraggiungibile.
+      - name: Invia su Telegram
+        if: always()
+        env:
+          TG_TOKEN: ${{ secrets.TG_TOKEN }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+        run: |
+          python - << 'EOF'
+          import os, glob, requests, datetime
+          token   = os.environ["TG_TOKEN"]
+          chat_id = os.environ["TG_CHAT_ID"]
+          today   = datetime.date.today().strftime("%d/%m/%Y")
+
+          def send(fpath, caption):
+              fname = os.path.basename(fpath)
+              with open(fpath, "rb") as f:
+                  requests.post(
+                      "https://api.telegram.org/bot{}/sendDocument".format(token),
+                      data={"chat_id": chat_id, "caption": caption},
+                      files={"document": (fname, f)})
+              print("Inviato:", fname)
+
+          wp = sorted(glob.glob("output/webpronostici_*.xlsx"))
+          cs = sorted(glob.glob("output/consensus_*.xlsx"))
+
+          if wp:
+              requests.post("https://api.telegram.org/bot{}/sendMessage".format(token),
+                  data={"chat_id": chat_id,
+                        "text": "WebPronostici settimana {} - {} file".format(today, len(wp))})
+              for f in wp:
+                  send(f, os.path.basename(f))
+          for f in cs:
+              send(f, "Consensus aggiornato {}".format(today))
+          EOF
+
+      - name: Salva artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: webpronostici-${{ github.run_id }}
+          path: output/*.xlsx
+          retention-days: 7
+          if-no-files-found: ignore
+
+
+  # FOOTYSTATS WDW TOLTO DAL GIRO (11/11): su gh-data non ha mai
+  # pubblicato niente (accesso bloccato) e ogni notte installava Chromium
+  # per niente. Lo scraper footystats_wdw_ci.py resta nel repository: se
+  # torna a funzionare si rimette il job.
+
+  # =========================================================
+  # SPORTS MOLE
+  # =========================================================
+  # Le percentuali della sezione "Data analysis" delle match guide di
+  # sportsmole.co.uk - 1X2, Gol/NoGol, Under/Over da 1.5 a 4.5, primo
+  # tempo, prima squadra a segnare, corner, risultati esatti - piu' il
+  # risultato esatto "We say" della redazione, dove c'e' la preview.
+  #
+  # INFORMATIVA, NON VOTA: sezione a se' in Kodi e sul sito, piu' l'Excel
+  # su Telegram. Le percentuali si muovono nei giorni prima della partita
+  # (il sito segna le variazioni con le frecce): prima di farla entrare
+  # nel consensus va misurato, con l'archivio, se segue le quote.
+  #
+  # NIENTE BROWSER: le pagine arrivano gia' complete dal server, requests +
+  # BeautifulSoup. NON E' VERIFICATO che Sports Mole risponda ai server di
+  # GitHub: lo dice il primo giro. Se arriva un 403, lo scraper riprova da
+  # solo con curl_cffi; se fallisce anche quello esce con errore senza
+  # scrivere niente, e su gh-data restano i file del giro prima.
+  #
+  # IL CLONE PRIMA DELLO SCRIPT, come per FootyStats e Betimate:
+  # sportsmole_archivio.csv e' cumulativo e lo script lo rilegge per
+  # aggiornarlo. Regola del congelamento: di ogni partita resta l'ultimo
+  # valore visto PRIMA del fischio d'inizio.
+  #
+  # L'ORARIO: il sito scrive l'ora inglese nel markup e lo scraper la porta
+  # a Europe/Rome. Va controllato sul primo giro contro AsianOdds.
+  #
+  # Ultimo anello della catena dei push: dopo webpronostici, cosi' non si
+  # contende il push con nessuno.
+  sportsmole:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    needs: [controllo, statarea, xgaura, soccersite, ratingbet, betimate, footymetrics, asianodds, webpronostici]
+    if: >-
+      !cancelled() && (
+        (github.event_name == 'workflow_dispatch' && !github.event.inputs.cron) ||
+        needs.controllo.outputs.gia_pubblicati != 'si'
+      )
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # curl_cffi serve solo se il sito rifiuta requests: lo scraper lo
+      # usa se riesce a importarlo. openpyxl per l'Excel di Telegram.
+      - name: Installa dipendenze
+        run: pip install requests beautifulsoup4 openpyxl curl_cffi
+
+      - name: Scarica i dati esistenti dal repository pubblico
+        id: clone
+        env:
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+        run: |
+          set -uo pipefail
+          if [ -z "${TOKEN_DATI:-}" ]; then
+            echo "::error::Secret TOKEN_REPO_DATI assente."
+            exit 1
+          fi
+          URL="https://x-access-token:${TOKEN_DATI}@github.com/${REPO_DATI}"
+          rm -rf ghdata
+          if ! git ls-remote --exit-code --heads "$URL" "${BRANCH_DATI}" >/dev/null 2>&1; then
+            echo "::error::${REPO_DATI} irraggiungibile o branch ${BRANCH_DATI} assente."
+            exit 1
+          fi
+          git clone --branch "${BRANCH_DATI}" --depth 1 "$URL" ghdata
+
+      # continue-on-error: fonte informativa. Se Sports Mole blocca il
+      # runner, il resto del giro e' gia' pubblicato e non deve risultare
+      # fallito per questo.
+      - name: Scarica Sports Mole
+        id: scarica
+        if: steps.clone.outcome == 'success'
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GH_DATA_DIR: ghdata
+        run: |
+          if [ ! -f sportsmole_scraper.py ]; then
+            echo "::warning::sportsmole_scraper.py non e' nel repository: passo saltato."
+            exit 1
+          fi
+          python sportsmole_scraper.py --kodi-dir smkodi
+
+      - name: Pubblica Sports Mole sul repository pubblico
+        if: steps.scarica.outcome == 'success'
+        env:
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+        run: |
+          set -uo pipefail
+          URL="https://x-access-token:${TOKEN_DATI}@github.com/${REPO_DATI}"
+          cp -f smkodi/*.json ghdata/ 2>/dev/null || true
+          python - << 'PYEOF_SMINDEX'
+          import os, re, json, datetime
+          from zoneinfo import ZoneInfo
+          # Le giornate passate escono dall'elenco: la memoria storica sta
+          # in sportsmole_archivio.csv, aggiornato dallo scraper. I file
+          # restano su gh-data finche' non li toglie la pulizia a 30 giorni.
+          oggi = datetime.datetime.now(ZoneInfo("Europe/Rome")).date().isoformat()
+          rx = re.compile(r"^sportsmole_(\d{4}-\d{2}-\d{2})\.json$")
+          # PULIZIA (10/11): il 10/11 due preview avevano portato a match
+          # guide di dicembre e marzo, finite in sportsmole_2026-12-09.json
+          # e sportsmole_2027-03-06.json. Lo scraper adesso le scarta; qui
+          # si tolgono i file e le righe d'archivio oltre i 7 giorni, che le
+          # preview non possono produrre.
+          import csv
+          limite = (datetime.datetime.now(ZoneInfo("Europe/Rome")).date()
+                    + datetime.timedelta(days=7)).isoformat()
+          for n in list(os.listdir("ghdata")):
+              m = rx.match(n)
+              if m and m.group(1) > limite:
+                  os.remove(os.path.join("ghdata", n))
+                  print("tolto", n, "(oltre i 7 giorni)")
+          pa = os.path.join("ghdata", "sportsmole_archivio.csv")
+          if os.path.exists(pa):
+              with open(pa, encoding="utf-8", newline="") as f:
+                  lettore = csv.DictReader(f)
+                  campi, righe = lettore.fieldnames, list(lettore)
+              buone = [r for r in righe if (r.get("Data") or "") <= limite]
+              if len(buone) < len(righe):
+                  with open(pa, "w", encoding="utf-8", newline="") as f:
+                      w = csv.DictWriter(f, fieldnames=campi)
+                      w.writeheader()
+                      w.writerows(buone)
+                  print("sportsmole_archivio.csv: tolte", len(righe) - len(buone), "righe oltre i 7 giorni")
+          tutte = sorted(m.group(1) for m in
+                         (rx.match(n) for n in os.listdir("ghdata")) if m)
+          date = [d for d in tutte if d >= oggi] or tutte[-1:]
+          if date:
+              agg = datetime.datetime.now(ZoneInfo("Europe/Rome")).strftime("%Y-%m-%d %H:%M")
+              with open("ghdata/sportsmole_index.json", "w", encoding="utf-8") as f:
+                  json.dump({"date": date, "updated": agg}, f,
+                            ensure_ascii=False, indent=1)
+              print("sportsmole_index.json: {} date {}".format(len(date), date))
+          else:
+              print("nessun sportsmole_*.json presente, indice non scritto")
+          PYEOF_SMINDEX
+          cd ghdata
+          git config user.name "caltiki-bot"
+          git config user.email "caltiki-bot@users.noreply.github.com"
+          git remote remove origin 2>/dev/null || true
+          git remote add origin "$URL"
+          git add -A
+          git diff --cached --quiet && echo "Nessuna modifica" || \
+            git commit -m "Update sportsmole $(date +%Y-%m-%d)"
+          git pull --rebase origin "${BRANCH_DATI}" 2>/dev/null || true
+          git push origin "HEAD:${BRANCH_DATI}"
+
+      - name: Invia su Telegram
+        if: always() && steps.clone.outcome == 'success'
+        env:
+          TG_TOKEN: ${{ secrets.TG_TOKEN }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+        run: |
+          python - << 'EOF'
+          import os, glob, requests, datetime
+          token   = os.environ["TG_TOKEN"]
+          chat_id = os.environ["TG_CHAT_ID"]
+          oggi    = datetime.date.today().strftime("%d/%m/%Y")
+          sm = sorted(glob.glob("output/Sportsmole_*.xlsx"))
+          for fpath in sm:
+              with open(fpath, "rb") as f:
+                  requests.post(
+                      "https://api.telegram.org/bot{}/sendDocument".format(token),
+                      data={"chat_id": chat_id,
+                            "caption": "Sports Mole {} - 1X2, gol, risultato "
+                                       "esatto e We say".format(oggi)},
+                      files={"document": (os.path.basename(fpath), f)})
+              print("Inviato:", os.path.basename(fpath))
+          if not sm:
+              requests.post("https://api.telegram.org/bot{}/sendMessage".format(token),
+                  data={"chat_id": chat_id,
+                        "text": "Sports Mole {}: nessun file. Il motivo e' nel "
+                                "log dello step 'Scarica Sports Mole' su "
+                                "GitHub Actions.".format(oggi)})
+          EOF
+
+      - name: Salva artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sportsmole-${{ github.run_id }}
+          path: |
+            output/Sportsmole_*.xlsx
+            output/sportsmole_*.json
+          retention-days: 7
+          if-no-files-found: ignore
