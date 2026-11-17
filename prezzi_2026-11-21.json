@@ -3428,8 +3428,7 @@
   "Sel": "2",
   "Prob": 74.8,
   "Equa": 1.34,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-21",
@@ -3470,7 +3469,8 @@
   "Sel": "1",
   "Prob": 74.7,
   "Equa": 1.34,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-21",
@@ -4166,8 +4166,7 @@
   "Sel": "1",
   "Prob": 70.4,
   "Equa": 1.42,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-21",
@@ -5731,7 +5730,8 @@
   "Sel": "2 + Over 1.5",
   "Prob": 64.7,
   "Equa": 1.55,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-21",
@@ -5833,8 +5833,7 @@
   "Sel": "1 + Over 1.5",
   "Prob": 64.4,
   "Equa": 1.55,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-21",
@@ -6620,7 +6619,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 62.0,
-  "Equa": 1.61
+  "Equa": 1.61,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-21",
@@ -25770,27 +25770,6 @@
  },
  {
   "Data": "2026-11-21",
-  "Ora": "15:00",
-  "Campionato": "Italy: Serie A",
-  "Partita": "Lazio - Lecce",
-  "Casa": "Lazio",
-  "Ospite": "Lecce",
-  "Linea_OU": 3.0,
-  "Gol_attesi": 3.16,
-  "Margine": 3.7,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 18.3,
-  "Equa": 5.46,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-11-21",
   "Ora": "17:00",
   "Campionato": "Turkey 1. Lig",
   "Partita": "Karagümrük - Boluspor",
@@ -25811,14 +25790,14 @@
  },
  {
   "Data": "2026-11-21",
-  "Ora": "18:00",
+  "Ora": "15:00",
   "Campionato": "Italy: Serie A",
-  "Partita": "Parma - AS Roma",
-  "Casa": "Parma",
-  "Ospite": "AS Roma",
+  "Partita": "Como - Cagliari",
+  "Casa": "Como",
+  "Ospite": "Cagliari",
   "Linea_OU": 3.0,
   "Gol_attesi": 3.16,
-  "Margine": 3.6,
+  "Margine": 3.7,
   "Movimento": null,
   "Principale": "si",
   "Schedina": "si",
@@ -25826,8 +25805,8 @@
   "Gruppo": "1X2",
   "Mercato": "1X2",
   "Sel": "X",
-  "Prob": 16.0,
-  "Equa": 6.25,
+  "Prob": 15.9,
+  "Equa": 6.29,
   "Rif_Book": "Pinnacle"
  },
  {
