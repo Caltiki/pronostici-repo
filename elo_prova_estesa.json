@@ -1,5 +1,5 @@
 {
- "calcolato": "2026-11-17 08:44 UTC",
+ "calcolato": "2026-11-17 09:05 UTC",
  "parametri_elo": {
   "K": 25,
   "campo": 50,
@@ -11,6 +11,8 @@
   "2026-06-30"
  ],
  "prova_dal": "2026-07-01",
+ "prova_al": null,
+ "stagione_prova": "2026-27",
  "partite_taratura": 127552,
  "partite_prova": 45018,
  "valori_fissati": {
@@ -685,6 +687,88 @@
      "t_brier": -1.16,
      "diff_logloss": -0.002126,
      "t_logloss": -1.22
+    }
+   }
+  },
+  {
+   "variante": "scelta",
+   "logit": [
+    -0.8518,
+    0.2881,
+    0.5833
+   ],
+   "campionati_con_soglie_proprie": 105,
+   "misure": {
+    "tutte": {
+     "partite": 45018,
+     "brier": 0.59937,
+     "rps": 0.20926,
+     "logloss": 1.00313,
+     "diff_brier": -0.002997,
+     "t_brier": -9.51,
+     "diff_logloss": -0.004469,
+     "t_logloss": -9.77
+    },
+    "campionati_con_statistiche": {
+     "partite": 5908,
+     "brier": 0.60439,
+     "rps": 0.20882,
+     "logloss": 1.01,
+     "diff_brier": -0.002721,
+     "t_brier": -3.43,
+     "diff_logloss": -0.004013,
+     "t_logloss": -3.48
+    },
+    "partite_con_xg": {
+     "partite": 4653,
+     "brier": 0.60408,
+     "rps": 0.20895,
+     "logloss": 1.00948,
+     "diff_brier": -0.002013,
+     "t_brier": -2.24,
+     "diff_logloss": -0.003103,
+     "t_logloss": -2.37
+    }
+   }
+  },
+  {
+   "variante": "scelta_senza_xg",
+   "logit": [
+    -0.8513,
+    0.2878,
+    0.5746
+   ],
+   "campionati_con_soglie_proprie": 105,
+   "misure": {
+    "tutte": {
+     "partite": 45018,
+     "brier": 0.59968,
+     "rps": 0.20941,
+     "logloss": 1.00356,
+     "diff_brier": -0.00269,
+     "t_brier": -8.67,
+     "diff_logloss": -0.004037,
+     "t_logloss": -8.96
+    },
+    "campionati_con_statistiche": {
+     "partite": 5908,
+     "brier": 0.60588,
+     "rps": 0.20954,
+     "logloss": 1.012,
+     "diff_brier": -0.001231,
+     "t_brier": -1.68,
+     "diff_logloss": -0.002007,
+     "t_logloss": -1.86
+    },
+    "partite_con_xg": {
+     "partite": 4653,
+     "brier": 0.60547,
+     "rps": 0.20964,
+     "logloss": 1.01134,
+     "diff_brier": -0.000624,
+     "t_brier": -0.76,
+     "diff_logloss": -0.00124,
+     "t_logloss": -1.02
     }
    }
   }
