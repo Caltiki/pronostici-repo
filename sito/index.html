@@ -3443,7 +3443,8 @@
     return Promise.all([
       leggi("schedina_" + data + ".json").catch(function () { return null; }),
       leggi("esiti_" + data + ".json").catch(function () { return null; }),
-      data <= oggi() ? leggiUrl(BASE + "calendario_" + data + ".json?t=" + Math.floor(Date.now() / 600000), "calendario_" + data).catch(function () { return null; }) : null
+      data <= oggi() ? leggiUrl(BASE + "calendario_" + data + ".json?t=" + Math.floor(Date.now() / 600000), "calendario_" + data).catch(function () { return null; }) : null,
+      caricaFinite(data)
     ]).then(function (a) {
       var s = a[0], e = a[1];
       // (172) IL RISULTATO DAL CALENDARIO, subito. esiti_<data>.json si rifa'
@@ -3457,6 +3458,7 @@
       (Array.isArray(a[2]) ? a[2] : []).forEach(function (x) {
         if (String(x.stato || "").toUpperCase() === "FT" && x.gc != null && x.go != null) cal[String(x.id)] = x;
       });
+      conFinite(cal, a[3]);
       if (Object.keys(cal).length) righe = righe.map(function (r) {
         var x = r && r.ID_API != null ? cal[String(r.ID_API)] : null;
         if (!x) return r;
@@ -3528,6 +3530,33 @@
   // i nomi di ogni fonte al numero ("Wellington Phoenix Reserves|Auckland
   // City" -> 1639051). Nomi esatti, nessuna somiglianza. Solo le finite ai
   // 90 minuti (FT).
+  // (178) I RISULTATI DAL PONTE LIVE, subito. Il calendario si rifa' una
+  // volta l'ora (e di notte no): una partita finita restava senza
+  // punteggio fino a un'ora, quelle della sera fino al mattino. Il ponte
+  // (caltiki-live, ogni 3 minuti) ora salva il risultato finale delle
+  // nostre partite appena escono dal live: /finite, ultime 36 ore, per
+  // numero di partita. Si legge al piu' una volta al minuto, solo per
+  // ieri e oggi. Solo le finite ai 90 minuti (FT), come il calendario.
+  var URL_FINITE = "https://caltiki-live.caltiki.workers.dev/finite", FINITE_P = null, FINITE_T = 0;
+  function caricaFinite(data) {
+    if (!URL_FINITE || !data || data > oggi() || data < giornoRoma(-1)) return Promise.resolve({});
+    if (FINITE_P && Date.now() - FINITE_T < 60000) return FINITE_P;
+    FINITE_T = Date.now();
+    FINITE_P = fetch(URL_FINITE, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) { return d && d.finite && typeof d.finite === "object" ? d.finite : {}; })
+      .catch(function () { return {}; });
+    return FINITE_P;
+  }
+  // aggiunge a cal (numero -> {gc, go}) le finite del ponte che mancano; torna quante
+  function conFinite(cal, fin) {
+    var n = 0;
+    Object.keys(fin || {}).forEach(function (id) {
+      var x = fin[id];
+      if (cal[id] || !x || String(x.stato || "").toUpperCase() !== "FT" || x.gc == null || x.go == null) return;
+      cal[id] = { id: id, stato: "FT", gc: x.gc, go: x.go }; n++;
+    });
+    return n;
+  }
   function conRisultati(sez, righe, data) {
     return conRisultatiScheda(sez, righe, data).then(function (r2) { return conRisultatiCal(r2, data); });
   }
@@ -3544,12 +3573,14 @@
     if (!righe.some(function (r) { return r && (r.Gol_Casa == null || r.Gol_Ospite == null); })) return Promise.resolve(righe);
     return Promise.all([
       leggiUrl(BASE + "calendario_" + data + ".json?t=" + Math.floor(Date.now() / 600000), "calendario_" + data).catch(function () { return null; }),
-      leggi("partite_api_" + data + ".json").catch(function () { return null; })
+      leggi("partite_api_" + data + ".json").catch(function () { return null; }),
+      caricaFinite(data)
     ]).then(function (a) {
       var cal = {}, quante = 0, mappa = a[1] && typeof a[1] === "object" ? a[1] : {};
       (Array.isArray(a[0]) ? a[0] : []).forEach(function (x) {
         if (String(x.stato || "").toUpperCase() === "FT" && x.gc != null && x.go != null) { cal[String(x.id)] = x; quante++; }
       });
+      quante += conFinite(cal, a[2]);
       if (!quante) return righe;
       return righe.map(function (r) {
         if (!r || (r.Gol_Casa != null && r.Gol_Ospite != null)) return r;
@@ -3559,7 +3590,7 @@
         if (!x) return r;
         var o = {};
         for (var k in r) o[k] = r[k];
-        o.Gol_Casa = x.gc; o.Gol_Ospite = x.go; o.Risultato_Da = "calendario";
+        o.Gol_Casa = x.gc; o.Gol_Ospite = x.go; o.Risultato_Da = x.id && !x.lega ? "live" : "calendario";
         return o;
       });
     });
