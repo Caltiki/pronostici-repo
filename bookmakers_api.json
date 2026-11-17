@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-16 07:07",
+ "aggiornato": "2026-11-17 07:07",
  "elenco": [
   {
    "id": 1,
@@ -135,19 +135,19 @@
   }
  ],
  "partita_prova": {
-  "id": 1636985,
-  "partita": "Marko - Zakynthos",
-  "lega": "Greece Super League 2",
+  "id": 1640016,
+  "partita": "St. Kitts and Nevis - Bonaire",
+  "lega": "World CONCACAF Nations League",
   "bookmaker": [
    {
     "id": 11,
     "nome": "1xBet",
-    "mercati": 38
+    "mercati": 31
    },
    {
     "id": 8,
     "nome": "Bet365",
-    "mercati": 17
+    "mercati": 56
    },
    {
     "id": 32,
@@ -157,7 +157,12 @@
    {
     "id": 3,
     "nome": "Betfair",
-    "mercati": 9
+    "mercati": 12
+   },
+   {
+    "id": 36,
+    "nome": "BetVictor",
+    "mercati": 12
    },
    {
     "id": 9,
@@ -167,17 +172,17 @@
    {
     "id": 2,
     "nome": "Marathonbet",
-    "mercati": 40
+    "mercati": 41
    },
    {
     "id": 4,
     "nome": "Pinnacle",
-    "mercati": 8
+    "mercati": 9
    },
    {
     "id": 7,
     "nome": "William Hill",
-    "mercati": 9
+    "mercati": 30
    }
   ]
  }
