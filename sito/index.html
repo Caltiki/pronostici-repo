@@ -73,6 +73,12 @@
     #contenuto .riga summary .corpo:has(> .tripla) > .alto { grid-column: 1 / -1; }
     #contenuto .riga summary .corpo:has(> .tripla) > .tripla { grid-column: 2; margin-top: 3px; margin-bottom: 3px; }
   }
+
+  /* (174) IL RISULTATO PIU' EVIDENTE (17/11): "Risultato: 1-1", piu' grande
+     e in grassetto, nella riga in alto di ogni scheda. Il punteggio resta
+     verde se il pronostico e' uscito, rosso se no, nero se non c'e'. */
+  #contenuto .riga .alto span.ris { font-size: 1.08rem; font-weight: 800; letter-spacing: .01em; text-transform: none; white-space: nowrap; }
+  #contenuto .riga .alto span.ris::before { content: "Risultato: "; font-size: .78em; font-weight: 700; color: var(--testo); letter-spacing: 0; }
 </style>
 <style>
   :root {
