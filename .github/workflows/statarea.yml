@@ -1,5 +1,19 @@
 name: Statarea Scraper
 
+# =========================================================
+# REPOSITORY PUBBLICO (17/11): questo workflow gira qui perche' sui
+# repository pubblici i minuti di GitHub Actions sono gratuiti.
+# Gli script NON sono qui: ogni job li scarica dal repository privato
+# con due secret di questo repository:
+#   SCRIPT_REPO   nome del repository degli script
+#   SCRIPT_TOKEN  token fine-grained di SOLA LETTURA (Contents: Read-only)
+# I dati si pubblicano su gh-data con il token interno di GitHub
+# (permesso contents: write), non serve un token in piu'.
+# Niente artifact: qui chiunque potrebbe scaricarli.
+# Telegram: se TG_TOKEN o TG_CHAT_ID mancano, gli invii si saltano.
+# I log di questo repository sono pubblici: i secret compaiono come ***.
+# =========================================================
+
 on:
   schedule:
     # ATTENZIONE - orari volutamente ANTICIPATI, non e' un errore.
@@ -133,6 +147,7 @@ concurrency:
 # I pacchetti dell'addon stanno su main dello stesso repository pubblico;
 # i dati su un branch a parte, gh-data, per non mescolare le due cose.
 env:
+  TG_ATTIVO: ${{ secrets.TG_TOKEN != '' && secrets.TG_CHAT_ID != '' }}
   REPO_DATI: Caltiki/pronostici-repo
   BRANCH_DATI: gh-data
 
@@ -169,12 +184,12 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
-      contents: read
+      contents: write
     if: (github.event_name == 'workflow_dispatch' && !github.event.inputs.cron) || (github.event.schedule || github.event.inputs.cron) == '37 0 * * *'
     steps:
       - name: Pubblica gli stemmi sul ramo stemmi
         env:
-          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI || github.token }}
         run: |
           set -euo pipefail
           if [ -z "${TOKEN_DATI:-}" ]; then
@@ -355,7 +370,7 @@ jobs:
     # e se il job sforasse verrebbe ucciso PRIMA della pubblicazione.
     timeout-minutes: 55
     permissions:
-      contents: read
+      contents: write
     needs: controllo
     if: >-
       (github.event_name == 'workflow_dispatch' && !github.event.inputs.cron) ||
@@ -364,6 +379,10 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          repository: ${{ secrets.SCRIPT_REPO }}
+          token: ${{ secrets.SCRIPT_TOKEN }}
+          persist-credentials: false
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -380,7 +399,7 @@ jobs:
 
       - name: Scarica dati esistenti dal repository pubblico
         env:
-          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI || github.token }}
         run: |
           set -uo pipefail
           if [ -z "${TOKEN_DATI:-}" ]; then
@@ -525,7 +544,7 @@ jobs:
 
       - name: Pubblica JSON sul repository pubblico
         env:
-          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI || github.token }}
           APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
         run: |
           cp -f data/*.json ghdata/ 2>/dev/null || true
@@ -668,7 +687,7 @@ jobs:
       # (nessuna partita) lo step viene saltato e non arriva NESSUNA notifica:
       # il ramo "nessun file" qui sotto era codice irraggiungibile.
       - name: Invia su Telegram
-        if: always()
+        if: (always()) && env.TG_ATTIVO == 'true'
         env:
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
@@ -741,14 +760,6 @@ jobs:
           # (12/11) AsianOdds tolto: niente file e niente avviso.
           EOF
 
-      - name: Salva artifact
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: statarea-${{ github.run_id }}
-          path: output/*.xlsx
-          retention-days: 7
-          if-no-files-found: ignore
 
   # FOOTBALLPREDICTIONS (FPNET) TOLTO (11/11): le sue Sure Bets erano il
   # favorito del book in 147 casi su 147 e i tip vincevano quanto il mercato
@@ -782,7 +793,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     permissions:
-      contents: read
+      contents: write
     needs: [controllo, statarea]
     if: >-
       !cancelled() && (
@@ -793,6 +804,10 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          repository: ${{ secrets.SCRIPT_REPO }}
+          token: ${{ secrets.SCRIPT_TOKEN }}
+          persist-credentials: false
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -821,7 +836,7 @@ jobs:
         # di un file vuoto che nell'addon sembra un guasto.
         if: steps.scarica.outcome == 'success'
         env:
-          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI || github.token }}
         run: |
           set -uo pipefail
           if [ -z "${TOKEN_DATI:-}" ]; then
@@ -882,7 +897,7 @@ jobs:
           git push origin "HEAD:${BRANCH_DATI}"
 
       - name: Invia su Telegram
-        if: always()
+        if: (always()) && env.TG_ATTIVO == 'true'
         env:
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
@@ -914,14 +929,6 @@ jobs:
                                 "Actions.".format(oggi)})
           EOF
 
-      - name: Salva artifact
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: xgaura-${{ github.run_id }}
-          path: Output_xlsx/xgaura_*.xlsx
-          retention-days: 7
-          if-no-files-found: ignore
 
   # SPORTYTRADER TOLTO (11/11): sulla pagella i suoi tip vincevano quanto
   # il mercato si aspettava (49,3% contro 48,6%, z 1,0), e il job costava
@@ -956,7 +963,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     permissions:
-      contents: read
+      contents: write
     needs: [controllo, statarea, xgaura]
     if: >-
       !cancelled() && (
@@ -967,6 +974,10 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          repository: ${{ secrets.SCRIPT_REPO }}
+          token: ${{ secrets.SCRIPT_TOKEN }}
+          persist-credentials: false
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -990,7 +1001,7 @@ jobs:
       - name: Pubblica i JSON SoccerSite sul repository pubblico
         if: steps.scarica.outcome == 'success'
         env:
-          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI || github.token }}
         run: |
           set -uo pipefail
           if [ -z "${TOKEN_DATI:-}" ]; then
@@ -1051,7 +1062,7 @@ jobs:
           git push origin "HEAD:${BRANCH_DATI}"
 
       - name: Invia su Telegram
-        if: always()
+        if: (always()) && env.TG_ATTIVO == 'true'
         env:
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
@@ -1083,14 +1094,6 @@ jobs:
                                 "GitHub Actions.".format(oggi)})
           EOF
 
-      - name: Salva artifact
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: soccersite-${{ github.run_id }}
-          path: Output_xlsx/soccersite_*.xlsx
-          retention-days: 7
-          if-no-files-found: ignore
 
   # =========================================================
   # RATINGBET
@@ -1128,7 +1131,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     permissions:
-      contents: read
+      contents: write
     needs: [controllo, statarea, xgaura, soccersite]
     if: >-
       !cancelled() && (
@@ -1139,6 +1142,10 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          repository: ${{ secrets.SCRIPT_REPO }}
+          token: ${{ secrets.SCRIPT_TOKEN }}
+          persist-credentials: false
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -1160,7 +1167,7 @@ jobs:
       - name: Pubblica i JSON Ratingbet sul repository pubblico
         if: steps.scarica.outcome == 'success'
         env:
-          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI || github.token }}
         run: |
           set -uo pipefail
           if [ -z "${TOKEN_DATI:-}" ]; then
@@ -1218,7 +1225,7 @@ jobs:
           git push origin "HEAD:${BRANCH_DATI}"
 
       - name: Invia su Telegram
-        if: always()
+        if: (always()) && env.TG_ATTIVO == 'true'
         env:
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
@@ -1255,18 +1262,6 @@ jobs:
                         "text": "Ratingbet {}: nessun file.{}".format(oggi, motivo)})
           EOF
 
-      - name: Salva artifact
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: ratingbet-${{ github.run_id }}
-          path: |
-            Output_xlsx/Ratingbet_*.xlsx
-            Output_xlsx/diagnostica_*.html
-            Output_xlsx/_errore_ratingbet.txt
-            rbkodi/*.json
-          retention-days: 7
-          if-no-files-found: ignore
 
   # =========================================================
   # BETIMATE
@@ -1309,7 +1304,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     permissions:
-      contents: read
+      contents: write
     # Settimo anello della catena dei push (vedi la nota FPNET TOLTO, sopra xgaura):
     # statarea -> xgaura -> soccersite ->
     # ratingbet -> betimate -> footymetrics -> asianodds -> webpronostici.
@@ -1324,6 +1319,10 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          repository: ${{ secrets.SCRIPT_REPO }}
+          token: ${{ secrets.SCRIPT_TOKEN }}
+          persist-credentials: false
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -1340,7 +1339,7 @@ jobs:
       - name: Prendi l'archivio gia' pubblicato
         id: clone
         env:
-          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI || github.token }}
         run: |
           set -uo pipefail
           if [ -z "${TOKEN_DATI:-}" ]; then
@@ -1371,7 +1370,7 @@ jobs:
       - name: Pubblica Betimate sul repository pubblico
         if: steps.scarica.outcome == 'success'
         env:
-          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI || github.token }}
         run: |
           set -uo pipefail
           URL="https://x-access-token:${TOKEN_DATI}@github.com/${REPO_DATI}"
@@ -1420,7 +1419,7 @@ jobs:
       - name: Invia su Telegram
         # Nei giri serali "solo risultati" niente Telegram: l'Excel e' lo
         # stesso di stamattina, cambia solo l'archivio dei risultati.
-        if: always() && needs.controllo.outputs.solo_risultati != 'si'
+        if: (always() && needs.controllo.outputs.solo_risultati != 'si') && env.TG_ATTIVO == 'true'
         env:
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
@@ -1464,16 +1463,6 @@ jobs:
                             oggi, motivo())})
           EOF
 
-      - name: Salva artifact
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: betimate-${{ github.run_id }}
-          path: |
-            output/betimate_*.xlsx
-            btkodi/*.json
-          retention-days: 7
-          if-no-files-found: ignore
 
   # =========================================================
   # FOOTYMETRICS
@@ -1503,7 +1492,7 @@ jobs:
     # di notte). Se il job sforasse verrebbe ucciso PRIMA della pubblicazione.
     timeout-minutes: 35
     permissions:
-      contents: read
+      contents: write
     needs: [controllo, statarea, xgaura, soccersite, ratingbet, betimate]
     if: >-
       !cancelled() && (
@@ -1515,6 +1504,10 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          repository: ${{ secrets.SCRIPT_REPO }}
+          token: ${{ secrets.SCRIPT_TOKEN }}
+          persist-credentials: false
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -1530,7 +1523,7 @@ jobs:
       - name: Prendi l'archivio gia' pubblicato
         id: clone
         env:
-          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI || github.token }}
         run: |
           set -uo pipefail
           if [ -z "${TOKEN_DATI:-}" ]; then
@@ -1885,7 +1878,7 @@ jobs:
         if: always() && steps.clone.outcome == 'success'
         continue-on-error: true
         env:
-          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI || github.token }}
         run: |
           set -uo pipefail
           if [ ! -f apifootball.py ] || [ ! -f prezzi_equi.py ]; then
@@ -2165,7 +2158,7 @@ jobs:
       - name: Pubblica FootyMetrics sul repository pubblico
         if: steps.scarica.outcome == 'success' || steps.archivio.outcome == 'success' || steps.archfonti.outcome == 'success' || steps.copie.outcome == 'success' || steps.pinnacle.outcome == 'success' || steps.apif.outcome == 'success' || steps.fotmob.outcome == 'success' || steps.stemmiapi.outcome == 'success' || steps.classifica.outcome == 'success' || steps.risultati.outcome == 'success' || steps.consmedio.outcome == 'success' || steps.prezzipoisson.outcome == 'success' || steps.scheda.outcome == 'success' || steps.esiti.outcome == 'success' || steps.esitism.outcome == 'success' || steps.esitipo.outcome == 'success' || steps.stemmibs.outcome == 'success'
         env:
-          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI || github.token }}
         run: |
           set -uo pipefail
           URL="https://x-access-token:${TOKEN_DATI}@github.com/${REPO_DATI}"
@@ -2214,7 +2207,7 @@ jobs:
       - name: Invia su Telegram
         # Nei giri serali "solo risultati" niente Telegram: l'Excel e' lo
         # stesso di stamattina, cambia solo l'archivio dei risultati.
-        if: always() && needs.controllo.outputs.solo_risultati != 'si'
+        if: (always() && needs.controllo.outputs.solo_risultati != 'si') && env.TG_ATTIVO == 'true'
         env:
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
@@ -2314,7 +2307,7 @@ jobs:
       #
       # PERCHE' ANCHE SU AVVIO A MANO: se lo lanci tu, lo vuoi vedere.
       - name: Rapporto settimanale sulle fonti
-        if: always() && steps.clone.outcome == 'success' && needs.controllo.outputs.solo_risultati != 'si'
+        if: (always() && steps.clone.outcome == 'success' && needs.controllo.outputs.solo_risultati != 'si') && env.TG_ATTIVO == 'true'
         continue-on-error: true
         env:
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
@@ -2381,17 +2374,6 @@ jobs:
                   print(r.text[:300])
           PYEOF_RAPPORTO
 
-      - name: Salva artifact
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: footymetrics-${{ github.run_id }}
-          path: |
-            output/FootyMetrics_*.xlsx
-            output/_errore_footymetrics.txt
-            fmkodi/*.json
-          retention-days: 7
-          if-no-files-found: ignore
 
   # =========================================================
   # OGNI SEI ORE: solo AsianOdds
@@ -2453,7 +2435,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     permissions:
-      contents: read
+      contents: write
     # Terzo anello della catena dei push (vedi la nota FPNET TOLTO, sopra xgaura):
     # statarea -> asianodds -> webpronostici. Serve anche nel caso
     # in cui statarea FALLISCE, perche' li' fpnet e asianodds girerebbero
@@ -2473,6 +2455,10 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          repository: ${{ secrets.SCRIPT_REPO }}
+          token: ${{ secrets.SCRIPT_TOKEN }}
+          persist-credentials: false
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -2484,7 +2470,7 @@ jobs:
 
       - name: Rifai prezzi, Poisson e schede e pubblica
         env:
-          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI || github.token }}
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
           EVENTO: ${{ github.event_name }}
           CRON_DISPATCH: ${{ github.event.inputs.cron }}
@@ -2624,7 +2610,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
     permissions:
-      contents: read
+      contents: write
     # Ultimo anello della catena dei push (vedi la nota FPNET TOLTO, sopra xgaura).
     needs: [controllo, statarea, xgaura, asianodds]
     # always() e' obbligatorio: 'needs: statarea' da solo farebbe saltare
@@ -2650,6 +2636,10 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          repository: ${{ secrets.SCRIPT_REPO }}
+          token: ${{ secrets.SCRIPT_TOKEN }}
+          persist-credentials: false
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -2666,7 +2656,7 @@ jobs:
 
       - name: Scarica dati esistenti dal repository pubblico
         env:
-          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI || github.token }}
         run: |
           set -uo pipefail
           if [ -z "${TOKEN_DATI:-}" ]; then
@@ -2779,7 +2769,7 @@ jobs:
 
       - name: Pubblica JSON sul repository pubblico
         env:
-          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI || github.token }}
           APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
         run: |
           cp -f data/*.json ghdata/ 2>/dev/null || true
@@ -2883,7 +2873,7 @@ jobs:
       # (nessuna partita) lo step viene saltato e non arriva NESSUNA notifica:
       # il ramo "nessun file" qui sotto era codice irraggiungibile.
       - name: Invia su Telegram
-        if: always()
+        if: (always()) && env.TG_ATTIVO == 'true'
         env:
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
@@ -2916,14 +2906,6 @@ jobs:
               send(f, "Consensus aggiornato {}".format(today))
           EOF
 
-      - name: Salva artifact
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: webpronostici-${{ github.run_id }}
-          path: output/*.xlsx
-          retention-days: 7
-          if-no-files-found: ignore
 
 
   # FOOTYSTATS WDW TOLTO DAL GIRO (11/11): su gh-data non ha mai
@@ -2964,7 +2946,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     permissions:
-      contents: read
+      contents: write
     needs: [controllo, statarea, xgaura, soccersite, ratingbet, betimate, footymetrics, asianodds, webpronostici]
     if: >-
       !cancelled() && (
@@ -2975,6 +2957,10 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          repository: ${{ secrets.SCRIPT_REPO }}
+          token: ${{ secrets.SCRIPT_TOKEN }}
+          persist-credentials: false
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -2989,7 +2975,7 @@ jobs:
       - name: Scarica i dati esistenti dal repository pubblico
         id: clone
         env:
-          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI || github.token }}
         run: |
           set -uo pipefail
           if [ -z "${TOKEN_DATI:-}" ]; then
@@ -3024,7 +3010,7 @@ jobs:
       - name: Pubblica Sports Mole sul repository pubblico
         if: steps.scarica.outcome == 'success'
         env:
-          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI || github.token }}
         run: |
           set -uo pipefail
           URL="https://x-access-token:${TOKEN_DATI}@github.com/${REPO_DATI}"
@@ -3086,7 +3072,7 @@ jobs:
           git push origin "HEAD:${BRANCH_DATI}"
 
       - name: Invia su Telegram
-        if: always() && steps.clone.outcome == 'success'
+        if: (always() && steps.clone.outcome == 'success') && env.TG_ATTIVO == 'true'
         env:
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
@@ -3114,13 +3100,3 @@ jobs:
                                 "GitHub Actions.".format(oggi)})
           EOF
 
-      - name: Salva artifact
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: sportsmole-${{ github.run_id }}
-          path: |
-            output/Sportsmole_*.xlsx
-            output/sportsmole_*.json
-          retention-days: 7
-          if-no-files-found: ignore

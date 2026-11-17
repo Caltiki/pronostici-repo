@@ -1,6 +1,20 @@
 name: Pinnacle
 
 # =========================================================
+# REPOSITORY PUBBLICO (17/11): questo workflow gira qui perche' sui
+# repository pubblici i minuti di GitHub Actions sono gratuiti.
+# Gli script NON sono qui: ogni job li scarica dal repository privato
+# con due secret di questo repository:
+#   SCRIPT_REPO   nome del repository degli script
+#   SCRIPT_TOKEN  token fine-grained di SOLA LETTURA (Contents: Read-only)
+# I dati si pubblicano su gh-data con il token interno di GitHub
+# (permesso contents: write), non serve un token in piu'.
+# Niente artifact: qui chiunque potrebbe scaricarli.
+# Telegram: se TG_TOKEN o TG_CHAT_ID mancano, gli invii si saltano.
+# I log di questo repository sono pubblici: i secret compaiono come ***.
+# =========================================================
+
+# =========================================================
 # PINNACLE (piano PRO di API-Football) - workflow a se'
 # =========================================================
 # apifootball.py pinnaclepro: le quote Pinnacle di tutte le partite del
@@ -45,6 +59,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
+  TG_ATTIVO: ${{ secrets.TG_TOKEN != '' && secrets.TG_CHAT_ID != '' }}
   REPO_DATI: Caltiki/pronostici-repo
   BRANCH_DATI: gh-data
 
@@ -53,10 +68,14 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     permissions:
-      contents: read
+      contents: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          repository: ${{ secrets.SCRIPT_REPO }}
+          token: ${{ secrets.SCRIPT_TOKEN }}
+          persist-credentials: false
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -66,7 +85,7 @@ jobs:
       - name: Scarica i dati esistenti dal repository pubblico
         id: clone
         env:
-          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI || github.token }}
         run: |
           set -uo pipefail
           if [ -z "${TOKEN_DATI:-}" ]; then
@@ -86,8 +105,8 @@ jobs:
         if: steps.clone.outcome == 'success'
         env:
           APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
-          # (14/11) NIENTE AVVISO SU TELEGRAM dei movimenti Pinnacle: Max non
-          # lo usa. Senza TG_TOKEN/TG_CHAT_ID lo script scrive l'avviso solo
+          # (14/11) NIENTE AVVISO SU TELEGRAM dei movimenti Pinnacle: non
+          # serve. Senza TG_TOKEN/TG_CHAT_ID lo script scrive l'avviso solo
           # nel log; la lettura del mattino resta (serve alle frecce del sito).
         run: |
           if [ ! -f apifootball.py ]; then
@@ -121,7 +140,7 @@ jobs:
       - name: Pubblica i file Pinnacle sul repository pubblico
         if: steps.pinnacle.outcome == 'success'
         env:
-          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI }}
+          TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI || github.token }}
         run: |
           set -uo pipefail
           URL="https://x-access-token:${TOKEN_DATI}@github.com/${REPO_DATI}"
