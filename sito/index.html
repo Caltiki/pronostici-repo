@@ -112,6 +112,12 @@
     .hero-nome { font-size: 1.5rem; }
     .hero-ris { font-size: 3.2rem; }
   }
+
+  /* (174) le quote dei tuoi book: verde quando pagano piu' dell'equa */
+  .bex-riga { font-size: .8rem; color: var(--tenue); margin-top: 2px; }
+  .bex-riga .bex b { font-weight: 700; color: var(--testo); }
+  .bex-riga .bex.valore b { color: var(--buono); }
+  .bex-riga .bex.valore::after { content: " \25B2"; color: var(--buono); font-size: .75em; }
 </style>
 <style>
   :root {
@@ -2564,6 +2570,8 @@
           .then(function (a) { return righeDellaGiornata(a[0], passate[d]); });
       if (conf.arricchisci) carica = carica.then(function (righe) { return conf.arricchisci(righe, d); });
       carica = carica.then(function (righe) { return conRisultati(sez, righe, d); });
+      // (174) le quote Sisal/Lottomatica da BetExplorer, se ci sono
+      if (sez === "prezzi") carica = carica.then(function (righe) { return conBex(righe, d); });
       return carica.then(function (righe) {
         if (stato.sez !== sez || stato.data[sez] !== d) return;
         disegnaRighe(sez, righe, d);
@@ -2973,7 +2981,7 @@
           '<div class="partita">' + partitaHtml(r0.Casa, r0.Ospite, r0.Partita, campiRiga(r0)) + "</div>" + sqHtml(r0) +
           '<div class="sel">' + (pron ? "<b>Pronostico:</b> " : "<b>Proposta:</b> ") + '<span class="q-n' + (eVerde(num(top.Prob)) ? " verde" : "") + '">' + esc(etichettaSel(top)) +
           " · " + f0(num(top.Prob)) + "%</span>" + (pron && equaDi(top) ? ' <span class="eq-pron">quota equa ' + f2(equaDi(top)) + "</span>" : "") +
-          (scelte_ ? " · " + scelte_ + " nella multipla" : "") + "</div>" +
+          (scelte_ ? " · " + scelte_ + " nella multipla" : "") + "</div>" + bexHtml(top) +
           '</div><div class="numero"><b>' + g.length + "</b><span>" + (g.length === 1 ? "probabilità" : "probabilità") + "</span></div></summary>" +
           '<div class="dentro-partita">' +
           '<div class="info-api" data-casa="' + esc(r0.Casa || "") + '" data-ospite="' + esc(r0.Ospite || "") + '" data-ora="' + esc(r0.Ora || "") + '" data-id="' + esc(r0.ID_API || "") + '"></div>' + dentro +
@@ -3895,6 +3903,77 @@
     if (!n) return "";
     return '<span class="fonte-q' + (f === "Pinnacle" ? " pin" : "") + '" title="Quota e margine di ' + esc(n) + '">' + esc(n) + "</span>";
   }
+  // (174) LE QUOTE DEI TUOI BOOK (17/11). betexplorer_<data>.json, scritto
+  // dal PC (betexplorer_quote.py), ha le quote 1X2 di Sisal e Lottomatica,
+  // con l'apertura. Si agganciano alle nostre partite con lo stesso orario
+  // (ora di Roma) e i nomi piu' simili; sotto la somiglianza minima la
+  // partita resta senza, meglio niente che la partita sbagliata. Sulle
+  // righe 1X2 si mostra la quota del book accanto all'equa: verde quando
+  // il book paga PIU' dell'equa (cioe' c'e' valore rispetto a Pinnacle).
+  var BEX = {}, BEX_BOOK = ["Sisal", "Lottomatica"], BEX_SOGLIA = 0.6;
+  function caricaBex(d) {
+    if (!BEX[d]) BEX[d] = leggi("betexplorer_" + d + ".json").then(function (j) {
+      return j && Array.isArray(j.righe) ? j.righe : [];
+    }).catch(function () { return []; });
+    return BEX[d];
+  }
+  var PAROLE_VUOTE = { fc: 1, cf: 1, sc: 1, ac: 1, cd: 1, club: 1, de: 1, the: 1, afc: 1, fk: 1, sk: 1, "if": 1, bk: 1, ud: 1, sd: 1, cs: 1, us: 1 };
+  function nomeBex(t) {
+    return String(t || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+      .replace(/[^a-z0-9 ]+/g, " ").split(/\s+/).filter(function (w) { return w && !PAROLE_VUOTE[w]; }).join(" ");
+  }
+  // somiglianza fra due nomi: coppie di lettere in comune (Dice), 0..1
+  function simile(a, b) {
+    a = nomeBex(a); b = nomeBex(b);
+    if (!a || !b) return 0;
+    if (a === b) return 1;
+    var coppie = function (x) { var o = {}; for (var i = 0; i < x.length - 1; i++) { var k = x.substr(i, 2); o[k] = (o[k] || 0) + 1; } return o; };
+    var A = coppie(a), Bc = coppie(b), com = 0, na = 0, nb = 0, k;
+    for (k in A) { na += A[k]; if (Bc[k]) com += Math.min(A[k], Bc[k]); }
+    for (k in Bc) nb += Bc[k];
+    return na + nb ? 2 * com / (na + nb) : 0;
+  }
+  function conBex(righe, d) {
+    return caricaBex(d).then(function (bx) {
+      if (!bx.length || !Array.isArray(righe)) return righe;
+      var perOra = {}, perId = {};
+      bx.forEach(function (x) {
+        (perOra[x.ora] = perOra[x.ora] || []).push(x);
+        (perId[x.match_id] = perId[x.match_id] || {})[x.bookmaker] = x;
+      });
+      var memo = {};
+      righe.forEach(function (r) {
+        var k = r.Casa + "|" + r.Ospite + "|" + r.Ora;
+        if (!(k in memo)) {
+          var best = null;
+          (perOra[r.Ora] || []).forEach(function (x) {
+            var v = (simile(r.Casa, x.casa) + simile(r.Ospite, x.ospite)) / 2;
+            if (!best || v > best.v) best = { v: v, id: x.match_id };
+          });
+          memo[k] = best && best.v >= BEX_SOGLIA ? best.id : null;
+        }
+        if (memo[k]) r._bex = perId[memo[k]];
+      });
+      return righe;
+    });
+  }
+  function bexHtml(r) {
+    if (!r || !r._bex || String(r.Mercato || "") !== "1X2") return "";
+    var sel = String(r.Sel || "");
+    if (!/^[1X2]$/.test(sel)) return "";
+    var eq = num(r.Equa), pezzi = [];
+    BEX_BOOK.forEach(function (b) {
+      var x = r._bex[b];
+      if (!x) return;
+      var q = num(x["q" + sel]), ap = num(x["ap" + sel]);
+      if (q == null) return;
+      var val = eq != null && q > eq;
+      var tit = b + " " + f2(q) + (ap != null ? " (apertura " + f2(ap) + ")" : "") +
+        (eq != null ? (val ? ": paga piu' della quota equa " : ": sotto la quota equa ") + f2(eq) : "");
+      pezzi.push('<span class="bex' + (val ? " valore" : "") + '" title="' + esc(tit) + '">' + esc(b) + " <b>" + f2(q) + "</b></span>");
+    });
+    return pezzi.length ? '<div class="bex-riga">' + pezzi.join(" \u00b7 ") + "</div>" : "";
+  }
   function rigaPrezzo(r, i) {
     var prob = num(r.Prob), equa = num(r.Equa), marg = num(r.Margine);
     var linea = r.Linea_OU, gol = num(r.Gol_attesi), mov = num(r.Movimento);
@@ -3990,7 +4069,7 @@
       (r._fresca ? '<span class="pill fresca" title="Quota Pinnacle aggiornata">\u21bb ' + esc(r._fresca) + "</span>" : "") +
       "</div>" +
       '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, r.Partita, campiRiga(r)) + "</div>" +
-      '<div class="sel"><b class="esito-sel">' + esc(etichettaSel(r)) + "</b></div>" +
+      '<div class="sel"><b class="esito-sel">' + esc(etichettaSel(r)) + "</b></div>" + bexHtml(r) +
       (prob != null ? '<div class="pbar"><i style="width:' + Math.min(100, prob) + '%"></i></div>' : "") +
       "</div>" +
       '<div class="numero"><b>' + f2(equa) + "</b><span>" + pctNumero(prob, margineStretto(r)) + "</span></div>" +
