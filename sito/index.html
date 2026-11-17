@@ -8072,7 +8072,7 @@
           if (ids && a2[5]) p.Classe = { c: posizioneApi(a2[5], ids[0], ids[2]), o: posizioneApi(a2[5], ids[1], ids[2]) };
           if (ids && ELO.dati && ELO.info) {
             var ec = ELO.dati.per[String(ids[0])], eo = ELO.dati.per[String(ids[1])];
-            if (ec && eo) p.Elo = { c: ec, o: eo, p: eloProb(ec.elo, eo.elo, ELO.info.logit) };
+            if (ec && eo) p.Elo = { c: ec, o: eo, p: eloProb(ec.elo, eo.elo, ELO.info.logit, ids[2]) };
           }
           var cal = a2[0];
           var pm = a2[2] && a2[2].partite ? a2[2].partite[String(p.PinId)] : null;
@@ -9620,7 +9620,7 @@
     }
     if (ELO.dati && ELO.info && ELO.info.logit) {
       var c = ELO.dati.per[String(x.ic)], o = ELO.dati.per[String(x.io)];
-      if (c && o) { pe = eloProb(c.elo, o.elo, ELO.info.logit); d = c.elo - o.elo; }
+      if (c && o) { pe = eloProb(c.elo, o.elo, ELO.info.logit, x.li); d = c.elo - o.elo; }
     }
     var rif = pp || pe, max = rif ? Math.max(rif[0], rif[1], rif[2]) : null;
     return { pin: pp, elo: pe, diff: d, max: max };
@@ -9785,9 +9785,17 @@
     return '<span class="' + cl(x, y) + '">' + f0(x) + "</span>" + sep + '<span class="' + cl(y, x) + '">' + f0(y) + "</span>";
   }
   function sig(z) { return 1 / (1 + Math.exp(-z)); }
-  function eloProb(ec, eo, lg) {
+  // (174) LE CORREZIONI DELL'ELO (17/11): con il numero del campionato (li
+  // del calendario) si aggiungono lo scarto del vantaggio campo di quel
+  // campionato e le sue soglie 1X2, se elo_info.json li ha (campo_lega,
+  // logit_lega). In coppa o senza numero: soglie comuni, nessuno scarto.
+  function eloProb(ec, eo, lg, li) {
     if (ec == null || eo == null || !lg) return null;
-    var x = (ec - eo) / 100, p2 = sig(lg.soglia1 - lg.pendenza * x), p2x = sig(lg.soglia2 - lg.pendenza * x);
+    var inf = ELO.info || {}, k = li == null ? null : String(li);
+    var sc = k && inf.campo_lega ? num(inf.campo_lega[k]) : null;
+    var sl = k && inf.logit_lega ? inf.logit_lega[k] : null;
+    var s1 = sl ? sl[0] : lg.soglia1, s2 = sl ? sl[1] : lg.soglia2;
+    var x = (ec - eo + (sc || 0)) / 100, p2 = sig(s1 - lg.pendenza * x), p2x = sig(s2 - lg.pendenza * x);
     return [100 * (1 - p2x), 100 * (p2x - p2), 100 * p2];
   }
   // "2026-11-12 16:10 UTC" (il calcolo intero) -> "2026-11-12 17:10", ora di Roma
@@ -9893,7 +9901,7 @@
     var lg = ELO.info.logit, q = ELO.cerca.trim().toLowerCase();
     var righe = lista.map(function (x) {
       var c = ELO.dati.per[String(x.ic)], o = ELO.dati.per[String(x.io)];
-      var p = c && o ? eloProb(c.elo, o.elo, lg) : null;
+      var p = c && o ? eloProb(c.elo, o.elo, lg, x.li) : null;
       var pin = PIN_G.perId[String(x.id)] || null;
       var pp = pin ? [num(pin["P1 Shin"]), num(pin["PX Shin"]), num(pin["P2 Shin"])] : null;
       if (pp && pp.some(function (v) { return v == null; })) pp = null;
@@ -10058,6 +10066,12 @@
       "</b> punti, margine di gol " + (e.margine ? "<b>conta</b> (una vittoria larga sposta di più)" : "<b>non conta</b>") +
       ", le prime " + esc(e.partite_provvisorie) + " partite di una squadra contano una volta e mezza.</p>" +
       "<p>Le squadre nuove partono dalla media del loro campionato, non da 1500: una squadra di quinta serie e una di Serie A non partono pari.</p>" +
+      // (174) le correzioni, quando il calcolo le ha
+      (I.correzioni ? "<p>Quattro correzioni, provate su due stagioni prima di usarle: il vantaggio del campo è quello del <b>campionato</b> " +
+        "(in alcuni campionati giocare in casa conta molto più che in altri); le probabilità 1X2, pareggio compreso, sono tarate " +
+        "<b>campionato per campionato</b>; a <b>inizio stagione</b> ogni rating torna un po’ (" + Math.round(100 * (I.correzioni.stagione || 0)) +
+        "%) verso la media del campionato, perché d’estate le squadre cambiano; una squadra <b>promossa o retrocessa</b> porta il suo rating, " +
+        "avvicinato del " + Math.round(100 * (I.correzioni.categoria || 0)) + "% alla media del campionato nuovo.</p>" : "") +
       "</div>" +
       '<div class="scheda"><h3>Quanto vale</h3>' +
       "<p>Misurato su <b>" + esc(I.partite_prova) + "</b> partite dal " + esc(((I.periodi || {}).prova || "").split("-").reverse().join("/")) +
@@ -10608,10 +10622,10 @@
       riga.dataset.elo = "1";
       var dove = el.closest(".partita") || el;
       var detC = riga.classList.contains("compatta") ? riga.querySelector(".dettaglio") : null;
-      var metti = function (ic, io) {
+      var metti = function (ic, io, li) {
         var c = ELO.dati.per[String(ic)], o = ELO.dati.per[String(io)];
         if (!c || !o) return;
-        var p = eloProb(c.elo, o.elo, lg);
+        var p = eloProb(c.elo, o.elo, lg, li);
         var div = document.createElement("div");
         div.className = "sel elo-mini";
         div.title = "Elo del sistema: " + c.nome + " " + Math.round(c.elo) + ", " + o.nome + " " + Math.round(o.elo);
@@ -10627,8 +10641,13 @@
         dove.parentNode.insertBefore(div, dove.nextSibling);
         stringiRiga(div);
       };
-      if (pin && pin.ID_Casa != null && pin.ID_Ospite != null && String(pin.ID_API) === String(fid)) return metti(pin.ID_Casa, pin.ID_Ospite);
-      calendarioIds(d).then(function (per) { var v = per[String(fid)]; if (v) metti(v[0], v[1]); });
+      // (174) il numero del campionato viene dal calendario anche quando le
+      // squadre arrivano dalla riga Pinnacle
+      calendarioIds(d).then(function (per) {
+        var v = per[String(fid)];
+        if (pin && pin.ID_Casa != null && pin.ID_Ospite != null && String(pin.ID_API) === String(fid)) return metti(pin.ID_Casa, pin.ID_Ospite, v ? v[2] : null);
+        if (v) metti(v[0], v[1], v[2]);
+      });
     });
   }
   function avviaTimbri() {
