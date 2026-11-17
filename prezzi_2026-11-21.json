@@ -2282,6 +2282,28 @@
  },
  {
   "Data": "2026-11-21",
+  "Ora": "16:15",
+  "Campionato": "Spain: Laliga",
+  "Partita": "Rayo Vallecano - Valencia",
+  "Casa": "Rayo Vallecano",
+  "Ospite": "Valencia",
+  "Linea_OU": 2.25,
+  "Gol_attesi": 2.33,
+  "Margine": 3.3,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "OddsAPI",
+  "Gruppo": "Under Over",
+  "Mercato": "OU 3.5",
+  "Sel": "Under",
+  "Prob": 79.3,
+  "Equa": 1.26,
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
+ },
+ {
+  "Data": "2026-11-21",
   "Ora": "20:30",
   "Campionato": "Germany 2. Bundesliga",
   "Partita": "St. Pauli - VfL Bochum 1848",
@@ -4163,7 +4185,8 @@
   "Mercato": "BTTS",
   "Sel": "Gol",
   "Prob": 70.5,
-  "Equa": 1.42
+  "Equa": 1.42,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-21",
@@ -4921,8 +4944,7 @@
   "Mercato": "BTTS",
   "Sel": "Gol",
   "Prob": 67.3,
-  "Equa": 1.49,
-  "InSchedina": "si"
+  "Equa": 1.49
  },
  {
   "Data": "2026-11-21",
@@ -5144,8 +5166,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "1X + Over 2.5",
   "Prob": 66.3,
-  "Equa": 1.51,
-  "InSchedina": "si"
+  "Equa": 1.51
  },
  {
   "Data": "2026-11-21",
@@ -25666,26 +25687,6 @@
  },
  {
   "Data": "2026-11-21",
-  "Ora": "18:45",
-  "Campionato": "Netherlands Eredivisie",
-  "Partita": "FC Utrecht - SC Cambuur",
-  "Casa": "FC Utrecht",
-  "Ospite": "SC Cambuur",
-  "Linea_OU": "",
-  "Gol_attesi": 3.41,
-  "Margine": 1.7,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "NoGol",
-  "Prob": 32.7,
-  "Equa": 3.06
- },
- {
-  "Data": "2026-11-21",
   "Ora": "21:00",
   "Campionato": "Netherlands Eredivisie",
   "Partita": "FC Groningen - SC Heerenveen",
@@ -25703,6 +25704,26 @@
   "Sel": "NoGol",
   "Prob": 30.4,
   "Equa": 3.29
+ },
+ {
+  "Data": "2026-11-21",
+  "Ora": "18:00",
+  "Campionato": "Switzerland Super League",
+  "Partita": "Young Boys - Thun",
+  "Casa": "Young Boys",
+  "Ospite": "Thun",
+  "Linea_OU": "",
+  "Gol_attesi": 4.15,
+  "Margine": 2.6,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "Gol NoGol",
+  "Mercato": "BTTS",
+  "Sel": "NoGol",
+  "Prob": 29.5,
+  "Equa": 3.39
  },
  {
   "Data": "2026-11-21",
