@@ -1264,24 +1264,6 @@
   "Ora": "13:00",
   "Lega": "Albania Cup",
   "Casa": "Kastrioti Krujë",
-  "Ospite": "Eagle FA",
-  "Segno": "1",
-  "P1": 48.0,
-  "PX": 19.0,
-  "P2": 33.0,
-  "Fonti": 1,
-  "Elenco": "betimate",
-  "MP1": 73.0,
-  "MPX": 12.4,
-  "MP2": 14.6,
-  "Scarto": -25.0,
-  "Segno_Mercato": "1"
- },
- {
-  "Data": "2026-11-18",
-  "Ora": "13:00",
-  "Lega": "Albania Cup",
-  "Casa": "Kastrioti Krujë",
   "Ospite": "Eagle Football",
   "Segno": "1",
   "P1": 45.0,
@@ -1293,6 +1275,24 @@
   "MPX": 12.4,
   "MP2": 14.6,
   "Scarto": -28.0,
+  "Segno_Mercato": "1"
+ },
+ {
+  "Data": "2026-11-18",
+  "Ora": "13:00",
+  "Lega": "Albania Cup",
+  "Casa": "Kastrioti Krujë",
+  "Ospite": "Eagle FA",
+  "Segno": "1",
+  "P1": 48.0,
+  "PX": 19.0,
+  "P2": 33.0,
+  "Fonti": 1,
+  "Elenco": "betimate",
+  "MP1": 73.0,
+  "MPX": 12.4,
+  "MP2": 14.6,
+  "Scarto": -25.0,
   "Segno_Mercato": "1"
  },
  {
@@ -1658,7 +1658,12 @@
   "PX": 19.0,
   "P2": 27.0,
   "Fonti": 1,
-  "Elenco": "betimate"
+  "Elenco": "betimate",
+  "MP1": 71.6,
+  "MPX": 16.7,
+  "MP2": 11.7,
+  "Scarto": -17.6,
+  "Segno_Mercato": "1"
  },
  {
   "Data": "2026-11-18",
@@ -1763,10 +1768,10 @@
   "P2": 22.5,
   "Fonti": 2,
   "Elenco": "ratingbet, soccersite",
-  "MP1": 55.5,
-  "MPX": 23.1,
-  "MP2": 21.4,
-  "Scarto": -5.0,
+  "MP1": 49.0,
+  "MPX": 25.4,
+  "MP2": 25.6,
+  "Scarto": 1.5,
   "Segno_Mercato": "1"
  },
  {
@@ -1890,10 +1895,10 @@
   "P2": 32.3,
   "Fonti": 3,
   "Elenco": "betimate, ratingbet, soccersite",
-  "MP1": 37.9,
-  "MPX": 31.5,
-  "MP2": 30.6,
-  "Scarto": -3.9,
+  "MP1": 43.5,
+  "MPX": 31.0,
+  "MP2": 25.5,
+  "Scarto": -9.5,
   "Segno_Mercato": "1"
  },
  {
@@ -2009,10 +2014,10 @@
   "P2": 11.0,
   "Fonti": 1,
   "Elenco": "betimate",
-  "MP1": 29.4,
-  "MPX": 29.7,
-  "MP2": 40.9,
-  "Scarto": 48.6,
+  "MP1": 29.8,
+  "MPX": 30.3,
+  "MP2": 39.9,
+  "Scarto": 48.2,
   "Segno_Mercato": "2"
  },
  {
@@ -2097,10 +2102,10 @@
   "P2": 34.0,
   "Fonti": 2,
   "Elenco": "betimate, statarea",
-  "MP1": 44.9,
-  "MPX": 27.4,
-  "MP2": 27.7,
-  "Scarto": -7.9,
+  "MP1": 44.6,
+  "MPX": 27.5,
+  "MP2": 27.9,
+  "Scarto": -7.6,
   "Segno_Mercato": "1"
  },
  {
@@ -2146,10 +2151,10 @@
   "P2": 11.0,
   "Fonti": 2,
   "Elenco": "ratingbet, soccersite",
-  "MP1": 76.6,
-  "MPX": 15.4,
-  "MP2": 8.0,
-  "Scarto": -6.6,
+  "MP1": 72.9,
+  "MPX": 17.4,
+  "MP2": 9.7,
+  "Scarto": -2.9,
   "Segno_Mercato": "1"
  },
  {
@@ -2182,10 +2187,10 @@
   "P2": 42.5,
   "Fonti": 2,
   "Elenco": "betimate, soccersite",
-  "MP1": 26.6,
-  "MPX": 26.0,
-  "MP2": 47.3,
-  "Scarto": -4.8,
+  "MP1": 27.9,
+  "MPX": 26.4,
+  "MP2": 45.7,
+  "Scarto": -3.2,
   "Segno_Mercato": "2"
  },
  {
@@ -2200,10 +2205,10 @@
   "P2": 17.3,
   "Fonti": 3,
   "Elenco": "betimate, soccersite, statarea",
-  "MP1": 56.7,
-  "MPX": 25.1,
-  "MP2": 18.2,
-  "Scarto": 1.0,
+  "MP1": 52.3,
+  "MPX": 28.5,
+  "MP2": 19.2,
+  "Scarto": 5.4,
   "Segno_Mercato": "1"
  },
  {
@@ -2269,7 +2274,12 @@
   "PX": 30.0,
   "P2": 36.0,
   "Fonti": 1,
-  "Elenco": "betimate"
+  "Elenco": "betimate",
+  "MP1": 29.8,
+  "MPX": 29.8,
+  "MP2": 40.4,
+  "Scarto": -4.4,
+  "Segno_Mercato": "2"
  },
  {
   "Data": "2026-11-18",
@@ -2353,8 +2363,8 @@
   "P2": 66.0,
   "Fonti": 2,
   "Elenco": "betimate, ratingbet",
-  "MP1": 9.8,
-  "MPX": 18.4,
+  "MP1": 10.3,
+  "MPX": 17.9,
   "MP2": 71.8,
   "Scarto": -5.8,
   "Segno_Mercato": "2"
@@ -2370,7 +2380,12 @@
   "PX": 25.0,
   "P2": 33.0,
   "Fonti": 1,
-  "Elenco": "betimate"
+  "Elenco": "betimate",
+  "MP1": 37.3,
+  "MPX": 28.6,
+  "MP2": 34.1,
+  "Scarto": 4.7,
+  "Segno_Mercato": "1"
  },
  {
   "Data": "2026-11-18",
@@ -2397,10 +2412,10 @@
   "P2": 20.3,
   "Fonti": 3,
   "Elenco": "betimate, ratingbet, statarea",
-  "MP1": 74.7,
-  "MPX": 15.6,
-  "MP2": 9.7,
-  "Scarto": -11.4,
+  "MP1": 76.6,
+  "MPX": 14.3,
+  "MP2": 9.1,
+  "Scarto": -13.3,
   "Segno_Mercato": "1"
  },
  {
@@ -2454,10 +2469,10 @@
   "P2": 45.5,
   "Fonti": 2,
   "Elenco": "betimate, soccersite",
-  "MP1": 9.2,
-  "MPX": 16.7,
-  "MP2": 74.1,
-  "Scarto": -28.6,
+  "MP1": 9.5,
+  "MPX": 17.0,
+  "MP2": 73.5,
+  "Scarto": -28.0,
   "Segno_Mercato": "2"
  },
  {
@@ -2472,10 +2487,10 @@
   "P2": 34.5,
   "Fonti": 2,
   "Elenco": "betimate, soccersite",
-  "MP1": 43.6,
-  "MPX": 33.5,
-  "MP2": 23.0,
-  "Scarto": 11.5,
+  "MP1": 44.2,
+  "MPX": 33.3,
+  "MP2": 22.5,
+  "Scarto": 12.0,
   "Segno_Mercato": "1"
  },
  {
@@ -2490,10 +2505,10 @@
   "P2": 29.3,
   "Fonti": 3,
   "Elenco": "betimate, ratingbet, soccersite",
-  "MP1": 49.1,
-  "MPX": 29.9,
-  "MP2": 21.1,
-  "Scarto": -8.7,
+  "MP1": 48.4,
+  "MPX": 30.0,
+  "MP2": 21.6,
+  "Scarto": -8.1,
   "Segno_Mercato": "1"
  },
  {
@@ -2507,7 +2522,12 @@
   "PX": 28.0,
   "P2": 37.0,
   "Fonti": 1,
-  "Elenco": "betimate"
+  "Elenco": "betimate",
+  "MP1": 32.7,
+  "MPX": 31.3,
+  "MP2": 36.0,
+  "Scarto": 1.0,
+  "Segno_Mercato": "2"
  },
  {
   "Data": "2026-11-18",
@@ -2520,7 +2540,12 @@
   "PX": 26.0,
   "P2": 35.0,
   "Fonti": 1,
-  "Elenco": "betimate"
+  "Elenco": "betimate",
+  "MP1": 47.3,
+  "MPX": 28.2,
+  "MP2": 24.5,
+  "Scarto": -8.3,
+  "Segno_Mercato": "1"
  },
  {
   "Data": "2026-11-18",
@@ -2534,10 +2559,10 @@
   "P2": 41.0,
   "Fonti": 1,
   "Elenco": "betimate",
-  "MP1": 23.3,
-  "MPX": 25.3,
-  "MP2": 51.4,
-  "Scarto": -10.4,
+  "MP1": 23.2,
+  "MPX": 26.7,
+  "MP2": 50.1,
+  "Scarto": -9.1,
   "Segno_Mercato": "2"
  },
  {
@@ -2552,10 +2577,10 @@
   "P2": 28.0,
   "Fonti": 1,
   "Elenco": "betimate",
-  "MP1": 53.3,
-  "MPX": 23.6,
-  "MP2": 23.1,
-  "Scarto": -2.3,
+  "MP1": 61.4,
+  "MPX": 21.3,
+  "MP2": 17.3,
+  "Scarto": -10.4,
   "Segno_Mercato": "1"
  },
  {
@@ -2582,7 +2607,12 @@
   "PX": 24.0,
   "P2": 42.0,
   "Fonti": 1,
-  "Elenco": "betimate"
+  "Elenco": "betimate",
+  "MP1": 60.6,
+  "MPX": 23.9,
+  "MP2": 15.5,
+  "Scarto": 26.5,
+  "Segno_Mercato": "1"
  },
  {
   "Data": "2026-11-18",
@@ -2653,10 +2683,10 @@
   "P2": 56.0,
   "Fonti": 2,
   "Elenco": "betimate, soccersite",
-  "MP1": 20.5,
-  "MPX": 28.7,
-  "MP2": 50.8,
-  "Scarto": 5.2,
+  "MP1": 20.2,
+  "MPX": 28.9,
+  "MP2": 50.9,
+  "Scarto": 5.1,
   "Segno_Mercato": "2"
  },
  {
@@ -2697,10 +2727,10 @@
   "P2": 54.5,
   "Fonti": 3,
   "Elenco": "betimate, footymetrics, soccersite",
-  "MP1": 11.1,
-  "MPX": 15.6,
-  "MP2": 73.3,
-  "Scarto": -18.8,
+  "MP1": 11.5,
+  "MPX": 15.7,
+  "MP2": 72.8,
+  "Scarto": -18.3,
   "Segno_Mercato": "2"
  },
  {
@@ -2728,8 +2758,8 @@
   "P2": 17.0,
   "Fonti": 3,
   "Elenco": "betimate, footymetrics, soccersite",
-  "MP1": 81.3,
-  "MPX": 12.1,
+  "MP1": 81.4,
+  "MPX": 12.0,
   "MP2": 6.6,
   "Scarto": -16.7,
   "Segno_Mercato": "1"
@@ -2855,10 +2885,10 @@
   "P2": 60.0,
   "Fonti": 1,
   "Elenco": "betimate",
-  "MP1": 25.2,
-  "MPX": 21.6,
-  "MP2": 53.2,
-  "Scarto": 6.8,
+  "MP1": 24.4,
+  "MPX": 22.7,
+  "MP2": 52.9,
+  "Scarto": 7.1,
   "Segno_Mercato": "2"
  },
  {
@@ -2873,10 +2903,10 @@
   "P2": 24.0,
   "Fonti": 1,
   "Elenco": "betimate",
-  "MP1": 60.8,
-  "MPX": 22.4,
-  "MP2": 16.8,
-  "Scarto": -4.8,
+  "MP1": 63.3,
+  "MPX": 21.4,
+  "MP2": 15.3,
+  "Scarto": -7.3,
   "Segno_Mercato": "1"
  },
  {
@@ -3005,10 +3035,10 @@
   "P2": 39.2,
   "Fonti": 5,
   "Elenco": "betimate, footymetrics, ratingbet, soccersite, statarea",
-  "MP1": 31.0,
-  "MPX": 29.6,
-  "MP2": 39.4,
-  "Scarto": -0.2,
+  "MP1": 31.4,
+  "MPX": 29.0,
+  "MP2": 39.6,
+  "Scarto": -0.4,
   "Segno_Mercato": "2"
  },
  {
@@ -3044,24 +3074,16 @@
   "Casa": "SSV Jeddeloh",
   "Ospite": "Phonix Lubeck",
   "Segno": "2",
-  "P1": 27.0,
-  "PX": 23.0,
-  "P2": 50.0,
-  "Fonti": 1,
-  "Elenco": "betimate"
- },
- {
-  "Data": "2026-11-18",
-  "Ora": "19:00",
-  "Lega": "Germany: Regionalliga Germany",
-  "Casa": "SSV Jeddeloh",
-  "Ospite": "1. FC Phoenix Luebeck",
-  "Segno": "2",
-  "P1": 26.0,
-  "PX": 25.0,
-  "P2": 49.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
+  "P1": 26.5,
+  "PX": 24.0,
+  "P2": 49.5,
+  "Fonti": 2,
+  "Elenco": "betimate, ratingbet",
+  "MP1": 25.7,
+  "MPX": 24.6,
+  "MP2": 49.7,
+  "Scarto": -0.2,
+  "Segno_Mercato": "2"
  },
  {
   "Data": "2026-11-18",
@@ -3074,7 +3096,12 @@
   "PX": 26.0,
   "P2": 31.0,
   "Fonti": 1,
-  "Elenco": "betimate"
+  "Elenco": "betimate",
+  "MP1": 38.6,
+  "MPX": 32.3,
+  "MP2": 29.1,
+  "Scarto": 4.4,
+  "Segno_Mercato": "1"
  },
  {
   "Data": "2026-11-18",
@@ -3088,10 +3115,10 @@
   "P2": 48.8,
   "Fonti": 5,
   "Elenco": "betimate, footymetrics, ratingbet, soccersite, statarea",
-  "MP1": 14.6,
-  "MPX": 23.5,
-  "MP2": 61.9,
-  "Scarto": -13.1,
+  "MP1": 15.5,
+  "MPX": 24.2,
+  "MP2": 60.3,
+  "Scarto": -11.5,
   "Segno_Mercato": "2"
  },
  {
@@ -3107,8 +3134,8 @@
   "Fonti": 1,
   "Elenco": "betimate",
   "MP1": 56.2,
-  "MPX": 25.4,
-  "MP2": 18.4,
+  "MPX": 25.3,
+  "MP2": 18.5,
   "Scarto": 0.8,
   "Segno_Mercato": "1"
  },
@@ -3163,10 +3190,10 @@
   "P2": 34.0,
   "Fonti": 1,
   "Elenco": "betimate",
-  "MP1": 30.7,
-  "MPX": 29.3,
-  "MP2": 40.0,
-  "Scarto": 9.3,
+  "MP1": 30.1,
+  "MPX": 30.7,
+  "MP2": 39.2,
+  "Scarto": 9.9,
   "Segno_Mercato": "2"
  },
  {
@@ -3181,10 +3208,10 @@
   "P2": 52.4,
   "Fonti": 5,
   "Elenco": "betimate, footymetrics, ratingbet, soccersite, statarea",
-  "MP1": 15.1,
-  "MPX": 24.3,
-  "MP2": 60.6,
-  "Scarto": -8.2,
+  "MP1": 14.0,
+  "MPX": 22.6,
+  "MP2": 63.4,
+  "Scarto": -11.0,
   "Segno_Mercato": "2"
  },
  {
@@ -3212,11 +3239,11 @@
   "P2": 38.5,
   "Fonti": 2,
   "Elenco": "betimate, statarea",
-  "MP1": 36.5,
+  "MP1": 35.0,
   "MPX": 27.6,
-  "MP2": 35.9,
-  "Scarto": 2.6,
-  "Segno_Mercato": "1"
+  "MP2": 37.4,
+  "Scarto": 1.1,
+  "Segno_Mercato": "2"
  },
  {
   "Data": "2026-11-18",
@@ -3243,10 +3270,10 @@
   "P2": 54.5,
   "Fonti": 4,
   "Elenco": "betimate, footymetrics, ratingbet, soccersite",
-  "MP1": 19.7,
-  "MPX": 25.1,
-  "MP2": 55.2,
-  "Scarto": -0.7,
+  "MP1": 16.8,
+  "MPX": 24.4,
+  "MP2": 58.8,
+  "Scarto": -4.3,
   "Segno_Mercato": "2"
  },
  {
@@ -3270,19 +3297,6 @@
  {
   "Data": "2026-11-18",
   "Ora": "20:00",
-  "Lega": "Germany: Oberliga Germany",
-  "Casa": "Darmstadt II",
-  "Ospite": "FC 1931 Eddersheim",
-  "Segno": "1",
-  "P1": 49.0,
-  "PX": 22.0,
-  "P2": 29.0,
-  "Fonti": 1,
-  "Elenco": "ratingbet"
- },
- {
-  "Data": "2026-11-18",
-  "Ora": "20:00",
   "Lega": "Oberliga Hessen (Germania)",
   "Casa": "Darmstadt II",
   "Ospite": "FC Eddersheim",
@@ -3292,6 +3306,19 @@
   "P2": 23.0,
   "Fonti": 1,
   "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-11-18",
+  "Ora": "20:00",
+  "Lega": "Germany: Oberliga Germany",
+  "Casa": "Darmstadt II",
+  "Ospite": "FC 1931 Eddersheim",
+  "Segno": "1",
+  "P1": 49.0,
+  "PX": 22.0,
+  "P2": 29.0,
+  "Fonti": 1,
+  "Elenco": "ratingbet"
  },
  {
   "Data": "2026-11-18",
@@ -3344,10 +3371,10 @@
   "P2": 22.0,
   "Fonti": 2,
   "Elenco": "betimate, ratingbet",
-  "MP1": 59.3,
-  "MPX": 22.3,
-  "MP2": 18.4,
-  "Scarto": -2.8,
+  "MP1": 58.5,
+  "MPX": 22.5,
+  "MP2": 19.0,
+  "Scarto": -2.0,
   "Segno_Mercato": "1"
  },
  {
@@ -3413,7 +3440,7 @@
   "Elenco": "betimate, soccersite",
   "MP1": 48.7,
   "MPX": 22.5,
-  "MP2": 28.8,
+  "MP2": 28.9,
   "Scarto": -1.7,
   "Segno_Mercato": "1"
  },
@@ -3429,10 +3456,10 @@
   "P2": 14.0,
   "Fonti": 1,
   "Elenco": "betimate",
-  "MP1": 76.2,
-  "MPX": 15.6,
-  "MP2": 8.2,
-  "Scarto": -7.2,
+  "MP1": 78.2,
+  "MPX": 15.5,
+  "MP2": 6.3,
+  "Scarto": -9.2,
   "Segno_Mercato": "1"
  },
  {
@@ -3499,10 +3526,10 @@
   "P2": 10.0,
   "Fonti": 1,
   "Elenco": "betimate",
-  "MP1": 91.2,
-  "MPX": 6.2,
-  "MP2": 2.6,
-  "Scarto": -13.2,
+  "MP1": 93.3,
+  "MPX": 5.0,
+  "MP2": 1.7,
+  "Scarto": -15.3,
   "Segno_Mercato": "1"
  },
  {
@@ -3543,10 +3570,10 @@
   "P2": 1.0,
   "Fonti": 1,
   "Elenco": "betimate",
-  "MP1": 84.1,
-  "MPX": 10.2,
-  "MP2": 5.7,
-  "Scarto": 11.9,
+  "MP1": 81.8,
+  "MPX": 11.3,
+  "MP2": 6.9,
+  "Scarto": 14.2,
   "Segno_Mercato": "1"
  },
  {
@@ -3586,7 +3613,12 @@
   "PX": 23.0,
   "P2": 32.0,
   "Fonti": 1,
-  "Elenco": "betimate"
+  "Elenco": "betimate",
+  "MP1": 40.0,
+  "MPX": 29.5,
+  "MP2": 30.5,
+  "Scarto": 5.0,
+  "Segno_Mercato": "1"
  },
  {
   "Data": "2026-11-18",
@@ -3599,7 +3631,12 @@
   "PX": 27.0,
   "P2": 30.0,
   "Fonti": 1,
-  "Elenco": "betimate"
+  "Elenco": "betimate",
+  "MP1": 47.9,
+  "MPX": 29.0,
+  "MP2": 23.1,
+  "Scarto": -4.9,
+  "Segno_Mercato": "1"
  },
  {
   "Data": "2026-11-18",
@@ -3613,10 +3650,10 @@
   "P2": 26.7,
   "Fonti": 3,
   "Elenco": "betimate, ratingbet, soccersite",
-  "MP1": 39.6,
-  "MPX": 30.5,
-  "MP2": 29.9,
-  "Scarto": 3.7,
+  "MP1": 39.9,
+  "MPX": 30.3,
+  "MP2": 29.7,
+  "Scarto": 3.4,
   "Segno_Mercato": "1"
  },
  {
@@ -3657,10 +3694,10 @@
   "P2": 31.4,
   "Fonti": 5,
   "Elenco": "betimate, footymetrics, ratingbet, soccersite, statarea",
-  "MP1": 32.9,
-  "MPX": 31.2,
-  "MP2": 35.9,
-  "Scarto": 7.0,
+  "MP1": 32.8,
+  "MPX": 31.4,
+  "MP2": 35.8,
+  "Scarto": 7.1,
   "Segno_Mercato": "2"
  },
  {
@@ -3688,10 +3725,10 @@
   "P2": 76.0,
   "Fonti": 1,
   "Elenco": "betimate",
-  "MP1": 15.8,
-  "MPX": 20.8,
-  "MP2": 63.4,
-  "Scarto": 12.6,
+  "MP1": 15.2,
+  "MPX": 25.4,
+  "MP2": 59.4,
+  "Scarto": 16.6,
   "Segno_Mercato": "2"
  },
  {
@@ -3724,10 +3761,10 @@
   "P2": 15.0,
   "Fonti": 2,
   "Elenco": "betimate, statarea",
-  "MP1": 57.3,
-  "MPX": 23.8,
-  "MP2": 18.9,
-  "Scarto": 8.2,
+  "MP1": 57.7,
+  "MPX": 24.6,
+  "MP2": 17.7,
+  "Scarto": 7.8,
   "Segno_Mercato": "1"
  },
  {
@@ -3755,10 +3792,10 @@
   "P2": 37.0,
   "Fonti": 1,
   "Elenco": "betimate",
-  "MP1": 70.6,
-  "MPX": 17.2,
-  "MP2": 12.2,
-  "Scarto": -26.6,
+  "MP1": 71.3,
+  "MPX": 16.1,
+  "MP2": 12.6,
+  "Scarto": -27.3,
   "Segno_Mercato": "1"
  },
  {
@@ -3773,10 +3810,10 @@
   "P2": 59.0,
   "Fonti": 1,
   "Elenco": "betimate",
-  "MP1": 11.9,
-  "MPX": 17.0,
-  "MP2": 71.1,
-  "Scarto": -12.1,
+  "MP1": 9.6,
+  "MPX": 14.6,
+  "MP2": 75.8,
+  "Scarto": -16.8,
   "Segno_Mercato": "2"
  },
  {
@@ -3791,10 +3828,10 @@
   "P2": 38.0,
   "Fonti": 2,
   "Elenco": "betimate, ratingbet",
-  "MP1": 33.7,
-  "MPX": 26.2,
-  "MP2": 40.2,
-  "Scarto": -2.2,
+  "MP1": 34.1,
+  "MPX": 25.1,
+  "MP2": 40.7,
+  "Scarto": -2.7,
   "Segno_Mercato": "2"
  },
  {
@@ -3809,10 +3846,10 @@
   "P2": 41.5,
   "Fonti": 2,
   "Elenco": "betimate, ratingbet",
-  "MP1": 35.7,
-  "MPX": 25.3,
-  "MP2": 39.0,
-  "Scarto": 2.5,
+  "MP1": 34.2,
+  "MPX": 25.0,
+  "MP2": 40.8,
+  "Scarto": 0.7,
   "Segno_Mercato": "2"
  },
  {
@@ -3879,10 +3916,10 @@
   "P2": 28.0,
   "Fonti": 1,
   "Elenco": "soccersite",
-  "MP1": 46.5,
-  "MPX": 22.3,
-  "MP2": 31.2,
-  "Scarto": -2.5,
+  "MP1": 52.2,
+  "MPX": 21.9,
+  "MP2": 25.9,
+  "Scarto": -8.2,
   "Segno_Mercato": "1"
  },
  {
@@ -3936,10 +3973,10 @@
   "P2": 36.3,
   "Fonti": 3,
   "Elenco": "betimate, ratingbet, soccersite",
-  "MP1": 44.3,
-  "MPX": 28.0,
-  "MP2": 27.7,
-  "Scarto": 8.6,
+  "MP1": 46.4,
+  "MPX": 28.6,
+  "MP2": 25.0,
+  "Scarto": 11.3,
   "Segno_Mercato": "1"
  },
  {
@@ -3954,10 +3991,10 @@
   "P2": 16.5,
   "Fonti": 4,
   "Elenco": "betimate, footymetrics, ratingbet, soccersite",
-  "MP1": 76.2,
-  "MPX": 14.9,
-  "MP2": 8.9,
-  "Scarto": -12.6,
+  "MP1": 75.4,
+  "MPX": 15.1,
+  "MP2": 9.5,
+  "Scarto": -11.8,
   "Segno_Mercato": "1"
  },
  {
@@ -3972,10 +4009,10 @@
   "P2": 47.0,
   "Fonti": 1,
   "Elenco": "betimate",
-  "MP1": 22.1,
-  "MPX": 27.5,
-  "MP2": 50.4,
-  "Scarto": -3.4,
+  "MP1": 20.7,
+  "MPX": 26.8,
+  "MP2": 52.5,
+  "Scarto": -5.5,
   "Segno_Mercato": "2"
  },
  {
@@ -4003,10 +4040,10 @@
   "P2": 18.7,
   "Fonti": 3,
   "Elenco": "betimate, footymetrics, soccersite",
-  "MP1": 74.5,
-  "MPX": 16.1,
-  "MP2": 9.4,
-  "Scarto": -12.5,
+  "MP1": 76.8,
+  "MPX": 14.9,
+  "MP2": 8.3,
+  "Scarto": -14.8,
   "Segno_Mercato": "1"
  },
  {
@@ -4034,10 +4071,10 @@
   "P2": 15.3,
   "Fonti": 3,
   "Elenco": "betimate, soccersite, statarea",
-  "MP1": 63.3,
-  "MPX": 21.3,
-  "MP2": 15.4,
-  "Scarto": -5.0,
+  "MP1": 60.5,
+  "MPX": 21.8,
+  "MP2": 17.7,
+  "Scarto": -2.2,
   "Segno_Mercato": "1"
  },
  {
@@ -4117,24 +4154,11 @@
   "P2": 19.7,
   "Fonti": 3,
   "Elenco": "betimate, soccersite, statarea",
-  "MP1": 55.3,
-  "MPX": 25.0,
-  "MP2": 19.7,
-  "Scarto": -5.0,
+  "MP1": 58.9,
+  "MPX": 24.1,
+  "MP2": 17.0,
+  "Scarto": -8.6,
   "Segno_Mercato": "1"
- },
- {
-  "Data": "2026-11-18",
-  "Ora": "23:00",
-  "Lega": "Brazil Copa Fares Lopes",
-  "Casa": "FC Atlético Cearense",
-  "Ospite": "Ceara",
-  "Segno": "2",
-  "P1": 11.0,
-  "PX": 17.0,
-  "P2": 72.0,
-  "Fonti": 1,
-  "Elenco": "betimate"
  },
  {
   "Data": "2026-11-18",
@@ -4146,6 +4170,19 @@
   "P1": 36.0,
   "PX": 25.0,
   "P2": 39.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-11-18",
+  "Ora": "23:00",
+  "Lega": "Brazil Copa Fares Lopes",
+  "Casa": "FC Atlético Cearense",
+  "Ospite": "Ceara",
+  "Segno": "2",
+  "P1": 11.0,
+  "PX": 17.0,
+  "P2": 72.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -4205,10 +4242,10 @@
   "P2": 41.8,
   "Fonti": 5,
   "Elenco": "betimate, footymetrics, ratingbet, soccersite, statarea",
-  "MP1": 26.5,
-  "MPX": 27.9,
-  "MP2": 45.6,
-  "Scarto": -3.8,
+  "MP1": 26.4,
+  "MPX": 27.7,
+  "MP2": 45.9,
+  "Scarto": -4.1,
   "Segno_Mercato": "2"
  },
  {
