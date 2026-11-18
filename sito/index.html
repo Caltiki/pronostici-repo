@@ -988,21 +988,26 @@
   .pbar i, .hb .t i { background: linear-gradient(90deg, var(--evidenza-forte), var(--evidenza)); }
   .tripla .barre { height: 21px; }
   .tripla .barre i { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-size: .76rem; }
-  /* (188) BARRE IN RILIEVO: tre pezzi staccati e arrotondati, con una luce
-     in alto, un'ombra in basso e un'ombra sotto, come pulsanti. Il colore
-     resta quello del segno (.s1/.sx/.s2): qui si aggiunge solo il rilievo. */
-  .tripla .barre { gap: 4px; height: 23px; }
-  .tripla .barre i, .tripla .barre i:first-child, .tripla .barre i:last-child { border-radius: 7px; }
+  /* (190) BARRE IN RILIEVO, UNA BARRA SOLA. Con tre pulsanti staccati i
+     pezzi piccoli (91/7/2) diventavano gocce e pulsanti vuoti. Ora e' una
+     barra unica arrotondata solo agli estremi, divisa da fessure sottili:
+     la luce in alto e il bordo scuro in basso sono su ogni pezzo e si
+     leggono come un rilievo continuo; l'ombra e' della barra intera. */
+  .tripla .barre { gap: 3px; height: 23px; filter: drop-shadow(0 2px 3px rgba(0,0,0,.16)); }
+  .tripla .barre i { border-radius: 2px; min-width: 4px; }
+  .tripla .barre i:first-child { border-radius: 8px 2px 2px 8px; }
+  .tripla .barre i:last-child { border-radius: 2px 8px 8px 2px; }
   .tripla .barre i {
     background-image: linear-gradient(180deg, rgba(255,255,255,.32) 0%, rgba(255,255,255,.08) 45%, rgba(0,0,0,0) 60%, rgba(0,0,0,.12) 100%);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.45), inset 0 -2px 0 rgba(0,0,0,.14), 0 2px 4px rgba(0,0,0,.18);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.45), inset 0 -2px 0 rgba(0,0,0,.14);
     text-shadow: 0 1px 1px rgba(0,0,0,.22);
   }
-  .tripla .barre i.picc, .tripla .barre i.picc:first-child, .tripla .barre i.picc:last-child { border-radius: 3px; min-width: 5px; }
-  .tripla .barre i.picc { box-shadow: inset 0 1px 0 rgba(255,255,255,.35), 0 1px 2px rgba(0,0,0,.15); }
-  .tripla .barre:has(i.picc) { gap: 3px; }
-  :root[data-theme="dark"] .tripla .barre i { box-shadow: inset 0 1px 0 rgba(255,255,255,.28), inset 0 -2px 0 rgba(0,0,0,.25), 0 2px 5px rgba(0,0,0,.45); }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .tripla .barre i { box-shadow: inset 0 1px 0 rgba(255,255,255,.28), inset 0 -2px 0 rgba(0,0,0,.25), 0 2px 5px rgba(0,0,0,.45); } }
+  :root[data-theme="dark"] .tripla .barre { filter: drop-shadow(0 2px 4px rgba(0,0,0,.45)); }
+  :root[data-theme="dark"] .tripla .barre i { box-shadow: inset 0 1px 0 rgba(255,255,255,.26), inset 0 -2px 0 rgba(0,0,0,.25); }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .tripla .barre { filter: drop-shadow(0 2px 4px rgba(0,0,0,.45)); }
+    :root:not([data-theme="light"]) .tripla .barre i { box-shadow: inset 0 1px 0 rgba(255,255,255,.26), inset 0 -2px 0 rgba(0,0,0,.25); }
+  }
   a.apri-scheda {
     padding: 8px 13px;
     border: 1px solid rgba(94,168,255,.18);
@@ -3305,9 +3310,7 @@
     var tot = a + x + b || 1;
     function pezzo(cls, val, et) {
       var w = val / tot * 100;
-      // (189) i pezzi sotto il 9% restano sottili e quasi squadrati: col
-      // rilievo pieno sembravano gocce o pulsanti vuoti
-      return '<i class="' + cls + (w < 9 ? " picc" : "") + '" style="flex-grow:' + w.toFixed(2) + '" title="' + et + " " + f0(val) + '%">' +
+      return '<i class="' + cls + '" style="flex-grow:' + w.toFixed(2) + '" title="' + et + " " + f0(val) + '%">' +
         (w >= 13 ? f0(val) : "") + "</i>";
     }
     return '<div class="tripla"><span class="nome">' + nome + "</span>" +
