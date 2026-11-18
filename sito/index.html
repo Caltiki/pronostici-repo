@@ -626,6 +626,11 @@
   .forme div { min-width: 0; }
   .forme span { display: block; font-size: .76rem; color: var(--tenue); margin-bottom: 3px; }
   .forme i[title] { cursor: pointer; }
+  /* (185) dieci risultati: casa e ospite una riga ciascuna */
+  .forme.forme-10 { grid-template-columns: 1fr; gap: 6px; }
+  .forme.forme-10 span { display: block; }
+  .forme.forme-10 .forma-verso { display: inline; font-size: .68rem; opacity: .75; margin-left: 4px; }
+  .testa-partita .forme.forme-10 > div:last-child, .testa-partita .forme.forme-10 > div:last-child span { text-align: left; }
   .forme i {
     display: inline-flex; width: 20px; height: 20px; margin-right: 3px; border-radius: 5px;
     align-items: center; justify-content: center; font-style: normal; font-size: .7rem; font-weight: 700;
@@ -8016,13 +8021,19 @@
   });
   // Il blocco della forma nel dettaglio delle righe (127): pagina
   // Pinnacle, Pronostici e tutte le sezioni col timbro Pinnacle.
+  // (185) LE ULTIME 10, non 5: forma_<data>.json ne ha gia' 10 per quasi
+  // tutte le squadre (255 su 295 il 18/11). Casa e ospite una sotto
+  // l'altra: dieci icone a testa affiancate non stanno nel telefono.
+  var FORMA_N = 10;
+  function r0Nome(p, lato) { return String(p[lato] || (lato === "Casa" ? "casa" : "ospite")); }
   function formaBloccoHtml(f) {
     if (!f) return "";
-    return '<div class="forme"><div><span>forma casa</span>' + (formaApi(f.casa) || "\u2013") +
-      '</div><div><span>forma ospite</span>' + (formaApi(f.ospite) || "\u2013") + "</div></div>";
+    var et = function (lato, u) { var n = Math.min((u || []).length, FORMA_N); return "forma " + lato + (n > 5 ? " \u00b7 ultime " + n : "") + ' <span class="forma-verso">\u2190 pi\u00f9 vecchia \u00b7 pi\u00f9 recente \u2192</span>'; };
+    return '<div class="forme forme-10"><div><span>' + et("casa", f.casa) + "</span>" + (formaApi(f.casa) || "\u2013") +
+      '</div><div><span>' + et("ospite", f.ospite) + "</span>" + (formaApi(f.ospite) || "\u2013") + "</div></div>";
   }
   function formaApi(u, n) {
-    return (u || []).slice(0, n || 5).reverse().map(function (x) {
+    return (u || []).slice(0, n || FORMA_N).reverse().map(function (x) {
       var f = x[3] > x[4] ? FORMA.W : x[3] < x[4] ? FORMA.L : FORMA.D;
       var g = String(x[0] || "").split("-");
       var t = f[0] + " " + x[3] + "-" + x[4] + (x[2] === "C" ? " in casa" : " fuori") + " con " + x[1] +
@@ -8086,14 +8097,17 @@
     var cl = p.Classe || {};
     var posC = fm.Pos_Casa != null ? esc(fm.Pos_Casa) + "° in classifica" : etichettaPos(cl.c);
     var posO = fm.Pos_Ospite != null ? esc(fm.Pos_Ospite) + "° in classifica" : etichettaPos(cl.o);
-    var fC = fm.Forma_Casa ? forma(fm.Forma_Casa) : (p.Forma ? formaApi(p.Forma.casa) : "");
-    var fO = fm.Forma_Casa ? forma(fm.Forma_Ospite) : (p.Forma ? formaApi(p.Forma.ospite) : "");
+    // (185) prima le ultime 10 del fornitore dei dati, poi le 5 di FootyMetrics
+    var fC = p.Forma && p.Forma.casa && p.Forma.casa.length ? formaApi(p.Forma.casa) : (fm.Forma_Casa ? forma(fm.Forma_Casa) : "");
+    var fO = p.Forma && p.Forma.ospite && p.Forma.ospite.length ? formaApi(p.Forma.ospite) : (fm.Forma_Casa ? forma(fm.Forma_Ospite) : "");
     if (posC || posO || fC || fO) {
-      h += '<div class="forme">' +
-        "<div><span>" + esc(posC || "casa") + "</span>" + (fC || (fO ? "\u2013" : "")) + "</div>" +
-        "<div><span>" + esc(posO || "ospite") + "</span>" + (fO || (fC ? "\u2013" : "")) + "</div></div>";
-      if (fm.Forma_Casa) h += '<p class="piccolo">Ultime cinque partite, la più recente a destra.</p>';
-      else if (fC || fO) h += '<p class="piccolo">Ultime cinque partite, tutte le competizioni, la più recente a destra: toccane una per vederla.</p>';
+      var dieci = !!(p.Forma && ((p.Forma.casa || []).length || (p.Forma.ospite || []).length));
+      var nF = dieci ? Math.min(FORMA_N, Math.max((p.Forma.casa || []).length, (p.Forma.ospite || []).length)) : 5;
+      h += '<div class="forme' + (dieci ? " forme-10" : "") + '">' +
+        "<div><span>" + esc(r0Nome(p, "Casa") + (posC ? " \u00b7 " + posC : "")) + "</span>" + (fC || (fO ? "\u2013" : "")) + "</div>" +
+        "<div><span>" + esc(r0Nome(p, "Ospite") + (posO ? " \u00b7 " + posO : "")) + "</span>" + (fO || (fC ? "\u2013" : "")) + "</div></div>";
+      if (dieci) h += '<p class="piccolo">Ultime ' + nF + " partite, tutte le competizioni, la pi\u00f9 recente a destra: toccane una per vederla.</p>";
+      else if (fm.Forma_Casa) h += '<p class="piccolo">Ultime cinque partite, la più recente a destra.</p>';
     }
     // CLASSIFICA E xG, dalle tabelle FotMob (6/11).
     var sq = p.Squadre;
