@@ -135,6 +135,9 @@
   .riga.partitona.senza-pron > details[open] > summary { opacity: 1; }
   .prob-carta .pc-merc:empty, .prob-carta .pc-elo:empty { display: none; }
   .riga .prob-carta { font-size: .85rem; margin: 2px 0 4px; }
+  /* (184) anche sulle righe della Schedina; non sulle righe compatte (Elo e
+     quote stanno nel dettaglio) ne' su quelle dentro una partita aperta */
+  .riga.compatta .prob-carta, .dentro-partita .prob-carta { display: none; }
   .xgp-dentro { margin: 6px 2px 8px; font-size: .88rem; }
   .sel.nessun-pron { color: var(--tenue); font-style: italic; font-size: .9rem; }
   /* (177) la nota del costruttore in testo normale (prima prendeva lo
@@ -4265,7 +4268,7 @@
       (fid ? '<span class="pill ' + fid[0] + '">margine ' + f1(marg) + "%</span>" : "") +
       (r._fresca ? '<span class="pill fresca" title="Quota Pinnacle aggiornata">\u21bb ' + esc(r._fresca) + "</span>" : "") +
       "</div>" +
-      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, r.Partita, campiRiga(r)) + "</div>" +
+      '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, r.Partita, campiRiga(r)) + "</div>" + PROB_CARTA +
       '<div class="sel"><b class="esito-sel">' + esc(etichettaSel(r)) + "</b></div>" + bexHtml(r) +
       (prob != null ? '<div class="pbar"><i style="width:' + Math.min(100, prob) + '%"></i></div>' : "") +
       "</div>" +
