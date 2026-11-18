@@ -2201,7 +2201,7 @@
   // gia' all'avvio.
   var CAL = { data: null, filtro: "tutte", cerca: "", aperti: {}, ordine: "lega" };
   // (173) l'ordine del Calendario si ricorda su questo telefono
-  try { if (localStorage.getItem("caltiki-cal-ordine") === "ora") CAL.ordine = "ora"; } catch (e) {}
+  try { var oc = localStorage.getItem("caltiki-cal-ordine"); if (oc === "ora" || oc === "prob") CAL.ordine = oc; } catch (e) {}
   // (167) la sezione Campionati: dichiarata qui perche' leggiHash la usa gia' all'avvio
   var CAMP = { squadra: null, cercaSq: "", indiceSq: null, versoXG: false, lega: "", scheda: "classifica", vista: "t", gioc: "marcatori", min: "f", ordine: null, verso: -1, idx: null, dati: {} };
   var ELO = { vista: "partite", data: null, filtro: "sito", ordine: "ora", cerca: "", camp: "", quante: 100, dati: null, info: null };
@@ -9897,7 +9897,8 @@
           chipsHtml([["tutte", "Tutte"], ["prev", "Più prevedibili"], ["sito", "Sul sito"], ["pin", "Con Pinnacle"], ["live", "In corso"], ["stat", "Con statistiche"]], CAL.filtro, "data-cfiltro") +
           '<div class="strumenti"><input type="search" id="cerca-cal" placeholder="Squadra, campionato o paese" value="' + esc(CAL.cerca) + '" autocomplete="off">' +
           '<select id="ordine-cal" aria-label="Ordine"><option value="lega"' + (CAL.ordine === "lega" ? " selected" : "") + '>Per campionato</option>' +
-          '<option value="ora"' + (CAL.ordine === "ora" ? " selected" : "") + ">Per orario</option></select></div>" +
+          '<option value="ora"' + (CAL.ordine === "ora" ? " selected" : "") + ">Per orario</option>" +
+          '<option value="prob"' + (CAL.ordine === "prob" ? " selected" : "") + ">Per probabilit\u00e0</option></select></div>" +
           '<div id="cal-lista"></div>';
         $cont.querySelectorAll("[data-cdata]").forEach(function (x) {
           x.addEventListener("click", function () { CAL.data = x.dataset.cdata; CAL.aperti = {}; disegna(); });
@@ -9911,7 +9912,7 @@
         });
         document.getElementById("cerca-cal").addEventListener("input", function (e) { CAL.cerca = e.target.value; listaCalendario(lista, sito); });
         document.getElementById("ordine-cal").addEventListener("change", function (e) {
-          CAL.ordine = e.target.value === "ora" ? "ora" : "lega";
+          CAL.ordine = e.target.value === "ora" || e.target.value === "prob" ? e.target.value : "lega";
           try { localStorage.setItem("caltiki-cal-ordine", CAL.ordine); } catch (er) {}
           listaCalendario(lista, sito);
         });
@@ -9995,7 +9996,8 @@
       }).join(" \u00b7 ");
     };
     return '<div class="cal-prob">' +
-      (P.pin ? '<div class="nw"><span class="et">Pinnacle</span> ' + tre(P.pin) + "</div>" : "") +
+      // (187) "Mercato" come nei Pronostici: che sia Pinnacle lo dice il timbro accanto
+      (P.pin ? '<div class="nw"><span class="et">Mercato</span> ' + tre(P.pin) + "</div>" : "") +
       (P.elo ? '<div class="nw"><span class="et">Elo</span> ' + tre(P.elo) +
         (P.diff != null ? ' <span class="piccolo">(' + (P.diff >= 0 ? "+" : "\u2212") + f0(Math.abs(P.diff)) + ")</span>" : "") + "</div>" : "") +
       (P.eloNo ? '<div class="nw"><span class="et">Elo</span> <span class="piccolo">' + NOTA_ELO_DIVERSI + "</span></div>" : "") +
@@ -10030,6 +10032,28 @@
         " ancora da giocare con un esito oltre il 60% (Pinnacle; dove manca, l\u2019Elo)" + (perOra ? ", per orario" : ", dalla pi\u00f9 probabile") + "</p>" +
         (righe.length ? (perOra ? listaPerOra(righe, sito) : '<div class="cal-lega cal-prev">' + righe.map(function (x) { return rigaCal(x, sito, true); }).join("") + "</div>")
           : messaggio("vuoto", "Nessuna partita con un esito oltre il 60%."));
+      collegaRigheCal($l);
+      return;
+    }
+    // (187) PER PROBABILITA': una lista sola, dall'esito piu' probabile in
+    // giu' (Pinnacle senza margine; dove manca, l'Elo). Prima quelle ancora
+    // da giocare, poi in corso e finite; senza probabilita' in fondo.
+    if (CAL.ordine === "prob") {
+      var daG = function (x) { var st = String(x.stato || "").toUpperCase(); return (!st || st === "NS" || st === "TBD") && !statoCal(x).vivo; };
+      var pm = {};
+      righe.forEach(function (x) { pm[x.id] = probCal(x).max; });
+      righe.sort(function (a, b) {
+        var ga = daG(a) ? 0 : 1, gb = daG(b) ? 0 : 1;
+        if (ga !== gb) return ga - gb;
+        var pa = pm[a.id], pb = pm[b.id];
+        if ((pa == null) !== (pb == null)) return pa == null ? 1 : -1;
+        return (pb || 0) - (pa || 0) || String(a.ora || "").localeCompare(String(b.ora || ""));
+      });
+      var conP = righe.filter(function (x) { return pm[x.id] != null; }).length;
+      $l.innerHTML = '<p class="conta">' + righe.length + (righe.length === 1 ? " partita" : " partite") + " dalla pi\u00f9 probabile \u00b7 " + conP +
+        " con le probabilit\u00e0 (mercato; dove manca, l\u2019Elo)</p>" +
+        (righe.length ? '<div class="cal-lega cal-prev">' + righe.map(function (x) { return rigaCal(x, sito, true); }).join("") + "</div>"
+          : messaggio("vuoto", "Nessuna partita con questi filtri."));
       collegaRigheCal($l);
       return;
     }
