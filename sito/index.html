@@ -998,6 +998,9 @@
     box-shadow: inset 0 1px 0 rgba(255,255,255,.45), inset 0 -2px 0 rgba(0,0,0,.14), 0 2px 4px rgba(0,0,0,.18);
     text-shadow: 0 1px 1px rgba(0,0,0,.22);
   }
+  .tripla .barre i.picc, .tripla .barre i.picc:first-child, .tripla .barre i.picc:last-child { border-radius: 3px; min-width: 5px; }
+  .tripla .barre i.picc { box-shadow: inset 0 1px 0 rgba(255,255,255,.35), 0 1px 2px rgba(0,0,0,.15); }
+  .tripla .barre:has(i.picc) { gap: 3px; }
   :root[data-theme="dark"] .tripla .barre i { box-shadow: inset 0 1px 0 rgba(255,255,255,.28), inset 0 -2px 0 rgba(0,0,0,.25), 0 2px 5px rgba(0,0,0,.45); }
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .tripla .barre i { box-shadow: inset 0 1px 0 rgba(255,255,255,.28), inset 0 -2px 0 rgba(0,0,0,.25), 0 2px 5px rgba(0,0,0,.45); } }
   a.apri-scheda {
@@ -3302,7 +3305,9 @@
     var tot = a + x + b || 1;
     function pezzo(cls, val, et) {
       var w = val / tot * 100;
-      return '<i class="' + cls + '" style="flex-grow:' + w.toFixed(2) + '" title="' + et + " " + f0(val) + '%">' +
+      // (189) i pezzi sotto il 9% restano sottili e quasi squadrati: col
+      // rilievo pieno sembravano gocce o pulsanti vuoti
+      return '<i class="' + cls + (w < 9 ? " picc" : "") + '" style="flex-grow:' + w.toFixed(2) + '" title="' + et + " " + f0(val) + '%">' +
         (w >= 13 ? f0(val) : "") + "</i>";
     }
     return '<div class="tripla"><span class="nome">' + nome + "</span>" +
