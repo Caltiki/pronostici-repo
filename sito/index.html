@@ -3555,6 +3555,15 @@
     });
   }
 
+  // (195) DA DOVE VIENE IL RISULTATO, senza nominare il fornitore dei dati:
+  // "API-Football" (e il calendario e il ponte live, che vengono da li')
+  // diventano "dai dati del sito"; le altre fonti restano col loro nome.
+  function daRis(x) {
+    var t = String(x || "").trim();
+    if (!t) return "";
+    if (/api.?football|api.?sports|^calendario$|^live$/i.test(t)) return "dai dati del sito";
+    return "da " + esc(t);
+  }
   // se l'archivio non ha ancora l'esito, quello calcolato dal calendario
   function daCalendario(r) {
     if (!r || !r._esito_cal || r.Esito || r._esito) return r;
@@ -3735,7 +3744,7 @@
   }
   function golHtml(r) {
     if (r.Gol_Casa == null || r.Gol_Ospite == null) return "";
-    var t = "risultato finale" + (r.Risultato_Da ? ", da " + r.Risultato_Da : "");
+    var t = "risultato finale" + (r.Risultato_Da ? ", " + daRis(r.Risultato_Da) : "");
     return risHtml(r.Gol_Casa + "-" + r.Gol_Ospite, null, t, "finale");
   }
 
@@ -4289,7 +4298,7 @@
     // di essere in schedina; ognuna ha solo uscita / non uscita.
     var fuoriSch = stato.vista.prezzi !== "schedina", esR = r.Esito || r._esito;
     var es = fuoriSch ? null : (r.Esito || (passata && inSch ? "attesa" : null)), gol = (r.Gol_Casa != null && r.Gol_Ospite != null) ? r.Gol_Casa + "-" + r.Gol_Ospite : "";
-    var daDove = r.Risultato_Da ? " (risultato da " + esc(r.Risultato_Da) + ")" : "";
+    var daDove = r.Risultato_Da ? " (risultato " + daRis(r.Risultato_Da) + ")" : "";
     if (es === "attesa") det.unshift("<p>Risultato non disponibile: nessuna delle fonti dei risultati ha questa partita.</p>");
     else if (es) det.unshift("<p>Finita " + esc(gol) + ": " + (es === "presa" ? "vinta" : es === "sbagliata" ? "persa" : "rimborso") +
       daDove + ".</p>");
@@ -5607,7 +5616,7 @@
       (num(r.Equa_Segno) != null ? " \u2013 quota del modello sul " + esc(segno) + " " + f2(num(r.Equa_Segno)) : "") + "</p>");
     var usc = segnoUscito(r);
     if (usc && segno) {
-      det.push("<p>Finita " + esc(r.Gol_Casa + "-" + r.Gol_Ospite) + (r.Risultato_Da ? " (risultato da " + esc(r.Risultato_Da) + ")" : "") +
+      det.push("<p>Finita " + esc(r.Gol_Casa + "-" + r.Gol_Ospite) + (r.Risultato_Da ? " (risultato " + daRis(r.Risultato_Da) + ")" : "") +
         ": il segno del modello, " + esc(segno) + ", " + (usc === segno ? "\u00e8 uscito" : "non \u00e8 uscito") + ".</p>");
     }
     det.push("<p>Lambda: casa " + f2(lc) + ", ospite " + f2(lo) + " (gol attesi " + f2(gol) + ")</p>");
@@ -5773,7 +5782,7 @@
     det.push("<p>1 " + pv1(p1) + " · X " + pv1(px) + " · 2 " + pv1(p2) + "</p>");
     var usc = segnoUscito(r);
     if (usc) {
-      det.push("<p>Finita " + esc(r.Gol_Casa + "-" + r.Gol_Ospite) + (r.Risultato_Da ? " (risultato da " + esc(r.Risultato_Da) + ")" : "") +
+      det.push("<p>Finita " + esc(r.Gol_Casa + "-" + r.Gol_Ospite) + (r.Risultato_Da ? " (risultato " + daRis(r.Risultato_Da) + ")" : "") +
         ": il segno del modello, " + esc(seg) + ", " + (usc === seg ? "\u00e8 uscito" : "non \u00e8 uscito") + "." +
         (ws ? " We say " + esc(ws) + ": " + (ws.replace(/\s/g, "") === String(r.Gol_Casa) + "-" + String(r.Gol_Ospite)
           ? "risultato esatto indovinato" : "risultato esatto sbagliato") +
@@ -6067,7 +6076,7 @@
         (seg ? ": segno " + esc(seg) + " " + (usc === seg ? "vinto" : "perso") : "") +
         (num(r.P_O25) != null ? " · Over 2.5 " + (gtot > 2.5 ? "uscito" : "non uscito") : "") +
         (num(r.P_GG) != null ? " · Gol " + (num(r.Gol_Casa) > 0 && num(r.Gol_Ospite) > 0 ? "uscito" : "non uscito") : "") +
-        (r.Risultato_Da ? ' <span class="piccolo">(risultato da ' + esc(r.Risultato_Da) + ")</span>" : "") + ".</p>");
+        (r.Risultato_Da ? ' <span class="piccolo">(risultato ' + daRis(r.Risultato_Da) + ")</span>" : "") + ".</p>");
     }
     if (num(r.Q1) != null) det.push("<p>Quote 1X2 mostrate dal sito " + [r.Q1, r.QX, r.Q2].map(function (x) { return f2(num(x)); }).join(" · ") +
       (num(r.Margine_1X2) != null ? " – margine " + f1(num(r.Margine_1X2)) + "%" : "") + "</p>");
@@ -7562,7 +7571,7 @@
     var m = p.Mercato;
     var det = [];
     if (p.Lega) det.push("<p>" + esc(p.Lega) + "</p>");
-    det.push("<p>Risultato da " + esc(p.Fonte_Risultato) + ".</p>");
+    det.push("<p>Risultato " + daRis(p.Fonte_Risultato) + ".</p>");
     if (m) {
       det.push("<p>Mercato alla chiusura (Shin): 1 " + f0(m.P1) + "% \u00b7 X " + f0(m.PX) + "% \u00b7 2 " + f0(m.P2) +
         "%. Favorito: " + esc(m.Favorito) + ", " + (m.Preso ? "uscito" : "non uscito") + ".</p>");
