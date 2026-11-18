@@ -8711,7 +8711,12 @@
   // campionato dello stesso paese, con un vincitore netto per tutte e due.
   // Nel dubbio il blocco non compare: meglio niente che i numeri di
   // un'altra squadra.
-  var SOFA_CAT = { bc: "bigChances", bcm: "bigChancesMissed", xgot: "expectedGoalsOnTarget", xg: "expectedGoals" };
+  var SOFA_CAT = { bc: "bigChances", bcm: "bigChancesMissed", xgot: "expectedGoalsOnTarget", xg: "expectedGoals",
+    // (199) la base completa, per i campionati che la tabella del sito non ha
+    gf: "goalsScored", gs: "goalsConceded", tiri: "shots", porta: "shotsOnTarget", ang: "corners",
+    gialli: "yellowCards", rossi: "redCards", falli: "fouls" };
+  // gia' medie o percentuali: non si dividono per le partite
+  var SOFA_CAT_DIRETTI = { pos: "averageBallPossession" };
   function caricaSofaGiorno(t) {
     return leggiUrl(BASE + "sofascore_squadre_index.json?t=" + t, "sofascore_squadre_index").then(function (ix) {
       var dd = ix && Array.isArray(ix.date) ? ix.date.slice().sort() : [];
@@ -8822,14 +8827,20 @@
       if (!trovata || tot > trovata.tot) trovata = { tot: tot, L: L, a: a.q, b: b.q };
     });
     if (!trovata) return null;
-    var cat = S2.categorie, campi = ["bc", "bcm", "xgot", "xg"];
+    var cat = S2.categorie, campi = ["bc", "bcm", "xgot", "xg", "gf", "gs", "tiri", "porta", "pos", "ang", "gialli", "rossi", "falli", "cs"];
     var val = function (q, k) { var i = cat.indexOf(k); return i >= 0 && q.stat ? q.stat[i] : null; };
     var fai = function (q) {
       var pg = q.pg || null;
       var media = function (k) { var x = val(q, k); return x != null && pg ? x / pg : null; };
       var gf = val(q, "goalsScored"), xg = val(q, "expectedGoals");
-      return { pg: pg, v: campi.map(function (c) { return media(SOFA_CAT[c]); }),
-        gol_meno_xg: gf != null && xg != null ? gf - xg : null, gp: val(q, "goalsPrevented"), nome: q.nome };
+      var cs = val(q, "cleanSheets");
+      return { pg: pg, v: campi.map(function (c) {
+          if (c === "cs") return cs != null && pg ? 100 * cs / pg : null;
+          if (SOFA_CAT_DIRETTI[c]) return val(q, SOFA_CAT_DIRETTI[c]);
+          return media(SOFA_CAT[c]);
+        }),
+        gol_meno_xg: gf != null && xg != null ? gf - xg : null, gp: val(q, "goalsPrevented"),
+        legni: val(q, "hitWoodwork"), nome: q.nome };
     };
     var c = fai(trovata.a), o = fai(trovata.b);
     if (!c.pg || !o.pg) return null;
@@ -8913,8 +8924,19 @@
       var ix = function (k) { return C.scampi.indexOf(k); };
       h += "<h4>Da Sofascore</h4>" + '<p class="piccolo">Tutta la stagione, casa e fuori insieme, a partita (' + C.sc.pg + " e " + C.so.pg + " partite).</p>";
       if (!(C.c && C.o)) h += '<div class="stat-testa"><span>' + esc(p.Casa) + "</span><span>" + esc(p.Ospite) + "</span></div>";
-      var voci = CONF_SOFA.slice();
-      if (!(C.c && C.o)) voci.unshift(["xG fatti", "xg", 1, 2]);   // (196) se mancano quelli del sito
+      // (199) Dove la tabella del sito non c'e' (Ligue 3, Serie C, National
+      // League...) Sofascore e' l'unica fonte: si mostra la base completa.
+      // Quello che la sezione "dal campionato" da' gia' (gol, porta
+      // inviolata, gialli, divisi casa / fuori) non si ripete.
+      var haSito = !!(C.c && C.o), haCamp = !!(C.pc && C.po), voci = [];
+      if (!haSito) {
+        if (!haCamp) voci.push(["Gol fatti", "gf", 1, 2], ["Gol subiti", "gs", -1, 2]);
+        voci.push(["xG fatti", "xg", 1, 2], ["Tiri", "tiri", 1, 1], ["Tiri in porta", "porta", 1, 1], ["Possesso", "pos", 1, "%"], ["Angoli", "ang", 1, 1]);
+        if (!haCamp) voci.push(["Gialli", "gialli", 0, 1]);
+        voci.push(["Rossi", "rossi", 0, 2], ["Falli", "falli", 0, 1]);
+      }
+      voci = voci.concat(CONF_SOFA);
+      if (!haCamp) voci.push(["Porta inviolata", "cs", 1, "%"]);
       h += voci.map(function (v) {
         var i = ix(v[1]);
         return i < 0 ? "" : rigaConfronto(v[0], C.sc.v[i], C.so.v[i], v[2], v[3]);
@@ -8924,14 +8946,21 @@
         h += '<div class="stat-riga"><b>' + sg(C.sc.gol_meno_xg) + "</b><span>Gol meno xG nella stagione</span><b>" + sg(C.so.gol_meno_xg) + "</b></div>" +
           '<p class="piccolo">Gol meno xG: sopra zero la squadra ha segnato più di quanto valevano le occasioni (precisione o fortuna), sotto zero meno.</p>';
       }
+      if (C.sc.legni != null || C.so.legni != null) {
+        var nLegni = function (x) { return x == null ? "\u2013" : String(Math.round(x)); };
+        h += '<div class="stat-riga"><b>' + nLegni(C.sc.legni) + "</b><span>Pali e traverse nella stagione</span><b>" + nLegni(C.so.legni) + "</b></div>" +
+          '<p class="piccolo">Pali e traverse: gol mancati di un soffio. Tanti legni con pochi gol rispetto agli xG dicono sfortuna più che mira storta.</p>';
+      }
       if (C.sc.gp != null || C.so.gp != null) {
         var sgp = function (x) { return x == null ? "\u2013" : (x > 0 ? "+" : x < 0 ? "\u2212" : "") + Math.abs(x).toFixed(1); };
         h += '<div class="stat-riga"><b>' + sgp(C.sc.gp) + "</b><span>Gol evitati dal portiere nella stagione</span><b>" + sgp(C.so.gp) + "</b></div>" +
           '<p class="piccolo">Gol evitati: i gol che valevano i tiri in porta subiti meno quelli presi davvero. Sotto zero il portiere ha preso più del dovuto. ' +
           "Sono numeri che tendono a rientrare: uno scarto grande dice più fortuna che bravura.</p>";
       }
+      if (!haSito && C.scampi.indexOf("tiri") >= 0)
+        h += '<p class="piccolo">Da Sofascore, gol a parte, i valori sono solo quelli fatti: per i tiri, gli angoli e gli xG subiti la fonte non ha il dato. Dove una riga manca, Sofascore non la segue in questo campionato.</p>';
       if (C.slega && (nomeBex(C.sc.nome) !== nomeBex(p.Casa) || nomeBex(C.so.nome) !== nomeBex(p.Ospite)))
-        h += '<p class="piccolo">Su Sofascore: ' + esc(C.sc.nome) + " e " + esc(C.so.nome) + " (" + esc(C.slega) + ").</p>";
+        h += '<p class="piccolo">Su Sofascore: ' + esc(C.sc.nome) + " e " + esc(C.so.nome) + " (" + esc(String(C.slega).trim()) + ").</p>";
     }
     var fonti = [];
     if (C.c && C.o) fonti.push("dati del sito, partita per partita (" + esc(String(C.agg || "").slice(0, 10)) + ")");
