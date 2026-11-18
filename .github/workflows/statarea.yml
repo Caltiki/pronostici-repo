@@ -487,7 +487,7 @@ jobs:
           # SOLO file dati con data nel nome. Gli indici (*_index.json,
           # webpronostici_tipi.json, index.json) non vengono mai toccati.
           rx = re.compile(
-              r"^(statarea|consensus|asianodds|fpnet|xgaura|sportytrader|soccersite|ratingbet|betimate|footymetrics|fotmobxg|footystatswdw|sportsmole|heropredict|betexplorer|xgprob|"
+              r"^(statarea|consensus|asianodds|fpnet|xgaura|sportytrader|soccersite|ratingbet|betimate|footymetrics|fotmobxg|footystatswdw|sportsmole|heropredict|betexplorer|xgprob|sofascore_squadre|"
               r"webpronostici(?:_[a-z0-9]+)?)_"
               r"(\d{4}-\d{2}-\d{2})\.json$")
           rimossi = 0
@@ -2716,7 +2716,7 @@ jobs:
           # SOLO file dati con data nel nome. Gli indici (*_index.json,
           # webpronostici_tipi.json, index.json) non vengono mai toccati.
           rx = re.compile(
-              r"^(statarea|consensus|asianodds|betexplorer|webpronostici(?:_[a-z0-9]+)?)_"
+              r"^(statarea|consensus|asianodds|betexplorer|sofascore_squadre|webpronostici(?:_[a-z0-9]+)?)_"
               r"(\d{4}-\d{2}-\d{2})\.json$")
           rimossi = 0
           for nome in sorted(os.listdir("ghdata")):
