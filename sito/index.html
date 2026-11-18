@@ -133,6 +133,7 @@
   /* (179) partita senza pronostico sopra soglia: c'e', ma in secondo piano */
   .riga.partitona.senza-pron > details > summary { opacity: .62; }
   .riga.partitona.senza-pron > details[open] > summary { opacity: 1; }
+  .xgp-dentro { margin: 6px 2px 8px; font-size: .88rem; }
   .sel.nessun-pron { color: var(--tenue); font-style: italic; font-size: .9rem; }
   /* (177) la nota del costruttore in testo normale (prima prendeva lo
      stile dei titoletti) e il bottone visibile anche fuori dalla barra */
@@ -2595,6 +2596,8 @@
       carica = carica.then(function (righe) { return conRisultati(sez, righe, d); });
       // (174) le quote Sisal/Lottomatica da BetExplorer, se ci sono
       if (sez === "prezzi") carica = carica.then(function (righe) { return conBex(righe, d); });
+      // (180) le probabilita' 1X2 di xGaura su tutte le partite
+      if (sez === "prezzi") carica = carica.then(function (righe) { return conXgp(righe, d); });
       return carica.then(function (righe) {
         if (stato.sez !== sez || stato.data[sez] !== d) return;
         disegnaRighe(sez, righe, d);
@@ -2972,10 +2975,11 @@
             (fidM ? '<span class="pill ' + fidM[0] + '" title="' + esc(fidM[1]) + '">margine ' + f1(num(r0.Margine)) + "%</span>" : "") +
             pillConsenso(g.filter(function (x) { return x._cons; })[0]) + "</div>" +
             '<div class="partita">' + partitaHtml(r0.Casa, r0.Ospite, r0.Partita, campiRiga(r0)) + "</div>" + sqHtml(r0) +
-            (inSch ? '<div class="sel"><b>In schedina:</b> <span class="q-n' + (eVerde(num(inSch.Prob)) ? " verde" : "") + '">' + esc(etichettaSel(inSch)) + " · " + f0(num(inSch.Prob)) + "%</span></div>" : "") +
+                (inSch ? '<div class="sel"><b>In schedina:</b> <span class="q-n' + (eVerde(num(inSch.Prob)) ? " verde" : "") + '">' + esc(etichettaSel(inSch)) + " · " + f0(num(inSch.Prob)) + "%</span></div>" : "") +
             "</div></summary>" +
             '<div class="dentro-partita">' +
             '<div class="info-api" data-casa="' + esc(r0.Casa || "") + '" data-ospite="' + esc(r0.Ospite || "") + '" data-ora="' + esc(r0.Ora || "") + '" data-id="' + esc(r0.ID_API || "") + '"></div>' +
+            xgpHtml((g.filter(function (x) { return x._xgp; })[0] || {})._xgp) +
             (r0.Casa && r0.Ospite ? '<p class="aggancio" data-alias="' + esc(aliasDi(sez, r0)) + '"></p>' : "") +
             "</div></details>" +
             '<div class="dentro-partita esiti">' + dentro + "</div></div></div>";
@@ -2999,14 +3003,15 @@
           pillConsenso(g.filter(function (x) { return x._cons; })[0]) +
           (eAltroBook(r0.Fonte) ? '<span class="chip" title="Pinnacle non quota questa partita: prezzo da ' + esc(r0.Fonte) + '">quota ' + esc(r0.Fonte) + "</span>" : "") + "</div>" +
           '<div class="partita">' + partitaHtml(r0.Casa, r0.Ospite, r0.Partita, campiRiga(r0)) + "</div>" + sqHtml(r0) +
-          (senzaPr
+            (senzaPr
             ? '<div class="sel nessun-pron">Nessun pronostico dal 60% con quota equa almeno 1.40' + (scelte_ ? " · " + scelte_ + " nella multipla" : "") + "</div>"
             : '<div class="sel">' + (pron ? "<b>Pronostico:</b> " : "<b>Proposta:</b> ") + '<span class="q-n' + (eVerde(num(top.Prob)) ? " verde" : "") + '">' + esc(etichettaSel(top)) +
           " · " + f0(num(top.Prob)) + "%</span>" + (pron && equaDi(top) ? ' <span class="eq-pron">quota equa ' + f2(equaDi(top)) + "</span>" : "") +
           (scelte_ ? " · " + scelte_ + " nella multipla" : "") + "</div>" + bexHtml(top)) +
           '</div><div class="numero"><b>' + g.length + "</b><span>" + (g.length === 1 ? "probabilità" : "probabilità") + "</span></div></summary>" +
           '<div class="dentro-partita">' +
-          '<div class="info-api" data-casa="' + esc(r0.Casa || "") + '" data-ospite="' + esc(r0.Ospite || "") + '" data-ora="' + esc(r0.Ora || "") + '" data-id="' + esc(r0.ID_API || "") + '"></div>' + dentro +
+          '<div class="info-api" data-casa="' + esc(r0.Casa || "") + '" data-ospite="' + esc(r0.Ospite || "") + '" data-ora="' + esc(r0.Ora || "") + '" data-id="' + esc(r0.ID_API || "") + '"></div>' +
+          xgpHtml((g.filter(function (x) { return x._xgp; })[0] || {})._xgp) + dentro +
           (r0.Casa && r0.Ospite ? '<p class="aggancio" data-alias="' + esc(aliasDi(sez, r0)) + '"></p>' : "") +
           "</div></details></div>";
     }
@@ -4076,6 +4081,59 @@
     if ((o = /^OU (\d+(?:\.\d+)?)$/.exec(m)) && /^(Over|Under)$/.test(sel)) return { k: "ou " + parseFloat(o[1]), e: sel };
     if (m === "BTTS" && (sel === "Gol" || sel === "NoGol")) return { k: "bts", e: sel === "Gol" ? "GG" : "NG" };
     return null;
+  }
+  // (180) LE PROBABILITA' DI XGAURA SU TUTTE LE PARTITE. Il pick di
+  // xGaura e' uno per partita e quasi mai un 1X2 (7 su 110 il 18/11); le
+  // probabilita' 1/X/2 il sito le da' invece per tutte: xgaura_scraper.py le
+  // scrive in xgprob_<data>.json (ora di Roma, frazioni 0-1). Aggancio come
+  // per BetExplorer: stesso orario e nomi piu' simili, soglia BEX_SOGLIA.
+  // Sono mescolate col mercato (circa 42% del peso, lo dice il sito):
+  // confronto, non voto indipendente.
+  var XGP = {};
+  function caricaXgp(d) {
+    if (!XGP[d]) XGP[d] = leggi("xgprob_" + d + ".json").then(function (j) {
+      return Array.isArray(j) ? j : [];
+    }).catch(function () { return []; });
+    return XGP[d];
+  }
+  function conXgp(righe, d) {
+    return caricaXgp(d).then(function (xs) {
+      if (!xs.length || !Array.isArray(righe)) return righe;
+      var perOra = {};
+      xs.forEach(function (x) { if (x && x.Ora) (perOra[x.Ora] = perOra[x.Ora] || []).push(x); });
+      var memo = {};
+      righe.forEach(function (r) {
+        if (!r || !r.Casa || !r.Ospite) return;
+        var k = r.Casa + "|" + r.Ospite + "|" + r.Ora;
+        if (!(k in memo)) {
+          var best = null;
+          (perOra[r.Ora] || []).forEach(function (x) {
+            var v = (simile(r.Casa, x.Casa) + simile(r.Ospite, x.Ospite)) / 2;
+            if (!best || v > best.v) best = { v: v, x: x };
+          });
+          memo[k] = best && best.v >= BEX_SOGLIA ? best.x : null;
+        }
+        if (memo[k]) r._xgp = memo[k];
+      });
+      return righe;
+    });
+  }
+  // il segno piu' probabile per xGaura e le tre probabilita' in %
+  function xgpSegni(x) {
+    if (!x) return null;
+    var p = [num(x.P1), num(x.PX), num(x.P2)];
+    if (p.some(function (v) { return v == null; })) return null;
+    var i = p.indexOf(Math.max.apply(null, p));
+    return { p: p.map(function (v) { return v * 100; }), segno: ["1", "X", "2"][i] };
+  }
+  function xgpHtml(x) {
+    var s = xgpSegni(x);
+    if (!s) return "";
+    var pz = ["1", "X", "2"].map(function (e, i) { return '<span class="nw"><b class="seg">' + e + "</b> " + pvE(s.p[i]) + "</span>"; });
+    // (181) solo dentro la partita aperta: sulla scheda chiusa ripeteva
+    // quasi il mercato (mescolato al 42%) e sembrava un secondo parere
+    return '<p class="xgp-dentro">xGaura: ' + pz.join("\u2009\u00b7 ") +
+      ' <span class="piccolo">\u00b7 mescolate per circa il 42% con le quote dei bookmaker: un confronto, non un parere indipendente</span></p>';
   }
   // la quota di un book per la selezione della riga: { q, a } o null
   function quotaBook(r, b) {
@@ -6628,7 +6686,11 @@
   // archivio_consensus.py lo segna per misurarlo. Il segno di xGaura viene
   // dalla scheda della partita, come i pronostici delle altre fonti: solo
   // il suo 1X2 secco.
+  // (180) poi le probabilita' di xGaura (xgprob_<data>.json) su tutte
   function arricchisciAccordo(righe, data) {
+    return Promise.resolve(arricchisciAccordo0(righe, data)).then(function (r) { return conXgp(r, data); });
+  }
+  function arricchisciAccordo0(righe, data) {
     if (!Array.isArray(righe)) return righe;
     return leggi("scheda_" + data + ".json").catch(function () { return null; }).then(function (s) {
       if (!s || !s.alias) return righe;
@@ -6649,11 +6711,19 @@
       });
     });
   }
+  // (180) col segno piu' probabile di xGaura su tutte le partite; dove
+  // il file delle probabilita' non c'e', col suo pick 1X2 come prima
+  function segnoXgaura(r) {
+    var s = xgpSegni(r._xgp);
+    return s ? s.segno : r._xg || null;
+  }
   function etichettaXgaura(r) {
-    if (!r._xg) return "";
+    var sg = segnoXgaura(r);
+    if (!sg) return "";
     var pron = String(r["Pron Combinato"] || "").toUpperCase();
-    var con = pron.indexOf(r._xg) >= 0;
-    return '<span class="pill ' + (con ? "stretto" : "largo") + '" title="xGaura: ' + esc(r._xg) + '">xGaura ' +
+    var con = pron.indexOf(sg) >= 0, s = xgpSegni(r._xgp);
+    var tit = "xGaura: " + (s ? "1 " + f0(s.p[0]) + "% \u00b7 X " + f0(s.p[1]) + "% \u00b7 2 " + f0(s.p[2]) + "%" : sg);
+    return '<span class="pill ' + (con ? "stretto" : "largo") + '" title="' + esc(tit) + '">xGaura ' +
       (con ? "d'accordo" : "contro") + "</span>";
   }
 
@@ -6672,7 +6742,13 @@
     if (String(r["xG Casa"] || "").trim() || String(r["xG Ospite"] || "").trim()) {
       det.push("<p>xG: " + esc(r["xG Casa"] || "-") + " \u2013 " + esc(r["xG Ospite"] || "-") + "</p>");
     }
-    if (r._xg) {
+    var sgX = xgpSegni(r._xgp);
+    if (sgX) {
+      det.push("<p>xGaura: 1 " + pv(sgX.p[0]) + " \u00b7 X " + pv(sgX.p[1]) + " \u00b7 2 " + pv(sgX.p[2]) +
+        " \u2192 il pi\u00f9 probabile \u00e8 " + esc(sgX.segno) + (pron.indexOf(sgX.segno) >= 0 ? ", d'accordo col consenso" : ", contro il consenso") +
+        (r._xg ? " (il suo pronostico 1X2: " + esc(r._xg) + ")" : "") +
+        ". Probabilit\u00e0 mescolate col mercato per circa il 42%: un confronto, non una fonte indipendente.</p>");
+    } else if (r._xg) {
       det.push("<p>xGaura: " + esc(r._xg) + (pron.indexOf(r._xg) >= 0
         ? ", d'accordo col consenso."
         : ", contro il consenso. Finora i casi sono pochi: si sta misurando se è un segnale per lasciar perdere la partita.") + "</p>");
