@@ -152,6 +152,22 @@
   .bex-riga.grande { font-size: .84rem; margin-top: 3px; }
   .bex-riga.grande .bex b { font-size: .92rem; }
   .bex-riga .bex, .bex-riga .bex-scarto { white-space: nowrap; }
+  /* (202) quote in calo */
+  .calo-riga { font-size: .78rem; color: var(--male); margin-top: 2px; }
+  .calo-filtro { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin: 4px 0 10px; }
+  .calo-filtro .chip-calo { padding: 7px 12px; border: 1px solid var(--bordo); border-radius: 9px; background: var(--scheda); color: var(--male);
+    font: inherit; font-size: .8rem; font-weight: 700; cursor: pointer; box-shadow: var(--ombra); }
+  .calo-filtro .chip-calo.attivo { border-color: var(--male); box-shadow: 0 0 0 1px var(--male), var(--ombra); }
+  .calo-filtro .chip-calo:disabled { opacity: .5; cursor: default; }
+  .calo-filtro .chip-link { font-size: .78rem; }
+  .riga.calo .calo-esito { margin-top: 8px; padding: 8px 10px; border: 1px solid var(--bordo); border-radius: var(--raggio-sm); font-size: .86rem; line-height: 1.45; }
+  .riga.calo .calo-esito.valore { border-color: var(--buono); background: var(--buono-tenue); }
+  .riga.calo .ce-testa { font-weight: 700; }
+  .riga.calo .ce-testa .mv-giu { margin-left: 4px; }
+  .riga.calo .ce-book .calo-ok b { color: var(--buono); }
+  .riga.calo .ce-giudizio { color: var(--tenue); font-size: .8rem; }
+  .riga.calo .calo-esito.valore .ce-giudizio { color: var(--buono); font-weight: 600; }
+  button.chip-link[data-vai-calo] { border: 0; background: none; padding: 0; color: var(--evidenza); font: inherit; text-decoration: underline; cursor: pointer; }
   .costr-lista .bex-scarto { font-weight: 600; }
   .costr-lista .bex-scarto.su { color: var(--buono); }
   .costr-lista .bex-scarto.giu { color: var(--male); }
@@ -2228,6 +2244,11 @@
   // muove molto vicino al via sono arrivate notizie o soldi informati.
   var PIN_VISTE = [
     ["tutte", "Tutte le partite", "Tutte le partite del sito quotate da Pinnacle: quote, margine e probabilit\u00e0 senza margine."],
+    // (202) QUOTE IN CALO: un esito per riga, non una partita
+    ["calo", "Quote in calo",
+     "Gli esiti 1X2 che Pinnacle ha accorciato di almeno 2 punti di probabilit\u00e0 dalla prima lettura, nelle partite non ancora iniziate. " +
+     "Accanto, Sisal e Lottomatica adesso e alla loro apertura. Un calo su Pinnacle \u00e8 un'informazione, ma \u00e8 gi\u00e0 nel suo prezzo: " +
+     "conviene solo dove il book italiano paga ancora pi\u00f9 della quota equa nuova (in verde). Quelle righe stanno in cima."],
     ["mosse", "Si sono mosse",
      "Le partite di oggi che Pinnacle ha mosso di almeno 2 punti dalla prima lettura del mattino, dalla pi\u00f9 mossa. " +
      "Un movimento forte vicino al via vuol dire notizie (formazioni, infortuni) o soldi informati: guarda se il tuo book si \u00e8 gi\u00e0 adeguato."],
@@ -2251,6 +2272,7 @@
     fonteCm: "",
     esito: "",
     stretti: false,
+    calo: false,
     secchi: false,
     limite: PASSO
   };
@@ -2718,6 +2740,7 @@
       b.addEventListener("click", function () {
         stato.vista[sez] = b.dataset.vista; stato.limite = PASSO; stato.esito = "";
         if (sez === "prezzi" && b.dataset.vista === "partite" && stato.ordine.prezzi === "file") stato.ordine.prezzi = "ora";
+        if (sez === "pin" && b.dataset.vista === "calo") stato.ordine.pin = "mov";     // (202) dal calo piu' utile
         disegna();
       });
     });
@@ -2777,6 +2800,13 @@
     }
     // Lo stesso per il riquadro "su un segno secco" del Consenso Statarea:
     // restano le partite in cui il pronostico combinato e' 1, X o 2.
+    // (202) il riquadro "quote in calo" dei Pronostici: stesso meccanismo
+    baseCalo = passano;
+    // in "Tutte le partite" il filtro guarda il pronostico della partita: lo fa disegnaPerPartita
+    if (sez === "prezzi" && stato.calo && vista !== "partite") {
+      var caloF = passano.filter(inCaloAperto);
+      if (caloF.length) passano = caloF; else stato.calo = false;
+    }
     baseSecchi = passano;
     if (sez === "accordo" && stato.secchi) {
       var secchiF = passano.filter(segnoSecco);
@@ -2821,7 +2851,7 @@
     var conta = visibili.length === tutte.length
       ? visibili.length + " righe"
       : visibili.length + " righe su " + tutte.length;
-    var html = SEZ[sez].riepilogo(visibili) + tessereEsito(sez, visibili) +
+    var html = SEZ[sez].riepilogo(visibili) + tessereEsito(sez, visibili) + caloFiltroHtml(sez, visibili) +
       (sez === "prezzi" && vista === "schedina" ? costruttoreHtml(passano) : "") +
       '<p class="conta">' + conta + SEZ[sez].nota + "</p><div class=\"lista\">" +
       mostrate.map(function (r, i) {
@@ -2851,6 +2881,18 @@
       b.addEventListener("click", function () {
         stato.stretti = !stato.stretti;
         stato.limite = PASSO; ridisegnaRighe();
+      });
+    });
+    $r.querySelectorAll("[data-calo]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        stato.calo = !stato.calo;
+        stato.limite = PASSO; ridisegnaRighe();
+      });
+    });
+    $r.querySelectorAll("[data-vai-calo]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        stato.vista.pin = "calo"; stato.ordine.pin = "mov"; stato.data.pin = data; stato.cerca = ""; stato.limite = PASSO;
+        location.hash = "pin/" + data + "/calo";
       });
     });
     $r.querySelectorAll("[data-secchi]").forEach(function (b) {
@@ -2973,9 +3015,13 @@
     var gf = pron && stato.esito ? gruppi.filter(function (g) { return esitoDi(g._pr) === stato.esito; }) : null;
     if (gf && !gf.length) { stato.esito = ""; gf = null; }
     var conPr = pron ? gruppi.filter(function (g) { return g._pr; }) : gruppi;
-    var riep = pron ? (conPr.length ? riepilogoPronostici(conPr) : "") : SEZ[sez].riepilogo(visibili);
+    // (202) "Quote in calo" qui: le partite il cui pronostico si sta accorciando
+    var gCalo = pron ? gruppi.filter(function (g) { return g._pr && inCaloAperto(g._pr); }) : null;
+    if (pron && stato.calo && !gCalo.length) stato.calo = false;
+    var riep = (pron ? (conPr.length ? riepilogoPronostici(conPr) : "") : SEZ[sez].riepilogo(visibili)) + caloFiltroHtml(sez, visibili, gCalo ? gCalo.length : null);
     var nTot = conPr.length, nSenza = gruppi.length - conPr.length;
     if (gf) gruppi = gf;
+    if (pron && stato.calo) gruppi = gruppi.filter(function (g) { return gCalo.indexOf(g) >= 0; });
 
     var mostrateG = gruppi.slice(0, stato.limite), mostrate = [];
     // LA GIOCATA PROPOSTA SULLA SCHEDA CHIUSA, quando la partita non ha
@@ -3082,7 +3128,7 @@
             ? '<div class="sel nessun-pron">Nessun pronostico dal 60% con quota equa almeno 1.40' + (scelte_ ? " · " + scelte_ + " nella multipla" : "") + "</div>"
             : '<div class="sel">' + (pron ? "<b>Pronostico:</b> " : "<b>Proposta:</b> ") + '<span class="q-n' + (eVerde(num(top.Prob)) ? " verde" : "") + '">' + esc(etichettaSel(top)) +
           " · " + f0(num(top.Prob)) + "%</span>" + (pron && equaDi(top) ? ' <span class="eq-pron">quota equa ' + f2(equaDi(top)) + "</span>" : "") +
-          (scelte_ ? " · " + scelte_ + " nella multipla" : "") + "</div>" + bexHtml(top)) +
+          (scelte_ ? " · " + scelte_ + " nella multipla" : "") + "</div>" + bexHtml(top) + caloHtml(top)) +
           '</div><div class="numero"><b>' + g.length + "</b><span>" + (g.length === 1 ? "probabilità" : "probabilità") + "</span></div></summary>" +
           '<div class="dentro-partita">' +
           '<div class="info-api" data-casa="' + esc(r0.Casa || "") + '" data-ospite="' + esc(r0.Ospite || "") + '" data-ora="' + esc(r0.Ora || "") + '" data-id="' + esc(r0.ID_API || "") + '"></div>' +
@@ -3113,6 +3159,18 @@
       b.addEventListener("click", function () {
         stato.stretti = !stato.stretti;
         stato.limite = PASSO; ridisegnaRighe();
+      });
+    });
+    $r.querySelectorAll("[data-calo]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        stato.calo = !stato.calo;
+        stato.limite = PASSO; ridisegnaRighe();
+      });
+    });
+    $r.querySelectorAll("[data-vai-calo]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        stato.vista.pin = "calo"; stato.ordine.pin = "mov"; stato.data.pin = data; stato.cerca = ""; stato.limite = PASSO;
+        location.hash = "pin/" + data + "/calo";
       });
     });
     $r.querySelectorAll("input[data-chiave]").forEach(function (cb) {
@@ -3278,7 +3336,38 @@
   // Le righe della giornata PRIMA del filtro prese/sbagliate: i conteggi
   // dei riquadri restano quelli di tutta la schedina anche col filtro.
   var baseEsiti = null;
-  var baseStrette = null;
+  var baseStrette = null, baseCalo = null;
+  function prezzoInCalo(r) {
+    var m = num(r.Mov_Sel);
+    if (m != null) return m >= CALO_PUNTI ? { tipo: "pin", d: m } : null;
+    var best = null;
+    BEX_BOOK.forEach(function (b) {
+      var x = quotaBook(r, b);
+      if (x && x.a && x.q <= x.a * CALO_BOOK) { var dr = 1 - x.q / x.a; if (!best || dr > best.dr) best = { tipo: "book", b: b, q: x.q, a: x.a, dr: dr }; }
+    });
+    return best;
+  }
+  // per il filtro: solo le partite ancora da giocare
+  function inCaloAperto(r) { return nonIniziata(r) && !!prezzoInCalo(r); }
+  function caloHtml(r) {
+    var c = r ? prezzoInCalo(r) : null;
+    if (!c) return "";
+    return '<div class="calo-riga">\u25bc ' + (c.tipo === "pin"
+      ? "in calo su Pinnacle: probabilit\u00e0 +" + f1(c.d) + " punti dalla prima lettura"
+      : "in calo su " + esc(c.b) + ": " + f2(c.a) + " \u2192 " + f2(c.q) + " dall'apertura") + "</div>";
+  }
+  // il tasto sopra la lista: quante partite hanno un pronostico in calo
+  // nPron: in "Tutte le partite" si contano le partite il cui pronostico e' in calo
+  function caloFiltroHtml(sez, v, nPron) {
+    if (sez !== "prezzi") return "";
+    var base = stato.calo && baseCalo ? baseCalo : v, viste = {};
+    base.filter(inCaloAperto).forEach(function (r) { viste[(r.Data || "") + "|" + (r.Partita || r.Casa + " - " + r.Ospite)] = 1; });
+    var n = nPron != null ? nPron : Object.keys(viste).length, on = !!stato.calo;
+    return '<div class="calo-filtro"><button type="button" class="chip-calo' + (on ? " attivo" : "") + '" data-calo="1"' +
+      (n || on ? "" : " disabled") + ' aria-pressed="' + on + '">\u25bc Quote in calo \u00b7 ' + n + (n === 1 ? " partita" : " partite") +
+      (on ? " \u00b7 mostra tutte" : "") + "</button>" +
+      '<button type="button" class="chip-link" data-vai-calo="1">tutti gli esiti in calo, con Sisal e Lottomatica \u2192</button></div>';
+  }
   var SOGLIA_STRETTO = 3;
   // (171) "Piu' book" (FootyMetrics) mette insieme le quote migliori di book
   // diversi: il suo margine esce basso per costruzione, quindi per lui il
@@ -3404,6 +3493,7 @@
     else if (o === "prob") v.sort(function (a, b) {
       return ((probOrdine(b) || 0) - (probOrdine(a) || 0)) || ((num(b.Fonti) || 0) - (num(a.Fonti) || 0));
     });
+    else if (o === "mov" && sez === "pin" && stato.vista.pin === "calo") v.sort(function (a, b) { return caloPeso(b) - caloPeso(a); });
     else if (o === "mov") v.sort(function (a, b) { return (num(b.Mov) || 0) - (num(a.Mov) || 0); });
     // Gol attesi: la linea Under/Over principale e' quella dove Over e Under
     // si equivalgono, quindi conta la linea (2.25, 2.5, 3...), poi l'Over.
@@ -3434,6 +3524,9 @@
   function scartoDi(r) { var v = num(r.Scarto); return v != null ? v : num(r.Scarto_Segno); }
 
   function vuotoPerVista(sez, vista, n, data) {
+    if (sez === "pin" && vista === "calo")
+      return "Nessun esito accorciato di almeno 2 punti fra le " + n + " partite del " + data + " ancora da giocare. " +
+        "Il movimento si misura dalla prima lettura di Pinnacle: per i giorni lontani di solito non c'\u00e8 ancora niente.";
     if (sez === "mercato") {
       if (vista === "aff") return "Nessuna partita a margine basso fra le " + n + " del " + data + ". Prova \u201cTutte\u201d.";
       if (vista === "mov") return "Nessun movimento notevole fra le " + n + " partite del " + data + ". Prova \u201cTutte\u201d.";
@@ -4348,7 +4441,7 @@
       (r._fresca ? '<span class="pill fresca" title="Quota Pinnacle aggiornata">\u21bb ' + esc(r._fresca) + "</span>" : "") +
       "</div>" +
       '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, r.Partita, campiRiga(r)) + "</div>" + PROB_CARTA +
-      '<div class="sel"><b class="esito-sel">' + esc(etichettaSel(r)) + "</b></div>" + bexHtml(r) +
+      '<div class="sel"><b class="esito-sel">' + esc(etichettaSel(r)) + "</b></div>" + bexHtml(r) + caloHtml(r) +
       (prob != null ? '<div class="pbar"><i style="width:' + Math.min(100, prob) + '%"></i></div>' : "") +
       "</div>" +
       '<div class="numero"><b>' + f2(equa) + "</b><span>" + pctNumero(prob, margineStretto(r)) + "</span></div>" +
@@ -6239,9 +6332,45 @@
     if (m === "SEGNA") return s === "CASA" ? gc > 0 : s === "OSPITE" ? go > 0 : null;
     return null;
   }
+  // (202) LE QUOTE IN CALO. Su Pinnacle: un esito 1X2 la cui probabilita'
+  // senza margine e' salita di almeno CALO_PUNTI dalla prima lettura (la
+  // stessa base delle frecce prima/ora). Sui book italiani, dove Pinnacle
+  // non ha la prima lettura (Under/Over, Gol/NoGol): quota scesa di almeno
+  // il 5% dall'apertura del book, letta da BetExplorer.
+  var CALO_PUNTI = 2, CALO_BOOK = 0.95;
+  function pinCalo(r, pro) {
+    var p = [num(r["P1 Shin"]), num(r["PX Shin"]), num(r["P2 Shin"])], b = baseMovimento(r, pro), out = [];
+    if (!b || p[0] == null) return out;
+    var Q = [num(r.Q1), num(r.QX), num(r.Q2)];
+    for (var i = 0; i < 3; i++) {
+      var d = p[i] - b.p[i];
+      if (!(d >= CALO_PUNTI) || !(p[i] > 0) || !(b.p[i] > 0)) continue;
+      var s = "1X2"[i], eq = 100 / p[i], books = [];
+      BEX_BOOK.forEach(function (bk) {
+        var x = quotaBook({ _bex: r._bex, Mercato: "1X2", Sel: s }, bk);
+        if (x) books.push({ b: bk, q: x.q, a: x.a });
+      });
+      out.push({ s: s, d: d, eq: eq, eq0: 100 / b.p[i], q: Q[i], q0: b.q && b.q[i] != null ? b.q[i] : null, t: b.t,
+        books: books, valore: books.some(function (x) { return x.q > eq; }) });
+    }
+    return out;
+  }
+  function nonIniziata(r) {
+    var st = String(r.Stato || "").toUpperCase();
+    if (st && st !== "NS" && st !== "TBD") return false;
+    if (r.Gol_Casa != null && r.Gol_Ospite != null) return false;
+    // oggi, ora del via gia' passata: lo stato arriva solo col giro dopo
+    if (r.Data && r.Data < oggi()) return false;
+    if (r.Data === oggi() && /^\d{2}:\d{2}/.test(r.Ora || "")) {
+      var hm = new Intl.DateTimeFormat("it-IT", { timeZone: "Europe/Rome", hour: "2-digit", minute: "2-digit", hour12: false }).format(new Date());
+      if (String(r.Ora).slice(0, 5) <= hm) return false;
+    }
+    return true;
+  }
   function arricchisciPin(righe, data) {
-    return Promise.all([pinExtra(data), calendarioPer(data), formaFile(data), freschePinnacle()]).then(function (a) {
-      var x = a[0], cal = a[1], ff = a[2];
+    return Promise.all([pinExtra(data), calendarioPer(data), formaFile(data), freschePinnacle(), proFrecce(),
+      conBex(righe, data).catch(function () { return righe; })]).then(function (a) {
+      var x = a[0], cal = a[1], ff = a[2], pro = a[4];
       applicaFresche(righe, a[3]);
       return (Array.isArray(righe) ? righe : []).map(function (r) {
         var p = [num(r["P1 Shin"]), num(r["PX Shin"]), num(r["P2 Shin"])];
@@ -6253,7 +6382,8 @@
           Segno: "1X2"[top], _prob: p[top] != null ? p[top] / 100 : null, _p: p,
           _diff: d, _mattino: mt ? mt[3] : null, Mov: d ? Math.abs(d[i]) : 0, _segnoMov: i != null ? "1X2"[i] : "",
           _form: x.form[String(r.ID_API)] || null,
-          _forma: formaDi(ff, r.ID_API)
+          _forma: formaDi(ff, r.ID_API),
+          _calo: pinCalo(r, pro)
         }, (function () {
           var c = cal[String(r.ID_API)];
           return c && (r.Gol_Casa == null || r.Gol_Ospite == null) ? { Gol_Casa: c.gc, Gol_Ospite: c.go } : {};
@@ -6263,9 +6393,22 @@
   }
   function pinTiene(r, tipo) {
     if (tipo === "mosse") return r.Mov >= 2;
+    if (tipo === "calo") return !!(r._calo && r._calo.length) && nonIniziata(r);
     return true;
   }
+  // in cima gli esiti dove un book italiano paga ancora piu' dell'equa, poi il calo piu' forte
+  function caloPeso(r) {
+    return (r._calo || []).reduce(function (m, c) { return Math.max(m, (c.valore ? 100 : 0) + c.d); }, 0);
+  }
   function riepilogoPin(v) {
+    if (stato.vista.pin === "calo") {
+      var es = [].concat.apply([], v.map(function (r) { return r._calo || []; }));
+      return tessere([
+        [String(es.length), es.length === 1 ? "esito in calo" : "esiti in calo"],
+        [String(es.filter(function (c) { return c.books.length; }).length), "con Sisal o Lottomatica"],
+        [String(es.filter(function (c) { return c.valore; }).length), "dove il book paga ancora più dell'equa"]
+      ]);
+    }
     var mosse = v.filter(function (r) { return r.Mov >= 2; });
     var forti = v.filter(function (r) { return r.Mov >= 4; });
     var marg = mediana(v.map(function (r) { return num(r.Margine); }));
@@ -6363,7 +6506,47 @@
     }
     return out.join("");
   }
+  function rigaCalo(r) {
+    var cal = (r._calo || []).slice().sort(function (a, b) { return (b.valore - a.valore) || (b.d - a.d); });
+    var esiti = cal.map(function (c) {
+      var chi = c.s === "1" ? r.Casa : c.s === "2" ? r.Ospite : "pareggio";
+      var bk = c.books.map(function (b) {
+        var sopra = b.q > c.eq;
+        return '<span class="nw' + (sopra ? " calo-ok" : "") + '">' + esc(b.b) + " <b>" + f2(b.q) + "</b>" +
+          (b.a != null && Math.abs(b.a - b.q) >= 0.005 ? ' <span class="piccolo">(apertura ' + f2(b.a) + ")</span>" : "") + "</span>";
+      }).join(" \u00b7 ");
+      var giudizio = !c.books.length ? "Sisal e Lottomatica non letti per questa partita."
+        : c.valore ? "Il book paga ancora più dell'equa nuova " + f2(c.eq) + "."
+        : "Sisal e Lottomatica sono già sotto l'equa nuova " + f2(c.eq) + ": niente da prendere.";
+      return '<div class="calo-esito' + (c.valore ? " valore" : "") + '">' +
+        '<div class="ce-testa"><b class="seg">' + c.s + "</b> " + esc(chi) +
+          ' <span class="mv-giu">\u25bc ' + f0((1 - c.eq / c.eq0) * 100) + "%</span></div>" +
+        '<div class="ce-pin">Quota equa <span class="piccolo">' + f2(c.eq0) + "</span> \u2192 <b>" + f2(c.eq) + "</b>" +
+          ' <span class="piccolo">(probabilit\u00e0 +' + f1(c.d) + " punti)</span></div>" +
+        (bk ? '<div class="ce-book">' + bk + "</div>" : "") +
+        '<div class="ce-giudizio">' + giudizio + "</div></div>";
+    }).join("");
+    var top = cal[0];
+    var quando = top && top.t ? top.t.slice(8, 10) + "/" + top.t.slice(5, 7) + " " + top.t.slice(11, 16) : "";
+    var det = ["<p>" + esc(r.Lega || "") + "</p>",
+      "<p>Dalla prima lettura di Pinnacle" + (quando ? " (" + esc(quando) + ")" : "") + " a adesso" + (r.Letto ? " (" + esc(String(r.Letto).slice(11, 16)) + ")" : "") +
+      ". Le quote eque sono senza margine; quelle di Sisal e Lottomatica vengono da BetExplorer, con l'apertura del book.</p>"];
+    if (r._form) det.push(formazioneHtml(r._form));
+    return '<div class="riga calo"><details><summary>' +
+      '<span class="segno mosso">' + esc(top ? top.s : "?") + "</span>" +
+      '<div class="corpo">' +
+      '<div class="alto">' + (r.Ora ? "<span><b>" + esc(r.Ora) + "</b></span>" : "") +
+        (r.Lega ? '<span class="chip">' + esc(r.Lega) + "</span>" : "") +
+        (r._form && r._form.titolari ? '<span class="pill stretto">formazioni</span>' : "") + "</div>" +
+      '<div class="partita">' + partitaHtmlId(r.Casa, r.Ospite, r.ID_Casa, r.ID_Ospite, campiRiga(r)) + "</div>" +
+      esiti + "</div>" +
+      '<div class="numero"><b>' + (top ? "\u2212" + f0((1 - top.eq / top.eq0) * 100) + "%" : "-") + "</b><span>quota equa sul " + esc(top ? top.s : "-") + "</span></div>" +
+      "</summary>" +
+      '<div class="dettaglio">' + det.join("") + "</div>" +
+      "</details></div>";
+  }
   function rigaPin(r) {
+    if (stato.vista.pin === "calo") return rigaCalo(r);
     var p = r._p, det = [];
     det.push("<p>" + esc(r.Lega || "") + "</p>");
     if (num(r.Q1) != null) det.push("<p>Quote Pinnacle " + [r.Q1, r.QX, r.Q2].map(function (x) { return qv(x); }).join(" · ") +
