@@ -8736,11 +8736,48 @@
     });
     return dentro ? Math.max(s, 0.85) : s;
   }
+  // (197) Nomi che la somiglianza non basta a riconoscere: a sinistra come
+  // arrivano dalle fonti del sito, a destra come li scrive Sofascore.
+  // Chiavi e valori si confrontano normalizzati (minuscole, senza accenti,
+  // senza FC/AC/...), quindi basta scriverli in modo leggibile.
+  var SOFA_ALIAS = {
+    "Inter Milan": "Inter", "Internazionale": "Inter", "FC Internazionale": "Inter", "Inter Milano": "Inter",
+    "Rennes": "Stade Rennais", "Stade Rennes": "Stade Rennais",
+    "Vicenza Virtus": "L.R. Vicenza", "Vicenza": "L.R. Vicenza", "LR Vicenza": "L.R. Vicenza",
+    "La Roche VF": "VFC La Roche-sur-Yon", "La Roche": "VFC La Roche-sur-Yon", "La Roche-sur-Yon": "VFC La Roche-sur-Yon",
+    "ESOF La Roche": "VFC La Roche-sur-Yon",
+    "PSG": "Paris Saint-Germain", "Paris SG": "Paris Saint-Germain",
+    "Rodez Aveyron": "Rodez AF", "Le Puy Foot": "Le Puy-en-Velay", "Le Puy": "Le Puy-en-Velay",
+    "Quevilly Rouen": "Quevilly - Rouen Métropole", "Quevilly": "Quevilly - Rouen Métropole", "QRM": "Quevilly - Rouen Métropole",
+    "Bourg Peronnas": "Bourg-en-Bresse", "Bourg-Peronnas": "Bourg-en-Bresse", "Bourg-en-bresse 01": "Bourg-en-Bresse",
+    "Gobelins": "Paris 13 Atletico", "FC Gobelins": "Paris 13 Atletico",
+    "Atalanta II": "Atalanta U23", "Atalanta B": "Atalanta U23", "Inter II": "Inter U23", "Inter B": "Inter U23",
+    "Celta Vigo B": "Celta Fortuna", "Celta B": "Celta Fortuna",
+    "Racing Santander": "Real Racing Club", "Racing de Santander": "Real Racing Club"
+  };
+  var SOFA_ALIAS_N = {};
+  Object.keys(SOFA_ALIAS).forEach(function (k) { SOFA_ALIAS_N[nomeBex(k)] = nomeBex(SOFA_ALIAS[k]); });
+  // le fonti italiane scrivono il paese in italiano ("Italia - Serie A"),
+  // Sofascore in inglese ("Italy")
+  var SOFA_PAESI = { italia: "italy", francia: "france", spagna: "spain", svizzera: "switzerland", germania: "germany",
+    inghilterra: "england", scozia: "scotland", galles: "wales", irlanda: "ireland", portogallo: "portugal", olanda: "netherlands",
+    "paesi bassi": "netherlands", belgio: "belgium", austria: "austria", danimarca: "denmark", svezia: "sweden", norvegia: "norway",
+    finlandia: "finland", polonia: "poland", "repubblica ceca": "czechia", croazia: "croatia", serbia: "serbia", grecia: "greece",
+    turchia: "turkey", romania: "romania", ungheria: "hungary", slovacchia: "slovakia", slovenia: "slovenia", ucraina: "ukraine",
+    brasile: "brazil", argentina: "argentina", messico: "mexico", "stati uniti": "usa", giappone: "japan", australia: "australia" };
+  function sofaLegaNorm(lega) {
+    var n = nomeBex(lega), k;
+    for (k in SOFA_PAESI) if (n === k || n.indexOf(k + " ") === 0) return SOFA_PAESI[k] + n.slice(k.length);
+    return n;
+  }
   function sofaMigliore(squadre, nome) {
-    var tq = sofaTipo(nome), best = null, secondo = 0;
+    var tq = sofaTipo(nome), best = null, secondo = 0, al = SOFA_ALIAS_N[nomeBex(nome)];
     squadre.forEach(function (q) {
-      if (!q.stat || sofaTipo(q.nome) !== tq) return;
-      var v = sofaPunti(nome, q.nome);
+      if (!q.stat) return;
+      // un nome della tabella vale anche fra prima squadra e seconda ("Atalanta II" / "Atalanta U23")
+      var daTabella = al && nomeBex(q.nome) === al;
+      if (!daTabella && sofaTipo(q.nome) !== tq) return;
+      var v = daTabella ? 1 : sofaPunti(nome, q.nome);
       if (!best || v > best.v) { if (best) secondo = Math.max(secondo, best.v); best = { v: v, q: q }; }
       else secondo = Math.max(secondo, v);
     });
@@ -8748,7 +8785,7 @@
   }
   function sofaPerNome(S2, lega, casa, ospite) {
     if (!S2 || !Array.isArray(S2.leghe) || !Array.isArray(S2.categorie) || !lega) return null;
-    var ln = nomeBex(lega), lt = sofaTipo(lega).replace("B", ""), trovata = null;
+    var ln = sofaLegaNorm(lega), lt = sofaTipo(lega).replace("B", ""), trovata = null;
     S2.leghe.forEach(function (L) {
       var pn = nomeBex(L.paese);
       if (!pn || ln.indexOf(pn) !== 0 || !Array.isArray(L.squadre)) return;
