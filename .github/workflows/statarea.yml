@@ -487,7 +487,7 @@ jobs:
           # SOLO file dati con data nel nome. Gli indici (*_index.json,
           # webpronostici_tipi.json, index.json) non vengono mai toccati.
           rx = re.compile(
-              r"^(statarea|consensus|asianodds|fpnet|xgaura|sportytrader|soccersite|ratingbet|betimate|footymetrics|fotmobxg|footystatswdw|sportsmole|heropredict|betexplorer|"
+              r"^(statarea|consensus|asianodds|fpnet|xgaura|sportytrader|soccersite|ratingbet|betimate|footymetrics|fotmobxg|footystatswdw|sportsmole|heropredict|betexplorer|xgprob|"
               r"webpronostici(?:_[a-z0-9]+)?)_"
               r"(\d{4}-\d{2}-\d{2})\.json$")
           rimossi = 0
@@ -828,7 +828,10 @@ jobs:
         id: scarica
         continue-on-error: true
         timeout-minutes: 22
-        run: python xgaura_scraper.py --giorni 3 --kodi-dir xgkodi
+        # (18/11) --prob-dir: anche xgprob_<data>.json, le probabilita'
+        # 1X2 / Over 2.5 / Gol di xGaura su tutte le partite (il sito le
+        # mostra accanto all'Elo). File a parte: xgaura_<data>.json resta com'era.
+        run: python xgaura_scraper.py --giorni 3 --kodi-dir xgkodi --prob-dir xgkodi
 
       - name: Pubblica i JSON xGaura sul repository pubblico
         # Come per le altre fonti: se lo scaricamento fallisce non si
@@ -861,7 +864,7 @@ jobs:
           # giocate. La pulizia generale a 30 giorni ci metterebbe settimane
           # a portarle via; qui vanno subito, come per le altre sezioni.
           oggi = datetime.date.today().isoformat()
-          rx = re.compile(r"^xgaura_(\d{4}-\d{2}-\d{2})\.json$")
+          rx = re.compile(r"^(?:xgaura|xgprob)_(\d{4}-\d{2}-\d{2})\.json$")
           tolti = 0
           for nome in sorted(os.listdir("ghdata")):
               m = rx.match(nome)
