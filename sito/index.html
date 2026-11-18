@@ -1778,6 +1778,20 @@
   .elo-r { display: grid; grid-template-columns: 2.6em 1fr auto; gap: 8px; align-items: center; padding: 7px 4px; border-bottom: 1px solid var(--bordo); }
   .elo-r .m { color: var(--tenue); font-variant-numeric: tabular-nums; text-align: right; }
   .elo-r .r b { font-size: 1.05rem; }
+  /* (200) PAGINA ELO SU PC. Giorno, filtro, ricerca e ordine in una barra
+     sola invece di tre file di bottoni una sotto l'altra; la classifica in
+     due colonne (1-50 a sinistra, 51-100 a destra), cosi' nome e rating
+     non stanno ai due capi dello schermo. Il telefono resta com'era. */
+  @media (min-width: 900px) {
+    .elo-barra { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 0; margin: 16px 0 10px;
+      padding: 10px 12px; border: 1px solid var(--bordo); border-radius: var(--raggio); background: var(--scheda); box-shadow: var(--ombra); }
+    #contenuto .elo-barra > .chips { margin: 0; padding: 0 14px 0 0; flex-wrap: wrap; overflow: visible; }
+    #contenuto .elo-barra > .chips + .chips { padding-left: 14px; border-left: 1px solid var(--bordo); }
+    #contenuto .elo-barra > .strumenti { flex: 1 1 340px; margin: 0 0 0 4px; }
+    #contenuto .elo-barra > .strumenti input[type="search"], #contenuto .elo-barra > .strumenti select { min-height: 38px; }
+    .elo-tab { columns: 2; column-gap: 40px; }
+    .elo-tab .elo-r { break-inside: avoid; }
+  }
   /* ✓/✗ grigia sui pronostici delle fonti nella scheda (125). */
   .spunta-pron { color: var(--tenue); font-weight: 800; }
 
@@ -10543,12 +10557,14 @@
         // (137) "Tutto su questa partita": stesso aggancio del Calendario
         linkSchede(sito, b[1] || {}, b[2], d);
         var conId = lista.filter(function (x) { return x.ic != null && x.io != null; }).length;
-        $c.innerHTML = chipsHtml(date.map(function (x) { return [x, etichettaData(x)]; }), d, "data-edata") +
+        // (200) giorno, filtro, ricerca e ordine in una barra sola: su PC
+        // stanno in fila, sul telefono restano uno sotto l'altro come prima
+        $c.innerHTML = '<div class="elo-barra">' + chipsHtml(date.map(function (x) { return [x, etichettaData(x)]; }), d, "data-edata") +
           chipsHtml([["sito", "Sul sito"], ["tutte", "Tutte"]], ELO.filtro, "data-efiltro") +
           '<div class="strumenti"><input type="search" id="cerca-elo" placeholder="Squadra o campionato" value="' + esc(ELO.cerca) + '" autocomplete="off">' +
           '<select id="ordine-elo" aria-label="Ordine">' + ELO_ORDINI.map(function (o) {
             return '<option value="' + o[0] + '"' + (o[0] === ELO.ordine ? " selected" : "") + ">" + esc(o[1]) + "</option>";
-          }).join("") + "</select></div>" +
+          }).join("") + "</select></div></div>" +
           (conId ? "" : messaggio("avviso", "Il calendario di questo giorno non ha ancora i numeri delle squadre: arrivano col prossimo giro di Pinnacle.")) +
           '<div id="elo-lista"></div>';
         $c.querySelectorAll("[data-edata]").forEach(function (x) { x.addEventListener("click", function () { ELO.data = x.dataset.edata; disegna(); }); });
