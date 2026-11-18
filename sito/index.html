@@ -133,6 +133,8 @@
   /* (179) partita senza pronostico sopra soglia: c'e', ma in secondo piano */
   .riga.partitona.senza-pron > details > summary { opacity: .62; }
   .riga.partitona.senza-pron > details[open] > summary { opacity: 1; }
+  .prob-carta .pc-merc:empty, .prob-carta .pc-elo:empty { display: none; }
+  .riga .prob-carta { font-size: .85rem; margin: 2px 0 4px; }
   .xgp-dentro { margin: 6px 2px 8px; font-size: .88rem; }
   .sel.nessun-pron { color: var(--tenue); font-style: italic; font-size: .9rem; }
   /* (177) la nota del costruttore in testo normale (prima prendeva lo
@@ -2974,7 +2976,7 @@
             (eAltroBook(r0.Fonte) ? '<span class="chip" title="Pinnacle non quota questa partita: prezzo da ' + esc(r0.Fonte) + '">quota ' + esc(r0.Fonte) + "</span>" : "") +
             (fidM ? '<span class="pill ' + fidM[0] + '" title="' + esc(fidM[1]) + '">margine ' + f1(num(r0.Margine)) + "%</span>" : "") +
             pillConsenso(g.filter(function (x) { return x._cons; })[0]) + "</div>" +
-            '<div class="partita">' + partitaHtml(r0.Casa, r0.Ospite, r0.Partita, campiRiga(r0)) + "</div>" + sqHtml(r0) +
+            '<div class="partita">' + partitaHtml(r0.Casa, r0.Ospite, r0.Partita, campiRiga(r0)) + "</div>" + PROB_CARTA + sqHtml(r0) +
                 (inSch ? '<div class="sel"><b>In schedina:</b> <span class="q-n' + (eVerde(num(inSch.Prob)) ? " verde" : "") + '">' + esc(etichettaSel(inSch)) + " · " + f0(num(inSch.Prob)) + "%</span></div>" : "") +
             "</div></summary>" +
             '<div class="dentro-partita">' +
@@ -3002,7 +3004,7 @@
           (r0.Fonte === "OddsAPI" ? '<span class="chip">quota Betfair</span>' : "") +
           pillConsenso(g.filter(function (x) { return x._cons; })[0]) +
           (eAltroBook(r0.Fonte) ? '<span class="chip" title="Pinnacle non quota questa partita: prezzo da ' + esc(r0.Fonte) + '">quota ' + esc(r0.Fonte) + "</span>" : "") + "</div>" +
-          '<div class="partita">' + partitaHtml(r0.Casa, r0.Ospite, r0.Partita, campiRiga(r0)) + "</div>" + sqHtml(r0) +
+          '<div class="partita">' + partitaHtml(r0.Casa, r0.Ospite, r0.Partita, campiRiga(r0)) + "</div>" + PROB_CARTA + sqHtml(r0) +
             (senzaPr
             ? '<div class="sel nessun-pron">Nessun pronostico dal 60% con quota equa almeno 1.40' + (scelte_ ? " · " + scelte_ + " nella multipla" : "") + "</div>"
             : '<div class="sel">' + (pron ? "<b>Pronostico:</b> " : "<b>Proposta:</b> ") + '<span class="q-n' + (eVerde(num(top.Prob)) ? " verde" : "") + '">' + esc(etichettaSel(top)) +
@@ -8072,7 +8074,7 @@
       var dElo = p.Elo.c.elo - p.Elo.o.elo;
       h += '<p class="elo-mini">Elo ' + evCoppia(p.Elo.c.elo, p.Elo.o.elo, " \u2013 ") + ' <span class="piccolo">(' + (dElo >= 0 ? "+" : "\u2212") + f0(Math.abs(dElo)) + ")</span>" +
         // (158) le probabilita' sotto, su una riga loro
-        "<br><span class=nw><b class=seg>1</b> " + pvE(p.Elo.p[0]) + "</span>" + " · <span class=nw><b class=seg>X</b> " + pvE(p.Elo.p[1]) + "</span>" + " · <span class=nw><b class=seg>2</b> " + pvE(p.Elo.p[2]) + "</span>" + "</p>";
+        (p.Elo.p ? "<br><span class=nw><b class=seg>1</b> " + pvE(p.Elo.p[0]) + "</span>" + " · <span class=nw><b class=seg>X</b> " + pvE(p.Elo.p[1]) + "</span>" + " · <span class=nw><b class=seg>2</b> " + pvE(p.Elo.p[2]) + "</span>" : '<br><span class="piccolo">' + NOTA_ELO_DIVERSI + campiDiversi(p.Elo.c, p.Elo.o) + "</span>") + "</p>";
     }
     var st = String(fm.Stato || "").toUpperCase(), gc = num(fm.Gol_Casa), go = num(fm.Gol_Ospite);
     // (174) il punteggio sta al centro, fra i due stemmi (heroPartita)
@@ -8386,7 +8388,7 @@
           if (ids && a2[5]) p.Classe = { c: posizioneApi(a2[5], ids[0], ids[2]), o: posizioneApi(a2[5], ids[1], ids[2]) };
           if (ids && ELO.dati && ELO.info) {
             var ec = ELO.dati.per[String(ids[0])], eo = ELO.dati.per[String(ids[1])];
-            if (ec && eo) p.Elo = { c: ec, o: eo, p: eloProb(ec.elo, eo.elo, ELO.info.logit, ids[2]) };
+            if (ec && eo) p.Elo = { c: ec, o: eo, p: eloConfrontabile(ec, eo) ? eloProb(ec.elo, eo.elo, ELO.info.logit, ids[2]) : null };
           }
           var cal = a2[0];
           var pm = a2[2] && a2[2].partite ? a2[2].partite[String(p.PinId)] : null;
@@ -9934,13 +9936,13 @@
     }
     if (ELO.dati && ELO.info && ELO.info.logit) {
       var c = ELO.dati.per[String(x.ic)], o = ELO.dati.per[String(x.io)];
-      if (c && o) { pe = eloProb(c.elo, o.elo, ELO.info.logit, x.li); d = c.elo - o.elo; }
+      if (c && o) { pe = eloConfrontabile(c, o) ? eloProb(c.elo, o.elo, ELO.info.logit, x.li) : null; d = c.elo - o.elo; }
     }
     var rif = pp || pe, max = rif ? Math.max(rif[0], rif[1], rif[2]) : null;
-    return { pin: pp, elo: pe, diff: d, max: max };
+    return { pin: pp, elo: pe, diff: d, max: max, eloNo: !pe && d != null };
   }
   function probCalHtml(P) {
-    if (!P.pin && !P.elo) return "";
+    if (!P.pin && !P.elo && !P.eloNo) return "";
     var tre = function (v) {
       return ["1", "X", "2"].map(function (sg, i) {
         return '<span class="nw"><b class="seg">' + sg + "</b> " + pvE(v[i]) + "</span>";
@@ -9950,6 +9952,7 @@
       (P.pin ? '<div class="nw"><span class="et">Pinnacle</span> ' + tre(P.pin) + "</div>" : "") +
       (P.elo ? '<div class="nw"><span class="et">Elo</span> ' + tre(P.elo) +
         (P.diff != null ? ' <span class="piccolo">(' + (P.diff >= 0 ? "+" : "\u2212") + f0(Math.abs(P.diff)) + ")</span>" : "") + "</div>" : "") +
+      (P.eloNo ? '<div class="nw"><span class="et">Elo</span> <span class="piccolo">' + NOTA_ELO_DIVERSI + "</span></div>" : "") +
       "</div>";
   }
   function listaCalendario(lista, sito) {
@@ -10103,6 +10106,26 @@
   // del calendario) si aggiungono lo scarto del vantaggio campo di quel
   // campionato e le sue soglie 1X2, se elo_info.json li ha (campo_lega,
   // logit_lega). In coppa o senza numero: soglie comuni, nessuno scarto.
+  // (183) ELO SOLO FRA SQUADRE DELLO STESSO CAMPIONATO. Ogni campionato e'
+  // un'isola: chi domina in Svezia sale quanto chi domina in Inghilterra,
+  // ma quasi nessuna partita mette le due isole a confronto. Misurato sulle
+  // partite Pinnacle del 18-20/11: scarto medio Elo-mercato (1 e 2 sommati)
+  // 12 punti nello stesso campionato, 31 fra campionati diversi, 44 nel
+  // femminile (Hacken W 1966 contro Manchester City W 1789: Elo 68% in
+  // casa, mercato 10%). Fra campionati diversi si mostrano i rating, non
+  // le probabilita'. Il campionato e' quello in cui la squadra ha giocato
+  // di piu' (elo_rating.json). Rimedio vero: una forza per campionato nel
+  // calcolo (elo_calcolo.py), da provare.
+  var NOTA_ELO_DIVERSI = "campionati diversi: non confrontabili";
+  // Gironi dello stesso campionato (Serie D - Girone A e B, 3. SNL - West
+  // ed East) restano confrontabili: stessa categoria, squadre che passano
+  // da un girone all'altro. Categorie diverse (Cearense - 1 e - 2) no.
+  function baseCamp(t) {
+    return String(t || "").replace(/\s*-\s*(girone|group|grupo|gruppe|groupe)\s+\S+$/i, "")
+      .replace(/\s*-\s*(west|east|north|south|nord|sud|est|ovest|centre|center|centro)$/i, "").trim();
+  }
+  function eloConfrontabile(c, o) { return !!(c && o && c.camp && o.camp && baseCamp(c.camp) === baseCamp(o.camp)); }
+  function campiDiversi(c, o) { return c.camp && o.camp ? " (" + esc(c.camp) + " \u2013 " + esc(o.camp) + ")" : ""; }
   function eloProb(ec, eo, lg, li) {
     if (ec == null || eo == null || !lg) return null;
     var inf = ELO.info || {}, k = li == null ? null : String(li);
@@ -10215,7 +10238,7 @@
     var lg = ELO.info.logit, q = ELO.cerca.trim().toLowerCase();
     var righe = lista.map(function (x) {
       var c = ELO.dati.per[String(x.ic)], o = ELO.dati.per[String(x.io)];
-      var p = c && o ? eloProb(c.elo, o.elo, lg, x.li) : null;
+      var p = c && o && eloConfrontabile(c, o) ? eloProb(c.elo, o.elo, lg, x.li) : null;
       var pin = PIN_G.perId[String(x.id)] || null;
       var pp = pin ? [num(pin["P1 Shin"]), num(pin["PX Shin"]), num(pin["P2 Shin"])] : null;
       if (pp && pp.some(function (v) { return v == null; })) pp = null;
@@ -10238,7 +10261,9 @@
     };
     righe.sort(ord[ELO.ordine] || ord.ora);
     var conElo = righe.filter(function (r) { return r.p; }).length;
-    var h = '<p class="conta">' + righe.length + (righe.length === 1 ? " partita" : " partite") + " · " + conElo + " con l’Elo di tutte e due</p>";
+    var diversi = righe.filter(function (r) { return !r.p && r.c && r.o; }).length;
+    var h = '<p class="conta">' + righe.length + (righe.length === 1 ? " partita" : " partite") + " · " + conElo + " con l’Elo di tutte e due" +
+      (diversi ? " · " + diversi + " fra campionati diversi" : "") + "</p>";
     if (!righe.length) h += messaggio("vuoto", "Nessuna partita con questi filtri.");
     h += righe.map(function (r) {
       var x = r.x, p = r.p, segno = p ? "1X2"[[0, 1, 2].reduce(function (a2, b2) { return p[b2] > p[a2] ? b2 : a2; }, 0)] : "–";
@@ -10260,7 +10285,8 @@
           '<div class="partita">' + partitaHtmlId(x.casa, x.ospite, x.ic, x.io, x.lega) + "</div>" +
           (r.c && r.o ? '<div class="sel">Elo ' + evCoppia(r.c.elo, r.o.elo, " – ") + " (" + (r.c.elo >= r.o.elo ? "+" : "−") + f0(Math.abs(r.c.elo - r.o.elo)) + ")" +
             (r.sc && Math.abs(r.sc.v) >= 5 ? ' · <span class="' + (r.sc.v > 0 ? "mv-su" : "mv-giu") + '">' + "1X2"[r.sc.i] + " " + (r.sc.v > 0 ? "+" : "−") + f0(Math.abs(r.sc.v)) + " vs Pinnacle</span>" : "") + "</div>" : "") +
-          (p ? tripla("Elo", p[0], p[1], p[2]) : '<div class="sel piccolo">Elo non disponibile per ' + (!r.c && !r.o ? "le due squadre" : !r.c ? esc(x.casa) : esc(x.ospite)) + "</div>") +
+          (p ? tripla("Elo", p[0], p[1], p[2]) : r.c && r.o ? '<div class="sel piccolo">Elo: ' + NOTA_ELO_DIVERSI + campiDiversi(r.c, r.o) + "</div>" :
+            '<div class="sel piccolo">Elo non disponibile per ' + (!r.c && !r.o ? "le due squadre" : !r.c ? esc(x.casa) : esc(x.ospite)) + "</div>") +
           (r.pp ? tripla("Pinnacle", r.pp[0], r.pp[1], r.pp[2]) : "") +
         "</div>" +
         (p ? '<div class="numero">' + pB(Math.max(p[0], p[1], p[2])) + "<span>" + articolo(segno) + "</span></div>" : "") +
@@ -10597,6 +10623,29 @@
     });
     return cand.length === 1 ? cand[0] : null;
   }
+  // (182) LE PROBABILITA' SULLA SCHEDA DEI PRONOSTICI, COME NEL CALENDARIO.
+  // Un posto fisso sotto le squadre (PROB_CARTA) che i timbri riempiono:
+  // MERCATO (Pinnacle senza margine; da dove viene lo dice il timbro), ELO,
+  // poi le QUOTE. Prima l'ordine dipendeva da chi arrivava per primo, e le
+  // quote comparivano solo se c'era una lettura precedente per le frecce.
+  var PROB_CARTA = '<div class="cal-prob prob-carta"><div class="pc-merc"></div><div class="pc-elo"></div></div>';
+  function treProb(v) {
+    return ["1", "X", "2"].map(function (sg, i) { return '<span class="nw"><b class="seg">' + sg + "</b> " + pvE(v[i]) + "</span>"; }).join(" \u00b7 ");
+  }
+  function mercatoCarta(riga, r) {
+    var pc = riga && riga.querySelector("summary .prob-carta .pc-merc");
+    if (!pc || pc.childNodes.length) return;
+    var a = [num(r["P1 Shin"]), num(r["PX Shin"]), num(r["P2 Shin"])];
+    if (a.some(function (v) { return v == null; })) return;
+    pc.innerHTML = '<span class="et">Mercato</span> ' + treProb(a);
+  }
+  // le quote di adesso anche senza una lettura precedente (niente frecce)
+  function quoteFerme(r) {
+    var q = [num(r.Q1), num(r.QX), num(r.Q2)];
+    if (q.some(function (v) { return v == null; })) return null;
+    return { pz: ["1", "X", "2"].map(function (sg, i) { return { seg: sg, c: "fermo", f: "=", q0: null, q1: q[i] }; }),
+             titolo: "Quote Pinnacle di adesso: nessuna lettura precedente per il movimento." };
+  }
   function timbroPin(r) {
     var p = [num(r["P1 Shin"]), num(r["PX Shin"]), num(r["P2 Shin"])];
     var t = "Quote Pinnacle" + (p[0] != null ? ": 1 " + f0(p[0]) + "% \u00b7 X " + f0(p[1]) + "% \u00b7 2 " + f0(p[2]) + "%" : "") +
@@ -10658,6 +10707,8 @@
     riga.dataset.frecce = "1";
     proFrecce().then(function (pro) {
       var x = frecceDati(r, pro);
+      var pcB = riga.querySelector("summary .prob-carta");
+      if (!x && pcB) x = quoteFerme(r);
       if (!x) { stringiQ3(riga); return; }
       var et = alto.querySelector(".timbro-pin") || alto.querySelector(".fonte-q.pin");
       var qp = riga.querySelector("summary .quote-pin");
@@ -10673,6 +10724,7 @@
         var detQ = riga.classList.contains("compatta") ? riga.querySelector(".dettaglio") : null;
         if (!riga.querySelector(".mov-riga")) {
           if (detQ) detQ.insertAdjacentHTML("afterbegin", movRigaHtml(x));
+          else if (pcB) pcB.insertAdjacentHTML("afterend", movRigaHtml(x));
           else sotto.insertAdjacentHTML("afterend", movRigaHtml(x));
         }
         return;
@@ -10762,6 +10814,7 @@
         }
         return;
       }
+      mercatoCarta(riga, r);
       if (soloFrecce || giaTimbro) { aggiungiFrecce(alto, r, riga); return; }
       if (!giaFonte) {
         var span = document.createElement("span");
@@ -10939,19 +10992,35 @@
       var metti = function (ic, io, li) {
         var c = ELO.dati.per[String(ic)], o = ELO.dati.per[String(io)];
         if (!c || !o) return;
-        var p = eloProb(c.elo, o.elo, lg, li);
+        var conf = eloConfrontabile(c, o);
+        var p = conf ? eloProb(c.elo, o.elo, lg, li) : null;
         var div = document.createElement("div");
         div.className = "sel elo-mini";
         div.title = "Elo del sistema: " + c.nome + " " + Math.round(c.elo) + ", " + o.nome + " " + Math.round(o.elo);
         // (148) una riga sola: trattini stretti, scarto fra parentesi piccolo
         // (151) a capo solo fra un pezzo e l'altro, mai fra "1" e "55%"
-        div.innerHTML = '<span class="nw">Elo ' + evCoppia(c.elo, o.elo, "\u2013") + ' <span class="piccolo">(' + (c.elo >= o.elo ? "+" : "\u2212") +
+        if (p) div.innerHTML = '<span class="nw">Elo ' + evCoppia(c.elo, o.elo, "\u2013") + ' <span class="piccolo">(' + (c.elo >= o.elo ? "+" : "\u2212") +
           f0(Math.abs(c.elo - o.elo)) + ")</span></span>" +
           // (172) le probabilita' dell'Elo sotto, con la loro etichetta:
           // accanto ai due rating sembravano quelle del mercato
           '<br><span class="piccolo">secondo l\u2019Elo</span> ' + '<span class="nw"><span class=nw><b class=seg>1</b> ' + pvE(p[0]) + '</span>' + "</span>\u2009· " +
           '<span class="nw"><span class=nw><b class=seg>X</b> ' + pvE(p[1]) + '</span>' + "</span>\u2009· " + '<span class="nw"><span class=nw><b class=seg>2</b> ' + pvE(p[2]) + '</span>' + "</span>";
+        else {
+          div.innerHTML = '<span class="nw">Elo ' + evCoppia(c.elo, o.elo, "\u2013") + ' <span class="piccolo">(' + (c.elo >= o.elo ? "+" : "\u2212") +
+            f0(Math.abs(c.elo - o.elo)) + ")</span></span>" + '<br><span class="piccolo">' + NOTA_ELO_DIVERSI + "</span>";
+          div.title += " (" + c.camp + " / " + o.camp + ")";
+        }
         if (detC) { detC.insertBefore(div, detC.firstChild); return; }
+        var pcE = riga.querySelector("summary .prob-carta");
+        if (pcE) {
+          // (182) scheda dei Pronostici: i due rating sopra, la riga ELO
+          // sotto MERCATO, con la stessa etichetta del Calendario
+          div.innerHTML = '<span class="nw">Elo ' + evCoppia(c.elo, o.elo, "\u2013") + ' <span class="piccolo">(' + (c.elo >= o.elo ? "+" : "\u2212") +
+            f0(Math.abs(c.elo - o.elo)) + ")</span></span>";
+          pcE.parentNode.insertBefore(div, pcE);
+          pcE.querySelector(".pc-elo").innerHTML = '<span class="et">Elo</span> ' + (p ? treProb(p) : '<span class="piccolo">' + NOTA_ELO_DIVERSI + "</span>");
+          return;
+        }
         dove.parentNode.insertBefore(div, dove.nextSibling);
         stringiRiga(div);
       };
