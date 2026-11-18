@@ -8122,11 +8122,46 @@
     var el = $cont.querySelectorAll(".hero .hero-nome[data-sqid]");
     if (!el.length) return;
     campIndice().then(function (ix) {
-      var dove = {};
-      ((ix && ix.campionati) || []).forEach(function (l) {
+      var dove = {}, leghe = (ix && ix.campionati) || [];
+      leghe.forEach(function (l) {
         if (l.sq && typeof l.sq === "object") for (var id in l.sq) if (!dove[id]) dove[id] = String(l.id);
       });
+      // (194) SENZA NUMERO DI SQUADRA, PER NOME. Le partite oltre i tre
+      // giorni (o non agganciate al fornitore dei dati) non hanno il numero:
+      // si cerca la squadra per nome, prima nel campionato della partita
+      // (stesso nome di lega: "Germany 2. Bundesliga"), con la somiglianza
+      // dei nomi e un vincitore netto; fuori dal campionato (coppe) solo col
+      // nome identico e una squadra sola. Nel dubbio, niente link.
+      // femminile, giovanili e squadre B sono un'altra squadra: "Melbourne
+      // Victory W" non e' "Melbourne Victory"
+      var tipo = function (t) {
+        var x = " " + normNome(t) + " ";
+        return (/ (w|women|woman|femenino|feminino|feminine|ladies|frauen|donne|femminile) /.test(x) ? "F" : "") +
+          ((/ u ?(1[5-9]|2[0-3]) /.test(x)) ? "G" : "") + (/ (ii|b|res|reserves|reserve|2) $/.test(x) ? "B" : "");
+      };
+      var perNome = function (nome, lega) {
+        var q = normNome(nome), lg = normNome(lega), tq = tipo(nome) + "|" + tipo(lega).replace("B", "");
+        if (!q) return null;
+        var stessa = leghe.filter(function (l) { var n = normNome(l.nome); return lg && n && (n === lg || lg.indexOf(n) >= 0 || n.indexOf(lg) >= 0); });
+        var best = null, secondo = 0;
+        stessa.forEach(function (l) {
+          for (var id in (l.sq || {})) {
+            if (tipo(l.sq[id]) + "|" + tipo(l.nome).replace("B", "") !== tq) continue;
+            var v = simile(nome, l.sq[id]);
+            if (!best || v > best.v) { if (best) secondo = Math.max(secondo, best.v); best = { v: v, id: id, L: String(l.id) }; }
+            else secondo = Math.max(secondo, v);
+          }
+        });
+        if (best && best.v >= 0.7 && best.v - secondo >= 0.1) return best;
+        var esatti = [];
+        leghe.forEach(function (l) { for (var id in (l.sq || {})) if (normNome(l.sq[id]) === q) esatti.push({ id: id, L: String(l.id) }); });
+        return esatti.length === 1 ? esatti[0] : null;
+      };
       el.forEach(function (n) {
+        if (!n.getAttribute("data-sqid") || !dove[n.getAttribute("data-sqid")]) {
+          var t = perNome(n.getAttribute("data-nome"), n.getAttribute("data-lega"));
+          if (t) { n.setAttribute("data-sqid", t.id); dove[t.id] = dove[t.id] || t.L; }
+        }
         var id = n.getAttribute("data-sqid"), L = id && dove[id];
         if (!L || n.querySelector("a")) return;
         n.innerHTML = '<a class="hero-link" href="#camp/' + esc(L) + "/squadra/" + esc(id) + '" title="Pagina della squadra: classifica, forma, statistiche">' +
@@ -8143,9 +8178,9 @@
       centro = '<b class="hero-ris' + (fin ? "" : " in-corso") + '">' + gc + "\u2013" + go + '</b><span class="hero-stato">' + (fin ? "finita" : "in corso (" + esc(st) + ")") + "</span>";
     } else centro = '<b class="hero-ora">' + esc(p.Ora || "vs") + "</b>";
     return '<h2 class="hero">' +
-      '<span class="hero-sq">' + stemmaHero(p.Casa, p.Pin && p.Pin.ID_Casa, p) + '<span class="hero-nome" data-sqid="' + esc(idSquadraScheda(p, 0)) + '">' + esc(p.Casa) + "</span></span>" +
+      '<span class="hero-sq">' + stemmaHero(p.Casa, p.Pin && p.Pin.ID_Casa, p) + '<span class="hero-nome" data-sqid="' + esc(idSquadraScheda(p, 0)) + '" data-nome="' + esc(p.Casa || "") + '" data-lega="' + esc(p.Lega || "") + '">' + esc(p.Casa) + "</span></span>" +
       '<span class="hero-centro">' + centro + "</span>" +
-      '<span class="hero-sq">' + stemmaHero(p.Ospite, p.Pin && p.Pin.ID_Ospite, p) + '<span class="hero-nome" data-sqid="' + esc(idSquadraScheda(p, 1)) + '">' + esc(p.Ospite) + "</span></span>" +
+      '<span class="hero-sq">' + stemmaHero(p.Ospite, p.Pin && p.Pin.ID_Ospite, p) + '<span class="hero-nome" data-sqid="' + esc(idSquadraScheda(p, 1)) + '" data-nome="' + esc(p.Ospite || "") + '" data-lega="' + esc(p.Lega || "") + '">' + esc(p.Ospite) + "</span></span>" +
       "</h2>";
   }
   function testaScheda(p, d) {
