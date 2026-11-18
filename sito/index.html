@@ -146,8 +146,12 @@
   .bex-riga .bex-scarto { margin-left: 6px; font-size: .9em; font-weight: 600; white-space: nowrap; }
   .bex-riga .bex-scarto.su { color: var(--buono); }
   .bex-riga .bex-scarto.giu { color: var(--male); }
-  .bex-riga.grande { font-size: .95rem; margin-top: 4px; }
-  .bex-riga.grande .bex b { font-size: 1.1rem; }
+  /* (201) nella Schedina un filo piu' grandi delle altre viste, non di
+     piu': la quota del book non deve pesare quanto la quota equa. Ogni book
+     resta intero sulla sua riga ("Lottomatica 1.19" non si spezza). */
+  .bex-riga.grande { font-size: .84rem; margin-top: 3px; }
+  .bex-riga.grande .bex b { font-size: .92rem; }
+  .bex-riga .bex, .bex-riga .bex-scarto { white-space: nowrap; }
   .costr-lista .bex-scarto { font-weight: 600; }
   .costr-lista .bex-scarto.su { color: var(--buono); }
   .costr-lista .bex-scarto.giu { color: var(--male); }
