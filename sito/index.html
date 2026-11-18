@@ -98,6 +98,8 @@
     background: rgba(11,74,134,.12); color: var(--evidenza); font-size: 2rem; font-weight: 800;
   }
   .hero-nome { font-size: 1.25rem; line-height: 1.15; overflow-wrap: anywhere; }
+  .hero-link { color: inherit; text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--evidenza) 55%, transparent); text-underline-offset: 4px; }
+  .hero-freccia { color: var(--evidenza); }
   .hero-centro { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 84px; padding: 0 2px; }
   .hero-ris { font-size: 2.6rem; line-height: 1; letter-spacing: .02em; white-space: nowrap; }
   .hero-ris.in-corso { color: var(--buono); }
@@ -8062,6 +8064,31 @@
     var ini = esc(String(nome || "?").replace(/^(fc|ac|as|ss|us|cd|cf|sc|fk|sk|nk|afc|cs)\s+/i, "").charAt(0).toUpperCase() || "?");
     return '<span class="hero-stemma"><span class="hero-ini" aria-hidden="true">' + ini + "</span>" + h + "</span>";
   }
+  // (186) IL NOME DELLA SQUADRA PORTA ALLA SUA PAGINA (Campionati), quando
+  // la squadra sta in uno dei campionati della sezione (campionati_index,
+  // campo "sq": 80 campionati, ~1.350 squadre il 18/11). Il numero della
+  // squadra viene dalla riga Pinnacle o da partite_api; senza, niente link.
+  function idSquadraScheda(p, i) {
+    var v = p.Pin ? (i ? p.Pin.ID_Ospite : p.Pin.ID_Casa) : null;
+    if (v == null && p.Ids) v = p.Ids[i];
+    return v == null ? "" : String(v);
+  }
+  function collegaSquadreHero() {
+    var el = $cont.querySelectorAll(".hero .hero-nome[data-sqid]");
+    if (!el.length) return;
+    campIndice().then(function (ix) {
+      var dove = {};
+      ((ix && ix.campionati) || []).forEach(function (l) {
+        if (l.sq && typeof l.sq === "object") for (var id in l.sq) if (!dove[id]) dove[id] = String(l.id);
+      });
+      el.forEach(function (n) {
+        var id = n.getAttribute("data-sqid"), L = id && dove[id];
+        if (!L || n.querySelector("a")) return;
+        n.innerHTML = '<a class="hero-link" href="#camp/' + esc(L) + "/squadra/" + esc(id) + '" title="Pagina della squadra: classifica, forma, statistiche">' +
+          n.innerHTML + '<span class="hero-freccia" aria-hidden="true"> \u203a</span></a>';
+      });
+    }).catch(function () {});
+  }
   function heroPartita(p) {
     var fm = p.FM || {}, st = String(fm.Stato || "").toUpperCase(), gc = num(fm.Gol_Casa), go = num(fm.Gol_Ospite);
     var fine = finaleScheda(p), centro;
@@ -8071,9 +8098,9 @@
       centro = '<b class="hero-ris' + (fin ? "" : " in-corso") + '">' + gc + "\u2013" + go + '</b><span class="hero-stato">' + (fin ? "finita" : "in corso (" + esc(st) + ")") + "</span>";
     } else centro = '<b class="hero-ora">' + esc(p.Ora || "vs") + "</b>";
     return '<h2 class="hero">' +
-      '<span class="hero-sq">' + stemmaHero(p.Casa, p.Pin && p.Pin.ID_Casa, p) + '<span class="hero-nome">' + esc(p.Casa) + "</span></span>" +
+      '<span class="hero-sq">' + stemmaHero(p.Casa, p.Pin && p.Pin.ID_Casa, p) + '<span class="hero-nome" data-sqid="' + esc(idSquadraScheda(p, 0)) + '">' + esc(p.Casa) + "</span></span>" +
       '<span class="hero-centro">' + centro + "</span>" +
-      '<span class="hero-sq">' + stemmaHero(p.Ospite, p.Pin && p.Pin.ID_Ospite, p) + '<span class="hero-nome">' + esc(p.Ospite) + "</span></span>" +
+      '<span class="hero-sq">' + stemmaHero(p.Ospite, p.Pin && p.Pin.ID_Ospite, p) + '<span class="hero-nome" data-sqid="' + esc(idSquadraScheda(p, 1)) + '">' + esc(p.Ospite) + "</span></span>" +
       "</h2>";
   }
   function testaScheda(p, d) {
@@ -8401,6 +8428,7 @@
           p.Conf = confrontoDi(a2[6], fidC, p.Pred);
           // (140) l'Elo delle due squadre, per numero
           var ids = a2[4] && a2[4][1] ? a2[4][1][String(p.PinId)] : null;
+          p.Ids = ids || null;                      // (186) per il link alla pagina squadra
           // (143) le posizioni in classifica, per numero di squadra
           if (ids && a2[5]) p.Classe = { c: posizioneApi(a2[5], ids[0], ids[2]), o: posizioneApi(a2[5], ids[1], ids[2]) };
           if (ids && ELO.dati && ELO.info) {
@@ -8756,6 +8784,7 @@
     $cont.innerHTML = testaScheda(p, d) + bloccoStatistiche(p) + bloccoMercato(p, m) + bloccoAltriMercati(p) + bloccoFormazioni(p, d) + bloccoConfronto(p) + bloccoPrezzi(p, d) + bloccoPoisson(p) + bloccoPredApi(p) +
       bloccoFonti(p, m) + bloccoSure(p) + bloccoAltro(p) + piedeScheda(p);
     collegaConfronto(p);
+    collegaSquadreHero();
     $cont.querySelectorAll("input[data-sp]").forEach(function (cb) {
       cb.addEventListener("change", function () {
         var r = righeSchedaPrezzi[Number(cb.dataset.sp)];
