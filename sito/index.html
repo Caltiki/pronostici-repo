@@ -8508,13 +8508,14 @@
           p.PinId != null ? Promise.all([caricaElo().catch(function () { return null; }), calendarioIds(d)]) : null,
           p.PinId != null ? classificheApi() : null,
           // (165) il confronto squadre: per numero di squadra, dal calendario
-          (p.PinId != null || p.ID_API != null) ? Promise.all([caricaConfronto(), calendarioIds(d)]) : null,
+          // (196) senza numero di partita il blocco Sofascore si trova comunque per nome
+          (p.PinId != null || p.ID_API != null) ? Promise.all([caricaConfronto(), calendarioIds(d)]) : Promise.all([caricaConfronto(), null]),
           // (166) il pronostico di il fornitore dei dati e le statistiche delle squadre nel campionato
           (p.PinId != null || p.ID_API != null) ? leggiUrl(BASE + "predizioni_" + d + ".json?t=" + tt, "predizioni_" + d).catch(function () { return null; }) : null
         ]).then(function (a2) {
           var fidC = p.PinId != null ? p.PinId : p.ID_API;
           p.Pred = a2[7] && a2[7].partite && fidC != null ? a2[7].partite[String(fidC)] || null : null;
-          p.Conf = confrontoDi(a2[6], fidC, p.Pred);
+          p.Conf = confrontoDi(a2[6], fidC, p.Pred, p);
           // (140) l'Elo delle due squadre, per numero
           var ids = a2[4] && a2[4][1] ? a2[4][1][String(p.PinId)] : null;
           p.Ids = ids || null;                      // (186) per il link alla pagina squadra
@@ -8702,28 +8703,103 @@
     ["Possesso", "pos", 1, "%"], ["Angoli", "ang", 1, 1], ["Angoli subiti", "ang_s", -1, 1],
     ["Gialli", "gialli", 0, 1], ["Rossi", "rossi", 0, 2], ["Falli", "falli", 0, 1]];
   var CONF_SOFA = [["Grandi occasioni create", "bc", 1, 1], ["Grandi occasioni sprecate", "bcm", 0, 1], ["xG dei tiri in porta (xGOT)", "xgot", 1, 2]];
+  // (196) Il file che pubblica scraper_sofascore_squadre.py dal PC:
+  // sofascore_squadre_<data>.json, con l'indice delle date. Un'altra forma:
+  // le categorie in testa una volta, per squadra la fila dei valori della
+  // stagione (totali, non medie) e il numero Sofascore della squadra, non
+  // quello del sito. Le squadre si trovano quindi per nome, dentro un
+  // campionato dello stesso paese, con un vincitore netto per tutte e due.
+  // Nel dubbio il blocco non compare: meglio niente che i numeri di
+  // un'altra squadra.
+  var SOFA_CAT = { bc: "bigChances", bcm: "bigChancesMissed", xgot: "expectedGoalsOnTarget", xg: "expectedGoals" };
+  function caricaSofaGiorno(t) {
+    return leggiUrl(BASE + "sofascore_squadre_index.json?t=" + t, "sofascore_squadre_index").then(function (ix) {
+      var dd = ix && Array.isArray(ix.date) ? ix.date.slice().sort() : [];
+      if (!dd.length) return null;
+      var d = dd[dd.length - 1];
+      return leggiUrl(BASE + "sofascore_squadre_" + d + ".json?t=" + t, "sofascore_squadre_" + d);
+    });
+  }
+  function sofaTipo(t) {
+    var x = " " + nomeBex(t) + " ";
+    return (/ (w|women|woman|womens|femenino|feminino|feminine|ladies|frauen|donne|femminile|dames|kobiet) /.test(x) ? "F" : "") +
+      (/ u ?(1[5-9]|2[0-3]) | (youth|primavera|juniors?) /.test(x) ? "G" : "") + (/ (ii|b|res|reserves|reserve|2) $/.test(x) ? "B" : "");
+  }
+  // somiglianza fra due nomi di squadra: Dice, oppure ogni parola del nome
+  // piu' corto sta nell'altro ("Grasshoppers" / "Grasshopper Club Zurich")
+  function sofaPunti(a, b) {
+    var s = simile(a, b), ta = nomeBex(a).split(" ").filter(Boolean), tb = nomeBex(b).split(" ").filter(Boolean);
+    if (!ta.length || !tb.length) return s;
+    var corto = ta.length <= tb.length ? ta : tb, lungo = corto === ta ? tb : ta;
+    var dentro = corto.every(function (w) {
+      return lungo.some(function (u) { return u === w || (Math.min(w.length, u.length) >= 4 && (u.indexOf(w) === 0 || w.indexOf(u) === 0)); });
+    });
+    return dentro ? Math.max(s, 0.85) : s;
+  }
+  function sofaMigliore(squadre, nome) {
+    var tq = sofaTipo(nome), best = null, secondo = 0;
+    squadre.forEach(function (q) {
+      if (!q.stat || sofaTipo(q.nome) !== tq) return;
+      var v = sofaPunti(nome, q.nome);
+      if (!best || v > best.v) { if (best) secondo = Math.max(secondo, best.v); best = { v: v, q: q }; }
+      else secondo = Math.max(secondo, v);
+    });
+    return best && best.v >= 0.75 && best.v - secondo >= 0.1 ? best : null;
+  }
+  function sofaPerNome(S2, lega, casa, ospite) {
+    if (!S2 || !Array.isArray(S2.leghe) || !Array.isArray(S2.categorie) || !lega) return null;
+    var ln = nomeBex(lega), lt = sofaTipo(lega).replace("B", ""), trovata = null;
+    S2.leghe.forEach(function (L) {
+      var pn = nomeBex(L.paese);
+      if (!pn || ln.indexOf(pn) !== 0 || !Array.isArray(L.squadre)) return;
+      if (sofaTipo(L.nome).replace("B", "") !== lt) return;
+      var a = sofaMigliore(L.squadre, casa), b = sofaMigliore(L.squadre, ospite);
+      if (!a || !b || a.q === b.q) return;
+      var tot = a.v + b.v;
+      if (!trovata || tot > trovata.tot) trovata = { tot: tot, L: L, a: a.q, b: b.q };
+    });
+    if (!trovata) return null;
+    var cat = S2.categorie, campi = ["bc", "bcm", "xgot", "xg"];
+    var val = function (q, k) { var i = cat.indexOf(k); return i >= 0 && q.stat ? q.stat[i] : null; };
+    var fai = function (q) {
+      var pg = q.pg || null;
+      var media = function (k) { var x = val(q, k); return x != null && pg ? x / pg : null; };
+      var gf = val(q, "goalsScored"), xg = val(q, "expectedGoals");
+      return { pg: pg, v: campi.map(function (c) { return media(SOFA_CAT[c]); }),
+        gol_meno_xg: gf != null && xg != null ? gf - xg : null, gp: val(q, "goalsPrevented"), nome: q.nome };
+    };
+    var c = fai(trovata.a), o = fai(trovata.b);
+    if (!c.pg || !o.pg) return null;
+    return { campi: campi, agg: S2.aggiornato, c: c, o: o, lega: trovata.L.nome };
+  }
   function caricaConfronto() {
     if (!CONF.prom) {
       var t = Math.floor(Date.now() / 600000);
       CONF.prom = Promise.all([
         leggiUrl(BASE + "squadre_stat.json?t=" + t, "squadre_stat").catch(function () { return null; }),
-        leggiUrl(BASE + "sofascore_squadre.json?t=" + t, "sofascore_squadre").catch(function () { return null; })
-      ]).then(function (a) { return { api: a[0], sofa: a[1] }; });
+        leggiUrl(BASE + "sofascore_squadre.json?t=" + t, "sofascore_squadre").catch(function () { return null; }),
+        caricaSofaGiorno(t).catch(function () { return null; })
+      ]).then(function (a) { return { api: a[0], sofa: a[1], sofa2: a[2] }; });
       CONF.prom.catch(function () { CONF.prom = null; });
     }
     return CONF.prom;
   }
-  function confrontoDi(x, fid, pred) {
+  function confrontoDi(x, fid, pred, p) {
     var ids = x && fid != null && x[1] ? x[1][String(fid)] : null;
     var A = x && x[0] ? x[0].api : null, S = x && x[0] ? x[0].sofa : null;
     var c = ids && A && A.squadre ? A.squadre[String(ids[0])] : null, o = ids && A && A.squadre ? A.squadre[String(ids[1])] : null;
     var sc = ids && S && S.squadre ? S.squadre[String(ids[0])] : null, so = ids && S && S.squadre ? S.squadre[String(ids[1])] : null;
+    var scampi = S ? S.campi || [] : [], sagg = S ? S.aggiornato : null, slega = "";
+    if (!(sc && so) && p && x && x[0] && x[0].sofa2) {
+      var m2 = sofaPerNome(x[0].sofa2, p.Lega, p.Casa, p.Ospite);
+      if (m2) { sc = m2.c; so = m2.o; scampi = m2.campi; sagg = m2.agg; slega = m2.lega; }
+    }
     // (166) dalle predizioni: le due squadre nel campionato della partita, tutti i campionati
     var pc = pred && pred.sq ? pred.sq.c : null, po = pred && pred.sq ? pred.sq.o : null;
     var conP = pc && po && pc.pg && po.pg && pc.pg[2] && po.pg[2];
     if (!(c && o) && !(sc && so) && !conP) return null;
     return { campi: A ? A.campi || [] : [], leghe: A ? A.leghe || {} : {}, agg: A ? A.aggiornato : null, c: c && o ? c : null, o: c && o ? o : null,
-      scampi: S ? S.campi || [] : [], sagg: S ? S.aggiornato : null, sc: sc && so ? sc : null, so: sc && so ? so : null,
+      scampi: scampi, sagg: sagg, slega: slega, sc: sc && so ? sc : null, so: sc && so ? so : null,
       pc: conP ? pc : null, po: conP ? po : null, plega: pred && pred.lega ? pred.lega.nome : "", pletto: pred ? pred.letto : null };
   }
   // un lato ("c" casa, "f" fuori) o la stagione intera ("t"), media pesata sulle partite
@@ -8774,7 +8850,9 @@
       var ix = function (k) { return C.scampi.indexOf(k); };
       h += "<h4>Da Sofascore</h4>" + '<p class="piccolo">Tutta la stagione, casa e fuori insieme, a partita (' + C.sc.pg + " e " + C.so.pg + " partite).</p>";
       if (!(C.c && C.o)) h += '<div class="stat-testa"><span>' + esc(p.Casa) + "</span><span>" + esc(p.Ospite) + "</span></div>";
-      h += CONF_SOFA.map(function (v) {
+      var voci = CONF_SOFA.slice();
+      if (!(C.c && C.o)) voci.unshift(["xG fatti", "xg", 1, 2]);   // (196) se mancano quelli del sito
+      h += voci.map(function (v) {
         var i = ix(v[1]);
         return i < 0 ? "" : rigaConfronto(v[0], C.sc.v[i], C.so.v[i], v[2], v[3]);
       }).join("");
@@ -8783,6 +8861,14 @@
         h += '<div class="stat-riga"><b>' + sg(C.sc.gol_meno_xg) + "</b><span>Gol meno xG nella stagione</span><b>" + sg(C.so.gol_meno_xg) + "</b></div>" +
           '<p class="piccolo">Gol meno xG: sopra zero la squadra ha segnato più di quanto valevano le occasioni (precisione o fortuna), sotto zero meno.</p>';
       }
+      if (C.sc.gp != null || C.so.gp != null) {
+        var sgp = function (x) { return x == null ? "\u2013" : (x > 0 ? "+" : x < 0 ? "\u2212" : "") + Math.abs(x).toFixed(1); };
+        h += '<div class="stat-riga"><b>' + sgp(C.sc.gp) + "</b><span>Gol evitati dal portiere nella stagione</span><b>" + sgp(C.so.gp) + "</b></div>" +
+          '<p class="piccolo">Gol evitati: i gol che valevano i tiri in porta subiti meno quelli presi davvero. Sotto zero il portiere ha preso più del dovuto. ' +
+          "Sono numeri che tendono a rientrare: uno scarto grande dice più fortuna che bravura.</p>";
+      }
+      if (C.slega && (nomeBex(C.sc.nome) !== nomeBex(p.Casa) || nomeBex(C.so.nome) !== nomeBex(p.Ospite)))
+        h += '<p class="piccolo">Su Sofascore: ' + esc(C.sc.nome) + " e " + esc(C.so.nome) + " (" + esc(C.slega) + ").</p>";
     }
     var fonti = [];
     if (C.c && C.o) fonti.push("dati del sito, partita per partita (" + esc(String(C.agg || "").slice(0, 10)) + ")");
