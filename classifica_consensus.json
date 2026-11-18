@@ -1,58 +1,58 @@
 {
  "medio": {
   "copertura": {
-   "1": 27032,
-   "2": 3249,
-   "3": 1649,
-   "4": 742,
-   "5": 269
+   "1": 26573,
+   "2": 3404,
+   "3": 1766,
+   "4": 800,
+   "5": 291
   },
-  "totale": 32941,
+  "totale": 32834,
   "brier": 0.5771,
   "brier_clima": 0.6401,
   "fonti": [
    {
     "nome": "betimate",
-    "partite": 31389,
+    "partite": 31391,
     "brier": 0.5773,
-    "brier_media": 0.5766
+    "brier_media": 0.5765
    },
    {
     "nome": "footymetrics",
     "partite": 2995,
     "brier": 0.5982,
-    "brier_media": 0.5883
+    "brier_media": 0.588
    },
    {
     "nome": "ratingbet",
-    "partite": 1619,
-    "brier": 0.5578,
-    "brier_media": 0.5638
+    "partite": 1707,
+    "brier": 0.5598,
+    "brier_media": 0.5657
    },
    {
     "nome": "soccersite",
-    "partite": 4024,
-    "brier": 0.5898,
-    "brier_media": 0.5811
+    "partite": 4370,
+    "brier": 0.5869,
+    "brier_media": 0.5779
    },
    {
     "nome": "statarea",
-    "partite": 2763,
-    "brier": 0.6025,
-    "brier_media": 0.5951
+    "partite": 2871,
+    "brier": 0.6012,
+    "brier_media": 0.5943
    }
   ],
   "mercato": {
-   "partite": 6021,
+   "partite": 5913,
    "poche": false,
-   "brier": 0.5824,
-   "brier_mercato": 0.5666,
-   "diff": 0.0158,
-   "es": 0.0019,
-   "t": 8.48,
+   "brier": 0.5829,
+   "brier_mercato": 0.5678,
+   "diff": 0.0151,
+   "es": 0.0018,
+   "t": 8.18,
    "ic": [
-    0.0121,
-    0.0194
+    0.0115,
+    0.0187
    ],
    "per_fonte": [
     {
@@ -64,29 +64,29 @@
     },
     {
      "fonte": "Pinnacle",
-     "partite": 1242,
-     "diff": 0.0222,
-     "es": 0.0041,
-     "t": 5.44
+     "partite": 1142,
+     "diff": 0.019,
+     "es": 0.0039,
+     "t": 4.9
     },
     {
      "fonte": "altri book",
-     "partite": 58,
-     "diff": 0.0142,
-     "es": 0.0187,
-     "t": 0.76
+     "partite": 57,
+     "diff": 0.0112,
+     "es": 0.0175,
+     "t": 0.64
     },
     {
      "fonte": "FootyMetrics",
-     "partite": 37,
-     "diff": -0.0148,
-     "es": 0.0325,
-     "t": -0.45
+     "partite": 30,
+     "diff": -0.0067,
+     "es": 0.0381,
+     "t": -0.18
     }
    ]
   }
  },
- "aggiornato": "2026-11-18 04:33",
+ "aggiornato": "2026-11-18 11:33",
  "accordo": {
   "totale": 2712,
   "prende": {
