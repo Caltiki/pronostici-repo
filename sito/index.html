@@ -121,6 +121,18 @@
     .hero-centro { min-height: 104px; }
     .hero-nome { font-size: 1.5rem; }
     .hero-ris { font-size: 3.2rem; }
+    /* (193) SU SCHERMI LARGHI la forma e la riga di classifica/xG di
+       ciascuna squadra stanno sotto il suo stemma: stessa griglia della
+       testata (colonna centrale fissa, cosi' i centri coincidono). */
+    .testa-partita h2.hero { grid-template-columns: minmax(0, 1fr) 10rem minmax(0, 1fr); }
+    .testa-partita .forme, .testa-partita .forme.forme-10 {
+      grid-template-columns: minmax(0, 1fr) 10rem minmax(0, 1fr); column-gap: 10px; text-align: center;
+    }
+    .testa-partita .forme > div:first-child { grid-column: 1; }
+    .testa-partita .forme > div:last-child { grid-column: 3; }
+    .testa-partita .forme > div, .testa-partita .forme > div:last-child,
+    .testa-partita .forme > div span, .testa-partita .forme > div:last-child span { text-align: center; }
+    .testa-partita .forme + p.piccolo { text-align: center; }
   }
 
   /* (174) le quote dei tuoi book: verde quando pagano piu' dell'equa */
