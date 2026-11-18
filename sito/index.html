@@ -72,6 +72,14 @@
     #contenuto .riga summary .corpo:has(> .tripla) > * { grid-column: 1; }
     #contenuto .riga summary .corpo:has(> .tripla) > .alto { grid-column: 1 / -1; }
     #contenuto .riga summary .corpo:has(> .tripla) > .tripla { grid-column: 2; margin-top: 3px; margin-bottom: 3px; }
+    /* (191) Pronostici e Schedina: le barre mercato/elo a destra, come nel Consenso */
+    #contenuto .riga summary .corpo:has(> .prob-carta .tripla) {
+      display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, 40%);
+      column-gap: 28px; grid-auto-flow: row dense; align-items: center;
+    }
+    #contenuto .riga summary .corpo:has(> .prob-carta .tripla) > * { grid-column: 1; }
+    #contenuto .riga summary .corpo:has(> .prob-carta .tripla) > .alto { grid-column: 1 / -1; }
+    #contenuto .riga summary .corpo:has(> .prob-carta .tripla) > .prob-carta { grid-column: 2; grid-row: 2 / span 3; align-self: center; margin: 0; }
   }
 
   /* (174) IL RISULTATO PIU' EVIDENTE (17/11): "Risultato: 1-1", piu' grande
@@ -137,6 +145,8 @@
   .riga.partitona.senza-pron > details[open] > summary { opacity: 1; }
   .prob-carta .pc-merc:empty, .prob-carta .pc-elo:empty { display: none; }
   .riga .prob-carta { font-size: .85rem; margin: 2px 0 4px; }
+  .prob-carta .tripla { margin-top: 5px; }
+  .prob-carta .tripla-nota .piccolo { font-size: .78rem; }
   /* (184) anche sulle righe della Schedina; non sulle righe compatte (Elo e
      quote stanno nel dettaglio) ne' su quelle dentro una partita aperta */
   .riga.compatta .prob-carta, .dentro-partita .prob-carta { display: none; }
@@ -10727,7 +10737,8 @@
     if (!pc || pc.childNodes.length) return;
     var a = [num(r["P1 Shin"]), num(r["PX Shin"]), num(r["P2 Shin"])];
     if (a.some(function (v) { return v == null; })) return;
-    pc.innerHTML = '<span class="et">Mercato</span> ' + treProb(a);
+    // (191) barre come nel Consenso fonti, non piu' una riga di testo
+    pc.innerHTML = tripla("mercato", a[0], a[1], a[2]);
   }
   // le quote di adesso anche senza una lettura precedente (niente frecce)
   function quoteFerme(r) {
@@ -11108,7 +11119,8 @@
           div.innerHTML = '<span class="nw">Elo ' + evCoppia(c.elo, o.elo, "\u2013") + ' <span class="piccolo">(' + (c.elo >= o.elo ? "+" : "\u2212") +
             f0(Math.abs(c.elo - o.elo)) + ")</span></span>";
           pcE.parentNode.insertBefore(div, pcE);
-          pcE.querySelector(".pc-elo").innerHTML = '<span class="et">Elo</span> ' + (p ? treProb(p) : '<span class="piccolo">' + NOTA_ELO_DIVERSI + "</span>");
+          pcE.querySelector(".pc-elo").innerHTML = p ? tripla("elo", p[0], p[1], p[2]) :
+            '<div class="tripla tripla-nota"><span class="nome">elo</span><span class="piccolo">' + NOTA_ELO_DIVERSI + "</span></div>";
           return;
         }
         dove.parentNode.insertBefore(div, dove.nextSibling);
