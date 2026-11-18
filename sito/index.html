@@ -8723,11 +8723,18 @@
   function sofaTipo(t) {
     var x = " " + nomeBex(t) + " ";
     return (/ (w|women|woman|womens|femenino|feminino|feminine|ladies|frauen|donne|femminile|dames|kobiet) /.test(x) ? "F" : "") +
-      (/ u ?(1[5-9]|2[0-3]) | (youth|primavera|juniors?) /.test(x) ? "G" : "") + (/ (ii|b|res|reserves|reserve|2) $/.test(x) ? "B" : "");
+      (/ u ?(1[5-9]|2[0-3]) | (youth|primavera|juniors?|jong) /.test(x) ? "G" : "") + (/ (ii|b|res|reserves|reserve|2) $/.test(x) ? "B" : "");
   }
   // somiglianza fra due nomi di squadra: Dice, oppure ogni parola del nome
   // piu' corto sta nell'altro ("Grasshoppers" / "Grasshopper Club Zurich")
+  // (198) abbreviazioni inglesi e "St./Saint/Sint": "Man City" e' "Manchester City"
+  var SOFA_ABBR = { utd: "united", man: "manchester", nottm: "nottingham", sheff: "sheffield", wed: "wednesday",
+    saint: "st", sint: "st", sankt: "st", atl: "atletico" };
+  function sofaEspandi(t) {
+    return nomeBex(t).split(" ").map(function (w) { return SOFA_ABBR[w] || w; }).join(" ");
+  }
   function sofaPunti(a, b) {
+    a = sofaEspandi(a); b = sofaEspandi(b);
     var s = simile(a, b), ta = nomeBex(a).split(" ").filter(Boolean), tb = nomeBex(b).split(" ").filter(Boolean);
     if (!ta.length || !tb.length) return s;
     var corto = ta.length <= tb.length ? ta : tb, lungo = corto === ta ? tb : ta;
@@ -8753,7 +8760,25 @@
     "Gobelins": "Paris 13 Atletico", "FC Gobelins": "Paris 13 Atletico",
     "Atalanta II": "Atalanta U23", "Atalanta B": "Atalanta U23", "Inter II": "Inter U23", "Inter B": "Inter U23",
     "Celta Vigo B": "Celta Fortuna", "Celta B": "Celta Fortuna",
-    "Racing Santander": "Real Racing Club", "Racing de Santander": "Real Racing Club"
+    "Racing Santander": "Real Racing Club", "Racing de Santander": "Real Racing Club",
+    // (198) Inghilterra, Germania, Austria, Belgio, Danimarca, Olanda, Brasile
+    "Wolves": "Wolverhampton", "QPR": "Queens Park Rangers", "WBA": "West Bromwich Albion", "W.B.A": "West Bromwich Albion",
+    "West Brom": "West Bromwich Albion", "Spurs": "Tottenham Hotspur", "Tottenham": "Tottenham Hotspur",
+    "FC Cologne": "1. FC Köln", "Cologne": "1. FC Köln", "Koln": "1. FC Köln", "Gladbach": "Borussia M'gladbach",
+    "Borussia Monchengladbach": "Borussia M'gladbach", "Bayern Munich": "FC Bayern München", "Bayern": "FC Bayern München",
+    "WSG Wattens": "WSG Tirol", "Rheindorf Altach": "SCR Altach", "Altach": "SCR Altach",
+    "BW Linz": "FC Blau Weiss Linz", "FC BW Linz": "FC Blau Weiss Linz", "Blau-Weiss Linz": "FC Blau Weiss Linz",
+    "First Wien 1894": "First Vienna FC", "First Vienna": "First Vienna FC",
+    "Austria Wien II": "Young Violets Austria Wien", "Austria Vienna II": "Young Violets Austria Wien", "Austria Vienna (Am)": "Young Violets Austria Wien",
+    "WSC Wels": "FC Hertha Wels", "WSPG Wels": "FC Hertha Wels", "Hertha Wels": "FC Hertha Wels",
+    "Club Brugge": "Club Brugge KV", "Racing Genk": "KRC Genk", "Genk": "KRC Genk", "OH Leuven": "Oud-Heverlee Leuven",
+    "Sp. Hasselt": "Koninklijke Sporting Hasselt", "K. Lierse SK": "Koninklijke Lierse Sportkring", "Lierse": "Koninklijke Lierse Sportkring",
+    "Club Brugge NXT": "Club NXT U23", "Club Brugge II": "Club NXT U23", "Gent B": "KAA Gent Reserve U23", "Jong Gent": "KAA Gent Reserve U23",
+    "RSC Anderlecht II": "RSCA Futures U23", "Anderlecht II": "RSCA Futures U23", "RSCA Futures": "RSCA Futures U23",
+    "FC Copenhagen": "FC København", "Copenhagen": "FC København", "Aarhus": "AGF", "AGF Aarhus": "AGF",
+    "OB": "Odense Boldklub", "Odense": "Odense Boldklub", "Aalborg": "AaB", "Aalborg BK": "AaB",
+    "Willem II": "Willem II Tilburg", "Jong PSV U21": "Jong PSV Eindhoven", "Jong PSV": "Jong PSV Eindhoven",
+    "Atletico Paranaense": "Athletico", "Athletico Paranaense": "Athletico"
   };
   var SOFA_ALIAS_N = {};
   Object.keys(SOFA_ALIAS).forEach(function (k) { SOFA_ALIAS_N[nomeBex(k)] = nomeBex(SOFA_ALIAS[k]); });
@@ -8773,7 +8798,7 @@
   function sofaMigliore(squadre, nome) {
     var tq = sofaTipo(nome), best = null, secondo = 0, al = SOFA_ALIAS_N[nomeBex(nome)];
     squadre.forEach(function (q) {
-      if (!q.stat) return;
+      if (!q.stat || !q.pg) return;   // (198) le coppe non hanno classifica: niente partite, niente medie
       // un nome della tabella vale anche fra prima squadra e seconda ("Atalanta II" / "Atalanta U23")
       var daTabella = al && nomeBex(q.nome) === al;
       if (!daTabella && sofaTipo(q.nome) !== tq) return;
@@ -8781,7 +8806,8 @@
       if (!best || v > best.v) { if (best) secondo = Math.max(secondo, best.v); best = { v: v, q: q }; }
       else secondo = Math.max(secondo, v);
     });
-    return best && best.v >= 0.75 && best.v - secondo >= 0.1 ? best : null;
+    // vincitore netto: molto simile e staccato, oppure abbastanza simile e staccato di molto
+    return best && ((best.v >= 0.75 && best.v - secondo >= 0.1) || (best.v >= 0.6 && best.v - secondo >= 0.25)) ? best : null;
   }
   function sofaPerNome(S2, lega, casa, ospite) {
     if (!S2 || !Array.isArray(S2.leghe) || !Array.isArray(S2.categorie) || !lega) return null;
