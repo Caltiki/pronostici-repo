@@ -8504,7 +8504,7 @@
     if (p.Elo) {
       // (159) lo scarto fra le due, come nelle card, non la posizione su 11 mila
       var dElo = p.Elo.c.elo - p.Elo.o.elo;
-      h += '<p class="elo-mini">Elo ' + evCoppia(p.Elo.c.elo, p.Elo.o.elo, " \u2013 ") + ' <span class="piccolo">(' + (dElo >= 0 ? "+" : "\u2212") + f0(Math.abs(dElo)) + ")</span>" +
+      h += '<p class="elo-mini">Elo ' + evCoppia(p.Elo.c.elo, p.Elo.o.elo, " \u2013 ") + ' <span class="piccolo">(' + scartoElo(p.Elo.c.elo, p.Elo.o.elo) + ")</span>" +
         // (158) le probabilita' sotto, su una riga loro
         (p.Elo.p ? "<br><span class=nw><b class=seg>1</b> " + pvE(p.Elo.p[0]) + "</span>" + " · <span class=nw><b class=seg>X</b> " + pvE(p.Elo.p[1]) + "</span>" + " · <span class=nw><b class=seg>2</b> " + pvE(p.Elo.p[2]) + "</span>" : '<br><span class="piccolo">' + NOTA_ELO_DIVERSI + campiDiversi(p.Elo.c, p.Elo.o) + "</span>") + "</p>";
     }
@@ -10735,6 +10735,14 @@
   // E' un ALTRO Elo da quello che AsianOdds scrive nel mercato.
   function ev(v) { return '<span class="q">' + f0(num(v)) + "</span>"; }
   // (171) la coppia di Elo: il piu' alto in verde, il piu' basso in rosso
+  // (206) lo scarto fra parentesi dai rating ARROTONDATI, come si leggono:
+  // 1604.5 e 1605.3 si scrivono 1605 e 1605, e "(−1)" accanto sembrava un errore
+  function scartoElo(a, b) {
+    var x = num(a), y = num(b);
+    if (x == null || y == null) return "-";
+    var d = Math.round(x) - Math.round(y);
+    return d === 0 ? "0" : (d > 0 ? "+" : "\u2212") + Math.abs(d);
+  }
   function evCoppia(a, b, sep) {
     var x = num(a), y = num(b);
     var cl = function (u, w) { return u == null || w == null || Math.round(u) === Math.round(w) ? "q" : u > w ? "q elo-su" : "q elo-giu"; };
@@ -10924,7 +10932,7 @@
         '<div class="corpo"><div class="alto">' + (x.ora ? "<span><b>" + esc(x.ora) + "</b></span>" : "") +
           (x.lega ? '<span class="chip">' + esc(x.lega) + "</span>" : "") + (r.pin ? timbroPin(r.pin) : "") + (st.html ? " " + st.html : "") + "</div>" +
           '<div class="partita">' + partitaHtmlId(x.casa, x.ospite, x.ic, x.io, x.lega) + "</div>" +
-          (r.c && r.o ? '<div class="sel">Elo ' + evCoppia(r.c.elo, r.o.elo, " – ") + " (" + (r.c.elo >= r.o.elo ? "+" : "−") + f0(Math.abs(r.c.elo - r.o.elo)) + ")" +
+          (r.c && r.o ? '<div class="sel">Elo ' + evCoppia(r.c.elo, r.o.elo, " – ") + " (" + scartoElo(r.c.elo, r.o.elo) + ")" +
             (r.sc && Math.abs(r.sc.v) >= 5 ? ' · <span class="' + (r.sc.v > 0 ? "mv-su" : "mv-giu") + '">' + "1X2"[r.sc.i] + " " + (r.sc.v > 0 ? "+" : "−") + f0(Math.abs(r.sc.v)) + " vs Pinnacle</span>" : "") + "</div>" : "") +
           (p ? tripla("Elo", p[0], p[1], p[2]) : r.c && r.o ? '<div class="sel piccolo">Elo: ' + NOTA_ELO_DIVERSI + campiDiversi(r.c, r.o) + "</div>" :
             '<div class="sel piccolo">Elo non disponibile per ' + (!r.c && !r.o ? "le due squadre" : !r.c ? esc(x.casa) : esc(x.ospite)) + "</div>") +
@@ -11641,15 +11649,13 @@
         div.title = "Elo del sistema: " + c.nome + " " + Math.round(c.elo) + ", " + o.nome + " " + Math.round(o.elo);
         // (148) una riga sola: trattini stretti, scarto fra parentesi piccolo
         // (151) a capo solo fra un pezzo e l'altro, mai fra "1" e "55%"
-        if (p) div.innerHTML = '<span class="nw">Elo ' + evCoppia(c.elo, o.elo, "\u2013") + ' <span class="piccolo">(' + (c.elo >= o.elo ? "+" : "\u2212") +
-          f0(Math.abs(c.elo - o.elo)) + ")</span></span>" +
+        if (p) div.innerHTML = '<span class="nw">Elo ' + evCoppia(c.elo, o.elo, "\u2013") + ' <span class="piccolo">(' + scartoElo(c.elo, o.elo) + ")</span></span>" +
           // (172) le probabilita' dell'Elo sotto, con la loro etichetta:
           // accanto ai due rating sembravano quelle del mercato
           '<br><span class="piccolo">secondo l\u2019Elo</span> ' + '<span class="nw"><span class=nw><b class=seg>1</b> ' + pvE(p[0]) + '</span>' + "</span>\u2009· " +
           '<span class="nw"><span class=nw><b class=seg>X</b> ' + pvE(p[1]) + '</span>' + "</span>\u2009· " + '<span class="nw"><span class=nw><b class=seg>2</b> ' + pvE(p[2]) + '</span>' + "</span>";
         else {
-          div.innerHTML = '<span class="nw">Elo ' + evCoppia(c.elo, o.elo, "\u2013") + ' <span class="piccolo">(' + (c.elo >= o.elo ? "+" : "\u2212") +
-            f0(Math.abs(c.elo - o.elo)) + ")</span></span>" + '<br><span class="piccolo">' + NOTA_ELO_DIVERSI + "</span>";
+          div.innerHTML = '<span class="nw">Elo ' + evCoppia(c.elo, o.elo, "\u2013") + ' <span class="piccolo">(' + scartoElo(c.elo, o.elo) + ")</span></span>" + '<br><span class="piccolo">' + NOTA_ELO_DIVERSI + "</span>";
           div.title += " (" + c.camp + " / " + o.camp + ")";
         }
         if (detC) { detC.insertBefore(div, detC.firstChild); return; }
@@ -11657,8 +11663,7 @@
         if (pcE) {
           // (182) scheda dei Pronostici: i due rating sopra, la riga ELO
           // sotto MERCATO, con la stessa etichetta del Calendario
-          div.innerHTML = '<span class="nw">Elo ' + evCoppia(c.elo, o.elo, "\u2013") + ' <span class="piccolo">(' + (c.elo >= o.elo ? "+" : "\u2212") +
-            f0(Math.abs(c.elo - o.elo)) + ")</span></span>";
+          div.innerHTML = '<span class="nw">Elo ' + evCoppia(c.elo, o.elo, "\u2013") + ' <span class="piccolo">(' + scartoElo(c.elo, o.elo) + ")</span></span>";
           pcE.parentNode.insertBefore(div, pcE);
           pcE.querySelector(".pc-elo").innerHTML = p ? tripla("elo", p[0], p[1], p[2]) :
             '<div class="tripla tripla-nota"><span class="nome">elo</span><span class="piccolo">' + NOTA_ELO_DIVERSI + "</span></div>";
