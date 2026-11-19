@@ -14360,162 +14360,332 @@ Data,Norm_Casa,Norm_Ospite,Chiave_Pron,Vista_Prima_Il,Vista_Ultima_Il,Rilevazion
 2026-11-18,virtus francavilla,turris,OU|Under|3.5,2026-11-18 02:03,2026-11-18 12:28,3,si,Virtus Francavilla,0.74,Coppa Italia Serie D,3.5,OU,14:30,Turris,Italy,1.29,,,,Under,Under 3.5
 2026-11-18,west ham w,wolverhampton w,OU|Over|2.5,2026-11-18 02:03,2026-11-18 18:09,4,si,West Ham W,0.73,WSL Cup,2.5,OU,20:00,Wolverhampton W,England,1.21,,,,Over,Over 2.5
 2026-11-18,zemun,radnicki 1923,OU|Over|1.5,2026-11-18 02:03,2026-11-18 18:09,4,si,Zemun,0.68,Cup,1.5,OU,18:30,Radnicki 1923,Serbia,1.4,,,,Over,Over 1.5
-2026-11-19,aigle royal,colombe,OU|Under|3.5,2026-11-18 12:28,2026-11-19 00:39,4,,Aigle Royal,0.75,Elite One,3.5,OU,15:30,Colombe,Cameroon,1.24,,,,Under,Under 3.5
-2026-11-19,al ahli doha,al shamal,OU|Over|2.5,2026-11-18 12:28,2026-11-19 00:39,4,,Al Ahli Doha,0.67,Stars League,2.5,OU,16:30,Al Shamal,Qatar,1.44,,,,Over,Over 2.5
-2026-11-19,al ain,al dhafra,OU|Over|2.5,2026-11-18 02:03,2026-11-19 00:39,6,,Al Ain,0.65,Pro League,2.5,OU,16:25,Al-Dhafra,United-Arab-Emirates,1.3,,,,Over,Over 2.5
-2026-11-19,al kahrabaa,diyala,OU|Under|2.5,2026-11-18 12:28,2026-11-19 00:39,4,,Al Kahrabaa,0.62,Iraqi League,2.5,OU,14:45,Diyala,Iraq,1.52,,,,Under,Under 2.5
-2026-11-19,al masry,asyut petrol,OU|Under|2.5,2026-11-18 12:28,2026-11-19 00:39,4,,AL Masry,0.64,Cup,2.5,OU,16:00,Asyut Petrol,Egypt,1.5,,,,Under,Under 2.5
-2026-11-19,al wasl,hatta,OU|Over|2.5,2026-11-18 02:03,2026-11-19 00:39,6,,Al-Wasl FC,0.72,Pro League,2.5,OU,13:45,Hatta SC,United-Arab-Emirates,1.22,,,,Over,Over 2.5
-2026-11-19,aldosivi res,godoy cruz res,OU|Under|3.5,2026-11-18 12:28,2026-11-19 00:39,4,,Aldosivi Res.,0.74,Reserve League,3.5,OU,19:00,Godoy Cruz Res.,Argentina,1.28,,,,Under,Under 3.5
-2026-11-19,amiens,caen,OU|Under|3.5,2026-11-18 02:03,2026-11-19 00:39,6,,Amiens,0.74,National 1,3.5,OU,20:45,Caen,France,1.33,,,,Under,Under 3.5
-2026-11-19,argentinos juniors res,gimnasia mendoza 2,OU|Under|2.5,2026-11-18 12:28,2026-11-19 00:39,4,,Argentinos Juniors Res.,0.61,Reserve League,2.5,OU,19:00,Gimnasia Mendoza 2,Argentina,1.61,,,,Under,Under 2.5
-2026-11-19,arsenal w,lyon w,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 00:39,6,,Arsenal W,0.62,UEFA Champions League Women,,BTTS,21:00,Lyon W,Europe,1.57,,,,Yes,GG
+2026-11-19,aigle royal,colombe,OU|Under|3.5,2026-11-18 12:28,2026-11-19 02:09,5,,Aigle Royal,0.76,Elite One,3.5,OU,15:30,Colombe,Cameroon,1.23,,,,Under,Under 3.5
+2026-11-19,al ahli doha,al shamal,OU|Over|2.5,2026-11-18 12:28,2026-11-19 02:09,5,,Al Ahli Doha,0.67,Stars League,2.5,OU,16:30,Al Shamal,Qatar,1.44,,,,Over,Over 2.5
+2026-11-19,al ain,al dhafra,OU|Over|2.5,2026-11-18 02:03,2026-11-19 02:09,7,,Al Ain,0.65,Pro League,2.5,OU,16:25,Al-Dhafra,United-Arab-Emirates,1.3,,,,Over,Over 2.5
+2026-11-19,al kahrabaa,diyala,OU|Under|2.5,2026-11-18 12:28,2026-11-19 02:09,5,,Al Kahrabaa,0.62,Iraqi League,2.5,OU,14:45,Diyala,Iraq,1.51,,,,Under,Under 2.5
+2026-11-19,al masry,asyut petrol,OU|Under|2.5,2026-11-18 12:28,2026-11-19 02:09,5,,AL Masry,0.64,Cup,2.5,OU,16:00,Asyut Petrol,Egypt,1.5,,,,Under,Under 2.5
+2026-11-19,al wasl,hatta,OU|Over|2.5,2026-11-18 02:03,2026-11-19 02:09,7,,Al-Wasl FC,0.72,Pro League,2.5,OU,13:45,Hatta SC,United-Arab-Emirates,1.22,,,,Over,Over 2.5
+2026-11-19,aldosivi res,godoy cruz res,OU|Under|3.5,2026-11-18 12:28,2026-11-19 02:09,5,,Aldosivi Res.,0.74,Reserve League,3.5,OU,19:00,Godoy Cruz Res.,Argentina,1.28,,,,Under,Under 3.5
+2026-11-19,amiens,caen,OU|Under|3.5,2026-11-18 02:03,2026-11-19 02:09,7,,Amiens,0.74,National 1,3.5,OU,20:45,Caen,France,1.33,,,,Under,Under 3.5
+2026-11-19,argentinos juniors res,gimnasia mendoza 2,OU|Under|2.5,2026-11-18 12:28,2026-11-19 02:09,5,,Argentinos Juniors Res.,0.61,Reserve League,2.5,OU,19:00,Gimnasia Mendoza 2,Argentina,1.62,,,,Under,Under 2.5
+2026-11-19,arsenal w,lyon w,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 02:09,7,,Arsenal W,0.62,UEFA Champions League Women,,BTTS,21:00,Lyon W,Europe,1.57,,,,Yes,GG
 2026-11-19,austria wien w,bayern munich w,BTTS|Yes|None,2026-11-18 02:03,2026-11-18 05:27,2,,Austria Wien W,0.58,UEFA Champions League Women,,BTTS,18:45,Bayern Munich W,Europe,2.38,,,,Yes,GG
-2026-11-19,austria wien w,bayern munich w,OU|Over|2.5,2026-11-18 12:28,2026-11-19 00:39,4,,Austria Wien W,0.72,UEFA Champions League Women,2.5,OU,18:45,Bayern Munich W,Europe,1.3,,,,Over,Over 2.5
-2026-11-19,baladiyyat al mehalla,haras el hodood,OU|Under|2.5,2026-11-18 12:28,2026-11-19 00:39,4,,Baladiyyat Al Mehalla,0.71,Second League,2.5,OU,13:30,Haras El Hodood,Egypt,1.35,,,,Under,Under 2.5
+2026-11-19,austria wien w,bayern munich w,OU|Over|2.5,2026-11-18 12:28,2026-11-19 02:09,5,,Austria Wien W,0.72,UEFA Champions League Women,2.5,OU,18:45,Bayern Munich W,Europe,1.28,,,,Over,Over 2.5
+2026-11-19,baladiyyat al mehalla,haras el hodood,OU|Under|2.5,2026-11-18 12:28,2026-11-19 02:09,5,,Baladiyyat Al Mehalla,0.7,Second League,2.5,OU,13:30,Haras El Hodood,Egypt,1.36,,,,Under,Under 2.5
 2026-11-19,barcelona w,servette chenois w,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 00:39,6,,Barcelona W,0.55,UEFA Champions League Women,,BTTS,21:00,Servette Chênois W,Europe,2.75,,,,Yes,GG
-2026-11-19,boston river,deportivo maldonado,DC|X2|None,2026-11-18 12:28,2026-11-19 00:39,4,,Boston River,0.79,Primera División Apertura,,DC,20:30,Deportivo Maldonado,Uruguay,1.22,,,,X2,X2
-2026-11-19,cong an nhan dan,johor darul takzim,BTTS|Yes|None,2026-11-18 12:28,2026-11-19 00:39,4,,Công An Nhân Dân,0.63,ASEAN Club Championship,,BTTS,13:30,Johor Darul Takzim FC,World,1.55,,,,Yes,GG
-2026-11-19,corinthians,botafogo,DC|1X|None,2026-11-18 02:03,2026-11-18 05:27,2,,Corinthians,0.8,Serie A,,DC,01:30,Botafogo,Brazil,1.22,,,,1X,1X
-2026-11-19,corinthians,botafogo,OU|Under|3.5,2026-11-18 12:28,2026-11-19 00:39,4,,Corinthians,0.73,Serie A,3.5,OU,01:30,Botafogo,Brazil,1.36,,,,Under,Under 3.5
+2026-11-19,beltinci,celje,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,Beltinci,0.63,Cup,,BTTS,13:30,Celje,Slovenia,1.69,,,,Yes,GG
+2026-11-19,boston river,deportivo maldonado,DC|X2|None,2026-11-18 12:28,2026-11-19 02:09,5,,Boston River,0.79,Primera División Apertura,,DC,20:30,Deportivo Maldonado,Uruguay,1.22,,,,X2,X2
+2026-11-19,cong an nhan dan,johor darul takzim,BTTS|Yes|None,2026-11-18 12:28,2026-11-19 02:09,5,,Công An Nhân Dân,0.63,ASEAN Club Championship,,BTTS,13:30,Johor Darul Takzim FC,World,1.53,,,,Yes,GG
+2026-11-19,corinthians,botafogo,DC|1X|None,2026-11-18 02:03,2026-11-18 05:27,2,si,Corinthians,0.8,Serie A,,DC,01:30,Botafogo,Brazil,1.22,,,,1X,1X
+2026-11-19,corinthians,botafogo,OU|Under|3.5,2026-11-18 12:28,2026-11-19 02:09,5,,Corinthians,0.73,Serie A,3.5,OU,,Botafogo,Brazil,1.36,,,,Under,Under 3.5
 2026-11-19,cruzeiro,palmeiras,OU|Over|1.5,2026-11-18 02:03,2026-11-18 23:39,5,si,Cruzeiro,0.77,Serie A,1.5,OU,00:30,Palmeiras,Brazil,1.25,,,,Over,Over 1.5
-2026-11-19,dobrudzha,fratria,DC|X2|None,2026-11-18 02:03,2026-11-19 00:39,6,,Dobrudzha,0.79,Second League,,DC,16:00,Fratria,Bulgaria,1.22,,,,X2,X2
-2026-11-19,el dakhleya,ismaily,OU|Over|1.5,2026-11-18 12:28,2026-11-19 00:39,4,,El Dakhleya,0.64,Second League,1.5,OU,13:30,Ismaily SC,Egypt,1.46,,,,Over,Over 1.5
-2026-11-19,el mokawloon,olympic el qanah,OU|Under|3.5,2026-11-18 12:28,2026-11-19 00:39,4,,El Mokawloon,0.81,Cup,3.5,OU,16:00,Olympic El Qanah,Egypt,1.22,,,,Under,Under 3.5
+2026-11-19,deportivo la guaira,anzoategui,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,Deportivo La Guaira,0.56,Copa Venezuela,,BTTS,23:30,Anzoátegui FC,Venezuela,1.89,,,,Yes,GG
+2026-11-19,dob,bistrica,OU|Over|2.5,2026-11-19 02:09,2026-11-19 02:09,1,,Dob,0.64,Cup,2.5,OU,13:30,Bistrica,Slovenia,1.66,,,,Over,Over 2.5
+2026-11-19,dobrudzha,fratria,DC|X2|None,2026-11-18 02:03,2026-11-19 02:09,7,,Dobrudzha,0.79,Second League,,DC,16:00,Fratria,Bulgaria,1.22,,,,X2,X2
+2026-11-19,el dakhleya,ismaily,OU|Over|1.5,2026-11-18 12:28,2026-11-19 02:09,5,,El Dakhleya,0.64,Second League,1.5,OU,13:30,Ismaily SC,Egypt,1.45,,,,Over,Over 1.5
+2026-11-19,el mokawloon,olympic el qanah,OU|Under|3.5,2026-11-18 12:28,2026-11-19 02:09,5,,El Mokawloon,0.81,Cup,3.5,OU,16:00,Olympic El Qanah,Egypt,1.22,,,,Under,Under 3.5
 2026-11-19,flamengo,atletico paranaense,1X2|1|None,2026-11-18 02:03,2026-11-18 23:39,5,si,Flamengo,0.72,Serie A,,1X2,00:30,Atletico Paranaense,Brazil,1.25,,,,1,1
-2026-11-19,fredericia,hiller d,OU|Under|3.5,2026-11-18 02:03,2026-11-19 00:39,6,,FC Fredericia,0.62,1. Division,3.5,OU,19:00,Hillerød,Denmark,1.73,,,,Under,Under 3.5
-2026-11-19,gharraf,al quwa al jawiya,OU|Under|2.5,2026-11-18 12:28,2026-11-19 00:39,4,,Gharraf,0.62,Iraqi League,2.5,OU,16:30,Al Quwa Al Jawiya,Iraq,1.57,,,,Under,Under 2.5
-2026-11-19,ghaz al shamal,al karkh,OU|Under|2.5,2026-11-18 12:28,2026-11-19 00:39,4,,Ghaz Al Shamal,0.63,Iraqi League,2.5,OU,17:00,Al Karkh,Iraq,1.52,,,,Under,Under 2.5
-2026-11-19,gremio,bahia,OU|Over|1.5,2026-11-18 02:03,2026-11-19 00:39,6,,Gremio,0.76,Serie A,1.5,OU,01:30,Bahia,Brazil,1.22,,,,Over,Over 1.5
-2026-11-19,ifk norrkoping,kups,OU|Under|3.5,2026-11-18 02:03,2026-11-19 00:39,6,,IFK Norrkoping,0.65,Friendlies Clubs,3.5,OU,14:00,KuPS,World,1.63,,,,Under,Under 3.5
-2026-11-19,independiente la chorrera,tauro,OU|Over|1.5,2026-11-18 02:03,2026-11-19 00:39,6,,Independiente de La Chorrera,0.76,Liga Panameña De Fútbol,1.5,OU,02:30,Tauro FC,Panama,1.22,,,,Over,Over 1.5
+2026-11-19,fredericia,hiller d,OU|Under|3.5,2026-11-18 02:03,2026-11-19 02:09,7,,FC Fredericia,0.62,1. Division,3.5,OU,19:00,Hillerød,Denmark,1.73,,,,Under,Under 3.5
+2026-11-19,gharraf,al quwa al jawiya,OU|Under|2.5,2026-11-18 12:28,2026-11-19 02:09,5,,Gharraf,0.62,Iraqi League,2.5,OU,16:30,Al Quwa Al Jawiya,Iraq,1.57,,,,Under,Under 2.5
+2026-11-19,ghaz al shamal,al karkh,OU|Under|2.5,2026-11-18 12:28,2026-11-19 02:09,5,,Ghaz Al Shamal,0.63,Iraqi League,2.5,OU,17:00,Al Karkh,Iraq,1.52,,,,Under,Under 2.5
+2026-11-19,gremio,bahia,OU|Over|1.5,2026-11-18 02:03,2026-11-19 02:09,7,,Gremio,0.77,Serie A,1.5,OU,,Bahia,Brazil,1.2,,,,Over,Over 1.5
+2026-11-19,ifk norrkoping,kups,OU|Under|3.5,2026-11-18 02:03,2026-11-19 02:09,7,,IFK Norrkoping,0.65,Friendlies Clubs,3.5,OU,14:00,KuPS,World,1.63,,,,Under,Under 3.5
+2026-11-19,independiente la chorrera,tauro,OU|Over|1.5,2026-11-18 02:03,2026-11-19 02:09,7,,Independiente de La Chorrera,0.76,Liga Panameña De Fútbol,1.5,OU,02:30,Tauro FC,Panama,1.22,,,,Over,Over 1.5
 2026-11-19,inter moengotapoe,inter wanica,OU|Over|2.5,2026-11-18 12:28,2026-11-18 23:39,3,si,Inter Moengotapoe,0.75,Eerste Divisie,2.5,OU,00:00,FC Inter Wanica,Surinam,1.22,,,,Over,Over 2.5
-2026-11-19,js kabylie,usm alger,DC|1X|None,2026-11-18 12:28,2026-11-19 00:39,4,,JS Kabylie,0.75,Ligue 1,,DC,20:00,USM Alger,Algeria,1.25,,,,1X,1X
-2026-11-19,khaitan,yarmouk,OU|Over|1.5,2026-11-18 12:28,2026-11-19 00:39,4,,Khaitan,0.8,Division 1,1.5,OU,15:20,Yarmouk,Kuwait,1.21,,,,Over,Over 1.5
-2026-11-19,kheybar khorramabad,esteghlal,OU|Under|2.5,2026-11-18 02:03,2026-11-19 00:39,6,,Kheybar Khorramabad,0.63,Persian Gulf Pro League,2.5,OU,14:00,Esteghlal FC,Iran,1.46,,,,Under,Under 2.5
+2026-11-19,js kabylie,usm alger,DC|1X|None,2026-11-18 12:28,2026-11-19 02:09,5,,JS Kabylie,0.75,Ligue 1,,DC,20:00,USM Alger,Algeria,1.25,,,,1X,1X
+2026-11-19,khaitan,yarmouk,OU|Over|1.5,2026-11-18 12:28,2026-11-19 02:09,5,,Khaitan,0.8,Division 1,1.5,OU,15:20,Yarmouk,Kuwait,1.21,,,,Over,Over 1.5
+2026-11-19,kheybar khorramabad,esteghlal,OU|Under|2.5,2026-11-18 02:03,2026-11-19 02:09,7,,Kheybar Khorramabad,0.63,Persian Gulf Pro League,2.5,OU,14:00,Esteghlal FC,Iran,1.46,,,,Under,Under 2.5
+2026-11-19,kif orebro w,rosengard w,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,KIF Örebro W,0.76,Damallsvenskan,1.5,OU,18:00,Rosengård W,Sweden,1.2,,,,Over,Over 1.5
 2026-11-19,la viena,el seka el hadid,OU|Over|1.5,2026-11-18 12:28,2026-11-19 00:39,4,,La Viena FC,0.62,Second League,1.5,OU,13:30,El Seka El Hadid,Egypt,1.51,,,,Over,Over 1.5
-2026-11-19,lions,wollongong wolves,BTTS|Yes|None,2026-11-18 12:28,2026-11-19 00:39,4,,Lions,0.64,Australian Championship,,BTTS,09:30,Wollongong Wolves,Australia,1.5,,,,Yes,GG
-2026-11-19,malavan,gol gohar,OU|Under|2.5,2026-11-18 02:03,2026-11-19 00:39,6,,Malavan,0.69,Persian Gulf Pro League,2.5,OU,14:00,Gol Gohar,Iran,1.28,,,,Under,Under 2.5
-2026-11-19,masr,smouha,OU|Over|1.5,2026-11-18 12:28,2026-11-19 00:39,4,,Masr,0.67,Cup,1.5,OU,19:00,Smouha SC,Egypt,1.5,,,,Over,Over 1.5
-2026-11-19,mb rouisset,cr belouizdad,OU|Under|2.5,2026-11-18 12:28,2026-11-19 00:39,4,,MB Rouisset,0.66,Ligue 1,2.5,OU,17:45,CR Belouizdad,Algeria,1.44,,,,Under,Under 2.5
-2026-11-19,mc alger,olympique akbou,OU|Under|3.5,2026-11-18 12:28,2026-11-19 00:39,4,,MC Alger,0.82,Ligue 1,3.5,OU,17:45,Olympique Akbou,Algeria,1.2,,,,Under,Under 3.5
-2026-11-19,mes shahr e babak,tractor sazi,OU|Under|3.5,2026-11-18 02:03,2026-11-19 00:39,6,,Mes Shahr-e Babak,0.79,Persian Gulf Pro League,3.5,OU,14:45,Tractor Sazi,Iran,1.2,,,,Under,Under 3.5
-2026-11-19,moik,s bail,BTTS|Yes|None,2026-11-18 12:28,2026-11-19 00:39,4,,MOIK,0.59,Birinci Dasta,,BTTS,11:00,Səbail,Azerbaidjan,1.74,,,,Yes,GG
-2026-11-19,mufulira wanderers,kabwe warriors,OU|Under|2.5,2026-11-18 12:28,2026-11-19 00:39,4,,Mufulira Wanderers,0.7,Super League,2.5,OU,14:00,Kabwe Warriors,Zambia,1.32,,,,Under,Under 2.5
-2026-11-19,paris w,k ge w,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 00:39,6,,Paris FC W,0.66,UEFA Champions League Women,,BTTS,18:45,Køge W,Europe,1.57,,,,Yes,GG
-2026-11-19,penarol,cerro largo,OU|Under|3.5,2026-11-18 12:28,2026-11-19 00:39,4,,Penarol,0.76,Primera División Apertura,3.5,OU,20:30,Cerro Largo,Uruguay,1.28,,,,Under,Under 3.5
+2026-11-19,la viena,el seka el hadid,OU|Under|2.5,2026-11-19 02:09,2026-11-19 02:09,1,,La Viena FC,0.66,Second League,2.5,OU,13:30,El Seka El Hadid,Egypt,1.33,,,,Under,Under 2.5
+2026-11-19,lions,wollongong wolves,BTTS|Yes|None,2026-11-18 12:28,2026-11-19 02:09,5,,Lions,0.64,Australian Championship,,BTTS,09:30,Wollongong Wolves,Australia,1.5,,,,Yes,GG
+2026-11-19,lokomotiva zvolen,kosice,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,Lokomotíva Zvolen,0.62,Cup,,BTTS,13:00,FK Košice,Slovakia,1.64,,,,Yes,GG
+2026-11-19,malavan,gol gohar,OU|Under|2.5,2026-11-18 02:03,2026-11-19 02:09,7,,Malavan,0.69,Persian Gulf Pro League,2.5,OU,14:00,Gol Gohar,Iran,1.28,,,,Under,Under 2.5
+2026-11-19,masr,smouha,OU|Over|1.5,2026-11-18 12:28,2026-11-19 02:09,5,,Masr,0.66,Cup,1.5,OU,19:00,Smouha SC,Egypt,1.53,,,,Over,Over 1.5
+2026-11-19,mb rouisset,cr belouizdad,OU|Under|2.5,2026-11-18 12:28,2026-11-19 02:09,5,,MB Rouisset,0.66,Ligue 1,2.5,OU,17:45,CR Belouizdad,Algeria,1.44,,,,Under,Under 2.5
+2026-11-19,mc alger,olympique akbou,OU|Under|3.5,2026-11-18 12:28,2026-11-19 02:09,5,,MC Alger,0.82,Ligue 1,3.5,OU,17:45,Olympique Akbou,Algeria,1.22,,,,Under,Under 3.5
+2026-11-19,mes shahr e babak,tractor sazi,OU|Under|3.5,2026-11-18 02:03,2026-11-19 02:09,7,,Mes Shahr-e Babak,0.79,Persian Gulf Pro League,3.5,OU,14:45,Tractor Sazi,Iran,1.2,,,,Under,Under 3.5
+2026-11-19,moik,s bail,BTTS|Yes|None,2026-11-18 12:28,2026-11-19 02:09,5,,MOIK,0.6,Birinci Dasta,,BTTS,11:00,Səbail,Azerbaidjan,1.62,,,,Yes,GG
+2026-11-19,mufulira wanderers,kabwe warriors,OU|Under|2.5,2026-11-18 12:28,2026-11-19 02:09,5,,Mufulira Wanderers,0.7,Super League,2.5,OU,14:00,Kabwe Warriors,Zambia,1.32,,,,Under,Under 2.5
+2026-11-19,nkwazi,mutondo stars,OU|Under|2.5,2026-11-19 02:09,2026-11-19 02:09,1,,Nkwazi,0.65,Super League,2.5,OU,14:00,Mutondo Stars,Zambia,1.47,,,,Under,Under 2.5
+2026-11-19,paris w,k ge w,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 02:09,7,,Paris FC W,0.66,UEFA Champions League Women,,BTTS,18:45,Køge W,Europe,1.57,,,,Yes,GG
+2026-11-19,penarol,cerro largo,OU|Under|3.5,2026-11-18 12:28,2026-11-19 02:09,5,,Penarol,0.77,Primera División Apertura,3.5,OU,20:30,Cerro Largo,Uruguay,1.25,,,,Under,Under 3.5
+2026-11-19,persib bandung,shan united,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,Persib Bandung,0.54,ASEAN Club Championship,,BTTS,13:00,Shan United,World,2.29,,,,Yes,GG
 2026-11-19,persib bandung,shan united,OU|Under|3.5,2026-11-18 12:28,2026-11-19 00:39,4,,Persib Bandung,0.59,ASEAN Club Championship,3.5,OU,13:00,Shan United,World,1.75,,,,Under,Under 3.5
-2026-11-19,pharco,el entag el harby,OU|Over|1.5,2026-11-18 12:28,2026-11-19 00:39,4,,Pharco,0.72,Second League,1.5,OU,13:30,El Entag EL Harby,Egypt,1.35,,,,Over,Over 1.5
-2026-11-19,preston lions,south hobart,OU|Over|2.5,2026-11-18 12:28,2026-11-19 00:39,4,,Preston Lions,0.69,Australian Championship,2.5,OU,09:30,South Hobart,Australia,1.22,,,,Over,Over 2.5
+2026-11-19,pharco,el entag el harby,OU|Over|1.5,2026-11-18 12:28,2026-11-19 02:09,5,,Pharco,0.72,Second League,1.5,OU,13:30,El Entag EL Harby,Egypt,1.35,,,,Over,Over 1.5
+2026-11-19,preston lions,south hobart,OU|Over|2.5,2026-11-18 12:28,2026-11-19 02:09,5,,Preston Lions,0.7,Australian Championship,2.5,OU,09:30,South Hobart,Australia,1.21,,,,Over,Over 2.5
 2026-11-19,progreso,atletico torque,BTTS|Yes|None,2026-11-18 12:28,2026-11-19 00:39,4,,Progreso,0.61,Primera División Apertura,,BTTS,20:30,Atletico Torque,Uruguay,1.8,,,,Yes,GG
-2026-11-19,racing res,talleres cordoba res,OU|Over|1.5,2026-11-18 12:28,2026-11-19 00:39,4,,Racing Club Res.,0.78,Reserve League,1.5,OU,19:00,Talleres Córdoba Res.,Argentina,1.2,,,,Over,Over 1.5
+2026-11-19,racing res,talleres cordoba res,OU|Over|1.5,2026-11-18 12:28,2026-11-19 02:09,5,,Racing Club Res.,0.78,Reserve League,1.5,OU,19:00,Talleres Córdoba Res.,Argentina,1.2,,,,Over,Over 1.5
 2026-11-19,remo,chapecoense,BTTS|Yes|None,2026-11-18 02:03,2026-11-18 05:27,2,si,Remo,0.62,Serie A,,BTTS,00:00,Chapecoense-sc,Brazil,1.67,,,,Yes,GG
 2026-11-19,remo,chapecoense,OU|Over|1.5,2026-11-18 12:28,2026-11-18 23:39,3,si,Remo,0.79,Serie A,1.5,OU,00:00,Chapecoense-sc,Brazil,1.2,,,,Over,Over 1.5
-2026-11-19,river plate res,banfield res,OU|Under|3.5,2026-11-18 12:28,2026-11-19 00:39,4,,River Plate Res.,0.68,Reserve League,3.5,OU,19:00,Banfield Res.,Argentina,1.41,,,,Under,Under 3.5
-2026-11-19,sl benfica w,roma w,OU|Under|3.5,2026-11-18 02:03,2026-11-19 00:39,6,,SL Benfica W,0.62,UEFA Champions League Women,3.5,OU,21:00,Roma W,Europe,1.57,,,,Under,Under 3.5
-2026-11-19,surkhon,andijan,OU|Under|2.5,2026-11-18 12:28,2026-11-19 00:39,4,,Surkhon,0.64,Super League,2.5,OU,14:00,Andijan,Uzbekistan,1.56,,,,Under,Under 2.5
-2026-11-19,svay rieng,port,OU|Over|2.5,2026-11-18 12:28,2026-11-19 00:39,4,,Svay Rieng,0.64,ASEAN Club Championship,2.5,OU,13:00,Port FC,World,1.66,,,,Over,Over 2.5
-2026-11-19,tersana,itesalat,OU|Under|2.5,2026-11-18 12:28,2026-11-19 00:39,4,,Tersana,0.66,Second League,2.5,OU,13:30,Itesalat,Egypt,1.35,,,,Under,Under 2.5
+2026-11-19,river plate res,banfield res,OU|Under|3.5,2026-11-18 12:28,2026-11-19 02:09,5,,River Plate Res.,0.68,Reserve League,3.5,OU,19:00,Banfield Res.,Argentina,1.41,,,,Under,Under 3.5
+2026-11-19,sl benfica w,roma w,OU|Under|3.5,2026-11-18 02:03,2026-11-19 02:09,7,,SL Benfica W,0.62,UEFA Champions League Women,3.5,OU,21:00,Roma W,Europe,1.57,,,,Under,Under 3.5
+2026-11-19,surkhon,andijan,OU|Under|2.5,2026-11-18 12:28,2026-11-19 02:09,5,,Surkhon,0.65,Super League,2.5,OU,14:00,Andijan,Uzbekistan,1.53,,,,Under,Under 2.5
+2026-11-19,svay rieng,port,OU|Over|2.5,2026-11-18 12:28,2026-11-19 02:09,5,,Svay Rieng,0.64,ASEAN Club Championship,2.5,OU,13:00,Port FC,World,1.66,,,,Over,Over 2.5
+2026-11-19,sveikata,hegelmann ii,DC|1X|None,2026-11-19 02:09,2026-11-19 02:09,1,,Sveikata,0.76,1 Lyga,,DC,18:00,Hegelmann II,Lithuania,1.48,,,,1X,1X
+2026-11-19,tersana,itesalat,OU|Under|2.5,2026-11-18 12:28,2026-11-19 02:09,5,,Tersana,0.67,Second League,2.5,OU,13:30,Itesalat,Egypt,1.32,,,,Under,Under 2.5
 2026-11-19,ucv,caracas,OU|Over|1.5,2026-11-18 12:28,2026-11-18 23:39,3,si,UCV,0.73,Copa Venezuela,1.5,OU,00:00,Caracas FC,Venezuela,1.36,,,,Over,Over 1.5
-2026-11-19,vasco da gama,internacional,OU|Over|1.5,2026-11-18 02:03,2026-11-19 00:39,6,,Vasco DA Gama,0.76,Serie A,1.5,OU,23:30,Internacional,Brazil,1.22,,,,Over,Over 1.5
-2026-11-19,vitoria,rb bragantino,OU|Under|3.5,2026-11-18 02:03,2026-11-19 00:39,6,,Vitoria,0.72,Serie A,3.5,OU,23:30,RB Bragantino,Brazil,1.4,,,,Under,Under 3.5
-2026-11-19,xank ndi,karvan,BTTS|Yes|None,2026-11-18 12:28,2026-11-19 00:39,4,,Xankəndi FK,0.59,Birinci Dasta,,BTTS,13:00,Karvan,Azerbaidjan,1.74,,,,Yes,GG
-2026-11-20,aarhus,lyngby,DC|1X|None,2026-11-18 02:03,2026-11-19 00:39,6,,Aarhus,0.81,Superliga,,DC,19:00,Lyngby,Denmark,1.22,,,,1X,1X
-2026-11-20,aarhus fremad,hobro,DC|1X|None,2026-11-18 02:03,2026-11-19 00:39,6,,Aarhus Fremad,0.81,1. Division,,DC,19:00,Hobro,Denmark,1.28,,,,1X,1X
-2026-11-20,airbus uk,colwyn bay,BTTS|Yes|None,2026-11-18 12:28,2026-11-19 00:39,4,,Airbus UK,0.63,Premier League,,BTTS,20:45,Colwyn Bay,Wales,1.61,,,,Yes,GG
-2026-11-20,al ahli jeddah,al nassr,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 00:39,6,,Al-Ahli Jeddah,0.68,Pro League,,BTTS,18:30,Al-Nassr,Saudi-Arabia,1.5,,,,Yes,GG
-2026-11-20,al ittihad kalba,sharjah,OU|Over|1.5,2026-11-18 02:03,2026-11-19 00:39,6,,Al-Ittihad Kalba,0.8,Pro League,1.5,OU,13:45,Sharjah FC,United-Arab-Emirates,1.21,,,,Over,Over 1.5
-2026-11-20,al sadd,lusail city,OU|Over|2.5,2026-11-18 12:28,2026-11-19 00:39,4,,Al Sadd,0.74,Stars League,2.5,OU,14:00,Lusail City,Qatar,1.24,,,,Over,Over 2.5
-2026-11-20,almere city,nac breda,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 00:39,6,,Almere City FC,0.67,Eerste Divisie,,BTTS,20:00,NAC Breda,Netherlands,1.33,,,,Yes,GG
-2026-11-20,annecy,clermont foot,OU|Under|3.5,2026-11-18 02:03,2026-11-19 00:39,6,,Annecy,0.75,Ligue 2,3.5,OU,20:00,Clermont Foot,France,1.28,,,,Under,Under 3.5
+2026-11-19,vasco da gama,internacional,OU|Over|1.5,2026-11-18 02:03,2026-11-19 02:09,7,,Vasco DA Gama,0.75,Serie A,1.5,OU,23:30,Internacional,Brazil,1.25,,,,Over,Over 1.5
+2026-11-19,vitoria,rb bragantino,OU|Under|3.5,2026-11-18 02:03,2026-11-19 02:09,7,,Vitoria,0.72,Serie A,3.5,OU,23:30,RB Bragantino,Brazil,1.4,,,,Under,Under 3.5
+2026-11-19,xank ndi,karvan,BTTS|Yes|None,2026-11-18 12:28,2026-11-19 02:09,5,,Xankəndi FK,0.6,Birinci Dasta,,BTTS,13:00,Karvan,Azerbaidjan,1.7,,,,Yes,GG
+2026-11-19,zesco united,red arrows,OU|Under|2.5,2026-11-19 02:09,2026-11-19 02:09,1,,ZESCO United,0.72,Super League,2.5,OU,14:00,Red Arrows,Zambia,1.32,,,,Under,Under 2.5
+2026-11-20,aarhus,lyngby,DC|1X|None,2026-11-18 02:03,2026-11-19 02:09,7,,Aarhus,0.81,Superliga,,DC,19:00,Lyngby,Denmark,1.22,,,,1X,1X
+2026-11-20,aarhus fremad,hobro,DC|1X|None,2026-11-18 02:03,2026-11-19 02:09,7,,Aarhus Fremad,0.81,1. Division,,DC,19:00,Hobro,Denmark,1.28,,,,1X,1X
+2026-11-20,airbus uk,colwyn bay,BTTS|Yes|None,2026-11-18 12:28,2026-11-19 02:09,5,,Airbus UK,0.63,Premier League,,BTTS,20:45,Colwyn Bay,Wales,1.61,,,,Yes,GG
+2026-11-20,al ahli jeddah,al nassr,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 02:09,7,,Al-Ahli Jeddah,0.68,Pro League,,BTTS,18:30,Al-Nassr,Saudi-Arabia,1.5,,,,Yes,GG
+2026-11-20,al ittihad kalba,sharjah,OU|Over|1.5,2026-11-18 02:03,2026-11-19 02:09,7,,Al-Ittihad Kalba,0.8,Pro League,1.5,OU,13:45,Sharjah FC,United-Arab-Emirates,1.21,,,,Over,Over 1.5
+2026-11-20,al sadd,lusail city,OU|Over|2.5,2026-11-18 12:28,2026-11-19 02:09,5,,Al Sadd,0.74,Stars League,2.5,OU,14:00,Lusail City,Qatar,1.24,,,,Over,Over 2.5
+2026-11-20,almere city,nac breda,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 02:09,7,,Almere City FC,0.67,Eerste Divisie,,BTTS,20:00,NAC Breda,Netherlands,1.33,,,,Yes,GG
+2026-11-20,annecy,clermont foot,OU|Under|3.5,2026-11-18 02:03,2026-11-19 02:09,7,,Annecy,0.75,Ligue 2,3.5,OU,20:00,Clermont Foot,France,1.28,,,,Under,Under 3.5
 2026-11-20,arminia bielefeld,1 magdeburg,BTTS|Yes|None,2026-11-18 02:03,2026-11-18 05:27,2,,Arminia Bielefeld,0.62,2. Bundesliga,,BTTS,18:30,1. FC Magdeburg,Germany,1.53,,,,Yes,GG
-2026-11-20,arminia bielefeld,1 magdeburg,OU|Over|1.5,2026-11-18 12:28,2026-11-19 00:39,4,,Arminia Bielefeld,0.8,2. Bundesliga,1.5,OU,18:30,1. FC Magdeburg,Germany,1.2,,,,Over,Over 1.5
-2026-11-20,athletic,espanyol,OU|Under|3.5,2026-11-18 02:03,2026-11-19 00:39,6,,Athletic Club,0.74,La Liga,3.5,OU,21:00,Espanyol,Spain,1.4,,,,Under,Under 3.5
-2026-11-20,austria salzburg,admira wacker,OU|Over|1.5,2026-11-18 02:03,2026-11-19 00:39,6,,Austria Salzburg,0.77,2. Liga,1.5,OU,20:30,Admira Wacker,Austria,1.2,,,,Over,Over 1.5
-2026-11-20,barnsley,sheffield wednesday,OU|Under|3.5,2026-11-18 02:03,2026-11-19 00:39,6,,Barnsley,0.62,League One,3.5,OU,21:00,Sheffield Wednesday,England,1.67,,,,Under,Under 3.5
-2026-11-20,bayern munchen,1 koln,OU|Over|2.5,2026-11-18 02:03,2026-11-19 00:39,6,,Bayern München,0.77,Bundesliga,2.5,OU,20:30,1. FC Köln,Germany,1.2,,,,Over,Over 2.5
-2026-11-20,bihor oradea,gloria bistrita,DC|1X|None,2026-11-18 02:03,2026-11-19 00:39,6,,Bihor Oradea,0.8,Liga II,,DC,13:30,Gloria Bistriţa,Romania,1.27,,,,1X,1X
-2026-11-20,borussia dortmund ii,sportfreunde lotte,OU|Under|3.5,2026-11-18 12:28,2026-11-19 00:39,4,,Borussia Dortmund II,0.62,Regionalliga West,3.5,OU,19:30,Sportfreunde Lotte,Germany,1.6,,,,Under,Under 3.5
-2026-11-20,botosani,voluntari,DC|1X|None,2026-11-18 02:03,2026-11-19 00:39,6,,FC Botosani,0.82,Liga I,,DC,16:30,FC Voluntari,Romania,1.25,,,,1X,1X
-2026-11-20,briton ferry,holywell,OU|Over|2.5,2026-11-18 12:28,2026-11-19 00:39,4,,Briton Ferry,0.67,Premier League,2.5,OU,20:45,Holywell,Wales,1.39,,,,Over,Over 2.5
-2026-11-20,brugge ii,excelsior virton,OU|Over|2.5,2026-11-18 02:03,2026-11-19 00:39,6,,Club Brugge II,0.63,Challenger Pro League,2.5,OU,20:00,Excelsior Virton,Belgium,1.49,,,,Over,Over 2.5
-2026-11-20,cardiff met,ammanford afc,1X2|1|None,2026-11-18 12:28,2026-11-19 00:39,4,,Cardiff MET,0.73,Premier League,,1X2,20:45,Ammanford AFC,Wales,1.2,,,,1,1
-2026-11-20,cercle brugge,kvc westerlo,OU|Over|2.5,2026-11-18 02:03,2026-11-19 00:39,6,,Cercle Brugge,0.7,Jupiler Pro League,2.5,OU,20:45,KVC Westerlo,Belgium,1.48,,,,Over,Over 2.5
-2026-11-20,chrobry g ogow,puszcza niepo omice,OU|Under|3.5,2026-11-18 02:03,2026-11-19 00:39,6,,Chrobry Głogów,0.74,I Liga,3.5,OU,18:00,Puszcza Niepołomice,Poland,1.28,,,,Under,Under 3.5
-2026-11-20,cliftonville,glentoran,OU|Under|3.5,2026-11-18 02:03,2026-11-19 00:39,6,,Cliftonville FC,0.71,Premiership,3.5,OU,20:45,Glentoran,Northern-Ireland,1.35,,,,Under,Under 3.5
-2026-11-20,den bosch,vvv venlo,OU|Over|2.5,2026-11-18 02:03,2026-11-19 00:39,6,,Den Bosch,0.7,Eerste Divisie,2.5,OU,20:00,VVV Venlo,Netherlands,1.29,,,,Over,Over 2.5
-2026-11-20,dewa united,persita,OU|Under|3.5,2026-11-18 02:03,2026-11-19 00:39,6,,Dewa United,0.62,Liga 1,3.5,OU,13:00,Persita,Indonesia,1.46,,,,Under,Under 3.5
-2026-11-20,dinamo tbilisi,torpedo kutaisi,1X2|1|None,2026-11-18 12:28,2026-11-19 00:39,4,,Dinamo Tbilisi,0.58,Erovnuli Liga,,1X2,17:00,Torpedo Kutaisi,Georgia,1.75,,,,1,1
-2026-11-20,east bengal ii,delhi,OU|Over|2.5,2026-11-18 02:03,2026-11-19 00:39,6,,East Bengal II,0.7,Indian Super League,2.5,OU,12:30,SC Delhi,India,1.43,,,,Over,Over 2.5
-2026-11-20,el mansura,dayrout,OU|Under|3.5,2026-11-18 12:28,2026-11-19 00:39,4,,El Mansura,0.77,Second League,3.5,OU,13:30,Dayrout,Egypt,1.21,,,,Under,Under 3.5
-2026-11-20,estac troyes,le havre,OU|Over|1.5,2026-11-18 02:03,2026-11-19 00:39,6,,Estac Troyes,0.75,Ligue 1,1.5,OU,20:45,Le Havre,France,1.25,,,,Over,Over 1.5
-2026-11-20,fajr sepasi,chadormalu,OU|Under|3.5,2026-11-18 12:28,2026-11-19 00:39,4,,Fajr Sepasi,0.76,Persian Gulf Pro League,3.5,OU,13:00,Chadormalu SC,Iran,1.2,,,,Under,Under 3.5
-2026-11-20,farul constanta,universitatea cluj,OU|Over|1.5,2026-11-18 02:03,2026-11-19 00:39,6,,Farul Constanta,0.79,Liga I,1.5,OU,19:30,Universitatea Cluj,Romania,1.26,,,,Over,Over 1.5
-2026-11-20,flint town united,cambrian clydach,1X2|1|None,2026-11-18 12:28,2026-11-19 00:39,4,,Flint Town United,0.51,Premier League,,1X2,20:45,Cambrian & Clydach,Wales,2.08,,,,1,1
-2026-11-20,garudayaksa,persepam madura utd,OU|Under|3.5,2026-11-18 02:03,2026-11-19 00:39,6,,Garudayaksa,0.65,Liga 1,3.5,OU,09:30,Persepam Madura Utd,Indonesia,1.41,,,,Under,Under 3.5
-2026-11-20,graafschap,mvv,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 00:39,6,,De Graafschap,0.66,Eerste Divisie,,BTTS,20:00,MVV,Netherlands,1.44,,,,Yes,GG
-2026-11-20,guingamp,rodez,OU|Under|3.5,2026-11-18 02:03,2026-11-19 00:39,6,,Guingamp,0.64,Ligue 2,3.5,OU,20:00,Rodez,France,1.5,,,,Under,Under 3.5
-2026-11-20,havelse,viktoria koln,OU|Over|2.5,2026-11-18 02:03,2026-11-19 00:39,6,,Havelse,0.72,3. Liga,2.5,OU,19:00,FC Viktoria Köln,Germany,1.31,,,,Over,Over 2.5
-2026-11-20,helmond sport,dordrecht,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 00:39,6,,Helmond Sport,0.66,Eerste Divisie,,BTTS,20:00,Dordrecht,Netherlands,1.47,,,,Yes,GG
-2026-11-20,heracles,jong psv u21,OU|Over|2.5,2026-11-18 02:03,2026-11-19 00:39,6,,Heracles,0.74,Eerste Divisie,2.5,OU,20:00,Jong PSV U21,Netherlands,1.22,,,,Over,Over 2.5
-2026-11-20,igd r,umraniyespor,OU|Under|3.5,2026-11-18 02:03,2026-11-19 00:39,6,,Iğdır FK,0.77,1. Lig,3.5,OU,18:00,Ümraniyespor,Turkey,1.27,,,,Under,Under 3.5
-2026-11-20,independiente del valle,macara,BTTS|Yes|None,2026-11-18 12:28,2026-11-19 00:39,4,,Independiente del Valle,0.62,Liga Pro,,BTTS,18:00,Macara,Ecuador,1.67,,,,Yes,GG
-2026-11-20,independiente medellin,santa fe,OU|Over|1.5,2026-11-18 12:28,2026-11-19 00:39,4,,Independiente Medellin,0.76,Primera A,1.5,OU,22:30,Santa Fe,Colombia,1.22,,,,Over,Over 1.5
-2026-11-20,inverness ct,ayr utd,OU|Over|1.5,2026-11-18 02:03,2026-11-19 00:39,6,,Inverness CT,0.77,Championship,1.5,OU,20:30,Ayr Utd,Scotland,1.25,,,,Over,Over 1.5
-2026-11-20,jong utrecht,emmen,OU|Over|2.5,2026-11-18 02:03,2026-11-19 00:39,6,,Jong Utrecht,0.69,Eerste Divisie,2.5,OU,20:00,Emmen,Netherlands,1.38,,,,Over,Over 2.5
-2026-11-20,k lierse s k,lokeren temse,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 00:39,6,,K. Lierse S.K.,0.65,Challenger Pro League,,BTTS,20:00,Lokeren-Temse,Belgium,1.49,,,,Yes,GG
-2026-11-20,karvina,banik ostrava ii,1X2|1|None,2026-11-18 02:03,2026-11-19 00:39,6,,Karviná,0.64,FNL,,1X2,18:00,Baník Ostrava II,Czech-Republic,1.45,,,,1,1
-2026-11-20,kashima,shimizu s pulse,OU|Over|1.5,2026-11-18 02:03,2026-11-19 00:39,6,,Kashima,0.77,J1 League,1.5,OU,11:00,Shimizu S-pulse,Japan,1.21,,,,Over,Over 1.5
-2026-11-20,kashiwa reysol,jef united chiba,1X2|1|None,2026-11-18 02:03,2026-11-19 00:39,6,,Kashiwa Reysol,0.65,J1 League,,1X2,11:00,JEF United Chiba,Japan,1.54,,,,1,1
-2026-11-20,kickers emden,bremer sv,BTTS|Yes|None,2026-11-18 12:28,2026-11-19 00:39,4,,Kickers Emden,0.65,Regionalliga Nord,,BTTS,19:00,Bremer SV,Germany,1.46,,,,Yes,GG
-2026-11-20,kolding,aalborg,OU|Over|1.5,2026-11-18 02:03,2026-11-19 00:39,6,,Kolding IF,0.76,1. Division,1.5,OU,19:00,Aalborg,Denmark,1.2,,,,Over,Over 1.5
-2026-11-20,laval,montpellier,DC|X2|None,2026-11-18 02:03,2026-11-19 00:39,6,,Laval,0.77,Ligue 2,,DC,20:00,Montpellier,France,1.3,,,,X2,X2
-2026-11-20,lechia zielona gora,chojniczanka chojnice,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 00:39,6,,Lechia Zielona Góra,0.64,II Liga East,,BTTS,18:00,Chojniczanka Chojnice,Poland,1.48,,,,Yes,GG
-2026-11-20,llandudno,barry town,DC|12|None,2026-11-18 12:28,2026-11-19 00:39,4,,Llandudno,0.77,Premier League,,DC,20:45,Barry Town,Wales,1.3,,,,12,12
-2026-11-20,lokomotive leipzig,rsv eintracht,1X2|1|None,2026-11-18 12:28,2026-11-19 00:39,4,,Lokomotive Leipzig,0.59,Regionalliga Nordost,,1X2,19:00,RSV Eintracht,Germany,1.87,,,,1,1
-2026-11-20,magdeburg ii,fsv zwickau,BTTS|Yes|None,2026-11-18 12:28,2026-11-19 00:39,4,,Magdeburg II,0.66,Regionalliga Nordost,,BTTS,19:00,FSV Zwickau,Germany,1.55,,,,Yes,GG
-2026-11-20,metz,boulogne,OU|Under|3.5,2026-11-18 02:03,2026-11-19 00:39,6,,Metz,0.74,Ligue 2,3.5,OU,20:00,Boulogne,France,1.33,,,,Under,Under 3.5
-2026-11-20,miedz legnica,ks odz,OU|Under|3.5,2026-11-18 02:03,2026-11-19 00:39,6,,Miedz Legnica,0.72,I Liga,3.5,OU,20:30,ŁKS Łódź,Poland,1.4,,,,Under,Under 3.5
-2026-11-20,molde,bodoglimt,OU|Over|2.5,2026-11-18 02:03,2026-11-19 00:39,6,,Molde,0.76,Eliteserien,2.5,OU,19:00,BodoGlimt,Norway,1.25,,,,Over,Over 2.5
-2026-11-20,nancy,dijon,OU|Over|1.5,2026-11-18 02:03,2026-11-19 00:39,6,,Nancy,0.78,Ligue 2,1.5,OU,20:00,Dijon,France,1.2,,,,Over,Over 1.5
-2026-11-20,nantes,grenoble,OU|Over|1.5,2026-11-18 02:03,2026-11-19 00:39,6,,Nantes,0.75,Ligue 2,1.5,OU,20:00,Grenoble,France,1.25,,,,Over,Over 1.5
-2026-11-20,neuchatel xamax,etoile carouge,OU|Under|3.5,2026-11-18 12:28,2026-11-19 00:39,4,,Neuchatel Xamax FC,0.65,Challenge League,3.5,OU,19:30,Étoile Carouge,Switzerland,1.53,,,,Under,Under 3.5
-2026-11-20,opatija,dinamo zagreb u21,OU|Under|3.5,2026-11-18 12:28,2026-11-19 00:39,4,,Opatija,0.75,First NL,3.5,OU,14:00,Dinamo Zagreb U21,Croatia,1.25,,,,Under,Under 3.5
-2026-11-20,orlando city,cincinnati,OU|Over|2.5,2026-11-18 02:03,2026-11-19 00:39,6,,Orlando City SC,0.77,Major League Soccer,2.5,OU,01:30,FC Cincinnati,USA,1.28,,,,Over,Over 2.5
-2026-11-20,oss,roda,OU|Under|3.5,2026-11-18 02:03,2026-11-19 00:39,6,,FC OSS,0.67,Eerste Divisie,3.5,OU,20:00,Roda,Netherlands,1.41,,,,Under,Under 3.5
-2026-11-20,penybont,haverfordwest county afc,1X2|1|None,2026-11-18 12:28,2026-11-19 00:39,4,,Penybont,0.61,Premier League,,1X2,20:45,Haverfordwest County AFC,Wales,1.65,,,,1,1
-2026-11-20,persepolis,paykan,1X2|1|None,2026-11-18 12:28,2026-11-19 00:39,4,,Persepolis FC,0.69,Persian Gulf Pro League,,1X2,13:45,Paykan,Iran,1.22,,,,1,1
-2026-11-20,piast gliwice,korona kielce,OU|Under|3.5,2026-11-18 02:03,2026-11-19 00:39,6,,Piast Gliwice,0.67,Ekstraklasa,3.5,OU,18:00,Korona Kielce,Poland,1.4,,,,Under,Under 3.5
-2026-11-20,pogon szczecin,slask wroclaw,DC|1X|None,2026-11-18 02:03,2026-11-19 00:39,6,,Pogon Szczecin,0.8,Ekstraklasa,,DC,20:30,Slask Wroclaw,Poland,1.2,,,,1X,1X
-2026-11-20,proxy,tanta,OU|Under|2.5,2026-11-18 12:28,2026-11-19 00:39,4,,Proxy,0.64,Second League,2.5,OU,13:30,Tanta SC,Egypt,1.46,,,,Under,Under 2.5
-2026-11-20,pss sleman,arema,OU|Over|2.5,2026-11-18 02:03,2026-11-19 00:39,6,,PSS Sleman,0.65,Liga 1,2.5,OU,09:30,Arema FC,Indonesia,1.47,,,,Over,Over 2.5
-2026-11-20,rapid wien ii,bw linz,1X2|2|None,2026-11-18 02:03,2026-11-19 00:39,6,,Rapid Wien II,0.71,2. Liga,,1X2,18:30,FC BW Linz,Austria,1.38,,,,2,2
-2026-11-20,rapperswil,aarau,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 00:39,6,,Rapperswil,0.67,Challenge League,,BTTS,19:30,FC Aarau,Switzerland,1.37,,,,Yes,GG
-2026-11-20,red star 93,pau,OU|Over|1.5,2026-11-18 02:03,2026-11-19 00:39,6,,RED Star FC 93,0.74,Ligue 2,1.5,OU,20:00,PAU,France,1.25,,,,Over,Over 1.5
-2026-11-20,reims,saint etienne,OU|Over|1.5,2026-11-18 02:03,2026-11-19 00:39,6,,Reims,0.76,Ligue 2,1.5,OU,20:00,Saint Etienne,France,1.28,,,,Over,Over 1.5
-2026-11-20,rostov,krylia sovetov,DC|1X|None,2026-11-18 02:03,2026-11-19 00:39,6,,FC Rostov,0.78,Premier League,,DC,17:30,Krylia Sovetov,Russia,1.26,,,,1X,1X
-2026-11-20,rot wei erfurt,altglienicke,BTTS|Yes|None,2026-11-18 12:28,2026-11-19 00:39,4,,FC Rot-Weiß Erfurt,0.66,Regionalliga Nordost,,BTTS,19:00,Altglienicke,Germany,1.5,,,,Yes,GG
-2026-11-20,sanat naft,esteghlal khuzestan,OU|Under|2.5,2026-11-18 12:28,2026-11-19 00:39,4,,Sanat Naft,0.65,Persian Gulf Pro League,2.5,OU,15:30,Esteghlal Khuzestan,Iran,1.46,,,,Under,Under 2.5
-2026-11-20,sao paulo,fluminense,OU|Under|3.5,2026-11-18 02:03,2026-11-19 00:39,6,,Sao Paulo,0.76,Serie A,3.5,OU,01:30,Fluminense,Brazil,1.28,,,,Under,Under 3.5
-2026-11-20,seattle sounders,real salt lake,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 00:39,6,,Seattle Sounders,0.64,Major League Soccer,,BTTS,04:00,Real Salt Lake,USA,1.53,,,,Yes,GG
-2026-11-20,septemvri sofia,lokomotiv plovdiv,OU|Under|3.5,2026-11-18 02:03,2026-11-19 00:39,6,,Septemvri Sofia,0.81,First League,3.5,OU,17:00,Lokomotiv Plovdiv,Bulgaria,1.2,,,,Under,Under 3.5
-2026-11-20,shabab al ahli dubai,ajman,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 00:39,6,,Shabab Al Ahli Dubai,0.62,Pro League,,BTTS,16:25,Ajman,United-Arab-Emirates,1.61,,,,Yes,GG
-2026-11-20,shakhtar donetsk,livyi bereh,OU|Under|3.5,2026-11-18 02:03,2026-11-19 00:39,6,,Shakhtar Donetsk,0.69,Premier League,3.5,OU,17:00,Livyi Bereh,Ukraine,1.58,,,,Under,Under 3.5
-2026-11-20,skn st polten,voitsberg,OU|Under|3.5,2026-11-18 02:03,2026-11-19 00:39,6,,SKN ST. Polten,0.65,2. Liga,3.5,OU,18:30,Voitsberg,Austria,1.5,,,,Under,Under 3.5
-2026-11-20,sochaux,dunkerque,OU|Under|3.5,2026-11-18 02:03,2026-11-19 00:39,6,,Sochaux,0.74,Ligue 2,3.5,OU,20:00,Dunkerque,France,1.33,,,,Under,Under 3.5
-2026-11-20,southend,boreham wood,OU|Over|2.5,2026-11-18 02:03,2026-11-19 00:39,6,,Southend,0.71,National League,2.5,OU,20:45,Boreham Wood,England,1.4,,,,Over,Over 2.5
-2026-11-20,sportivo ameliano,sportivo luqueno,OU|Over|1.5,2026-11-18 02:03,2026-11-19 00:39,6,,Sportivo Ameliano,0.75,Division Profesional Clausura,1.5,OU,21:30,Sportivo Luqueno,Paraguay,1.28,,,,Over,Over 1.5
-2026-11-20,stade lausanne ouchy,kriens,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 00:39,6,,Stade Lausanne-Ouchy,0.62,Challenge League,,BTTS,19:30,SC Kriens,Switzerland,1.57,,,,Yes,GG
-2026-11-20,stade nyonnais,wil 1900,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 00:39,6,,Stade Nyonnais,0.64,Challenge League,,BTTS,19:30,FC WIL 1900,Switzerland,1.47,,,,Yes,GG
-2026-11-20,sv darmstadt 98,1 heidenheim,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 00:39,6,,SV Darmstadt 98,0.65,2. Bundesliga,,BTTS,18:30,1. FC Heidenheim,Germany,1.5,,,,Yes,GG
-2026-11-20,sv kapfenberg,wspg wels,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 00:39,6,,SV Kapfenberg,0.66,2. Liga,,BTTS,18:30,WSPG Wels,Austria,1.53,,,,Yes,GG
-2026-11-20,swit skolwin,stal stalowa wola,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 00:39,6,,Świt Skolwin,0.64,II Liga East,,BTTS,12:30,Stal Stalowa Wola,Poland,1.45,,,,Yes,GG
-2026-11-20,taborsko,slavia praha ii,1X2|1|None,2026-11-18 02:03,2026-11-19 00:39,6,,Táborsko,0.51,FNL,,1X2,17:00,Slavia Praha II,Czech-Republic,1.84,,,,1,1
-2026-11-20,teutonia ottensen,hebc,OU|Over|2.5,2026-11-18 12:28,2026-11-19 00:39,4,,Teutonia Ottensen,0.7,Oberliga Hamburg,2.5,OU,19:45,HEBC,Germany,1.26,,,,Over,Over 2.5
-2026-11-20,vissel kobe,mito hollyhock,OU|Over|1.5,2026-11-18 02:03,2026-11-19 00:39,6,,Vissel Kobe,0.76,J1 League,1.5,OU,11:00,Mito Hollyhock,Japan,1.21,,,,Over,Over 1.5
-2026-11-20,vitesse,jong az,OU|Over|2.5,2026-11-18 02:03,2026-11-19 00:39,6,,Vitesse,0.68,Eerste Divisie,2.5,OU,20:00,Jong AZ,Netherlands,1.34,,,,Over,Over 2.5
-2026-11-20,volendam,jong ajax,BTTS|Yes|None,2026-11-18 12:28,2026-11-19 00:39,4,,FC Volendam,0.72,Eerste Divisie,,BTTS,20:00,Jong Ajax,Netherlands,1.26,,,,Yes,GG
+2026-11-20,arminia bielefeld,1 magdeburg,OU|Over|1.5,2026-11-18 12:28,2026-11-19 02:09,5,,Arminia Bielefeld,0.8,2. Bundesliga,1.5,OU,18:30,1. FC Magdeburg,Germany,1.2,,,,Over,Over 1.5
+2026-11-20,athletic,espanyol,OU|Under|3.5,2026-11-18 02:03,2026-11-19 02:09,7,,Athletic Club,0.74,La Liga,3.5,OU,21:00,Espanyol,Spain,1.4,,,,Under,Under 3.5
+2026-11-20,austria salzburg,admira wacker,OU|Over|1.5,2026-11-18 02:03,2026-11-19 02:09,7,,Austria Salzburg,0.77,2. Liga,1.5,OU,20:30,Admira Wacker,Austria,1.2,,,,Over,Over 1.5
+2026-11-20,barnsley,sheffield wednesday,OU|Under|3.5,2026-11-18 02:03,2026-11-19 02:09,7,,Barnsley,0.62,League One,3.5,OU,21:00,Sheffield Wednesday,England,1.67,,,,Under,Under 3.5
+2026-11-20,bayern munchen,1 koln,OU|Over|2.5,2026-11-18 02:03,2026-11-19 02:09,7,,Bayern München,0.77,Bundesliga,2.5,OU,20:30,1. FC Köln,Germany,1.2,,,,Over,Over 2.5
+2026-11-20,bihor oradea,gloria bistrita,DC|1X|None,2026-11-18 02:03,2026-11-19 02:09,7,,Bihor Oradea,0.8,Liga II,,DC,13:30,Gloria Bistriţa,Romania,1.27,,,,1X,1X
+2026-11-20,borussia dortmund ii,sportfreunde lotte,OU|Under|3.5,2026-11-18 12:28,2026-11-19 02:09,5,,Borussia Dortmund II,0.62,Regionalliga West,3.5,OU,19:30,Sportfreunde Lotte,Germany,1.6,,,,Under,Under 3.5
+2026-11-20,botosani,voluntari,DC|1X|None,2026-11-18 02:03,2026-11-19 02:09,7,,FC Botosani,0.82,Liga I,,DC,16:30,FC Voluntari,Romania,1.25,,,,1X,1X
+2026-11-20,briton ferry,holywell,OU|Over|2.5,2026-11-18 12:28,2026-11-19 02:09,5,,Briton Ferry,0.67,Premier League,2.5,OU,20:45,Holywell,Wales,1.39,,,,Over,Over 2.5
+2026-11-20,brugge ii,excelsior virton,OU|Over|2.5,2026-11-18 02:03,2026-11-19 02:09,7,,Club Brugge II,0.63,Challenger Pro League,2.5,OU,20:00,Excelsior Virton,Belgium,1.49,,,,Over,Over 2.5
+2026-11-20,cardiff met,ammanford afc,1X2|1|None,2026-11-18 12:28,2026-11-19 02:09,5,,Cardiff MET,0.73,Premier League,,1X2,20:45,Ammanford AFC,Wales,1.2,,,,1,1
+2026-11-20,cercle brugge,kvc westerlo,OU|Over|2.5,2026-11-18 02:03,2026-11-19 02:09,7,,Cercle Brugge,0.7,Jupiler Pro League,2.5,OU,20:45,KVC Westerlo,Belgium,1.48,,,,Over,Over 2.5
+2026-11-20,chrobry g ogow,puszcza niepo omice,OU|Under|3.5,2026-11-18 02:03,2026-11-19 02:09,7,,Chrobry Głogów,0.74,I Liga,3.5,OU,18:00,Puszcza Niepołomice,Poland,1.28,,,,Under,Under 3.5
+2026-11-20,cliftonville,glentoran,OU|Under|3.5,2026-11-18 02:03,2026-11-19 02:09,7,,Cliftonville FC,0.71,Premiership,3.5,OU,20:45,Glentoran,Northern-Ireland,1.35,,,,Under,Under 3.5
+2026-11-20,den bosch,vvv venlo,OU|Over|2.5,2026-11-18 02:03,2026-11-19 02:09,7,,Den Bosch,0.7,Eerste Divisie,2.5,OU,20:00,VVV Venlo,Netherlands,1.29,,,,Over,Over 2.5
+2026-11-20,dewa united,persita,OU|Under|3.5,2026-11-18 02:03,2026-11-19 02:09,7,,Dewa United,0.62,Liga 1,3.5,OU,13:00,Persita,Indonesia,1.46,,,,Under,Under 3.5
+2026-11-20,dinamo tbilisi,torpedo kutaisi,1X2|1|None,2026-11-18 12:28,2026-11-19 02:09,5,,Dinamo Tbilisi,0.58,Erovnuli Liga,,1X2,17:00,Torpedo Kutaisi,Georgia,1.75,,,,1,1
+2026-11-20,east bengal ii,delhi,OU|Over|2.5,2026-11-18 02:03,2026-11-19 02:09,7,,East Bengal II,0.7,Indian Super League,2.5,OU,12:30,SC Delhi,India,1.43,,,,Over,Over 2.5
+2026-11-20,el mansura,dayrout,OU|Under|3.5,2026-11-18 12:28,2026-11-19 02:09,5,,El Mansura,0.77,Second League,3.5,OU,13:30,Dayrout,Egypt,1.21,,,,Under,Under 3.5
+2026-11-20,estac troyes,le havre,OU|Over|1.5,2026-11-18 02:03,2026-11-19 02:09,7,,Estac Troyes,0.75,Ligue 1,1.5,OU,20:45,Le Havre,France,1.25,,,,Over,Over 1.5
+2026-11-20,fajr sepasi,chadormalu,OU|Under|3.5,2026-11-18 12:28,2026-11-19 02:09,5,,Fajr Sepasi,0.76,Persian Gulf Pro League,3.5,OU,13:00,Chadormalu SC,Iran,1.2,,,,Under,Under 3.5
+2026-11-20,farul constanta,universitatea cluj,OU|Over|1.5,2026-11-18 02:03,2026-11-19 02:09,7,,Farul Constanta,0.79,Liga I,1.5,OU,19:30,Universitatea Cluj,Romania,1.26,,,,Over,Over 1.5
+2026-11-20,flint town united,cambrian clydach,1X2|1|None,2026-11-18 12:28,2026-11-19 02:09,5,,Flint Town United,0.51,Premier League,,1X2,20:45,Cambrian & Clydach,Wales,2.08,,,,1,1
+2026-11-20,garudayaksa,persepam madura utd,OU|Under|3.5,2026-11-18 02:03,2026-11-19 02:09,7,,Garudayaksa,0.65,Liga 1,3.5,OU,09:30,Persepam Madura Utd,Indonesia,1.41,,,,Under,Under 3.5
+2026-11-20,graafschap,mvv,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 02:09,7,,De Graafschap,0.66,Eerste Divisie,,BTTS,20:00,MVV,Netherlands,1.44,,,,Yes,GG
+2026-11-20,guingamp,rodez,OU|Under|3.5,2026-11-18 02:03,2026-11-19 02:09,7,,Guingamp,0.64,Ligue 2,3.5,OU,20:00,Rodez,France,1.5,,,,Under,Under 3.5
+2026-11-20,havelse,viktoria koln,OU|Over|2.5,2026-11-18 02:03,2026-11-19 02:09,7,,Havelse,0.72,3. Liga,2.5,OU,19:00,FC Viktoria Köln,Germany,1.31,,,,Over,Over 2.5
+2026-11-20,helmond sport,dordrecht,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 02:09,7,,Helmond Sport,0.66,Eerste Divisie,,BTTS,20:00,Dordrecht,Netherlands,1.47,,,,Yes,GG
+2026-11-20,heracles,jong psv u21,OU|Over|2.5,2026-11-18 02:03,2026-11-19 02:09,7,,Heracles,0.74,Eerste Divisie,2.5,OU,20:00,Jong PSV U21,Netherlands,1.22,,,,Over,Over 2.5
+2026-11-20,igd r,umraniyespor,OU|Under|3.5,2026-11-18 02:03,2026-11-19 02:09,7,,Iğdır FK,0.77,1. Lig,3.5,OU,18:00,Ümraniyespor,Turkey,1.27,,,,Under,Under 3.5
+2026-11-20,independiente del valle,macara,BTTS|Yes|None,2026-11-18 12:28,2026-11-19 02:09,5,,Independiente del Valle,0.62,Liga Pro,,BTTS,18:00,Macara,Ecuador,1.67,,,,Yes,GG
+2026-11-20,independiente medellin,santa fe,OU|Over|1.5,2026-11-18 12:28,2026-11-19 02:09,5,,Independiente Medellin,0.76,Primera A,1.5,OU,22:30,Santa Fe,Colombia,1.22,,,,Over,Over 1.5
+2026-11-20,inverness ct,ayr utd,OU|Over|1.5,2026-11-18 02:03,2026-11-19 02:09,7,,Inverness CT,0.77,Championship,1.5,OU,20:30,Ayr Utd,Scotland,1.25,,,,Over,Over 1.5
+2026-11-20,jong utrecht,emmen,OU|Over|2.5,2026-11-18 02:03,2026-11-19 02:09,7,,Jong Utrecht,0.69,Eerste Divisie,2.5,OU,20:00,Emmen,Netherlands,1.38,,,,Over,Over 2.5
+2026-11-20,k lierse s k,lokeren temse,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 02:09,7,,K. Lierse S.K.,0.65,Challenger Pro League,,BTTS,20:00,Lokeren-Temse,Belgium,1.49,,,,Yes,GG
+2026-11-20,karvina,banik ostrava ii,1X2|1|None,2026-11-18 02:03,2026-11-19 02:09,7,,Karviná,0.64,FNL,,1X2,18:00,Baník Ostrava II,Czech-Republic,1.45,,,,1,1
+2026-11-20,kashima,shimizu s pulse,OU|Over|1.5,2026-11-18 02:03,2026-11-19 02:09,7,,Kashima,0.77,J1 League,1.5,OU,11:00,Shimizu S-pulse,Japan,1.21,,,,Over,Over 1.5
+2026-11-20,kashiwa reysol,jef united chiba,1X2|1|None,2026-11-18 02:03,2026-11-19 02:09,7,,Kashiwa Reysol,0.65,J1 League,,1X2,11:00,JEF United Chiba,Japan,1.54,,,,1,1
+2026-11-20,kickers emden,bremer sv,BTTS|Yes|None,2026-11-18 12:28,2026-11-19 02:09,5,,Kickers Emden,0.65,Regionalliga Nord,,BTTS,19:00,Bremer SV,Germany,1.46,,,,Yes,GG
+2026-11-20,kolding,aalborg,OU|Over|1.5,2026-11-18 02:03,2026-11-19 02:09,7,,Kolding IF,0.76,1. Division,1.5,OU,19:00,Aalborg,Denmark,1.2,,,,Over,Over 1.5
+2026-11-20,laval,montpellier,DC|X2|None,2026-11-18 02:03,2026-11-19 02:09,7,,Laval,0.77,Ligue 2,,DC,20:00,Montpellier,France,1.3,,,,X2,X2
+2026-11-20,lechia zielona gora,chojniczanka chojnice,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 02:09,7,,Lechia Zielona Góra,0.64,II Liga East,,BTTS,18:00,Chojniczanka Chojnice,Poland,1.48,,,,Yes,GG
+2026-11-20,llandudno,barry town,DC|12|None,2026-11-18 12:28,2026-11-19 02:09,5,,Llandudno,0.77,Premier League,,DC,20:45,Barry Town,Wales,1.3,,,,12,12
+2026-11-20,lokomotive leipzig,rsv eintracht,1X2|1|None,2026-11-18 12:28,2026-11-19 02:09,5,,Lokomotive Leipzig,0.59,Regionalliga Nordost,,1X2,19:00,RSV Eintracht,Germany,1.87,,,,1,1
+2026-11-20,magdeburg ii,fsv zwickau,BTTS|Yes|None,2026-11-18 12:28,2026-11-19 02:09,5,,Magdeburg II,0.66,Regionalliga Nordost,,BTTS,19:00,FSV Zwickau,Germany,1.55,,,,Yes,GG
+2026-11-20,metz,boulogne,OU|Under|3.5,2026-11-18 02:03,2026-11-19 02:09,7,,Metz,0.74,Ligue 2,3.5,OU,20:00,Boulogne,France,1.33,,,,Under,Under 3.5
+2026-11-20,miedz legnica,ks odz,OU|Under|3.5,2026-11-18 02:03,2026-11-19 02:09,7,,Miedz Legnica,0.72,I Liga,3.5,OU,20:30,ŁKS Łódź,Poland,1.4,,,,Under,Under 3.5
+2026-11-20,molde,bodoglimt,OU|Over|2.5,2026-11-18 02:03,2026-11-19 02:09,7,,Molde,0.76,Eliteserien,2.5,OU,19:00,BodoGlimt,Norway,1.25,,,,Over,Over 2.5
+2026-11-20,nancy,dijon,OU|Over|1.5,2026-11-18 02:03,2026-11-19 02:09,7,,Nancy,0.78,Ligue 2,1.5,OU,20:00,Dijon,France,1.2,,,,Over,Over 1.5
+2026-11-20,nantes,grenoble,OU|Over|1.5,2026-11-18 02:03,2026-11-19 02:09,7,,Nantes,0.75,Ligue 2,1.5,OU,20:00,Grenoble,France,1.25,,,,Over,Over 1.5
+2026-11-20,neuchatel xamax,etoile carouge,OU|Under|3.5,2026-11-18 12:28,2026-11-19 02:09,5,,Neuchatel Xamax FC,0.65,Challenge League,3.5,OU,19:30,Étoile Carouge,Switzerland,1.53,,,,Under,Under 3.5
+2026-11-20,opatija,dinamo zagreb u21,OU|Under|3.5,2026-11-18 12:28,2026-11-19 02:09,5,,Opatija,0.75,First NL,3.5,OU,14:00,Dinamo Zagreb U21,Croatia,1.25,,,,Under,Under 3.5
+2026-11-20,orlando city,cincinnati,OU|Over|2.5,2026-11-18 02:03,2026-11-19 02:09,7,,Orlando City SC,0.77,Major League Soccer,2.5,OU,01:30,FC Cincinnati,USA,1.28,,,,Over,Over 2.5
+2026-11-20,oss,roda,OU|Under|3.5,2026-11-18 02:03,2026-11-19 02:09,7,,FC OSS,0.67,Eerste Divisie,3.5,OU,20:00,Roda,Netherlands,1.41,,,,Under,Under 3.5
+2026-11-20,penybont,haverfordwest county afc,1X2|1|None,2026-11-18 12:28,2026-11-19 02:09,5,,Penybont,0.61,Premier League,,1X2,20:45,Haverfordwest County AFC,Wales,1.65,,,,1,1
+2026-11-20,persepolis,paykan,1X2|1|None,2026-11-18 12:28,2026-11-19 02:09,5,,Persepolis FC,0.69,Persian Gulf Pro League,,1X2,13:45,Paykan,Iran,1.22,,,,1,1
+2026-11-20,piast gliwice,korona kielce,OU|Under|3.5,2026-11-18 02:03,2026-11-19 02:09,7,,Piast Gliwice,0.67,Ekstraklasa,3.5,OU,18:00,Korona Kielce,Poland,1.4,,,,Under,Under 3.5
+2026-11-20,pogon szczecin,slask wroclaw,DC|1X|None,2026-11-18 02:03,2026-11-19 02:09,7,,Pogon Szczecin,0.8,Ekstraklasa,,DC,20:30,Slask Wroclaw,Poland,1.2,,,,1X,1X
+2026-11-20,proxy,tanta,OU|Under|2.5,2026-11-18 12:28,2026-11-19 02:09,5,,Proxy,0.64,Second League,2.5,OU,13:30,Tanta SC,Egypt,1.46,,,,Under,Under 2.5
+2026-11-20,pss sleman,arema,OU|Over|2.5,2026-11-18 02:03,2026-11-19 02:09,7,,PSS Sleman,0.65,Liga 1,2.5,OU,09:30,Arema FC,Indonesia,1.47,,,,Over,Over 2.5
+2026-11-20,rapid wien ii,bw linz,1X2|2|None,2026-11-18 02:03,2026-11-19 02:09,7,,Rapid Wien II,0.71,2. Liga,,1X2,18:30,FC BW Linz,Austria,1.38,,,,2,2
+2026-11-20,rapperswil,aarau,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 02:09,7,,Rapperswil,0.67,Challenge League,,BTTS,19:30,FC Aarau,Switzerland,1.37,,,,Yes,GG
+2026-11-20,red star 93,pau,OU|Over|1.5,2026-11-18 02:03,2026-11-19 02:09,7,,RED Star FC 93,0.74,Ligue 2,1.5,OU,20:00,PAU,France,1.25,,,,Over,Over 1.5
+2026-11-20,reims,saint etienne,OU|Over|1.5,2026-11-18 02:03,2026-11-19 02:09,7,,Reims,0.76,Ligue 2,1.5,OU,20:00,Saint Etienne,France,1.28,,,,Over,Over 1.5
+2026-11-20,rostov,krylia sovetov,DC|1X|None,2026-11-18 02:03,2026-11-19 02:09,7,,FC Rostov,0.78,Premier League,,DC,17:30,Krylia Sovetov,Russia,1.26,,,,1X,1X
+2026-11-20,rot wei erfurt,altglienicke,BTTS|Yes|None,2026-11-18 12:28,2026-11-19 02:09,5,,FC Rot-Weiß Erfurt,0.66,Regionalliga Nordost,,BTTS,19:00,Altglienicke,Germany,1.5,,,,Yes,GG
+2026-11-20,sanat naft,esteghlal khuzestan,OU|Under|2.5,2026-11-18 12:28,2026-11-19 02:09,5,,Sanat Naft,0.65,Persian Gulf Pro League,2.5,OU,15:30,Esteghlal Khuzestan,Iran,1.46,,,,Under,Under 2.5
+2026-11-20,sao paulo,fluminense,OU|Under|3.5,2026-11-18 02:03,2026-11-19 02:09,7,,Sao Paulo,0.76,Serie A,3.5,OU,01:30,Fluminense,Brazil,1.28,,,,Under,Under 3.5
+2026-11-20,seattle sounders,real salt lake,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 02:09,7,,Seattle Sounders,0.64,Major League Soccer,,BTTS,04:00,Real Salt Lake,USA,1.53,,,,Yes,GG
+2026-11-20,septemvri sofia,lokomotiv plovdiv,OU|Under|3.5,2026-11-18 02:03,2026-11-19 02:09,7,,Septemvri Sofia,0.81,First League,3.5,OU,17:00,Lokomotiv Plovdiv,Bulgaria,1.2,,,,Under,Under 3.5
+2026-11-20,shabab al ahli dubai,ajman,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 02:09,7,,Shabab Al Ahli Dubai,0.62,Pro League,,BTTS,16:25,Ajman,United-Arab-Emirates,1.61,,,,Yes,GG
+2026-11-20,shakhtar donetsk,livyi bereh,OU|Under|3.5,2026-11-18 02:03,2026-11-19 02:09,7,,Shakhtar Donetsk,0.69,Premier League,3.5,OU,17:00,Livyi Bereh,Ukraine,1.58,,,,Under,Under 3.5
+2026-11-20,skn st polten,voitsberg,OU|Under|3.5,2026-11-18 02:03,2026-11-19 02:09,7,,SKN ST. Polten,0.65,2. Liga,3.5,OU,18:30,Voitsberg,Austria,1.5,,,,Under,Under 3.5
+2026-11-20,sochaux,dunkerque,OU|Under|3.5,2026-11-18 02:03,2026-11-19 02:09,7,,Sochaux,0.74,Ligue 2,3.5,OU,20:00,Dunkerque,France,1.33,,,,Under,Under 3.5
+2026-11-20,southend,boreham wood,OU|Over|2.5,2026-11-18 02:03,2026-11-19 02:09,7,,Southend,0.71,National League,2.5,OU,20:45,Boreham Wood,England,1.4,,,,Over,Over 2.5
+2026-11-20,sportivo ameliano,sportivo luqueno,OU|Over|1.5,2026-11-18 02:03,2026-11-19 02:09,7,,Sportivo Ameliano,0.75,Division Profesional Clausura,1.5,OU,21:30,Sportivo Luqueno,Paraguay,1.28,,,,Over,Over 1.5
+2026-11-20,stade lausanne ouchy,kriens,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 02:09,7,,Stade Lausanne-Ouchy,0.62,Challenge League,,BTTS,19:30,SC Kriens,Switzerland,1.57,,,,Yes,GG
+2026-11-20,stade nyonnais,wil 1900,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 02:09,7,,Stade Nyonnais,0.64,Challenge League,,BTTS,19:30,FC WIL 1900,Switzerland,1.47,,,,Yes,GG
+2026-11-20,sv darmstadt 98,1 heidenheim,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 02:09,7,,SV Darmstadt 98,0.65,2. Bundesliga,,BTTS,18:30,1. FC Heidenheim,Germany,1.5,,,,Yes,GG
+2026-11-20,sv kapfenberg,wspg wels,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 02:09,7,,SV Kapfenberg,0.66,2. Liga,,BTTS,18:30,WSPG Wels,Austria,1.53,,,,Yes,GG
+2026-11-20,swit skolwin,stal stalowa wola,BTTS|Yes|None,2026-11-18 02:03,2026-11-19 02:09,7,,Świt Skolwin,0.64,II Liga East,,BTTS,12:30,Stal Stalowa Wola,Poland,1.45,,,,Yes,GG
+2026-11-20,taborsko,slavia praha ii,1X2|1|None,2026-11-18 02:03,2026-11-19 02:09,7,,Táborsko,0.51,FNL,,1X2,17:00,Slavia Praha II,Czech-Republic,1.84,,,,1,1
+2026-11-20,teutonia ottensen,hebc,OU|Over|2.5,2026-11-18 12:28,2026-11-19 02:09,5,,Teutonia Ottensen,0.7,Oberliga Hamburg,2.5,OU,19:45,HEBC,Germany,1.26,,,,Over,Over 2.5
+2026-11-20,vissel kobe,mito hollyhock,OU|Over|1.5,2026-11-18 02:03,2026-11-19 02:09,7,,Vissel Kobe,0.76,J1 League,1.5,OU,11:00,Mito Hollyhock,Japan,1.21,,,,Over,Over 1.5
+2026-11-20,vitesse,jong az,OU|Over|2.5,2026-11-18 02:03,2026-11-19 02:09,7,,Vitesse,0.68,Eerste Divisie,2.5,OU,20:00,Jong AZ,Netherlands,1.34,,,,Over,Over 2.5
+2026-11-20,volendam,jong ajax,BTTS|Yes|None,2026-11-18 12:28,2026-11-19 02:09,5,,FC Volendam,0.72,Eerste Divisie,,BTTS,20:00,Jong Ajax,Netherlands,1.26,,,,Yes,GG
 2026-11-20,volendam,jong ajax,OU|Over|2.5,2026-11-18 02:03,2026-11-18 05:27,2,,FC Volendam,0.76,Eerste Divisie,2.5,OU,20:00,Jong Ajax,Netherlands,1.2,,,,Over,Over 2.5
-2026-11-20,western sydney wanderers,adelaide united,DC|1X|None,2026-11-18 02:03,2026-11-19 00:39,6,,Western Sydney Wanderers,0.81,A League,,DC,09:40,Adelaide United,Australia,1.22,,,,1X,1X
-2026-11-20,yverdon sport,winterthur,OU|Under|3.5,2026-11-18 02:03,2026-11-19 00:39,6,,Yverdon Sport,0.63,Challenge League,3.5,OU,20:15,FC Winterthur,Switzerland,1.48,,,,Under,Under 3.5
-2026-11-20,zob ahan,shams azar qazvin,OU|Under|2.5,2026-11-18 12:28,2026-11-19 00:39,4,,ZOB Ahan,0.75,Persian Gulf Pro League,2.5,OU,13:00,Shams Azar Qazvin,Iran,1.29,,,,Under,Under 2.5
+2026-11-20,western sydney wanderers,adelaide united,DC|1X|None,2026-11-18 02:03,2026-11-19 02:09,7,,Western Sydney Wanderers,0.81,A League,,DC,09:40,Adelaide United,Australia,1.22,,,,1X,1X
+2026-11-20,yverdon sport,winterthur,OU|Under|3.5,2026-11-18 02:03,2026-11-19 02:09,7,,Yverdon Sport,0.63,Challenge League,3.5,OU,20:15,FC Winterthur,Switzerland,1.48,,,,Under,Under 3.5
+2026-11-20,zob ahan,shams azar qazvin,OU|Under|2.5,2026-11-18 12:28,2026-11-19 02:09,5,,ZOB Ahan,0.75,Persian Gulf Pro League,2.5,OU,13:00,Shams Azar Qazvin,Iran,1.29,,,,Under,Under 2.5
+2026-11-21,1 nurnberg,eintracht braunschweig,DC|1X|None,2026-11-19 02:09,2026-11-19 02:09,1,,1. FC Nürnberg,0.84,2. Bundesliga,,DC,13:00,Eintracht Braunschweig,Germany,1.2,,,,1X,1X
+2026-11-21,akron,fakel,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Akron,0.75,Premier League,3.5,OU,13:15,Fakel,Russia,1.21,,,,Under,Under 3.5
+2026-11-21,al wakrah,al sailiya,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,Al Wakrah,0.68,Stars League,,BTTS,14:00,Al-Sailiya,Qatar,1.5,,,,Yes,GG
+2026-11-21,alaves,deportivo la coruna,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Alaves,0.77,La Liga,3.5,OU,14:00,Deportivo La Coruna,Spain,1.25,,,,Under,Under 3.5
+2026-11-21,amed,rizespor,DC|1X|None,2026-11-19 02:09,2026-11-19 02:09,1,,Amed,0.83,Süper Lig,,DC,14:00,Rizespor,Turkey,1.22,,,,1X,1X
+2026-11-21,aston villa,sunderland,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Aston Villa,0.78,Premier League,1.5,OU,16:00,Sunderland,England,1.25,,,,Over,Over 1.5
+2026-11-21,auckland,melbourne victory,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Auckland,0.77,A League,1.5,OU,05:00,Melbourne Victory,Australia,1.25,,,,Over,Over 1.5
+2026-11-21,avia swidnik,legia warszawa ii,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,Avia Świdnik,0.65,II Liga East,,BTTS,12:30,Legia Warszawa II,Poland,1.57,,,,Yes,GG
+2026-11-21,bacau,dinamo bucuresti,1X2|1|None,2026-11-19 02:09,2026-11-19 02:09,1,,FC Bacau,0.73,Liga II,,1X2,10:00,CS Dinamo București,Romania,1.23,,,,1,1
+2026-11-21,baniyas,al nasr,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Baniyas SC,0.63,Pro League,3.5,OU,13:45,Al Nasr,United-Arab-Emirates,1.6,,,,Under,Under 3.5
+2026-11-21,bastia,villefranche,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Bastia,0.74,National 1,3.5,OU,14:45,Villefranche,France,1.28,,,,Under,Under 3.5
+2026-11-21,bayer leverkusen,paderborn 07,OU|Over|2.5,2026-11-19 02:09,2026-11-19 02:09,1,,Bayer Leverkusen,0.67,Bundesliga,2.5,OU,15:30,SC Paderborn 07,Germany,1.33,,,,Over,Over 2.5
+2026-11-21,bhayangkara,persijap,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Bhayangkara FC,0.64,Liga 1,3.5,OU,13:00,Persijap,Indonesia,1.57,,,,Under,Under 3.5
+2026-11-21,blackpool,wigan,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Blackpool,0.75,League One,1.5,OU,13:30,Wigan,England,1.22,,,,Over,Over 1.5
+2026-11-21,blaublitz akita,montedio yamagata,OU|Under|2.5,2026-11-19 02:09,2026-11-19 02:09,1,,Blaublitz Akita,0.61,J2 League,2.5,OU,06:00,Montedio Yamagata,Japan,1.62,,,,Under,Under 2.5
+2026-11-21,bocholt,westfalia rhynern,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,FC Bocholt,0.68,Regionalliga West,,BTTS,14:00,Westfalia Rhynern,Germany,1.57,,,,Yes,GG
+2026-11-21,bolton,portsmouth,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Bolton,0.76,Championship,1.5,OU,16:00,Portsmouth,England,1.28,,,,Over,Over 1.5
+2026-11-21,borussia m gladbach ii,bonner,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,Borussia M'gladbach II,0.65,Regionalliga West,,BTTS,14:00,Bonner SC,Germany,1.55,,,,Yes,GG
+2026-11-21,borussia monchengladbach,borussia dortmund,DC|X2|None,2026-11-19 02:09,2026-11-19 02:09,1,,Borussia Mönchengladbach,0.79,Bundesliga,,DC,15:30,Borussia Dortmund,Germany,1.2,,,,X2,X2
+2026-11-21,bournemouth,nottingham forest,DC|1X|None,2026-11-19 02:09,2026-11-19 02:09,1,,Bournemouth,0.78,Premier League,,DC,16:00,Nottingham Forest,England,1.25,,,,1X,1X
+2026-11-21,brisbane roar,sydney,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Brisbane Roar,0.75,A League,1.5,OU,09:40,Sydney,Australia,1.22,,,,Over,Over 1.5
+2026-11-21,bucaramanga,america cali,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Bucaramanga,0.77,Primera A,3.5,OU,00:35,America de Cali,Colombia,1.25,,,,Under,Under 3.5
+2026-11-21,busan i park,cheongju,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Busan I Park,0.67,K League 2,3.5,OU,06:00,Cheongju,South-Korea,1.39,,,,Under,Under 3.5
+2026-11-21,cannes,aubagne,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Cannes,0.75,National 1,3.5,OU,14:45,Aubagne,France,1.36,,,,Under,Under 3.5
+2026-11-21,celtic,st mirren,OU|Over|2.5,2026-11-19 02:09,2026-11-19 02:09,1,,Celtic,0.69,Premiership,2.5,OU,16:00,ST Mirren,Scotland,1.25,,,,Over,Over 2.5
+2026-11-21,central coast mariners,perth glory,OU|Over|2.5,2026-11-19 02:09,2026-11-19 02:09,1,,Central Coast Mariners,0.61,A League,2.5,OU,07:00,Perth Glory,Australia,1.53,,,,Over,Over 2.5
+2026-11-21,cerezo osaka,tokyo,1X2|2|None,2026-11-19 02:09,2026-11-19 02:09,1,,Cerezo Osaka,0.62,J1 League,,1X2,07:00,FC Tokyo,Japan,1.64,,,,2,2
+2026-11-21,cetatea suceava,politehnica timisoara,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Cetatea Suceava,0.72,Liga II,1.5,OU,11:30,FC Politehnica Timisoara,Romania,1.33,,,,Over,Over 1.5
+2026-11-21,charleroi,st truiden,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,Charleroi,0.67,Jupiler Pro League,,BTTS,16:00,St. Truiden,Belgium,1.5,,,,Yes,GG
+2026-11-21,chelsea,leeds,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Chelsea,0.76,Premier League,1.5,OU,16:00,Leeds,England,1.22,,,,Over,Over 1.5
+2026-11-21,como,cagliari,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Como,0.66,Serie A,3.5,OU,15:00,Cagliari,Italy,1.62,,,,Under,Under 3.5
+2026-11-21,coventry,crystal palace,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Coventry,0.8,Premier League,1.5,OU,16:00,Crystal Palace,England,1.22,,,,Over,Over 1.5
+2026-11-21,cracovia krakow,jagiellonia,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Cracovia Krakow,0.67,Ekstraklasa,3.5,OU,14:45,Jagiellonia,Poland,1.44,,,,Under,Under 3.5
+2026-11-21,csikszereda,corvinul hunedoara,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Csikszereda,0.76,Liga I,3.5,OU,14:00,Corvinul Hunedoara,Romania,1.34,,,,Under,Under 3.5
+2026-11-21,csm resita,metaloglobus,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,CSM Reşiţa,0.74,Liga II,3.5,OU,10:00,Metaloglobus,Romania,1.31,,,,Under,Under 3.5
+2026-11-21,csm satu mare,concordia,DC|X2|None,2026-11-19 02:09,2026-11-19 02:09,1,,CSM Satu Mare,0.8,Liga II,,DC,10:00,Concordia,Romania,1.22,,,,X2,X2
+2026-11-21,dallas,portland timbers,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,FC Dallas,0.68,Major League Soccer,,BTTS,22:00,Portland Timbers,USA,1.44,,,,Yes,GG
+2026-11-21,deportivo recoleta,guarani,DC|X2|None,2026-11-19 02:09,2026-11-19 02:09,1,,Deportivo Recoleta,0.81,Division Profesional Clausura,,DC,00:00,Club Guarani,Paraguay,1.25,,,,X2,X2
+2026-11-21,dumbravita,afumati,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Dumbrăviţa,0.73,Liga II,1.5,OU,10:00,CS Afumati,Romania,1.31,,,,Over,Over 1.5
+2026-11-21,dundee,heart of midlothian,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,Dundee,0.66,Premiership,,BTTS,18:45,Heart Of Midlothian,Scotland,1.53,,,,Yes,GG
+2026-11-21,eimsbutteler tv,vfb oldenburg,OU|Over|2.5,2026-11-19 02:09,2026-11-19 02:09,1,,Eimsbütteler TV,0.67,Regionalliga Nord,2.5,OU,14:00,VfB Oldenburg,Germany,1.46,,,,Over,Over 2.5
+2026-11-21,eintracht frankfurt,1899 hoffenheim,OU|Over|2.5,2026-11-19 02:09,2026-11-19 02:09,1,,Eintracht Frankfurt,0.72,Bundesliga,2.5,OU,15:30,1899 Hoffenheim,Germany,1.36,,,,Over,Over 2.5
+2026-11-21,enkoping,orebro,DC|1X|None,2026-11-19 02:09,2026-11-19 02:09,1,,Enköping,0.7,Superettan,,DC,14:00,Orebro SK,Sweden,1.43,,,,1X,1X
+2026-11-21,erzgebirge aue,sv babelsberg 03,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Erzgebirge Aue,0.67,Regionalliga Nordost,3.5,OU,14:00,SV Babelsberg 03,Germany,1.38,,,,Under,Under 3.5
+2026-11-21,esbjerg,ab copenhagen,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Esbjerg,0.62,1. Division,3.5,OU,15:00,AB Copenhagen,Denmark,1.67,,,,Under,Under 3.5
+2026-11-21,falkirk,st johnstone,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Falkirk,0.78,Premiership,1.5,OU,16:00,ST Johnstone,Scotland,1.22,,,,Over,Over 1.5
+2026-11-21,feyenoord,excelsior,OU|Over|2.5,2026-11-19 02:09,2026-11-19 02:09,1,,Feyenoord,0.74,Eredivisie,2.5,OU,18:45,Excelsior,Netherlands,1.33,,,,Over,Over 2.5
+2026-11-21,fleury 91,rouen,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Fleury 91,0.74,National 1,1.5,OU,14:45,Rouen,France,1.3,,,,Over,Over 1.5
+2026-11-21,fortuna dusseldorf,sg sonnenhof grossaspach,DC|1X|None,2026-11-19 02:09,2026-11-19 02:09,1,,Fortuna Düsseldorf,0.81,3. Liga,,DC,14:00,SG Sonnenhof Grossaspach,Germany,1.2,,,,1X,1X
+2026-11-21,fortuna koln,sv meppen,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Fortuna Köln,0.71,3. Liga,3.5,OU,14:00,SV Meppen,Germany,1.44,,,,Under,Under 3.5
+2026-11-21,fujieda myfc,imabari,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Fujieda MYFC,0.74,J2 League,1.5,OU,06:00,Imabari,Japan,1.21,,,,Over,Over 1.5
+2026-11-21,galatasaray,samsunspor,OU|Over|2.5,2026-11-19 02:09,2026-11-19 02:09,1,,Galatasaray,0.74,Süper Lig,2.5,OU,14:00,Samsunspor,Turkey,1.33,,,,Over,Over 2.5
+2026-11-21,gamba osaka,fagiano okayama,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Gamba Osaka,0.68,J1 League,3.5,OU,08:00,Fagiano Okayama,Japan,1.35,,,,Under,Under 3.5
+2026-11-21,gangwon,daejeon citizen,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Gangwon FC,0.74,K League 1,3.5,OU,08:30,Daejeon Citizen,South-Korea,1.22,,,,Under,Under 3.5
+2026-11-21,genclerbirligi s k,gaziantep,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Gençlerbirliği S.K.,0.76,Süper Lig,1.5,OU,11:30,Gaziantep FK,Turkey,1.22,,,,Over,Over 1.5
+2026-11-21,genk,raal la louviere,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,Genk,0.59,Jupiler Pro League,,BTTS,18:15,RAAL La Louvière,Belgium,1.75,,,,Yes,GG
+2026-11-21,gillingham,crewe,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Gillingham,0.74,League Two,1.5,OU,13:30,Crewe,England,1.28,,,,Over,Over 1.5
+2026-11-21,gimpo citizen,suwon city,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Gimpo Citizen,0.67,K League 2,3.5,OU,08:30,Suwon City FC,South-Korea,1.39,,,,Under,Under 3.5
+2026-11-21,groningen,heerenveen,OU|Over|2.5,2026-11-19 02:09,2026-11-19 02:09,1,,Groningen,0.72,Eredivisie,2.5,OU,21:00,Heerenveen,Netherlands,1.4,,,,Over,Over 2.5
+2026-11-21,hannover 96,spvgg greuther furth,DC|1X|None,2026-11-19 02:09,2026-11-19 02:09,1,,Hannover 96,0.8,2. Bundesliga,,DC,13:00,SpVgg Greuther Fürth,Germany,1.22,,,,1X,1X
+2026-11-21,hansa rostock ii,sparta lichtenberg,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,Hansa Rostock II,0.64,Oberliga Nordost Nord,,BTTS,13:30,Sparta Lichtenberg,Germany,1.51,,,,Yes,GG
+2026-11-21,hibernian,dundee utd,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Hibernian,0.78,Premiership,1.5,OU,16:00,Dundee Utd,Scotland,1.2,,,,Over,Over 1.5
+2026-11-21,hoffenheim ii,preu en munster,OU|Over|2.5,2026-11-19 02:09,2026-11-19 02:09,1,,Hoffenheim II,0.63,3. Liga,2.5,OU,14:00,Preußen Münster,Germany,1.53,,,,Over,Over 2.5
+2026-11-21,incheon united,ulsan hyundai,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Incheon United,0.74,K League 1,1.5,OU,08:30,Ulsan Hyundai FC,South-Korea,1.22,,,,Over,Over 1.5
+2026-11-21,istanbulspor,keciorengucu,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,İstanbulspor,0.61,1. Lig,,BTTS,11:30,Keçiörengücü,Turkey,1.56,,,,Yes,GG
+2026-11-21,jeonbuk motors,seoul,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Jeonbuk Motors,0.74,K League 1,1.5,OU,06:00,FC Seoul,South-Korea,1.2,,,,Over,Over 1.5
+2026-11-21,juarez,atlas,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,FC Juarez,0.8,Liga MX,1.5,OU,04:00,Atlas,Mexico,1.2,,,,Over,Over 1.5
+2026-11-21,jubilo iwata,omiya ardija,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Jubilo Iwata,0.66,J2 League,3.5,OU,06:00,Omiya Ardija,Japan,1.44,,,,Under,Under 3.5
+2026-11-21,kataller toyama,oita trinita,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Kataller Toyama,0.67,J2 League,3.5,OU,06:00,Oita Trinita,Japan,1.41,,,,Under,Under 3.5
+2026-11-21,kawasaki frontale,avispa fukuoka,DC|1X|None,2026-11-19 02:09,2026-11-19 02:09,1,,Kawasaki Frontale,0.83,J1 League,,DC,07:00,Avispa Fukuoka,Japan,1.24,,,,1X,1X
+2026-11-21,kayserispor,sar yer,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Kayserispor,0.76,1. Lig,1.5,OU,14:00,Sarıyer,Turkey,1.22,,,,Over,Over 1.5
+2026-11-21,khorfakkan,al jazira,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,Khorfakkan,0.62,Pro League,,BTTS,13:45,Al-Jazira,United-Arab-Emirates,1.69,,,,Yes,GG
+2026-11-21,kilmarnock,aberdeen,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Kilmarnock,0.78,Premiership,1.5,OU,16:00,Aberdeen,Scotland,1.22,,,,Over,Over 1.5
+2026-11-21,kocaelispor,fenerbahce,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Kocaelispor,0.75,Süper Lig,1.5,OU,17:00,Fenerbahçe,Turkey,1.22,,,,Over,Over 1.5
+2026-11-21,kolos kovalivka,kharkiv,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Kolos Kovalivka,0.66,Premier League,1.5,OU,12:00,FC Kharkiv,Ukraine,1.5,,,,Over,Over 1.5
+2026-11-21,kryvbas kr,kudrivka,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Kryvbas KR,0.62,Premier League,3.5,OU,12:00,Kudrivka,Ukraine,1.48,,,,Under,Under 3.5
+2026-11-21,kv mechelen,brugge kv,OU|Over|2.5,2026-11-19 02:09,2026-11-19 02:09,1,,KV Mechelen,0.67,Jupiler Pro League,2.5,OU,20:45,Club Brugge KV,Belgium,1.4,,,,Over,Over 2.5
+2026-11-21,kyoto sanga,urawa,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,Kyoto Sanga,0.62,J1 League,,BTTS,06:00,Urawa,Japan,1.58,,,,Yes,GG
+2026-11-21,la roche vf,concarneau,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,La Roche VF,0.77,National 1,3.5,OU,14:45,Concarneau,France,1.25,,,,Under,Under 3.5
+2026-11-21,lazio,lecce,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Lazio,0.81,Serie A,1.5,OU,15:00,Lecce,Italy,1.2,,,,Over,Over 1.5
+2026-11-21,le puy foot,gobelins,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Le Puy Foot,0.79,National 1,3.5,OU,14:45,Gobelins,France,1.25,,,,Under,Under 3.5
+2026-11-21,lens,toulouse,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Lens,0.81,Ligue 1,1.5,OU,20:45,Toulouse,France,1.2,,,,Over,Over 1.5
+2026-11-21,lille,lyon,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Lille,0.78,Ligue 1,3.5,OU,20:45,Lyon,France,1.3,,,,Under,Under 3.5
+2026-11-21,lincoln,wrexham,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Lincoln,0.73,Championship,1.5,OU,16:00,Wrexham,England,1.3,,,,Over,Over 1.5
+2026-11-21,luckenwalde,chemnitzer,1X2|2|None,2026-11-19 02:09,2026-11-19 02:09,1,,Luckenwalde,0.64,Regionalliga Nordost,,1X2,14:00,Chemnitzer FC,Germany,1.51,,,,2,2
+2026-11-21,machida zelvia,v varen nagasaki,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Machida Zelvia,0.74,J1 League,1.5,OU,06:00,V-varen Nagasaki,Japan,1.22,,,,Over,Over 1.5
+2026-11-21,manchester city,fulham,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Manchester City,0.63,Premier League,3.5,OU,13:30,Fulham,England,1.67,,,,Under,Under 3.5
+2026-11-21,mardin 1969,band rmaspor,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Mardin 1969,0.74,1. Lig,3.5,OU,11:30,Bandırmaspor,Turkey,1.29,,,,Under,Under 3.5
+2026-11-21,middlesbrough,bristol city,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Middlesbrough,0.61,Championship,3.5,OU,16:00,Bristol City,England,1.62,,,,Under,Under 3.5
+2026-11-21,millwall,qpr,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Millwall,0.79,Championship,1.5,OU,13:30,QPR,England,1.22,,,,Over,Over 1.5
+2026-11-21,monaco,auxerre,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,Monaco,0.62,Ligue 1,,BTTS,20:45,Auxerre,France,1.7,,,,Yes,GG
+2026-11-21,motherwell,rangers,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Motherwell,0.63,Premiership,3.5,OU,21:00,Rangers,Scotland,1.57,,,,Under,Under 3.5
+2026-11-21,napoli,torino,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Napoli,0.78,Serie A,1.5,OU,20:45,Torino,Italy,1.22,,,,Over,Over 1.5
+2026-11-21,nassaji mazandaran,aluminium arak,OU|Under|2.5,2026-11-19 02:09,2026-11-19 02:09,1,,Nassaji Mazandaran,0.68,Persian Gulf Pro League,2.5,OU,13:45,Aluminium Arak,Iran,1.45,,,,Under,Under 2.5
+2026-11-21,nec nijmegen,psv eindhoven,OU|Over|2.5,2026-11-19 02:09,2026-11-19 02:09,1,,NEC Nijmegen,0.75,Eredivisie,2.5,OU,16:30,PSV Eindhoven,Netherlands,1.28,,,,Over,Over 2.5
+2026-11-21,new england revolution,philadelphia union,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,New England Revolution,0.66,Major League Soccer,,BTTS,20:00,Philadelphia Union,USA,1.5,,,,Yes,GG
+2026-11-21,newcastle,arsenal,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Newcastle,0.75,Premier League,1.5,OU,18:30,Arsenal,England,1.22,,,,Over,Over 1.5
+2026-11-21,newport county,swindon town,DC|1X|None,2026-11-19 02:09,2026-11-19 02:09,1,,Newport County,0.81,League Two,,DC,13:30,Swindon Town,England,1.25,,,,1X,1X
+2026-11-21,nice,paris saint germain,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,Nice,0.65,Ligue 1,,BTTS,17:15,Paris Saint Germain,France,1.53,,,,Yes,GG
+2026-11-21,norwich,cardiff,OU|Over|2.5,2026-11-19 02:09,2026-11-19 02:09,1,,Norwich,0.73,Championship,2.5,OU,13:30,Cardiff,England,1.36,,,,Over,Over 2.5
+2026-11-21,olimpija ljubljana,radomlje,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Olimpija Ljubljana,0.79,1. SNL,1.5,OU,15:00,Radomlje,Slovenia,1.2,,,,Over,Over 1.5
+2026-11-21,omonia aradippou,pafos,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Omonia Aradippou,0.76,1. Division,3.5,OU,15:00,Pafos,Cyprus,1.3,,,,Under,Under 3.5
+2026-11-21,orenburg,baltika,OU|Under|2.5,2026-11-19 02:09,2026-11-19 02:09,1,,FC Orenburg,0.62,Premier League,2.5,OU,11:00,Baltika,Russia,1.63,,,,Under,Under 2.5
+2026-11-21,paderborn ii,hilden,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,Paderborn II,0.63,Regionalliga West,,BTTS,14:00,Hilden,Germany,1.51,,,,Yes,GG
+2026-11-21,parma,roma,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,Parma,0.58,Serie A,,BTTS,18:00,AS Roma,Italy,1.95,,,,Yes,GG
+2026-11-21,persebaya surabaya,java united,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Persebaya Surabaya,0.64,Liga 1,3.5,OU,09:30,Java United,Indonesia,1.55,,,,Under,Under 3.5
+2026-11-21,persik kediri,psim yogyakarta,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Persik Kediri,0.69,Liga 1,3.5,OU,09:30,PSIM Yogyakarta,Indonesia,1.4,,,,Under,Under 3.5
+2026-11-21,pohang steelers,anyang,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Pohang Steelers,0.76,K League 1,3.5,OU,06:00,FC Anyang,South-Korea,1.22,,,,Under,Under 3.5
+2026-11-21,popesti leordeni,viitorul selimbar,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Popești-Leordeni,0.8,Liga II,1.5,OU,10:00,Viitorul Şelimbăr,Romania,1.21,,,,Over,Over 1.5
+2026-11-21,psm makassar,persija,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,PSM Makassar,0.61,Liga 1,,BTTS,13:00,Persija,Indonesia,1.69,,,,Yes,GG
+2026-11-21,puebla,atletico san luis,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Puebla,0.76,Liga MX,1.5,OU,02:00,Atletico San Luis,Mexico,1.2,,,,Over,Over 1.5
+2026-11-21,puskas academy,mtk budapest,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Puskas Academy,0.64,NB I,3.5,OU,13:30,MTK Budapest,Hungary,1.45,,,,Under,Under 3.5
+2026-11-21,quevilly,valenciennes,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Quevilly,0.74,National 1,3.5,OU,14:45,Valenciennes,France,1.25,,,,Under,Under 3.5
+2026-11-21,rayo vallecano,valencia,DC|1X|None,2026-11-19 02:09,2026-11-19 02:09,1,,Rayo Vallecano,0.8,La Liga,,DC,16:15,Valencia,Spain,1.25,,,,1X,1X
+2026-11-21,reading,bromley,1X2|1|None,2026-11-19 02:09,2026-11-19 02:09,1,,Reading,0.71,League One,,1X2,13:30,Bromley,England,1.38,,,,1,1
+2026-11-21,real madrid,celta vigo,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Real Madrid,0.6,La Liga,3.5,OU,21:00,Celta Vigo,Spain,1.8,,,,Under,Under 3.5
+2026-11-21,rekord bielsko bia a,slask wroc aw ii,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Rekord Bielsko-Biała,0.62,II Liga East,3.5,OU,12:00,Śląsk Wrocław II,Poland,1.54,,,,Under,Under 3.5
+2026-11-21,sabadell,granada,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Sabadell,0.8,Segunda División,3.5,OU,14:00,Granada CF,Spain,1.22,,,,Under,Under 3.5
+2026-11-21,sagan tosu,vegalta sendai,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Sagan Tosu,0.75,J2 League,3.5,OU,06:00,Vegalta Sendai,Japan,1.25,,,,Under,Under 3.5
+2026-11-21,sanfrecce hiroshima,yokohama f marinos,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Sanfrecce Hiroshima,0.62,J1 League,3.5,OU,06:00,Yokohama F. Marinos,Japan,1.66,,,,Under,Under 3.5
+2026-11-21,schalke 04,vfb stuttgart,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,FC Schalke 04,0.65,Bundesliga,3.5,OU,18:30,VfB Stuttgart,Germany,1.67,,,,Under,Under 3.5
+2026-11-21,seongnam,yongin city,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Seongnam FC,0.73,K League 2,3.5,OU,08:30,Yongin City,South-Korea,1.26,,,,Under,Under 3.5
+2026-11-21,sevilla,real betis,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Sevilla,0.79,La Liga,1.5,OU,18:30,Real Betis,Spain,1.22,,,,Over,Over 1.5
+2026-11-21,sheffield utd,watford,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Sheffield Utd,0.75,Championship,1.5,OU,16:00,Watford,England,1.25,,,,Over,Over 1.5
+2026-11-21,slatina,asa targu mures,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Slatina,0.75,Liga II,1.5,OU,10:00,ASA Targu Mures,Romania,1.27,,,,Over,Over 1.5
+2026-11-21,slavia sofia,arda kardzhali,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Slavia Sofia,0.8,First League,3.5,OU,13:45,Arda Kardzhali,Bulgaria,1.22,,,,Under,Under 3.5
+2026-11-21,soko kleczew,tychy 71,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Sokół Kleczew,0.67,II Liga East,3.5,OU,12:00,Tychy 71,Poland,1.45,,,,Under,Under 3.5
+2026-11-21,solihull moors,altrincham,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,Solihull Moors,0.67,National League,,BTTS,13:30,Altrincham,England,1.5,,,,Yes,GG
+2026-11-21,southampton,derby,1X2|1|None,2026-11-19 02:09,2026-11-19 02:09,1,,Southampton,0.71,Championship,,1X2,13:30,Derby,England,1.4,,,,1,1
+2026-11-21,sportfreunde siegen,bergisch gladbach,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,Sportfreunde Siegen,0.68,Regionalliga West,,BTTS,14:00,Bergisch Gladbach,Germany,1.51,,,,Yes,GG
+2026-11-21,ssv jahn regensburg,wurzburger kickers,DC|1X|None,2026-11-19 02:09,2026-11-19 02:09,1,,SSV Jahn Regensburg,0.8,3. Liga,,DC,14:00,Würzburger Kickers,Germany,1.2,,,,1X,1X
+2026-11-21,stefanesti,unirea slobozia,DC|X2|None,2026-11-19 02:09,2026-11-19 02:09,1,,Ştefăneşti,0.8,Liga II,,DC,10:00,Unirea Slobozia,Romania,1.23,,,,X2,X2
+2026-11-21,stoke city,birmingham,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Stoke City,0.74,Championship,1.5,OU,16:00,Birmingham,England,1.3,,,,Over,Over 1.5
+2026-11-21,strasbourg,stade brestois 29,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Strasbourg,0.82,Ligue 1,1.5,OU,20:45,Stade Brestois 29,France,1.2,,,,Over,Over 1.5
+2026-11-21,suwon bluewings,gyeongnam,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Suwon Bluewings,0.7,K League 2,3.5,OU,06:00,Gyeongnam FC,South-Korea,1.41,,,,Under,Under 3.5
+2026-11-21,sv elversberg,freiburg,OU|Over|2.5,2026-11-19 02:09,2026-11-19 02:09,1,,SV Elversberg,0.63,Bundesliga,2.5,OU,15:30,SC Freiburg,Germany,1.57,,,,Over,Over 2.5
+2026-11-21,sv rodinghausen,schalke 04 ii,OU|Over|2.5,2026-11-19 02:09,2026-11-19 02:09,1,,SV Rodinghausen,0.65,Regionalliga West,2.5,OU,14:00,Schalke 04 II,Germany,1.57,,,,Over,Over 2.5
+2026-11-21,swansea,west brom,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Swansea,0.74,Championship,3.5,OU,16:00,West Brom,England,1.33,,,,Under,Under 3.5
+2026-11-21,tamworth,eastleigh,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,Tamworth,0.64,National League,,BTTS,13:30,Eastleigh,England,1.53,,,,Yes,GG
+2026-11-21,tasmania berlin,hertha bsc ii,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,Tasmania Berlin,0.66,Regionalliga Nordost,,BTTS,14:00,Hertha BSC II,Germany,1.55,,,,Yes,GG
+2026-11-21,tegevajaro miyazaki,iwaki,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Tegevajaro Miyazaki,0.75,J2 League,1.5,OU,06:00,Iwaki,Japan,1.25,,,,Over,Over 1.5
+2026-11-21,telstar,pec zwolle,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Telstar,0.8,Eredivisie,1.5,OU,21:00,PEC Zwolle,Netherlands,1.2,,,,Over,Over 1.5
+2026-11-21,tijuana,atlante,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Club Tijuana,0.77,Liga MX,1.5,OU,04:00,Atlante FC,Mexico,1.2,,,,Over,Over 1.5
+2026-11-21,tochigi city,albirex niigata,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,Tochigi City,0.64,J2 League,,BTTS,06:00,Albirex Niigata,Japan,1.53,,,,Yes,GG
+2026-11-21,tokyo verdy,nagoya grampus,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Tokyo Verdy,0.73,J1 League,3.5,OU,06:00,Nagoya Grampus,Japan,1.24,,,,Under,Under 3.5
+2026-11-21,tottenham,ipswich,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Tottenham,0.65,Premier League,3.5,OU,16:00,Ipswich,England,1.53,,,,Under,Under 3.5
+2026-11-21,trinec,dukla praha,1X2|2|None,2026-11-19 02:09,2026-11-19 02:09,1,,Třinec,0.55,FNL,,1X2,13:30,Dukla Praha,Czech-Republic,1.82,,,,2,2
+2026-11-21,tromso,viking,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,Tromso,0.67,Eliteserien,,BTTS,14:00,Viking,Norway,1.44,,,,Yes,GG
+2026-11-21,union berlin,rb leipzig,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,Union Berlin,0.66,Bundesliga,,BTTS,15:30,RB Leipzig,Germany,1.53,,,,Yes,GG
+2026-11-21,utrecht,cambuur,OU|Over|2.5,2026-11-19 02:09,2026-11-19 02:09,1,,Utrecht,0.72,Eredivisie,2.5,OU,18:45,Cambuur,Netherlands,1.44,,,,Over,Over 2.5
+2026-11-21,vejle,hb koge,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,Vejle,0.59,1. Division,,BTTS,13:30,HB Koge,Denmark,1.67,,,,Yes,GG
+2026-11-21,vendsyssel,hvidovre,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Vendsyssel FF,0.66,1. Division,3.5,OU,14:00,Hvidovre,Denmark,1.5,,,,Under,Under 3.5
+2026-11-21,ventforet kofu,vanraure hachinohe,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Ventforet Kofu,0.78,J2 League,3.5,OU,06:00,Vanraure Hachinohe,Japan,1.2,,,,Under,Under 3.5
+2026-11-21,verl,rot wei essen,BTTS|Yes|None,2026-11-19 02:09,2026-11-19 02:09,1,,Verl,0.63,3. Liga,,BTTS,14:00,Rot-Weiß Essen,Germany,1.5,,,,Yes,GG
+2026-11-21,versailles,bourg en bresse 01,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Versailles,0.72,National 1,3.5,OU,14:45,Bourg-en-bresse 01,France,1.36,,,,Under,Under 3.5
+2026-11-21,vfl wolfsburg,holstein kiel,DC|1X|None,2026-11-19 02:09,2026-11-19 02:09,1,,VfL Wolfsburg,0.84,2. Bundesliga,,DC,13:00,Holstein Kiel,Germany,1.22,,,,1X,1X
+2026-11-21,west ham,preston,OU|Over|2.5,2026-11-19 02:09,2026-11-19 02:09,1,,West Ham,0.72,Championship,2.5,OU,16:00,Preston,England,1.36,,,,Over,Over 2.5
+2026-11-21,wolves,charlton,OU|Under|3.5,2026-11-19 02:09,2026-11-19 02:09,1,,Wolves,0.65,Championship,3.5,OU,16:00,Charlton,England,1.57,,,,Under,Under 3.5
+2026-11-21,yokohama,consadole sapporo,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Yokohama FC,0.76,J2 League,1.5,OU,06:00,Consadole Sapporo,Japan,1.21,,,,Over,Over 1.5
+2026-11-21,zulte waregem,antwerp,OU|Over|1.5,2026-11-19 02:09,2026-11-19 02:09,1,,Zulte Waregem,0.8,Jupiler Pro League,1.5,OU,20:45,Antwerp,Belgium,1.2,,,,Over,Over 1.5
