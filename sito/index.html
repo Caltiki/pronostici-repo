@@ -1315,6 +1315,14 @@
       0 8px 18px -8px rgba(0,0,0,.65),
       0 28px 72px -18px rgba(0,0,0,.82);
   }
+  /* (203) multipla riducibile */
+  .multipla .riga1 { align-items: center; }
+  .multipla .riga1 #m-eventi { flex: 1; min-width: 0; }
+  .multipla .riga1 .m-riduci { flex: none; min-width: 40px; min-height: 34px; padding: 0 10px; border-radius: 9px;
+    font-size: 1.05rem; line-height: 1; color: var(--testo); }
+  .multipla.ridotta .dentro > :not(.riga1) { display: none !important; }
+  .multipla.ridotta { padding-top: 9px; padding-bottom: calc(9px + env(safe-area-inset-bottom)); cursor: pointer; }
+  .multipla.ridotta .riga1 b { font-size: 1.15rem; }
   :root[data-theme="light"] .multipla {
     box-shadow:
       0 1px 0 rgba(255,255,255,.9) inset,
@@ -1942,6 +1950,7 @@
     <div class="riga1">
       <span id="m-eventi"></span>
       <b id="m-equa"></b>
+      <button id="m-riduci" class="m-riduci" type="button" aria-expanded="true" aria-label="Riduci la multipla" title="Riduci">&#9662;</button>
     </div>
     <p id="m-stima"></p>
     <p id="m-book" hidden></p>
@@ -4453,6 +4462,32 @@
   // ------------------------------------------------------- multipla
 
   var $m = document.getElementById("multipla");
+  // (203) LA MULTIPLA SI RIDUCE A UNA RIGA. Aperta copriva mezzo schermo
+  // del telefono e non si chiudeva senza svuotarla: col tasto ▾ resta solo
+  // "N eventi · equa", toccandola si riapre. Si ricorda su questo telefono.
+  var M_RIDOTTA = false;
+  try { M_RIDOTTA = localStorage.getItem("caltiki-multipla-ridotta") === "1"; } catch (e) {}
+  function applicaRiduci() {
+    $m.classList.toggle("ridotta", M_RIDOTTA);
+    var b = document.getElementById("m-riduci");
+    if (b) {
+      b.innerHTML = M_RIDOTTA ? "&#9652;" : "&#9662;";
+      b.setAttribute("aria-expanded", String(!M_RIDOTTA));
+      b.setAttribute("aria-label", M_RIDOTTA ? "Apri la multipla" : "Riduci la multipla");
+      b.title = M_RIDOTTA ? "Apri" : "Riduci";
+    }
+    if (!$m.hidden) document.body.style.paddingBottom = $m.offsetHeight + "px";
+  }
+  function riduciMultipla(si) {
+    M_RIDOTTA = si;
+    try { localStorage.setItem("caltiki-multipla-ridotta", si ? "1" : "0"); } catch (e) {}
+    if (si && typeof chiudiInvio === "function") chiudiInvio();
+    applicaRiduci();
+  }
+  document.getElementById("m-riduci").addEventListener("click", function (ev) {
+    ev.stopPropagation(); riduciMultipla(!M_RIDOTTA);
+  });
+  $m.querySelector(".riga1").addEventListener("click", function () { if (M_RIDOTTA) riduciMultipla(false); });
   document.getElementById("m-svuota").addEventListener("click", function () {
     scelte = {};
     chiudiInvio();
@@ -4468,6 +4503,7 @@
     var r = Object.keys(scelte).map(function (k) { return scelte[k]; });
     if (!r.length) { $m.hidden = true; chiudiInvio(); document.body.style.paddingBottom = ""; return; }
     $m.hidden = false;
+    $m.classList.toggle("ridotta", M_RIDOTTA);
     var equa = 1, pagata = 1, prob = 1, senzaMarg = 0;
     r.forEach(function (x) {
       var e = num(x.Equa), m = num(x.Margine), p = num(x.Prob);
@@ -4509,7 +4545,7 @@
       $a.textContent = "Stessa partita due volte (" + doppie.join(", ") +
         "): non sono eventi indipendenti, cadono insieme e il prodotto delle quote mente.";
     } else $a.hidden = true;
-    document.body.style.paddingBottom = $m.offsetHeight + "px";
+    applicaRiduci();
     if ($invio) preparaSeAperto();
     if (typeof $reg !== "undefined" && $reg && !$reg.hidden) disegnaPannelloReg();
   }
