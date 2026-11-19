@@ -1323,6 +1323,18 @@
   .multipla.ridotta .dentro > :not(.riga1) { display: none !important; }
   .multipla.ridotta { padding-top: 9px; padding-bottom: calc(9px + env(safe-area-inset-bottom)); cursor: pointer; }
   .multipla.ridotta .riga1 b { font-size: 1.15rem; }
+  /* (204) gli eventi della multipla */
+  .multipla .riga1 .m-eventi { flex: 1; min-width: 0; text-align: left; border: 0; background: none; padding: 4px 0;
+    font-family: inherit; font-size: .7rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; color: var(--testo); cursor: pointer; }
+  .multipla .riga1 .m-eventi:hover { background: none; }
+  .multipla .riga1 .m-eventi .m-freccia { color: var(--evidenza); }
+  .multipla .riga1 .m-eventi .m-prob { white-space: nowrap; }
+  .multipla .m-lista { max-height: 38vh; overflow-y: auto; margin: 8px 0 4px; border-top: 1px solid var(--bordo); }
+  .multipla .m-ev { display: flex; align-items: center; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--bordo);
+    font-size: .82rem; line-height: 1.35; color: var(--testo); }
+  .multipla .m-ev-testo { flex: 1; min-width: 0; }
+  .multipla .m-ev-testo .piccolo { margin-left: 6px; color: var(--tenue); }
+  .multipla .m-ev .m-togli { flex: none; min-width: 34px; min-height: 34px; padding: 0; border-radius: 9px; font-size: 1.1rem; line-height: 1; }
   :root[data-theme="light"] .multipla {
     box-shadow:
       0 1px 0 rgba(255,255,255,.9) inset,
@@ -1948,10 +1960,11 @@
 <div class="multipla" id="multipla" hidden>
   <div class="dentro">
     <div class="riga1">
-      <span id="m-eventi"></span>
+      <button id="m-eventi" class="m-eventi" type="button" aria-expanded="false" aria-controls="m-lista" title="Vedi gli eventi"></button>
       <b id="m-equa"></b>
       <button id="m-riduci" class="m-riduci" type="button" aria-expanded="true" aria-label="Riduci la multipla" title="Riduci">&#9662;</button>
     </div>
+    <div id="m-lista" class="m-lista" hidden></div>
     <p id="m-stima"></p>
     <p id="m-book" hidden></p>
     <p id="m-avviso" class="avviso" hidden></p>
@@ -4484,6 +4497,46 @@
     if (si && typeof chiudiInvio === "function") chiudiInvio();
     applicaRiduci();
   }
+  // (204) GLI EVENTI DELLA MULTIPLA. Toccando "N eventi" si apre l'elenco:
+  // partita, scelta, probabilita' e quota equa, con la x per togliere una
+  // riga senza tornare a cercarla nella lista.
+  var M_LISTA = false;
+  function disegnaListaMultipla() {
+    var $l = document.getElementById("m-lista"), $b = document.getElementById("m-eventi");
+    if (!$l) return;
+    $l.hidden = !M_LISTA;
+    if ($b) $b.setAttribute("aria-expanded", String(M_LISTA));
+    if (!M_LISTA) return;
+    var ks = Object.keys(scelte).sort(function (a, b) {
+      var x = scelte[a], y = scelte[b];
+      return String((x.Data || "") + (x.Ora || "")).localeCompare(String((y.Data || "") + (y.Ora || "")));
+    });
+    $l.innerHTML = ks.map(function (k) {
+      var x = scelte[k], p = num(x.Prob), e = num(x.Equa);
+      var quando = (x.Data && x.Data !== oggi() ? x.Data.slice(8, 10) + "/" + x.Data.slice(5, 7) + " " : "") + (x.Ora || "");
+      var bk = [];
+      if (typeof quotaBook === "function") BEX_BOOK.forEach(function (b) { var q = quotaBook(x, b); if (q) bk.push(b + " " + f2(q.q)); });
+      return '<div class="m-ev"><div class="m-ev-testo"><b>' + esc(x.Partita || ((x.Casa || "") + " - " + (x.Ospite || ""))) + "</b>" +
+        '<span class="piccolo">' + esc(quando) + "</span><br>" +
+        esc(etichettaSel(x)) + (p != null ? " \u00b7 " + f0(p) + "%" : "") + (e != null ? " \u00b7 equa " + f2(e) : "") +
+        (bk.length ? ' <span class="piccolo">\u00b7 ' + esc(bk.join(" \u00b7 ")) + "</span>" : "") + "</div>" +
+        '<button type="button" class="m-togli" data-togli="' + esc(k) + '" aria-label="Togli dalla multipla" title="Togli">\u00d7</button></div>';
+    }).join("");
+    $l.querySelectorAll("[data-togli]").forEach(function (b) {
+      b.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        delete scelte[b.dataset.togli];
+        aggiornaMultipla();
+        ridisegnaRighe();
+      });
+    });
+  }
+  document.getElementById("m-eventi").addEventListener("click", function (ev) {
+    if (M_RIDOTTA) return;                     // ridotta: il tocco riapre la barra (sotto)
+    ev.stopPropagation();
+    M_LISTA = !M_LISTA;
+    aggiornaMultipla();
+  });
   document.getElementById("m-riduci").addEventListener("click", function (ev) {
     ev.stopPropagation(); riduciMultipla(!M_RIDOTTA);
   });
@@ -4512,8 +4565,10 @@
       if (m == null) { senzaMarg++; pagata *= e || 1; } else pagata *= (e || 1) / (1 + m / 100);
     });
     var perdita = (pagata / equa - 1) * 100;
-    document.getElementById("m-eventi").textContent =
-      r.length + (r.length === 1 ? " evento" : " eventi") + " · probabilità " + (prob * 100).toFixed(1) + "%";
+    document.getElementById("m-eventi").innerHTML = esc(r.length + (r.length === 1 ? " evento" : " eventi")) +
+      ' <span class="m-freccia">' + (M_LISTA ? "\u25b4" : "\u25be") + "</span>" +
+      '<span class="m-prob"> \u00b7 probabilit\u00e0 ' + (prob * 100).toFixed(1) + "%</span>";
+    disegnaListaMultipla();
     document.getElementById("m-equa").textContent = "equa " + equa.toFixed(2);
     document.getElementById("m-stima").textContent =
       "Col margine di ciascuna partita il book pagherebbe circa " + pagata.toFixed(2) +
