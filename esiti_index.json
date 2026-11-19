@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-19 18:15",
+ "aggiornato": "2026-11-19 19:24",
  "date": [
   "2026-11-05",
   "2026-11-06",
@@ -117,11 +117,11 @@
    "righe": 584
   },
   "2026-11-19": {
-   "presa": 77,
-   "sbagliata": 53,
+   "presa": 76,
+   "sbagliata": 54,
    "rimborso": 0,
-   "attesa": 168,
-   "righe": 298
+   "attesa": 174,
+   "righe": 304
   }
  },
  "taratura": {
@@ -129,31 +129,31 @@
    "righe": 8809,
    "partite": 1185,
    "prevista": 54.9,
-   "uscita": 54.3,
+   "uscita": 54.2,
    "scarto": -0.6,
    "errore_std": 0.5
   },
   "fasce": [
    {
-    "righe": 1523,
-    "partite": 935,
+    "righe": 1521,
+    "partite": 934,
     "prevista": 37.4,
-    "uscita": 36.0,
-    "scarto": -1.4,
+    "uscita": 35.8,
+    "scarto": -1.5,
     "errore_std": 1.2,
     "fascia": "35-40%"
    },
    {
-    "righe": 1102,
-    "partite": 770,
+    "righe": 1104,
+    "partite": 771,
     "prevista": 42.3,
-    "uscita": 43.6,
-    "scarto": 1.4,
+    "uscita": 43.8,
+    "scarto": 1.5,
     "errore_std": 1.5,
     "fascia": "40-45%"
    },
    {
-    "righe": 750,
+    "righe": 748,
     "partite": 581,
     "prevista": 47.3,
     "uscita": 47.7,
@@ -162,17 +162,17 @@
     "fascia": "45-50%"
    },
    {
-    "righe": 1321,
-    "partite": 837,
+    "righe": 1322,
+    "partite": 838,
     "prevista": 52.4,
     "uscita": 51.3,
-    "scarto": -1.0,
+    "scarto": -1.1,
     "errore_std": 1.4,
     "fascia": "50-55%"
    },
    {
     "righe": 1118,
-    "partite": 787,
+    "partite": 789,
     "prevista": 57.3,
     "uscita": 54.0,
     "scarto": -3.3,
@@ -180,10 +180,10 @@
     "fascia": "55-60%"
    },
    {
-    "righe": 744,
-    "partite": 533,
+    "righe": 745,
+    "partite": 534,
     "prevista": 62.2,
-    "uscita": 62.6,
+    "uscita": 62.7,
     "scarto": 0.5,
     "errore_std": 1.8,
     "fascia": "60-65%"
@@ -193,25 +193,25 @@
     "partite": 454,
     "prevista": 67.4,
     "uscita": 70.7,
-    "scarto": 3.4,
+    "scarto": 3.3,
     "errore_std": 2.0,
     "fascia": "65-70%"
    },
    {
-    "righe": 447,
+    "righe": 448,
     "partite": 369,
     "prevista": 72.4,
-    "uscita": 71.6,
+    "uscita": 71.7,
     "scarto": -0.8,
     "errore_std": 2.1,
     "fascia": "70-75%"
    },
    {
-    "righe": 514,
+    "righe": 513,
     "partite": 461,
     "prevista": 77.8,
     "uscita": 73.9,
-    "scarto": -3.8,
+    "scarto": -3.9,
     "errore_std": 1.8,
     "fascia": "75-80%"
    },
@@ -257,7 +257,7 @@
     "righe": 3896,
     "partite": 1112,
     "prevista": 46.2,
-    "uscita": 46.3,
+    "uscita": 46.2,
     "scarto": 0.0,
     "errore_std": 0.8,
     "nome": "Combo"
@@ -276,7 +276,7 @@
     "partite": 1185,
     "prevista": 57.2,
     "uscita": 53.3,
-    "scarto": -3.8,
+    "scarto": -3.9,
     "errore_std": 1.4,
     "nome": "Gol NoGol"
    },
