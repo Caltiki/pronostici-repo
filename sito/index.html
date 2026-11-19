@@ -154,6 +154,8 @@
   .bex-riga .bex, .bex-riga .bex-scarto { white-space: nowrap; }
   /* (202) quote in calo */
   .calo-riga { font-size: .78rem; color: var(--male); margin-top: 2px; }
+  .calo-riga b { font-weight: 700; }
+  .calo-riga .piccolo { color: var(--tenue); }
   .calo-filtro { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin: 4px 0 10px; }
   .calo-filtro .chip-calo { padding: 7px 12px; border: 1px solid var(--bordo); border-radius: 9px; background: var(--scheda); color: var(--male);
     font: inherit; font-size: .8rem; font-weight: 700; cursor: pointer; box-shadow: var(--ombra); }
@@ -3374,9 +3376,17 @@
   function caloHtml(r) {
     var c = r ? prezzoInCalo(r) : null;
     if (!c) return "";
-    return '<div class="calo-riga">\u25bc ' + (c.tipo === "pin"
-      ? "in calo su Pinnacle: probabilit\u00e0 +" + f1(c.d) + " punti dalla prima lettura"
-      : "in calo su " + esc(c.b) + ": " + f2(c.a) + " \u2192 " + f2(c.q) + " dall'apertura") + "</div>";
+    // (205) si dice QUALE quota scende: quella del pronostico, non l'1X2
+    // della griglia prima/ora che sta sopra
+    var sel = "<b>" + esc(etichettaSel(r)) + "</b>";
+    if (c.tipo === "pin") {
+      var p = num(r.Prob), eq = num(r.Equa), eq0 = p != null && p - c.d > 0 ? 100 / (p - c.d) : null;
+      return '<div class="calo-riga">\u25bc ' + sel + " in calo su Pinnacle: quota equa " +
+        (eq0 != null && eq != null ? f2(eq0) + " \u2192 " + f2(eq) : "") +
+        ' <span class="piccolo">(probabilit\u00e0 +' + f1(c.d) + " punti dalla prima lettura)</span></div>";
+    }
+    return '<div class="calo-riga">\u25bc ' + sel + " in calo su " + esc(c.b) + ": " + f2(c.a) + " \u2192 " + f2(c.q) +
+      ' <span class="piccolo">(dall\u2019apertura del book)</span></div>';
   }
   // il tasto sopra la lista: quante partite hanno un pronostico in calo
   // nPron: in "Tutte le partite" si contano le partite il cui pronostico e' in calo
