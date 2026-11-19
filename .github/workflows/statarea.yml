@@ -53,11 +53,16 @@ on:
     # sono quindi tolti (li fa l'orologio); restano le RISERVE, che si
     # spengono da sole quando il lavoro e' gia' fatto e recuperano se un
     # giorno e' l'orologio a non partire.
-    #   orologio 00:37 UTC  -> cron '37 0 * * *'   giro quotidiano
+    #   orologio 05:37 di Roma -> cron '37 0 * * *'   giro quotidiano
+    #     (19/11: era alle 00:37 UTC; i file su Telegram arrivavano alle 2
+    #     di notte, ora fra le 05:55 e le 06:20. La stringa resta la stessa.)
     #   orologio 06/12/18:23    -> '23 */6 * * *'  prezzi, Poisson e schede (era AsianOdds)
     #   orologio 17:07 e 22:37  -> '7 17 * * *' e '37 22 * * *'  risultati
-    - cron: '17 2 * * *'     # riserva del giro quotidiano
-    - cron: '47 4 * * *'     # seconda riserva
+    # (19/11) le riserve DOPO il giro delle 05:37 di Roma: prima di lui
+    # trovavano i dati di oggi ancora da fare e partivano di notte, con
+    # l'invio su Telegram alle 3.
+    - cron: '17 5 * * *'     # riserva del giro quotidiano
+    - cron: '47 6 * * *'     # seconda riserva
     #
     # AsianOdds ogni SEI ore. NON e' ridondanza con i tre tentativi di
     # sopra: quelli riguardano Statarea, che di suo non si muove quasi
@@ -2403,7 +2408,7 @@ jobs:
   #
   # 2) il cron dev'essere uno dei TRE delle quote
   #    Senza questo pezzo il job partirebbe anche sui due tentativi di
-  #    riserva del quotidiano (02:17 e 04:47 UTC), che esistono per
+  #    riserva del quotidiano (05:17 e 06:47 UTC), che esistono per
   #    recuperare Statarea quando GitHub scarta un cron e non hanno niente
   #    a che vedere con le quote. Il risultato era un AsianOdds in piu' a
   #    testa, cioe' tre consegne stipate fra le 04:17 e le 06:47 italiane.
@@ -2632,8 +2637,8 @@ jobs:
         ((github.event_name == 'schedule' || github.event.inputs.cron) && needs.controllo.outputs.wp_manca == 'si' && (
           (github.event.schedule || github.event.inputs.cron) == '37 0 * * 2' ||
           (github.event.schedule || github.event.inputs.cron) == '37 0 * * *' ||
-          (github.event.schedule || github.event.inputs.cron) == '17 2 * * *' ||
-          (github.event.schedule || github.event.inputs.cron) == '47 4 * * *'))
+          (github.event.schedule || github.event.inputs.cron) == '17 5 * * *' ||
+          (github.event.schedule || github.event.inputs.cron) == '47 6 * * *'))
       )
 
     steps:
