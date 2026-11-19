@@ -10314,7 +10314,8 @@
     var t = "In corso" + (LIVE_ORA ? " \u00b7 aggiornato alle " + LIVE_ORA : "") + (LIVE_FERMO ? "\nATTENZIONE: " + LIVE_FERMO : "");
     var gl = golLive(x);
     if (gl) t += "\nGol: " + gl.map(function (g) {
-      return g.m + "\u2032 " + (g.g || "?") + (g.t === "rig" ? " (rigore)" : g.t === "aut" ? " (autogol)" : "");
+      var chi = g.s === "c" ? x.casa : g.s === "o" ? x.ospite : "";
+      return g.m + "\u2032 " + (g.g || chi || "gol") + (g.t === "rig" ? " (rigore)" : g.t === "aut" ? " (autogol)" : "");
     }).join(", ");
     var c = num(x.rc) || 0, o = num(x.ro) || 0;
     if (c || o) t += "\nEspulsi: " + (x.casa || "casa") + " " + c + ", " + (x.ospite || "ospite") + " " + o;
@@ -11126,7 +11127,11 @@
     if (!gl) return "";
     return gl.map(function (g) {
       var chi = g.s === "c" ? x.casa : g.s === "o" ? x.ospite : "";
-      return g.m + "\u2032 " + esc(g.g || "?") + (g.t === "rig" ? " (rig.)" : g.t === "aut" ? " (aut.)" : "") + (chi && g.t !== "aut" ? " \u2013 " + esc(chi) : "");
+      // (207) senza il nome del marcatore (le leghe minori spesso non lo
+      // hanno) niente "?": minuto e squadra, "11′ Hegelmann II"
+      var tipo = g.t === "rig" ? " (rig.)" : g.t === "aut" ? " (aut.)" : "";
+      if (!g.g) return g.m + "\u2032 " + (chi ? esc(chi) : "gol") + tipo;
+      return g.m + "\u2032 " + esc(g.g) + tipo + (chi && g.t !== "aut" ? " \u2013 " + esc(chi) : "");
     }).join(" \u00b7 ");
   }
   function rigaLive(x) {
