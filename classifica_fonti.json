@@ -1,6 +1,6 @@
 {
- "aggiornato": "2026-11-20 05:15",
- "risultati": 46010,
+ "aggiornato": "2026-11-20 06:22",
+ "risultati": 46011,
  "con_prezzo": 11038,
  "minimo": 100,
  "fonti": [
@@ -58,7 +58,7 @@
   {
    "chiave": "soccersite",
    "nome": "SoccerSite",
-   "righe": 13528,
+   "righe": 14275,
    "rotte": 48,
    "misurate": 11544,
    "mercati": [
@@ -102,40 +102,40 @@
   {
    "chiave": "ratingbet",
    "nome": "RatingBet",
-   "righe": 17459,
+   "righe": 17716,
    "rotte": 0,
-   "misurate": 10855,
+   "misurate": 10859,
    "mercati": [
     {
      "mercato": "1X2",
-     "prese": 1450,
-     "su": 2622,
+     "prese": 1451,
+     "su": 2623,
      "pct": 55.3,
      "rimborsi": 0
     },
     {
      "mercato": "BTTS",
-     "prese": 1517,
-     "su": 2735,
+     "prese": 1518,
+     "su": 2736,
      "pct": 55.5,
      "rimborsi": 0
     },
     {
      "mercato": "DC",
-     "prese": 2201,
-     "su": 2751,
+     "prese": 2202,
+     "su": 2752,
      "pct": 80.0,
      "rimborsi": 0
     },
     {
      "mercato": "OU",
-     "prese": 1624,
-     "su": 2747,
+     "prese": 1625,
+     "su": 2748,
      "pct": 59.1,
      "rimborsi": 0
     }
    ],
-   "prese": 6792,
+   "prese": 6796,
    "pct": 62.6,
    "mercato": {
     "n": 1045,
@@ -146,9 +146,9 @@
   {
    "chiave": "xgaura",
    "nome": "xGaura",
-   "righe": 14819,
+   "righe": 15094,
    "rotte": 0,
-   "misurate": 8858,
+   "misurate": 8859,
    "mercati": [
     {
      "mercato": "1X2",
@@ -174,7 +174,7 @@
     {
      "mercato": "OU",
      "prese": 1674,
-     "su": 2672,
+     "su": 2673,
      "pct": 62.6,
      "rimborsi": 0
     }
@@ -213,7 +213,7 @@
   {
    "chiave": "statarea",
    "nome": "Statarea",
-   "righe": 5150,
+   "righe": 5522,
    "rotte": 0,
    "misurate": 4104,
    "mercati": [
