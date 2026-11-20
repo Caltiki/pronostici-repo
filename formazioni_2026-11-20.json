@@ -1277,7 +1277,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Knee Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Estac Troyes": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "H. Konaté",
+     "Y. Titi",
+     "A. Monfray",
+     "I. Boura",
+     "A. Ouzenadji",
+     "A. Mille",
+     "D. Karim",
+     "M. Diop",
+     "M. Ifnaoui",
+     "J. Le Douaron",
+     "K. Diawara"
+    ]
+   },
+   "Le Havre": {
+    "modulo": "3-5-2",
+    "titolari": [
+     "A. Bodart",
+     "V. Sasso",
+     "A. Seko",
+     "A. Touba",
+     "K. Mizuta",
+     "S. Ebonog",
+     "A. Richardson",
+     "J. Mwanga",
+     "E. Koffi Vinette",
+     "R. Fofana",
+     "J. Maja"
+    ]
+   }
+  },
+  "partita": "Estac Troyes - Le Havre"
  },
  "1570454": {
   "assenti": [
@@ -1409,7 +1444,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Hamstring Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Athletic Club": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Unai Simón",
+     "Hugo Rincón",
+     "Yeray",
+     "Aymeric Laporte",
+     "Yuri",
+     "Peio Canales",
+     "Beñat Prados",
+     "Álex Berenguer",
+     "Oihan Sancet",
+     "Nico Williams",
+     "I. Williams"
+    ]
+   },
+   "Espanyol": {
+    "modulo": "5-4-1",
+    "titolari": [
+     "Ángel Fortuño",
+     "O. El Hilali",
+     "C. Riedel",
+     "L. Cabrera",
+     "Q. Hartman",
+     "Roger Hinojo",
+     "Pere Milla",
+     "Pol Lozano",
+     "Rafel Bauzà",
+     "Alejandro Santiago Vargas",
+     "Roberto Fernández"
+    ]
+   }
+  },
+  "partita": "Athletic Club - Espanyol"
  },
  "1556143": {
   "titolari": {
@@ -3136,5 +3206,190 @@
    }
   },
   "partita": "Racing Montevideo - Central Espanol"
+ },
+ "1650504": {
+  "titolari": {
+   "Liverpool Montevideo": {
+    "modulo": "3-4-1-2",
+    "titolari": [
+     "M. Campaña",
+     "A. Cayetano",
+     "S. Strasorier",
+     "E. Castillo",
+     "D. Romero",
+     "N. Garayalde",
+     "M. Mir",
+     "R. Haller",
+     "D. Zabala",
+     "R. Machado",
+     "vicenzo macchia"
+    ]
+   },
+   "Wanderers": {
+    "modulo": "5-2-3",
+    "titolari": [
+     "A. Buffa",
+     "M. García",
+     "F. Formiliano",
+     "N. Cabral",
+     "L. Zazpe",
+     "S. Benitez",
+     "J. Alberti",
+     "G. Freitas",
+     "R. Sánchez",
+     "L. Cosentino",
+     "F. Labandeira"
+    ]
+   }
+  },
+  "partita": "Liverpool Montevideo - Wanderers"
+ },
+ "1558682": {
+  "titolari": {
+   "Cercle Brugge": {
+    "modulo": "3-4-1-2",
+    "titolari": [
+     "Gaëtan Coucke",
+     "Ibrahim Diakité",
+     "Geoffrey Kondo",
+     "Royer Caicedo",
+     "Tunde Akinsola",
+     "Hannes Van Der Bruggen",
+     "Luke Le Roux",
+     "Gary Magnee",
+     "Viggo Martens",
+     "Steve Ngoura",
+     "Dante Vanzeir"
+    ]
+   },
+   "KVC Westerlo": {
+    "modulo": "4-3-1-2",
+    "titolari": [
+     "Andreas Jungdal",
+     "Lasse Flø",
+     "Seiji Kimura",
+     "Amando Lapage",
+     "Fabio Ferraro",
+     "Cameron Congreve",
+     "Doğucan Haspolat",
+     "Ibrahim Fofana",
+     "Cisse Sandra",
+     "Isa Sakamoto",
+     "Norman Bassette"
+    ]
+   }
+  },
+  "partita": "Cercle Brugge - KVC Westerlo"
+ },
+ "1564415": {
+  "titolari": {
+   "Barnsley": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "C. Slicker",
+     "A. Kay",
+     "J. Okedina",
+     "S. Gale",
+     "Z. Larkeche",
+     "Patrick Kelly",
+     "L. Connell",
+     "Vimal Yoganathan",
+     "Royce Brownlie",
+     "R. Cleary",
+     "M. Kirk"
+    ]
+   },
+   "Sheffield Wednesday": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "J. Lumley",
+     "Y. Valery",
+     "D. Bernard",
+     "S. Swinkels",
+     "L. Cooper",
+     "B. Bannan",
+     "B. Mitchell",
+     "Jaden Heskey",
+     "C. Slattery",
+     "J. Lowe",
+     "D. Keillor-Dunn"
+    ]
+   }
+  },
+  "partita": "Barnsley - Sheffield Wednesday"
+ },
+ "1581016": {
+  "titolari": {
+   "Toulouse W": {
+    "modulo": "5-4-1",
+    "titolari": [
+     "Alyssa Fernandes",
+     "L. Bardet",
+     "M. Diakité",
+     "L. Jumere",
+     "F. Bogi",
+     "C. Tapia",
+     "A. Conesa",
+     "L. Gay",
+     "S. Altunkulak",
+     "C. Marty",
+     "A. Atamaniuk"
+    ]
+   },
+   "Marseille W": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "E. Burns",
+     "Amandine Beche",
+     "C. Baltrip-Reyes",
+     "M. Cosson",
+     "L. Fleury",
+     "Bea",
+     "S. Elisor",
+     "Jenny Perret",
+     "Maelle Garbino",
+     "M. Bourdieu",
+     "C. Lavogez"
+    ]
+   }
+  },
+  "partita": "Toulouse W - Marseille W"
+ },
+ "1632063": {
+  "titolari": {
+   "Sportivo Ameliano": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "Á. Sánchez",
+     "F. Franco",
+     "J. González",
+     "L. Falabella",
+     "R. Peralta",
+     "W. Rodríguez",
+     "F. Vera",
+     "E. Moreira",
+     "R. Cabral",
+     "E. Torales",
+     "C. Ocampos"
+    ]
+   },
+   "Sportivo Luqueno": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "N. Campisi",
+     "O. Lopez",
+     "J. Diaz",
+     "M. Barreto",
+     "A. Cantero",
+     "M. Pérez",
+     "L. Comas",
+     "A. Maíz",
+     "F. Benitez",
+     "G. Bogado",
+     "I. Maggi"
+    ]
+   }
+  },
+  "partita": "Sportivo Ameliano - Sportivo Luqueno"
  }
 }
