@@ -561,8 +561,7 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 77.2,
-  "Equa": 1.29,
-  "InSchedina": "si"
+  "Equa": 1.29
  },
  {
   "Data": "2026-11-24",
@@ -1110,7 +1109,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 68.4,
-  "Equa": 1.46
+  "Equa": 1.46,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-24",
@@ -1676,7 +1676,8 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 61.9,
-  "Equa": 1.61
+  "Equa": 1.61,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-24",
@@ -5383,6 +5384,26 @@
   "Data": "2026-11-24",
   "Ora": "20:45",
   "Campionato": "England Championship",
+  "Partita": "Cardiff - Preston",
+  "Casa": "Cardiff",
+  "Ospite": "Preston",
+  "Linea_OU": "",
+  "Gol_attesi": 3.37,
+  "Margine": 2.8,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 21.1,
+  "Equa": 4.73
+ },
+ {
+  "Data": "2026-11-24",
+  "Ora": "20:45",
+  "Campionato": "England Championship",
   "Partita": "Norwich - QPR",
   "Casa": "Norwich",
   "Ospite": "QPR",
@@ -5438,26 +5459,6 @@
   "Sel": "X",
   "Prob": 18.4,
   "Equa": 5.43
- },
- {
-  "Data": "2026-11-24",
-  "Ora": "21:00",
-  "Campionato": "Scotland Premiership",
-  "Partita": "Rangers - Aberdeen",
-  "Casa": "Rangers",
-  "Ospite": "Aberdeen",
-  "Linea_OU": "",
-  "Gol_attesi": 3.39,
-  "Margine": 2.7,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 15.0,
-  "Equa": 6.68
  },
  {
   "Data": "2026-11-24",
