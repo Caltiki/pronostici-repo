@@ -783,7 +783,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Molde": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Mads Eikrem Myklebust",
+     "M. Linnes",
+     "E. Haugan",
+     "B. Risa",
+     "F. Dahl",
+     "M. Møller Dæhli",
+     "D. Daga",
+     "C. Zady Sery",
+     "S. Granaas",
+     "S. Kilen",
+     "K. Lonebu"
+    ]
+   },
+   "Bodo/Glimt": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "N. Haikin",
+     "F. Sjøvold",
+     "O. Bjørtuft",
+     "J. Gundersen",
+     "I. Määttä",
+     "S. Auklend",
+     "P. Berg",
+     "S. Fet",
+     "J. Hauge",
+     "O. Didrik Blomberg",
+     "O. Brynhildsen"
+    ]
+   }
+  },
+  "partita": "Molde - Bodo/Glimt"
  },
  "1549058": {
   "assenti": [
@@ -867,7 +902,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Knee Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Aarhus": {
+    "modulo": "3-4-2-1",
+    "titolari": [
+     "J. Hansen",
+     "T. Mølgaard",
+     "C. Rösler",
+     "E. Kahl",
+     "J. Andersen",
+     "M. Knudsen",
+     "Kristian Fredrik Malt Arnstad",
+     "Frederik Emmery",
+     "T. Bech",
+     "C. McCowatt",
+     "S. Tchamche"
+    ]
+   },
+   "Lyngby": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "J. Ægidius",
+     "O. Buur",
+     "M. Fischer",
+     "A. Hoskonen",
+     "R. Tytens",
+     "G. Fraulo",
+     "L. Sandgrav",
+     "Z. Sertdemir",
+     "S. Colyn",
+     "F. Gytkjær",
+     "Í. Þorvaldsson"
+    ]
+   }
+  },
+  "partita": "Aarhus - Lyngby"
  },
  "1575221": {
   "assenti": [
@@ -1181,10 +1251,27 @@
    "M. Sannadi (Athletic Club)",
    "D. Vivian (Athletic Club)",
    "A. Calatrava (Espanyol)",
+   "E. Exposito (Espanyol)",
    "K. Garcia (Espanyol)",
+   "J. Carreras (Espanyol)",
    "U. Gonzalez (Espanyol)"
   ],
   "assenti_peso": [
+   {
+    "nome": "E. Exposito",
+    "squadra": "Espanyol",
+    "tipo": "Missing Fixture",
+    "motivo": "Knock",
+    "pres": 13,
+    "tit": 11,
+    "min": 1016,
+    "gol": 1,
+    "ass": 0,
+    "voto": 7.13,
+    "gol_squadra": 15,
+    "partite_squadra": 13,
+    "quota_gol": 7
+   },
    {
     "nome": "A. Calatrava",
     "squadra": "Espanyol",
@@ -1258,6 +1345,21 @@
     "voto": 5.4,
     "gol_squadra": 21,
     "partite_squadra": 12,
+    "quota_gol": 0
+   },
+   {
+    "nome": "J. Carreras",
+    "squadra": "Espanyol",
+    "tipo": "Questionable",
+    "motivo": "Muscle Injury",
+    "pres": 3,
+    "tit": 0,
+    "min": 24,
+    "gol": 0,
+    "ass": 0,
+    "voto": 6.3,
+    "gol_squadra": 15,
+    "partite_squadra": 13,
     "quota_gol": 0
    },
    {
@@ -2111,5 +2213,79 @@
    }
   },
   "partita": "Union Berlin W - Bayer Leverkusen W"
+ },
+ "1584082": {
+  "titolari": {
+   "Havelse": {
+    "modulo": "3-4-2-1",
+    "titolari": [
+     "T. Opitz",
+     "D. Duah",
+     "I. Nduka",
+     "S. Belkahia",
+     "E. Voufack",
+     "J. Tugbenyo",
+     "J. Berger",
+     "M. Lamby",
+     "L. Paldino",
+     "Alexander Guiddir",
+     "Y. Wardak"
+    ]
+   },
+   "FC Viktoria Köln": {
+    "modulo": "3-4-2-1",
+    "titolari": [
+     "A. Schulz",
+     "V. Boboy",
+     "T. Eisenhuth",
+     "Tim Kloss",
+     "P. Fallmann",
+     "T. Duman",
+     "Niklas Swider",
+     "Y. Tonye",
+     "L. Wolf",
+     "N. Castelle",
+     "D. Otto"
+    ]
+   }
+  },
+  "partita": "Havelse - FC Viktoria Köln"
+ },
+ "1565306": {
+  "titolari": {
+   "Farul Constanta": {
+    "modulo": "3-4-3",
+    "titolari": [
+     "Rafael Munteanu",
+     "Sofyane Bouzamoucha",
+     "Nabil Aberdin",
+     "Victor Dican",
+     "Ionuț Vînă",
+     "Tony Njiké",
+     "Matteo Ahlinvi",
+     "Cristian Ganea",
+     "Răzvan Tănasă",
+     "Denis Alibec",
+     "Eduard Radaslavescu"
+    ]
+   },
+   "Universitatea Cluj": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "Ștefan Lefter",
+     "Dino Mikanović",
+     "Florent Poulolo",
+     "Iulian Cristea",
+     "Alexandru Chipciu",
+     "Dorin Codrea",
+     "Issouf Macalou",
+     "Pedro Pinho",
+     "Marius Ștefănescu",
+     "Jug Stanojev",
+     "Jovo Lukić"
+    ]
+   }
+  },
+  "partita": "Farul Constanta - Universitatea Cluj"
  }
 }
