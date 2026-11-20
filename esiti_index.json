@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-20 07:24",
+ "aggiornato": "2026-11-20 13:24",
  "date": [
   "2026-11-06",
   "2026-11-07",
@@ -120,8 +120,8 @@
    "presa": 18,
    "sbagliata": 8,
    "rimborso": 0,
-   "attesa": 987,
-   "righe": 1013
+   "attesa": 1096,
+   "righe": 1122
   }
  },
  "taratura": {
@@ -135,19 +135,19 @@
   },
   "fasce": [
    {
-    "righe": 1548,
+    "righe": 1549,
     "partite": 953,
-    "prevista": 37.3,
+    "prevista": 37.4,
     "uscita": 35.9,
     "scarto": -1.5,
     "errore_std": 1.2,
     "fascia": "35-40%"
    },
    {
-    "righe": 1128,
+    "righe": 1127,
     "partite": 787,
     "prevista": 42.3,
-    "uscita": 43.8,
+    "uscita": 43.7,
     "scarto": 1.5,
     "errore_std": 1.5,
     "fascia": "40-45%"
@@ -162,16 +162,16 @@
     "fascia": "45-50%"
    },
    {
-    "righe": 1351,
+    "righe": 1348,
     "partite": 855,
     "prevista": 52.4,
-    "uscita": 51.7,
-    "scarto": -0.7,
+    "uscita": 51.6,
+    "scarto": -0.8,
     "errore_std": 1.4,
     "fascia": "50-55%"
    },
    {
-    "righe": 1138,
+    "righe": 1139,
     "partite": 804,
     "prevista": 57.3,
     "uscita": 54.3,
@@ -180,11 +180,11 @@
     "fascia": "55-60%"
    },
    {
-    "righe": 765,
-    "partite": 547,
+    "righe": 767,
+    "partite": 548,
     "prevista": 62.2,
-    "uscita": 63.0,
-    "scarto": 0.8,
+    "uscita": 63.1,
+    "scarto": 0.9,
     "errore_std": 1.8,
     "fascia": "60-65%"
    },
@@ -207,20 +207,20 @@
     "fascia": "70-75%"
    },
    {
-    "righe": 525,
+    "righe": 524,
     "partite": 470,
     "prevista": 77.8,
-    "uscita": 74.5,
+    "uscita": 74.4,
     "scarto": -3.3,
     "errore_std": 1.8,
     "fascia": "75-80%"
    },
    {
-    "righe": 338,
-    "partite": 326,
+    "righe": 339,
+    "partite": 327,
     "prevista": 82.5,
-    "uscita": 82.8,
-    "scarto": 0.3,
+    "uscita": 82.9,
+    "scarto": 0.4,
     "errore_std": 2.1,
     "fascia": "80-85%"
    },
