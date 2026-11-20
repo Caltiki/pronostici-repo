@@ -639,7 +639,42 @@
     "partite_squadra": 14,
     "quota_gol": 0
    }
-  ]
+  ],
+  "titolari": {
+   "FC Rostov": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "A. Petrov",
+     "D. Khlusevich",
+     "O. Sako",
+     "D. Chistyakov",
+     "A. Langovich",
+     "I. Komarov",
+     "A. Mironov",
+     "K. Kuchaev",
+     "Ronaldo",
+     "T. Suleymanov",
+     "O. Olusegun"
+    ]
+   },
+   "Krylia Sovetov": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "N. Kokarev",
+     "Dani Fernández",
+     "N. Chernov",
+     "S. Bozhin",
+     "K. Pechenin",
+     "Fernando Costanza",
+     "Y. Gorshkov",
+     "D. Makarov",
+     "M. Banjac",
+     "K. Stolbov",
+     "V. Shitov"
+    ]
+   }
+  },
+  "partita": "FC Rostov - Krylia Sovetov"
  },
  "1494808": {
   "assenti": [
@@ -1682,5 +1717,78 @@
    }
   },
   "partita": "FC Botosani - FC Voluntari"
+ },
+ "1509219": {
+  "titolari": {
+   "Dinamo Tbilisi": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "Lucas Flores",
+     "P. Psaltis",
+     "N. Kurdić",
+     "N. Ugrekhelidze",
+     "M. Pourzitídis",
+     "Welton",
+     "N. Ninua",
+     "B. Osei",
+     "A. Bah",
+     "M. Vatsadze"
+    ]
+   },
+   "Torpedo Kutaisi": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "O. Goshadze",
+     "D. Skorup",
+     "D. Bukia",
+     "T. Nadaraia",
+     "M. Šimić",
+     "A. Shulaia",
+     "M. Itrak",
+     "V. Mamuchashvili",
+     "Felipe Pires",
+     "D. Deisadze",
+     "K. Andrić"
+    ]
+   }
+  },
+  "partita": "Dinamo Tbilisi - Torpedo Kutaisi"
+ },
+ "1551149": {
+  "titolari": {
+   "Septemvri Sofia": {
+    "modulo": "",
+    "titolari": [
+     "V. Ivanov",
+     "S. Vulikić",
+     "pedrinho",
+     "V. Ozornwafor",
+     "André Filipe Rio Liberal",
+     "M. Hristov",
+     "F. Herard",
+     "N. Fontaine",
+     "Pedro Ferreira",
+     "A. Dzhamov",
+     "Y. Baurenski"
+    ]
+   },
+   "Lokomotiv Plovdiv": {
+    "modulo": "",
+    "titolari": [
+     "P. Umarbayev",
+     "B. Milosavljevic",
+     "Adrián Cova",
+     "J. Iliev",
+     "I. Ivanov",
+     "J. Lamy",
+     "Christ Longville",
+     "Lucas Ryan",
+     "D. Mrankov",
+     "T. Pavlov",
+     "M. Petrović"
+    ]
+   }
+  },
+  "partita": "Septemvri Sofia - Lokomotiv Plovdiv"
  }
 }
