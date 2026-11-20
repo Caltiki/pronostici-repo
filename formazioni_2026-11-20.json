@@ -502,7 +502,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Western Sydney Wanderers": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Lawrence Thomas",
+     "Panashe Madanha",
+     "Germán Ferreyra",
+     "Nathan Barrie",
+     "Jarrod Carluccio",
+     "Angus Thurgate",
+     "Dylan Scicluna",
+     "Nicolas Milanović",
+     "Miguel Di Pizio",
+     "Aydan Hammond",
+     "Brandon Borrello"
+    ]
+   },
+   "Adelaide United": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "Joshua Smits",
+     "Harry Crawford",
+     "Sotiri Phillis",
+     "Panagiotis Kikianis",
+     "Fabian Talladira",
+     "Juan Muñiz",
+     "Ethan Alagich",
+     "Jay Barnett",
+     "Craig Goodwin",
+     "Brody Burkitt",
+     "Mitchell Smith"
+    ]
+   }
+  },
+  "partita": "Western Sydney Wanderers - Adelaide United"
  },
  "1561447": {
   "assenti": [
@@ -1203,5 +1238,116 @@
     "motivo": "Hamstring Injury"
    }
   ]
+ },
+ "1556143": {
+  "titolari": {
+   "Kashima": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "T. Hayakawa",
+     "K. Tsukui",
+     "N. Ueda",
+     "I. Sekigawa",
+     "R. Ogawa",
+     "Y. Matsumura",
+     "K. Misao",
+     "Matheus Bueno",
+     "Élber",
+     "Léo Ceará",
+     "H. Hayashu"
+    ]
+   },
+   "Shimizu S-pulse": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "Y. Oki",
+     "H. Sugai",
+     "Park Seung-Wook",
+     "Y. Honda",
+     "Mateus Brunetti",
+     "M. Yumiba",
+     "K. Koizumi",
+     "K. Kozuka",
+     "K. Matsuzaki",
+     "R. Germain",
+     "Capixaba"
+    ]
+   }
+  },
+  "partita": "Kashima - Shimizu S-pulse"
+ },
+ "1556144": {
+  "titolari": {
+   "Kashiwa Reysol": {
+    "modulo": "3-4-2-1",
+    "titolari": [
+     "K. Nagai",
+     "W. Harada",
+     "T. Koga",
+     "D. Sugioka",
+     "K. Yuba",
+     "Y. Yamada",
+     "S. Toshima",
+     "K. Endo",
+     "Y. Koizumi",
+     "M. Mitsuta",
+     "Y. Kakita"
+    ]
+   },
+   "JEF United Chiba": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "J. Suarez",
+     "T. Mae",
+     "D. Suzuki",
+     "B. Nduka",
+     "M. Hidaka",
+     "Leonardo Rocha",
+     "Dudu",
+     "T. Yasui",
+     "T. Tsukui",
+     "D. Ishikawa",
+     "K. Yamura"
+    ]
+   }
+  },
+  "partita": "Kashiwa Reysol - JEF United Chiba"
+ },
+ "1556150": {
+  "titolari": {
+   "Vissel Kobe": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "S. Gonda",
+     "G. Sakai",
+     "T. Yamakawa",
+     "Matheus Thuler",
+     "Diego",
+     "Y. Ideguchi",
+     "Yuan Iwamoto",
+     "D. Sasaki",
+     "Y. Muto",
+     "Y. Osako",
+     "R. Komatsu"
+    ]
+   },
+   "Mito Hollyhock": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "J. Słowik",
+     "T. Mase",
+     "Y. Kimoto",
+     "K. Itakura",
+     "Y. Tamura",
+     "J. Okumura",
+     "T. Semba",
+     "Y. Funabashi",
+     "K. Osaki",
+     "R. Nemoto",
+     "M. Nishihara"
+    ]
+   }
+  },
+  "partita": "Vissel Kobe - Mito Hollyhock"
  }
 }
