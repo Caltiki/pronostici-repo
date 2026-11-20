@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-20 05:03",
+ "aggiornato": "2026-11-20 05:15",
  "date": [
   "2026-11-06",
   "2026-11-07",
@@ -110,33 +110,33 @@
    "righe": 584
   },
   "2026-11-19": {
-   "presa": 174,
-   "sbagliata": 119,
+   "presa": 179,
+   "sbagliata": 114,
    "rimborso": 0,
    "attesa": 7,
    "righe": 300
   },
   "2026-11-20": {
-   "presa": 9,
-   "sbagliata": 7,
+   "presa": 18,
+   "sbagliata": 8,
    "rimborso": 0,
-   "attesa": 990,
-   "righe": 1006
+   "attesa": 968,
+   "righe": 994
   }
  },
  "taratura": {
   "totale": {
-   "righe": 8988,
-   "partite": 1210,
+   "righe": 8998,
+   "partite": 1211,
    "prevista": 54.9,
    "uscita": 54.4,
-   "scarto": -0.6,
+   "scarto": -0.5,
    "errore_std": 0.5
   },
   "fasce": [
    {
-    "righe": 1547,
-    "partite": 952,
+    "righe": 1548,
+    "partite": 953,
     "prevista": 37.3,
     "uscita": 35.9,
     "scarto": -1.5,
@@ -147,8 +147,8 @@
     "righe": 1128,
     "partite": 787,
     "prevista": 42.3,
-    "uscita": 43.7,
-    "scarto": 1.4,
+    "uscita": 43.8,
+    "scarto": 1.5,
     "errore_std": 1.5,
     "fascia": "40-45%"
    },
@@ -162,20 +162,20 @@
     "fascia": "45-50%"
    },
    {
-    "righe": 1347,
-    "partite": 854,
+    "righe": 1351,
+    "partite": 855,
     "prevista": 52.4,
-    "uscita": 51.4,
-    "scarto": -1.0,
+    "uscita": 51.7,
+    "scarto": -0.7,
     "errore_std": 1.4,
     "fascia": "50-55%"
    },
    {
-    "righe": 1136,
-    "partite": 803,
+    "righe": 1138,
+    "partite": 804,
     "prevista": 57.3,
-    "uscita": 54.1,
-    "scarto": -3.2,
+    "uscita": 54.3,
+    "scarto": -3.0,
     "errore_std": 1.5,
     "fascia": "55-60%"
    },
@@ -183,17 +183,17 @@
     "righe": 765,
     "partite": 547,
     "prevista": 62.2,
-    "uscita": 62.9,
-    "scarto": 0.7,
+    "uscita": 63.0,
+    "scarto": 0.8,
     "errore_std": 1.8,
     "fascia": "60-65%"
    },
    {
-    "righe": 594,
-    "partite": 466,
+    "righe": 595,
+    "partite": 467,
     "prevista": 67.4,
     "uscita": 70.9,
-    "scarto": 3.5,
+    "scarto": 3.6,
     "errore_std": 1.9,
     "fascia": "65-70%"
    },
@@ -207,11 +207,11 @@
     "fascia": "70-75%"
    },
    {
-    "righe": 523,
-    "partite": 469,
+    "righe": 525,
+    "partite": 470,
     "prevista": 77.8,
-    "uscita": 74.4,
-    "scarto": -3.4,
+    "uscita": 74.5,
+    "scarto": -3.3,
     "errore_std": 1.8,
     "fascia": "75-80%"
    },
@@ -254,49 +254,49 @@
   ],
   "gruppi": [
    {
-    "righe": 3971,
-    "partite": 1134,
+    "righe": 3977,
+    "partite": 1135,
     "prevista": 46.2,
-    "uscita": 46.2,
-    "scarto": -0.0,
+    "uscita": 46.3,
+    "scarto": 0.1,
     "errore_std": 0.8,
     "nome": "Combo"
    },
    {
-    "righe": 2492,
-    "partite": 1210,
+    "righe": 2494,
+    "partite": 1211,
     "prevista": 68.3,
     "uscita": 67.2,
-    "scarto": -1.1,
+    "scarto": -1.0,
     "errore_std": 0.9,
     "nome": "Under Over"
    },
    {
-    "righe": 1264,
-    "partite": 1210,
+    "righe": 1265,
+    "partite": 1211,
     "prevista": 57.2,
-    "uscita": 53.7,
-    "scarto": -3.5,
+    "uscita": 53.8,
+    "scarto": -3.4,
     "errore_std": 1.4,
     "nome": "Gol NoGol"
    },
    {
-    "righe": 1261,
-    "partite": 1210,
-    "prevista": 53.5,
-    "uscita": 55.3,
-    "scarto": 1.7,
+    "righe": 1262,
+    "partite": 1211,
+    "prevista": 53.6,
+    "uscita": 55.4,
+    "scarto": 1.8,
     "errore_std": 1.4,
     "nome": "1X2"
    }
   ],
   "fonti": [
    {
-    "righe": 4692,
-    "partite": 622,
+    "righe": 4702,
+    "partite": 623,
     "prevista": 54.8,
-    "uscita": 54.5,
-    "scarto": -0.3,
+    "uscita": 54.6,
+    "scarto": -0.2,
     "errore_std": 0.7,
     "nome": "Pinnacle"
    },
