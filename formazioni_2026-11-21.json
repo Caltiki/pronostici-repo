@@ -272,7 +272,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Ankle Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Brisbane Roar": {
+    "modulo": "3-5-2",
+    "titolari": [
+     "George Plusnin",
+     "Milorad Stajić",
+     "Tom Aldred",
+     "Joel King",
+     "Tate Russell",
+     "Tae Hee Nam",
+     "Noah Maieroni",
+     "Tyrese Francois",
+     "Sabit James Ngor",
+     "Virgiliu Postolachi",
+     "Justin Vidic"
+    ]
+   },
+   "Sydney": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Harrison Devenish-Meares",
+     "Rhyan Grant",
+     "Alexandar Popovic",
+     "Jordan Courtney-Perkins",
+     "Jacob Farrell",
+     "Rhys Youlley",
+     "Wataru Kamijo",
+     "Al Hassan Toure",
+     "Tiago Quintal",
+     "Ben Garuccio",
+     "Oriola Sunday"
+    ]
+   }
+  },
+  "partita": "Brisbane Roar - Sydney"
  },
  "1561448": {
   "assenti": [
@@ -445,7 +480,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Knee Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "FC Orenburg": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "B. Ovsyannikov",
+     "M. Sivis",
+     "A. Kasimov",
+     "D. Khotulev",
+     "E. Tsenov",
+     "R. Kul",
+     "E. Bolotov",
+     "J. Thompson",
+     "D. Puebla",
+     "D. Rybchinskiy",
+     "G. Guzina"
+    ]
+   },
+   "Baltika": {
+    "modulo": "5-4-1",
+    "titolari": [
+     "E. Latyshonok",
+     "M. Beveev",
+     "S. Varatynov",
+     "L. Mouyokolo",
+     "E. Anderson",
+     "M. Ryadno",
+     "F. Moufi",
+     "A. Mendel",
+     "A. Mourid",
+     "K. Shiltsov",
+     "E. Golenkov"
+    ]
+   }
+  },
+  "partita": "FC Orenburg - Baltika"
  },
  "1584470": {
   "assenti": [
@@ -7961,5 +8031,153 @@
    }
   },
   "partita": "Incheon United - Ulsan Hyundai FC"
+ },
+ "1509221": {
+  "titolari": {
+   "Samgurali": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "A. Siukaev",
+     "L. Gegetchkori",
+     "M. Shatirishvili",
+     "Ryan",
+     "G. Gogia",
+     "Vinicius Vianna",
+     "T. Gaprindashvili",
+     "I. Bidzinashvili",
+     "Gean Carlos",
+     "N. Tsetskhladze",
+     "I. Siradze"
+    ]
+   },
+   "FC Iberia 1999": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "G. Makaridze",
+     "G. Kobuladze",
+     "A. Amisulashvili",
+     "V. Selimović",
+     "J. Jinjolava",
+     "N. Dadiani",
+     "G. Kutsia",
+     "B. Kardava",
+     "N. Sikharulashvili",
+     "A. Dzagania",
+     "Lucas Brune"
+    ]
+   }
+  },
+  "partita": "Samgurali - FC Iberia 1999"
+ },
+ "1585838": {
+  "titolari": {
+   "Mardin 1969": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "E. Kardeşler",
+     "N. Yardımcı",
+     "K. Alıcı",
+     "U. Gezer",
+     "M. Şengül",
+     "A. Kabak",
+     "M. Wilks",
+     "T. Teklić",
+     "B. Alhassan",
+     "Z. Dimitrov",
+     "O. Kayode"
+    ]
+   },
+   "Bandırmaspor": {
+    "modulo": "3-4-3",
+    "titolari": [
+     "A. Alkan",
+     "B. Bekaroğlu",
+     "H. Bilgiç",
+     "Y. Kocatürk",
+     "Emirhan Ayhan",
+     "R. Mulumba",
+     "D. Liço",
+     "Lucas Lima",
+     "M. Gümüşkaya",
+     "G. Bruno",
+     "T. Kehinde"
+    ]
+   }
+  },
+  "partita": "Mardin 1969 - Bandırmaspor"
+ },
+ "1577587": {
+  "titolari": {
+   "Nizhny Novgorod": {
+    "modulo": "",
+    "titolari": [
+     "N. Ermakov",
+     "A. Timofeev",
+     "A. Sokolov",
+     "I. Imamov",
+     "V. Grulev",
+     "Y. Gudkov",
+     "N. Kakkoev",
+     "N. Kalinskiy",
+     "Y. Koledin",
+     "G. Popolitov",
+     "V. Sarveli"
+    ]
+   },
+   "Torpedo Moskva": {
+    "modulo": "",
+    "titolari": [
+     "R. Soldatenko",
+     "R. Apekov",
+     "I. Berkovskiy",
+     "S. Borodin",
+     "N. Bozov",
+     "M. Ćurić",
+     "D. Kornyushin",
+     "J. Okoronkwo",
+     "A. Pogosov",
+     "G. Shevchenko",
+     "A. Yushin"
+    ]
+   }
+  },
+  "partita": "Nizhny Novgorod - Torpedo Moskva"
+ },
+ "1585834": {
+  "titolari": {
+   "İstanbulspor": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "A. Tutar",
+     "E. Mendy",
+     "M. Ologo",
+     "Umut İslamoğlu",
+     "E. Uzunhan",
+     "D. Aydın",
+     "K. Sönmez",
+     "I. Iliev",
+     "I. Dayakli",
+     "M. Fall",
+     "M. Sol"
+    ]
+   },
+   "Keçiörengücü": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "M. Erdoğan",
+     "M. Keskin",
+     "Wellington Nascimento",
+     "A. Çelik",
+     "D. Aksu",
+     "I. Karaogul",
+     "İ. Akdağ",
+     "O. Roshi",
+     "E. Develi",
+     "M. Fofana",
+     "Ö. Demirel"
+    ]
+   }
+  },
+  "partita": "İstanbulspor - Keçiörengücü"
  }
 }
