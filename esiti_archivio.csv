@@ -12763,7 +12763,7 @@ Data,Ora,Campionato,Partita,Gruppo,Mercato,Sel,Prob,Equa,Margine,Fonte,InSchedin
 2026-11-21,16:00,England Championship,West Ham - Preston,Combo,Esito + Gol,1 + Over 1.5,68.7,1.45,4.2,Pinnacle,,sbagliata,1,1
 2026-11-21,16:00,England Championship,West Ham - Preston,Combo,Esito + Gol,1 + Over 2.5,56.5,1.77,4.2,Pinnacle,,sbagliata,1,1
 2026-11-21,16:00,England Championship,West Ham - Preston,Combo,Esito + Gol,1X + NoGol,49.0,2.04,4.2,Pinnacle,,sbagliata,1,1
-2026-11-21,16:00,England Championship,West Ham - Preston,Combo,Esito + Gol,1X + Over 2.5,60.3,1.66,4.2,Pinnacle,,sbagliata,1,1
+2026-11-21,16:00,England Championship,West Ham - Preston,Combo,Esito + Gol,1X + Over 2.5,60.3,1.66,4.2,Pinnacle,si,sbagliata,1,1
 2026-11-21,16:00,England Championship,West Ham - Preston,Under Over,OU 1.5,Over,84.0,1.19,4.2,Pinnacle,,presa,1,1
 2026-11-21,16:00,England Championship,West Ham - Preston,Under Over,OU 2.5,Over,66.7,1.5,4.2,Pinnacle,,sbagliata,1,1
 2026-11-21,16:00,England Non League Premier - Southern South,Wimborne Town - Bath City,1X2,1X2,1,41.6,2.4,9.8,Pinnacle,,sbagliata,0,2
@@ -13371,12 +13371,6 @@ Data,Ora,Campionato,Partita,Gruppo,Mercato,Sel,Prob,Equa,Margine,Fonte,InSchedin
 2026-11-21,19:00,Northern-Ireland Premiership,Larne - Ballymena United,Combo,Esito + Gol,1X + Under 2.5,36.7,2.72,5.0,Pinnacle,,sbagliata,4,0
 2026-11-21,19:00,Northern-Ireland Premiership,Larne - Ballymena United,Under Over,OU 1.5,Over,76.9,1.3,5.0,Pinnacle,,presa,4,0
 2026-11-21,19:00,Northern-Ireland Premiership,Larne - Ballymena United,Under Over,OU 2.5,Over,55.8,1.79,5.0,Pinnacle,,presa,4,0
-2026-11-21,19:00,Portugal Taça De Portugal,Sporting CP - UD da Serra,1X2,1X2,1,97.8,1.02,0.3,FootyMetrics,,presa,4,0
-2026-11-21,19:00,Portugal Taça De Portugal,Sporting CP - UD da Serra,Gol NoGol,BTTS,NoGol,70.5,1.42,0.3,FootyMetrics,,presa,4,0
-2026-11-21,19:00,Portugal Taça De Portugal,Sporting CP - UD da Serra,Combo,Esito + Gol,1 + NoGol,73.2,1.37,0.3,FootyMetrics,,presa,4,0
-2026-11-21,19:00,Portugal Taça De Portugal,Sporting CP - UD da Serra,Combo,Esito + Gol,1X + NoGol,73.7,1.36,0.3,FootyMetrics,,presa,4,0
-2026-11-21,19:00,Portugal Taça De Portugal,Sporting CP - UD da Serra,Under Over,OU 1.5,Over,96.5,1.04,0.3,FootyMetrics,,presa,4,0
-2026-11-21,19:00,Portugal Taça De Portugal,Sporting CP - UD da Serra,Under Over,OU 2.5,Over,89.2,1.12,0.3,FootyMetrics,,presa,4,0
 2026-11-21,19:00,Argentina Primera B Metropolitana,Sportivo Italiano - Deportivo Armenio,1X2,1X2,1,38.0,2.63,9.7,Pinnacle,,sbagliata,0,0
 2026-11-21,19:00,Argentina Primera B Metropolitana,Sportivo Italiano - Deportivo Armenio,Gol NoGol,BTTS,NoGol,60.5,1.65,9.7,Pinnacle,,presa,0,0
 2026-11-21,19:00,Argentina Primera B Metropolitana,Sportivo Italiano - Deportivo Armenio,Combo,Esito + Gol,1X + NoGol,39.6,2.53,9.7,Pinnacle,,presa,0,0
@@ -13588,8 +13582,7 @@ Data,Ora,Campionato,Partita,Gruppo,Mercato,Sel,Prob,Equa,Margine,Fonte,InSchedin
 2026-11-21,21:00,Argentina Primera Nacional,Ciudad de Bolívar - Atlanta,Under Over,OU 1.5,Over,59.2,1.69,4.4,Pinnacle,,sbagliata,0,1
 2026-11-21,21:00,Argentina Primera Nacional,Ciudad de Bolívar - Atlanta,Under Over,OU 2.5,Under,68.1,1.47,4.4,Pinnacle,,presa,0,1
 2026-11-21,21:00,Netherlands Eredivisie,Groningen - Heerenveen,1X2,1X2,2,39.6,2.53,3.1,Pinnacle,,presa,1,3
-2026-11-21,21:00,Netherlands Eredivisie,Groningen - Heerenveen,Gol NoGol,BTTS,Gol,65.7,1.52,3.1,Pinnacle,si,presa,1,3
-2026-11-21,21:00,Netherlands Eredivisie,Groningen - Heerenveen,Gol NoGol,BTTS,NoGol,34.3,2.91,3.1,Pinnacle,,sbagliata,1,3
+2026-11-21,21:00,Netherlands Eredivisie,Groningen - Heerenveen,Gol NoGol,BTTS,Gol,65.7,1.52,3.1,Pinnacle,,presa,1,3
 2026-11-21,21:00,Netherlands Eredivisie,Groningen - Heerenveen,Combo,Esito + Gol,2 + Over 1.5,35.3,2.83,3.1,Pinnacle,,presa,1,3
 2026-11-21,21:00,Netherlands Eredivisie,Groningen - Heerenveen,Combo,Esito + Gol,X2 + Over 2.5,39.3,2.54,3.1,Pinnacle,,presa,1,3
 2026-11-21,21:00,Netherlands Eredivisie,Groningen - Heerenveen,Under Over,OU 1.5,Over,85.5,1.17,3.1,Pinnacle,,presa,1,3

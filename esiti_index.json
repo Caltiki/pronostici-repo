@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-21 23:30",
+ "aggiornato": "2026-11-21 23:41",
  "date": [
   "2026-11-07",
   "2026-11-08",
@@ -117,17 +117,17 @@
    "righe": 1168
   },
   "2026-11-21": {
-   "presa": 1606,
-   "sbagliata": 1452,
+   "presa": 1600,
+   "sbagliata": 1451,
    "rimborso": 0,
    "attesa": 317,
-   "righe": 3375
+   "righe": 3368
   }
  },
  "taratura": {
   "totale": {
-   "righe": 13146,
-   "partite": 1806,
+   "righe": 13139,
+   "partite": 1805,
    "prevista": 54.6,
    "uscita": 53.9,
    "scarto": -0.7,
@@ -198,11 +198,11 @@
     "fascia": "65-70%"
    },
    {
-    "righe": 629,
-    "partite": 531,
+    "righe": 626,
+    "partite": 530,
     "prevista": 72.4,
-    "uscita": 72.8,
-    "scarto": 0.4,
+    "uscita": 72.7,
+    "scarto": 0.3,
     "errore_std": 1.8,
     "fascia": "70-75%"
    },
@@ -225,10 +225,10 @@
     "fascia": "80-85%"
    },
    {
-    "righe": 214,
-    "partite": 203,
+    "righe": 213,
+    "partite": 202,
     "prevista": 87.3,
-    "uscita": 87.9,
+    "uscita": 87.8,
     "scarto": 0.5,
     "errore_std": 2.3,
     "fascia": "85-90%"
@@ -243,28 +243,28 @@
     "fascia": "90-95%"
    },
    {
-    "righe": 19,
-    "partite": 13,
-    "prevista": 96.5,
-    "uscita": 94.7,
-    "scarto": -1.8,
-    "errore_std": 4.2,
+    "righe": 17,
+    "partite": 12,
+    "prevista": 96.4,
+    "uscita": 94.1,
+    "scarto": -2.3,
+    "errore_std": 4.5,
     "fascia": "95-100%"
    }
   ],
   "gruppi": [
    {
-    "righe": 5716,
-    "partite": 1699,
+    "righe": 5714,
+    "partite": 1698,
     "prevista": 45.6,
     "uscita": 45.2,
-    "scarto": -0.3,
+    "scarto": -0.4,
     "errore_std": 0.7,
     "nome": "Combo"
    },
    {
-    "righe": 3696,
-    "partite": 1806,
+    "righe": 3694,
+    "partite": 1805,
     "prevista": 68.2,
     "uscita": 67.2,
     "scarto": -1.0,
@@ -272,17 +272,17 @@
     "nome": "Under Over"
    },
    {
-    "righe": 1867,
-    "partite": 1806,
+    "righe": 1866,
+    "partite": 1805,
     "prevista": 52.6,
-    "uscita": 53.5,
+    "uscita": 53.4,
     "scarto": 0.9,
     "errore_std": 1.2,
     "nome": "1X2"
    },
    {
-    "righe": 1867,
-    "partite": 1806,
+    "righe": 1865,
+    "partite": 1805,
     "prevista": 57.3,
     "uscita": 54.6,
     "scarto": -2.8,
@@ -292,7 +292,7 @@
   ],
   "fonti": [
    {
-    "righe": 8755,
+    "righe": 8754,
     "partite": 1205,
     "prevista": 54.4,
     "uscita": 53.8,
@@ -301,10 +301,10 @@
     "nome": "Pinnacle"
    },
    {
-    "righe": 3955,
-    "partite": 542,
+    "righe": 3949,
+    "partite": 541,
     "prevista": 54.9,
-    "uscita": 53.4,
+    "uscita": 53.3,
     "scarto": -1.6,
     "errore_std": 0.8,
     "nome": "FootyMetrics"
