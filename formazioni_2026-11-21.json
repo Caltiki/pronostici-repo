@@ -311,17 +311,13 @@
  },
  "1561448": {
   "assenti": [
-   "Alexandre Jesus (FC Orenburg)",
    "B. Bosch (FC Orenburg)",
    "R. Mejia (FC Orenburg)",
    "J. Palacios (FC Orenburg)",
    "M. Rudakov (FC Orenburg)",
-   "M. Savelyev (FC Orenburg)",
    "A. Tataev (FC Orenburg)",
-   "D. Vasiljev (FC Orenburg)",
    "A. Filin (Baltika)",
-   "M. Shnaptsev (Baltika)",
-   "B. Gil (Baltika)"
+   "M. Shnaptsev (Baltika)"
   ],
   "assenti_peso": [
    {
@@ -355,21 +351,6 @@
     "quota_gol": 0
    },
    {
-    "nome": "B. Gil",
-    "squadra": "Baltika",
-    "tipo": "Questionable",
-    "motivo": "Rest",
-    "pres": 13,
-    "tit": 8,
-    "min": 745,
-    "gol": 5,
-    "ass": 1,
-    "voto": 6.86,
-    "gol_squadra": 17,
-    "partite_squadra": 14,
-    "quota_gol": 29
-   },
-   {
     "nome": "M. Shnaptsev",
     "squadra": "Baltika",
     "tipo": "Missing Fixture",
@@ -385,21 +366,6 @@
     "quota_gol": 0
    },
    {
-    "nome": "Alexandre Jesus",
-    "squadra": "FC Orenburg",
-    "tipo": "Missing Fixture",
-    "motivo": "Injury",
-    "pres": 8,
-    "tit": 0,
-    "min": 122,
-    "gol": 1,
-    "ass": 0,
-    "voto": 6.45,
-    "gol_squadra": 14,
-    "partite_squadra": 14,
-    "quota_gol": 7
-   },
-   {
     "nome": "M. Rudakov",
     "squadra": "FC Orenburg",
     "tipo": "Missing Fixture",
@@ -410,21 +376,6 @@
     "gol": 0,
     "ass": 0,
     "voto": 5.9,
-    "gol_squadra": 14,
-    "partite_squadra": 14,
-    "quota_gol": 0
-   },
-   {
-    "nome": "M. Savelyev",
-    "squadra": "FC Orenburg",
-    "tipo": "Missing Fixture",
-    "motivo": "Injury",
-    "pres": 1,
-    "tit": 1,
-    "min": 49,
-    "gol": 0,
-    "ass": 0,
-    "voto": 5.3,
     "gol_squadra": 14,
     "partite_squadra": 14,
     "quota_gol": 0
@@ -452,21 +403,6 @@
     "pres": 1,
     "tit": 0,
     "min": 21,
-    "gol": 0,
-    "ass": 0,
-    "voto": 6.3,
-    "gol_squadra": 14,
-    "partite_squadra": 14,
-    "quota_gol": 0
-   },
-   {
-    "nome": "D. Vasiljev",
-    "squadra": "FC Orenburg",
-    "tipo": "Missing Fixture",
-    "motivo": "Injury",
-    "pres": 1,
-    "tit": 0,
-    "min": 16,
     "gol": 0,
     "ass": 0,
     "voto": 6.3,
@@ -702,17 +638,51 @@
     "tipo": "Missing Fixture",
     "motivo": "Back Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Gençlerbirliği S.K.": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "İrfan Can Eğribayat",
+     "Franco Tongya",
+     "Arda Cagan Celik",
+     "Cheikh Niasse",
+     "Yiğit Hamza Aydar",
+     "Ousmane Diabate",
+     "Oğulcan Ülgün",
+     "Adama Malouda Traoré",
+     "Rafael Luis",
+     "Tiago Gouveia",
+     "Pedro Mendes"
+    ]
+   },
+   "Gaziantep FK": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "Kacper Tobiasz",
+     "Deian Sorescu",
+     "Arda Kızıldağ",
+     "Myenty Abena",
+     "Efe Sarıkaya",
+     "Ulrich Meleke",
+     "Kacper Kozłowski",
+     "Gidado Victor Ntino-Emo",
+     "Alexandru Maxim",
+     "Drissa Camara",
+     "Halil Dervişoğlu"
+    ]
+   }
+  },
+  "partita": "Gençlerbirliği S.K. - Gaziantep FK"
  },
  "1561443": {
   "assenti": [
-   "Benchimol (Akron)",
    "M. Bokoev (Akron)",
    "Y. Zheleznov (Akron)",
+   "Benchimol (Akron)",
    "A. Sutormin (Fakel)",
    "D. Todorovic (Fakel)",
-   "I. Alshin (Fakel)",
-   "Benchimol (Akron)"
+   "I. Alshin (Fakel)"
   ],
   "assenti_peso": [
    {
@@ -744,21 +714,6 @@
     "gol_squadra": 9,
     "partite_squadra": 14,
     "quota_gol": 0
-   },
-   {
-    "nome": "Benchimol",
-    "squadra": "Akron",
-    "tipo": "Missing Fixture",
-    "motivo": "Inactive",
-    "pres": 11,
-    "tit": 9,
-    "min": 809,
-    "gol": 4,
-    "ass": 2,
-    "voto": 7.04,
-    "gol_squadra": 17,
-    "partite_squadra": 14,
-    "quota_gol": 24
    },
    {
     "nome": "Benchimol",
@@ -820,7 +775,42 @@
     "partite_squadra": 14,
     "quota_gol": 0
    }
-  ]
+  ],
+  "titolari": {
+   "Akron": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "V. Gudiev",
+     "V. Bardybakhin",
+     "João Escoval",
+     "I. Nedelcearu",
+     "D. Popenkov",
+     "K. Bistrović",
+     "S. Lončar",
+     "K. Maradishvili",
+     "D. Pestryakov",
+     "S. Tedić",
+     "A. Shumanskiy"
+    ]
+   },
+   "Fakel": {
+    "modulo": "5-3-2",
+    "titolari": [
+     "D. Frolkin",
+     "A. Kovalev",
+     "A. Gabaraev",
+     "Clayton",
+     "M. Bardachev",
+     "R. Netfullin",
+     "V. Yakimov",
+     "H. El Mahasni",
+     "B. Magomedov",
+     "B. Pusi",
+     "A. Koksharov"
+    ]
+   }
+  },
+  "partita": "Akron - Fakel"
  },
  "1557474": {
   "assenti": [
@@ -906,7 +896,42 @@
     "partite_squadra": 13,
     "quota_gol": 7
    }
-  ]
+  ],
+  "titolari": {
+   "Manchester City": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "G. Donnarumma",
+     "A. Khusanov",
+     "Rúben Dias",
+     "M. Guéhi",
+     "N. O&apos;Reilly",
+     "A. Bouaddi",
+     "E. Anderson",
+     "I. Ndiaye",
+     "P. Foden",
+     "J. Doku",
+     "E. Haaland"
+    ]
+   },
+   "Fulham": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "B. Leno",
+     "K. Tete",
+     "D. Affengruber",
+     "C. Bassey",
+     "R. Sessegnon",
+     "S. Berge",
+     "S. Charles",
+     "Oscar Bobb",
+     "Joshua King",
+     "A. Iwobi",
+     "Rodrigo Muniz"
+    ]
+   }
+  },
+  "partita": "Manchester City - Fulham"
  },
  "1563267": {
   "assenti": [
@@ -918,11 +943,11 @@
    "C. De Norre (Millwall)",
    "L. Jensen (Millwall)",
    "M. Luongo (Millwall)",
-   "R. Burrell (QPR)",
    "T. Lamptey (QPR)",
+   "A. S. Mbengue (QPR)",
+   "R. Burrell (QPR)",
    "A. Lloyd (QPR)",
-   "N. Madsen (QPR)",
-   "A. S. Mbengue (QPR)"
+   "N. Madsen (QPR)"
   ],
   "assenti_peso": [
    {
@@ -943,7 +968,7 @@
    {
     "nome": "R. Burrell",
     "squadra": "QPR",
-    "tipo": "Missing Fixture",
+    "tipo": "Questionable",
     "motivo": "Muscle Injury",
     "pres": 9,
     "tit": 7,
@@ -973,7 +998,7 @@
    {
     "nome": "N. Madsen",
     "squadra": "QPR",
-    "tipo": "Missing Fixture",
+    "tipo": "Questionable",
     "motivo": "Muscle Injury",
     "pres": 10,
     "tit": 8,
@@ -1018,7 +1043,7 @@
    {
     "nome": "A. Lloyd",
     "squadra": "QPR",
-    "tipo": "Missing Fixture",
+    "tipo": "Questionable",
     "motivo": "Hamstring Injury",
     "pres": 9,
     "tit": 3,
@@ -1111,7 +1136,42 @@
     "tipo": "Questionable",
     "motivo": "Knee Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Millwall": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "L. Jensen",
+     "M. Sykes",
+     "C. Taylor",
+     "J. Cooper",
+     "Zak Norton Sturge",
+     "C. De Norre",
+     "Jenson Metcalfe",
+     "C. Neghli",
+     "T. Arconte",
+     "K. Lisbie",
+     "L. Dykes"
+    ]
+   },
+   "QPR": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "P. Charles",
+     "K. Adamson",
+     "R. Edwards",
+     "J. Clarke-Salter",
+     "D. Cirkin",
+     "B. Kemper",
+     "N. Madsen",
+     "G. Kamara",
+     "P. Smyth",
+     "R. Kone",
+     "I. Chair"
+    ]
+   }
+  },
+  "partita": "Millwall - QPR"
  },
  "1563268": {
   "assenti": [
@@ -1123,6 +1183,8 @@
    "C. Chambers (Cardiff)",
    "I. Davies (Cardiff)",
    "D. Lawlor (Cardiff)",
+   "G. Osho (Cardiff)",
+   "P. Ng (Cardiff)",
    "C. Robinson (Cardiff)"
   ],
   "assenti_peso": [
@@ -1137,6 +1199,36 @@
     "gol": 0,
     "ass": 1,
     "voto": 7.11,
+    "gol_squadra": 30,
+    "partite_squadra": 17,
+    "quota_gol": 0
+   },
+   {
+    "nome": "P. Ng",
+    "squadra": "Cardiff",
+    "tipo": "Questionable",
+    "motivo": "Inactive",
+    "pres": 16,
+    "tit": 16,
+    "min": 1422,
+    "gol": 1,
+    "ass": 1,
+    "voto": 6.98,
+    "gol_squadra": 30,
+    "partite_squadra": 17,
+    "quota_gol": 3
+   },
+   {
+    "nome": "G. Osho",
+    "squadra": "Cardiff",
+    "tipo": "Missing Fixture",
+    "motivo": "Knee Injury",
+    "pres": 11,
+    "tit": 11,
+    "min": 975,
+    "gol": 0,
+    "ass": 0,
+    "voto": 7.04,
     "gol_squadra": 30,
     "partite_squadra": 17,
     "quota_gol": 0
@@ -1234,24 +1326,74 @@
     "tipo": "Missing Fixture",
     "motivo": "Knee Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Norwich": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "D. Grimshaw",
+     "J. Stacey",
+     "Ruairi McConville",
+     "H. Darling",
+     "B. Chrisene",
+     "K. McLean",
+     "Jacob Wright",
+     "A. Brooks",
+     "P. Maghoma",
+     "A. Musaba",
+     "M. Kvistgaarden"
+    ]
+   },
+   "Cardiff": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "N. Trott",
+     "R. Kpakio",
+     "W. Fish",
+     "K. Bielik",
+     "C. Scanlon",
+     "A. Robertson",
+     "J. Moylan",
+     "O. Tanner",
+     "R. Colwill",
+     "C. Willock",
+     "Y. Salech"
+    ]
+   }
+  },
+  "partita": "Norwich - Cardiff"
  },
  "1563270": {
   "assenti": [
+   "K. Schlotterbeck (Southampton)",
    "C. Jander (Southampton)",
-   "C. Larin (Southampton)",
-   "P. Agyemang (Derby)",
-   "E. Cashin (Derby)",
-   "M. Clarke (Derby)",
    "C. Forsyth (Derby)",
-   "R. Hedges (Derby)",
    "S. Langas (Derby)",
    "D. Murkin (Derby)",
    "S. Szmodics (Derby)",
    "C. Taylor (Derby)",
+   "P. Agyemang (Derby)",
+   "E. Cashin (Derby)",
+   "M. Clarke (Derby)",
+   "R. Hedges (Derby)",
    "J. Ward (Derby)"
   ],
   "assenti_peso": [
+   {
+    "nome": "K. Schlotterbeck",
+    "squadra": "Southampton",
+    "tipo": "Missing Fixture",
+    "motivo": "Shoulder Injury",
+    "pres": 13,
+    "tit": 13,
+    "min": 1088,
+    "gol": 2,
+    "ass": 0,
+    "voto": 7.19,
+    "gol_squadra": 32,
+    "partite_squadra": 17,
+    "quota_gol": 6
+   },
    {
     "nome": "S. Szmodics",
     "squadra": "Derby",
@@ -1285,7 +1427,7 @@
    {
     "nome": "J. Ward",
     "squadra": "Derby",
-    "tipo": "Missing Fixture",
+    "tipo": "Questionable",
     "motivo": "Back Injury",
     "pres": 11,
     "tit": 8,
@@ -1300,7 +1442,7 @@
    {
     "nome": "R. Hedges",
     "squadra": "Derby",
-    "tipo": "Missing Fixture",
+    "tipo": "Questionable",
     "motivo": "Muscle Injury",
     "pres": 12,
     "tit": 10,
@@ -1311,21 +1453,6 @@
     "gol_squadra": 15,
     "partite_squadra": 16,
     "quota_gol": 0
-   },
-   {
-    "nome": "C. Larin",
-    "squadra": "Southampton",
-    "tipo": "Questionable",
-    "motivo": "Hamstring Injury",
-    "pres": 13,
-    "tit": 10,
-    "min": 776,
-    "gol": 8,
-    "ass": 0,
-    "voto": 7.07,
-    "gol_squadra": 32,
-    "partite_squadra": 17,
-    "quota_gol": 25
    },
    {
     "nome": "C. Taylor",
@@ -1375,7 +1502,7 @@
    {
     "nome": "E. Cashin",
     "squadra": "Derby",
-    "tipo": "Missing Fixture",
+    "tipo": "Questionable",
     "motivo": "Calf Injury",
     "pres": 2,
     "tit": 2,
@@ -1390,7 +1517,7 @@
    {
     "nome": "M. Clarke",
     "squadra": "Derby",
-    "tipo": "Missing Fixture",
+    "tipo": "Questionable",
     "motivo": "Calf Injury",
     "pres": 1,
     "tit": 1,
@@ -1403,18 +1530,53 @@
     "quota_gol": 0
    },
    {
-    "nome": "P. Agyemang",
-    "squadra": "Derby",
-    "tipo": "Missing Fixture",
-    "motivo": "Achilles Tendon Injury"
-   },
-   {
     "nome": "D. Murkin",
     "squadra": "Derby",
     "tipo": "Missing Fixture",
     "motivo": "Hamstring Injury"
+   },
+   {
+    "nome": "P. Agyemang",
+    "squadra": "Derby",
+    "tipo": "Questionable",
+    "motivo": "Achilles Tendon Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Southampton": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Daniel Peretz",
+     "Z. Abbott",
+     "T. Fellows",
+     "J. Stephens",
+     "R. Manning",
+     "F. Downes",
+     "J. Ward-Prowse",
+     "Cameron Bragg",
+     "F. Azaz",
+     "S. Edozie",
+     "C. Larin"
+    ]
+   },
+   "Derby": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "J. Widell Zetterström",
+     "R. Nyambe",
+     "S. Duffy",
+     "J. Robinson",
+     "D. Sanderson",
+     "A. Mowatt",
+     "D. Ozoh",
+     "M. Fuseini",
+     "B. Clark",
+     "R. Brewster",
+     "C. Morris"
+    ]
+   }
+  },
+  "partita": "Southampton - Derby"
  },
  "1570453": {
   "assenti": [
@@ -1495,9 +1657,9 @@
  },
  "1494810": {
   "assenti": [
+   "D. Braut (Tromso)",
    "T. Nyhammer (Tromso)",
    "S. Prestmo (Tromso)",
-   "M. Tonnessen (Tromso)",
    "S. Bjorshol (Viking)",
    "M. Roseth (Viking)"
   ],
@@ -1518,19 +1680,19 @@
     "quota_gol": 14
    },
    {
-    "nome": "M. Tonnessen",
+    "nome": "D. Braut",
     "squadra": "Tromso",
-    "tipo": "Questionable",
-    "motivo": "Thigh Injury",
-    "pres": 11,
-    "tit": 7,
-    "min": 479,
-    "gol": 0,
-    "ass": 0,
-    "voto": 6.46,
+    "tipo": "Missing Fixture",
+    "motivo": "Ankle Injury",
+    "pres": 25,
+    "tit": 5,
+    "min": 723,
+    "gol": 2,
+    "ass": 1,
+    "voto": 6.63,
     "gol_squadra": 42,
     "partite_squadra": 33,
-    "quota_gol": 0
+    "quota_gol": 5
    },
    {
     "nome": "S. Bjorshol",
@@ -1563,26 +1725,42 @@
  },
  "1584466": {
   "assenti": [
-   "L. Dellova (Amed)",
    "D. Demir (Amed)",
    "M. Yildirim (Amed)",
+   "E. Krasniqi (Amed)",
    "K. Alikulov (Rizespor)",
+   "C. Bozdogan (Rizespor)",
    "G. Borrelli (Rizespor)",
-   "C. Bozdogan (Rizespor)"
+   "V. Mihaila (Rizespor)"
   ],
   "assenti_peso": [
    {
-    "nome": "L. Dellova",
+    "nome": "E. Krasniqi",
     "squadra": "Amed",
-    "tipo": "Missing Fixture",
-    "motivo": "Injury",
-    "pres": 9,
-    "tit": 9,
-    "min": 777,
-    "gol": 0,
-    "ass": 1,
-    "voto": 7.1,
+    "tipo": "Questionable",
+    "motivo": "Muscle Injury",
+    "pres": 11,
+    "tit": 11,
+    "min": 928,
+    "gol": 1,
+    "ass": 2,
+    "voto": 6.93,
     "gol_squadra": 27,
+    "partite_squadra": 11,
+    "quota_gol": 4
+   },
+   {
+    "nome": "V. Mihaila",
+    "squadra": "Rizespor",
+    "tipo": "Questionable",
+    "motivo": "Calf Injury",
+    "pres": 6,
+    "tit": 2,
+    "min": 211,
+    "gol": 0,
+    "ass": 0,
+    "voto": 6.48,
+    "gol_squadra": 13,
     "partite_squadra": 11,
     "quota_gol": 0
    },
@@ -1604,7 +1782,7 @@
    {
     "nome": "C. Bozdogan",
     "squadra": "Rizespor",
-    "tipo": "Questionable",
+    "tipo": "Missing Fixture",
     "motivo": "Health problems",
     "pres": 3,
     "tit": 0,
@@ -1638,13 +1816,15 @@
  },
  "1584469": {
   "assenti": [
-   "U. Cakir (Galatasaray)",
    "R. Leao (Galatasaray)",
    "V. Osimhen (Galatasaray)",
+   "A. Batrakov (Galatasaray)",
+   "U. Cakir (Galatasaray)",
    "R. Sallai (Galatasaray)",
    "D. Sanchez (Galatasaray)",
-   "F. Kaya (Samsunspor)",
    "Y. E. Cift (Samsunspor)",
+   "F. Kaya (Samsunspor)",
+   "C. Yuksel (Samsunspor)",
    "E. Kilinc (Samsunspor)",
    "A. Sekongo (Samsunspor)"
   ],
@@ -1667,7 +1847,7 @@
    {
     "nome": "U. Cakir",
     "squadra": "Galatasaray",
-    "tipo": "Missing Fixture",
+    "tipo": "Questionable",
     "motivo": "Shoulder Injury",
     "pres": 14,
     "tit": 14,
@@ -1682,7 +1862,7 @@
    {
     "nome": "R. Sallai",
     "squadra": "Galatasaray",
-    "tipo": "Missing Fixture",
+    "tipo": "Questionable",
     "motivo": "Hamstring Injury",
     "pres": 14,
     "tit": 13,
@@ -1693,6 +1873,21 @@
     "gol_squadra": 31,
     "partite_squadra": 15,
     "quota_gol": 3
+   },
+   {
+    "nome": "A. Batrakov",
+    "squadra": "Galatasaray",
+    "tipo": "Questionable",
+    "motivo": "Knee Injury",
+    "pres": 13,
+    "tit": 10,
+    "min": 831,
+    "gol": 6,
+    "ass": 3,
+    "voto": 7.41,
+    "gol_squadra": 31,
+    "partite_squadra": 15,
+    "quota_gol": 19
    },
    {
     "nome": "V. Osimhen",
@@ -1740,6 +1935,21 @@
     "quota_gol": 6
    },
    {
+    "nome": "C. Yuksel",
+    "squadra": "Samsunspor",
+    "tipo": "Missing Fixture",
+    "motivo": "Hamstring Injury",
+    "pres": 8,
+    "tit": 8,
+    "min": 577,
+    "gol": 1,
+    "ass": 0,
+    "voto": 7.08,
+    "gol_squadra": 11,
+    "partite_squadra": 11,
+    "quota_gol": 9
+   },
+   {
     "nome": "A. Sekongo",
     "squadra": "Samsunspor",
     "tipo": "Questionable",
@@ -1757,7 +1967,7 @@
    {
     "nome": "Y. E. Cift",
     "squadra": "Samsunspor",
-    "tipo": "Questionable",
+    "tipo": "Missing Fixture",
     "motivo": "Inactive",
     "pres": 6,
     "tit": 3,
@@ -2034,29 +2244,12 @@
    "T. Ayari (AIK Stockholm)",
    "I. Cisse (AIK Stockholm)",
    "Y. Geiger (AIK Stockholm)",
-   "A. Helm (AIK Stockholm)",
    "S. Papagiannopoulos (AIK Stockholm)",
    "A. Redkin (AIK Stockholm)",
    "J. Pikkarainen (Degerfors IF)",
-   "S. Diatara (Degerfors IF)",
    "S. Ohlsson (Degerfors IF)"
   ],
   "assenti_peso": [
-   {
-    "nome": "S. Diatara",
-    "squadra": "Degerfors IF",
-    "tipo": "Questionable",
-    "motivo": "Injury",
-    "pres": 27,
-    "tit": 22,
-    "min": 1925,
-    "gol": 1,
-    "ass": 1,
-    "voto": 6.47,
-    "gol_squadra": 21,
-    "partite_squadra": 28,
-    "quota_gol": 5
-   },
    {
     "nome": "S. Ohlsson",
     "squadra": "Degerfors IF",
@@ -2148,21 +2341,6 @@
     "quota_gol": 5
    },
    {
-    "nome": "A. Helm",
-    "squadra": "AIK Stockholm",
-    "tipo": "Missing Fixture",
-    "motivo": "Knee Injury",
-    "pres": 4,
-    "tit": 1,
-    "min": 135,
-    "gol": 1,
-    "ass": 1,
-    "voto": 5.4,
-    "gol_squadra": 46,
-    "partite_squadra": 26,
-    "quota_gol": 2
-   },
-   {
     "nome": "A. Redkin",
     "squadra": "AIK Stockholm",
     "tipo": "Missing Fixture",
@@ -2173,17 +2351,32 @@
  "1494342": {
   "assenti": [
    "V. Dalsgaard (Mjallby AIF)",
+   "T. Helge (Mjallby AIF)",
    "M. Isaksson (Mjallby AIF)",
    "T. Stavitski (Mjallby AIF)",
-   "I. Assibu (Malmo FF)",
+   "R. Wallinder (Mjallby AIF)",
    "K. Busuladzic (Malmo FF)",
    "A. Djuric (Malmo FF)",
    "P. Jansson (Malmo FF)",
-   "N. John (Malmo FF)",
    "W. Kamanzi (Malmo FF)",
    "O. Sjostrand (Malmo FF)"
   ],
   "assenti_peso": [
+   {
+    "nome": "R. Wallinder",
+    "squadra": "Mjallby AIF",
+    "tipo": "Questionable",
+    "motivo": "Inactive",
+    "pres": 24,
+    "tit": 24,
+    "min": 1895,
+    "gol": 0,
+    "ass": 0,
+    "voto": 6.53,
+    "gol_squadra": 33,
+    "partite_squadra": 35,
+    "quota_gol": 0
+   },
    {
     "nome": "A. Djuric",
     "squadra": "Malmo FF",
@@ -2230,21 +2423,6 @@
     "quota_gol": 2
    },
    {
-    "nome": "N. John",
-    "squadra": "Malmo FF",
-    "tipo": "Missing Fixture",
-    "motivo": "Inactive",
-    "pres": 12,
-    "tit": 7,
-    "min": 504,
-    "gol": 1,
-    "ass": 1,
-    "voto": 6.75,
-    "gol_squadra": 40,
-    "partite_squadra": 27,
-    "quota_gol": 2
-   },
-   {
     "nome": "P. Jansson",
     "squadra": "Malmo FF",
     "tipo": "Missing Fixture",
@@ -2260,18 +2438,18 @@
     "quota_gol": 2
    },
    {
-    "nome": "I. Assibu",
-    "squadra": "Malmo FF",
+    "nome": "T. Helge",
+    "squadra": "Mjallby AIF",
     "tipo": "Missing Fixture",
     "motivo": "Inactive",
-    "pres": 8,
-    "tit": 0,
-    "min": 205,
+    "pres": 5,
+    "tit": 1,
+    "min": 162,
     "gol": 0,
     "ass": 0,
-    "voto": 6.58,
-    "gol_squadra": 40,
-    "partite_squadra": 27,
+    "voto": 6.31,
+    "gol_squadra": 33,
+    "partite_squadra": 35,
     "quota_gol": 0
    },
    {
@@ -2884,46 +3062,78 @@
  },
  "1561450": {
   "assenti": [
-   "A. Jukic (Rubin)",
-   "K. Nizhegorodov (Rubin)",
+   "D. Odoevskiy (Zenit)",
+   "N. Alip (Zenit)",
+   "K. Andrade (Zenit)",
+   "Douglas Santos (Zenit)",
    "A. Erokhin (Zenit)",
-   "D. Odoevskiy (Zenit)"
+   "R. Vega (Zenit)"
   ],
   "assenti_peso": [
    {
-    "nome": "A. Jukic",
-    "squadra": "Rubin",
-    "tipo": "Missing Fixture",
-    "motivo": "Injury",
-    "pres": 6,
-    "tit": 4,
-    "min": 358,
-    "gol": 1,
-    "ass": 1,
-    "voto": 6.94,
-    "gol_squadra": 13,
-    "partite_squadra": 14,
-    "quota_gol": 8
-   },
-   {
-    "nome": "K. Nizhegorodov",
-    "squadra": "Rubin",
+    "nome": "R. Vega",
+    "squadra": "Zenit",
     "tipo": "Questionable",
-    "motivo": "Injury",
-    "pres": 2,
-    "tit": 2,
-    "min": 128,
+    "motivo": "Rest",
+    "pres": 11,
+    "tit": 8,
+    "min": 664,
     "gol": 0,
     "ass": 0,
-    "voto": 4.03,
-    "gol_squadra": 13,
+    "voto": 6.23,
+    "gol_squadra": 31,
     "partite_squadra": 14,
     "quota_gol": 0
    },
    {
+    "nome": "Douglas Santos",
+    "squadra": "Zenit",
+    "tipo": "Questionable",
+    "motivo": "Rest",
+    "pres": 11,
+    "tit": 6,
+    "min": 646,
+    "gol": 1,
+    "ass": 1,
+    "voto": 6.78,
+    "gol_squadra": 31,
+    "partite_squadra": 14,
+    "quota_gol": 3
+   },
+   {
+    "nome": "N. Alip",
+    "squadra": "Zenit",
+    "tipo": "Questionable",
+    "motivo": "Rest",
+    "pres": 11,
+    "tit": 6,
+    "min": 641,
+    "gol": 0,
+    "ass": 0,
+    "voto": 6.27,
+    "gol_squadra": 31,
+    "partite_squadra": 14,
+    "quota_gol": 0
+   },
+   {
+    "nome": "K. Andrade",
+    "squadra": "Zenit",
+    "tipo": "Questionable",
+    "motivo": "Rest",
+    "pres": 14,
+    "tit": 5,
+    "min": 565,
+    "gol": 1,
+    "ass": 0,
+    "voto": 6.78,
+    "gol_squadra": 31,
+    "partite_squadra": 14,
+    "quota_gol": 3
+   },
+   {
     "nome": "A. Erokhin",
     "squadra": "Zenit",
-    "tipo": "Missing Fixture",
+    "tipo": "Questionable",
     "motivo": "Injury",
     "pres": 3,
     "tit": 0,
@@ -3552,11 +3762,11 @@
  },
  "1563263": {
   "assenti": [
-   "G. Bazunu (Bolton)",
    "E. Erhahon (Bolton)",
    "R. Hardie (Bolton)",
    "J. McAtee (Bolton)",
    "J. Nelson (Bolton)",
+   "G. Bazunu (Bolton)",
    "E. Toal (Bolton)",
    "E. Adams (Portsmouth)",
    "K. Anderson (Portsmouth)",
@@ -3566,7 +3776,8 @@
    "M. Kosznovszky (Portsmouth)",
    "C. Ogilvie (Portsmouth)",
    "J. Swift (Portsmouth)",
-   "M. Milovanovic (Portsmouth)"
+   "M. Milovanovic (Portsmouth)",
+   "I. Mohamed (Portsmouth)"
   ],
   "assenti_peso": [
    {
@@ -3602,7 +3813,7 @@
    {
     "nome": "E. Toal",
     "squadra": "Bolton",
-    "tipo": "Missing Fixture",
+    "tipo": "Questionable",
     "motivo": "Muscle Injury",
     "pres": 9,
     "tit": 7,
@@ -3632,7 +3843,7 @@
    {
     "nome": "G. Bazunu",
     "squadra": "Bolton",
-    "tipo": "Missing Fixture",
+    "tipo": "Questionable",
     "motivo": "Muscle Injury",
     "pres": 7,
     "tit": 7,
@@ -3658,6 +3869,21 @@
     "gol_squadra": 20,
     "partite_squadra": 16,
     "quota_gol": 5
+   },
+   {
+    "nome": "I. Mohamed",
+    "squadra": "Portsmouth",
+    "tipo": "Questionable",
+    "motivo": "Injury",
+    "pres": 9,
+    "tit": 6,
+    "min": 467,
+    "gol": 0,
+    "ass": 0,
+    "voto": 6.59,
+    "gol_squadra": 20,
+    "partite_squadra": 16,
+    "quota_gol": 0
    },
    {
     "nome": "B. Arthur",
@@ -3783,12 +4009,12 @@
    "T. Darikwa (Lincoln)",
    "C. McGrandles (Lincoln)",
    "M. Melia (Lincoln)",
-   "N. Broadhead (Wrexham)",
    "L. Cacace (Wrexham)",
    "S. Smith (Wrexham)",
-   "J. Windass (Wrexham)",
+   "N. Broadhead (Wrexham)",
    "C. O'Hare (Wrexham)",
-   "S. Revan (Wrexham)"
+   "S. Revan (Wrexham)",
+   "J. Windass (Wrexham)"
   ],
   "assenti_peso": [
    {
@@ -3839,7 +4065,7 @@
    {
     "nome": "N. Broadhead",
     "squadra": "Wrexham",
-    "tipo": "Missing Fixture",
+    "tipo": "Questionable",
     "motivo": "Thigh Injury",
     "pres": 4,
     "tit": 4,
@@ -3854,7 +4080,7 @@
    {
     "nome": "J. Windass",
     "squadra": "Wrexham",
-    "tipo": "Missing Fixture",
+    "tipo": "Questionable",
     "motivo": "Ankle Injury",
     "pres": 6,
     "tit": 4,
@@ -3913,8 +4139,8 @@
  "1563266": {
   "assenti": [
    "A. Jones (Middlesbrough)",
-   "W. Lankshear (Middlesbrough)",
    "R. Pukstas (Middlesbrough)",
+   "W. Lankshear (Middlesbrough)",
    "N. Eile (Bristol City)",
    "G. Yah (Bristol City)"
   ],
@@ -3922,7 +4148,7 @@
    {
     "nome": "W. Lankshear",
     "squadra": "Middlesbrough",
-    "tipo": "Missing Fixture",
+    "tipo": "Questionable",
     "motivo": "Hamstring Injury",
     "pres": 16,
     "tit": 13,
@@ -3937,7 +4163,7 @@
    {
     "nome": "G. Yah",
     "squadra": "Bristol City",
-    "tipo": "Missing Fixture",
+    "tipo": "Questionable",
     "motivo": "Injury",
     "pres": 9,
     "tit": 5,
@@ -3967,7 +4193,7 @@
    {
     "nome": "N. Eile",
     "squadra": "Bristol City",
-    "tipo": "Missing Fixture",
+    "tipo": "Questionable",
     "motivo": "Illness",
     "pres": 3,
     "tit": 2,
@@ -4000,10 +4226,9 @@
   "assenti": [
    "M. Doherty (Sheffield Utd)",
    "R. One (Sheffield Utd)",
+   "J. Rothwell (Sheffield Utd)",
    "F. Seriki (Sheffield Utd)",
    "J. Shackleton (Sheffield Utd)",
-   "P. Bamford (Sheffield Utd)",
-   "J. Rothwell (Sheffield Utd)",
    "M. Antonio (Watford)",
    "K. Baah (Watford)",
    "E. Bove (Watford)",
@@ -4014,24 +4239,9 @@
   ],
   "assenti_peso": [
    {
-    "nome": "P. Bamford",
-    "squadra": "Sheffield Utd",
-    "tipo": "Questionable",
-    "motivo": "Shoulder Injury",
-    "pres": 13,
-    "tit": 11,
-    "min": 864,
-    "gol": 6,
-    "ass": 1,
-    "voto": 6.63,
-    "gol_squadra": 26,
-    "partite_squadra": 17,
-    "quota_gol": 23
-   },
-   {
     "nome": "J. Rothwell",
     "squadra": "Sheffield Utd",
-    "tipo": "Questionable",
+    "tipo": "Missing Fixture",
     "motivo": "Muscle Injury",
     "pres": 10,
     "tit": 9,
@@ -4207,6 +4417,7 @@
    "E. Bocat (Stoke City)",
    "L. Cisse (Stoke City)",
    "A. Cresswell (Stoke City)",
+   "S. Gallagher (Stoke City)",
    "M. Leonard (Birmingham)",
    "K. Lund (Birmingham)"
   ],
@@ -4242,6 +4453,21 @@
     "quota_gol": 4
    },
    {
+    "nome": "S. Gallagher",
+    "squadra": "Stoke City",
+    "tipo": "Missing Fixture",
+    "motivo": "Hamstring Injury",
+    "pres": 8,
+    "tit": 5,
+    "min": 422,
+    "gol": 2,
+    "ass": 1,
+    "voto": 6.17,
+    "gol_squadra": 24,
+    "partite_squadra": 17,
+    "quota_gol": 8
+   },
+   {
     "nome": "K. Lund",
     "squadra": "Birmingham",
     "tipo": "Missing Fixture",
@@ -4265,7 +4491,7 @@
    {
     "nome": "A. Cresswell",
     "squadra": "Stoke City",
-    "tipo": "Questionable",
+    "tipo": "Missing Fixture",
     "motivo": "Knee Injury"
    },
    {
@@ -4569,6 +4795,7 @@
    "B. Traore (Wolves)",
    "R. Apter (Charlton)",
    "C. Sichenje (Charlton)",
+   "N. Chalobah (Charlton)",
    "K. Ramsay (Charlton)"
   ],
   "assenti_peso": [
@@ -4601,6 +4828,21 @@
     "gol_squadra": 29,
     "partite_squadra": 17,
     "quota_gol": 10
+   },
+   {
+    "nome": "N. Chalobah",
+    "squadra": "Charlton",
+    "tipo": "Questionable",
+    "motivo": "Injury",
+    "pres": 6,
+    "tit": 5,
+    "min": 371,
+    "gol": 0,
+    "ass": 1,
+    "voto": 6.73,
+    "gol_squadra": 17,
+    "partite_squadra": 16,
+    "quota_gol": 0
    },
    {
     "nome": "K. Ramsay",
@@ -4699,9 +4941,9 @@
    "M. Johnsgard (Ham-Kam)",
    "M. Ofkir (Ham-Kam)",
    "D. Al Saed (Ham-Kam)",
+   "B. Fiabema (Fredrikstad)",
    "S. Kvile (Fredrikstad)",
-   "S. Sorlokk (Fredrikstad)",
-   "B. Fiabema (Fredrikstad)"
+   "S. Sorlokk (Fredrikstad)"
   ],
   "assenti_peso": [
    {
@@ -4737,7 +4979,7 @@
    {
     "nome": "B. Fiabema",
     "squadra": "Fredrikstad",
-    "tipo": "Questionable",
+    "tipo": "Missing Fixture",
     "motivo": "Back Injury",
     "pres": 7,
     "tit": 7,
@@ -4954,8 +5196,8 @@
    "S. Ouaissa (PSV Eindhoven)",
    "A. Plea (PSV Eindhoven)",
    "J. Schouten (PSV Eindhoven)",
-   "P. Wanner (PSV Eindhoven)",
-   "S. Dest (PSV Eindhoven)"
+   "S. Dest (PSV Eindhoven)",
+   "P. Wanner (PSV Eindhoven)"
   ],
   "assenti_peso": [
    {
@@ -4991,7 +5233,7 @@
    {
     "nome": "P. Wanner",
     "squadra": "PSV Eindhoven",
-    "tipo": "Missing Fixture",
+    "tipo": "Questionable",
     "motivo": "Foot Injury",
     "pres": 8,
     "tit": 5,
@@ -5088,10 +5330,12 @@
    "M. Haidara (Kocaelispor)",
    "A. Jovanovic (Kocaelispor)",
    "B. Petkovic (Kocaelispor)",
-   "T. Zoukrou (Kocaelispor)",
    "Show (Kocaelispor)",
+   "R. Rivas (Kocaelispor)",
+   "T. Zoukrou (Kocaelispor)",
    "N. Ake (Fenerbahçe)",
    "M. Asensio (Fenerbahçe)",
+   "A. Brown (Fenerbahçe)",
    "J. Oosterwolde (Fenerbahçe)"
   ],
   "assenti_peso": [
@@ -5111,9 +5355,24 @@
     "quota_gol": 0
    },
    {
+    "nome": "A. Brown",
+    "squadra": "Fenerbahçe",
+    "tipo": "Missing Fixture",
+    "motivo": "Red Card",
+    "pres": 16,
+    "tit": 14,
+    "min": 1304,
+    "gol": 3,
+    "ass": 2,
+    "voto": 7.04,
+    "gol_squadra": 43,
+    "partite_squadra": 21,
+    "quota_gol": 7
+   },
+   {
     "nome": "Show",
     "squadra": "Kocaelispor",
-    "tipo": "Questionable",
+    "tipo": "Missing Fixture",
     "motivo": "Injury",
     "pres": 11,
     "tit": 11,
@@ -5143,7 +5402,7 @@
    {
     "nome": "T. Zoukrou",
     "squadra": "Kocaelispor",
-    "tipo": "Missing Fixture",
+    "tipo": "Questionable",
     "motivo": "Muscle Injury",
     "pres": 5,
     "tit": 5,
@@ -5169,6 +5428,21 @@
     "gol_squadra": 43,
     "partite_squadra": 21,
     "quota_gol": 5
+   },
+   {
+    "nome": "R. Rivas",
+    "squadra": "Kocaelispor",
+    "tipo": "Questionable",
+    "motivo": "Inactive",
+    "pres": 6,
+    "tit": 4,
+    "min": 389,
+    "gol": 0,
+    "ass": 2,
+    "voto": 7.02,
+    "gol_squadra": 13,
+    "partite_squadra": 11,
+    "quota_gol": 0
    },
    {
     "nome": "J. Oosterwolde",
@@ -5287,12 +5561,11 @@
   "assenti": [
    "B. Asumang (Gais)",
    "D. Collander (Gais)",
-   "A. Hermansen (Gais)",
+   "J. Fagerjord (Gais)",
    "K. Holmen (Gais)",
    "O. Pettersson (Gais)",
-   "H. Sletsjoe (Gais)",
    "R. Thorkelsson (Gais)",
-   "N. Vasic (Gais)",
+   "A. Wangberg (Gais)",
    "L. Bark (Vasteras SK FK)",
    "M. Diallo (Vasteras SK FK)",
    "E. Jager (Vasteras SK FK)"
@@ -5314,6 +5587,36 @@
     "quota_gol": 0
    },
    {
+    "nome": "A. Wangberg",
+    "squadra": "Gais",
+    "tipo": "Missing Fixture",
+    "motivo": "Inactive",
+    "pres": 27,
+    "tit": 23,
+    "min": 2157,
+    "gol": 0,
+    "ass": 3,
+    "voto": 6.28,
+    "gol_squadra": 36,
+    "partite_squadra": 28,
+    "quota_gol": 0
+   },
+   {
+    "nome": "J. Fagerjord",
+    "squadra": "Gais",
+    "tipo": "Missing Fixture",
+    "motivo": "Inactive",
+    "pres": 25,
+    "tit": 24,
+    "min": 1911,
+    "gol": 3,
+    "ass": 1,
+    "voto": 7.05,
+    "gol_squadra": 36,
+    "partite_squadra": 28,
+    "quota_gol": 8
+   },
+   {
     "nome": "R. Thorkelsson",
     "squadra": "Gais",
     "tipo": "Missing Fixture",
@@ -5329,21 +5632,6 @@
     "quota_gol": 11
    },
    {
-    "nome": "H. Sletsjoe",
-    "squadra": "Gais",
-    "tipo": "Missing Fixture",
-    "motivo": "Inactive",
-    "pres": 21,
-    "tit": 13,
-    "min": 1328,
-    "gol": 2,
-    "ass": 0,
-    "voto": 6.59,
-    "gol_squadra": 36,
-    "partite_squadra": 28,
-    "quota_gol": 6
-   },
-   {
     "nome": "O. Pettersson",
     "squadra": "Gais",
     "tipo": "Missing Fixture",
@@ -5357,21 +5645,6 @@
     "gol_squadra": 36,
     "partite_squadra": 28,
     "quota_gol": 3
-   },
-   {
-    "nome": "N. Vasic",
-    "squadra": "Gais",
-    "tipo": "Missing Fixture",
-    "motivo": "Inactive",
-    "pres": 16,
-    "tit": 9,
-    "min": 796,
-    "gol": 4,
-    "ass": 0,
-    "voto": 6.82,
-    "gol_squadra": 36,
-    "partite_squadra": 28,
-    "quota_gol": 11
    },
    {
     "nome": "D. Collander",
@@ -5399,21 +5672,6 @@
     "gol": 0,
     "ass": 0,
     "voto": 6.27,
-    "gol_squadra": 36,
-    "partite_squadra": 28,
-    "quota_gol": 0
-   },
-   {
-    "nome": "A. Hermansen",
-    "squadra": "Gais",
-    "tipo": "Missing Fixture",
-    "motivo": "Inactive",
-    "pres": 5,
-    "tit": 4,
-    "min": 90,
-    "gol": 0,
-    "ass": 0,
-    "voto": 1.29,
     "gol_squadra": 36,
     "partite_squadra": 28,
     "quota_gol": 0
@@ -6301,7 +6559,6 @@
    "K. Paredes (Utrecht)",
    "J. Amofa (Cambuur)",
    "D. Visser (Cambuur)",
-   "D. Westerhof (Cambuur)",
    "W. Asselman (Cambuur)"
   ],
   "assenti_peso": [
@@ -6373,21 +6630,6 @@
     "squadra": "Utrecht",
     "tipo": "Missing Fixture",
     "motivo": "Knee Injury"
-   },
-   {
-    "nome": "D. Westerhof",
-    "squadra": "Cambuur",
-    "tipo": "Missing Fixture",
-    "motivo": "Inactive",
-    "pres": 0,
-    "tit": 0,
-    "min": 0,
-    "gol": 0,
-    "ass": 0,
-    "voto": 0.0,
-    "gol_squadra": 24,
-    "partite_squadra": 12,
-    "quota_gol": 0
    },
    {
     "nome": "W. Asselman",
@@ -6859,8 +7101,7 @@
    "T. Morton (Lyon)",
    "L. Openda (Lyon)",
    "M. Ouedraogo (Lyon)",
-   "P. Sulc (Lyon)",
-   "R. Himbert (Lyon)"
+   "P. Sulc (Lyon)"
   ],
   "assenti_peso": [
    {
@@ -6949,21 +7190,6 @@
     "gol": 0,
     "ass": 1,
     "voto": 6.84,
-    "gol_squadra": 26,
-    "partite_squadra": 18,
-    "quota_gol": 0
-   },
-   {
-    "nome": "R. Himbert",
-    "squadra": "Lyon",
-    "tipo": "Questionable",
-    "motivo": "Inactive",
-    "pres": 3,
-    "tit": 2,
-    "min": 154,
-    "gol": 0,
-    "ass": 0,
-    "voto": 3.03,
     "gol_squadra": 26,
     "partite_squadra": 18,
     "quota_gol": 0
@@ -7126,17 +7352,33 @@
  },
  "1552826": {
   "assenti": [
-   "J. Panichelli (Strasbourg)",
    "F. Balde (Strasbourg)",
+   "Oso (Strasbourg)",
+   "J. Panichelli (Strasbourg)",
    "G. Reyna (Strasbourg)",
    "B. Chardonnet (Stade Brestois 29)",
    "R. Le Guen (Stade Brestois 29)"
   ],
   "assenti_peso": [
    {
+    "nome": "Oso",
+    "squadra": "Strasbourg",
+    "tipo": "Missing Fixture",
+    "motivo": "Injury",
+    "pres": 8,
+    "tit": 8,
+    "min": 720,
+    "gol": 0,
+    "ass": 2,
+    "voto": 6.71,
+    "gol_squadra": 16,
+    "partite_squadra": 10,
+    "quota_gol": 0
+   },
+   {
     "nome": "G. Reyna",
     "squadra": "Strasbourg",
-    "tipo": "Questionable",
+    "tipo": "Missing Fixture",
     "motivo": "Muscle Injury",
     "pres": 10,
     "tit": 8,
@@ -7166,7 +7408,7 @@
    {
     "nome": "F. Balde",
     "squadra": "Strasbourg",
-    "tipo": "Questionable",
+    "tipo": "Missing Fixture",
     "motivo": "Leg Injury",
     "pres": 4,
     "tit": 1,
@@ -8179,5 +8421,708 @@
    }
   },
   "partita": "İstanbulspor - Keçiörengücü"
+ },
+ "1526032": {
+  "titolari": {
+   "Baranovichi": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "D. Shapko",
+     "N. Ryabykh",
+     "A. Bruy",
+     "Kirill Muzychenko",
+     "T. Tkachev",
+     "E. Lapun",
+     "V. Balbukh",
+     "M. Bondarenko",
+     "V. Potorocha",
+     "A. Petrenko",
+     "M. Artyukh"
+    ]
+   },
+   "Belshina": {
+    "modulo": "3-4-3",
+    "titolari": [
+     "Pavel Prishivalko",
+     "G. Yakushevich",
+     "I. Vikhrov",
+     "D. Lazarev",
+     "V. Davydov",
+     "V. Rusenchik",
+     "P. Seleznev",
+     "L. Zgurskiy",
+     "N. Golub",
+     "A. Shvedchikov",
+     "A. Achapovskiy"
+    ]
+   }
+  },
+  "partita": "Baranovichi - Belshina"
+ },
+ "1593178": {
+  "titolari": {
+   "Eintracht Frankfurt W": {
+    "modulo": "4-3-1-2",
+    "titolari": [
+     "L. Altenburg",
+     "P. Wolter",
+     "A. Ilestedt",
+     "M. Østenstad",
+     "N. LührÃen",
+     "E. Memeti",
+     "H. Bennison",
+     "N. Ivelj",
+     "L. Mühlhaus",
+     "L. Freigang",
+     "R. Blomqvist"
+    ]
+   },
+   "Hamburger SV W": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "K. Szemik",
+     "M. Doucouré",
+     "S. Stoldt",
+     "A. Böhler",
+     "S. Matysik",
+     "L. Peneau",
+     "P. Machtens",
+     "C. Linberg",
+     "P. Bartz",
+     "C. Morich",
+     "N. Karczewska"
+    ]
+   }
+  },
+  "partita": "Eintracht Frankfurt W - Hamburger SV W"
+ },
+ "1526034": {
+  "titolari": {
+   "FC Dnepr Mogilev": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "A. Sinenko",
+     "A. Potapenko",
+     "A. Varganov",
+     "S. Rusak",
+     "M. Kasarab",
+     "D. Lisakovich",
+     "V. Harutyunyan",
+     "N. Krasnov",
+     "E. Karpitskiy",
+     "K. Zabelin",
+     "K. Kirilenko"
+    ]
+   },
+   "FC Vitebsk": {
+    "modulo": "3-4-3",
+    "titolari": [
+     "N. Goylo",
+     "S. Egorov",
+     "K. Rodionov",
+     "R. Lisovskiy",
+     "E. Novykh",
+     "Mikhail Bashilov",
+     "Y. Protasov",
+     "M. Kuntsevich",
+     "A. Gurenko",
+     "R. Minaev",
+     "Z. Chervyakov"
+    ]
+   }
+  },
+  "partita": "FC Dnepr Mogilev - FC Vitebsk"
+ },
+ "1526036": {
+  "titolari": {
+   "FC Gomel": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "A. Karatay",
+     "D. Shaykhtdinov",
+     "I. Zayats",
+     "G. Kukushkin",
+     "V. Martinkevich",
+     "K. Danilin",
+     "V. Lazarev",
+     "V. Sotnikov",
+     "D. Kovalevich",
+     "M. Mardas",
+     "T. Simanenka"
+    ]
+   },
+   "Bate Borisov": {
+    "modulo": "5-3-2",
+    "titolari": [
+     "A. Skopets",
+     "E. Kress",
+     "P. Dubovskiy",
+     "H. Moussakhanian",
+     "M. Sakuta",
+     "N. Neskoromny",
+     "Y. Kovalev",
+     "I. Kuimov",
+     "K. Kaplenko",
+     "V. Yatskevich",
+     "V. Varaksa"
+    ]
+   }
+  },
+  "partita": "FC Gomel - Bate Borisov"
+ },
+ "1565532": {
+  "titolari": {
+   "Kolos Kovalivka": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "I. Pakholyuk",
+     "A. Ponedelnik",
+     "E. Kozik",
+     "M. Burda",
+     "A. Tsurikov",
+     "O. Demchenko",
+     "I. Kane",
+     "N. Gagnidze",
+     "A. Rrapaj",
+     "I. Kasalla",
+     "A. Tahiri"
+    ]
+   },
+   "FC Kharkiv": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "H. Ermakov",
+     "I. Krupskyi",
+     "V. Salyuk",
+     "A. Shabanov",
+     "O. Martynyuk",
+     "O. Yatsyk",
+     "I. Kalyuzhnyi",
+     "Ramik Gadzhyev",
+     "C. Paraco",
+     "B. Zabërgja",
+     "P. Itodo"
+    ]
+   }
+  },
+  "partita": "Kolos Kovalivka - FC Kharkiv"
+ },
+ "1565533": {
+  "titolari": {
+   "Kryvbas KR": {
+    "modulo": "5-4-1",
+    "titolari": [
+     "O. Kemkin",
+     "João Machado",
+     "D. Pidgurskyi",
+     "V. Vilivald",
+     "J. Jones",
+     "Thiago Isabel Nascimento Borges",
+     "B. Lin",
+     "R. Nawi",
+     "Y. Shevchenko",
+     "A. Herbert",
+     "Assane Seck"
+    ]
+   },
+   "Kudrivka": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "K. Lavuta",
+     "Y. Pasich",
+     "M. Serdyuk",
+     "Mykola Oharkov",
+     "M. Melnychuk",
+     "D. Svityukha",
+     "A. Dumanyuk",
+     "Y. Smyrnyi",
+     "R. Plaksa",
+     "R. Owusu",
+     "M. Vechurko"
+    ]
+   }
+  },
+  "partita": "Kryvbas KR - Kudrivka"
+ },
+ "1642197": {
+  "titolari": {
+   "Chennaiyin": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "Mohammad Nawaz",
+     "Namgyal Bhutia",
+     "Nuno Reis",
+     "Emmanuel Imanishimwe",
+     "Muhammed Saheef",
+     "S Prakadeswaran",
+     "Nikola Stojanović",
+     "Ayush Dev Chhetri",
+     "Brison Fernandes",
+     "Irfan Yadwad",
+     "Lalhriatpuia Chawngthu"
+    ]
+   },
+   "Minerva Punjab": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Arshdeep Singh",
+     "Khaiminthang Lhungdim",
+     "Nikhil Prabhu",
+     "Patrick Bahanack",
+     "Muhammed Uvais",
+     "Laishram Rishikanta Meitei",
+     "Ricky John Shabong",
+     "Manglenthang Kipgen",
+     "Alfred Planas",
+     "Muhammad Suhail",
+     "Raphaël Messi Bouli"
+    ]
+   }
+  },
+  "partita": "Chennaiyin - Minerva Punjab"
+ },
+ "1576239": {
+  "titolari": {
+   "1. FC Nürnberg": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "J. Reichert",
+     "T. Janisch",
+     "A. Kalogeropoulos",
+     "S. Mkrtchyan",
+     "E. Porstner",
+     "A. Marhiev",
+     "J. Fernandez",
+     "J. Justvan",
+     "W. Bøving",
+     "Rafael Lubach",
+     "P. Scobel"
+    ]
+   },
+   "Eintracht Braunschweig": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "R. Hoffmann",
+     "T. Wagner",
+     "K. Ehlers",
+     "L. Frenkert",
+     "F. Di Michele Sanchez",
+     "F. Flick",
+     "Max Marie",
+     "A. Opoku",
+     "R. Heußer",
+     "Yann Sturm",
+     "Jan Urbich"
+    ]
+   }
+  },
+  "partita": "1. FC Nürnberg - Eintracht Braunschweig"
+ },
+ "1635103": {
+  "titolari": {
+   "BSK Banja Luka": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Srđan Modić",
+     "Domagoj Čulina",
+     "Zoran Kvržić",
+     "Diouf Cherif Atab",
+     "Aleksandar Subić",
+     "Ognjen Radošević",
+     "Juraj Ljubić",
+     "Denis Dizdarevic",
+     "Nedim Keranovic",
+     "David Čavić",
+     "Stefan Marčetić"
+    ]
+   },
+   "Zrinjski": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Goran Karačić",
+     "Viktor Grbić",
+     "Hrvoje Barišić",
+     "Karlo Stapić",
+     "Petar Mamić",
+     "Antonio Ivančić",
+     "Igor Savić",
+     "Karlo Abramović",
+     "Stefan Cvetković",
+     "Antonio Ilić",
+     "Nemanja Bilbija"
+    ]
+   }
+  },
+  "partita": "BSK Banja Luka - Zrinjski"
+ },
+ "1649507": {
+  "titolari": {
+   "Enköping": {
+    "modulo": "5-3-2",
+    "titolari": [
+     "T. Kvist",
+     "M. Ozgun",
+     "A. Sveijer",
+     "F. Ededal",
+     "M. Belouchi",
+     "A. Lundgren",
+     "H. Norrlin",
+     "H. Noori",
+     "I. Bråholm",
+     "L. Nwafor",
+     "musab abdi"
+    ]
+   },
+   "Orebro SK": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "J. Ojrzyński",
+     "C. Amatkarijo",
+     "V. Sandberg",
+     "C. Redenstrand",
+     "J. Stenberg",
+     "E. Rakip",
+     "M. Kusu",
+     "J. Haliti",
+     "A. Yakoub",
+     "K. Holmberg",
+     "R. Wiedesheim-Paul"
+    ]
+   }
+  },
+  "partita": "Enköping - Orebro SK"
+ },
+ "1576236": {
+  "titolari": {
+   "Hannover 96": {
+    "modulo": "3-4-3",
+    "titolari": [
+     "M. Bundu",
+     "L. Weinkauf",
+     "B. Tomiak",
+     "H. Chakroun",
+     "V. Ghiță",
+     "F. Roggow",
+     "M. Neubauer",
+     "H. Matsuda",
+     "B. Källman",
+     "J. Hugonet",
+     "M. Hartel"
+    ]
+   },
+   "SpVgg Greuther Fürth": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Florian Hellstern",
+     "J. Dehm",
+     "J. Heuer",
+     "K. Keresztes",
+     "G. Itter",
+     "F. Ademi",
+     "P. Will",
+     "A. Keller",
+     "D. Srbeny",
+     "Ole Pohlmann",
+     "O. Sillah"
+    ]
+   }
+  },
+  "partita": "Hannover 96 - SpVgg Greuther Fürth"
+ },
+ "1649505": {
+  "titolari": {
+   "Ostersunds FK": {
+    "modulo": "3-4-3",
+    "titolari": [
+     "R. Forsell",
+     "D. Widgren",
+     "S. Anyanwu",
+     "H. Azzi",
+     "D. Miljanovic",
+     "C. Edwards",
+     "A. Begić",
+     "Y. Adjoumani",
+     "S. Marklund",
+     "J. Ali",
+     "E. Özkan"
+    ]
+   },
+   "Varbergs BoIS FC": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "K. Strindholm",
+     "N. Dahlström",
+     "G. Broman",
+     "E. Tellgren",
+     "E. Hellman",
+     "I. Vidjeskog",
+     "E. Sadiku",
+     "A. Winbo",
+     "W. Ärlig",
+     "O. Alfonsi",
+     "L. Sibelius"
+    ]
+   }
+  },
+  "partita": "Ostersunds FK - Varbergs BoIS FC"
+ },
+ "1553919": {
+  "titolari": {
+   "Radnicki NIS": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "I. Kostić",
+     "S. Veličković",
+     "U. Vitas",
+     "M. Mijailović",
+     "A. Vidović",
+     "R. Milosavljević",
+     "D. Krajišnik",
+     "I. Ivanović",
+     "Luka Izderic",
+     "G. Ariyibi",
+     "V. Jovanović"
+    ]
+   },
+   "Zemun": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "M. Dubljanić",
+     "D. Parađina",
+     "I. Ostojić",
+     "V. Bakić",
+     "M. Spremo",
+     "O. Ilić",
+     "M. Meskhi",
+     "N. Belaković",
+     "U. Ljubomirac",
+     "Dimitrije Tabakovic",
+     "N. Kalat"
+    ]
+   }
+  },
+  "partita": "Radnicki NIS - Zemun"
+ },
+ "1576241": {
+  "titolari": {
+   "VfL Wolfsburg": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "T. Wellenreuther",
+     "S. Kumbedi",
+     "H. Wahl",
+     "M. Angely",
+     "J. Mæhle",
+     "Bence Dárdai",
+     "Vinicius Souza",
+     "M. Damar",
+     "A. Bernhardsson",
+     "R. Glatzel",
+     "F. Reese"
+    ]
+   },
+   "Holstein Kiel": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "T. Weiner",
+     "H. Sekine",
+     "N. Madsen",
+     "I. Nekić",
+     "J. Tolkin",
+     "G. Balzi",
+     "J. Meffert",
+     "K. Davidsen",
+     "G. de Regt",
+     "P. Harres",
+     "J. Therkelsen"
+    ]
+   }
+  },
+  "partita": "VfL Wolfsburg - Holstein Kiel"
+ },
+ "1564416": {
+  "titolari": {
+   "Blackpool": {
+    "modulo": "4-1-3-2",
+    "titolari": [
+     "B. Peacock-Farrell",
+     "J. Williams",
+     "O. Casey",
+     "C. Hamilton",
+     "Z. Ashworth",
+     "J. Brown",
+     "J. Bowler",
+     "D. Charles",
+     "A. Morgan",
+     "J. Yates",
+     "D. Taylor"
+    ]
+   },
+   "Wigan": {
+    "modulo": "3-4-2-1",
+    "titolari": [
+     "J. Whitworth",
+     "F. Burns",
+     "J. Carragher",
+     "M. Fox",
+     "R. Trevitt",
+     "J. Weir",
+     "M. Power",
+     "F. Murray",
+     "B. Burrows",
+     "J. Mellish",
+     "S. Hogan"
+    ]
+   }
+  },
+  "partita": "Blackpool - Wigan"
+ },
+ "1563868": {
+  "titolari": {
+   "Gillingham": {
+    "modulo": "3-4-2-1",
+    "titolari": [
+     "O. Wright",
+     "A. Smith",
+     "O. Beckles",
+     "Conor McManus",
+     "N. Freeman",
+     "Z. Albarus",
+     "A. Little",
+     "J. Brophy",
+     "H. Waldock",
+     "Ronan Hale",
+     "L. Sillah"
+    ]
+   },
+   "Crewe": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "I. Lawlor",
+     "L. Billington",
+     "Stan Dancey",
+     "J. Stephenson",
+     "R. Hutchinson",
+     "O. Lunt",
+     "C. Thomas",
+     "J. Tabiner",
+     "M. Holíček",
+     "J. White",
+     "A. Thibaut"
+    ]
+   }
+  },
+  "partita": "Gillingham - Crewe"
+ },
+ "1563870": {
+  "titolari": {
+   "Newport County": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "J. Wright",
+     "C. Norman",
+     "L. Jenkins",
+     "K. Cameron",
+     "T. Davies",
+     "M. Smith",
+     "C. Brennan",
+     "Y. Bamba",
+     "H. Biggins",
+     "A. Lewis",
+     "K. Etete"
+    ]
+   },
+   "Swindon Town": {
+    "modulo": "3-4-2-1",
+    "titolari": [
+     "C. Ripley",
+     "S. Negru",
+     "J. Ball",
+     "B. Kirkman",
+     "J. Snowdon",
+     "J. Thomson",
+     "T. Nichols",
+     "Joel McGregor",
+     "M. Virtue-Thick",
+     "A. Hackford",
+     "A. Drinan"
+    ]
+   }
+  },
+  "partita": "Newport County - Swindon Town"
+ },
+ "1560282": {
+  "titolari": {
+   "Puskas Academy": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "B. Lehoczki",
+     "R. Orján",
+     "W. Golla",
+     "G. Harutyunyan",
+     "Z. Nagy",
+     "Michael Okeke",
+     "P. Dárdai",
+     "L. Duarte",
+     "M. Kern",
+     "B. Ormonde-Ottewill",
+     "A. Németh"
+    ]
+   },
+   "MTK Budapest": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "T. Fadgyas",
+     "B. Varju",
+     "V. Armalas",
+     "I. Beriashvili",
+     "P. Kovács",
+     "M. Kata",
+     "S. Szuhodovszki",
+     "A. G. Zubor",
+     "Adam Nyers",
+     "G. Komáromi",
+     "G. Jurek"
+    ]
+   }
+  },
+  "partita": "Puskas Academy - MTK Budapest"
+ },
+ "1564426": {
+  "titolari": {
+   "Reading": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Joel Pereira",
+     "U. Godwin-Malife",
+     "J. Knight",
+     "P. O&apos;Connor",
+     "J. Dorsett",
+     "L. Wing",
+     "A. Rinomhota",
+     "R. Williams",
+     "George Earthy",
+     "D. Kyerewaa",
+     "J. Marriott"
+    ]
+   },
+   "Bromley": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "S. George",
+     "Marcus Lemar Ifill",
+     "R. Taylor",
+     "Reece Oxford",
+     "J. Mendy",
+     "G. Saville",
+     "J. Jones",
+     "K. Conteh",
+     "M. Pinnock",
+     "M. Miller",
+     "M. Cheek"
+    ]
+   }
+  },
+  "partita": "Reading - Bromley"
  }
 }
