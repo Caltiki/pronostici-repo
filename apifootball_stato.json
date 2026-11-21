@@ -339,14 +339,22 @@
    "finite": 102
   },
   "2026-11-20": {
-   "letta": "2026-11-21 06:20",
-   "chiusa": false,
-   "partite_api": 368,
+   "letta": "2026-11-21 18:12",
+   "chiusa": true,
+   "partite_api": 367,
    "nostre": 435,
-   "riconosciute": 368,
+   "riconosciute": 367,
    "finite": 360
+  },
+  "2026-11-21": {
+   "letta": "2026-11-21 18:12",
+   "chiusa": false,
+   "partite_api": 1302,
+   "nostre": 1255,
+   "riconosciute": 1094,
+   "finite": 810
   }
  },
- "aggiornato": "2026-11-21 06:20",
+ "aggiornato": "2026-11-21 18:12",
  "nomi_annotati": "2026-11-04"
 }
