@@ -749,7 +749,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Foot Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Dynamo": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "A. Lunev",
+     "J. Cáceres",
+     "M. Osipenko",
+     "David Ricardo",
+     "Rubens",
+     "D. Fomin",
+     "D. Glebov",
+     "Bitello",
+     "Y. Gladyshev",
+     "K. Tyukavin",
+     "M. Gutiérrez"
+    ]
+   },
+   "FC Krasnodar": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "S. Agkatsev",
+     "I. Vakhania",
+     "Jubal",
+     "M. Rodríguez",
+     "L. Olaza",
+     "Christian",
+     "A. Chernikov",
+     "Douglas Augusto",
+     "Batxi",
+     "J. Córdoba",
+     "D. Vorobjev"
+    ]
+   }
+  },
+  "partita": "Dynamo - FC Krasnodar"
  },
  "1552232": {
   "assenti": [
@@ -858,7 +893,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Groin Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Twente": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "J. Drommel",
+     "B. van Rooij",
+     "R. Pröpper",
+     "R. Nijstad",
+     "A. Adelgaard",
+     "R. Zerrouki",
+     "D. Weidmann",
+     "D. Rots",
+     "Y. Taha",
+     "S. Ørjasæter",
+     "W. Weghorst"
+    ]
+   },
+   "Willem II": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "M. Delanghe",
+     "H. ter Avest",
+     "M. Lemmens",
+     "M. Dekker",
+     "N. Tjoe-A-On",
+     "C. Twigt",
+     "K. Boogaard",
+     "T. Vilhena",
+     "Uriel van Aalst",
+     "V. van Crooij",
+     "D. Haen"
+    ]
+   }
+  },
+  "partita": "Twente - Willem II"
  },
  "1550201": {
   "assenti": [
@@ -1054,7 +1124,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Hip Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Juventus": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "G. Vicario",
+     "Z. Çelik",
+     "Bremer",
+     "L. Kelly",
+     "J. Cabal",
+     "Douglas Luiz",
+     "T. Koopmeiners",
+     "E. Zhegrova",
+     "W. McKennie",
+     "Kerim-Sam Alajbegović",
+     "R. Kolo Muani"
+    ]
+   },
+   "Venezia": {
+    "modulo": "3-5-2",
+    "titolari": [
+     "F. Stanković",
+     "R. Halhal",
+     "M. Moreno",
+     "Juan Jesus",
+     "A. Hainaut",
+     "Kike Pérez",
+     "S. Sohm",
+     "G. Busio",
+     "R. Haps",
+     "A. Adams",
+     "L. Lauberbach"
+    ]
+   }
+  },
+  "partita": "Juventus - Venezia"
  },
  "1563264": {
   "assenti": [
@@ -1280,7 +1385,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Achilles Tendon Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Burnley": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "M. Weiß",
+     "K. Walker",
+     "Max Alleyne",
+     "Igor",
+     "O. Sonne",
+     "R. Hatate",
+     "J. Cullen",
+     "J. Banel",
+     "J. Laurent",
+     "L. Ramazani",
+     "Z. Amdouni"
+    ]
+   },
+   "Blackburn": {
+    "modulo": "3-4-2-1",
+    "titolari": [
+     "A. Pears",
+     "Tom Atcheson",
+     "H. Carter",
+     "S. McLoughlin",
+     "Gady Beyuku",
+     "Kristi Montgomery",
+     "M. Baradji",
+     "H. Pickering",
+     "T. Cantwell",
+     "O. Afolayan",
+     "A. Guðjohnsen"
+    ]
+   }
+  },
+  "partita": "Burnley - Blackburn"
  },
  "1570455": {
   "assenti": [
@@ -2305,8 +2445,7 @@
    "D. Alaba (Udinese)",
    "N. Bertola (Udinese)",
    "I. Gueye (Udinese)",
-   "K. Davis (Udinese)",
-   "E. Ebosse (Udinese)"
+   "K. Davis (Udinese)"
   ],
   "assenti_peso": [
    {
@@ -2337,21 +2476,6 @@
     "voto": 6.97,
     "gol_squadra": 15,
     "partite_squadra": 11,
-    "quota_gol": 0
-   },
-   {
-    "nome": "E. Ebosse",
-    "squadra": "Udinese",
-    "tipo": "Questionable",
-    "motivo": "Ankle Injury",
-    "pres": 9,
-    "tit": 6,
-    "min": 566,
-    "gol": 0,
-    "ass": 0,
-    "voto": 4.9,
-    "gol_squadra": 14,
-    "partite_squadra": 13,
     "quota_gol": 0
    },
    {
@@ -2467,26 +2591,9 @@
    "D. Boloca (Sassuolo)",
    "I. Kone (Sassuolo)",
    "F. Leysen (Sassuolo)",
-   "C. Volpato (Sassuolo)",
-   "Y. Paz (Sassuolo)",
-   "M. Frendrup (Genoa)"
+   "C. Volpato (Sassuolo)"
   ],
   "assenti_peso": [
-   {
-    "nome": "M. Frendrup",
-    "squadra": "Genoa",
-    "tipo": "Questionable",
-    "motivo": "Ankle Injury",
-    "pres": 11,
-    "tit": 10,
-    "min": 921,
-    "gol": 0,
-    "ass": 1,
-    "voto": 6.43,
-    "gol_squadra": 16,
-    "partite_squadra": 13,
-    "quota_gol": 0
-   },
    {
     "nome": "V. Adzic",
     "squadra": "Sassuolo",
@@ -2543,12 +2650,6 @@
     "squadra": "Sassuolo",
     "tipo": "Missing Fixture",
     "motivo": "Broken Leg"
-   },
-   {
-    "nome": "Y. Paz",
-    "squadra": "Sassuolo",
-    "tipo": "Questionable",
-    "motivo": "Knee Injury"
    }
   ]
  },
@@ -3867,26 +3968,25 @@
  },
  "1575227": {
   "assenti": [
-   "S. Musah (Werder Bremen)",
-   "J. Stage (Werder Bremen)",
-   "K. Topp (Werder Bremen)",
    "F. Agu (Werder Bremen)",
    "S. Alvero (Werder Bremen)",
    "M. Grull (Werder Bremen)",
-   "S. Lynen (Werder Bremen)",
+   "S. Musah (Werder Bremen)",
    "M. N'Diaye (Werder Bremen)",
+   "J. Stage (Werder Bremen)",
+   "K. Topp (Werder Bremen)",
    "A. S. Lokonga (Hamburger SV)",
+   "B. Nadir (Hamburger SV)",
    "Y. Poulsen (Hamburger SV)",
    "N. Remberg (Hamburger SV)",
    "J. Torunarigha (Hamburger SV)",
-   "B. Nadir (Hamburger SV)",
    "M. Vuskovic (Hamburger SV)"
   ],
   "assenti_peso": [
    {
     "nome": "M. Grull",
     "squadra": "Werder Bremen",
-    "tipo": "Questionable",
+    "tipo": "Missing Fixture",
     "motivo": "Calf Injury",
     "pres": 11,
     "tit": 10,
@@ -3961,7 +4061,7 @@
    {
     "nome": "B. Nadir",
     "squadra": "Hamburger SV",
-    "tipo": "Questionable",
+    "tipo": "Missing Fixture",
     "motivo": "Muscle Injury",
     "pres": 5,
     "tit": 3,
@@ -3971,21 +4071,6 @@
     "voto": 6.88,
     "gol_squadra": 14,
     "partite_squadra": 10,
-    "quota_gol": 0
-   },
-   {
-    "nome": "S. Lynen",
-    "squadra": "Werder Bremen",
-    "tipo": "Questionable",
-    "motivo": "Illness",
-    "pres": 5,
-    "tit": 3,
-    "min": 205,
-    "gol": 0,
-    "ass": 0,
-    "voto": 5.39,
-    "gol_squadra": 22,
-    "partite_squadra": 11,
     "quota_gol": 0
    },
    {
@@ -4019,27 +4104,21 @@
     "quota_gol": 0
    },
    {
-    "nome": "K. Topp",
-    "squadra": "Werder Bremen",
-    "tipo": "Missing Fixture",
-    "motivo": "Knee Injury"
-   },
-   {
     "nome": "F. Agu",
     "squadra": "Werder Bremen",
-    "tipo": "Questionable",
+    "tipo": "Missing Fixture",
     "motivo": "Calf Injury"
    },
    {
     "nome": "S. Alvero",
     "squadra": "Werder Bremen",
-    "tipo": "Questionable",
+    "tipo": "Missing Fixture",
     "motivo": "Calf Injury"
    },
    {
     "nome": "M. N'Diaye",
     "squadra": "Werder Bremen",
-    "tipo": "Questionable",
+    "tipo": "Missing Fixture",
     "motivo": "Groin Injury",
     "pres": 0,
     "tit": 0,
@@ -4050,6 +4129,12 @@
     "gol_squadra": 22,
     "partite_squadra": 11,
     "quota_gol": 0
+   },
+   {
+    "nome": "K. Topp",
+    "squadra": "Werder Bremen",
+    "tipo": "Missing Fixture",
+    "motivo": "Knee Injury"
    },
    {
     "nome": "M. Vuskovic",
@@ -4282,8 +4367,11 @@
    "A. Bretones (Osasuna)",
    "A. Fernandez (Osasuna)",
    "R. Yeboah (Osasuna)",
+   "H. Abaida (Malaga)",
    "A. Aznou (Malaga)",
+   "F. Calero (Malaga)",
    "R. Garrido Hierro (Malaga)",
+   "Juani (Malaga)",
    "J. Lobete (Malaga)",
    "A. Ochoa (Malaga)"
   ],
@@ -4334,6 +4422,21 @@
     "quota_gol": 0
    },
    {
+    "nome": "F. Calero",
+    "squadra": "Malaga",
+    "tipo": "Missing Fixture",
+    "motivo": "Muscle Injury",
+    "pres": 4,
+    "tit": 4,
+    "min": 333,
+    "gol": 0,
+    "ass": 0,
+    "voto": 6.64,
+    "gol_squadra": 9,
+    "partite_squadra": 12,
+    "quota_gol": 0
+   },
+   {
     "nome": "A. Aznou",
     "squadra": "Malaga",
     "tipo": "Missing Fixture",
@@ -4360,6 +4463,36 @@
     "ass": 0,
     "voto": 3.32,
     "gol_squadra": 12,
+    "partite_squadra": 12,
+    "quota_gol": 0
+   },
+   {
+    "nome": "H. Abaida",
+    "squadra": "Malaga",
+    "tipo": "Missing Fixture",
+    "motivo": "Personal Reasons",
+    "pres": 3,
+    "tit": 0,
+    "min": 41,
+    "gol": 0,
+    "ass": 0,
+    "voto": 4.91,
+    "gol_squadra": 9,
+    "partite_squadra": 12,
+    "quota_gol": 0
+   },
+   {
+    "nome": "Juani",
+    "squadra": "Malaga",
+    "tipo": "Missing Fixture",
+    "motivo": "Inactive",
+    "pres": 1,
+    "tit": 0,
+    "min": 11,
+    "gol": 0,
+    "ass": 0,
+    "voto": 2.23,
+    "gol_squadra": 9,
     "partite_squadra": 12,
     "quota_gol": 0
    },
@@ -4552,8 +4685,8 @@
  "1550198": {
   "assenti": [
    "I. Hien (Atalanta)",
-   "G. Gaetano (Atalanta)",
    "O. Kossounou (Atalanta)",
+   "G. Gaetano (Atalanta)",
    "A. Bonny (Inter)",
    "A. Stankovic (Inter)",
    "P. Zielinski (Inter)"
@@ -4592,7 +4725,7 @@
    {
     "nome": "O. Kossounou",
     "squadra": "Atalanta",
-    "tipo": "Questionable",
+    "tipo": "Missing Fixture",
     "motivo": "Thigh Injury",
     "pres": 6,
     "tit": 6,
@@ -4646,11 +4779,26 @@
   "assenti": [
    "D. Cornelius (Marseille)",
    "Emerson (Marseille)",
+   "P. Hojbjerg (Marseille)",
    "A. Bourabaa (Le Mans)",
-   "D. Sidibe (Le Mans)",
-   "E. Colas (Le Mans)"
+   "D. Sidibe (Le Mans)"
   ],
   "assenti_peso": [
+   {
+    "nome": "P. Hojbjerg",
+    "squadra": "Marseille",
+    "tipo": "Questionable",
+    "motivo": "Illness",
+    "pres": 11,
+    "tit": 10,
+    "min": 919,
+    "gol": 1,
+    "ass": 0,
+    "voto": 6.98,
+    "gol_squadra": 23,
+    "partite_squadra": 14,
+    "quota_gol": 4
+   },
    {
     "nome": "Emerson",
     "squadra": "Marseille",
@@ -4710,21 +4858,6 @@
     "gol_squadra": 23,
     "partite_squadra": 14,
     "quota_gol": 0
-   },
-   {
-    "nome": "E. Colas",
-    "squadra": "Le Mans",
-    "tipo": "Questionable",
-    "motivo": "Back Injury",
-    "pres": 2,
-    "tit": 0,
-    "min": 51,
-    "gol": 1,
-    "ass": 0,
-    "voto": 7.36,
-    "gol_squadra": 11,
-    "partite_squadra": 10,
-    "quota_gol": 9
    }
   ]
  },
@@ -5238,5 +5371,511 @@
    }
   },
   "partita": "Batman Petrolspor - Muğlaspor"
+ },
+ "1526031": {
+  "titolari": {
+   "Arsenal": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "I. Sanko",
+     "D. Polyakov",
+     "D. Lutik",
+     "V. Vasilyev",
+     "A. Zaleskiy",
+     "M. Matveev",
+     "N. Sotnikov",
+     "K. Badoev",
+     "D. Tsallagov",
+     "I. Vasin",
+     "D. Antilevskiy"
+    ]
+   },
+   "Neman": {
+    "modulo": "4-5-1",
+    "titolari": [
+     "N. Matysyuk",
+     "A. Vasiljev",
+     "I. Sadovnichiy",
+     "S. Jimoh",
+     "Y. Pantea",
+     "O. Evdokimov",
+     "A. Yakimov",
+     "M. Kozlov",
+     "D. Lisakovich",
+     "D. Spătaru",
+     "S. Pushnyakov"
+    ]
+   }
+  },
+  "partita": "Arsenal - Neman"
+ },
+ "1551146": {
+  "titolari": {
+   "Botev Vratsa": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "M. Orlinov",
+     "S. Sanyang",
+     "R. Tsonev",
+     "J. Gallegos",
+     "I. Yurukov",
+     "M. Smolenski",
+     "M. Stoev",
+     "A. Buchkov",
+     "L. Boyanov",
+     "F. Gigov",
+     "V. Naydenov"
+    ]
+   },
+   "CSKA 1948": {
+    "modulo": "4-1-3-2",
+    "titolari": [
+     "A. Bozhev",
+     "H. Cuellar",
+     "B. Benamar",
+     "K. Iliev",
+     "danilo terasenko",
+     "O. Gašević",
+     "M. Zemzemi",
+     "P. Vitanov",
+     "J. Meyer",
+     "Elias Franco",
+     "B. Sobrero"
+    ]
+   }
+  },
+  "partita": "Botev Vratsa - CSKA 1948"
+ },
+ "1565530": {
+  "titolari": {
+   "Dynamo Kyiv": {
+    "modulo": "3-4-3",
+    "titolari": [
+     "H. Bushchan",
+     "T. Kędziora",
+     "V. Brazhko",
+     "A. Thiare",
+     "O. Sych",
+     "O. Pikhalyonok",
+     "M. Shaparenko",
+     "V. Dubinchak",
+     "K. Bah",
+     "P. Mounguengue",
+     "S. Ogundana"
+    ]
+   },
+   "Obolon'-Brovar": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "N. Fedorivskyi",
+     "P. Polehenko",
+     "K. Prokopchuk",
+     "A. Lomnytskyi",
+     "Y. Shevchenko",
+     "M. Chekh",
+     "T. Moroz",
+     "A. Shulyanskyi",
+     "O. Slobodyan",
+     "I. Medynskyi",
+     "S. Sukhanov"
+    ]
+   }
+  },
+  "partita": "Dynamo Kyiv - Obolon'-Brovar"
+ },
+ "1565536": {
+  "titolari": {
+   "Veres Rivne": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "V. Gorokh",
+     "K. Stamoulis",
+     "K. Cipot",
+     "S. Vovchenko",
+     "M. Smiyan",
+     "D. Checher",
+     "I. Kharatin",
+     "L. Pomba",
+     "David Niyo",
+     "André Gonçalves",
+     "Alagie Wally"
+    ]
+   },
+   "Bukovyna": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "H. Penkov",
+     "I. Putrya",
+     "A. Busko",
+     "D. Karas",
+     "P. Stasyuk",
+     "V. Vitenchuk",
+     "E. Odinaka",
+     "O. Kozhushko",
+     "V. Grusha",
+     "V. Dakhnovskyi",
+     "R. Dadashov"
+    ]
+   }
+  },
+  "partita": "Veres Rivne - Bukovyna"
+ },
+ "1553232": {
+  "titolari": {
+   "Raków Częstochowa": {
+    "modulo": "3-4-3",
+    "titolari": [
+     "T. Karić",
+     "F. Tudor",
+     "B. Racovițan",
+     "S. Svarnas",
+     "Jean Carlos",
+     "O. Repka",
+     "V. Kochergin",
+     "E. Otieno",
+     "T. Pieńko",
+     "M. Emreli",
+     "P. Makuch"
+    ]
+   },
+   "Widzew Łódź": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "B. Drągowski",
+     "J. Gazibegović",
+     "Visus",
+     "S. Kapuadi",
+     "C. Cheng",
+     "L. Selahi",
+     "K. Świderski",
+     "Fran Álvarez",
+     "J. Shehu",
+     "D. Males",
+     "S. Bergier"
+    ]
+   }
+  },
+  "partita": "Raków Częstochowa - Widzew Łódź"
+ },
+ "1607734": {
+  "titolari": {
+   "Birmingham City W": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "L Thomas",
+     "Marie Levasseur",
+     "S. Cooke",
+     "M. Turner",
+     "N. Herron",
+     "Chelsea Cornet",
+     "L. Naalsund",
+     "R. McKenna",
+     "W. Leidhammar",
+     "Oceane Hurtre",
+     "Lee Geum-Min"
+    ]
+   },
+   "Manchester United W": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "P. Tullis-Joyce",
+     "J. Riviere",
+     "M. Le Tissier",
+     "D. Janssen",
+     "H. Lundkvist",
+     "J. Olme",
+     "H. Miyazawa",
+     "Jessica Park",
+     "Simi Awujo",
+     "Celin Bizet Dønnum",
+     "Elisabeth Terland"
+    ]
+   }
+  },
+  "partita": "Birmingham City W - Manchester United W"
+ },
+ "1607739": {
+  "titolari": {
+   "Manchester City W": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "A. Yamashita",
+     "I. Beney",
+     "Jade Rose",
+     "R. Knaak",
+     "C. Wamser",
+     "Laura Blindkilde Brown",
+     "Yui Hasegawa",
+     "A. Fujino",
+     "V. Miedema",
+     "L. Hemp",
+     "K. Shaw"
+    ]
+   },
+   "Tottenham Hotspur W": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Lize Kop",
+     "C. Dijkstra",
+     "T. Koga",
+     "Amanda Nildén",
+     "J. Blakstad",
+     "S. Gaupset",
+     "D. Spence",
+     "M. Vinberg",
+     "V. Pelova",
+     "K. Hanson",
+     "C. Tandberg"
+    ]
+   }
+  },
+  "partita": "Manchester City W - Tottenham Hotspur W"
+ },
+ "1560074": {
+  "titolari": {
+   "Pardubice": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "V. Neuman",
+     "E. Godwin",
+     "D. Halinský",
+     "D. Krčík",
+     "R. Mahuta",
+     "M. Hlavatý",
+     "M. Icha",
+     "A. Ouattara",
+     "A. Tanko",
+     "V. Drchal",
+     "S. Ďatko"
+    ]
+   },
+   "Zbrojovka Brno": {
+    "modulo": "3-4-2-1",
+    "titolari": [
+     "A. Hrdina",
+     "F. Vedral",
+     "J. Pokorný",
+     "E. Hunál",
+     "J. Klíma",
+     "P. Čavoš",
+     "Š. Langer",
+     "D. Granečný",
+     "T. Vachoušek",
+     "A. Vaníček",
+     "O. Velich"
+    ]
+   }
+  },
+  "partita": "Pardubice - Zbrojovka Brno"
+ },
+ "1553918": {
+  "titolari": {
+   "Radnicki 1923": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "M. Šahinović",
+     "B. Nikčević",
+     "S. Simović",
+     "Nikola Marjanović",
+     "I. Babić",
+     "M. Ristić",
+     "M. Cissé",
+     "N. Glavčić",
+     "S. Alić",
+     "M. Kuzmanović",
+     "U. Sremčević"
+    ]
+   },
+   "Cukaricki": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "V. Čarapić",
+     "N. Stanković",
+     "I. Maiga",
+     "M. Đoković",
+     "Z. Šehović",
+     "S. Sissoko",
+     "M. Docić",
+     "L. Marković",
+     "Karel Mustmaa",
+     "U. Miladinović",
+     "Đ. Jovanović"
+    ]
+   }
+  },
+  "partita": "Radnicki 1923 - Cukaricki"
+ },
+ "1576237": {
+  "titolari": {
+   "1. FC Kaiserslautern": {
+    "modulo": "3-4-2-1",
+    "titolari": [
+     "J. Krahl",
+     "J. Elvedi",
+     "M. Gyamfi",
+     "J. Rasmussen",
+     "P. Joly",
+     "S. Şahin",
+     "M. Sauer",
+     "Mika Haas",
+     "N. Skyttä",
+     "I. Kanate",
+     "T. Fidjeu-Tazemeta"
+    ]
+   },
+   "Dynamo Dresden": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "L. Grill",
+     "J. Sterner",
+     "N. Rapp",
+     "F. Muller",
+     "S. Straudi",
+     "R. Wagner",
+     "T. Raschl",
+     "P. Čović",
+     "N. Hauptmann",
+     "B. Bobzien",
+     "V. Vermeij"
+    ]
+   }
+  },
+  "partita": "1. FC Kaiserslautern - Dynamo Dresden"
+ },
+ "1576234": {
+  "titolari": {
+   "Energie Cottbus": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "M. Lotka",
+     "H. Rorig",
+     "K. Manu",
+     "Fousseny Doumbia",
+     "L. Guwara",
+     "L. Bittencourt",
+     "Lukas Michelbrink",
+     "Luca Erlein",
+     "L. Copado",
+     "C. Kinsombi",
+     "J. Butler"
+    ]
+   },
+   "Hertha BSC": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "M. Gersbeck",
+     "D. Zeefuik",
+     "L. Gechter",
+     "N. Kolbe",
+     "M. Pedersen",
+     "P. Seguin",
+     "K. Sessa",
+     "O. Adewumi",
+     "J. Þorsteinsson",
+     "J. Brekalo",
+     "S. Grønning"
+    ]
+   }
+  },
+  "partita": "Energie Cottbus - Hertha BSC"
+ },
+ "1576238": {
+  "titolari": {
+   "Karlsruher SC": {
+    "modulo": "3-5-2",
+    "titolari": [
+     "H. Bernat",
+     "Paul Scholl",
+     "M. Franke",
+     "S. Trémoulet",
+     "Rafael Pinto Pedrosa",
+     "K. Wiethaup",
+     "S. Väänänen",
+     "T. Civeja",
+     "D. Ofli",
+     "S. Fukuda",
+     "M. Wanitzek"
+    ]
+   },
+   "VfL Osnabrück": {
+    "modulo": "3-4-2-1",
+    "titolari": [
+     "J. Krumrey",
+     "R. Fabinski",
+     "J. Müller",
+     "N. Wiemann",
+     "P. Kammerbauer",
+     "F. Wagner",
+     "B. Jacobsen",
+     "I. Badjie",
+     "D. Kyereh",
+     "A. Beck",
+     "R. Meißner"
+    ]
+   }
+  },
+  "partita": "Karlsruher SC - VfL Osnabrück"
+ },
+ "1584081": {
+  "titolari": {
+   "Stuttgart II": {
+    "modulo": "",
+    "titolari": [
+     "T. van der Leij",
+     "Jerik von der Felsen",
+     "Eliot Bujupi",
+     "Jarzinho Ataide Adriano de Nascimento Malanga",
+     "D. Zagadou",
+     "L. Stergiou",
+     "V. Stange",
+     "N. Sessa",
+     "Joyeux Masanka Bungi",
+     "L. Penna",
+     "Maximilian Tobias Herwerth"
+    ]
+   },
+   "FC Ingolstadt 04": {
+    "modulo": "",
+    "titolari": []
+   }
+  },
+  "partita": "Stuttgart II - FC Ingolstadt 04"
+ },
+ "1560284": {
+  "titolari": {
+   "Zalaegerszegi TE": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "B. Gundel-Takács",
+     "Aiden Joshua Harangi",
+     "T. Peñalba",
+     "Fernando José Vera García",
+     "Calderón",
+     "B. Kiss",
+     "F. Amato",
+     "Danylo Krevsun",
+     "Marlon",
+     "Matheus Machado",
+     "Max"
+    ]
+   },
+   "Vasas": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "M. Engedi",
+     "B. Pávkovics",
+     "P. Iyinbor",
+     "Dániel Csóka",
+     "Á. Doktorics",
+     "M. Kovácsréti",
+     "S. Mezei",
+     "S. Hidi",
+     "Rajmund Horvath",
+     "M. Koszta",
+     "J. Urblík"
+    ]
+   }
+  },
+  "partita": "Zalaegerszegi TE - Vasas"
  }
 }
