@@ -1,19 +1,19 @@
 {
  "medio": {
   "copertura": {
-   "1": 27927,
+   "1": 27928,
    "2": 3850,
    "3": 2128,
    "4": 1036,
    "5": 406
   },
-  "totale": 35347,
+  "totale": 35348,
   "brier": 0.5767,
   "brier_clima": 0.6397,
   "fonti": [
    {
     "nome": "betimate",
-    "partite": 33898,
+    "partite": 33899,
     "brier": 0.577,
     "brier_media": 0.5761
    },
@@ -86,37 +86,37 @@
    ]
   }
  },
- "aggiornato": "2026-11-22 22:41",
+ "aggiornato": "2026-11-22 22:56",
  "accordo": {
-  "totale": 3084,
+  "totale": 3106,
   "prende": {
    "statarea": {
-    "prese": 1284,
-    "su": 2282,
-    "pct": 56.3
+    "prese": 1295,
+    "su": 2295,
+    "pct": 56.4
    },
    "webpronostici": {
-    "prese": 666,
-    "su": 1236,
-    "pct": 53.9
+    "prese": 672,
+    "su": 1245,
+    "pct": 54.0
    },
    "consensus": {
-    "prese": 1429,
-    "su": 2673,
-    "pct": 53.5
+    "prese": 1442,
+    "su": 2691,
+    "pct": 53.6
    }
   },
   "mercato": {
-   "partite": 1973,
+   "partite": 1992,
    "poche": false,
-   "brier": 0.5752,
-   "brier_mercato": 0.5634,
-   "diff": 0.0118,
+   "brier": 0.5744,
+   "brier_mercato": 0.5625,
+   "diff": 0.0119,
    "es": 0.0028,
-   "t": 4.22,
+   "t": 4.29,
    "ic": [
-    0.0063,
-    0.0173
+    0.0065,
+    0.0174
    ],
    "per_fonte": [
     {
@@ -128,10 +128,10 @@
     },
     {
      "fonte": "Pinnacle",
-     "partite": 496,
-     "diff": 0.0099,
-     "es": 0.0054,
-     "t": 1.83
+     "partite": 515,
+     "diff": 0.0105,
+     "es": 0.0053,
+     "t": 1.97
     },
     {
      "fonte": "altri book",
@@ -149,11 +149,11 @@
     }
    ]
   },
-  "favorito_mercato": 56.1,
+  "favorito_mercato": 56.2,
   "testa_a_testa": {
-   "partite": 1701,
-   "consensus": 55.8,
-   "mercato": 58.1
+   "partite": 1716,
+   "consensus": 55.9,
+   "mercato": 58.2
   }
  }
 }
