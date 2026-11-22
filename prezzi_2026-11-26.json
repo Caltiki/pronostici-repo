@@ -1167,8 +1167,7 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 71.5,
-  "Equa": 1.4,
-  "InSchedina": "si"
+  "Equa": 1.4
  },
  {
   "Data": "2026-11-26",
@@ -1308,7 +1307,8 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 69.0,
-  "Equa": 1.45
+  "Equa": 1.45,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-26",
@@ -1972,7 +1972,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 62.3,
-  "Equa": 1.61
+  "Equa": 1.61,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-26",
@@ -2195,8 +2196,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
   "Prob": 60.7,
-  "Equa": 1.65,
-  "InSchedina": "si"
+  "Equa": 1.65
  },
  {
   "Data": "2026-11-26",
@@ -5920,14 +5920,14 @@
  },
  {
   "Data": "2026-11-26",
-  "Ora": "21:00",
+  "Ora": "18:45",
   "Campionato": "Europe Europa League",
-  "Partita": "Ferencvárosi - Celje",
-  "Casa": "Ferencvárosi",
-  "Ospite": "Celje",
+  "Partita": "Union St.Gilloise - Lech Poznań",
+  "Casa": "Union St.Gilloise",
+  "Ospite": "Lech Poznań",
   "Linea_OU": "",
-  "Gol_attesi": 3.26,
-  "Margine": 2.0,
+  "Gol_attesi": 3.37,
+  "Margine": 2.8,
   "Movimento": null,
   "Principale": "",
   "Schedina": "si",
@@ -5935,8 +5935,8 @@
   "Gruppo": "1X2",
   "Mercato": "1X2",
   "Sel": "X",
-  "Prob": 17.8,
-  "Equa": 5.61
+  "Prob": 18.0,
+  "Equa": 5.55
  },
  {
   "Data": "2026-11-26",
