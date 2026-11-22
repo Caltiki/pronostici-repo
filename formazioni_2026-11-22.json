@@ -550,7 +550,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Ankle Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Erzurumspor FK": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "Ertuğrul Taşkıran",
+     "Orhan Ovacıklı",
+     "Amar Gerxhaliu",
+     "Nihad Mujakić",
+     "Guram Giorbelidze",
+     "Brandon Baiye",
+     "Mustafa Yumlu",
+     "Elisha Owusu",
+     "Martín Rodríguez",
+     "Gyrano Kerk",
+     "Ibrahim Diabaté"
+    ]
+   },
+   "Göztepe": {
+    "modulo": "3-4-1-2",
+    "titolari": [
+     "Arda Özçimen",
+     "Taha Altıkardeş",
+     "Noah Sonko Sundberg",
+     "Malcom Bokele",
+     "Arda Kurtulan",
+     "Rhaldney",
+     "Novatus Miroshi",
+     "Richard Akonnor",
+     "Alexis Antunes",
+     "André Henrique",
+     "Juan Santos da Silva"
+    ]
+   }
+  },
+  "partita": "Erzurumspor FK - Göztepe"
  },
  "1561446": {
   "assenti": [
@@ -5166,5 +5201,42 @@
    }
   },
   "partita": "FC UFA - Ural"
+ },
+ "1585829": {
+  "titolari": {
+   "Batman Petrolspor": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "B. Tetik",
+     "Ö. Artan",
+     "M. Mert",
+     "Dória",
+     "M. Albayrak",
+     "Jo Jin-Ho",
+     "P. Yaldır",
+     "O. Gürbulak",
+     "Pedrinho",
+     "M. Biron",
+     "G. Altıparmak"
+    ]
+   },
+   "Muğlaspor": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "E. Kılıçarslan",
+     "B. Ceylan",
+     "Yiğit Fidan",
+     "O. Nahırcı",
+     "O. Matur",
+     "M. Diarra",
+     "J. Çelhaka",
+     "A. Güneren",
+     "B. Bulut",
+     "P. Yıldırım",
+     "Y. Uzunoglu"
+    ]
+   }
+  },
+  "partita": "Batman Petrolspor - Muğlaspor"
  }
 }
