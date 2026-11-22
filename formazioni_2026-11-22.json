@@ -1545,7 +1545,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Knee Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Barcelona": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "Joan García",
+     "Eric García",
+     "F. de Jong",
+     "Gerard Martín",
+     "João Cancelo",
+     "Fermín",
+     "Marc Bernal",
+     "Pedri",
+     "Lamine Yamal",
+     "Raphinha",
+     "K. Adeyemi"
+    ]
+   },
+   "Villarreal": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "P. Gulácsi",
+     "A. Freeman",
+     "Pau Navarro",
+     "Renato Veiga",
+     "Carlos Romero",
+     "T. Buchanan",
+     "Santi Comesaña",
+     "P. Gueye",
+     "Alberto Moleiro",
+     "T. Oluwaseyi",
+     "G. Mikautadze"
+    ]
+   }
+  },
+  "partita": "Barcelona - Villarreal"
  },
  "1494340": {
   "assenti": [
@@ -1613,7 +1648,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Inactive"
    }
-  ]
+  ],
+  "titolari": {
+   "BK Hacken": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "E. Berisha",
+     "B. Wembangomo",
+     "H. Hilvenius",
+     "F. Helander",
+     "A. Lundkvist",
+     "A. Doumbia",
+     "D. Seger",
+     "A. Svanbäck",
+     "M. Rygaard",
+     "Julius Lindberg",
+     "G. Lindgren"
+    ]
+   },
+   "IF Elfsborg": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "T. Sander",
+     "A. Jensen",
+     "S. Holmén",
+     "T. Isherwood",
+     "N. Hult",
+     "J. Magnússon",
+     "S. Olsson",
+     "M. Kamara",
+     "J. Beck",
+     "A. Zeneli",
+     "L. Ãstman"
+    ]
+   }
+  },
+  "partita": "BK Hacken - IF Elfsborg"
  },
  "1494344": {
   "assenti": [
@@ -1651,7 +1721,42 @@
     "partite_squadra": 28,
     "quota_gol": 4
    }
-  ]
+  ],
+  "titolari": {
+   "Sirius": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "D. Celic",
+     "H. Castegren",
+     "Mohamed Soumah",
+     "T. Anker",
+     "O. Krusnell",
+     "M. Heier",
+     "M. Lindberg",
+     "J. Persson",
+     "Matthias Nartey",
+     "I. Bjerkebo",
+     "J. Uneken"
+    ]
+   },
+   "Djurgardens IF": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "J. Rinne",
+     "A. Ståhl",
+     "M. Tenho",
+     "M. Marques",
+     "M. Larsson",
+     "P. Langhoff",
+     "M. Siltanen",
+     "Christos Almyras",
+     "Bo Åsulv  Hegland",
+     "J. Okkels",
+     "K. Lien"
+    ]
+   }
+  },
+  "partita": "Sirius - Djurgardens IF"
  },
  "1584471": {
   "assenti": [
@@ -1783,7 +1888,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Kasımpaşa": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Andreas Gianniotis",
+     "Cláudio Winck",
+     "Adem Arous",
+     "Matei Ilie",
+     "Ayberk Karapo",
+     "Andri Fannar Baldursson",
+     "Kerem Demirbay",
+     "Jesurun Rak-Sakyi",
+     "Haris Hajradinović",
+     "Ali Yavuz Kol",
+     "Adrian Benedyczak"
+    ]
+   },
+   "Alanyaspor": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Paulo Victor",
+     "Florent Hadergjonaj",
+     "Nuno Lima",
+     "Fidan Aliti",
+     "Yusuf Özdemir",
+     "Gaius Makouta",
+     "Maestro",
+     "Ibrahim Kaya",
+     "Ianis Hagi",
+     "Ruan Pereira Duarte",
+     "Hwang Ui-Jo"
+    ]
+   }
+  },
+  "partita": "Kasımpaşa - Alanyaspor"
  },
  "1584473": {
   "assenti": [
@@ -1869,7 +2009,42 @@
     "partite_squadra": 21,
     "quota_gol": 0
    }
-  ]
+  ],
+  "titolari": {
+   "Konyaspor": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Bahadır Han Güngördü",
+     "Ahmet Oğuz",
+     "Uğurcan Yazğılı",
+     "Arif Boşluk",
+     "Arthur Masuaku",
+     "Rajmund Tóth",
+     "Melih İbrahimoğlu",
+     "Deniz Türüç",
+     "Jackson Muleka",
+     "Jean-Luc Dompé",
+     "Enis Destan"
+    ]
+   },
+   "Beşiktaş": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "Alexander Nübel",
+     "Amir Murillo",
+     "Emmanuel Agbadou",
+     "Tiago Djaló",
+     "Rıdvan Yılmaz",
+     "Salih Özcan",
+     "Ernest Poku",
+     "Junior Olaitan",
+     "Wilfred Ndidi",
+     "Leandro Trossard",
+     "Dušan Vlahović"
+    ]
+   }
+  },
+  "partita": "Konyaspor - Beşiktaş"
  },
  "1549060": {
   "assenti": [
@@ -1919,7 +2094,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Knee Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "AC Horsens": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "M. Delač",
+     "V. Pálsson",
+     "M. Kupijbida",
+     "J. Bonde",
+     "I. Miličević",
+     "A. Herdonsson",
+     "K. Lusavec",
+     "Kingsley Bimpong",
+     "J. Madsen",
+     "Y. Ouorou",
+     "J. Körkkö"
+    ]
+   },
+   "Silkeborg": {
+    "modulo": "3-4-2-1",
+    "titolari": [
+     "A. Andrésen",
+     "A. Madsen",
+     "R. Østrøm",
+     "W. Moller",
+     "V. Westh",
+     "W. Kirk",
+     "M. Larsen",
+     "J. Gammelby",
+     "L. Riisgaard",
+     "K. Kirkegaard",
+     "O. Ross"
+    ]
+   }
+  },
+  "partita": "AC Horsens - Silkeborg"
  },
  "1549063": {
   "assenti": [
@@ -2026,7 +2236,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Knee Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Viborg": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "K. Kiilerich",
+     "Hjalte Bidstrup",
+     "L. Kirkegaard",
+     "Ž. Zaletel",
+     "O. Bundgaard",
+     "A. Beck",
+     "J. Grønning",
+     "M. Søndergaard",
+     "S. Jalal",
+     "Dorian Hanza",
+     "C. Nouck"
+    ]
+   },
+   "Randers FC": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "J. Storch",
+     "S. Hansen",
+     "D. Høegh",
+     "N. Hopland",
+     "N. Dyhr",
+     "E. Mahmoud",
+     "L. Pedersen",
+     "J. Björkengren",
+     "M. Greve",
+     "M. Sankoh",
+     "M. Themsen"
+    ]
+   }
+  },
+  "partita": "Viborg - Randers FC"
  },
  "1552225": {
   "assenti": [
@@ -2096,7 +2341,42 @@
     "partite_squadra": 21,
     "quota_gol": 0
    }
-  ]
+  ],
+  "titolari": {
+   "Ajax": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "M. Paes",
+     "Lucas Rosa",
+     "A. Bouwman",
+     "Y. Baas",
+     "O. Wijndal",
+     "D. Klaassen",
+     "J. Mokio",
+     "Y. Bissouma",
+     "Rayane Bounida",
+     "T. Arokodare",
+     "O. Gloukh"
+    ]
+   },
+   "ADO Den Haag": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "K. Nikiéma",
+     "O. Raterink",
+     "P. Mulder",
+     "M. Waem",
+     "M. Hokke",
+     "M. Jiménez",
+     "J. Kilo",
+     "M. Šín",
+     "N. Thomas",
+     "E. Rottier",
+     "Y. Eduardo"
+    ]
+   }
+  },
+  "partita": "Ajax - ADO Den Haag"
  },
  "1552230": {
   "assenti": [
@@ -2221,7 +2501,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Knee Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Sparta Rotterdam": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "F. Bednarek",
+     "L. Martes",
+     "M. Young",
+     "B. Martins Indi",
+     "B. Kuipers",
+     "J. Baas",
+     "I. Babadi",
+     "Cedric Hatenboer",
+     "M. van Bergen",
+     "M. Zonneveld",
+     "S. Mito"
+    ]
+   },
+   "AZ Alkmaar": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "J. De Busser",
+     "E. Dijkstra",
+     "W. Goes",
+     "W. Hoedt",
+     "M. Chávez",
+     "C. Stengs",
+     "D. Kwakman",
+     "P. Koopmeiners",
+     "A. Oufkir",
+     "M. Meerdink",
+     "R. Daal"
+    ]
+   }
+  },
+  "partita": "Sparta Rotterdam - AZ Alkmaar"
  },
  "1561445": {
   "assenti": [
@@ -2337,7 +2652,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Achilles Tendon Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Dinamo Makhachkala": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "T. Magomedov",
+     "T. Sundukov",
+     "A. Alarcón",
+     "M. Alibekov",
+     "M. Makhamadjonov",
+     "M. Apshatsev",
+     "K. Zinovich",
+     "N. Glushkov",
+     "M. Hosseinnezhad",
+     "D. Kuzyaev",
+     "G. Agalarov"
+    ]
+   },
+   "Spartak Moscow": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "I. Pomazun",
+     "Gedson Fernandes",
+     "C. Wooh",
+     "S. Babić",
+     "Víctor Parada",
+     "R. Litvinov",
+     "P. Solari",
+     "N. Umyarov",
+     "R. Zobnin",
+     "Marquinhos",
+     "M. Daku"
+    ]
+   }
+  },
+  "partita": "Dinamo Makhachkala - Spartak Moscow"
  },
  "1557472": {
   "assenti": [
@@ -5877,5 +6227,375 @@
    }
   },
   "partita": "Zalaegerszegi TE - Vasas"
+ },
+ "1558681": {
+  "titolari": {
+   "SK Beveren": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "Johannes Schenk",
+     "Laurent Jans",
+     "Viktor Boone",
+     "Stephane Keller",
+     "Yoni Gomis",
+     "Arno Verschueren",
+     "Kurt Abrahams",
+     "Jearl Margaritha",
+     "Sieben Dewaele",
+     "Christian Brüls",
+     "Moise Kaboré"
+    ]
+   },
+   "Gent": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "Davy Roef",
+     "Matties Volckaert",
+     "Maksim Paskotsi",
+     "Siebe Van der Heyden",
+     "Leonardo Lopes",
+     "Hyllarion Goore",
+     "Abdelkahar Kadri",
+     "Mathias Delorge",
+     "Tiago Araújo",
+     "Josué Vergara",
+     "Momodou Sonko"
+    ]
+   }
+  },
+  "partita": "SK Beveren - Gent"
+ },
+ "1570030": {
+  "titolari": {
+   "Cordoba": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "Iker Álvarez",
+     "Daniel Budesca",
+     "Juan Gutiérrez",
+     "Rubén Alves",
+     "Dani Tasende",
+     "Adnane Ghailan",
+     "Isma Ruiz",
+     "Eder García",
+     "Diego Bri",
+     "Percan",
+     "S. El Jebari"
+    ]
+   },
+   "Oviedo": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Aarón Escandell",
+     "David Jiménez",
+     "David Costas",
+     "Carlos Domínguez",
+     "S. Rodriguez",
+     "Y. Didi",
+     "Mikel Goti",
+     "I. Chaira",
+     "Enzo Perez",
+     "Estanis",
+     "A. Ișfan"
+    ]
+   }
+  },
+  "partita": "Cordoba - Oviedo"
+ },
+ "1585832": {
+  "titolari": {
+   "Esenler Erokspor": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "E. Canpolat",
+     "H. Bilazer",
+     "B. Öztürk",
+     "Luccas Claro",
+     "E. Alić",
+     "F. Yazgan",
+     "N. Janvier",
+     "Y. Erdoğan",
+     "G. Kanga",
+     "M. Faye",
+     "K. Kanatsızkuş"
+    ]
+   },
+   "Antalyaspor": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "F. Pseftis",
+     "F. Nzaba",
+     "Bugra Tivsiz Ensar",
+     "S. Karakoç",
+     "B. Balcı",
+     "Pedrinho",
+     "M. Şimşek",
+     "S. Dikmen",
+     "Ö. Beyaz",
+     "S. van de Streek",
+     "Nuno da Costa"
+    ]
+   }
+  },
+  "partita": "Esenler Erokspor - Antalyaspor"
+ },
+ "1555430": {
+  "titolari": {
+   "FC Zurich": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "Silas Huber",
+     "Doron Lichtenstein",
+     "L. Kamberi",
+     "A. Hack",
+     "S. Walker",
+     "L. Schodler",
+     "K. Spadanuda",
+     "S. Hodža",
+     "L. Comenencia",
+     "U. Emmanuel",
+     "P. Keny"
+    ]
+   },
+   "FC ST. Gallen": {
+    "modulo": "3-1-4-2",
+    "titolari": [
+     "L. Zigi",
+     "T. Gaal",
+     "J. Stanić",
+     "M. Heydari",
+     "M. Stevanovic",
+     "H. Vandermersch",
+     "L. Görtler",
+     "L. Daschner",
+     "C. Okoroji",
+     "C. Boukhalfa",
+     "A. Hunziker"
+    ]
+   }
+  },
+  "partita": "FC Zurich - FC ST. Gallen"
+ },
+ "1585837": {
+  "titolari": {
+   "Manisa F.K.": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "V. Karakuş",
+     "K. Yurdakul",
+     "C. Hérelle",
+     "Y. Güreler",
+     "O. Kaynak",
+     "Osman Kahraman",
+     "A. Çankaya",
+     "J. Anziani",
+     "Y. Talum",
+     "Y. Benrahou",
+     "C. Sylla"
+    ]
+   },
+   "Pendikspor": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "E. Dadük",
+     "K. Kalafat",
+     "T. İnce",
+     "V. Soldo",
+     "S. Abifade",
+     "M. Özdemir",
+     "D. Hrelja",
+     "B. Karadeniz",
+     "H. Yeşil",
+     "M. Kiprit",
+     "Thuram"
+    ]
+   }
+  },
+  "partita": "Manisa F.K. - Pendikspor"
+ },
+ "1603610": {
+  "titolari": {
+   "Olympiakos": {
+    "modulo": "3-5-2",
+    "titolari": [
+     "Christos Talichmanidis",
+     "Christoforos Frantzis",
+     "Márk Tamás",
+     "Henrique Gomes",
+     "Jean Felipe",
+     "Agapios Vrikkis",
+     "Constantinos Christou",
+     "Dominik Prokop",
+     "Marios Pechlivanis",
+     "Zanos Savva",
+     "Kyprianos Eracleous"
+    ]
+   },
+   "AEK Larnaca": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "Alberto Paleari",
+     "Godswill Ekpolo",
+     "Hrvoje Miličević",
+     "Mike Van der Hoorn",
+     "Kostas Pileas",
+     "Amor Layouni",
+     "Gus Ledes",
+     "Ivan Chavdarov Pankov",
+     "Nicolas Andereggen",
+     "Riad Bajić",
+     "Đorđe Ivanović"
+    ]
+   }
+  },
+  "partita": "Olympiakos - AEK Larnaca"
+ },
+ "1593179": {
+  "titolari": {
+   "SC Freiburg W": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "A. Reimann",
+     "L. Karl",
+     "A. Axtmann",
+     "J. Stierli",
+     "E. Memminger",
+     "L. Kolb",
+     "İlayda Açıkgöz",
+     "Maj Schneider",
+     "B. D. Vincze",
+     "L. Birkholz",
+     "C. Brunold"
+    ]
+   },
+   "Stuttgart W": {
+    "modulo": "3-4-1-2",
+    "titolari": [
+     "L. Giuliani",
+     "G. Stegemann",
+     "L. Zähringer",
+     "Katana Norman",
+     "M. Rall",
+     "A. AchciÅska",
+     "Y. Hirano",
+     "Lenelotte Muller",
+     "Dafina Redzepi",
+     "N. Billa",
+     "V. Wieder"
+    ]
+   }
+  },
+  "partita": "SC Freiburg W - Stuttgart W"
+ },
+ "1551147": {
+  "titolari": {
+   "Levski Sofia": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "O. Vladimirov",
+     "Aldair",
+     "K. Dimitrov",
+     "G. Trdin",
+     "Maicon",
+     "M. Grujić",
+     "A. Bouras",
+     "M. Soula",
+     "Everton Bala",
+     "A. Oko-Flex",
+     "J. Perea"
+    ]
+   },
+   "Lokomotiv Sofia": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "M. Velichkov",
+     "Eirô",
+     "R. Bidounga",
+     "N. Neychev",
+     "O. Oduko",
+     "R. Daskalov",
+     "K. Stanoev",
+     "E. Dost",
+     "A. Taoui",
+     "A. Aralica",
+     "S. Delev"
+    ]
+   }
+  },
+  "partita": "Levski Sofia - Lokomotiv Sofia"
+ },
+ "1561966": {
+  "titolari": {
+   "SCR Altach": {
+    "modulo": "5-3-2",
+    "titolari": [
+     "D. Stojanovic",
+     "N. Niehoff",
+     "L. Jäger",
+     "Filip Milojevic",
+     "B. Zech",
+     "B. Böckle",
+     "Y. Massombo",
+     "M. Bähre",
+     "P. Greil",
+     "R. Elongo-Yombo",
+     "O. Diawara"
+    ]
+   },
+   "Sturm Graz": {
+    "modulo": "3-4-2-1",
+    "titolari": [
+     "A. Helac",
+     "A. Malic",
+     "J. Quarshie",
+     "A. Vallci",
+     "Jacob Peter Hödl",
+     "Luca Weinhandl",
+     "J. Gorenc Stankovič",
+     "L. Balbo",
+     "S. Seidl",
+     "V. Matoshi",
+     "O. Diakité"
+    ]
+   }
+  },
+  "partita": "SCR Altach - Sturm Graz"
+ },
+ "1561971": {
+  "titolari": {
+   "Wolfsberger AC": {
+    "modulo": "3-4-2-1",
+    "titolari": [
+     "L. Gliklich",
+     "Matteo Kitz",
+     "S. Piesinger",
+     "Aboubacar Drabo",
+     "F. Wohlmuth",
+     "M. Sulzner",
+     "D. Fitz",
+     "Boris Matić",
+     "P. Verhounig",
+     "D. Avdijaj",
+     "G. Vrioni"
+    ]
+   },
+   "Ried": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "A. Leitner",
+     "F. Rossdorfer",
+     "S. Chukwudi",
+     "O. Steurer",
+     "P. Pomer",
+     "Y. Maart",
+     "M. Rasner",
+     "A. Bajić",
+     "S. Schwab",
+     "J. Rhodes",
+     "I. Kiese Thelin"
+    ]
+   }
+  },
+  "partita": "Wolfsberger AC - Ried"
  }
 }
