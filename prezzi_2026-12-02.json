@@ -276,8 +276,7 @@
   "Sel": "Gol",
   "Prob": 63.5,
   "Equa": 1.57,
-  "Rif_Book": "Marathon Bet",
-  "InSchedina": "si"
+  "Rif_Book": "Marathon Bet"
  },
  {
   "Data": "2026-12-02",
@@ -298,7 +297,8 @@
   "Sel": "1",
   "Prob": 60.8,
   "Equa": 1.64,
-  "Rif_Book": "Marathon Bet"
+  "Rif_Book": "Marathon Bet",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-12-02",
@@ -1103,27 +1103,6 @@
   "Data": "2026-12-02",
   "Ora": "20:30",
   "Campionato": "England: Premier League",
-  "Partita": "Chelsea - Crystal Palace",
-  "Casa": "Chelsea",
-  "Ospite": "Crystal Palace",
-  "Linea_OU": 3.5,
-  "Gol_attesi": 3.5,
-  "Margine": 4.2,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "Gol NoGol",
-  "Mercato": "BTTS",
-  "Sel": "NoGol",
-  "Prob": 36.5,
-  "Equa": 2.74,
-  "Rif_Book": "Marathon Bet"
- },
- {
-  "Data": "2026-12-02",
-  "Ora": "20:30",
-  "Campionato": "England: Premier League",
   "Partita": "Manchester City - Leeds United",
   "Casa": "Manchester City",
   "Ospite": "Leeds United",
@@ -1286,6 +1265,27 @@
   "Sel": "Under",
   "Prob": 21.3,
   "Equa": 4.69,
+  "Rif_Book": "Marathon Bet"
+ },
+ {
+  "Data": "2026-12-02",
+  "Ora": "20:30",
+  "Campionato": "England: Premier League",
+  "Partita": "Chelsea - Crystal Palace",
+  "Casa": "Chelsea",
+  "Ospite": "Crystal Palace",
+  "Linea_OU": 3.5,
+  "Gol_attesi": 3.5,
+  "Margine": 4.2,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "OddsAPI",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 20.2,
+  "Equa": 4.95,
   "Rif_Book": "Marathon Bet"
  },
  {
