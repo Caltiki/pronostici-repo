@@ -623,6 +623,7 @@
  },
  "1550203": {
   "assenti": [
+   "P. Ciurria (Monza)",
    "M. Folorunsho (Monza)",
    "Y. Maye (Monza)",
    "C. Ngonge (Monza)",
@@ -687,6 +688,21 @@
     "gol": 0,
     "ass": 0,
     "voto": 5.13,
+    "gol_squadra": 20,
+    "partite_squadra": 13,
+    "quota_gol": 0
+   },
+   {
+    "nome": "P. Ciurria",
+    "squadra": "Monza",
+    "tipo": "Missing Fixture",
+    "motivo": "Injury",
+    "pres": 0,
+    "tit": 0,
+    "min": 0,
+    "gol": 0,
+    "ass": 0,
+    "voto": 0.0,
     "gol_squadra": 20,
     "partite_squadra": 13,
     "quota_gol": 0
@@ -846,18 +862,14 @@
    "Alan Patrick (Internacional)",
    "A. Bernabei (Internacional)",
    "K. da Silva Chagas (Internacional)",
-   "Matheus Bahia (Internacional)",
    "S. Rochet (Internacional)",
-   "Thiago Maia (Internacional)",
    "Dudu (Vitoria)",
    "Edu (Vitoria)",
    "Fabiano (Vitoria)",
    "Lucas Silva (Vitoria)",
    "Matheusinho (Vitoria)",
    "Nathan Mendes (Vitoria)",
-   "Riccieli (Vitoria)",
-   "Erick (Vitoria)",
-   "Matheuzinho (Vitoria)"
+   "Riccieli (Vitoria)"
   ],
   "assenti_peso": [
    {
@@ -876,36 +888,6 @@
     "quota_gol": 17
    },
    {
-    "nome": "Erick",
-    "squadra": "Vitoria",
-    "tipo": "Questionable",
-    "motivo": "Injury",
-    "pres": 54,
-    "tit": 33,
-    "min": 2798,
-    "gol": 14,
-    "ass": 7,
-    "voto": 7.18,
-    "gol_squadra": 54,
-    "partite_squadra": 54,
-    "quota_gol": 26
-   },
-   {
-    "nome": "Matheuzinho",
-    "squadra": "Vitoria",
-    "tipo": "Questionable",
-    "motivo": "Injury",
-    "pres": 38,
-    "tit": 33,
-    "min": 2513,
-    "gol": 5,
-    "ass": 4,
-    "voto": 6.86,
-    "gol_squadra": 54,
-    "partite_squadra": 54,
-    "quota_gol": 9
-   },
-   {
     "nome": "Alan Patrick",
     "squadra": "Internacional",
     "tipo": "Missing Fixture",
@@ -919,21 +901,6 @@
     "gol_squadra": 47,
     "partite_squadra": 40,
     "quota_gol": 15
-   },
-   {
-    "nome": "Matheus Bahia",
-    "squadra": "Internacional",
-    "tipo": "Missing Fixture",
-    "motivo": "Muscle Injury",
-    "pres": 28,
-    "tit": 24,
-    "min": 1895,
-    "gol": 2,
-    "ass": 3,
-    "voto": 6.7,
-    "gol_squadra": 47,
-    "partite_squadra": 40,
-    "quota_gol": 4
    },
    {
     "nome": "Nathan Mendes",
@@ -978,21 +945,6 @@
     "voto": 6.93,
     "gol_squadra": 54,
     "partite_squadra": 54,
-    "quota_gol": 0
-   },
-   {
-    "nome": "Thiago Maia",
-    "squadra": "Internacional",
-    "tipo": "Missing Fixture",
-    "motivo": "Muscle Injury",
-    "pres": 21,
-    "tit": 10,
-    "min": 915,
-    "gol": 0,
-    "ass": 2,
-    "voto": 6.82,
-    "gol_squadra": 47,
-    "partite_squadra": 40,
     "quota_gol": 0
    },
    {
@@ -1086,5 +1038,79 @@
     "quota_gol": 0
    }
   ]
+ },
+ "1565529": {
+  "titolari": {
+   "Chornomorets": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "C. Aniagboso",
+     "O. Pushkarev",
+     "M. Jarju",
+     "M. Melnychenko",
+     "M. Farina",
+     "V. Klymenko",
+     "G. Robakidze",
+     "D. Alefirenko",
+     "V. Kurko",
+     "V. Faraseenko",
+     "K. Popov"
+    ]
+   },
+   "Epitsentr Dunayivtsi": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "N. Fedotov",
+     "I. Kyryukhantsev",
+     "S. Repaj",
+     "V. Moroz",
+     "O. Klymets",
+     "Nene",
+     "D. Vashchenko",
+     "Y. Zaporozhets",
+     "A. Kozak",
+     "V. Sydun",
+     "M. Evpak"
+    ]
+   }
+  },
+  "partita": "Chornomorets - Epitsentr Dunayivtsi"
+ },
+ "1565535": {
+  "titolari": {
+   "LNZ Cherkasy": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "D. Ledvii",
+     "V. Roman",
+     "B. Slyubyk",
+     "N. Muravskyi",
+     "O. Drambaev",
+     "R. Didyk",
+     "D. Kuzyk",
+     "A. Ryabov",
+     "A. Yakubu",
+     "H. Pasich",
+     "P. Yade"
+    ]
+   },
+   "Polessya": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "Y. Volynets",
+     "M. Kravchenko",
+     "S. Chobotenko",
+     "E. Sarapiy",
+     "B. Krushynskyi",
+     "R. Babenko",
+     "O. Nazarenko",
+     "O. Andrievskyi",
+     "L. Emërllahu",
+     "V. Veleten",
+     "I. Krasnopir"
+    ]
+   }
+  },
+  "partita": "LNZ Cherkasy - Polessya"
  }
 }
