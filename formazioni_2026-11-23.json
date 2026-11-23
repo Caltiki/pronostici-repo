@@ -859,7 +859,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Back Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Monza": {
+    "modulo": "3-5-2",
+    "titolari": [
+     "D. Thiam",
+     "E. Kouadio",
+     "S. Goglichidze",
+     "A. Carboni",
+     "S. Birindelli",
+     "E. Akinsanmiro",
+     "L. Colombo",
+     "M. Pessina",
+     "Ricardo Mangas",
+     "Gustavo Varela",
+     "Jay Robinson"
+    ]
+   },
+   "Fiorentina": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "David de Gea",
+     "Álex Jiménez",
+     "R. Drăgușin",
+     "Viery",
+     "João Mário",
+     "C. Ndour",
+     "C. Inao OulaÃ¯",
+     "Franco Mastantuono",
+     "Pote",
+     "W. Gnonto",
+     "Mateo Pellegrino"
+    ]
+   }
+  },
+  "partita": "Monza - Fiorentina"
  },
  "1557469": {
   "assenti": [
@@ -959,7 +994,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Surgery"
    }
-  ]
+  ],
+  "titolari": {
+   "Brentford": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "C. Kelleher",
+     "M. Kayode",
+     "K. Ajer",
+     "S. van den Berg",
+     "K. Lewis-Potter",
+     "Y. Yarmolyuk",
+     "V. Janelt",
+     "D. Ouattara",
+     "M. Damsgaard",
+     "J. Anthony",
+     "C. Wilson"
+    ]
+   },
+   "Everton": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "J. Pickford",
+     "J. O&apos;Brien",
+     "J. Tarkowski",
+     "J. Branthwaite",
+     "V. Mykolenko",
+     "H. Armstrong",
+     "J. Garner",
+     "M. Röhl",
+     "K. Dewsbury-Hall",
+     "Tyrique George",
+     "T. Barry"
+    ]
+   }
+  },
+  "partita": "Brentford - Everton"
  },
  "1570457": {
   "assenti": [
@@ -995,7 +1065,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Inactive"
    }
-  ]
+  ],
+  "titolari": {
+   "Levante": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "M. Ryan",
+     "J. Toljan",
+     "A. Mandi",
+     "Dela",
+     "Manu Sánchez",
+     "Oriol Rey",
+     "Jon Ander Olasagasti",
+     "Brugui",
+     "Reque",
+     "T. Fernández",
+     "Iván Romero"
+    ]
+   },
+   "Elche": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "M. Dituro",
+     "Buba Sangaré",
+     "F. Redondo",
+     "Víctor Chust",
+     "R. Revivo",
+     "Gonzalo Villar",
+     "J. Morcillo",
+     "A. Osorio",
+     "L. Cepeda",
+     "Fer Niño",
+     "Germán Valera"
+    ]
+   }
+  },
+  "partita": "Levante - Elche"
  },
  "1492467": {
   "assenti": [
@@ -2140,5 +2245,79 @@
    }
   },
   "partita": "Juventud - Defensor Sporting"
+ },
+ "1552539": {
+  "titolari": {
+   "Sochaux": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "M. Jeannin",
+     "E. N'Gatta",
+     "M. Peybernes",
+     "D. Gomis",
+     "Dylan Tavares",
+     "Honoré Bayanginisa",
+     "J. Masson",
+     "L. Deedson",
+     "S. Baghdadi",
+     "V. Lobry",
+     "K. Djoco"
+    ]
+   },
+   "Dunkerque": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Moha Airam",
+     "A. Linguet",
+     "Opa Sanganté",
+     "O. Touré",
+     "V. Mayela",
+     "S. Nzonzi",
+     "J. Morel",
+     "K. Ayari",
+     "A. Lebeau",
+     "E. Prutsev",
+     "A. Nade"
+    ]
+   }
+  },
+  "partita": "Sochaux - Dunkerque"
+ },
+ "1649567": {
+  "titolari": {
+   "Gimnasia L.P.": {
+    "modulo": "4-3-1-2",
+    "titolari": [
+     "H. Castillo",
+     "A. Steimbach",
+     "G. Conti",
+     "E. Martínez",
+     "P. Silva",
+     "M. Seoane",
+     "I. Miramón",
+     "L. Janson",
+     "I. Fernández",
+     "A. Auzmendi",
+     "M. Torres"
+    ]
+   },
+   "Newells Old Boys": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "J. Reinatti",
+     "M. Ortega",
+     "B. Cabrera",
+     "L. Carrizo",
+     "J. Russo",
+     "L. Regiardo",
+     "R. Herrera",
+     "W. Mazzantti",
+     "Facundo Gauch",
+     "S. Solari",
+     "M. Cóccaro"
+    ]
+   }
+  },
+  "partita": "Gimnasia L.P. - Newells Old Boys"
  }
 }
