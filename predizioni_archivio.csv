@@ -4637,12 +4637,12 @@ ID_API,Data,Ora,Lega_ID,Lega,Casa,Ospite,ID_Casa,ID_Ospite,P1,PX,P2,Consiglio,Vi
 1646789,2026-11-23,11:00,277,Kenya Super League,Talanta,Kibera Soccer,17897,25751,33.0,33.0,33.0,No predictions available,,False,,,,,,,2026-11-23 07:13,2,2,X
 1605126,2026-11-23,11:30,343,Armenia First League,Pyunik II,BKMA II,3696,17171,10.0,45.0,45.0,Double chance : draw or BKMA II,BKMA II,True,,-1.5,-2.5,,,,2026-11-23 07:13,,,
 1565529,2026-11-23,12:00,333,Ukraine Premier League,Chornomorets,Epitsentr Dunayivtsi,3615,14434,45.0,45.0,10.0,Double chance : Chornomorets or draw,Chornomorets,True,,-1.5,-1.5,33.0,30.9,36.2,2026-11-23 07:13,,,
-1565535,2026-11-23,12:00,333,Ukraine Premier League,LNZ Cherkasy,Polessya,17161,6496,10.0,45.0,45.0,Double chance : draw or Polessya,Polessya,True,,-2.5,-2.5,23.9,32.2,44.0,2026-11-23 07:13,,,
-1629483,2026-11-23,12:00,1240,Turkey U19 league,İstanbul Başakşehir U19,Corum U19,16397,28242,50.0,50.0,0.0,Winner : İstanbul Başakşehir U19,İstanbul Başakşehir U19,False,,-3.5,-1.5,,,,2026-11-23 07:13,,,
-1527752,2026-11-23,12:00,571,Tajikistan Vysshaya Liga,Barki Tajik,Istiqlol,12270,8012,10.0,45.0,45.0,Combo Double chance : draw or Istiqlol and -3.5 goals,Istiqlol,True,-3.5,-1.5,-1.5,,,,2026-11-23 07:13,,,
-1647893,2026-11-23,12:00,291,Iran Azadegan League,Mes Kerman,Be'sat Kermanshah,2718,20802,45.0,45.0,10.0,Combo Double chance : Mes Kerman or draw and -3.5 goals,Mes Kerman,True,-3.5,-1.5,-1.5,,,,2026-11-23 07:13,,,
+1565535,2026-11-23,12:00,333,Ukraine Premier League,LNZ Cherkasy,Polessya,17161,6496,10.0,45.0,45.0,Double chance : draw or Polessya,Polessya,True,,-2.5,-2.5,23.9,32.2,44.0,2026-11-23 07:13,1,1,X
+1629483,2026-11-23,12:00,1240,Turkey U19 league,İstanbul Başakşehir U19,Corum U19,16397,28242,50.0,50.0,0.0,Winner : İstanbul Başakşehir U19,İstanbul Başakşehir U19,False,,-3.5,-1.5,,,,2026-11-23 07:13,3,0,1
+1527752,2026-11-23,12:00,571,Tajikistan Vysshaya Liga,Barki Tajik,Istiqlol,12270,8012,10.0,45.0,45.0,Combo Double chance : draw or Istiqlol and -3.5 goals,Istiqlol,True,-3.5,-1.5,-1.5,,,,2026-11-23 07:13,1,5,2
+1647893,2026-11-23,12:00,291,Iran Azadegan League,Mes Kerman,Be'sat Kermanshah,2718,20802,45.0,45.0,10.0,Combo Double chance : Mes Kerman or draw and -3.5 goals,Mes Kerman,True,-3.5,-1.5,-1.5,,,,2026-11-23 07:13,0,0,X
 1647894,2026-11-23,12:30,291,Iran Azadegan League,Mes Soongoun,Ario Eslamshahr,22236,20801,45.0,45.0,10.0,Combo Double chance : Mes Soongoun or draw and -3.5 goals,Mes Soongoun,True,-3.5,-2.5,-1.5,,,,2026-11-23 07:13,,,
-1647895,2026-11-23,12:30,291,Iran Azadegan League,Saipa,Naft Bandar Abbas,2736,24800,45.0,45.0,10.0,Combo Double chance : Saipa or draw and -3.5 goals,Saipa,True,-3.5,-2.5,-1.5,,,,2026-11-23 07:13,,,
+1647895,2026-11-23,12:30,291,Iran Azadegan League,Saipa,Naft Bandar Abbas,2736,24800,45.0,45.0,10.0,Combo Double chance : Saipa or draw and -3.5 goals,Saipa,True,-3.5,-2.5,-1.5,,,,2026-11-23 07:13,0,0,X
 1646787,2026-11-23,13:00,277,Kenya Super League,Kibera Black Stars,Naivas,2497,19488,10.0,45.0,45.0,Double chance : draw or Naivas,Naivas,True,,,,,,,2026-11-23 07:13,,,
 1626928,2026-11-23,13:00,175,Bulgaria Third League - Northeast,Cherno more II,Fratria II,19891,24545,50.0,50.0,0.0,Combo Winner : Cherno more II and +1.5 goals,Cherno more II,False,+1.5,-4.5,-1.5,,,,2026-11-23 07:13,,,
 1646788,2026-11-23,13:00,277,Kenya Super League,Nzoia Sugar,Mfalme,2469,27732,33.0,33.0,33.0,No predictions available,,False,,,,,,,2026-11-23 07:13,,,
@@ -4748,3 +4748,6 @@ ID_API,Data,Ora,Lega_ID,Lega,Casa,Ospite,ID_Casa,ID_Ospite,P1,PX,P2,Consiglio,Vi
 1632064,2026-11-24,00:15,252,Paraguay Division Profesional - Clausura,Nacional Asuncion,Cerro Porteno,1175,1176,35.0,35.0,30.0,Double chance : Nacional Asuncion or draw,Nacional Asuncion,True,,-2.5,-1.5,34.2,28.0,37.8,2026-11-23 13:12,,,
 1650863,2026-11-24,01:00,163,Costa-Rica Liga de Ascenso,Pitbulls Santa Barbara FC,ADR Jicaral,26343,2043,10.0,45.0,45.0,Double chance : draw or ADR Jicaral,ADR Jicaral,True,,-1.5,-2.5,,,,2026-11-23 13:12,,,
 1492469,2026-11-24,01:00,71,Brazil Serie A,Santos,Gremio,128,130,45.0,45.0,10.0,Double chance : Santos or draw,Santos,True,,-2.5,-1.5,59.0,21.9,19.1,2026-11-23 13:12,,,
+1647132,2026-11-24,01:30,421,Aruba Division di Honor,Bubali,Estrella,8235,8238,35.0,35.0,30.0,Combo Double chance : Bubali or draw and +1.5 goals,Bubali,True,+1.5,-3.5,-2.5,,,,2026-11-23 14:09,,,
+1648486,2026-11-24,02:00,322,Jamaica Premier League,Portmore United,Racing United,3443,25020,45.0,45.0,10.0,Double chance : Portmore United or draw,Portmore United,True,,-2.5,-2.5,58.3,24.2,17.5,2026-11-23 14:09,,,
+1649498,2026-11-24,02:00,253,USA Major League Soccer,St. Louis City,Los Angeles FC,20787,1616,10.0,45.0,45.0,Double chance : draw or Los Angeles FC,Los Angeles FC,True,,-2.5,-2.5,39.1,26.9,34.0,2026-11-23 14:09,,,
