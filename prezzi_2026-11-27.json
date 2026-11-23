@@ -1155,7 +1155,8 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 68.0,
-  "Equa": 1.47
+  "Equa": 1.47,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-27",
@@ -1440,8 +1441,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "1X + Over 2.5",
   "Prob": 64.2,
-  "Equa": 1.56,
-  "InSchedina": "si"
+  "Equa": 1.56
  },
  {
   "Data": "2026-11-27",
@@ -5673,5 +5673,25 @@
   "Prob": 20.1,
   "Equa": 4.99,
   "Rif_Book": "Pinnacle"
+ },
+ {
+  "Data": "2026-11-27",
+  "Ora": "20:00",
+  "Campionato": "Netherlands Eerste Divisie",
+  "Partita": "NAC Breda - FC Den Bosch",
+  "Casa": "NAC Breda",
+  "Ospite": "FC Den Bosch",
+  "Linea_OU": "",
+  "Gol_attesi": 3.98,
+  "Margine": 1.4,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 17.9,
+  "Equa": 5.58
  }
 ]
