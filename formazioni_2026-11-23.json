@@ -301,7 +301,42 @@
     "partite_squadra": 11,
     "quota_gol": 0
    }
-  ]
+  ],
+  "titolari": {
+   "Başakşehir": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Muhammed Şengezer",
+     "Michał Karbownik",
+     "Emin Bayram",
+     "Jerome Opoku",
+     "Saba Kharebashvili",
+     "Olivier Kemen",
+     "Jakub Kałuziński",
+     "Andreas Skov Olsen",
+     "Eldor Shomurodov",
+     "Ivan Brnić",
+     "Davie Selke"
+    ]
+   },
+   "Çorum FK": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "Erhan Erentürk",
+     "Alexandre Penetra",
+     "Çağlar Söyüncü",
+     "Hrvoje Smolčić",
+     "Andrei Borza",
+     "Ylber Ramadani",
+     "Göktan Gürpüz",
+     "Markus Karlsbakk",
+     "Mohammed Diomande",
+     "Alexandros Kyziridis",
+     "Jesús Ramírez"
+    ]
+   }
+  },
+  "partita": "Başakşehir - Çorum FK"
  },
  "1494341": {
   "assenti": [
@@ -1445,5 +1480,153 @@
    }
   },
   "partita": "Tractor Sazi - Al-Wasl FC"
+ },
+ "1593177": {
+  "titolari": {
+   "Bayern Munich W": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "E. Mahmutovic",
+     "S. Mattner-Trembleau",
+     "G. Viggósdóttir",
+     "S. Ballisager",
+     "F. Kett",
+     "A. Åehitler",
+     "B. Amani",
+     "S. Proost",
+     "J. DamnjanoviÄ",
+     "K. Bühl",
+     "E. Imade"
+    ]
+   },
+   "1899 Hoffenheim W": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "L. Dick",
+     "L. Gloning",
+     "J. van de Velde",
+     "L. Doorn",
+     "L. Kaut",
+     "V. Ampoorter",
+     "V. Diehm",
+     "C. Hahn",
+     "M. Fenger",
+     "S. Fölmli",
+     "M. Steiner"
+    ]
+   }
+  },
+  "partita": "Bayern Munich W - 1899 Hoffenheim W"
+ },
+ "1585830": {
+  "titolari": {
+   "Bodrum FK": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "Diogo Sousa",
+     "A. Yılmaz",
+     "A. Ajeti",
+     "A. Aytemur",
+     "E. Kaplan",
+     "B. Yavuzay",
+     "Yusuf Sertkaya",
+     "J. de Sousa Moreira Cruz",
+     "Fernando Andrade",
+     "E. Bilsel",
+     "R. Providence"
+    ]
+   },
+   "Vanspor FK": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "A. Damlu",
+     "C. Hanalp",
+     "S. Osmanoğlu",
+     "K. Seven",
+     "B. İşçiler",
+     "M. Özcan",
+     "H. Çiftçi",
+     "M. Maniş",
+     "O. Kökçü",
+     "T. Yenne",
+     "İlkan Sever"
+    ]
+   }
+  },
+  "partita": "Bodrum FK - Vanspor FK"
+ },
+ "1603609": {
+  "titolari": {
+   "Krasava Ypsonas": {
+    "modulo": "3-4-2-1",
+    "titolari": [
+     "Andreas Christodoulou",
+     "Fanos Katelaris",
+     "Luiyi de Lucas",
+     "Kristopher Da Graca",
+     "Issam Chebake",
+     "Vasilios Papafotis",
+     "Rubén Pardo",
+     "Giannis Kiakos",
+     "Serge Tabekou",
+     "Yassine Bahassa",
+     "Lysandros Papastylianou"
+    ]
+   },
+   "Anorthosis": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "Jacob Karlstrøm",
+     "Simranjit Thandi",
+     "Gabriel Furtado",
+     "Andreas Karamanolis",
+     "Kiko",
+     "Clifford Aboagye",
+     "Stijn Middendorp",
+     "Sabrawi Ali",
+     "Babacar Dione",
+     "Rafa Lopes",
+     "Tamás Kiss"
+    ]
+   }
+  },
+  "partita": "Krasava Ypsonas - Anorthosis"
+ },
+ "1548566": {
+  "titolari": {
+   "NK Slaven Belupo": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "I. Čović",
+     "F. Krušelj",
+     "T. Božić",
+     "J. Mersinaj",
+     "A. Jakir",
+     "L. Crepulja",
+     "A. Adeshina",
+     "M. Dabro",
+     "L. Banovec",
+     "J. Mitrović",
+     "I. Nestorovski"
+    ]
+   },
+   "NK Osijek": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "M. Malenica",
+     "S. Mustafic",
+     "Ivano Kolarik",
+     "L. Jelenić",
+     "D. Kalem",
+     "Niko Farkaš",
+     "L. Vrbancic",
+     "I. Dolček",
+     "Luka Tunjic",
+     "Cantero",
+     "I. Barić"
+    ]
+   }
+  },
+  "partita": "NK Slaven Belupo - NK Osijek"
  }
 }
