@@ -493,7 +493,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Knee Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Hammarby FF": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "W. Hahn",
+     "E. Skoglund",
+     "I. Fofana",
+     "F. Winther",
+     "N. Persson",
+     "F. Adjei",
+     "T. Tekie",
+     "M. Karlsson",
+     "M. Madjed",
+     "P. Abraham",
+     "V. Lind"
+    ]
+   },
+   "IFK Goteborg": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "V. Andersson",
+     "F. Eriksson",
+     "E. Fasth",
+     "H. Hermannsson",
+     "Noah Tolf",
+     "N. Žugelj",
+     "O. Mansson",
+     "D. Kruse",
+     "K. Þórðarson",
+     "Alexander Illum Simmelhack",
+     "K. Ackermann"
+    ]
+   }
+  },
+  "partita": "Hammarby FF - IFK Goteborg"
  },
  "1494343": {
   "assenti": [
@@ -522,7 +557,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Knee Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Orgryte IS": {
+    "modulo": "5-3-2",
+    "titolari": [
+     "A. Rahm",
+     "A. Andreasson",
+     "S. Lagerlund",
+     "M. Dyrestam",
+     "J. Hammar",
+     "D. Paulson",
+     "O. Parker-Price",
+     "B. Laturnus",
+     "R. Alm",
+     "T. Sana",
+     "L. Andersson"
+    ]
+   },
+   "Kalmar FF": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "S. Brolin",
+     "M. Ylitolva",
+     "L. Sætra",
+     "J. Löfgren",
+     "V. Larsson",
+     "K. Paananen",
+     "R. Gojani",
+     "C. Gustafsson",
+     "C. Sagoe",
+     "M. Söderbäck",
+     "V. Tyren"
+    ]
+   }
+  },
+  "partita": "Orgryte IS - Kalmar FF"
  },
  "1549059": {
   "assenti": [
@@ -654,7 +724,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Knee Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Brondby": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "P. Pentz",
+     "Christopher Olivier",
+     "J. Vanlerberghe",
+     "F. Alves",
+     "M. Divković",
+     "B. Slisz",
+     "M. Ejdum",
+     "M. Younis",
+     "M. Frøkjær-Jensen",
+     "F. Bundgaard",
+     "O. Fenger"
+    ]
+   },
+   "FC Midtjylland": {
+    "modulo": "3-4-1-2",
+    "titolari": [
+     "E. Ólafsson",
+     "O. Diao",
+     "A. Maxsø",
+     "M. Bech",
+     "R. Kristensen",
+     "P. Billing",
+     "P. Bravo",
+     "V. Bak Jensen",
+     "K. WÃ¤tjen",
+     "S. Iheanacho",
+     "F. Etim"
+    ]
+   }
+  },
+  "partita": "Brondby - FC Midtjylland"
  },
  "1550203": {
   "assenti": [
@@ -1628,5 +1733,190 @@
    }
   },
   "partita": "NK Slaven Belupo - NK Osijek"
+ },
+ "1612280": {
+  "titolari": {
+   "Al Ahly": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Mostafa Shobeir",
+     "Mohamed Hany",
+     "Yasser Ibrahim",
+     "A. Dari",
+     "Tawfik Mohamed",
+     "Akram Tawfik",
+     "Marwan Attia",
+     "Zizo",
+     "Omar El Saeey",
+     "A. Bencharki",
+     "S. Benjdida"
+    ]
+   },
+   "Pyramids FC": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Ahmed El Shenawy",
+     "M. Chibi",
+     "Mahmoud Marei",
+     "Ahmed Samy",
+     "Karim Hafez",
+     "Mohanad Lasheen",
+     "W. El Karti",
+     "Abdel Rahman Magdi",
+     "Nasser Maher",
+     "Mostafa Zico",
+     "Mostafa Fathi"
+    ]
+   }
+  },
+  "partita": "Al Ahly - Pyramids FC"
+ },
+ "1565309": {
+  "titolari": {
+   "Sepsi OSK Sfantu Gheorghe": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "David Lazar",
+     "Gustavo Cascardo",
+     "Daniel Vîrtej",
+     "Setigui Karamoko",
+     "Fábio Vianna",
+     "Robert Silaghi",
+     "Nicolae Păun",
+     "Raul Cîmpean",
+     "Doru Andrei",
+     "Dimitri Oberlin",
+     "Boris Cmiljanić"
+    ]
+   },
+   "Rapid": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "Marian Aioani",
+     "Răzvan Onea",
+     "Sheriff Sinyan",
+     "Lars Kramer",
+     "Latif Ouedraogo",
+     "Cătălin Vulturar",
+     "Olimpiu Moruțan",
+     "Constantin Grameni",
+     "Alex Dobre",
+     "Filip Stojilković",
+     "Claudiu Petrila"
+    ]
+   }
+  },
+  "partita": "Sepsi OSK Sfantu Gheorghe - Rapid"
+ },
+ "1553233": {
+  "titolari": {
+   "Wieczysta Kraków": {
+    "modulo": "4-5-1",
+    "titolari": [
+     "M. Kochalski",
+     "K. Fila",
+     "M. Wieteska",
+     "A. Milić",
+     "M. Vojtko",
+     "Miki Villar",
+     "B. Lederman",
+     "T. Christensen",
+     "M. Maigaard",
+     "Lisandro Semedo",
+     "E. Koulouris"
+    ]
+   },
+   "Motor Lublin": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "G. Tratnik",
+     "T. Santos",
+     "B. Bereszyński",
+     "T. Plavotić",
+     "F. Luberecki",
+     "Y. Bourhane",
+     "M. Ndiaye",
+     "Rony Lopes",
+     "C. Simon",
+     "Fábio Ronaldo",
+     "K. Czubak"
+    ]
+   }
+  },
+  "partita": "Wieczysta Kraków - Motor Lublin"
+ },
+ "1629980": {
+  "titolari": {
+   "Al Quwa Al Jawiya": {
+    "modulo": "4-4-1-1",
+    "titolari": [
+     "Mohammed Salih",
+     "Mujtaba Muhsen",
+     "Ruslan Hanoon",
+     "A. Boudrama",
+     "Muslim Mousa",
+     "Abbas Fawzi Hasan",
+     "Abdulameer",
+     "Moses Orkuma",
+     "Hareth Hatem",
+     "Murad Subeh",
+     "M. Jawad"
+    ]
+   },
+   "Al-Gharafa": {
+    "modulo": "5-4-1",
+    "titolari": [
+     "A. Kone",
+     "Abdulrahman Faiz Al Rashidi",
+     "M. Holgate",
+     "Mostafa Essam",
+     "Dame Traoré",
+     "Ayoub Al Oui",
+     "Jamal Hamed",
+     "A. Hassan",
+     "Jamil Friarkh",
+     "Saifeldeen Hassan Fadlalla",
+     "Yousef Saaed Ahmed"
+    ]
+   }
+  },
+  "partita": "Al Quwa Al Jawiya - Al-Gharafa"
+ },
+ "1629979": {
+  "titolari": {
+   "Al-Ittihad FC": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "P. Rajković",
+     "Muhannad Al Shanqiti",
+     "Saad Al Mosa",
+     "Danilo Pereira",
+     "F. Abdi",
+     "D. Lopy",
+     "Mukhtar Ali",
+     "Marwan Al Sahafi",
+     "H. Aouar",
+     "S. Bergwijn",
+     "G. Ilenikhena"
+    ]
+   },
+   "Pakhtakor": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "V. Nazarov",
+     "Mukhammad-Bobur Karimov",
+     "M. Abdumajidov",
+     "Zayed Tahseen",
+     "S. Nasrullayev",
+     "Abdurauf Bo'riyev",
+     "A. Mozgovoy",
+     "D. Khamdamov",
+     "O. Bozorov",
+     "Flamarion",
+     "M. Dilshodbekov"
+    ]
+   }
+  },
+  "partita": "Al-Ittihad FC - Pakhtakor"
  }
 }
