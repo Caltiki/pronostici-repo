@@ -1,55 +1,55 @@
 {
  "medio": {
   "copertura": {
-   "1": 28630,
+   "1": 28638,
    "2": 4020,
-   "3": 2249,
-   "4": 1049,
-   "5": 406
+   "3": 2251,
+   "4": 1050,
+   "5": 409
   },
-  "totale": 36354,
+  "totale": 36368,
   "brier": 0.5765,
   "brier_clima": 0.6397,
   "fonti": [
    {
     "nome": "betimate",
-    "partite": 34905,
+    "partite": 34918,
     "brier": 0.5767,
     "brier_media": 0.5759
    },
    {
     "nome": "footymetrics",
-    "partite": 3411,
-    "brier": 0.5994,
-    "brier_media": 0.5893
+    "partite": 3416,
+    "brier": 0.5995,
+    "brier_media": 0.5894
    },
    {
     "nome": "ratingbet",
-    "partite": 2014,
-    "brier": 0.5633,
-    "brier_media": 0.5687
+    "partite": 2019,
+    "brier": 0.5635,
+    "brier_media": 0.5689
    },
    {
     "nome": "soccersite",
-    "partite": 5622,
-    "brier": 0.5865,
-    "brier_media": 0.5775
+    "partite": 5628,
+    "brier": 0.5866,
+    "brier_media": 0.5776
    },
    {
     "nome": "statarea",
-    "partite": 3691,
-    "brier": 0.6026,
-    "brier_media": 0.5955
+    "partite": 3695,
+    "brier": 0.6027,
+    "brier_media": 0.5956
    }
   ],
   "mercato": {
-   "partite": 7446,
+   "partite": 7451,
    "poche": false,
-   "brier": 0.5829,
-   "brier_mercato": 0.5691,
-   "diff": 0.0139,
+   "brier": 0.583,
+   "brier_mercato": 0.5692,
+   "diff": 0.0138,
    "es": 0.0016,
-   "t": 8.68,
+   "t": 8.66,
    "ic": [
     0.0107,
     0.017
@@ -64,10 +64,10 @@
     },
     {
      "fonte": "Pinnacle",
-     "partite": 2566,
-     "diff": 0.0145,
+     "partite": 2571,
+     "diff": 0.0144,
      "es": 0.0025,
-     "t": 5.88
+     "t": 5.84
     },
     {
      "fonte": "altri book",
@@ -79,14 +79,14 @@
     {
      "fonte": "FootyMetrics",
      "partite": 46,
-     "diff": -0.0352,
+     "diff": -0.035,
      "es": 0.0274,
-     "t": -1.29
+     "t": -1.28
     }
    ]
   }
  },
- "aggiornato": "2026-11-23 04:58",
+ "aggiornato": "2026-11-23 17:16",
  "accordo": {
   "totale": 3130,
   "prende": {
@@ -143,7 +143,7 @@
     {
      "fonte": "FootyMetrics",
      "partite": 1,
-     "diff": 0.2138,
+     "diff": 0.2061,
      "es": 0.0,
      "t": 0.0
     }

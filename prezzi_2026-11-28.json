@@ -568,7 +568,8 @@
   "Sel": "2",
   "Prob": 78.7,
   "Equa": 1.27,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-28",
@@ -865,8 +866,7 @@
   "Sel": "2 + Over 1.5",
   "Prob": 73.7,
   "Equa": 1.36,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-11-28",
@@ -5537,6 +5537,27 @@
   "Sel": "X",
   "Prob": 16.4,
   "Equa": 6.1,
+  "Rif_Book": "Pinnacle"
+ },
+ {
+  "Data": "2026-11-28",
+  "Ora": "15:30",
+  "Campionato": "Germany: Bundesliga",
+  "Partita": "Hamburger SV - Bayern Munich",
+  "Casa": "Hamburger SV",
+  "Ospite": "Bayern Munich",
+  "Linea_OU": 4.0,
+  "Gol_attesi": 4.16,
+  "Margine": 4.3,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "OddsAPI",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 12.3,
+  "Equa": 8.13,
   "Rif_Book": "Pinnacle"
  }
 ]
