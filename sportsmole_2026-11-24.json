@@ -1,45 +1,188 @@
 [
  {
+  "Casa": "Botafogo",
+  "Ospite": "Sao Paulo",
+  "Ora": "00:00",
+  "Data": "2026-11-24",
+  "Lega": "Brasileiro",
+  "Giornata": "Gameweek 36",
+  "P1": 52.81,
+  "PX": 24.59,
+  "P2": 22.59,
+  "P_GG": 51.9,
+  "P_NG": 48.1,
+  "P_O15": 74.38,
+  "P_U15": 25.62,
+  "P_O25": 50.31,
+  "P_U25": 49.69,
+  "P_O35": 27.8,
+  "P_U35": 72.2,
+  "P_O45": 15.82,
+  "P_U45": 84.18,
+  "PT1": 38.39,
+  "PTX": 43.15,
+  "PT2": 18.46,
+  "P_Primo_Casa": 61.69,
+  "P_Nessun_Gol": 7.04,
+  "P_Primo_Ospite": 31.27,
+  "Esatto": "1-0",
+  "P_Esatto": 11.83,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     11.83
+    ],
+    [
+     "2-1",
+     10.45
+    ],
+    [
+     "2-0",
+     9.17
+    ],
+    [
+     "3-1",
+     5.12
+    ],
+    [
+     "3-0",
+     5.1
+    ],
+    [
+     "3-2",
+     2.97
+    ],
+    [
+     "Other",
+     8.18
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.6
+    ],
+    [
+     "0-0",
+     7.04
+    ],
+    [
+     "2-2",
+     4.9
+    ],
+    [
+     "Other",
+     0.1
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     6.77
+    ],
+    [
+     "1-2",
+     5.82
+    ],
+    [
+     "0-2",
+     3.28
+    ],
+    [
+     "1-3",
+     1.97
+    ],
+    [
+     "2-3",
+     1.78
+    ],
+    [
+     "0-3",
+     1.15
+    ],
+    [
+     "Other",
+     1.83
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 65.82,
+   "equal_8": 10.34,
+   "under_8": 23.84,
+   "over_9": 54.59,
+   "equal_9": 11.23,
+   "under_9": 34.18,
+   "over_10.5": 43.39,
+   "under_10.5": 56.61
+  },
+  "Linee_Casa": {
+   "over_1.5": 48.73,
+   "under_1.5": 51.27,
+   "over_2.5": 22.43,
+   "under_2.5": 77.57,
+   "over_3.5": 8.28,
+   "under_3.5": 91.72
+  },
+  "Linee_Ospite": {
+   "over_0.5": 58.7,
+   "under_0.5": 41.3,
+   "over_1.5": 24.76,
+   "under_1.5": 75.24,
+   "over_2.5": 7.79,
+   "under_2.5": 92.21,
+   "over_3.5": 1.93,
+   "under_3.5": 98.07
+  },
+  "WeSay": "",
+  "WeSay_Segno": "",
+  "Ora_Sito": "Nov 23, 2026 11.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/brasileiro/botafogo-vs-sao-paulo_game_263341.html",
+  "Url_Preview": "",
+  "Id": "263341"
+ },
+ {
   "Casa": "St Louis City",
   "Ospite": "Los Angeles FC",
   "Ora": "02:00",
   "Data": "2026-11-24",
   "Lega": "Major League Soccer",
   "Giornata": "",
-  "P1": 39.91,
-  "PX": 24.75,
-  "P2": 35.31,
-  "P_GG": 60.28,
-  "P_NG": 39.72,
-  "P_O15": 79.71,
-  "P_U15": 20.29,
-  "P_O25": 58.09,
-  "P_U25": 41.91,
+  "P1": 39.92,
+  "PX": 24.76,
+  "P2": 35.25,
+  "P_GG": 60.31,
+  "P_NG": 39.69,
+  "P_O15": 79.72,
+  "P_U15": 20.28,
+  "P_O25": 58.17,
+  "P_U25": 41.83,
   "P_O35": 36.11,
   "P_U35": 63.89,
-  "P_O45": 21.62,
-  "P_U45": 78.38,
-  "PT1": 33.22,
-  "PTX": 38.64,
-  "PT2": 28.14,
-  "P_Primo_Casa": 51.39,
-  "P_Nessun_Gol": 5.38,
-  "P_Primo_Ospite": 43.23,
+  "P_O45": 21.61,
+  "P_U45": 78.39,
+  "PT1": 33.19,
+  "PTX": 38.7,
+  "PT2": 28.11,
+  "P_Primo_Casa": 51.38,
+  "P_Nessun_Gol": 5.37,
+  "P_Primo_Ospite": 43.25,
   "Esatto": "1-1",
-  "P_Esatto": 10.91,
+  "P_Esatto": 10.89,
   "Esatti": {
    "casa": [
     [
      "2-1",
-     8.4
+     8.43
     ],
     [
      "1-0",
-     7.63
+     7.61
     ],
     [
      "2-0",
-     5.72
+     5.7
     ],
     [
      "3-1",
@@ -47,11 +190,11 @@
     ],
     [
      "3-2",
-     3.35
+     3.34
     ],
     [
      "3-0",
-     2.93
+     2.95
     ],
     [
      "Other",
@@ -61,81 +204,81 @@
    "pareggio": [
     [
      "1-1",
-     10.91
+     10.89
     ],
     [
      "2-2",
-     6.23
+     6.25
     ],
     [
      "0-0",
-     5.38
+     5.37
     ],
     [
      "3-3",
-     1.88
+     1.89
     ],
     [
      "Other",
-     0.35
+     0.36
     ]
    ],
    "ospite": [
     [
      "1-2",
-     8.31
+     8.33
     ],
     [
      "0-1",
-     7.25
+     7.22
     ],
     [
      "0-2",
-     4.99
+     4.95
     ],
     [
      "1-3",
-     3.75
+     3.74
     ],
     [
      "2-3",
-     3.12
+     3.11
     ],
     [
      "0-3",
-     2.34
+     2.36
     ],
     [
      "Other",
-     5.55
+     5.54
     ]
    ]
   },
   "Corner": {
-   "over_8": 72.27,
-   "equal_8": 9.66,
-   "under_8": 18.07,
-   "over_9": 61.08,
-   "equal_9": 11.18,
-   "under_9": 27.73,
-   "over_10.5": 49.34,
-   "under_10.5": 50.66
+   "over_8": 72.45,
+   "equal_8": 9.65,
+   "under_8": 17.9,
+   "over_9": 61.25,
+   "equal_9": 11.2,
+   "under_9": 27.55,
+   "over_10.5": 49.47,
+   "under_10.5": 50.53
   },
   "Linee_Casa": {
-   "over_1.5": 43.86,
-   "under_1.5": 56.14,
-   "over_2.5": 20.39,
-   "under_2.5": 79.61,
-   "over_3.5": 7.72,
-   "under_3.5": 92.28
+   "over_1.5": 43.91,
+   "under_1.5": 56.09,
+   "over_2.5": 20.42,
+   "under_2.5": 79.58,
+   "over_3.5": 7.73,
+   "under_3.5": 92.27
   },
   "Linee_Ospite": {
-   "over_0.5": 70.94,
-   "under_0.5": 29.06,
+   "over_0.5": 70.92,
+   "under_0.5": 29.08,
    "over_1.5": 39.87,
    "under_1.5": 60.13,
-   "over_2.5": 16.99,
-   "under_2.5": 83.01,
+   "over_2.5": 17.0,
+   "under_2.5": 83.0,
    "over_3.5": 5.9,
    "under_3.5": 94.1
   },
@@ -145,5 +288,3052 @@
   "Url": "https://www.sportsmole.co.uk/football/mls/saint-louis-city-vs-los-angeles-fc_game_263343.html",
   "Url_Preview": "https://www.sportsmole.co.uk/football/saint-louis-city/preview/st-louis-city-vs-los-angeles-prediction-team-news-lineups_609584.html",
   "Id": "263343"
+ },
+ {
+  "Casa": "Bodo/Glimt",
+  "Ospite": "LASK Linz",
+  "Ora": "18:45",
+  "Data": "2026-11-24",
+  "Lega": "Champions League - League Stage",
+  "Giornata": "Gameweek 5",
+  "P1": 55.99,
+  "PX": 20.26,
+  "P2": 23.75,
+  "P_GG": 60.6,
+  "P_NG": 39.4,
+  "P_O15": 85.23,
+  "P_U15": 14.77,
+  "P_O25": 66.11,
+  "P_U25": 33.89,
+  "P_O35": 43.01,
+  "P_U35": 56.99,
+  "P_O45": 28.53,
+  "P_U45": 71.47,
+  "PT1": 40.02,
+  "PTX": 34.91,
+  "PT2": 25.07,
+  "P_Primo_Casa": 55.25,
+  "P_Nessun_Gol": 3.46,
+  "P_Primo_Ospite": 41.29,
+  "Esatto": "2-1",
+  "P_Esatto": 9.64,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     9.64
+    ],
+    [
+     "2-0",
+     7.58
+    ],
+    [
+     "1-0",
+     7.19
+    ],
+    [
+     "3-1",
+     6.34
+    ],
+    [
+     "3-0",
+     5.89
+    ],
+    [
+     "3-2",
+     4.26
+    ],
+    [
+     "Other",
+     15.09
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     8.81
+    ],
+    [
+     "2-2",
+     5.71
+    ],
+    [
+     "0-0",
+     3.46
+    ],
+    [
+     "3-3",
+     1.85
+    ],
+    [
+     "Other",
+     0.42
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     6.14
+    ],
+    [
+     "0-1",
+     4.11
+    ],
+    [
+     "0-2",
+     2.75
+    ],
+    [
+     "2-3",
+     2.55
+    ],
+    [
+     "1-3",
+     2.41
+    ],
+    [
+     "0-3",
+     1.43
+    ],
+    [
+     "Other",
+     4.36
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 66.47,
+   "equal_8": 9.78,
+   "under_8": 23.74,
+   "over_9": 55.81,
+   "equal_9": 10.66,
+   "under_9": 33.53,
+   "over_10.5": 45.08,
+   "under_10.5": 54.92
+  },
+  "Linee_Casa": {
+   "over_1.5": 59.33,
+   "under_1.5": 40.67,
+   "over_2.5": 33.85,
+   "under_2.5": 66.15,
+   "over_3.5": 15.51,
+   "under_3.5": 84.49
+  },
+  "Linee_Ospite": {
+   "over_0.5": 60.78,
+   "under_0.5": 39.22,
+   "over_1.5": 31.88,
+   "under_1.5": 68.12,
+   "over_2.5": 13.02,
+   "under_2.5": 86.98,
+   "over_3.5": 4.78,
+   "under_3.5": 95.22
+  },
+  "WeSay": "1-1",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 24, 2026 5.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/champions-league/bodo-glimt-vs-lask-linz_game_263352.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/bodo-glimt/champions-league/preview/bodoglimt-vs-lask-prediction-team-news-lineups_609647.html",
+  "Id": "263352"
+ },
+ {
+  "Casa": "Galatasaray",
+  "Ospite": "Aston Villa",
+  "Ora": "18:45",
+  "Data": "2026-11-24",
+  "Lega": "Champions League - League Stage",
+  "Giornata": "Gameweek 5",
+  "P1": 51.72,
+  "PX": 21.41,
+  "P2": 26.86,
+  "P_GG": 66.63,
+  "P_NG": 33.37,
+  "P_O15": 86.83,
+  "P_U15": 13.17,
+  "P_O25": 68.99,
+  "P_U25": 31.01,
+  "P_O35": 46.96,
+  "P_U35": 53.04,
+  "P_O45": 31.76,
+  "P_U45": 68.24,
+  "PT1": 42.39,
+  "PTX": 34.88,
+  "PT2": 22.73,
+  "P_Primo_Casa": 60.43,
+  "P_Nessun_Gol": 3.3,
+  "P_Primo_Ospite": 36.27,
+  "Esatto": "2-1",
+  "P_Esatto": 9.28,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     9.28
+    ],
+    [
+     "2-0",
+     5.89
+    ],
+    [
+     "1-0",
+     5.69
+    ],
+    [
+     "3-1",
+     5.59
+    ],
+    [
+     "3-0",
+     4.59
+    ],
+    [
+     "3-2",
+     4.54
+    ],
+    [
+     "Other",
+     16.13
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     8.81
+    ],
+    [
+     "2-2",
+     6.69
+    ],
+    [
+     "0-0",
+     3.3
+    ],
+    [
+     "3-3",
+     2.05
+    ],
+    [
+     "Other",
+     0.56
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     6.36
+    ],
+    [
+     "0-1",
+     4.15
+    ],
+    [
+     "0-2",
+     3.16
+    ],
+    [
+     "2-3",
+     2.99
+    ],
+    [
+     "1-3",
+     2.91
+    ],
+    [
+     "0-3",
+     1.79
+    ],
+    [
+     "Other",
+     5.49
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 57.84,
+   "equal_8": 10.52,
+   "under_8": 31.64,
+   "over_9": 47.1,
+   "equal_9": 10.74,
+   "under_9": 42.16,
+   "over_10.5": 36.97,
+   "under_10.5": 63.03
+  },
+  "Linee_Casa": {
+   "over_1.5": 58.31,
+   "under_1.5": 41.69,
+   "over_2.5": 33.46,
+   "under_2.5": 66.54,
+   "over_3.5": 16.69,
+   "under_3.5": 83.31
+  },
+  "Linee_Ospite": {
+   "over_0.5": 64.37,
+   "under_0.5": 35.63,
+   "over_1.5": 36.54,
+   "under_1.5": 63.46,
+   "over_2.5": 15.79,
+   "under_2.5": 84.21,
+   "over_3.5": 6.05,
+   "under_3.5": 93.95
+  },
+  "WeSay": "2-2",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 24, 2026 5.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/champions-league/galatasaray-vs-aston-villa_game_263351.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/galatasaray/champions-league/preview/galatasaray-vs-aston-villa-prediction-team-news-lineups_609642.html",
+  "Id": "263351"
+ },
+ {
+  "Casa": "Al-Nassr",
+  "Ospite": "Al-Sadd",
+  "Ora": "19:15",
+  "Data": "2026-11-24",
+  "Lega": "AFC Champions League - League Stage",
+  "Giornata": "Gameweek 5",
+  "P1": 58.7,
+  "PX": 21.61,
+  "P2": 19.69,
+  "P_GG": 56.71,
+  "P_NG": 43.29,
+  "P_O15": 81.88,
+  "P_U15": 18.12,
+  "P_O25": 61.07,
+  "P_U25": 38.93,
+  "P_O35": 39.52,
+  "P_U35": 60.48,
+  "P_O45": 26.28,
+  "P_U45": 73.72,
+  "PT1": 43.42,
+  "PTX": 35.47,
+  "PT2": 21.11,
+  "P_Primo_Casa": 61.1,
+  "P_Nessun_Gol": 4.92,
+  "P_Primo_Ospite": 33.98,
+  "Esatto": "1-1",
+  "P_Esatto": 9.52,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     9.34
+    ],
+    [
+     "1-0",
+     8.73
+    ],
+    [
+     "2-0",
+     8.65
+    ],
+    [
+     "3-0",
+     6.2
+    ],
+    [
+     "3-1",
+     6.11
+    ],
+    [
+     "3-2",
+     3.44
+    ],
+    [
+     "Other",
+     16.23
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     9.52
+    ],
+    [
+     "2-2",
+     5.35
+    ],
+    [
+     "0-0",
+     4.92
+    ],
+    [
+     "3-3",
+     1.49
+    ],
+    [
+     "Other",
+     0.33
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     5.02
+    ],
+    [
+     "0-1",
+     4.48
+    ],
+    [
+     "0-2",
+     2.65
+    ],
+    [
+     "2-3",
+     1.89
+    ],
+    [
+     "1-3",
+     1.77
+    ],
+    [
+     "Other",
+     2.9
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 51.81,
+   "equal_8": 10.79,
+   "under_8": 37.4,
+   "over_9": 41.27,
+   "equal_9": 10.54,
+   "under_9": 48.19,
+   "over_10.5": 31.74,
+   "under_10.5": 68.26
+  },
+  "Linee_Casa": {
+   "over_1.5": 59.03,
+   "under_1.5": 40.97,
+   "over_2.5": 33.8,
+   "under_2.5": 66.2,
+   "over_3.5": 16.56,
+   "under_3.5": 83.44
+  },
+  "Linee_Ospite": {
+   "over_0.5": 55.28,
+   "under_0.5": 44.72,
+   "over_1.5": 25.83,
+   "under_1.5": 74.17,
+   "over_2.5": 9.37,
+   "under_2.5": 90.63,
+   "over_3.5": 3.23,
+   "under_3.5": 96.77
+  },
+  "WeSay": "3-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 24, 2026 6.15pm",
+  "Url": "https://www.sportsmole.co.uk/football/afc-champions-league/al-nassr-vs-al-sadd_game_263354.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/al-nassr/preview/al-nassr-vs-al-sadd-prediction-team-news-lineups_609627.html",
+  "Id": "263354"
+ },
+ {
+  "Casa": "Blackpool",
+  "Ospite": "Leicester City",
+  "Ora": "20:45",
+  "Data": "2026-11-24",
+  "Lega": "League One",
+  "Giornata": "Gameweek 9",
+  "P1": 30.95,
+  "PX": 25.05,
+  "P2": 44.03,
+  "P_GG": 58.47,
+  "P_NG": 41.53,
+  "P_O15": 78.61,
+  "P_U15": 21.39,
+  "P_O25": 56.36,
+  "P_U25": 43.64,
+  "P_O35": 34.02,
+  "P_U35": 65.98,
+  "P_O45": 19.69,
+  "P_U45": 80.31,
+  "PT1": 30.28,
+  "PTX": 38.78,
+  "PT2": 30.93,
+  "P_Primo_Casa": 44.72,
+  "P_Nessun_Gol": 5.83,
+  "P_Primo_Ospite": 49.45,
+  "Esatto": "1-1",
+  "P_Esatto": 11.03,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     7.42
+    ],
+    [
+     "1-0",
+     7.11
+    ],
+    [
+     "2-0",
+     4.33
+    ],
+    [
+     "3-1",
+     3.14
+    ],
+    [
+     "3-2",
+     2.63
+    ],
+    [
+     "3-0",
+     2.04
+    ],
+    [
+     "Other",
+     4.29
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.03
+    ],
+    [
+     "2-2",
+     6.33
+    ],
+    [
+     "0-0",
+     5.83
+    ],
+    [
+     "3-3",
+     1.55
+    ],
+    [
+     "Other",
+     0.31
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     9.28
+    ],
+    [
+     "0-1",
+     8.48
+    ],
+    [
+     "0-2",
+     6.9
+    ],
+    [
+     "1-3",
+     4.85
+    ],
+    [
+     "0-3",
+     3.6
+    ],
+    [
+     "2-3",
+     3.31
+    ],
+    [
+     "Other",
+     7.6
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 65.1,
+   "equal_8": 10.5,
+   "under_8": 24.4,
+   "over_9": 53.76,
+   "equal_9": 11.34,
+   "under_9": 34.9,
+   "over_10.5": 42.53,
+   "under_10.5": 57.47
+  },
+  "Linee_Casa": {
+   "over_1.5": 35.35,
+   "under_1.5": 64.65,
+   "over_2.5": 13.96,
+   "under_2.5": 86.04,
+   "over_3.5": 4.6,
+   "under_3.5": 95.4
+  },
+  "Linee_Ospite": {
+   "over_0.5": 76.43,
+   "under_0.5": 23.57,
+   "over_1.5": 46.36,
+   "under_1.5": 53.64,
+   "over_2.5": 21.22,
+   "under_2.5": 78.78,
+   "over_3.5": 7.91,
+   "under_3.5": 92.09
+  },
+  "WeSay": "1-2",
+  "WeSay_Segno": "2",
+  "Ora_Sito": "Nov 24, 2026 7.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/league-one/blackpool-vs-leicester-city_game_263365.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/blackpool/preview/blackpool-vs-leicester-prediction-team-news-lineups_609628.html",
+  "Id": "263365"
+ },
+ {
+  "Casa": "Bradford City",
+  "Ospite": "Barnsley",
+  "Ora": "20:45",
+  "Data": "2026-11-24",
+  "Lega": "League One",
+  "Giornata": "Gameweek 8",
+  "P1": 61.23,
+  "PX": 20.79,
+  "P2": 18.05,
+  "P_GG": 54.76,
+  "P_NG": 45.24,
+  "P_O15": 79.95,
+  "P_U15": 20.05,
+  "P_O25": 57.91,
+  "P_U25": 42.09,
+  "P_O35": 35.56,
+  "P_U35": 64.44,
+  "P_O45": 22.23,
+  "P_U45": 77.77,
+  "PT1": 47.99,
+  "PTX": 35.51,
+  "PT2": 16.5,
+  "P_Primo_Casa": 65.26,
+  "P_Nessun_Gol": 4.94,
+  "P_Primo_Ospite": 29.8,
+  "Esatto": "1-0",
+  "P_Esatto": 10.33,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     10.33
+    ],
+    [
+     "2-1",
+     10.22
+    ],
+    [
+     "2-0",
+     9.92
+    ],
+    [
+     "3-1",
+     6.68
+    ],
+    [
+     "3-0",
+     6.56
+    ],
+    [
+     "3-2",
+     3.64
+    ],
+    [
+     "Other",
+     13.89
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     9.69
+    ],
+    [
+     "0-0",
+     4.94
+    ],
+    [
+     "2-2",
+     4.92
+    ],
+    [
+     "3-3",
+     1.06
+    ],
+    [
+     "Other",
+     0.19
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     4.86
+    ],
+    [
+     "1-2",
+     4.84
+    ],
+    [
+     "0-2",
+     2.42
+    ],
+    [
+     "1-3",
+     1.73
+    ],
+    [
+     "2-3",
+     1.65
+    ],
+    [
+     "Other",
+     1.8
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 74.23,
+   "equal_8": 9.18,
+   "under_8": 16.58,
+   "over_9": 63.42,
+   "equal_9": 10.81,
+   "under_9": 25.77,
+   "over_10.5": 51.86,
+   "under_10.5": 48.14
+  },
+  "Linee_Casa": {
+   "over_1.5": 58.73,
+   "under_1.5": 41.27,
+   "over_2.5": 32.02,
+   "under_2.5": 67.98,
+   "over_3.5": 14.08,
+   "under_3.5": 85.92
+  },
+  "Linee_Ospite": {
+   "over_0.5": 54.44,
+   "under_0.5": 45.56,
+   "over_1.5": 22.99,
+   "under_1.5": 77.01,
+   "over_2.5": 7.17,
+   "under_2.5": 92.83,
+   "over_3.5": 1.99,
+   "under_3.5": 98.01
+  },
+  "WeSay": "2-0",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 24, 2026 7.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/league-one/bradford-city-vs-barnsley_game_258943.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/bradford-city/preview/bradford-vs-barnsley-prediction-team-news-lineups_609625.html",
+  "Id": "258943"
+ },
+ {
+  "Casa": "Bromley",
+  "Ospite": "Wycombe Wanderers",
+  "Ora": "20:45",
+  "Data": "2026-11-24",
+  "Lega": "League One",
+  "Giornata": "Gameweek 9",
+  "P1": 28.98,
+  "PX": 25.33,
+  "P2": 45.69,
+  "P_GG": 52.99,
+  "P_NG": 47.01,
+  "P_O15": 74.54,
+  "P_U15": 25.46,
+  "P_O25": 50.61,
+  "P_U25": 49.39,
+  "P_O35": 28.55,
+  "P_U35": 71.45,
+  "P_O45": 16.15,
+  "P_U45": 83.85,
+  "PT1": 23.21,
+  "PTX": 41.84,
+  "PT2": 34.94,
+  "P_Primo_Casa": 40.53,
+  "P_Nessun_Gol": 7.08,
+  "P_Primo_Ospite": 52.39,
+  "Esatto": "1-1",
+  "P_Esatto": 11.8,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     8.05
+    ],
+    [
+     "2-1",
+     6.85
+    ],
+    [
+     "2-0",
+     4.61
+    ],
+    [
+     "3-1",
+     2.64
+    ],
+    [
+     "3-2",
+     1.97
+    ],
+    [
+     "3-0",
+     1.92
+    ],
+    [
+     "Other",
+     2.94
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.8
+    ],
+    [
+     "0-0",
+     7.08
+    ],
+    [
+     "2-2",
+     5.19
+    ],
+    [
+     "3-3",
+     1.08
+    ],
+    [
+     "Other",
+     0.18
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     10.33
+    ],
+    [
+     "1-2",
+     9.09
+    ],
+    [
+     "0-2",
+     7.51
+    ],
+    [
+     "1-3",
+     4.58
+    ],
+    [
+     "0-3",
+     4.2
+    ],
+    [
+     "2-3",
+     2.56
+    ],
+    [
+     "Other",
+     7.42
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 70.5,
+   "equal_8": 9.29,
+   "under_8": 20.21,
+   "over_9": 60.02,
+   "equal_9": 10.48,
+   "under_9": 29.5,
+   "over_10.5": 49.15,
+   "under_10.5": 50.85
+  },
+  "Linee_Casa": {
+   "over_1.5": 29.94,
+   "under_1.5": 70.06,
+   "over_2.5": 10.73,
+   "under_2.5": 89.27,
+   "over_3.5": 3.12,
+   "under_3.5": 96.88
+  },
+  "Linee_Ospite": {
+   "over_0.5": 75.4,
+   "under_0.5": 24.6,
+   "over_1.5": 43.78,
+   "under_1.5": 56.22,
+   "over_2.5": 20.02,
+   "under_2.5": 79.98,
+   "over_3.5": 7.6,
+   "under_3.5": 92.4
+  },
+  "WeSay": "1-1",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 24, 2026 7.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/league-one/bromley-vs-wycombe-wanderers_game_259204.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/bromley/preview/bromley-vs-wycombe-prediction-team-news-lineups_609633.html",
+  "Id": "259204"
+ },
+ {
+  "Casa": "Cardiff City",
+  "Ospite": "Preston North End",
+  "Ora": "20:45",
+  "Data": "2026-11-24",
+  "Lega": "Championship",
+  "Giornata": "Gameweek 17",
+  "P1": 66.23,
+  "PX": 20.73,
+  "P2": 13.01,
+  "P_GG": 51.39,
+  "P_NG": 48.61,
+  "P_O15": 78.91,
+  "P_U15": 21.09,
+  "P_O25": 58.32,
+  "P_U25": 41.68,
+  "P_O35": 37.42,
+  "P_U35": 62.58,
+  "P_O45": 25.66,
+  "P_U45": 74.34,
+  "PT1": 51.35,
+  "PTX": 34.14,
+  "PT2": 14.51,
+  "P_Primo_Casa": 67.24,
+  "P_Nessun_Gol": 6.2,
+  "P_Primo_Ospite": 26.56,
+  "Esatto": "1-0",
+  "P_Esatto": 10.92,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     10.92
+    ],
+    [
+     "2-0",
+     10.21
+    ],
+    [
+     "2-1",
+     9.02
+    ],
+    [
+     "3-0",
+     7.5
+    ],
+    [
+     "3-1",
+     6.57
+    ],
+    [
+     "3-2",
+     2.85
+    ],
+    [
+     "Other",
+     19.16
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     8.96
+    ],
+    [
+     "0-0",
+     6.2
+    ],
+    [
+     "2-2",
+     4.21
+    ],
+    [
+     "3-3",
+     1.09
+    ],
+    [
+     "Other",
+     0.26
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     3.93
+    ],
+    [
+     "1-2",
+     3.78
+    ],
+    [
+     "0-2",
+     1.42
+    ],
+    [
+     "2-3",
+     1.28
+    ],
+    [
+     "Other",
+     1.02
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 73.25,
+   "equal_8": 8.36,
+   "under_8": 18.39,
+   "over_9": 63.67,
+   "equal_9": 9.58,
+   "under_9": 26.75,
+   "over_10.5": 53.49,
+   "under_10.5": 46.51
+  },
+  "Linee_Casa": {
+   "over_1.5": 62.15,
+   "under_1.5": 37.85,
+   "over_2.5": 37.43,
+   "under_2.5": 62.57,
+   "over_3.5": 19.42,
+   "under_3.5": 80.58
+  },
+  "Linee_Ospite": {
+   "over_0.5": 45.97,
+   "under_0.5": 54.03,
+   "over_1.5": 17.49,
+   "under_1.5": 82.51,
+   "over_2.5": 5.23,
+   "under_2.5": 94.77,
+   "over_3.5": 1.28,
+   "under_3.5": 98.72
+  },
+  "WeSay": "3-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 24, 2026 7.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/championship/cardiff-city-vs-preston-north-end_game_263371.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/cardiff-city/preview/cardiff-vs-preston-prediction-team-news-lineups_609608.html",
+  "Id": "263371"
+ },
+ {
+  "Casa": "Charlton Athletic",
+  "Ospite": "Lincoln City",
+  "Ora": "20:45",
+  "Data": "2026-11-24",
+  "Lega": "Championship",
+  "Giornata": "Gameweek 17",
+  "P1": 36.17,
+  "PX": 27.21,
+  "P2": 36.68,
+  "P_GG": 52.96,
+  "P_NG": 47.04,
+  "P_O15": 72.38,
+  "P_U15": 27.62,
+  "P_O25": 47.34,
+  "P_U25": 52.66,
+  "P_O35": 26.41,
+  "P_U35": 73.59,
+  "P_O45": 14.25,
+  "P_U45": 85.75,
+  "PT1": 28.78,
+  "PTX": 46.76,
+  "PT2": 24.46,
+  "P_Primo_Casa": 48.09,
+  "P_Nessun_Gol": 7.92,
+  "P_Primo_Ospite": 43.99,
+  "Esatto": "1-1",
+  "P_Esatto": 12.89,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     9.9
+    ],
+    [
+     "2-1",
+     8.0
+    ],
+    [
+     "2-0",
+     5.96
+    ],
+    [
+     "3-1",
+     3.4
+    ],
+    [
+     "3-2",
+     2.45
+    ],
+    [
+     "3-0",
+     2.37
+    ],
+    [
+     "Other",
+     4.1
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     12.89
+    ],
+    [
+     "0-0",
+     7.92
+    ],
+    [
+     "2-2",
+     5.25
+    ],
+    [
+     "3-3",
+     1.03
+    ],
+    [
+     "Other",
+     0.12
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     9.87
+    ],
+    [
+     "1-2",
+     8.12
+    ],
+    [
+     "0-2",
+     6.19
+    ],
+    [
+     "1-3",
+     3.51
+    ],
+    [
+     "0-3",
+     2.44
+    ],
+    [
+     "2-3",
+     2.3
+    ],
+    [
+     "Other",
+     4.25
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 65.03,
+   "equal_8": 10.68,
+   "under_8": 24.29,
+   "over_9": 53.48,
+   "equal_9": 11.55,
+   "under_9": 34.97,
+   "over_10.5": 42.07,
+   "under_10.5": 57.93
+  },
+  "Linee_Casa": {
+   "over_1.5": 34.98,
+   "under_1.5": 65.02,
+   "over_2.5": 13.47,
+   "under_2.5": 86.53,
+   "over_3.5": 4.22,
+   "under_3.5": 95.78
+  },
+  "Linee_Ospite": {
+   "over_0.5": 69.82,
+   "under_0.5": 30.18,
+   "over_1.5": 35.66,
+   "under_1.5": 64.34,
+   "over_2.5": 13.65,
+   "under_2.5": 86.35,
+   "over_3.5": 4.37,
+   "under_3.5": 95.63
+  },
+  "WeSay": "1-1",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 24, 2026 7.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/championship/charlton-athletic-vs-lincoln-city_game_263370.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/charlton-athletic/preview/charlton-vs-lincoln-prediction-team-news-lineups_609618.html",
+  "Id": "263370"
+ },
+ {
+  "Casa": "Middlesbrough",
+  "Ospite": "Swansea City",
+  "Ora": "20:45",
+  "Data": "2026-11-24",
+  "Lega": "Championship",
+  "Giornata": "Gameweek 17",
+  "P1": 66.0,
+  "PX": 19.3,
+  "P2": 14.7,
+  "P_GG": 53.91,
+  "P_NG": 46.09,
+  "P_O15": 81.56,
+  "P_U15": 18.44,
+  "P_O25": 60.33,
+  "P_U25": 39.68,
+  "P_O35": 37.55,
+  "P_U35": 62.48,
+  "P_O45": 24.74,
+  "P_U45": 75.26,
+  "PT1": 54.3,
+  "PTX": 31.93,
+  "PT2": 13.76,
+  "P_Primo_Casa": 70.78,
+  "P_Nessun_Gol": 4.47,
+  "P_Primo_Ospite": 24.75,
+  "Esatto": "2-1",
+  "P_Esatto": 10.5,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     10.5
+    ],
+    [
+     "2-0",
+     10.18
+    ],
+    [
+     "1-0",
+     9.95
+    ],
+    [
+     "3-0",
+     7.57
+    ],
+    [
+     "3-1",
+     6.93
+    ],
+    [
+     "3-2",
+     3.33
+    ],
+    [
+     "Other",
+     17.55
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     9.12
+    ],
+    [
+     "2-2",
+     4.57
+    ],
+    [
+     "0-0",
+     4.47
+    ],
+    [
+     "Other",
+     0.16
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     4.15
+    ],
+    [
+     "0-1",
+     4.05
+    ],
+    [
+     "0-2",
+     1.92
+    ],
+    [
+     "2-3",
+     1.4
+    ],
+    [
+     "1-3",
+     1.31
+    ],
+    [
+     "Other",
+     1.31
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 70.78,
+   "equal_8": 9.84,
+   "under_8": 19.38,
+   "over_9": 59.58,
+   "equal_9": 11.2,
+   "under_9": 29.22,
+   "over_10.5": 47.96,
+   "under_10.5": 52.04
+  },
+  "Linee_Casa": {
+   "over_1.5": 63.18,
+   "under_1.5": 36.82,
+   "over_2.5": 36.53,
+   "under_2.5": 63.47,
+   "over_3.5": 17.71,
+   "under_3.5": 82.29
+  },
+  "Linee_Ospite": {
+   "over_0.5": 50.31,
+   "under_0.5": 49.69,
+   "over_1.5": 19.71,
+   "under_1.5": 80.29,
+   "over_2.5": 5.74,
+   "under_2.5": 94.26,
+   "over_3.5": 1.47,
+   "under_3.5": 98.53
+  },
+  "WeSay": "3-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 24, 2026 7.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/championship/middlesbrough-vs-swansea-city_game_263369.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/middlesbrough/preview/middlesbrough-vs-swansea-prediction-team-news-lineups_609606.html",
+  "Id": "263369"
+ },
+ {
+  "Casa": "Norwich City",
+  "Ospite": "Queens Park Rangers",
+  "Ora": "20:45",
+  "Data": "2026-11-24",
+  "Lega": "Championship",
+  "Giornata": "Gameweek 17",
+  "P1": 49.98,
+  "PX": 23.42,
+  "P2": 26.56,
+  "P_GG": 60.06,
+  "P_NG": 39.94,
+  "P_O15": 81.07,
+  "P_U15": 18.93,
+  "P_O25": 59.66,
+  "P_U25": 40.34,
+  "P_O35": 36.99,
+  "P_U35": 63.01,
+  "P_O45": 22.48,
+  "P_U45": 77.52,
+  "PT1": 41.37,
+  "PTX": 37.64,
+  "PT2": 20.99,
+  "P_Primo_Casa": 59.12,
+  "P_Nessun_Gol": 4.79,
+  "P_Primo_Ospite": 36.09,
+  "Esatto": "1-1",
+  "P_Esatto": 10.55,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     9.86
+    ],
+    [
+     "1-0",
+     8.54
+    ],
+    [
+     "2-0",
+     7.29
+    ],
+    [
+     "3-1",
+     5.6
+    ],
+    [
+     "3-0",
+     4.56
+    ],
+    [
+     "3-2",
+     3.59
+    ],
+    [
+     "Other",
+     10.54
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.55
+    ],
+    [
+     "2-2",
+     6.14
+    ],
+    [
+     "0-0",
+     4.79
+    ],
+    [
+     "3-3",
+     1.64
+    ],
+    [
+     "Other",
+     0.3
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     6.64
+    ],
+    [
+     "0-1",
+     5.55
+    ],
+    [
+     "0-2",
+     3.57
+    ],
+    [
+     "1-3",
+     2.76
+    ],
+    [
+     "2-3",
+     2.63
+    ],
+    [
+     "0-3",
+     1.62
+    ],
+    [
+     "Other",
+     3.78
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 56.18,
+   "equal_8": 11.68,
+   "under_8": 32.14,
+   "over_9": 44.43,
+   "equal_9": 11.75,
+   "under_9": 43.82,
+   "over_10.5": 33.58,
+   "under_10.5": 66.42
+  },
+  "Linee_Casa": {
+   "over_1.5": 52.15,
+   "under_1.5": 47.85,
+   "over_2.5": 26.23,
+   "under_2.5": 73.77,
+   "over_3.5": 10.84,
+   "under_3.5": 89.16
+  },
+  "Linee_Ospite": {
+   "over_0.5": 64.23,
+   "under_0.5": 35.77,
+   "over_1.5": 32.67,
+   "under_1.5": 67.33,
+   "over_2.5": 12.73,
+   "under_2.5": 87.27,
+   "over_3.5": 4.08,
+   "under_3.5": 95.92
+  },
+  "WeSay": "2-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 24, 2026 7.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/championship/norwich-city-vs-qpr_game_263368.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/norwich-city/preview/norwich-vs-qpr-prediction-team-news-lineups_609607.html",
+  "Id": "263368"
+ },
+ {
+  "Casa": "Portsmouth",
+  "Ospite": "West Ham United",
+  "Ora": "20:45",
+  "Data": "2026-11-24",
+  "Lega": "Championship",
+  "Giornata": "Gameweek 17",
+  "P1": 30.68,
+  "PX": 25.34,
+  "P2": 43.97,
+  "P_GG": 57.28,
+  "P_NG": 42.72,
+  "P_O15": 77.72,
+  "P_U15": 22.28,
+  "P_O25": 54.69,
+  "P_U25": 45.28,
+  "P_O35": 32.28,
+  "P_U35": 67.72,
+  "P_O45": 18.38,
+  "P_U45": 81.62,
+  "PT1": 28.4,
+  "PTX": 41.62,
+  "PT2": 29.98,
+  "P_Primo_Casa": 43.55,
+  "P_Nessun_Gol": 6.09,
+  "P_Primo_Ospite": 50.36,
+  "Esatto": "1-1",
+  "P_Esatto": 11.5,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     7.45
+    ],
+    [
+     "1-0",
+     7.19
+    ],
+    [
+     "2-0",
+     4.5
+    ],
+    [
+     "3-1",
+     3.23
+    ],
+    [
+     "3-2",
+     2.5
+    ],
+    [
+     "3-0",
+     2.11
+    ],
+    [
+     "Other",
+     3.71
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.5
+    ],
+    [
+     "0-0",
+     6.09
+    ],
+    [
+     "2-2",
+     6.03
+    ],
+    [
+     "3-3",
+     1.45
+    ],
+    [
+     "Other",
+     0.27
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     9.25
+    ],
+    [
+     "0-1",
+     9.01
+    ],
+    [
+     "0-2",
+     7.02
+    ],
+    [
+     "1-3",
+     4.66
+    ],
+    [
+     "0-3",
+     3.59
+    ],
+    [
+     "2-3",
+     2.89
+    ],
+    [
+     "Other",
+     7.56
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 71.82,
+   "equal_8": 9.81,
+   "under_8": 18.37,
+   "over_9": 60.5,
+   "equal_9": 11.32,
+   "under_9": 28.18,
+   "over_10.5": 48.67,
+   "under_10.5": 51.33
+  },
+  "Linee_Casa": {
+   "over_1.5": 34.14,
+   "under_1.5": 65.86,
+   "over_2.5": 13.27,
+   "under_2.5": 86.73,
+   "over_3.5": 3.98,
+   "under_3.5": 96.02
+  },
+  "Linee_Ospite": {
+   "over_0.5": 76.41,
+   "under_0.5": 23.59,
+   "over_1.5": 45.22,
+   "under_1.5": 54.78,
+   "over_2.5": 20.42,
+   "under_2.5": 79.58,
+   "over_3.5": 7.83,
+   "under_3.5": 92.17
+  },
+  "WeSay": "2-2",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 24, 2026 7.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/championship/portsmouth-vs-west-ham-united_game_263367.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/portsmouth/preview/portsmouth-vs-west-ham-prediction-team-news-lineups_609617.html",
+  "Id": "263367"
+ },
+ {
+  "Casa": "Sheffield United",
+  "Ospite": "Southampton",
+  "Ora": "20:45",
+  "Data": "2026-11-24",
+  "Lega": "Championship",
+  "Giornata": "Gameweek 17",
+  "P1": 41.35,
+  "PX": 23.21,
+  "P2": 35.44,
+  "P_GG": 62.68,
+  "P_NG": 37.32,
+  "P_O15": 82.83,
+  "P_U15": 17.17,
+  "P_O25": 62.48,
+  "P_U25": 37.53,
+  "P_O35": 39.47,
+  "P_U35": 60.53,
+  "P_O45": 24.05,
+  "P_U45": 75.95,
+  "PT1": 36.64,
+  "PTX": 36.52,
+  "PT2": 26.84,
+  "P_Primo_Casa": 52.91,
+  "P_Nessun_Gol": 4.18,
+  "P_Primo_Ospite": 42.91,
+  "Esatto": "1-1",
+  "P_Esatto": 10.27,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     9.1
+    ],
+    [
+     "1-0",
+     6.82
+    ],
+    [
+     "2-0",
+     5.51
+    ],
+    [
+     "3-1",
+     4.7
+    ],
+    [
+     "3-2",
+     3.68
+    ],
+    [
+     "3-0",
+     3.3
+    ],
+    [
+     "Other",
+     8.24
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.27
+    ],
+    [
+     "2-2",
+     6.68
+    ],
+    [
+     "0-0",
+     4.18
+    ],
+    [
+     "3-3",
+     1.81
+    ],
+    [
+     "Other",
+     0.28
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     8.09
+    ],
+    [
+     "0-1",
+     6.18
+    ],
+    [
+     "0-2",
+     4.57
+    ],
+    [
+     "1-3",
+     4.05
+    ],
+    [
+     "2-3",
+     3.42
+    ],
+    [
+     "0-3",
+     2.51
+    ],
+    [
+     "Other",
+     6.62
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 66.3,
+   "equal_8": 10.66,
+   "under_8": 23.04,
+   "over_9": 54.66,
+   "equal_9": 11.64,
+   "under_9": 33.7,
+   "over_10.5": 43.08,
+   "under_10.5": 56.92
+  },
+  "Linee_Casa": {
+   "over_1.5": 46.72,
+   "under_1.5": 53.28,
+   "over_2.5": 22.01,
+   "under_2.5": 77.99,
+   "over_3.5": 8.52,
+   "under_3.5": 91.48
+  },
+  "Linee_Ospite": {
+   "over_0.5": 71.96,
+   "under_0.5": 28.04,
+   "over_1.5": 41.71,
+   "under_1.5": 58.29,
+   "over_2.5": 18.69,
+   "under_2.5": 81.31,
+   "over_3.5": 6.9,
+   "under_3.5": 93.1
+  },
+  "WeSay": "1-1",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 24, 2026 7.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/championship/sheffield-united-vs-southampton_game_263366.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/sheffield-united/preview/sheff-utd-vs-southampton-prediction-team-news-lineups_609653.html",
+  "Id": "263366"
+ },
+ {
+  "Casa": "Stevenage",
+  "Ospite": "Sheffield Wednesday",
+  "Ora": "20:45",
+  "Data": "2026-11-24",
+  "Lega": "League One",
+  "Giornata": "Gameweek 8",
+  "P1": 46.74,
+  "PX": 24.44,
+  "P2": 28.82,
+  "P_GG": 56.05,
+  "P_NG": 43.95,
+  "P_O15": 76.52,
+  "P_U15": 23.48,
+  "P_O25": 53.32,
+  "P_U25": 46.68,
+  "P_O35": 31.06,
+  "P_U35": 68.94,
+  "P_O45": 17.87,
+  "P_U45": 82.13,
+  "PT1": 36.85,
+  "PTX": 42.35,
+  "PT2": 20.8,
+  "P_Primo_Casa": 58.54,
+  "P_Nessun_Gol": 6.21,
+  "P_Primo_Ospite": 35.25,
+  "Esatto": "1-1",
+  "P_Esatto": 11.51,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     10.11
+    ],
+    [
+     "2-1",
+     9.6
+    ],
+    [
+     "2-0",
+     7.51
+    ],
+    [
+     "3-1",
+     4.83
+    ],
+    [
+     "3-0",
+     4.06
+    ],
+    [
+     "3-2",
+     3.3
+    ],
+    [
+     "Other",
+     7.34
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.51
+    ],
+    [
+     "0-0",
+     6.21
+    ],
+    [
+     "2-2",
+     5.5
+    ],
+    [
+     "3-3",
+     1.17
+    ],
+    [
+     "Other",
+     0.05
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     7.17
+    ],
+    [
+     "1-2",
+     6.89
+    ],
+    [
+     "0-2",
+     4.18
+    ],
+    [
+     "1-3",
+     2.86
+    ],
+    [
+     "2-3",
+     2.24
+    ],
+    [
+     "0-3",
+     1.71
+    ],
+    [
+     "Other",
+     3.77
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 63.12,
+   "equal_8": 11.26,
+   "under_8": 25.62,
+   "over_9": 51.11,
+   "equal_9": 12.01,
+   "under_9": 36.88,
+   "over_10.5": 39.44,
+   "under_10.5": 60.56
+  },
+  "Linee_Casa": {
+   "over_1.5": 45.6,
+   "under_1.5": 54.4,
+   "over_2.5": 20.75,
+   "under_2.5": 79.25,
+   "over_3.5": 7.39,
+   "under_3.5": 92.61
+  },
+  "Linee_Ospite": {
+   "over_0.5": 64.78,
+   "under_0.5": 35.22,
+   "over_1.5": 31.67,
+   "under_1.5": 68.33,
+   "over_2.5": 11.8,
+   "under_2.5": 88.2,
+   "over_3.5": 3.82,
+   "under_3.5": 96.18
+  },
+  "WeSay": "0-1",
+  "WeSay_Segno": "2",
+  "Ora_Sito": "Nov 24, 2026 7.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/league-one/stevenage-vs-sheffield-wednesday_game_258937.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/stevenage/preview/stevenage-vs-sheff-weds-prediction-team-news-lineups_609655.html",
+  "Id": "258937"
+ },
+ {
+  "Casa": "Arsenal",
+  "Ospite": "Borussia Dortmund",
+  "Ora": "21:00",
+  "Data": "2026-11-24",
+  "Lega": "Champions League - League Stage",
+  "Giornata": "Gameweek 5",
+  "P1": 58.88,
+  "PX": 21.36,
+  "P2": 19.77,
+  "P_GG": 50.93,
+  "P_NG": 49.07,
+  "P_O15": 77.43,
+  "P_U15": 22.57,
+  "P_O25": 53.71,
+  "P_U25": 46.29,
+  "P_O35": 30.89,
+  "P_U35": 69.11,
+  "P_O45": 18.93,
+  "P_U45": 81.07,
+  "PT1": 38.67,
+  "PTX": 39.84,
+  "PT2": 21.49,
+  "P_Primo_Casa": 63.2,
+  "P_Nessun_Gol": 5.83,
+  "P_Primo_Ospite": 30.97,
+  "Esatto": "1-0",
+  "P_Esatto": 11.38,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     11.38
+    ],
+    [
+     "2-0",
+     10.68
+    ],
+    [
+     "2-1",
+     10.26
+    ],
+    [
+     "3-0",
+     6.47
+    ],
+    [
+     "3-1",
+     5.77
+    ],
+    [
+     "3-2",
+     3.07
+    ],
+    [
+     "Other",
+     11.24
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.16
+    ],
+    [
+     "0-0",
+     5.83
+    ],
+    [
+     "2-2",
+     4.56
+    ],
+    [
+     "Other",
+     0.03
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     5.34
+    ],
+    [
+     "1-2",
+     4.91
+    ],
+    [
+     "0-2",
+     2.9
+    ],
+    [
+     "1-3",
+     1.62
+    ],
+    [
+     "2-3",
+     1.61
+    ],
+    [
+     "0-3",
+     1.17
+    ],
+    [
+     "Other",
+     2.21
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 57.56,
+   "equal_8": 11.01,
+   "under_8": 31.43,
+   "over_9": 46.35,
+   "equal_9": 11.2,
+   "under_9": 42.44,
+   "over_10.5": 35.85,
+   "under_10.5": 64.15
+  },
+  "Linee_Casa": {
+   "over_1.5": 54.46,
+   "under_1.5": 45.54,
+   "over_2.5": 27.35,
+   "under_2.5": 72.65,
+   "over_3.5": 11.27,
+   "under_3.5": 88.73
+  },
+  "Linee_Ospite": {
+   "over_0.5": 54.38,
+   "under_0.5": 45.62,
+   "over_1.5": 22.85,
+   "under_1.5": 77.15,
+   "over_2.5": 7.41,
+   "under_2.5": 92.59,
+   "over_3.5": 2.24,
+   "under_3.5": 97.76
+  },
+  "WeSay": "2-0",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 24, 2026 8.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/champions-league/arsenal-vs-borussia-dortmund_game_263377.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/arsenal/champions-league/preview/arsenal-vs-dortmund-prediction-team-news-lineups_609605.html",
+  "Id": "263377"
+ },
+ {
+  "Casa": "Como",
+  "Ospite": "AEK Athens",
+  "Ora": "21:00",
+  "Data": "2026-11-24",
+  "Lega": "Champions League - League Stage",
+  "Giornata": "Gameweek 5",
+  "P1": 55.21,
+  "PX": 23.67,
+  "P2": 21.13,
+  "P_GG": 50.42,
+  "P_NG": 49.58,
+  "P_O15": 76.1,
+  "P_U15": 23.9,
+  "P_O25": 52.17,
+  "P_U25": 47.83,
+  "P_O35": 29.41,
+  "P_U35": 70.59,
+  "P_O45": 17.51,
+  "P_U45": 82.49,
+  "PT1": 41.16,
+  "PTX": 39.21,
+  "PT2": 19.63,
+  "P_Primo_Casa": 59.48,
+  "P_Nessun_Gol": 6.71,
+  "P_Primo_Ospite": 33.81,
+  "Esatto": "1-0",
+  "P_Esatto": 11.28,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     11.28
+    ],
+    [
+     "2-1",
+     10.03
+    ],
+    [
+     "2-0",
+     9.98
+    ],
+    [
+     "3-0",
+     5.85
+    ],
+    [
+     "3-1",
+     5.32
+    ],
+    [
+     "3-2",
+     2.76
+    ],
+    [
+     "Other",
+     9.98
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.95
+    ],
+    [
+     "0-0",
+     6.71
+    ],
+    [
+     "2-2",
+     4.81
+    ],
+    [
+     "Other",
+     0.22
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     5.89
+    ],
+    [
+     "1-2",
+     5.58
+    ],
+    [
+     "0-2",
+     3.02
+    ],
+    [
+     "1-3",
+     1.76
+    ],
+    [
+     "2-3",
+     1.56
+    ],
+    [
+     "0-3",
+     1.29
+    ],
+    [
+     "Other",
+     2.01
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 48.3,
+   "equal_8": 11.64,
+   "under_8": 40.05,
+   "over_9": 37.27,
+   "equal_9": 11.03,
+   "under_9": 51.7,
+   "over_10.5": 27.64,
+   "under_10.5": 72.36
+  },
+  "Linee_Casa": {
+   "over_1.5": 51.49,
+   "under_1.5": 48.51,
+   "over_2.5": 25.11,
+   "under_2.5": 74.89,
+   "over_3.5": 10.2,
+   "under_3.5": 89.8
+  },
+  "Linee_Ospite": {
+   "over_0.5": 56.18,
+   "under_0.5": 43.82,
+   "over_1.5": 23.99,
+   "under_1.5": 76.01,
+   "over_2.5": 7.82,
+   "under_2.5": 92.18,
+   "over_3.5": 2.23,
+   "under_3.5": 97.77
+  },
+  "WeSay": "3-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 24, 2026 8.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/champions-league/como-vs-aek-athens_game_263379.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/como/champions-league/preview/como-vs-aek-athens-prediction-team-news-lineups_609600.html",
+  "Id": "263379"
+ },
+ {
+  "Casa": "Feyenoord",
+  "Ospite": "Porto",
+  "Ora": "21:00",
+  "Data": "2026-11-24",
+  "Lega": "Champions League - League Stage",
+  "Giornata": "Gameweek 5",
+  "P1": 31.84,
+  "PX": 22.97,
+  "P2": 45.19,
+  "P_GG": 59.82,
+  "P_NG": 40.18,
+  "P_O15": 82.06,
+  "P_U15": 17.94,
+  "P_O25": 61.08,
+  "P_U25": 38.92,
+  "P_O35": 39.31,
+  "P_U35": 60.69,
+  "P_O45": 24.35,
+  "P_U45": 75.65,
+  "PT1": 26.68,
+  "PTX": 38.34,
+  "PT2": 34.98,
+  "P_Primo_Casa": 43.54,
+  "P_Nessun_Gol": 4.88,
+  "P_Primo_Ospite": 51.58,
+  "Esatto": "1-1",
+  "P_Esatto": 9.87,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     6.97
+    ],
+    [
+     "1-0",
+     6.06
+    ],
+    [
+     "2-0",
+     4.37
+    ],
+    [
+     "3-1",
+     3.67
+    ],
+    [
+     "3-2",
+     3.08
+    ],
+    [
+     "3-0",
+     2.16
+    ],
+    [
+     "Other",
+     5.53
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     9.87
+    ],
+    [
+     "2-2",
+     6.08
+    ],
+    [
+     "0-0",
+     4.88
+    ],
+    [
+     "3-3",
+     1.75
+    ],
+    [
+     "Other",
+     0.39
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     8.87
+    ],
+    [
+     "0-1",
+     7.01
+    ],
+    [
+     "0-2",
+     6.73
+    ],
+    [
+     "1-3",
+     5.21
+    ],
+    [
+     "2-3",
+     3.97
+    ],
+    [
+     "0-3",
+     3.78
+    ],
+    [
+     "Other",
+     9.63
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 50.85,
+   "equal_8": 11.18,
+   "under_8": 37.98,
+   "over_9": 40.03,
+   "equal_9": 10.81,
+   "under_9": 49.15,
+   "over_10.5": 30.37,
+   "under_10.5": 69.63
+  },
+  "Linee_Casa": {
+   "over_1.5": 37.97,
+   "under_1.5": 62.03,
+   "over_2.5": 16.58,
+   "under_2.5": 83.42,
+   "over_3.5": 5.92,
+   "under_3.5": 94.08
+  },
+  "Linee_Ospite": {
+   "over_0.5": 77.01,
+   "under_0.5": 22.99,
+   "over_1.5": 49.49,
+   "under_1.5": 50.51,
+   "over_2.5": 24.73,
+   "under_2.5": 75.27,
+   "over_3.5": 10.02,
+   "under_3.5": 89.98
+  },
+  "WeSay": "2-3",
+  "WeSay_Segno": "2",
+  "Ora_Sito": "Nov 24, 2026 8.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/champions-league/feyenoord-vs-porto_game_263378.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/feyenoord/champions-league/preview/feyenoord-vs-porto-prediction-team-news-lineups_609638.html",
+  "Id": "263378"
+ },
+ {
+  "Casa": "Manchester City",
+  "Ospite": "Napoli",
+  "Ora": "21:00",
+  "Data": "2026-11-24",
+  "Lega": "Champions League - League Stage",
+  "Giornata": "Gameweek 5",
+  "P1": 56.82,
+  "PX": 21.46,
+  "P2": 21.68,
+  "P_GG": 53.64,
+  "P_NG": 46.36,
+  "P_O15": 79.13,
+  "P_U15": 20.87,
+  "P_O25": 57.25,
+  "P_U25": 42.75,
+  "P_O35": 34.87,
+  "P_U35": 65.13,
+  "P_O45": 22.59,
+  "P_U45": 77.41,
+  "PT1": 40.21,
+  "PTX": 35.7,
+  "PT2": 24.09,
+  "P_Primo_Casa": 53.18,
+  "P_Nessun_Gol": 5.69,
+  "P_Primo_Ospite": 41.13,
+  "Esatto": "1-0",
+  "P_Esatto": 10.01,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     10.01
+    ],
+    [
+     "2-1",
+     9.34
+    ],
+    [
+     "2-0",
+     9.29
+    ],
+    [
+     "3-0",
+     6.16
+    ],
+    [
+     "3-1",
+     5.73
+    ],
+    [
+     "3-2",
+     3.53
+    ],
+    [
+     "Other",
+     12.77
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     9.59
+    ],
+    [
+     "0-0",
+     5.69
+    ],
+    [
+     "2-2",
+     4.75
+    ],
+    [
+     "3-3",
+     1.24
+    ],
+    [
+     "Other",
+     0.19
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     5.58
+    ],
+    [
+     "0-1",
+     5.14
+    ],
+    [
+     "0-2",
+     2.99
+    ],
+    [
+     "2-3",
+     1.98
+    ],
+    [
+     "1-3",
+     1.8
+    ],
+    [
+     "0-3",
+     1.31
+    ],
+    [
+     "Other",
+     2.88
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 63.13,
+   "equal_8": 10.55,
+   "under_8": 26.32,
+   "over_9": 51.93,
+   "equal_9": 11.2,
+   "under_9": 36.87,
+   "over_10.5": 40.99,
+   "under_10.5": 59.01
+  },
+  "Linee_Casa": {
+   "over_1.5": 54.98,
+   "under_1.5": 45.02,
+   "over_2.5": 29.62,
+   "under_2.5": 70.38,
+   "over_3.5": 12.96,
+   "under_3.5": 87.04
+  },
+  "Linee_Ospite": {
+   "over_0.5": 56.05,
+   "under_0.5": 43.95,
+   "over_1.5": 26.25,
+   "under_1.5": 73.75,
+   "over_2.5": 9.4,
+   "under_2.5": 90.6,
+   "over_3.5": 3.07,
+   "under_3.5": 96.93
+  },
+  "WeSay": "2-2",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 24, 2026 8.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/champions-league/man-city-vs-napoli_game_263376.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/man-city/champions-league/preview/man-city-vs-napoli-prediction-team-news-lineups_609624.html",
+  "Id": "263376"
+ },
+ {
+  "Casa": "RB Leipzig",
+  "Ospite": "Lens",
+  "Ora": "21:00",
+  "Data": "2026-11-24",
+  "Lega": "Champions League - League Stage",
+  "Giornata": "Gameweek 5",
+  "P1": 45.9,
+  "PX": 22.54,
+  "P2": 31.56,
+  "P_GG": 64.81,
+  "P_NG": 35.19,
+  "P_O15": 85.91,
+  "P_U15": 14.09,
+  "P_O25": 67.26,
+  "P_U25": 32.74,
+  "P_O35": 47.6,
+  "P_U35": 52.4,
+  "P_O45": 31.55,
+  "P_U45": 68.45,
+  "PT1": 40.0,
+  "PTX": 33.15,
+  "PT2": 26.85,
+  "P_Primo_Casa": 51.4,
+  "P_Nessun_Gol": 3.56,
+  "P_Primo_Ospite": 45.04,
+  "Esatto": "1-1",
+  "P_Esatto": 9.29,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     8.39
+    ],
+    [
+     "1-0",
+     5.63
+    ],
+    [
+     "2-0",
+     5.54
+    ],
+    [
+     "3-1",
+     5.46
+    ],
+    [
+     "3-2",
+     4.64
+    ],
+    [
+     "3-0",
+     3.41
+    ],
+    [
+     "Other",
+     12.82
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     9.29
+    ],
+    [
+     "2-2",
+     6.94
+    ],
+    [
+     "0-0",
+     3.56
+    ],
+    [
+     "3-3",
+     2.27
+    ],
+    [
+     "Other",
+     0.48
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     6.41
+    ],
+    [
+     "0-1",
+     4.89
+    ],
+    [
+     "0-2",
+     3.82
+    ],
+    [
+     "2-3",
+     3.8
+    ],
+    [
+     "1-3",
+     3.66
+    ],
+    [
+     "0-3",
+     1.44
+    ],
+    [
+     "Other",
+     7.54
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 68.96,
+   "equal_8": 9.01,
+   "under_8": 22.03,
+   "over_9": 58.95,
+   "equal_9": 10.01,
+   "under_9": 31.04,
+   "over_10.5": 48.64,
+   "under_10.5": 51.36
+  },
+  "Linee_Casa": {
+   "over_1.5": 53.75,
+   "under_1.5": 46.25,
+   "over_2.5": 29.08,
+   "under_2.5": 70.92,
+   "over_3.5": 13.3,
+   "under_3.5": 86.7
+  },
+  "Linee_Ospite": {
+   "over_0.5": 69.03,
+   "under_0.5": 30.97,
+   "over_1.5": 41.0,
+   "under_1.5": 59.0,
+   "over_2.5": 19.19,
+   "under_2.5": 80.81,
+   "over_3.5": 8.02,
+   "under_3.5": 91.98
+  },
+  "WeSay": "2-0",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 24, 2026 8.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/champions-league/rb-leipzig-vs-lens_game_263381.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/rb-leipzig/champions-league/preview/rb-leipzig-vs-lens-prediction-team-news-lineups_609645.html",
+  "Id": "263381"
+ },
+ {
+  "Casa": "Real Madrid",
+  "Ospite": "PSV Eindhoven",
+  "Ora": "21:00",
+  "Data": "2026-11-24",
+  "Lega": "Champions League - League Stage",
+  "Giornata": "Gameweek 5",
+  "P1": 56.47,
+  "PX": 20.25,
+  "P2": 23.28,
+  "P_GG": 64.69,
+  "P_NG": 35.31,
+  "P_O15": 87.19,
+  "P_U15": 12.81,
+  "P_O25": 69.06,
+  "P_U25": 30.94,
+  "P_O35": 47.93,
+  "P_U35": 52.07,
+  "P_O45": 32.8,
+  "P_U45": 67.2,
+  "PT1": 39.48,
+  "PTX": 33.5,
+  "PT2": 27.03,
+  "P_Primo_Casa": 57.26,
+  "P_Nessun_Gol": 3.03,
+  "P_Primo_Ospite": 39.71,
+  "Esatto": "2-1",
+  "P_Esatto": 8.89,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     8.89
+    ],
+    [
+     "2-0",
+     7.01
+    ],
+    [
+     "3-1",
+     6.43
+    ],
+    [
+     "1-0",
+     6.15
+    ],
+    [
+     "3-0",
+     5.24
+    ],
+    [
+     "3-2",
+     4.44
+    ],
+    [
+     "Other",
+     18.31
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     8.4
+    ],
+    [
+     "2-2",
+     6.33
+    ],
+    [
+     "0-0",
+     3.03
+    ],
+    [
+     "3-3",
+     2.01
+    ],
+    [
+     "Other",
+     0.48
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     5.81
+    ],
+    [
+     "0-1",
+     3.63
+    ],
+    [
+     "2-3",
+     2.93
+    ],
+    [
+     "0-2",
+     2.73
+    ],
+    [
+     "1-3",
+     2.36
+    ],
+    [
+     "0-3",
+     1.19
+    ],
+    [
+     "Other",
+     4.63
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 66.69,
+   "equal_8": 9.97,
+   "under_8": 23.34,
+   "over_9": 55.85,
+   "equal_9": 10.85,
+   "under_9": 33.31,
+   "over_10.5": 44.99,
+   "under_10.5": 55.01
+  },
+  "Linee_Casa": {
+   "over_1.5": 62.07,
+   "under_1.5": 37.93,
+   "over_2.5": 36.91,
+   "under_2.5": 63.09,
+   "over_3.5": 18.79,
+   "under_3.5": 81.21
+  },
+  "Linee_Ospite": {
+   "over_0.5": 60.26,
+   "under_0.5": 39.74,
+   "over_1.5": 32.91,
+   "under_1.5": 67.09,
+   "over_2.5": 13.6,
+   "under_2.5": 86.4,
+   "over_3.5": 5.11,
+   "under_3.5": 94.89
+  },
+  "WeSay": "3-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 24, 2026 8.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/champions-league/real-madrid-vs-psv-eindhoven_game_263375.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/real-madrid/champions-league/preview/real-madrid-vs-psv-prediction-team-news-lineups_609630.html",
+  "Id": "263375"
+ },
+ {
+  "Casa": "Slovan Bratislava",
+  "Ospite": "Real Betis",
+  "Ora": "21:00",
+  "Data": "2026-11-24",
+  "Lega": "Champions League - League Stage",
+  "Giornata": "Gameweek 5",
+  "P1": 39.06,
+  "PX": 23.95,
+  "P2": 36.96,
+  "P_GG": 54.85,
+  "P_NG": 45.15,
+  "P_O15": 76.95,
+  "P_U15": 23.05,
+  "P_O25": 54.55,
+  "P_U25": 45.45,
+  "P_O35": 32.75,
+  "P_U35": 67.25,
+  "P_O45": 19.69,
+  "P_U45": 80.31,
+  "PT1": 34.69,
+  "PTX": 39.2,
+  "PT2": 26.11,
+  "P_Primo_Casa": 51.3,
+  "P_Nessun_Gol": 6.5,
+  "P_Primo_Ospite": 42.2,
+  "Esatto": "1-1",
+  "P_Esatto": 10.64,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     8.09
+    ],
+    [
+     "2-1",
+     7.92
+    ],
+    [
+     "2-0",
+     5.59
+    ],
+    [
+     "3-1",
+     4.02
+    ],
+    [
+     "3-0",
+     3.23
+    ],
+    [
+     "3-2",
+     2.96
+    ],
+    [
+     "Other",
+     7.27
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.64
+    ],
+    [
+     "0-0",
+     6.5
+    ],
+    [
+     "2-2",
+     5.49
+    ],
+    [
+     "3-3",
+     1.22
+    ],
+    [
+     "Other",
+     0.1
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     8.45
+    ],
+    [
+     "1-2",
+     7.73
+    ],
+    [
+     "0-2",
+     6.14
+    ],
+    [
+     "1-3",
+     3.57
+    ],
+    [
+     "0-3",
+     2.93
+    ],
+    [
+     "2-3",
+     2.62
+    ],
+    [
+     "Other",
+     5.52
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 58.13,
+   "equal_8": 10.5,
+   "under_8": 31.36,
+   "over_9": 47.39,
+   "equal_9": 10.75,
+   "under_9": 41.87,
+   "over_10.5": 37.21,
+   "under_10.5": 62.79
+  },
+  "Linee_Casa": {
+   "over_1.5": 40.42,
+   "under_1.5": 59.58,
+   "over_2.5": 18.8,
+   "under_2.5": 81.2,
+   "over_3.5": 7.37,
+   "under_3.5": 92.63
+  },
+  "Linee_Ospite": {
+   "over_0.5": 69.31,
+   "under_0.5": 30.69,
+   "over_1.5": 38.28,
+   "under_1.5": 61.72,
+   "over_2.5": 15.96,
+   "under_2.5": 84.04,
+   "over_3.5": 5.62,
+   "under_3.5": 94.38
+  },
+  "WeSay": "1-3",
+  "WeSay_Segno": "2",
+  "Ora_Sito": "Nov 24, 2026 8.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/champions-league/slovan-bratislava-vs-betis_game_263380.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/slovan-bratislava/preview/slovan-bratislava-vs-betis-prediction-team-news-lineups_609622.html",
+  "Id": "263380"
+ },
+ {
+  "Casa": "Wolverhampton Wanderers",
+  "Ospite": "Derby County",
+  "Ora": "21:00",
+  "Data": "2026-11-24",
+  "Lega": "Championship",
+  "Giornata": "Gameweek 17",
+  "P1": 63.7,
+  "PX": 20.59,
+  "P2": 15.71,
+  "P_GG": 52.51,
+  "P_NG": 47.49,
+  "P_O15": 79.26,
+  "P_U15": 20.74,
+  "P_O25": 56.61,
+  "P_U25": 43.39,
+  "P_O35": 33.86,
+  "P_U35": 66.14,
+  "P_O45": 21.39,
+  "P_U45": 78.61,
+  "PT1": 46.66,
+  "PTX": 37.9,
+  "PT2": 15.44,
+  "P_Primo_Casa": 67.67,
+  "P_Nessun_Gol": 5.3,
+  "P_Primo_Ospite": 27.03,
+  "Esatto": "1-0",
+  "P_Esatto": 10.79,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     10.79
+    ],
+    [
+     "2-0",
+     10.65
+    ],
+    [
+     "2-1",
+     10.36
+    ],
+    [
+     "3-0",
+     7.31
+    ],
+    [
+     "3-1",
+     6.69
+    ],
+    [
+     "3-2",
+     3.33
+    ],
+    [
+     "Other",
+     14.56
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     9.86
+    ],
+    [
+     "0-0",
+     5.3
+    ],
+    [
+     "2-2",
+     4.5
+    ],
+    [
+     "Other",
+     0.08
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     4.65
+    ],
+    [
+     "1-2",
+     4.41
+    ],
+    [
+     "0-2",
+     2.14
+    ],
+    [
+     "2-3",
+     1.33
+    ],
+    [
+     "1-3",
+     1.28
+    ],
+    [
+     "Other",
+     1.23
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 66.91,
+   "equal_8": 10.19,
+   "under_8": 22.9,
+   "over_9": 55.75,
+   "equal_9": 11.17,
+   "under_9": 33.09,
+   "over_10.5": 44.53,
+   "under_10.5": 55.47
+  },
+  "Linee_Casa": {
+   "over_1.5": 59.67,
+   "under_1.5": 40.33,
+   "over_2.5": 32.83,
+   "under_2.5": 67.17,
+   "over_3.5": 14.64,
+   "under_3.5": 85.36
+  },
+  "Linee_Ospite": {
+   "over_0.5": 51.39,
+   "under_0.5": 48.61,
+   "over_1.5": 19.83,
+   "under_1.5": 80.17,
+   "over_2.5": 5.45,
+   "under_2.5": 94.55,
+   "over_3.5": 1.31,
+   "under_3.5": 98.69
+  },
+  "WeSay": "2-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 24, 2026 8.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/championship/wolves-vs-derby-county_game_263374.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/wolves/preview/wolves-vs-derby-prediction-team-news-lineups_609609.html",
+  "Id": "263374"
  }
 ]
