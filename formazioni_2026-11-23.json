@@ -1282,7 +1282,42 @@
     "partite_squadra": 54,
     "quota_gol": 0
    }
-  ]
+  ],
+  "titolari": {
+   "Internacional": {
+    "modulo": "3-4-2-1",
+    "titolari": [
+     "Kauan",
+     "Bruno Gomes",
+     "G. Mercado",
+     "Juninho",
+     "B. Aguirre",
+     "R. Villagra",
+     "Ronaldo",
+     "Matheus Bahia",
+     "Vitinho",
+     "J. Carbonero",
+     "Alerrandro"
+    ]
+   },
+   "Vitoria": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "Lucas Arcanjo",
+     "Jamerson",
+     "Cacá",
+     "E. Brítez",
+     "Ramon",
+     "Matheuzinho",
+     "Erick",
+     "Gabriel Baralhas",
+     "E. Martínez",
+     "D. Tarzia",
+     "Rene"
+    ]
+   }
+  },
+  "partita": "Internacional - Vitoria"
  },
  "1565529": {
   "titolari": {
@@ -2393,5 +2428,42 @@
    }
   },
   "partita": "Universitario de Vinto - Gualberto Villarroel SJ"
+ },
+ "1650507": {
+  "titolari": {
+   "Albion FC": {
+    "modulo": "",
+    "titolari": [
+     "S. Jaume",
+     "I. Zufiaurre",
+     "F. Puente",
+     "T. Moschión",
+     "Á. López",
+     "P. Lacoste",
+     "M. de los Santos",
+     "S. Costa",
+     "B. Barcia",
+     "J. Alvarez",
+     "C. Airala"
+    ]
+   },
+   "Danubio": {
+    "modulo": "",
+    "titolari": [
+     "M. Brasil",
+     "E. Cabrera",
+     "E. Femia",
+     "J. Millán",
+     "M. Peralta",
+     "Bautista Pereira",
+     "G. Rodriguez",
+     "B. Tomatis",
+     "J. Trasante",
+     "E. Velázquez",
+     "M. Goicoechea"
+    ]
+   }
+  },
+  "partita": "Albion FC - Danubio"
  }
 }
