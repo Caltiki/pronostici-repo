@@ -551,6 +551,14 @@
   .s1 { background: var(--v1); color: var(--v1-testo); }
   .sx { background: var(--vx); color: var(--vx-testo); }
   .s2 { background: var(--v2); color: var(--v2-testo); }
+  /* (211) nel confronto Elo / Pinnacle / BeSoccer il colore dice la fonte:
+     ogni fonte una tinta, 1 scuro, X chiaro, 2 medio */
+  .tripla.t-elo .s1 { background: #1f7a4d; color: #fff; } .tripla.t-elo .sx { background: #cfe9da; color: #1a3d2b; } .tripla.t-elo .s2 { background: #4fae7e; color: #fff; }
+  .tripla.t-pin .s1 { background: #1f4f9a; color: #fff; } .tripla.t-pin .sx { background: #d3e0f5; color: #1b2f52; } .tripla.t-pin .s2 { background: #5b8fd6; color: #fff; }
+  .tripla.t-bs .s1 { background: #6a3fa0; color: #fff; } .tripla.t-bs .sx { background: #e4d8f3; color: #3a2358; } .tripla.t-bs .s2 { background: #9a72cc; color: #fff; }
+  .tripla.t-elo .sx, .tripla.t-pin .sx, .tripla.t-bs .sx { text-shadow: none; }
+  .fonti-col { display: flex; gap: 12px; flex-wrap: wrap; font-size: .76rem; color: var(--tenue); margin: 4px 0 8px; }
+  .fonti-col i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 4px; vertical-align: -1px; }
   .legenda {
     display: flex; gap: 14px; font-size: .76rem;
     color: var(--tenue); margin: 4px 0 10px; flex-wrap: wrap;
@@ -3480,7 +3488,8 @@
 
   // Una barra 1-X-2. Il numero sta dentro il pezzo quando c'e' posto;
   // il valore esatto e' comunque scritto nel dettaglio della partita.
-  function tripla(nome, a, x, b) {
+  // (211) tema: colori per fonte invece che per segno (blocco BeSoccer)
+  function tripla(nome, a, x, b, tema) {
     if (a == null || x == null || b == null) return "";
     var tot = a + x + b || 1;
     function pezzo(cls, val, et) {
@@ -3488,7 +3497,7 @@
       return '<i class="' + cls + '" style="flex-grow:' + w.toFixed(2) + '" title="' + et + " " + f0(val) + '%">' +
         (w >= 13 ? f0(val) : "") + "</i>";
     }
-    return '<div class="tripla"><span class="nome">' + nome + "</span>" +
+    return '<div class="tripla' + (tema ? " " + tema : "") + '"><span class="nome">' + nome + "</span>" +
       '<div class="barre" role="img" aria-label="' + nome + ": 1 " + f0(a) + "%, X " + f0(x) + "%, 2 " + f0(b) + '%">' +
       pezzo("s1", a, "1") + pezzo("sx", x, "X") + pezzo("s2", b, "2") + "</div></div>";
   }
@@ -9455,12 +9464,17 @@
   function bloccoBesoccer(p) {
     var B = p.Bs;
     if (!B || (!B.p && !B.xg)) return "";
-    var h = '<div class="scheda"><h3>BeSoccer</h3>';
-    if (B.p) h += tripla("ELO", num(B.p[0]), num(B.p[1]), num(B.p[2]));
+    // (211) tre barre, una per fonte, ognuna col suo colore: il nostro Elo
+    // (se le squadre sono dello stesso campionato), Pinnacle, BeSoccer.
+    var h = '<div class="scheda"><h3>Elo, Pinnacle, BeSoccer</h3>', leg = [];
     var mk = mercatoScheda(p);
-    if (B.p && mk) h += tripla(mk.da === "Pinnacle" ? "Pinnacle" : "mercato", mk["1"], mk.X, mk["2"]);
+    if (B.p && p.Elo && p.Elo.p) { h += tripla("Elo", p.Elo.p[0], p.Elo.p[1], p.Elo.p[2], "t-elo"); leg.push(["#1f7a4d", "il nostro Elo"]); }
+    if (B.p && mk) { h += tripla(mk.da === "Pinnacle" ? "Pinnacle" : "Mercato", mk["1"], mk.X, mk["2"], "t-pin"); leg.push(["#1f4f9a", mk.da === "Pinnacle" ? "Pinnacle" : "mercato"]); }
+    if (B.p) { h += tripla("BeSoccer", num(B.p[0]), num(B.p[1]), num(B.p[2]), "t-bs"); leg.push(["#6a3fa0", "ELO di BeSoccer"]); }
+    if (leg.length > 1) h += '<div class="fonti-col">' + leg.map(function (x) { return '<span><i style="background:' + x[0] + '"></i>' + esc(x[1]) + "</span>"; }).join("") +
+      "<span>(in ogni barra 1 \u00b7 X \u00b7 2)</span></div>";
     var r = [];
-    if (B.elo) r.push("Rating ELO " + esc(p.Casa) + " " + f0(num(B.elo[0])) + " \u00b7 " + esc(p.Ospite) + " " + f0(num(B.elo[1])));
+    if (B.elo) r.push("Rating ELO BeSoccer " + esc(p.Casa) + " " + f0(num(B.elo[0])) + " \u00b7 " + esc(p.Ospite) + " " + f0(num(B.elo[1])));
     if (B.xg) r.push("Gol attesi " + f2(num(B.xg[0])) + " \u2013 " + f2(num(B.xg[1])) + " (totale " + f2(num(B.xg[0]) + num(B.xg[1])) + ")");
     if (r.length) h += "<p>" + r.join("<br>") + "</p>";
     h += '<p class="piccolo">Il rating ELO di BeSoccer \u00e8 su una sua scala, non confrontabile col nostro. Letto dal server' +
