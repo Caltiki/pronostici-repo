@@ -11,10 +11,10 @@
   "P2": 32.0,
   "Fonti": 1,
   "Elenco": "ratingbet",
-  "MP1": 41.0,
+  "MP1": 40.4,
   "MPX": 27.3,
-  "MP2": 31.7,
-  "Scarto": -1.0,
+  "MP2": 32.4,
+  "Scarto": -0.4,
   "Segno_Mercato": "1"
  },
  {
@@ -90,7 +90,12 @@
   "PX": 28.0,
   "P2": 46.0,
   "Fonti": 1,
-  "Elenco": "betimate"
+  "Elenco": "betimate",
+  "MP1": 35.8,
+  "MPX": 27.0,
+  "MP2": 37.3,
+  "Scarto": 8.7,
+  "Segno_Mercato": "2"
  },
  {
   "Data": "2026-11-26",
@@ -104,10 +109,10 @@
   "P2": 15.0,
   "Fonti": 3,
   "Elenco": "betimate, footymetrics, ratingbet",
-  "MP1": 62.2,
-  "MPX": 24.4,
-  "MP2": 13.4,
-  "Scarto": -1.4,
+  "MP1": 59.3,
+  "MPX": 25.6,
+  "MP2": 15.1,
+  "Scarto": 1.5,
   "Segno_Mercato": "1"
  },
  {
@@ -152,15 +157,20 @@
  {
   "Data": "2026-11-26",
   "Ora": "02:00",
-  "Lega": "Messico - Liga MX",
+  "Lega": "Mexico - Liga MX",
   "Casa": "Toluca",
   "Ospite": "Atlas",
   "Segno": "1",
-  "P1": 63.0,
-  "PX": 20.0,
-  "P2": 17.0,
-  "Fonti": 1,
-  "Elenco": "betimate"
+  "P1": 62.7,
+  "PX": 19.9,
+  "P2": 17.4,
+  "Fonti": 2,
+  "Elenco": "betimate, footymetrics",
+  "MP1": 66.2,
+  "MPX": 19.4,
+  "MP2": 14.4,
+  "Scarto": -3.5,
+  "Segno_Mercato": "1"
  },
  {
   "Data": "2026-11-26",
@@ -208,6 +218,24 @@
  },
  {
   "Data": "2026-11-26",
+  "Ora": "04:10",
+  "Lega": "Mexico - Liga MX",
+  "Casa": "Monterrey",
+  "Ospite": "América",
+  "Segno": "1",
+  "P1": 43.0,
+  "PX": 26.0,
+  "P2": 31.0,
+  "Fonti": 1,
+  "Elenco": "footymetrics",
+  "MP1": 40.4,
+  "MPX": 28.0,
+  "MP2": 31.6,
+  "Scarto": 2.6,
+  "Segno_Mercato": "1"
+ },
+ {
+  "Data": "2026-11-26",
   "Ora": "09:30",
   "Lega": "Indonesia: Liga 1 Indonesia",
   "Casa": "Borneo Samarinda",
@@ -217,7 +245,12 @@
   "PX": 26.0,
   "P2": 24.0,
   "Fonti": 1,
-  "Elenco": "ratingbet"
+  "Elenco": "ratingbet",
+  "MP1": 51.6,
+  "MPX": 26.0,
+  "MP2": 22.4,
+  "Scarto": -1.6,
+  "Segno_Mercato": "1"
  },
  {
   "Data": "2026-11-26",
@@ -282,7 +315,12 @@
   "PX": 21.0,
   "P2": 48.0,
   "Fonti": 1,
-  "Elenco": "footymetrics"
+  "Elenco": "footymetrics",
+  "MP1": 14.8,
+  "MPX": 20.4,
+  "MP2": 64.8,
+  "Scarto": -16.8,
+  "Segno_Mercato": "2"
  },
  {
   "Data": "2026-11-26",
@@ -295,7 +333,12 @@
   "PX": 24.0,
   "P2": 37.0,
   "Fonti": 1,
-  "Elenco": "footymetrics"
+  "Elenco": "footymetrics",
+  "MP1": 32.4,
+  "MPX": 26.1,
+  "MP2": 41.4,
+  "Scarto": 6.6,
+  "Segno_Mercato": "2"
  },
  {
   "Data": "2026-11-26",
@@ -321,7 +364,12 @@
   "PX": 22.0,
   "P2": 45.0,
   "Fonti": 1,
-  "Elenco": "footymetrics"
+  "Elenco": "footymetrics",
+  "MP1": 12.4,
+  "MPX": 18.0,
+  "MP2": 69.6,
+  "Scarto": -24.6,
+  "Segno_Mercato": "2"
  },
  {
   "Data": "2026-11-26",
@@ -335,10 +383,10 @@
   "P2": 22.5,
   "Fonti": 2,
   "Elenco": "footymetrics, ratingbet",
-  "MP1": 57.5,
-  "MPX": 27.7,
-  "MP2": 14.8,
-  "Scarto": -9.5,
+  "MP1": 57.9,
+  "MPX": 27.5,
+  "MP2": 14.6,
+  "Scarto": -9.9,
   "Segno_Mercato": "1"
  },
  {
@@ -353,10 +401,10 @@
   "P2": 41.5,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea",
-  "MP1": 21.7,
-  "MPX": 24.1,
-  "MP2": 54.2,
-  "Scarto": -12.7,
+  "MP1": 21.9,
+  "MPX": 24.2,
+  "MP2": 53.9,
+  "Scarto": -12.4,
   "Segno_Mercato": "2"
  },
  {
@@ -370,7 +418,12 @@
   "PX": 22.5,
   "P2": 11.0,
   "Fonti": 2,
-  "Elenco": "ratingbet, statarea"
+  "Elenco": "ratingbet, statarea",
+  "MP1": 69.5,
+  "MPX": 19.4,
+  "MP2": 11.1,
+  "Scarto": -3.0,
+  "Segno_Mercato": "1"
  },
  {
   "Data": "2026-11-26",
@@ -446,10 +499,10 @@
   "P2": 32.0,
   "Fonti": 1,
   "Elenco": "ratingbet",
-  "MP1": 42.9,
+  "MP1": 40.0,
   "MPX": 27.7,
-  "MP2": 29.4,
-  "Scarto": -2.9,
+  "MP2": 32.3,
+  "Scarto": 0.0,
   "Segno_Mercato": "1"
  },
  {
@@ -463,7 +516,12 @@
   "PX": 13.0,
   "P2": 6.0,
   "Fonti": 1,
-  "Elenco": "ratingbet"
+  "Elenco": "ratingbet",
+  "MP1": 82.4,
+  "MPX": 11.5,
+  "MP2": 6.1,
+  "Scarto": -1.4,
+  "Segno_Mercato": "1"
  },
  {
   "Data": "2026-11-26",
@@ -508,10 +566,10 @@
   "P2": 6.0,
   "Fonti": 1,
   "Elenco": "ratingbet",
-  "MP1": 82.0,
-  "MPX": 11.0,
-  "MP2": 7.0,
-  "Scarto": 1.0,
+  "MP1": 83.2,
+  "MPX": 10.3,
+  "MP2": 6.5,
+  "Scarto": -0.2,
   "Segno_Mercato": "1"
  },
  {
@@ -526,10 +584,10 @@
   "P2": 8.0,
   "Fonti": 1,
   "Elenco": "ratingbet",
-  "MP1": 79.5,
-  "MPX": 12.7,
-  "MP2": 7.8,
-  "Scarto": -1.5,
+  "MP1": 80.3,
+  "MPX": 12.4,
+  "MP2": 7.3,
+  "Scarto": -2.3,
   "Segno_Mercato": "1"
  },
  {
@@ -544,10 +602,10 @@
   "P2": 31.5,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea",
-  "MP1": 45.3,
-  "MPX": 25.4,
-  "MP2": 29.2,
-  "Scarto": -2.3,
+  "MP1": 46.2,
+  "MPX": 24.9,
+  "MP2": 28.9,
+  "Scarto": -3.2,
   "Segno_Mercato": "1"
  },
  {
@@ -580,10 +638,10 @@
   "P2": 47.5,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea",
-  "MP1": 24.4,
-  "MPX": 26.4,
-  "MP2": 49.3,
-  "Scarto": -1.8,
+  "MP1": 25.1,
+  "MPX": 26.5,
+  "MP2": 48.3,
+  "Scarto": -0.8,
   "Segno_Mercato": "2"
  },
  {
@@ -598,10 +656,10 @@
   "P2": 15.5,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea",
-  "MP1": 60.1,
-  "MPX": 21.8,
-  "MP2": 18.1,
-  "Scarto": 2.9,
+  "MP1": 61.4,
+  "MPX": 21.4,
+  "MP2": 17.2,
+  "Scarto": 1.6,
   "Segno_Mercato": "1"
  },
  {
@@ -634,10 +692,10 @@
   "P2": 58.0,
   "Fonti": 1,
   "Elenco": "ratingbet",
-  "MP1": 20.6,
-  "MPX": 22.5,
-  "MP2": 56.9,
-  "Scarto": 1.1,
+  "MP1": 19.3,
+  "MPX": 21.7,
+  "MP2": 59.0,
+  "Scarto": -1.0,
   "Segno_Mercato": "2"
  },
  {
@@ -652,10 +710,10 @@
   "P2": 54.0,
   "Fonti": 1,
   "Elenco": "statarea",
-  "MP1": 19.8,
-  "MPX": 22.3,
-  "MP2": 57.9,
-  "Scarto": -3.9,
+  "MP1": 19.4,
+  "MPX": 22.8,
+  "MP2": 57.8,
+  "Scarto": -3.8,
   "Segno_Mercato": "2"
  },
  {
@@ -670,10 +728,10 @@
   "P2": 64.0,
   "Fonti": 1,
   "Elenco": "ratingbet",
-  "MP1": 14.9,
-  "MPX": 23.3,
-  "MP2": 61.8,
-  "Scarto": 2.2,
+  "MP1": 12.9,
+  "MPX": 21.4,
+  "MP2": 65.7,
+  "Scarto": -1.7,
   "Segno_Mercato": "2"
  },
  {
@@ -688,10 +746,10 @@
   "P2": 46.0,
   "Fonti": 1,
   "Elenco": "ratingbet",
-  "MP1": 29.7,
-  "MPX": 24.7,
-  "MP2": 45.6,
-  "Scarto": 0.4,
+  "MP1": 28.6,
+  "MPX": 24.6,
+  "MP2": 46.8,
+  "Scarto": -0.8,
   "Segno_Mercato": "2"
  },
  {
@@ -706,10 +764,10 @@
   "P2": 22.5,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea",
-  "MP1": 68.5,
-  "MPX": 18.8,
+  "MP1": 68.6,
+  "MPX": 18.7,
   "MP2": 12.7,
-  "Scarto": -12.0,
+  "Scarto": -12.1,
   "Segno_Mercato": "1"
  },
  {
@@ -724,10 +782,10 @@
   "P2": 48.5,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea",
-  "MP1": 21.4,
-  "MPX": 22.2,
-  "MP2": 56.4,
-  "Scarto": -7.9,
+  "MP1": 20.7,
+  "MPX": 21.8,
+  "MP2": 57.5,
+  "Scarto": -9.0,
   "Segno_Mercato": "2"
  },
  {
@@ -742,10 +800,10 @@
   "P2": 29.5,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea",
-  "MP1": 34.8,
-  "MPX": 27.6,
-  "MP2": 37.6,
-  "Scarto": 5.2,
+  "MP1": 34.3,
+  "MPX": 27.7,
+  "MP2": 38.1,
+  "Scarto": 5.7,
   "Segno_Mercato": "2"
  },
  {
@@ -779,8 +837,8 @@
   "Fonti": 1,
   "Elenco": "ratingbet",
   "MP1": 83.8,
-  "MPX": 10.7,
-  "MP2": 5.5,
+  "MPX": 10.6,
+  "MP2": 5.6,
   "Scarto": -1.8,
   "Segno_Mercato": "1"
  },
@@ -814,10 +872,10 @@
   "P2": 65.0,
   "Fonti": 1,
   "Elenco": "ratingbet",
-  "MP1": 16.6,
-  "MPX": 18.5,
-  "MP2": 64.9,
-  "Scarto": 0.1,
+  "MP1": 15.9,
+  "MPX": 18.2,
+  "MP2": 65.9,
+  "Scarto": -0.9,
   "Segno_Mercato": "2"
  },
  {
@@ -832,10 +890,10 @@
   "P2": 30.0,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 55.9,
+  "MP1": 54.8,
   "MPX": 22.4,
-  "MP2": 21.7,
-  "Scarto": -11.6,
+  "MP2": 22.8,
+  "Scarto": -10.5,
   "Segno_Mercato": "1"
  },
  {
@@ -912,10 +970,10 @@
   "P2": 30.5,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea",
-  "MP1": 46.9,
-  "MPX": 23.5,
-  "MP2": 29.6,
-  "Scarto": 0.1,
+  "MP1": 47.0,
+  "MPX": 23.6,
+  "MP2": 29.4,
+  "Scarto": 0.0,
   "Segno_Mercato": "1"
  },
  {
@@ -930,10 +988,10 @@
   "P2": 52.0,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 23.9,
-  "MPX": 21.5,
-  "MP2": 54.6,
-  "Scarto": -2.6,
+  "MP1": 22.6,
+  "MPX": 20.8,
+  "MP2": 56.6,
+  "Scarto": -4.6,
   "Segno_Mercato": "2"
  },
  {
@@ -948,10 +1006,10 @@
   "P2": 39.5,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea",
-  "MP1": 35.4,
-  "MPX": 27.1,
-  "MP2": 37.5,
-  "Scarto": 2.0,
+  "MP1": 34.7,
+  "MPX": 26.9,
+  "MP2": 38.4,
+  "Scarto": 1.1,
   "Segno_Mercato": "2"
  },
  {
@@ -966,10 +1024,10 @@
   "P2": 61.5,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea",
-  "MP1": 19.7,
-  "MPX": 20.9,
-  "MP2": 59.4,
-  "Scarto": 2.1,
+  "MP1": 17.5,
+  "MPX": 19.9,
+  "MP2": 62.6,
+  "Scarto": -1.1,
   "Segno_Mercato": "2"
  },
  {
@@ -1002,10 +1060,10 @@
   "P2": 28.0,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea",
-  "MP1": 44.3,
+  "MP1": 43.3,
   "MPX": 27.1,
-  "MP2": 28.6,
-  "Scarto": 0.2,
+  "MP2": 29.6,
+  "Scarto": 1.2,
   "Segno_Mercato": "1"
  },
  {
@@ -1020,10 +1078,10 @@
   "P2": 26.5,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea",
-  "MP1": 45.2,
+  "MP1": 44.2,
   "MPX": 26.8,
-  "MP2": 28.0,
-  "Scarto": 1.8,
+  "MP2": 29.0,
+  "Scarto": 2.8,
   "Segno_Mercato": "1"
  },
  {
@@ -1038,10 +1096,10 @@
   "P2": 71.5,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea",
-  "MP1": 10.0,
-  "MPX": 16.6,
-  "MP2": 73.4,
-  "Scarto": -1.9,
+  "MP1": 8.9,
+  "MPX": 15.4,
+  "MP2": 75.7,
+  "Scarto": -4.2,
   "Segno_Mercato": "2"
  },
  {
@@ -1056,10 +1114,10 @@
   "P2": 6.0,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea",
-  "MP1": 82.3,
-  "MPX": 11.7,
-  "MP2": 6.0,
-  "Scarto": -4.3,
+  "MP1": 83.0,
+  "MPX": 11.3,
+  "MP2": 5.7,
+  "Scarto": -5.0,
   "Segno_Mercato": "1"
  },
  {
@@ -1074,10 +1132,10 @@
   "P2": 11.0,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea",
-  "MP1": 82.4,
-  "MPX": 11.6,
-  "MP2": 6.0,
-  "Scarto": -9.4,
+  "MP1": 83.1,
+  "MPX": 11.2,
+  "MP2": 5.7,
+  "Scarto": -10.1,
   "Segno_Mercato": "1"
  },
  {
@@ -1092,10 +1150,10 @@
   "P2": 38.0,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea",
-  "MP1": 31.9,
-  "MPX": 24.0,
-  "MP2": 44.2,
-  "Scarto": -6.2,
+  "MP1": 31.1,
+  "MPX": 23.9,
+  "MP2": 45.0,
+  "Scarto": -7.0,
   "Segno_Mercato": "2"
  },
  {
@@ -1110,10 +1168,10 @@
   "P2": 54.0,
   "Fonti": 1,
   "Elenco": "ratingbet",
-  "MP1": 21.6,
-  "MPX": 25.0,
-  "MP2": 53.4,
-  "Scarto": 0.6,
+  "MP1": 20.8,
+  "MPX": 24.6,
+  "MP2": 54.6,
+  "Scarto": -0.6,
   "Segno_Mercato": "2"
  },
  {
@@ -1128,10 +1186,10 @@
   "P2": 5.0,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea",
-  "MP1": 85.7,
-  "MPX": 9.9,
-  "MP2": 4.4,
-  "Scarto": -2.7,
+  "MP1": 85.9,
+  "MPX": 9.8,
+  "MP2": 4.3,
+  "Scarto": -2.9,
   "Segno_Mercato": "1"
  },
  {
@@ -1146,10 +1204,10 @@
   "P2": 27.5,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea",
-  "MP1": 46.3,
-  "MPX": 23.1,
-  "MP2": 30.6,
-  "Scarto": -0.3,
+  "MP1": 45.6,
+  "MPX": 23.4,
+  "MP2": 31.0,
+  "Scarto": 0.4,
   "Segno_Mercato": "1"
  },
  {
@@ -1164,10 +1222,10 @@
   "P2": 38.5,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea",
-  "MP1": 34.8,
-  "MPX": 26.2,
-  "MP2": 39.0,
-  "Scarto": -0.5,
+  "MP1": 33.6,
+  "MPX": 25.9,
+  "MP2": 40.5,
+  "Scarto": -2.0,
   "Segno_Mercato": "2"
  },
  {
@@ -1182,10 +1240,10 @@
   "P2": 11.0,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea",
-  "MP1": 76.6,
-  "MPX": 15.4,
-  "MP2": 8.0,
-  "Scarto": -4.6,
+  "MP1": 77.6,
+  "MPX": 14.9,
+  "MP2": 7.5,
+  "Scarto": -5.6,
   "Segno_Mercato": "1"
  },
  {
@@ -1200,10 +1258,10 @@
   "P2": 51.0,
   "Fonti": 2,
   "Elenco": "ratingbet, statarea",
-  "MP1": 19.6,
-  "MPX": 22.6,
-  "MP2": 57.8,
-  "Scarto": -6.8,
+  "MP1": 19.0,
+  "MPX": 22.3,
+  "MP2": 58.7,
+  "Scarto": -7.7,
   "Segno_Mercato": "2"
  }
 ]

@@ -341,28 +341,6 @@
  },
  {
   "Data": "2026-11-29",
-  "Ora": "14:00",
-  "Campionato": "Spain: Laliga",
-  "Partita": "Valencia - CA Osasuna",
-  "Casa": "Valencia",
-  "Ospite": "CA Osasuna",
-  "Linea_OU": 2.25,
-  "Gol_attesi": 2.33,
-  "Margine": 3.0,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "Under Over",
-  "Mercato": "OU 3.5",
-  "Sel": "Under",
-  "Prob": 79.3,
-  "Equa": 1.26,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
- },
- {
-  "Data": "2026-11-29",
   "Ora": "15:00",
   "Campionato": "Italy: Serie B",
   "Partita": "Modena - Padova",
@@ -866,7 +844,8 @@
   "Sel": "1X + Under 4.5",
   "Prob": 66.6,
   "Equa": 1.5,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-29",
