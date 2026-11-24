@@ -39,7 +39,8 @@
   "Sel": "Over",
   "Prob": 79.9,
   "Equa": 1.25,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-12-07",
@@ -106,6 +107,27 @@
  },
  {
   "Data": "2026-12-07",
+  "Ora": "21:00",
+  "Campionato": "Spain: Laliga",
+  "Partita": "Sevilla - Málaga",
+  "Casa": "Sevilla",
+  "Ospite": "Málaga",
+  "Linea_OU": 2.5,
+  "Gol_attesi": 2.82,
+  "Margine": 5.4,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "OddsAPI",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "1",
+  "Prob": 65.8,
+  "Equa": 1.52,
+  "Rif_Book": "Pinnacle"
+ },
+ {
+  "Data": "2026-12-07",
   "Ora": "20:45",
   "Campionato": "Italy: Serie A",
   "Partita": "Fiorentina - Cagliari",
@@ -121,8 +143,8 @@
   "Gruppo": "Combo",
   "Mercato": "Esito + Gol",
   "Sel": "1X + Over 1.5",
-  "Prob": 66.4,
-  "Equa": 1.51,
+  "Prob": 65.5,
+  "Equa": 1.53,
   "Rif_Book": "Pinnacle"
  },
  {
@@ -142,29 +164,8 @@
   "Gruppo": "Combo",
   "Mercato": "Esito + Gol",
   "Sel": "1X + Under 4.5",
-  "Prob": 66.3,
-  "Equa": 1.51,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-12-07",
-  "Ora": "21:00",
-  "Campionato": "Spain: Laliga",
-  "Partita": "Sevilla - Málaga",
-  "Casa": "Sevilla",
-  "Ospite": "Málaga",
-  "Linea_OU": 2.5,
-  "Gol_attesi": 2.82,
-  "Margine": 5.4,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "1",
-  "Prob": 65.8,
-  "Equa": 1.52,
+  "Prob": 65.4,
+  "Equa": 1.53,
   "Rif_Book": "Pinnacle"
  },
  {
@@ -227,10 +228,9 @@
   "Gruppo": "1X2",
   "Mercato": "1X2",
   "Sel": "1",
-  "Prob": 60.1,
-  "Equa": 1.66,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Prob": 58.6,
+  "Equa": 1.71,
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-12-07",
@@ -270,8 +270,8 @@
   "Gruppo": "Gol NoGol",
   "Mercato": "BTTS",
   "Sel": "Gol",
-  "Prob": 54.7,
-  "Equa": 1.83,
+  "Prob": 55.4,
+  "Equa": 1.8,
   "Rif_Book": "Pinnacle"
  },
  {
@@ -396,8 +396,8 @@
   "Gruppo": "Combo",
   "Mercato": "Esito + Gol",
   "Sel": "1 + Over 1.5",
-  "Prob": 50.1,
-  "Equa": 2.0,
+  "Prob": 48.8,
+  "Equa": 2.05,
   "Rif_Book": "Pinnacle"
  },
  {
@@ -444,27 +444,6 @@
  },
  {
   "Data": "2026-12-07",
-  "Ora": "20:45",
-  "Campionato": "Italy: Serie A",
-  "Partita": "Fiorentina - Cagliari",
-  "Casa": "Fiorentina",
-  "Ospite": "Cagliari",
-  "Linea_OU": 2.75,
-  "Gol_attesi": 2.99,
-  "Margine": 5.0,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "Combo",
-  "Mercato": "Esito + Gol",
-  "Sel": "1X + Over 2.5",
-  "Prob": 46.5,
-  "Equa": 2.15,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-12-07",
   "Ora": "21:00",
   "Campionato": "Spain: Laliga",
   "Partita": "Sevilla - Málaga",
@@ -482,6 +461,27 @@
   "Sel": "1X + Over 2.5",
   "Prob": 46.3,
   "Equa": 2.16,
+  "Rif_Book": "Pinnacle"
+ },
+ {
+  "Data": "2026-12-07",
+  "Ora": "20:45",
+  "Campionato": "Italy: Serie A",
+  "Partita": "Fiorentina - Cagliari",
+  "Casa": "Fiorentina",
+  "Ospite": "Cagliari",
+  "Linea_OU": 2.75,
+  "Gol_attesi": 2.99,
+  "Margine": 5.0,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "OddsAPI",
+  "Gruppo": "Combo",
+  "Mercato": "Esito + Gol",
+  "Sel": "1X + Over 2.5",
+  "Prob": 45.7,
+  "Equa": 2.19,
   "Rif_Book": "Pinnacle"
  },
  {
@@ -549,27 +549,6 @@
  },
  {
   "Data": "2026-12-07",
-  "Ora": "20:45",
-  "Campionato": "Italy: Serie A",
-  "Partita": "Fiorentina - Cagliari",
-  "Casa": "Fiorentina",
-  "Ospite": "Cagliari",
-  "Linea_OU": 2.75,
-  "Gol_attesi": 2.99,
-  "Margine": 5.0,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "Combo",
-  "Mercato": "Esito + Gol",
-  "Sel": "1 + Over 2.5",
-  "Prob": 40.2,
-  "Equa": 2.49,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-12-07",
   "Ora": "21:00",
   "Campionato": "Spain: Laliga",
   "Partita": "Sevilla - Málaga",
@@ -587,6 +566,27 @@
   "Sel": "1X + Under 2.5",
   "Prob": 39.7,
   "Equa": 2.52,
+  "Rif_Book": "Pinnacle"
+ },
+ {
+  "Data": "2026-12-07",
+  "Ora": "20:45",
+  "Campionato": "Italy: Serie A",
+  "Partita": "Fiorentina - Cagliari",
+  "Casa": "Fiorentina",
+  "Ospite": "Cagliari",
+  "Linea_OU": 2.75,
+  "Gol_attesi": 2.99,
+  "Margine": 5.0,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "OddsAPI",
+  "Gruppo": "Combo",
+  "Mercato": "Esito + Gol",
+  "Sel": "1 + Over 2.5",
+  "Prob": 39.2,
+  "Equa": 2.55,
   "Rif_Book": "Pinnacle"
  },
  {
@@ -668,7 +668,7 @@
   "Fonte": "OddsAPI",
   "Gruppo": "Combo",
   "Mercato": "Esito + Gol",
-  "Sel": "1X + NoGol",
+  "Sel": "X2 + Under 4.5",
   "Prob": 36.6,
   "Equa": 2.73,
   "Rif_Book": "Pinnacle"
@@ -689,9 +689,9 @@
   "Fonte": "OddsAPI",
   "Gruppo": "Combo",
   "Mercato": "Esito + Gol",
-  "Sel": "X2 + Under 4.5",
-  "Prob": 35.5,
-  "Equa": 2.82,
+  "Sel": "1X + NoGol",
+  "Prob": 35.4,
+  "Equa": 2.83,
   "Rif_Book": "Pinnacle"
  },
  {
@@ -729,11 +729,11 @@
   "Principale": "si",
   "Schedina": "si",
   "Fonte": "OddsAPI",
-  "Gruppo": "1X2",
-  "Mercato": "1X2",
-  "Sel": "X",
-  "Prob": 22.3,
-  "Equa": 4.48,
+  "Gruppo": "Under Over",
+  "Mercato": "OU 1.5",
+  "Sel": "Under",
+  "Prob": 20.1,
+  "Equa": 4.99,
   "Rif_Book": "Pinnacle"
  }
 ]
