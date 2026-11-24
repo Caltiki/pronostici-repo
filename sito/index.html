@@ -8813,10 +8813,16 @@
           // (196) senza numero di partita il blocco Sofascore si trova comunque per nome
           (p.PinId != null || p.ID_API != null) ? Promise.all([caricaConfronto(), calendarioIds(d)]) : Promise.all([caricaConfronto(), null]),
           // (166) il pronostico di il fornitore dei dati e le statistiche delle squadre nel campionato
-          (p.PinId != null || p.ID_API != null) ? leggiUrl(BASE + "predizioni_" + d + ".json?t=" + tt, "predizioni_" + d).catch(function () { return null; }) : null
+          (p.PinId != null || p.ID_API != null) ? leggiUrl(BASE + "predizioni_" + d + ".json?t=" + tt, "predizioni_" + d).catch(function () { return null; }) : null,
+          // (208) il nostro modello (modello_misto.py): la partita e la misura dal vivo
+          (p.PinId != null || p.ID_API != null) ? Promise.all([
+            leggiUrl(BASE + "modello_" + d + ".json?t=" + tt, "modello_" + d).catch(function () { return null; }),
+            leggiUrl(BASE + "modello_info.json?t=" + tt, "modello_info").catch(function () { return null; })]) : null
         ]).then(function (a2) {
           var fidC = p.PinId != null ? p.PinId : p.ID_API;
           p.Pred = a2[7] && a2[7].partite && fidC != null ? a2[7].partite[String(fidC)] || null : null;
+          p.Mod = a2[8] && a2[8][0] && a2[8][0].partite && fidC != null ? a2[8][0].partite[String(fidC)] || null : null;
+          p.ModInfo = a2[8] ? a2[8][1] : null;
           p.Conf = confrontoDi(a2[6], fidC, p.Pred, p);
           // (140) l'Elo delle due squadre, per numero
           var ids = a2[4] && a2[4][1] ? a2[4][1][String(p.PinId)] : null;
@@ -9317,6 +9323,45 @@
     var m = /^([+-])(\d+)\.(\d)$/.exec(String(t || "").trim());
     return m ? (m[1] === "+" ? "più" : "meno") + " di " + m[2] + "," + m[3] + " gol" : "";
   }
+  // (208) IL NOSTRO MODELLO (modello_misto.py), al posto del pronostico del
+  // fornitore dei dati, che faceva peggio di un 33-33-33. Un rating attacco/
+  // difesa per squadra che impara dai gol e dalle chiusure di Pinnacle:
+  // prevede senza vedere le quote della partita, quindi c'e' anche dove il
+  // mercato manca. Accanto, il mercato, perche' dove c'e' resta il riferimento.
+  function bloccoModello(p) {
+    var M = p.Mod;
+    if (!M || !M.p) return "";
+    var m = mercatoScheda(p);
+    var h = '<div class="scheda"><h3>Il nostro modello</h3>' + tripla("modello", num(M.p[0]), num(M.p[1]), num(M.p[2]));
+    if (m) h += tripla(m.da === "Pinnacle" ? "Pinnacle" : "mercato", m["1"], m.X, m["2"]);
+    var ou = M.ou || {};
+    var gl = [["Over 1.5", ou["1.5"]], ["Over 2.5", ou["2.5"]], ["Over 3.5", ou["3.5"]], ["Gol", M.gg]]
+      .filter(function (x) { return num(x[1]) != null; })
+      .map(function (x) { return '<span class="nw">' + x[0] + " " + f0(num(x[1])) + "%</span>"; });
+    h += "<p>Gol attesi " + esc(p.Casa) + " " + f2(num(M.l[0])) + " \u00b7 " + esc(p.Ospite) + " " + f2(num(M.l[1])) + "</p>";
+    if (gl.length) h += "<p>" + gl.join(" \u00b7 ") + "</p>";
+    if (m && m.da === "Pinnacle") {
+      var seg = ["1", "X", "2"], k = 0, mx = 0;
+      for (var i = 0; i < 3; i++) { var dd = num(M.p[i]) - m[seg[i]]; if (Math.abs(dd) > Math.abs(mx)) { mx = dd; k = i; } }
+      if (Math.abs(mx) >= 5) h += "<p>Sul " + seg[k] + " il modello d\u00e0 " + Math.abs(mx).toFixed(0) + " punti " + (mx > 0 ? "pi\u00f9" : "meno") +
+        " di Pinnacle. Dove i due non sono d'accordo, di solito ha ragione il mercato: \u00e8 un segnale da guardare, non una giocata.</p>";
+    }
+    var fid = { alta: "alta", media: "media", bassa: "bassa" }[M.f] || "?";
+    var nota = "Fiducia " + fid + (M.f === "alta" ? ": squadre con tante partite e quote gi\u00e0 viste." :
+      M.f === "media" ? ": poche partite con le quote, il modello sta ancora imparando." : ": poche partite, numeri da prendere con cautela.");
+    if (M.tra) nota += " Squadre di campionati diversi (o appena promosse/retrocesse): qui il rating \u00e8 meno sicuro.";
+    h += '<p class="piccolo">' + nota + "</p>";
+    var I = p.ModInfo && p.ModInfo.misura && p.ModInfo.misura.tutte;
+    if (I && I.partite >= 300) {
+      h += '<p class="piccolo">Dal vivo, su ' + I.partite.toLocaleString("it-IT") + " partite con la chiusura di Pinnacle: Brier modello " +
+        String(I.brier_modello).replace(".", ",") + ", Pinnacle " + String(I.brier_pinnacle).replace(".", ",") + " (pi\u00f9 basso = meglio)." +
+        (I.con_elo && I.con_elo.partite >= 300 ? " Elo, stesse partite: " + String(I.con_elo.brier_elo).replace(".", ",") + " contro " + String(I.con_elo.brier_modello).replace(".", ",") + " del modello." : "") + "</p>";
+    } else {
+      h += '<p class="piccolo">Il modello impara dalle chiusure di Pinnacle raccolte dall\u201911/11: nei primi due o tre mesi migliora da solo. ' +
+        "Nella prova su dieci anni (100.733 partite mai viste) ha chiuso due terzi della distanza fra un rating da soli risultati e il mercato.</p>";
+    }
+    return h + "</div>";
+  }
   function bloccoPredApi(p) {
     var P = p.Pred;
     if (!P || !P.p || P.p[0] == null) return "";
@@ -9350,7 +9395,7 @@
 
   function disegnaSchedaPartita(p, d) {
     var m = mercatoScheda(p);
-    $cont.innerHTML = testaScheda(p, d) + bloccoStatistiche(p) + bloccoMercato(p, m) + bloccoAltriMercati(p) + bloccoFormazioni(p, d) + bloccoConfronto(p) + bloccoPrezzi(p, d) + bloccoPoisson(p) + bloccoPredApi(p) +
+    $cont.innerHTML = testaScheda(p, d) + bloccoStatistiche(p) + bloccoMercato(p, m) + bloccoAltriMercati(p) + bloccoFormazioni(p, d) + bloccoConfronto(p) + bloccoPrezzi(p, d) + bloccoPoisson(p) + bloccoModello(p) +
       bloccoFonti(p, m) + bloccoSure(p) + bloccoAltro(p) + piedeScheda(p);
     collegaConfronto(p);
     collegaSquadreHero();
