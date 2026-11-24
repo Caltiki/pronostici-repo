@@ -1805,6 +1805,8 @@
   .quote-pin .ov { display: block; }
   .riga summary.con-elo-largo { flex-wrap: wrap; row-gap: 2px; }
   #contenuto[data-sez="pin"] .riga summary .tripla .nome, #contenuto[data-sez="consensus"] .riga summary .tripla .nome, #contenuto[data-sez="accordo"] .riga summary .tripla .nome, #contenuto[data-sez="poisson"] .riga summary .tripla .nome, #contenuto[data-sez="sm"] .riga summary .tripla .nome { width: auto; min-width: 54px; white-space: nowrap; }
+  /* (209) "senza margine" e "modello" una sotto l'altra: barre allineate */
+  #contenuto[data-sez="pin"] .riga summary .tripla .nome { min-width: 7.2em; }
   /* (156) CARD LARGHE in Pinnacle, Consenso, Poisson e (157) Sports Mole: il numero grande sale
      nella prima riga, a destra, e la colonna centrale prende tutta la
      larghezza (prima ~215 pixel: i nomi corti andavano a capo). */
@@ -2266,6 +2268,8 @@
   // lettura del giorno di ogni partita. Il movimento e' la differenza in
   // punti fra adesso e il mattino, segno per segno: quando Pinnacle si
   // muove molto vicino al via sono arrivate notizie o soldi informati.
+  var MOD_SCARTO = 5;
+  var PIN_MOD_N = {};       // data -> quante partite Pinnacle hanno il modello
   var PIN_VISTE = [
     ["tutte", "Tutte le partite", "Tutte le partite del sito quotate da Pinnacle: quote, margine e probabilit\u00e0 senza margine."],
     // (202) QUOTE IN CALO: un esito per riga, non una partita
@@ -2273,6 +2277,11 @@
      "Gli esiti 1X2 che Pinnacle ha accorciato di almeno 2 punti di probabilit\u00e0 dalla prima lettura, nelle partite non ancora iniziate. " +
      "Accanto, Sisal e Lottomatica adesso e alla loro apertura. Un calo su Pinnacle \u00e8 un'informazione, ma \u00e8 gi\u00e0 nel suo prezzo: " +
      "conviene solo dove il book italiano paga ancora pi\u00f9 della quota equa nuova (in verde). Quelle righe stanno in cima."],
+    // (209) IL NOSTRO MODELLO CONTRO PINNACLE (modello_misto.py)
+    ["modello", "Modello vs Pinnacle",
+     "Le partite dove il nostro modello si scosta da Pinnacle di almeno " + MOD_SCARTO + " punti su un segno, dalla pi\u00f9 lontana. " +
+     "Il modello non vede le quote della partita: guarda le due squadre partita dopo partita. Quando non \u00e8 d'accordo, di solito ha ragione il mercato " +
+     "(notizie, formazioni, soldi informati): \u00e8 una partita da guardare meglio, non una giocata."],
     ["mosse", "Si sono mosse",
      "Le partite di oggi che Pinnacle ha mosso di almeno 2 punti dalla prima lettura del mattino, dalla pi\u00f9 mossa. " +
      "Un movimento forte vicino al via vuol dire notizie (formazioni, infortuni) o soldi informati: guarda se il tuo book si \u00e8 gi\u00e0 adeguato."],
@@ -2358,6 +2367,7 @@
       if (/^\d{4}-\d{2}-\d{2}$/.test(p[1] || "")) stato.data[stato.sez] = p[1];
       var viste = SEZ[stato.sez].viste;
       if (p[2] && viste.some(function (v) { return v[0] === p[2]; })) stato.vista[stato.sez] = p[2];
+      if (stato.sez === "pin" && (p[2] === "calo" || p[2] === "modello")) stato.ordine.pin = "mov";   // (209) come col bottone
     }
   }
   function scriviHash() {
@@ -2765,6 +2775,7 @@
         stato.vista[sez] = b.dataset.vista; stato.limite = PASSO; stato.esito = "";
         if (sez === "prezzi" && b.dataset.vista === "partite" && stato.ordine.prezzi === "file") stato.ordine.prezzi = "ora";
         if (sez === "pin" && b.dataset.vista === "calo") stato.ordine.pin = "mov";     // (202) dal calo piu' utile
+        if (sez === "pin" && b.dataset.vista === "modello") stato.ordine.pin = "mov";  // (209) dallo scarto piu' grande
         disegna();
       });
     });
@@ -3526,6 +3537,7 @@
       return ((probOrdine(b) || 0) - (probOrdine(a) || 0)) || ((num(b.Fonti) || 0) - (num(a.Fonti) || 0));
     });
     else if (o === "mov" && sez === "pin" && stato.vista.pin === "calo") v.sort(function (a, b) { return caloPeso(b) - caloPeso(a); });
+    else if (o === "mov" && sez === "pin" && stato.vista.pin === "modello") v.sort(function (a, b) { return Math.abs(b._modGap || 0) - Math.abs(a._modGap || 0); });
     else if (o === "mov") v.sort(function (a, b) { return (num(b.Mov) || 0) - (num(a.Mov) || 0); });
     // Gol attesi: la linea Under/Over principale e' quella dove Over e Under
     // si equivalgono, quindi conta la linea (2.25, 2.5, 3...), poi l'Over.
@@ -3556,6 +3568,9 @@
   function scartoDi(r) { var v = num(r.Scarto); return v != null ? v : num(r.Scarto_Segno); }
 
   function vuotoPerVista(sez, vista, n, data) {
+    if (sez === "pin" && vista === "modello")
+      return "Nessuna delle " + n + " partite del " + data + " ha il nostro modello lontano da Pinnacle di " + MOD_SCARTO + " punti o pi\u00f9. " +
+        "Il modello esce ogni mattina per le partite del calendario, se le due squadre hanno abbastanza partite alle spalle.";
     if (sez === "pin" && vista === "calo")
       return "Nessun esito accorciato di almeno 2 punti fra le " + n + " partite del " + data + " ancora da giocare. " +
         "Il movimento si misura dalla prima lettura di Pinnacle: per i giorni lontani di solito non c'\u00e8 ancora niente.";
@@ -6470,8 +6485,12 @@
   }
   function arricchisciPin(righe, data) {
     return Promise.all([pinExtra(data), calendarioPer(data), formaFile(data), freschePinnacle(), proFrecce(),
-      conBex(righe, data).catch(function () { return righe; })]).then(function (a) {
+      conBex(righe, data).catch(function () { return righe; }),
+      // (209) il nostro modello, per numero di partita
+      leggiUrl(BASE + "modello_" + data + ".json?t=" + Math.floor(Date.now() / 600000), "modello_" + data).catch(function () { return null; })]).then(function (a) {
       var x = a[0], cal = a[1], ff = a[2], pro = a[4];
+      var mod = a[6] && a[6].partite ? a[6].partite : {};
+      PIN_MOD_N[data] = (Array.isArray(righe) ? righe : []).filter(function (r) { return mod[String(r.ID_API)]; }).length;
       applicaFresche(righe, a[3]);
       return (Array.isArray(righe) ? righe : []).map(function (r) {
         var p = [num(r["P1 Shin"]), num(r["PX Shin"]), num(r["P2 Shin"])];
@@ -6485,15 +6504,42 @@
           _form: x.form[String(r.ID_API)] || null,
           _forma: formaDi(ff, r.ID_API),
           _calo: pinCalo(r, pro)
-        }, (function () {
+        }, modDi(mod[String(r.ID_API)], p), (function () {
           var c = cal[String(r.ID_API)];
           return c && (r.Gol_Casa == null || r.Gol_Ospite == null) ? { Gol_Casa: c.gc, Gol_Ospite: c.go } : {};
         })());
       });
     });
   }
+  // (209) il modello della partita e quanto si scosta da Pinnacle: il segno
+  // con lo scarto piu' grande, in punti (positivo: il modello ci crede di piu').
+  function modDi(M, p) {
+    if (!M || !M.p) return {};
+    var q = [num(M.p[0]), num(M.p[1]), num(M.p[2])];
+    var k = null, g = 0;
+    for (var i = 0; i < 3; i++) {
+      if (q[i] == null || p[i] == null) continue;
+      var d = q[i] - p[i];
+      if (k == null || Math.abs(d) > Math.abs(g)) { k = i; g = d; }
+    }
+    return { _mod: M, _modP: q, _modGap: k == null ? null : g, _modSeg: k == null ? "" : "1X2"[k] };
+  }
+  function modHtml(r) {
+    var M = r._mod;
+    if (!M) return "";
+    var ou = M.ou || {};
+    var gl = [["Over 2.5", ou["2.5"]], ["Gol", M.gg]].filter(function (x) { return num(x[1]) != null; })
+      .map(function (x) { return x[0] + " " + f0(num(x[1])) + "%"; });
+    var fid = M.f === "alta" ? "fiducia alta" : M.f === "media" ? "fiducia media (il modello sta ancora imparando)" : "fiducia bassa (poche partite)";
+    return "<p><b>Il nostro modello</b>: <span class=nw><b class=seg>1</b> " + f0(r._modP[0]) + "%</span> \u00b7 <span class=nw><b class=seg>X</b> " + f0(r._modP[1]) +
+      "%</span> \u00b7 <span class=nw><b class=seg>2</b> " + f0(r._modP[2]) + "%</span>" +
+      (num(M.l && M.l[0]) != null ? " \u00b7 gol attesi " + f2(num(M.l[0])) + "\u2013" + f2(num(M.l[1])) : "") +
+      (gl.length ? " \u00b7 " + gl.join(" \u00b7 ") : "") + '.<br><span class="piccolo">' + fid +
+      (M.tra ? "; squadre di campionati diversi o appena promosse/retrocesse, rating meno sicuro" : "") + ".</span></p>";
+  }
   function pinTiene(r, tipo) {
     if (tipo === "mosse") return r.Mov >= 2;
+    if (tipo === "modello") return r._modGap != null && Math.abs(r._modGap) >= MOD_SCARTO;
     if (tipo === "calo") return !!(r._calo && r._calo.length) && nonIniziata(r);
     return true;
   }
@@ -6508,6 +6554,14 @@
         [String(es.length), es.length === 1 ? "esito in calo" : "esiti in calo"],
         [String(es.filter(function (c) { return c.books.length; }).length), "con Sisal o Lottomatica"],
         [String(es.filter(function (c) { return c.valore; }).length), "dove il book paga ancora più dell'equa"]
+      ]);
+    }
+    if (stato.vista.pin === "modello") {
+      var nMod = PIN_MOD_N[stato.data.pin];
+      return tessere([
+        [String(v.length), v.length === 1 ? "partita lontana da Pinnacle" : "partite lontane da Pinnacle"],
+        [nMod == null ? "-" : String(nMod), "partite Pinnacle col modello, in tutto"],
+        [String(v.filter(function (r) { return r._mod && r._mod.f === "alta"; }).length), "di queste con fiducia alta"]
       ]);
     }
     var mosse = v.filter(function (r) { return r.Mov >= 2; });
@@ -6656,6 +6710,7 @@
     if (r._diff) det.push("<p>" + movimentoHtml(r._diff, r._mattino, r._p) + ".</p>");
     else det.push("<p>Nessuna lettura del mattino per questa partita: il movimento si vede solo per oggi.</p>");
     if (num(r.OU) != null && num(r["P Over"]) != null) det.push("<p>Linea Under/Over " + esc(r.OU) + ": Over " + pv(r["P Over"]) + "</p>");
+    if (r._mod) det.push(modHtml(r));
     if (r.Gol_Casa != null && r.Gol_Ospite != null) det.unshift("<p>Finita <b>" + esc(r.Gol_Casa + "-" + r.Gol_Ospite) + "</b>.</p>");
     if (r._forma) det.push(formaBloccoHtml(r._forma));
     det.push(formazioneHtml(r._form));
@@ -6671,7 +6726,8 @@
     return '<div class="riga"><details><summary>' +
       // Nella vista "Mosse" il segno e' quello che si e' mosso (anche in
       // giu'): niente ✓/✗ li', non direbbe se la mossa era giusta.
-      '<span class="segno' + (mosse ? " mosso" : "") + '">' + esc((mosse ? r._segnoMov : top) || r.Segno || "?") + "</span>" +
+      '<span class="segno' + (mosse || stato.vista.pin === "modello" ? " mosso" : "") + '">' +
+        esc((mosse ? r._segnoMov : stato.vista.pin === "modello" && r._modSeg ? r._modSeg : top) || r.Segno || "?") + "</span>" +
       '<div class="corpo">' +
       '<div class="alto">' + (r.Ora ? "<span><b>" + esc(r.Ora) + "</b></span>" : "") + golHtml(r) +
         (r.Lega ? '<span class="chip">' + esc(r.Lega) + "</span>" : "") +
@@ -6683,8 +6739,11 @@
       // (173) il movimento sta nella griglia prima/ora delle quote, come
       // nelle altre pagine; i punti di probabilita' restano nel dettaglio
       tripla("senza margine", p[0], p[1], p[2]) +
+      (r._mod ? tripla("modello", r._modP[0], r._modP[1], r._modP[2]) : "") +
       "</div>" +
-      (mosse || pt == null
+      (stato.vista.pin === "modello" && r._modGap != null
+        ? '<div class="numero"><b>' + (r._modGap > 0 ? "+" : "\u2212") + f0(Math.abs(r._modGap)) + "</b><span>modello sul " + esc(r._modSeg) + "</span></div>"
+        : mosse || pt == null
         ? '<div class="numero"><b>' + esc(punti) + "</b><span>punti sul " + esc(r._segnoMov || "-") + "</span></div>"
         : '<div class="numero">' + pB(pt) + "<span>" + (/^[1X2]$/.test(top) ? articolo(top) : esc(top)) + " · equa " + f2(100 / pt) + "</span></div>") +
       "</summary>" +
