@@ -8876,12 +8876,16 @@
           // (208) il nostro modello (modello_misto.py): la partita e la misura dal vivo
           (p.PinId != null || p.ID_API != null) ? Promise.all([
             leggiUrl(BASE + "modello_" + d + ".json?t=" + tt, "modello_" + d).catch(function () { return null; }),
-            leggiUrl(BASE + "modello_info.json?t=" + tt, "modello_info").catch(function () { return null; })]) : null
+            leggiUrl(BASE + "modello_info.json?t=" + tt, "modello_info").catch(function () { return null; })]) : null,
+          // (210) BeSoccer dal server: ELO e gol attesi, per nome
+          leggiUrl(BASE + "besoccer_" + d + ".json?t=" + tt, "besoccer_" + d).catch(function () { return null; })
         ]).then(function (a2) {
           var fidC = p.PinId != null ? p.PinId : p.ID_API;
           p.Pred = a2[7] && a2[7].partite && fidC != null ? a2[7].partite[String(fidC)] || null : null;
           p.Mod = a2[8] && a2[8][0] && a2[8][0].partite && fidC != null ? a2[8][0].partite[String(fidC)] || null : null;
           p.ModInfo = a2[8] ? a2[8][1] : null;
+          p.Bs = a2[9] && Array.isArray(a2[9].partite) ? besoccerDi(a2[9].partite, p.Casa, p.Ospite) : null;
+          if (p.Bs) p.BsAgg = a2[9].aggiornato || "";
           p.Conf = confrontoDi(a2[6], fidC, p.Pred, p);
           // (140) l'Elo delle due squadre, per numero
           var ids = a2[4] && a2[4][1] ? a2[4][1][String(p.PinId)] : null;
@@ -9421,6 +9425,49 @@
     }
     return h + "</div>";
   }
+  // (210) BESOCCER (besoccer_server.py, dal server ogni mattina): la sua
+  // probabilita' ELO, il suo rating (scala 0-100) e i gol attesi. La partita
+  // si trova per nome: i nomi BeSoccer vengono dall'indirizzo della pagina
+  // ("Manchester City Fc", "Everton Sub21"), quindi stessi confronti della
+  // tabella Sofascore, "Sub21" come U21, e un vincitore netto. Provato sui
+  // file del 24 e 25/11: 106 partite su 124 trovate, nessuna sbagliata; le
+  // altre non erano nel calendario del sito (Landesliga, Derde Divisie...).
+  function bsNorm(n) { return String(n || "").replace(/\bsub ?(\d\d)\b/ig, "U$1"); }
+  function bsPunti(a, b) {
+    a = bsNorm(a); b = bsNorm(b);
+    var na = nomeBex(a), nb = nomeBex(b);
+    if ((SOFA_ALIAS_N[na] && SOFA_ALIAS_N[na] === nb) || (SOFA_ALIAS_N[nb] && SOFA_ALIAS_N[nb] === na) ||
+        (SOFA_ALIAS_N[na] && SOFA_ALIAS_N[na] === SOFA_ALIAS_N[nb])) return 1;
+    return sofaPunti(a, b);
+  }
+  function besoccerDi(lista, casa, osp) {
+    var best = null, sec = 0;
+    lista.forEach(function (r) {
+      if (sofaTipo(bsNorm(r.casa)) !== sofaTipo(bsNorm(casa)) || sofaTipo(bsNorm(r.ospite)) !== sofaTipo(bsNorm(osp))) return;
+      var a = bsPunti(casa, r.casa), b = bsPunti(osp, r.ospite);
+      if (Math.min(a, b) < 0.6) return;
+      var v = a + b;
+      if (!best || v > best.v) { if (best) sec = Math.max(sec, best.v); best = { v: v, r: r }; }
+      else sec = Math.max(sec, v);
+    });
+    return best && best.v >= 1.5 && best.v - sec >= 0.15 ? best.r : null;
+  }
+  function bloccoBesoccer(p) {
+    var B = p.Bs;
+    if (!B || (!B.p && !B.xg)) return "";
+    var h = '<div class="scheda"><h3>BeSoccer</h3>';
+    if (B.p) h += tripla("ELO", num(B.p[0]), num(B.p[1]), num(B.p[2]));
+    var mk = mercatoScheda(p);
+    if (B.p && mk) h += tripla(mk.da === "Pinnacle" ? "Pinnacle" : "mercato", mk["1"], mk.X, mk["2"]);
+    var r = [];
+    if (B.elo) r.push("Rating ELO " + esc(p.Casa) + " " + f0(num(B.elo[0])) + " \u00b7 " + esc(p.Ospite) + " " + f0(num(B.elo[1])));
+    if (B.xg) r.push("Gol attesi " + f2(num(B.xg[0])) + " \u2013 " + f2(num(B.xg[1])) + " (totale " + f2(num(B.xg[0]) + num(B.xg[1])) + ")");
+    if (r.length) h += "<p>" + r.join("<br>") + "</p>";
+    h += '<p class="piccolo">Il rating ELO di BeSoccer \u00e8 su una sua scala, non confrontabile col nostro. Letto dal server' +
+      (p.BsAgg ? " il " + esc(String(p.BsAgg).slice(8, 10) + "/" + String(p.BsAgg).slice(5, 7) + " alle " + String(p.BsAgg).slice(11, 16)) : "") +
+      (B.url ? ' \u00b7 <a href="' + esc(B.url) + '" target="_blank" rel="noopener">la partita su BeSoccer</a>' : "") + ".</p>";
+    return h + "</div>";
+  }
   function bloccoPredApi(p) {
     var P = p.Pred;
     if (!P || !P.p || P.p[0] == null) return "";
@@ -9454,7 +9501,7 @@
 
   function disegnaSchedaPartita(p, d) {
     var m = mercatoScheda(p);
-    $cont.innerHTML = testaScheda(p, d) + bloccoStatistiche(p) + bloccoMercato(p, m) + bloccoAltriMercati(p) + bloccoFormazioni(p, d) + bloccoConfronto(p) + bloccoPrezzi(p, d) + bloccoPoisson(p) + bloccoModello(p) +
+    $cont.innerHTML = testaScheda(p, d) + bloccoStatistiche(p) + bloccoMercato(p, m) + bloccoAltriMercati(p) + bloccoFormazioni(p, d) + bloccoConfronto(p) + bloccoPrezzi(p, d) + bloccoPoisson(p) + bloccoModello(p) + bloccoBesoccer(p) +
       bloccoFonti(p, m) + bloccoSure(p) + bloccoAltro(p) + piedeScheda(p);
     collegaConfronto(p);
     collegaSquadreHero();
