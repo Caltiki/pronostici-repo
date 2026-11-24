@@ -1366,6 +1366,8 @@ Data,Ora,Lega,Casa,Ospite,Norm_Casa,Norm_Ospite,Segno,P1,PX,P2,Lambda_Casa,Lambd
 2026-11-24,02:00,Stati Uniti - Major League Soccer Sedicesimi di finale [130],St. Louis City,Los Angeles FC,st louis city,los angeles,1,41.5,25.7,32.8,1.44,1.25,2.7,50.5,54.6,39.0,27.1,33.9,2.67,2.5,0.03,FotMob,2026-11-20 04:04
 2026-11-24,15:00,India - Indian Super League [9478],NorthEast United,SC Delhi,northeast united,delhi,1,45.3,25.3,29.4,1.53,1.18,2.71,51.0,54.4,56.5,23.7,19.8,2.99,-11.2,-0.28,FotMob,2026-11-22 06:24
 2026-11-24,16:00,Egitto - Premier League [519],Smouha,National Bank,smouha,national bank,2,30.8,34.3,34.9,0.8,0.87,1.68,23.6,32.1,30.5,34.1,35.4,2.67,-0.5,-0.99,FotMob,2026-11-21 05:26
+2026-11-24,17:00,Slovakia Cup,Žilina,Ružomberok,zilina,ruzomberok,1,53.6,21.0,25.5,2.11,1.41,3.51,68.2,66.3,59.8,20.9,19.3,3.67,-6.2,-0.16,API-Football,2026-11-24 06:24
+2026-11-24,18:30,Sudafrica - Premier Soccer League [537],Durban City,Polokwane City,durban city,polokwane city,1,36.9,30.0,33.1,1.08,1.01,2.09,34.7,41.9,43.1,33.7,23.2,1.99,-6.2,0.1,FotMob,2026-11-24 06:24
 2026-11-24,19:00,Italia - Serie B [86],Juve Stabia,Catanzaro,juve stabia,catanzaro,1,52.2,23.3,24.4,1.78,1.14,2.92,55.8,56.6,46.0,27.6,26.4,2.67,6.2,0.25,FotMob,2026-11-20 04:04
 2026-11-24,20:00,Italia - Serie B [86],Benevento,Empoli,benevento,empoli,1,58.9,22.1,19.0,1.9,0.98,2.87,54.7,52.9,54.0,25.3,20.7,2.67,4.9,0.2,FotMob,2026-11-20 04:04
 2026-11-24,20:00,Italia - Serie B [86],Cesena,Ascoli,cesena,ascoli,1,38.2,26.7,35.2,1.31,1.24,2.55,46.9,51.9,36.5,29.4,34.1,2.67,1.7,-0.12,FotMob,2026-11-20 04:04
@@ -1413,6 +1415,7 @@ Data,Ora,Lega,Casa,Ospite,Norm_Casa,Norm_Ospite,Segno,P1,PX,P2,Lambda_Casa,Lambd
 2026-11-25,11:00,Japan J1 League,V-Varen Nagasaki,Kawasaki,v varen nagasaki,kawasaki,2,30.8,24.2,45.1,1.31,1.64,2.95,56.6,58.9,25.7,23.1,51.3,3.16,-6.2,-0.21,API-Football,2026-11-24 05:17
 2026-11-25,11:30,Giappone - J. League [223],Urawa Reds,Cerezo Osaka,urawa reds,cerezo osaka,1,55.5,22.1,22.4,1.92,1.14,3.06,59.1,58.1,45.9,25.9,28.2,2.67,9.6,0.39,FotMob,2026-11-21 04:08
 2026-11-25,11:30,Japan J1 League,Urawa,Cerezo Osaka,urawa,cerezo osaka,1,47.8,23.4,28.8,1.76,1.32,3.07,59.3,60.5,51.6,23.8,24.6,3.16,-3.8,-0.09,API-Football,2026-11-22 06:24
+2026-11-25,13:00,Serbia Super Liga,Radnicki NIS,Železničar Pančevo,radnicki nis,zeleznicar pancevo,2,23.9,25.7,50.4,0.97,1.53,2.5,45.6,48.6,21.9,26.7,51.4,2.67,-1.0,-0.17,API-Football,2026-11-24 06:24
 2026-11-25,19:00,Italia - Serie B [86],Cremonese,Avellino,cremonese,avellino,1,41.3,27.1,31.6,1.33,1.13,2.46,44.7,49.9,50.1,27.1,22.9,2.67,-8.8,-0.21,FotMob,2026-11-21 04:08
 2026-11-25,20:00,Italia - Serie B [86],Mantova,Arezzo,mantova,arezzo,1,51.5,24.1,24.4,1.69,1.09,2.78,52.5,54.0,57.3,25.1,17.6,2.67,-5.8,0.11,FotMob,2026-11-21 04:08
 2026-11-25,20:00,Italia - Serie B [86],Padova,Sampdoria,padova,sampdoria,2,28.5,25.5,46.1,1.14,1.52,2.66,49.7,53.2,37.4,29.5,33.1,2.67,13.0,-0.01,FotMob,2026-11-21 04:08
@@ -1423,10 +1426,13 @@ Data,Ora,Lega,Casa,Ospite,Norm_Casa,Norm_Ospite,Segno,P1,PX,P2,Lambda_Casa,Lambd
 2026-11-25,21:00,Inghilterra - Championship [48],Stoke,Millwall,stoke,millwall,2,30.5,24.7,44.7,1.26,1.58,2.84,53.9,56.8,38.9,28.6,32.4,2.67,12.3,0.17,FotMob,2026-11-21 04:08
 2026-11-25,21:00,Inghilterra - Championship [48],Stoke City,Millwall,stoke city,millwall,2,33.1,25.3,41.6,1.29,1.48,2.77,52.4,56.0,41.1,28.4,30.5,2.67,11.1,0.1,FotMob,2026-11-22 06:24
 2026-11-25,22:00,Ecuador Liga Pro,Barcelona SC,Independiente del Valle,barcelona,independiente del valle,2,31.1,28.7,40.2,1.03,1.21,2.24,38.7,45.0,27.1,26.4,46.5,2.67,-6.3,-0.43,API-Football,2026-11-22 06:24
+2026-11-25,22:00,Paraguay Division Profesional - Clausura,Sportivo Luqueno,Olimpia,sportivo luqueno,olimpia,2,31.3,25.9,42.8,1.2,1.44,2.64,49.1,53.3,19.6,20.5,59.8,2.99,-17.0,-0.35,API-Football,2026-11-24 06:24
+2026-11-25,22:00,Paraguay Division Profesional - Clausura,Sportivo Trinidense,Deportivo Recoleta,sportivo trinidense,deportivo recoleta,1,50.6,25.5,23.9,1.55,0.98,2.54,46.5,49.3,62.6,21.7,15.7,2.99,-12.0,-0.45,API-Football,2026-11-24 06:24
 2026-11-26,00:00,Brasile - Série A [268],Atlético Mineiro,Corinthians,atletico mineiro,corinthians,1,41.4,27.8,30.8,1.28,1.07,2.35,41.7,47.4,40.4,27.5,32.1,2.67,1.0,-0.32,FotMob,2026-11-22 03:24
 2026-11-26,00:00,Brasile - Série A [268],Atletico-MG,Corinthians,atletico mg,corinthians,1,41.6,27.8,30.7,1.29,1.06,2.35,41.7,47.4,41.0,27.3,31.7,2.67,0.6,-0.32,FotMob,2026-11-23 06:24
 2026-11-26,00:20,Colombia - Primera A [274],Santa Fe,Once Caldas,santa fe,once caldas,1,44.2,28.6,27.3,1.27,0.93,2.2,37.8,43.6,42.4,30.0,27.7,2.33,1.8,-0.13,FotMob,2026-11-23 06:24
 2026-11-26,01:00,Argentina Liga Profesional Argentina,Boca Juniors,Independ. Rivadavia,boca juniors,independ rivadavia,1,46.1,27.5,26.3,1.36,0.95,2.31,40.8,45.7,63.1,23.1,13.8,2.33,-17.0,-0.02,API-Football,2026-11-23 06:24
+2026-11-26,01:00,Ecuador Liga Pro,Barcelona SC,Independiente del Valle,barcelona,independiente del valle,2,31.2,28.7,40.0,1.03,1.21,2.23,38.6,45.0,35.8,27.0,37.3,2.67,2.7,-0.44,API-Football,2026-11-24 06:24
 2026-11-26,02:30,Colombia - Primera A [274],Atletico Nacional,Independiente Medellin,atletico nacional,independiente medellin,1,49.4,27.6,23.0,1.38,0.85,2.23,38.5,42.8,53.8,25.1,21.1,2.67,-4.4,-0.44,FotMob,2026-11-23 06:24
 2026-11-26,15:25,Arabia Saudita - Saudi Pro League [536],Al-Fateh,Al Riyadh,al fateh,al riyadh,1,42.0,23.9,34.1,1.62,1.44,3.06,59.0,61.2,45.3,24.8,29.9,2.99,-3.3,0.07,FotMob,2026-11-24 05:17
 2026-11-26,16:05,Arabia Saudita - Saudi Pro League [536],Abha,Al Shabab,abha,al shabab,2,28.6,24.3,47.1,1.23,1.65,2.88,55.0,57.3,21.7,23.1,55.2,2.99,-8.1,-0.11,FotMob,2026-11-24 05:17
@@ -1435,24 +1441,46 @@ Data,Ora,Lega,Casa,Ospite,Norm_Casa,Norm_Ospite,Segno,P1,PX,P2,Lambda_Casa,Lambd
 2026-11-27,13:15,Arabia Saudita - Saudi Pro League [536],Al Kholood,Al Khaleej,al kholood,al khaleej,1,50.5,21.3,28.2,2.05,1.5,3.55,68.8,67.6,44.2,27.1,28.7,2.67,6.3,0.88,FotMob,2026-11-24 05:17
 2026-11-27,15:00,India - Indian Super League [9478],Inter Kashi,Churchill Brothers,inter kashi,churchill brothers,2,26.7,26.1,47.2,1.04,1.48,2.52,46.2,50.0,,,,,,,FotMob,2026-11-23 04:59
 2026-11-27,15:20,Arabia Saudita - Saudi Pro League [536],Al-Qadsiah,Al-Fayha,al qadsiah,al fayha,1,81.7,11.1,7.2,3.25,0.93,4.18,78.8,58.3,79.0,12.9,8.1,2.67,2.7,1.51,FotMob,2026-11-24 05:17
+2026-11-27,16:30,Romania Liga I,Universitatea Cluj,Sepsi OSK Sfantu Gheorghe,universitatea cluj,sepsi osk sfantu gheorghe,1,55.1,24.0,20.8,1.7,0.94,2.64,49.2,49.9,58.1,23.6,18.4,2.67,-3.0,-0.03,API-Football,2026-11-24 06:24
 2026-11-27,18:00,Polonia - Ekstraklasa [196],Raków Częstochowa,Piast Gliwice,rakow czestochowa,piast gliwice,1,48.7,20.6,30.7,2.16,1.69,3.85,73.9,72.2,49.2,25.2,25.6,2.67,-0.5,1.18,FotMob,2026-11-23 03:51
 2026-11-27,18:00,Turchia - Süper Lig [71],Alanyaspor,Konyaspor,alanyaspor,konyaspor,2,35.3,26.3,38.4,1.27,1.34,2.61,48.4,53.1,37.7,29.7,32.7,2.67,5.7,-0.06,FotMob,2026-11-23 03:51
 2026-11-27,18:00,Turchia - Süper Lig [71],Rizespor,Kasımpaşa,rizespor,kas mpasa,1,44.8,26.5,28.8,1.42,1.09,2.51,45.9,50.3,49.0,25.5,25.5,2.67,-4.2,-0.16,FotMob,2026-11-23 03:51
+2026-11-27,18:00,Czech-Republic Czech Liga,Artis,Slovácko,artis,slovacko,1,44.8,25.8,29.4,1.48,1.15,2.62,48.8,52.7,40.1,27.9,32.0,2.67,4.7,-0.05,API-Football,2026-11-24 06:24
+2026-11-27,18:00,Croatia HNL,Istra 1961,NK Varazdin,istra 1961,varazdin,1,42.0,25.5,32.5,1.47,1.26,2.74,51.5,55.3,38.4,27.1,34.5,2.99,3.6,-0.25,API-Football,2026-11-24 06:24
 2026-11-27,18:30,Germania - 2. Bundesliga [146],Heidenheim,Nürnberg,heidenheim,nurnberg,1,60.4,18.6,21.0,2.46,1.42,3.88,74.3,69.3,46.5,24.2,29.3,2.67,13.9,1.21,FotMob,2026-11-23 03:51
 2026-11-27,18:30,Arabia Saudita - Saudi Pro League [536],Al Ittihad,NEOM SC,al ittihad,neom,1,47.2,23.6,29.2,1.72,1.31,3.03,58.4,60.0,49.2,25.2,25.6,2.67,-2.0,0.36,FotMob,2026-11-24 05:17
+2026-11-27,18:30,Germany 2. Bundesliga,1. FC Heidenheim,1. FC Nürnberg,1 heidenheim,1 nurnberg,1,56.6,20.6,22.8,2.15,1.31,3.45,67.0,64.4,48.1,23.6,28.3,3.67,8.5,-0.22,API-Football,2026-11-24 06:24
+2026-11-27,18:30,Germany 2. Bundesliga,VfL Bochum,SV Darmstadt 98,vfl bochum,sv darmstadt 98,1,49.6,25.3,25.1,1.56,1.03,2.6,48.1,50.9,55.0,23.0,22.0,3.16,-5.4,-0.56,API-Football,2026-11-24 06:24
 2026-11-27,19:00,Danimarca - Superligaen [46],Sønderjyske,Brøndby IF,s nderjyske,br ndby,2,28.2,24.1,47.7,1.23,1.67,2.91,55.6,57.6,19.8,22.4,57.8,2.67,-10.1,0.24,FotMob,2026-11-23 03:51
+2026-11-27,19:00,Denmark Superliga,Sonderjyske,Brondby,sonderjyske,brondby,2,28.0,24.2,47.8,1.22,1.66,2.88,54.8,57.0,22.8,22.0,55.2,3.16,-7.4,-0.28,API-Football,2026-11-24 06:24
 2026-11-27,19:30,Austria - Bundesliga [38],Grazer AK,Altach,grazer ak,altach,2,31.9,26.5,41.6,1.17,1.38,2.55,46.8,51.6,28.0,29.3,42.7,2.67,-1.1,-0.12,FotMob,2026-11-23 03:51
+2026-11-27,19:30,Austria Bundesliga,Grazer AK,SCR Altach,grazer ak,scr altach,2,34.2,26.7,39.1,1.22,1.32,2.55,46.8,51.8,26.2,30.9,42.9,2.67,-3.8,-0.12,API-Football,2026-11-24 06:24
+2026-11-27,19:30,Hungary NB I,Gyori ETO FC,Debreceni VSC,gyori eto,debreceni vsc,2,37.7,23.4,38.9,1.59,1.62,3.21,62.1,63.8,39.2,25.9,34.9,3.16,4.0,0.05,API-Football,2026-11-24 06:24
+2026-11-27,19:30,Romania Liga I,Petrolul Ploiesti,Arges Pitesti,petrolul ploiesti,arges pitesti,2,28.5,27.6,43.9,1.02,1.33,2.35,41.7,47.0,45.3,27.6,27.1,2.67,16.8,-0.32,API-Football,2026-11-24 06:24
 2026-11-27,20:00,Belgio - First Division B [264],Royal Francs Borains,KAS Eupen,royal francs borains,kas eupen,2,32.5,22.8,44.8,1.5,1.8,3.3,64.1,64.9,30.8,28.0,41.2,2.67,3.6,0.63,FotMob,2026-11-23 03:51
 2026-11-27,20:00,Paesi Bassi - Eredivisie [57],FC Groningen,Willem II,groningen,willem ii,1,55.5,19.6,24.9,2.34,1.54,3.89,74.5,71.1,72.0,16.8,11.2,2.67,-16.5,1.22,FotMob,2026-11-23 03:51
+2026-11-27,20:00,Netherlands Eerste Divisie,Dordrecht,Vitesse,dordrecht,vitesse,2,32.9,23.3,43.7,1.46,1.72,3.18,61.6,63.0,28.0,25.7,46.3,2.99,-2.6,0.19,API-Football,2026-11-24 06:24
+2026-11-27,20:00,Netherlands Eerste Divisie,Jong AZ,FC OSS,jong az,oss,1,48.2,22.4,29.4,1.88,1.43,3.32,64.4,64.5,61.0,20.2,18.8,3.67,-12.8,-0.35,API-Football,2026-11-24 06:24
+2026-11-27,20:00,Netherlands Eerste Divisie,Jong Ajax,Heracles,jong ajax,heracles,2,27.0,19.6,53.4,1.66,2.36,4.02,76.5,73.4,15.4,16.0,68.6,3.99,-15.2,0.03,API-Football,2026-11-24 06:24
+2026-11-27,20:00,Netherlands Eerste Divisie,Jong Utrecht,Almere City FC,jong utrecht,almere city,2,27.0,20.1,53.0,1.59,2.27,3.86,74.0,71.4,27.7,23.1,49.1,3.99,3.9,-0.13,API-Football,2026-11-24 06:24
+2026-11-27,20:00,Netherlands Eerste Divisie,MVV,Jong PSV U21,mvv,jong psv u21,1,43.9,24.3,31.8,1.61,1.33,2.94,56.3,58.9,47.2,22.8,29.9,3.33,-3.3,-0.39,API-Football,2026-11-24 06:24
+2026-11-27,20:00,Netherlands Eerste Divisie,NAC Breda,Den Bosch,nac breda,den bosch,1,53.0,21.0,26.1,2.11,1.44,3.54,68.7,66.9,71.5,16.0,12.5,3.99,-18.5,-0.45,API-Football,2026-11-24 06:24
+2026-11-27,20:00,Netherlands Eerste Divisie,VVV Venlo,Waalwijk,vvv venlo,waalwijk,1,41.2,23.1,35.7,1.7,1.57,3.27,63.5,64.7,36.1,25.0,38.9,3.33,5.1,-0.06,API-Football,2026-11-24 06:24
 2026-11-27,20:30,Bundesliga,Werder Bremen,M'Gladbach,werder bremen,m gladbach,1,50.7,22.2,27.1,1.92,1.35,3.27,63.5,63.3,54.8,22.8,22.4,2.67,-4.1,0.6,Understat,2026-11-23 03:51
 2026-11-27,20:30,Polonia - Ekstraklasa [196],Górnik Zabrze,Wisła Płock,gornik zabrze,wis a p ock,1,63.4,20.1,16.4,2.1,0.97,3.07,59.2,54.4,60.0,23.4,16.6,2.67,3.4,0.4,FotMob,2026-11-23 03:51
 2026-11-27,20:30,Spagna - LaLiga2 [140],Leganés,Sabadell,leganes,sabadell,2,34.7,25.3,40.0,1.33,1.45,2.78,52.5,56.3,37.4,31.0,31.5,2.67,8.5,0.11,FotMob,2026-11-23 03:51
+2026-11-27,20:30,Poland Ekstraklasa,Gornik Zabrze,Wisla Plock,gornik zabrze,wisla plock,1,63.7,20.9,15.4,1.98,0.86,2.84,53.9,49.6,63.4,21.1,15.5,2.99,0.3,-0.15,API-Football,2026-11-24 06:24
+2026-11-27,20:30,Bundesliga,Werder Bremen,Borussia Mönchengladbach,werder bremen,borussia monchengladbach,1,50.7,22.2,27.1,1.92,1.35,3.27,63.5,63.3,55.5,21.6,23.0,3.33,-4.8,-0.06,Understat,2026-11-24 06:24
 2026-11-27,20:45,Belgio - Belgian Pro League [40],OH Leuven,KV Kortrijk,oh leuven,kv kortrijk,1,48.4,23.5,28.1,1.74,1.28,3.02,58.1,59.5,49.2,25.2,25.6,2.67,-0.8,0.35,FotMob,2026-11-23 03:51
 2026-11-27,20:45,Ligue 1,Brest,Paris,brest,paris,1,42.8,25.3,31.9,1.5,1.25,2.75,51.9,55.5,29.6,26.8,43.5,2.67,13.2,0.08,Understat,2026-11-23 03:51
 2026-11-27,20:45,Serie A,Venezia,Bologna,venezia,bologna,2,33.8,22.1,44.0,1.62,1.87,3.49,67.8,67.9,27.0,27.7,45.3,2.67,-1.3,0.82,Understat,2026-11-23 03:51
+2026-11-27,20:45,Belgium Jupiler Pro League,OH Leuven,Kortrijk,oh leuven,kortrijk,1,47.2,23.9,29.0,1.69,1.28,2.97,57.0,58.9,49.9,24.2,25.9,3.16,-2.7,-0.19,API-Football,2026-11-24 06:24
+2026-11-27,20:45,Ligue 1,Stade Brestois 29,Paris FC,stade brestois 29,paris,1,42.8,25.3,31.9,1.49,1.26,2.75,51.9,55.5,28.1,28.2,43.7,2.67,14.7,0.08,Understat,2026-11-24 06:24
 2026-11-27,21:00,Inghilterra - Championship [48],Southampton,Middlesbrough,southampton,middlesbrough,2,33.8,24.1,42.1,1.41,1.6,3.01,58.0,60.4,33.8,25.6,40.6,2.67,1.5,0.34,FotMob,2026-11-23 03:51
 2026-11-27,21:00,EPL,Nottm Forest,Chelsea,nottm forest,chelsea,1,50.9,24.8,24.3,1.62,1.04,2.66,49.7,51.9,34.2,27.5,38.3,2.67,16.7,-0.01,Understat,2026-11-23 03:51
 2026-11-27,21:00,La Liga,Levante,Racing Santander,levante,racing santander,1,44.1,22.2,33.7,1.86,1.61,3.47,67.4,67.6,45.5,24.8,29.7,2.67,-1.4,0.8,Understat,2026-11-23 03:51
+2026-11-27,21:00,EPL,Nottingham Forest,Chelsea,nottingham forest,chelsea,1,51.0,24.6,24.4,1.64,1.05,2.69,50.3,52.3,36.7,28.3,35.0,2.99,14.3,-0.3,Understat,2026-11-24 06:24
+2026-11-27,21:15,Portugal Primeira Liga,Maritimo,Nacional,maritimo,nacional,1,43.7,26.0,30.3,1.45,1.16,2.61,48.4,52.5,46.3,28.1,25.6,2.33,-2.6,0.28,API-Football,2026-11-24 06:24
 2026-11-28,00:00,Brasile - Série A [268],Fluminense,Cruzeiro,fluminense,cruzeiro,1,42.0,25.1,32.9,1.5,1.3,2.81,53.2,56.7,46.1,26.2,27.7,2.67,-4.1,0.14,FotMob,2026-11-24 03:33
 2026-11-28,01:00,Messico - Liga MX [230],América,Monterrey,america,monterrey,1,46.7,23.5,29.8,1.73,1.34,3.06,59.1,60.6,41.7,29.1,29.1,2.67,5.0,0.39,FotMob,2026-11-24 03:33
 2026-11-28,01:00,Messico - Liga MX [230],Atlas,Toluca,atlas,toluca,2,28.8,22.8,48.4,1.37,1.83,3.21,62.1,62.7,25.0,24.3,50.7,2.67,-2.3,0.54,FotMob,2026-11-24 03:33
