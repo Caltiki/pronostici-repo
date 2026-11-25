@@ -2989,22 +2989,46 @@
   var VISTE_MERCATO = { "1x2": 1, ou: 1, btts: 1, combo: 1 };
   // (174) IL PRONOSTICO DELLA PARTITA: fra le probabilita' dal 60% in su con
   // quota equa almeno 1.40, la piu' alta; a parita' il margine piu' basso.
+  // (219) con la regola dei combinati qui sotto.
   var SOGLIA_PRON = 60, EQUA_MIN_PRON = 1.40;
   function equaDi(r) {
     var e = num(r.Equa), p = num(r.Prob);
     return e != null ? e : (p ? 100 / p : null);
   }
   function esitoDi(r) { return r ? (r.Esito || r._esito || null) : null; }
+  // (219) I COMBINATI SOLO SE STACCANO DAVVERO I MERCATI SEMPLICI (25/11,
+  // deciso con Max). Col tetto di 1.40 (sotto il 71%) vinceva quasi sempre
+  // un combinato: sono tanti e uno capita sempre appena sotto il tetto. Il
+  // 28/11 erano 95 pronostici su 175. Due regole:
+  //  - "doppia + Under 4.5" non e' un pronostico: e' la doppia (sotto 1.40)
+  //    con una gamba quasi sicura aggiunta per passare il tetto. Resta
+  //    dentro la partita, non in testa.
+  //  - un combinato (e dal 220 un Gol/NoGol) vince solo se e' almeno
+  //    COMBO_STACCO punti piu' probabile del miglior 1X2 o Under/Over.
+  //    I semplici hanno le quote Sisal e Lottomatica accanto e margini piu'
+  //    bassi; sui dati dall'11/11 (1.394 partite finite) la regola cambia
+  //    l'uscita di mezzo punto, dentro il rumore.
+  // (220) Anche il Gol/NoGol passa dietro, come i combinati: sui dati
+  // dall'11/11, fra il 60 e il 72% il Gol e' uscito 3,6 punti sotto il
+  // previsto (455 righe) e il NoGol 5,1 sotto (130): sono probabilita'
+  // troppo sicure. Davanti restano 1X2 e Under/Over. Sulle 1.381 partite
+  // finite: uscite 67,7% contro 65,9% attese (con la regola di prima 66,5).
+  var COMBO_STACCO = 5, GRUPPI_DIETRO = { "Combo": 1, "Gol NoGol": 1 };
   function principale(g) {
     var c = g.filter(function (r) {
       var p = num(r.Prob), e = equaDi(r);
+      if (r.Gruppo === "Combo" && /Under 4\.5/.test(String(r.Sel || ""))) return false;
       return p != null && p >= SOGLIA_PRON && e != null && e >= EQUA_MIN_PRON - 0.005;
     });
     if (!c.length) return null;
+    var m = function (r) { var x = num(r.Margine); return x == null ? 99 : x; };
     c.sort(function (a, b) {
-      var m = function (r) { var x = num(r.Margine); return x == null ? 99 : x; };
       return (num(b.Prob) - num(a.Prob)) || (m(a) - m(b));
     });
+    if (GRUPPI_DIETRO[c[0].Gruppo]) {
+      var s = c.filter(function (r) { return !GRUPPI_DIETRO[r.Gruppo]; })[0];
+      if (s && num(c[0].Prob) - num(s.Prob) < COMBO_STACCO) return s;
+    }
     return c[0];
   }
   // Azzeccati e sbagliati accanto a quanti ne promettevano le probabilita':
