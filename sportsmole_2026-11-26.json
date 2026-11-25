@@ -1,75 +1,1231 @@
 [
  {
-  "Casa": "Lyon",
-  "Ospite": "Lillestrom",
-  "Ora": "21:00",
+  "Casa": "Atletico Mineiro",
+  "Ospite": "Corinthians",
+  "Ora": "00:00",
   "Data": "2026-11-26",
-  "Lega": "Europa League - League Stage",
-  "Giornata": "Gameweek 5",
-  "P1": 56.13,
-  "PX": 22.67,
-  "P2": 21.2,
-  "P_GG": 55.51,
-  "P_NG": 44.49,
-  "P_O15": 80.07,
-  "P_U15": 19.93,
-  "P_O25": 58.07,
-  "P_U25": 41.93,
-  "P_O35": 35.4,
-  "P_U35": 64.6,
-  "P_O45": 22.42,
-  "P_U45": 77.58,
-  "PT1": 41.91,
-  "PTX": 36.39,
-  "PT2": 21.7,
-  "P_Primo_Casa": 59.12,
-  "P_Nessun_Gol": 5.45,
-  "P_Primo_Ospite": 35.43,
-  "Esatto": "1-1",
-  "P_Esatto": 10.19,
+  "Lega": "Brasileiro",
+  "Giornata": "Gameweek 36",
+  "P1": 52.88,
+  "PX": 25.3,
+  "P2": 21.85,
+  "P_GG": 49.6,
+  "P_NG": 50.4,
+  "P_O15": 72.09,
+  "P_U15": 27.91,
+  "P_O25": 47.21,
+  "P_U25": 52.79,
+  "P_O35": 25.38,
+  "P_U35": 74.62,
+  "P_O45": 13.96,
+  "P_U45": 86.04,
+  "PT1": 42.64,
+  "PTX": 39.91,
+  "PT2": 17.45,
+  "P_Primo_Casa": 61.24,
+  "P_Nessun_Gol": 7.88,
+  "P_Primo_Ospite": 30.88,
+  "Esatto": "1-0",
+  "P_Esatto": 12.91,
   "Esatti": {
    "casa": [
     [
-     "2-1",
-     9.68
+     "1-0",
+     12.91
     ],
     [
-     "1-0",
-     9.67
+     "2-1",
+     10.22
     ],
     [
      "2-0",
-     9.03
+     9.66
     ],
     [
      "3-0",
-     6.1
+     5.02
     ],
     [
      "3-1",
-     5.67
+     4.97
     ],
     [
      "3-2",
-     3.67
+     2.74
     ],
     [
      "Other",
-     12.31
+     7.36
     ]
    ],
    "pareggio": [
     [
      "1-1",
-     10.19
+     11.99
     ],
     [
      "0-0",
-     5.45
+     7.88
     ],
     [
      "2-2",
-     5.43
+     4.64
+    ],
+    [
+     "Other",
+     0.04
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     7.16
+    ],
+    [
+     "1-2",
+     5.58
+    ],
+    [
+     "0-2",
+     3.23
+    ],
+    [
+     "1-3",
+     1.8
+    ],
+    [
+     "2-3",
+     1.53
+    ],
+    [
+     "0-3",
+     1.02
+    ],
+    [
+     "Other",
+     1.53
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 67.82,
+   "equal_8": 10.18,
+   "under_8": 22.0,
+   "over_9": 56.57,
+   "equal_9": 11.26,
+   "under_9": 32.18,
+   "over_10.5": 45.18,
+   "under_10.5": 54.82
+  },
+  "Linee_Casa": {
+   "over_1.5": 46.94,
+   "under_1.5": 53.06,
+   "over_2.5": 20.89,
+   "under_2.5": 79.11,
+   "over_3.5": 7.4,
+   "under_3.5": 92.6
+  },
+  "Linee_Ospite": {
+   "over_0.5": 57.21,
+   "under_0.5": 42.79,
+   "over_1.5": 22.87,
+   "under_1.5": 77.13,
+   "over_2.5": 6.68,
+   "under_2.5": 93.32,
+   "over_3.5": 1.57,
+   "under_3.5": 98.43
+  },
+  "WeSay": "",
+  "WeSay_Segno": "",
+  "Ora_Sito": "Nov 25, 2026 11.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/brasileiro/atletico-mineiro-vs-corinthians_game_263414.html",
+  "Url_Preview": "",
+  "Id": "263414"
+ },
+ {
+  "Casa": "Toluca",
+  "Ospite": "Atlas",
+  "Ora": "02:00",
+  "Data": "2026-11-26",
+  "Lega": "Liga MX",
+  "Giornata": "",
+  "P1": 62.41,
+  "PX": 19.58,
+  "P2": 18.01,
+  "P_GG": 61.45,
+  "P_NG": 38.55,
+  "P_O15": 85.55,
+  "P_U15": 14.45,
+  "P_O25": 66.68,
+  "P_U25": 33.32,
+  "P_O35": 43.76,
+  "P_U35": 56.24,
+  "P_O45": 28.99,
+  "P_U45": 71.01,
+  "PT1": 51.41,
+  "PTX": 33.63,
+  "PT2": 14.96,
+  "P_Primo_Casa": 70.49,
+  "P_Nessun_Gol": 3.09,
+  "P_Primo_Ospite": 26.42,
+  "Esatto": "2-1",
+  "P_Esatto": 10.53,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     10.53
+    ],
+    [
+     "2-0",
+     8.13
+    ],
+    [
+     "1-0",
+     7.65
+    ],
+    [
+     "3-1",
+     6.85
+    ],
+    [
+     "3-0",
+     6.58
+    ],
+    [
+     "3-2",
+     4.3
+    ],
+    [
+     "Other",
+     18.36
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     8.8
+    ],
+    [
+     "2-2",
+     5.99
+    ],
+    [
+     "0-0",
+     3.09
+    ],
+    [
+     "3-3",
+     1.49
+    ],
+    [
+     "Other",
+     0.22
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     4.92
+    ],
+    [
+     "0-1",
+     3.69
+    ],
+    [
+     "2-3",
+     2.19
+    ],
+    [
+     "0-2",
+     1.95
+    ],
+    [
+     "1-3",
+     1.93
+    ],
+    [
+     "Other",
+     2.43
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 72.11,
+   "equal_8": 8.7,
+   "under_8": 19.18,
+   "over_9": 62.19,
+   "equal_9": 9.93,
+   "under_9": 27.89,
+   "over_10.5": 51.73,
+   "under_10.5": 48.27
+  },
+  "Linee_Casa": {
+   "over_1.5": 64.64,
+   "under_1.5": 35.36,
+   "over_2.5": 37.8,
+   "under_2.5": 62.2,
+   "over_3.5": 18.58,
+   "under_3.5": 81.42
+  },
+  "Linee_Ospite": {
+   "over_0.5": 56.17,
+   "under_0.5": 43.83,
+   "over_1.5": 26.3,
+   "under_1.5": 73.7,
+   "over_2.5": 9.14,
+   "under_2.5": 90.86,
+   "over_3.5": 2.65,
+   "under_3.5": 97.35
+  },
+  "WeSay": "",
+  "WeSay_Segno": "",
+  "Ora_Sito": "Nov 26, 2026 1.00am",
+  "Url": "https://www.sportsmole.co.uk/football/liga-mx/toluca-vs-atlas_game_269959.html",
+  "Url_Preview": "",
+  "Id": "269959"
+ },
+ {
+  "Casa": "Monterrey",
+  "Ospite": "Club America",
+  "Ora": "04:10",
+  "Data": "2026-11-26",
+  "Lega": "Liga MX",
+  "Giornata": "",
+  "P1": 41.97,
+  "PX": 25.88,
+  "P2": 32.15,
+  "P_GG": 56.29,
+  "P_NG": 43.71,
+  "P_O15": 76.01,
+  "P_U15": 23.99,
+  "P_O25": 53.3,
+  "P_U25": 46.7,
+  "P_O35": 31.64,
+  "P_U35": 68.33,
+  "P_O45": 18.09,
+  "P_U45": 81.91,
+  "PT1": 33.34,
+  "PTX": 38.84,
+  "PT2": 27.82,
+  "P_Primo_Casa": 48.52,
+  "P_Nessun_Gol": 6.83,
+  "P_Primo_Ospite": 44.65,
+  "Esatto": "1-1",
+  "P_Esatto": 11.41,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     9.6
+    ],
+    [
+     "2-1",
+     8.87
+    ],
+    [
+     "2-0",
+     6.7
+    ],
+    [
+     "3-1",
+     4.5
+    ],
+    [
+     "3-0",
+     3.36
+    ],
+    [
+     "3-2",
+     2.83
+    ],
+    [
+     "Other",
+     6.1
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.41
+    ],
+    [
+     "0-0",
+     6.83
+    ],
+    [
+     "2-2",
+     5.84
+    ],
+    [
+     "3-3",
+     1.55
+    ],
+    [
+     "Other",
+     0.26
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     7.57
+    ],
+    [
+     "1-2",
+     7.37
+    ],
+    [
+     "0-2",
+     4.59
+    ],
+    [
+     "1-3",
+     3.22
+    ],
+    [
+     "2-3",
+     2.87
+    ],
+    [
+     "0-3",
+     2.06
+    ],
+    [
+     "Other",
+     4.48
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 61.79,
+   "equal_8": 10.85,
+   "under_8": 27.36,
+   "over_9": 50.38,
+   "equal_9": 11.41,
+   "under_9": 38.21,
+   "over_10.5": 39.36,
+   "under_10.5": 60.64
+  },
+  "Linee_Casa": {
+   "over_1.5": 42.88,
+   "under_1.5": 57.12,
+   "over_2.5": 18.6,
+   "under_2.5": 81.4,
+   "over_3.5": 6.36,
+   "under_3.5": 93.64
+  },
+  "Linee_Ospite": {
+   "over_0.5": 67.42,
+   "under_0.5": 32.58,
+   "over_1.5": 35.07,
+   "under_1.5": 64.93,
+   "over_2.5": 14.44,
+   "under_2.5": 85.56,
+   "over_3.5": 4.74,
+   "under_3.5": 95.26
+  },
+  "WeSay": "",
+  "WeSay_Segno": "",
+  "Ora_Sito": "Nov 26, 2026 3.10am",
+  "Url": "https://www.sportsmole.co.uk/football/liga-mx/monterrey-vs-club-america_game_269960.html",
+  "Url_Preview": "",
+  "Id": "269960"
+ },
+ {
+  "Casa": "Ajax",
+  "Ospite": "Thun",
+  "Ora": "18:45",
+  "Data": "2026-11-26",
+  "Lega": "Conference League - League Stage",
+  "Giornata": "Gameweek 4",
+  "P1": 69.57,
+  "PX": 16.29,
+  "P2": 14.08,
+  "P_GG": 60.68,
+  "P_NG": 39.32,
+  "P_O15": 87.83,
+  "P_U15": 12.17,
+  "P_O25": 71.29,
+  "P_U25": 28.71,
+  "P_O35": 51.25,
+  "P_U35": 48.75,
+  "P_O45": 37.76,
+  "P_U45": 62.24,
+  "PT1": 56.55,
+  "PTX": 29.14,
+  "PT2": 14.31,
+  "P_Primo_Casa": 70.66,
+  "P_Nessun_Gol": 2.64,
+  "P_Primo_Ospite": 26.7,
+  "Esatto": "2-1",
+  "P_Esatto": 9.24,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     9.24
+    ],
+    [
+     "2-0",
+     8.14
+    ],
+    [
+     "3-1",
+     7.24
+    ],
+    [
+     "1-0",
+     6.67
+    ],
+    [
+     "3-0",
+     6.54
+    ],
+    [
+     "3-2",
+     4.57
+    ],
+    [
+     "Other",
+     27.16
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     6.91
+    ],
+    [
+     "2-2",
+     4.85
+    ],
+    [
+     "0-0",
+     2.64
+    ],
+    [
+     "3-3",
+     1.53
+    ],
+    [
+     "Other",
+     0.37
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     3.75
+    ],
+    [
+     "0-1",
+     2.8
+    ],
+    [
+     "2-3",
+     1.85
+    ],
+    [
+     "0-2",
+     1.49
+    ],
+    [
+     "1-3",
+     1.4
+    ],
+    [
+     "Other",
+     2.28
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 66.82,
+   "equal_8": 8.74,
+   "under_8": 24.44,
+   "over_9": 57.24,
+   "equal_9": 9.58,
+   "under_9": 33.18,
+   "over_10.5": 47.46,
+   "under_10.5": 52.54
+  },
+  "Linee_Casa": {
+   "over_1.5": 71.49,
+   "under_1.5": 28.51,
+   "over_2.5": 47.41,
+   "under_2.5": 52.59,
+   "over_3.5": 27.53,
+   "under_3.5": 72.47
+  },
+  "Linee_Ospite": {
+   "over_0.5": 48.79,
+   "under_0.5": 51.21,
+   "over_1.5": 22.6,
+   "under_1.5": 77.4,
+   "over_2.5": 7.94,
+   "under_2.5": 92.06,
+   "over_3.5": 2.65,
+   "under_3.5": 97.35
+  },
+  "WeSay": "3-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 26, 2026 5.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/europa-conference-league/ajax-vs-thun_game_263435.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/ajax/europa-conference-league/preview/ajax-vs-thun-prediction-team-news-lineups_609762.html",
+  "Id": "263435"
+ },
+ {
+  "Casa": "Besiktas",
+  "Ospite": "Hapoel Be'er Sheva",
+  "Ora": "18:45",
+  "Data": "2026-11-26",
+  "Lega": "Europa League - League Stage",
+  "Giornata": "Gameweek 5",
+  "P1": 64.67,
+  "PX": 20.31,
+  "P2": 14.99,
+  "P_GG": 51.56,
+  "P_NG": 48.44,
+  "P_O15": 79.39,
+  "P_U15": 20.61,
+  "P_O25": 58.59,
+  "P_U25": 41.41,
+  "P_O35": 35.54,
+  "P_U35": 64.46,
+  "P_O45": 23.94,
+  "P_U45": 76.06,
+  "PT1": 46.99,
+  "PTX": 35.59,
+  "PT2": 17.42,
+  "P_Primo_Casa": 64.95,
+  "P_Nessun_Gol": 5.64,
+  "P_Primo_Ospite": 29.41,
+  "Esatto": "1-0",
+  "P_Esatto": 11.29,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     11.29
+    ],
+    [
+     "2-0",
+     10.72
+    ],
+    [
+     "2-1",
+     9.66
+    ],
+    [
+     "3-0",
+     7.92
+    ],
+    [
+     "3-1",
+     5.68
+    ],
+    [
+     "3-2",
+     3.08
+    ],
+    [
+     "Other",
+     16.32
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     8.6
+    ],
+    [
+     "0-0",
+     5.64
+    ],
+    [
+     "2-2",
+     4.73
+    ],
+    [
+     "3-3",
+     1.07
+    ],
+    [
+     "Other",
+     0.25
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     4.58
+    ],
+    [
+     "0-1",
+     3.64
+    ],
+    [
+     "0-2",
+     1.48
+    ],
+    [
+     "2-3",
+     1.42
+    ],
+    [
+     "1-3",
+     1.18
+    ],
+    [
+     "Other",
+     1.8
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 51.87,
+   "equal_8": 10.93,
+   "under_8": 37.21,
+   "over_9": 41.2,
+   "equal_9": 10.67,
+   "under_9": 48.13,
+   "over_10.5": 31.56,
+   "under_10.5": 68.44
+  },
+  "Linee_Casa": {
+   "over_1.5": 60.85,
+   "under_1.5": 39.15,
+   "over_2.5": 34.32,
+   "under_2.5": 65.68,
+   "over_3.5": 16.57,
+   "under_3.5": 83.43
+  },
+  "Linee_Ospite": {
+   "over_0.5": 48.07,
+   "under_0.5": 51.93,
+   "over_1.5": 20.49,
+   "under_1.5": 79.51,
+   "over_2.5": 6.62,
+   "under_2.5": 93.38,
+   "over_3.5": 2.05,
+   "under_3.5": 97.95
+  },
+  "WeSay": "3-0",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 26, 2026 5.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/europa-league/besiktas-vs-hapoel-beer-sheva_game_263425.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/besiktas/europa-league/preview/besiktas-vs-h-beer-sheva-prediction-team-news-lineups_609772.html",
+  "Id": "263425"
+ },
+ {
+  "Casa": "Brighton & Hove Albion",
+  "Ospite": "Universitatea Craiova",
+  "Ora": "18:45",
+  "Data": "2026-11-26",
+  "Lega": "Conference League - League Stage",
+  "Giornata": "Gameweek 4",
+  "P1": 47.76,
+  "PX": 25.96,
+  "P2": 26.27,
+  "P_GG": 44.61,
+  "P_NG": 55.39,
+  "P_O15": 71.17,
+  "P_U15": 28.83,
+  "P_O25": 45.98,
+  "P_U25": 54.02,
+  "P_O35": 25.32,
+  "P_U35": 74.68,
+  "P_O45": 15.25,
+  "P_U45": 84.75,
+  "PT1": 27.76,
+  "PTX": 42.53,
+  "PT2": 29.71,
+  "P_Primo_Casa": 49.27,
+  "P_Nessun_Gol": 9.25,
+  "P_Primo_Ospite": 41.48,
+  "Esatto": "1-0",
+  "P_Esatto": 12.82,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     12.82
+    ],
+    [
+     "2-0",
+     10.18
+    ],
+    [
+     "2-1",
+     7.64
+    ],
+    [
+     "3-0",
+     5.3
+    ],
+    [
+     "3-1",
+     3.48
+    ],
+    [
+     "3-2",
+     1.82
+    ],
+    [
+     "Other",
+     6.53
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.93
+    ],
+    [
+     "0-0",
+     9.25
+    ],
+    [
+     "2-2",
+     4.43
+    ],
+    [
+     "Other",
+     0.38
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     6.76
+    ],
+    [
+     "1-2",
+     5.78
+    ],
+    [
+     "0-2",
+     4.08
+    ],
+    [
+     "1-3",
+     2.16
+    ],
+    [
+     "2-3",
+     2.02
+    ],
+    [
+     "0-3",
+     1.94
+    ],
+    [
+     "Other",
+     3.53
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 51.88,
+   "equal_8": 10.8,
+   "under_8": 37.33,
+   "over_9": 41.34,
+   "equal_9": 10.54,
+   "under_9": 48.12,
+   "over_10.5": 31.82,
+   "under_10.5": 68.18
+  },
+  "Linee_Casa": {
+   "over_1.5": 42.75,
+   "under_1.5": 57.25,
+   "over_2.5": 18.48,
+   "under_2.5": 81.52,
+   "over_3.5": 6.91,
+   "under_3.5": 93.09
+  },
+  "Linee_Ospite": {
+   "over_0.5": 55.92,
+   "under_0.5": 44.08,
+   "over_1.5": 27.11,
+   "under_1.5": 72.89,
+   "over_2.5": 11.0,
+   "under_2.5": 89.0,
+   "over_3.5": 3.91,
+   "under_3.5": 96.09
+  },
+  "WeSay": "2-0",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 26, 2026 5.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/europa-conference-league/brighton-and-hove-albion-vs-cs-u-craiova_game_263434.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/brighton-and-hove-albion/europa-conference-league/preview/brighton-vs-u-craiova-prediction-team-news-lineups_609737.html",
+  "Id": "263434"
+ },
+ {
+  "Casa": "Celta Vigo",
+  "Ospite": "Bournemouth",
+  "Ora": "18:45",
+  "Data": "2026-11-26",
+  "Lega": "Europa League - League Stage",
+  "Giornata": "Gameweek 5",
+  "P1": 28.07,
+  "PX": 25.26,
+  "P2": 46.74,
+  "P_GG": 51.66,
+  "P_NG": 48.34,
+  "P_O15": 74.44,
+  "P_U15": 25.56,
+  "P_O25": 50.91,
+  "P_U25": 49.09,
+  "P_O35": 29.44,
+  "P_U35": 70.56,
+  "P_O45": 17.16,
+  "P_U45": 82.84,
+  "PT1": 27.07,
+  "PTX": 40.24,
+  "PT2": 32.69,
+  "P_Primo_Casa": 44.24,
+  "P_Nessun_Gol": 7.43,
+  "P_Primo_Ospite": 48.33,
+  "Esatto": "1-1",
+  "P_Esatto": 11.15,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     7.16
+    ],
+    [
+     "2-1",
+     6.29
+    ],
+    [
+     "2-0",
+     4.11
+    ],
+    [
+     "3-1",
+     2.73
+    ],
+    [
+     "3-2",
+     2.17
+    ],
+    [
+     "3-0",
+     1.95
+    ],
+    [
+     "Other",
+     3.66
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.15
+    ],
+    [
+     "0-0",
+     7.43
+    ],
+    [
+     "2-2",
+     5.13
+    ],
+    [
+     "3-3",
+     1.23
+    ],
+    [
+     "Other",
+     0.32
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     11.03
+    ],
+    [
+     "1-2",
+     8.85
+    ],
+    [
+     "0-2",
+     8.28
+    ],
+    [
+     "1-3",
+     4.42
+    ],
+    [
+     "0-3",
+     4.37
+    ],
+    [
+     "2-3",
+     2.43
+    ],
+    [
+     "Other",
+     7.35
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 55.07,
+   "equal_8": 11.84,
+   "under_8": 33.09,
+   "over_9": 43.26,
+   "equal_9": 11.81,
+   "under_9": 44.93,
+   "over_10.5": 32.46,
+   "under_10.5": 67.54
+  },
+  "Linee_Casa": {
+   "over_1.5": 30.02,
+   "under_1.5": 69.98,
+   "over_2.5": 12.06,
+   "under_2.5": 87.94,
+   "over_3.5": 3.98,
+   "under_3.5": 96.02
+  },
+  "Linee_Ospite": {
+   "over_0.5": 75.75,
+   "under_0.5": 24.25,
+   "over_1.5": 44.55,
+   "under_1.5": 55.45,
+   "over_2.5": 20.12,
+   "under_2.5": 79.88,
+   "over_3.5": 7.67,
+   "under_3.5": 92.33
+  },
+  "WeSay": "1-2",
+  "WeSay_Segno": "2",
+  "Ora_Sito": "Nov 26, 2026 5.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/europa-league/celta-vigo-vs-bournemouth_game_263430.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/celta-vigo/europa-league/preview/celta-vigo-vs-bournemouth-prediction-team-news-lineups_609734.html",
+  "Id": "263430"
+ },
+ {
+  "Casa": "Dinamo Zagreb",
+  "Ospite": "Bayer Leverkusen",
+  "Ora": "18:45",
+  "Data": "2026-11-26",
+  "Lega": "Europa League - League Stage",
+  "Giornata": "Gameweek 5",
+  "P1": 38.83,
+  "PX": 23.52,
+  "P2": 37.65,
+  "P_GG": 61.69,
+  "P_NG": 38.31,
+  "P_O15": 82.91,
+  "P_U15": 17.09,
+  "P_O25": 62.71,
+  "P_U25": 37.29,
+  "P_O35": 41.05,
+  "P_U35": 58.95,
+  "P_O45": 25.89,
+  "P_U45": 74.11,
+  "PT1": 33.19,
+  "PTX": 37.48,
+  "PT2": 29.33,
+  "P_Primo_Casa": 52.03,
+  "P_Nessun_Gol": 4.36,
+  "P_Primo_Ospite": 43.61,
+  "Esatto": "1-1",
+  "P_Esatto": 9.8,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     7.88
+    ],
+    [
+     "1-0",
+     6.47
+    ],
+    [
+     "2-0",
+     5.26
+    ],
+    [
+     "3-1",
+     4.3
+    ],
+    [
+     "3-2",
+     3.22
+    ],
+    [
+     "3-0",
+     3.04
+    ],
+    [
+     "Other",
+     8.65
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     9.8
+    ],
+    [
+     "2-2",
+     6.66
+    ],
+    [
+     "0-0",
+     4.36
+    ],
+    [
+     "3-3",
+     2.13
+    ],
+    [
+     "Other",
+     0.57
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     7.96
+    ],
+    [
+     "0-1",
+     6.23
+    ],
+    [
+     "0-2",
+     5.16
+    ],
+    [
+     "1-3",
+     4.18
+    ],
+    [
+     "2-3",
+     3.47
+    ],
+    [
+     "0-3",
+     2.78
+    ],
+    [
+     "Other",
+     7.85
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 55.34,
+   "equal_8": 10.78,
+   "under_8": 33.88,
+   "over_9": 44.54,
+   "equal_9": 10.8,
+   "under_9": 44.66,
+   "over_10.5": 34.54,
+   "under_10.5": 65.46
+  },
+  "Linee_Casa": {
+   "over_1.5": 45.18,
+   "under_1.5": 54.82,
+   "over_2.5": 21.91,
+   "under_2.5": 78.09,
+   "over_3.5": 9.22,
+   "under_3.5": 90.78
+  },
+  "Linee_Ospite": {
+   "over_0.5": 72.19,
+   "under_0.5": 27.81,
+   "over_1.5": 43.98,
+   "under_1.5": 56.02,
+   "over_2.5": 20.98,
+   "under_2.5": 79.02,
+   "over_3.5": 8.42,
+   "under_3.5": 91.58
+  },
+  "WeSay": "2-3",
+  "WeSay_Segno": "2",
+  "Ora_Sito": "Nov 26, 2026 5.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/europa-league/dinamo-zagreb-vs-bayer-leverkusen_game_263427.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/dinamo-zagreb/europa-league/preview/dinamo-zagreb-vs-b-leverkusen-prediction-team-news-lineups_609792.html",
+  "Id": "263427"
+ },
+ {
+  "Casa": "Hearts",
+  "Ospite": "Monaco",
+  "Ora": "18:45",
+  "Data": "2026-11-26",
+  "Lega": "Conference League - League Stage",
+  "Giornata": "Gameweek 4",
+  "P1": 35.75,
+  "PX": 24.72,
+  "P2": 39.5,
+  "P_GG": 56.63,
+  "P_NG": 43.37,
+  "P_O15": 77.65,
+  "P_U15": 22.35,
+  "P_O25": 55.07,
+  "P_U25": 44.93,
+  "P_O35": 33.05,
+  "P_U35": 66.95,
+  "P_O45": 19.34,
+  "P_U45": 80.66,
+  "PT1": 31.14,
+  "PTX": 41.13,
+  "PT2": 27.73,
+  "P_Primo_Casa": 48.82,
+  "P_Nessun_Gol": 6.18,
+  "P_Primo_Ospite": 45.0,
+  "Esatto": "1-1",
+  "P_Esatto": 10.99,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     7.76
+    ],
+    [
+     "2-1",
+     7.74
+    ],
+    [
+     "2-0",
+     5.39
+    ],
+    [
+     "3-1",
+     3.68
+    ],
+    [
+     "3-2",
+     2.74
+    ],
+    [
+     "3-0",
+     2.67
+    ],
+    [
+     "Other",
+     5.76
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.99
+    ],
+    [
+     "0-0",
+     6.18
+    ],
+    [
+     "2-2",
+     5.94
     ],
     [
      "3-3",
@@ -77,67 +1233,2387 @@
     ],
     [
      "Other",
-     0.29
+     0.28
     ]
    ],
    "ospite": [
     [
      "1-2",
-     5.71
+     8.55
     ],
     [
      "0-1",
-     4.81
+     8.36
     ],
     [
      "0-2",
-     2.77
+     6.22
     ],
     [
      "1-3",
-     1.89
-    ],
-    [
-     "2-3",
-     1.8
+     4.08
     ],
     [
      "0-3",
-     1.18
+     3.05
+    ],
+    [
+     "2-3",
+     2.89
     ],
     [
      "Other",
-     3.03
+     6.35
     ]
    ]
   },
   "Corner": {
-   "over_8": 60.37,
-   "equal_8": 10.17,
-   "under_8": 29.46,
-   "over_9": 49.77,
-   "equal_9": 10.59,
-   "under_9": 39.63,
-   "over_10.5": 39.56,
-   "under_10.5": 60.44
+   "over_8": 66.33,
+   "equal_8": 10.14,
+   "under_8": 23.54,
+   "over_9": 55.29,
+   "equal_9": 11.04,
+   "under_9": 33.67,
+   "over_10.5": 44.25,
+   "under_10.5": 55.75
   },
   "Linee_Casa": {
-   "over_1.5": 55.3,
-   "under_1.5": 44.7,
-   "over_2.5": 29.36,
-   "under_2.5": 70.64,
-   "over_3.5": 12.6,
-   "under_3.5": 87.4
+   "over_1.5": 38.41,
+   "under_1.5": 61.59,
+   "over_2.5": 16.45,
+   "under_2.5": 83.55,
+   "over_3.5": 6.04,
+   "under_3.5": 93.96
   },
   "Linee_Ospite": {
-   "over_0.5": 57.44,
-   "under_0.5": 42.56,
-   "over_1.5": 27.09,
-   "under_1.5": 72.91,
-   "over_2.5": 9.51,
-   "under_2.5": 90.49,
-   "over_3.5": 3.32,
-   "under_3.5": 96.68
+   "over_0.5": 72.19,
+   "under_0.5": 27.81,
+   "over_1.5": 41.42,
+   "under_1.5": 58.58,
+   "over_2.5": 17.97,
+   "under_2.5": 82.03,
+   "over_3.5": 6.63,
+   "under_3.5": 93.37
+  },
+  "WeSay": "1-3",
+  "WeSay_Segno": "2",
+  "Ora_Sito": "Nov 26, 2026 5.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/europa-conference-league/hearts-vs-as-monaco_game_263439.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/hearts/europa-conference-league/preview/hearts-vs-monaco-prediction-team-news-lineups_609756.html",
+  "Id": "263439"
+ },
+ {
+  "Casa": "Marseille",
+  "Ospite": "Levski Sofia",
+  "Ora": "18:45",
+  "Data": "2026-11-26",
+  "Lega": "Europa League - League Stage",
+  "Giornata": "Gameweek 5",
+  "P1": 42.6,
+  "PX": 23.58,
+  "P2": 33.86,
+  "P_GG": 54.89,
+  "P_NG": 45.11,
+  "P_O15": 78.79,
+  "P_U15": 21.21,
+  "P_O25": 55.89,
+  "P_U25": 44.11,
+  "P_O35": 33.52,
+  "P_U35": 66.48,
+  "P_O45": 20.23,
+  "P_U45": 79.77,
+  "PT1": 28.2,
+  "PTX": 39.85,
+  "PT2": 31.95,
+  "P_Primo_Casa": 44.22,
+  "P_Nessun_Gol": 6.1,
+  "P_Primo_Ospite": 49.68,
+  "Esatto": "1-1",
+  "P_Esatto": 10.37,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     8.48
+    ],
+    [
+     "2-1",
+     8.22
+    ],
+    [
+     "2-0",
+     7.13
+    ],
+    [
+     "3-1",
+     4.41
+    ],
+    [
+     "3-0",
+     4.07
+    ],
+    [
+     "3-2",
+     2.88
+    ],
+    [
+     "Other",
+     7.41
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.37
+    ],
+    [
+     "0-0",
+     6.1
+    ],
+    [
+     "2-2",
+     5.55
+    ],
+    [
+     "3-3",
+     1.26
+    ],
+    [
+     "Other",
+     0.3
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     7.34
+    ],
+    [
+     "0-1",
+     6.66
+    ],
+    [
+     "0-2",
+     5.4
+    ],
+    [
+     "1-3",
+     3.33
+    ],
+    [
+     "0-3",
+     2.74
+    ],
+    [
+     "2-3",
+     2.74
+    ],
+    [
+     "Other",
+     5.64
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 50.97,
+   "equal_8": 11.77,
+   "under_8": 37.26,
+   "over_9": 39.6,
+   "equal_9": 11.37,
+   "under_9": 49.03,
+   "over_10.5": 29.49,
+   "under_10.5": 70.51
+  },
+  "Linee_Casa": {
+   "over_1.5": 43.97,
+   "under_1.5": 56.03,
+   "over_2.5": 20.33,
+   "under_2.5": 79.67,
+   "over_3.5": 7.71,
+   "under_3.5": 92.29
+  },
+  "Linee_Ospite": {
+   "over_0.5": 66.84,
+   "under_0.5": 33.16,
+   "over_1.5": 37.18,
+   "under_1.5": 62.82,
+   "over_2.5": 16.01,
+   "under_2.5": 83.99,
+   "over_3.5": 5.94,
+   "under_3.5": 94.06
+  },
+  "WeSay": "4-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 26, 2026 5.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/europa-league/marseille-vs-levski-sofia_game_263426.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/marseille/europa-league/preview/marseille-vs-levski-sofia-prediction-team-news-lineups_609786.html",
+  "Id": "263426"
+ },
+ {
+  "Casa": "Olympiacos",
+  "Ospite": "AC Milan",
+  "Ora": "18:45",
+  "Data": "2026-11-26",
+  "Lega": "Europa League - League Stage",
+  "Giornata": "Gameweek 5",
+  "P1": 47.0,
+  "PX": 26.16,
+  "P2": 26.83,
+  "P_GG": 49.11,
+  "P_NG": 50.89,
+  "P_O15": 72.15,
+  "P_U15": 27.85,
+  "P_O25": 47.35,
+  "P_U25": 52.61,
+  "P_O35": 26.16,
+  "P_U35": 73.84,
+  "P_O45": 14.93,
+  "P_U45": 85.07,
+  "PT1": 36.27,
+  "PTX": 44.56,
+  "PT2": 19.17,
+  "P_Primo_Casa": 55.94,
+  "P_Nessun_Gol": 7.97,
+  "P_Primo_Ospite": 36.09,
+  "Esatto": "1-1",
+  "P_Esatto": 12.33,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     11.93
+    ],
+    [
+     "2-1",
+     8.6
+    ],
+    [
+     "2-0",
+     8.05
+    ],
+    [
+     "3-0",
+     4.71
+    ],
+    [
+     "3-1",
+     4.17
+    ],
+    [
+     "3-2",
+     2.22
+    ],
+    [
+     "Other",
+     7.31
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     12.33
+    ],
+    [
+     "0-0",
+     7.97
+    ],
+    [
+     "2-2",
+     4.77
+    ],
+    [
+     "Other",
+     0.18
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     7.94
+    ],
+    [
+     "1-2",
+     6.24
+    ],
+    [
+     "0-2",
+     4.43
+    ],
+    [
+     "1-3",
+     2.28
+    ],
+    [
+     "2-3",
+     1.91
+    ],
+    [
+     "0-3",
+     1.64
+    ],
+    [
+     "Other",
+     2.39
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 48.81,
+   "equal_8": 11.08,
+   "under_8": 40.11,
+   "over_9": 38.24,
+   "equal_9": 10.56,
+   "under_9": 51.19,
+   "over_10.5": 28.92,
+   "under_10.5": 71.08
+  },
+  "Linee_Casa": {
+   "over_1.5": 42.84,
+   "under_1.5": 57.16,
+   "over_2.5": 19.51,
+   "under_2.5": 80.49,
+   "over_3.5": 7.49,
+   "under_3.5": 92.51
+  },
+  "Linee_Ospite": {
+   "over_0.5": 60.02,
+   "under_0.5": 39.98,
+   "over_1.5": 26.98,
+   "under_1.5": 73.02,
+   "over_2.5": 9.32,
+   "under_2.5": 90.68,
+   "over_3.5": 2.57,
+   "under_3.5": 97.43
+  },
+  "WeSay": "2-2",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 26, 2026 5.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/europa-league/olympiacos-vs-ac-milan_game_263432.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/olympiacos/europa-league/preview/olympiacos-vs-ac-milan-prediction-team-news-lineups_609768.html",
+  "Id": "263432"
+ },
+ {
+  "Casa": "Red Bull Salzburg",
+  "Ospite": "Ararat-Armenia",
+  "Ora": "18:45",
+  "Data": "2026-11-26",
+  "Lega": "Europa League - League Stage",
+  "Giornata": "Gameweek 5",
+  "P1": 60.51,
+  "PX": 20.58,
+  "P2": 18.91,
+  "P_GG": 53.16,
+  "P_NG": 46.84,
+  "P_O15": 80.09,
+  "P_U15": 19.91,
+  "P_O25": 59.08,
+  "P_U25": 40.92,
+  "P_O35": 37.01,
+  "P_U35": 62.99,
+  "P_O45": 24.23,
+  "P_U45": 75.77,
+  "PT1": 40.69,
+  "PTX": 37.67,
+  "PT2": 21.64,
+  "P_Primo_Casa": 56.53,
+  "P_Nessun_Gol": 5.36,
+  "P_Primo_Ospite": 38.11,
+  "Esatto": "1-0",
+  "P_Esatto": 10.15,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     10.15
+    ],
+    [
+     "2-0",
+     9.8
+    ],
+    [
+     "2-1",
+     9.64
+    ],
+    [
+     "3-0",
+     6.74
+    ],
+    [
+     "3-1",
+     6.13
+    ],
+    [
+     "3-2",
+     3.78
+    ],
+    [
+     "Other",
+     14.28
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     8.99
+    ],
+    [
+     "0-0",
+     5.36
+    ],
+    [
+     "2-2",
+     4.83
+    ],
+    [
+     "3-3",
+     1.23
+    ],
+    [
+     "Other",
+     0.16
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     4.79
+    ],
+    [
+     "0-1",
+     4.4
+    ],
+    [
+     "0-2",
+     2.22
+    ],
+    [
+     "2-3",
+     1.98
+    ],
+    [
+     "1-3",
+     1.81
+    ],
+    [
+     "Other",
+     2.8
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 55.68,
+   "equal_8": 10.79,
+   "under_8": 33.53,
+   "over_9": 44.85,
+   "equal_9": 10.83,
+   "under_9": 44.32,
+   "over_10.5": 34.79,
+   "under_10.5": 65.21
+  },
+  "Linee_Casa": {
+   "over_1.5": 58.57,
+   "under_1.5": 41.43,
+   "over_2.5": 32.32,
+   "under_2.5": 67.68,
+   "over_3.5": 14.44,
+   "under_3.5": 85.56
+  },
+  "Linee_Ospite": {
+   "over_0.5": 53.67,
+   "under_0.5": 46.33,
+   "over_1.5": 24.51,
+   "under_1.5": 75.49,
+   "over_2.5": 8.89,
+   "under_2.5": 91.11,
+   "over_3.5": 2.96,
+   "under_3.5": 97.04
+  },
+  "WeSay": "3-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 26, 2026 5.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/europa-league/red-bull-salzburg-vs-ararat-armenia_game_263431.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/red-bull-salzburg/europa-league/preview/salzburg-vs-ararat-armenia-prediction-team-news-lineups_609738.html",
+  "Id": "263431"
+ },
+ {
+  "Casa": "Saburtalo Tbilisi",
+  "Ospite": "Getafe",
+  "Ora": "18:45",
+  "Data": "2026-11-26",
+  "Lega": "Conference League - League Stage",
+  "Giornata": "Gameweek 4",
+  "P1": 41.87,
+  "PX": 26.83,
+  "P2": 31.3,
+  "P_GG": 47.56,
+  "P_NG": 52.44,
+  "P_O15": 70.8,
+  "P_U15": 29.2,
+  "P_O25": 45.85,
+  "P_U25": 54.15,
+  "P_O35": 24.15,
+  "P_U35": 75.85,
+  "P_O45": 13.29,
+  "P_U45": 86.71,
+  "PT1": 34.35,
+  "PTX": 45.28,
+  "PT2": 20.37,
+  "P_Primo_Casa": 53.02,
+  "P_Nessun_Gol": 8.68,
+  "P_Primo_Ospite": 38.3,
+  "Esatto": "1-1",
+  "P_Esatto": 12.34,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     11.19
+    ],
+    [
+     "2-1",
+     8.52
+    ],
+    [
+     "2-0",
+     7.76
+    ],
+    [
+     "3-0",
+     3.71
+    ],
+    [
+     "3-1",
+     3.47
+    ],
+    [
+     "3-2",
+     1.9
+    ],
+    [
+     "Other",
+     5.33
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     12.34
+    ],
+    [
+     "0-0",
+     8.68
+    ],
+    [
+     "2-2",
+     4.67
+    ],
+    [
+     "Other",
+     0.27
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     9.34
+    ],
+    [
+     "1-2",
+     7.11
+    ],
+    [
+     "0-2",
+     4.84
+    ],
+    [
+     "1-3",
+     2.73
+    ],
+    [
+     "0-3",
+     2.36
+    ],
+    [
+     "2-3",
+     1.97
+    ],
+    [
+     "Other",
+     2.95
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 53.24,
+   "equal_8": 11.28,
+   "under_8": 35.48,
+   "over_9": 42.14,
+   "equal_9": 11.1,
+   "under_9": 46.76,
+   "over_10.5": 32.05,
+   "under_10.5": 67.95
+  },
+  "Linee_Casa": {
+   "over_1.5": 38.47,
+   "under_1.5": 61.53,
+   "over_2.5": 15.55,
+   "under_2.5": 84.45,
+   "over_3.5": 5.6,
+   "under_3.5": 94.4
+  },
+  "Linee_Ospite": {
+   "over_0.5": 63.34,
+   "under_0.5": 36.66,
+   "over_1.5": 29.67,
+   "under_1.5": 70.33,
+   "over_2.5": 11.15,
+   "under_2.5": 88.85,
+   "over_3.5": 3.22,
+   "under_3.5": 96.78
+  },
+  "WeSay": "1-1",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 26, 2026 5.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/europa-conference-league/saburtalo-tbilisi-vs-getafe_game_263433.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/getafe/europa-conference-league/preview/saburtalo-tbilisi-vs-getafe-prediction-team-news-lineups_609761.html",
+  "Id": "263433"
+ },
+ {
+  "Casa": "Union SG",
+  "Ospite": "Lech Poznan",
+  "Ora": "18:45",
+  "Data": "2026-11-26",
+  "Lega": "Europa League - League Stage",
+  "Giornata": "Gameweek 5",
+  "P1": 54.99,
+  "PX": 22.85,
+  "P2": 22.1,
+  "P_GG": 55.41,
+  "P_NG": 44.59,
+  "P_O15": 79.44,
+  "P_U15": 20.56,
+  "P_O25": 57.51,
+  "P_U25": 42.49,
+  "P_O35": 35.93,
+  "P_U35": 64.07,
+  "P_O45": 22.39,
+  "P_U45": 77.61,
+  "PT1": 38.08,
+  "PTX": 40.24,
+  "PT2": 21.68,
+  "P_Primo_Casa": 60.95,
+  "P_Nessun_Gol": 5.59,
+  "P_Primo_Ospite": 33.46,
+  "Esatto": "1-1",
+  "P_Esatto": 10.35,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     9.73
+    ],
+    [
+     "1-0",
+     9.42
+    ],
+    [
+     "2-0",
+     8.7
+    ],
+    [
+     "3-1",
+     5.89
+    ],
+    [
+     "3-0",
+     5.24
+    ],
+    [
+     "3-2",
+     3.5
+    ],
+    [
+     "Other",
+     12.51
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.35
+    ],
+    [
+     "0-0",
+     5.59
+    ],
+    [
+     "2-2",
+     5.45
+    ],
+    [
+     "3-3",
+     1.21
+    ],
+    [
+     "Other",
+     0.25
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     5.52
+    ],
+    [
+     "0-1",
+     5.47
+    ],
+    [
+     "0-2",
+     2.89
+    ],
+    [
+     "1-3",
+     2.2
+    ],
+    [
+     "2-3",
+     2.04
+    ],
+    [
+     "0-3",
+     1.08
+    ],
+    [
+     "Other",
+     2.88
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 52.07,
+   "equal_8": 10.43,
+   "under_8": 37.5,
+   "over_9": 41.83,
+   "equal_9": 10.23,
+   "under_9": 47.93,
+   "over_10.5": 32.53,
+   "under_10.5": 67.47
+  },
+  "Linee_Casa": {
+   "over_1.5": 54.52,
+   "under_1.5": 45.48,
+   "over_2.5": 28.6,
+   "under_2.5": 71.4,
+   "over_3.5": 12.76,
+   "under_3.5": 87.24
+  },
+  "Linee_Ospite": {
+   "over_0.5": 58.46,
+   "under_0.5": 41.54,
+   "over_1.5": 27.02,
+   "under_1.5": 72.98,
+   "over_2.5": 9.66,
+   "under_2.5": 90.34,
+   "over_3.5": 3.13,
+   "under_3.5": 96.87
+  },
+  "WeSay": "2-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 26, 2026 5.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/europa-league/union-sg-vs-lech-poznan_game_263429.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/union-sg/preview/union-sg-vs-lech-poznan-prediction-team-news-lineups_609775.html",
+  "Id": "263429"
+ },
+ {
+  "Casa": "Viktoria Plzen",
+  "Ospite": "Benfica",
+  "Ora": "18:45",
+  "Data": "2026-11-26",
+  "Lega": "Europa League - League Stage",
+  "Giornata": "Gameweek 5",
+  "P1": 23.94,
+  "PX": 21.61,
+  "P2": 54.45,
+  "P_GG": 60.41,
+  "P_NG": 39.59,
+  "P_O15": 83.37,
+  "P_U15": 16.63,
+  "P_O25": 63.31,
+  "P_U25": 36.69,
+  "P_O35": 41.11,
+  "P_U35": 58.89,
+  "P_O45": 26.84,
+  "P_U45": 73.16,
+  "PT1": 19.31,
+  "PTX": 37.33,
+  "PT2": 43.36,
+  "P_Primo_Casa": 33.41,
+  "P_Nessun_Gol": 4.42,
+  "P_Primo_Ospite": 62.17,
+  "Esatto": "1-2",
+  "P_Esatto": 9.62,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     5.73
+    ],
+    [
+     "1-0",
+     4.93
+    ],
+    [
+     "2-0",
+     3.32
+    ],
+    [
+     "3-1",
+     2.55
+    ],
+    [
+     "3-2",
+     2.35
+    ],
+    [
+     "3-0",
+     1.6
+    ],
+    [
+     "Other",
+     3.46
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     9.41
+    ],
+    [
+     "2-2",
+     5.78
+    ],
+    [
+     "0-0",
+     4.42
+    ],
+    [
+     "3-3",
+     1.71
+    ],
+    [
+     "Other",
+     0.3
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     9.62
+    ],
+    [
+     "0-2",
+     7.32
+    ],
+    [
+     "0-1",
+     7.29
+    ],
+    [
+     "1-3",
+     5.95
+    ],
+    [
+     "0-3",
+     5.25
+    ],
+    [
+     "2-3",
+     4.37
+    ],
+    [
+     "Other",
+     14.65
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 61.48,
+   "equal_8": 9.77,
+   "under_8": 28.75,
+   "over_9": 51.21,
+   "equal_9": 10.28,
+   "under_9": 38.52,
+   "over_10.5": 41.19,
+   "under_10.5": 58.81
+  },
+  "Linee_Casa": {
+   "over_1.5": 31.17,
+   "under_1.5": 68.83,
+   "over_2.5": 11.97,
+   "under_2.5": 88.03,
+   "over_3.5": 3.76,
+   "under_3.5": 96.24
+  },
+  "Linee_Ospite": {
+   "over_0.5": 82.28,
+   "under_0.5": 17.72,
+   "over_1.5": 57.3,
+   "under_1.5": 42.7,
+   "over_2.5": 32.23,
+   "under_2.5": 67.77,
+   "over_3.5": 14.95,
+   "under_3.5": 85.05
+  },
+  "WeSay": "1-3",
+  "WeSay_Segno": "2",
+  "Ora_Sito": "Nov 26, 2026 5.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/europa-league/viktoria-plzen-vs-benfica_game_263428.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/benfica/europa-league/preview/plzen-vs-benfica-prediction-team-news-lineups_609781.html",
+  "Id": "263428"
+ },
+ {
+  "Casa": "Borac Banja Luka",
+  "Ospite": "Atalanta BC",
+  "Ora": "21:00",
+  "Data": "2026-11-26",
+  "Lega": "Conference League - League Stage",
+  "Giornata": "Gameweek 4",
+  "P1": 45.55,
+  "PX": 24.46,
+  "P2": 29.96,
+  "P_GG": 52.3,
+  "P_NG": 47.7,
+  "P_O15": 76.31,
+  "P_U15": 23.69,
+  "P_O25": 52.84,
+  "P_U25": 47.16,
+  "P_O35": 30.56,
+  "P_U35": 69.44,
+  "P_O45": 18.17,
+  "P_U45": 81.83,
+  "PT1": 35.24,
+  "PTX": 43.65,
+  "PT2": 21.12,
+  "P_Primo_Casa": 56.39,
+  "P_Nessun_Gol": 6.21,
+  "P_Primo_Ospite": 37.4,
+  "Esatto": "1-1",
+  "P_Esatto": 11.65,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     10.12
+    ],
+    [
+     "2-1",
+     8.9
+    ],
+    [
+     "2-0",
+     7.38
+    ],
+    [
+     "3-1",
+     4.31
+    ],
+    [
+     "3-0",
+     4.27
+    ],
+    [
+     "3-2",
+     2.81
+    ],
+    [
+     "Other",
+     7.77
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.65
+    ],
+    [
+     "0-0",
+     6.21
+    ],
+    [
+     "2-2",
+     5.27
+    ],
+    [
+     "3-3",
+     1.08
+    ],
+    [
+     "Other",
+     0.25
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     7.33
+    ],
+    [
+     "1-2",
+     6.89
+    ],
+    [
+     "0-2",
+     4.43
+    ],
+    [
+     "1-3",
+     2.82
+    ],
+    [
+     "2-3",
+     2.39
+    ],
+    [
+     "0-3",
+     2.22
+    ],
+    [
+     "Other",
+     3.87
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 54.06,
+   "equal_8": 11.13,
+   "under_8": 34.8,
+   "over_9": 43.04,
+   "equal_9": 11.03,
+   "under_9": 45.94,
+   "over_10.5": 32.94,
+   "under_10.5": 67.06
+  },
+  "Linee_Casa": {
+   "over_1.5": 44.43,
+   "under_1.5": 55.57,
+   "over_2.5": 20.49,
+   "under_2.5": 79.51,
+   "over_3.5": 8.02,
+   "under_3.5": 91.98
+  },
+  "Linee_Ospite": {
+   "over_0.5": 64.22,
+   "under_0.5": 35.78,
+   "over_1.5": 32.03,
+   "under_1.5": 67.97,
+   "over_2.5": 12.63,
+   "under_2.5": 87.37,
+   "over_3.5": 4.12,
+   "under_3.5": 95.88
+  },
+  "WeSay": "1-1",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 26, 2026 8.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/europa-conference-league/borac-banja-luka-vs-atalanta-bc_game_263459.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/borac-banja-luka/europa-conference-league/preview/borac-banja-luka-vs-atalanta-prediction-team-news-lineups_609745.html",
+  "Id": "263459"
+ },
+ {
+  "Casa": "Braga",
+  "Ospite": "KuPS",
+  "Ora": "21:00",
+  "Data": "2026-11-26",
+  "Lega": "Conference League - League Stage",
+  "Giornata": "Gameweek 4",
+  "P1": 55.85,
+  "PX": 22.86,
+  "P2": 21.32,
+  "P_GG": 53.02,
+  "P_NG": 46.98,
+  "P_O15": 77.97,
+  "P_U15": 22.03,
+  "P_O25": 55.15,
+  "P_U25": 44.85,
+  "P_O35": 32.44,
+  "P_U35": 67.56,
+  "P_O45": 19.72,
+  "P_U45": 80.28,
+  "PT1": 40.05,
+  "PTX": 42.13,
+  "PT2": 17.83,
+  "P_Primo_Casa": 63.73,
+  "P_Nessun_Gol": 6.18,
+  "P_Primo_Ospite": 30.09,
+  "Esatto": "1-1",
+  "P_Esatto": 10.41,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     10.31
+    ],
+    [
+     "2-1",
+     10.12
+    ],
+    [
+     "2-0",
+     9.47
+    ],
+    [
+     "3-0",
+     5.72
+    ],
+    [
+     "3-1",
+     5.7
+    ],
+    [
+     "3-2",
+     3.25
+    ],
+    [
+     "Other",
+     11.27
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.41
+    ],
+    [
+     "0-0",
+     6.18
+    ],
+    [
+     "2-2",
+     5.11
+    ],
+    [
+     "3-3",
+     1.05
+    ],
+    [
+     "Other",
+     0.12
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     5.6
+    ],
+    [
+     "0-1",
+     5.57
+    ],
+    [
+     "0-2",
+     2.94
+    ],
+    [
+     "1-3",
+     1.9
+    ],
+    [
+     "2-3",
+     1.82
+    ],
+    [
+     "0-3",
+     1.28
+    ],
+    [
+     "Other",
+     2.21
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 47.53,
+   "equal_8": 11.54,
+   "under_8": 40.92,
+   "over_9": 36.66,
+   "equal_9": 10.87,
+   "under_9": 52.47,
+   "over_10.5": 27.2,
+   "under_10.5": 72.8
+  },
+  "Linee_Casa": {
+   "over_1.5": 53.63,
+   "under_1.5": 46.37,
+   "over_2.5": 27.11,
+   "under_2.5": 72.89,
+   "over_3.5": 11.39,
+   "under_3.5": 88.61
+  },
+  "Linee_Ospite": {
+   "over_0.5": 57.08,
+   "under_0.5": 42.92,
+   "over_1.5": 25.28,
+   "under_1.5": 74.72,
+   "over_2.5": 8.38,
+   "under_2.5": 91.62,
+   "over_3.5": 2.33,
+   "under_3.5": 97.67
+  },
+  "WeSay": "2-0",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 26, 2026 8.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/europa-conference-league/braga-vs-kups_game_263454.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/braga/europa-conference-league/preview/braga-vs-kups-prediction-team-news-lineups_609783.html",
+  "Id": "263454"
+ },
+ {
+  "Casa": "CSKA Sofia",
+  "Ospite": "Trabzonspor",
+  "Ora": "21:00",
+  "Data": "2026-11-26",
+  "Lega": "Conference League - League Stage",
+  "Giornata": "Gameweek 4",
+  "P1": 22.85,
+  "PX": 22.59,
+  "P2": 54.56,
+  "P_GG": 57.85,
+  "P_NG": 42.15,
+  "P_O15": 80.63,
+  "P_U15": 19.37,
+  "P_O25": 59.08,
+  "P_U25": 40.92,
+  "P_O35": 36.63,
+  "P_U35": 63.37,
+  "P_O45": 22.67,
+  "P_U45": 77.33,
+  "PT1": 21.05,
+  "PTX": 42.08,
+  "PT2": 36.87,
+  "P_Primo_Casa": 35.55,
+  "P_Nessun_Gol": 4.96,
+  "P_Primo_Ospite": 59.49,
+  "Esatto": "1-1",
+  "P_Esatto": 10.22,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     6.14
+    ],
+    [
+     "1-0",
+     5.22
+    ],
+    [
+     "2-0",
+     3.08
+    ],
+    [
+     "3-1",
+     2.25
+    ],
+    [
+     "3-2",
+     1.92
+    ],
+    [
+     "3-0",
+     1.26
+    ],
+    [
+     "Other",
+     2.98
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.22
+    ],
+    [
+     "2-2",
+     5.62
+    ],
+    [
+     "0-0",
+     4.96
+    ],
+    [
+     "3-3",
+     1.48
+    ],
+    [
+     "Other",
+     0.32
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     9.86
+    ],
+    [
+     "0-1",
+     9.21
+    ],
+    [
+     "0-2",
+     8.25
+    ],
+    [
+     "1-3",
+     6.1
+    ],
+    [
+     "0-3",
+     5.18
+    ],
+    [
+     "2-3",
+     3.97
+    ],
+    [
+     "Other",
+     12.0
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 56.74,
+   "equal_8": 10.35,
+   "under_8": 32.9,
+   "over_9": 46.24,
+   "equal_9": 10.5,
+   "under_9": 43.26,
+   "over_10.5": 36.38,
+   "under_10.5": 63.62
+  },
+  "Linee_Casa": {
+   "over_1.5": 29.02,
+   "under_1.5": 70.98,
+   "over_2.5": 10.21,
+   "under_2.5": 89.79,
+   "over_3.5": 3.3,
+   "under_3.5": 96.7
+  },
+  "Linee_Ospite": {
+   "over_0.5": 82.52,
+   "under_0.5": 17.48,
+   "over_1.5": 54.7,
+   "under_1.5": 45.3,
+   "over_2.5": 29.05,
+   "under_2.5": 70.95,
+   "over_3.5": 12.32,
+   "under_3.5": 87.68
+  },
+  "WeSay": "1-2",
+  "WeSay_Segno": "2",
+  "Ora_Sito": "Nov 26, 2026 8.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/europa-conference-league/cska-sofia-vs-trabzonspor_game_263455.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/cska-sofia/europa-conference-league/preview/cska-sofia-vs-trabzonspor-prediction-team-news-lineups_609771.html",
+  "Id": "263455"
+ },
+ {
+  "Casa": "Crystal Palace",
+  "Ospite": "Real Sociedad",
+  "Ora": "21:00",
+  "Data": "2026-11-26",
+  "Lega": "Europa League - League Stage",
+  "Giornata": "Gameweek 5",
+  "P1": 34.84,
+  "PX": 24.48,
+  "P2": 40.71,
+  "P_GG": 57.91,
+  "P_NG": 42.09,
+  "P_O15": 78.45,
+  "P_U15": 21.55,
+  "P_O25": 56.24,
+  "P_U25": 43.76,
+  "P_O35": 34.2,
+  "P_U35": 65.8,
+  "P_O45": 20.31,
+  "P_U45": 79.69,
+  "PT1": 23.74,
+  "PTX": 39.51,
+  "PT2": 36.76,
+  "P_Primo_Casa": 41.62,
+  "P_Nessun_Gol": 5.9,
+  "P_Primo_Ospite": 52.48,
+  "Esatto": "1-1",
+  "P_Esatto": 10.85,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     7.96
+    ],
+    [
+     "1-0",
+     7.67
+    ],
+    [
+     "2-0",
+     5.38
+    ],
+    [
+     "3-1",
+     3.51
+    ],
+    [
+     "3-2",
+     2.67
+    ],
+    [
+     "3-0",
+     2.54
+    ],
+    [
+     "Other",
+     5.11
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.85
+    ],
+    [
+     "2-2",
+     6.02
+    ],
+    [
+     "0-0",
+     5.9
+    ],
+    [
+     "3-3",
+     1.48
+    ],
+    [
+     "Other",
+     0.22
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     8.47
+    ],
+    [
+     "0-1",
+     8.01
+    ],
+    [
+     "0-2",
+     5.99
+    ],
+    [
+     "1-3",
+     4.36
+    ],
+    [
+     "2-3",
+     3.24
+    ],
+    [
+     "0-3",
+     3.06
+    ],
+    [
+     "Other",
+     7.59
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 61.96,
+   "equal_8": 11.2,
+   "under_8": 26.83,
+   "over_9": 50.18,
+   "equal_9": 11.78,
+   "under_9": 38.03,
+   "over_10.5": 38.85,
+   "under_10.5": 61.15
+  },
+  "Linee_Casa": {
+   "over_1.5": 38.13,
+   "under_1.5": 61.87,
+   "over_2.5": 15.53,
+   "under_2.5": 84.47,
+   "over_3.5": 5.33,
+   "under_3.5": 94.67
+  },
+  "Linee_Ospite": {
+   "over_0.5": 73.43,
+   "under_0.5": 26.57,
+   "over_1.5": 43.1,
+   "under_1.5": 56.9,
+   "over_2.5": 19.95,
+   "under_2.5": 80.05,
+   "over_3.5": 7.81,
+   "under_3.5": 92.19
+  },
+  "WeSay": "2-2",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 26, 2026 8.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/europa-league/crystal-palace-vs-real-sociedad_game_263451.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/crystal-palace/europa-league/preview/crystal-palace-vs-real-sociedad-prediction-team-news-lineups_609735.html",
+  "Id": "263451"
+ },
+ {
+  "Casa": "Doncaster Rovers",
+  "Ospite": "Huddersfield Town",
+  "Ora": "21:00",
+  "Data": "2026-11-26",
+  "Lega": "League One",
+  "Giornata": "Gameweek 17",
+  "P1": 22.75,
+  "PX": 25.51,
+  "P2": 51.74,
+  "P_GG": 50.72,
+  "P_NG": 49.28,
+  "P_O15": 73.44,
+  "P_U15": 26.56,
+  "P_O25": 48.7,
+  "P_U25": 51.27,
+  "P_O35": 26.65,
+  "P_U35": 73.35,
+  "P_O45": 14.96,
+  "P_U45": 85.04,
+  "PT1": 19.86,
+  "PTX": 39.68,
+  "PT2": 40.46,
+  "P_Primo_Casa": 32.96,
+  "P_Nessun_Gol": 7.79,
+  "P_Primo_Ospite": 59.25,
+  "Esatto": "1-1",
+  "P_Esatto": 11.78,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     7.06
+    ],
+    [
+     "2-1",
+     5.8
+    ],
+    [
+     "2-0",
+     3.53
+    ],
+    [
+     "3-1",
+     1.85
+    ],
+    [
+     "3-2",
+     1.49
+    ],
+    [
+     "3-0",
+     1.27
+    ],
+    [
+     "Other",
+     1.74
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.78
+    ],
+    [
+     "0-0",
+     7.79
+    ],
+    [
+     "2-2",
+     4.84
+    ],
+    [
+     "Other",
+     0.19
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     11.72
+    ],
+    [
+     "1-2",
+     9.87
+    ],
+    [
+     "0-2",
+     9.43
+    ],
+    [
+     "0-3",
+     5.1
+    ],
+    [
+     "1-3",
+     5.01
+    ],
+    [
+     "2-3",
+     2.67
+    ],
+    [
+     "Other",
+     7.94
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 68.42,
+   "equal_8": 10.39,
+   "under_8": 21.2,
+   "over_9": 56.82,
+   "equal_9": 11.6,
+   "under_9": 31.58,
+   "over_10.5": 45.04,
+   "under_10.5": 54.96
+  },
+  "Linee_Casa": {
+   "over_1.5": 24.31,
+   "under_1.5": 75.69,
+   "over_2.5": 7.47,
+   "under_2.5": 92.53,
+   "over_3.5": 1.93,
+   "under_3.5": 98.07
+  },
+  "Linee_Ospite": {
+   "over_0.5": 78.62,
+   "under_0.5": 21.38,
+   "over_1.5": 47.47,
+   "under_1.5": 52.53,
+   "over_2.5": 21.84,
+   "under_2.5": 78.16,
+   "over_3.5": 8.13,
+   "under_3.5": 91.87
+  },
+  "WeSay": "0-2",
+  "WeSay_Segno": "2",
+  "Ora_Sito": "Nov 26, 2026 8.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/league-one/doncaster-rovers-vs-huddersfield-town_game_263442.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/preview/doncaster-vs-huddersfield-prediction-team-news-lineups_609754.html",
+  "Id": "263442"
+ },
+ {
+  "Casa": "Ferencvaros",
+  "Ospite": "Celje",
+  "Ora": "21:00",
+  "Data": "2026-11-26",
+  "Lega": "Europa League - League Stage",
+  "Giornata": "Gameweek 5",
+  "P1": 51.67,
+  "PX": 23.2,
+  "P2": 25.14,
+  "P_GG": 57.26,
+  "P_NG": 42.74,
+  "P_O15": 79.82,
+  "P_U15": 20.18,
+  "P_O25": 57.61,
+  "P_U25": 42.39,
+  "P_O35": 34.97,
+  "P_U35": 65.0,
+  "P_O45": 21.58,
+  "P_U45": 78.42,
+  "PT1": 38.16,
+  "PTX": 39.26,
+  "PT2": 22.59,
+  "P_Primo_Casa": 58.04,
+  "P_Nessun_Gol": 5.37,
+  "P_Primo_Ospite": 36.59,
+  "Esatto": "1-1",
+  "P_Esatto": 10.37,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     9.42
+    ],
+    [
+     "1-0",
+     9.19
+    ],
+    [
+     "2-0",
+     8.25
+    ],
+    [
+     "3-1",
+     5.3
+    ],
+    [
+     "3-0",
+     5.2
+    ],
+    [
+     "3-2",
+     3.41
+    ],
+    [
+     "Other",
+     10.9
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.37
+    ],
+    [
+     "2-2",
+     5.81
+    ],
+    [
+     "0-0",
+     5.37
+    ],
+    [
+     "3-3",
+     1.4
+    ],
+    [
+     "Other",
+     0.25
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     6.46
+    ],
+    [
+     "0-1",
+     5.63
+    ],
+    [
+     "0-2",
+     3.59
+    ],
+    [
+     "1-3",
+     2.28
+    ],
+    [
+     "2-3",
+     2.25
+    ],
+    [
+     "0-3",
+     1.56
+    ],
+    [
+     "Other",
+     3.37
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 60.42,
+   "equal_8": 10.38,
+   "under_8": 29.2,
+   "over_9": 49.62,
+   "equal_9": 10.8,
+   "under_9": 39.58,
+   "over_10.5": 39.24,
+   "under_10.5": 60.76
+  },
+  "Linee_Casa": {
+   "over_1.5": 52.19,
+   "under_1.5": 47.81,
+   "over_2.5": 26.46,
+   "under_2.5": 73.54,
+   "over_3.5": 11.15,
+   "under_3.5": 88.85
+  },
+  "Linee_Ospite": {
+   "over_0.5": 61.1,
+   "under_0.5": 38.9,
+   "over_1.5": 30.38,
+   "under_1.5": 69.62,
+   "over_2.5": 11.11,
+   "under_2.5": 88.89,
+   "over_3.5": 3.62,
+   "under_3.5": 96.38
+  },
+  "WeSay": "2-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 26, 2026 8.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/europa-league/ferencvaros-vs-celje_game_263449.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/ferencvaros/europa-league/preview/ferencvaros-vs-celje-prediction-team-news-lineups_609760.html",
+  "Id": "263449"
+ },
+ {
+  "Casa": "Freiburg",
+  "Ospite": "FC Twente",
+  "Ora": "21:00",
+  "Data": "2026-11-26",
+  "Lega": "Conference League - League Stage",
+  "Giornata": "Gameweek 4",
+  "P1": 35.02,
+  "PX": 24.06,
+  "P2": 40.92,
+  "P_GG": 59.7,
+  "P_NG": 40.3,
+  "P_O15": 81.28,
+  "P_U15": 18.72,
+  "P_O25": 60.17,
+  "P_U25": 39.83,
+  "P_O35": 37.99,
+  "P_U35": 62.01,
+  "P_O45": 24.26,
+  "P_U45": 75.74,
+  "PT1": 26.01,
+  "PTX": 34.89,
+  "PT2": 39.1,
+  "P_Primo_Casa": 43.57,
+  "P_Nessun_Gol": 5.11,
+  "P_Primo_Ospite": 51.32,
+  "Esatto": "1-1",
+  "P_Esatto": 10.48,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     7.73
+    ],
+    [
+     "1-0",
+     6.95
+    ],
+    [
+     "2-0",
+     5.15
+    ],
+    [
+     "3-1",
+     3.52
+    ],
+    [
+     "3-2",
+     3.18
+    ],
+    [
+     "3-0",
+     2.78
+    ],
+    [
+     "Other",
+     5.71
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.48
+    ],
+    [
+     "2-2",
+     6.09
+    ],
+    [
+     "0-0",
+     5.11
+    ],
+    [
+     "3-3",
+     1.89
+    ],
+    [
+     "Other",
+     0.49
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     8.59
+    ],
+    [
+     "0-1",
+     6.67
+    ],
+    [
+     "0-2",
+     5.48
+    ],
+    [
+     "1-3",
+     4.12
+    ],
+    [
+     "2-3",
+     3.47
+    ],
+    [
+     "0-3",
+     3.08
+    ],
+    [
+     "Other",
+     9.52
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 49.66,
+   "equal_8": 10.13,
+   "under_8": 40.22,
+   "over_9": 39.84,
+   "equal_9": 9.81,
+   "under_9": 50.34,
+   "over_10.5": 31.03,
+   "under_10.5": 68.97
+  },
+  "Linee_Casa": {
+   "over_1.5": 40.01,
+   "under_1.5": 59.99,
+   "over_2.5": 17.57,
+   "under_2.5": 82.43,
+   "over_3.5": 6.2,
+   "under_3.5": 93.8
+  },
+  "Linee_Ospite": {
+   "over_0.5": 74.31,
+   "under_0.5": 25.69,
+   "over_1.5": 45.91,
+   "under_1.5": 54.09,
+   "over_2.5": 22.57,
+   "under_2.5": 77.43,
+   "over_3.5": 10.01,
+   "under_3.5": 89.99
+  },
+  "WeSay": "2-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 26, 2026 8.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/europa-conference-league/freiburg-vs-fc-twente_game_263453.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/freiburg/europa-conference-league/preview/freiburg-vs-fc-twente-prediction-team-news-lineups_609722.html",
+  "Id": "263453"
+ },
+ {
+  "Casa": "Hoffenheim",
+  "Ospite": "Sturm Graz",
+  "Ora": "21:00",
+  "Data": "2026-11-26",
+  "Lega": "Europa League - League Stage",
+  "Giornata": "Gameweek 5",
+  "P1": 49.46,
+  "PX": 21.87,
+  "P2": 28.66,
+  "P_GG": 57.71,
+  "P_NG": 42.29,
+  "P_O15": 81.1,
+  "P_U15": 18.9,
+  "P_O25": 60.44,
+  "P_U25": 39.56,
+  "P_O35": 38.81,
+  "P_U35": 61.19,
+  "P_O45": 24.94,
+  "P_U45": 75.06,
+  "PT1": 32.02,
+  "PTX": 38.26,
+  "PT2": 29.71,
+  "P_Primo_Casa": 49.9,
+  "P_Nessun_Gol": 4.89,
+  "P_Primo_Ospite": 45.21,
+  "Esatto": "1-1",
+  "P_Esatto": 9.46,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     8.84
+    ],
+    [
+     "1-0",
+     8.61
+    ],
+    [
+     "2-0",
+     7.53
+    ],
+    [
+     "3-1",
+     5.38
+    ],
+    [
+     "3-0",
+     4.55
+    ],
+    [
+     "3-2",
+     3.65
+    ],
+    [
+     "Other",
+     10.91
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     9.46
+    ],
+    [
+     "2-2",
+     5.54
+    ],
+    [
+     "0-0",
+     4.89
+    ],
+    [
+     "3-3",
+     1.6
+    ],
+    [
+     "Other",
+     0.38
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     6.51
+    ],
+    [
+     "0-1",
+     5.41
+    ],
+    [
+     "0-2",
+     3.66
+    ],
+    [
+     "1-3",
+     2.97
+    ],
+    [
+     "2-3",
+     2.78
+    ],
+    [
+     "0-3",
+     1.72
+    ],
+    [
+     "Other",
+     5.62
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 62.94,
+   "equal_8": 10.06,
+   "under_8": 27.0,
+   "over_9": 52.26,
+   "equal_9": 10.68,
+   "under_9": 37.06,
+   "over_10.5": 41.79,
+   "under_10.5": 58.21
+  },
+  "Linee_Casa": {
+   "over_1.5": 51.16,
+   "under_1.5": 48.84,
+   "over_2.5": 26.47,
+   "under_2.5": 73.53,
+   "over_3.5": 11.29,
+   "under_3.5": 88.71
+  },
+  "Linee_Ospite": {
+   "over_0.5": 63.52,
+   "under_0.5": 36.48,
+   "over_1.5": 34.43,
+   "under_1.5": 65.57,
+   "over_2.5": 15.07,
+   "under_2.5": 84.93,
+   "over_3.5": 6.0,
+   "under_3.5": 94.0
+  },
+  "WeSay": "3-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 26, 2026 8.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/europa-league/hoffenheim-vs-sturm-graz_game_263448.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/hoffenheim/europa-league/preview/hoffenheim-vs-sturm-graz-prediction-team-news-lineups_609774.html",
+  "Id": "263448"
+ },
+ {
+  "Casa": "Juventus",
+  "Ospite": "Omonia",
+  "Ora": "21:00",
+  "Data": "2026-11-26",
+  "Lega": "Europa League - League Stage",
+  "Giornata": "Gameweek 5",
+  "P1": 63.43,
+  "PX": 22.05,
+  "P2": 14.48,
+  "P_GG": 47.63,
+  "P_NG": 52.37,
+  "P_O15": 74.73,
+  "P_U15": 25.27,
+  "P_O25": 50.29,
+  "P_U25": 49.71,
+  "P_O35": 27.73,
+  "P_U35": 72.27,
+  "P_O45": 17.14,
+  "P_U45": 82.86,
+  "PT1": 41.44,
+  "PTX": 41.72,
+  "PT2": 16.84,
+  "P_Primo_Casa": 64.62,
+  "P_Nessun_Gol": 7.04,
+  "P_Primo_Ospite": 28.34,
+  "Esatto": "1-0",
+  "P_Esatto": 13.18,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     13.18
+    ],
+    [
+     "2-0",
+     11.93
+    ],
+    [
+     "2-1",
+     10.1
+    ],
+    [
+     "3-0",
+     7.71
+    ],
+    [
+     "3-1",
+     5.73
+    ],
+    [
+     "3-2",
+     2.94
+    ],
+    [
+     "Other",
+     11.85
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.56
+    ],
+    [
+     "0-0",
+     7.04
+    ],
+    [
+     "2-2",
+     3.94
+    ],
+    [
+     "Other",
+     0.01
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     5.05
+    ],
+    [
+     "1-2",
+     4.16
+    ],
+    [
+     "0-2",
+     1.91
+    ],
+    [
+     "Other",
+     0.93
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 55.09,
+   "equal_8": 11.08,
+   "under_8": 33.83,
+   "over_9": 44.02,
+   "equal_9": 11.07,
+   "under_9": 44.91,
+   "over_10.5": 33.82,
+   "under_10.5": 66.18
+  },
+  "Linee_Casa": {
+   "over_1.5": 55.62,
+   "under_1.5": 44.38,
+   "over_2.5": 28.76,
+   "under_2.5": 71.24,
+   "over_3.5": 11.86,
+   "under_3.5": 88.14
+  },
+  "Linee_Ospite": {
+   "over_0.5": 48.29,
+   "under_0.5": 51.71,
+   "over_1.5": 16.85,
+   "under_1.5": 83.15,
+   "over_2.5": 3.9,
+   "under_2.5": 96.1,
+   "over_3.5": 0.94,
+   "under_3.5": 99.06
+  },
+  "WeSay": "3-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 26, 2026 8.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/europa-league/juventus-vs-omonia_game_263446.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/europa-league/preview/juventus-vs-omonia-prediction-team-news-lineups_609764.html",
+  "Id": "263446"
+ },
+ {
+  "Casa": "Lyon",
+  "Ospite": "Lillestrom",
+  "Ora": "21:00",
+  "Data": "2026-11-26",
+  "Lega": "Europa League - League Stage",
+  "Giornata": "Gameweek 5",
+  "P1": 56.94,
+  "PX": 22.42,
+  "P2": 20.64,
+  "P_GG": 57.02,
+  "P_NG": 42.98,
+  "P_O15": 81.25,
+  "P_U15": 18.75,
+  "P_O25": 59.36,
+  "P_U25": 40.64,
+  "P_O35": 37.25,
+  "P_U35": 62.75,
+  "P_O45": 23.45,
+  "P_U45": 76.55,
+  "PT1": 44.06,
+  "PTX": 35.03,
+  "PT2": 20.9,
+  "P_Primo_Casa": 59.92,
+  "P_Nessun_Gol": 4.9,
+  "P_Primo_Ospite": 35.18,
+  "Esatto": "1-1",
+  "P_Esatto": 10.04,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     9.78
+    ],
+    [
+     "1-0",
+     9.23
+    ],
+    [
+     "2-0",
+     8.99
+    ],
+    [
+     "3-1",
+     6.06
+    ],
+    [
+     "3-0",
+     5.81
+    ],
+    [
+     "3-2",
+     4.04
+    ],
+    [
+     "Other",
+     13.02
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.04
+    ],
+    [
+     "2-2",
+     5.86
+    ],
+    [
+     "0-0",
+     4.9
+    ],
+    [
+     "3-3",
+     1.36
+    ],
+    [
+     "Other",
+     0.25
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     5.49
+    ],
+    [
+     "0-1",
+     4.59
+    ],
+    [
+     "0-2",
+     2.87
+    ],
+    [
+     "1-3",
+     1.87
+    ],
+    [
+     "2-3",
+     1.86
+    ],
+    [
+     "0-3",
+     1.03
+    ],
+    [
+     "Other",
+     2.92
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 63.0,
+   "equal_8": 10.02,
+   "under_8": 26.98,
+   "over_9": 52.36,
+   "equal_9": 10.64,
+   "under_9": 37.0,
+   "over_10.5": 41.92,
+   "under_10.5": 58.08
+  },
+  "Linee_Casa": {
+   "over_1.5": 57.03,
+   "under_1.5": 42.97,
+   "over_2.5": 30.54,
+   "under_2.5": 69.46,
+   "over_3.5": 13.27,
+   "under_3.5": 86.73
+  },
+  "Linee_Ospite": {
+   "over_0.5": 58.02,
+   "under_0.5": 41.98,
+   "over_1.5": 27.55,
+   "under_1.5": 72.45,
+   "over_2.5": 9.29,
+   "under_2.5": 90.71,
+   "over_3.5": 3.17,
+   "under_3.5": 96.83
   },
   "WeSay": "2-0",
   "WeSay_Segno": "1",
@@ -145,5 +3621,740 @@
   "Url": "https://www.sportsmole.co.uk/football/europa-league/lyon-vs-lillestrom_game_263443.html",
   "Url_Preview": "https://www.sportsmole.co.uk/football/lyon/europa-league/preview/lyon-vs-lillestrom-prediction-team-news-lineups_609716.html",
   "Id": "263443"
+ },
+ {
+  "Casa": "NEC",
+  "Ospite": "Rennes",
+  "Ora": "21:00",
+  "Data": "2026-11-26",
+  "Lega": "Europa League - League Stage",
+  "Giornata": "Gameweek 5",
+  "P1": 37.99,
+  "PX": 25.05,
+  "P2": 36.95,
+  "P_GG": 57.87,
+  "P_NG": 42.13,
+  "P_O15": 79.22,
+  "P_U15": 20.78,
+  "P_O25": 58.9,
+  "P_U25": 41.1,
+  "P_O35": 39.14,
+  "P_U35": 60.86,
+  "P_O45": 25.18,
+  "P_U45": 74.82,
+  "PT1": 31.17,
+  "PTX": 39.27,
+  "PT2": 29.56,
+  "P_Primo_Casa": 52.8,
+  "P_Nessun_Gol": 6.01,
+  "P_Primo_Ospite": 41.19,
+  "Esatto": "1-1",
+  "P_Esatto": 9.86,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     7.32
+    ],
+    [
+     "1-0",
+     7.25
+    ],
+    [
+     "2-0",
+     5.06
+    ],
+    [
+     "3-1",
+     3.61
+    ],
+    [
+     "3-2",
+     3.26
+    ],
+    [
+     "3-0",
+     2.56
+    ],
+    [
+     "Other",
+     8.93
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     9.86
+    ],
+    [
+     "2-2",
+     6.42
+    ],
+    [
+     "0-0",
+     6.01
+    ],
+    [
+     "3-3",
+     2.17
+    ],
+    [
+     "Other",
+     0.6
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     7.53
+    ],
+    [
+     "0-1",
+     7.52
+    ],
+    [
+     "0-2",
+     5.39
+    ],
+    [
+     "1-3",
+     3.94
+    ],
+    [
+     "2-3",
+     3.08
+    ],
+    [
+     "0-3",
+     2.35
+    ],
+    [
+     "Other",
+     7.14
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 67.69,
+   "equal_8": 9.25,
+   "under_8": 23.06,
+   "over_9": 57.52,
+   "equal_9": 10.17,
+   "under_9": 32.31,
+   "over_10.5": 47.17,
+   "under_10.5": 52.83
+  },
+  "Linee_Casa": {
+   "over_1.5": 43.01,
+   "under_1.5": 56.99,
+   "over_2.5": 21.13,
+   "under_2.5": 78.87,
+   "over_3.5": 9.53,
+   "under_3.5": 90.47
+  },
+  "Linee_Ospite": {
+   "over_0.5": 70.19,
+   "under_0.5": 29.81,
+   "over_1.5": 41.88,
+   "under_1.5": 58.12,
+   "over_2.5": 19.28,
+   "under_2.5": 80.72,
+   "over_3.5": 7.74,
+   "under_3.5": 92.26
+  },
+  "WeSay": "1-2",
+  "WeSay_Segno": "2",
+  "Ora_Sito": "Nov 26, 2026 8.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/europa-league/nec-vs-rennes_game_263452.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/nec/preview/nijmegen-vs-rennes-prediction-team-news-lineups_609742.html",
+  "Id": "263452"
+ },
+ {
+  "Casa": "OFI Crete",
+  "Ospite": "Anderlecht",
+  "Ora": "21:00",
+  "Data": "2026-11-26",
+  "Lega": "Europa League - League Stage",
+  "Giornata": "Gameweek 5",
+  "P1": 29.54,
+  "PX": 23.62,
+  "P2": 46.81,
+  "P_GG": 58.17,
+  "P_NG": 41.83,
+  "P_O15": 79.45,
+  "P_U15": 20.55,
+  "P_O25": 56.79,
+  "P_U25": 43.21,
+  "P_O35": 34.27,
+  "P_U35": 65.73,
+  "P_O45": 20.58,
+  "P_U45": 79.42,
+  "PT1": 23.02,
+  "PTX": 40.3,
+  "PT2": 36.69,
+  "P_Primo_Casa": 40.0,
+  "P_Nessun_Gol": 5.41,
+  "P_Primo_Ospite": 54.59,
+  "Esatto": "1-1",
+  "P_Esatto": 10.9,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     7.0
+    ],
+    [
+     "1-0",
+     6.33
+    ],
+    [
+     "2-0",
+     4.3
+    ],
+    [
+     "3-1",
+     2.99
+    ],
+    [
+     "3-2",
+     2.51
+    ],
+    [
+     "3-0",
+     1.95
+    ],
+    [
+     "Other",
+     4.46
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.9
+    ],
+    [
+     "2-2",
+     5.79
+    ],
+    [
+     "0-0",
+     5.41
+    ],
+    [
+     "3-3",
+     1.31
+    ],
+    [
+     "Other",
+     0.21
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     9.63
+    ],
+    [
+     "0-1",
+     8.79
+    ],
+    [
+     "0-2",
+     7.44
+    ],
+    [
+     "1-3",
+     4.93
+    ],
+    [
+     "0-3",
+     3.94
+    ],
+    [
+     "2-3",
+     3.49
+    ],
+    [
+     "Other",
+     8.6
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 55.74,
+   "equal_8": 11.67,
+   "under_8": 32.59,
+   "over_9": 44.03,
+   "equal_9": 11.7,
+   "under_9": 44.26,
+   "over_10.5": 33.26,
+   "under_10.5": 66.74
+  },
+  "Linee_Casa": {
+   "over_1.5": 34.01,
+   "under_1.5": 65.99,
+   "over_2.5": 13.43,
+   "under_2.5": 86.57,
+   "over_3.5": 4.67,
+   "under_3.5": 95.33
+  },
+  "Linee_Ospite": {
+   "over_0.5": 77.53,
+   "under_0.5": 22.47,
+   "over_1.5": 47.85,
+   "under_1.5": 52.15,
+   "over_2.5": 22.48,
+   "under_2.5": 77.52,
+   "over_3.5": 8.81,
+   "under_3.5": 91.19
+  },
+  "WeSay": "1-1",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 26, 2026 8.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/europa-league/ofi-crete-vs-anderlecht_game_263450.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/anderlecht/europa-league/preview/ofi-crete-vs-anderlecht-prediction-team-news-lineups_609757.html",
+  "Id": "263450"
+ },
+ {
+  "Casa": "Sparta Prague",
+  "Ospite": "AZ Alkmaar",
+  "Ora": "21:00",
+  "Data": "2026-11-26",
+  "Lega": "Europa League - League Stage",
+  "Giornata": "Gameweek 5",
+  "P1": 37.96,
+  "PX": 21.91,
+  "P2": 40.13,
+  "P_GG": 62.91,
+  "P_NG": 37.09,
+  "P_O15": 84.05,
+  "P_U15": 15.95,
+  "P_O25": 64.51,
+  "P_U25": 35.49,
+  "P_O35": 42.44,
+  "P_U35": 57.56,
+  "P_O45": 27.46,
+  "P_U45": 72.54,
+  "PT1": 34.39,
+  "PTX": 34.87,
+  "PT2": 30.74,
+  "P_Primo_Casa": 49.75,
+  "P_Nessun_Gol": 3.96,
+  "P_Primo_Ospite": 46.29,
+  "Esatto": "1-1",
+  "P_Esatto": 9.42,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     7.93
+    ],
+    [
+     "1-0",
+     6.08
+    ],
+    [
+     "2-0",
+     4.82
+    ],
+    [
+     "3-1",
+     4.28
+    ],
+    [
+     "3-2",
+     3.84
+    ],
+    [
+     "3-0",
+     2.9
+    ],
+    [
+     "Other",
+     8.1
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     9.42
+    ],
+    [
+     "2-2",
+     6.19
+    ],
+    [
+     "0-0",
+     3.96
+    ],
+    [
+     "3-3",
+     1.94
+    ],
+    [
+     "Other",
+     0.4
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     8.17
+    ],
+    [
+     "0-1",
+     5.9
+    ],
+    [
+     "0-2",
+     5.29
+    ],
+    [
+     "1-3",
+     4.52
+    ],
+    [
+     "2-3",
+     3.64
+    ],
+    [
+     "0-3",
+     3.07
+    ],
+    [
+     "Other",
+     9.54
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 64.46,
+   "equal_8": 10.41,
+   "under_8": 25.13,
+   "over_9": 53.32,
+   "equal_9": 11.14,
+   "under_9": 35.54,
+   "over_10.5": 42.37,
+   "under_10.5": 57.63
+  },
+  "Linee_Casa": {
+   "over_1.5": 44.04,
+   "under_1.5": 55.96,
+   "over_2.5": 21.46,
+   "under_2.5": 78.54,
+   "over_3.5": 8.5,
+   "under_3.5": 91.5
+  },
+  "Linee_Ospite": {
+   "over_0.5": 74.13,
+   "under_0.5": 25.87,
+   "over_1.5": 46.6,
+   "under_1.5": 53.4,
+   "over_2.5": 23.11,
+   "under_2.5": 76.89,
+   "over_3.5": 9.94,
+   "under_3.5": 90.06
+  },
+  "WeSay": "1-3",
+  "WeSay_Segno": "2",
+  "Ora_Sito": "Nov 26, 2026 8.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/europa-league/sparta-prague-vs-az_game_263447.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/sparta-prague/europa-league/preview/sparta-prague-vs-az-prediction-team-news-lineups_609744.html",
+  "Id": "263447"
+ },
+ {
+  "Casa": "Sunderland",
+  "Ospite": "Jagiellonia Bialystok",
+  "Ora": "21:00",
+  "Data": "2026-11-26",
+  "Lega": "Europa League - League Stage",
+  "Giornata": "Gameweek 5",
+  "P1": 42.4,
+  "PX": 24.14,
+  "P2": 33.46,
+  "P_GG": 51.64,
+  "P_NG": 48.36,
+  "P_O15": 75.22,
+  "P_U15": 24.78,
+  "P_O25": 51.87,
+  "P_U25": 48.13,
+  "P_O35": 29.35,
+  "P_U35": 70.65,
+  "P_O45": 16.9,
+  "P_U45": 83.1,
+  "PT1": 26.49,
+  "PTX": 41.13,
+  "PT2": 32.38,
+  "P_Primo_Casa": 45.73,
+  "P_Nessun_Gol": 6.71,
+  "P_Primo_Ospite": 47.56,
+  "Esatto": "1-1",
+  "P_Esatto": 11.05,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     9.96
+    ],
+    [
+     "2-1",
+     8.73
+    ],
+    [
+     "2-0",
+     7.14
+    ],
+    [
+     "3-1",
+     4.19
+    ],
+    [
+     "3-0",
+     3.83
+    ],
+    [
+     "3-2",
+     2.64
+    ],
+    [
+     "Other",
+     5.92
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.05
+    ],
+    [
+     "0-0",
+     6.71
+    ],
+    [
+     "2-2",
+     5.09
+    ],
+    [
+     "3-3",
+     1.08
+    ],
+    [
+     "Other",
+     0.22
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     8.12
+    ],
+    [
+     "1-2",
+     7.4
+    ],
+    [
+     "0-2",
+     5.14
+    ],
+    [
+     "1-3",
+     3.18
+    ],
+    [
+     "0-3",
+     2.57
+    ],
+    [
+     "2-3",
+     2.12
+    ],
+    [
+     "Other",
+     4.92
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 67.2,
+   "equal_8": 10.78,
+   "under_8": 22.02,
+   "over_9": 55.28,
+   "equal_9": 11.93,
+   "under_9": 32.8,
+   "over_10.5": 43.3,
+   "under_10.5": 56.7
+  },
+  "Linee_Casa": {
+   "over_1.5": 40.96,
+   "under_1.5": 59.04,
+   "over_2.5": 17.88,
+   "under_2.5": 82.12,
+   "over_3.5": 6.14,
+   "under_3.5": 93.86
+  },
+  "Linee_Ospite": {
+   "over_0.5": 66.45,
+   "under_0.5": 33.55,
+   "over_1.5": 34.36,
+   "under_1.5": 65.64,
+   "over_2.5": 14.09,
+   "under_2.5": 85.91,
+   "over_3.5": 5.14,
+   "under_3.5": 94.86
+  },
+  "WeSay": "1-0",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 26, 2026 8.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/europa-league/sunderland-vs-jagiellonia-bialystok_game_263445.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/sunderland/europa-league/preview/sunderland-vs-jagiellonia-prediction-team-news-lineups_609736.html",
+  "Id": "263445"
+ },
+ {
+  "Casa": "Torreense",
+  "Ospite": "Celtic",
+  "Ora": "21:00",
+  "Data": "2026-11-26",
+  "Lega": "Europa League - League Stage",
+  "Giornata": "Gameweek 5",
+  "P1": 22.44,
+  "PX": 18.9,
+  "P2": 58.63,
+  "P_GG": 63.56,
+  "P_NG": 36.44,
+  "P_O15": 86.55,
+  "P_U15": 13.45,
+  "P_O25": 69.18,
+  "P_U25": 30.82,
+  "P_O35": 47.89,
+  "P_U35": 52.1,
+  "P_O45": 32.86,
+  "P_U45": 67.14,
+  "PT1": 17.2,
+  "PTX": 36.45,
+  "PT2": 46.34,
+  "P_Primo_Casa": 33.24,
+  "P_Nessun_Gol": 3.04,
+  "P_Primo_Ospite": 63.72,
+  "Esatto": "1-2",
+  "P_Esatto": 9.68,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     5.22
+    ],
+    [
+     "1-0",
+     3.66
+    ],
+    [
+     "3-2",
+     2.66
+    ],
+    [
+     "3-1",
+     2.49
+    ],
+    [
+     "2-0",
+     2.46
+    ],
+    [
+     "3-0",
+     1.15
+    ],
+    [
+     "Other",
+     4.8
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     7.55
+    ],
+    [
+     "2-2",
+     5.9
+    ],
+    [
+     "0-0",
+     3.04
+    ],
+    [
+     "3-3",
+     1.99
+    ],
+    [
+     "Other",
+     0.41
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     9.68
+    ],
+    [
+     "0-2",
+     7.38
+    ],
+    [
+     "0-1",
+     6.7
+    ],
+    [
+     "1-3",
+     6.63
+    ],
+    [
+     "0-3",
+     5.23
+    ],
+    [
+     "2-3",
+     4.74
+    ],
+    [
+     "Other",
+     18.26
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 51.03,
+   "equal_8": 11.13,
+   "under_8": 37.84,
+   "over_9": 40.25,
+   "equal_9": 10.78,
+   "under_9": 48.97,
+   "over_10.5": 30.6,
+   "under_10.5": 69.4
+  },
+  "Linee_Casa": {
+   "over_1.5": 31.82,
+   "under_1.5": 68.18,
+   "over_2.5": 13.5,
+   "under_2.5": 86.5,
+   "over_3.5": 5.21,
+   "under_3.5": 94.79
+  },
+  "Linee_Ospite": {
+   "over_0.5": 84.84,
+   "under_0.5": 15.16,
+   "over_1.5": 62.88,
+   "under_1.5": 37.12,
+   "over_2.5": 37.26,
+   "under_2.5": 62.74,
+   "over_3.5": 18.67,
+   "under_3.5": 81.33
+  },
+  "WeSay": "1-3",
+  "WeSay_Segno": "2",
+  "Ora_Sito": "Nov 26, 2026 8.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/europa-league/torreense-vs-celtic_game_263444.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/torreense/europa-league/preview/torreense-vs-celtic-prediction-team-news-lineups_609752.html",
+  "Id": "263444"
  }
 ]
