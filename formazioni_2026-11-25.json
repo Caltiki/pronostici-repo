@@ -74,6 +74,7 @@
    "A. McCarthy (Sabah FA)",
    "A. Khaybulaev (Sabah FA)",
    "V. Simic (Sabah FA)",
+   "H. Abdelkarim (Barcelona)",
    "R. Bardghji (Barcelona)",
    "A. Christensen (Barcelona)",
    "X. Espart (Barcelona)",
@@ -184,6 +185,21 @@
     "voto": 6.26,
     "gol_squadra": 17,
     "partite_squadra": 12,
+    "quota_gol": 0
+   },
+   {
+    "nome": "H. Abdelkarim",
+    "squadra": "Barcelona",
+    "tipo": "Missing Fixture",
+    "motivo": "Muscle Injury",
+    "pres": 2,
+    "tit": 0,
+    "min": 17,
+    "gol": 0,
+    "ass": 0,
+    "voto": 1.76,
+    "gol_squadra": 66,
+    "partite_squadra": 17,
     "quota_gol": 0
    },
    {
@@ -940,25 +956,9 @@
    "M. Roseth (Viking)",
    "A. Baertelsen (Viking)",
    "V. Berisha (Viking)",
-   "P. Christiansen (Viking)",
    "N. D'Agostino (Viking)"
   ],
   "assenti_peso": [
-   {
-    "nome": "P. Christiansen",
-    "squadra": "Viking",
-    "tipo": "Questionable",
-    "motivo": "Illness",
-    "pres": 32,
-    "tit": 31,
-    "min": 2701,
-    "gol": 22,
-    "ass": 8,
-    "voto": 7.31,
-    "gol_squadra": 84,
-    "partite_squadra": 33,
-    "quota_gol": 26
-   },
    {
     "nome": "K. Haugen",
     "squadra": "Viking",
@@ -2333,5 +2333,116 @@
    }
   },
   "partita": "Kryvbas KR - FC Kharkiv"
+ },
+ "1577597": {
+  "titolari": {
+   "FK Neftekhimik": {
+    "modulo": "",
+    "titolari": [
+     "A. Ismagilov",
+     "A. Teshkin",
+     "M. Sukhoruchenko",
+     "D. Sukhomlinov",
+     "L. Sharifullin",
+     "I. Pyatkin",
+     "P. Platonov",
+     "N. Pechenkin",
+     "E. Mukba",
+     "I. Mashukov",
+     "A. Kakhidze"
+    ]
+   },
+   "Rotor Volgograd": {
+    "modulo": "",
+    "titolari": [
+     "N. Chagrov",
+     "A. Troshechkin",
+     "I. Rodionov",
+     "N. Poyarkov",
+     "N. Pokidyshev",
+     "I. Manelov",
+     "A. Kleshchenko",
+     "A. Khokhlachev",
+     "A. Khityaev",
+     "A. Eldarushev",
+     "R. Baytukov"
+    ]
+   }
+  },
+  "partita": "FK Neftekhimik - Rotor Volgograd"
+ },
+ "1553905": {
+  "titolari": {
+   "Radnicki NIS": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "I. Kostić",
+     "S. Veličković",
+     "U. Vitas",
+     "N. Zečević",
+     "A. Vidović",
+     "D. Krajišnik",
+     "F. Kanouté",
+     "G. Ariyibi",
+     "R. Milosavljević",
+     "I. Abass",
+     "V. Jovanović"
+    ]
+   },
+   "Železničar Pančevo": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "J. Miladinović",
+     "U. Tegeltija",
+     "M. Milikić",
+     "N. Vidojević",
+     "N. Đuričić",
+     "M. Amadou Sabo",
+     "N. Jovanović",
+     "M. Pantović",
+     "D. Tosic",
+     "S. Plavšić",
+     "K. Kwaku"
+    ]
+   }
+  },
+  "partita": "Radnicki NIS - Železničar Pančevo"
+ },
+ "1637495": {
+  "titolari": {
+   "Persib Bandung": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "T. Paku Alam",
+     "S. Walsh",
+     "D. Lončar",
+     "Júlio César",
+     "P. Matricardi",
+     "E. Reijnders",
+     "G. Notsuda",
+     "L. Menalo",
+     "A. Alis",
+     "R. Oratmangoen",
+     "M. Peralta"
+    ]
+   },
+   "FC Seoul": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "Baek Jong-Beom",
+     "Park Soo-Il",
+     "Lee Sang-Min",
+     "Yazan Al Arab",
+     "Kim Jin-Su",
+     "Moon Seon-Min",
+     "Park Jang Han-Gyeol",
+     "H. Babec",
+     "Anderson Oliveira",
+     "L. Ruiz",
+     "Cho Young-Wook"
+    ]
+   }
+  },
+  "partita": "Persib Bandung - FC Seoul"
  }
 }
