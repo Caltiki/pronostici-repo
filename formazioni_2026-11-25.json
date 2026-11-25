@@ -688,7 +688,42 @@
     "partite_squadra": 18,
     "quota_gol": 0
    }
-  ]
+  ],
+  "titolari": {
+   "Bolton": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "G. Bazunu",
+     "Luca Stephenson",
+     "L. Brunt",
+     "A. Famewo",
+     "M. Conway",
+     "X. Simons",
+     "J. Sheehan",
+     "Gaizka Larrazabal",
+     "A. Ito",
+     "S. Iling-Junior",
+     "T. Bair"
+    ]
+   },
+   "West Brom": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "M. O’Leary",
+     "B. Pereira",
+     "C. Mepham",
+     "G. Campbell",
+     "C. Styles",
+     "K. Tunde",
+     "R. Nzingoula",
+     "J. Molumby",
+     "Harry Whitwell",
+     "A. Heggebø",
+     "F. Myhre"
+    ]
+   }
+  },
+  "partita": "Bolton - West Brom"
  },
  "1563284": {
   "assenti": [
@@ -930,7 +965,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Achilles Tendon Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Burnley": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "M. Weiß",
+     "K. Walker",
+     "Max Alleyne",
+     "Igor",
+     "Lucas Pires",
+     "J. Cullen",
+     "R. Hatate",
+     "L. Ramazani",
+     "A. Ramsey",
+     "J. Banel",
+     "Z. Amdouni"
+    ]
+   },
+   "Birmingham": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "J. Beadle",
+     "B. Osayi-Samuel",
+     "P. Neumann",
+     "D. Fry",
+     "A. Cochrane",
+     "T. Iwata",
+     "J. Solis",
+     "Carlos Vicente",
+     "J. Stansfield",
+     "L. Millar",
+     "A. Priske"
+    ]
+   }
+  },
+  "partita": "Burnley - Birmingham"
  },
  "1563286": {
   "assenti": [
@@ -1110,7 +1180,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Achilles Tendon Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Watford": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "F. Ravaglia",
+     "O. Traoré",
+     "M. Pollock",
+     "S. Coulibaly",
+     "J. Zemura",
+     "E. Bove",
+     "H. Kyprianou",
+     "Iker Bravo",
+     "Amin Nabizada",
+     "M. Doumbia",
+     "S. Mavididi"
+    ]
+   },
+   "Blackburn": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "A. Pears",
+     "Gady Beyuku",
+     "H. Carter",
+     "S. McLoughlin",
+     "H. Pickering",
+     "M. Baradji",
+     "Kristi Montgomery",
+     "J. Fevrier",
+     "T. Cantwell",
+     "O. Afolayan",
+     "A. Guðjohnsen"
+    ]
+   }
+  },
+  "partita": "Watford - Blackburn"
  },
  "1635625": {
   "assenti": [
@@ -1242,7 +1347,42 @@
     "tipo": "Questionable",
     "motivo": "Knee Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Atletico Madrid": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "J. Oblak",
+     "Marcos Llorente",
+     "Robin Le Normand",
+     "D. Hancko",
+     "Álex Grimaldo",
+     "Lee Kang-In",
+     "Koke",
+     "J. Cardoso",
+     "Álex Baena",
+     "J. Álvarez",
+     "A. Sørloth"
+    ]
+   },
+   "Viking": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "Ľ. Belko",
+     "H. Haugen",
+     "G. Stensness",
+     "H. Falchener",
+     "H. Heggheim",
+     "K. Askildsen",
+     "T. Moi",
+     "S. Kvia-Egeskog",
+     "H. Bjørdal",
+     "E. Botheim",
+     "Z. Tripić"
+    ]
+   }
+  },
+  "partita": "Atletico Madrid - Viking"
  },
  "1635642": {
   "assenti": [
@@ -1347,7 +1487,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Leg Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Club Brugge KV": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Y. Sommer",
+     "K. Sabbe",
+     "J. Spileers",
+     "B. Mechele",
+     "J. Seys",
+     "F. Potts",
+     "H. Vanaken",
+     "Carlos Forbs",
+     "H. Vetlesen",
+     "F. Lemaréchal",
+     "N. Tresoldi"
+    ]
+   },
+   "Liverpool": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Alisson Becker",
+     "J. Frimpong",
+     "J. Jacquet",
+     "R. Araújo",
+     "M. Kerkez",
+     "T. Nyoni",
+     "D. Szoboszlai",
+     "Víctor Muñoz",
+     "F. Wirtz",
+     "B. Barcola",
+     "A. Isak"
+    ]
+   }
+  },
+  "partita": "Club Brugge KV - Liverpool"
  },
  "1635673": {
   "assenti": [
@@ -1454,7 +1629,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Off the roster"
    }
-  ]
+  ],
+  "titolari": {
+   "Inter": {
+    "modulo": "3-5-2",
+    "titolari": [
+     "Josep Martínez",
+     "Y. Bisseck",
+     "M. Akanji",
+     "A. Bastoni",
+     "D. Spence",
+     "N. Barella",
+     "P. Sučić",
+     "H. Mkhitaryan",
+     "Carlos Augusto",
+     "F. Esposito",
+     "M. Thuram"
+    ]
+   },
+   "VfB Stuttgart": {
+    "modulo": "3-4-3",
+    "titolari": [
+     "D. Seimen",
+     "Finn Jeltsch",
+     "J. Chabot",
+     "R. Hendriks",
+     "J. Vagnoman",
+     "N. Nartey",
+     "Y. Spalt",
+     "M. Mittelstädt",
+     "B. El Khannouss",
+     "E. Demirović",
+     "C. Führich"
+    ]
+   }
+  },
+  "partita": "Inter - VfB Stuttgart"
  },
  "1635682": {
   "assenti": [
@@ -1611,7 +1821,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Knee Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Lille": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "B. Özer",
+     "M. Goffi",
+     "N. Ngoy",
+     "Alexsandro Ribeiro",
+     "C. Verdonk",
+     "N. Mukau",
+     "N. Bentaleb",
+     "B. André",
+     "E. Mbappé",
+     "A. Ueda",
+     "H. Haraldsson"
+    ]
+   },
+   "Bayern München": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "J. Urbig",
+     "J. Stanišić",
+     "D. Upamecano",
+     "Kim Min-Jae",
+     "H. Ito",
+     "J. Kimmich",
+     "A. Pavlović",
+     "K. Laimer",
+     "T. Bischof",
+     "N. Brown",
+     "L. Karl"
+    ]
+   }
+  },
+  "partita": "Lille - Bayern München"
  },
  "1635703": {
   "assenti": [
@@ -1713,7 +1958,42 @@
     "partite_squadra": 17,
     "quota_gol": 0
    }
-  ]
+  ],
+  "titolari": {
+   "Paris Saint Germain": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "M. Safonov",
+     "A. Hakimi",
+     "I. Zabarnyi",
+     "W. Pacho",
+     "Nuno Mendes",
+     "João Neves",
+     "Vitinha",
+     "Fabián Ruiz",
+     "M. Akliouche",
+     "Ferran Torres",
+     "Senny Mayulu"
+    ]
+   },
+   "AS Roma": {
+    "modulo": "3-4-2-1",
+    "titolari": [
+     "M. Svilar",
+     "G. Mancini",
+     "E. Ndicka",
+     "Hermoso",
+     "Wesley",
+     "M. de Roon",
+     "M. Koné",
+     "N. Molina",
+     "N. Pisilli",
+     "M. Soulé",
+     "S. Castro"
+    ]
+   }
+  },
+  "partita": "Paris Saint Germain - AS Roma"
  },
  "1635724": {
   "assenti": [
@@ -1896,7 +2176,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Off the roster"
    }
-  ]
+  ],
+  "titolari": {
+   "Shakhtar Donetsk": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "D. Riznyk",
+     "Vinícius Tobias",
+     "V. Bondar",
+     "M. Matvienko",
+     "Pedrinho",
+     "E. Nazaryna",
+     "Alisson Santana",
+     "O. Ocheretko",
+     "Marlon Gomes",
+     "Newertton",
+     "L. Traoré"
+    ]
+   },
+   "Fenerbahçe": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Ederson",
+     "Nélson Semedo",
+     "M. Škriniar",
+     "K. Peprah Oppong",
+     "A. Brown",
+     "İ. Yüksek",
+     "N. Kanté",
+     "O. Aydın",
+     "M. Greenwood",
+     "K. Aktürkoğlu",
+     "V. Muriqi"
+    ]
+   }
+  },
+  "partita": "Shakhtar Donetsk - Fenerbahçe"
  },
  "1635735": {
   "assenti": [
@@ -2003,7 +2318,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Knee Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Sporting CP": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "Kaique",
+     "Iván Fresneda",
+     "Eduardo Quaresma",
+     "Gonçalo Inácio",
+     "M. Araújo",
+     "S. Andersen",
+     "Sergi Altimira",
+     "I. Doumbia",
+     "Geny Catamo",
+     "L. Suárez",
+     "Luis Guilherme"
+    ]
+   },
+   "Manchester United": {
+    "modulo": "3-4-2-1",
+    "titolari": [
+     "S. Lammens",
+     "L. Yoro",
+     "H. Maguire",
+     "Lisandro Martínez",
+     "A. Diallo",
+     "K. Mainoo",
+     "Y. Tielemans",
+     "N. Mazraoui",
+     "B. Mbeumo",
+     "Bruno Fernandes",
+     "J. Zirkzee"
+    ]
+   }
+  },
+  "partita": "Sporting CP - Manchester United"
  },
  "1563285": {
   "assenti": [
@@ -2174,7 +2524,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Knee Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Stoke City": {
+    "modulo": "3-4-3",
+    "titolari": [
+     "V. Johansson",
+     "B. Wilmot",
+     "B. Lawal",
+     "L. Graham",
+     "B. Johnson",
+     "J. McGlynn",
+     "E. Galbraith",
+     "J. Devenny",
+     "M. Manhoef",
+     "G. Hirst",
+     "Bae Jun-Ho"
+    ]
+   },
+   "Millwall": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "L. Jensen",
+     "J. Osei-Tutu",
+     "C. Taylor",
+     "J. Cooper",
+     "A. Doughty",
+     "Jenson Metcalfe",
+     "D. Mazou-Sacko",
+     "M. Sykes",
+     "C. Neghli",
+     "T. Arconte",
+     "M. Ivanović"
+    ]
+   }
+  },
+  "partita": "Stoke City - Millwall"
  },
  "1630407": {
   "titolari": {
