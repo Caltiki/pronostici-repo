@@ -8331,6 +8331,32 @@
   var SCHEDA = { data: null, chiave: null, interna: false };
   var ritorno = null, daClic = false;
 
+  // (217) la voce della scheda per la stessa partita, coi nomi scritti
+  // diversi: per ogni partita della scheda il punteggio migliore fra i suoi
+  // nomi (prezzi, consensus, poisson... li scrivono ognuno a modo suo).
+  function aliasVicino(s, casa, osp, ora) {
+    if (!s || !s.alias || !Array.isArray(s.partite) || !casa || !osp) return null;
+    var min = function (x) { var m = /(\d{1,2}):(\d{2})/.exec(x || ""); return m ? +m[1] * 60 + +m[2] : null; };
+    var t = min(ora), per = {};
+    for (var k in s.alias) {
+      var i = s.alias[k], P = s.partite[i];
+      if (!P) continue;
+      var u = min(P.Ora);
+      // un'ora di tolleranza: le fonti non sempre hanno lo stesso orario
+      // (Paderborn-Schalke del 28/11: 15:30 per AsianOdds, 16:00 nella scheda)
+      if (t != null && u != null && Math.abs(u - t) > 60) continue;
+      var n = k.split("|");
+      if (n.length < 3) continue;
+      if (sofaTipo(bsNorm(n[1])) !== sofaTipo(bsNorm(casa)) || sofaTipo(bsNorm(n[2])) !== sofaTipo(bsNorm(osp))) continue;
+      var a = bsPunti(casa, n[1]), b = bsPunti(osp, n[2]);
+      if (Math.min(a, b) < 0.6) continue;
+      var v = a + b;
+      if (!per[i] || v > per[i].v || (v === per[i].v && n[0] === "prezzi")) per[i] = { v: v, k: k };
+    }
+    var l = Object.keys(per).map(function (i) { return per[i]; }).sort(function (x, y) { return y.v - x.v; });
+    if (!l.length || l[0].v < 1.5 || (l[1] && l[0].v - l[1].v < 0.15)) return null;
+    return l[0].k;
+  }
   function aliasDi(sez, r) {
     return SEZ[sez].prefisso.replace(/_$/, "") + "|" + r.Casa + "|" + r.Ospite;
   }
@@ -8342,7 +8368,7 @@
     var fine = "</div></details></div>";
     var i = html.lastIndexOf(fine);
     if (i < 0) return html;
-    return html.slice(0, i) + '<p class="aggancio" data-alias="' + esc(aliasDi(sez, r)) + '"></p>' + html.slice(i);
+    return html.slice(0, i) + '<p class="aggancio" data-alias="' + esc(aliasDi(sez, r)) + '" data-ora="' + esc(String(r.Ora || "").slice(0, 5)) + '"></p>' + html.slice(i);
   }
 
   function collegaAgganci($r, data) {
@@ -8376,6 +8402,14 @@
           if (s.alias[pre + "|" + nomi] != null) { al = pre + "|" + nomi; return true; }
           return false;
         });
+      }
+      // (217) NOMI SCRITTI DIVERSI (AsianOdds "Mainz", la scheda "FSV Mainz
+      // 05"): la stessa partita per somiglianza dei nomi, solo fra quelle
+      // entro un'ora dall'orario e con un vincitore netto, come il book 105
+      // accanto a Pinnacle. Nel dubbio niente link.
+      if (s && s.alias && !s.alias[al] && p.dataset.ora) {
+        var pz = al.split("|"), vic = aliasVicino(s, pz[1], pz[2], p.dataset.ora);
+        if (vic) al = vic;
       }
       if (!s || !s.alias || !s.alias[al]) { p.remove(); return; }
       p.innerHTML = '<a class="apri-scheda" href="#scheda/' + data + "/" + encodeURIComponent(al) + '">' +
