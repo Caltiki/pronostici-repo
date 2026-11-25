@@ -521,7 +521,11 @@ jobs:
           # (12/11) Anche AsianOdds: i suoi file di oggi e di domani hanno
           # quote del mattino che nessuno aggiorna piu', e i prezzi equi le
           # userebbero come se fossero fresche.
-          tolte = ("sportytrader", "fpnet", "footystatswdw", "footballpark", "heropredict", "asianodds")
+          # (25/11) AsianOdds TOLTO da questa lista: da oggi lo pubblica il
+          # server Aruba (asianodds_ci.py con l'accesso al sito, 3 giri al
+          # giorno), e qui i suoi file di oggi e dei giorni dopo verrebbero
+          # cancellati a ogni giro.
+          tolte = ("sportytrader", "fpnet", "footystatswdw", "footballpark", "heropredict")
           rx2 = re.compile(r"^(" + "|".join(tolte) + r")_(\d{4}-\d{2}-\d{2})\.json$")
           via = 0
           for nome in sorted(os.listdir("ghdata")):
@@ -2833,7 +2837,11 @@ jobs:
           # (12/11) Anche AsianOdds: i suoi file di oggi e di domani hanno
           # quote del mattino che nessuno aggiorna piu', e i prezzi equi le
           # userebbero come se fossero fresche.
-          tolte = ("sportytrader", "fpnet", "footystatswdw", "footballpark", "heropredict", "asianodds")
+          # (25/11) AsianOdds TOLTO da questa lista: da oggi lo pubblica il
+          # server Aruba (asianodds_ci.py con l'accesso al sito, 3 giri al
+          # giorno), e qui i suoi file di oggi e dei giorni dopo verrebbero
+          # cancellati a ogni giro.
+          tolte = ("sportytrader", "fpnet", "footystatswdw", "footballpark", "heropredict")
           rx2 = re.compile(r"^(" + "|".join(tolte) + r")_(\d{4}-\d{2}-\d{2})\.json$")
           via = 0
           for nome in sorted(os.listdir("ghdata")):
