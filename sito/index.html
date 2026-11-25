@@ -3155,6 +3155,7 @@
             (gol ? risHtml(gol, null, "risultato finale") : "") +
             (r0.Campionato ? '<span class="chip">' + esc(r0.Campionato) + "</span>" : "") +
             (eAltroBook(r0.Fonte) ? '<span class="chip" title="Pinnacle non quota questa partita: prezzo da ' + esc(r0.Fonte) + '">quota ' + esc(r0.Fonte) + "</span>" : "") +
+            chipFonte(r0) +
             (fidM ? '<span class="pill ' + fidM[0] + '" title="' + esc(fidM[1]) + '">margine ' + f1(num(r0.Margine)) + "%</span>" : "") +
             pillConsenso(g.filter(function (x) { return x._cons; })[0]) + "</div>" +
             '<div class="partita">' + partitaHtml(r0.Casa, r0.Ospite, r0.Partita, campiRiga(r0)) + "</div>" + PROB_CARTA + sqHtml(r0) +
@@ -3182,7 +3183,7 @@
           (function () { var f = g.filter(function (x) { return x._fresca; })[0]; return f ? '<span class="pill fresca" title="1X2 aggiornato con la quota Pinnacle">\u21bb ' + esc(f._fresca) + "</span>" : ""; })() +
           (gol ? risHtml(gol, ep, ep ? titoloEp : "risultato finale") : "") +
           (r0.Campionato ? '<span class="chip">' + esc(r0.Campionato) + "</span>" : "") +
-          (r0.Fonte === "OddsAPI" ? '<span class="chip">quota Betfair</span>' : "") +
+          chipFonte(r0) +
           pillConsenso(g.filter(function (x) { return x._cons; })[0]) +
           (eAltroBook(r0.Fonte) ? '<span class="chip" title="Pinnacle non quota questa partita: prezzo da ' + esc(r0.Fonte) + '">quota ' + esc(r0.Fonte) + "</span>" : "") + "</div>" +
           '<div class="partita">' + partitaHtml(r0.Casa, r0.Ospite, r0.Partita, campiRiga(r0)) + "</div>" + PROB_CARTA + sqHtml(r0) +
@@ -4261,12 +4262,27 @@
 
   // (173) AsianOdds non c'e' piu' (12/11): le sue righe vecchie si chiamano "altro book"
   var NOMI_QUOTA = { Pinnacle: "Pinnacle", AsianOdds: "altro book", OddsAPI: "Betfair", FootyMetrics: "più book" };
+  // (218) DA DOVE VIENE DAVVERO LA QUOTA. AsianOdds dal 25/11 e' il book 105
+  // (prima era 1xBet, margine 8-12%: "altro book"). The Odds API porta il
+  // nome del book in Rif_Book, e quasi sempre e' PINNACLE, non Betfair.
+  function nomeQuotaDi(r) {
+    var f = r && r.Fonte;
+    if (f === "AsianOdds") return String(r.Data || "") >= "2026-11-25" ? "book 105" : "altro book";
+    if (f === "OddsAPI") return r.Rif_Book ? String(r.Rif_Book) : "The Odds API";
+    return NOMI_QUOTA[f] || (eAltroBook(f) ? f : null);
+  }
+  function chipFonte(r) {
+    if (!r || (r.Fonte !== "AsianOdds" && r.Fonte !== "OddsAPI")) return "";
+    var n = nomeQuotaDi(r);
+    return '<span class="chip" title="' + esc(r.Fonte === "OddsAPI" ? "Prezzo da The Odds API: " + n : "Prezzo da AsianOdds: " + n) + '">quota ' + esc(n) +
+      (r.Fonte === "OddsAPI" && /pinnacle/i.test(n) ? " \u00b7 Odds API" : "") + "</span>";
+  }
   // (139) GLI ALTRI BOOK dove Pinnacle manca (altribook_<data>.json): la
   // fonte e' il nome del book, o "media di N book".
   var LIBRI_SHARP = ["SBO", "Betfair", "Marathonbet", "Dafabet", "188Bet", "1xBet"];
   function eAltroBook(f) { return LIBRI_SHARP.indexOf(String(f || "")) >= 0 || /^media di \d+ book$/.test(String(f || "")); }
-  function fonteQuotaHtml(f) {
-    var n = NOMI_QUOTA[f] || (eAltroBook(f) ? f : null);
+  function fonteQuotaHtml(f, r) {
+    var n = r ? nomeQuotaDi(r) : NOMI_QUOTA[f] || (eAltroBook(f) ? f : null);
     if (!n) return "";
     return '<span class="fonte-q' + (f === "Pinnacle" ? " pin" : "") + '" title="Quota e margine di ' + esc(n) + '">' + esc(n) + "</span>";
   }
@@ -4514,7 +4530,7 @@
       (r.Gruppo ? '<span class="chip">' + esc(r.Gruppo) + "</span>" : "") +
       // DA DOVE VIENE LA QUOTA (112), accanto al margine: e' il margine di
       // quel book. "più book" = la migliore fra piu' bookmaker.
-      fonteQuotaHtml(r.Fonte) +
+      fonteQuotaHtml(r.Fonte, r) +
       (fid ? '<span class="pill ' + fid[0] + '">margine ' + f1(marg) + "%</span>" : "") +
       (r._fresca ? '<span class="pill fresca" title="Quota Pinnacle aggiornata">\u21bb ' + esc(r._fresca) + "</span>" : "") +
       "</div>" +
@@ -7836,7 +7852,7 @@
     var p = r._p || [];
     var det = [];
     if (r.Lega) det.push("<p>" + esc(r.Lega) + "</p>");
-    det.push("<p>Quote " + esc(r.Fonte === "AsianOdds" ? "di un altro book" : r.Fonte) + ": <span class=nw><b class=seg>1</b> " + qv(r.Q1) + "</span>" + " · <span class=nw><b class=seg>X</b> " + qv(r.QX) + "</span>" + " · <span class=nw><b class=seg>2</b> " + qv(r.Q2) + "</span>" +
+    det.push("<p>Quote " + esc(r.Fonte === "AsianOdds" ? "del " + nomeQuotaDi(r) : r.Fonte === "OddsAPI" ? nomeQuotaDi(r) + " (The Odds API)" : r.Fonte) + ": <span class=nw><b class=seg>1</b> " + qv(r.Q1) + "</span>" + " · <span class=nw><b class=seg>X</b> " + qv(r.QX) + "</span>" + " · <span class=nw><b class=seg>2</b> " + qv(r.Q2) + "</span>" +
       (marg != null ? " (margine " + mv(marg) + ")" : "") + "</p>");
     if (p[0] != null) det.push("<p>Senza margine: <span class=nw><b class=seg>1</b> " + pv(p[0]) + "</span>" + " · <span class=nw><b class=seg>X</b> " + pv(p[1]) + "</span>" + " · <span class=nw><b class=seg>2</b> " + pv(p[2]) + "</span>" + "</p>");
     det.push("<p>Quota equa " + articolo(esito) + ": " + qv(equa) + (r._quota ? " – il book la paga " + qv(r._quota) : "") +
@@ -7848,7 +7864,7 @@
       "<details><summary>" +
       '<span class="segno">' + esc(esito || "?") + "</span>" +
       '<div class="corpo">' +
-      '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" + fonteQuotaHtml(r.Fonte) +
+      '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" + fonteQuotaHtml(r.Fonte, r) +
       (fid ? '<span class="pill ' + fid[0] + '">margine ' + f1(marg) + "%</span>" : "") + "</div>" +
       '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" +
       '<div class="sel">' + sel + (r._quota ? " · quota book " + qv(r._quota) : "") + "</div>" +
@@ -8439,7 +8455,7 @@
   }
 
   var NOMI_SCHEDA = {
-    asianodds: "altro book", footymetrics: "FootyMetrics", prezzi: "Probabilit\u00e0 senza margine", poisson: "Gol attesi",
+    asianodds: "book 105", footymetrics: "FootyMetrics", prezzi: "Probabilit\u00e0 senza margine", poisson: "Gol attesi",
     accordo: "Statarea + WebPronostici", consenso: "Consenso medio", statarea: "Statarea",
     wp_1x2: "WebPronostici", wp_ou: "WebPronostici", wp_ggng: "WebPronostici", wp_misti: "WebPronostici",
     webpronostici: "WebPronostici", betimate: "Betimate", xgaura: "xGaura", sportytrader: "Sportytrader",
