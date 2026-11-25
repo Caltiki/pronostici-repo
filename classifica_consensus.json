@@ -2,54 +2,54 @@
  "medio": {
   "copertura": {
    "1": 28851,
-   "2": 4078,
+   "2": 4080,
    "3": 2319,
    "4": 1103,
-   "5": 460
+   "5": 461
   },
-  "totale": 36811,
+  "totale": 36814,
   "brier": 0.5762,
   "brier_clima": 0.6394,
   "fonti": [
    {
     "nome": "betimate",
-    "partite": 35358,
+    "partite": 35361,
     "brier": 0.5765,
     "brier_media": 0.5756
    },
    {
     "nome": "footymetrics",
-    "partite": 3503,
+    "partite": 3504,
     "brier": 0.6005,
-    "brier_media": 0.5901
+    "brier_media": 0.59
    },
    {
     "nome": "ratingbet",
-    "partite": 2148,
+    "partite": 2150,
     "brier": 0.5641,
-    "brier_media": 0.5696
+    "brier_media": 0.5695
    },
    {
     "nome": "soccersite",
-    "partite": 5839,
+    "partite": 5841,
     "brier": 0.5863,
-    "brier_media": 0.5775
+    "brier_media": 0.5776
    },
    {
     "nome": "statarea",
-    "partite": 3828,
+    "partite": 3829,
     "brier": 0.6021,
     "brier_media": 0.5948
    }
   ],
   "mercato": {
-   "partite": 7712,
+   "partite": 7715,
    "poche": false,
    "brier": 0.5826,
-   "brier_mercato": 0.5689,
+   "brier_mercato": 0.5688,
    "diff": 0.0138,
    "es": 0.0016,
-   "t": 8.82,
+   "t": 8.83,
    "ic": [
     0.0107,
     0.0168
@@ -64,10 +64,10 @@
     },
     {
      "fonte": "Pinnacle",
-     "partite": 2803,
+     "partite": 2806,
      "diff": 0.014,
      "es": 0.0023,
-     "t": 5.99
+     "t": 6.0
     },
     {
      "fonte": "altri book",
@@ -86,9 +86,9 @@
    ]
   }
  },
- "aggiornato": "2026-11-25 05:04",
+ "aggiornato": "2026-11-25 06:06",
  "accordo": {
-  "totale": 3199,
+  "totale": 3200,
   "prende": {
    "statarea": {
     "prese": 1335,
@@ -107,16 +107,16 @@
    }
   },
   "mercato": {
-   "partite": 2081,
+   "partite": 2082,
    "poche": false,
-   "brier": 0.5728,
-   "brier_mercato": 0.5605,
-   "diff": 0.0122,
+   "brier": 0.5727,
+   "brier_mercato": 0.5604,
+   "diff": 0.0123,
    "es": 0.0027,
-   "t": 4.51,
+   "t": 4.53,
    "ic": [
-    0.0069,
-    0.0175
+    0.007,
+    0.0176
    ],
    "per_fonte": [
     {
@@ -128,10 +128,10 @@
     },
     {
      "fonte": "Pinnacle",
-     "partite": 600,
-     "diff": 0.0119,
+     "partite": 601,
+     "diff": 0.0121,
      "es": 0.0048,
-     "t": 2.46
+     "t": 2.5
     },
     {
      "fonte": "altri book",
