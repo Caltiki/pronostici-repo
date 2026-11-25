@@ -208,7 +208,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Knee Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Sabah FA": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "S. Pokatilov",
+     "A. Zedadka",
+     "S. Solvet",
+     "Erivaldo Almeida",
+     "T. Puchacz",
+     "U. Rahmonaliyev",
+     "I. Lepinjica",
+     "X. Severina",
+     "Du Queiroz",
+     "C. Nwachukwu",
+     "K. Aliyev"
+    ]
+   },
+   "Barcelona": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "Joan García",
+     "J. Koundé",
+     "F. de Jong",
+     "Gerard Martín",
+     "Alejandro Balde",
+     "Fermín",
+     "Gavi",
+     "Pedri",
+     "K. Adeyemi",
+     "Gabriel Jesus",
+     "A. Gordon"
+    ]
+   }
+  },
+  "partita": "Sabah FA - Barcelona"
  },
  "1635728": {
   "assenti": [
@@ -452,7 +487,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Achilles Tendon Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Slavia Praha": {
+    "modulo": "3-4-2-1",
+    "titolari": [
+     "J. Markovič",
+     "T. Holeš",
+     "D. Zima",
+     "A. N&apos;Guessan",
+     "T. Vlček",
+     "M. Sadílek",
+     "W. Nowak",
+     "D. Jurásek",
+     "E. Ayaosi",
+     "M. E. Suleiman",
+     "M. Chytil"
+    ]
+   },
+   "Villarreal": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "Luíz Júnior",
+     "S. Mouriño",
+     "Logan Costa",
+     "Renato Veiga",
+     "Sergi Cardona",
+     "T. Buchanan",
+     "C. Macia",
+     "P. Gueye",
+     "Alberto Moleiro",
+     "Ayoze Pérez",
+     "T. Oluwaseyi"
+    ]
+   }
+  },
+  "partita": "Slavia Praha - Villarreal"
  },
  "1563283": {
   "assenti": [
@@ -462,10 +532,27 @@
    "J. Nelson (Bolton)",
    "E. Toal (Bolton)",
    "T. Collyer (West Brom)",
+   "O. Diakite (West Brom)",
    "N. Galves (West Brom)",
-   "M. Johnston (West Brom)"
+   "M. Johnston (West Brom)",
+   "E. Toal (Bolton)"
   ],
   "assenti_peso": [
+   {
+    "nome": "O. Diakite",
+    "squadra": "West Brom",
+    "tipo": "Missing Fixture",
+    "motivo": "Calf Injury",
+    "pres": 17,
+    "tit": 14,
+    "min": 1317,
+    "gol": 0,
+    "ass": 0,
+    "voto": 6.88,
+    "gol_squadra": 31,
+    "partite_squadra": 18,
+    "quota_gol": 0
+   },
    {
     "nome": "E. Erhahon",
     "squadra": "Bolton",
@@ -485,6 +572,21 @@
     "nome": "E. Toal",
     "squadra": "Bolton",
     "tipo": "Questionable",
+    "motivo": "Muscle Injury",
+    "pres": 9,
+    "tit": 7,
+    "min": 659,
+    "gol": 0,
+    "ass": 0,
+    "voto": 6.75,
+    "gol_squadra": 21,
+    "partite_squadra": 17,
+    "quota_gol": 0
+   },
+   {
+    "nome": "E. Toal",
+    "squadra": "Bolton",
+    "tipo": "Missing Fixture",
     "motivo": "Muscle Injury",
     "pres": 9,
     "tit": 7,
@@ -595,7 +697,6 @@
    "J. Beyer (Burnley)",
    "A. Broja (Burnley)",
    "J. Bruun Larsen (Burnley)",
-   "B. Humphreys (Burnley)",
    "J. Laurent (Burnley)",
    "H. Mejbri (Burnley)",
    "M. Obafemi (Burnley)",
@@ -603,6 +704,8 @@
    "S. Sambo (Burnley)",
    "D. Satpaev (Burnley)",
    "M. Tresor Ndayishimiye (Burnley)",
+   "B. Humphreys (Burnley)",
+   "Lucas Pires (Burnley)",
    "C. Klarer (Birmingham)",
    "M. Leonard (Birmingham)",
    "K. Lund (Birmingham)"
@@ -637,6 +740,21 @@
     "gol_squadra": 23,
     "partite_squadra": 17,
     "quota_gol": 4
+   },
+   {
+    "nome": "Lucas Pires",
+    "squadra": "Burnley",
+    "tipo": "Questionable",
+    "motivo": "Inactive",
+    "pres": 13,
+    "tit": 9,
+    "min": 866,
+    "gol": 0,
+    "ass": 5,
+    "voto": 6.77,
+    "gol_squadra": 23,
+    "partite_squadra": 17,
+    "quota_gol": 0
    },
    {
     "nome": "J. Bruun Larsen",
@@ -716,7 +834,7 @@
    {
     "nome": "B. Humphreys",
     "squadra": "Burnley",
-    "tipo": "Missing Fixture",
+    "tipo": "Questionable",
     "motivo": "Muscle Injury",
     "pres": 3,
     "tit": 3,
@@ -818,9 +936,12 @@
   "assenti": [
    "M. Antonio (Watford)",
    "K. Baah (Watford)",
+   "M. Boadu (Watford)",
    "N. Chikovani (Watford)",
+   "K. Diatta (Watford)",
    "J. Ngakia (Watford)",
    "R. Alebiosu (Blackburn)",
+   "T. Atcheson (Blackburn)",
    "A. Forshaw (Blackburn)",
    "L. Miller (Blackburn)",
    "B. Toth (Blackburn)",
@@ -858,6 +979,36 @@
     "quota_gol": 0
    },
    {
+    "nome": "T. Atcheson",
+    "squadra": "Blackburn",
+    "tipo": "Missing Fixture",
+    "motivo": "Injury",
+    "pres": 12,
+    "tit": 12,
+    "min": 911,
+    "gol": 0,
+    "ass": 1,
+    "voto": 5.62,
+    "gol_squadra": 26,
+    "partite_squadra": 18,
+    "quota_gol": 0
+   },
+   {
+    "nome": "M. Boadu",
+    "squadra": "Watford",
+    "tipo": "Missing Fixture",
+    "motivo": "Inactive",
+    "pres": 7,
+    "tit": 5,
+    "min": 379,
+    "gol": 2,
+    "ass": 1,
+    "voto": 6.8,
+    "gol_squadra": 15,
+    "partite_squadra": 18,
+    "quota_gol": 13
+   },
+   {
     "nome": "A. Forshaw",
     "squadra": "Blackburn",
     "tipo": "Missing Fixture",
@@ -869,6 +1020,21 @@
     "ass": 0,
     "voto": 6.72,
     "gol_squadra": 26,
+    "partite_squadra": 18,
+    "quota_gol": 0
+   },
+   {
+    "nome": "K. Diatta",
+    "squadra": "Watford",
+    "tipo": "Missing Fixture",
+    "motivo": "Inactive",
+    "pres": 6,
+    "tit": 4,
+    "min": 274,
+    "gol": 0,
+    "ass": 0,
+    "voto": 6.75,
+    "gol_squadra": 15,
     "partite_squadra": 18,
     "quota_gol": 0
    },
@@ -1188,8 +1354,10 @@
    "A. Bonny (Inter)",
    "H. Calhanoglu (Inter)",
    "P. Zielinski (Inter)",
+   "J. Diehl (VfB Stuttgart)",
    "S. Drljaca (VfB Stuttgart)",
    "L. Stergiou (VfB Stuttgart)",
+   "D. Zagadou (VfB Stuttgart)",
    "L. Sauer (VfB Stuttgart)"
   ],
   "assenti_peso": [
@@ -1269,7 +1437,19 @@
     "quota_gol": 0
    },
    {
+    "nome": "J. Diehl",
+    "squadra": "VfB Stuttgart",
+    "tipo": "Missing Fixture",
+    "motivo": "Off the roster"
+   },
+   {
     "nome": "S. Drljaca",
+    "squadra": "VfB Stuttgart",
+    "tipo": "Missing Fixture",
+    "motivo": "Off the roster"
+   },
+   {
+    "nome": "D. Zagadou",
     "squadra": "VfB Stuttgart",
     "tipo": "Missing Fixture",
     "motivo": "Off the roster"
@@ -1831,12 +2011,14 @@
    "L. Bombino (Stoke City)",
    "L. Cisse (Stoke City)",
    "A. Cresswell (Stoke City)",
+   "J. Coburn (Millwall)",
    "T. Crama (Millwall)",
+   "R. Esse (Millwall)",
    "R. Leonard (Millwall)",
+   "M. Luongo (Millwall)",
    "F. Marschall (Millwall)",
    "M. Servais (Millwall)",
-   "Z. Sturge (Millwall)",
-   "M. Luongo (Millwall)"
+   "Z. Sturge (Millwall)"
   ],
   "assenti_peso": [
    {
@@ -1885,6 +2067,21 @@
     "quota_gol": 4
    },
    {
+    "nome": "J. Coburn",
+    "squadra": "Millwall",
+    "tipo": "Missing Fixture",
+    "motivo": "Injury",
+    "pres": 7,
+    "tit": 6,
+    "min": 453,
+    "gol": 2,
+    "ass": 0,
+    "voto": 6.02,
+    "gol_squadra": 25,
+    "partite_squadra": 19,
+    "quota_gol": 8
+   },
+   {
     "nome": "F. Marschall",
     "squadra": "Millwall",
     "tipo": "Missing Fixture",
@@ -1930,6 +2127,21 @@
     "quota_gol": 0
    },
    {
+    "nome": "R. Esse",
+    "squadra": "Millwall",
+    "tipo": "Missing Fixture",
+    "motivo": "Injury",
+    "pres": 8,
+    "tit": 3,
+    "min": 262,
+    "gol": 0,
+    "ass": 0,
+    "voto": 6.19,
+    "gol_squadra": 25,
+    "partite_squadra": 19,
+    "quota_gol": 0
+   },
+   {
     "nome": "M. Servais",
     "squadra": "Millwall",
     "tipo": "Missing Fixture",
@@ -1959,7 +2171,7 @@
    {
     "nome": "M. Luongo",
     "squadra": "Millwall",
-    "tipo": "Questionable",
+    "tipo": "Missing Fixture",
     "motivo": "Knee Injury"
    }
   ]
@@ -2887,5 +3099,153 @@
    }
   },
   "partita": "Rubin - Rodina Moskva"
+ },
+ "1601615": {
+  "titolari": {
+   "Cremonese": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "A. Fulignati",
+     "T. Barbieri",
+     "F. Baschirotto",
+     "S. Luperto",
+     "G. Pezzella",
+     "D. Stückler",
+     "D. Lordkipanidze",
+     "Adin Ličina",
+     "T. Berti",
+     "M. Collocolo",
+     "M. Nasti"
+    ]
+   },
+   "Avellino": {
+    "modulo": "3-5-2",
+    "titolari": [
+     "T. Martinelli",
+     "A. Izzo",
+     "T. Cancellotti",
+     "P. Enrici",
+     "F. Missori",
+     "D. Sounas",
+     "L. Palmiero",
+     "M. Besaggio",
+     "M. Sala",
+     "L. Pandolfi",
+     "T. Biasci"
+    ]
+   }
+  },
+  "partita": "Cremonese - Avellino"
+ },
+ "1612287": {
+  "titolari": {
+   "Enppi": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Abdel Rahman Samir",
+     "M. Sharkia",
+     "Ahmed Khalil Kalousha",
+     "Seif Elkhashab",
+     "Marwan Dawoud",
+     "Zeyad Kamal",
+     "Emad Mayhoub",
+     "Omar El Azab",
+     "Hossam Gahnem",
+     "Hamed Abdallah",
+     "Mohamed El Nahass"
+    ]
+   },
+   "Ceramica Cleopatra": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Mohamed Bassam",
+     "Abdallah Magdy",
+     "Ahmed Ramadan",
+     "J. Arthur",
+     "Hussein Al Sayed",
+     "Amr Al Sulaya",
+     "Amr Kalawa",
+     "S. Ougola",
+     "P. Gwargis",
+     "Mohamed Reda",
+     "Marwan Osman"
+    ]
+   }
+  },
+  "partita": "Enppi - Ceramica Cleopatra"
+ },
+ "1612288": {
+  "titolari": {
+   "Ghazl El Mehalla": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Mohamed Koko",
+     "F. Nechat Djabri",
+     "Ahmed El Aash",
+     "Ahmed Shousha",
+     "Yehia Zakaria",
+     "M. Touré",
+     "Abdel Rahman Osama",
+     "Ahmed Etman",
+     "R. Arfaoui",
+     "Abdel Kader Yehia",
+     "Mohamed Salem Ekbad"
+    ]
+   },
+   "Petrojet": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "Omar Salah",
+     "Omar Diyaa",
+     "Barakat Haggag",
+     "Ahmed Bahbah",
+     "Islam Abdallah",
+     "Karim El Deeb",
+     "Adham Hamed",
+     "Mohamed Osman",
+     "Mostafa El Gamal",
+     "A. Liadi",
+     "Samir Mohamed"
+    ]
+   }
+  },
+  "partita": "Ghazl El Mehalla - Petrojet"
+ },
+ "1630413": {
+  "titolari": {
+   "Al Taawon": {
+    "modulo": "5-4-1",
+    "titolari": [
+     "Mailson",
+     "Mohammed Bassam Al Hurayji",
+     "Nasser Al Haleel",
+     "Awn Al Saluli",
+     "Z. Belaïd",
+     "M. Petkov",
+     "Mohammed Al Kuwaykibi",
+     "Rakan Al Tulayhi",
+     "O. Dorley",
+     "Mohammed Al Saedi",
+     "Y. El Bahraoui"
+    ]
+   },
+   "Al-Nahda": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Faiyz Al Rashidi",
+     "Amjad Al Harthi",
+     "Thani Gharib Thani Khamis Al Rushaidi",
+     "Ahmed Al Rawahi",
+     "Ahmed Al Kaabi",
+     "Ahed Al-Mashaiki",
+     "Petrus Boumal Mayega",
+     "Jameel Al-Yahmadi",
+     "Djavan Anderson",
+     "Jamal Al Wahshi",
+     "Karim Darwich"
+    ]
+   }
+  },
+  "partita": "Al Taawon - Al-Nahda"
  }
 }
