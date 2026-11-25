@@ -643,25 +643,11 @@ jobs:
             python archivio_xg.py --xg output/fotmob_xg.json --dati ghdata --prefisso fotmobxg || \
               echo "::warning::archivio_xg.py non e' andato a buon fine sugli xG FotMob."
           fi
-          # Indice AsianOdds per l'addon Kodi. Si ricostruisce dai file
-          # EFFETTIVAMENTE presenti dopo la pulizia, non da una lista tenuta
-          # a mano: cosi' non elenca mai date i cui file sono stati rimossi,
-          # che nell'addon darebbero un 404.
-          python - << 'PYEOF_AOINDEX'
-          import os, re, json, datetime
-          from zoneinfo import ZoneInfo
-          rx = re.compile(r"^asianodds_(\d{4}-\d{2}-\d{2})\.json$")
-          date = sorted(m.group(1) for m in
-                        (rx.match(n) for n in os.listdir("ghdata")) if m)
-          if date:
-              agg = datetime.datetime.now(ZoneInfo("Europe/Rome")).strftime("%Y-%m-%d %H:%M")
-              with open("ghdata/asianodds_index.json", "w", encoding="utf-8") as f:
-                  json.dump({"date": date, "updated": agg}, f,
-                            ensure_ascii=False, indent=1)
-              print("asianodds_index.json: {} date {}".format(len(date), date))
-          else:
-              print("nessun asianodds_*.json presente, indice non scritto")
-          PYEOF_AOINDEX
+          # (25/11) L'INDICE ASIANODDS NON SI RISCRIVE PIU' QUI. Lo scrive solo
+          # ao_pubblica.py sul server Aruba, a ogni giro (7:40, 13:40, 19:40), e il
+          # suo "updated" e' l'ora della lettura: lo usano il sito ("letto dal
+          # server alle...") e prezzi_equi.py (AsianOdds vecchio di 24 ore non si
+          # usa). Riscritto qui a ogni giro avrebbe l'ora di questo job.
           # IL GIRO DI OGGI E' STATO FATTO: lo legge il job 'controllo' per
           # non rifare tutto ai tentativi successivi anche quando Statarea
           # e' fallito (il 30-31/10 il giro intero e' ripartito a ogni
@@ -2935,25 +2921,11 @@ jobs:
             echo "apifootball.py non e' nel repository: controllo del calendario saltato."
           fi
           cp -f aokodi/*.json ghdata/ 2>/dev/null || true
-          # Indice AsianOdds per l'addon Kodi. Si ricostruisce dai file
-          # EFFETTIVAMENTE presenti dopo la pulizia, non da una lista tenuta
-          # a mano: cosi' non elenca mai date i cui file sono stati rimossi,
-          # che nell'addon darebbero un 404.
-          python - << 'PYEOF_AOINDEX'
-          import os, re, json, datetime
-          from zoneinfo import ZoneInfo
-          rx = re.compile(r"^asianodds_(\d{4}-\d{2}-\d{2})\.json$")
-          date = sorted(m.group(1) for m in
-                        (rx.match(n) for n in os.listdir("ghdata")) if m)
-          if date:
-              agg = datetime.datetime.now(ZoneInfo("Europe/Rome")).strftime("%Y-%m-%d %H:%M")
-              with open("ghdata/asianodds_index.json", "w", encoding="utf-8") as f:
-                  json.dump({"date": date, "updated": agg}, f,
-                            ensure_ascii=False, indent=1)
-              print("asianodds_index.json: {} date {}".format(len(date), date))
-          else:
-              print("nessun asianodds_*.json presente, indice non scritto")
-          PYEOF_AOINDEX
+          # (25/11) L'INDICE ASIANODDS NON SI RISCRIVE PIU' QUI. Lo scrive solo
+          # ao_pubblica.py sul server Aruba, a ogni giro (7:40, 13:40, 19:40), e il
+          # suo "updated" e' l'ora della lettura: lo usano il sito ("letto dal
+          # server alle...") e prezzi_equi.py (AsianOdds vecchio di 24 ore non si
+          # usa). Riscritto qui a ogni giro avrebbe l'ora di questo job.
           cd ghdata
           # Autore anonimo: lo storico dei commit e' PUBBLICO, quindi qui non
           # deve comparire nessun indirizzo reale. L'indirizzo @users.noreply
