@@ -1845,8 +1845,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "X2 + Over 1.5",
   "Prob": 77.3,
-  "Equa": 1.29,
-  "InSchedina": "si"
+  "Equa": 1.29
  },
  {
   "Data": "2026-11-29",
@@ -2477,7 +2476,8 @@
   "Mercato": "1X2",
   "Sel": "2",
   "Prob": 73.3,
-  "Equa": 1.37
+  "Equa": 1.37,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-11-29",
@@ -23918,6 +23918,26 @@
   "Sel": "Under",
   "Prob": 20.0,
   "Equa": 5.01
+ },
+ {
+  "Data": "2026-11-29",
+  "Ora": "15:00",
+  "Campionato": "Sweden Allsvenskan",
+  "Partita": "Västerås SK - Hammarby",
+  "Casa": "Västerås SK",
+  "Ospite": "Hammarby",
+  "Linea_OU": "",
+  "Gol_attesi": 3.31,
+  "Margine": 2.6,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "1X2",
+  "Mercato": "1X2",
+  "Sel": "X",
+  "Prob": 16.8,
+  "Equa": 5.95
  },
  {
   "Data": "2026-11-29",
