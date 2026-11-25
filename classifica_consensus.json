@@ -1,21 +1,21 @@
 {
  "medio": {
   "copertura": {
-   "1": 28746,
-   "2": 4044,
-   "3": 2276,
-   "4": 1089,
+   "1": 28851,
+   "2": 4078,
+   "3": 2319,
+   "4": 1103,
    "5": 460
   },
-  "totale": 36615,
-  "brier": 0.5765,
-  "brier_clima": 0.6396,
+  "totale": 36811,
+  "brier": 0.5762,
+  "brier_clima": 0.6394,
   "fonti": [
    {
     "nome": "betimate",
-    "partite": 35162,
-    "brier": 0.5767,
-    "brier_media": 0.5759
+    "partite": 35358,
+    "brier": 0.5765,
+    "brier_media": 0.5756
    },
    {
     "nome": "footymetrics",
@@ -25,33 +25,33 @@
    },
    {
     "nome": "ratingbet",
-    "partite": 2126,
-    "brier": 0.5647,
-    "brier_media": 0.57
+    "partite": 2148,
+    "brier": 0.5641,
+    "brier_media": 0.5696
    },
    {
     "nome": "soccersite",
-    "partite": 5755,
-    "brier": 0.587,
-    "brier_media": 0.5782
+    "partite": 5839,
+    "brier": 0.5863,
+    "brier_media": 0.5775
    },
    {
     "nome": "statarea",
-    "partite": 3772,
-    "brier": 0.6025,
-    "brier_media": 0.5954
+    "partite": 3828,
+    "brier": 0.6021,
+    "brier_media": 0.5948
    }
   ],
   "mercato": {
-   "partite": 7602,
+   "partite": 7712,
    "poche": false,
-   "brier": 0.5832,
-   "brier_mercato": 0.5695,
-   "diff": 0.0137,
+   "brier": 0.5826,
+   "brier_mercato": 0.5689,
+   "diff": 0.0138,
    "es": 0.0016,
-   "t": 8.71,
+   "t": 8.82,
    "ic": [
-    0.0106,
+    0.0107,
     0.0168
    ],
    "per_fonte": [
@@ -64,17 +64,17 @@
     },
     {
      "fonte": "Pinnacle",
-     "partite": 2703,
-     "diff": 0.0141,
-     "es": 0.0024,
-     "t": 5.87
+     "partite": 2803,
+     "diff": 0.014,
+     "es": 0.0023,
+     "t": 5.99
     },
     {
      "fonte": "altri book",
-     "partite": 167,
-     "diff": 0.0057,
-     "es": 0.0104,
-     "t": 0.55
+     "partite": 177,
+     "diff": 0.0081,
+     "es": 0.0099,
+     "t": 0.81
     },
     {
      "fonte": "FootyMetrics",
@@ -86,7 +86,7 @@
    ]
   }
  },
- "aggiornato": "2026-11-25 01:42",
+ "aggiornato": "2026-11-25 05:04",
  "accordo": {
   "totale": 3199,
   "prende": {
