@@ -1,31 +1,17 @@
 [
  {
-  "Casa": "San Jose Earthquakes",
-  "Ospite": "Houston Dynamo",
-  "Ora": null,
-  "Paese": "USA",
-  "Lega": "Major League Soccer",
-  "P1": 0.5,
-  "PX": 0.26,
-  "P2": 0.24,
-  "P O2.5": 0.53,
-  "P GG": 0.62,
-  "xG casa": 1.55,
-  "xG ospite": 1.15
- },
- {
-  "Casa": "FC Ryukyu",
-  "Ospite": "Roasso Kumamoto",
+  "Casa": "Kitakyushu",
+  "Ospite": "Kanazawa",
   "Ora": null,
   "Paese": "Japan",
   "Lega": "J3 League",
-  "P1": 0.39,
-  "PX": 0.25,
-  "P2": 0.36,
-  "P O2.5": 0.53,
-  "P GG": 0.6,
-  "xG casa": 1.36,
-  "xG ospite": 1.28
+  "P1": 0.35,
+  "PX": 0.24,
+  "P2": 0.42,
+  "P O2.5": 0.58,
+  "P GG": 0.61,
+  "xG casa": 1.42,
+  "xG ospite": 1.62
  },
  {
   "Casa": "Sabah FA",
@@ -35,11 +21,11 @@
   "Lega": "UEFA Champions League",
   "P1": 0.16,
   "PX": 0.17,
-  "P2": 0.68,
+  "P2": 0.67,
   "P O2.5": 0.81,
-  "P GG": 0.63,
-  "xG casa": 1.52,
-  "xG ospite": 2.48
+  "P GG": 0.64,
+  "xG casa": 1.55,
+  "xG ospite": 2.49
  },
  {
   "Casa": "Slavia Praha",
@@ -52,7 +38,7 @@
   "P2": 0.41,
   "P O2.5": 0.7,
   "P GG": 0.69,
-  "xG casa": 2.11,
+  "xG casa": 2.09,
   "xG ospite": 1.86
  },
  {
@@ -61,13 +47,13 @@
   "Ora": "21:00",
   "Paese": "Europe",
   "Lega": "UEFA Champions League",
-  "P1": 0.7,
+  "P1": 0.71,
   "PX": 0.17,
   "P2": 0.13,
   "P O2.5": 0.73,
   "P GG": 0.61,
-  "xG casa": 2.35,
-  "xG ospite": 1.3
+  "xG casa": 2.36,
+  "xG ospite": 1.29
  },
  {
   "Casa": "Club Brugge KV",
@@ -80,8 +66,8 @@
   "P2": 0.49,
   "P O2.5": 0.79,
   "P GG": 0.75,
-  "xG casa": 2.37,
-  "xG ospite": 2.27
+  "xG casa": 2.36,
+  "xG ospite": 2.28
  },
  {
   "Casa": "Inter",
@@ -94,8 +80,8 @@
   "P2": 0.2,
   "P O2.5": 0.71,
   "P GG": 0.67,
-  "xG casa": 2.07,
-  "xG ospite": 1.32
+  "xG casa": 2.09,
+  "xG ospite": 1.31
  },
  {
   "Casa": "Lille",
@@ -108,8 +94,8 @@
   "P2": 0.61,
   "P O2.5": 0.65,
   "P GG": 0.63,
-  "xG casa": 1.29,
-  "xG ospite": 2.4
+  "xG casa": 1.31,
+  "xG ospite": 2.41
  },
  {
   "Casa": "Paris Saint Germain",
@@ -122,8 +108,8 @@
   "P2": 0.14,
   "P O2.5": 0.79,
   "P GG": 0.67,
-  "xG casa": 3.41,
-  "xG ospite": 1.4
+  "xG casa": 3.39,
+  "xG ospite": 1.39
  },
  {
   "Casa": "Shakhtar Donetsk",
@@ -136,8 +122,8 @@
   "P2": 0.35,
   "P O2.5": 0.53,
   "P GG": 0.62,
-  "xG casa": 1.54,
-  "xG ospite": 1.2
+  "xG casa": 1.55,
+  "xG ospite": 1.19
  },
  {
   "Casa": "Sporting CP",
@@ -145,13 +131,13 @@
   "Ora": "21:00",
   "Paese": "Europe",
   "Lega": "UEFA Champions League",
-  "P1": 0.45,
+  "P1": 0.46,
   "PX": 0.23,
-  "P2": 0.32,
+  "P2": 0.31,
   "P O2.5": 0.63,
   "P GG": 0.63,
-  "xG casa": 1.88,
-  "xG ospite": 1.37
+  "xG casa": 1.92,
+  "xG ospite": 1.38
  },
  {
   "Casa": "APS Bomet",
@@ -277,132 +263,6 @@
   "P O2.5": 0.5,
   "P GG": 0.61,
   "xG casa": 1.68,
-  "xG ospite": 1.12
- },
- {
-  "Casa": "Kitakyushu",
-  "Ospite": "Kanazawa",
-  "Ora": "06:00",
-  "Paese": "Japan",
-  "Lega": "J3 League",
-  "P1": 0.35,
-  "PX": 0.24,
-  "P2": 0.42,
-  "P O2.5": 0.58,
-  "P GG": 0.61,
-  "xG casa": 1.42,
-  "xG ospite": 1.62
- },
- {
-  "Casa": "Biwako Shiga",
-  "Ospite": "Kochi United",
-  "Ora": "10:00",
-  "Paese": "Japan",
-  "Lega": "J3 League",
-  "P1": 0.48,
-  "PX": 0.24,
-  "P2": 0.28,
-  "P O2.5": 0.52,
-  "P GG": 0.58,
-  "xG casa": 1.7,
-  "xG ospite": 1.08
- },
- {
-  "Casa": "Sagamihara",
-  "Ospite": "Ehime FC",
-  "Ora": "10:30",
-  "Paese": "Japan",
-  "Lega": "J3 League",
-  "P1": 0.51,
-  "PX": 0.23,
-  "P2": 0.27,
-  "P O2.5": 0.55,
-  "P GG": 0.63,
-  "xG casa": 1.85,
-  "xG ospite": 1.1
- },
- {
-  "Casa": "FC Gifu",
-  "Ospite": "Thespakusatsu Gunma",
-  "Ora": "11:00",
-  "Paese": "Japan",
-  "Lega": "J3 League",
-  "P1": 0.71,
-  "PX": 0.18,
-  "P2": 0.11,
-  "P O2.5": 0.61,
-  "P GG": 0.59,
-  "xG casa": 2.31,
-  "xG ospite": 0.73
- },
- {
-  "Casa": "Kamatamare Sanuki",
-  "Ospite": "Gainare Tottori",
-  "Ora": "11:00",
-  "Paese": "Japan",
-  "Lega": "J3 League",
-  "P1": 0.39,
-  "PX": 0.25,
-  "P2": 0.36,
-  "P O2.5": 0.52,
-  "P GG": 0.62,
-  "xG casa": 1.45,
-  "xG ospite": 1.3
- },
- {
-  "Casa": "Parceiro Nagano",
-  "Ospite": "Kagoshima United",
-  "Ora": "11:00",
-  "Paese": "Japan",
-  "Lega": "J3 League",
-  "P1": 0.28,
-  "PX": 0.24,
-  "P2": 0.48,
-  "P O2.5": 0.5,
-  "P GG": 0.57,
-  "xG casa": 1.28,
-  "xG ospite": 1.41
- },
- {
-  "Casa": "Nara Club",
-  "Ospite": "Matsumoto Yamaga",
-  "Ora": "11:00",
-  "Paese": "Japan",
-  "Lega": "J3 League",
-  "P1": 0.45,
-  "PX": 0.24,
-  "P2": 0.31,
-  "P O2.5": 0.53,
-  "P GG": 0.58,
-  "xG casa": 1.65,
-  "xG ospite": 1.07
- },
- {
-  "Casa": "Osaka",
-  "Ospite": "Tochigi SC",
-  "Ora": "11:00",
-  "Paese": "Japan",
-  "Lega": "J3 League",
-  "P1": 0.46,
-  "PX": 0.27,
-  "P2": 0.27,
-  "P O2.5": 0.42,
-  "P GG": 0.52,
-  "xG casa": 1.3,
-  "xG ospite": 0.86
- },
- {
-  "Casa": "Renofa Yamaguchi",
-  "Ospite": "Fukushima United",
-  "Ora": "11:00",
-  "Paese": "Japan",
-  "Lega": "J3 League",
-  "P1": 0.58,
-  "PX": 0.22,
-  "P2": 0.2,
-  "P O2.5": 0.6,
-  "P GG": 0.6,
-  "xG casa": 1.96,
   "xG ospite": 1.12
  },
  {
@@ -544,6 +404,118 @@
   "P GG": 0.6,
   "xG casa": 2.15,
   "xG ospite": 1.04
+ },
+ {
+  "Casa": "Biwako Shiga",
+  "Ospite": "Kochi United",
+  "Ora": "10:00",
+  "Paese": "Japan",
+  "Lega": "J3 League",
+  "P1": 0.48,
+  "PX": 0.24,
+  "P2": 0.28,
+  "P O2.5": 0.52,
+  "P GG": 0.58,
+  "xG casa": 1.7,
+  "xG ospite": 1.08
+ },
+ {
+  "Casa": "Sagamihara",
+  "Ospite": "Ehime FC",
+  "Ora": "10:30",
+  "Paese": "Japan",
+  "Lega": "J3 League",
+  "P1": 0.51,
+  "PX": 0.23,
+  "P2": 0.27,
+  "P O2.5": 0.55,
+  "P GG": 0.63,
+  "xG casa": 1.85,
+  "xG ospite": 1.1
+ },
+ {
+  "Casa": "FC Gifu",
+  "Ospite": "Thespakusatsu Gunma",
+  "Ora": "11:00",
+  "Paese": "Japan",
+  "Lega": "J3 League",
+  "P1": 0.71,
+  "PX": 0.18,
+  "P2": 0.11,
+  "P O2.5": 0.61,
+  "P GG": 0.59,
+  "xG casa": 2.31,
+  "xG ospite": 0.73
+ },
+ {
+  "Casa": "Kamatamare Sanuki",
+  "Ospite": "Gainare Tottori",
+  "Ora": "11:00",
+  "Paese": "Japan",
+  "Lega": "J3 League",
+  "P1": 0.39,
+  "PX": 0.25,
+  "P2": 0.36,
+  "P O2.5": 0.52,
+  "P GG": 0.62,
+  "xG casa": 1.45,
+  "xG ospite": 1.3
+ },
+ {
+  "Casa": "Parceiro Nagano",
+  "Ospite": "Kagoshima United",
+  "Ora": "11:00",
+  "Paese": "Japan",
+  "Lega": "J3 League",
+  "P1": 0.28,
+  "PX": 0.24,
+  "P2": 0.48,
+  "P O2.5": 0.5,
+  "P GG": 0.57,
+  "xG casa": 1.28,
+  "xG ospite": 1.41
+ },
+ {
+  "Casa": "Nara Club",
+  "Ospite": "Matsumoto Yamaga",
+  "Ora": "11:00",
+  "Paese": "Japan",
+  "Lega": "J3 League",
+  "P1": 0.45,
+  "PX": 0.24,
+  "P2": 0.31,
+  "P O2.5": 0.53,
+  "P GG": 0.58,
+  "xG casa": 1.65,
+  "xG ospite": 1.07
+ },
+ {
+  "Casa": "Osaka",
+  "Ospite": "Tochigi SC",
+  "Ora": "11:00",
+  "Paese": "Japan",
+  "Lega": "J3 League",
+  "P1": 0.46,
+  "PX": 0.27,
+  "P2": 0.27,
+  "P O2.5": 0.42,
+  "P GG": 0.52,
+  "xG casa": 1.3,
+  "xG ospite": 0.86
+ },
+ {
+  "Casa": "Renofa Yamaguchi",
+  "Ospite": "Fukushima United",
+  "Ora": "11:00",
+  "Paese": "Japan",
+  "Lega": "J3 League",
+  "P1": 0.58,
+  "PX": 0.22,
+  "P2": 0.2,
+  "P O2.5": 0.6,
+  "P GG": 0.6,
+  "xG casa": 1.96,
+  "xG ospite": 1.12
  },
  {
   "Casa": "Kolos Kovalivka U19",
@@ -808,8 +780,8 @@
   "P2": 0.15,
   "P O2.5": 0.75,
   "P GG": 0.66,
-  "xG casa": 2.87,
-  "xG ospite": 1.53
+  "xG casa": 2.89,
+  "xG ospite": 1.52
  },
  {
   "Casa": "Kashima",
@@ -817,12 +789,12 @@
   "Ora": "11:00",
   "Paese": "Asia",
   "Lega": "AFC Champions League",
-  "P1": 0.6,
+  "P1": 0.61,
   "PX": 0.23,
   "P2": 0.17,
   "P O2.5": 0.55,
   "P GG": 0.5,
-  "xG casa": 1.88,
+  "xG casa": 1.9,
   "xG ospite": 0.95
  },
  {
@@ -938,6 +910,20 @@
   "xG ospite": 1.4
  },
  {
+  "Casa": "San Jose Earthquakes",
+  "Ospite": "Houston Dynamo",
+  "Ora": null,
+  "Paese": "USA",
+  "Lega": "Major League Soccer",
+  "P1": 0.5,
+  "PX": 0.26,
+  "P2": 0.24,
+  "P O2.5": 0.53,
+  "P GG": 0.62,
+  "xG casa": 1.55,
+  "xG ospite": 1.15
+ },
+ {
   "Casa": "Tampa Bay Sun W",
   "Ospite": "Dallas Trinity W",
   "Ora": null,
@@ -992,6 +978,20 @@
   "P GG": 0.64,
   "xG casa": 2.55,
   "xG ospite": 1.11
+ },
+ {
+  "Casa": "FC Ryukyu",
+  "Ospite": "Roasso Kumamoto",
+  "Ora": null,
+  "Paese": "Japan",
+  "Lega": "J3 League",
+  "P1": 0.39,
+  "PX": 0.25,
+  "P2": 0.36,
+  "P O2.5": 0.53,
+  "P GG": 0.6,
+  "xG casa": 1.36,
+  "xG ospite": 1.28
  },
  {
   "Casa": "Arsenal Tivat",
@@ -1769,12 +1769,12 @@
   "Ora": "16:00",
   "Paese": "Russia",
   "Lega": "Cup",
-  "P1": 0.38,
+  "P1": 0.37,
   "PX": 0.25,
   "P2": 0.37,
   "P O2.5": 0.49,
   "P GG": 0.6,
-  "xG casa": 1.27,
+  "xG casa": 1.26,
   "xG ospite": 1.22
  },
  {
@@ -1788,8 +1788,8 @@
   "P2": 0.52,
   "P O2.5": 0.43,
   "P GG": 0.54,
-  "xG casa": 1.04,
-  "xG ospite": 1.39
+  "xG casa": 1.06,
+  "xG ospite": 1.41
  },
  {
   "Casa": "Lokomotiv",
@@ -1801,9 +1801,9 @@
   "PX": 0.25,
   "P2": 0.39,
   "P O2.5": 0.54,
-  "P GG": 0.63,
-  "xG casa": 1.31,
-  "xG ospite": 1.48
+  "P GG": 0.64,
+  "xG casa": 1.34,
+  "xG ospite": 1.51
  },
  {
   "Casa": "Rubin",
@@ -1816,7 +1816,7 @@
   "P2": 0.25,
   "P O2.5": 0.54,
   "P GG": 0.56,
-  "xG casa": 1.73,
+  "xG casa": 1.72,
   "xG ospite": 1.44
  },
  {
