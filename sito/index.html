@@ -8411,7 +8411,8 @@
   // 24 ore, FootyMetrics senza margine. Sono quelle dei file, non ricalcolate.
   // Lo stesso ordine dei prezzi equi: Pinnacle, AsianOdds, FootyMetrics.
   function mercatoScheda(p) {
-    var a = p.Mercato, f = p.FM, pin = p.Pin;
+    // (215) il book 105 letto dal sito prima della riga che porta la scheda
+    var a = p.Ao || p.Mercato, f = p.FM, pin = p.Pin;
     if (pin) {
       var q = [num(pin["P1 Shin"]), num(pin["PX Shin"]), num(pin["P2 Shin"])];
       if (q[0] != null && q[1] != null && q[2] != null) return { "1": q[0], "X": q[1], "2": q[2], da: "Pinnacle" };
@@ -8419,7 +8420,7 @@
     if (a) {
       var s = [num(a["P1 Shin"]), num(a["PX Shin"]), num(a["P2 Shin"])];
       if (s[0] == null) s = [num(a.P1), num(a.PX), num(a.P2)];
-      if (s[0] != null) return { "1": s[0], "X": s[1], "2": s[2], da: "altro book" };
+      if (s[0] != null) return { "1": s[0], "X": s[1], "2": s[2], da: p.Ao ? "book 105" : "altro book" };
     }
     if (f && num(f.Devig1) != null) {
       return { "1": num(f.Devig1), "X": num(f.DevigX), "2": num(f.Devig2), da: "FootyMetrics" };
@@ -8698,7 +8699,22 @@
     if (a) {
       var s = [num(a["P1 Shin"]), num(a["PX Shin"]), num(a["P2 Shin"])];
       if (s[0] == null) s = [num(a.P1), num(a.PX), num(a.P2)];
-      if (s[0] != null) {
+      if (s[0] != null && p.Ao) {
+        // (215) il book 105 sotto Pinnacle, con lo scarto
+        var ma5 = num(a.Margine), g5 = null, sg5 = "";
+        for (var i5 = 0; i5 < 3; i5++) {
+          if (pr[i5] == null) continue;
+          var d5 = s[i5] - pr[i5];
+          if (g5 == null || Math.abs(d5) > Math.abs(g5)) { g5 = d5; sg5 = "1X2"[i5]; }
+        }
+        h += tripla("book 105", s[0], s[1], s[2]) +
+          "<p>Book 105 (AsianOdds): <span class=nw><b class=seg>1</b> " + pv(s[0]) + "</span> \u00b7 <span class=nw><b class=seg>X</b> " + pv(s[1]) +
+          "</span> \u00b7 <span class=nw><b class=seg>2</b> " + pv(s[2]) + "</span>" + (ma5 != null ? " (margine " + mv(ma5) + ")" : "") + ". " +
+          (g5 == null ? "" : Math.abs(g5) >= AO_SCARTO
+            ? "<b>Non d'accordo con Pinnacle</b>: " + f1(Math.abs(g5)) + " punti sul " + sg5 + "."
+            : "D'accordo con Pinnacle: scarto massimo " + f1(Math.abs(g5)) + " punti.") +
+          '<br><span class="piccolo">Letto dal server' + esc(aoOra(p.AoAgg)) + ": AsianOdds si legge tre volte al giorno, Pinnacle ogni ora.</span></p>";
+      } else if (s[0] != null) {
         var ma = num(a.Margine);
         h += "<p>Un altro book: <span class=nw><b class=seg>1</b> " + pv(s[0]) + "</span>" + " · <span class=nw><b class=seg>X</b> " + pv(s[1]) + "</span>" + " · <span class=nw><b class=seg>2</b> " + pv(s[2]) + "</span>" + (ma != null ? " (margine " + mv(ma) + ")" : "") +
           (num(a.Mov) ? "; " + (a.Notevole ? "movimento notevole" : "movimento") + " di " + nv(a.Mov) + " punti dall'apertura" : "") + ".</p>";
@@ -8717,7 +8733,7 @@
   }
 
   function bloccoMercato(p, m) {
-    var a = p.Mercato, f = p.FM;
+    var a = p.Ao || p.Mercato, f = p.FM;
     var h = '<div class="scheda"><h3>Il mercato</h3>';
     if (!m) {
       return h + '<p class="piccolo">Nessuna quota per questa partita.</p></div>';
@@ -8741,7 +8757,8 @@
       if (a.Notevole) chip.push('<span class="scarto-grosso">movimento notevole</span>');
       if (a.Affidabile) chip.push('<span class="chip">affidabile</span>');
       if (chip.length) h += "<p>" + chip.join(" ") + "</p>";
-      h += '<p class="piccolo">Un altro book, senza margine. Pinnacle non c’è ancora.</p>';
+      h += '<p class="piccolo">' + (p.Ao ? "Book 105 di AsianOdds, il pi\u00f9 sharp dei dieci che porta, senza margine; letto dal server" + esc(aoOra(p.AoAgg)) + "."
+        : "Un altro book, senza margine.") + " Pinnacle non c’è ancora.</p>";
     } else {
       var or = num(f.Overround);
       h += tripla("migliori", m["1"], m.X, m["2"]) + legenda();
@@ -9577,7 +9594,7 @@
     // (se le squadre sono dello stesso campionato), Pinnacle, BeSoccer.
     // (214) piu' il book 105 di AsianOdds, sui cinque campionati principali
     var mk = mercatoScheda(p);
-    if (mk && mk.da === "altro book" && A) mk = null;      // e' gia' il 105, non due volte
+    if (mk && (mk.da === "altro book" || mk.da === "book 105") && A) mk = null;      // e' gia' il 105, non due volte
     var titolo = [p.Elo && p.Elo.p ? "Elo" : "", mk ? (mk.da === "Pinnacle" ? "Pinnacle" : "mercato") : "", B.p ? "BeSoccer" : "", A ? "book 105" : ""].filter(Boolean);
     var h = '<div class="scheda"><h3>' + esc(titolo.length > 1 ? titolo.slice(0, -1).join(", ") + " e " + titolo[titolo.length - 1] : (titolo[0] || "BeSoccer")) + "</h3>", leg = [];
     if (p.Elo && p.Elo.p) { h += tripla("Elo", p.Elo.p[0], p.Elo.p[1], p.Elo.p[2], "t-elo"); leg.push(["#1f7a4d", "il nostro Elo"]); }
