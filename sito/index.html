@@ -556,7 +556,9 @@
   .tripla.t-elo .s1 { background: #1f7a4d; color: #fff; } .tripla.t-elo .sx { background: #cfe9da; color: #1a3d2b; } .tripla.t-elo .s2 { background: #4fae7e; color: #fff; }
   .tripla.t-pin .s1 { background: #1f4f9a; color: #fff; } .tripla.t-pin .sx { background: #d3e0f5; color: #1b2f52; } .tripla.t-pin .s2 { background: #5b8fd6; color: #fff; }
   .tripla.t-bs .s1 { background: #6a3fa0; color: #fff; } .tripla.t-bs .sx { background: #e4d8f3; color: #3a2358; } .tripla.t-bs .s2 { background: #9a72cc; color: #fff; }
-  .tripla.t-elo .sx, .tripla.t-pin .sx, .tripla.t-bs .sx { text-shadow: none; }
+  /* (214) il book 105 di AsianOdds: ambra */
+  .tripla.t-ao .s1 { background: #9a5b00; color: #fff; } .tripla.t-ao .sx { background: #f6e3c4; color: #4a2e05; } .tripla.t-ao .s2 { background: #d08a2a; color: #fff; }
+  .tripla.t-elo .sx, .tripla.t-pin .sx, .tripla.t-bs .sx, .tripla.t-ao .sx { text-shadow: none; }
   .fonti-col { display: flex; gap: 12px; flex-wrap: wrap; font-size: .76rem; color: var(--tenue); margin: 4px 0 8px; }
   .fonti-col i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 4px; vertical-align: -1px; }
   .legenda {
@@ -2281,6 +2283,7 @@
   // punti fra adesso e il mattino, segno per segno: quando Pinnacle si
   // muove molto vicino al via sono arrivate notizie o soldi informati.
   var MOD_SCARTO = 5;
+  var AO_SCARTO = 3;        // (214) punti fra Pinnacle e il book 105 per dire "non d'accordo"
   var PIN_MOD_N = {};       // data -> quante partite Pinnacle hanno il modello
   var PIN_VISTE = [
     ["tutte", "Tutte le partite", "Tutte le partite del sito quotate da Pinnacle: quote, margine e probabilit\u00e0 senza margine."],
@@ -2294,6 +2297,14 @@
      "Le partite dove il nostro modello si scosta da Pinnacle di almeno " + MOD_SCARTO + " punti su un segno, dalla pi\u00f9 lontana. " +
      "Il modello non vede le quote della partita: guarda le due squadre partita dopo partita. Quando non \u00e8 d'accordo, di solito ha ragione il mercato " +
      "(notizie, formazioni, soldi informati): \u00e8 una partita da guardare meglio, non una giocata."],
+    // (214) DUE PREZZI SHARP A CONFRONTO: Pinnacle e il book "105" di
+    // AsianOdds (margine 1,6%, nome non disponibile), sui cinque campionati
+    // principali. Di solito stanno a 1-2 punti; da AO_SCARTO in su uno dei
+    // due e' indietro o ha una notizia che l'altro non ha ancora.
+    ["sharp", "Pinnacle vs book 105",
+     "Le partite che hanno anche il book 105 di AsianOdds, il prezzo pi\u00f9 sharp che legge il server (margine intorno all'1,6%, il nome il sito non lo d\u00e0): " +
+     "solo i cinque campionati principali. In cima quelle dove i due prezzi sono pi\u00f9 lontani. Di solito stanno a 1-2 punti: " +
+     "da " + AO_SCARTO + " punti in su uno dei due \u00e8 indietro (AsianOdds si legge tre volte al giorno, Pinnacle ogni ora) oppure ha gi\u00e0 una notizia che l'altro non ha."],
     ["mosse", "Si sono mosse",
      "Le partite di oggi che Pinnacle ha mosso di almeno 2 punti dalla prima lettura del mattino, dalla pi\u00f9 mossa. " +
      "Un movimento forte vicino al via vuol dire notizie (formazioni, infortuni) o soldi informati: guarda se il tuo book si \u00e8 gi\u00e0 adeguato."],
@@ -2379,7 +2390,7 @@
       if (/^\d{4}-\d{2}-\d{2}$/.test(p[1] || "")) stato.data[stato.sez] = p[1];
       var viste = SEZ[stato.sez].viste;
       if (p[2] && viste.some(function (v) { return v[0] === p[2]; })) stato.vista[stato.sez] = p[2];
-      if (stato.sez === "pin" && (p[2] === "calo" || p[2] === "modello")) stato.ordine.pin = "mov";   // (209) come col bottone
+      if (stato.sez === "pin" && (p[2] === "calo" || p[2] === "modello" || p[2] === "sharp")) stato.ordine.pin = "mov";   // (209) come col bottone
     }
   }
   function scriviHash() {
@@ -2788,7 +2799,7 @@
         stato.vista[sez] = b.dataset.vista; stato.limite = PASSO; stato.esito = "";
         if (sez === "prezzi" && b.dataset.vista === "partite" && stato.ordine.prezzi === "file") stato.ordine.prezzi = "ora";
         if (sez === "pin" && b.dataset.vista === "calo") stato.ordine.pin = "mov";     // (202) dal calo piu' utile
-        if (sez === "pin" && b.dataset.vista === "modello") stato.ordine.pin = "mov";  // (209) dallo scarto piu' grande
+        if (sez === "pin" && (b.dataset.vista === "modello" || b.dataset.vista === "sharp")) stato.ordine.pin = "mov";  // (209) dallo scarto piu' grande
         disegna();
       });
     });
@@ -3552,6 +3563,7 @@
     });
     else if (o === "mov" && sez === "pin" && stato.vista.pin === "calo") v.sort(function (a, b) { return caloPeso(b) - caloPeso(a); });
     else if (o === "mov" && sez === "pin" && stato.vista.pin === "modello") v.sort(function (a, b) { return Math.abs(b._modGap || 0) - Math.abs(a._modGap || 0); });
+    else if (o === "mov" && sez === "pin" && stato.vista.pin === "sharp") v.sort(function (a, b) { return Math.abs(b._aoGap || 0) - Math.abs(a._aoGap || 0); });
     else if (o === "mov") v.sort(function (a, b) { return (num(b.Mov) || 0) - (num(a.Mov) || 0); });
     // Gol attesi: la linea Under/Over principale e' quella dove Over e Under
     // si equivalgono, quindi conta la linea (2.25, 2.5, 3...), poi l'Over.
@@ -3585,6 +3597,9 @@
     if (sez === "pin" && vista === "modello")
       return "Nessuna delle " + n + " partite del " + data + " ha il nostro modello lontano da Pinnacle di " + MOD_SCARTO + " punti o pi\u00f9. " +
         "Il modello esce ogni mattina per le partite del calendario, se le due squadre hanno abbastanza partite alle spalle.";
+    if (sez === "pin" && vista === "sharp")
+      return "Nessuna delle " + n + " partite Pinnacle del " + data + " ha anche il book 105: AsianOdds copre solo i cinque campionati principali " +
+        "(Premier League, Liga, Serie A, Bundesliga, Ligue 1), e Pinnacle sul sito va avanti di pochi giorni.";
     if (sez === "pin" && vista === "calo")
       return "Nessun esito accorciato di almeno 2 punti fra le " + n + " partite del " + data + " ancora da giocare. " +
         "Il movimento si misura dalla prima lettura di Pinnacle: per i giorni lontani di solito non c'\u00e8 ancora niente.";
@@ -6500,8 +6515,10 @@
     return Promise.all([pinExtra(data), calendarioPer(data), formaFile(data), freschePinnacle(), proFrecce(),
       conBex(righe, data).catch(function () { return righe; }),
       // (209) il nostro modello, per numero di partita
-      leggiUrl(BASE + "modello_" + data + ".json?t=" + Math.floor(Date.now() / 600000), "modello_" + data).catch(function () { return null; })]).then(function (a) {
-      var x = a[0], cal = a[1], ff = a[2], pro = a[4];
+      leggiUrl(BASE + "modello_" + data + ".json?t=" + Math.floor(Date.now() / 600000), "modello_" + data).catch(function () { return null; }),
+      // (214) il book 105 di AsianOdds, per nome e ora
+      caricaAo(data)]).then(function (a) {
+      var x = a[0], cal = a[1], ff = a[2], pro = a[4], aoL = a[7];
       var mod = a[6] && a[6].partite ? a[6].partite : {};
       PIN_MOD_N[data] = (Array.isArray(righe) ? righe : []).filter(function (r) { return mod[String(r.ID_API)]; }).length;
       applicaFresche(righe, a[3]);
@@ -6517,7 +6534,7 @@
           _form: x.form[String(r.ID_API)] || null,
           _forma: formaDi(ff, r.ID_API),
           _calo: pinCalo(r, pro)
-        }, modDi(mod[String(r.ID_API)], p), (function () {
+        }, modDi(mod[String(r.ID_API)], p), aoConfronto(aoL ? aoDi(aoL.righe, r.Casa, r.Ospite, r.Ora) : null, p, aoL), (function () {
           var c = cal[String(r.ID_API)];
           return c && (r.Gol_Casa == null || r.Gol_Ospite == null) ? { Gol_Casa: c.gc, Gol_Ospite: c.go } : {};
         })());
@@ -6552,6 +6569,7 @@
   }
   function pinTiene(r, tipo) {
     if (tipo === "mosse") return r.Mov >= 2;
+    if (tipo === "sharp") return r._ao != null && r._aoGap != null;
     if (tipo === "modello") return r._modGap != null && Math.abs(r._modGap) >= MOD_SCARTO;
     if (tipo === "calo") return !!(r._calo && r._calo.length) && nonIniziata(r);
     return true;
@@ -6567,6 +6585,14 @@
         [String(es.length), es.length === 1 ? "esito in calo" : "esiti in calo"],
         [String(es.filter(function (c) { return c.books.length; }).length), "con Sisal o Lottomatica"],
         [String(es.filter(function (c) { return c.valore; }).length), "dove il book paga ancora più dell'equa"]
+      ]);
+    }
+    if (stato.vista.pin === "sharp") {
+      var sc = mediana(v.map(function (r) { return r._aoGap == null ? null : Math.abs(r._aoGap); }));
+      return tessere([
+        [String(v.length), v.length === 1 ? "partita con tutti e due" : "partite con tutti e due"],
+        [String(v.filter(function (r) { return Math.abs(r._aoGap) >= AO_SCARTO; }).length), "lontane " + AO_SCARTO + " punti o pi\u00f9"],
+        [sc == null ? "-" : f1(sc), "scarto mediano, in punti"]
       ]);
     }
     if (stato.vista.pin === "modello") {
@@ -6724,6 +6750,7 @@
     else det.push("<p>Nessuna lettura del mattino per questa partita: il movimento si vede solo per oggi.</p>");
     if (num(r.OU) != null && num(r["P Over"]) != null) det.push("<p>Linea Under/Over " + esc(r.OU) + ": Over " + pv(r["P Over"]) + "</p>");
     if (r._mod) det.push(modHtml(r));
+    if (r._ao) det.push(aoDettaglio(r));
     if (r.Gol_Casa != null && r.Gol_Ospite != null) det.unshift("<p>Finita <b>" + esc(r.Gol_Casa + "-" + r.Gol_Ospite) + "</b>.</p>");
     if (r._forma) det.push(formaBloccoHtml(r._forma));
     det.push(formazioneHtml(r._form));
@@ -6739,12 +6766,13 @@
     return '<div class="riga"><details><summary>' +
       // Nella vista "Mosse" il segno e' quello che si e' mosso (anche in
       // giu'): niente ✓/✗ li', non direbbe se la mossa era giusta.
-      '<span class="segno' + (mosse || stato.vista.pin === "modello" ? " mosso" : "") + '">' +
-        esc((mosse ? r._segnoMov : stato.vista.pin === "modello" && r._modSeg ? r._modSeg : top) || r.Segno || "?") + "</span>" +
+      '<span class="segno' + (mosse || stato.vista.pin === "modello" || stato.vista.pin === "sharp" ? " mosso" : "") + '">' +
+        esc((mosse ? r._segnoMov : stato.vista.pin === "modello" && r._modSeg ? r._modSeg : stato.vista.pin === "sharp" && r._aoSeg ? r._aoSeg : top) || r.Segno || "?") + "</span>" +
       '<div class="corpo">' +
       '<div class="alto">' + (r.Ora ? "<span><b>" + esc(r.Ora) + "</b></span>" : "") + golHtml(r) +
         (r.Lega ? '<span class="chip">' + esc(r.Lega) + "</span>" : "") +
         (fid ? '<span class="pill ' + fid[0] + '">margine ' + f1(num(r.Margine)) + "%</span>" : "") +
+        (r._aoGap != null && Math.abs(r._aoGap) >= AO_SCARTO ? '<span class="pill largo">105 lontano ' + f0(Math.abs(r._aoGap)) + " punti</span>" : "") +
         (r._form && r._form.titolari ? '<span class="pill stretto">formazioni</span>' : "") +
         (r._form && r._form.assenti && r._form.assenti.length ? '<span class="pill largo">' + r._form.assenti.length + " assenti</span>" : "") + "</div>" +
       '<div class="partita">' + partitaHtmlId(r.Casa, r.Ospite, r.ID_Casa, r.ID_Ospite, campiRiga(r)) + "</div>" +
@@ -6753,8 +6781,11 @@
       // nelle altre pagine; i punti di probabilita' restano nel dettaglio
       tripla("senza margine", p[0], p[1], p[2]) +
       (r._mod ? tripla("modello", r._modP[0], r._modP[1], r._modP[2]) : "") +
+      (r._ao ? tripla("book 105", r._aoP[0], r._aoP[1], r._aoP[2]) : "") +
       "</div>" +
-      (stato.vista.pin === "modello" && r._modGap != null
+      (stato.vista.pin === "sharp" && r._aoGap != null
+        ? '<div class="numero"><b>' + (r._aoGap > 0 ? "+" : "\u2212") + f1(Math.abs(r._aoGap)) + "</b><span>105 sul " + esc(r._aoSeg) + "</span></div>"
+        : stato.vista.pin === "modello" && r._modGap != null
         ? '<div class="numero"><b>' + (r._modGap > 0 ? "+" : "\u2212") + f0(Math.abs(r._modGap)) + "</b><span>modello sul " + esc(r._modSeg) + "</span></div>"
         : mosse || pt == null
         ? '<div class="numero"><b>' + esc(punti) + "</b><span>punti sul " + esc(r._segnoMov || "-") + "</span></div>"
@@ -8068,7 +8099,8 @@
   // (161) AsianOdds non arriva piu' dal 12/11: le sue righe restano come
   // storico, ma si vede che la fonte e' chiusa.
   // (212) AsianOdds riaperto il 25/11: lo pubblica il server Aruba, con
-  // l'accesso al sito (solo i cinque campionati principali, quote 1xBet).
+  // l'accesso al sito (solo i cinque campionati principali). (214) Non e'
+  // 1xBet: e' il book "105", il piu' sharp dei dieci del file, senza nome.
   var FONTI_CHIUSE = {};
   // (166) IL PRONOSTICO DI DEL FORNITORE DEI DATI CONTRO PINNACLE, sulle stesse
   // partite (predizioni_misura.json, apifootball_predizioni.py). Brier: piu'
@@ -8893,7 +8925,9 @@
             leggiUrl(BASE + "modello_" + d + ".json?t=" + tt, "modello_" + d).catch(function () { return null; }),
             leggiUrl(BASE + "modello_info.json?t=" + tt, "modello_info").catch(function () { return null; })]) : null,
           // (210) BeSoccer dal server: ELO e gol attesi, per nome
-          leggiUrl(BASE + "besoccer_" + d + ".json?t=" + tt, "besoccer_" + d).catch(function () { return null; })
+          leggiUrl(BASE + "besoccer_" + d + ".json?t=" + tt, "besoccer_" + d).catch(function () { return null; }),
+          // (214) il book 105 di AsianOdds, per nome e ora
+          caricaAo(d)
         ]).then(function (a2) {
           var fidC = p.PinId != null ? p.PinId : p.ID_API;
           p.Pred = a2[7] && a2[7].partite && fidC != null ? a2[7].partite[String(fidC)] || null : null;
@@ -8901,6 +8935,8 @@
           p.ModInfo = a2[8] ? a2[8][1] : null;
           p.Bs = a2[9] && Array.isArray(a2[9].partite) ? besoccerDi(a2[9].partite, p.Casa, p.Ospite) : null;
           if (p.Bs) p.BsAgg = a2[9].aggiornato || "";
+          p.Ao = a2[10] ? aoDi(a2[10].righe, p.Casa, p.Ospite, p.Ora) : null;
+          if (p.Ao) p.AoAgg = a2[10].agg;
           p.Conf = confrontoDi(a2[6], fidC, p.Pred, p);
           // (140) l'Elo delle due squadre, per numero
           var ids = a2[4] && a2[4][1] ? a2[4][1][String(p.PinId)] : null;
@@ -9169,7 +9205,9 @@
     "FC Copenhagen": "FC København", "Copenhagen": "FC København", "Aarhus": "AGF", "AGF Aarhus": "AGF",
     "OB": "Odense Boldklub", "Odense": "Odense Boldklub", "Aalborg": "AaB", "Aalborg BK": "AaB",
     "Willem II": "Willem II Tilburg", "Jong PSV U21": "Jong PSV Eindhoven", "Jong PSV": "Jong PSV Eindhoven",
-    "Atletico Paranaense": "Athletico", "Athletico Paranaense": "Athletico"
+    "Atletico Paranaense": "Athletico", "Athletico Paranaense": "Athletico",
+    // (214) AsianOdds
+    "Ath Bilbao": "Athletic Club", "Athletic Bilbao": "Athletic Club"
   };
   var SOFA_ALIAS_N = {};
   Object.keys(SOFA_ALIAS).forEach(function (k) { SOFA_ALIAS_N[nomeBex(k)] = nomeBex(SOFA_ALIAS[k]); });
@@ -9467,23 +9505,105 @@
     });
     return best && best.v >= 1.5 && best.v - sec >= 0.15 ? best.r : null;
   }
+  // (214) IL BOOK 105 DI ASIANODDS (asianodds_ci.py dal server, tre volte
+  // al giorno). Nel file di AsianOdds ci sono dieci bookmaker sotto un
+  // numero, senza nome; il server legge il "105", il piu' sharp (margine
+  // mediano 1,6% su 96 partite, contro 4-13% degli altri). La partita si
+  // trova per nome, come BeSoccer, ma solo fra quelle entro 20 minuti
+  // dall'ora: provato il 28/11 contro Pinnacle, 20 partite su 20, nessuna
+  // sbagliata (scarto fra i due prezzi da 0,4 a 2,6 punti).
+  var AO_CACHE = {};
+  function caricaAo(d) {
+    if (!AO_CACHE[d]) {
+      var t = Math.floor(Date.now() / 600000);
+      AO_CACHE[d] = Promise.all([
+        leggiUrl(BASE + "asianodds_" + d + ".json?t=" + t, "asianodds_" + d).catch(function () { return null; }),
+        leggiUrl(BASE + "asianodds_index.json?t=" + t, "asianodds_index").catch(function () { return null; })
+      ]).then(function (a) {
+        return Array.isArray(a[0]) && a[0].length ? { righe: a[0], agg: a[1] && a[1].updated ? String(a[1].updated) : "" } : null;
+      });
+    }
+    return AO_CACHE[d];
+  }
+  function aoDi(lista, casa, osp, ora) {
+    if (!Array.isArray(lista)) return null;
+    var min = function (x) { var m = /(\d{1,2}):(\d{2})/.exec(x || ""); return m ? +m[1] * 60 + +m[2] : null; };
+    var t = min(ora);
+    var c = lista.filter(function (r) { var u = min(r.Ora); return t == null || u == null || Math.abs(u - t) <= 20; })
+      .map(function (r) { return { casa: r.Casa, ospite: r.Ospite, r: r }; });
+    var b = besoccerDi(c, casa, osp);
+    return b ? b.r : null;
+  }
+  function aoProb(a) {
+    if (!a) return null;
+    var q = [num(a["P1 Shin"]), num(a["PX Shin"]), num(a["P2 Shin"])];
+    if (q[0] == null) q = [num(a.P1), num(a.PX), num(a.P2)];
+    return q[0] == null || q[1] == null || q[2] == null ? null : q;
+  }
+  // lo scarto piu' grande fra il 105 e Pinnacle (p), col suo segno:
+  // positivo = il 105 ci crede di piu'
+  function aoConfronto(a, p, L) {
+    var q = aoProb(a);
+    if (!q) return {};
+    var k = null, g = 0;
+    for (var i = 0; i < 3; i++) {
+      if (p[i] == null) continue;
+      var d = q[i] - p[i];
+      if (k == null || Math.abs(d) > Math.abs(g)) { k = i; g = d; }
+    }
+    return { _ao: a, _aoP: q, _aoGap: k == null ? null : g, _aoSeg: k == null ? "" : "1X2"[k], _aoAgg: L ? L.agg : "" };
+  }
+  function aoOra(agg) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}:\d{2})/.exec(agg || "");
+    return m ? " il " + m[3] + "/" + m[2] + " alle " + m[4] : "";
+  }
+  function aoDettaglio(r) {
+    var a = r._ao, q = r._aoP;
+    var h = "<p><b>Book 105</b> (AsianOdds): <span class=nw><b class=seg>1</b> " + pv1(q[0]) + "</span> \u00b7 <span class=nw><b class=seg>X</b> " + pv1(q[1]) +
+      "</span> \u00b7 <span class=nw><b class=seg>2</b> " + pv1(q[2]) + "</span>";
+    if (num(a.Q1) != null) h += "; quote " + [a.Q1, a.QX, a.Q2].map(function (x) { return qv(x); }).join(" \u00b7 ") +
+      (num(a.Margine) != null ? ", margine " + mv(a.Margine) : "");
+    h += ".";
+    if (r._aoGap != null) h += "<br>" + (Math.abs(r._aoGap) >= AO_SCARTO
+      ? "<b>Non d'accordo con Pinnacle</b>: " + f1(Math.abs(r._aoGap)) + " punti " + (r._aoGap > 0 ? "in pi\u00f9" : "in meno") + " sul " + esc(r._aoSeg) +
+        ". Uno dei due \u00e8 indietro, o ha gi\u00e0 una notizia che l'altro non ha."
+      : "D'accordo con Pinnacle: scarto massimo " + f1(Math.abs(r._aoGap)) + " punti.");
+    return h + '<br><span class="piccolo">Letto dal server' + esc(aoOra(r._aoAgg)) + ". Il nome del bookmaker AsianOdds non lo d\u00e0: \u00e8 il pi\u00f9 sharp dei dieci che porta.</span></p>";
+  }
   function bloccoBesoccer(p) {
-    var B = p.Bs;
-    if (!B || (!B.p && !B.xg)) return "";
+    var B = p.Bs || {}, A = aoProb(p.Ao);
+    if (!B.p && !B.xg && !A) return "";
     // (211) tre barre, una per fonte, ognuna col suo colore: il nostro Elo
     // (se le squadre sono dello stesso campionato), Pinnacle, BeSoccer.
-    var h = '<div class="scheda"><h3>Elo, Pinnacle, BeSoccer</h3>', leg = [];
+    // (214) piu' il book 105 di AsianOdds, sui cinque campionati principali
     var mk = mercatoScheda(p);
-    if (B.p && p.Elo && p.Elo.p) { h += tripla("Elo", p.Elo.p[0], p.Elo.p[1], p.Elo.p[2], "t-elo"); leg.push(["#1f7a4d", "il nostro Elo"]); }
-    if (B.p && mk) { h += tripla(mk.da === "Pinnacle" ? "Pinnacle" : "Mercato", mk["1"], mk.X, mk["2"], "t-pin"); leg.push(["#1f4f9a", mk.da === "Pinnacle" ? "Pinnacle" : "mercato"]); }
+    if (mk && mk.da === "altro book" && A) mk = null;      // e' gia' il 105, non due volte
+    var titolo = [p.Elo && p.Elo.p ? "Elo" : "", mk ? (mk.da === "Pinnacle" ? "Pinnacle" : "mercato") : "", B.p ? "BeSoccer" : "", A ? "book 105" : ""].filter(Boolean);
+    var h = '<div class="scheda"><h3>' + esc(titolo.length > 1 ? titolo.slice(0, -1).join(", ") + " e " + titolo[titolo.length - 1] : (titolo[0] || "BeSoccer")) + "</h3>", leg = [];
+    if (p.Elo && p.Elo.p) { h += tripla("Elo", p.Elo.p[0], p.Elo.p[1], p.Elo.p[2], "t-elo"); leg.push(["#1f7a4d", "il nostro Elo"]); }
+    if (mk) { h += tripla(mk.da === "Pinnacle" ? "Pinnacle" : "Mercato", mk["1"], mk.X, mk["2"], "t-pin"); leg.push(["#1f4f9a", mk.da === "Pinnacle" ? "Pinnacle" : "mercato"]); }
+    if (A) { h += tripla("book 105", A[0], A[1], A[2], "t-ao"); leg.push(["#9a5b00", "book 105 (AsianOdds)"]); }
     if (B.p) { h += tripla("BeSoccer", num(B.p[0]), num(B.p[1]), num(B.p[2]), "t-bs"); leg.push(["#6a3fa0", "ELO di BeSoccer"]); }
     if (leg.length > 1) h += '<div class="fonti-col">' + leg.map(function (x) { return '<span><i style="background:' + x[0] + '"></i>' + esc(x[1]) + "</span>"; }).join("") +
       "<span>(in ogni barra 1 \u00b7 X \u00b7 2)</span></div>";
+    if (A) {
+      var gap = null, seg = "";
+      if (mk && mk.da === "Pinnacle") [mk["1"], mk.X, mk["2"]].forEach(function (v, i) {
+        var d = A[i] - num(v);
+        if (!isNaN(d) && (gap == null || Math.abs(d) > Math.abs(gap))) { gap = d; seg = "1X2"[i]; }
+      });
+      h += "<p>" + (gap == null ? "Book 105 di AsianOdds: il prezzo pi\u00f9 sharp fra i dieci che il sito porta (margine " + mv(p.Ao.Margine) + ")."
+        : Math.abs(gap) >= AO_SCARTO
+        ? "<b>Pinnacle e il book 105 non sono d'accordo</b>: " + f1(Math.abs(gap)) + " punti sul " + seg + ". Due prezzi sharp che si separano: " +
+          "uno dei due \u00e8 indietro, oppure \u00e8 arrivata una notizia che uno ha gi\u00e0 e l'altro no."
+        : "Pinnacle e il book 105 sono d'accordo: scarto massimo " + f1(Math.abs(gap)) + " punti.") +
+        '<br><span class="piccolo">Book 105 letto dal server' + esc(aoOra(p.AoAgg)) + "; Pinnacle si legge ogni ora, AsianOdds tre volte al giorno.</span></p>";
+    }
     var r = [];
     if (B.elo) r.push("Rating ELO BeSoccer " + esc(p.Casa) + " " + f0(num(B.elo[0])) + " \u00b7 " + esc(p.Ospite) + " " + f0(num(B.elo[1])));
     if (B.xg) r.push("Gol attesi " + f2(num(B.xg[0])) + " \u2013 " + f2(num(B.xg[1])) + " (totale " + f2(num(B.xg[0]) + num(B.xg[1])) + ")");
     if (r.length) h += "<p>" + r.join("<br>") + "</p>";
-    h += '<p class="piccolo">Il rating ELO di BeSoccer \u00e8 su una sua scala, non confrontabile col nostro. Letto dal server' +
+    if (B.p || B.xg) h += '<p class="piccolo">Il rating ELO di BeSoccer \u00e8 su una sua scala, non confrontabile col nostro. Letto dal server' +
       (p.BsAgg ? " il " + esc(String(p.BsAgg).slice(8, 10) + "/" + String(p.BsAgg).slice(5, 7) + " alle " + String(p.BsAgg).slice(11, 16)) : "") +
       (B.url ? ' \u00b7 <a href="' + esc(B.url) + '" target="_blank" rel="noopener">la partita su BeSoccer</a>' : "") + ".</p>";
     return h + "</div>";
