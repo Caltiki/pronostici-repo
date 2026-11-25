@@ -1,0 +1,105 @@
+{
+ "aggiornato": "2026-11-25 07:38",
+ "parametri": {
+  "K_MERCATO": 0.5,
+  "K_GOL": 0.02,
+  "K_GOL_SOLO": 0.05,
+  "K_LEGA": 0.03,
+  "REGR": 0.85,
+  "THETA": 0.08
+ },
+ "date": [
+  "2026-11-25",
+  "2026-11-26",
+  "2026-11-27",
+  "2026-11-28"
+ ],
+ "partite_storico": 1153416,
+ "partite_con_quote": 2473,
+ "misura": {
+  "tutte": {
+   "partite": 2473,
+   "brier_modello": 0.6015,
+   "brier_pinnacle": 0.5823,
+   "logloss_modello": 1.0052,
+   "logloss_pinnacle": 0.977,
+   "diff": 0.0191,
+   "t": 6.52,
+   "con_elo": {
+    "partite": 2473,
+    "brier_modello": 0.6015,
+    "brier_elo": 0.601,
+    "brier_pinnacle": 0.5823,
+    "diff_modello_elo": 0.0005,
+    "t": 0.26
+   },
+   "over_under": {
+    "partite": 685,
+    "brier_modello": 0.5056,
+    "brier_pinnacle": 0.4993,
+    "diff": 0.0063,
+    "t": 1.16
+   }
+  },
+  "ultimi_14_giorni": {
+   "partite": 2473,
+   "brier_modello": 0.6015,
+   "brier_pinnacle": 0.5823,
+   "logloss_modello": 1.0052,
+   "logloss_pinnacle": 0.977,
+   "diff": 0.0191,
+   "t": 6.52,
+   "con_elo": {
+    "partite": 2473,
+    "brier_modello": 0.6015,
+    "brier_elo": 0.601,
+    "brier_pinnacle": 0.5823,
+    "diff_modello_elo": 0.0005,
+    "t": 0.26
+   },
+   "over_under": {
+    "partite": 685,
+    "brier_modello": 0.5056,
+    "brier_pinnacle": 0.4993,
+    "diff": 0.0063,
+    "t": 1.16
+   }
+  },
+  "fiducia_alta": {
+   "partite": 0
+  },
+  "stesso_campionato": {
+   "partite": 2324,
+   "brier_modello": 0.6017,
+   "brier_pinnacle": 0.5846,
+   "logloss_modello": 1.0058,
+   "logloss_pinnacle": 0.9808,
+   "diff": 0.0171,
+   "t": 6.27,
+   "con_elo": {
+    "partite": 2324,
+    "brier_modello": 0.6017,
+    "brier_elo": 0.6013,
+    "brier_pinnacle": 0.5846,
+    "diff_modello_elo": 0.0003,
+    "t": 0.17
+   },
+   "over_under": {
+    "partite": 642,
+    "brier_modello": 0.5051,
+    "brier_pinnacle": 0.4988,
+    "diff": 0.0063,
+    "t": 1.25
+   }
+  }
+ },
+ "prova_storica": {
+  "fonte": "football-data.co.uk, 38 campionati, quote Bet365",
+  "partite": 100733,
+  "periodo": "2017-07 / 2026-09",
+  "brier_mercato": 0.5989,
+  "brier_modello": 0.6034,
+  "brier_soli_gol": 0.6125
+ },
+ "nota": "Brier: piu' basso = meglio. diff = modello meno Pinnacle sulle stesse partite (positivo: Pinnacle meglio); |t| > 2: non e' il caso."
+}
