@@ -2165,16 +2165,20 @@
   // "Pronostici" come seconda scheda: i prezzi equi nascono da queste
   // stesse quote. "Notevole" e "Affidabile" li decide asianodds_ci.py e qui
   // si leggono soltanto, come fa l'addon: la regola vive in un posto solo.
+  // (213) AsianOdds di nuovo, dal server Aruba con l'accesso al sito: i
+  // cinque campionati principali, fino a una decina di giorni avanti.
+  // "Affidabili" tolta: il file non porta piu' quel campo e la vista
+  // restava sempre vuota.
   var MK_VISTE = [
-    ["aff", "Affidabili",
-     "Solo le partite delle prossime 24 ore. Margine basso e i due de-vig concordi: le probabilit\u00e0 pi\u00f9 attendibili. Attendibile non vuol dire " +
-     "conveniente: sono le stime migliori del mercato, quindi il prezzo le incorpora gi\u00e0. Servono come metro."],
-    ["mov", "Movimenti",
-     "Solo le partite delle prossime 24 ore, e fra queste solo quelle dove il mercato si \u00e8 mosso davvero. Conta anche il margine: un movimento piccolo su un " +
-     "mercato quotato con cura pesa pi\u00f9 di uno grande su una lega minore, dove spesso \u00e8 solo la correzione dell'apertura."],
     ["tutte", "Tutte",
-     "Tutte le partite delle prossime 24 ore. Quote 1xBet, solo informative: non entrano nel pronostico."]
+     "AsianOdds, piano gratuito: i cinque campionati principali fino a una decina di giorni avanti. Quote all'apertura e adesso, il movimento in punti, " +
+     "le linee Asian handicap e Under/Over e l'Elo del sito. Solo informative: non entrano nel pronostico. Il prezzo di riferimento resta Pinnacle."],
+    ["mov", "Movimenti",
+     "Solo le partite dove le quote si sono mosse davvero dall'apertura. Un movimento qui arriva quasi sempre dopo quello di Pinnacle: " +
+     "guardalo accanto alla pagina Pinnacle, non da solo."]
   ];
+  // (213) le due pagine del Mercato, una accanto all'altra
+  var GRUPPO_MERCATO = [["pin", "Pinnacle"], ["mercato", "AsianOdds"]];
   var MK_ORDINI = [["file", "Per orario"], ["mov", "Per movimento"], ["margine", "Per margine"]];
   // (136) "Mercato" era AsianOdds, tolto il 12/11 (quote passate a
   // pagamento): il mercato adesso e' Pinnacle, nella sua pagina.
@@ -2307,7 +2311,7 @@
   var stato = {
     sez: "prezzi",
     data: { prezzi: null, mercato: null, consensus: null, accordo: null, poisson: null, sure: null, wdw: null, sm: null, hp: null, fp: null, pin: null },
-    vista: { wdw: "tutte", sm: "tutte", hp: "tutte", fp: "tutte", pin: "tutte", prezzi: "partite", mercato: "aff", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "75" },
+    vista: { wdw: "tutte", sm: "tutte", hp: "tutte", fp: "tutte", pin: "tutte", prezzi: "partite", mercato: "tutte", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "75" },
     ordine: { wdw: "prob", sm: "prob", hp: "ora", fp: "ora", pin: "ora", prezzi: "ora", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "prob" },
     cerca: "",
     fonteCm: "",
@@ -2365,7 +2369,7 @@
       if (p[2] === "fotmob" || p[2] === "understat") XG.fonte = p[2];
       return;
     }
-    if (p[0] === "fp" || p[0] === "mercato" || p[0] === "sure") p = ["prezzi"];
+    if (p[0] === "fp" || p[0] === "sure") p = ["prezzi"];
     if (SEZ[p[0]] || p[0] === "fonti") stato.sez = p[0];
     if (stato.sez === "fonti") {
       FONTI.vista = p[1] === "partite" ? "partite" : "riepilogo";
@@ -2613,7 +2617,7 @@
     $cont.setAttribute("data-sez", stato.sez || "");
     scriviHash();
     document.querySelectorAll("nav.sezioni button[data-sez]").forEach(function (b) {
-      var accesa = (stato.sez === "accordo" || stato.sez === "sm") ? "consensus" : (stato.sez === "mercato" || stato.sez === "wdw" || stato.sez === "hp" || stato.sez === "fp") ? "prezzi" :
+      var accesa = (stato.sez === "accordo" || stato.sez === "sm") ? "consensus" : stato.sez === "mercato" ? "pin" : (stato.sez === "wdw" || stato.sez === "hp" || stato.sez === "fp") ? "prezzi" :
         stato.sez === "xg" ? (CAMP.versoXG ? "camp" : "poisson") : stato.sez;
       b.setAttribute("aria-current", String(b.dataset.sez === accesa));
     });
@@ -2716,7 +2720,8 @@
       var vista = viste.filter(function (v) { return v[0] === stato.vista[sez]; })[0];
       var testa = (sez === "consensus" || sez === "accordo" || sez === "sm" ? chipsHtml(gruppoConsenso(sez), sez, "data-gruppo") : "") +
         // (174) la fila sopra le date solo se ha almeno due tasti
-        ((sez === "prezzi" || sez === "mercato" || sez === "wdw" || sez === "hp" || sez === "fp") && gruppoPronostici(sez).length > 1 ? chipsHtml(gruppoPronostici(sez), sez, "data-gruppo") : "") +
+        ((sez === "prezzi" || sez === "wdw" || sez === "hp" || sez === "fp") && gruppoPronostici(sez).length > 1 ? chipsHtml(gruppoPronostici(sez), sez, "data-gruppo") : "") +
+        (sez === "pin" || sez === "mercato" ? chipsHtml(GRUPPO_MERCATO, sez, "data-gruppo") : "") +
         (sez === "poisson" ? chipsHtml(GRUPPO_POISSON, sez, "data-gruppo") : "") +
         chipsDateHtml(date, d, "data-data") +
         (viste.length > 1 ? chipsHtml(viste, vista[0], "data-vista") : "") +
@@ -3287,7 +3292,7 @@
       $a.innerHTML = voci.length
         ? '<p class="piccolo">“' + esc(cerca) + "” si trova qui:</p>" + voci.join("")
         : '<p class="piccolo">Nemmeno negli altri giorni pubblicati in questa sezione.' +
-          (sez === "mercato" ? " Il Mercato ha solo le partite delle prossime 24 ore: le altre si trovano in Probabilit\u00e0 senza margine." : "") + "</p>";
+          (sez === "mercato" ? " AsianOdds ha solo i cinque campionati principali: le altre partite si trovano nella pagina Pinnacle." : "") + "</p>";
       $a.querySelectorAll("[data-vai-data]").forEach(function (b) {
         b.addEventListener("click", function () {
           stato.data[sez] = b.dataset.vaiData;
@@ -3584,7 +3589,6 @@
       return "Nessun esito accorciato di almeno 2 punti fra le " + n + " partite del " + data + " ancora da giocare. " +
         "Il movimento si misura dalla prima lettura di Pinnacle: per i giorni lontani di solito non c'\u00e8 ancora niente.";
     if (sez === "mercato") {
-      if (vista === "aff") return "Nessuna partita a margine basso fra le " + n + " del " + data + ". Prova \u201cTutte\u201d.";
       if (vista === "mov") return "Nessun movimento notevole fra le " + n + " partite del " + data + ". Prova \u201cTutte\u201d.";
     }
     if (sez === "sure") {
@@ -10383,7 +10387,7 @@
     if (e) e.preventDefault();
     stato.sez = "prezzi";
     stato.data = { prezzi: null, mercato: null, consensus: null, accordo: null, poisson: null, sure: null, wdw: null, sm: null, hp: null, fp: null, pin: null };
-    stato.vista = { wdw: "tutte", sm: "tutte", hp: "tutte", fp: "tutte", pin: "tutte", prezzi: "partite", mercato: "aff", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "75" };
+    stato.vista = { wdw: "tutte", sm: "tutte", hp: "tutte", fp: "tutte", pin: "tutte", prezzi: "partite", mercato: "tutte", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "75" };
     stato.ordine = { wdw: "prob", sm: "prob", hp: "ora", fp: "ora", pin: "ora", prezzi: "ora", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "prob" };
     stato.cerca = "";
     stato.fonteCm = "";
@@ -11924,7 +11928,8 @@
     if (!ix || !Array.isArray(ix.date) || !ix.date.length) return;
     WDW_PRONTO = true;
     // La pagina e' gia' disegnata: si aggiunge il tasto dove serve.
-    if (stato.sez === "prezzi" || stato.sez === "mercato") {
+    // (213) non piu' in "mercato": li' i tasti sono Pinnacle e AsianOdds.
+    if (stato.sez === "prezzi") {
       var m = $cont.querySelector('[data-gruppo="mercato"]');
       if (m && !$cont.querySelector('[data-gruppo="wdw"]')) {
         var sez = stato.sez;
