@@ -39,8 +39,7 @@
   "Sel": "Over",
   "Prob": 79.9,
   "Equa": 1.25,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-12-07",
@@ -145,7 +144,8 @@
   "Sel": "1X + Over 1.5",
   "Prob": 65.5,
   "Equa": 1.53,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-12-07",
@@ -713,27 +713,6 @@
   "Sel": "1 + Over 1.5",
   "Prob": 35.1,
   "Equa": 2.85,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-12-07",
-  "Ora": "20:45",
-  "Campionato": "Italy: Serie A",
-  "Partita": "Fiorentina - Cagliari",
-  "Casa": "Fiorentina",
-  "Ospite": "Cagliari",
-  "Linea_OU": 2.75,
-  "Gol_attesi": 2.99,
-  "Margine": 5.0,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "Under Over",
-  "Mercato": "OU 1.5",
-  "Sel": "Under",
-  "Prob": 20.1,
-  "Equa": 4.99,
   "Rif_Book": "Pinnacle"
  }
 ]
