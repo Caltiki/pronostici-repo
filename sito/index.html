@@ -556,6 +556,8 @@
   .tripla.t-elo .s1 { background: #1f7a4d; color: #fff; } .tripla.t-elo .sx { background: #cfe9da; color: #1a3d2b; } .tripla.t-elo .s2 { background: #4fae7e; color: #fff; }
   .tripla.t-pin .s1 { background: #1f4f9a; color: #fff; } .tripla.t-pin .sx { background: #d3e0f5; color: #1b2f52; } .tripla.t-pin .s2 { background: #5b8fd6; color: #fff; }
   .tripla.t-bs .s1 { background: #6a3fa0; color: #fff; } .tripla.t-bs .sx { background: #e4d8f3; color: #3a2358; } .tripla.t-bs .s2 { background: #9a72cc; color: #fff; }
+  /* (216) nella pagina AsianOdds: di chi sono le barre e il margine */
+  .fonte-105 { font-size: .72rem; font-weight: 800; letter-spacing: .03em; text-transform: uppercase; color: #9a5b00; margin-top: 4px; }
   /* (214) il book 105 di AsianOdds: ambra */
   .tripla.t-ao .s1 { background: #9a5b00; color: #fff; } .tripla.t-ao .sx { background: #f6e3c4; color: #4a2e05; } .tripla.t-ao .s2 { background: #d08a2a; color: #fff; }
   .tripla.t-elo .sx, .tripla.t-pin .sx, .tripla.t-bs .sx, .tripla.t-ao .sx { text-shadow: none; }
@@ -2174,7 +2176,8 @@
   var MK_VISTE = [
     ["tutte", "Tutte",
      "AsianOdds, piano gratuito: i cinque campionati principali fino a una decina di giorni avanti. Quote all'apertura e adesso, il movimento in punti, " +
-     "le linee Asian handicap e Under/Over e l'Elo del sito. Solo informative: non entrano nel pronostico. Il prezzo di riferimento resta Pinnacle."],
+     "le linee Asian handicap e Under/Over e l'Elo del sito. Le barre ambra e il margine sono del book 105, il pi\u00f9 sharp dei dieci bookmaker di AsianOdds; " +
+     "le quote accanto all'etichetta PINNACLE sono di Pinnacle, per confronto. Il prezzo di riferimento resta Pinnacle."],
     ["mov", "Movimenti",
      "Solo le partite dove le quote si sono mosse davvero dall'apertura. Un movimento qui arriva quasi sempre dopo quello di Pinnacle: " +
      "guardalo accanto alla pagina Pinnacle, non da solo."]
@@ -7038,7 +7041,9 @@
     var ap = apertura(r), pp = oraComeApertura(r);
     var verso = mov ? versoMercato(r) : null;
     var det = [];
-    if (r.Lega) det.push("<p>" + esc(r.Lega) + "</p>");
+    // (216) il dettaglio comincia col blocco Pinnacle del timbro; da qui in
+    // giu' e' tutto del book 105, e va detto
+    det.push("<p>" + (r.Lega ? esc(r.Lega) + " \u00b7 " : "") + '<b style="color:#9a5b00">da qui in gi\u00f9: book 105 (AsianOdds)</b></p>');
     var q = [["1", "Q1 Apre", "Q1", "Drift 1"], ["X", "QX Apre", "QX", "Drift X"], ["2", "Q2 Apre", "Q2", "Drift 2"]]
       .map(function (k) {
         var a = num(r[k[1]]), c = num(r[k[2]]), d = num(r[k[3]]);
@@ -7078,14 +7083,15 @@
       '<span class="segno">' + fav + "</span>" +
       '<div class="corpo">' +
       '<div class="alto"><span>' + esc(r.Ora || "") + "</span>" + golHtml(r) +
-      (fid ? '<span class="pill ' + fid[0] + '">margine ' + f1(marg) + "%</span>" : "") +
+      (fid ? '<span class="pill ' + fid[0] + '">105 \u00b7 margine ' + f1(marg) + "%</span>" : "") +
       (aff ? '<span class="chip">affidabile</span>' : "") + "</div>" +
       '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" + sqHtml(r) +
+      '<div class="fonte-105">Book 105 (AsianOdds)</div>' +
       (verso || nota ? '<div class="sel">' + (nota ? '<span class="scarto-grosso">movimento notevole' + (verso ? " " + esc(verso.testo) : "") + "</span>"
         : '<span class="scarto">' + esc(verso.testo.charAt(0).toUpperCase() + verso.testo.slice(1)) + "</span>") + "</div>" : "") +
-      (ap && mov && pp ? tripla("apertura", ap[0], ap[1], ap[2]) + tripla("ora", pp[0], pp[1], pp[2]) : tripla("ora", p1, px, p2)) +
+      (ap && mov && pp ? tripla("apertura", ap[0], ap[1], ap[2], "t-ao") + tripla("ora", pp[0], pp[1], pp[2], "t-ao") : tripla("ora", p1, px, p2, "t-ao")) +
       "</div>" +
-      '<div class="numero"><b>' + (mov != null ? f1(mov) : "-") + "</b><span>punti mossi</span></div>" +
+      '<div class="numero"><b>' + (mov != null ? f1(mov) : "-") + "</b><span>punti mossi dal 105</span></div>" +
       "</summary>" +
       '<div class="dettaglio">' + det.join("") + "</div>" +
       "</details></div>";
