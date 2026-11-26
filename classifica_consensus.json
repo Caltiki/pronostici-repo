@@ -86,9 +86,9 @@
    ]
   }
  },
- "aggiornato": "2026-11-25 22:43",
+ "aggiornato": "2026-11-26 01:19",
  "accordo": {
-  "totale": 3235,
+  "totale": 3237,
   "prende": {
    "statarea": {
     "prese": 1350,
@@ -107,13 +107,13 @@
    }
   },
   "mercato": {
-   "partite": 2117,
+   "partite": 2118,
    "poche": false,
    "brier": 0.5733,
-   "brier_mercato": 0.5609,
-   "diff": 0.0124,
+   "brier_mercato": 0.561,
+   "diff": 0.0123,
    "es": 0.0027,
-   "t": 4.61,
+   "t": 4.6,
    "ic": [
     0.0071,
     0.0176
@@ -128,10 +128,10 @@
     },
     {
      "fonte": "Pinnacle",
-     "partite": 636,
-     "diff": 0.0124,
+     "partite": 637,
+     "diff": 0.0123,
      "es": 0.0047,
-     "t": 2.65
+     "t": 2.63
     },
     {
      "fonte": "altri book",
@@ -149,7 +149,7 @@
     }
    ]
   },
-  "favorito_mercato": 56.4,
+  "favorito_mercato": 56.3,
   "testa_a_testa": {
    "partite": 1820,
    "consensus": 56.0,
