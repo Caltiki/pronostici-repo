@@ -327,7 +327,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Heart Problems"
    }
-  ]
+  ],
+  "titolari": {
+   "Beşiktaş": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "D. Alemdar",
+     "Taylan  Bulut",
+     "Tiago Djaló",
+     "E. Topçu",
+     "K. Ouattara",
+     "W. Ndidi",
+     "S. Özcan",
+     "O. Kökçü",
+     "V. Černý",
+     "Oh Hyeon-Gyu",
+     "I. Fakili"
+    ]
+   },
+   "Hapoel Beer Sheva": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "M. Wolff",
+     "G. Mizrahi",
+     "D. Diop",
+     "M. Vítor",
+     "Pedro Amador",
+     "Z. Ahmed",
+     "N. Yehoshua",
+     "A. Forson",
+     "M. Abu Rumi",
+     "I. Zlatanović",
+     "Y. Malede"
+    ]
+   }
+  },
+  "partita": "Beşiktaş - Hapoel Beer Sheva"
  },
  "1636244": {
   "assenti": [
@@ -489,7 +524,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Off the roster"
    }
-  ]
+  ],
+  "titolari": {
+   "Celta Vigo": {
+    "modulo": "3-4-3",
+    "titolari": [
+     "I. Radu",
+     "Javi Rodríguez",
+     "Yoel Lago",
+     "Marcos Alonso",
+     "Javi Rueda",
+     "Aleix Febas",
+     "H. Burcio",
+     "Sergio Carreira",
+     "Iago Aspas",
+     "Pablo Durán",
+     "C. Driouech"
+    ]
+   },
+   "Bournemouth": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "M. Di Gregorio",
+     "B. Diakité",
+     "J. Hill",
+     "António Silva",
+     "J. Soler",
+     "D. Brooks",
+     "L. Cook",
+     "A. Scott",
+     "A. Adli",
+     "J. Kluivert",
+     "Á. Rodríguez"
+    ]
+   }
+  },
+  "partita": "Celta Vigo - Bournemouth"
  },
  "1636255": {
   "assenti": [
@@ -662,7 +732,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Illness"
    }
-  ]
+  ],
+  "titolari": {
+   "Dinamo Zagreb": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "D. Kotarski",
+     "M. Valinčić",
+     "Sergi Domínguez",
+     "S. McKenna",
+     "B. Goda",
+     "L. Kačavenda",
+     "J. Mišić",
+     "L. Stojković",
+     "M. Lisica",
+     "D. Beljo",
+     "M. Oršić"
+    ]
+   },
+   "Bayer Leverkusen": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "M. Flekken",
+     "J. Quansah",
+     "L. Badé",
+     "F. Medina",
+     "Miguel Gutiérrez",
+     "R. Andrich",
+     "Aleix García",
+     "M. Diaby",
+     "M. Tillman",
+     "I. Maza",
+     "P. Schick"
+    ]
+   }
+  },
+  "partita": "Dinamo Zagreb - Bayer Leverkusen"
  },
  "1636298": {
   "assenti": [
@@ -785,7 +890,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Off the roster"
    }
-  ]
+  ],
+  "titolari": {
+   "Marseille": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "J. de Lange",
+     "K. Bezahaf",
+     "C. Egan-Riley",
+     "N. Aguerd",
+     "U. Garcia",
+     "P. Højbjerg",
+     "H. Abdelli",
+     "K. Abdallah",
+     "A. Gomes",
+     "Igor Paixão",
+     "A. Gouiri"
+    ]
+   },
+   "Levski Sofia": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "S. Vutsov",
+     "N. Serafimov",
+     "K. Dimitrov",
+     "C. Makoun",
+     "Álex Centelles",
+     "M. Grujić",
+     "E. El Moubarik",
+     "Aldair",
+     "A. Bouras",
+     "A. Oko-Flex",
+     "Reinaldo"
+    ]
+   }
+  },
+  "partita": "Marseille - Levski Sofia"
  },
  "1636307": {
   "assenti": [
@@ -1118,7 +1258,42 @@
     "partite_squadra": 16,
     "quota_gol": 0
    }
-  ]
+  ],
+  "titolari": {
+   "Olympiakos Piraeus": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "S. Ortega",
+     "P. Retsos",
+     "Z. Smajlović",
+     "L. Pirola",
+     "S. Onyemaechi",
+     "R. Freuler",
+     "Gustavo Sá",
+     "M. Pedersen",
+     "Jota Silva",
+     "Gelson Martins",
+     "A. González"
+    ]
+   },
+   "AC Milan": {
+    "modulo": "3-4-2-1",
+    "titolari": [
+     "M. Maignan",
+     "Mario Gila",
+     "K. De Winter",
+     "S. Bocoum",
+     "Diego Moreira",
+     "A. Jashari",
+     "A. Rabiot",
+     "P. Estupiñán",
+     "O. Hutchinson",
+     "A. Cissè",
+     "Gonçalo Ramos"
+    ]
+   }
+  },
+  "partita": "Olympiakos Piraeus - AC Milan"
  },
  "1636315": {
   "assenti": [
@@ -1195,7 +1370,42 @@
     "partite_squadra": 21,
     "quota_gol": 0
    }
-  ]
+  ],
+  "titolari": {
+   "Plzen": {
+    "modulo": "5-4-1",
+    "titolari": [
+     "F. Wiegele",
+     "A. Gabriel",
+     "T. Pališčák",
+     "S. Dweh",
+     "F. Prebsl",
+     "Merchas Doski",
+     "A. Memić",
+     "P. Hrošovský",
+     "L. Červ",
+     "C. Kabongo",
+     "P. Adu"
+    ]
+   },
+   "Benfica": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "A. Trubin",
+     "Daniel Banjaqui",
+     "A. Circati",
+     "Tomás Araújo",
+     "S. El Karouani",
+     "Manu",
+     "E. Barrenechea",
+     "D. Lukebakio",
+     "Rafa",
+     "J. Kamiński",
+     "V. Pavlidis"
+    ]
+   }
+  },
+  "partita": "Plzen - Benfica"
  },
  "1636329": {
   "assenti": [
@@ -1375,7 +1585,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Knee Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Union St. Gilloise": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "H. Koffi",
+     "D. De Roeve",
+     "M. Sylla",
+     "R. Sykes",
+     "L. Patris",
+     "A. Zorgane",
+     "K. Van de Perre",
+     "Guilherme Henriques da Silva Carvalho",
+     "R. Florucz",
+     "K. Rodríguez",
+     "B. Zeneli"
+    ]
+   },
+   "Lech Poznan": {
+    "modulo": "5-4-1",
+    "titolari": [
+     "M. Lis",
+     "R. Gumny",
+     "M. Skrzypczak",
+     "W. Mońka",
+     "T. Yegbe",
+     "M. Gurgul",
+     "L. Bengtsson",
+     "A. Kozubal",
+     "G. Berggren",
+     "L. Palma",
+     "Y. Agnero"
+    ]
+   }
+  },
+  "partita": "Union St. Gilloise - Lech Poznan"
  },
  "1636334": {
   "assenti": [
@@ -1578,7 +1823,42 @@
     "partite_squadra": 12,
     "quota_gol": 0
    }
-  ]
+  ],
+  "titolari": {
+   "Red Bull Salzburg": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Christian Zawieschitzky",
+     "L. Morgalla",
+     "T. Drexler",
+     "Valentin Zabransky",
+     "F. Krätzig",
+     "S. Diabaté",
+     "B. Mazurek",
+     "E. Baidoo",
+     "G. Diakité",
+     "J. Lindstrøm",
+     "Y. Vertessen"
+    ]
+   },
+   "Ararat-Armenia": {
+    "modulo": "5-4-1",
+    "titolari": [
+     "A. Nersesyan",
+     "Hugo Oliveira",
+     "Bruno Wilson",
+     "M. Carlier",
+     "A. Malis",
+     "K. Muradyan",
+     "E. Grigoryan",
+     "J. Balanta",
+     "A. Serobyan",
+     "A. Ndour",
+     "Z. Shaghoyan"
+    ]
+   }
+  },
+  "partita": "Red Bull Salzburg - Ararat-Armenia"
  },
  "1636252": {
   "assenti": [
@@ -3975,5 +4255,338 @@
    }
   },
   "partita": "Al-Faisaly FC - Al Diriyah"
+ },
+ "1636381": {
+  "titolari": {
+   "Ajax": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "M. ter Stegen",
+     "T. Kehrer",
+     "D. Blind",
+     "D. Janse",
+     "O. Wijndal",
+     "Rayane Bounida",
+     "S. Amrabat",
+     "J. Brandt",
+     "O. Edvardsen",
+     "Marcos Leonardo",
+     "A. Ouazane"
+    ]
+   },
+   "FC Thun": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "N. Steffen",
+     "F. Fehr",
+     "J. Bamert",
+     "M. Bürki",
+     "O. Mambwa",
+     "N. Reichmuth",
+     "M. Käit",
+     "J. Roth",
+     "N. Maier",
+     "B. Labeau",
+     "F. Dursun"
+    ]
+   }
+  },
+  "partita": "Ajax - FC Thun"
+ },
+ "1636393": {
+  "titolari": {
+   "Brann": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "M. Dyngeland",
+     "L. Cornic",
+     "F. Knudsen",
+     "N. Kasanwirjo",
+     "J. Soltvedt",
+     "K. Ingason",
+     "N. Jensen Wassberg",
+     "J. Torsvik",
+     "U. Mathisen",
+     "N. Holm",
+     "N. Castro"
+    ]
+   },
+   "Aarhus": {
+    "modulo": "3-4-3",
+    "titolari": [
+     "M. Hedenstad Christiansen",
+     "T. Mølgaard",
+     "C. Rösler",
+     "D. Grétarsson",
+     "J. Andersen",
+     "Kristian Fredrik Malt Arnstad",
+     "M. Knudsen",
+     "G. Links",
+     "T. Bech",
+     "S. Tchamche",
+     "C. McCowatt"
+    ]
+   }
+  },
+  "partita": "Brann - Aarhus"
+ },
+ "1636395": {
+  "titolari": {
+   "Brighton": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "J. Steele",
+     "F. Kadıoğlu",
+     "M. Svoboda",
+     "P. Struijk",
+     "M. De Cuyper",
+     "J. Hinshelwood",
+     "José María Andrés Baixauli",
+     "P. Groß",
+     "M. O&apos;Riley",
+     "C. Kostoulas",
+     "I. Osman"
+    ]
+   },
+   "Universitatea Craiova": {
+    "modulo": "3-4-3",
+    "titolari": [
+     "L. Popescu",
+     "O. Romanchuk",
+     "N. Stevanović",
+     "V. Screciu",
+     "C. Mora",
+     "T. Băluță",
+     "João Lameira",
+     "N. Bancu",
+     "A. Cicâldău",
+     "S. Elisor",
+     "Ș. Baiaram"
+    ]
+   }
+  },
+  "partita": "Brighton - Universitatea Craiova"
+ },
+ "1636405": {
+  "titolari": {
+   "Egnatia Rrogozhinë": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "M. Dajsinani",
+     "Guillem Jaime",
+     "A. Aleksi",
+     "N. Ajetovikj",
+     "Andrey Yago",
+     "A. Albanese",
+     "A. Kryeziu",
+     "Fernando Medeiros",
+     "K. Loukili",
+     "D. Adjessa",
+     "I. Gruda"
+    ]
+   },
+   "Lincoln Red Imps FC": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "Nauzet García",
+     "J. Eersteling",
+     "G. Cardozo",
+     "B. Lopes",
+     "Christian Rutjens",
+     "Toni García",
+     "G. Torrilla",
+     "Mandi",
+     "Nano",
+     "K. Gómez",
+     "Álvaro Romero"
+    ]
+   }
+  },
+  "partita": "Egnatia Rrogozhinë - Lincoln Red Imps FC"
+ },
+ "1636426": {
+  "titolari": {
+   "FC Iberia 1999": {
+    "modulo": "4-1-3-2",
+    "titolari": [
+     "G. Makaridze",
+     "G. Kobuladze",
+     "A. Amisulashvili",
+     "V. Selimović",
+     "J. Jinjolava",
+     "N. Dadiani",
+     "Lucas Brune",
+     "B. Kardava",
+     "N. Sikharulashvili",
+     "A. Dzagania",
+     "G. Kutsia"
+    ]
+   },
+   "Getafe": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "David Soria",
+     "Kiko Femenía",
+     "S. Sazonov",
+     "D. Dakonam",
+     "Davinchi",
+     "Ramón Terrats",
+     "N. Gudelj",
+     "Mario Martín",
+     "Alberto Risco",
+     "M. Satriano",
+     "Borja Mayoral"
+    ]
+   }
+  },
+  "partita": "FC Iberia 1999 - Getafe"
+ },
+ "1636431": {
+  "titolari": {
+   "FK Jablonec": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "K. Mihelak",
+     "M. Cedidla",
+     "N. Tekijaški",
+     "D. Pavlović",
+     "J. Sláma",
+     "R. Sedláček",
+     "N. Okeke",
+     "V. Tchanturishvili",
+     "D. Hollý",
+     "S. Alioum",
+     "L. Jawo"
+    ]
+   },
+   "FC Lugano": {
+    "modulo": "3-4-3",
+    "titolari": [
+     "D. von Ballmoos",
+     "A. Papadopoulos",
+     "L. Mai",
+     "J. Bichsel",
+     "B. Karimov",
+     "A. Kendouci",
+     "U. Bislimi",
+     "E. Alioski",
+     "B. Castro",
+     "A. Ajeti",
+     "E. Pihlström"
+    ]
+   }
+  },
+  "partita": "FK Jablonec - FC Lugano"
+ },
+ "1636421": {
+  "titolari": {
+   "Heart Of Midlothian": {
+    "modulo": "5-3-2",
+    "titolari": [
+     "B. Reus",
+     "S. Kerjota",
+     "J. Altena",
+     "J. McCart",
+     "S. Findlay",
+     "C. Borchgrevink",
+     "M. Gillies",
+     "S. Guendouz",
+     "L. Mendy",
+     "P. Kabore",
+     "Cláudio Braga"
+    ]
+   },
+   "Monaco": {
+    "modulo": "3-4-2-1",
+    "titolari": [
+     "L. Hrádecký",
+     "Sadibou Sané",
+     "E. Dier",
+     "J. Teze",
+     "Vanderson",
+     "D. Zakaria",
+     "E. Diop",
+     "C. Mawissa Elebi",
+     "T. Minamino",
+     "M. Abline",
+     "F. Balogun"
+    ]
+   }
+  },
+  "partita": "Heart Of Midlothian - Monaco"
+ },
+ "1636438": {
+  "titolari": {
+   "Kauno Žalgiris": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "T. Švedkauskas",
+     "J. Moutachy",
+     "R. Lekiatas",
+     "A. Hernández",
+     "N. Edokpolor",
+     "Y. Karashima",
+     "M. Burba",
+     "A. Kalik",
+     "V. Slivka",
+     "L. Kreković",
+     "G. Debeljuh"
+    ]
+   },
+   "Riga": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "K. Pirić",
+     "M. Toņiševs",
+     "K. Wassom",
+     "B. Musah",
+     "R. Jurkovskis",
+     "O. Galo",
+     "Caio",
+     "S. Oulad M&apos;Hand",
+     "Iago Siqueira Augusto",
+     "R. Aouani",
+     "Reginaldo Ramires"
+    ]
+   }
+  },
+  "partita": "Kauno Žalgiris - Riga"
+ },
+ "1636460": {
+  "titolari": {
+   "Pafos": {
+    "modulo": "5-4-1",
+    "titolari": [
+     "R. Majecki",
+     "Bruno Felipe",
+     "S. Mmaee",
+     "David Luiz",
+     "David Goldar",
+     "N. Ioannou",
+     "V. Dragomir",
+     "Pêpê Rodrigues",
+     "I. Šunjić",
+     "João Correia",
+     "Anderson Silva"
+    ]
+   },
+   "FC Midtjylland": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "E. Ólafsson",
+     "N. A. Aziz",
+     "R. Kristensen",
+     "M. Bech",
+     "V. Bak Jensen",
+     "J. Emefile",
+     "Hong Hyun-Seok",
+     "P. Bravo",
+     "S. Johannesen",
+     "M. Rajović",
+     "F. Etim"
+    ]
+   }
+  },
+  "partita": "Pafos - FC Midtjylland"
  }
 }
