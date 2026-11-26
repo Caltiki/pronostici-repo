@@ -2178,13 +2178,18 @@
      "AsianOdds, piano gratuito: i cinque campionati principali fino a una decina di giorni avanti. Quote all'apertura e adesso, il movimento in punti, " +
      "le linee Asian handicap e Under/Over e l'Elo del sito. Le barre ambra e il margine sono del book 105, il pi\u00f9 sharp dei dieci bookmaker di AsianOdds; " +
      "le quote accanto all'etichetta PINNACLE sono di Pinnacle, per confronto. Il prezzo di riferimento resta Pinnacle."],
+    // (221) filtro per probabilita' del favorito, come nelle altre pagine
+    ["p60", "Sopra il 60%",
+     "Solo le partite dove l'esito pi\u00f9 probabile per il book 105 (senza margine) supera il 60%, dalla pi\u00f9 probabile."],
+    ["p70", "Sopra il 70%",
+     "Solo le partite dove l'esito pi\u00f9 probabile per il book 105 (senza margine) supera il 70%, dalla pi\u00f9 probabile."],
     ["mov", "Movimenti",
      "Solo le partite dove le quote si sono mosse davvero dall'apertura. Un movimento qui arriva quasi sempre dopo quello di Pinnacle: " +
      "guardalo accanto alla pagina Pinnacle, non da solo."]
   ];
   // (213) le due pagine del Mercato, una accanto all'altra
   var GRUPPO_MERCATO = [["pin", "Pinnacle"], ["mercato", "AsianOdds"]];
-  var MK_ORDINI = [["file", "Per orario"], ["mov", "Per movimento"], ["margine", "Per margine"]];
+  var MK_ORDINI = [["file", "Per orario"], ["prob", "Per probabilit\u00e0"], ["mov", "Per movimento"], ["margine", "Per margine"]];
   // (136) "Mercato" era AsianOdds, tolto il 12/11 (quote passate a
   // pagamento): il mercato adesso e' Pinnacle, nella sua pagina.
   var GRUPPO_PRONOSTICI_TUTTI = [["prezzi", "Pronostici"], ["wdw", "FootyStats"], ["pin", "Mosse Pinnacle"]];
@@ -2393,7 +2398,8 @@
       if (/^\d{4}-\d{2}-\d{2}$/.test(p[1] || "")) stato.data[stato.sez] = p[1];
       var viste = SEZ[stato.sez].viste;
       if (p[2] && viste.some(function (v) { return v[0] === p[2]; })) stato.vista[stato.sez] = p[2];
-      if (stato.sez === "pin" && (p[2] === "calo" || p[2] === "modello" || p[2] === "sharp")) stato.ordine.pin = "mov";   // (209) come col bottone
+      if (stato.sez === "pin" && (p[2] === "calo" || p[2] === "modello" || p[2] === "sharp")) stato.ordine.pin = "mov";
+      if (stato.sez === "mercato" && (p[2] === "p60" || p[2] === "p70")) stato.ordine.mercato = "prob";   // (209) come col bottone
     }
   }
   function scriviHash() {
@@ -2803,6 +2809,7 @@
         if (sez === "prezzi" && b.dataset.vista === "partite" && stato.ordine.prezzi === "file") stato.ordine.prezzi = "ora";
         if (sez === "pin" && b.dataset.vista === "calo") stato.ordine.pin = "mov";     // (202) dal calo piu' utile
         if (sez === "pin" && (b.dataset.vista === "modello" || b.dataset.vista === "sharp")) stato.ordine.pin = "mov";  // (209) dallo scarto piu' grande
+        if (sez === "mercato" && (b.dataset.vista === "p60" || b.dataset.vista === "p70")) stato.ordine.mercato = "prob";  // (221)
         disegna();
       });
     });
@@ -3586,6 +3593,7 @@
     });
     // La probabilita' del segno indicato, dalla piu' alta. A parita' vince
     // chi ha piu' fonti: lo stesso 70% detto da tre siti pesa piu' di uno.
+    else if (o === "prob" && sez === "mercato") v.sort(function (a, b) { return (mkFav(b) || 0) - (mkFav(a) || 0); });
     else if (o === "prob") v.sort(function (a, b) {
       return ((probOrdine(b) || 0) - (probOrdine(a) || 0)) || ((num(b.Fonti) || 0) - (num(a.Fonti) || 0));
     });
@@ -3633,6 +3641,7 @@
         "Il movimento si misura dalla prima lettura di Pinnacle: per i giorni lontani di solito non c'\u00e8 ancora niente.";
     if (sez === "mercato") {
       if (vista === "mov") return "Nessun movimento notevole fra le " + n + " partite del " + data + ". Prova \u201cTutte\u201d.";
+      if (vista === "p60" || vista === "p70") return "Nessuna delle " + n + " partite del " + data + " ha un esito sopra il " + vista.slice(1) + "% per il book 105. Prova \u201cTutte\u201d.";
     }
     if (sez === "sure") {
       return "Nessuna delle " + n + " partite quotate del " + data + " ha un favorito sopra il " + esc(vista) + "%. Prova una soglia pi\u00f9 bassa.";
@@ -7022,7 +7031,16 @@
 
   // ---------------------------------------------------------- mercato
 
+  // (221) la probabilita' dell'esito favorito del book 105, senza margine (Shin)
+  function mkFav(r) {
+    var p = [num(r["P1 Shin"]), num(r["PX Shin"]), num(r["P2 Shin"])];
+    if (p[0] == null) p = [num(r.P1), num(r.PX), num(r.P2)];
+    if (p.some(function (x) { return x == null; })) return null;
+    return Math.max(p[0], p[1], p[2]);
+  }
   function mkTiene(r, tipo) {
+    if (tipo === "p60") return (mkFav(r) || 0) > 60;
+    if (tipo === "p70") return (mkFav(r) || 0) > 70;
     if (tipo === "aff") return r.Affidabile === true || String(r.Affidabile).toLowerCase() === "true";
     if (tipo === "mov") return r.Notevole === true || String(r.Notevole).toLowerCase() === "true";
     return true;
@@ -7131,7 +7149,9 @@
         : '<span class="scarto">' + esc(verso.testo.charAt(0).toUpperCase() + verso.testo.slice(1)) + "</span>") + "</div>" : "") +
       (ap && mov && pp ? tripla("apertura", ap[0], ap[1], ap[2], "t-ao") + tripla("ora", pp[0], pp[1], pp[2], "t-ao") : tripla("ora", p1, px, p2, "t-ao")) +
       "</div>" +
-      '<div class="numero"><b>' + (mov != null ? f1(mov) : "-") + "</b><span>punti mossi dal 105</span></div>" +
+      ((stato.vista.mercato === "p60" || stato.vista.mercato === "p70") && mkFav(r) != null
+        ? '<div class="numero">' + pB(mkFav(r)) + "<span>sul " + esc(fav) + " \u00b7 equa " + f2(100 / mkFav(r)) + "</span></div>"
+        : '<div class="numero"><b>' + (mov != null ? f1(mov) : "-") + "</b><span>punti mossi dal 105</span></div>") +
       "</summary>" +
       '<div class="dettaglio">' + det.join("") + "</div>" +
       "</details></div>";
