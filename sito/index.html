@@ -1305,6 +1305,9 @@
   /* Stemmi accanto ai nomi delle squadre. */
   img.stemma { width: 18px; height: 18px; object-fit: contain; vertical-align: -3px; margin-right: 5px; }
   img.stemma.grande { width: 28px; height: 28px; vertical-align: -6px; margin-right: 7px; }
+  /* (227) "adesso": dove comincia la parte della giornata ancora da giocare */
+  .ora-adesso { display: flex; align-items: center; gap: 8px; margin: 6px 2px 10px; color: var(--evidenza); font-size: .78rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+  .ora-adesso::before, .ora-adesso::after { content: ""; flex: 1; height: 2px; background: var(--evidenza); opacity: .5; border-radius: 2px; }
   /* (225) gli stemmi senza piu' il riquadro bianco (stemmi_trasparenti.py):
      in tema scuro quelli scritti in nero sparirebbero sul fondo, quindi un
      filo di alone chiaro attorno */
@@ -2656,6 +2659,7 @@
     nav.scrollTo({ left: Math.max(0, meta), behavior: liscio ? "smooth" : "auto" });
   }
   function disegna() {
+    SALTO_ORA = true;                     // (227) al primo disegno, all'ora di adesso
     // (156) la pagina in cui si e' (per lo stile delle card larghe)
     $cont.setAttribute("data-sez", stato.sez || "");
     scriviHash();
@@ -2859,6 +2863,59 @@
   }
 
   var ultime = null;
+  // (227) LA GIORNATA DI OGGI SI APRE ALL'ORA DI ADESSO. Entrando in una
+  // pagina con la lista per orario, sulla data di oggi, la pagina scende
+  // alla prima partita non ancora iniziata, con una riga "adesso" sopra;
+  // quelle gia' giocate o in corso restano sopra, scorrendo indietro. Solo
+  // al primo disegno della pagina (cambio di pagina, data o vista), non
+  // mentre si cerca o si cambia ordine; mai tornando da una scheda (li'
+  // vale il posto di prima) ne' sui giorni diversi da oggi.
+  var SALTO_ORA = false;
+  function ordinePerOra(sez) {
+    var o = stato.ordine[sez], l = ((SEZ[sez] && SEZ[sez].ordini) || []).filter(function (x) { return x[0] === o; })[0];
+    return !!(l && /orario/i.test(l[1]));
+  }
+  function adessoHM() {
+    return new Intl.DateTimeFormat("it-IT", { timeZone: "Europe/Rome", hour: "2-digit", minute: "2-digit", hour12: false }).format(new Date());
+  }
+  // indice della prima voce non ancora iniziata (ora >= adesso), -1 se nessuna
+  function primaDaAdesso(lista, oraDi, finita) {
+    var hm = adessoHM();
+    for (var i = 0; i < lista.length; i++) {
+      var o = String(oraDi(lista[i]) || "").slice(0, 5);
+      if (/^\d{2}:\d{2}$/.test(o) && o >= hm && !(finita && finita(lista[i]))) return i;
+    }
+    return -1;
+  }
+  function saltoPrevisto(sez, data, lista, oraDi, finita) {
+    var ok = SALTO_ORA && data === oggi() && !ritorno && ordinePerOra(sez) && !stato.cerca;
+    SALTO_ORA = false;
+    return ok ? primaDaAdesso(lista, oraDi, finita) : -1;
+  }
+  function vaiAdesso($r, i) {
+    if (i <= 0) return;
+    var lista = $r.querySelector(".lista");
+    var el = lista && lista.children[i];
+    if (!el) return;
+    var m = document.createElement("div");
+    m.className = "ora-adesso";
+    m.textContent = "adesso \u00b7 " + adessoHM();
+    lista.insertBefore(m, el);
+    var guscio = document.querySelector(".sez-guscio");
+    var su = (guscio ? guscio.getBoundingClientRect().height : 80) + 18;
+    var fatta = null;
+    var vai = function () {
+      // se nel frattempo si e' scorso a mano, si lascia stare
+      if (fatta != null && Math.abs(window.scrollY - fatta) > 4) return;
+      fatta = Math.max(0, m.getBoundingClientRect().top + window.scrollY - su);
+      window.scrollTo({ top: fatta, behavior: "instant" });
+    };
+    vai();
+    // le card si allungano un poco dopo (Elo, quote, stemmi): si ricorregge
+    setTimeout(vai, 700);
+    setTimeout(vai, 1800);
+  }
+
   function ridisegnaRighe() {
     if (ultime) disegnaRighe(ultime.sez, ultime.righe, ultime.data);
   }
@@ -2939,6 +2996,9 @@
     // riga per esito, compatta (quote ed Elo nel dettaglio).
     if (sez === "prezzi" && VISTE_MERCATO[vista] && stato.ordine.prezzi === "ora") return disegnaPerPartita(sez, visibili, tutte, data, $r, true);
 
+    var salto = saltoPrevisto(sez, data, visibili, function (r) { return r.Ora; },
+      function (r) { return r.Esito || r._esito || (r.Gol_Casa != null && r.Gol_Ospite != null); });
+    if (salto > 0 && stato.limite < salto + 40) stato.limite = salto + 40;
     var mostrate = visibili.slice(0, stato.limite);
     var conta = visibili.length === tutte.length
       ? visibili.length + " righe"
@@ -3005,6 +3065,7 @@
       });
     }
     rimettiPosto($r);
+    vaiAdesso($r, salto);
   }
 
   // ------------------------------------------------ tutte le partite
@@ -3139,6 +3200,9 @@
     if (gf) gruppi = gf;
     if (pron && stato.calo) gruppi = gruppi.filter(function (g) { return gCalo.indexOf(g) >= 0; });
 
+    var saltoG = saltoPrevisto(sez, data, gruppi, function (g) { return g[0].Ora; },
+      function (g) { return g.some(function (r) { return r.Esito || r._esito || (r.Gol_Casa != null && r.Gol_Ospite != null); }); });
+    if (saltoG > 0 && stato.limite < saltoG + 40) stato.limite = saltoG + 40;
     var mostrateG = gruppi.slice(0, stato.limite), mostrate = [];
     // LA GIOCATA PROPOSTA SULLA SCHEDA CHIUSA, quando la partita non ha
     // quella della schedina. Prima era la piu' probabile, cioe' quasi
@@ -3301,6 +3365,7 @@
       });
     });
     rimettiPosto($r);
+    vaiAdesso($r, saltoG);
   }
 
   // ------------------------------------------- la ricerca negli altri giorni
