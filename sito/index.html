@@ -2895,12 +2895,14 @@
   function vaiAdesso($r, i) {
     if (i <= 0) return;
     var lista = $r.querySelector(".lista");
-    var el = lista && lista.children[i];
-    if (!el) return;
+    vaiAdessoEl(lista && lista.children[i]);
+  }
+  function vaiAdessoEl(el) {
+    if (!el || !el.parentNode) return;
     var m = document.createElement("div");
     m.className = "ora-adesso";
     m.textContent = "adesso \u00b7 " + adessoHM();
-    lista.insertBefore(m, el);
+    el.parentNode.insertBefore(m, el);
     var guscio = document.querySelector(".sez-guscio");
     var su = (guscio ? guscio.getBoundingClientRect().height : 80) + 18;
     var fatta = null;
@@ -6932,7 +6934,7 @@
       quote +
       // (173) il movimento sta nella griglia prima/ora delle quote, come
       // nelle altre pagine; i punti di probabilita' restano nel dettaglio
-      tripla("senza margine", p[0], p[1], p[2]) +
+      tripla("mercato", p[0], p[1], p[2]) +
       (r._mod ? tripla("modello", r._modP[0], r._modP[1], r._modP[2]) : "") +
       (r._ao ? tripla("book 105", r._aoP[0], r._aoP[1], r._aoP[2]) : "") +
       "</div>" +
@@ -11013,6 +11015,7 @@
         document.getElementById("cerca-cal").addEventListener("input", function (e) { CAL.cerca = e.target.value; listaCalendario(lista, sito); });
         document.getElementById("ordine-cal").addEventListener("change", function (e) {
           CAL.ordine = e.target.value === "ora" || e.target.value === "prob" ? e.target.value : "lega";
+          if (CAL.ordine === "ora") SALTO_ORA = true;      // (228) passando a "Per orario", all'ora di adesso
           try { localStorage.setItem("caltiki-cal-ordine", CAL.ordine); } catch (er) {}
           listaCalendario(lista, sito);
         });
@@ -11165,6 +11168,15 @@
       $l.innerHTML = '<p class="conta">' + righe.length + (righe.length === 1 ? " partita" : " partite") + " per orario · " + nS + " sul sito</p>" +
         (righe.length ? listaPerOra(righe, sito) : messaggio("vuoto", "Nessuna partita con questi filtri."));
       collegaRigheCal($l);
+      // (228) anche qui, oggi, all'ora di adesso: la prima partita non ancora iniziata
+      var okC = SALTO_ORA && CAL.data === oggi() && !ritorno && !q && CAL.filtro === "tutte";
+      SALTO_ORA = false;
+      if (okC) {
+        var iC = primaDaAdesso(righe, function (x) { return x.ora; }, function (x) {
+          var st = String(x.stato || "").toUpperCase(); return (st && st !== "NS" && st !== "TBD") || !!statoCal(x).vivo;
+        });
+        if (iC > 0) vaiAdessoEl($l.querySelectorAll(".cal-riga")[iC]);
+      }
       return;
     }
     var gruppi = {}, conSito = {};
