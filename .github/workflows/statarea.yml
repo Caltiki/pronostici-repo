@@ -192,6 +192,12 @@ jobs:
       contents: write
     if: (github.event_name == 'workflow_dispatch' && !github.event.inputs.cron) || (github.event.schedule || github.event.inputs.cron) == '37 0 * * *'
     steps:
+      # (26/11) per stemmi_trasparenti.py: toglie lo sfondo chiaro pieno
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
       - name: Pubblica gli stemmi sul ramo stemmi
         env:
           TOKEN_DATI: ${{ secrets.TOKEN_REPO_DATI || github.token }}
@@ -213,7 +219,10 @@ jobs:
           fi
           ORA=$(curl -fsSL "${RAW}/stemmi/versione.txt" 2>/dev/null || echo "nessuna")
           echo "pacchetto stemmi: ${VER}   sul ramo stemmi: ${ORA}"
-          if [ "$ORA" = "$VER" ]; then
+          # (26/11) "-t1" = stemmi gia' passati da stemmi_trasparenti.py: il
+          # ramo di adesso non ce l'ha, quindi si rifa' una volta anche
+          # senza versione nuova del pacchetto.
+          if [ "$ORA" = "${VER}-t1" ]; then
             echo "Gia' aggiornati, niente da fare."
             exit 0
           fi
@@ -226,7 +235,20 @@ jobs:
             exit 1
           fi
           cp "$CART"/*.png pub/
-          echo -n "$VER" > pub/versione.txt
+          # (26/11) LO SFONDO CHIARO PIENO VIA. Circa meta' degli stemmi del
+          # pacchetto e' un quadrato bianco con lo stemma dentro: sul sito, in
+          # tema scuro, si vedeva il riquadro. stemmi_trasparenti.py (main di
+          # questo repository) lo toglie solo dove il bordo e' chiaro e
+          # uniforme; il resto non lo tocca. Se non va, si pubblicano com'erano.
+          SEGNO="$VER"
+          if pip install -q pillow numpy scipy && \
+             curl -fsSL -o stemmi_trasparenti.py "${RAW}/main/stemmi_trasparenti.py" && \
+             python stemmi_trasparenti.py pub; then
+            SEGNO="${VER}-t1"
+          else
+            echo "::warning::stemmi_trasparenti.py non e' andato: stemmi pubblicati con lo sfondo."
+          fi
+          echo -n "$SEGNO" > pub/versione.txt
           N=$(ls pub/*.png | wc -l)
           echo "stemmi da pubblicare: $N"
           cd pub
@@ -1953,6 +1975,12 @@ jobs:
           fi
           python apifootball.py stemmi --dati ghdata --cartella stemmiapi || \
             echo "::warning::apifootball.py stemmi non e' andato a buon fine."
+          # (26/11) lo sfondo chiaro pieno via anche qui (vedi il job stemmi);
+          # tocca solo i file che non sono gia' trasparenti sul bordo
+          if pip install -q pillow numpy scipy && \
+             curl -fsSL -o stemmi_trasparenti.py "https://raw.githubusercontent.com/${REPO_DATI}/main/stemmi_trasparenti.py"; then
+            python stemmi_trasparenti.py stemmiapi || echo "::warning::stemmi_trasparenti.py non e' andato sugli stemmi API-Football."
+          fi
           cd stemmiapi
           git config user.name "caltiki-bot"
           git config user.email "caltiki-bot@users.noreply.github.com"
