@@ -560,7 +560,19 @@
   .fonte-105 { font-size: .72rem; font-weight: 800; letter-spacing: .03em; text-transform: uppercase; color: #9a5b00; margin-top: 4px; }
   /* (214) il book 105 di AsianOdds: ambra */
   .tripla.t-ao .s1 { background: #9a5b00; color: #fff; } .tripla.t-ao .sx { background: #f6e3c4; color: #4a2e05; } .tripla.t-ao .s2 { background: #d08a2a; color: #fff; }
-  .tripla.t-elo .sx, .tripla.t-pin .sx, .tripla.t-bs .sx, .tripla.t-ao .sx { text-shadow: none; }
+  /* (226) UN COLORE PER FONTE, SU TUTTO IL SITO (deciso con Max il 26/11).
+     Ogni fonte la sua tinta: 1 scuro, X chiaro, 2 medio. La posizione dice
+     il segno, il colore dice chi lo dice. */
+  .tripla.t-mod .s1 { background: #9d174d; color: #fff; } .tripla.t-mod .sx { background: #f9d4e3; color: #4a0f26; } .tripla.t-mod .s2 { background: #d6578d; color: #fff; }
+  .tripla.t-xg .s1 { background: #0e7490; color: #fff; } .tripla.t-xg .sx { background: #cdeef5; color: #08343f; } .tripla.t-xg .s2 { background: #3fa9c4; color: #fff; }
+  .tripla.t-fonti .s1 { background: #475569; color: #fff; } .tripla.t-fonti .sx { background: #e2e8f0; color: #1e293b; } .tripla.t-fonti .s2 { background: #8b98ab; color: #fff; }
+  .tripla.t-fs .s1 { background: #7c4a2d; color: #fff; } .tripla.t-fs .sx { background: #efdccf; color: #3b2213; } .tripla.t-fs .s2 { background: #b07a56; color: #fff; }
+  .tripla.t-sm .s1 { background: #4d6b12; color: #fff; } .tripla.t-sm .sx { background: #e1ecc8; color: #26350a; } .tripla.t-sm .s2 { background: #86a83b; color: #fff; }
+  .tripla.t-fm .s1 { background: #4338ca; color: #fff; } .tripla.t-fm .sx { background: #e0e7ff; color: #1e1b4b; } .tripla.t-fm .s2 { background: #818cf8; color: #fff; }
+  .tripla.t-elo .sx, .tripla.t-pin .sx, .tripla.t-bs .sx, .tripla.t-ao .sx, .tripla.t-mod .sx, .tripla.t-xg .sx,
+  .tripla.t-fonti .sx, .tripla.t-fs .sx, .tripla.t-sm .sx, .tripla.t-fm .sx { text-shadow: none; }
+  /* la legenda neutra: 1 scuro, X chiaro, 2 medio, senza colore di fonte */
+  .legenda.neutra .s1 { background: #5b6170; } .legenda.neutra .sx { background: #dfe2e8; } .legenda.neutra .s2 { background: #9aa1ae; }
   /* (222) la legenda col colore della fonte */
   .legenda.t-ao .s1 { background: #9a5b00; } .legenda.t-ao .sx { background: #f6e3c4; } .legenda.t-ao .s2 { background: #d08a2a; }
   .fonti-col { display: flex; gap: 12px; flex-wrap: wrap; font-size: .76rem; color: var(--tenue); margin: 4px 0 8px; }
@@ -3551,8 +3563,21 @@
   // Una barra 1-X-2. Il numero sta dentro il pezzo quando c'e' posto;
   // il valore esatto e' comunque scritto nel dettaglio della partita.
   // (211) tema: colori per fonte invece che per segno (blocco BeSoccer)
+  // (226) la fonte dall'etichetta, quando chi chiama non la dice
+  var TEMA_ETICHETTA = { "Pinnacle": "t-pin", "senza margine": "t-pin", "mattino": "t-pin", "mercato": "t-pin", "Mercato": "t-pin",
+    "book 105": "t-ao", "Elo": "t-elo", "elo": "t-elo", "modello": "t-mod", "xG": "t-xg", "fonti": "t-fonti",
+    "BeSoccer": "t-bs", "FootyStats": "t-fs", "Sports Mole": "t-sm", "migliori": "t-fm" };
+  // la fonte del mercato com'e' scritta nei file o in mercatoScheda()
+  function temaFonte(f) {
+    f = String(f || "");
+    if (/pinnacle/i.test(f)) return "t-pin";
+    if (/105|asian|altro book/i.test(f)) return "t-ao";
+    if (/footymetrics|pi\u00f9 book|migliori/i.test(f)) return "t-fm";
+    return "t-pin";
+  }
   function tripla(nome, a, x, b, tema) {
     if (a == null || x == null || b == null) return "";
+    if (tema === undefined) tema = TEMA_ETICHETTA[nome] || (/\bfont[ei]$/.test(String(nome)) ? "t-fonti" : "");
     var tot = a + x + b || 1;
     function pezzo(cls, val, et) {
       var w = val / tot * 100;
@@ -5868,7 +5893,7 @@
   // ------------------------------------------------------- poisson xG
 
   function legenda(tema) {
-    return '<div class="legenda' + (tema ? " " + tema : "") + '"><span><i class="s1"></i>1 casa</span><span><i class="sx"></i>X pareggio</span>' +
+    return '<div class="legenda ' + (tema || "neutra") + '"><span><i class="s1"></i>1 casa</span><span><i class="sx"></i>X pareggio</span>' +
       "<span><i class=\"s2\"></i>2 trasferta</span></div>";
   }
 
@@ -5974,8 +5999,8 @@
         (r.Fonte_xG === "FotMob" ? '<span class="chip">xG FotMob</span>' : r.Fonte_xG === "API-Football" ? '<span class="chip">xG del sito</span>' : "") + "</div>" +
       '<div class="partita">' + partitaHtml(r.Casa, r.Ospite, "", campiRiga(r)) + "</div>" +
       '<div class="sel">\u03bb ' + f2(lc) + " \u2013 " + f2(lo) + coda + "</div>" +
-      tripla("modello", p1, px, p2) +
-      (m1 != null ? tripla("mercato", m1, mx, m2) : "") +
+      tripla("xG", p1, px, p2, "t-xg") +
+      (m1 != null ? tripla("mercato", m1, mx, m2, temaFonte(r.M_Fonte)) : "") +
       "</div>" +
       '<div class="numero"><b>' + f2(gol) + "</b><span>gol attesi</span></div>" +
       "</summary>" +
@@ -8795,7 +8820,7 @@
     // Le due barre solo se dal mattino qualcosa si e' mosso (mezzo punto).
     var dm = mt ? [pr[0] - mt[0], pr[1] - mt[1], pr[2] - mt[2]] : null;
     var mosso = dm && dm.some(function (v) { return Math.abs(v) >= 0.5; });
-    h += (mosso ? tripla("mattino", mt[0], mt[1], mt[2]) + tripla("ora", pr[0], pr[1], pr[2]) : tripla("Pinnacle", pr[0], pr[1], pr[2])) + legenda();
+    h += (mosso ? tripla("mattino", mt[0], mt[1], mt[2], "t-pin") + tripla("ora", pr[0], pr[1], pr[2], "t-pin") : tripla("Pinnacle", pr[0], pr[1], pr[2], "t-pin")) + legenda();
     if (mt) h += "<p>" + movimentoHtml(dm, mt[3] || "", pr) + ".</p>";
     var q = [["1", r.Q1], ["X", r.QX], ["2", r.Q2]].filter(function (x) { return num(x[1]) != null; });
     var marg = num(r.Margine), fid = fiducia(marg);
@@ -8859,9 +8884,9 @@
       var pp = oraComeApertura(a), vm = num(a.Mov) ? versoMercato(a) : null;
       if (num(a.Mov)) h += "<p><b>" + (a.Notevole ? "Movimento notevole" : "Movimento") + " di " + nv(a.Mov) + " punti" +
         (vm ? " " + esc(vm.testo) : "") + "</b></p>";
-      var tm = e105 ? "t-ao" : "";
+      var tm = e105 ? "t-ao" : temaFonte(m.da);
       h += (ap && num(a.Mov) && pp ? tripla("apertura", ap[0], ap[1], ap[2], tm) + tripla("ora", pp[0], pp[1], pp[2], tm)
-        : tripla("ora", m["1"], m.X, m["2"], tm)) + legenda(tm);
+        : tripla("ora", m["1"], m.X, m["2"], tm)) + legenda();
       ["1", "X", "2"].forEach(function (e) { var t = versoQuota(a, e); if (t) h += "<p>" + t + "</p>"; });
       var vl = versoLinea(a);
       if (vl) h += "<p>" + vl + "</p>";
@@ -8927,7 +8952,7 @@
     var gl = [["Over 2.5", r.P_O25], ["Gol", r.P_GG]].filter(function (x) { return num(x[1]) != null; })
       .map(function (x) { return x[0] + " " + f0(num(x[1])) + "%"; });
     var ds = num(r.Scarto_Segno);
-    var h = '<div class="scheda"><h3>Gol attesi (xG)</h3>' + tripla("modello", num(r.P1), num(r.PX), num(r.P2)) +
+    var h = '<div class="scheda"><h3>Gol attesi (xG)</h3>' + tripla("xG", num(r.P1), num(r.PX), num(r.P2), "t-xg") +
       "<p>Gol attesi " + f2(num(r.Gol_Attesi)) + (gl.length ? " · " + gl.join(" · ") : "") + "</p>";
     if (ds != null) h += "<p>Sul " + esc(r.Segno) + " il modello dà " + Math.abs(ds).toFixed(1) + " punti " +
       (ds >= 0 ? "più" : "meno") + " del mercato.</p>";
@@ -8948,7 +8973,7 @@
       h += '<p class="avviso">Il consenso medio ha questa partita su ' + cons.length + " righe separate: " +
         "le fonti la scrivono con nomi diversi e il consenso non le ha unite. Qui sono messe insieme.</p>";
     }
-    if (m) h += tripla("mercato", m["1"], m.X, m["2"]);
+    if (m) h += tripla(m.da === "Pinnacle" ? "Pinnacle" : m.da === "book 105" ? "book 105" : "mercato", m["1"], m.X, m["2"], temaFonte(m.da));
     if (cons.length || m) h += legenda();
     var ac = p.Accordo;
     if (ac) {
@@ -9597,7 +9622,7 @@
     if (!M || !M.p) return "";
     var m = mercatoScheda(p);
     var h = '<div class="scheda"><h3>Il nostro modello</h3>' + tripla("modello", num(M.p[0]), num(M.p[1]), num(M.p[2]));
-    if (m) h += tripla(m.da === "Pinnacle" ? "Pinnacle" : "mercato", m["1"], m.X, m["2"]);
+    if (m) h += tripla(m.da === "Pinnacle" ? "Pinnacle" : m.da === "book 105" ? "book 105" : "mercato", m["1"], m.X, m["2"], temaFonte(m.da));
     var ou = M.ou || {};
     var gl = [["Over 1.5", ou["1.5"]], ["Over 2.5", ou["2.5"]], ["Over 3.5", ou["3.5"]], ["Gol", M.gg]]
       .filter(function (x) { return num(x[1]) != null; })
@@ -9729,7 +9754,8 @@
     var titolo = [p.Elo && p.Elo.p ? "Elo" : "", mk ? (mk.da === "Pinnacle" ? "Pinnacle" : "mercato") : "", B.p ? "BeSoccer" : "", A ? "book 105" : ""].filter(Boolean);
     var h = '<div class="scheda"><h3>' + esc(titolo.length > 1 ? titolo.slice(0, -1).join(", ") + " e " + titolo[titolo.length - 1] : (titolo[0] || "BeSoccer")) + "</h3>", leg = [];
     if (p.Elo && p.Elo.p) { h += tripla("Elo", p.Elo.p[0], p.Elo.p[1], p.Elo.p[2], "t-elo"); leg.push(["#1f7a4d", "il nostro Elo"]); }
-    if (mk) { h += tripla(mk.da === "Pinnacle" ? "Pinnacle" : "Mercato", mk["1"], mk.X, mk["2"], "t-pin"); leg.push(["#1f4f9a", mk.da === "Pinnacle" ? "Pinnacle" : "mercato"]); }
+    if (mk) { var tmk = temaFonte(mk.da); h += tripla(mk.da === "Pinnacle" ? "Pinnacle" : "Mercato", mk["1"], mk.X, mk["2"], tmk);
+      leg.push([{ "t-pin": "#1f4f9a", "t-ao": "#9a5b00", "t-fm": "#4338ca" }[tmk] || "#1f4f9a", mk.da === "Pinnacle" ? "Pinnacle" : "mercato"]); }
     if (A) { h += tripla("book 105", A[0], A[1], A[2], "t-ao"); leg.push(["#9a5b00", "book 105 (AsianOdds)"]); }
     if (B.p) { h += tripla("BeSoccer", num(B.p[0]), num(B.p[1]), num(B.p[2]), "t-bs"); leg.push(["#6a3fa0", "ELO di BeSoccer"]); }
     if (leg.length > 1) h += '<div class="fonti-col">' + leg.map(function (x) { return '<span><i style="background:' + x[0] + '"></i>' + esc(x[1]) + "</span>"; }).join("") +
