@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-25 07:38",
+ "aggiornato": "2026-11-26 07:38",
  "parametri": {
   "K_MERCATO": 0.5,
   "K_GOL": 0.02,
@@ -9,87 +9,87 @@
   "THETA": 0.08
  },
  "date": [
-  "2026-11-25",
   "2026-11-26",
   "2026-11-27",
-  "2026-11-28"
+  "2026-11-28",
+  "2026-11-29"
  ],
- "partite_storico": 1153416,
- "partite_con_quote": 2473,
+ "partite_storico": 1153599,
+ "partite_con_quote": 2606,
  "misura": {
   "tutte": {
-   "partite": 2473,
+   "partite": 2605,
    "brier_modello": 0.6015,
-   "brier_pinnacle": 0.5823,
-   "logloss_modello": 1.0052,
-   "logloss_pinnacle": 0.977,
-   "diff": 0.0191,
-   "t": 6.52,
+   "brier_pinnacle": 0.5816,
+   "logloss_modello": 1.0054,
+   "logloss_pinnacle": 0.976,
+   "diff": 0.02,
+   "t": 6.79,
    "con_elo": {
-    "partite": 2473,
+    "partite": 2605,
     "brier_modello": 0.6015,
-    "brier_elo": 0.601,
-    "brier_pinnacle": 0.5823,
-    "diff_modello_elo": 0.0005,
-    "t": 0.26
+    "brier_elo": 0.6006,
+    "brier_pinnacle": 0.5816,
+    "diff_modello_elo": 0.0009,
+    "t": 0.47
    },
    "over_under": {
-    "partite": 685,
-    "brier_modello": 0.5056,
+    "partite": 712,
+    "brier_modello": 0.5075,
     "brier_pinnacle": 0.4993,
-    "diff": 0.0063,
-    "t": 1.16
+    "diff": 0.0082,
+    "t": 1.52
    }
   },
   "ultimi_14_giorni": {
-   "partite": 2473,
-   "brier_modello": 0.6015,
-   "brier_pinnacle": 0.5823,
-   "logloss_modello": 1.0052,
-   "logloss_pinnacle": 0.977,
-   "diff": 0.0191,
-   "t": 6.52,
+   "partite": 2598,
+   "brier_modello": 0.6019,
+   "brier_pinnacle": 0.5818,
+   "logloss_modello": 1.0059,
+   "logloss_pinnacle": 0.9763,
+   "diff": 0.0201,
+   "t": 6.82,
    "con_elo": {
-    "partite": 2473,
-    "brier_modello": 0.6015,
-    "brier_elo": 0.601,
-    "brier_pinnacle": 0.5823,
-    "diff_modello_elo": 0.0005,
-    "t": 0.26
+    "partite": 2598,
+    "brier_modello": 0.6019,
+    "brier_elo": 0.6009,
+    "brier_pinnacle": 0.5818,
+    "diff_modello_elo": 0.001,
+    "t": 0.48
    },
    "over_under": {
-    "partite": 685,
-    "brier_modello": 0.5056,
-    "brier_pinnacle": 0.4993,
-    "diff": 0.0063,
-    "t": 1.16
+    "partite": 711,
+    "brier_modello": 0.5079,
+    "brier_pinnacle": 0.4994,
+    "diff": 0.0086,
+    "t": 1.58
    }
   },
   "fiducia_alta": {
    "partite": 0
   },
   "stesso_campionato": {
-   "partite": 2324,
-   "brier_modello": 0.6017,
-   "brier_pinnacle": 0.5846,
-   "logloss_modello": 1.0058,
-   "logloss_pinnacle": 0.9808,
+   "partite": 2427,
+   "brier_modello": 0.601,
+   "brier_pinnacle": 0.5839,
+   "logloss_modello": 1.005,
+   "logloss_pinnacle": 0.9801,
    "diff": 0.0171,
-   "t": 6.27,
+   "t": 6.4,
    "con_elo": {
-    "partite": 2324,
-    "brier_modello": 0.6017,
-    "brier_elo": 0.6013,
-    "brier_pinnacle": 0.5846,
-    "diff_modello_elo": 0.0003,
-    "t": 0.17
+    "partite": 2427,
+    "brier_modello": 0.601,
+    "brier_elo": 0.6006,
+    "brier_pinnacle": 0.5839,
+    "diff_modello_elo": 0.0004,
+    "t": 0.19
    },
    "over_under": {
-    "partite": 642,
-    "brier_modello": 0.5051,
+    "partite": 663,
+    "brier_modello": 0.5058,
     "brier_pinnacle": 0.4988,
-    "diff": 0.0063,
-    "t": 1.25
+    "diff": 0.0071,
+    "t": 1.42
    }
   }
  },
