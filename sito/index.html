@@ -11202,8 +11202,21 @@
     return String(t || "").replace(/\s*-\s*(girone|group|grupo|gruppe|groupe)\s+\S+$/i, "")
       .replace(/\s*-\s*(west|east|north|south|nord|sud|est|ovest|centre|center|centro)$/i, "").trim();
   }
-  function eloConfrontabile(c, o) { return !!(c && o && c.camp && o.camp && baseCamp(c.camp) === baseCamp(o.camp)); }
-  function campiDiversi(c, o) { return c.camp && o.camp ? " (" + esc(c.camp) + " \u2013 " + esc(o.camp) + ")" : ""; }
+  // (224) STESSO NOME, CAMPIONATI DIVERSI: "Bundesliga" e' Germania e
+  // Austria, "Serie A" Italia e Brasile. Hoffenheim-Sturm Graz (Europa
+  // League, 26/11) passava per confrontabile: Elo 45% contro il 73% del
+  // mercato. Con elo_rating.json nuovo (campionati_id, il numero del
+  // campionato) lo stesso nome con due numeri diversi non e' piu' lo
+  // stesso campionato. I gironi (nomi diversi, stessa base) restano insieme.
+  function eloConfrontabile(c, o) {
+    if (!(c && o && c.camp && o.camp && baseCamp(c.camp) === baseCamp(o.camp))) return false;
+    if (c.camp === o.camp && c.campId != null && o.campId != null && String(c.campId) !== String(o.campId)) return false;
+    return true;
+  }
+  function campiDiversi(c, o) {
+    if (!c.camp || !o.camp) return "";
+    return " (" + esc(c.camp) + " \u2013 " + esc(o.camp) + (c.camp === o.camp ? ", di due paesi" : "") + ")";
+  }
   function eloProb(ec, eo, lg, li) {
     if (ec == null || eo == null || !lg) return null;
     var inf = ELO.info || {}, k = li == null ? null : String(li);
@@ -11234,7 +11247,8 @@
       ELO.confronto = a[2];
       var r = a[0] || {}, per = {};
       (r.squadre || []).forEach(function (s, i) {
-        per[String(s[0])] = { id: s[0], nome: s[1], elo: s[2], partite: s[3], ultima: s[4], camp: (r.campionati || [])[s[5]] || "", pos: i + 1 };
+        per[String(s[0])] = { id: s[0], nome: s[1], elo: s[2], partite: s[3], ultima: s[4], camp: (r.campionati || [])[s[5]] || "", pos: i + 1,
+          campId: r.campionati_id ? r.campionati_id[s[5]] : null };
       });
       ELO.dati = { per: per, lista: r.squadre || [], campionati: r.campionati || [], calcolato: r.aggiornato || utcARoma(r.calcolato), ultima: r.ultima_partita };
       ELO.info = a[1] || {};
@@ -11378,17 +11392,26 @@
   // ---- la classifica
   function eloClassifica() {
     var $c = document.getElementById("elo-corpo"), D = ELO.dati;
-    var conta = {};
-    D.lista.forEach(function (s) { var c = D.campionati[s[5]] || ""; conta[c] = (conta[c] || 0) + 1; });
-    var camps = Object.keys(conta).filter(Boolean).sort(function (a, b) { return a.localeCompare(b); });
+    // (224) un campionato per numero: due "Bundesliga" sono due voci, con la
+    // prima squadra accanto per distinguerle
+    var conta = {}, prima = {}, quanti = {};
+    D.lista.forEach(function (s) {
+      var k = String(s[5]);
+      if (!D.campionati[s[5]]) return;
+      conta[k] = (conta[k] || 0) + 1;
+      if (!prima[k]) prima[k] = s[1];
+    });
+    Object.keys(conta).forEach(function (k) { var n = D.campionati[+k]; quanti[n] = (quanti[n] || 0) + 1; });
+    var nomeC = function (k) { var n = D.campionati[+k]; return n + (quanti[n] > 1 ? " \u00b7 " + prima[k] : ""); };
+    var camps = Object.keys(conta).sort(function (a, b) { return nomeC(a).localeCompare(nomeC(b)); });
     $c.innerHTML = '<div class="strumenti"><input type="search" id="cerca-elo" placeholder="Squadra" value="' + esc(ELO.cerca) + '" autocomplete="off">' +
       '<select id="camp-elo" aria-label="Campionato"><option value="">Tutti i campionati</option>' + camps.map(function (c) {
-        return '<option value="' + esc(c) + '"' + (c === ELO.camp ? " selected" : "") + ">" + esc(c) + " (" + conta[c] + ")</option>";
+        return '<option value="' + esc(c) + '"' + (c === ELO.camp ? " selected" : "") + ">" + esc(nomeC(c)) + " (" + conta[c] + ")</option>";
       }).join("") + "</select></div>" + '<div id="elo-lista"></div>';
     var disegnaL = function () {
       var q = ELO.cerca.trim().toLowerCase();
       var v = D.lista.filter(function (s) {
-        if (ELO.camp && (D.campionati[s[5]] || "") !== ELO.camp) return false;
+        if (ELO.camp && String(s[5]) !== ELO.camp) return false;
         return !q || String(s[1]).toLowerCase().indexOf(q) >= 0;
       });
       var h = '<p class="conta">' + v.length + " squadre · rating dopo le partite fino al " + esc(D.ultima || "?") + "</p>" +
