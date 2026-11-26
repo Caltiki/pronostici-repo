@@ -561,6 +561,8 @@
   /* (214) il book 105 di AsianOdds: ambra */
   .tripla.t-ao .s1 { background: #9a5b00; color: #fff; } .tripla.t-ao .sx { background: #f6e3c4; color: #4a2e05; } .tripla.t-ao .s2 { background: #d08a2a; color: #fff; }
   .tripla.t-elo .sx, .tripla.t-pin .sx, .tripla.t-bs .sx, .tripla.t-ao .sx { text-shadow: none; }
+  /* (222) la legenda col colore della fonte */
+  .legenda.t-ao .s1 { background: #9a5b00; } .legenda.t-ao .sx { background: #f6e3c4; } .legenda.t-ao .s2 { background: #d08a2a; }
   .fonti-col { display: flex; gap: 12px; flex-wrap: wrap; font-size: .76rem; color: var(--tenue); margin: 4px 0 8px; }
   .fonti-col i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 4px; vertical-align: -1px; }
   .legenda {
@@ -5856,8 +5858,8 @@
 
   // ------------------------------------------------------- poisson xG
 
-  function legenda() {
-    return '<div class="legenda"><span><i class="s1"></i>1 casa</span><span><i class="sx"></i>X pareggio</span>' +
+  function legenda(tema) {
+    return '<div class="legenda' + (tema ? " " + tema : "") + '"><span><i class="s1"></i>1 casa</span><span><i class="sx"></i>X pareggio</span>' +
       "<span><i class=\"s2\"></i>2 trasferta</span></div>";
   }
 
@@ -8807,7 +8809,7 @@
           var d5 = s[i5] - pr[i5];
           if (g5 == null || Math.abs(d5) > Math.abs(g5)) { g5 = d5; sg5 = "1X2"[i5]; }
         }
-        h += tripla("book 105", s[0], s[1], s[2]) +
+        h += tripla("book 105", s[0], s[1], s[2], "t-ao") +
           "<p>Book 105 (AsianOdds): <span class=nw><b class=seg>1</b> " + pv(s[0]) + "</span> \u00b7 <span class=nw><b class=seg>X</b> " + pv(s[1]) +
           "</span> \u00b7 <span class=nw><b class=seg>2</b> " + pv(s[2]) + "</span>" + (ma5 != null ? " (margine " + mv(ma5) + ")" : "") + ". " +
           (g5 == null ? "" : Math.abs(g5) >= AO_SCARTO
@@ -8834,7 +8836,11 @@
 
   function bloccoMercato(p, m) {
     var a = p.Ao || p.Mercato, f = p.FM;
-    var h = '<div class="scheda"><h3>Il mercato</h3>';
+    // (222) quando il mercato e' il book 105 (dal 25/11 la riga "Mercato"
+    // della scheda e' AsianOdds dal server) le barre sono ambra, come nella
+    // pagina AsianOdds e nel confronto delle fonti: si vede che non e' Pinnacle.
+    var e105 = !!a && (!!p.Ao || String(p.PinData || "") >= "2026-11-25");
+    var h = '<div class="scheda"><h3>Il mercato' + (m && m.da !== "Pinnacle" && a && e105 ? " \u00b7 book 105" : "") + "</h3>";
     if (!m) {
       return h + '<p class="piccolo">Nessuna quota per questa partita.</p></div>';
     }
@@ -8844,8 +8850,9 @@
       var pp = oraComeApertura(a), vm = num(a.Mov) ? versoMercato(a) : null;
       if (num(a.Mov)) h += "<p><b>" + (a.Notevole ? "Movimento notevole" : "Movimento") + " di " + nv(a.Mov) + " punti" +
         (vm ? " " + esc(vm.testo) : "") + "</b></p>";
-      h += (ap && num(a.Mov) && pp ? tripla("apertura", ap[0], ap[1], ap[2]) + tripla("ora", pp[0], pp[1], pp[2])
-        : tripla("ora", m["1"], m.X, m["2"])) + legenda();
+      var tm = e105 ? "t-ao" : "";
+      h += (ap && num(a.Mov) && pp ? tripla("apertura", ap[0], ap[1], ap[2], tm) + tripla("ora", pp[0], pp[1], pp[2], tm)
+        : tripla("ora", m["1"], m.X, m["2"], tm)) + legenda(tm);
       ["1", "X", "2"].forEach(function (e) { var t = versoQuota(a, e); if (t) h += "<p>" + t + "</p>"; });
       var vl = versoLinea(a);
       if (vl) h += "<p>" + vl + "</p>";
@@ -9017,6 +9024,21 @@
         collegaIndietro();
         return;
       }
+      // (222) I NOMI DELLE SQUADRE. Dal 25/11 la scheda puo' prendere i nomi
+      // da AsianOdds ("B. Monchengladbach"): con quelli Pinnacle non si
+      // trovava piu' e la scheda restava col solo book 105. Se la partita
+      // ha una riga dei prezzi, si usano i suoi nomi, che sono quelli di
+      // Pinnacle e del calendario.
+      (function () {
+        var pre = ["prezzi", "poisson", "consensus"];
+        for (var j = 0; j < pre.length; j++) {
+          for (var k in s.alias) {
+            if (s.alias[k] !== id || k.indexOf(pre[j] + "|") !== 0) continue;
+            var n = k.split("|");
+            if (n.length >= 3 && n[1] && n[2]) { p.NomiFile = [p.Casa, p.Ospite]; p.Casa = n[1]; p.Ospite = n[2]; return; }
+          }
+        }
+      })();
       // Pinnacle prima di disegnare (98): Il mercato e i "% book" delle
       // fonti partono da li' quando c'e'. Se il file non si legge, la scheda
       // si disegna lo stesso con AsianOdds o FootyMetrics.
