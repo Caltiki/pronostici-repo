@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-26 07:38",
+ "aggiornato": "2026-11-27 07:38",
  "parametri": {
   "K_MERCATO": 0.5,
   "K_GOL": 0.02,
@@ -9,86 +9,86 @@
   "THETA": 0.08
  },
  "date": [
-  "2026-11-26",
   "2026-11-27",
   "2026-11-28",
-  "2026-11-29"
+  "2026-11-29",
+  "2026-11-30"
  ],
- "partite_storico": 1153599,
- "partite_con_quote": 2606,
+ "partite_storico": 1153717,
+ "partite_con_quote": 2695,
  "misura": {
   "tutte": {
-   "partite": 2605,
-   "brier_modello": 0.6015,
-   "brier_pinnacle": 0.5816,
-   "logloss_modello": 1.0054,
-   "logloss_pinnacle": 0.976,
-   "diff": 0.02,
-   "t": 6.79,
+   "partite": 2694,
+   "brier_modello": 0.6044,
+   "brier_pinnacle": 0.5823,
+   "logloss_modello": 1.0096,
+   "logloss_pinnacle": 0.9772,
+   "diff": 0.0221,
+   "t": 7.29,
    "con_elo": {
-    "partite": 2605,
-    "brier_modello": 0.6015,
-    "brier_elo": 0.6006,
-    "brier_pinnacle": 0.5816,
+    "partite": 2694,
+    "brier_modello": 0.6044,
+    "brier_elo": 0.6034,
+    "brier_pinnacle": 0.5823,
+    "diff_modello_elo": 0.001,
+    "t": 0.49
+   },
+   "over_under": {
+    "partite": 730,
+    "brier_modello": 0.5074,
+    "brier_pinnacle": 0.4991,
+    "diff": 0.0083,
+    "t": 1.56
+   }
+  },
+  "ultimi_14_giorni": {
+   "partite": 2661,
+   "brier_modello": 0.6043,
+   "brier_pinnacle": 0.5821,
+   "logloss_modello": 1.0094,
+   "logloss_pinnacle": 0.9769,
+   "diff": 0.0222,
+   "t": 7.34,
+   "con_elo": {
+    "partite": 2661,
+    "brier_modello": 0.6043,
+    "brier_elo": 0.6034,
+    "brier_pinnacle": 0.5821,
     "diff_modello_elo": 0.0009,
     "t": 0.47
    },
    "over_under": {
-    "partite": 712,
-    "brier_modello": 0.5075,
-    "brier_pinnacle": 0.4993,
-    "diff": 0.0082,
-    "t": 1.52
-   }
-  },
-  "ultimi_14_giorni": {
-   "partite": 2598,
-   "brier_modello": 0.6019,
-   "brier_pinnacle": 0.5818,
-   "logloss_modello": 1.0059,
-   "logloss_pinnacle": 0.9763,
-   "diff": 0.0201,
-   "t": 6.82,
-   "con_elo": {
-    "partite": 2598,
-    "brier_modello": 0.6019,
-    "brier_elo": 0.6009,
-    "brier_pinnacle": 0.5818,
-    "diff_modello_elo": 0.001,
-    "t": 0.48
-   },
-   "over_under": {
-    "partite": 711,
-    "brier_modello": 0.5079,
-    "brier_pinnacle": 0.4994,
+    "partite": 722,
+    "brier_modello": 0.5077,
+    "brier_pinnacle": 0.4991,
     "diff": 0.0086,
-    "t": 1.58
+    "t": 1.61
    }
   },
   "fiducia_alta": {
    "partite": 0
   },
   "stesso_campionato": {
-   "partite": 2427,
-   "brier_modello": 0.601,
-   "brier_pinnacle": 0.5839,
-   "logloss_modello": 1.005,
-   "logloss_pinnacle": 0.9801,
-   "diff": 0.0171,
-   "t": 6.4,
+   "partite": 2472,
+   "brier_modello": 0.6029,
+   "brier_pinnacle": 0.5857,
+   "logloss_modello": 1.0079,
+   "logloss_pinnacle": 0.9828,
+   "diff": 0.0172,
+   "t": 6.5,
    "con_elo": {
-    "partite": 2427,
-    "brier_modello": 0.601,
-    "brier_elo": 0.6006,
-    "brier_pinnacle": 0.5839,
+    "partite": 2472,
+    "brier_modello": 0.6029,
+    "brier_elo": 0.6025,
+    "brier_pinnacle": 0.5857,
     "diff_modello_elo": 0.0004,
-    "t": 0.19
+    "t": 0.2
    },
    "over_under": {
-    "partite": 663,
-    "brier_modello": 0.5058,
-    "brier_pinnacle": 0.4988,
-    "diff": 0.0071,
+    "partite": 674,
+    "brier_modello": 0.5057,
+    "brier_pinnacle": 0.4987,
+    "diff": 0.007,
     "t": 1.42
    }
   }
