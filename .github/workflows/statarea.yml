@@ -194,7 +194,7 @@ jobs:
     steps:
       # (26/11) per stemmi_trasparenti.py: toglie lo sfondo chiaro pieno
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
@@ -405,14 +405,14 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: ${{ secrets.SCRIPT_REPO }}
           token: ${{ secrets.SCRIPT_TOKEN }}
           persist-credentials: false
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
@@ -696,16 +696,31 @@ jobs:
           # "Internal Server Error" a un push solo e il giro e' fallito senza
           # pubblicare: un errore di GitHub di pochi secondi. Ora si riprova
           # fino a 4 volte, a 20, 40 e 60 secondi, rileggendo il ramo prima.
-          for TENTATIVO in 1 2 3 4; do
-            git pull --rebase origin "${BRANCH_DATI}" 2>/dev/null || { git rebase --abort 2>/dev/null; true; }
-            if git push origin "HEAD:${BRANCH_DATI}"; then break; fi
-            if [ "$TENTATIVO" = 4 ]; then
-              echo "::error::Push su ${BRANCH_DATI} non riuscito dopo 4 tentativi."
-              exit 1
-            fi
-            echo "Push non riuscito (tentativo ${TENTATIVO}/4): riprovo fra $((TENTATIVO * 20)) secondi."
-            sleep $((TENTATIVO * 20))
-          done
+          # (27/11) LA PUBBLICAZIONE CON spingi_ghdata.py (main di questo
+          # repository). Il 27/11 betimate e footymetrics sono falliti quattro
+          # volte su quattro: un altro job aveva appena scritto gli stessi file
+          # (archivi CSV, FootyMetrics), il rebase si fermava sul conflitto e
+          # il push veniva rifiutato. Lo script unisce gli archivi CSV riga per
+          # riga, per gli altri file tiene la versione di questo job, e se
+          # serve riparte dal ramo com'e' e ci rimette sopra i file. Il
+          # vecchio ciclo resta solo se lo script non si scarica.
+          rm -f ../spingi_ghdata.py
+          curl -fsSL -o ../spingi_ghdata.py "https://raw.githubusercontent.com/${REPO_DATI}/main/spingi_ghdata.py" || true
+          if [ -s ../spingi_ghdata.py ]; then
+            python3 ../spingi_ghdata.py "${BRANCH_DATI}" || exit 1
+          else
+            echo "::warning::spingi_ghdata.py non scaricato: pubblico col ciclo vecchio."
+            for TENTATIVO in 1 2 3 4; do
+              git pull --rebase origin "${BRANCH_DATI}" || { git rebase --abort 2>/dev/null; true; }
+              if git push origin "HEAD:${BRANCH_DATI}"; then break; fi
+              if [ "$TENTATIVO" = 4 ]; then
+                echo "::error::Push su ${BRANCH_DATI} non riuscito dopo 4 tentativi."
+                exit 1
+              fi
+              echo "Push non riuscito (tentativo ${TENTATIVO}/4): riprovo fra $((TENTATIVO * 20)) secondi."
+              sleep $((TENTATIVO * 20))
+            done
+          fi
 
       - name: Avviso Statarea non scaricato
         if: steps.statarea.outcome != 'success'
@@ -832,14 +847,14 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: ${{ secrets.SCRIPT_REPO }}
           token: ${{ secrets.SCRIPT_TOKEN }}
           persist-credentials: false
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
@@ -929,16 +944,31 @@ jobs:
           # "Internal Server Error" a un push solo e il giro e' fallito senza
           # pubblicare: un errore di GitHub di pochi secondi. Ora si riprova
           # fino a 4 volte, a 20, 40 e 60 secondi, rileggendo il ramo prima.
-          for TENTATIVO in 1 2 3 4; do
-            git pull --rebase origin "${BRANCH_DATI}" 2>/dev/null || { git rebase --abort 2>/dev/null; true; }
-            if git push origin "HEAD:${BRANCH_DATI}"; then break; fi
-            if [ "$TENTATIVO" = 4 ]; then
-              echo "::error::Push su ${BRANCH_DATI} non riuscito dopo 4 tentativi."
-              exit 1
-            fi
-            echo "Push non riuscito (tentativo ${TENTATIVO}/4): riprovo fra $((TENTATIVO * 20)) secondi."
-            sleep $((TENTATIVO * 20))
-          done
+          # (27/11) LA PUBBLICAZIONE CON spingi_ghdata.py (main di questo
+          # repository). Il 27/11 betimate e footymetrics sono falliti quattro
+          # volte su quattro: un altro job aveva appena scritto gli stessi file
+          # (archivi CSV, FootyMetrics), il rebase si fermava sul conflitto e
+          # il push veniva rifiutato. Lo script unisce gli archivi CSV riga per
+          # riga, per gli altri file tiene la versione di questo job, e se
+          # serve riparte dal ramo com'e' e ci rimette sopra i file. Il
+          # vecchio ciclo resta solo se lo script non si scarica.
+          rm -f ../spingi_ghdata.py
+          curl -fsSL -o ../spingi_ghdata.py "https://raw.githubusercontent.com/${REPO_DATI}/main/spingi_ghdata.py" || true
+          if [ -s ../spingi_ghdata.py ]; then
+            python3 ../spingi_ghdata.py "${BRANCH_DATI}" || exit 1
+          else
+            echo "::warning::spingi_ghdata.py non scaricato: pubblico col ciclo vecchio."
+            for TENTATIVO in 1 2 3 4; do
+              git pull --rebase origin "${BRANCH_DATI}" || { git rebase --abort 2>/dev/null; true; }
+              if git push origin "HEAD:${BRANCH_DATI}"; then break; fi
+              if [ "$TENTATIVO" = 4 ]; then
+                echo "::error::Push su ${BRANCH_DATI} non riuscito dopo 4 tentativi."
+                exit 1
+              fi
+              echo "Push non riuscito (tentativo ${TENTATIVO}/4): riprovo fra $((TENTATIVO * 20)) secondi."
+              sleep $((TENTATIVO * 20))
+            done
+          fi
 
       - name: Invia su Telegram
         if: (always()) && env.TG_ATTIVO == 'true'
@@ -1017,14 +1047,14 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: ${{ secrets.SCRIPT_REPO }}
           token: ${{ secrets.SCRIPT_TOKEN }}
           persist-credentials: false
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
@@ -1106,16 +1136,31 @@ jobs:
           # "Internal Server Error" a un push solo e il giro e' fallito senza
           # pubblicare: un errore di GitHub di pochi secondi. Ora si riprova
           # fino a 4 volte, a 20, 40 e 60 secondi, rileggendo il ramo prima.
-          for TENTATIVO in 1 2 3 4; do
-            git pull --rebase origin "${BRANCH_DATI}" 2>/dev/null || { git rebase --abort 2>/dev/null; true; }
-            if git push origin "HEAD:${BRANCH_DATI}"; then break; fi
-            if [ "$TENTATIVO" = 4 ]; then
-              echo "::error::Push su ${BRANCH_DATI} non riuscito dopo 4 tentativi."
-              exit 1
-            fi
-            echo "Push non riuscito (tentativo ${TENTATIVO}/4): riprovo fra $((TENTATIVO * 20)) secondi."
-            sleep $((TENTATIVO * 20))
-          done
+          # (27/11) LA PUBBLICAZIONE CON spingi_ghdata.py (main di questo
+          # repository). Il 27/11 betimate e footymetrics sono falliti quattro
+          # volte su quattro: un altro job aveva appena scritto gli stessi file
+          # (archivi CSV, FootyMetrics), il rebase si fermava sul conflitto e
+          # il push veniva rifiutato. Lo script unisce gli archivi CSV riga per
+          # riga, per gli altri file tiene la versione di questo job, e se
+          # serve riparte dal ramo com'e' e ci rimette sopra i file. Il
+          # vecchio ciclo resta solo se lo script non si scarica.
+          rm -f ../spingi_ghdata.py
+          curl -fsSL -o ../spingi_ghdata.py "https://raw.githubusercontent.com/${REPO_DATI}/main/spingi_ghdata.py" || true
+          if [ -s ../spingi_ghdata.py ]; then
+            python3 ../spingi_ghdata.py "${BRANCH_DATI}" || exit 1
+          else
+            echo "::warning::spingi_ghdata.py non scaricato: pubblico col ciclo vecchio."
+            for TENTATIVO in 1 2 3 4; do
+              git pull --rebase origin "${BRANCH_DATI}" || { git rebase --abort 2>/dev/null; true; }
+              if git push origin "HEAD:${BRANCH_DATI}"; then break; fi
+              if [ "$TENTATIVO" = 4 ]; then
+                echo "::error::Push su ${BRANCH_DATI} non riuscito dopo 4 tentativi."
+                exit 1
+              fi
+              echo "Push non riuscito (tentativo ${TENTATIVO}/4): riprovo fra $((TENTATIVO * 20)) secondi."
+              sleep $((TENTATIVO * 20))
+            done
+          fi
 
       - name: Invia su Telegram
         if: (always()) && env.TG_ATTIVO == 'true'
@@ -1197,14 +1242,14 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: ${{ secrets.SCRIPT_REPO }}
           token: ${{ secrets.SCRIPT_TOKEN }}
           persist-credentials: false
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
@@ -1281,16 +1326,31 @@ jobs:
           # "Internal Server Error" a un push solo e il giro e' fallito senza
           # pubblicare: un errore di GitHub di pochi secondi. Ora si riprova
           # fino a 4 volte, a 20, 40 e 60 secondi, rileggendo il ramo prima.
-          for TENTATIVO in 1 2 3 4; do
-            git pull --rebase origin "${BRANCH_DATI}" 2>/dev/null || { git rebase --abort 2>/dev/null; true; }
-            if git push origin "HEAD:${BRANCH_DATI}"; then break; fi
-            if [ "$TENTATIVO" = 4 ]; then
-              echo "::error::Push su ${BRANCH_DATI} non riuscito dopo 4 tentativi."
-              exit 1
-            fi
-            echo "Push non riuscito (tentativo ${TENTATIVO}/4): riprovo fra $((TENTATIVO * 20)) secondi."
-            sleep $((TENTATIVO * 20))
-          done
+          # (27/11) LA PUBBLICAZIONE CON spingi_ghdata.py (main di questo
+          # repository). Il 27/11 betimate e footymetrics sono falliti quattro
+          # volte su quattro: un altro job aveva appena scritto gli stessi file
+          # (archivi CSV, FootyMetrics), il rebase si fermava sul conflitto e
+          # il push veniva rifiutato. Lo script unisce gli archivi CSV riga per
+          # riga, per gli altri file tiene la versione di questo job, e se
+          # serve riparte dal ramo com'e' e ci rimette sopra i file. Il
+          # vecchio ciclo resta solo se lo script non si scarica.
+          rm -f ../spingi_ghdata.py
+          curl -fsSL -o ../spingi_ghdata.py "https://raw.githubusercontent.com/${REPO_DATI}/main/spingi_ghdata.py" || true
+          if [ -s ../spingi_ghdata.py ]; then
+            python3 ../spingi_ghdata.py "${BRANCH_DATI}" || exit 1
+          else
+            echo "::warning::spingi_ghdata.py non scaricato: pubblico col ciclo vecchio."
+            for TENTATIVO in 1 2 3 4; do
+              git pull --rebase origin "${BRANCH_DATI}" || { git rebase --abort 2>/dev/null; true; }
+              if git push origin "HEAD:${BRANCH_DATI}"; then break; fi
+              if [ "$TENTATIVO" = 4 ]; then
+                echo "::error::Push su ${BRANCH_DATI} non riuscito dopo 4 tentativi."
+                exit 1
+              fi
+              echo "Push non riuscito (tentativo ${TENTATIVO}/4): riprovo fra $((TENTATIVO * 20)) secondi."
+              sleep $((TENTATIVO * 20))
+            done
+          fi
 
       - name: Invia su Telegram
         if: (always()) && env.TG_ATTIVO == 'true'
@@ -1386,14 +1446,14 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: ${{ secrets.SCRIPT_REPO }}
           token: ${{ secrets.SCRIPT_TOKEN }}
           persist-credentials: false
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
@@ -1485,16 +1545,31 @@ jobs:
           # "Internal Server Error" a un push solo e il giro e' fallito senza
           # pubblicare: un errore di GitHub di pochi secondi. Ora si riprova
           # fino a 4 volte, a 20, 40 e 60 secondi, rileggendo il ramo prima.
-          for TENTATIVO in 1 2 3 4; do
-            git pull --rebase origin "${BRANCH_DATI}" 2>/dev/null || { git rebase --abort 2>/dev/null; true; }
-            if git push origin "HEAD:${BRANCH_DATI}"; then break; fi
-            if [ "$TENTATIVO" = 4 ]; then
-              echo "::error::Push su ${BRANCH_DATI} non riuscito dopo 4 tentativi."
-              exit 1
-            fi
-            echo "Push non riuscito (tentativo ${TENTATIVO}/4): riprovo fra $((TENTATIVO * 20)) secondi."
-            sleep $((TENTATIVO * 20))
-          done
+          # (27/11) LA PUBBLICAZIONE CON spingi_ghdata.py (main di questo
+          # repository). Il 27/11 betimate e footymetrics sono falliti quattro
+          # volte su quattro: un altro job aveva appena scritto gli stessi file
+          # (archivi CSV, FootyMetrics), il rebase si fermava sul conflitto e
+          # il push veniva rifiutato. Lo script unisce gli archivi CSV riga per
+          # riga, per gli altri file tiene la versione di questo job, e se
+          # serve riparte dal ramo com'e' e ci rimette sopra i file. Il
+          # vecchio ciclo resta solo se lo script non si scarica.
+          rm -f ../spingi_ghdata.py
+          curl -fsSL -o ../spingi_ghdata.py "https://raw.githubusercontent.com/${REPO_DATI}/main/spingi_ghdata.py" || true
+          if [ -s ../spingi_ghdata.py ]; then
+            python3 ../spingi_ghdata.py "${BRANCH_DATI}" || exit 1
+          else
+            echo "::warning::spingi_ghdata.py non scaricato: pubblico col ciclo vecchio."
+            for TENTATIVO in 1 2 3 4; do
+              git pull --rebase origin "${BRANCH_DATI}" || { git rebase --abort 2>/dev/null; true; }
+              if git push origin "HEAD:${BRANCH_DATI}"; then break; fi
+              if [ "$TENTATIVO" = 4 ]; then
+                echo "::error::Push su ${BRANCH_DATI} non riuscito dopo 4 tentativi."
+                exit 1
+              fi
+              echo "Push non riuscito (tentativo ${TENTATIVO}/4): riprovo fra $((TENTATIVO * 20)) secondi."
+              sleep $((TENTATIVO * 20))
+            done
+          fi
 
       - name: Invia su Telegram
         # Nei giri serali "solo risultati" niente Telegram: l'Excel e' lo
@@ -1583,14 +1658,14 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: ${{ secrets.SCRIPT_REPO }}
           token: ${{ secrets.SCRIPT_TOKEN }}
           persist-credentials: false
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
@@ -2291,16 +2366,31 @@ jobs:
           # "Internal Server Error" a un push solo e il giro e' fallito senza
           # pubblicare: un errore di GitHub di pochi secondi. Ora si riprova
           # fino a 4 volte, a 20, 40 e 60 secondi, rileggendo il ramo prima.
-          for TENTATIVO in 1 2 3 4; do
-            git pull --rebase origin "${BRANCH_DATI}" 2>/dev/null || { git rebase --abort 2>/dev/null; true; }
-            if git push origin "HEAD:${BRANCH_DATI}"; then break; fi
-            if [ "$TENTATIVO" = 4 ]; then
-              echo "::error::Push su ${BRANCH_DATI} non riuscito dopo 4 tentativi."
-              exit 1
-            fi
-            echo "Push non riuscito (tentativo ${TENTATIVO}/4): riprovo fra $((TENTATIVO * 20)) secondi."
-            sleep $((TENTATIVO * 20))
-          done
+          # (27/11) LA PUBBLICAZIONE CON spingi_ghdata.py (main di questo
+          # repository). Il 27/11 betimate e footymetrics sono falliti quattro
+          # volte su quattro: un altro job aveva appena scritto gli stessi file
+          # (archivi CSV, FootyMetrics), il rebase si fermava sul conflitto e
+          # il push veniva rifiutato. Lo script unisce gli archivi CSV riga per
+          # riga, per gli altri file tiene la versione di questo job, e se
+          # serve riparte dal ramo com'e' e ci rimette sopra i file. Il
+          # vecchio ciclo resta solo se lo script non si scarica.
+          rm -f ../spingi_ghdata.py
+          curl -fsSL -o ../spingi_ghdata.py "https://raw.githubusercontent.com/${REPO_DATI}/main/spingi_ghdata.py" || true
+          if [ -s ../spingi_ghdata.py ]; then
+            python3 ../spingi_ghdata.py "${BRANCH_DATI}" || exit 1
+          else
+            echo "::warning::spingi_ghdata.py non scaricato: pubblico col ciclo vecchio."
+            for TENTATIVO in 1 2 3 4; do
+              git pull --rebase origin "${BRANCH_DATI}" || { git rebase --abort 2>/dev/null; true; }
+              if git push origin "HEAD:${BRANCH_DATI}"; then break; fi
+              if [ "$TENTATIVO" = 4 ]; then
+                echo "::error::Push su ${BRANCH_DATI} non riuscito dopo 4 tentativi."
+                exit 1
+              fi
+              echo "Push non riuscito (tentativo ${TENTATIVO}/4): riprovo fra $((TENTATIVO * 20)) secondi."
+              sleep $((TENTATIVO * 20))
+            done
+          fi
 
       - name: Invia su Telegram
         # Nei giri serali "solo risultati" niente Telegram: l'Excel e' lo
@@ -2552,14 +2642,14 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: ${{ secrets.SCRIPT_REPO }}
           token: ${{ secrets.SCRIPT_TOKEN }}
           persist-credentials: false
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
@@ -2702,16 +2792,31 @@ jobs:
           # "Internal Server Error" a un push solo e il giro e' fallito senza
           # pubblicare: un errore di GitHub di pochi secondi. Ora si riprova
           # fino a 4 volte, a 20, 40 e 60 secondi, rileggendo il ramo prima.
-          for TENTATIVO in 1 2 3 4; do
-            git pull --rebase origin "${BRANCH_DATI}" 2>/dev/null || { git rebase --abort 2>/dev/null; true; }
-            if git push origin "HEAD:${BRANCH_DATI}"; then break; fi
-            if [ "$TENTATIVO" = 4 ]; then
-              echo "::error::Push su ${BRANCH_DATI} non riuscito dopo 4 tentativi."
-              exit 1
-            fi
-            echo "Push non riuscito (tentativo ${TENTATIVO}/4): riprovo fra $((TENTATIVO * 20)) secondi."
-            sleep $((TENTATIVO * 20))
-          done
+          # (27/11) LA PUBBLICAZIONE CON spingi_ghdata.py (main di questo
+          # repository). Il 27/11 betimate e footymetrics sono falliti quattro
+          # volte su quattro: un altro job aveva appena scritto gli stessi file
+          # (archivi CSV, FootyMetrics), il rebase si fermava sul conflitto e
+          # il push veniva rifiutato. Lo script unisce gli archivi CSV riga per
+          # riga, per gli altri file tiene la versione di questo job, e se
+          # serve riparte dal ramo com'e' e ci rimette sopra i file. Il
+          # vecchio ciclo resta solo se lo script non si scarica.
+          rm -f ../spingi_ghdata.py
+          curl -fsSL -o ../spingi_ghdata.py "https://raw.githubusercontent.com/${REPO_DATI}/main/spingi_ghdata.py" || true
+          if [ -s ../spingi_ghdata.py ]; then
+            python3 ../spingi_ghdata.py "${BRANCH_DATI}" || exit 1
+          else
+            echo "::warning::spingi_ghdata.py non scaricato: pubblico col ciclo vecchio."
+            for TENTATIVO in 1 2 3 4; do
+              git pull --rebase origin "${BRANCH_DATI}" || { git rebase --abort 2>/dev/null; true; }
+              if git push origin "HEAD:${BRANCH_DATI}"; then break; fi
+              if [ "$TENTATIVO" = 4 ]; then
+                echo "::error::Push su ${BRANCH_DATI} non riuscito dopo 4 tentativi."
+                exit 1
+              fi
+              echo "Push non riuscito (tentativo ${TENTATIVO}/4): riprovo fra $((TENTATIVO * 20)) secondi."
+              sleep $((TENTATIVO * 20))
+            done
+          fi
 
   # =========================================================
   # MARTEDI: WebPronostici settimanali + Consensus aggiornato
@@ -2745,14 +2850,14 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: ${{ secrets.SCRIPT_REPO }}
           token: ${{ secrets.SCRIPT_TOKEN }}
           persist-credentials: false
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
@@ -2970,16 +3075,31 @@ jobs:
           # "Internal Server Error" a un push solo e il giro e' fallito senza
           # pubblicare: un errore di GitHub di pochi secondi. Ora si riprova
           # fino a 4 volte, a 20, 40 e 60 secondi, rileggendo il ramo prima.
-          for TENTATIVO in 1 2 3 4; do
-            git pull --rebase origin "${BRANCH_DATI}" 2>/dev/null || { git rebase --abort 2>/dev/null; true; }
-            if git push origin "HEAD:${BRANCH_DATI}"; then break; fi
-            if [ "$TENTATIVO" = 4 ]; then
-              echo "::error::Push su ${BRANCH_DATI} non riuscito dopo 4 tentativi."
-              exit 1
-            fi
-            echo "Push non riuscito (tentativo ${TENTATIVO}/4): riprovo fra $((TENTATIVO * 20)) secondi."
-            sleep $((TENTATIVO * 20))
-          done
+          # (27/11) LA PUBBLICAZIONE CON spingi_ghdata.py (main di questo
+          # repository). Il 27/11 betimate e footymetrics sono falliti quattro
+          # volte su quattro: un altro job aveva appena scritto gli stessi file
+          # (archivi CSV, FootyMetrics), il rebase si fermava sul conflitto e
+          # il push veniva rifiutato. Lo script unisce gli archivi CSV riga per
+          # riga, per gli altri file tiene la versione di questo job, e se
+          # serve riparte dal ramo com'e' e ci rimette sopra i file. Il
+          # vecchio ciclo resta solo se lo script non si scarica.
+          rm -f ../spingi_ghdata.py
+          curl -fsSL -o ../spingi_ghdata.py "https://raw.githubusercontent.com/${REPO_DATI}/main/spingi_ghdata.py" || true
+          if [ -s ../spingi_ghdata.py ]; then
+            python3 ../spingi_ghdata.py "${BRANCH_DATI}" || exit 1
+          else
+            echo "::warning::spingi_ghdata.py non scaricato: pubblico col ciclo vecchio."
+            for TENTATIVO in 1 2 3 4; do
+              git pull --rebase origin "${BRANCH_DATI}" || { git rebase --abort 2>/dev/null; true; }
+              if git push origin "HEAD:${BRANCH_DATI}"; then break; fi
+              if [ "$TENTATIVO" = 4 ]; then
+                echo "::error::Push su ${BRANCH_DATI} non riuscito dopo 4 tentativi."
+                exit 1
+              fi
+              echo "Push non riuscito (tentativo ${TENTATIVO}/4): riprovo fra $((TENTATIVO * 20)) secondi."
+              sleep $((TENTATIVO * 20))
+            done
+          fi
 
       # if: always() - senza questo, se statarea_scraper.py esce con codice 1
       # (nessuna partita) lo step viene saltato e non arriva NESSUNA notifica:
@@ -3068,14 +3188,14 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: ${{ secrets.SCRIPT_REPO }}
           token: ${{ secrets.SCRIPT_TOKEN }}
           persist-credentials: false
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
@@ -3184,16 +3304,31 @@ jobs:
           # "Internal Server Error" a un push solo e il giro e' fallito senza
           # pubblicare: un errore di GitHub di pochi secondi. Ora si riprova
           # fino a 4 volte, a 20, 40 e 60 secondi, rileggendo il ramo prima.
-          for TENTATIVO in 1 2 3 4; do
-            git pull --rebase origin "${BRANCH_DATI}" 2>/dev/null || { git rebase --abort 2>/dev/null; true; }
-            if git push origin "HEAD:${BRANCH_DATI}"; then break; fi
-            if [ "$TENTATIVO" = 4 ]; then
-              echo "::error::Push su ${BRANCH_DATI} non riuscito dopo 4 tentativi."
-              exit 1
-            fi
-            echo "Push non riuscito (tentativo ${TENTATIVO}/4): riprovo fra $((TENTATIVO * 20)) secondi."
-            sleep $((TENTATIVO * 20))
-          done
+          # (27/11) LA PUBBLICAZIONE CON spingi_ghdata.py (main di questo
+          # repository). Il 27/11 betimate e footymetrics sono falliti quattro
+          # volte su quattro: un altro job aveva appena scritto gli stessi file
+          # (archivi CSV, FootyMetrics), il rebase si fermava sul conflitto e
+          # il push veniva rifiutato. Lo script unisce gli archivi CSV riga per
+          # riga, per gli altri file tiene la versione di questo job, e se
+          # serve riparte dal ramo com'e' e ci rimette sopra i file. Il
+          # vecchio ciclo resta solo se lo script non si scarica.
+          rm -f ../spingi_ghdata.py
+          curl -fsSL -o ../spingi_ghdata.py "https://raw.githubusercontent.com/${REPO_DATI}/main/spingi_ghdata.py" || true
+          if [ -s ../spingi_ghdata.py ]; then
+            python3 ../spingi_ghdata.py "${BRANCH_DATI}" || exit 1
+          else
+            echo "::warning::spingi_ghdata.py non scaricato: pubblico col ciclo vecchio."
+            for TENTATIVO in 1 2 3 4; do
+              git pull --rebase origin "${BRANCH_DATI}" || { git rebase --abort 2>/dev/null; true; }
+              if git push origin "HEAD:${BRANCH_DATI}"; then break; fi
+              if [ "$TENTATIVO" = 4 ]; then
+                echo "::error::Push su ${BRANCH_DATI} non riuscito dopo 4 tentativi."
+                exit 1
+              fi
+              echo "Push non riuscito (tentativo ${TENTATIVO}/4): riprovo fra $((TENTATIVO * 20)) secondi."
+              sleep $((TENTATIVO * 20))
+            done
+          fi
 
       - name: Invia su Telegram
         if: (always() && steps.clone.outcome == 'success') && env.TG_ATTIVO == 'true'
