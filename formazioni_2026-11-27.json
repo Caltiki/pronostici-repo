@@ -339,14 +339,15 @@
  },
  "1584475": {
   "assenti": [
+   "C. Awaziem (Konyaspor)",
    "A. Demirbag (Konyaspor)",
-   "C. Awaziem (Konyaspor)"
+   "M. Ibrahimoglu (Konyaspor)"
   ],
   "assenti_peso": [
    {
     "nome": "C. Awaziem",
     "squadra": "Konyaspor",
-    "tipo": "Questionable",
+    "tipo": "Missing Fixture",
     "motivo": "Inactive",
     "pres": 9,
     "tit": 7,
@@ -372,6 +373,12 @@
     "gol_squadra": 7,
     "partite_squadra": 12,
     "quota_gol": 0
+   },
+   {
+    "nome": "M. Ibrahimoglu",
+    "squadra": "Konyaspor",
+    "tipo": "Missing Fixture",
+    "motivo": "Muscle Injury"
    }
   ],
   "titolari": {
@@ -412,17 +419,33 @@
  },
  "1584482": {
   "assenti": [
-   "K. Alikulov (Rizespor)",
    "C. Bozdogan (Rizespor)",
+   "Y. Fofana (Rizespor)",
    "V. Mihaila (Rizespor)",
+   "T. Sahin (Rizespor)",
    "K. Corekci (Kasımpaşa)",
+   "F. Diabate (Kasımpaşa)",
    "G. Frimpong (Kasımpaşa)",
    "A. Karapo (Kasımpaşa)",
-   "F. Diabate (Kasımpaşa)",
    "K. Mouanga (Kasımpaşa)",
    "M. Ouanes (Kasımpaşa)"
   ],
   "assenti_peso": [
+   {
+    "nome": "Y. Fofana",
+    "squadra": "Rizespor",
+    "tipo": "Missing Fixture",
+    "motivo": "Inactive",
+    "pres": 9,
+    "tit": 9,
+    "min": 810,
+    "gol": 0,
+    "ass": 1,
+    "voto": 7.09,
+    "gol_squadra": 15,
+    "partite_squadra": 12,
+    "quota_gol": 0
+   },
    {
     "nome": "A. Karapo",
     "squadra": "Kasımpaşa",
@@ -441,7 +464,7 @@
    {
     "nome": "K. Mouanga",
     "squadra": "Kasımpaşa",
-    "tipo": "Questionable",
+    "tipo": "Missing Fixture",
     "motivo": "Inactive",
     "pres": 4,
     "tit": 3,
@@ -456,7 +479,7 @@
    {
     "nome": "V. Mihaila",
     "squadra": "Rizespor",
-    "tipo": "Questionable",
+    "tipo": "Missing Fixture",
     "motivo": "Calf Injury",
     "pres": 6,
     "tit": 2,
@@ -471,7 +494,7 @@
    {
     "nome": "F. Diabate",
     "squadra": "Kasımpaşa",
-    "tipo": "Questionable",
+    "tipo": "Missing Fixture",
     "motivo": "Inactive",
     "pres": 3,
     "tit": 2,
@@ -484,9 +507,24 @@
     "quota_gol": 5
    },
    {
+    "nome": "T. Sahin",
+    "squadra": "Rizespor",
+    "tipo": "Missing Fixture",
+    "motivo": "Inactive",
+    "pres": 2,
+    "tit": 2,
+    "min": 148,
+    "gol": 0,
+    "ass": 0,
+    "voto": 6.7,
+    "gol_squadra": 15,
+    "partite_squadra": 12,
+    "quota_gol": 0
+   },
+   {
     "nome": "M. Ouanes",
     "squadra": "Kasımpaşa",
-    "tipo": "Questionable",
+    "tipo": "Missing Fixture",
     "motivo": "Muscle Injury",
     "pres": 1,
     "tit": 1,
@@ -502,7 +540,7 @@
     "nome": "C. Bozdogan",
     "squadra": "Rizespor",
     "tipo": "Missing Fixture",
-    "motivo": "Health problems",
+    "motivo": "Health Problems",
     "pres": 3,
     "tit": 0,
     "min": 51,
@@ -512,12 +550,6 @@
     "gol_squadra": 15,
     "partite_squadra": 12,
     "quota_gol": 0
-   },
-   {
-    "nome": "K. Alikulov",
-    "squadra": "Rizespor",
-    "tipo": "Missing Fixture",
-    "motivo": "Knee Injury"
    },
    {
     "nome": "K. Corekci",
@@ -578,7 +610,7 @@
     "nome": "L. Binks",
     "squadra": "Brondby",
     "tipo": "Missing Fixture",
-    "motivo": "Injury",
+    "motivo": "Muscle Injury",
     "pres": 11,
     "tit": 11,
     "min": 969,
@@ -604,16 +636,53 @@
     "partite_squadra": 15,
     "quota_gol": 0
    }
-  ]
+  ],
+  "titolari": {
+   "Sonderjyske": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "M. Bundgaard",
+     "A. Munksgaard",
+     "M. Soulas",
+     "S. Velkov",
+     "P. Kristensen",
+     "S. Emini",
+     "R. Vinderslev",
+     "I. Seydi",
+     "M. Haidara",
+     "A. Pedersen",
+     "O. De Rosario"
+    ]
+   },
+   "Brondby": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "P. Pentz",
+     "Christopher Olivier",
+     "J. Vanlerberghe",
+     "F. Alves",
+     "M. Divković",
+     "B. Slisz",
+     "M. Ejdum",
+     "M. Younis",
+     "M. Frøkjær-Jensen",
+     "F. Bundgaard",
+     "J. Ambæk"
+    ]
+   }
+  },
+  "partita": "Sonderjyske - Brondby"
  },
  "1552238": {
   "assenti": [
    "T. Hernes (Groningen)",
+   "R. Janse (Groningen)",
    "M. Jeng (Groningen)",
-   "T. Didillon Hodl (Willem II)",
    "J. Hoogma (Willem II)",
    "A. Lachkar (Willem II)",
-   "N. Tjoe a On (Willem II)"
+   "N. Tjoe a On (Willem II)",
+   "T. Didillon Hodl (Willem II)",
+   "U. van Aalst (Willem II)"
   ],
   "assenti_peso": [
    {
@@ -630,6 +699,21 @@
     "gol_squadra": 16,
     "partite_squadra": 14,
     "quota_gol": 0
+   },
+   {
+    "nome": "U. van Aalst",
+    "squadra": "Willem II",
+    "tipo": "Questionable",
+    "motivo": "Inactive",
+    "pres": 13,
+    "tit": 13,
+    "min": 1113,
+    "gol": 2,
+    "ass": 2,
+    "voto": 6.45,
+    "gol_squadra": 16,
+    "partite_squadra": 14,
+    "quota_gol": 12
    },
    {
     "nome": "J. Hoogma",
@@ -649,7 +733,7 @@
    {
     "nome": "T. Didillon Hodl",
     "squadra": "Willem II",
-    "tipo": "Missing Fixture",
+    "tipo": "Questionable",
     "motivo": "Inactive",
     "pres": 2,
     "tit": 2,
@@ -665,13 +749,28 @@
     "nome": "T. Hernes",
     "squadra": "Groningen",
     "tipo": "Missing Fixture",
-    "motivo": "Inactive",
+    "motivo": "Injury",
     "pres": 7,
     "tit": 0,
     "min": 55,
     "gol": 0,
     "ass": 0,
     "voto": 5.22,
+    "gol_squadra": 28,
+    "partite_squadra": 14,
+    "quota_gol": 0
+   },
+   {
+    "nome": "R. Janse",
+    "squadra": "Groningen",
+    "tipo": "Missing Fixture",
+    "motivo": "Injury",
+    "pres": 0,
+    "tit": 0,
+    "min": 0,
+    "gol": 0,
+    "ass": 0,
+    "voto": 0.0,
     "gol_squadra": 28,
     "partite_squadra": 14,
     "quota_gol": 0
@@ -726,7 +825,7 @@
     "nome": "L. Ullrich",
     "squadra": "Borussia Mönchengladbach",
     "tipo": "Missing Fixture",
-    "motivo": "Broken collarbone",
+    "motivo": "Broken Collarbone",
     "pres": 10,
     "tit": 9,
     "min": 784,
@@ -879,7 +978,6 @@
  },
  "1550216": {
   "assenti": [
-   "A. Adorante (Venezia)",
    "T. Correia (Venezia)",
    "B. Franjic (Venezia)",
    "M. Sverko (Venezia)",
@@ -996,12 +1094,6 @@
     "quota_gol": 0
    },
    {
-    "nome": "A. Adorante",
-    "squadra": "Venezia",
-    "tipo": "Missing Fixture",
-    "motivo": "Hernia"
-   },
-   {
     "nome": "M. Sverko",
     "squadra": "Venezia",
     "tipo": "Missing Fixture",
@@ -1012,8 +1104,7 @@
  "1552830": {
   "assenti": [
    "B. Chardonnet (Stade Brestois 29)",
-   "R. Le Guen (Stade Brestois 29)",
-   "N. Sangui (Paris FC)"
+   "R. Le Guen (Stade Brestois 29)"
   ],
   "assenti_peso": [
    {
@@ -1036,12 +1127,6 @@
     "squadra": "Stade Brestois 29",
     "tipo": "Missing Fixture",
     "motivo": "Calf Injury"
-   },
-   {
-    "nome": "N. Sangui",
-    "squadra": "Paris FC",
-    "tipo": "Questionable",
-    "motivo": "Muscle Injury"
    }
   ]
  },
@@ -1156,12 +1241,13 @@
  },
  "1570468": {
   "assenti": [
+   "P. Ratkov (Levante)",
    "M. Sanchez (Levante)",
    "J. Toljan (Levante)",
-   "P. Ratkov (Levante)",
    "M. Gueye (Racing Santander)",
    "A. Mantilla (Racing Santander)",
-   "A. Martin (Racing Santander)"
+   "A. Martin (Racing Santander)",
+   "G. Guliashvili (Racing Santander)"
   ],
   "assenti_peso": [
    {
@@ -1227,8 +1313,8 @@
    {
     "nome": "P. Ratkov",
     "squadra": "Levante",
-    "tipo": "Questionable",
-    "motivo": "Injury",
+    "tipo": "Missing Fixture",
+    "motivo": "Muscle Injury",
     "pres": 8,
     "tit": 3,
     "min": 290,
@@ -1253,6 +1339,21 @@
     "gol_squadra": 20,
     "partite_squadra": 13,
     "quota_gol": 5
+   },
+   {
+    "nome": "G. Guliashvili",
+    "squadra": "Racing Santander",
+    "tipo": "Questionable",
+    "motivo": "Illness",
+    "pres": 7,
+    "tit": 0,
+    "min": 89,
+    "gol": 0,
+    "ass": 0,
+    "voto": 4.92,
+    "gol_squadra": 20,
+    "partite_squadra": 13,
+    "quota_gol": 0
    }
   ]
  },
@@ -2274,5 +2375,301 @@
    }
   },
   "partita": "VfL Bochum - SV Darmstadt 98"
+ },
+ "1603614": {
+  "titolari": {
+   "AEL": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "Stefanos Kapino",
+     "Sérgio Conceição",
+     "Evagoras Antoniou",
+     "Diogo Gomes",
+     "Ivan Milosavljević",
+     "Giorgos Papageorgiou",
+     "Rémi Oudin",
+     "Davor Zdravkovski",
+     "Jair Tavares",
+     "Luther Singh",
+     "Danil Paroutis"
+    ]
+   },
+   "Olympiakos": {
+    "modulo": "5-4-1",
+    "titolari": [
+     "Christos Talichmanidis",
+     "Jean Felipe",
+     "Márk Tamás",
+     "Henrique Gomes",
+     "Christoforos Frantzis",
+     "Marios Pechlivanis",
+     "Zanos Savva",
+     "Constantinos Christou",
+     "Alexandros Lolis",
+     "Agapios Vrikkis",
+     "Kyprianos Eracleous"
+    ]
+   }
+  },
+  "partita": "AEL - Olympiakos"
+ },
+ "1651745": {
+  "titolari": {
+   "Amal Tiznit": {
+    "modulo": "",
+    "titolari": [
+     "Y. Faqir",
+     "J. Assouab",
+     "Nourddine Koumah",
+     "O. Houssni",
+     "A. El Kouhil",
+     "S. El Azhari",
+     "Hassan Boulaabar",
+     "Tarik Asstati",
+     "A. Ouaarab",
+     "Ayoub Adila",
+     "Z. Essalhi"
+    ]
+   },
+   "Moghreb Tetouan": {
+    "modulo": "",
+    "titolari": [
+     "Zakaria Benabbou",
+     "Achraf marzak",
+     "Soulaimane driouache",
+     "Issam Bouabsidi",
+     "Hicham Zeghari",
+     "M. Karmoun",
+     "Wissam Erbati",
+     "eddine diae eddaoudi",
+     "Mohamed kassou",
+     "Nadir El Fadili",
+     "Mohamed Amraoui"
+    ]
+   }
+  },
+  "partita": "Amal Tiznit - Moghreb Tetouan"
+ },
+ "1576542": {
+  "titolari": {
+   "Feirense": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "Diego Altube",
+     "Luiz Gustavo",
+     "Pedro Pinto",
+     "João Queirós",
+     "Diego Moreno",
+     "M. Diaby",
+     "Diogo Mendes",
+     "Tiago Castro",
+     "Henrique Pereira",
+     "Alexandre Guedes",
+     "Pedro Henrique"
+    ]
+   },
+   "Portimonense": {
+    "modulo": "3-4-3",
+    "titolari": [
+     "Dudu",
+     "Italo Cabelinho",
+     "Xavier",
+     "S. Neves",
+     "Edney",
+     "Yanis da Rocha",
+     "Felipe Favero",
+     "João Reis",
+     "S. Yépié Yépié",
+     "Welinton Júnior",
+     "S. Nakajima"
+    ]
+   }
+  },
+  "partita": "Feirense - Portimonense"
+ },
+ "1584085": {
+  "titolari": {
+   "Hansa Rostock": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "P. Klewin",
+     "Ouassim Karada",
+     "F. Carstens",
+     "F. Pfanne",
+     "N. Kölle",
+     "B. Dietze",
+     "K. Fatkić",
+     "J. Dirkner",
+     "D. Kopacz",
+     "A. Voglsammer",
+     "L. Dajaku"
+    ]
+   },
+   "Havelse": {
+    "modulo": "3-4-3",
+    "titolari": [
+     "T. Opitz",
+     "D. Duah",
+     "S. Belkahia",
+     "Y. Mausehund",
+     "J. Berger",
+     "J. Tugbenyo",
+     "L. Sommer",
+     "K. Schumacher",
+     "Alexander Guiddir",
+     "N. Tauer",
+     "Y. Wardak"
+    ]
+   }
+  },
+  "partita": "Hansa Rostock - Havelse"
+ },
+ "1603618": {
+  "titolari": {
+   "Omonia 29is Maiou": {
+    "modulo": "3-4-2-1",
+    "titolari": [
+     "Antonis Mavrantonis",
+     "Matej Senić",
+     "Alexandros Kaiafas",
+     "Dimitris Chantakias",
+     "Stelios Panteli",
+     "Kelechi Nwakali",
+     "Domen Črnigoj",
+     "Sotiris Fiakas",
+     "Steve Ambri",
+     "Rashaan Fernandes",
+     "Anestis Vlachomitros"
+    ]
+   },
+   "Omonia Aradippou": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Živko Živković",
+     "Minas Antoniou",
+     "Andreas Christofi",
+     "Vernon De Marco",
+     "Jairo Izquierdo",
+     "Jeremy Van Mullem",
+     "Niko Havelka",
+     "Sebastián Lomónaco",
+     "Achraf El Bouchataoui",
+     "Michalis Koumouris",
+     "Giorgos Pontikos"
+    ]
+   }
+  },
+  "partita": "Omonia 29is Maiou - Omonia Aradippou"
+ },
+ "1561974": {
+  "titolari": {
+   "Grazer AK": {
+    "modulo": "3-4-3",
+    "titolari": [
+     "C. Stanković",
+     "M. Gragger",
+     "D. Pines",
+     "Y. Oberleitner",
+     "T. Trummer",
+     "P. Michorl",
+     "C. Cvetko",
+     "L. Klassen",
+     "J. Italiano",
+     "A. Hofleitner",
+     "C. Lichtenberger"
+    ]
+   },
+   "SCR Altach": {
+    "modulo": "3-4-3",
+    "titolari": [
+     "D. Stojanovic",
+     "Filip Milojevic",
+     "B. Zech",
+     "L. Jäger",
+     "N. Niehoff",
+     "R. Elongo-Yombo",
+     "M. Bähre",
+     "B. Böckle",
+     "Y. Massombo",
+     "S. Hrstić",
+     "P. Greil"
+    ]
+   }
+  },
+  "partita": "Grazer AK - SCR Altach"
+ },
+ "1560286": {
+  "titolari": {
+   "Gyori ETO FC": {
+    "modulo": "5-4-1",
+    "titolari": [
+     "S. Petráš",
+     "J. Bennette",
+     "Ã. Umathum",
+     "N. Urblík",
+     "L. Balogun",
+     "D. Štefulj",
+     "K. Bánáti",
+     "P. Agba",
+     "M. Szép",
+     "V. Đukanović",
+     "L. Kulenović"
+    ]
+   },
+   "Debreceni VSC": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "P. Andreev",
+     "J. Mejías",
+     "M. Hofmann",
+     "Á. Lang",
+     "Adrián Guerrero",
+     "B. Dzsudzsák",
+     "D. Patai",
+     "D. Kocsis",
+     "B. Batik",
+     "C. Denes",
+     "Á. Szendrei"
+    ]
+   }
+  },
+  "partita": "Gyori ETO FC - Debreceni VSC"
+ },
+ "1565316": {
+  "titolari": {
+   "Petrolul Ploiesti": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "Lukáš Zima",
+     "Tiberiu Căpuşă",
+     "Paul Papp",
+     "Breston Malula",
+     "Andres Dumitrescu",
+     "Léo Teixeira",
+     "Dele Israel",
+     "Sergiu Hanca",
+     "Rodrigo Martins",
+     "Dan N'Lundulu",
+     "Mario Ioniță"
+    ]
+   },
+   "Arges Pitesti": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "Igor Nikić",
+     "Florin Borța",
+     "Guilherme Garutti",
+     "Leard Sadriu",
+     "Costinel Tofan",
+     "Yanis Pîrvu",
+     "Vadim Rață",
+     "Rober Sierra",
+     "Taylor Luvambo",
+     "Ricardo Matos",
+     "Gabriel Charpentier"
+    ]
+   }
+  },
+  "partita": "Petrolul Ploiesti - Arges Pitesti"
  }
 }
