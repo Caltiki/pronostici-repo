@@ -787,7 +787,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Groin Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Groningen": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "E. Vaessen",
+     "H. Hateboer",
+     "T. Blokzijl",
+     "M. Csinger",
+     "Wouter Prins",
+     "T. de Jonge",
+     "P. Clement",
+     "J. Schreuders",
+     "T. van Bergen",
+     "D. van der Werff",
+     "B. Willumsson"
+    ]
+   },
+   "Willem II": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "M. Delanghe",
+     "H. ter Avest",
+     "F. Stam",
+     "M. Dekker",
+     "M. Lemmens",
+     "C. Twigt",
+     "K. Boogaard",
+     "E. Gürbüz",
+     "T. Vilhena",
+     "V. van Crooij",
+     "D. Haen"
+    ]
+   }
+  },
+  "partita": "Groningen - Willem II"
  },
  "1575237": {
   "assenti": [
@@ -974,7 +1009,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Knee Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Werder Bremen": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "K. Hein",
+     "Arthur",
+     "A. Pieper",
+     "M. Friedl",
+     "O. Deman",
+     "L. Reis",
+     "Y. Regeer",
+     "E. Dinkçi",
+     "Chuky San José",
+     "P. Erevbenagie",
+     "N. Füllkrug"
+    ]
+   },
+   "Borussia Mönchengladbach": {
+    "modulo": "3-4-2-1",
+    "titolari": [
+     "D. Batz",
+     "K. Diks",
+     "P. Sander",
+     "F. Chiarodia",
+     "J. Scally",
+     "Z. Uno",
+     "F. Neuhaus",
+     "J. Castrop",
+     "F. Honorat",
+     "W. Mohya",
+     "S. Machino"
+    ]
+   }
+  },
+  "partita": "Werder Bremen - Borussia Mönchengladbach"
  },
  "1550216": {
   "assenti": [
@@ -2671,5 +2741,449 @@
    }
   },
   "partita": "Petrolul Ploiesti - Arges Pitesti"
+ },
+ "1555088": {
+  "titolari": {
+   "SC Kriens": {
+    "modulo": "4-3-2-1",
+    "titolari": [
+     "Ruben Salchli",
+     "J. Hermann",
+     "M. Willimann",
+     "Enea Heiniger",
+     "K. Tröndle",
+     "Bleron Mulliqi",
+     "E. Rufener",
+     "Martin François",
+     "Nico Siegrist",
+     "D. Ulrich",
+     "A. Krasniqi"
+    ]
+   },
+   "FC Aarau": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "A. Hirzel",
+     "M. Dickenmann",
+     "S. Müller",
+     "M. Thaler",
+     "R. Guzzo",
+     "H. Koide",
+     "D. Coric",
+     "K. Ndau",
+     "L. Obexer",
+     "Z. Tairi",
+     "D. Afriyie"
+    ]
+   }
+  },
+  "partita": "SC Kriens - FC Aarau"
+ },
+ "1639839": {
+  "titolari": {
+   "Delfin SC": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "B. Heras",
+     "B. Hernández",
+     "A. Bedoya",
+     "A. Cisneros",
+     "E. Zúñiga",
+     "G. Heredia",
+     "J. Morocho",
+     "Jefferson Stalin Arce Mina",
+     "Danny Gabriel Luna Morán",
+     "T. Ozaeta",
+     "F. Ayunta"
+    ]
+   },
+   "Orense SC": {
+    "modulo": "3-4-2-1",
+    "titolari": [
+     "R. Silva",
+     "M. Quiñonez",
+     "A. Lorenzo",
+     "Sixto Romario Mina Arroyo",
+     "C. Barrio",
+     "G. Rostagno",
+     "N. Molina",
+     "B. Caicedo",
+     "Á. Mena",
+     "Michael Alessandro Bermúdez Reyes",
+     "Agustin Herrera"
+    ]
+   }
+  },
+  "partita": "Delfin SC - Orense SC"
+ },
+ "1559205": {
+  "titolari": {
+   "Francs Borains": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "V. Swinnen",
+     "M. Caufriez",
+     "J. Molle",
+     "D. Dessoleil",
+     "R. Monticelli",
+     "E. Faucon",
+     "N. Diliberto",
+     "D. Ndongala",
+     "R. Asante",
+     "P. Wydra",
+     "Ariel Kemeth Yobo"
+    ]
+   },
+   "AS Eupen": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "M. Hiller",
+     "Y. Van Genechten",
+     "R. Paeshuyse",
+     "I. Plastun",
+     "N. Gavory",
+     "Théo Maréchal",
+     "L. Delaurier-Chaubet",
+     "M. Fixelles",
+     "C. Nadje",
+     "Sandro Vidigal",
+     "Kikas"
+    ]
+   }
+  },
+  "partita": "Francs Borains - AS Eupen"
+ },
+ "1551898": {
+  "titolari": {
+   "Jong Ajax": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "J. Heerkens",
+     "A. Appiah",
+     "G. Spina",
+     "M. Muzungu",
+     "F. Zahouani",
+     "Alejandro Monserrate",
+     "T. Peters",
+     "L. Acheampong",
+     "E. Ünüvar",
+     "D. Pugno",
+     "P. Nash"
+    ]
+   },
+   "Heracles": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "F. de Keijzer",
+     "David Vicente",
+     "D. Mirani",
+     "M. Wrusch",
+     "Manny",
+     "S. Scheperman",
+     "D. van der Kust",
+     "C. Abbas",
+     "T. van Gilst",
+     "M. Hauswirth",
+     "J. N&apos;djoli"
+    ]
+   }
+  },
+  "partita": "Jong Ajax - Heracles"
+ },
+ "1559206": {
+  "titolari": {
+   "KRC Genk II": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "E. Doucouré",
+     "K. Nkuba",
+     "Brad Ryan Manguelle",
+     "W. Kapers",
+     "Y. Yoshinaga",
+     "D. Nzoko",
+     "Moussa Kone",
+     "P. Ogbeiwi",
+     "Shakhmurat Dauletov",
+     "Loïc Alvarez Fernandez",
+     "J. Coenen"
+    ]
+   },
+   "RSC Anderlecht II": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Kamiel Timmermans",
+     "N. Cobiella",
+     "N. Engwanda",
+     "K. Momba Liema Olinga",
+     "Cheikh Koité",
+     "O. Sarr",
+     "A. de Ridder",
+     "J. Bethume",
+     "A. Flips",
+     "E. Sternal",
+     "P. N'Dao"
+    ]
+   }
+  },
+  "partita": "KRC Genk II - RSC Anderlecht II"
+ },
+ "1551901": {
+  "titolari": {
+   "MVV": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "H. Wentges",
+     "S. Wegen",
+     "F. Dicke",
+     "Sven Bouland",
+     "Yael Liesdek",
+     "Mika Luijendijk",
+     "O. Dumont",
+     "E. Sierra",
+     "D. Asante",
+     "N. El Hamdaoui",
+     "L. Daneels"
+    ]
+   },
+   "Jong PSV U21": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "T. Smolenaars",
+     "F. Kluit",
+     "M. Bresser",
+     "F. Merién",
+     "M. Monamay",
+     "B. Mulders",
+     "S. Sidibe",
+     "M. Hansen",
+     "S. Cornecion",
+     "A. Bouhamdi",
+     "A. Jones"
+    ]
+   }
+  },
+  "partita": "MVV - Jong PSV U21"
+ },
+ "1551902": {
+  "titolari": {
+   "NAC Breda": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "M. Verrips",
+     "B. Lucassen",
+     "R. Hillen",
+     "F. Oldrup Jensen",
+     "J. Van den Bergh",
+     "K. Sowah",
+     "M. Balard",
+     "J. Van Hecke",
+     "M. Nassoh",
+     "C. Brym",
+     "M. Soumano"
+    ]
+   },
+   "Den Bosch": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "P. van de Merbel",
+     "S. Barglan",
+     "Jeffry Fortes",
+     "J. van Heertum",
+     "S. Maas",
+     "H. Eikelboom",
+     "K. Monzialo",
+     "B. van Schuppen",
+     "Devon Decorte",
+     "I. Boumassaoudi",
+     "S. Karlsson Grach"
+    ]
+   }
+  },
+  "partita": "NAC Breda - Den Bosch"
+ },
+ "1555090": {
+  "titolari": {
+   "FC Winterthur": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "A. Spagnoli",
+     "S. Ottiger",
+     "R. Arnold",
+     "S. Camara",
+     "S. Diaby",
+     "S. Cueni",
+     "L. Zuffi",
+     "T. Golliard",
+     "Y. Odin",
+     "E. Kehrer",
+     "N. Cavka"
+    ]
+   },
+   "Rapperswil": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "A. Omerovic",
+     "J. Ambassa",
+     "C. May",
+     "I. Beka",
+     "W. Le Pogam",
+     "A. Durrer",
+     "A. Charveys",
+     "S. Diarrassouba",
+     "Y. Ryter",
+     "M. Kurtishi",
+     "N. Mupemba"
+    ]
+   }
+  },
+  "partita": "FC Winterthur - Rapperswil"
+ },
+ "1555087": {
+  "titolari": {
+   "Étoile Carouge": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "Lionel Huwiler",
+     "V. Felder",
+     "B. Céspedes",
+     "M. Dubosson",
+     "F. Hoxha",
+     "L. Essiena Avang",
+     "M. Holcbecher",
+     "B. Caslei",
+     "O. Sene",
+     "Oscar Renovales",
+     "T. Escorza"
+    ]
+   },
+   "Stade Lausanne-Ouchy": {
+    "modulo": "3-2-4-1",
+    "titolari": [
+     "L. Seji",
+     "N. Sutter",
+     "L. Hajrulahu",
+     "T. Barbet",
+     "Jordi Tur",
+     "B. Conus",
+     "V. Tritten",
+     "C. Sow",
+     "T. Bouchlarhem",
+     "R. Freitas",
+     "Jamie Atangana"
+    ]
+   }
+  },
+  "partita": "Étoile Carouge - Stade Lausanne-Ouchy"
+ },
+ "1553236": {
+  "titolari": {
+   "Gornik Zabrze": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "P. Schulze",
+     "O. Zmrzlý",
+     "R. Janicki",
+     "P. Bochniewicz",
+     "Josema Sánchez",
+     "Paulo Bernardo",
+     "M. Højholt",
+     "K. UrbaÅski",
+     "Peter",
+     "E. Prekop",
+     "M. Khlan"
+    ]
+   },
+   "Wisla Plock": {
+    "modulo": "3-4-3",
+    "titolari": [
+     "R. Leszczyński",
+     "M. Haglind-Sangré",
+     "M. Kamiński",
+     "Afonso Silva",
+     "Ž. Rogelj",
+     "A. Radwański",
+     "Sidnei Tavares",
+     "P. Kun",
+     "S. Akere",
+     "J. Pršir",
+     "O. Kobacki"
+    ]
+   }
+  },
+  "partita": "Gornik Zabrze - Wisla Plock"
+ },
+ "1570043": {
+  "titolari": {
+   "Leganes": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "L. Zidane",
+     "Jorge Martínez",
+     "Lalo Aguilar",
+     "Ignasi Miquel",
+     "Marvel",
+     "Álex Millán",
+     "Miguel Atienza",
+     "Dani Rodríguez",
+     "U. del Cura",
+     "Álex Sancris",
+     "Álvaro Morata"
+    ]
+   },
+   "Sabadell": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "Diego Fuoli",
+     "Óscar Sanz",
+     "Edgar González",
+     "Genar Fornés",
+     "Miki Codina",
+     "Ton Ripoll",
+     "Pere Pons",
+     "Alain Ribeiro",
+     "J. Priego",
+     "Ángel Baena",
+     "Y. Rahmani"
+    ]
+   }
+  },
+  "partita": "Leganes - Sabadell"
+ },
+ "1567971": {
+  "titolari": {
+   "Wacker Innsbruck": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "Juri Kirchmayr",
+     "Max Köchl",
+     "Phil Kunze",
+     "Robin Littig",
+     "Alexander Joppich",
+     "Adrian Lechl",
+     "Daniel Francis",
+     "Raphael Gallé",
+     "Luis Gstrein",
+     "Gabriele Biancheri",
+     "Okan Yılmaz"
+    ]
+   },
+   "First Vienna": {
+    "modulo": "5-4-1",
+    "titolari": [
+     "Bernhard Unger",
+     "Raul Peter Marte",
+     "Marco Gantschnig",
+     "Philipp Breit",
+     "Jurgen Bauer",
+     "Benjamin Rosenberger",
+     "Bernhard Zimmermann",
+     "Bernhard Luxbacher",
+     "Florian Prohart",
+     "David Ungar",
+     "Youssouf Soukouna"
+    ]
+   }
+  },
+  "partita": "Wacker Innsbruck - First Vienna"
  }
 }
