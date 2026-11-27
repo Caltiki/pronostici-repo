@@ -590,7 +590,8 @@
   "Sel": "1X + Under 4.5",
   "Prob": 65.0,
   "Equa": 1.54,
-  "Rif_Book": "Pinnacle"
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
  },
  {
   "Data": "2026-12-06",
@@ -632,8 +633,7 @@
   "Sel": "Over",
   "Prob": 63.5,
   "Equa": 1.58,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-12-06",
@@ -2798,27 +2798,6 @@
   "Sel": "1X + Under 4.5",
   "Prob": 36.8,
   "Equa": 2.71,
-  "Rif_Book": "Pinnacle"
- },
- {
-  "Data": "2026-12-06",
-  "Ora": "18:30",
-  "Campionato": "Spain: Laliga",
-  "Partita": "Getafe - Valencia",
-  "Casa": "Getafe",
-  "Ospite": "Valencia",
-  "Linea_OU": 2.0,
-  "Gol_attesi": 2.16,
-  "Margine": 4.7,
-  "Movimento": null,
-  "Principale": "si",
-  "Schedina": "si",
-  "Fonte": "OddsAPI",
-  "Gruppo": "Under Over",
-  "Mercato": "OU 1.5",
-  "Sel": "Under",
-  "Prob": 36.5,
-  "Equa": 2.74,
   "Rif_Book": "Pinnacle"
  },
  {

@@ -3,56 +3,56 @@
   "copertura": {
    "1": 29130,
    "2": 4147,
-   "3": 2380,
-   "4": 1174,
-   "5": 489
+   "3": 2383,
+   "4": 1180,
+   "5": 493
   },
-  "totale": 37320,
+  "totale": 37333,
   "brier": 0.5764,
   "brier_clima": 0.6396,
   "fonti": [
    {
     "nome": "betimate",
-    "partite": 35866,
+    "partite": 35879,
     "brier": 0.5767,
     "brier_media": 0.5758
    },
    {
     "nome": "footymetrics",
-    "partite": 3567,
+    "partite": 3580,
     "brier": 0.5996,
-    "brier_media": 0.5891
+    "brier_media": 0.5892
    },
    {
     "nome": "ratingbet",
-    "partite": 2283,
-    "brier": 0.564,
-    "brier_media": 0.5697
+    "partite": 2290,
+    "brier": 0.5642,
+    "brier_media": 0.5699
    },
    {
     "nome": "soccersite",
-    "partite": 6042,
+    "partite": 6054,
     "brier": 0.5869,
     "brier_media": 0.578
    },
    {
     "nome": "statarea",
-    "partite": 3947,
-    "brier": 0.6025,
-    "brier_media": 0.5951
+    "partite": 3955,
+    "brier": 0.6024,
+    "brier_media": 0.595
    }
   ],
   "mercato": {
-   "partite": 7989,
+   "partite": 8002,
    "poche": false,
-   "brier": 0.5828,
-   "brier_mercato": 0.5694,
-   "diff": 0.0135,
+   "brier": 0.5829,
+   "brier_mercato": 0.5695,
+   "diff": 0.0134,
    "es": 0.0015,
-   "t": 8.83,
+   "t": 8.8,
    "ic": [
-    0.0105,
-    0.0165
+    0.0104,
+    0.0164
    ],
    "per_fonte": [
     {
@@ -64,10 +64,10 @@
     },
     {
      "fonte": "Pinnacle",
-     "partite": 3041,
+     "partite": 3049,
      "diff": 0.0134,
      "es": 0.0022,
-     "t": 5.99
+     "t": 5.98
     },
     {
      "fonte": "altri book",
@@ -78,36 +78,36 @@
     },
     {
      "fonte": "FootyMetrics",
-     "partite": 54,
-     "diff": -0.026,
-     "es": 0.0243,
-     "t": -1.07
+     "partite": 59,
+     "diff": -0.0304,
+     "es": 0.0223,
+     "t": -1.37
     }
    ]
   }
  },
- "aggiornato": "2026-11-27 07:06",
+ "aggiornato": "2026-11-27 17:11",
  "accordo": {
-  "totale": 3265,
+  "totale": 3268,
   "prende": {
    "statarea": {
     "prese": 1364,
-    "su": 2410,
+    "su": 2411,
     "pct": 56.6
    },
    "webpronostici": {
-    "prese": 710,
-    "su": 1314,
+    "prese": 711,
+    "su": 1316,
     "pct": 54.0
    },
    "consensus": {
-    "prese": 1517,
-    "su": 2823,
+    "prese": 1518,
+    "su": 2825,
     "pct": 53.7
    }
   },
   "mercato": {
-   "partite": 2145,
+   "partite": 2148,
    "poche": false,
    "brier": 0.5734,
    "brier_mercato": 0.5607,
@@ -128,10 +128,10 @@
     },
     {
      "fonte": "Pinnacle",
-     "partite": 661,
+     "partite": 662,
      "diff": 0.0134,
      "es": 0.0047,
-     "t": 2.87
+     "t": 2.88
     },
     {
      "fonte": "altri book",
@@ -142,16 +142,16 @@
     },
     {
      "fonte": "FootyMetrics",
-     "partite": 3,
-     "diff": 0.1127,
-     "es": 0.0523,
-     "t": 2.16
+     "partite": 5,
+     "diff": 0.0627,
+     "es": 0.0431,
+     "t": 1.46
     }
    ]
   },
   "favorito_mercato": 56.5,
   "testa_a_testa": {
-   "partite": 1843,
+   "partite": 1845,
    "consensus": 56.0,
    "mercato": 58.4
   }
