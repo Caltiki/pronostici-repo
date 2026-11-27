@@ -373,7 +373,42 @@
     "partite_squadra": 12,
     "quota_gol": 0
    }
-  ]
+  ],
+  "titolari": {
+   "Alanyaspor": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Paulo Victor",
+     "F. Hadërgjonaj",
+     "F. Aliti",
+     "Nuno Lima",
+     "Y. Özdemir",
+     "Maestro",
+     "G. Makouta",
+     "İ. Kaya",
+     "I. Hagi",
+     "Ruan",
+     "Hwang Ui-Jo"
+    ]
+   },
+   "Konyaspor": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "D. Ertaş",
+     "A. Oğuz",
+     "R. Baniya",
+     "U. Yazğılı",
+     "A. Masuaku",
+     "R.Tóth",
+     "M. İbrahimoğlu",
+     "D. Türüç",
+     "J. Muleka",
+     "J. Dompé",
+     "E. Destan"
+    ]
+   }
+  },
+  "partita": "Alanyaspor - Konyaspor"
  },
  "1584482": {
   "assenti": [
@@ -496,7 +531,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Rizespor": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "Z. Görgen",
+     "M. Pala",
+     "A. Mocsi",
+     "S. Bakayoko",
+     "Z. Ariss",
+     "T. Antalyalı",
+     "Adedire Emmanuel  Awokoya-Mebude",
+     "I. Olawoyin",
+     "Q. Laçi",
+     "A. Kutucu",
+     "A. Sowe"
+    ]
+   },
+   "Kasımpaşa": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "A. Gianniotis",
+     "Cláudio Winck",
+     "A. Arous",
+     "M. Ilie",
+     "J. Jessen",
+     "K. Demirbay",
+     "Elson Mendes",
+     "J. Rak-Sakyi",
+     "H. Hajradinović",
+     "A. Kol",
+     "A. Benedyczak"
+    ]
+   }
+  },
+  "partita": "Rizespor - Kasımpaşa"
  },
  "1549069": {
   "assenti": [
@@ -1798,5 +1868,411 @@
    }
   },
   "partita": "Lokomotiv Sofia - Slavia Sofia"
+ },
+ "1603613": {
+  "titolari": {
+   "AEK Larnaca": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "Alberto Paleari",
+     "Jorge Miramón",
+     "Hrvoje Miličević",
+     "Mike Van der Hoorn",
+     "Kostas Pileas",
+     "Amor Layouni",
+     "Gus Ledes",
+     "Ivan Chavdarov Pankov",
+     "Giorgos Naoum",
+     "Riad Bajić",
+     "Nicolas Andereggen"
+    ]
+   },
+   "Apollon Limassol": {
+    "modulo": "3-5-2",
+    "titolari": [
+     "Philipp Kühn",
+     "Leonidas Konomis",
+     "Connor Goldson",
+     "Josef Kvida",
+     "Bruno Gaspar",
+     "Gaetan Weissbeck",
+     "Ivan Ljubić",
+     "Dani Escriche",
+     "Giorgos Malekkidis",
+     "Joel Asoro",
+     "Alen Ožbolt"
+    ]
+   }
+  },
+  "partita": "AEK Larnaca - Apollon Limassol"
+ },
+ "1560084": {
+  "titolari": {
+   "Artis": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "R. Kasik",
+     "N. Glossoa",
+     "D. Plechatý",
+     "K. Pojezný",
+     "D. Preisler",
+     "S. Boháč",
+     "M. Pospíšil",
+     "A. Alégué",
+     "D. Sarapata",
+     "Papalélé",
+     "Q. Adediran"
+    ]
+   },
+   "Slovácko": {
+    "modulo": "3-4-2-1",
+    "titolari": [
+     "M. Heča",
+     "F. Vaško",
+     "J. Behiratche",
+     "Tomáš Král",
+     "M. Šviderský",
+     "M. Trávník",
+     "T. Kostadinov",
+     "Gigli Ndefe",
+     "M. Havlík",
+     "L. Vorlický",
+     "D. Puškáč"
+    ]
+   }
+  },
+  "partita": "Artis - Slovácko"
+ },
+ "1548569": {
+  "titolari": {
+   "Istra 1961": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "F. Kolić",
+     "R. Hrvatin",
+     "M. Nasraoui",
+     "R. Kumar",
+     "Niko Šepić",
+     "D. Hodzic",
+     "G. AlbarracÃ­n",
+     "E. Frederiksen",
+     "D. Ahmeti",
+     "N. Skafar Zuzic",
+     "S. Ukich"
+    ]
+   },
+   "NK Varazdin": {
+    "modulo": "3-4-2-1",
+    "titolari": [
+     "J. Silić",
+     "N. Tepšić",
+     "M. Barać",
+     "M. Mladenovski",
+     "E. Duraković",
+     "T. Duvnjak",
+     "I. Canjuga",
+     "L. Posinkovic",
+     "L. Mamić",
+     "A. Latković",
+     "Iuri Tavares"
+    ]
+   }
+  },
+  "partita": "Istra 1961 - NK Varazdin"
+ },
+ "1553241": {
+  "titolari": {
+   "Raków Częstochowa": {
+    "modulo": "3-4-3",
+    "titolari": [
+     "T. Karić",
+     "F. Tudor",
+     "B. Racovițan",
+     "S. Svarnas",
+     "Jean Carlos",
+     "O. Repka",
+     "V. Kochergin",
+     "E. Otieno",
+     "T. Pieńko",
+     "M. Emreli",
+     "P. Makuch"
+    ]
+   },
+   "Piast Gliwice": {
+    "modulo": "4-4-1-1",
+    "titolari": [
+     "D. Gril",
+     "E. Twumasi",
+     "Juande Rivas",
+     "F. Sierralta",
+     "J. Lewicki",
+     "Ivan Lima",
+     "O. Leśniak",
+     "Q. Boisgard",
+     "Hugo Vallejo",
+     "A. Katsantonis",
+     "Leandro Sanca"
+    ]
+   }
+  },
+  "partita": "Raków Częstochowa - Piast Gliwice"
+ },
+ "1585845": {
+  "titolari": {
+   "Sarıyer": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "I. Šehić",
+     "Ü. Ergün",
+     "J. Attamah",
+     "C. Osmanpaşa",
+     "E. Korkmazoğlu",
+     "H. Yeşilyurt",
+     "K. Arslan",
+     "A. Biyogo Poko",
+     "T. Ergül",
+     "E. Karaca",
+     "E. Eze"
+    ]
+   },
+   "İstanbulspor": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "A. Tutar",
+     "Alieu Cham",
+     "M. Ologo",
+     "Umut İslamoğlu",
+     "Y. Özer",
+     "I. Dayakli",
+     "D. Aydın",
+     "E. Mendy",
+     "I. Iliev",
+     "M. Fall",
+     "M. Sol"
+    ]
+   }
+  },
+  "partita": "Sarıyer - İstanbulspor"
+ },
+ "1585847": {
+  "titolari": {
+   "Ümraniyespor": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "C. Topaloğlu",
+     "O. Yıldırım",
+     "M. Kartal",
+     "T. Glumac",
+     "E. Gedik",
+     "Álex Blanco",
+     "S. Göksu",
+     "A. Đokanović",
+     "Berat Yılmaz",
+     "S. Hostikka",
+     "C. Soukou"
+    ]
+   },
+   "Manisa F.K.": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "V. Karakuş",
+     "K. Yurdakul",
+     "C. Hérelle",
+     "Y. Güreler",
+     "Y. Talum",
+     "B. Touré",
+     "Y. Benrahou",
+     "A. Çankaya",
+     "J. Anziani",
+     "A. Vargas",
+     "C. Sylla"
+    ]
+   }
+  },
+  "partita": "Ümraniyespor - Manisa F.K."
+ },
+ "1635109": {
+  "titolari": {
+   "Čelik": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Arman Šutković",
+     "Halid Šabanović",
+     "Albin Omić",
+     "Amer Mašetić",
+     "Nemanja Tomašević",
+     "Faruk Gogić",
+     "Joseph Amoah",
+     "Dževad Sijamija",
+     "Oliver Šarkić",
+     "Samy Faraj",
+     "Dejan Vidić"
+    ]
+   },
+   "BSK Banja Luka": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Srđan Modić",
+     "Domagoj Čulina",
+     "Zoran Kvržić",
+     "Diouf Cherif Atab",
+     "Aleksandar Subić",
+     "Ognjen Radošević",
+     "Boro Erić",
+     "Denis Dizdarevic",
+     "Nedim Keranovic",
+     "David Čavić",
+     "Stefan Marčetić"
+    ]
+   }
+  },
+  "partita": "Čelik - BSK Banja Luka"
+ },
+ "1576245": {
+  "titolari": {
+   "1. FC Heidenheim": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "Frank  Feller",
+     "M. Busch",
+     "P. Mainka",
+     "T. Siersleben",
+     "M. Heule",
+     "P. Hennrich",
+     "M. Zrilic",
+     "J. Schöppner",
+     "M. Costly",
+     "B. Zivzivadze",
+     "C. Conteh"
+    ]
+   },
+   "1. FC Nürnberg": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "J. Reichert",
+     "T. Janisch",
+     "A. Kalogeropoulos",
+     "F. Otto",
+     "E. Porstner",
+     "A. Marhiev",
+     "J. Fernandez",
+     "J. Justvan",
+     "W. Bøving",
+     "Rafael Lubach",
+     "P. Scobel"
+    ]
+   }
+  },
+  "partita": "1. FC Heidenheim - 1. FC Nürnberg"
+ },
+ "1603086": {
+  "titolari": {
+   "Al-Ittihad FC": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "P. Rajković",
+     "Muhannad Al Shanqiti",
+     "Saad Al Mosa",
+     "Danilo Pereira",
+     "F. Abdi",
+     "Mukhtar Ali",
+     "H. Aouar",
+     "D. Lopy",
+     "Marwan Al Sahafi",
+     "G. Ilenikhena",
+     "S. Bergwijn"
+    ]
+   },
+   "NEOM": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "Luís Maximiano",
+     "Abdulmalik Al Oyayari",
+     "M. Sarr",
+     "N. Zézé",
+     "Islam Hawsawi",
+     "Muhannad Al Saad",
+     "Ala Al Hajji",
+     "Faisal Al Ghamdi",
+     "G. Masouras",
+     "S. Benrahma",
+     "Haroune Camara"
+    ]
+   }
+  },
+  "partita": "Al-Ittihad FC - NEOM"
+ },
+ "1600378": {
+  "titolari": {
+   "Stellenbosch": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "N. Garrow",
+     "S. Nkwali",
+     "S. Msimango",
+     "L. Vena",
+     "T. Mashego",
+     "Daniels",
+     "G. Palace",
+     "Njabulo Blom",
+     "C. Butsaka",
+     "S. Kwayiba"
+    ]
+   },
+   "TS Galaxy": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "Sipho Gift Maseti",
+     "M. Mahlangu",
+     "K. Mhlongo",
+     "Lennol Mathebula",
+     "S. Ngobeni",
+     "Junior Zindoga",
+     "Tshepo Kakora",
+     "M. Mbunjana",
+     "N. Nkosi",
+     "V. Letsoalo",
+     "Anslin Williams"
+    ]
+   }
+  },
+  "partita": "Stellenbosch - TS Galaxy"
+ },
+ "1576242": {
+  "titolari": {
+   "VfL Bochum": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "T. Horn",
+     "S. Klaiber",
+     "M. Steinwender",
+     "K. Mets",
+     "M. Wittek",
+     "E. Çokaj",
+     "K. Miyoshi",
+     "M. Pannewig",
+     "J. Steuckers",
+     "P. Hofmann",
+     "C. Rasmussen"
+    ]
+   },
+   "SV Darmstadt 98": {
+    "modulo": "4-4-2",
+    "titolari": [
+     "M. Schuhen",
+     "K. Klefisch",
+     "Y. Lührs",
+     "A. Vukotić",
+     "R. Petretta",
+     "M. Bader",
+     "M. Richter",
+     "H. Akiyama",
+     "N. Weißhaupt",
+     "L. Kehl",
+     "M. Smit"
+    ]
+   }
+  },
+  "partita": "VfL Bochum - SV Darmstadt 98"
  }
 }
