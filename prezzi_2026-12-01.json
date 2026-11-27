@@ -522,8 +522,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "X2 + Over 1.5",
   "Prob": 77.4,
-  "Equa": 1.29,
-  "InSchedina": "si"
+  "Equa": 1.29
  },
  {
   "Data": "2026-12-01",
@@ -664,7 +663,8 @@
   "Mercato": "1X2",
   "Sel": "2",
   "Prob": 76.2,
-  "Equa": 1.31
+  "Equa": 1.31,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-12-01",
@@ -704,7 +704,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "1X + Over 1.5",
   "Prob": 75.5,
-  "Equa": 1.32
+  "Equa": 1.32,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-12-01",
@@ -1006,8 +1007,7 @@
   "Mercato": "1X2",
   "Sel": "1",
   "Prob": 67.1,
-  "Equa": 1.49,
-  "InSchedina": "si"
+  "Equa": 1.49
  },
  {
   "Data": "2026-12-01",
@@ -1287,8 +1287,7 @@
   "Mercato": "Esito + Gol",
   "Sel": "1X + Over 1.5",
   "Prob": 63.9,
-  "Equa": 1.56,
-  "InSchedina": "si"
+  "Equa": 1.56
  },
  {
   "Data": "2026-12-01",
@@ -1350,6 +1349,27 @@
   "Sel": "Gol",
   "Prob": 63.7,
   "Equa": 1.57
+ },
+ {
+  "Data": "2026-12-01",
+  "Ora": "21:00",
+  "Campionato": "England League One",
+  "Partita": "Reading - Doncaster",
+  "Casa": "Reading",
+  "Ospite": "Doncaster",
+  "Linea_OU": "",
+  "Gol_attesi": 3.06,
+  "Margine": 3.7,
+  "Movimento": null,
+  "Principale": "",
+  "Schedina": "si",
+  "Fonte": "FootyMetrics",
+  "Gruppo": "Under Over",
+  "Mercato": "OU 3.5",
+  "Sel": "Under",
+  "Prob": 63.3,
+  "Equa": 1.58,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-12-01",
@@ -6043,14 +6063,14 @@
  },
  {
   "Data": "2026-12-01",
-  "Ora": "20:45",
-  "Campionato": "Germany DFB Pokal",
-  "Partita": "M'Gladbach - Darmstadt 98",
-  "Casa": "M'Gladbach",
-  "Ospite": "Darmstadt 98",
+  "Ora": "17:30",
+  "Campionato": "Bulgaria First League",
+  "Partita": "Dunav 2010 - CSKA Sofia",
+  "Casa": "Dunav 2010",
+  "Ospite": "CSKA Sofia",
   "Linea_OU": "",
-  "Gol_attesi": 3.67,
-  "Margine": 2.7,
+  "Gol_attesi": 3.17,
+  "Margine": 5.0,
   "Movimento": null,
   "Principale": "",
   "Schedina": "si",
@@ -6058,8 +6078,8 @@
   "Gruppo": "1X2",
   "Mercato": "1X2",
   "Sel": "X",
-  "Prob": 18.5,
-  "Equa": 5.39
+  "Prob": 15.9,
+  "Equa": 6.3
  },
  {
   "Data": "2026-12-01",

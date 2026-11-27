@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-27 08:06",
+ "aggiornato": "2026-11-27 13:24",
  "date": [
   "2026-11-13",
   "2026-11-14",
@@ -117,16 +117,16 @@
    "righe": 856
   },
   "2026-11-27": {
-   "presa": 19,
-   "sbagliata": 13,
+   "presa": 17,
+   "sbagliata": 17,
    "rimborso": 0,
-   "attesa": 1020,
-   "righe": 1052
+   "attesa": 1198,
+   "righe": 1232
   }
  },
  "taratura": {
   "totale": {
-   "righe": 19981,
+   "righe": 19983,
    "partite": 2621,
    "prevista": 54.6,
    "uscita": 54.5,
@@ -135,16 +135,16 @@
   },
   "fasce": [
    {
-    "righe": 3466,
-    "partite": 2147,
+    "righe": 3465,
+    "partite": 2146,
     "prevista": 37.4,
     "uscita": 35.8,
-    "scarto": -1.5,
+    "scarto": -1.6,
     "errore_std": 0.8,
     "fascia": "35-40%"
    },
    {
-    "righe": 2614,
+    "righe": 2617,
     "partite": 1760,
     "prevista": 42.3,
     "uscita": 44.6,
@@ -156,52 +156,52 @@
     "righe": 1779,
     "partite": 1355,
     "prevista": 47.3,
-    "uscita": 47.0,
-    "scarto": -0.3,
+    "uscita": 47.1,
+    "scarto": -0.2,
     "errore_std": 1.2,
     "fascia": "45-50%"
    },
    {
-    "righe": 3051,
-    "partite": 1860,
+    "righe": 3049,
+    "partite": 1859,
     "prevista": 52.4,
-    "uscita": 52.0,
-    "scarto": -0.4,
+    "uscita": 51.9,
+    "scarto": -0.5,
     "errore_std": 0.9,
     "fascia": "50-55%"
    },
    {
-    "righe": 2544,
+    "righe": 2545,
     "partite": 1737,
     "prevista": 57.4,
     "uscita": 57.0,
-    "scarto": -0.4,
+    "scarto": -0.3,
     "errore_std": 1.0,
     "fascia": "55-60%"
    },
    {
-    "righe": 1785,
-    "partite": 1248,
+    "righe": 1786,
+    "partite": 1249,
     "prevista": 62.2,
-    "uscita": 62.0,
-    "scarto": -0.2,
+    "uscita": 61.9,
+    "scarto": -0.3,
     "errore_std": 1.1,
     "fascia": "60-65%"
    },
    {
-    "righe": 1235,
-    "partite": 970,
+    "righe": 1236,
+    "partite": 971,
     "prevista": 67.3,
-    "uscita": 70.4,
+    "uscita": 70.5,
     "scarto": 3.1,
     "errore_std": 1.3,
     "fascia": "65-70%"
    },
    {
-    "righe": 962,
+    "righe": 961,
     "partite": 809,
     "prevista": 72.3,
-    "uscita": 72.9,
+    "uscita": 72.8,
     "scarto": 0.5,
     "errore_std": 1.4,
     "fascia": "70-75%"
@@ -254,7 +254,7 @@
   ],
   "gruppi": [
    {
-    "righe": 9225,
+    "righe": 9227,
     "partite": 2478,
     "prevista": 46.4,
     "uscita": 46.7,
@@ -267,7 +267,7 @@
     "partite": 2621,
     "prevista": 68.2,
     "uscita": 67.8,
-    "scarto": -0.3,
+    "scarto": -0.4,
     "errore_std": 0.6,
     "nome": "Under Over"
    },
@@ -284,15 +284,15 @@
     "righe": 2697,
     "partite": 2621,
     "prevista": 57.3,
-    "uscita": 54.9,
-    "scarto": -2.4,
+    "uscita": 54.8,
+    "scarto": -2.5,
     "errore_std": 1.0,
     "nome": "Gol NoGol"
    }
   ],
   "fonti": [
    {
-    "righe": 15521,
+    "righe": 15523,
     "partite": 2011,
     "prevista": 54.4,
     "uscita": 54.5,
