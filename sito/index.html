@@ -2214,7 +2214,24 @@
      "guardalo accanto alla pagina Pinnacle, non da solo."]
   ];
   // (213) le due pagine del Mercato, una accanto all'altra
-  var GRUPPO_MERCATO = [["pin", "Pinnacle"], ["mercato", "AsianOdds"]];
+  var GRUPPO_MERCATO = [["pin", "Pinnacle"], ["mercato", "AsianOdds"], ["modello", "Modello"]];
+  // (229) LA PAGINA DEL NOSTRO MODELLO (modello_misto.py): tutte le partite
+  // del calendario che hanno il modello, con Pinnacle accanto dove c'e'.
+  var MO_VISTE = [
+    ["tutte", "Tutte",
+     "Il nostro modello misto: un rating di attacco e difesa per ogni squadra che impara dai gol e dalle chiusure di Pinnacle, partita dopo partita. " +
+     "Prevede senza vedere le quote della partita. Barra rosa il modello, blu Pinnacle quando c'\u00e8. Non entra nei Pronostici: " +
+     "dal vivo fa ancora peggio di Pinnacle (la misura \u00e8 qui sotto)."],
+    ["lontane", "Lontane da Pinnacle",
+     "Le partite dove il modello si scosta da Pinnacle di almeno " + 5 + " punti su un segno, dalla pi\u00f9 lontana. Quando non sono d'accordo, " +
+     "di solito ha ragione il mercato (notizie, formazioni, soldi informati): \u00e8 una partita da guardare meglio, non una giocata."],
+    ["senza", "Senza Pinnacle",
+     "Le partite che Pinnacle non quota: qui il modello \u00e8 l'unico prezzo che il sito ha. Fiducia e partite viste dicono quanto prenderlo sul serio."],
+    ["forti", "Sopra il 60%",
+     "Le partite dove il segno pi\u00f9 probabile per il modello supera il 60%, dalla pi\u00f9 probabile."]
+  ];
+  var MO_ORDINI = [["ora", "Per orario"], ["prob", "Per probabilit\u00e0"], ["scarto", "Per scarto da Pinnacle"], ["paese", "Per campionato"]];
+  var MOD_INFO = null;
   var MK_ORDINI = [["file", "Per orario"], ["prob", "Per probabilit\u00e0"], ["mov", "Per movimento"], ["margine", "Per margine"]];
   // (136) "Mercato" era AsianOdds, tolto il 12/11 (quote passate a
   // pagamento): il mercato adesso e' Pinnacle, nella sua pagina.
@@ -2355,9 +2372,9 @@
 
   var stato = {
     sez: "prezzi",
-    data: { prezzi: null, mercato: null, consensus: null, accordo: null, poisson: null, sure: null, wdw: null, sm: null, hp: null, fp: null, pin: null },
-    vista: { wdw: "tutte", sm: "tutte", hp: "tutte", fp: "tutte", pin: "tutte", prezzi: "partite", mercato: "tutte", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "75" },
-    ordine: { wdw: "prob", sm: "prob", hp: "ora", fp: "ora", pin: "ora", prezzi: "ora", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "prob" },
+    data: { prezzi: null, mercato: null, consensus: null, accordo: null, poisson: null, sure: null, wdw: null, sm: null, hp: null, fp: null, pin: null, modello: null },
+    vista: { wdw: "tutte", sm: "tutte", hp: "tutte", fp: "tutte", pin: "tutte", prezzi: "partite", mercato: "tutte", modello: "tutte", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "75" },
+    ordine: { wdw: "prob", sm: "prob", hp: "ora", fp: "ora", pin: "ora", prezzi: "ora", mercato: "file", modello: "ora", consensus: "file", accordo: "file", poisson: "file", sure: "prob" },
     cerca: "",
     fonteCm: "",
     esito: "",
@@ -2486,6 +2503,8 @@
           tiene: fpTiene, riepilogo: riepilogoFp, riga: rigaFp, arricchisci: arricchisciFp, nota: "" },
     pin: { indice: "pinnacle_index.json", prefisso: "pinnacle_", viste: PIN_VISTE, ordini: PIN_ORDINI,
            tiene: pinTiene, riepilogo: riepilogoPin, riga: rigaPin, arricchisci: arricchisciPin, nota: "" },
+    modello: { indice: "modello_info.json", prefisso: "modello_", viste: MO_VISTE, ordini: MO_ORDINI,
+               tiene: moTiene, riepilogo: riepilogoModello, riga: rigaModello, arricchisci: arricchisciModello, nota: "" },
     sure: { indice: "pinnacle_index.json", prefisso: "pinnacle_", viste: SB_VISTE, ordini: SB_ORDINI,
             tiene: sbTiene, riepilogo: riepilogoSure, riga: rigaSure,
             arricchisci: function (righe) { return freschePinnacle().then(function (fq) { return applicaFresche(righe, fq); }); },
@@ -2611,7 +2630,7 @@
   // suo ritmo, e passando dall'una all'altra l'ora sembrava tornare
   // indietro. "Statarea + WebPronostici · aggiornato oggi alle 00:29".
   var NOMI_AGG = { prezzi: "Pronostici", mercato: "Mercato", consensus: "Media delle fonti",
-    accordo: "Statarea + WebPronostici", poisson: "Gol attesi", sure: "Quote", pin: "Mercato",
+    accordo: "Statarea + WebPronostici", poisson: "Gol attesi", sure: "Quote", pin: "Mercato", modello: "Modello",
     sm: "Sports Mole", fp: "FootballPark", wdw: "FootyStats", hp: "HeroPredict" };
   function testoAggiornato(nome, t) {
     var m = /^(\d{4}-\d{2}-\d{2})[ T](\d{2}:\d{2})/.exec(String(t || ""));
@@ -2664,7 +2683,7 @@
     $cont.setAttribute("data-sez", stato.sez || "");
     scriviHash();
     document.querySelectorAll("nav.sezioni button[data-sez]").forEach(function (b) {
-      var accesa = (stato.sez === "accordo" || stato.sez === "sm") ? "consensus" : stato.sez === "mercato" ? "pin" : (stato.sez === "wdw" || stato.sez === "hp" || stato.sez === "fp") ? "prezzi" :
+      var accesa = (stato.sez === "accordo" || stato.sez === "sm") ? "consensus" : (stato.sez === "mercato" || stato.sez === "modello") ? "pin" : (stato.sez === "wdw" || stato.sez === "hp" || stato.sez === "fp") ? "prezzi" :
         stato.sez === "xg" ? (CAMP.versoXG ? "camp" : "poisson") : stato.sez;
       b.setAttribute("aria-current", String(b.dataset.sez === accesa));
     });
@@ -2732,6 +2751,16 @@
         });
       });
       date.sort();
+      // (229) il modello: modello_info elenca solo le giornate di questo giro,
+      // ma i file restano 30 giorni. Gli ultimi 7 giorni (dal 25/11, quando
+      // e' partito) si aggiungono: li' c'e' il risultato con la ✓/✗.
+      if (sez === "modello") {
+        for (var gi = -7; gi < 0; gi++) {
+          var gd = giornoRoma(gi);
+          if (gd >= "2026-11-25" && date.indexOf(gd) < 0) date.push(gd);
+        }
+        date.sort();
+      }
       if (conf.daOggi) {
         var futuri = date.filter(function (x) { return x >= oggi(); });
         if (futuri.length) date = futuri;
@@ -2754,7 +2783,7 @@
         });
         date.sort();
       }
-      document.getElementById("aggiornato").textContent = testoAggiornato(NOMI_AGG[sez] || "", ix.updated);
+      document.getElementById("aggiornato").textContent = testoAggiornato(NOMI_AGG[sez] || "", ix.updated || ix.aggiornato);
       if (!date.length) {
         $cont.innerHTML = messaggio("vuoto", "Nessuna giornata pubblicata.");
         return;
@@ -2768,7 +2797,7 @@
       var testa = (sez === "consensus" || sez === "accordo" || sez === "sm" ? chipsHtml(gruppoConsenso(sez), sez, "data-gruppo") : "") +
         // (174) la fila sopra le date solo se ha almeno due tasti
         ((sez === "prezzi" || sez === "wdw" || sez === "hp" || sez === "fp") && gruppoPronostici(sez).length > 1 ? chipsHtml(gruppoPronostici(sez), sez, "data-gruppo") : "") +
-        (sez === "pin" || sez === "mercato" ? chipsHtml(GRUPPO_MERCATO, sez, "data-gruppo") : "") +
+        (sez === "pin" || sez === "mercato" || sez === "modello" ? chipsHtml(GRUPPO_MERCATO, sez, "data-gruppo") : "") +
         (sez === "poisson" ? chipsHtml(GRUPPO_POISSON, sez, "data-gruppo") : "") +
         chipsDateHtml(date, d, "data-data") +
         (viste.length > 1 ? chipsHtml(viste, vista[0], "data-vista") : "") +
@@ -2837,6 +2866,7 @@
         if (sez === "pin" && b.dataset.vista === "calo") stato.ordine.pin = "mov";     // (202) dal calo piu' utile
         if (sez === "pin" && (b.dataset.vista === "modello" || b.dataset.vista === "sharp")) stato.ordine.pin = "mov";  // (209) dallo scarto piu' grande
         if (sez === "mercato" && (b.dataset.vista === "p60" || b.dataset.vista === "p70")) stato.ordine.mercato = "prob";  // (221)
+        if (sez === "modello") stato.ordine.modello = b.dataset.vista === "lontane" ? "scarto" : b.dataset.vista === "forti" ? "prob" : "ora";  // (229)
         disegna();
       });
     });
@@ -3470,6 +3500,7 @@
     return { esito: seg.indexOf(u) >= 0 ? "presa" : "sbagliata", prob: pr };
   }
   var ESITO_SEZ = {
+    modello: function (r) { return esitoSegno(r.Segno, r, r._modP); },
     consensus: function (r) { return esitoSegno(r.Segno, r, [num(r.P1), num(r.PX), num(r.P2)]); },
     accordo: function (r) { return esitoSegno(r["Pron Combinato"], r, [num(r["P_1 %"]), num(r["P_X %"]), num(r["P_2 %"])]); },
     poisson: function (r) { return esitoSegno(r.Segno, r, [num(r.P1), num(r.PX), num(r.P2)]); },
@@ -3733,6 +3764,7 @@
   function scartoDi(r) { var v = num(r.Scarto); return v != null ? v : num(r.Scarto_Segno); }
 
   function vuotoPerVista(sez, vista, n, data) {
+    if (sez === "modello" && vuotoModello(vista, n, data)) return vuotoModello(vista, n, data);
     if (sez === "pin" && vista === "modello")
       return "Nessuna delle " + n + " partite del " + data + " ha il nostro modello lontano da Pinnacle di " + MOD_SCARTO + " punti o pi\u00f9. " +
         "Il modello esce ogni mattina per le partite del calendario, se le due squadre hanno abbastanza partite alle spalle.";
@@ -6696,6 +6728,105 @@
       });
     });
   }
+  // (229) LE RIGHE DELLA PAGINA MODELLO: il calendario del giorno (nomi,
+  // ora, campionato, numeri delle squadre, risultato) piu' il modello per
+  // numero di partita, piu' Pinnacle per numero dove c'e'.
+  function arricchisciModello(dati, d) {
+    var mod = dati && dati.partite ? dati.partite : {}, t = Math.floor(Date.now() / 600000);
+    return Promise.all([
+      leggiUrl(BASE + "calendario_" + d + ".json?t=" + t, "calendario_" + d).catch(function () { return []; }),
+      leggiUrl(BASE + "pinnacle_" + d + ".json?t=" + t, "pinnacle_" + d).catch(function () { return []; }),
+      MOD_INFO ? MOD_INFO : leggiUrl(BASE + "modello_info.json?t=" + t, "modello_info").catch(function () { return null; })
+    ]).then(function (a) {
+      MOD_INFO = a[2] || MOD_INFO;
+      var pin = {};
+      (Array.isArray(a[1]) ? a[1] : []).forEach(function (r) { if (r && r.ID_API != null) pin[String(r.ID_API)] = r; });
+      var righe = [];
+      (Array.isArray(a[0]) ? a[0] : []).forEach(function (x) {
+        var M = x && mod[String(x.id)];
+        if (!M || !M.p) return;
+        var q = [num(M.p[0]), num(M.p[1]), num(M.p[2])];
+        if (q.some(function (v) { return v == null; })) return;
+        var P = pin[String(x.id)], pp = P ? [num(P["P1 Shin"]), num(P["PX Shin"]), num(P["P2 Shin"])] : null;
+        if (pp && pp.some(function (v) { return v == null; })) pp = null;
+        var top = q.indexOf(Math.max(q[0], q[1], q[2]));
+        var r = { ID_API: x.id, Data: d, Ora: x.ora || "", Lega: x.lega || "", Casa: x.casa, Ospite: x.ospite,
+          ID_Casa: x.ic, ID_Ospite: x.io, Stato: x.stato, Segno: "1X2"[top], _prob: q[top] / 100, _modP: q, _mod: M, _pin: P || null, _p: pp };
+        if (FINITE_CAL[String(x.stato || "").toUpperCase()] && x.gc != null && x.go != null) { r.Gol_Casa = x.gc; r.Gol_Ospite = x.go; }
+        if (pp) {
+          var g = modDi(M, pp);
+          r._modGap = g._modGap; r._modSeg = g._modSeg; r.Scarto = g._modGap; r.Margine = P.Margine;
+        }
+        righe.push(r);
+      });
+      return righe;
+    });
+  }
+  function moTiene(r, tipo) {
+    if (tipo === "lontane") return r._modGap != null && Math.abs(r._modGap) >= MOD_SCARTO;
+    if (tipo === "senza") return !r._p;
+    if (tipo === "forti") return (r._prob || 0) * 100 > 60;
+    return true;
+  }
+  function riepilogoModello(v) {
+    var mi = MOD_INFO && MOD_INFO.misura && MOD_INFO.misura.tutte ? MOD_INFO.misura.tutte : null;
+    var ce = mi && mi.con_elo ? mi.con_elo : null;
+    var h = tessere([
+      [String(v.length), v.length === 1 ? "partita" : "partite"],
+      [String(v.filter(function (r) { return r._modGap != null && Math.abs(r._modGap) >= MOD_SCARTO; }).length), "lontane " + MOD_SCARTO + "+ punti da Pinnacle"],
+      [String(v.filter(function (r) { return !r._p; }).length), "senza Pinnacle"]
+    ]);
+    if (mi && mi.partite) {
+      h += '<p class="piccolo">La misura dal vivo, sulle ' + mi.partite + " partite gi\u00e0 giocate con la chiusura di Pinnacle (Brier, pi\u00f9 basso = meglio): " +
+        "modello <b>" + String(mi.brier_modello).replace(".", ",") + "</b> \u00b7 Pinnacle <b>" + String(mi.brier_pinnacle).replace(".", ",") + "</b>" +
+        (ce && ce.brier_elo != null ? " \u00b7 il nostro Elo <b>" + String(ce.brier_elo).replace(".", ",") + "</b>" : "") +
+        ". Il modello sta ancora imparando: lo si guarda, non ci si gioca.</p>";
+    }
+    return h;
+  }
+  function rigaModello(r) {
+    var M = r._mod, q = r._modP, ou = M.ou || {}, det = [];
+    if (r.Lega) det.push("<p>" + esc(r.Lega) + "</p>");
+    det.push("<p><b>Il nostro modello</b>: <span class=nw><b class=seg>1</b> " + pv1(q[0]) + "</span> \u00b7 <span class=nw><b class=seg>X</b> " + pv1(q[1]) +
+      "</span> \u00b7 <span class=nw><b class=seg>2</b> " + pv1(q[2]) + "</span>; equa " + [q[0], q[1], q[2]].map(function (x) { return qv(100 / x); }).join(" \u00b7 ") + "</p>");
+    var gl = [["Over 1.5", ou["1.5"]], ["Over 2.5", ou["2.5"]], ["Over 3.5", ou["3.5"]], ["Gol", M.gg]].filter(function (x) { return num(x[1]) != null; })
+      .map(function (x) { return x[0] + " " + pv(num(x[1])); });
+    if (num(M.l && M.l[0]) != null) det.push("<p>Gol attesi " + f2(num(M.l[0])) + " \u2013 " + f2(num(M.l[1])) + (gl.length ? " \u00b7 " + gl.join(" \u00b7 ") : "") + "</p>");
+    if (r._p) {
+      det.push("<p>Pinnacle: <span class=nw><b class=seg>1</b> " + pv(r._p[0]) + "</span> \u00b7 <span class=nw><b class=seg>X</b> " + pv(r._p[1]) +
+        "</span> \u00b7 <span class=nw><b class=seg>2</b> " + pv(r._p[2]) + "</span>" +
+        (r._pin && num(r._pin.Q1) != null ? "; quote " + [r._pin.Q1, r._pin.QX, r._pin.Q2].map(function (x) { return qv(x); }).join(" \u00b7 ") : "") + "</p>");
+      if (r._modGap != null) det.push("<p>" + (Math.abs(r._modGap) >= MOD_SCARTO ? "<b>Lontano da Pinnacle</b>: " : "Scarto massimo da Pinnacle: ") +
+        f0(Math.abs(r._modGap)) + " punti sul " + esc(r._modSeg) + (r._modGap > 0 ? " (il modello ci crede di pi\u00f9)" : " (il modello ci crede di meno)") + ".</p>");
+    } else det.push("<p>Pinnacle non quota questa partita: qui il modello \u00e8 l'unico prezzo del sito.</p>");
+    var fid = M.f === "alta" ? "fiducia alta" : M.f === "media" ? "fiducia media: il modello sta ancora imparando" : "fiducia bassa: poche partite viste";
+    det.push('<p class="piccolo">' + fid + (M.tra ? "; squadre di campionati diversi o appena promosse/retrocesse, rating meno sicuro" : "") + ".</p>");
+    var vista = stato.vista.modello, top = r.Segno, pt = (r._prob || 0) * 100;
+    return '<div class="riga"><details><summary>' +
+      '<span class="segno' + (vista === "lontane" ? " mosso" : "") + '">' + esc(vista === "lontane" && r._modSeg ? r._modSeg : top) + "</span>" +
+      '<div class="corpo">' +
+      '<div class="alto">' + (r.Ora ? "<span><b>" + esc(r.Ora) + "</b></span>" : "") + golHtml(r) +
+        (r.Lega ? '<span class="chip">' + esc(r.Lega) + "</span>" : "") +
+        '<span class="pill ' + (M.f === "alta" ? "stretto" : M.f === "media" ? "medio" : "largo") + '">fiducia ' + esc(M.f || "bassa") + "</span>" +
+        (r._p ? "" : '<span class="pill">senza Pinnacle</span>') + "</div>" +
+      '<div class="partita">' + partitaHtmlId(r.Casa, r.Ospite, r.ID_Casa, r.ID_Ospite, r.Lega) + "</div>" +
+      tripla("modello", q[0], q[1], q[2], "t-mod") +
+      (r._p ? tripla("Pinnacle", r._p[0], r._p[1], r._p[2], "t-pin") : "") +
+      "</div>" +
+      (vista === "lontane" && r._modGap != null
+        ? '<div class="numero"><b>' + (r._modGap > 0 ? "+" : "\u2212") + f0(Math.abs(r._modGap)) + "</b><span>modello sul " + esc(r._modSeg) + "</span></div>"
+        : '<div class="numero">' + pB(pt) + "<span>" + articolo(top) + " \u00b7 equa " + f2(100 / pt) + "</span></div>") +
+      "</summary>" +
+      '<div class="dettaglio">' + det.join("") + "</div>" +
+      "</details></div>";
+  }
+  function vuotoModello(vista, n, data) {
+    if (vista === "lontane") return "Nessuna delle " + n + " partite del " + data + " ha il modello lontano da Pinnacle di " + MOD_SCARTO + " punti o pi\u00f9.";
+    if (vista === "senza") return "Tutte le " + n + " partite del " + data + " col modello hanno anche Pinnacle.";
+    if (vista === "forti") return "Nessuna delle " + n + " partite del " + data + " ha un segno sopra il 60% per il modello.";
+    return null;
+  }
+
   // (209) il modello della partita e quanto si scosta da Pinnacle: il segno
   // con lo scarto piu' grande, in punti (positivo: il modello ci crede di piu').
   function modDi(M, p) {
@@ -10748,8 +10879,8 @@
     if (e) e.preventDefault();
     stato.sez = "prezzi";
     stato.data = { prezzi: null, mercato: null, consensus: null, accordo: null, poisson: null, sure: null, wdw: null, sm: null, hp: null, fp: null, pin: null };
-    stato.vista = { wdw: "tutte", sm: "tutte", hp: "tutte", fp: "tutte", pin: "tutte", prezzi: "partite", mercato: "tutte", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "75" };
-    stato.ordine = { wdw: "prob", sm: "prob", hp: "ora", fp: "ora", pin: "ora", prezzi: "ora", mercato: "file", consensus: "file", accordo: "file", poisson: "file", sure: "prob" };
+    stato.vista = { wdw: "tutte", sm: "tutte", hp: "tutte", fp: "tutte", pin: "tutte", prezzi: "partite", mercato: "tutte", modello: "tutte", consensus: "mercato", accordo: "tutte", poisson: "tutte", sure: "75" };
+    stato.ordine = { wdw: "prob", sm: "prob", hp: "ora", fp: "ora", pin: "ora", prezzi: "ora", mercato: "file", modello: "ora", consensus: "file", accordo: "file", poisson: "file", sure: "prob" };
     stato.cerca = "";
     stato.fonteCm = "";
     stato.esito = "";
