@@ -5307,9 +5307,9 @@ ID_API,Data,Ora,Lega_ID,Lega,Casa,Ospite,ID_Casa,ID_Ospite,P1,PX,P2,Consiglio,Vi
 1492478,2026-11-27,00:00,71,Brazil Serie A,Sao Paulo,Remo,126,1198,10.0,45.0,45.0,Double chance : draw or Remo,Remo,True,,-2.5,-2.5,71.8,18.1,10.1,2026-11-26 13:11,3,1,1
 1649152,2026-11-27,00:00,617,Brazil Copa do Brasil U20,Palmeiras U20,Operário PR U20,12968,13036,45.0,45.0,10.0,Double chance : Palmeiras U20 or draw,Palmeiras U20,True,,-3.5,-2.5,84.4,10.3,5.3,2026-11-26 13:11,4,1,1
 1651516,2026-11-27,01:00,396,Nicaragua Primera Division,Diriangén,Matagalpa,4641,19159,50.0,50.0,0.0,Double chance : Diriangén or draw,Diriangén,True,,-2.5,-1.5,75.6,14.7,9.6,2026-11-26 13:11,4,0,1
-1651504,2026-11-27,02:00,262,Mexico Liga MX,CF Pachuca,Guadalajara Chivas,2292,2278,10.0,45.0,45.0,Double chance : draw or Guadalajara Chivas,Guadalajara Chivas,True,,-2.5,-2.5,33.6,30.5,35.9,2026-11-26 14:08,,,
-1651832,2026-11-27,03:00,1200,Mexico Liga MX U21,Juarez U21,Guadalajara Chivas U21,26834,26833,10.0,45.0,45.0,Double chance : draw or Guadalajara Chivas U21,Guadalajara Chivas U21,True,,-2.5,-2.5,,,,2026-11-26 15:08,,,
-1651502,2026-11-27,04:10,262,Mexico Liga MX,Leon,Cruz Azul,2289,2295,10.0,45.0,45.0,Double chance : draw or Cruz Azul,Cruz Azul,True,,-2.5,-2.5,29.3,26.3,44.4,2026-11-26 17:08,,,
+1651504,2026-11-27,02:00,262,Mexico Liga MX,CF Pachuca,Guadalajara Chivas,2292,2278,10.0,45.0,45.0,Double chance : draw or Guadalajara Chivas,Guadalajara Chivas,True,,-2.5,-2.5,33.6,30.5,35.9,2026-11-26 14:08,2,1,1
+1651832,2026-11-27,03:00,1200,Mexico Liga MX U21,Juarez U21,Guadalajara Chivas U21,26834,26833,10.0,45.0,45.0,Double chance : draw or Guadalajara Chivas U21,Guadalajara Chivas U21,True,,-2.5,-2.5,,,,2026-11-26 15:08,0,1,2
+1651502,2026-11-27,04:10,262,Mexico Liga MX,Leon,Cruz Azul,2289,2295,10.0,45.0,45.0,Double chance : draw or Cruz Azul,Cruz Azul,True,,-2.5,-2.5,29.3,26.3,44.4,2026-11-26 17:08,0,4,2
 1640125,2026-11-27,09:30,398,Bangladesh Premier League,Bangladesh Police,Abahani,10106,5009,45.0,45.0,10.0,Double chance : Bangladesh Police or draw,Bangladesh Police,True,,-3.5,-2.5,,,,2026-11-26 22:08,,,
 1651252,2026-11-27,09:30,1202,Australia Australian Championship,Broadmeadow Magic,Lions,10202,10217,33.0,33.0,33.0,No predictions available,,False,,,,24.8,21.4,53.8,2026-11-26 22:08,,,
 1640126,2026-11-27,09:30,398,Bangladesh Premier League,Dhaka Wanderers,Arambagh,25415,5011,10.0,45.0,45.0,Combo Double chance : draw or Arambagh and +1.5 goals,Arambagh,True,+1.5,-2.5,-2.5,,,,2026-11-26 22:08,,,
@@ -5596,3 +5596,11 @@ ID_API,Data,Ora,Lega_ID,Lega,Casa,Ospite,ID_Casa,ID_Ospite,P1,PX,P2,Consiglio,Vi
 1647628,2026-11-27,21:00,666,World Friendlies Women,France W,Venezuela W,1725,18264,45.0,45.0,10.0,Combo Winner : France W and +3.5 goals,France W,False,+3.5,-9.5,-2.5,,,,2026-11-27 09:09,,,
 1570468,2026-11-27,21:00,140,Spain La Liga,Levante,Racing Santander,539,4665,45.0,45.0,10.0,Combo Double chance : Levante or draw and +1.5 goals,Levante,True,+1.5,-3.5,-2.5,47.6,23.7,28.7,2026-11-27 09:09,,,
 1563294,2026-11-27,21:00,40,England Championship,Southampton,Middlesbrough,41,70,35.0,35.0,30.0,Double chance : Southampton or draw,Southampton,True,,-2.5,-2.5,33.3,24.6,42.2,2026-11-27 09:09,,,
+1571230,2026-11-27,21:15,436,Spain Primera División RFEF - Group 2,Hércules,Antequera,4666,9742,10.0,45.0,45.0,Double chance : draw or Antequera,Antequera,True,,-2.5,-2.5,,,,2026-11-27 11:09,,,
+1575551,2026-11-27,21:15,94,Portugal Primeira Liga,Maritimo,Nacional,214,225,35.0,35.0,30.0,Double chance : Maritimo or draw,Maritimo,True,,-1.5,-1.5,43.5,29.9,26.6,2026-11-27 11:09,,,
+1632070,2026-11-27,21:30,252,Paraguay Division Profesional - Clausura,Nacional Asuncion,Rubio NU,1175,1185,45.0,45.0,10.0,Double chance : Nacional Asuncion or draw,Nacional Asuncion,True,,-2.5,-1.5,59.5,23.2,17.3,2026-11-27 11:09,,,
+1648995,2026-11-27,22:00,666,World Friendlies Women,Peru W,Dominican Republic W,18261,16926,45.0,45.0,10.0,Double chance : Peru W or draw,Peru W,True,,-1.5,,49.5,25.2,25.3,2026-11-27 11:09,,,
+1616182,2026-11-27,22:00,450,Spain Tercera División RFEF - Group 12,Real Unión de Tenerife,Anaza,20375,28113,45.0,45.0,10.0,Double chance : Real Unión de Tenerife or draw,Real Unión de Tenerife,True,,-2.5,-1.5,,,,2026-11-27 11:09,,,
+1639840,2026-11-27,22:30,242,Ecuador Liga Pro,Deportivo Cuenca,Manta FC,1154,1980,45.0,45.0,10.0,Double chance : Deportivo Cuenca or draw,Deportivo Cuenca,True,,-2.5,-2.5,60.7,22.5,16.8,2026-11-27 11:09,,,
+1650244,2026-11-27,23:00,129,Argentina Primera Nacional,Atlanta,Ciudad de Bolívar,1948,16612,45.0,45.0,10.0,Combo Double chance : Atlanta or draw and -3.5 goals,Atlanta,True,-3.5,-1.5,-1.5,46.0,32.0,22.0,2026-11-27 11:09,,,
+1550710,2026-11-27,23:00,927,World World Cup - Women - Qualification Concacaf,Jamaica W,Costa Rica W,1785,1727,45.0,45.0,10.0,Combo Double chance : Jamaica W or draw and +2.5 goals,Jamaica W,True,+2.5,-4.5,-9.5,,,,2026-11-27 11:09,,,
