@@ -10,7 +10,12 @@
   "PX": 16.0,
   "P2": 70.0,
   "Fonti": 1,
-  "Elenco": "betimate"
+  "Elenco": "betimate",
+  "MP1": 9.0,
+  "MPX": 13.0,
+  "MP2": 78.0,
+  "Scarto": -8.0,
+  "Segno_Mercato": "2"
  },
  {
   "Data": "2026-11-29",
@@ -20,8 +25,8 @@
   "Ospite": "Lexington SC (W)",
   "Segno": "2",
   "P1": 16.0,
-  "PX": 15.0,
-  "P2": 69.0,
+  "PX": 16.0,
+  "P2": 68.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -54,6 +59,24 @@
  {
   "Data": "2026-11-29",
   "Ora": "00:00",
+  "Lega": "Primera Nacional argentina",
+  "Casa": "Deportivo Madryn",
+  "Ospite": "Gimnasia Jujuy",
+  "Segno": "1",
+  "P1": 58.0,
+  "PX": 24.0,
+  "P2": 18.0,
+  "Fonti": 1,
+  "Elenco": "betimate",
+  "MP1": 68.1,
+  "MPX": 20.9,
+  "MP2": 11.0,
+  "Scarto": -10.1,
+  "Segno_Mercato": "1"
+ },
+ {
+  "Data": "2026-11-29",
+  "Ora": "00:00",
   "Lega": "USA - USL Super League Femminile",
   "Casa": "Fort Lauderdale Utd (W)",
   "Ospite": "DC Power (W)",
@@ -71,16 +94,29 @@
   "Casa": "Fortaleza",
   "Ospite": "Criciúma",
   "Segno": "1",
-  "P1": 44.7,
-  "PX": 31.7,
+  "P1": 44.3,
+  "PX": 32.0,
   "P2": 23.7,
   "Fonti": 3,
   "Elenco": "betimate, footymetrics, statarea",
   "MP1": 48.0,
   "MPX": 29.6,
   "MP2": 22.4,
-  "Scarto": -3.3,
+  "Scarto": -3.7,
   "Segno_Mercato": "1"
+ },
+ {
+  "Data": "2026-11-29",
+  "Ora": "00:00",
+  "Lega": "Suriname Major League",
+  "Casa": "PVV",
+  "Ospite": "FC Inter Wanica",
+  "Segno": "1",
+  "P1": 74.0,
+  "PX": 14.0,
+  "P2": 12.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
  },
  {
   "Data": "2026-11-29",
@@ -115,9 +151,22 @@
   "Casa": "Tigres de Chinandega",
   "Ospite": "Deportivo Ocotal",
   "Segno": "1",
-  "P1": 59.0,
+  "P1": 60.0,
   "PX": 20.0,
-  "P2": 21.0,
+  "P2": 20.0,
+  "Fonti": 1,
+  "Elenco": "betimate"
+ },
+ {
+  "Data": "2026-11-29",
+  "Ora": "00:00",
+  "Lega": "Liga Primera Nicaragua",
+  "Casa": "UNAN Managua",
+  "Ospite": "CD Walter Ferretti",
+  "Segno": "2",
+  "P1": 30.0,
+  "PX": 22.0,
+  "P2": 48.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -128,15 +177,15 @@
   "Casa": "Vélez Sarsfield",
   "Ospite": "Independiente",
   "Segno": "1",
-  "P1": 44.0,
-  "PX": 28.0,
+  "P1": 43.5,
+  "PX": 28.5,
   "P2": 28.0,
   "Fonti": 2,
   "Elenco": "betimate, footymetrics",
-  "MP1": 47.7,
-  "MPX": 29.9,
-  "MP2": 22.4,
-  "Scarto": -3.7,
+  "MP1": 47.3,
+  "MPX": 29.7,
+  "MP2": 23.0,
+  "Scarto": -3.8,
   "Segno_Mercato": "1"
  },
  {
@@ -169,10 +218,10 @@
   "P2": 17.0,
   "Fonti": 2,
   "Elenco": "betimate, statarea",
-  "MP1": 61.3,
-  "MPX": 17.9,
-  "MP2": 20.8,
-  "Scarto": -0.3,
+  "MP1": 60.9,
+  "MPX": 18.4,
+  "MP2": 20.7,
+  "Scarto": 0.1,
   "Segno_Mercato": "1"
  },
  {
@@ -266,8 +315,8 @@
   "Ospite": "Atletico Nacional Medellin",
   "Segno": "2",
   "P1": 35.0,
-  "PX": 29.0,
-  "P2": 36.0,
+  "PX": 28.0,
+  "P2": 37.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -279,14 +328,14 @@
   "Ospite": "Alajuelense",
   "Segno": "2",
   "P1": 25.0,
-  "PX": 26.0,
-  "P2": 49.0,
+  "PX": 27.0,
+  "P2": 48.0,
   "Fonti": 1,
   "Elenco": "betimate",
   "MP1": 26.0,
   "MPX": 27.5,
   "MP2": 46.6,
-  "Scarto": 2.4,
+  "Scarto": 1.4,
   "Segno_Mercato": "2"
  },
  {
@@ -296,15 +345,15 @@
   "Casa": "Atlas",
   "Ospite": "Toluca",
   "Segno": "2",
-  "P1": 25.4,
+  "P1": 24.9,
   "PX": 23.9,
-  "P2": 50.8,
+  "P2": 51.3,
   "Fonti": 2,
   "Elenco": "betimate, footymetrics",
   "MP1": 30.6,
   "MPX": 23.8,
   "MP2": 45.6,
-  "Scarto": 5.2,
+  "Scarto": 5.7,
   "Segno_Mercato": "2"
  },
  {
@@ -327,9 +376,9 @@
   "Casa": "CA Independiente Siguatepeque",
   "Ospite": "CD Platense",
   "Segno": "1",
-  "P1": 41.0,
+  "P1": 40.0,
   "PX": 26.0,
-  "P2": 33.0,
+  "P2": 34.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -354,8 +403,8 @@
   "Ospite": "Estrella Roja",
   "Segno": "1",
   "P1": 73.5,
-  "PX": 17.0,
-  "P2": 9.5,
+  "PX": 16.5,
+  "P2": 10.0,
   "Fonti": 2,
   "Elenco": "betimate, statarea"
  },
@@ -371,10 +420,10 @@
   "P2": 8.0,
   "Fonti": 2,
   "Elenco": "betimate, statarea",
-  "MP1": 79.7,
-  "MPX": 13.0,
+  "MP1": 79.9,
+  "MPX": 12.8,
   "MP2": 7.3,
-  "Scarto": -4.7,
+  "Scarto": -4.9,
   "Segno_Mercato": "1"
  },
  {
@@ -388,7 +437,12 @@
   "PX": 13.0,
   "P2": 9.0,
   "Fonti": 1,
-  "Elenco": "betimate"
+  "Elenco": "betimate",
+  "MP1": 61.2,
+  "MPX": 19.5,
+  "MP2": 19.3,
+  "Scarto": 16.8,
+  "Segno_Mercato": "1"
  },
  {
   "Data": "2026-11-29",
@@ -410,15 +464,15 @@
   "Casa": "Deportivo Saprissa",
   "Ospite": "Inter San Carlos",
   "Segno": "1",
-  "P1": 72.0,
-  "PX": 18.0,
+  "P1": 71.5,
+  "PX": 18.5,
   "P2": 10.0,
   "Fonti": 2,
   "Elenco": "betimate, statarea",
-  "MP1": 73.5,
-  "MPX": 15.9,
-  "MP2": 10.6,
-  "Scarto": -1.5,
+  "MP1": 74.2,
+  "MPX": 15.6,
+  "MP2": 10.2,
+  "Scarto": -2.7,
   "Segno_Mercato": "1"
  },
  {
@@ -472,9 +526,9 @@
   "Casa": "Napier City Rovers",
   "Ospite": "Eastern Suburbs Auckland",
   "Segno": "1",
-  "P1": 46.0,
+  "P1": 47.0,
   "PX": 23.0,
-  "P2": 31.0,
+  "P2": 30.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -543,14 +597,14 @@
   "Ospite": "St. Louis City",
   "Segno": "1",
   "P1": 49.0,
-  "PX": 26.3,
-  "P2": 24.7,
+  "PX": 26.0,
+  "P2": 25.0,
   "Fonti": 3,
   "Elenco": "betimate, footymetrics, statarea",
-  "MP1": 57.9,
-  "MPX": 21.8,
-  "MP2": 20.3,
-  "Scarto": -8.9,
+  "MP1": 60.1,
+  "MPX": 21.1,
+  "MP2": 18.8,
+  "Scarto": -11.1,
   "Segno_Mercato": "1"
  },
  {
@@ -578,9 +632,9 @@
   "Casa": "Wellington Phoenix",
   "Ospite": "Adelaide United",
   "Segno": "1",
-  "P1": 45.0,
+  "P1": 43.0,
   "PX": 23.0,
-  "P2": 32.0,
+  "P2": 34.0,
   "Fonti": 1,
   "Elenco": "betimate"
  },
@@ -591,11 +645,16 @@
   "Casa": "Birkenhead United",
   "Ospite": "Miramar Rangers",
   "Segno": "1",
-  "P1": 40.0,
-  "PX": 23.0,
+  "P1": 39.0,
+  "PX": 24.0,
   "P2": 37.0,
   "Fonti": 1,
-  "Elenco": "betimate"
+  "Elenco": "betimate",
+  "MP1": 50.1,
+  "MPX": 23.6,
+  "MP2": 26.3,
+  "Scarto": -11.1,
+  "Segno_Mercato": "1"
  },
  {
   "Data": "2026-11-29",
@@ -617,8 +676,8 @@
   "Casa": "New Zealand (W)",
   "Ospite": "Filippine (D)",
   "Segno": "1",
-  "P1": 54.0,
-  "PX": 18.0,
+  "P1": 55.0,
+  "PX": 17.0,
   "P2": 28.0,
   "Fonti": 1,
   "Elenco": "betimate"
@@ -630,15 +689,15 @@
   "Casa": "América",
   "Ospite": "Monterrey",
   "Segno": "1",
-  "P1": 48.3,
-  "PX": 25.4,
+  "P1": 48.8,
+  "PX": 24.9,
   "P2": 26.3,
   "Fonti": 2,
   "Elenco": "betimate, footymetrics",
   "MP1": 40.7,
   "MPX": 31.9,
   "MP2": 27.5,
-  "Scarto": 7.6,
+  "Scarto": 8.1,
   "Segno_Mercato": "1"
  },
  {
@@ -823,10 +882,10 @@
   "P2": 59.0,
   "Fonti": 1,
   "Elenco": "statarea",
-  "MP1": 19.8,
-  "MPX": 18.4,
-  "MP2": 61.8,
-  "Scarto": -2.8,
+  "MP1": 19.9,
+  "MPX": 18.7,
+  "MP2": 61.4,
+  "Scarto": -2.4,
   "Segno_Mercato": "2"
  },
  {
@@ -1130,10 +1189,10 @@
   "P2": 23.0,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea",
-  "MP1": 52.8,
-  "MPX": 26.2,
+  "MP1": 52.7,
+  "MPX": 26.3,
   "MP2": 21.0,
-  "Scarto": -1.8,
+  "Scarto": -1.7,
   "Segno_Mercato": "1"
  },
  {
@@ -1384,7 +1443,12 @@
   "PX": 34.0,
   "P2": 36.0,
   "Fonti": 1,
-  "Elenco": "statarea"
+  "Elenco": "statarea",
+  "MP1": 29.0,
+  "MPX": 28.7,
+  "MP2": 42.3,
+  "Scarto": -6.3,
+  "Segno_Mercato": "2"
  },
  {
   "Data": "2026-11-29",
@@ -1429,10 +1493,10 @@
   "P2": 48.0,
   "Fonti": 1,
   "Elenco": "statarea",
-  "MP1": 20.5,
-  "MPX": 23.1,
-  "MP2": 56.4,
-  "Scarto": -8.4,
+  "MP1": 21.5,
+  "MPX": 23.5,
+  "MP2": 55.0,
+  "Scarto": -7.0,
   "Segno_Mercato": "2"
  },
  {
@@ -1514,11 +1578,11 @@
   "P2": 32.0,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea",
-  "MP1": 34.2,
+  "MP1": 37.0,
   "MPX": 28.5,
-  "MP2": 37.3,
-  "Scarto": 1.8,
-  "Segno_Mercato": "2"
+  "MP2": 34.5,
+  "Scarto": -1.0,
+  "Segno_Mercato": "1"
  },
  {
   "Data": "2026-11-29",
@@ -1612,10 +1676,10 @@
   "P2": 41.5,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 30.3,
-  "MPX": 26.6,
-  "MP2": 43.2,
-  "Scarto": -1.6,
+  "MP1": 30.4,
+  "MPX": 27.0,
+  "MP2": 42.6,
+  "Scarto": -1.1,
   "Segno_Mercato": "2"
  },
  {
@@ -1644,9 +1708,9 @@
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
   "MP1": 20.3,
-  "MPX": 25.1,
-  "MP2": 54.6,
-  "Scarto": -4.4,
+  "MPX": 24.8,
+  "MP2": 54.9,
+  "Scarto": -4.7,
   "Segno_Mercato": "2"
  },
  {
@@ -1661,10 +1725,10 @@
   "P2": 62.0,
   "Fonti": 1,
   "Elenco": "statarea",
-  "MP1": 14.1,
-  "MPX": 22.5,
-  "MP2": 63.4,
-  "Scarto": -1.4,
+  "MP1": 15.5,
+  "MPX": 23.5,
+  "MP2": 61.0,
+  "Scarto": 1.0,
   "Segno_Mercato": "2"
  },
  {
@@ -1746,10 +1810,10 @@
   "P2": 26.7,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 46.1,
-  "MPX": 23.9,
-  "MP2": 30.1,
-  "Scarto": 0.9,
+  "MP1": 44.8,
+  "MPX": 24.1,
+  "MP2": 31.1,
+  "Scarto": 2.2,
   "Segno_Mercato": "1"
  },
  {
@@ -1795,10 +1859,10 @@
   "P2": 40.5,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea",
-  "MP1": 24.2,
+  "MP1": 24.3,
   "MPX": 22.4,
-  "MP2": 53.4,
-  "Scarto": -12.9,
+  "MP2": 53.3,
+  "Scarto": -12.8,
   "Segno_Mercato": "2"
  },
  {
@@ -1839,10 +1903,10 @@
   "P2": 21.4,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea",
-  "MP1": 60.6,
-  "MPX": 20.0,
-  "MP2": 19.4,
-  "Scarto": -5.3,
+  "MP1": 60.8,
+  "MPX": 19.9,
+  "MP2": 19.3,
+  "Scarto": -5.6,
   "Segno_Mercato": "1"
  },
  {
@@ -1857,10 +1921,10 @@
   "P2": 37.5,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea",
-  "MP1": 28.1,
+  "MP1": 28.3,
   "MPX": 27.3,
-  "MP2": 44.6,
-  "Scarto": 9.9,
+  "MP2": 44.4,
+  "Scarto": 9.7,
   "Segno_Mercato": "2"
  },
  {
@@ -1906,10 +1970,10 @@
   "P2": 15.0,
   "Fonti": 1,
   "Elenco": "statarea",
-  "MP1": 61.0,
-  "MPX": 24.6,
-  "MP2": 14.4,
-  "Scarto": 2.0,
+  "MP1": 60.6,
+  "MPX": 24.4,
+  "MP2": 15.0,
+  "Scarto": 2.4,
   "Segno_Mercato": "1"
  },
  {
@@ -2022,10 +2086,10 @@
   "P2": 53.5,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea",
-  "MP1": 13.9,
-  "MPX": 18.5,
-  "MP2": 67.6,
-  "Scarto": -14.1,
+  "MP1": 14.0,
+  "MPX": 18.3,
+  "MP2": 67.7,
+  "Scarto": -14.2,
   "Segno_Mercato": "2"
  },
  {
@@ -2040,10 +2104,10 @@
   "P2": 15.5,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea",
-  "MP1": 62.4,
-  "MPX": 21.3,
-  "MP2": 16.3,
-  "Scarto": -1.9,
+  "MP1": 63.1,
+  "MPX": 20.9,
+  "MP2": 16.0,
+  "Scarto": -2.6,
   "Segno_Mercato": "1"
  },
  {
@@ -2058,10 +2122,10 @@
   "P2": 56.0,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea",
-  "MP1": 14.1,
-  "MPX": 18.7,
-  "MP2": 67.2,
-  "Scarto": -11.2,
+  "MP1": 14.8,
+  "MPX": 18.6,
+  "MP2": 66.6,
+  "Scarto": -10.6,
   "Segno_Mercato": "2"
  },
  {
@@ -2094,10 +2158,10 @@
   "P2": 44.9,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 26.8,
-  "MPX": 24.5,
-  "MP2": 48.7,
-  "Scarto": -3.8,
+  "MP1": 26.7,
+  "MPX": 25.1,
+  "MP2": 48.2,
+  "Scarto": -3.3,
   "Segno_Mercato": "2"
  },
  {
@@ -2143,10 +2207,10 @@
   "P2": 33.8,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 42.0,
-  "MPX": 25.2,
-  "MP2": 32.8,
-  "Scarto": -0.4,
+  "MP1": 41.5,
+  "MPX": 25.8,
+  "MP2": 32.7,
+  "Scarto": 0.1,
   "Segno_Mercato": "1"
  },
  {
@@ -2179,10 +2243,10 @@
   "P2": 32.7,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 45.4,
-  "MPX": 29.4,
-  "MP2": 25.3,
-  "Scarto": -5.7,
+  "MP1": 44.3,
+  "MPX": 29.8,
+  "MP2": 25.9,
+  "Scarto": -4.6,
   "Segno_Mercato": "1"
  },
  {
@@ -2197,10 +2261,10 @@
   "P2": 8.0,
   "Fonti": 1,
   "Elenco": "statarea",
-  "MP1": 69.9,
-  "MPX": 16.9,
-  "MP2": 13.2,
-  "Scarto": 2.1,
+  "MP1": 71.6,
+  "MPX": 16.4,
+  "MP2": 12.0,
+  "Scarto": 0.4,
   "Segno_Mercato": "1"
  },
  {
@@ -2303,10 +2367,10 @@
   "P2": 38.0,
   "Fonti": 2,
   "Elenco": "footymetrics, ratingbet",
-  "MP1": 43.4,
-  "MPX": 23.2,
-  "MP2": 33.4,
-  "Scarto": -4.9,
+  "MP1": 43.1,
+  "MPX": 23.6,
+  "MP2": 33.3,
+  "Scarto": -4.6,
   "Segno_Mercato": "1"
  },
  {
@@ -2471,10 +2535,10 @@
   "P2": 33.5,
   "Fonti": 2,
   "Elenco": "footymetrics, ratingbet",
-  "MP1": 42.7,
-  "MPX": 24.9,
-  "MP2": 32.4,
-  "Scarto": -1.7,
+  "MP1": 42.8,
+  "MPX": 24.8,
+  "MP2": 32.5,
+  "Scarto": -1.8,
   "Segno_Mercato": "1"
  },
  {
@@ -2551,10 +2615,10 @@
   "P2": 49.7,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 26.6,
-  "MPX": 24.6,
-  "MP2": 48.8,
-  "Scarto": 0.9,
+  "MP1": 26.3,
+  "MPX": 24.5,
+  "MP2": 49.1,
+  "Scarto": 0.5,
   "Segno_Mercato": "2"
  },
  {
@@ -2600,10 +2664,10 @@
   "P2": 29.0,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea",
-  "MP1": 49.1,
+  "MP1": 47.6,
   "MPX": 24.0,
-  "MP2": 26.9,
-  "Scarto": -1.6,
+  "MP2": 28.3,
+  "Scarto": -0.1,
   "Segno_Mercato": "1"
  },
  {
@@ -2654,10 +2718,10 @@
   "P2": 20.0,
   "Fonti": 1,
   "Elenco": "statarea",
-  "MP1": 50.0,
-  "MPX": 27.5,
-  "MP2": 22.6,
-  "Scarto": -1.0,
+  "MP1": 51.9,
+  "MPX": 26.7,
+  "MP2": 21.4,
+  "Scarto": -2.9,
   "Segno_Mercato": "1"
  },
  {
@@ -2708,10 +2772,10 @@
   "P2": 38.0,
   "Fonti": 1,
   "Elenco": "footymetrics",
-  "MP1": 22.4,
-  "MPX": 21.7,
-  "MP2": 55.9,
-  "Scarto": -17.9,
+  "MP1": 21.6,
+  "MPX": 21.6,
+  "MP2": 56.8,
+  "Scarto": -18.8,
   "Segno_Mercato": "2"
  },
  {
@@ -2726,10 +2790,10 @@
   "P2": 33.0,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea",
-  "MP1": 41.6,
-  "MPX": 27.1,
-  "MP2": 31.3,
-  "Scarto": -2.1,
+  "MP1": 41.0,
+  "MPX": 28.0,
+  "MP2": 31.0,
+  "Scarto": -1.5,
   "Segno_Mercato": "1"
  },
  {
@@ -2793,10 +2857,10 @@
   "P2": 16.0,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea",
-  "MP1": 65.8,
-  "MPX": 21.9,
-  "MP2": 12.3,
-  "Scarto": -5.8,
+  "MP1": 67.2,
+  "MPX": 20.0,
+  "MP2": 12.8,
+  "Scarto": -7.2,
   "Segno_Mercato": "1"
  },
  {
@@ -2865,10 +2929,10 @@
   "P2": 28.0,
   "Fonti": 1,
   "Elenco": "statarea",
-  "MP1": 42.1,
-  "MPX": 30.1,
-  "MP2": 27.9,
-  "Scarto": 0.9,
+  "MP1": 41.3,
+  "MPX": 30.2,
+  "MP2": 28.5,
+  "Scarto": 1.7,
   "Segno_Mercato": "1"
  },
  {
@@ -2883,10 +2947,10 @@
   "P2": 33.5,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea",
-  "MP1": 32.3,
-  "MPX": 28.9,
-  "MP2": 38.8,
-  "Scarto": 1.7,
+  "MP1": 31.4,
+  "MPX": 30.1,
+  "MP2": 38.5,
+  "Scarto": 2.6,
   "Segno_Mercato": "2"
  },
  {
@@ -2914,10 +2978,10 @@
   "P2": 56.5,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea",
-  "MP1": 9.4,
-  "MPX": 15.8,
-  "MP2": 74.8,
-  "Scarto": -18.3,
+  "MP1": 9.2,
+  "MPX": 15.4,
+  "MP2": 75.4,
+  "Scarto": -18.9,
   "Segno_Mercato": "2"
  },
  {
@@ -2968,10 +3032,10 @@
   "P2": 27.7,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 50.9,
-  "MPX": 25.0,
-  "MP2": 24.1,
-  "Scarto": -3.6,
+  "MP1": 50.1,
+  "MPX": 25.2,
+  "MP2": 24.7,
+  "Scarto": -2.7,
   "Segno_Mercato": "1"
  },
  {
@@ -2986,10 +3050,10 @@
   "P2": 38.7,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 33.9,
-  "MPX": 27.3,
-  "MP2": 38.8,
-  "Scarto": -0.1,
+  "MP1": 33.7,
+  "MPX": 27.4,
+  "MP2": 38.9,
+  "Scarto": -0.2,
   "Segno_Mercato": "2"
  },
  {
@@ -3004,10 +3068,10 @@
   "P2": 41.7,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 24.6,
-  "MPX": 28.2,
-  "MP2": 47.2,
-  "Scarto": -5.5,
+  "MP1": 23.6,
+  "MPX": 28.3,
+  "MP2": 48.1,
+  "Scarto": -6.4,
   "Segno_Mercato": "2"
  },
  {
@@ -3022,10 +3086,10 @@
   "P2": 34.0,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 35.2,
-  "MPX": 24.8,
-  "MP2": 40.0,
-  "Scarto": 7.1,
+  "MP1": 36.0,
+  "MPX": 24.3,
+  "MP2": 39.6,
+  "Scarto": 6.3,
   "Segno_Mercato": "2"
  },
  {
@@ -3089,10 +3153,10 @@
   "P2": 54.0,
   "Fonti": 1,
   "Elenco": "statarea",
-  "MP1": 30.6,
-  "MPX": 25.7,
-  "MP2": 43.6,
-  "Scarto": 10.4,
+  "MP1": 29.6,
+  "MPX": 25.2,
+  "MP2": 45.2,
+  "Scarto": 8.8,
   "Segno_Mercato": "2"
  },
  {
@@ -3120,10 +3184,10 @@
   "P2": 43.5,
   "Fonti": 2,
   "Elenco": "footymetrics, ratingbet",
-  "MP1": 27.1,
-  "MPX": 23.7,
-  "MP2": 49.1,
-  "Scarto": -5.6,
+  "MP1": 26.5,
+  "MPX": 23.5,
+  "MP2": 50.0,
+  "Scarto": -6.5,
   "Segno_Mercato": "2"
  },
  {
@@ -3138,10 +3202,10 @@
   "P2": 62.1,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 12.4,
-  "MPX": 20.2,
-  "MP2": 67.4,
-  "Scarto": -5.2,
+  "MP1": 11.8,
+  "MPX": 19.9,
+  "MP2": 68.3,
+  "Scarto": -6.2,
   "Segno_Mercato": "2"
  },
  {
@@ -3156,10 +3220,10 @@
   "P2": 40.6,
   "Fonti": 1,
   "Elenco": "footymetrics",
-  "MP1": 28.4,
-  "MPX": 25.5,
-  "MP2": 46.1,
-  "Scarto": -5.5,
+  "MP1": 27.7,
+  "MPX": 25.3,
+  "MP2": 47.0,
+  "Scarto": -6.4,
   "Segno_Mercato": "2"
  },
  {
@@ -3174,10 +3238,10 @@
   "P2": 26.0,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 46.3,
-  "MPX": 26.4,
-  "MP2": 27.2,
-  "Scarto": 0.7,
+  "MP1": 46.5,
+  "MPX": 26.5,
+  "MP2": 27.0,
+  "Scarto": 0.5,
   "Segno_Mercato": "1"
  },
  {
@@ -3191,7 +3255,12 @@
   "PX": 29.0,
   "P2": 42.0,
   "Fonti": 1,
-  "Elenco": "statarea"
+  "Elenco": "statarea",
+  "MP1": 27.8,
+  "MPX": 27.1,
+  "MP2": 45.0,
+  "Scarto": -3.0,
+  "Segno_Mercato": "2"
  },
  {
   "Data": "2026-11-29",
@@ -3248,7 +3317,12 @@
   "PX": 28.0,
   "P2": 44.0,
   "Fonti": 1,
-  "Elenco": "statarea"
+  "Elenco": "statarea",
+  "MP1": 24.2,
+  "MPX": 27.0,
+  "MP2": 48.8,
+  "Scarto": -4.8,
+  "Segno_Mercato": "2"
  },
  {
   "Data": "2026-11-29",
@@ -3261,7 +3335,12 @@
   "PX": 29.0,
   "P2": 37.0,
   "Fonti": 1,
-  "Elenco": "statarea"
+  "Elenco": "statarea",
+  "MP1": 33.9,
+  "MPX": 29.2,
+  "MP2": 37.0,
+  "Scarto": 0.0,
+  "Segno_Mercato": "2"
  },
  {
   "Data": "2026-11-29",
@@ -3275,10 +3354,10 @@
   "P2": 68.8,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 8.3,
-  "MPX": 11.5,
-  "MP2": 80.2,
-  "Scarto": -11.4,
+  "MP1": 8.6,
+  "MPX": 11.8,
+  "MP2": 79.6,
+  "Scarto": -10.8,
   "Segno_Mercato": "2"
  },
  {
@@ -3293,10 +3372,10 @@
   "P2": 35.2,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea",
-  "MP1": 40.5,
-  "MPX": 29.6,
-  "MP2": 29.8,
-  "Scarto": -3.4,
+  "MP1": 40.2,
+  "MPX": 29.5,
+  "MP2": 30.3,
+  "Scarto": -3.0,
   "Segno_Mercato": "1"
  },
  {
@@ -3350,10 +3429,10 @@
   "P2": 23.7,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 49.4,
-  "MPX": 25.9,
-  "MP2": 24.7,
-  "Scarto": -1.1,
+  "MP1": 45.9,
+  "MPX": 27.1,
+  "MP2": 27.0,
+  "Scarto": 2.4,
   "Segno_Mercato": "1"
  },
  {
@@ -3515,10 +3594,10 @@
   "P2": 29.0,
   "Fonti": 1,
   "Elenco": "footymetrics",
-  "MP1": 44.4,
-  "MPX": 24.8,
-  "MP2": 30.8,
-  "Scarto": 4.6,
+  "MP1": 43.7,
+  "MPX": 26.0,
+  "MP2": 30.4,
+  "Scarto": 5.3,
   "Segno_Mercato": "1"
  },
  {
@@ -3533,10 +3612,10 @@
   "P2": 19.5,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea",
-  "MP1": 60.6,
-  "MPX": 18.4,
-  "MP2": 21.0,
-  "Scarto": -0.1,
+  "MP1": 61.0,
+  "MPX": 18.3,
+  "MP2": 20.7,
+  "Scarto": -0.5,
   "Segno_Mercato": "1"
  },
  {
@@ -3551,10 +3630,10 @@
   "P2": 15.4,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea",
-  "MP1": 78.0,
-  "MPX": 14.5,
+  "MP1": 78.1,
+  "MPX": 14.4,
   "MP2": 7.5,
-  "Scarto": -17.3,
+  "Scarto": -17.4,
   "Segno_Mercato": "1"
  },
  {
@@ -3689,7 +3768,12 @@
   "PX": 32.0,
   "P2": 22.0,
   "Fonti": 1,
-  "Elenco": "statarea"
+  "Elenco": "statarea",
+  "MP1": 49.9,
+  "MPX": 28.4,
+  "MP2": 21.7,
+  "Scarto": -3.9,
+  "Segno_Mercato": "1"
  },
  {
   "Data": "2026-11-29",
@@ -3734,11 +3818,11 @@
   "P2": 36.5,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea",
-  "MP1": 38.3,
+  "MP1": 36.8,
   "MPX": 24.5,
-  "MP2": 37.2,
-  "Scarto": -1.8,
-  "Segno_Mercato": "1"
+  "MP2": 38.7,
+  "Scarto": -0.3,
+  "Segno_Mercato": "2"
  },
  {
   "Data": "2026-11-29",
@@ -3765,10 +3849,10 @@
   "P2": 14.0,
   "Fonti": 1,
   "Elenco": "statarea",
-  "MP1": 62.7,
-  "MPX": 21.9,
-  "MP2": 15.4,
-  "Scarto": 0.3,
+  "MP1": 61.5,
+  "MPX": 22.4,
+  "MP2": 16.1,
+  "Scarto": 1.5,
   "Segno_Mercato": "1"
  },
  {
@@ -3783,10 +3867,10 @@
   "P2": 30.0,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea",
-  "MP1": 35.2,
-  "MPX": 30.5,
-  "MP2": 34.3,
-  "Scarto": 8.3,
+  "MP1": 34.5,
+  "MPX": 32.0,
+  "MP2": 33.5,
+  "Scarto": 9.0,
   "Segno_Mercato": "1"
  },
  {
@@ -3801,10 +3885,10 @@
   "P2": 32.7,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 37.4,
-  "MPX": 26.7,
-  "MP2": 35.9,
-  "Scarto": 0.9,
+  "MP1": 38.0,
+  "MPX": 25.8,
+  "MP2": 36.2,
+  "Scarto": 0.3,
   "Segno_Mercato": "1"
  },
  {
@@ -3837,10 +3921,10 @@
   "P2": 24.3,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 48.5,
-  "MPX": 25.2,
-  "MP2": 26.3,
-  "Scarto": 3.6,
+  "MP1": 49.0,
+  "MPX": 25.7,
+  "MP2": 25.3,
+  "Scarto": 3.1,
   "Segno_Mercato": "1"
  },
  {
@@ -3912,10 +3996,10 @@
   "P2": 24.3,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 56.5,
+  "MP1": 57.5,
   "MPX": 19.8,
-  "MP2": 23.7,
-  "Scarto": -3.2,
+  "MP2": 22.7,
+  "Scarto": -4.2,
   "Segno_Mercato": "1"
  },
  {
@@ -3992,10 +4076,10 @@
   "P2": 44.7,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 21.4,
-  "MPX": 26.1,
-  "MP2": 52.5,
-  "Scarto": -7.8,
+  "MP1": 22.1,
+  "MPX": 26.0,
+  "MP2": 51.9,
+  "Scarto": -7.3,
   "Segno_Mercato": "2"
  },
  {
@@ -4010,10 +4094,10 @@
   "P2": 12.5,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea",
-  "MP1": 76.7,
-  "MPX": 15.1,
-  "MP2": 8.2,
-  "Scarto": -9.2,
+  "MP1": 75.6,
+  "MPX": 15.6,
+  "MP2": 8.8,
+  "Scarto": -8.1,
   "Segno_Mercato": "1"
  },
  {
@@ -4028,10 +4112,10 @@
   "P2": 23.0,
   "Fonti": 1,
   "Elenco": "statarea",
-  "MP1": 44.0,
-  "MPX": 27.3,
-  "MP2": 28.8,
-  "Scarto": 4.0,
+  "MP1": 43.7,
+  "MPX": 27.7,
+  "MP2": 28.6,
+  "Scarto": 4.3,
   "Segno_Mercato": "1"
  },
  {
@@ -4046,10 +4130,10 @@
   "P2": 9.0,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 80.2,
-  "MPX": 12.3,
-  "MP2": 7.5,
-  "Scarto": -5.5,
+  "MP1": 79.6,
+  "MPX": 12.6,
+  "MP2": 7.8,
+  "Scarto": -4.9,
   "Segno_Mercato": "1"
  },
  {
@@ -4082,10 +4166,10 @@
   "P2": 15.0,
   "Fonti": 1,
   "Elenco": "statarea",
-  "MP1": 61.4,
-  "MPX": 21.2,
-  "MP2": 17.4,
-  "Scarto": 1.6,
+  "MP1": 59.8,
+  "MPX": 21.7,
+  "MP2": 18.5,
+  "Scarto": 3.2,
   "Segno_Mercato": "1"
  },
  {
@@ -4131,10 +4215,10 @@
   "P2": 38.3,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 34.9,
+  "MP1": 35.0,
   "MPX": 26.9,
-  "MP2": 38.2,
-  "Scarto": 0.1,
+  "MP2": 38.1,
+  "Scarto": 0.2,
   "Segno_Mercato": "2"
  },
  {
@@ -4150,9 +4234,9 @@
   "Fonti": 2,
   "Elenco": "footymetrics, statarea",
   "MP1": 31.1,
-  "MPX": 25.5,
-  "MP2": 43.4,
-  "Scarto": -2.9,
+  "MPX": 25.3,
+  "MP2": 43.5,
+  "Scarto": -3.0,
   "Segno_Mercato": "2"
  },
  {
@@ -4288,10 +4372,10 @@
   "P2": 43.0,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea",
-  "MP1": 23.5,
-  "MPX": 27.5,
-  "MP2": 48.9,
-  "Scarto": -5.9,
+  "MP1": 24.0,
+  "MPX": 26.9,
+  "MP2": 49.2,
+  "Scarto": -6.2,
   "Segno_Mercato": "2"
  },
  {
@@ -4307,8 +4391,8 @@
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
   "MP1": 46.0,
-  "MPX": 23.2,
-  "MP2": 30.8,
+  "MPX": 23.3,
+  "MP2": 30.7,
   "Scarto": -0.5,
   "Segno_Mercato": "1"
  },
@@ -4342,10 +4426,10 @@
   "P2": 21.7,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 55.9,
-  "MPX": 23.9,
-  "MP2": 20.2,
-  "Scarto": -1.2,
+  "MP1": 55.0,
+  "MPX": 24.5,
+  "MP2": 20.5,
+  "Scarto": -0.3,
   "Segno_Mercato": "1"
  },
  {
@@ -4360,10 +4444,10 @@
   "P2": 4.0,
   "Fonti": 1,
   "Elenco": "footymetrics",
-  "MP1": 68.7,
-  "MPX": 22.6,
-  "MP2": 8.7,
-  "Scarto": 15.3,
+  "MP1": 68.4,
+  "MPX": 22.8,
+  "MP2": 8.8,
+  "Scarto": 15.6,
   "Segno_Mercato": "1"
  },
  {
@@ -4396,10 +4480,10 @@
   "P2": 53.5,
   "Fonti": 2,
   "Elenco": "footymetrics, ratingbet",
-  "MP1": 24.6,
-  "MPX": 21.5,
-  "MP2": 53.9,
-  "Scarto": -0.4,
+  "MP1": 24.8,
+  "MPX": 22.2,
+  "MP2": 53.0,
+  "Scarto": 0.5,
   "Segno_Mercato": "2"
  },
  {
@@ -4450,10 +4534,10 @@
   "P2": 26.0,
   "Fonti": 1,
   "Elenco": "statarea",
-  "MP1": 50.5,
+  "MP1": 52.1,
   "MPX": 27.2,
-  "MP2": 22.3,
-  "Scarto": -3.5,
+  "MP2": 20.7,
+  "Scarto": -5.1,
   "Segno_Mercato": "1"
  },
  {
@@ -4468,10 +4552,10 @@
   "P2": 25.7,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 47.8,
-  "MPX": 27.2,
-  "MP2": 25.0,
-  "Scarto": 0.9,
+  "MP1": 47.9,
+  "MPX": 27.3,
+  "MP2": 24.8,
+  "Scarto": 0.8,
   "Segno_Mercato": "1"
  },
  {
@@ -4486,10 +4570,10 @@
   "P2": 28.0,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 39.9,
-  "MPX": 28.9,
-  "MP2": 31.1,
-  "Scarto": 4.7,
+  "MP1": 39.8,
+  "MPX": 29.0,
+  "MP2": 31.2,
+  "Scarto": 4.9,
   "Segno_Mercato": "1"
  },
  {
@@ -4504,10 +4588,10 @@
   "P2": 20.9,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea",
-  "MP1": 57.1,
-  "MPX": 24.0,
-  "MP2": 18.9,
-  "Scarto": -1.9,
+  "MP1": 57.4,
+  "MPX": 23.8,
+  "MP2": 18.8,
+  "Scarto": -2.2,
   "Segno_Mercato": "1"
  },
  {
@@ -4522,10 +4606,10 @@
   "P2": 28.3,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 45.6,
-  "MPX": 25.1,
-  "MP2": 29.3,
-  "Scarto": -0.9,
+  "MP1": 45.2,
+  "MPX": 25.5,
+  "MP2": 29.4,
+  "Scarto": -0.5,
   "Segno_Mercato": "1"
  },
  {
@@ -4589,10 +4673,10 @@
   "P2": 26.3,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 49.9,
-  "MPX": 28.9,
-  "MP2": 21.2,
-  "Scarto": -4.6,
+  "MP1": 50.8,
+  "MPX": 28.5,
+  "MP2": 20.7,
+  "Scarto": -5.5,
   "Segno_Mercato": "1"
  },
  {
@@ -4625,10 +4709,10 @@
   "P2": 17.3,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 59.8,
-  "MPX": 23.2,
-  "MP2": 17.0,
-  "Scarto": -2.5,
+  "MP1": 59.4,
+  "MPX": 23.7,
+  "MP2": 16.9,
+  "Scarto": -2.1,
   "Segno_Mercato": "1"
  },
  {
@@ -4643,10 +4727,10 @@
   "P2": 26.3,
   "Fonti": 3,
   "Elenco": "footymetrics, ratingbet, statarea",
-  "MP1": 49.3,
-  "MPX": 25.4,
-  "MP2": 25.4,
-  "Scarto": -2.8,
+  "MP1": 48.9,
+  "MPX": 25.9,
+  "MP2": 25.3,
+  "Scarto": -2.4,
   "Segno_Mercato": "1"
  },
  {
@@ -4715,10 +4799,10 @@
   "P2": 30.4,
   "Fonti": 2,
   "Elenco": "footymetrics, statarea",
-  "MP1": 35.9,
-  "MPX": 26.9,
-  "MP2": 37.2,
-  "Scarto": 5.4,
+  "MP1": 35.6,
+  "MPX": 27.5,
+  "MP2": 37.0,
+  "Scarto": 5.7,
   "Segno_Mercato": "2"
  },
  {
