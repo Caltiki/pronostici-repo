@@ -1169,7 +1169,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Hip Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Venezia": {
+    "modulo": "3-5-2",
+    "titolari": [
+     "F. Stanković",
+     "R. Halhal",
+     "M. Moreno",
+     "Juan Jesus",
+     "A. Hainaut",
+     "Kike Pérez",
+     "S. Sohm",
+     "G. Busio",
+     "R. Haps",
+     "J. Yeboah",
+     "A. Adams"
+    ]
+   },
+   "Bologna": {
+    "modulo": "3-4-3",
+    "titolari": [
+     "Ł. Skorupski",
+     "M. Vitík",
+     "N. Casale",
+     "A. Theate",
+     "N. Zortea",
+     "L. Ferguson",
+     "T. Pobega",
+     "R. Alhassane",
+     "F. Bernardeschi",
+     "J. Odgaard",
+     "S. Mbangula"
+    ]
+   }
+  },
+  "partita": "Venezia - Bologna"
  },
  "1552830": {
   "assenti": [
@@ -1198,7 +1233,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Calf Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Stade Brestois 29": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "E. Selvik",
+     "L. Zogbe",
+     "L. Tousart",
+     "G. Lloris",
+     "B. Locko",
+     "J. Chotard",
+     "H. Magnetti",
+     "N. Edjouma",
+     "K. Doumbia",
+     "P. Mboup",
+     "L. Ajorque"
+    ]
+   },
+   "Paris FC": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "K. Trapp",
+     "A. Camara",
+     "S. Chergui",
+     "D. Coppola",
+     "H. Traoré",
+     "M. Lopez",
+     "P. Lees-Melou",
+     "L. Koleosho",
+     "P. Pagis",
+     "M. Simon",
+     "L. Sinayoko"
+    ]
+   }
+  },
+  "partita": "Stade Brestois 29 - Paris FC"
  },
  "1557485": {
   "assenti": [
@@ -1307,7 +1377,42 @@
     "tipo": "Missing Fixture",
     "motivo": "Knee Injury"
    }
-  ]
+  ],
+  "titolari": {
+   "Nottingham Forest": {
+    "modulo": "3-4-2-1",
+    "titolari": [
+     "M. Sels",
+     "Jair",
+     "N. Milenković",
+     "Murillo",
+     "D. Muñoz",
+     "J. McAtee",
+     "X. Schlager",
+     "N. Williams",
+     "Igor Jesus",
+     "M. Gibbs-White",
+     "L. Delap"
+    ]
+   },
+   "Chelsea": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "E. Martínez",
+     "Joshua Kofi Acheampong",
+     "W. Fofana",
+     "R. Lavia",
+     "Pep Chavarría",
+     "J. Henderson",
+     "M. Caicedo",
+     "Pedro Neto",
+     "C. Palmer",
+     "M. Rogers",
+     "D. Welbeck"
+    ]
+   }
+  },
+  "partita": "Nottingham Forest - Chelsea"
  },
  "1570468": {
   "assenti": [
@@ -1425,7 +1530,42 @@
     "partite_squadra": 13,
     "quota_gol": 0
    }
-  ]
+  ],
+  "titolari": {
+   "Levante": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "M. Ryan",
+     "Nacho Pérez",
+     "Dela",
+     "A. Mandi",
+     "M. Santos",
+     "Jon Ander Olasagasti",
+     "Oriol Rey",
+     "Reque",
+     "Víctor García",
+     "Iván Romero",
+     "T. Fernández"
+    ]
+   },
+   "Racing Santander": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Julen Agirrezabala",
+     "Pablo Ramón",
+     "Pedro Felipe",
+     "J. Belocian",
+     "Jorge Salinas",
+     "M. Prati",
+     "Iván Martín",
+     "Iker Luque",
+     "Sergio Canales",
+     "Iñigo Vicente",
+     "M. Zabiri"
+    ]
+   }
+  },
+  "partita": "Levante - Racing Santander"
  },
  "1563294": {
   "assenti": [
@@ -1495,7 +1635,42 @@
     "partite_squadra": 20,
     "quota_gol": 0
    }
-  ]
+  ],
+  "titolari": {
+   "Southampton": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Daniel Peretz",
+     "J. Bree",
+     "J. Stephens",
+     "K. Schlotterbeck",
+     "R. Manning",
+     "F. Downes",
+     "J. Ward-Prowse",
+     "K. Matsuki",
+     "F. Azaz",
+     "L. Dobbin",
+     "C. Larin"
+    ]
+   },
+   "Middlesbrough": {
+    "modulo": "3-4-2-1",
+    "titolari": [
+     "R. Vítek",
+     "L. Ayling",
+     "A. Phillips",
+     "A. Malanda",
+     "C. Brittain",
+     "A. Morris",
+     "S. Berhalter",
+     "Neto Borges",
+     "A. Cozier-Duberry",
+     "T. Conway",
+     "W. Lankshear"
+    ]
+   }
+  },
+  "partita": "Southampton - Middlesbrough"
  },
  "1565542": {
   "titolari": {
@@ -3185,5 +3360,338 @@
    }
   },
   "partita": "Wacker Innsbruck - First Vienna"
+ },
+ "1576021": {
+  "titolari": {
+   "Briton Ferry": {
+    "modulo": "",
+    "titolari": [
+     "O. Anderson",
+     "W. Fuller",
+     "T. Walters",
+     "D. Packer",
+     "R. Owen",
+     "J. Lloyd",
+     "I. Jones",
+     "C. Hurford",
+     "A. Gammond",
+     "L. Bates",
+     "T. Price"
+    ]
+   },
+   "Penybont": {
+    "modulo": "",
+    "titolari": [
+     "A. Pennock",
+     "billy borge",
+     "M. Davies",
+     "R. Hill",
+     "J. Leko",
+     "M. Manga",
+     "C. Venables",
+     "N. Wood",
+     "T. Mehew",
+     "M. Melbourne",
+     "E. Vaughan"
+    ]
+   }
+  },
+  "partita": "Briton Ferry - Penybont"
+ },
+ "1576022": {
+  "titolari": {
+   "Cambrian & Clydach": {
+    "modulo": "",
+    "titolari": [
+     "J. Allen",
+     "Daniel Birch",
+     "H. Bright",
+     "L. Eason",
+     "K. Absalom",
+     "Dylan Edwards",
+     "A. John",
+     "K. Lewis",
+     "J. Wright",
+     "Frazer Thomas",
+     "Cam Strinati"
+    ]
+   },
+   "Trefelin": {
+    "modulo": "",
+    "titolari": [
+     "Lewys Ware",
+     "C. Saunders",
+     "K. Owen",
+     "S. MacDonald",
+     "J. Jones",
+     "J. Jones",
+     "D. Horgan-Evans",
+     "K. Georgievsky",
+     "J. Davies",
+     "L. Gerrard",
+     "S. Coughlan"
+    ]
+   }
+  },
+  "partita": "Cambrian & Clydach - Trefelin"
+ },
+ "1576023": {
+  "titolari": {
+   "Cardiff MET": {
+    "modulo": "",
+    "titolari": [
+     "J. Clarke",
+     "A. Wildig",
+     "J. Veale",
+     "S. Snaith",
+     "J. Payne",
+     "L. Mwandwe",
+     "S. Jones",
+     "Joel Edwards",
+     "Spencer Dymond-Hall",
+     "C. Craven",
+     "Arron Davies"
+    ]
+   },
+   "Airbus UK": {
+    "modulo": "",
+    "titolari": [
+     "Oliver Lancely",
+     "Sean Moscrop",
+     "J. Palmer",
+     "G. Peers",
+     "Sam Rickett",
+     "J. Stevenson",
+     "N. Williams",
+     "L. Fallon",
+     "M. Blackwell-Jones",
+     "J. Evans",
+     "Kieran Evans"
+    ]
+   }
+  },
+  "partita": "Cardiff MET - Airbus UK"
+ },
+ "1576024": {
+  "titolari": {
+   "Colwyn Bay": {
+    "modulo": "",
+    "titolari": [
+     "C. Bratley",
+     "J. Williams",
+     "E. Roberts",
+     "L. Sirrell",
+     "M. Halstead",
+     "A. Davies",
+     "J. Davies",
+     "S. Forde",
+     "G. Hughes",
+     "J. Kenny",
+     "D. Roberts"
+    ]
+   },
+   "Ammanford AFC": {
+    "modulo": "",
+    "titolari": [
+     "Tom Wright",
+     "C. Bell",
+     "L. Davies",
+     "J. Evans",
+     "J. Hopkins",
+     "A. John",
+     "A. Orme",
+     "H. Rowe",
+     "B. Sauane",
+     "C. Shirt",
+     "S. Woodhouse"
+    ]
+   }
+  },
+  "partita": "Colwyn Bay - Ammanford AFC"
+ },
+ "1576025": {
+  "titolari": {
+   "Flint Town United": {
+    "modulo": "",
+    "titolari": [
+     "M. Burke",
+     "H. Dean",
+     "Lee Jonas",
+     "Jack Flint",
+     "N. Kane",
+     "H. McGahey",
+     "J. Thorn",
+     "T. Owolabi",
+     "H. Owen",
+     "I. Modi",
+     "Lassana Mendes"
+    ]
+   },
+   "The New Saints": {
+    "modulo": "",
+    "titolari": [
+     "Bradley Jamie Ethan Young",
+     "D. Williams",
+     "D. Redmond",
+     "J. Lock",
+     "Isaac Jefferies",
+     "R. Hughes",
+     "Harvey George Godsmark-Ford",
+     "Eoin Farrell",
+     "D. Davies",
+     "J. Bodenham",
+     "N. Shepperd"
+    ]
+   }
+  },
+  "partita": "Flint Town United - The New Saints"
+ },
+ "1576026": {
+  "titolari": {
+   "Haverfordwest County AFC": {
+    "modulo": "",
+    "titolari": [
+     "J. Wilson",
+     "I. Knott",
+     "G. Walters",
+     "C. Shephard",
+     "L. Rees",
+     "J. Owen",
+     "K. McCarthy",
+     "R. Watts",
+     "R. Abbruzzese",
+     "B. Ahmun",
+     "D. Hawkins"
+    ]
+   },
+   "GAP Connah S Quay FC": {
+    "modulo": "",
+    "titolari": [
+     "Callum West",
+     "D. Cowan",
+     "F. Deane",
+     "J. Ferguson",
+     "H. Franklin",
+     "J. Hodkin",
+     "A. Hughes",
+     "J. Jones",
+     "A. Sharif",
+     "C. Renshaw",
+     "Max Woodcock"
+    ]
+   }
+  },
+  "partita": "Haverfordwest County AFC - GAP Connah S Quay FC"
+ },
+ "1558692": {
+  "titolari": {
+   "OH Leuven": {
+    "modulo": "3-4-3",
+    "titolari": [
+     "D. van den Heuvel",
+     "J. Lawrence",
+     "E. Pletinckx",
+     "R. Nyakossi",
+     "Óscar Gil",
+     "W. George",
+     "S. Schrijvers",
+     "D. Opoku",
+     "E. Addai",
+     "R. Mirisola",
+     "W. Balikwisha"
+    ]
+   },
+   "Kortrijk": {
+    "modulo": "3-4-3",
+    "titolari": [
+     "T. Alliet",
+     "A. Drouhin",
+     "Harrison Murray-Campbell",
+     "J. Ndjeungoue",
+     "Mohamed Fofana",
+     "B. Dejaegere",
+     "J. Roche",
+     "M. Anderson",
+     "K. Masui",
+     "G. Koyalipou",
+     "T. Ambrose"
+    ]
+   }
+  },
+  "partita": "OH Leuven - Kortrijk"
+ },
+ "1575551": {
+  "titolari": {
+   "Maritimo": {
+    "modulo": "4-2-3-1",
+    "titolari": [
+     "Fran Vieites",
+     "Igor Julião",
+     "Romain Correia",
+     "G. Szalai",
+     "Paulo Henrique",
+     "Rodrigo Andrade",
+     "V. Danilović",
+     "M. Diouri",
+     "Raphael Guzzo",
+     "Martín Tejón",
+     "Adrián Butzke"
+    ]
+   },
+   "Nacional": {
+    "modulo": "4-3-3",
+    "titolari": [
+     "Renato Bellucci",
+     "M. Jensen",
+     "Francisco Gonçalves",
+     "Zé Vitor",
+     "W. Kokolo",
+     "Miguel Baeza",
+     "Matheus Dias",
+     "C. Labidi",
+     "Pablo Ruan",
+     "N. Kader",
+     "Song Min-Kyu"
+    ]
+   }
+  },
+  "partita": "Maritimo - Nacional"
+ },
+ "1632070": {
+  "titolari": {
+   "Nacional Asuncion": {
+    "modulo": "4-1-4-1",
+    "titolari": [
+     "S. Rojas",
+     "C. Espínola",
+     "M. Coronel",
+     "R. Melgarejo",
+     "S. Vargas",
+     "Á. Cardozo Lucena",
+     "J. Colmán",
+     "F. Jara",
+     "L. Meza",
+     "R. Prieto",
+     "H. Benítez"
+    ]
+   },
+   "Rubio NU": {
+    "modulo": "5-4-1",
+    "titolari": [
+     "T. Canteros",
+     "M. Ramos",
+     "B. Blasi",
+     "J. Vallejos",
+     "P. Álvarez",
+     "L. Gómez",
+     "S. Fretes",
+     "O. Alfonso",
+     "V. Cabañas",
+     "M. Acosta",
+     "R. Ruiz Díaz"
+    ]
+   }
+  },
+  "partita": "Nacional Asuncion - Rubio NU"
  }
 }
