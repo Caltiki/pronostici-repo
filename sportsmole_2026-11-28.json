@@ -1,24 +1,171 @@
 [
  {
+  "Casa": "Fluminense",
+  "Ospite": "Cruzeiro",
+  "Ora": "00:00",
+  "Data": "2026-11-28",
+  "Lega": "Brasileiro",
+  "Giornata": "Gameweek 37",
+  "P1": 50.05,
+  "PX": 24.03,
+  "P2": 25.92,
+  "P_GG": 58.28,
+  "P_NG": 41.72,
+  "P_O15": 78.58,
+  "P_U15": 21.42,
+  "P_O25": 56.44,
+  "P_U25": 43.56,
+  "P_O35": 32.5,
+  "P_U35": 67.5,
+  "P_O45": 18.72,
+  "P_U45": 81.28,
+  "PT1": 38.83,
+  "PTX": 39.47,
+  "PT2": 21.7,
+  "P_Primo_Casa": 54.19,
+  "P_Nessun_Gol": 5.29,
+  "P_Primo_Ospite": 40.52,
+  "Esatto": "1-1",
+  "P_Esatto": 11.24,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     10.63
+    ],
+    [
+     "1-0",
+     10.06
+    ],
+    [
+     "2-0",
+     7.64
+    ],
+    [
+     "3-1",
+     5.23
+    ],
+    [
+     "3-0",
+     4.66
+    ],
+    [
+     "3-2",
+     3.36
+    ],
+    [
+     "Other",
+     8.46
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.24
+    ],
+    [
+     "2-2",
+     5.91
+    ],
+    [
+     "0-0",
+     5.29
+    ],
+    [
+     "3-3",
+     1.41
+    ],
+    [
+     "Other",
+     0.18
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     6.98
+    ],
+    [
+     "0-1",
+     6.06
+    ],
+    [
+     "0-2",
+     3.26
+    ],
+    [
+     "1-3",
+     2.64
+    ],
+    [
+     "2-3",
+     2.35
+    ],
+    [
+     "0-3",
+     1.67
+    ],
+    [
+     "Other",
+     2.96
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 63.93,
+   "equal_8": 10.83,
+   "under_8": 25.24,
+   "over_9": 52.33,
+   "equal_9": 11.6,
+   "under_9": 36.07,
+   "over_10.5": 40.97,
+   "under_10.5": 59.03
+  },
+  "Linee_Casa": {
+   "over_1.5": 49.83,
+   "under_1.5": 50.17,
+   "over_2.5": 23.3,
+   "under_2.5": 76.7,
+   "over_3.5": 8.64,
+   "under_3.5": 91.36
+  },
+  "Linee_Ospite": {
+   "over_0.5": 63.88,
+   "under_0.5": 36.12,
+   "over_1.5": 30.72,
+   "under_1.5": 69.28,
+   "over_2.5": 11.21,
+   "under_2.5": 88.79,
+   "over_3.5": 3.14,
+   "under_3.5": 96.86
+  },
+  "WeSay": "",
+  "WeSay_Segno": "",
+  "Ora_Sito": "Nov 27, 2026 11.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/brasileiro/fluminense-vs-cruzeiro_game_263498.html",
+  "Url_Preview": "",
+  "Id": "263498"
+ },
+ {
   "Casa": "Columbus Crew",
   "Ospite": "Inter Miami",
   "Ora": "02:00",
   "Data": "2026-11-28",
   "Lega": "Major League Soccer",
   "Giornata": "",
-  "P1": 47.07,
+  "P1": 47.04,
   "PX": 22.0,
-  "P2": 30.93,
+  "P2": 30.96,
   "P_GG": 65.66,
   "P_NG": 34.34,
-  "P_O15": 85.43,
-  "P_U15": 14.57,
-  "P_O25": 66.96,
-  "P_U25": 33.03,
+  "P_O15": 85.4,
+  "P_U15": 14.6,
+  "P_O25": 66.93,
+  "P_U25": 33.07,
   "P_O35": 45.16,
   "P_U35": 54.84,
-  "P_O45": 29.15,
-  "P_U45": 70.85,
+  "P_O45": 29.14,
+  "P_U45": 70.86,
   "PT1": 42.73,
   "PTX": 35.6,
   "PT2": 21.67,
@@ -26,12 +173,12 @@
   "P_Nessun_Gol": 3.46,
   "P_Primo_Ospite": 35.17,
   "Esatto": "2-1",
-  "P_Esatto": 9.09,
+  "P_Esatto": 9.08,
   "Esatti": {
    "casa": [
     [
      "2-1",
-     9.09
+     9.08
     ],
     [
      "1-0",
@@ -43,25 +190,25 @@
     ],
     [
      "3-1",
-     5.53
+     5.52
     ],
     [
      "3-2",
-     4.33
+     4.32
     ],
     [
      "3-0",
-     3.92
+     3.91
     ],
     [
      "Other",
-     11.77
+     11.76
     ]
    ],
    "pareggio": [
     [
      "1-1",
-     8.93
+     8.94
     ],
     [
      "2-2",
@@ -73,7 +220,7 @@
     ],
     [
      "3-3",
-     2.3
+     2.29
     ],
     [
      "Other",
@@ -83,11 +230,11 @@
    "ospite": [
     [
      "1-2",
-     6.96
+     6.95
     ],
     [
      "0-1",
-     4.67
+     4.68
     ],
     [
      "1-3",
@@ -95,11 +242,11 @@
     ],
     [
      "0-2",
-     3.53
+     3.54
     ],
     [
      "2-3",
-     3.4
+     3.39
     ],
     [
      "0-3",
@@ -107,7 +254,7 @@
     ],
     [
      "Other",
-     6.76
+     6.79
     ]
    ]
   },
@@ -122,22 +269,22 @@
    "under_10.5": 70.62
   },
   "Linee_Casa": {
-   "over_1.5": 53.65,
-   "under_1.5": 46.35,
-   "over_2.5": 28.44,
-   "under_2.5": 71.56,
-   "over_3.5": 12.36,
-   "under_3.5": 87.64
+   "over_1.5": 53.58,
+   "under_1.5": 46.42,
+   "over_2.5": 28.39,
+   "under_2.5": 71.61,
+   "over_3.5": 12.35,
+   "under_3.5": 87.65
   },
   "Linee_Ospite": {
    "over_0.5": 68.41,
    "under_0.5": 31.59,
    "over_1.5": 40.19,
    "under_1.5": 59.81,
-   "over_2.5": 18.65,
-   "under_2.5": 81.35,
-   "over_3.5": 7.35,
-   "under_3.5": 92.65
+   "over_2.5": 18.66,
+   "under_2.5": 81.34,
+   "over_3.5": 7.38,
+   "under_3.5": 92.62
   },
   "WeSay": "3-2",
   "WeSay_Segno": "1",
@@ -156,22 +303,22 @@
   "P1": 36.3,
   "PX": 23.84,
   "P2": 39.86,
-  "P_GG": 61.1,
-  "P_NG": 38.9,
-  "P_O15": 81.23,
-  "P_U15": 18.77,
-  "P_O25": 59.76,
-  "P_U25": 40.24,
-  "P_O35": 37.04,
-  "P_U35": 62.96,
-  "P_O45": 22.04,
-  "P_U45": 77.96,
+  "P_GG": 61.13,
+  "P_NG": 38.87,
+  "P_O15": 81.26,
+  "P_U15": 18.74,
+  "P_O25": 59.8,
+  "P_U25": 40.2,
+  "P_O35": 37.07,
+  "P_U35": 62.93,
+  "P_O45": 22.06,
+  "P_U45": 77.94,
   "PT1": 29.74,
   "PTX": 39.05,
   "PT2": 31.21,
   "P_Primo_Casa": 46.44,
-  "P_Nessun_Gol": 4.82,
-  "P_Primo_Ospite": 48.74,
+  "P_Nessun_Gol": 4.81,
+  "P_Primo_Ospite": 48.75,
   "Esatto": "1-1",
   "P_Esatto": 10.67,
   "Esatti": {
@@ -190,7 +337,7 @@
     ],
     [
      "3-1",
-     4.09
+     4.1
     ],
     [
      "3-2",
@@ -216,11 +363,11 @@
     ],
     [
      "0-0",
-     4.82
+     4.81
     ],
     [
      "3-3",
-     1.64
+     1.65
     ],
     [
      "Other",
@@ -234,7 +381,7 @@
     ],
     [
      "0-1",
-     7.13
+     7.12
     ],
     [
      "0-2",
@@ -254,7 +401,7 @@
     ],
     [
      "Other",
-     7.02
+     7.03
     ]
    ]
   },
@@ -269,22 +416,22 @@
    "under_10.5": 62.78
   },
   "Linee_Casa": {
-   "over_1.5": 41.55,
-   "under_1.5": 58.45,
-   "over_2.5": 18.0,
-   "under_2.5": 82.0,
+   "over_1.5": 41.57,
+   "under_1.5": 58.43,
+   "over_2.5": 18.02,
+   "under_2.5": 81.98,
    "over_3.5": 6.42,
    "under_3.5": 93.58
   },
   "Linee_Ospite": {
-   "over_0.5": 74.49,
-   "under_0.5": 25.51,
-   "over_1.5": 44.32,
-   "under_1.5": 55.68,
-   "over_2.5": 20.14,
-   "under_2.5": 79.86,
-   "over_3.5": 7.27,
-   "under_3.5": 92.73
+   "over_0.5": 74.51,
+   "under_0.5": 25.49,
+   "over_1.5": 44.34,
+   "under_1.5": 55.66,
+   "over_2.5": 20.16,
+   "under_2.5": 79.84,
+   "over_3.5": 7.28,
+   "under_3.5": 92.72
   },
   "WeSay": "1-3",
   "WeSay_Segno": "2",
@@ -294,42 +441,1643 @@
   "Id": "263525"
  },
  {
-  "Casa": "Charlotte FC",
-  "Ospite": "Chicago Fire",
-  "Ora": "18:30",
+  "Casa": "Blackburn Rovers",
+  "Ospite": "Charlton Athletic",
+  "Ora": "13:30",
   "Data": "2026-11-28",
-  "Lega": "Major League Soccer",
-  "Giornata": "",
-  "P1": 41.21,
-  "PX": 24.29,
-  "P2": 34.54,
-  "P_GG": 64.34,
-  "P_NG": 35.66,
-  "P_O15": 83.74,
-  "P_U15": 16.26,
-  "P_O25": 63.6,
-  "P_U25": 36.4,
-  "P_O35": 41.51,
-  "P_U35": 58.49,
-  "P_O45": 25.63,
-  "P_U45": 74.37,
-  "PT1": 33.12,
-  "PTX": 40.47,
-  "PT2": 26.41,
-  "P_Primo_Casa": 51.55,
-  "P_Nessun_Gol": 4.08,
-  "P_Primo_Ospite": 44.37,
+  "Lega": "Championship",
+  "Giornata": "Gameweek 18",
+  "P1": 49.01,
+  "PX": 25.67,
+  "P2": 25.32,
+  "P_GG": 52.26,
+  "P_NG": 47.74,
+  "P_O15": 73.47,
+  "P_U15": 26.53,
+  "P_O25": 48.8,
+  "P_U25": 51.2,
+  "P_O35": 27.32,
+  "P_U35": 72.68,
+  "P_O45": 15.05,
+  "P_U45": 84.95,
+  "PT1": 36.26,
+  "PTX": 44.59,
+  "PT2": 19.15,
+  "P_Primo_Casa": 59.13,
+  "P_Nessun_Gol": 7.38,
+  "P_Primo_Ospite": 33.49,
   "Esatto": "1-1",
-  "P_Esatto": 10.43,
+  "P_Esatto": 12.14,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     11.66
+    ],
+    [
+     "2-1",
+     9.4
+    ],
+    [
+     "2-0",
+     8.56
+    ],
+    [
+     "3-1",
+     4.9
+    ],
+    [
+     "3-0",
+     4.42
+    ],
+    [
+     "3-2",
+     2.72
+    ],
+    [
+     "Other",
+     7.35
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     12.14
+    ],
+    [
+     "0-0",
+     7.38
+    ],
+    [
+     "2-2",
+     5.15
+    ],
+    [
+     "Other",
+     0.13
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     7.5
+    ],
+    [
+     "1-2",
+     6.36
+    ],
+    [
+     "0-2",
+     3.96
+    ],
+    [
+     "1-3",
+     2.23
+    ],
+    [
+     "2-3",
+     1.79
+    ],
+    [
+     "0-3",
+     1.3
+    ],
+    [
+     "Other",
+     2.19
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 69.57,
+   "equal_8": 10.36,
+   "under_8": 20.07,
+   "over_9": 57.84,
+   "equal_9": 11.73,
+   "under_9": 30.43,
+   "over_10.5": 45.8,
+   "under_10.5": 54.2
+  },
+  "Linee_Casa": {
+   "over_1.5": 45.29,
+   "under_1.5": 54.71,
+   "over_2.5": 20.39,
+   "under_2.5": 79.61,
+   "over_3.5": 7.48,
+   "under_3.5": 92.52
+  },
+  "Linee_Ospite": {
+   "over_0.5": 60.64,
+   "under_0.5": 39.36,
+   "over_1.5": 26.7,
+   "under_1.5": 73.3,
+   "over_2.5": 8.51,
+   "under_2.5": 91.49,
+   "over_3.5": 2.32,
+   "under_3.5": 97.68
+  },
+  "WeSay": "2-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 12.30pm",
+  "Url": "https://www.sportsmole.co.uk/football/championship/blackburn-rovers-vs-charlton-athletic_game_263542.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/blackburn-rovers/preview/blackburn-vs-charlton-prediction-team-news-lineups_609886.html",
+  "Id": "263542"
+ },
+ {
+  "Casa": "Lincoln City",
+  "Ospite": "Wolverhampton Wanderers",
+  "Ora": "13:30",
+  "Data": "2026-11-28",
+  "Lega": "Championship",
+  "Giornata": "Gameweek 18",
+  "P1": 30.3,
+  "PX": 25.18,
+  "P2": 44.48,
+  "P_GG": 55.3,
+  "P_NG": 44.7,
+  "P_O15": 76.25,
+  "P_U15": 23.75,
+  "P_O25": 51.99,
+  "P_U25": 48.01,
+  "P_O35": 30.54,
+  "P_U35": 69.46,
+  "P_O45": 17.18,
+  "P_U45": 82.82,
+  "PT1": 23.94,
+  "PTX": 43.12,
+  "PT2": 32.94,
+  "P_Primo_Casa": 41.96,
+  "P_Nessun_Gol": 6.37,
+  "P_Primo_Ospite": 51.67,
+  "Esatto": "1-1",
+  "P_Esatto": 11.83,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     7.79
+    ],
+    [
+     "2-1",
+     6.97
+    ],
+    [
+     "2-0",
+     4.92
+    ],
+    [
+     "3-1",
+     3.08
+    ],
+    [
+     "3-2",
+     2.38
+    ],
+    [
+     "3-0",
+     1.75
+    ],
+    [
+     "Other",
+     3.42
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.83
+    ],
+    [
+     "0-0",
+     6.37
+    ],
+    [
+     "2-2",
+     5.61
+    ],
+    [
+     "3-3",
+     1.25
+    ],
+    [
+     "Other",
+     0.13
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     9.57
+    ],
+    [
+     "1-2",
+     9.18
+    ],
+    [
+     "0-2",
+     7.51
+    ],
+    [
+     "1-3",
+     4.67
+    ],
+    [
+     "0-3",
+     3.55
+    ],
+    [
+     "2-3",
+     2.89
+    ],
+    [
+     "Other",
+     7.11
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 59.31,
+   "equal_8": 11.73,
+   "under_8": 28.96,
+   "over_9": 47.21,
+   "equal_9": 12.1,
+   "under_9": 40.69,
+   "over_10.5": 35.81,
+   "under_10.5": 64.19
+  },
+  "Linee_Casa": {
+   "over_1.5": 32.4,
+   "under_1.5": 67.6,
+   "over_2.5": 12.01,
+   "under_2.5": 87.99,
+   "over_3.5": 3.55,
+   "under_3.5": 96.45
+  },
+  "Linee_Ospite": {
+   "over_0.5": 75.73,
+   "under_0.5": 24.27,
+   "over_1.5": 44.28,
+   "under_1.5": 55.72,
+   "over_2.5": 19.6,
+   "under_2.5": 80.4,
+   "over_3.5": 7.24,
+   "under_3.5": 92.76
+  },
+  "WeSay": "1-3",
+  "WeSay_Segno": "2",
+  "Ora_Sito": "Nov 28, 2026 12.30pm",
+  "Url": "https://www.sportsmole.co.uk/football/championship/lincoln-city-vs-wolves_game_263541.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/wolves/preview/lincoln-vs-wolves-prediction-team-news-lineups_609885.html",
+  "Id": "263541"
+ },
+ {
+  "Casa": "MK Dons",
+  "Ospite": "Notts County",
+  "Ora": "13:30",
+  "Data": "2026-11-28",
+  "Lega": "League One",
+  "Giornata": "Gameweek 17",
+  "P1": 51.67,
+  "PX": 26.19,
+  "P2": 22.15,
+  "P_GG": 53.13,
+  "P_NG": 46.87,
+  "P_O15": 75.53,
+  "P_U15": 24.47,
+  "P_O25": 51.85,
+  "P_U25": 48.15,
+  "P_O35": 30.25,
+  "P_U35": 69.75,
+  "P_O45": 17.36,
+  "P_U45": 82.64,
+  "PT1": 40.99,
+  "PTX": 39.47,
+  "PT2": 19.54,
+  "P_Primo_Casa": 58.02,
+  "P_Nessun_Gol": 7.18,
+  "P_Primo_Ospite": 34.8,
+  "Esatto": "1-1",
+  "P_Esatto": 11.87,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     11.04
+    ],
+    [
+     "2-1",
+     9.56
+    ],
+    [
+     "2-0",
+     8.66
+    ],
+    [
+     "3-0",
+     5.22
+    ],
+    [
+     "3-1",
+     5.19
+    ],
+    [
+     "3-2",
+     2.9
+    ],
+    [
+     "Other",
+     9.09
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.87
+    ],
+    [
+     "0-0",
+     7.18
+    ],
+    [
+     "2-2",
+     5.72
+    ],
+    [
+     "3-3",
+     1.12
+    ],
+    [
+     "Other",
+     0.29
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     6.24
+    ],
+    [
+     "1-2",
+     5.66
+    ],
+    [
+     "0-2",
+     3.15
+    ],
+    [
+     "1-3",
+     1.98
+    ],
+    [
+     "2-3",
+     1.79
+    ],
+    [
+     "0-3",
+     1.16
+    ],
+    [
+     "Other",
+     2.17
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 62.48,
+   "equal_8": 11.0,
+   "under_8": 26.52,
+   "over_9": 50.84,
+   "equal_9": 11.64,
+   "under_9": 37.52,
+   "over_10.5": 39.55,
+   "under_10.5": 60.45
+  },
+  "Linee_Casa": {
+   "over_1.5": 49.54,
+   "under_1.5": 50.46,
+   "over_2.5": 23.81,
+   "under_2.5": 76.19,
+   "over_3.5": 9.38,
+   "under_3.5": 90.62
+  },
+  "Linee_Ospite": {
+   "over_0.5": 58.8,
+   "under_0.5": 41.2,
+   "over_1.5": 25.94,
+   "under_1.5": 74.06,
+   "over_2.5": 8.51,
+   "under_2.5": 91.49,
+   "over_3.5": 2.46,
+   "under_3.5": 97.54
+  },
+  "WeSay": "2-0",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 12.30pm",
+  "Url": "https://www.sportsmole.co.uk/football/league-one/mk-dons-vs-notts-county_game_263539.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/mk-dons/preview/mk-dons-vs-notts-county-prediction-team-news-lineups_609908.html",
+  "Id": "263539"
+ },
+ {
+  "Casa": "Peterborough United",
+  "Ospite": "Cambridge United",
+  "Ora": "13:30",
+  "Data": "2026-11-28",
+  "Lega": "League One",
+  "Giornata": "Gameweek 17",
+  "P1": 32.56,
+  "PX": 26.58,
+  "P2": 40.82,
+  "P_GG": 50.62,
+  "P_NG": 49.38,
+  "P_O15": 72.69,
+  "P_U15": 27.31,
+  "P_O25": 48.35,
+  "P_U25": 51.65,
+  "P_O35": 27.06,
+  "P_U35": 72.94,
+  "P_O45": 14.88,
+  "P_U45": 85.12,
+  "PT1": 30.86,
+  "PTX": 39.28,
+  "PT2": 29.86,
+  "P_Primo_Casa": 44.54,
+  "P_Nessun_Gol": 8.17,
+  "P_Primo_Ospite": 47.29,
+  "Esatto": "1-1",
+  "P_Esatto": 11.94,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     8.56
+    ],
+    [
+     "2-1",
+     7.18
+    ],
+    [
+     "2-0",
+     5.07
+    ],
+    [
+     "3-1",
+     3.27
+    ],
+    [
+     "3-0",
+     2.36
+    ],
+    [
+     "3-2",
+     2.27
+    ],
+    [
+     "Other",
+     3.85
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.94
+    ],
+    [
+     "0-0",
+     8.17
+    ],
+    [
+     "2-2",
+     5.11
+    ],
+    [
+     "3-3",
+     1.14
+    ],
+    [
+     "Other",
+     0.22
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     10.55
+    ],
+    [
+     "1-2",
+     8.39
+    ],
+    [
+     "0-2",
+     7.33
+    ],
+    [
+     "1-3",
+     3.79
+    ],
+    [
+     "0-3",
+     3.37
+    ],
+    [
+     "2-3",
+     2.11
+    ],
+    [
+     "Other",
+     5.29
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 66.51,
+   "equal_8": 9.74,
+   "under_8": 23.74,
+   "over_9": 55.91,
+   "equal_9": 10.6,
+   "under_9": 33.49,
+   "over_10.5": 45.26,
+   "under_10.5": 54.74
+  },
+  "Linee_Casa": {
+   "over_1.5": 32.58,
+   "under_1.5": 67.42,
+   "over_2.5": 13.11,
+   "under_2.5": 86.89,
+   "over_3.5": 4.07,
+   "under_3.5": 95.93
+  },
+  "Linee_Ospite": {
+   "over_0.5": 71.96,
+   "under_0.5": 28.04,
+   "over_1.5": 39.02,
+   "under_1.5": 60.98,
+   "over_2.5": 15.92,
+   "under_2.5": 84.08,
+   "over_3.5": 5.51,
+   "under_3.5": 94.49
+  },
+  "WeSay": "1-1",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 28, 2026 12.30pm",
+  "Url": "https://www.sportsmole.co.uk/football/league-one/peterborough-united-vs-cambridge-united_game_263538.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/peterborough-united/preview/peterborough-vs-cambridge-prediction-team-news-lineups_609902.html",
+  "Id": "263538"
+ },
+ {
+  "Casa": "Preston North End",
+  "Ospite": "Norwich City",
+  "Ora": "13:30",
+  "Data": "2026-11-28",
+  "Lega": "Championship",
+  "Giornata": "Gameweek 18",
+  "P1": 22.79,
+  "PX": 23.23,
+  "P2": 53.98,
+  "P_GG": 56.07,
+  "P_NG": 43.93,
+  "P_O15": 79.07,
+  "P_U15": 20.93,
+  "P_O25": 56.83,
+  "P_U25": 43.17,
+  "P_O35": 34.29,
+  "P_U35": 65.71,
+  "P_O45": 20.52,
+  "P_U45": 79.48,
+  "PT1": 20.6,
+  "PTX": 38.08,
+  "PT2": 41.32,
+  "P_Primo_Casa": 36.32,
+  "P_Nessun_Gol": 5.59,
+  "P_Primo_Ospite": 58.09,
+  "Esatto": "1-1",
+  "P_Esatto": 10.65,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     5.96
+    ],
+    [
+     "2-1",
+     5.86
+    ],
+    [
+     "2-0",
+     3.2
+    ],
+    [
+     "3-1",
+     2.12
+    ],
+    [
+     "3-2",
+     1.96
+    ],
+    [
+     "3-0",
+     1.39
+    ],
+    [
+     "Other",
+     2.29
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.65
+    ],
+    [
+     "2-2",
+     5.62
+    ],
+    [
+     "0-0",
+     5.59
+    ],
+    [
+     "3-3",
+     1.16
+    ],
+    [
+     "Other",
+     0.2
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     9.93
+    ],
+    [
+     "0-1",
+     9.36
+    ],
+    [
+     "0-2",
+     8.4
+    ],
+    [
+     "1-3",
+     6.02
+    ],
+    [
+     "0-3",
+     5.36
+    ],
+    [
+     "2-3",
+     3.49
+    ],
+    [
+     "Other",
+     11.42
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 65.9,
+   "equal_8": 10.96,
+   "under_8": 23.14,
+   "over_9": 53.92,
+   "equal_9": 11.98,
+   "under_9": 34.09,
+   "over_10.5": 42.02,
+   "under_10.5": 57.98
+  },
+  "Linee_Casa": {
+   "over_1.5": 27.29,
+   "under_1.5": 72.71,
+   "over_2.5": 9.12,
+   "under_2.5": 90.88,
+   "over_3.5": 2.49,
+   "under_3.5": 97.51
+  },
+  "Linee_Ospite": {
+   "over_0.5": 81.55,
+   "under_0.5": 18.45,
+   "over_1.5": 53.56,
+   "under_1.5": 46.44,
+   "over_2.5": 27.65,
+   "under_2.5": 72.35,
+   "over_3.5": 11.62,
+   "under_3.5": 88.38
+  },
+  "WeSay": "1-2",
+  "WeSay_Segno": "2",
+  "Ora_Sito": "Nov 28, 2026 12.30pm",
+  "Url": "https://www.sportsmole.co.uk/football/championship/preston-north-end-vs-norwich-city_game_263540.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/norwich-city/preview/preston-vs-norwich-prediction-team-news-lineups_609887.html",
+  "Id": "263540"
+ },
+ {
+  "Casa": "Real Betis",
+  "Ospite": "Rayo Vallecano",
+  "Ora": "14:00",
+  "Data": "2026-11-28",
+  "Lega": "La Liga",
+  "Giornata": "Gameweek 14",
+  "P1": 58.21,
+  "PX": 22.24,
+  "P2": 19.55,
+  "P_GG": 51.77,
+  "P_NG": 48.23,
+  "P_O15": 77.03,
+  "P_U15": 22.97,
+  "P_O25": 54.05,
+  "P_U25": 45.95,
+  "P_O35": 31.3,
+  "P_U35": 68.7,
+  "P_O45": 19.01,
+  "P_U45": 80.99,
+  "PT1": 40.56,
+  "PTX": 39.79,
+  "PT2": 19.65,
+  "P_Primo_Casa": 59.98,
+  "P_Nessun_Gol": 6.26,
+  "P_Primo_Ospite": 33.76,
+  "Esatto": "1-0",
+  "P_Esatto": 11.49,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     11.49
+    ],
+    [
+     "2-0",
+     10.38
+    ],
+    [
+     "2-1",
+     10.09
+    ],
+    [
+     "3-0",
+     6.41
+    ],
+    [
+     "3-1",
+     5.74
+    ],
+    [
+     "3-2",
+     3.12
+    ],
+    [
+     "Other",
+     10.98
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.08
+    ],
+    [
+     "0-0",
+     6.26
+    ],
+    [
+     "2-2",
+     4.86
+    ],
+    [
+     "Other",
+     0.1
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     5.21
+    ],
+    [
+     "1-2",
+     5.18
+    ],
+    [
+     "0-2",
+     2.52
+    ],
+    [
+     "1-3",
+     1.69
+    ],
+    [
+     "2-3",
+     1.69
+    ],
+    [
+     "0-3",
+     1.07
+    ],
+    [
+     "Other",
+     2.18
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 61.96,
+   "equal_8": 10.88,
+   "under_8": 27.17,
+   "over_9": 50.51,
+   "equal_9": 11.44,
+   "under_9": 38.04,
+   "over_10.5": 39.46,
+   "under_10.5": 60.54
+  },
+  "Linee_Casa": {
+   "over_1.5": 54.31,
+   "under_1.5": 45.69,
+   "over_2.5": 27.29,
+   "under_2.5": 72.71,
+   "over_3.5": 11.08,
+   "under_3.5": 88.92
+  },
+  "Linee_Ospite": {
+   "over_0.5": 54.47,
+   "under_0.5": 45.53,
+   "over_1.5": 23.35,
+   "under_1.5": 76.65,
+   "over_2.5": 7.67,
+   "under_2.5": 92.33,
+   "over_3.5": 2.28,
+   "under_3.5": 97.72
+  },
+  "WeSay": "2-0",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 1.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/la-liga/betis-vs-rayo-vallecano_game_263543.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/betis/preview/betis-vs-rayo-vallecano-prediction-team-news-lineups_609939.html",
+  "Id": "263543"
+ },
+ {
+  "Casa": "Samsunspor",
+  "Ospite": "Genclerbirligi",
+  "Ora": "14:00",
+  "Data": "2026-11-28",
+  "Lega": "Turkish Super Lig",
+  "Giornata": "Gameweek 13",
+  "P1": 53.98,
+  "PX": 23.1,
+  "P2": 22.89,
+  "P_GG": 57.35,
+  "P_NG": 42.65,
+  "P_O15": 79.39,
+  "P_U15": 20.61,
+  "P_O25": 57.56,
+  "P_U25": 42.44,
+  "P_O35": 35.3,
+  "P_U35": 64.7,
+  "P_O45": 21.69,
+  "P_U45": 78.31,
+  "PT1": 39.13,
+  "PTX": 40.81,
+  "PT2": 20.06,
+  "P_Primo_Casa": 60.84,
+  "P_Nessun_Gol": 5.63,
+  "P_Primo_Ospite": 33.53,
+  "Esatto": "1-1",
+  "P_Esatto": 10.4,
   "Esatti": {
    "casa": [
     [
      "2-1",
-     8.67
+     10.04
     ],
     [
      "1-0",
-     6.41
+     9.45
+    ],
+    [
+     "2-0",
+     8.51
+    ],
+    [
+     "3-1",
+     5.83
+    ],
+    [
+     "3-0",
+     5.1
+    ],
+    [
+     "3-2",
+     3.53
+    ],
+    [
+     "Other",
+     11.52
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.4
+    ],
+    [
+     "0-0",
+     5.63
+    ],
+    [
+     "2-2",
+     5.5
+    ],
+    [
+     "3-3",
+     1.31
+    ],
+    [
+     "Other",
+     0.26
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     5.87
+    ],
+    [
+     "0-1",
+     5.5
+    ],
+    [
+     "0-2",
+     2.92
+    ],
+    [
+     "1-3",
+     2.28
+    ],
+    [
+     "2-3",
+     2.12
+    ],
+    [
+     "0-3",
+     1.25
+    ],
+    [
+     "Other",
+     2.95
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 54.17,
+   "equal_8": 12.35,
+   "under_8": 33.48,
+   "over_9": 41.91,
+   "equal_9": 12.25,
+   "under_9": 45.83,
+   "over_10.5": 30.83,
+   "under_10.5": 69.17
+  },
+  "Linee_Casa": {
+   "over_1.5": 53.72,
+   "under_1.5": 46.28,
+   "over_2.5": 27.55,
+   "under_2.5": 72.45,
+   "over_3.5": 11.78,
+   "under_3.5": 88.22
+  },
+  "Linee_Ospite": {
+   "over_0.5": 59.76,
+   "under_0.5": 40.24,
+   "over_1.5": 27.99,
+   "under_1.5": 72.01,
+   "over_2.5": 10.17,
+   "under_2.5": 89.83,
+   "over_3.5": 3.21,
+   "under_3.5": 96.79
+  },
+  "WeSay": "2-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 1.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/super-lig/samsunspor-vs-genclerbirligi_game_263544.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/samsunspor/preview/samsunspor-vs-genclerbirligi-prediction-team-news-lineups_609943.html",
+  "Id": "263544"
+ },
+ {
+  "Casa": "Frosinone",
+  "Ospite": "Parma",
+  "Ora": "15:00",
+  "Data": "2026-11-28",
+  "Lega": "Serie A",
+  "Giornata": "Gameweek 13",
+  "P1": 63.55,
+  "PX": 21.87,
+  "P2": 14.61,
+  "P_GG": 50.31,
+  "P_NG": 49.69,
+  "P_O15": 78.26,
+  "P_U15": 21.74,
+  "P_O25": 55.98,
+  "P_U25": 44.02,
+  "P_O35": 33.98,
+  "P_U35": 66.02,
+  "P_O45": 21.86,
+  "P_U45": 78.14,
+  "PT1": 52.24,
+  "PTX": 35.42,
+  "PT2": 12.33,
+  "P_Primo_Casa": 70.91,
+  "P_Nessun_Gol": 6.02,
+  "P_Primo_Ospite": 23.07,
+  "Esatto": "1-0",
+  "P_Esatto": 11.38,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     11.38
+    ],
+    [
+     "2-0",
+     10.33
+    ],
+    [
+     "2-1",
+     10.06
+    ],
+    [
+     "3-0",
+     7.17
+    ],
+    [
+     "3-1",
+     6.53
+    ],
+    [
+     "3-2",
+     2.89
+    ],
+    [
+     "Other",
+     15.19
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.11
+    ],
+    [
+     "0-0",
+     6.02
+    ],
+    [
+     "2-2",
+     4.41
+    ],
+    [
+     "3-3",
+     1.01
+    ],
+    [
+     "Other",
+     0.32
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     4.37
+    ],
+    [
+     "1-2",
+     4.09
+    ],
+    [
+     "0-2",
+     1.84
+    ],
+    [
+     "2-3",
+     1.34
+    ],
+    [
+     "1-3",
+     1.18
+    ],
+    [
+     "Other",
+     1.11
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 65.63,
+   "equal_8": 9.44,
+   "under_8": 24.93,
+   "over_9": 55.41,
+   "equal_9": 10.22,
+   "under_9": 34.37,
+   "over_10.5": 45.16,
+   "under_10.5": 54.84
+  },
+  "Linee_Casa": {
+   "over_1.5": 59.25,
+   "under_1.5": 40.75,
+   "over_2.5": 33.11,
+   "under_2.5": 66.89,
+   "over_3.5": 15.51,
+   "under_3.5": 84.49
+  },
+  "Linee_Ospite": {
+   "over_0.5": 49.94,
+   "under_0.5": 50.06,
+   "over_1.5": 18.87,
+   "under_1.5": 81.13,
+   "over_2.5": 5.64,
+   "under_2.5": 94.36,
+   "over_3.5": 1.43,
+   "under_3.5": 98.57
+  },
+  "WeSay": "2-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 2.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/serie-a/frosinone-vs-parma_game_263548.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/frosinone/preview/frosinone-vs-parma-prediction-team-news-lineups_609825.html",
+  "Id": "263548"
+ },
+ {
+  "Casa": "FC Koln",
+  "Ospite": "Elversberg",
+  "Ora": "15:30",
+  "Data": "2026-11-28",
+  "Lega": "Bundesliga",
+  "Giornata": "Gameweek 11",
+  "P1": 43.12,
+  "PX": 24.52,
+  "P2": 32.36,
+  "P_GG": 60.98,
+  "P_NG": 39.02,
+  "P_O15": 80.15,
+  "P_U15": 19.85,
+  "P_O25": 59.23,
+  "P_U25": 40.77,
+  "P_O35": 37.38,
+  "P_U35": 62.62,
+  "P_O45": 22.64,
+  "P_U45": 77.36,
+  "PT1": 35.42,
+  "PTX": 38.73,
+  "PT2": 25.85,
+  "P_Primo_Casa": 54.31,
+  "P_Nessun_Gol": 5.36,
+  "P_Primo_Ospite": 40.33,
+  "Esatto": "1-1",
+  "P_Esatto": 10.66,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     8.84
+    ],
+    [
+     "1-0",
+     7.91
+    ],
+    [
+     "2-0",
+     5.91
+    ],
+    [
+     "3-1",
+     4.78
+    ],
+    [
+     "3-2",
+     3.66
+    ],
+    [
+     "3-0",
+     3.48
+    ],
+    [
+     "Other",
+     8.54
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.66
+    ],
+    [
+     "2-2",
+     6.42
+    ],
+    [
+     "0-0",
+     5.36
+    ],
+    [
+     "3-3",
+     1.64
+    ],
+    [
+     "Other",
+     0.44
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     7.54
+    ],
+    [
+     "0-1",
+     6.59
+    ],
+    [
+     "0-2",
+     4.35
+    ],
+    [
+     "1-3",
+     3.53
+    ],
+    [
+     "2-3",
+     3.08
+    ],
+    [
+     "0-3",
+     2.0
+    ],
+    [
+     "Other",
+     5.28
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 65.78,
+   "equal_8": 10.32,
+   "under_8": 23.9,
+   "over_9": 54.58,
+   "equal_9": 11.2,
+   "under_9": 34.22,
+   "over_10.5": 43.42,
+   "under_10.5": 56.58
+  },
+  "Linee_Casa": {
+   "over_1.5": 46.79,
+   "under_1.5": 53.21,
+   "over_2.5": 22.54,
+   "under_2.5": 77.46,
+   "over_3.5": 8.98,
+   "under_3.5": 91.02
+  },
+  "Linee_Ospite": {
+   "over_0.5": 68.81,
+   "under_0.5": 31.19,
+   "over_1.5": 37.94,
+   "under_1.5": 62.06,
+   "over_2.5": 15.97,
+   "under_2.5": 84.03,
+   "over_3.5": 5.72,
+   "under_3.5": 94.28
+  },
+  "WeSay": "2-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 2.30pm",
+  "Url": "https://www.sportsmole.co.uk/football/bundesliga/fc-koln-vs-elversberg_game_263555.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/fc-koln/preview/fc-koln-vs-elversberg-prediction-team-news-lineups_609970.html",
+  "Id": "263555"
+ },
+ {
+  "Casa": "Hamburger SV",
+  "Ospite": "Bayern Munich",
+  "Ora": "15:30",
+  "Data": "2026-11-28",
+  "Lega": "Bundesliga",
+  "Giornata": "Gameweek 11",
+  "P1": 15.37,
+  "PX": 18.03,
+  "P2": 66.59,
+  "P_GG": 58.22,
+  "P_NG": 41.78,
+  "P_O15": 84.13,
+  "P_U15": 15.87,
+  "P_O25": 65.31,
+  "P_U25": 34.69,
+  "P_O35": 44.01,
+  "P_U35": 55.99,
+  "P_O45": 29.98,
+  "P_U45": 70.02,
+  "PT1": 16.83,
+  "PTX": 33.14,
+  "PT2": 50.03,
+  "P_Primo_Casa": 24.72,
+  "P_Nessun_Gol": 3.77,
+  "P_Primo_Ospite": 71.51,
+  "Esatto": "1-2",
+  "P_Esatto": 9.82,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     4.06
+    ],
+    [
+     "1-0",
+     3.58
+    ],
+    [
+     "2-0",
+     1.8
+    ],
+    [
+     "3-2",
+     1.75
+    ],
+    [
+     "3-1",
+     1.68
+    ],
+    [
+     "Other",
+     2.01
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     7.71
+    ],
+    [
+     "2-2",
+     5.12
+    ],
+    [
+     "0-0",
+     3.77
+    ],
+    [
+     "3-3",
+     1.31
+    ],
+    [
+     "Other",
+     0.13
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     9.82
+    ],
+    [
+     "0-2",
+     9.3
+    ],
+    [
+     "0-1",
+     8.54
+    ],
+    [
+     "1-3",
+     7.24
+    ],
+    [
+     "0-3",
+     6.91
+    ],
+    [
+     "2-3",
+     4.45
+    ],
+    [
+     "Other",
+     20.33
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 68.07,
+   "equal_8": 9.28,
+   "under_8": 22.66,
+   "over_9": 57.86,
+   "equal_9": 10.2,
+   "under_9": 31.93,
+   "over_10.5": 47.47,
+   "under_10.5": 52.53
+  },
+  "Linee_Casa": {
+   "over_1.5": 22.82,
+   "under_1.5": 77.18,
+   "over_2.5": 7.39,
+   "under_2.5": 92.61,
+   "over_3.5": 2.14,
+   "under_3.5": 97.86
+  },
+  "Linee_Ospite": {
+   "over_0.5": 88.35,
+   "under_0.5": 11.65,
+   "over_1.5": 66.36,
+   "under_1.5": 33.64,
+   "over_2.5": 40.37,
+   "under_2.5": 59.63,
+   "over_3.5": 20.46,
+   "under_3.5": 79.54
+  },
+  "WeSay": "1-3",
+  "WeSay_Segno": "2",
+  "Ora_Sito": "Nov 28, 2026 2.30pm",
+  "Url": "https://www.sportsmole.co.uk/football/bundesliga/hamburger-sv-vs-bayern-munich_game_263556.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/hamburger-sv/bundesliga-title-race/preview/hamburger-sv-vs-bayern-prediction-team-news-lineups_609927.html",
+  "Id": "263556"
+ },
+ {
+  "Casa": "Mainz 05",
+  "Ospite": "Union Berlin",
+  "Ora": "15:30",
+  "Data": "2026-11-28",
+  "Lega": "Bundesliga",
+  "Giornata": "Gameweek 11",
+  "P1": 48.42,
+  "PX": 24.64,
+  "P2": 26.93,
+  "P_GG": 52.68,
+  "P_NG": 47.32,
+  "P_O15": 74.91,
+  "P_U15": 25.09,
+  "P_O25": 52.24,
+  "P_U25": 47.76,
+  "P_O35": 30.78,
+  "P_U35": 69.22,
+  "P_O45": 18.29,
+  "P_U45": 81.71,
+  "PT1": 37.17,
+  "PTX": 38.54,
+  "PT2": 24.28,
+  "P_Primo_Casa": 54.26,
+  "P_Nessun_Gol": 7.02,
+  "P_Primo_Ospite": 38.72,
+  "Esatto": "1-0",
+  "P_Esatto": 10.92,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     10.92
+    ],
+    [
+     "2-1",
+     9.09
+    ],
+    [
+     "2-0",
+     7.89
+    ],
+    [
+     "3-1",
+     4.77
+    ],
+    [
+     "3-0",
+     4.23
+    ],
+    [
+     "3-2",
+     3.02
+    ],
+    [
+     "Other",
+     8.5
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.88
+    ],
+    [
+     "0-0",
+     7.02
+    ],
+    [
+     "2-2",
+     5.25
+    ],
+    [
+     "3-3",
+     1.27
+    ],
+    [
+     "Other",
+     0.22
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     7.14
+    ],
+    [
+     "1-2",
+     6.5
+    ],
+    [
+     "0-2",
+     3.9
+    ],
+    [
+     "1-3",
+     2.47
+    ],
+    [
+     "2-3",
+     2.05
+    ],
+    [
+     "0-3",
+     1.64
+    ],
+    [
+     "Other",
+     3.23
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 62.3,
+   "equal_8": 10.66,
+   "under_8": 27.05,
+   "over_9": 51.06,
+   "equal_9": 11.23,
+   "under_9": 37.7,
+   "over_10.5": 40.17,
+   "under_10.5": 59.83
+  },
+  "Linee_Casa": {
+   "over_1.5": 46.29,
+   "under_1.5": 53.71,
+   "over_2.5": 22.01,
+   "under_2.5": 77.99,
+   "over_3.5": 8.72,
+   "under_3.5": 91.28
+  },
+  "Linee_Ospite": {
+   "over_0.5": 61.43,
+   "under_0.5": 38.57,
+   "over_1.5": 29.55,
+   "under_1.5": 70.45,
+   "over_2.5": 10.88,
+   "under_2.5": 89.12,
+   "over_3.5": 3.45,
+   "under_3.5": 96.55
+  },
+  "WeSay": "1-1",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 28, 2026 2.30pm",
+  "Url": "https://www.sportsmole.co.uk/football/bundesliga/mainz-05-vs-union-berlin_game_263557.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/mainz-05/preview/mainz-vs-union-berlin-prediction-team-news-lineups_609964.html",
+  "Id": "263557"
+ },
+ {
+  "Casa": "SC Paderborn",
+  "Ospite": "Schalke 04",
+  "Ora": "15:30",
+  "Data": "2026-11-28",
+  "Lega": "Bundesliga",
+  "Giornata": "Gameweek 11",
+  "P1": 41.23,
+  "PX": 22.9,
+  "P2": 35.86,
+  "P_GG": 63.01,
+  "P_NG": 36.99,
+  "P_O15": 82.93,
+  "P_U15": 17.07,
+  "P_O25": 63.11,
+  "P_U25": 36.89,
+  "P_O35": 40.81,
+  "P_U35": 59.15,
+  "P_O45": 25.72,
+  "P_U45": 74.28,
+  "PT1": 34.08,
+  "PTX": 36.59,
+  "PT2": 29.32,
+  "P_Primo_Casa": 49.56,
+  "P_Nessun_Gol": 4.36,
+  "P_Primo_Ospite": 46.08,
+  "Esatto": "1-1",
+  "P_Esatto": 9.9,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     8.6
+    ],
+    [
+     "1-0",
+     6.46
     ],
     [
      "2-0",
@@ -337,11 +2085,4373 @@
     ],
     [
      "3-1",
-     4.62
+     4.66
     ],
     [
      "3-2",
+     4.07
+    ],
+    [
+     "3-0",
+     3.25
+    ],
+    [
+     "Other",
+     8.95
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     9.9
+    ],
+    [
+     "2-2",
+     6.46
+    ],
+    [
+     "0-0",
+     4.36
+    ],
+    [
+     "3-3",
+     1.91
+    ],
+    [
+     "Other",
+     0.27
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     7.87
+    ],
+    [
+     "0-1",
+     6.24
+    ],
+    [
+     "0-2",
+     4.68
+    ],
+    [
+     "1-3",
+     3.97
+    ],
+    [
+     "2-3",
+     3.34
+    ],
+    [
+     "0-3",
+     2.57
+    ],
+    [
+     "Other",
+     7.18
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 66.36,
+   "equal_8": 10.32,
+   "under_8": 23.32,
+   "over_9": 55.11,
+   "equal_9": 11.25,
+   "under_9": 33.64,
+   "over_10.5": 43.86,
+   "under_10.5": 56.14
+  },
+  "Linee_Casa": {
+   "over_1.5": 46.76,
+   "under_1.5": 53.24,
+   "over_2.5": 23.11,
+   "under_2.5": 76.89,
+   "over_3.5": 9.22,
+   "under_3.5": 90.78
+  },
+  "Linee_Ospite": {
+   "over_0.5": 71.72,
+   "under_0.5": 28.28,
+   "over_1.5": 42.32,
+   "under_1.5": 57.68,
+   "over_2.5": 19.24,
+   "under_2.5": 80.76,
+   "over_3.5": 7.45,
+   "under_3.5": 92.55
+  },
+  "WeSay": "1-1",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 28, 2026 2.30pm",
+  "Url": "https://www.sportsmole.co.uk/football/bundesliga/paderborn-vs-schalke-04_game_263554.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/schalke-04/preview/sc-paderborn-vs-schalke-prediction-team-news-lineups_609922.html",
+  "Id": "263554"
+ },
+ {
+  "Casa": "AFC Wimbledon",
+  "Ospite": "Barnsley",
+  "Ora": "16:00",
+  "Data": "2026-11-28",
+  "Lega": "League One",
+  "Giornata": "Gameweek 17",
+  "P1": 44.18,
+  "PX": 25.52,
+  "P2": 30.27,
+  "P_GG": 53.83,
+  "P_NG": 46.17,
+  "P_O15": 75.08,
+  "P_U15": 24.92,
+  "P_O25": 51.47,
+  "P_U25": 48.53,
+  "P_O35": 28.72,
+  "P_U35": 71.28,
+  "P_O45": 15.98,
+  "P_U45": 84.02,
+  "PT1": 32.75,
+  "PTX": 41.42,
+  "PT2": 25.82,
+  "P_Primo_Casa": 52.4,
+  "P_Nessun_Gol": 6.92,
+  "P_Primo_Ospite": 40.68,
+  "Esatto": "1-1",
+  "P_Esatto": 11.77,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     10.24
+    ],
+    [
+     "2-1",
+     9.28
+    ],
+    [
+     "2-0",
+     7.31
+    ],
+    [
+     "3-1",
+     4.41
+    ],
+    [
+     "3-0",
+     3.89
+    ],
+    [
+     "3-2",
+     2.83
+    ],
+    [
+     "Other",
+     6.21
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.77
+    ],
+    [
+     "0-0",
+     6.92
+    ],
+    [
+     "2-2",
+     5.42
+    ],
+    [
+     "3-3",
+     1.13
+    ],
+    [
+     "Other",
+     0.28
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     7.7
+    ],
+    [
+     "1-2",
+     7.4
+    ],
+    [
+     "0-2",
+     4.54
+    ],
+    [
+     "1-3",
+     2.91
+    ],
+    [
+     "0-3",
+     2.17
+    ],
+    [
+     "2-3",
+     2.05
+    ],
+    [
+     "Other",
+     3.48
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 70.76,
+   "equal_8": 9.91,
+   "under_8": 19.33,
+   "over_9": 59.49,
+   "equal_9": 11.27,
+   "under_9": 29.24,
+   "over_10.5": 47.82,
+   "under_10.5": 52.18
+  },
+  "Linee_Casa": {
+   "over_1.5": 42.81,
+   "under_1.5": 57.19,
+   "over_2.5": 18.75,
+   "under_2.5": 81.25,
+   "over_3.5": 6.49,
+   "under_3.5": 93.51
+  },
+  "Linee_Ospite": {
+   "over_0.5": 65.37,
+   "under_0.5": 34.63,
+   "over_1.5": 32.21,
+   "under_1.5": 67.79,
+   "over_2.5": 12.02,
+   "under_2.5": 87.98,
+   "over_3.5": 3.76,
+   "under_3.5": 96.24
+  },
+  "WeSay": "1-0",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 3.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/league-one/afc-wimbledon-vs-barnsley_game_263584.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/afc-wimbledon/preview/afc-wimbledon-vs-barnsley-prediction-team-news-lineups_609941.html",
+  "Id": "263584"
+ },
+ {
+  "Casa": "Aberdeen",
+  "Ospite": "Dundee",
+  "Ora": "16:00",
+  "Data": "2026-11-28",
+  "Lega": "Scottish Premiership",
+  "Giornata": "Gameweek 15",
+  "P1": 51.43,
+  "PX": 23.31,
+  "P2": 25.3,
+  "P_GG": 58.03,
+  "P_NG": 41.97,
+  "P_O15": 79.48,
+  "P_U15": 20.52,
+  "P_O25": 57.2,
+  "P_U25": 42.8,
+  "P_O35": 34.72,
+  "P_U35": 65.28,
+  "P_O45": 20.48,
+  "P_U45": 79.52,
+  "PT1": 37.1,
+  "PTX": 41.78,
+  "PT2": 21.12,
+  "P_Primo_Casa": 58.0,
+  "P_Nessun_Gol": 5.16,
+  "P_Primo_Ospite": 36.84,
+  "Esatto": "1-1",
+  "P_Esatto": 10.88,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     9.99
+    ],
+    [
+     "1-0",
+     9.38
+    ],
+    [
+     "2-0",
+     7.88
+    ],
+    [
+     "3-1",
+     5.86
+    ],
+    [
+     "3-0",
+     4.65
+    ],
+    [
+     "3-2",
+     3.7
+    ],
+    [
+     "Other",
+     9.96
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.88
+    ],
+    [
+     "2-2",
+     5.83
+    ],
+    [
+     "0-0",
+     5.16
+    ],
+    [
+     "3-3",
+     1.3
+    ],
+    [
+     "Other",
+     0.14
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     6.47
+    ],
+    [
+     "0-1",
+     6.03
+    ],
+    [
+     "0-2",
+     3.51
+    ],
+    [
+     "1-3",
+     2.55
+    ],
+    [
+     "2-3",
+     2.27
+    ],
+    [
+     "0-3",
+     1.38
+    ],
+    [
+     "Other",
+     3.11
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 75.15,
+   "equal_8": 9.02,
+   "under_8": 15.83,
+   "over_9": 64.43,
+   "equal_9": 10.72,
+   "under_9": 24.85,
+   "over_10.5": 52.88,
+   "under_10.5": 47.12
+  },
+  "Linee_Casa": {
+   "over_1.5": 51.58,
+   "under_1.5": 48.42,
+   "over_2.5": 25.61,
+   "under_2.5": 74.39,
+   "over_3.5": 10.1,
+   "under_3.5": 89.9
+  },
+  "Linee_Ospite": {
+   "over_0.5": 63.02,
+   "under_0.5": 36.98,
+   "over_1.5": 30.26,
+   "under_1.5": 69.74,
+   "over_2.5": 10.75,
+   "under_2.5": 89.25,
+   "over_3.5": 3.25,
+   "under_3.5": 96.75
+  },
+  "WeSay": "2-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 3.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/scottish-premiership/aberdeen-vs-dundee_game_263564.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/aberdeen/preview/aberdeen-vs-dundee-prediction-team-news-lineups_609924.html",
+  "Id": "263564"
+ },
+ {
+  "Casa": "Birmingham City",
+  "Ospite": "Bolton Wanderers",
+  "Ora": "16:00",
+  "Data": "2026-11-28",
+  "Lega": "Championship",
+  "Giornata": "Gameweek 18",
+  "P1": 57.94,
+  "PX": 24.12,
+  "P2": 17.98,
+  "P_GG": 48.51,
+  "P_NG": 51.49,
+  "P_O15": 72.46,
+  "P_U15": 27.54,
+  "P_O25": 49.13,
+  "P_U25": 50.87,
+  "P_O35": 28.48,
+  "P_U35": 71.52,
+  "P_O45": 16.86,
+  "P_U45": 83.14,
+  "PT1": 43.63,
+  "PTX": 37.26,
+  "PT2": 19.11,
+  "P_Primo_Casa": 59.93,
+  "P_Nessun_Gol": 8.4,
+  "P_Primo_Ospite": 31.67,
+  "Esatto": "1-0",
+  "P_Esatto": 13.34,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     13.34
+    ],
+    [
+     "2-0",
+     10.56
+    ],
+    [
+     "2-1",
+     9.59
+    ],
+    [
+     "3-0",
+     5.94
+    ],
+    [
+     "3-1",
+     5.64
+    ],
+    [
+     "3-2",
+     2.96
+    ],
+    [
+     "Other",
+     9.9
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.28
+    ],
+    [
+     "0-0",
+     8.4
+    ],
+    [
+     "2-2",
+     4.47
+    ],
+    [
+     "Other",
+     0.05
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     5.83
+    ],
+    [
+     "1-2",
+     4.5
+    ],
+    [
+     "0-2",
+     2.49
+    ],
+    [
+     "1-3",
+     1.51
+    ],
+    [
+     "2-3",
+     1.43
+    ],
+    [
+     "Other",
+     1.6
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 60.37,
+   "equal_8": 10.79,
+   "under_8": 28.84,
+   "over_9": 49.15,
+   "equal_9": 11.22,
+   "under_9": 39.63,
+   "over_10.5": 38.41,
+   "under_10.5": 61.59
+  },
+  "Linee_Casa": {
+   "over_1.5": 51.46,
+   "under_1.5": 48.54,
+   "over_2.5": 25.41,
+   "under_2.5": 74.59,
+   "over_3.5": 9.95,
+   "under_3.5": 90.05
+  },
+  "Linee_Ospite": {
+   "over_0.5": 51.89,
+   "under_0.5": 48.11,
+   "over_1.5": 20.55,
+   "under_1.5": 79.45,
+   "over_2.5": 6.13,
+   "under_2.5": 93.87,
+   "over_3.5": 1.65,
+   "under_3.5": 98.35
+  },
+  "WeSay": "2-0",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 3.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/championship/birmingham-city-vs-bolton-wanderers_game_263591.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/birmingham-city/preview/birmingham-vs-bolton-prediction-team-news-lineups_609918.html",
+  "Id": "263591"
+ },
+ {
+  "Casa": "Bromley",
+  "Ospite": "Burton Albion",
+  "Ora": "16:00",
+  "Data": "2026-11-28",
+  "Lega": "League One",
+  "Giornata": "Gameweek 17",
+  "P1": 40.72,
+  "PX": 26.87,
+  "P2": 32.41,
+  "P_GG": 51.36,
+  "P_NG": 48.64,
+  "P_O15": 71.1,
+  "P_U15": 28.9,
+  "P_O25": 46.1,
+  "P_U25": 53.9,
+  "P_O35": 25.21,
+  "P_U35": 74.76,
+  "P_O45": 13.69,
+  "P_U45": 86.31,
+  "PT1": 30.61,
+  "PTX": 45.19,
+  "PT2": 24.2,
+  "P_Primo_Casa": 52.39,
+  "P_Nessun_Gol": 8.36,
+  "P_Primo_Ospite": 39.25,
+  "Esatto": "1-1",
+  "P_Esatto": 12.68,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     10.93
+    ],
+    [
+     "2-1",
+     8.31
+    ],
+    [
+     "2-0",
+     7.04
+    ],
+    [
+     "3-1",
+     3.77
+    ],
+    [
+     "3-0",
+     3.11
+    ],
+    [
+     "3-2",
+     2.42
+    ],
+    [
+     "Other",
+     5.14
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     12.68
+    ],
+    [
+     "0-0",
+     8.36
+    ],
+    [
+     "2-2",
+     4.89
+    ],
+    [
+     "Other",
+     0.07
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     9.6
+    ],
+    [
+     "1-2",
+     7.42
+    ],
+    [
+     "0-2",
+     5.27
+    ],
+    [
+     "1-3",
+     2.86
+    ],
+    [
+     "0-3",
+     2.06
+    ],
+    [
+     "2-3",
+     1.96
+    ],
+    [
+     "Other",
+     3.24
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 63.55,
+   "equal_8": 10.89,
+   "under_8": 25.56,
+   "over_9": 51.93,
+   "equal_9": 11.63,
+   "under_9": 36.44,
+   "over_10.5": 40.57,
+   "under_10.5": 59.43
+  },
+  "Linee_Casa": {
+   "over_1.5": 37.57,
+   "under_1.5": 62.43,
+   "over_2.5": 15.37,
+   "under_2.5": 84.63,
+   "over_3.5": 5.21,
+   "under_3.5": 94.79
+  },
+  "Linee_Ospite": {
+   "over_0.5": 65.41,
+   "under_0.5": 34.59,
+   "over_1.5": 31.05,
+   "under_1.5": 68.95,
+   "over_2.5": 11.05,
+   "under_2.5": 88.95,
+   "over_3.5": 3.31,
+   "under_3.5": 96.69
+  },
+  "WeSay": "1-1",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 28, 2026 3.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/league-one/bromley-vs-burton-albion_game_263583.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/bromley/preview/bromley-vs-burton-albion-prediction-team-news-lineups_609901.html",
+  "Id": "263583"
+ },
+ {
+  "Casa": "Derby County",
+  "Ospite": "Watford",
+  "Ora": "16:00",
+  "Data": "2026-11-28",
+  "Lega": "Championship",
+  "Giornata": "Gameweek 18",
+  "P1": 53.08,
+  "PX": 24.35,
+  "P2": 22.53,
+  "P_GG": 52.52,
+  "P_NG": 47.48,
+  "P_O15": 75.09,
+  "P_U15": 24.91,
+  "P_O25": 51.06,
+  "P_U25": 48.94,
+  "P_O35": 28.62,
+  "P_U35": 71.38,
+  "P_O45": 16.37,
+  "P_U45": 83.63,
+  "PT1": 36.55,
+  "PTX": 42.28,
+  "PT2": 21.16,
+  "P_Primo_Casa": 56.96,
+  "P_Nessun_Gol": 6.71,
+  "P_Primo_Ospite": 36.33,
+  "Esatto": "1-0",
+  "P_Esatto": 11.52,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     11.52
+    ],
+    [
+     "2-1",
+     10.19
+    ],
+    [
+     "2-0",
+     9.08
+    ],
+    [
+     "3-1",
+     5.16
+    ],
+    [
+     "3-0",
+     5.09
+    ],
+    [
+     "3-2",
+     3.14
+    ],
+    [
+     "Other",
+     8.89
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.49
+    ],
+    [
+     "0-0",
+     6.71
+    ],
+    [
+     "2-2",
+     5.16
+    ],
+    [
+     "Other",
+     0.09
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     6.64
+    ],
+    [
+     "1-2",
+     6.15
+    ],
+    [
+     "0-2",
+     3.47
+    ],
+    [
+     "1-3",
+     1.92
+    ],
+    [
+     "2-3",
+     1.46
+    ],
+    [
+     "0-3",
+     1.01
+    ],
+    [
+     "Other",
+     1.88
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 62.25,
+   "equal_8": 11.5,
+   "under_8": 26.24,
+   "over_9": 50.08,
+   "equal_9": 12.17,
+   "under_9": 37.75,
+   "over_10.5": 38.37,
+   "under_10.5": 61.63
+  },
+  "Linee_Casa": {
+   "over_1.5": 49.17,
+   "under_1.5": 50.83,
+   "over_2.5": 23.28,
+   "under_2.5": 76.72,
+   "over_3.5": 8.98,
+   "under_3.5": 91.02
+  },
+  "Linee_Ospite": {
+   "over_0.5": 58.67,
+   "under_0.5": 41.33,
+   "over_1.5": 25.19,
+   "under_1.5": 74.81,
+   "over_2.5": 7.27,
+   "under_2.5": 92.73,
+   "over_3.5": 1.97,
+   "under_3.5": 98.03
+  },
+  "WeSay": "2-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 3.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/championship/derby-county-vs-watford_game_263590.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/derby-county/preview/derby-vs-watford-prediction-team-news-lineups_609888.html",
+  "Id": "263590"
+ },
+ {
+  "Casa": "Dundee United",
+  "Ospite": "St Johnstone",
+  "Ora": "16:00",
+  "Data": "2026-11-28",
+  "Lega": "Scottish Premiership",
+  "Giornata": "Gameweek 15",
+  "P1": 46.23,
+  "PX": 25.79,
+  "P2": 27.98,
+  "P_GG": 51.86,
+  "P_NG": 48.14,
+  "P_O15": 73.22,
+  "P_U15": 26.78,
+  "P_O25": 48.89,
+  "P_U25": 51.11,
+  "P_O35": 27.56,
+  "P_U35": 72.44,
+  "P_O45": 15.73,
+  "P_U45": 84.27,
+  "PT1": 32.88,
+  "PTX": 39.89,
+  "PT2": 27.22,
+  "P_Primo_Casa": 49.45,
+  "P_Nessun_Gol": 7.73,
+  "P_Primo_Ospite": 42.82,
+  "Esatto": "1-1",
+  "P_Esatto": 11.98,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     11.23
+    ],
+    [
+     "2-1",
+     8.99
+    ],
+    [
+     "2-0",
+     8.1
+    ],
+    [
+     "3-1",
+     4.33
+    ],
+    [
+     "3-0",
+     4.21
+    ],
+    [
+     "3-2",
+     2.83
+    ],
+    [
+     "Other",
+     6.54
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.98
+    ],
+    [
+     "0-0",
+     7.73
+    ],
+    [
+     "2-2",
+     4.98
+    ],
+    [
+     "3-3",
+     1.04
+    ],
+    [
+     "Other",
+     0.07
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     7.82
+    ],
+    [
+     "1-2",
+     6.54
+    ],
+    [
+     "0-2",
+     4.25
+    ],
+    [
+     "1-3",
+     2.52
+    ],
+    [
+     "2-3",
+     2.02
+    ],
+    [
+     "0-3",
+     1.59
+    ],
+    [
+     "Other",
+     3.23
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 71.35,
+   "equal_8": 9.11,
+   "under_8": 19.53,
+   "over_9": 61.01,
+   "equal_9": 10.35,
+   "under_9": 28.65,
+   "over_10.5": 50.2,
+   "under_10.5": 49.8
+  },
+  "Linee_Casa": {
+   "over_1.5": 43.11,
+   "under_1.5": 56.89,
+   "over_2.5": 19.02,
+   "under_2.5": 80.98,
+   "over_3.5": 6.61,
+   "under_3.5": 93.39
+  },
+  "Linee_Ospite": {
+   "over_0.5": 62.19,
+   "under_0.5": 37.81,
+   "over_1.5": 29.07,
+   "under_1.5": 70.93,
+   "over_2.5": 10.47,
+   "under_2.5": 89.53,
+   "over_3.5": 3.3,
+   "under_3.5": 96.7
+  },
+  "WeSay": "2-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 3.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/scottish-premiership/dundee-united-vs-st-johnstone_game_263563.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/dundee-united/preview/dundee-utd-vs-st-johnstone-prediction-team-news-lineups_609971.html",
+  "Id": "263563"
+ },
+ {
+  "Casa": "Leeds United",
+  "Ospite": "Coventry City",
+  "Ora": "16:00",
+  "Data": "2026-11-28",
+  "Lega": "Premier League",
+  "Giornata": "Gameweek 12",
+  "P1": 54.95,
+  "PX": 24.58,
+  "P2": 20.46,
+  "P_GG": 46.48,
+  "P_NG": 53.52,
+  "P_O15": 71.33,
+  "P_U15": 28.67,
+  "P_O25": 46.96,
+  "P_U25": 53.04,
+  "P_O35": 25.71,
+  "P_U35": 74.29,
+  "P_O45": 14.98,
+  "P_U45": 85.02,
+  "PT1": 35.22,
+  "PTX": 41.6,
+  "PT2": 23.18,
+  "P_Primo_Casa": 52.25,
+  "P_Nessun_Gol": 8.48,
+  "P_Primo_Ospite": 39.27,
+  "Esatto": "1-0",
+  "P_Esatto": 13.77,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     13.77
+    ],
+    [
+     "2-0",
+     10.62
+    ],
+    [
+     "2-1",
+     9.11
+    ],
+    [
+     "3-0",
+     5.98
+    ],
+    [
+     "3-1",
+     4.77
+    ],
+    [
+     "3-2",
+     2.39
+    ],
+    [
+     "Other",
+     8.31
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.84
+    ],
+    [
+     "0-0",
+     8.48
+    ],
+    [
+     "2-2",
+     4.25
+    ],
+    [
+     "Other",
+     0.15
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     6.41
+    ],
+    [
+     "1-2",
+     5.15
+    ],
+    [
+     "0-2",
+     2.92
+    ],
+    [
+     "1-3",
+     1.71
+    ],
+    [
+     "2-3",
+     1.41
+    ],
+    [
+     "0-3",
+     1.0
+    ],
+    [
+     "Other",
+     1.86
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 58.26,
+   "equal_8": 11.73,
+   "under_8": 30.01,
+   "over_9": 46.25,
+   "equal_9": 12.01,
+   "under_9": 41.74,
+   "over_10.5": 35.01,
+   "under_10.5": 64.99
+  },
+  "Linee_Casa": {
+   "over_1.5": 47.85,
+   "under_1.5": 52.15,
+   "over_2.5": 22.46,
+   "under_2.5": 77.54,
+   "over_3.5": 8.46,
+   "under_3.5": 91.54
+  },
+  "Linee_Ospite": {
+   "over_0.5": 52.83,
+   "under_0.5": 47.17,
+   "over_1.5": 21.7,
+   "under_1.5": 78.3,
+   "over_2.5": 6.99,
+   "under_2.5": 93.01,
+   "over_3.5": 2.01,
+   "under_3.5": 97.99
+  },
+  "WeSay": "3-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 3.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/premier-league/leeds-united-vs-coventry-city_game_263560.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/leeds-united/preview/leeds-vs-coventry-prediction-team-news-lineups_609877.html",
+  "Id": "263560"
+ },
+ {
+  "Casa": "Leicester City",
+  "Ospite": "Mansfield Town",
+  "Ora": "16:00",
+  "Data": "2026-11-28",
+  "Lega": "League One",
+  "Giornata": "Gameweek 17",
+  "P1": 48.3,
+  "PX": 23.24,
+  "P2": 28.49,
+  "P_GG": 55.32,
+  "P_NG": 44.68,
+  "P_O15": 77.61,
+  "P_U15": 22.39,
+  "P_O25": 55.29,
+  "P_U25": 44.71,
+  "P_O35": 33.69,
+  "P_U35": 66.31,
+  "P_O45": 20.35,
+  "P_U45": 79.65,
+  "PT1": 47.8,
+  "PTX": 32.87,
+  "PT2": 19.33,
+  "P_Primo_Casa": 63.1,
+  "P_Nessun_Gol": 5.94,
+  "P_Primo_Ospite": 30.96,
+  "Esatto": "1-1",
+  "P_Esatto": 10.76,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     9.09
+    ],
+    [
+     "2-1",
+     8.9
+    ],
+    [
+     "2-0",
+     6.9
+    ],
+    [
+     "3-1",
+     5.28
+    ],
+    [
+     "3-0",
+     4.45
+    ],
+    [
+     "3-2",
+     3.38
+    ],
+    [
+     "Other",
+     10.3
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.76
+    ],
+    [
+     "0-0",
+     5.94
+    ],
+    [
+     "2-2",
+     5.24
+    ],
+    [
+     "3-3",
+     1.16
+    ],
+    [
+     "Other",
+     0.14
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     7.39
+    ],
+    [
+     "1-2",
+     6.41
+    ],
+    [
+     "0-2",
+     4.66
+    ],
+    [
+     "1-3",
+     2.83
+    ],
+    [
+     "2-3",
+     2.0
+    ],
+    [
+     "0-3",
+     1.83
+    ],
+    [
+     "Other",
+     3.37
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 71.49,
+   "equal_8": 9.57,
+   "under_8": 18.94,
+   "over_9": 60.55,
+   "equal_9": 10.94,
+   "under_9": 28.51,
+   "over_10.5": 49.13,
+   "under_10.5": 50.87
+  },
+  "Linee_Casa": {
+   "over_1.5": 47.75,
+   "under_1.5": 52.25,
+   "over_2.5": 24.71,
+   "under_2.5": 75.29,
+   "over_3.5": 10.44,
+   "under_3.5": 89.56
+  },
+  "Linee_Ospite": {
+   "over_0.5": 63.35,
+   "under_0.5": 36.65,
+   "over_1.5": 31.02,
+   "under_1.5": 68.98,
+   "over_2.5": 11.33,
+   "under_2.5": 88.67,
+   "over_3.5": 3.51,
+   "under_3.5": 96.49
+  },
+  "WeSay": "2-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 3.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/league-one/leicester-city-vs-mansfield-town_game_263582.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/leicester-city/preview/leicester-vs-mansfield-prediction-team-news-lineups_609929.html",
+  "Id": "263582"
+ },
+ {
+  "Casa": "Luton Town",
+  "Ospite": "Oxford United",
+  "Ora": "16:00",
+  "Data": "2026-11-28",
+  "Lega": "League One",
+  "Giornata": "Gameweek 17",
+  "P1": 59.97,
+  "PX": 23.07,
+  "P2": 16.99,
+  "P_GG": 50.88,
+  "P_NG": 49.12,
+  "P_O15": 75.77,
+  "P_U15": 24.23,
+  "P_O25": 52.19,
+  "P_U25": 47.81,
+  "P_O35": 30.19,
+  "P_U35": 69.81,
+  "P_O45": 18.25,
+  "P_U45": 81.75,
+  "PT1": 47.32,
+  "PTX": 35.49,
+  "PT2": 17.2,
+  "P_Primo_Casa": 61.55,
+  "P_Nessun_Gol": 6.67,
+  "P_Primo_Ospite": 31.78,
+  "Esatto": "1-0",
+  "P_Esatto": 12.23,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     12.23
+    ],
+    [
+     "2-0",
+     10.61
+    ],
+    [
+     "2-1",
+     10.16
+    ],
+    [
+     "3-0",
+     6.45
+    ],
+    [
+     "3-1",
+     5.83
+    ],
+    [
+     "3-2",
+     3.08
+    ],
+    [
+     "Other",
+     11.6
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.59
+    ],
+    [
+     "0-0",
+     6.67
+    ],
+    [
+     "2-2",
+     4.79
+    ],
+    [
+     "Other",
+     0.12
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     5.38
+    ],
+    [
+     "1-2",
+     4.65
+    ],
+    [
+     "0-2",
+     2.38
+    ],
+    [
+     "1-3",
+     1.32
+    ],
+    [
+     "2-3",
+     1.24
+    ],
+    [
+     "Other",
+     1.3
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 72.79,
+   "equal_8": 8.92,
+   "under_8": 18.29,
+   "over_9": 62.53,
+   "equal_9": 10.26,
+   "under_9": 27.21,
+   "over_10.5": 51.69,
+   "under_10.5": 48.31
+  },
+  "Linee_Casa": {
+   "over_1.5": 54.79,
+   "under_1.5": 45.21,
+   "over_2.5": 27.99,
+   "under_2.5": 72.01,
+   "over_3.5": 11.72,
+   "under_3.5": 88.28
+  },
+  "Linee_Ospite": {
+   "over_0.5": 52.49,
+   "under_0.5": 47.51,
+   "over_1.5": 20.53,
+   "under_1.5": 79.47,
+   "over_2.5": 5.63,
+   "under_2.5": 94.37,
+   "over_3.5": 1.42,
+   "under_3.5": 98.58
+  },
+  "WeSay": "2-2",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 28, 2026 3.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/league-one/luton-town-vs-oxford-united_game_263581.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/luton-town/preview/luton-vs-oxford-utd-prediction-team-news-lineups_609895.html",
+  "Id": "263581"
+ },
+ {
+  "Casa": "Manchester United",
+  "Ospite": "Brentford",
+  "Ora": "16:00",
+  "Data": "2026-11-28",
+  "Lega": "Premier League",
+  "Giornata": "Gameweek 12",
+  "P1": 43.3,
+  "PX": 25.56,
+  "P2": 31.11,
+  "P_GG": 60.35,
+  "P_NG": 39.65,
+  "P_O15": 79.28,
+  "P_U15": 20.72,
+  "P_O25": 57.75,
+  "P_U25": 42.25,
+  "P_O35": 36.64,
+  "P_U35": 63.36,
+  "P_O45": 22.07,
+  "P_U45": 77.93,
+  "PT1": 31.16,
+  "PTX": 39.04,
+  "PT2": 29.81,
+  "P_Primo_Casa": 46.65,
+  "P_Nessun_Gol": 5.81,
+  "P_Primo_Ospite": 47.54,
+  "Esatto": "1-1",
+  "P_Esatto": 10.83,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     8.52
+    ],
+    [
+     "1-0",
+     8.51
+    ],
+    [
+     "2-0",
+     6.54
+    ],
+    [
+     "3-1",
+     4.42
+    ],
+    [
+     "3-2",
+     3.59
+    ],
+    [
+     "3-0",
+     3.41
+    ],
+    [
+     "Other",
+     8.32
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.83
+    ],
+    [
+     "2-2",
+     6.8
+    ],
+    [
+     "0-0",
+     5.81
+    ],
+    [
+     "3-3",
+     1.8
+    ],
+    [
+     "Other",
+     0.32
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     7.32
+    ],
+    [
+     "0-1",
+     6.37
+    ],
+    [
+     "0-2",
+     4.16
+    ],
+    [
+     "1-3",
+     3.35
+    ],
+    [
+     "2-3",
+     2.85
+    ],
+    [
+     "0-3",
+     1.86
+    ],
+    [
+     "Other",
+     5.19
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 61.69,
+   "equal_8": 10.92,
+   "under_8": 27.39,
+   "over_9": 50.21,
+   "equal_9": 11.48,
+   "under_9": 38.31,
+   "over_10.5": 39.14,
+   "under_10.5": 60.86
+  },
+  "Linee_Casa": {
+   "over_1.5": 46.57,
+   "under_1.5": 53.43,
+   "over_2.5": 21.86,
+   "under_2.5": 78.14,
+   "over_3.5": 8.64,
+   "under_3.5": 91.36
+  },
+  "Linee_Ospite": {
+   "over_0.5": 67.38,
+   "under_0.5": 32.62,
+   "over_1.5": 37.24,
+   "under_1.5": 62.76,
+   "over_2.5": 15.37,
+   "under_2.5": 84.63,
+   "over_3.5": 5.51,
+   "under_3.5": 94.49
+  },
+  "WeSay": "2-2",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 28, 2026 3.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/premier-league/man-utd-vs-brentford_game_263559.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/man-utd/preview/man-utd-vs-brentford-prediction-team-news-lineups_609874.html",
+  "Id": "263559"
+ },
+ {
+  "Casa": "Millwall",
+  "Ospite": "Burnley",
+  "Ora": "16:00",
+  "Data": "2026-11-28",
+  "Lega": "Championship",
+  "Giornata": "Gameweek 18",
+  "P1": 47.87,
+  "PX": 25.45,
+  "P2": 26.68,
+  "P_GG": 57.25,
+  "P_NG": 42.75,
+  "P_O15": 77.89,
+  "P_U15": 22.11,
+  "P_O25": 54.85,
+  "P_U25": 45.15,
+  "P_O35": 32.12,
+  "P_U35": 67.88,
+  "P_O45": 18.55,
+  "P_U45": 81.45,
+  "PT1": 39.06,
+  "PTX": 36.94,
+  "PT2": 24.0,
+  "P_Primo_Casa": 57.01,
+  "P_Nessun_Gol": 6.0,
+  "P_Primo_Ospite": 36.99,
+  "Esatto": "1-1",
+  "P_Esatto": 11.77,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     9.8
+    ],
+    [
+     "1-0",
+     9.56
+    ],
+    [
+     "2-0",
+     7.53
+    ],
+    [
+     "3-1",
+     5.03
+    ],
+    [
+     "3-0",
+     4.23
+    ],
+    [
+     "3-2",
+     3.07
+    ],
+    [
+     "Other",
+     8.65
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.77
+    ],
+    [
+     "0-0",
+     6.0
+    ],
+    [
+     "2-2",
+     5.95
+    ],
+    [
+     "3-3",
+     1.38
+    ],
+    [
+     "Other",
+     0.35
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     7.08
+    ],
+    [
+     "0-1",
+     6.55
+    ],
+    [
+     "0-2",
+     3.74
+    ],
+    [
+     "1-3",
+     2.59
+    ],
+    [
+     "2-3",
+     2.16
+    ],
+    [
+     "0-3",
+     1.62
+    ],
+    [
+     "Other",
+     2.94
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 68.15,
+   "equal_8": 10.12,
+   "under_8": 21.74,
+   "over_9": 56.94,
+   "equal_9": 11.21,
+   "under_9": 31.85,
+   "over_10.5": 45.58,
+   "under_10.5": 54.42
+  },
+  "Linee_Casa": {
+   "over_1.5": 48.15,
+   "under_1.5": 51.85,
+   "over_2.5": 22.71,
+   "under_2.5": 77.29,
+   "over_3.5": 9.0,
+   "under_3.5": 91.0
+  },
+  "Linee_Ospite": {
+   "over_0.5": 64.03,
+   "under_0.5": 35.97,
+   "over_1.5": 30.88,
+   "under_1.5": 69.12,
+   "over_2.5": 11.04,
+   "under_2.5": 88.96,
+   "over_3.5": 3.29,
+   "under_3.5": 96.71
+  },
+  "WeSay": "1-0",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 3.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/championship/millwall-vs-burnley_game_263589.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/millwall/preview/millwall-vs-burnley-prediction-team-news-lineups_609903.html",
+  "Id": "263589"
+ },
+ {
+  "Casa": "Queens Park Rangers",
+  "Ospite": "Sheffield United",
+  "Ora": "16:00",
+  "Data": "2026-11-28",
+  "Lega": "Championship",
+  "Giornata": "Gameweek 18",
+  "P1": 42.9,
+  "PX": 24.82,
+  "P2": 32.28,
+  "P_GG": 58.48,
+  "P_NG": 41.52,
+  "P_O15": 78.99,
+  "P_U15": 21.01,
+  "P_O25": 56.45,
+  "P_U25": 43.55,
+  "P_O35": 34.07,
+  "P_U35": 65.93,
+  "P_O45": 19.77,
+  "P_U45": 80.23,
+  "PT1": 30.68,
+  "PTX": 41.28,
+  "PT2": 28.04,
+  "P_Primo_Casa": 47.81,
+  "P_Nessun_Gol": 5.57,
+  "P_Primo_Ospite": 46.62,
+  "Esatto": "1-1",
+  "P_Esatto": 11.31,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     8.97
+    ],
+    [
+     "1-0",
+     8.47
+    ],
+    [
+     "2-0",
+     6.44
+    ],
+    [
+     "3-1",
+     4.71
+    ],
+    [
+     "3-0",
+     3.56
+    ],
+    [
+     "3-2",
+     3.27
+    ],
+    [
+     "Other",
+     7.49
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.31
+    ],
+    [
+     "2-2",
+     6.24
+    ],
+    [
+     "0-0",
+     5.57
+    ],
+    [
+     "3-3",
+     1.53
+    ],
+    [
+     "Other",
+     0.18
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     7.76
+    ],
+    [
+     "0-1",
+     6.99
+    ],
+    [
+     "0-2",
+     4.77
+    ],
+    [
+     "1-3",
+     3.36
+    ],
+    [
+     "2-3",
+     2.81
+    ],
+    [
+     "0-3",
+     2.1
+    ],
+    [
+     "Other",
+     4.49
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 67.62,
+   "equal_8": 10.4,
+   "under_8": 21.99,
+   "over_9": 56.12,
+   "equal_9": 11.5,
+   "under_9": 32.38,
+   "over_10.5": 44.51,
+   "under_10.5": 55.49
+  },
+  "Linee_Casa": {
+   "over_1.5": 45.2,
+   "under_1.5": 54.8,
+   "over_2.5": 20.74,
+   "under_2.5": 79.26,
+   "over_3.5": 7.67,
+   "under_3.5": 92.33
+  },
+  "Linee_Ospite": {
+   "over_0.5": 68.49,
+   "under_0.5": 31.51,
+   "over_1.5": 36.51,
+   "under_1.5": 63.49,
+   "over_2.5": 14.47,
+   "under_2.5": 85.53,
+   "over_3.5": 4.67,
+   "under_3.5": 95.33
+  },
+  "WeSay": "1-1",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 28, 2026 3.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/championship/qpr-vs-sheffield-united_game_263588.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/queens-park-rangers/preview/qpr-vs-sheff-utd-prediction-team-news-lineups_609859.html",
+  "Id": "263588"
+ },
+ {
+  "Casa": "Rangers",
+  "Ospite": "Falkirk",
+  "Ora": "16:00",
+  "Data": "2026-11-28",
+  "Lega": "Scottish Premiership",
+  "Giornata": "Gameweek 15",
+  "P1": 63.53,
+  "PX": 19.37,
+  "P2": 17.07,
+  "P_GG": 56.92,
+  "P_NG": 43.08,
+  "P_O15": 82.78,
+  "P_U15": 17.22,
+  "P_O25": 61.59,
+  "P_U25": 38.41,
+  "P_O35": 39.06,
+  "P_U35": 60.91,
+  "P_O45": 25.48,
+  "P_U45": 74.52,
+  "PT1": 54.95,
+  "PTX": 32.02,
+  "PT2": 13.04,
+  "P_Primo_Casa": 72.0,
+  "P_Nessun_Gol": 3.96,
+  "P_Primo_Ospite": 24.04,
+  "Esatto": "2-1",
+  "P_Esatto": 10.39,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     10.39
+    ],
+    [
+     "2-0",
+     9.88
+    ],
+    [
+     "1-0",
+     9.31
+    ],
+    [
+     "3-0",
+     6.69
+    ],
+    [
+     "3-1",
+     6.69
+    ],
+    [
+     "3-2",
+     4.11
+    ],
+    [
+     "Other",
+     16.45
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     9.13
+    ],
+    [
+     "2-2",
+     5.24
+    ],
+    [
+     "0-0",
+     3.96
+    ],
+    [
+     "3-3",
+     1.04
+    ],
+    [
+     "Other",
+     0.01
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     4.72
+    ],
+    [
+     "0-1",
+     3.92
+    ],
+    [
+     "0-2",
+     2.18
+    ],
+    [
+     "2-3",
+     1.68
+    ],
+    [
+     "1-3",
+     1.64
+    ],
+    [
+     "Other",
+     2.19
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 64.75,
+   "equal_8": 10.01,
+   "under_8": 25.23,
+   "over_9": 53.99,
+   "equal_9": 10.77,
+   "under_9": 35.25,
+   "over_10.5": 43.3,
+   "under_10.5": 56.7
+  },
+  "Linee_Casa": {
+   "over_1.5": 62.18,
+   "under_1.5": 37.82,
+   "over_2.5": 34.99,
+   "under_2.5": 65.01,
+   "over_3.5": 16.46,
+   "under_3.5": 83.54
+  },
+  "Linee_Ospite": {
+   "over_0.5": 53.68,
+   "under_0.5": 46.32,
+   "over_1.5": 23.55,
+   "under_1.5": 76.45,
+   "over_2.5": 7.3,
+   "under_2.5": 92.7,
+   "over_3.5": 2.2,
+   "under_3.5": 97.8
+  },
+  "WeSay": "2-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 3.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/scottish-premiership/rangers-vs-falkirk_game_263562.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/rangers/preview/rangers-vs-falkirk-prediction-team-news-lineups_609920.html",
+  "Id": "263562"
+ },
+ {
+  "Casa": "Sheffield Wednesday",
+  "Ospite": "Reading",
+  "Ora": "16:00",
+  "Data": "2026-11-28",
+  "Lega": "League One",
+  "Giornata": "Gameweek 17",
+  "P1": 36.42,
+  "PX": 26.73,
+  "P2": 36.82,
+  "P_GG": 53.2,
+  "P_NG": 46.8,
+  "P_O15": 73.6,
+  "P_U15": 26.4,
+  "P_O25": 49.57,
+  "P_U25": 50.43,
+  "P_O35": 27.95,
+  "P_U35": 72.05,
+  "P_O45": 15.64,
+  "P_U45": 84.36,
+  "PT1": 25.68,
+  "PTX": 39.93,
+  "PT2": 34.39,
+  "P_Primo_Casa": 41.81,
+  "P_Nessun_Gol": 7.69,
+  "P_Primo_Ospite": 50.5,
+  "Esatto": "1-1",
+  "P_Esatto": 12.13,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     9.58
+    ],
+    [
+     "2-1",
+     7.87
+    ],
+    [
+     "2-0",
+     6.09
+    ],
+    [
+     "3-1",
+     3.36
+    ],
+    [
+     "3-0",
+     2.97
+    ],
+    [
+     "3-2",
+     2.36
+    ],
+    [
+     "Other",
+     4.19
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     12.13
+    ],
+    [
+     "0-0",
+     7.69
+    ],
+    [
+     "2-2",
+     5.43
+    ],
+    [
+     "3-3",
+     1.23
+    ],
+    [
+     "Other",
+     0.25
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     9.1
+    ],
+    [
+     "1-2",
+     8.06
+    ],
+    [
+     "0-2",
+     5.8
+    ],
+    [
+     "1-3",
+     3.52
+    ],
+    [
+     "0-3",
+     2.73
+    ],
+    [
+     "2-3",
+     2.31
+    ],
+    [
+     "Other",
+     5.3
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 69.78,
+   "equal_8": 10.01,
+   "under_8": 20.21,
+   "over_9": 58.51,
+   "equal_9": 11.27,
+   "under_9": 30.22,
+   "over_10.5": 46.95,
+   "under_10.5": 53.05
+  },
+  "Linee_Casa": {
+   "over_1.5": 36.06,
+   "under_1.5": 63.94,
+   "over_2.5": 14.36,
+   "under_2.5": 85.64,
+   "over_3.5": 4.44,
+   "under_3.5": 95.56
+  },
+  "Linee_Ospite": {
+   "over_0.5": 69.45,
+   "under_0.5": 30.55,
+   "over_1.5": 36.99,
+   "under_1.5": 63.01,
+   "over_2.5": 15.34,
+   "under_2.5": 84.66,
+   "over_3.5": 5.55,
+   "under_3.5": 94.45
+  },
+  "WeSay": "2-0",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 3.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/league-one/sheffield-wednesday-vs-reading_game_263580.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/sheffield-wednesday/preview/sheff-weds-vs-reading-prediction-team-news-lineups_609944.html",
+  "Id": "263580"
+ },
+ {
+  "Casa": "St Mirren",
+  "Ospite": "Kilmarnock",
+  "Ora": "16:00",
+  "Data": "2026-11-28",
+  "Lega": "Scottish Premiership",
+  "Giornata": "Gameweek 15",
+  "P1": 46.44,
+  "PX": 24.18,
+  "P2": 29.38,
+  "P_GG": 57.51,
+  "P_NG": 42.49,
+  "P_O15": 78.34,
+  "P_U15": 21.66,
+  "P_O25": 55.77,
+  "P_U25": 44.23,
+  "P_O35": 33.47,
+  "P_U35": 66.53,
+  "P_O45": 19.54,
+  "P_U45": 80.46,
+  "PT1": 34.58,
+  "PTX": 40.3,
+  "PT2": 25.12,
+  "P_Primo_Casa": 52.75,
+  "P_Nessun_Gol": 5.54,
+  "P_Primo_Ospite": 41.71,
+  "Esatto": "1-1",
+  "P_Esatto": 11.16,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     9.25
+    ],
+    [
+     "2-1",
+     9.2
+    ],
+    [
+     "2-0",
+     7.08
+    ],
+    [
+     "3-1",
+     5.04
+    ],
+    [
+     "3-0",
+     4.05
+    ],
+    [
+     "3-2",
+     3.36
+    ],
+    [
+     "Other",
+     8.46
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.16
+    ],
+    [
+     "2-2",
+     5.91
+    ],
+    [
+     "0-0",
+     5.54
+    ],
+    [
+     "3-3",
+     1.39
+    ],
+    [
+     "Other",
+     0.19
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     7.26
+    ],
+    [
+     "0-1",
+     6.87
+    ],
+    [
+     "0-2",
+     4.33
+    ],
+    [
+     "1-3",
+     2.97
+    ],
+    [
+     "2-3",
+     2.28
+    ],
+    [
+     "0-3",
+     1.8
+    ],
+    [
+     "Other",
+     3.86
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 71.46,
+   "equal_8": 9.91,
+   "under_8": 18.62,
+   "over_9": 60.07,
+   "equal_9": 11.4,
+   "under_9": 28.54,
+   "over_10.5": 48.18,
+   "under_10.5": 51.82
+  },
+  "Linee_Casa": {
+   "over_1.5": 46.96,
+   "under_1.5": 53.04,
+   "over_2.5": 22.49,
+   "under_2.5": 77.51,
+   "over_3.5": 8.65,
+   "under_3.5": 91.35
+  },
+  "Linee_Ospite": {
+   "over_0.5": 65.62,
+   "under_0.5": 34.38,
+   "over_1.5": 33.35,
+   "under_1.5": 66.65,
+   "over_2.5": 12.49,
+   "under_2.5": 87.51,
+   "over_3.5": 4.05,
+   "under_3.5": 95.95
+  },
+  "WeSay": "2-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 3.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/scottish-premiership/st-mirren-vs-kilmarnock_game_263561.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/st-mirren/preview/st-mirren-vs-kilmarnock-prediction-team-news-lineups_609934.html",
+  "Id": "263561"
+ },
+ {
+  "Casa": "Stevenage",
+  "Ospite": "Blackpool",
+  "Ora": "16:00",
+  "Data": "2026-11-28",
+  "Lega": "League One",
+  "Giornata": "Gameweek 17",
+  "P1": 46.58,
+  "PX": 25.0,
+  "P2": 28.45,
+  "P_GG": 55.28,
+  "P_NG": 44.72,
+  "P_O15": 75.62,
+  "P_U15": 24.38,
+  "P_O25": 51.68,
+  "P_U25": 48.32,
+  "P_O35": 30.3,
+  "P_U35": 69.7,
+  "P_O45": 17.41,
+  "P_U45": 82.59,
+  "PT1": 34.9,
+  "PTX": 44.03,
+  "PT2": 21.07,
+  "P_Primo_Casa": 56.69,
+  "P_Nessun_Gol": 6.53,
+  "P_Primo_Ospite": 36.78,
+  "Esatto": "1-1",
+  "P_Esatto": 11.89,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     10.27
+    ],
+    [
+     "2-1",
+     9.24
+    ],
+    [
+     "2-0",
+     7.64
+    ],
+    [
+     "3-1",
+     4.84
+    ],
+    [
+     "3-0",
+     3.83
+    ],
+    [
+     "3-2",
+     3.2
+    ],
+    [
+     "Other",
+     7.57
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.89
+    ],
+    [
+     "0-0",
+     6.53
+    ],
+    [
+     "2-2",
+     5.32
+    ],
+    [
+     "3-3",
+     1.17
+    ],
+    [
+     "Other",
+     0.09
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     7.62
+    ],
+    [
+     "1-2",
+     6.78
+    ],
+    [
+     "0-2",
+     4.41
+    ],
+    [
+     "1-3",
+     2.72
+    ],
+    [
+     "2-3",
+     2.13
+    ],
+    [
+     "0-3",
+     1.54
+    ],
+    [
+     "Other",
+     3.25
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 68.69,
+   "equal_8": 10.11,
+   "under_8": 21.19,
+   "over_9": 57.43,
+   "equal_9": 11.26,
+   "under_9": 31.3,
+   "over_10.5": 45.97,
+   "under_10.5": 54.03
+  },
+  "Linee_Casa": {
+   "over_1.5": 45.03,
+   "under_1.5": 54.97,
+   "over_2.5": 20.7,
+   "under_2.5": 79.3,
+   "over_3.5": 7.66,
+   "under_3.5": 92.34
+  },
+  "Linee_Ospite": {
+   "over_0.5": 64.2,
+   "under_0.5": 35.8,
+   "over_1.5": 30.61,
+   "under_1.5": 69.39,
+   "over_2.5": 10.9,
+   "under_2.5": 89.1,
+   "over_3.5": 3.34,
+   "under_3.5": 96.66
+  },
+  "WeSay": "1-0",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 3.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/league-one/stevenage-vs-blackpool_game_263579.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/stevenage/preview/stevenage-vs-blackpool-prediction-team-news-lineups_609912.html",
+  "Id": "263579"
+ },
+ {
+  "Casa": "Stockport County",
+  "Ospite": "Leyton Orient",
+  "Ora": "16:00",
+  "Data": "2026-11-28",
+  "Lega": "League One",
+  "Giornata": "Gameweek 17",
+  "P1": 60.63,
+  "PX": 19.32,
+  "P2": 20.05,
+  "P_GG": 61.85,
+  "P_NG": 38.15,
+  "P_O15": 85.12,
+  "P_U15": 14.88,
+  "P_O25": 66.06,
+  "P_U25": 33.94,
+  "P_O35": 44.22,
+  "P_U35": 55.78,
+  "P_O45": 29.88,
+  "P_U45": 70.12,
+  "PT1": 53.25,
+  "PTX": 32.08,
+  "PT2": 14.67,
+  "P_Primo_Casa": 69.74,
+  "P_Nessun_Gol": 3.33,
+  "P_Primo_Ospite": 26.93,
+  "Esatto": "2-1",
+  "P_Esatto": 9.69,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     9.69
+    ],
+    [
+     "2-0",
+     8.15
+    ],
+    [
+     "1-0",
+     7.9
+    ],
+    [
+     "3-1",
+     6.62
+    ],
+    [
+     "3-0",
+     6.15
+    ],
+    [
+     "3-2",
+     4.37
+    ],
+    [
+     "Other",
+     17.75
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     8.59
+    ],
+    [
+     "2-2",
+     5.58
+    ],
+    [
+     "0-0",
+     3.33
+    ],
+    [
+     "3-3",
+     1.61
+    ],
+    [
+     "Other",
+     0.21
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     5.0
+    ],
+    [
+     "0-1",
+     3.65
+    ],
+    [
+     "0-2",
+     2.33
+    ],
+    [
+     "2-3",
+     2.3
+    ],
+    [
+     "1-3",
+     2.13
+    ],
+    [
+     "0-3",
+     1.0
+    ],
+    [
+     "Other",
+     3.64
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 65.14,
+   "equal_8": 10.52,
+   "under_8": 24.35,
+   "over_9": 53.77,
+   "equal_9": 11.36,
+   "under_9": 34.86,
+   "over_10.5": 42.51,
+   "under_10.5": 57.49
+  },
+  "Linee_Casa": {
+   "over_1.5": 62.43,
+   "under_1.5": 37.57,
+   "over_2.5": 36.71,
+   "under_2.5": 63.29,
+   "over_3.5": 17.96,
+   "under_3.5": 82.04
+  },
+  "Linee_Ospite": {
+   "over_0.5": 56.72,
+   "under_0.5": 43.28,
+   "over_1.5": 28.17,
+   "under_1.5": 71.83,
+   "over_2.5": 10.89,
+   "under_2.5": 89.11,
+   "over_3.5": 3.85,
+   "under_3.5": 96.15
+  },
+  "WeSay": "3-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 3.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/league-one/stockport-county-vs-leyton-orient_game_263578.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/leyton-orient/preview/stockport-vs-leyton-orient-prediction-team-news-lineups_609926.html",
+  "Id": "263578"
+ },
+ {
+  "Casa": "West Bromwich Albion",
+  "Ospite": "Bristol City",
+  "Ora": "16:00",
+  "Data": "2026-11-28",
+  "Lega": "Championship",
+  "Giornata": "Gameweek 18",
+  "P1": 51.55,
+  "PX": 26.22,
+  "P2": 22.23,
+  "P_GG": 47.04,
+  "P_NG": 52.96,
+  "P_O15": 69.36,
+  "P_U15": 30.64,
+  "P_O25": 44.33,
+  "P_U25": 55.67,
+  "P_O35": 23.26,
+  "P_U35": 76.74,
+  "P_O45": 12.86,
+  "P_U45": 87.14,
+  "PT1": 40.02,
+  "PTX": 41.87,
+  "PT2": 18.11,
+  "P_Primo_Casa": 58.24,
+  "P_Nessun_Gol": 9.19,
+  "P_Primo_Ospite": 32.57,
+  "Esatto": "1-0",
+  "P_Esatto": 13.51,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     13.51
+    ],
+    [
+     "2-0",
+     9.47
+    ],
+    [
+     "2-1",
+     9.41
+    ],
+    [
+     "3-0",
+     5.13
+    ],
+    [
+     "3-1",
+     4.54
+    ],
+    [
+     "3-2",
+     2.28
+    ],
+    [
+     "Other",
+     7.21
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     12.13
+    ],
+    [
+     "0-0",
+     9.19
+    ],
+    [
+     "2-2",
+     4.19
+    ],
+    [
+     "Other",
+     0.06
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     7.94
+    ],
+    [
+     "1-2",
+     5.39
+    ],
+    [
+     "0-2",
+     3.44
+    ],
+    [
+     "1-3",
+     1.66
+    ],
+    [
+     "2-3",
+     1.28
+    ],
+    [
+     "0-3",
+     1.14
+    ],
+    [
+     "Other",
+     1.38
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 62.94,
+   "equal_8": 10.86,
+   "under_8": 26.2,
+   "over_9": 51.4,
+   "equal_9": 11.54,
+   "under_9": 37.06,
+   "over_10.5": 40.18,
+   "under_10.5": 59.82
+  },
+  "Linee_Casa": {
+   "over_1.5": 44.22,
+   "under_1.5": 55.78,
+   "over_2.5": 19.87,
+   "under_2.5": 80.13,
+   "over_3.5": 7.27,
+   "under_3.5": 92.73
+  },
+  "Linee_Ospite": {
+   "over_0.5": 55.49,
+   "under_0.5": 44.51,
+   "over_1.5": 21.47,
+   "under_1.5": 78.53,
+   "over_2.5": 6.17,
+   "under_2.5": 93.83,
+   "over_3.5": 1.44,
+   "under_3.5": 98.56
+  },
+  "WeSay": "2-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 3.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/championship/west-brom-albion-vs-bristol-city_game_263587.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/west-brom-albion/preview/west-brom-vs-bristol-city-prediction-team-news-lineups_609910.html",
+  "Id": "263587"
+ },
+ {
+  "Casa": "West Ham United",
+  "Ospite": "Stoke City",
+  "Ora": "16:00",
+  "Data": "2026-11-28",
+  "Lega": "Championship",
+  "Giornata": "Gameweek 18",
+  "P1": 43.84,
+  "PX": 25.24,
+  "P2": 30.99,
+  "P_GG": 58.16,
+  "P_NG": 41.84,
+  "P_O15": 78.12,
+  "P_U15": 21.88,
+  "P_O25": 54.74,
+  "P_U25": 45.26,
+  "P_O35": 32.56,
+  "P_U35": 67.44,
+  "P_O45": 18.77,
+  "P_U45": 81.23,
+  "PT1": 36.04,
+  "PTX": 42.1,
+  "PT2": 21.85,
+  "P_Primo_Casa": 54.4,
+  "P_Nessun_Gol": 5.84,
+  "P_Primo_Ospite": 39.76,
+  "Esatto": "1-1",
+  "P_Esatto": 11.88,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     9.21
+    ],
+    [
+     "1-0",
+     8.94
+    ],
+    [
+     "2-0",
+     6.89
+    ],
+    [
+     "3-1",
+     4.73
+    ],
+    [
+     "3-0",
+     3.48
+    ],
+    [
+     "3-2",
+     3.39
+    ],
+    [
+     "Other",
+     7.21
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.88
+    ],
+    [
+     "0-0",
+     5.84
+    ],
+    [
+     "2-2",
+     5.83
+    ],
+    [
+     "3-3",
+     1.45
+    ],
+    [
+     "Other",
+     0.24
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     7.64
+    ],
+    [
+     "0-1",
+     7.18
+    ],
+    [
+     "0-2",
+     4.6
+    ],
+    [
+     "1-3",
+     3.23
+    ],
+    [
+     "2-3",
+     2.62
+    ],
+    [
+     "0-3",
+     1.86
+    ],
+    [
+     "Other",
+     3.86
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 71.86,
+   "equal_8": 9.4,
+   "under_8": 18.74,
+   "over_9": 61.1,
+   "equal_9": 10.77,
+   "under_9": 28.14,
+   "over_10.5": 49.82,
+   "under_10.5": 50.18
+  },
+  "Linee_Casa": {
+   "over_1.5": 45.05,
+   "under_1.5": 54.95,
+   "over_2.5": 20.5,
+   "under_2.5": 79.5,
+   "over_3.5": 7.45,
+   "under_3.5": 92.55
+  },
+  "Linee_Ospite": {
+   "over_0.5": 67.72,
+   "under_0.5": 32.28,
+   "over_1.5": 34.72,
+   "under_1.5": 65.28,
+   "over_2.5": 13.26,
+   "under_2.5": 86.74,
+   "over_3.5": 4.1,
+   "under_3.5": 95.9
+  },
+  "WeSay": "1-1",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 28, 2026 3.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/championship/west-ham-united-vs-stoke-city_game_263586.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/west-ham-united/preview/west-ham-vs-stoke-prediction-team-news-lineups_609898.html",
+  "Id": "263586"
+ },
+ {
+  "Casa": "Wigan Athletic",
+  "Ospite": "Plymouth Argyle",
+  "Ora": "16:00",
+  "Data": "2026-11-28",
+  "Lega": "League One",
+  "Giornata": "Gameweek 17",
+  "P1": 32.45,
+  "PX": 25.33,
+  "P2": 42.21,
+  "P_GG": 59.18,
+  "P_NG": 40.82,
+  "P_O15": 79.55,
+  "P_U15": 20.45,
+  "P_O25": 57.47,
+  "P_U25": 42.53,
+  "P_O35": 35.02,
+  "P_U35": 64.98,
+  "P_O45": 20.4,
+  "P_U45": 79.6,
+  "PT1": 28.58,
+  "PTX": 39.72,
+  "PT2": 31.69,
+  "P_Primo_Casa": 44.84,
+  "P_Nessun_Gol": 5.45,
+  "P_Primo_Ospite": 49.71,
+  "Esatto": "1-1",
+  "P_Esatto": 11.3,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     7.65
+    ],
+    [
+     "1-0",
+     6.92
+    ],
+    [
+     "2-0",
+     4.53
+    ],
+    [
+     "3-1",
+     3.47
+    ],
+    [
+     "3-2",
+     2.85
+    ],
+    [
+     "3-0",
+     2.36
+    ],
+    [
+     "Other",
+     4.67
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.3
+    ],
+    [
+     "2-2",
+     6.49
+    ],
+    [
+     "0-0",
+     5.45
+    ],
+    [
+     "3-3",
+     1.69
+    ],
+    [
+     "Other",
+     0.4
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     9.04
+    ],
+    [
+     "0-1",
+     8.09
+    ],
+    [
+     "0-2",
+     6.25
+    ],
+    [
+     "1-3",
+     4.66
+    ],
+    [
+     "0-3",
+     3.4
+    ],
+    [
+     "2-3",
+     3.14
+    ],
+    [
+     "Other",
+     7.65
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 64.41,
+   "equal_8": 10.37,
+   "under_8": 25.22,
+   "over_9": 53.29,
+   "equal_9": 11.12,
+   "under_9": 35.59,
+   "over_10.5": 42.32,
+   "under_10.5": 57.68
+  },
+  "Linee_Casa": {
+   "over_1.5": 37.25,
+   "under_1.5": 62.75,
+   "over_2.5": 15.44,
+   "under_2.5": 84.56,
+   "over_3.5": 5.07,
+   "under_3.5": 94.93
+  },
+  "Linee_Ospite": {
+   "over_0.5": 76.08,
+   "under_0.5": 23.92,
+   "over_1.5": 45.57,
+   "under_1.5": 54.43,
+   "over_2.5": 20.94,
+   "under_2.5": 79.06,
+   "over_3.5": 8.05,
+   "under_3.5": 91.95
+  },
+  "WeSay": "2-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 3.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/league-one/wigan-athletic-vs-plymouth-argyle_game_263577.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/wigan-athletic/preview/wigan-vs-plymouth-prediction-team-news-lineups_609914.html",
+  "Id": "263577"
+ },
+ {
+  "Casa": "Wrexham",
+  "Ospite": "Portsmouth",
+  "Ora": "16:00",
+  "Data": "2026-11-28",
+  "Lega": "Championship",
+  "Giornata": "Gameweek 18",
+  "P1": 46.48,
+  "PX": 27.53,
+  "P2": 26.0,
+  "P_GG": 48.23,
+  "P_NG": 51.77,
+  "P_O15": 69.44,
+  "P_U15": 30.56,
+  "P_O25": 43.7,
+  "P_U25": 56.3,
+  "P_O35": 22.9,
+  "P_U35": 77.1,
+  "P_O45": 12.23,
+  "P_U45": 87.77,
+  "PT1": 33.53,
+  "PTX": 44.22,
+  "PT2": 22.25,
+  "P_Primo_Casa": 53.38,
+  "P_Nessun_Gol": 9.46,
+  "P_Primo_Ospite": 37.16,
+  "Esatto": "1-0",
+  "P_Esatto": 12.83,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     12.83
+    ],
+    [
+     "2-1",
+     8.93
+    ],
+    [
+     "2-0",
+     8.86
+    ],
+    [
+     "3-0",
+     4.11
+    ],
+    [
+     "3-1",
+     3.97
+    ],
+    [
+     "3-2",
+     2.19
+    ],
+    [
+     "Other",
+     5.59
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     12.64
+    ],
+    [
+     "0-0",
+     9.46
+    ],
+    [
+     "2-2",
+     4.6
+    ],
+    [
+     "Other",
+     0.09
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     8.29
+    ],
+    [
+     "1-2",
+     6.33
+    ],
+    [
+     "0-2",
+     4.23
+    ],
+    [
+     "1-3",
+     2.1
+    ],
+    [
+     "2-3",
+     1.55
+    ],
+    [
+     "0-3",
+     1.44
+    ],
+    [
+     "Other",
+     2.06
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 57.81,
+   "equal_8": 12.13,
+   "under_8": 30.06,
+   "over_9": 45.42,
+   "equal_9": 12.39,
+   "under_9": 42.19,
+   "over_10.5": 33.89,
+   "under_10.5": 66.11
+  },
+  "Linee_Casa": {
+   "over_1.5": 40.64,
+   "under_1.5": 59.36,
+   "over_2.5": 16.7,
+   "under_2.5": 83.3,
+   "over_3.5": 5.68,
+   "under_3.5": 94.32
+  },
+  "Linee_Ospite": {
+   "over_0.5": 59.17,
+   "under_0.5": 40.83,
+   "over_1.5": 25.34,
+   "under_1.5": 74.66,
+   "over_2.5": 7.99,
+   "under_2.5": 92.01,
+   "over_3.5": 2.15,
+   "under_3.5": 97.85
+  },
+  "WeSay": "1-1",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 28, 2026 3.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/championship/wrexham-vs-portsmouth_game_263585.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/wrexham/preview/wrexham-vs-portsmouth-prediction-team-news-lineups_609916.html",
+  "Id": "263585"
+ },
+ {
+  "Casa": "Wycombe Wanderers",
+  "Ospite": "Bradford City",
+  "Ora": "16:00",
+  "Data": "2026-11-28",
+  "Lega": "League One",
+  "Giornata": "Gameweek 17",
+  "P1": 43.34,
+  "PX": 25.45,
+  "P2": 31.24,
+  "P_GG": 57.0,
+  "P_NG": 43.0,
+  "P_O15": 77.66,
+  "P_U15": 22.34,
+  "P_O25": 54.26,
+  "P_U25": 45.74,
+  "P_O35": 31.7,
+  "P_U35": 68.3,
+  "P_O45": 18.08,
+  "P_U45": 81.92,
+  "PT1": 32.78,
+  "PTX": 41.9,
+  "PT2": 25.32,
+  "P_Primo_Casa": 49.61,
+  "P_Nessun_Gol": 6.35,
+  "P_Primo_Ospite": 44.04,
+  "Esatto": "1-1",
+  "P_Esatto": 11.7,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     9.0
+    ],
+    [
+     "1-0",
+     8.8
+    ],
+    [
+     "2-0",
+     6.96
+    ],
+    [
+     "3-1",
+     4.63
+    ],
+    [
+     "3-0",
      3.8
+    ],
+    [
+     "3-2",
+     3.03
+    ],
+    [
+     "Other",
+     7.13
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.7
+    ],
+    [
+     "0-0",
+     6.35
+    ],
+    [
+     "2-2",
+     5.92
+    ],
+    [
+     "3-3",
+     1.27
+    ],
+    [
+     "Other",
+     0.21
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     7.6
+    ],
+    [
+     "0-1",
+     7.23
+    ],
+    [
+     "0-2",
+     4.74
+    ],
+    [
+     "1-3",
+     3.07
+    ],
+    [
+     "2-3",
+     2.41
+    ],
+    [
+     "0-3",
+     2.16
+    ],
+    [
+     "Other",
+     4.03
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 69.72,
+   "equal_8": 9.4,
+   "under_8": 20.88,
+   "over_9": 59.19,
+   "equal_9": 10.53,
+   "under_9": 30.28,
+   "over_10.5": 48.34,
+   "under_10.5": 51.66
+  },
+  "Linee_Casa": {
+   "over_1.5": 44.36,
+   "under_1.5": 55.64,
+   "over_2.5": 20.07,
+   "under_2.5": 79.93,
+   "over_3.5": 7.34,
+   "under_3.5": 92.66
+  },
+  "Linee_Ospite": {
+   "over_0.5": 67.0,
+   "under_0.5": 33.0,
+   "over_1.5": 34.44,
+   "under_1.5": 65.56,
+   "over_2.5": 13.15,
+   "under_2.5": 86.85,
+   "over_3.5": 4.24,
+   "under_3.5": 95.76
+  },
+  "WeSay": "1-2",
+  "WeSay_Segno": "2",
+  "Ora_Sito": "Nov 28, 2026 3.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/league-one/wycombe-wanderers-vs-bradford-city_game_263576.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/wycombe-wanderers/preview/wycombe-vs-bradford-prediction-team-news-lineups_609947.html",
+  "Id": "263576"
+ },
+ {
+  "Casa": "Malaga",
+  "Ospite": "Athletic Bilbao",
+  "Ora": "16:15",
+  "Data": "2026-11-28",
+  "Lega": "La Liga",
+  "Giornata": "Gameweek 14",
+  "P1": 25.63,
+  "PX": 25.4,
+  "P2": 48.96,
+  "P_GG": 56.1,
+  "P_NG": 43.9,
+  "P_O15": 77.0,
+  "P_U15": 23.0,
+  "P_O25": 53.54,
+  "P_U25": 46.46,
+  "P_O35": 31.3,
+  "P_U35": 68.7,
+  "P_O45": 17.69,
+  "P_U45": 82.31,
+  "PT1": 20.46,
+  "PTX": 38.22,
+  "PT2": 41.32,
+  "P_Primo_Casa": 32.45,
+  "P_Nessun_Gol": 6.62,
+  "P_Primo_Ospite": 60.93,
+  "Esatto": "1-1",
+  "P_Esatto": 11.42,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     6.9
+    ],
+    [
+     "2-1",
+     6.46
+    ],
+    [
+     "2-0",
+     3.95
+    ],
+    [
+     "3-1",
+     2.37
+    ],
+    [
+     "3-2",
+     1.91
+    ],
+    [
+     "3-0",
+     1.52
+    ],
+    [
+     "Other",
+     2.52
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.42
+    ],
+    [
+     "0-0",
+     6.62
+    ],
+    [
+     "2-2",
+     5.88
+    ],
+    [
+     "3-3",
+     1.28
+    ],
+    [
+     "Other",
+     0.21
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     9.93
+    ],
+    [
+     "0-1",
+     9.49
+    ],
+    [
+     "0-2",
+     8.08
+    ],
+    [
+     "1-3",
+     5.38
+    ],
+    [
+     "0-3",
+     4.32
+    ],
+    [
+     "2-3",
+     3.28
+    ],
+    [
+     "Other",
+     8.49
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 51.99,
+   "equal_8": 12.23,
+   "under_8": 35.78,
+   "over_9": 40.08,
+   "equal_9": 11.91,
+   "under_9": 48.01,
+   "over_10.5": 29.46,
+   "under_10.5": 70.54
+  },
+  "Linee_Casa": {
+   "over_1.5": 29.38,
+   "under_1.5": 70.62,
+   "over_2.5": 9.81,
+   "under_2.5": 90.19,
+   "over_3.5": 2.73,
+   "under_3.5": 97.27
+  },
+  "Linee_Ospite": {
+   "over_0.5": 78.5,
+   "under_0.5": 21.5,
+   "over_1.5": 48.76,
+   "under_1.5": 51.24,
+   "over_2.5": 22.96,
+   "under_2.5": 77.04,
+   "over_3.5": 8.7,
+   "under_3.5": 91.3
+  },
+  "WeSay": "1-1",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 28, 2026 3.15pm",
+  "Url": "https://www.sportsmole.co.uk/football/la-liga/malaga-vs-athletic-bilbao_game_263613.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/malaga/preview/malaga-vs-athletic-bilbao-prediction-team-news-lineups_609935.html",
+  "Id": "263613"
+ },
+ {
+  "Casa": "Arouca",
+  "Ospite": "Rio Ave",
+  "Ora": "16:30",
+  "Data": "2026-11-28",
+  "Lega": "Primeira Liga",
+  "Giornata": "Gameweek 12",
+  "P1": 51.25,
+  "PX": 24.55,
+  "P2": 24.2,
+  "P_GG": 56.18,
+  "P_NG": 43.82,
+  "P_O15": 76.83,
+  "P_U15": 23.17,
+  "P_O25": 53.54,
+  "P_U25": 46.46,
+  "P_O35": 31.34,
+  "P_U35": 68.66,
+  "P_O45": 18.38,
+  "P_U45": 81.62,
+  "PT1": 33.4,
+  "PTX": 45.18,
+  "PT2": 21.42,
+  "P_Primo_Casa": 57.32,
+  "P_Nessun_Gol": 6.33,
+  "P_Primo_Ospite": 36.35,
+  "Esatto": "1-1",
+  "P_Esatto": 11.61,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     10.36
+    ],
+    [
+     "2-1",
+     9.95
+    ],
+    [
+     "2-0",
+     8.25
+    ],
+    [
+     "3-1",
+     5.32
+    ],
+    [
+     "3-0",
+     4.71
+    ],
+    [
+     "3-2",
+     3.27
+    ],
+    [
+     "Other",
+     9.39
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.61
+    ],
+    [
+     "0-0",
+     6.33
+    ],
+    [
+     "2-2",
+     5.35
+    ],
+    [
+     "3-3",
+     1.11
+    ],
+    [
+     "Other",
+     0.14
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     6.47
+    ],
+    [
+     "1-2",
+     6.27
+    ],
+    [
+     "0-2",
+     3.44
+    ],
+    [
+     "1-3",
+     2.28
+    ],
+    [
+     "2-3",
+     1.99
+    ],
+    [
+     "0-3",
+     1.27
+    ],
+    [
+     "Other",
+     2.48
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 56.83,
+   "equal_8": 11.76,
+   "under_8": 31.41,
+   "over_9": 44.93,
+   "equal_9": 11.9,
+   "under_9": 43.17,
+   "over_10.5": 33.9,
+   "under_10.5": 66.1
+  },
+  "Linee_Casa": {
+   "over_1.5": 49.48,
+   "under_1.5": 50.52,
+   "over_2.5": 23.94,
+   "under_2.5": 76.06,
+   "over_3.5": 9.53,
+   "under_3.5": 90.47
+  },
+  "Linee_Ospite": {
+   "over_0.5": 60.95,
+   "under_0.5": 39.05,
+   "over_1.5": 27.6,
+   "under_1.5": 72.4,
+   "over_2.5": 9.27,
+   "under_2.5": 90.73,
+   "over_3.5": 2.62,
+   "under_3.5": 97.38
+  },
+  "WeSay": "2-0",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 3.30pm",
+  "Url": "https://www.sportsmole.co.uk/football/primeira-liga/arouca-vs-rio-ave_game_263617.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/arouca/preview/arouca-vs-rio-ave-prediction-team-news-lineups_609954.html",
+  "Id": "263617"
+ },
+ {
+  "Casa": "Moreirense",
+  "Ospite": "Santa Clara",
+  "Ora": "16:30",
+  "Data": "2026-11-28",
+  "Lega": "Primeira Liga",
+  "Giornata": "Gameweek 12",
+  "P1": 25.6,
+  "PX": 25.87,
+  "P2": 48.53,
+  "P_GG": 51.84,
+  "P_NG": 48.16,
+  "P_O15": 73.8,
+  "P_U15": 26.2,
+  "P_O25": 49.11,
+  "P_U25": 50.89,
+  "P_O35": 28.05,
+  "P_U35": 71.95,
+  "P_O45": 15.81,
+  "P_U45": 84.19,
+  "PT1": 20.62,
+  "PTX": 47.65,
+  "PT2": 31.74,
+  "P_Primo_Casa": 39.8,
+  "P_Nessun_Gol": 7.73,
+  "P_Primo_Ospite": 52.47,
+  "Esatto": "1-1",
+  "P_Esatto": 11.95,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     7.22
+    ],
+    [
+     "2-1",
+     6.14
+    ],
+    [
+     "2-0",
+     4.0
+    ],
+    [
+     "3-1",
+     2.32
+    ],
+    [
+     "3-2",
+     1.95
+    ],
+    [
+     "3-0",
+     1.42
+    ],
+    [
+     "Other",
+     2.56
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.95
+    ],
+    [
+     "0-0",
+     7.73
+    ],
+    [
+     "2-2",
+     5.13
+    ],
+    [
+     "Other",
+     0.08
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     11.26
+    ],
+    [
+     "1-2",
+     9.12
+    ],
+    [
+     "0-2",
+     8.73
+    ],
+    [
+     "1-3",
+     4.79
+    ],
+    [
+     "0-3",
+     4.39
+    ],
+    [
+     "2-3",
+     2.74
+    ],
+    [
+     "Other",
+     7.49
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 46.97,
+   "equal_8": 12.66,
+   "under_8": 40.37,
+   "over_9": 35.12,
+   "equal_9": 11.85,
+   "under_9": 53.03,
+   "over_10.5": 24.97,
+   "under_10.5": 75.03
+  },
+  "Linee_Casa": {
+   "over_1.5": 27.33,
+   "under_1.5": 72.67,
+   "over_2.5": 9.32,
+   "under_2.5": 90.68,
+   "over_3.5": 2.64,
+   "under_3.5": 97.36
+  },
+  "Linee_Ospite": {
+   "over_0.5": 77.08,
+   "under_0.5": 22.92,
+   "over_1.5": 45.41,
+   "under_1.5": 54.59,
+   "over_2.5": 20.48,
+   "under_2.5": 79.52,
+   "over_3.5": 7.57,
+   "under_3.5": 92.43
+  },
+  "WeSay": "1-1",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 28, 2026 3.30pm",
+  "Url": "https://www.sportsmole.co.uk/football/primeira-liga/moreirense-vs-santa-clara_game_263616.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/moreirense/preview/moreirense-vs-santa-clara-prediction-team-news-lineups_609955.html",
+  "Id": "263616"
+ },
+ {
+  "Casa": "SBV Excelsior",
+  "Ospite": "Telstar",
+  "Ora": "16:30",
+  "Data": "2026-11-28",
+  "Lega": "Eredivisie",
+  "Giornata": "Gameweek 14",
+  "P1": 35.92,
+  "PX": 24.4,
+  "P2": 39.68,
+  "P_GG": 56.22,
+  "P_NG": 43.78,
+  "P_O15": 77.66,
+  "P_U15": 22.34,
+  "P_O25": 55.99,
+  "P_U25": 44.01,
+  "P_O35": 33.51,
+  "P_U35": 66.49,
+  "P_O45": 19.75,
+  "P_U45": 80.25,
+  "PT1": 30.56,
+  "PTX": 41.58,
+  "PT2": 27.86,
+  "P_Primo_Casa": 49.77,
+  "P_Nessun_Gol": 5.71,
+  "P_Primo_Ospite": 44.52,
+  "Esatto": "1-1",
+  "P_Esatto": 10.73,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     8.1
+    ],
+    [
+     "1-0",
+     7.87
+    ],
+    [
+     "2-0",
+     5.31
+    ],
+    [
+     "3-1",
+     3.72
+    ],
+    [
+     "3-2",
+     2.97
+    ],
+    [
+     "3-0",
+     2.75
+    ],
+    [
+     "Other",
+     5.19
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.73
+    ],
+    [
+     "2-2",
+     5.92
+    ],
+    [
+     "0-0",
+     5.71
+    ],
+    [
+     "3-3",
+     1.63
+    ],
+    [
+     "Other",
+     0.41
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     8.75
+    ],
+    [
+     "1-2",
+     8.56
+    ],
+    [
+     "0-2",
+     5.63
+    ],
+    [
+     "1-3",
+     4.12
+    ],
+    [
+     "0-3",
+     3.07
+    ],
+    [
+     "2-3",
+     2.77
+    ],
+    [
+     "Other",
+     6.78
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 56.32,
+   "equal_8": 12.35,
+   "under_8": 31.32,
+   "over_9": 43.85,
+   "equal_9": 12.47,
+   "under_9": 43.68,
+   "over_10.5": 32.4,
+   "under_10.5": 67.6
+  },
+  "Linee_Casa": {
+   "over_1.5": 38.77,
+   "under_1.5": 61.23,
+   "over_2.5": 16.67,
+   "under_2.5": 83.33,
+   "over_3.5": 5.6,
+   "under_3.5": 94.4
+  },
+  "Linee_Ospite": {
+   "over_0.5": 73.16,
+   "under_0.5": 26.84,
+   "over_1.5": 41.86,
+   "under_1.5": 58.14,
+   "over_2.5": 18.78,
+   "under_2.5": 81.22,
+   "over_3.5": 7.19,
+   "under_3.5": 92.81
+  },
+  "WeSay": "2-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 3.30pm",
+  "Url": "https://www.sportsmole.co.uk/football/eredivisie/sbv-excelsior-vs-telstar_game_263614.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/sbv-excelsior/preview/excelsior-vs-telstar-prediction-team-news-lineups_609968.html",
+  "Id": "263614"
+ },
+ {
+  "Casa": "Gaziantep",
+  "Ospite": "Amed SK",
+  "Ora": "17:00",
+  "Data": "2026-11-28",
+  "Lega": "Turkish Super Lig",
+  "Giornata": "Gameweek 13",
+  "P1": 27.91,
+  "PX": 25.49,
+  "P2": 46.6,
+  "P_GG": 55.49,
+  "P_NG": 44.51,
+  "P_O15": 76.21,
+  "P_U15": 23.79,
+  "P_O25": 52.78,
+  "P_U25": 47.22,
+  "P_O35": 30.85,
+  "P_U35": 69.15,
+  "P_O45": 17.68,
+  "P_U45": 82.32,
+  "PT1": 21.96,
+  "PTX": 38.6,
+  "PT2": 39.44,
+  "P_Primo_Casa": 38.58,
+  "P_Nessun_Gol": 6.75,
+  "P_Primo_Ospite": 54.67,
+  "Esatto": "1-1",
+  "P_Esatto": 11.71,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     7.16
+    ],
+    [
+     "2-1",
+     6.79
+    ],
+    [
+     "2-0",
+     4.23
+    ],
+    [
+     "3-1",
+     2.81
+    ],
+    [
+     "3-2",
+     2.21
+    ],
+    [
+     "3-0",
+     1.73
+    ],
+    [
+     "Other",
+     2.97
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.71
+    ],
+    [
+     "0-0",
+     6.75
+    ],
+    [
+     "2-2",
+     5.58
+    ],
+    [
+     "3-3",
+     1.25
+    ],
+    [
+     "Other",
+     0.2
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     9.87
+    ],
+    [
+     "1-2",
+     9.38
+    ],
+    [
+     "0-2",
+     7.49
+    ],
+    [
+     "1-3",
+     4.78
+    ],
+    [
+     "0-3",
+     4.03
+    ],
+    [
+     "2-3",
+     3.09
+    ],
+    [
+     "Other",
+     7.96
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 53.88,
+   "equal_8": 11.28,
+   "under_8": 34.83,
+   "over_9": 42.72,
+   "equal_9": 11.16,
+   "under_9": 46.12,
+   "over_10.5": 32.53,
+   "under_10.5": 67.47
+  },
+  "Linee_Casa": {
+   "over_1.5": 30.86,
+   "under_1.5": 69.14,
+   "over_2.5": 11.17,
+   "under_2.5": 88.83,
+   "over_3.5": 3.17,
+   "under_3.5": 96.83
+  },
+  "Linee_Ospite": {
+   "over_0.5": 77.15,
+   "under_0.5": 22.85,
+   "over_1.5": 45.97,
+   "under_1.5": 54.03,
+   "over_2.5": 21.31,
+   "under_2.5": 78.69,
+   "over_3.5": 8.16,
+   "under_3.5": 91.84
+  },
+  "WeSay": "1-2",
+  "WeSay_Segno": "2",
+  "Ora_Sito": "Nov 28, 2026 4.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/super-lig/gfk-vs-amed-sk_game_263621.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/gfk/preview/gaziantep-vs-amed-sk-prediction-team-news-lineups_609946.html",
+  "Id": "263621"
+ },
+ {
+  "Casa": "Angers",
+  "Ospite": "Lens",
+  "Ora": "17:15",
+  "Data": "2026-11-28",
+  "Lega": "Ligue 1",
+  "Giornata": "Gameweek 12",
+  "P1": 23.62,
+  "PX": 24.57,
+  "P2": 51.85,
+  "P_GG": 56.76,
+  "P_NG": 43.24,
+  "P_O15": 78.47,
+  "P_U15": 21.53,
+  "P_O25": 55.99,
+  "P_U25": 44.01,
+  "P_O35": 33.89,
+  "P_U35": 66.11,
+  "P_O45": 20.0,
+  "P_U45": 80.0,
+  "PT1": 21.85,
+  "PTX": 39.51,
+  "PT2": 38.63,
+  "P_Primo_Casa": 36.76,
+  "P_Nessun_Gol": 5.95,
+  "P_Primo_Ospite": 57.29,
+  "Esatto": "1-1",
+  "P_Esatto": 10.87,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     6.17
+    ],
+    [
+     "1-0",
+     5.94
+    ],
+    [
+     "2-0",
+     3.33
+    ],
+    [
+     "3-1",
+     2.25
+    ],
+    [
+     "3-2",
+     2.08
+    ],
+    [
+     "3-0",
+     1.28
+    ],
+    [
+     "Other",
+     2.56
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     10.87
+    ],
+    [
+     "2-2",
+     6.03
+    ],
+    [
+     "0-0",
+     5.95
+    ],
+    [
+     "3-3",
+     1.41
+    ],
+    [
+     "Other",
+     0.31
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     9.85
+    ],
+    [
+     "0-1",
+     9.68
+    ],
+    [
+     "0-2",
+     8.27
+    ],
+    [
+     "1-3",
+     5.62
+    ],
+    [
+     "0-3",
+     4.8
+    ],
+    [
+     "2-3",
+     3.38
+    ],
+    [
+     "Other",
+     10.26
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 72.72,
+   "equal_8": 9.83,
+   "under_8": 17.44,
+   "over_9": 61.22,
+   "equal_9": 11.51,
+   "under_9": 27.28,
+   "over_10.5": 49.06,
+   "under_10.5": 50.94
+  },
+  "Linee_Casa": {
+   "over_1.5": 28.8,
+   "under_1.5": 71.2,
+   "over_2.5": 9.89,
+   "under_2.5": 90.11,
+   "over_3.5": 2.87,
+   "under_3.5": 97.13
+  },
+  "Linee_Ospite": {
+   "over_0.5": 80.98,
+   "under_0.5": 19.02,
+   "over_1.5": 52.01,
+   "under_1.5": 47.99,
+   "over_2.5": 25.78,
+   "under_2.5": 74.22,
+   "over_3.5": 10.57,
+   "under_3.5": 89.43
+  },
+  "WeSay": "1-2",
+  "WeSay_Segno": "2",
+  "Ora_Sito": "Nov 28, 2026 4.15pm",
+  "Url": "https://www.sportsmole.co.uk/football/ligue-1/angers-vs-lens_game_263622.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/angers/preview/angers-vs-lens-prediction-team-news-lineups_609963.html",
+  "Id": "263622"
+ },
+ {
+  "Casa": "Torino",
+  "Ospite": "Lazio",
+  "Ora": "18:00",
+  "Data": "2026-11-28",
+  "Lega": "Serie A",
+  "Giornata": "Gameweek 13",
+  "P1": 26.89,
+  "PX": 26.52,
+  "P2": 46.59,
+  "P_GG": 51.62,
+  "P_NG": 48.38,
+  "P_O15": 73.51,
+  "P_U15": 26.49,
+  "P_O25": 48.84,
+  "P_U25": 51.16,
+  "P_O35": 26.1,
+  "P_U35": 73.9,
+  "P_O45": 14.04,
+  "P_U45": 85.96,
+  "PT1": 24.56,
+  "PTX": 46.69,
+  "PT2": 28.75,
+  "P_Primo_Casa": 42.76,
+  "P_Nessun_Gol": 7.72,
+  "P_Primo_Ospite": 49.52,
+  "Esatto": "1-1",
+  "P_Esatto": 12.33,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     7.73
+    ],
+    [
+     "2-1",
+     6.91
+    ],
+    [
+     "2-0",
+     4.07
+    ],
+    [
+     "3-1",
+     2.36
+    ],
+    [
+     "3-2",
+     1.86
+    ],
+    [
+     "3-0",
+     1.77
+    ],
+    [
+     "Other",
+     2.17
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     12.33
+    ],
+    [
+     "0-0",
+     7.72
+    ],
+    [
+     "2-2",
+     5.29
+    ],
+    [
+     "Other",
+     0.21
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     11.02
+    ],
+    [
+     "1-2",
+     9.72
+    ],
+    [
+     "0-2",
+     8.28
+    ],
+    [
+     "1-3",
+     4.4
+    ],
+    [
+     "0-3",
+     4.34
+    ],
+    [
+     "2-3",
+     2.4
+    ],
+    [
+     "Other",
+     6.44
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 53.77,
+   "equal_8": 12.37,
+   "under_8": 33.86,
+   "over_9": 41.54,
+   "equal_9": 12.23,
+   "under_9": 46.23,
+   "over_10.5": 30.5,
+   "under_10.5": 69.5
+  },
+  "Linee_Casa": {
+   "over_1.5": 28.0,
+   "under_1.5": 72.0,
+   "over_2.5": 9.33,
+   "under_2.5": 90.67,
+   "over_3.5": 2.38,
+   "under_3.5": 97.62
+  },
+  "Linee_Ospite": {
+   "over_0.5": 76.52,
+   "under_0.5": 23.48,
+   "over_1.5": 43.9,
+   "under_1.5": 56.1,
+   "over_2.5": 18.75,
+   "under_2.5": 81.25,
+   "over_3.5": 6.65,
+   "under_3.5": 93.35
+  },
+  "WeSay": "0-2",
+  "WeSay_Segno": "2",
+  "Ora_Sito": "Nov 28, 2026 5.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/serie-a/torino-vs-lazio_game_263626.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/torino/preview/torino-vs-lazio-prediction-team-news-lineups_609919.html",
+  "Id": "263626"
+ },
+ {
+  "Casa": "Charlotte FC",
+  "Ospite": "Chicago Fire",
+  "Ora": "18:30",
+  "Data": "2026-11-28",
+  "Lega": "Major League Soccer",
+  "Giornata": "",
+  "P1": 41.17,
+  "PX": 24.29,
+  "P2": 34.54,
+  "P_GG": 64.38,
+  "P_NG": 35.62,
+  "P_O15": 83.75,
+  "P_U15": 16.25,
+  "P_O25": 63.63,
+  "P_U25": 36.37,
+  "P_O35": 41.51,
+  "P_U35": 58.49,
+  "P_O45": 25.64,
+  "P_U45": 74.36,
+  "PT1": 33.12,
+  "PTX": 40.47,
+  "PT2": 26.41,
+  "P_Primo_Casa": 51.55,
+  "P_Nessun_Gol": 4.07,
+  "P_Primo_Ospite": 44.38,
+  "Esatto": "1-1",
+  "P_Esatto": 10.43,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     8.68
+    ],
+    [
+     "1-0",
+     6.4
+    ],
+    [
+     "2-0",
+     5.24
+    ],
+    [
+     "3-1",
+     4.61
+    ],
+    [
+     "3-2",
+     3.79
     ],
     [
      "3-0",
@@ -359,15 +6469,15 @@
     ],
     [
      "2-2",
-     7.27
+     7.28
     ],
     [
      "0-0",
-     4.08
+     4.07
     ],
     [
      "3-3",
-     1.99
+     2.0
     ],
     [
      "Other",
@@ -377,15 +6487,15 @@
    "ospite": [
     [
      "1-2",
-     7.91
+     7.92
     ],
     [
      "0-1",
-     5.8
+     5.79
     ],
     [
      "0-2",
-     4.45
+     4.44
     ],
     [
      "1-3",
@@ -401,7 +6511,7 @@
     ],
     [
      "Other",
-     6.31
+     6.32
     ]
    ]
   },
@@ -418,20 +6528,20 @@
   "Linee_Casa": {
    "over_1.5": 48.34,
    "under_1.5": 51.66,
-   "over_2.5": 23.38,
-   "under_2.5": 76.62,
+   "over_2.5": 23.37,
+   "under_2.5": 76.63,
    "over_3.5": 9.76,
    "under_3.5": 90.24
   },
   "Linee_Ospite": {
-   "over_0.5": 71.83,
-   "under_0.5": 28.17,
-   "over_1.5": 42.31,
-   "under_1.5": 57.69,
-   "over_2.5": 18.88,
-   "under_2.5": 81.12,
-   "over_3.5": 6.82,
-   "under_3.5": 93.18
+   "over_0.5": 71.84,
+   "under_0.5": 28.16,
+   "over_1.5": 42.33,
+   "under_1.5": 57.67,
+   "over_2.5": 18.9,
+   "under_2.5": 81.1,
+   "over_3.5": 6.83,
+   "under_3.5": 93.17
   },
   "WeSay": "1-1",
   "WeSay_Segno": "X",
@@ -439,6 +6549,2286 @@
   "Url": "https://www.sportsmole.co.uk/football/mls/charlotte-fc-vs-chicago-fire_game_263634.html",
   "Url_Preview": "https://www.sportsmole.co.uk/football/charlotte-fc/preview/charlotte-fc-vs-chicago-fire-prediction-team-news-lineups_609855.html",
   "Id": "263634"
+ },
+ {
+  "Casa": "Elche",
+  "Ospite": "Atletico Madrid",
+  "Ora": "18:30",
+  "Data": "2026-11-28",
+  "Lega": "La Liga",
+  "Giornata": "Gameweek 14",
+  "P1": 17.69,
+  "PX": 23.47,
+  "P2": 58.85,
+  "P_GG": 44.57,
+  "P_NG": 55.43,
+  "P_O15": 72.22,
+  "P_U15": 27.78,
+  "P_O25": 48.55,
+  "P_U25": 51.45,
+  "P_O35": 27.78,
+  "P_U35": 72.22,
+  "P_O45": 16.88,
+  "P_U45": 83.12,
+  "PT1": 22.71,
+  "PTX": 39.47,
+  "PT2": 37.83,
+  "P_Primo_Casa": 35.92,
+  "P_Nessun_Gol": 8.57,
+  "P_Primo_Ospite": 55.51,
+  "Esatto": "0-1",
+  "P_Esatto": 14.02,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     5.21
+    ],
+    [
+     "2-1",
+     4.3
+    ],
+    [
+     "2-0",
+     2.33
+    ],
+    [
+     "3-1",
+     1.63
+    ],
+    [
+     "3-2",
+     1.47
+    ],
+    [
+     "3-0",
+     1.01
+    ],
+    [
+     "Other",
+     1.74
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     9.4
+    ],
+    [
+     "0-0",
+     8.57
+    ],
+    [
+     "2-2",
+     4.27
+    ],
+    [
+     "3-3",
+     1.0
+    ],
+    [
+     "Other",
+     0.24
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     14.02
+    ],
+    [
+     "0-2",
+     11.94
+    ],
+    [
+     "1-2",
+     8.65
+    ],
+    [
+     "0-3",
+     6.8
+    ],
+    [
+     "1-3",
+     5.01
+    ],
+    [
+     "2-3",
+     2.51
+    ],
+    [
+     "Other",
+     9.92
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 58.28,
+   "equal_8": 11.36,
+   "under_8": 30.36,
+   "over_9": 46.67,
+   "equal_9": 11.62,
+   "under_9": 41.72,
+   "over_10.5": 35.76,
+   "under_10.5": 64.24
+  },
+  "Linee_Casa": {
+   "over_1.5": 20.5,
+   "under_1.5": 79.5,
+   "over_2.5": 7.09,
+   "under_2.5": 92.91,
+   "over_3.5": 1.98,
+   "under_3.5": 98.02
+  },
+  "Linee_Ospite": {
+   "over_0.5": 81.16,
+   "under_0.5": 18.84,
+   "over_1.5": 51.81,
+   "under_1.5": 48.19,
+   "over_2.5": 25.48,
+   "under_2.5": 74.52,
+   "over_3.5": 10.16,
+   "under_3.5": 89.84
+  },
+  "WeSay": "1-2",
+  "WeSay_Segno": "2",
+  "Ora_Sito": "Nov 28, 2026 5.30pm",
+  "Url": "https://www.sportsmole.co.uk/football/la-liga/elche-vs-atletico-madrid_game_263632.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/atletico-madrid/race-for-the-la-liga-title/preview/elche-vs-atletico-prediction-team-news-lineups_609930.html",
+  "Id": "263632"
+ },
+ {
+  "Casa": "Ipswich Town",
+  "Ospite": "Aston Villa",
+  "Ora": "18:30",
+  "Data": "2026-11-28",
+  "Lega": "Premier League",
+  "Giornata": "Gameweek 12",
+  "P1": 31.8,
+  "PX": 25.02,
+  "P2": 43.19,
+  "P_GG": 57.68,
+  "P_NG": 42.32,
+  "P_O15": 77.93,
+  "P_U15": 22.07,
+  "P_O25": 55.46,
+  "P_U25": 44.54,
+  "P_O35": 32.66,
+  "P_U35": 67.34,
+  "P_O45": 18.78,
+  "P_U45": 81.22,
+  "PT1": 30.19,
+  "PTX": 38.44,
+  "PT2": 31.37,
+  "P_Primo_Casa": 46.56,
+  "P_Nessun_Gol": 5.9,
+  "P_Primo_Ospite": 47.54,
+  "Esatto": "1-1",
+  "P_Esatto": 11.22,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     7.52
+    ],
+    [
+     "1-0",
+     7.27
+    ],
+    [
+     "2-0",
+     4.53
+    ],
+    [
+     "3-1",
+     3.23
+    ],
+    [
+     "3-2",
+     2.51
+    ],
+    [
+     "3-0",
+     2.23
+    ],
+    [
+     "Other",
+     4.51
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.22
+    ],
+    [
+     "2-2",
+     6.16
+    ],
+    [
+     "0-0",
+     5.9
+    ],
+    [
+     "3-3",
+     1.43
+    ],
+    [
+     "Other",
+     0.3
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     9.49
+    ],
+    [
+     "0-1",
+     8.9
+    ],
+    [
+     "0-2",
+     6.73
+    ],
+    [
+     "1-3",
+     4.49
+    ],
+    [
+     "0-3",
+     3.55
+    ],
+    [
+     "2-3",
+     3.23
+    ],
+    [
+     "Other",
+     6.8
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 56.14,
+   "equal_8": 12.06,
+   "under_8": 31.8,
+   "over_9": 44.0,
+   "equal_9": 12.14,
+   "under_9": 43.86,
+   "over_10.5": 32.83,
+   "under_10.5": 67.17
+  },
+  "Linee_Casa": {
+   "over_1.5": 35.65,
+   "under_1.5": 64.35,
+   "over_2.5": 14.21,
+   "under_2.5": 85.79,
+   "over_3.5": 4.81,
+   "under_3.5": 95.19
+  },
+  "Linee_Ospite": {
+   "over_0.5": 75.56,
+   "under_0.5": 24.44,
+   "over_1.5": 44.69,
+   "under_1.5": 55.31,
+   "over_2.5": 19.8,
+   "under_2.5": 80.2,
+   "over_3.5": 7.1,
+   "under_3.5": 92.9
+  },
+  "WeSay": "1-2",
+  "WeSay_Segno": "2",
+  "Ora_Sito": "Nov 28, 2026 5.30pm",
+  "Url": "https://www.sportsmole.co.uk/football/premier-league/ipswich-town-vs-aston-villa_game_263631.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/ipswich-town/preview/ipswich-vs-aston-villa-prediction-team-news-lineups_609879.html",
+  "Id": "263631"
+ },
+ {
+  "Casa": "Stuttgart",
+  "Ospite": "Eintracht Frankfurt",
+  "Ora": "18:30",
+  "Data": "2026-11-28",
+  "Lega": "Bundesliga",
+  "Giornata": "Gameweek 11",
+  "P1": 54.67,
+  "PX": 21.15,
+  "P2": 24.21,
+  "P_GG": 63.62,
+  "P_NG": 36.38,
+  "P_O15": 85.19,
+  "P_U15": 14.81,
+  "P_O25": 66.61,
+  "P_U25": 33.39,
+  "P_O35": 44.84,
+  "P_U35": 55.16,
+  "P_O45": 29.97,
+  "P_U45": 70.03,
+  "PT1": 45.06,
+  "PTX": 33.12,
+  "PT2": 21.82,
+  "P_Primo_Casa": 62.11,
+  "P_Nessun_Gol": 3.54,
+  "P_Primo_Ospite": 34.35,
+  "Esatto": "2-1",
+  "P_Esatto": 9.66,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     9.66
+    ],
+    [
+     "2-0",
+     6.95
+    ],
+    [
+     "1-0",
+     6.86
+    ],
+    [
+     "3-1",
+     5.88
+    ],
+    [
+     "3-0",
+     4.77
+    ],
+    [
+     "3-2",
+     4.31
+    ],
+    [
+     "Other",
+     16.24
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     8.71
+    ],
+    [
+     "2-2",
+     6.36
+    ],
+    [
+     "0-0",
+     3.54
+    ],
+    [
+     "3-3",
+     2.0
+    ],
+    [
+     "Other",
+     0.54
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     6.02
+    ],
+    [
+     "0-1",
+     4.45
+    ],
+    [
+     "0-2",
+     2.91
+    ],
+    [
+     "2-3",
+     2.74
+    ],
+    [
+     "1-3",
+     2.63
+    ],
+    [
+     "0-3",
+     1.33
+    ],
+    [
+     "Other",
+     4.14
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 63.88,
+   "equal_8": 10.24,
+   "under_8": 25.88,
+   "over_9": 52.94,
+   "equal_9": 10.94,
+   "under_9": 36.12,
+   "over_10.5": 42.18,
+   "under_10.5": 57.82
+  },
+  "Linee_Casa": {
+   "over_1.5": 59.45,
+   "under_1.5": 40.55,
+   "over_2.5": 33.74,
+   "under_2.5": 66.26,
+   "over_3.5": 16.78,
+   "under_3.5": 83.22
+  },
+  "Linee_Ospite": {
+   "over_0.5": 61.68,
+   "under_0.5": 38.32,
+   "over_1.5": 32.98,
+   "under_1.5": 67.02,
+   "over_2.5": 13.38,
+   "under_2.5": 86.62,
+   "over_3.5": 4.68,
+   "under_3.5": 95.32
+  },
+  "WeSay": "1-1",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 28, 2026 5.30pm",
+  "Url": "https://www.sportsmole.co.uk/football/bundesliga/stuttgart-vs-eintracht-frankfurt_game_263633.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/stuttgart/preview/stuttgart-vs-frankfurt-prediction-team-news-lineups_609969.html",
+  "Id": "263633"
+ },
+ {
+  "Casa": "Motherwell",
+  "Ospite": "Hibernian",
+  "Ora": "18:45",
+  "Data": "2026-11-28",
+  "Lega": "Scottish Premiership",
+  "Giornata": "Gameweek 15",
+  "P1": 28.75,
+  "PX": 25.97,
+  "P2": 45.21,
+  "P_GG": 53.79,
+  "P_NG": 46.21,
+  "P_O15": 75.8,
+  "P_U15": 24.2,
+  "P_O25": 51.72,
+  "P_U25": 48.28,
+  "P_O35": 29.47,
+  "P_U35": 70.53,
+  "P_O45": 16.51,
+  "P_U45": 83.49,
+  "PT1": 25.71,
+  "PTX": 41.08,
+  "PT2": 33.2,
+  "P_Primo_Casa": 41.74,
+  "P_Nessun_Gol": 6.91,
+  "P_Primo_Ospite": 51.35,
+  "Esatto": "1-1",
+  "P_Esatto": 11.98,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     7.47
+    ],
+    [
+     "2-1",
+     7.01
+    ],
+    [
+     "2-0",
+     4.34
+    ],
+    [
+     "3-1",
+     2.75
+    ],
+    [
+     "3-2",
+     2.21
+    ],
+    [
+     "3-0",
+     1.91
+    ],
+    [
+     "Other",
+     3.06
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.98
+    ],
+    [
+     "0-0",
+     6.91
+    ],
+    [
+     "2-2",
+     5.63
+    ],
+    [
+     "3-3",
+     1.19
+    ],
+    [
+     "Other",
+     0.26
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     9.77
+    ],
+    [
+     "1-2",
+     9.28
+    ],
+    [
+     "0-2",
+     7.75
+    ],
+    [
+     "1-3",
+     4.59
+    ],
+    [
+     "0-3",
+     4.05
+    ],
+    [
+     "2-3",
+     2.9
+    ],
+    [
+     "Other",
+     6.89
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 63.28,
+   "equal_8": 10.93,
+   "under_8": 25.8,
+   "over_9": 51.64,
+   "equal_9": 11.64,
+   "under_9": 36.72,
+   "over_10.5": 40.29,
+   "under_10.5": 59.71
+  },
+  "Linee_Casa": {
+   "over_1.5": 31.26,
+   "under_1.5": 68.74,
+   "over_2.5": 11.38,
+   "under_2.5": 88.62,
+   "over_3.5": 3.32,
+   "under_3.5": 96.68
+  },
+  "Linee_Ospite": {
+   "over_0.5": 76.26,
+   "under_0.5": 23.74,
+   "over_1.5": 44.75,
+   "under_1.5": 55.25,
+   "over_2.5": 19.88,
+   "under_2.5": 80.12,
+   "over_3.5": 7.15,
+   "under_3.5": 92.85
+  },
+  "WeSay": "1-2",
+  "WeSay_Segno": "2",
+  "Ora_Sito": "Nov 28, 2026 5.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/scottish-premiership/motherwell-vs-hibernian_game_263636.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/motherwell/preview/motherwell-vs-hibernian-prediction-team-news-lineups_609940.html",
+  "Id": "263636"
+ },
+ {
+  "Casa": "PSV Eindhoven",
+  "Ospite": "Go Ahead Eagles",
+  "Ora": "18:45",
+  "Data": "2026-11-28",
+  "Lega": "Eredivisie",
+  "Giornata": "Gameweek 14",
+  "P1": 68.12,
+  "PX": 18.61,
+  "P2": 13.21,
+  "P_GG": 51.92,
+  "P_NG": 48.08,
+  "P_O15": 81.24,
+  "P_U15": 18.76,
+  "P_O25": 62.93,
+  "P_U25": 37.07,
+  "P_O35": 43.5,
+  "P_U35": 56.5,
+  "P_O45": 31.65,
+  "P_U45": 68.35,
+  "PT1": 57.7,
+  "PTX": 26.34,
+  "PT2": 15.96,
+  "P_Primo_Casa": 67.23,
+  "P_Nessun_Gol": 5.4,
+  "P_Primo_Ospite": 27.37,
+  "Esatto": "1-0",
+  "P_Esatto": 9.76,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     9.76
+    ],
+    [
+     "2-0",
+     9.61
+    ],
+    [
+     "2-1",
+     8.43
+    ],
+    [
+     "3-0",
+     7.01
+    ],
+    [
+     "3-1",
+     6.5
+    ],
+    [
+     "3-2",
+     3.7
+    ],
+    [
+     "Other",
+     23.11
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     7.38
+    ],
+    [
+     "0-0",
+     5.4
+    ],
+    [
+     "2-2",
+     4.22
+    ],
+    [
+     "3-3",
+     1.32
+    ],
+    [
+     "Other",
+     0.3
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     3.55
+    ],
+    [
+     "1-2",
+     3.46
+    ],
+    [
+     "2-3",
+     1.53
+    ],
+    [
+     "0-2",
+     1.3
+    ],
+    [
+     "1-3",
+     1.15
+    ],
+    [
+     "Other",
+     1.69
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 74.56,
+   "equal_8": 8.22,
+   "under_8": 17.22,
+   "over_9": 65.0,
+   "equal_9": 9.56,
+   "under_9": 25.44,
+   "over_10.5": 54.73,
+   "under_10.5": 45.27
+  },
+  "Linee_Casa": {
+   "over_1.5": 65.73,
+   "under_1.5": 34.27,
+   "over_2.5": 41.94,
+   "under_2.5": 58.06,
+   "over_3.5": 23.41,
+   "under_3.5": 76.59
+  },
+  "Linee_Ospite": {
+   "over_0.5": 45.06,
+   "under_0.5": 54.94,
+   "over_1.5": 19.2,
+   "under_1.5": 80.8,
+   "over_2.5": 6.52,
+   "under_2.5": 93.48,
+   "over_3.5": 1.99,
+   "under_3.5": 98.01
+  },
+  "WeSay": "3-0",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 5.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/eredivisie/psv-eindhoven-vs-go-ahead-eagles_game_263635.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/psv-eindhoven/preview/psv-vs-go-ahead-eagles-prediction-team-news-lineups_609867.html",
+  "Id": "263635"
+ },
+ {
+  "Casa": "Academico de Viseu",
+  "Ospite": "Alverca",
+  "Ora": "19:00",
+  "Data": "2026-11-28",
+  "Lega": "Primeira Liga",
+  "Giornata": "Gameweek 12",
+  "P1": 46.69,
+  "PX": 25.52,
+  "P2": 27.82,
+  "P_GG": 56.01,
+  "P_NG": 43.99,
+  "P_O15": 76.72,
+  "P_U15": 23.28,
+  "P_O25": 54.0,
+  "P_U25": 46.0,
+  "P_O35": 31.27,
+  "P_U35": 68.7,
+  "P_O45": 18.02,
+  "P_U45": 81.98,
+  "PT1": 32.04,
+  "PTX": 46.25,
+  "PT2": 21.72,
+  "P_Primo_Casa": 54.59,
+  "P_Nessun_Gol": 6.58,
+  "P_Primo_Ospite": 38.83,
+  "Esatto": "1-1",
+  "P_Esatto": 11.64,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     9.96
+    ],
+    [
+     "2-1",
+     9.56
+    ],
+    [
+     "2-0",
+     7.37
+    ],
+    [
+     "3-1",
+     4.79
+    ],
+    [
+     "3-0",
+     4.1
+    ],
+    [
+     "3-2",
+     2.74
+    ],
+    [
+     "Other",
+     8.16
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.64
+    ],
+    [
+     "0-0",
+     6.58
+    ],
+    [
+     "2-2",
+     5.73
+    ],
+    [
+     "3-3",
+     1.27
+    ],
+    [
+     "Other",
+     0.31
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     7.18
+    ],
+    [
+     "0-1",
+     6.78
+    ],
+    [
+     "0-2",
+     3.71
+    ],
+    [
+     "1-3",
+     2.73
+    ],
+    [
+     "2-3",
+     2.29
+    ],
+    [
+     "0-3",
+     1.89
+    ],
+    [
+     "Other",
+     3.25
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 46.49,
+   "equal_8": 12.2,
+   "under_8": 41.3,
+   "over_9": 35.12,
+   "equal_9": 11.38,
+   "under_9": 53.51,
+   "over_10.5": 25.37,
+   "under_10.5": 74.63
+  },
+  "Linee_Casa": {
+   "over_1.5": 46.32,
+   "under_1.5": 53.68,
+   "over_2.5": 21.37,
+   "under_2.5": 78.63,
+   "over_3.5": 8.47,
+   "under_3.5": 91.53
+  },
+  "Linee_Ospite": {
+   "over_0.5": 63.87,
+   "under_0.5": 36.13,
+   "over_1.5": 31.1,
+   "under_1.5": 68.9,
+   "over_2.5": 11.74,
+   "under_2.5": 88.26,
+   "over_3.5": 3.56,
+   "under_3.5": 96.44
+  },
+  "WeSay": "1-0",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 6.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/primeira-liga/academico-de-viseu-vs-alverca_game_263637.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/academico-de-viseu/preview/viseu-vs-alverca-prediction-team-news-lineups_609957.html",
+  "Id": "263637"
+ },
+ {
+  "Casa": "Houston Dynamo",
+  "Ospite": "San Jose Earthquakes",
+  "Ora": "20:30",
+  "Data": "2026-11-28",
+  "Lega": "Major League Soccer",
+  "Giornata": "",
+  "P1": 44.42,
+  "PX": 25.27,
+  "P2": 30.35,
+  "P_GG": 56.47,
+  "P_NG": 43.53,
+  "P_O15": 77.06,
+  "P_U15": 22.94,
+  "P_O25": 54.06,
+  "P_U25": 45.94,
+  "P_O35": 31.28,
+  "P_U35": 68.72,
+  "P_O45": 17.92,
+  "P_U45": 82.08,
+  "PT1": 38.72,
+  "PTX": 39.66,
+  "PT2": 21.63,
+  "P_Primo_Casa": 57.31,
+  "P_Nessun_Gol": 6.17,
+  "P_Primo_Ospite": 36.52,
+  "Esatto": "1-1",
+  "P_Esatto": 11.74,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     9.44
+    ],
+    [
+     "1-0",
+     9.24
+    ],
+    [
+     "2-0",
+     6.72
+    ],
+    [
+     "3-1",
+     4.69
+    ],
+    [
+     "3-0",
+     3.82
+    ],
+    [
+     "3-2",
+     3.16
+    ],
+    [
+     "Other",
+     7.35
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.74
+    ],
+    [
+     "0-0",
+     6.17
+    ],
+    [
+     "2-2",
+     5.72
+    ],
+    [
+     "3-3",
+     1.42
+    ],
+    [
+     "Other",
+     0.21
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     7.56
+    ],
+    [
+     "1-2",
+     7.4
+    ],
+    [
+     "0-2",
+     4.55
+    ],
+    [
+     "1-3",
+     2.94
+    ],
+    [
+     "2-3",
+     2.32
+    ],
+    [
+     "0-3",
+     2.12
+    ],
+    [
+     "Other",
+     3.46
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 64.7,
+   "equal_8": 11.18,
+   "under_8": 24.11,
+   "over_9": 52.59,
+   "equal_9": 12.11,
+   "under_9": 35.3,
+   "over_10.5": 40.68,
+   "under_10.5": 59.32
+  },
+  "Linee_Casa": {
+   "over_1.5": 44.85,
+   "under_1.5": 55.15,
+   "over_2.5": 20.65,
+   "under_2.5": 79.35,
+   "over_3.5": 7.56,
+   "under_3.5": 92.44
+  },
+  "Linee_Ospite": {
+   "over_0.5": 66.73,
+   "under_0.5": 33.27,
+   "over_1.5": 33.3,
+   "under_1.5": 66.7,
+   "over_2.5": 12.47,
+   "under_2.5": 87.53,
+   "over_3.5": 3.67,
+   "under_3.5": 96.33
+  },
+  "WeSay": "1-1",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 28, 2026 7.30pm",
+  "Url": "https://www.sportsmole.co.uk/football/mls/houston-dynamo-vs-san-jose-earthquakes_game_263645.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/houston-dynamo/preview/houston-vs-earthquakes-prediction-team-news-lineups_609917.html",
+  "Id": "263645"
+ },
+ {
+  "Casa": "Inter Milan",
+  "Ospite": "Genoa",
+  "Ora": "20:45",
+  "Data": "2026-11-28",
+  "Lega": "Serie A",
+  "Giornata": "Gameweek 13",
+  "P1": 73.79,
+  "PX": 17.22,
+  "P2": 9.0,
+  "P_GG": 44.95,
+  "P_NG": 55.05,
+  "P_O15": 78.89,
+  "P_U15": 21.11,
+  "P_O25": 56.06,
+  "P_U25": 43.94,
+  "P_O35": 33.98,
+  "P_U35": 66.02,
+  "P_O45": 23.65,
+  "P_U45": 76.35,
+  "PT1": 57.22,
+  "PTX": 31.98,
+  "PT2": 10.81,
+  "P_Primo_Casa": 73.87,
+  "P_Nessun_Gol": 5.29,
+  "P_Primo_Ospite": 20.84,
+  "Esatto": "2-0",
+  "P_Esatto": 13.63,
+  "Esatti": {
+   "casa": [
+    [
+     "2-0",
+     13.63
+    ],
+    [
+     "1-0",
+     12.43
+    ],
+    [
+     "3-0",
+     9.72
+    ],
+    [
+     "2-1",
+     9.51
+    ],
+    [
+     "3-1",
+     6.52
+    ],
+    [
+     "3-2",
+     2.79
+    ],
+    [
+     "Other",
+     19.18
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     8.1
+    ],
+    [
+     "0-0",
+     5.29
+    ],
+    [
+     "2-2",
+     3.24
+    ],
+    [
+     "Other",
+     0.03
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     3.4
+    ],
+    [
+     "1-2",
+     2.64
+    ],
+    [
+     "0-2",
+     1.1
+    ],
+    [
+     "Other",
+     0.42
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 62.21,
+   "equal_8": 10.13,
+   "under_8": 27.65,
+   "over_9": 51.56,
+   "equal_9": 10.66,
+   "under_9": 37.79,
+   "over_10.5": 41.19,
+   "under_10.5": 58.81
+  },
+  "Linee_Casa": {
+   "over_1.5": 65.85,
+   "under_1.5": 34.15,
+   "over_2.5": 38.8,
+   "under_2.5": 61.2,
+   "over_3.5": 19.21,
+   "under_3.5": 80.79
+  },
+  "Linee_Ospite": {
+   "over_0.5": 39.76,
+   "under_0.5": 60.24,
+   "over_1.5": 12.23,
+   "under_1.5": 87.77,
+   "over_2.5": 2.46,
+   "under_2.5": 97.54,
+   "over_3.5": 0.45,
+   "under_3.5": 99.55
+  },
+  "WeSay": "3-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 7.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/serie-a/inter-milan-vs-genoa_game_263646.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/inter-milan/preview/inter-milan-vs-genoa-prediction-team-news-lineups_609931.html",
+  "Id": "263646"
+ },
+ {
+  "Casa": "Le Havre",
+  "Ospite": "Strasbourg",
+  "Ora": "20:45",
+  "Data": "2026-11-28",
+  "Lega": "Ligue 1",
+  "Giornata": "Gameweek 12",
+  "P1": 39.62,
+  "PX": 24.83,
+  "P2": 35.55,
+  "P_GG": 60.08,
+  "P_NG": 39.92,
+  "P_O15": 79.64,
+  "P_U15": 20.36,
+  "P_O25": 57.71,
+  "P_U25": 42.26,
+  "P_O35": 34.31,
+  "P_U35": 65.69,
+  "P_O45": 19.93,
+  "P_U45": 80.07,
+  "PT1": 32.47,
+  "PTX": 42.03,
+  "PT2": 25.5,
+  "P_Primo_Casa": 49.63,
+  "P_Nessun_Gol": 5.39,
+  "P_Primo_Ospite": 44.98,
+  "Esatto": "1-1",
+  "P_Esatto": 11.05,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     9.18
+    ],
+    [
+     "1-0",
+     7.75
+    ],
+    [
+     "2-0",
+     5.88
+    ],
+    [
+     "3-1",
+     4.17
+    ],
+    [
+     "3-2",
+     3.21
+    ],
+    [
+     "3-0",
+     3.13
+    ],
+    [
+     "Other",
+     6.29
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.05
+    ],
+    [
+     "2-2",
+     6.42
+    ],
+    [
+     "0-0",
+     5.39
+    ],
+    [
+     "3-3",
+     1.65
+    ],
+    [
+     "Other",
+     0.32
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     8.35
+    ],
+    [
+     "0-1",
+     7.21
+    ],
+    [
+     "0-2",
+     5.02
+    ],
+    [
+     "1-3",
+     3.78
+    ],
+    [
+     "0-3",
+     2.73
+    ],
+    [
+     "2-3",
+     2.7
+    ],
+    [
+     "Other",
+     5.76
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 51.78,
+   "equal_8": 12.85,
+   "under_8": 35.37,
+   "over_9": 39.28,
+   "equal_9": 12.51,
+   "under_9": 48.22,
+   "over_10.5": 28.21,
+   "under_10.5": 71.79
+  },
+  "Linee_Casa": {
+   "over_1.5": 42.95,
+   "under_1.5": 57.05,
+   "over_2.5": 18.77,
+   "under_2.5": 81.23,
+   "over_3.5": 6.61,
+   "under_3.5": 93.39
+  },
+  "Linee_Ospite": {
+   "over_0.5": 71.55,
+   "under_0.5": 28.45,
+   "over_1.5": 39.94,
+   "under_1.5": 60.06,
+   "over_2.5": 16.94,
+   "under_2.5": 83.06,
+   "over_3.5": 6.08,
+   "under_3.5": 93.92
+  },
+  "WeSay": "1-2",
+  "WeSay_Segno": "2",
+  "Ora_Sito": "Nov 28, 2026 7.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/ligue-1/le-havre-vs-strasbourg_game_263650.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/le-havre/preview/le-havre-vs-strasbourg-prediction-team-news-lineups_609866.html",
+  "Id": "263650"
+ },
+ {
+  "Casa": "Le Mans",
+  "Ospite": "Lille",
+  "Ora": "20:45",
+  "Data": "2026-11-28",
+  "Lega": "Ligue 1",
+  "Giornata": "Gameweek 12",
+  "P1": 29.56,
+  "PX": 28.33,
+  "P2": 42.1,
+  "P_GG": 49.17,
+  "P_NG": 50.83,
+  "P_O15": 68.84,
+  "P_U15": 31.16,
+  "P_O25": 43.25,
+  "P_U25": 56.72,
+  "P_O35": 22.75,
+  "P_U35": 77.25,
+  "P_O45": 11.8,
+  "P_U45": 88.2,
+  "PT1": 27.93,
+  "PTX": 45.23,
+  "PT2": 26.84,
+  "P_Primo_Casa": 44.47,
+  "P_Nessun_Gol": 9.67,
+  "P_Primo_Ospite": 45.86,
+  "Esatto": "1-1",
+  "P_Esatto": 13.0,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     9.48
+    ],
+    [
+     "2-1",
+     6.72
+    ],
+    [
+     "2-0",
+     4.77
+    ],
+    [
+     "3-1",
+     2.54
+    ],
+    [
+     "3-2",
+     1.8
+    ],
+    [
+     "3-0",
+     1.74
+    ],
+    [
+     "Other",
+     2.52
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     13.0
+    ],
+    [
+     "0-0",
+     9.67
+    ],
+    [
+     "2-2",
+     4.72
+    ],
+    [
+     "Other",
+     0.1
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     12.02
+    ],
+    [
+     "1-2",
+     8.67
+    ],
+    [
+     "0-2",
+     7.82
+    ],
+    [
+     "1-3",
+     3.7
+    ],
+    [
+     "0-3",
+     3.36
+    ],
+    [
+     "2-3",
+     2.12
+    ],
+    [
+     "Other",
+     4.41
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 54.06,
+   "equal_8": 12.14,
+   "under_8": 33.8,
+   "over_9": 42.03,
+   "equal_9": 12.03,
+   "under_9": 45.94,
+   "over_10.5": 31.13,
+   "under_10.5": 68.87
+  },
+  "Linee_Casa": {
+   "over_1.5": 27.88,
+   "under_1.5": 72.12,
+   "over_2.5": 9.55,
+   "under_2.5": 90.45,
+   "over_3.5": 2.62,
+   "under_3.5": 97.38
+  },
+  "Linee_Ospite": {
+   "over_0.5": 71.83,
+   "under_0.5": 28.17,
+   "over_1.5": 37.55,
+   "under_1.5": 62.45,
+   "over_2.5": 14.54,
+   "under_2.5": 85.46,
+   "over_3.5": 4.51,
+   "under_3.5": 95.49
+  },
+  "WeSay": "1-2",
+  "WeSay_Segno": "2",
+  "Ora_Sito": "Nov 28, 2026 7.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/ligue-1/le-mans-vs-lille_game_263649.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/le-mans/preview/le-mans-vs-lille-prediction-team-news-lineups_609967.html",
+  "Id": "263649"
+ },
+ {
+  "Casa": "Nice",
+  "Ospite": "Troyes",
+  "Ora": "20:45",
+  "Data": "2026-11-28",
+  "Lega": "Ligue 1",
+  "Giornata": "Gameweek 12",
+  "P1": 46.35,
+  "PX": 25.73,
+  "P2": 27.92,
+  "P_GG": 51.01,
+  "P_NG": 48.99,
+  "P_O15": 73.19,
+  "P_U15": 26.81,
+  "P_O25": 48.72,
+  "P_U25": 51.24,
+  "P_O35": 27.75,
+  "P_U35": 72.25,
+  "P_O45": 15.65,
+  "P_U45": 84.35,
+  "PT1": 31.32,
+  "PTX": 42.0,
+  "PT2": 26.68,
+  "P_Primo_Casa": 50.46,
+  "P_Nessun_Gol": 8.01,
+  "P_Primo_Ospite": 41.53,
+  "Esatto": "1-1",
+  "P_Esatto": 11.71,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     11.41
+    ],
+    [
+     "2-1",
+     8.47
+    ],
+    [
+     "2-0",
+     8.34
+    ],
+    [
+     "3-1",
+     4.29
+    ],
+    [
+     "3-0",
+     4.28
+    ],
+    [
+     "3-2",
+     2.51
+    ],
+    [
+     "Other",
+     7.06
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     11.71
+    ],
+    [
+     "0-0",
+     8.01
+    ],
+    [
+     "2-2",
+     5.16
+    ],
+    [
+     "Other",
+     0.04
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     7.4
+    ],
+    [
+     "1-2",
+     6.63
+    ],
+    [
+     "0-2",
+     4.41
+    ],
+    [
+     "1-3",
+     2.65
+    ],
+    [
+     "2-3",
+     1.95
+    ],
+    [
+     "0-3",
+     1.6
+    ],
+    [
+     "Other",
+     3.27
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 55.13,
+   "equal_8": 11.94,
+   "under_8": 32.93,
+   "over_9": 43.21,
+   "equal_9": 11.92,
+   "under_9": 44.87,
+   "over_10.5": 32.31,
+   "under_10.5": 67.69
+  },
+  "Linee_Casa": {
+   "over_1.5": 42.92,
+   "under_1.5": 57.08,
+   "over_2.5": 19.0,
+   "under_2.5": 81.0,
+   "over_3.5": 7.1,
+   "under_3.5": 92.9
+  },
+  "Linee_Ospite": {
+   "over_0.5": 60.91,
+   "under_0.5": 39.09,
+   "over_1.5": 29.04,
+   "under_1.5": 70.96,
+   "over_2.5": 10.33,
+   "under_2.5": 89.67,
+   "over_3.5": 3.31,
+   "under_3.5": 96.69
+  },
+  "WeSay": "2-0",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 7.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/ligue-1/nice-vs-troyes_game_263648.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/nice/preview/nice-vs-troyes-prediction-team-news-lineups_609865.html",
+  "Id": "263648"
+ },
+ {
+  "Casa": "Paris Saint-Germain",
+  "Ospite": "Lorient",
+  "Ora": "20:45",
+  "Data": "2026-11-28",
+  "Lega": "Ligue 1",
+  "Giornata": "Gameweek 12",
+  "P1": 70.77,
+  "PX": 19.48,
+  "P2": 9.78,
+  "P_GG": 43.72,
+  "P_NG": 56.28,
+  "P_O15": 75.46,
+  "P_U15": 24.54,
+  "P_O25": 53.09,
+  "P_U25": 46.91,
+  "P_O35": 32.9,
+  "P_U35": 67.1,
+  "P_O45": 21.92,
+  "P_U45": 78.08,
+  "PT1": 52.65,
+  "PTX": 34.52,
+  "PT2": 12.83,
+  "P_Primo_Casa": 69.93,
+  "P_Nessun_Gol": 6.87,
+  "P_Primo_Ospite": 23.2,
+  "Esatto": "1-0",
+  "P_Esatto": 13.93,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     13.93
+    ],
+    [
+     "2-0",
+     12.84
+    ],
+    [
+     "3-0",
+     8.82
+    ],
+    [
+     "2-1",
+     8.77
+    ],
+    [
+     "3-1",
+     6.65
+    ],
+    [
+     "3-2",
+     2.77
+    ],
+    [
+     "Other",
+     16.98
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     8.38
+    ],
+    [
+     "0-0",
+     6.87
+    ],
+    [
+     "2-2",
+     3.57
+    ],
+    [
+     "Other",
+     0.05
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     3.76
+    ],
+    [
+     "1-2",
+     2.59
+    ],
+    [
+     "0-2",
+     1.15
+    ],
+    [
+     "Other",
+     0.64
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 55.95,
+   "equal_8": 10.97,
+   "under_8": 33.08,
+   "over_9": 44.92,
+   "equal_9": 11.03,
+   "under_9": 44.05,
+   "over_10.5": 34.68,
+   "under_10.5": 65.32
+  },
+  "Linee_Casa": {
+   "over_1.5": 61.93,
+   "under_1.5": 38.07,
+   "over_2.5": 35.87,
+   "under_2.5": 64.13,
+   "over_3.5": 17.03,
+   "under_3.5": 82.97
+  },
+  "Linee_Ospite": {
+   "over_0.5": 40.58,
+   "under_0.5": 59.42,
+   "over_1.5": 13.02,
+   "under_1.5": 86.98,
+   "over_2.5": 2.94,
+   "under_2.5": 97.06,
+   "over_3.5": 0.69,
+   "under_3.5": 99.31
+  },
+  "WeSay": "2-0",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 7.45pm",
+  "Url": "https://www.sportsmole.co.uk/football/ligue-1/psg-vs-lorient_game_263647.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/psg/preview/psg-vs-lorient-prediction-team-news-lineups_609863.html",
+  "Id": "263647"
+ },
+ {
+  "Casa": "Cambuur",
+  "Ospite": "Sparta Rotterdam",
+  "Ora": "21:00",
+  "Data": "2026-11-28",
+  "Lega": "Eredivisie",
+  "Giornata": "Gameweek 14",
+  "P1": 43.64,
+  "PX": 23.88,
+  "P2": 32.48,
+  "P_GG": 65.55,
+  "P_NG": 34.45,
+  "P_O15": 84.79,
+  "P_U15": 15.21,
+  "P_O25": 65.88,
+  "P_U25": 34.12,
+  "P_O35": 44.8,
+  "P_U35": 55.2,
+  "P_O45": 28.38,
+  "P_U45": 71.62,
+  "PT1": 37.02,
+  "PTX": 33.29,
+  "PT2": 29.7,
+  "P_Primo_Casa": 51.75,
+  "P_Nessun_Gol": 3.88,
+  "P_Primo_Ospite": 44.37,
+  "Esatto": "1-1",
+  "P_Esatto": 9.56,
+  "Esatti": {
+   "casa": [
+    [
+     "2-1",
+     8.71
+    ],
+    [
+     "1-0",
+     6.18
+    ],
+    [
+     "2-0",
+     5.38
+    ],
+    [
+     "3-1",
+     5.19
+    ],
+    [
+     "3-2",
+     4.1
+    ],
+    [
+     "3-0",
+     3.13
+    ],
+    [
+     "Other",
+     10.94
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     9.56
+    ],
+    [
+     "2-2",
+     7.49
+    ],
+    [
+     "0-0",
+     3.88
+    ],
+    [
+     "3-3",
+     2.33
+    ],
+    [
+     "Other",
+     0.62
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     7.29
+    ],
+    [
+     "0-1",
+     5.13
+    ],
+    [
+     "0-2",
+     3.98
+    ],
+    [
+     "1-3",
+     3.74
+    ],
+    [
+     "2-3",
+     3.43
+    ],
+    [
+     "0-3",
+     1.94
+    ],
+    [
+     "Other",
+     6.96
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 62.57,
+   "equal_8": 11.05,
+   "under_8": 26.38,
+   "over_9": 50.86,
+   "equal_9": 11.71,
+   "under_9": 37.43,
+   "over_10.5": 39.51,
+   "under_10.5": 60.49
+  },
+  "Linee_Casa": {
+   "over_1.5": 51.32,
+   "under_1.5": 48.68,
+   "over_2.5": 26.31,
+   "under_2.5": 73.69,
+   "over_3.5": 11.56,
+   "under_3.5": 88.44
+  },
+  "Linee_Ospite": {
+   "over_0.5": 70.47,
+   "under_0.5": 29.53,
+   "over_1.5": 41.88,
+   "under_1.5": 58.12,
+   "over_2.5": 19.02,
+   "under_2.5": 80.98,
+   "over_3.5": 7.58,
+   "under_3.5": 92.42
+  },
+  "WeSay": "2-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 8.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/eredivisie/cambuur-vs-sparta-rotterdam_game_263653.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/cambuur/preview/cambuur-vs-sparta-prediction-team-news-lineups_609937.html",
+  "Id": "263653"
+ },
+ {
+  "Casa": "Palmeiras",
+  "Ospite": "Estudiantes",
+  "Ora": "21:00",
+  "Data": "2026-11-28",
+  "Lega": "Copa Libertadores - Final",
+  "Giornata": "",
+  "P1": 48.62,
+  "PX": 26.75,
+  "P2": 24.59,
+  "P_GG": 46.75,
+  "P_NG": 53.25,
+  "P_O15": 70.42,
+  "P_U15": 29.58,
+  "P_O25": 44.18,
+  "P_U25": 55.82,
+  "P_O35": 23.6,
+  "P_U35": 76.37,
+  "P_O45": 13.35,
+  "P_U45": 86.65,
+  "PT1": 41.1,
+  "PTX": 43.28,
+  "PT2": 15.62,
+  "P_Primo_Casa": 62.88,
+  "P_Nessun_Gol": 8.62,
+  "P_Primo_Ospite": 28.5,
+  "Esatto": "1-0",
+  "P_Esatto": 12.8,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     12.8
+    ],
+    [
+     "2-0",
+     9.47
+    ],
+    [
+     "2-1",
+     8.87
+    ],
+    [
+     "3-0",
+     4.67
+    ],
+    [
+     "3-1",
+     3.91
+    ],
+    [
+     "3-2",
+     2.22
+    ],
+    [
+     "Other",
+     6.69
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     12.65
+    ],
+    [
+     "0-0",
+     8.62
+    ],
+    [
+     "2-2",
+     4.42
+    ],
+    [
+     "Other",
+     0.25
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     8.13
+    ],
+    [
+     "1-2",
+     5.67
+    ],
+    [
+     "0-2",
+     4.12
+    ],
+    [
+     "1-3",
+     1.92
+    ],
+    [
+     "2-3",
+     1.56
+    ],
+    [
+     "0-3",
+     1.37
+    ],
+    [
+     "Other",
+     1.82
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 55.55,
+   "equal_8": 10.75,
+   "under_8": 33.7,
+   "over_9": 44.77,
+   "equal_9": 10.78,
+   "under_9": 44.45,
+   "over_10.5": 34.76,
+   "under_10.5": 65.24
+  },
+  "Linee_Casa": {
+   "over_1.5": 42.87,
+   "under_1.5": 57.13,
+   "over_2.5": 18.55,
+   "under_2.5": 81.45,
+   "over_3.5": 6.94,
+   "under_3.5": 93.06
+  },
+  "Linee_Ospite": {
+   "over_0.5": 57.72,
+   "under_0.5": 42.28,
+   "over_1.5": 24.16,
+   "under_1.5": 75.84,
+   "over_2.5": 7.73,
+   "under_2.5": 92.27,
+   "over_3.5": 2.07,
+   "under_3.5": 97.93
+  },
+  "WeSay": "1-1",
+  "WeSay_Segno": "X",
+  "Ora_Sito": "Nov 28, 2026 8.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/copa-libertadores/palmeiras-vs-estudiantes_game_263655.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/palmeiras/copa-libertadores/preview/palmeiras-vs-estudiantes-prediction-team-news-lineups_609899.html",
+  "Id": "263655"
+ },
+ {
+  "Casa": "Real Madrid",
+  "Ospite": "Alaves",
+  "Ora": "21:00",
+  "Data": "2026-11-28",
+  "Lega": "La Liga",
+  "Giornata": "Gameweek 14",
+  "P1": 73.17,
+  "PX": 17.72,
+  "P2": 9.1,
+  "P_GG": 43.66,
+  "P_NG": 56.34,
+  "P_O15": 77.61,
+  "P_U15": 22.39,
+  "P_O25": 57.19,
+  "P_U25": 42.82,
+  "P_O35": 36.03,
+  "P_U35": 63.97,
+  "P_O45": 26.54,
+  "P_U45": 73.46,
+  "PT1": 50.29,
+  "PTX": 34.44,
+  "PT2": 15.27,
+  "P_Primo_Casa": 62.8,
+  "P_Nessun_Gol": 6.79,
+  "P_Primo_Ospite": 30.41,
+  "Esatto": "1-0",
+  "P_Esatto": 12.99,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     12.99
+    ],
+    [
+     "2-0",
+     12.93
+    ],
+    [
+     "3-0",
+     9.64
+    ],
+    [
+     "2-1",
+     8.1
+    ],
+    [
+     "3-1",
+     5.36
+    ],
+    [
+     "3-2",
+     2.78
+    ],
+    [
+     "Other",
+     21.37
+    ]
+   ],
+   "pareggio": [
+    [
+     "0-0",
+     6.79
+    ],
+    [
+     "1-1",
+     6.55
+    ],
+    [
+     "2-2",
+     3.56
+    ],
+    [
+     "Other",
+     0.03
+    ]
+   ],
+   "ospite": [
+    [
+     "1-2",
+     2.75
+    ],
+    [
+     "0-1",
+     2.58
+    ],
+    [
+     "Other",
+     0.73
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 67.1,
+   "equal_8": 9.26,
+   "under_8": 23.64,
+   "over_9": 56.96,
+   "equal_9": 10.14,
+   "under_9": 32.9,
+   "over_10.5": 46.66,
+   "under_10.5": 53.34
+  },
+  "Linee_Casa": {
+   "over_1.5": 65.4,
+   "under_1.5": 34.6,
+   "over_2.5": 39.96,
+   "under_2.5": 60.04,
+   "over_3.5": 21.4,
+   "under_3.5": 78.6
+  },
+  "Linee_Ospite": {
+   "over_0.5": 36.25,
+   "under_0.5": 63.75,
+   "over_1.5": 13.66,
+   "under_1.5": 86.34,
+   "over_2.5": 3.6,
+   "under_2.5": 96.4,
+   "over_3.5": 0.76,
+   "under_3.5": 99.24
+  },
+  "WeSay": "3-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 8.00pm",
+  "Url": "https://www.sportsmole.co.uk/football/la-liga/real-madrid-vs-alaves_game_263654.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/real-madrid/race-for-the-la-liga-title/preview/real-madrid-vs-alaves-prediction-team-news-lineups_609921.html",
+  "Id": "263654"
+ },
+ {
+  "Casa": "Vitoria de Guimaraes",
+  "Ospite": "Estrela Amadora",
+  "Ora": "21:30",
+  "Data": "2026-11-28",
+  "Lega": "Primeira Liga",
+  "Giornata": "Gameweek 12",
+  "P1": 46.8,
+  "PX": 25.78,
+  "P2": 27.42,
+  "P_GG": 52.08,
+  "P_NG": 47.92,
+  "P_O15": 73.99,
+  "P_U15": 26.01,
+  "P_O25": 49.45,
+  "P_U25": 50.55,
+  "P_O35": 27.12,
+  "P_U35": 72.88,
+  "P_O45": 14.63,
+  "P_U45": 85.37,
+  "PT1": 34.01,
+  "PTX": 45.55,
+  "PT2": 20.44,
+  "P_Primo_Casa": 56.88,
+  "P_Nessun_Gol": 7.17,
+  "P_Primo_Ospite": 35.95,
+  "Esatto": "1-1",
+  "P_Esatto": 12.38,
+  "Esatti": {
+   "casa": [
+    [
+     "1-0",
+     11.08
+    ],
+    [
+     "2-1",
+     9.66
+    ],
+    [
+     "2-0",
+     8.02
+    ],
+    [
+     "3-1",
+     4.84
+    ],
+    [
+     "3-0",
+     4.21
+    ],
+    [
+     "3-2",
+     2.54
+    ],
+    [
+     "Other",
+     6.46
+    ]
+   ],
+   "pareggio": [
+    [
+     "1-1",
+     12.38
+    ],
+    [
+     "0-0",
+     7.17
+    ],
+    [
+     "2-2",
+     5.16
+    ],
+    [
+     "Other",
+     0.09
+    ]
+   ],
+   "ospite": [
+    [
+     "0-1",
+     7.77
+    ],
+    [
+     "1-2",
+     6.83
+    ],
+    [
+     "0-2",
+     4.14
+    ],
+    [
+     "1-3",
+     2.49
+    ],
+    [
+     "2-3",
+     2.01
+    ],
+    [
+     "0-3",
+     1.63
+    ],
+    [
+     "Other",
+     2.54
+    ]
+   ]
+  },
+  "Corner": {
+   "over_8": 60.39,
+   "equal_8": 11.05,
+   "under_8": 28.56,
+   "over_9": 48.91,
+   "equal_9": 11.48,
+   "under_9": 39.61,
+   "over_10.5": 37.96,
+   "under_10.5": 62.04
+  },
+  "Linee_Casa": {
+   "over_1.5": 43.98,
+   "under_1.5": 56.02,
+   "over_2.5": 19.13,
+   "under_2.5": 80.87,
+   "over_3.5": 6.55,
+   "under_3.5": 93.45
+  },
+  "Linee_Ospite": {
+   "over_0.5": 63.07,
+   "under_0.5": 36.93,
+   "over_1.5": 28.42,
+   "under_1.5": 71.58,
+   "over_2.5": 9.75,
+   "under_2.5": 90.25,
+   "over_3.5": 2.63,
+   "under_3.5": 97.37
+  },
+  "WeSay": "2-1",
+  "WeSay_Segno": "1",
+  "Ora_Sito": "Nov 28, 2026 8.30pm",
+  "Url": "https://www.sportsmole.co.uk/football/primeira-liga/vitoria-de-guimaraes-vs-estrela-amadora_game_263656.html",
+  "Url_Preview": "https://www.sportsmole.co.uk/football/vitoria-de-guimaraes/preview/guimaraes-vs-estrela-amadora-prediction-team-news-lineups_609960.html",
+  "Id": "263656"
  },
  {
   "Casa": "Philadelphia Union",
@@ -449,23 +8839,23 @@
   "Giornata": "",
   "P1": 59.7,
   "PX": 20.39,
-  "P2": 19.94,
+  "P2": 19.91,
   "P_GG": 59.53,
   "P_NG": 40.47,
-  "P_O15": 82.73,
-  "P_U15": 17.27,
+  "P_O15": 82.74,
+  "P_U15": 17.26,
   "P_O25": 62.41,
   "P_U25": 37.59,
   "P_O35": 40.65,
-  "P_U35": 59.32,
-  "P_O45": 26.32,
-  "P_U45": 73.68,
-  "PT1": 51.56,
-  "PTX": 32.02,
-  "PT2": 16.42,
+  "P_U35": 59.35,
+  "P_O45": 26.33,
+  "P_U45": 73.67,
+  "PT1": 51.54,
+  "PTX": 32.03,
+  "PT2": 16.43,
   "P_Primo_Casa": 65.91,
-  "P_Nessun_Gol": 3.87,
-  "P_Primo_Ospite": 30.22,
+  "P_Nessun_Gol": 3.86,
+  "P_Primo_Ospite": 30.23,
   "Esatto": "2-1",
   "P_Esatto": 9.89,
   "Esatti": {
@@ -480,7 +8870,7 @@
     ],
     [
      "2-0",
-     8.22
+     8.21
     ],
     [
      "3-1",
@@ -488,7 +8878,7 @@
     ],
     [
      "3-0",
-     5.82
+     5.83
     ],
     [
      "3-2",
@@ -496,7 +8886,7 @@
     ],
     [
      "Other",
-     16.17
+     16.18
     ]
    ],
    "pareggio": [
@@ -506,11 +8896,11 @@
     ],
     [
      "2-2",
-     5.54
+     5.55
     ],
     [
      "0-0",
-     3.87
+     3.86
     ],
     [
      "3-3",
@@ -528,11 +8918,11 @@
     ],
     [
      "0-1",
-     4.57
+     4.56
     ],
     [
      "0-2",
-     2.66
+     2.65
     ],
     [
      "2-3",
@@ -559,16 +8949,16 @@
    "under_10.5": 60.28
   },
   "Linee_Casa": {
-   "over_1.5": 59.98,
-   "under_1.5": 40.02,
-   "over_2.5": 34.27,
-   "under_2.5": 65.73,
-   "over_3.5": 16.31,
-   "under_3.5": 83.69
+   "over_1.5": 60.0,
+   "under_1.5": 40.0,
+   "over_2.5": 34.29,
+   "under_2.5": 65.71,
+   "over_3.5": 16.32,
+   "under_3.5": 83.68
   },
   "Linee_Ospite": {
-   "over_0.5": 57.09,
-   "under_0.5": 42.91,
+   "over_0.5": 57.08,
+   "under_0.5": 42.92,
    "over_1.5": 26.45,
    "under_1.5": 73.55,
    "over_2.5": 9.12,
