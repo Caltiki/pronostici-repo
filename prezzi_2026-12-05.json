@@ -592,6 +592,28 @@
  {
   "Data": "2026-12-05",
   "Ora": "20:45",
+  "Campionato": "France: Ligue 1",
+  "Partita": "Strasbourg - Lorient",
+  "Casa": "Strasbourg",
+  "Ospite": "Lorient",
+  "Linea_OU": 2.5,
+  "Gol_attesi": 2.57,
+  "Margine": 4.8,
+  "Movimento": null,
+  "Principale": "si",
+  "Schedina": "si",
+  "Fonte": "OddsAPI",
+  "Gruppo": "Under Over",
+  "Mercato": "OU 3.5",
+  "Sel": "Under",
+  "Prob": 74.2,
+  "Equa": 1.35,
+  "Rif_Book": "Pinnacle",
+  "InSchedina": "si"
+ },
+ {
+  "Data": "2026-12-05",
+  "Ora": "20:45",
   "Campionato": "Italy: Serie A",
   "Partita": "Napoli - Lecce",
   "Casa": "Napoli",
@@ -1262,8 +1284,7 @@
   "Sel": "1X + Under 4.5",
   "Prob": 64.3,
   "Equa": 1.56,
-  "Rif_Book": "Pinnacle",
-  "InSchedina": "si"
+  "Rif_Book": "Pinnacle"
  },
  {
   "Data": "2026-12-05",

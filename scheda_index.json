@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-26 23:48",
+ "aggiornato": "2026-11-27 02:19",
  "date": [
   "2026-11-26",
   "2026-11-27",
@@ -18,54 +18,47 @@
   "2026-12-17"
  ],
  "giorni": {
-  "2026-11-26": {
-   "partite": 255,
-   "con_mercato": 52,
-   "con_prezzo": 82,
-   "con_risultato": 128,
-   "con_classifica_xg": 69
-  },
   "2026-11-27": {
-   "partite": 490,
+   "partite": 503,
    "con_mercato": 59,
    "con_prezzo": 102,
-   "con_risultato": 0,
+   "con_risultato": 1,
    "con_classifica_xg": 40
   },
   "2026-11-28": {
-   "partite": 691,
+   "partite": 1433,
    "con_mercato": 210,
    "con_prezzo": 308,
    "con_risultato": 0,
-   "con_classifica_xg": 177
+   "con_classifica_xg": 181
   },
   "2026-11-29": {
-   "partite": 533,
+   "partite": 556,
    "con_mercato": 148,
    "con_prezzo": 175,
    "con_risultato": 0,
-   "con_classifica_xg": 148
+   "con_classifica_xg": 149
   },
   "2026-11-30": {
    "partite": 73,
    "con_mercato": 22,
-   "con_prezzo": 18,
+   "con_prezzo": 17,
    "con_risultato": 0,
    "con_classifica_xg": 26
   },
   "2026-12-01": {
-   "partite": 27,
-   "con_mercato": 1,
-   "con_prezzo": 1,
+   "partite": 66,
+   "con_mercato": 56,
+   "con_prezzo": 30,
    "con_risultato": 0,
-   "con_classifica_xg": 21
+   "con_classifica_xg": 51
   },
   "2026-12-02": {
    "partite": 42,
    "con_mercato": 10,
    "con_prezzo": 10,
    "con_risultato": 0,
-   "con_classifica_xg": 30
+   "con_classifica_xg": 31
   },
   "2026-12-03": {
    "partite": 1,
@@ -122,6 +115,14 @@
    "con_prezzo": 0,
    "con_risultato": 0,
    "con_classifica_xg": 1
+  },
+  "2026-11-26": {
+   "partite": 255,
+   "con_mercato": 52,
+   "con_prezzo": 82,
+   "con_risultato": 224,
+   "con_classifica_xg": 69,
+   "passata": true
   }
  }
 }
