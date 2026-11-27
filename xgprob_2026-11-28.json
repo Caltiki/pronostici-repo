@@ -33,7 +33,7 @@
   "Ora": "18:30",
   "Paese": "England",
   "Lega": "Premier League",
-  "P1": 0.29,
+  "P1": 0.3,
   "PX": 0.24,
   "P2": 0.47,
   "P O2.5": 0.63,
@@ -47,13 +47,13 @@
   "Ora": "14:00",
   "Paese": "Spain",
   "Lega": "La Liga",
-  "P1": 0.57,
-  "PX": 0.24,
-  "P2": 0.19,
+  "P1": 0.59,
+  "PX": 0.23,
+  "P2": 0.18,
   "P O2.5": 0.58,
   "P GG": 0.61,
-  "xG casa": 1.89,
-  "xG ospite": 1.06
+  "xG casa": 1.91,
+  "xG ospite": 1.05
  },
  {
   "Casa": "Malaga",
@@ -61,12 +61,12 @@
   "Ora": "16:15",
   "Paese": "Spain",
   "Lega": "La Liga",
-  "P1": 0.21,
+  "P1": 0.2,
   "PX": 0.26,
   "P2": 0.54,
   "P O2.5": 0.48,
   "P GG": 0.55,
-  "xG casa": 0.91,
+  "xG casa": 0.9,
   "xG ospite": 1.5
  },
  {
@@ -75,13 +75,13 @@
   "Ora": "18:30",
   "Paese": "Spain",
   "Lega": "La Liga",
-  "P1": 0.17,
+  "P1": 0.18,
   "PX": 0.22,
-  "P2": 0.61,
+  "P2": 0.59,
   "P O2.5": 0.57,
   "P GG": 0.59,
-  "xG casa": 1.0,
-  "xG ospite": 1.83
+  "xG casa": 1.02,
+  "xG ospite": 1.81
  },
  {
   "Casa": "Real Madrid",
@@ -89,12 +89,12 @@
   "Ora": "21:00",
   "Paese": "Spain",
   "Lega": "La Liga",
-  "P1": 0.76,
-  "PX": 0.15,
-  "P2": 0.1,
-  "P O2.5": 0.68,
-  "P GG": 0.56,
-  "xG casa": 2.5,
+  "P1": 0.77,
+  "PX": 0.14,
+  "P2": 0.09,
+  "P O2.5": 0.69,
+  "P GG": 0.55,
+  "xG casa": 2.52,
   "xG ospite": 0.8
  },
  {
@@ -103,12 +103,12 @@
   "Ora": "15:00",
   "Paese": "Italy",
   "Lega": "Serie A",
-  "P1": 0.62,
-  "PX": 0.2,
+  "P1": 0.63,
+  "PX": 0.19,
   "P2": 0.19,
   "P O2.5": 0.67,
   "P GG": 0.64,
-  "xG casa": 2.22,
+  "xG casa": 2.23,
   "xG ospite": 1.17
  },
  {
@@ -118,11 +118,11 @@
   "Paese": "Italy",
   "Lega": "Serie A",
   "P1": 0.25,
-  "PX": 0.24,
-  "P2": 0.51,
+  "PX": 0.25,
+  "P2": 0.5,
   "P O2.5": 0.52,
   "P GG": 0.58,
-  "xG casa": 1.07,
+  "xG casa": 1.08,
   "xG ospite": 1.73
  },
  {
@@ -313,13 +313,13 @@
   "Ora": "21:00",
   "Paese": "Netherlands",
   "Lega": "Eredivisie",
-  "P1": 0.48,
+  "P1": 0.49,
   "PX": 0.21,
   "P2": 0.31,
   "P O2.5": 0.72,
-  "P GG": 0.7,
+  "P GG": 0.69,
   "xG casa": 2.41,
-  "xG ospite": 1.78
+  "xG ospite": 1.77
  },
  {
   "Casa": "Arouca",
@@ -456,10 +456,10 @@
   "P1": 0.65,
   "PX": 0.2,
   "P2": 0.15,
-  "P O2.5": 0.59,
+  "P O2.5": 0.6,
   "P GG": 0.58,
-  "xG casa": 2.21,
-  "xG ospite": 0.86
+  "xG casa": 2.22,
+  "xG ospite": 0.87
  },
  {
   "Casa": "Derby",
@@ -484,10 +484,10 @@
   "P1": 0.47,
   "PX": 0.23,
   "P2": 0.3,
-  "P O2.5": 0.59,
-  "P GG": 0.62,
-  "xG casa": 1.91,
-  "xG ospite": 1.36
+  "P O2.5": 0.6,
+  "P GG": 0.63,
+  "xG casa": 1.93,
+  "xG ospite": 1.37
  },
  {
   "Casa": "QPR",
@@ -551,13 +551,13 @@
   "Ora": "16:00",
   "Paese": "Scotland",
   "Lega": "Premiership",
-  "P1": 0.53,
+  "P1": 0.52,
   "PX": 0.23,
   "P2": 0.24,
-  "P O2.5": 0.59,
+  "P O2.5": 0.58,
   "P GG": 0.63,
-  "xG casa": 1.74,
-  "xG ospite": 1.36
+  "xG casa": 1.72,
+  "xG ospite": 1.35
  },
  {
   "Casa": "Dundee Utd",
@@ -579,13 +579,13 @@
   "Ora": "16:00",
   "Paese": "Scotland",
   "Lega": "Premiership",
-  "P1": 0.6,
+  "P1": 0.61,
   "PX": 0.2,
   "P2": 0.19,
-  "P O2.5": 0.63,
+  "P O2.5": 0.64,
   "P GG": 0.61,
-  "xG casa": 1.77,
-  "xG ospite": 1.19
+  "xG casa": 1.8,
+  "xG ospite": 1.2
  },
  {
   "Casa": "ST Mirren",
@@ -663,12 +663,12 @@
   "Ora": "20:30",
   "Paese": "USA",
   "Lega": "Major League Soccer",
-  "P1": 0.5,
+  "P1": 0.49,
   "PX": 0.24,
-  "P2": 0.26,
+  "P2": 0.27,
   "P O2.5": 0.56,
   "P GG": 0.63,
-  "xG casa": 1.6,
+  "xG casa": 1.59,
   "xG ospite": 1.17
  },
  {
@@ -692,12 +692,12 @@
   "Paese": "Brazil",
   "Lega": "Serie A",
   "P1": 0.45,
-  "PX": 0.23,
+  "PX": 0.24,
   "P2": 0.32,
   "P O2.5": 0.56,
   "P GG": 0.59,
   "xG casa": 1.65,
-  "xG ospite": 1.31
+  "xG ospite": 1.3
  },
  {
   "Casa": "Al-Hazm",
@@ -747,13 +747,13 @@
   "Ora": "14:00",
   "Paese": "Africa",
   "Lega": "CAF Champions League",
-  "P1": 0.59,
+  "P1": 0.58,
   "PX": 0.23,
   "P2": 0.18,
-  "P O2.5": 0.44,
-  "P GG": 0.51,
-  "xG casa": 1.8,
-  "xG ospite": 0.84
+  "P O2.5": 0.42,
+  "P GG": 0.5,
+  "xG casa": 1.77,
+  "xG ospite": 0.83
  },
  {
   "Casa": "ES Tunis",
@@ -763,11 +763,11 @@
   "Lega": "CAF Champions League",
   "P1": 0.59,
   "PX": 0.25,
-  "P2": 0.16,
-  "P O2.5": 0.35,
-  "P GG": 0.43,
-  "xG casa": 1.15,
-  "xG ospite": 0.75
+  "P2": 0.15,
+  "P O2.5": 0.4,
+  "P GG": 0.44,
+  "xG casa": 1.21,
+  "xG ospite": 0.78
  },
  {
   "Casa": "Pyramids FC",
@@ -775,13 +775,13 @@
   "Ora": "17:00",
   "Paese": "Africa",
   "Lega": "CAF Champions League",
-  "P1": 0.7,
-  "PX": 0.21,
-  "P2": 0.09,
-  "P O2.5": 0.44,
-  "P GG": 0.46,
-  "xG casa": 1.99,
-  "xG ospite": 0.6
+  "P1": 0.68,
+  "PX": 0.22,
+  "P2": 0.1,
+  "P O2.5": 0.46,
+  "P GG": 0.49,
+  "xG casa": 2.0,
+  "xG ospite": 0.63
  },
  {
   "Casa": "Zamalek SC",
@@ -789,13 +789,13 @@
   "Ora": "17:00",
   "Paese": "Africa",
   "Lega": "CAF Champions League",
-  "P1": 0.6,
-  "PX": 0.26,
-  "P2": 0.14,
-  "P O2.5": 0.35,
-  "P GG": 0.47,
-  "xG casa": 1.54,
-  "xG ospite": 0.57
+  "P1": 0.58,
+  "PX": 0.27,
+  "P2": 0.16,
+  "P O2.5": 0.4,
+  "P GG": 0.51,
+  "xG casa": 1.57,
+  "xG ospite": 0.62
  },
  {
   "Casa": "Renaissance Berkane",
@@ -804,12 +804,12 @@
   "Paese": "Africa",
   "Lega": "CAF Champions League",
   "P1": 0.65,
-  "PX": 0.24,
-  "P2": 0.11,
-  "P O2.5": 0.38,
-  "P GG": 0.41,
-  "xG casa": 1.29,
-  "xG ospite": 0.49
+  "PX": 0.25,
+  "P2": 0.1,
+  "P O2.5": 0.34,
+  "P GG": 0.36,
+  "xG casa": 1.25,
+  "xG ospite": 0.46
  },
  {
   "Casa": "KVC Westerlo",
@@ -873,12 +873,12 @@
   "Ora": "20:00",
   "Paese": "Africa",
   "Lega": "CAF Confederation Cup",
-  "P1": 0.63,
+  "P1": 0.64,
   "PX": 0.21,
   "P2": 0.15,
-  "P O2.5": 0.48,
+  "P O2.5": 0.49,
   "P GG": 0.5,
-  "xG casa": 1.6,
+  "xG casa": 1.62,
   "xG ospite": 0.81
  },
  {
@@ -891,7 +891,7 @@
   "PX": 0.21,
   "P2": 0.67,
   "P O2.5": 0.57,
-  "P GG": 0.57,
+  "P GG": 0.58,
   "xG casa": 0.83,
   "xG ospite": 2.18
  },
@@ -901,13 +901,13 @@
   "Ora": "00:00",
   "Paese": "Chile",
   "Lega": "Primera B",
-  "P1": 0.66,
-  "PX": 0.2,
+  "P1": 0.65,
+  "PX": 0.21,
   "P2": 0.14,
-  "P O2.5": 0.57,
+  "P O2.5": 0.56,
   "P GG": 0.55,
-  "xG casa": 2.03,
-  "xG ospite": 0.86
+  "xG casa": 2.0,
+  "xG ospite": 0.87
  },
  {
   "Casa": "Independiente Petrolero",
@@ -916,12 +916,12 @@
   "Paese": "Bolivia",
   "Lega": "Primera División",
   "P1": 0.58,
-  "PX": 0.21,
+  "PX": 0.22,
   "P2": 0.2,
-  "P O2.5": 0.69,
-  "P GG": 0.66,
-  "xG casa": 2.22,
-  "xG ospite": 1.35
+  "P O2.5": 0.67,
+  "P GG": 0.64,
+  "xG casa": 2.18,
+  "xG ospite": 1.32
  },
  {
   "Casa": "Vila Nova",
@@ -957,13 +957,13 @@
   "Ora": "00:35",
   "Paese": "Colombia",
   "Lega": "Primera A",
-  "P1": 0.57,
-  "PX": 0.26,
-  "P2": 0.17,
+  "P1": 0.55,
+  "PX": 0.27,
+  "P2": 0.18,
   "P O2.5": 0.42,
   "P GG": 0.53,
-  "xG casa": 1.53,
-  "xG ospite": 0.77
+  "xG casa": 1.51,
+  "xG ospite": 0.79
  },
  {
   "Casa": "Millonarios",
@@ -975,7 +975,7 @@
   "PX": 0.26,
   "P2": 0.23,
   "P O2.5": 0.43,
-  "P GG": 0.51,
+  "P GG": 0.5,
   "xG casa": 1.39,
   "xG ospite": 0.95
  },
@@ -985,13 +985,13 @@
   "Ora": "01:00",
   "Paese": "Argentina",
   "Lega": "Primera Nacional",
-  "P1": 0.4,
-  "PX": 0.29,
-  "P2": 0.3,
+  "P1": 0.39,
+  "PX": 0.3,
+  "P2": 0.31,
   "P O2.5": 0.32,
   "P GG": 0.47,
-  "xG casa": 1.08,
-  "xG ospite": 0.93
+  "xG casa": 1.07,
+  "xG ospite": 0.94
  },
  {
   "Casa": "Tristan Suarez",
@@ -1004,7 +1004,7 @@
   "P2": 0.17,
   "P O2.5": 0.26,
   "P GG": 0.43,
-  "xG casa": 1.12,
+  "xG casa": 1.13,
   "xG ospite": 0.49
  },
  {
@@ -1027,7 +1027,7 @@
   "Ora": "02:30",
   "Paese": "Panama",
   "Lega": "Liga Panameña De Fútbol",
-  "P1": 0.38,
+  "P1": 0.39,
   "PX": 0.27,
   "P2": 0.34,
   "P O2.5": 0.44,
@@ -1237,12 +1237,12 @@
   "Ora": "06:00",
   "Paese": "South-Korea",
   "Lega": "K League 2",
-  "P1": 0.42,
+  "P1": 0.43,
   "PX": 0.25,
-  "P2": 0.33,
-  "P O2.5": 0.48,
+  "P2": 0.32,
+  "P O2.5": 0.49,
   "P GG": 0.56,
-  "xG casa": 1.35,
+  "xG casa": 1.37,
   "xG ospite": 1.19
  },
  {
@@ -1251,13 +1251,13 @@
   "Ora": "09:30",
   "Paese": "Indonesia",
   "Lega": "Liga 1",
-  "P1": 0.39,
-  "PX": 0.26,
-  "P2": 0.35,
-  "P O2.5": 0.5,
-  "P GG": 0.58,
-  "xG casa": 1.3,
-  "xG ospite": 1.19
+  "P1": 0.4,
+  "PX": 0.27,
+  "P2": 0.34,
+  "P O2.5": 0.48,
+  "P GG": 0.57,
+  "xG casa": 1.29,
+  "xG ospite": 1.17
  },
  {
   "Casa": "Bali United",
@@ -1302,34 +1302,6 @@
   "xG ospite": 1.44
  },
  {
-  "Casa": "Persepam Madura Utd",
-  "Ospite": "Java United",
-  "Ora": "13:00",
-  "Paese": "Indonesia",
-  "Lega": "Liga 1",
-  "P1": 0.42,
-  "PX": 0.24,
-  "P2": 0.34,
-  "P O2.5": 0.57,
-  "P GG": 0.64,
-  "xG casa": 1.61,
-  "xG ospite": 1.33
- },
- {
-  "Casa": "Persija",
-  "Ospite": "Garudayaksa",
-  "Ora": "13:00",
-  "Paese": "Indonesia",
-  "Lega": "Liga 1",
-  "P1": 0.72,
-  "PX": 0.18,
-  "P2": 0.1,
-  "P O2.5": 0.62,
-  "P GG": 0.54,
-  "xG casa": 2.26,
-  "xG ospite": 0.83
- },
- {
   "Casa": "Central Coast Mariners",
   "Ospite": "Auckland",
   "Ora": "09:40",
@@ -1342,6 +1314,34 @@
   "P GG": 0.59,
   "xG casa": 1.23,
   "xG ospite": 1.59
+ },
+ {
+  "Casa": "Negeri Sembilan",
+  "Ospite": "Terengganu",
+  "Ora": "09:45",
+  "Paese": "Malaysia",
+  "Lega": "Super League",
+  "P1": 0.39,
+  "PX": 0.24,
+  "P2": 0.37,
+  "P O2.5": 0.5,
+  "P GG": 0.51,
+  "xG casa": 1.31,
+  "xG ospite": 1.26
+ },
+ {
+  "Casa": "Sabah FA",
+  "Ospite": "Selangor",
+  "Ora": "10:00",
+  "Paese": "Malaysia",
+  "Lega": "Super League",
+  "P1": 0.15,
+  "PX": 0.21,
+  "P2": 0.63,
+  "P O2.5": 0.58,
+  "P GG": 0.58,
+  "xG casa": 0.97,
+  "xG ospite": 1.99
  },
  {
   "Casa": "CS Afumati",
@@ -1363,7 +1363,7 @@
   "Ora": "10:00",
   "Paese": "Romania",
   "Lega": "Liga II",
-  "P1": 0.76,
+  "P1": 0.77,
   "PX": 0.16,
   "P2": 0.08,
   "P O2.5": 0.7,
@@ -1461,27 +1461,13 @@
   "Ora": "10:00",
   "Paese": "Uzbekistan",
   "Lega": "Pro League A",
-  "P1": 0.59,
-  "PX": 0.24,
-  "P2": 0.18,
+  "P1": 0.61,
+  "PX": 0.23,
+  "P2": 0.16,
   "P O2.5": 0.54,
-  "P GG": 0.6,
-  "xG casa": 1.82,
-  "xG ospite": 1.06
- },
- {
-  "Casa": "Sabah FA",
-  "Ospite": "Selangor",
-  "Ora": "10:00",
-  "Paese": "Malaysia",
-  "Lega": "Super League",
-  "P1": 0.15,
-  "PX": 0.21,
-  "P2": 0.63,
-  "P O2.5": 0.58,
-  "P GG": 0.58,
-  "xG casa": 0.97,
-  "xG ospite": 1.99
+  "P GG": 0.59,
+  "xG casa": 1.84,
+  "xG ospite": 1.03
  },
  {
   "Casa": "Metalurh Zaporizhya",
@@ -1554,18 +1540,74 @@
   "xG ospite": 1.64
  },
  {
+  "Casa": "Hatayspor",
+  "Ospite": "Ankaraspor",
+  "Ora": "11:00",
+  "Paese": "Turkey",
+  "Lega": "2. Lig",
+  "P1": 0.29,
+  "PX": 0.21,
+  "P2": 0.49,
+  "P O2.5": 0.59,
+  "P GG": 0.56,
+  "xG casa": 1.12,
+  "xG ospite": 1.79
+ },
+ {
+  "Casa": "Isparta 32 Spor",
+  "Ospite": "İnegöl Kafkas Gençlik",
+  "Ora": "11:00",
+  "Paese": "Turkey",
+  "Lega": "2. Lig",
+  "P1": 0.31,
+  "PX": 0.22,
+  "P2": 0.47,
+  "P O2.5": 0.57,
+  "P GG": 0.56,
+  "xG casa": 1.38,
+  "xG ospite": 1.71
+ },
+ {
+  "Casa": "Şanlıurfaspor",
+  "Ospite": "Somaspor",
+  "Ora": "11:00",
+  "Paese": "Turkey",
+  "Lega": "2. Lig",
+  "P1": 0.72,
+  "PX": 0.15,
+  "P2": 0.12,
+  "P O2.5": 0.64,
+  "P GG": 0.46,
+  "xG casa": 2.34,
+  "xG ospite": 0.85
+ },
+ {
+  "Casa": "Górnik Zabrze U19",
+  "Ospite": "Arkonia U19",
+  "Ora": "11:00",
+  "Paese": "Poland",
+  "Lega": "Central Youth League",
+  "P1": 0.55,
+  "PX": 0.2,
+  "P2": 0.25,
+  "P O2.5": 0.63,
+  "P GG": 0.57,
+  "xG casa": 1.96,
+  "xG ospite": 1.2
+ },
+ {
   "Casa": "Bate Borisov",
   "Ospite": "FC Isloch Minsk R.",
   "Ora": "11:00",
   "Paese": "Belarus",
   "Lega": "Premier League",
   "P1": 0.16,
-  "PX": 0.23,
-  "P2": 0.61,
-  "P O2.5": 0.51,
-  "P GG": 0.57,
-  "xG casa": 0.82,
-  "xG ospite": 1.75
+  "PX": 0.25,
+  "P2": 0.59,
+  "P O2.5": 0.45,
+  "P GG": 0.55,
+  "xG casa": 0.79,
+  "xG ospite": 1.67
  },
  {
   "Casa": "Belshina",
@@ -1573,13 +1615,13 @@
   "Ora": "11:00",
   "Paese": "Belarus",
   "Lega": "Premier League",
-  "P1": 0.1,
+  "P1": 0.11,
   "PX": 0.18,
-  "P2": 0.72,
-  "P O2.5": 0.62,
+  "P2": 0.71,
+  "P O2.5": 0.61,
   "P GG": 0.56,
-  "xG casa": 0.81,
-  "xG ospite": 2.26
+  "xG casa": 0.8,
+  "xG ospite": 2.23
  },
  {
   "Casa": "FC Minsk",
@@ -1604,10 +1646,10 @@
   "P1": 0.09,
   "PX": 0.14,
   "P2": 0.77,
-  "P O2.5": 0.67,
-  "P GG": 0.52,
-  "xG casa": 0.77,
-  "xG ospite": 2.6
+  "P O2.5": 0.69,
+  "P GG": 0.54,
+  "xG casa": 0.79,
+  "xG ospite": 2.62
  },
  {
   "Casa": "FC Vitebsk",
@@ -1615,12 +1657,12 @@
   "Ora": "11:00",
   "Paese": "Belarus",
   "Lega": "Premier League",
-  "P1": 0.51,
-  "PX": 0.25,
-  "P2": 0.24,
-  "P O2.5": 0.44,
-  "P GG": 0.5,
-  "xG casa": 1.52,
+  "P1": 0.48,
+  "PX": 0.26,
+  "P2": 0.25,
+  "P O2.5": 0.4,
+  "P GG": 0.49,
+  "xG casa": 1.46,
   "xG ospite": 0.78
  },
  {
@@ -1699,13 +1741,13 @@
   "Ora": "11:30",
   "Paese": "Estonia",
   "Lega": "Meistriliiga",
-  "P1": 0.51,
+  "P1": 0.54,
   "PX": 0.22,
-  "P2": 0.27,
+  "P2": 0.24,
   "P O2.5": 0.52,
   "P GG": 0.58,
-  "xG casa": 1.52,
-  "xG ospite": 1.12
+  "xG casa": 1.54,
+  "xG ospite": 1.09
  },
  {
   "Casa": "Lokomotiv Plovdiv",
@@ -1730,7 +1772,7 @@
   "P1": 0.15,
   "PX": 0.2,
   "P2": 0.65,
-  "P O2.5": 0.55,
+  "P O2.5": 0.56,
   "P GG": 0.56,
   "xG casa": 0.85,
   "xG ospite": 1.84
@@ -1741,27 +1783,13 @@
   "Ora": "12:00",
   "Paese": "Macedonia",
   "Lega": "First League",
-  "P1": 0.25,
+  "P1": 0.24,
   "PX": 0.23,
-  "P2": 0.51,
+  "P2": 0.53,
   "P O2.5": 0.44,
   "P GG": 0.57,
-  "xG casa": 0.98,
-  "xG ospite": 1.41
- },
- {
-  "Casa": "Tikveš",
-  "Ospite": "Shkendija",
-  "Ora": "13:00",
-  "Paese": "Macedonia",
-  "Lega": "First League",
-  "P1": 0.4,
-  "PX": 0.24,
-  "P2": 0.36,
-  "P O2.5": 0.52,
-  "P GG": 0.62,
-  "xG casa": 1.54,
-  "xG ospite": 1.28
+  "xG casa": 0.96,
+  "xG ospite": 1.42
  },
  {
   "Casa": "Górnik Łęczna",
@@ -1818,20 +1846,6 @@
   "P GG": 0.66,
   "xG casa": 2.36,
   "xG ospite": 1.39
- },
- {
-  "Casa": "Pelikan Łowicz",
-  "Ospite": "Mławianka Mława",
-  "Ora": "13:00",
-  "Paese": "Poland",
-  "Lega": "III Liga Group 1",
-  "P1": 0.58,
-  "PX": 0.18,
-  "P2": 0.24,
-  "P O2.5": 0.68,
-  "P GG": 0.66,
-  "xG casa": 2.27,
-  "xG ospite": 1.42
  },
  {
   "Casa": "Bałtyk Koszalin",
@@ -1946,20 +1960,6 @@
   "xG ospite": 1.16
  },
  {
-  "Casa": "Moravia Morawica",
-  "Ospite": "Pogoń-Sokół Lubaczów",
-  "Ora": "13:00",
-  "Paese": "Poland",
-  "Lega": "III Liga Group 4",
-  "P1": 0.38,
-  "PX": 0.23,
-  "P2": 0.39,
-  "P O2.5": 0.62,
-  "P GG": 0.64,
-  "xG casa": 1.59,
-  "xG ospite": 1.54
- },
- {
   "Casa": "Rubin",
   "Ospite": "Akron",
   "Ora": "12:00",
@@ -1984,8 +1984,8 @@
   "P2": 0.1,
   "P O2.5": 0.55,
   "P GG": 0.53,
-  "xG casa": 1.99,
-  "xG ospite": 0.63
+  "xG casa": 1.98,
+  "xG ospite": 0.64
  },
  {
   "Casa": "Obolon'-Brovar",
@@ -2007,13 +2007,13 @@
   "Ora": "12:00",
   "Paese": "Spain",
   "Lega": "Segunda División RFEF Group 1",
-  "P1": 0.3,
+  "P1": 0.26,
   "PX": 0.27,
-  "P2": 0.43,
-  "P O2.5": 0.45,
-  "P GG": 0.56,
-  "xG casa": 0.91,
-  "xG ospite": 1.32
+  "P2": 0.46,
+  "P O2.5": 0.43,
+  "P GG": 0.54,
+  "xG casa": 0.85,
+  "xG ospite": 1.33
  },
  {
   "Casa": "AVS",
@@ -2030,6 +2030,20 @@
   "xG ospite": 1.32
  },
  {
+  "Casa": "Levante II",
+  "Ospite": "Hércules II",
+  "Ora": "12:00",
+  "Paese": "Spain",
+  "Lega": "Tercera División RFEF Group 6",
+  "P1": 0.52,
+  "PX": 0.24,
+  "P2": 0.24,
+  "P O2.5": 0.43,
+  "P GG": 0.42,
+  "xG casa": 1.38,
+  "xG ospite": 0.81
+ },
+ {
   "Casa": "Pattani",
   "Ospite": "Chiangrai United",
   "Ora": "12:00",
@@ -2042,6 +2056,34 @@
   "P GG": 0.59,
   "xG casa": 1.12,
   "xG ospite": 1.74
+ },
+ {
+  "Casa": "Chainat",
+  "Ospite": "Chanthaburi",
+  "Ora": "12:00",
+  "Paese": "Thailand",
+  "Lega": "Thai League 2",
+  "P1": 0.4,
+  "PX": 0.24,
+  "P2": 0.36,
+  "P O2.5": 0.47,
+  "P GG": 0.49,
+  "xG casa": 1.34,
+  "xG ospite": 1.15
+ },
+ {
+  "Casa": "Khon Kaen United",
+  "Ospite": "Kasetsart FC",
+  "Ora": "12:30",
+  "Paese": "Thailand",
+  "Lega": "Thai League 2",
+  "P1": 0.71,
+  "PX": 0.18,
+  "P2": 0.12,
+  "P O2.5": 0.57,
+  "P GG": 0.46,
+  "xG casa": 2.19,
+  "xG ospite": 0.72
  },
  {
   "Casa": "Bắc Ninh",
@@ -2086,6 +2128,20 @@
   "xG ospite": 1.26
  },
  {
+  "Casa": "Binh Dinh",
+  "Ospite": "Sanna Khanh Hoa",
+  "Ora": "12:00",
+  "Paese": "Vietnam",
+  "Lega": "V.League 2",
+  "P1": 0.5,
+  "PX": 0.23,
+  "P2": 0.27,
+  "P O2.5": 0.45,
+  "P GG": 0.47,
+  "xG casa": 1.5,
+  "xG ospite": 0.91
+ },
+ {
   "Casa": "Balestier Khalsa",
   "Ospite": "Hougang United",
   "Ora": "12:30",
@@ -2098,6 +2154,34 @@
   "P GG": 0.68,
   "xG casa": 2.15,
   "xG ospite": 1.26
+ },
+ {
+  "Casa": "China W",
+  "Ospite": "Thailand W",
+  "Ora": "12:35",
+  "Paese": "World",
+  "Lega": "Friendlies Women",
+  "P1": 0.69,
+  "PX": 0.15,
+  "P2": 0.16,
+  "P O2.5": 0.66,
+  "P GG": 0.45,
+  "xG casa": 2.08,
+  "xG ospite": 0.84
+ },
+ {
+  "Casa": "Segesta Sisak",
+  "Ospite": "Dubrava Zagreb",
+  "Ora": "12:45",
+  "Paese": "Croatia",
+  "Lega": "First NL",
+  "P1": 0.54,
+  "PX": 0.22,
+  "P2": 0.24,
+  "P O2.5": 0.48,
+  "P GG": 0.46,
+  "xG casa": 1.55,
+  "xG ospite": 0.94
  },
  {
   "Casa": "Tractor Sazi",
@@ -2152,91 +2236,7 @@
   "P2": 0.11,
   "P O2.5": 0.7,
   "P GG": 0.6,
-  "xG casa": 2.84,
+  "xG casa": 2.83,
   "xG ospite": 0.89
- },
- {
-  "Casa": "Holstein Kiel",
-  "Ospite": "1. FC Kaiserslautern",
-  "Ora": "13:00",
-  "Paese": "Germany",
-  "Lega": "2. Bundesliga",
-  "P1": 0.37,
-  "PX": 0.28,
-  "P2": 0.35,
-  "P O2.5": 0.46,
-  "P GG": 0.58,
-  "xG casa": 1.09,
-  "xG ospite": 1.06
- },
- {
-  "Casa": "Dynamo Dresden",
-  "Ospite": "FC St. Pauli",
-  "Ora": "13:00",
-  "Paese": "Germany",
-  "Lega": "2. Bundesliga",
-  "P1": 0.42,
-  "PX": 0.24,
-  "P2": 0.34,
-  "P O2.5": 0.57,
-  "P GG": 0.62,
-  "xG casa": 1.68,
-  "xG ospite": 1.27
- },
- {
-  "Casa": "Varbergs BoIS FC",
-  "Ospite": "Ostersunds FK",
-  "Ora": "13:00",
-  "Paese": "Sweden",
-  "Lega": "Allsvenskan",
-  "P1": 0.42,
-  "PX": 0.27,
-  "P2": 0.31,
-  "P O2.5": 0.39,
-  "P GG": 0.53,
-  "xG casa": 1.25,
-  "xG ospite": 0.92
- },
- {
-  "Casa": "Kazincbarcikai",
-  "Ospite": "Tiszakecske FC",
-  "Ora": "13:00",
-  "Paese": "Hungary",
-  "Lega": "NB II",
-  "P1": 0.43,
-  "PX": 0.23,
-  "P2": 0.33,
-  "P O2.5": 0.56,
-  "P GG": 0.64,
-  "xG casa": 1.69,
-  "xG ospite": 1.33
- },
- {
-  "Casa": "Kozarmisleny FC",
-  "Ospite": "BVSC",
-  "Ora": "13:00",
-  "Paese": "Hungary",
-  "Lega": "NB II",
-  "P1": 0.34,
-  "PX": 0.26,
-  "P2": 0.4,
-  "P O2.5": 0.46,
-  "P GG": 0.59,
-  "xG casa": 1.14,
-  "xG ospite": 1.34
- },
- {
-  "Casa": "Mezokovesd-zsory",
-  "Ospite": "Szentlőrinc SE",
-  "Ora": "13:00",
-  "Paese": "Hungary",
-  "Lega": "NB II",
-  "P1": 0.63,
-  "PX": 0.22,
-  "P2": 0.14,
-  "P O2.5": 0.53,
-  "P GG": 0.51,
-  "xG casa": 1.95,
-  "xG ospite": 0.85
  }
 ]
