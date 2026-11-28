@@ -929,8 +929,7 @@
   "Mercato": "OU 1.5",
   "Sel": "Over",
   "Prob": 73.6,
-  "Equa": 1.36,
-  "InSchedina": "si"
+  "Equa": 1.36
  },
  {
   "Data": "2026-12-01",
@@ -1347,7 +1346,8 @@
   "Mercato": "Esito + Gol",
   "Sel": "1X + Under 4.5",
   "Prob": 65.4,
-  "Equa": 1.53
+  "Equa": 1.53,
+  "InSchedina": "si"
  },
  {
   "Data": "2026-12-01",
@@ -6785,26 +6785,6 @@
   "Sel": "2 + Over 1.5",
   "Prob": 35.1,
   "Equa": 2.85
- },
- {
-  "Data": "2026-12-01",
-  "Ora": "20:45",
-  "Campionato": "England League One",
-  "Partita": "Notts County - Wimbledon",
-  "Casa": "Notts County",
-  "Ospite": "Wimbledon",
-  "Linea_OU": "",
-  "Gol_attesi": 2.62,
-  "Margine": 4.2,
-  "Movimento": null,
-  "Principale": "",
-  "Schedina": "si",
-  "Fonte": "FootyMetrics",
-  "Gruppo": "Under Over",
-  "Mercato": "OU 1.5",
-  "Sel": "Under",
-  "Prob": 26.4,
-  "Equa": 3.79
  },
  {
   "Data": "2026-12-01",
