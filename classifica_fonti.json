@@ -1,6 +1,6 @@
 {
- "aggiornato": "2026-11-28 01:52",
- "risultati": 52806,
+ "aggiornato": "2026-11-28 06:19",
+ "risultati": 52854,
  "con_prezzo": 11038,
  "minimo": 100,
  "fonti": [
@@ -9,35 +9,35 @@
    "nome": "WebPronostici",
    "righe": 58640,
    "rotte": 0,
-   "misurate": 32843,
+   "misurate": 32859,
    "mercati": [
     {
      "mercato": "1X2",
-     "prese": 1851,
-     "su": 3566,
+     "prese": 1852,
+     "su": 3567,
      "pct": 51.9,
      "rimborsi": 0
     },
     {
      "mercato": "BTTS",
-     "prese": 5350,
-     "su": 9690,
+     "prese": 5352,
+     "su": 9695,
      "pct": 55.2,
      "rimborsi": 0
     },
     {
      "mercato": "DC",
-     "prese": 4393,
-     "su": 6124,
-     "pct": 71.7,
+     "prese": 4397,
+     "su": 6128,
+     "pct": 71.8,
      "rimborsi": 0
     },
     {
      "mercato": "OU",
-     "prese": 6866,
-     "su": 11616,
+     "prese": 6870,
+     "su": 11622,
      "pct": 59.1,
-     "rimborsi": 881
+     "rimborsi": 882
     },
     {
      "mercato": "SEGNA",
@@ -47,7 +47,7 @@
      "rimborsi": 0
     }
    ],
-   "prese": 19954,
+   "prese": 19965,
    "pct": 60.8,
    "mercato": {
     "n": 843,
@@ -58,40 +58,40 @@
   {
    "chiave": "soccersite",
    "nome": "SoccerSite",
-   "righe": 16803,
+   "righe": 17445,
    "rotte": 48,
-   "misurate": 14446,
+   "misurate": 14458,
    "mercati": [
     {
      "mercato": "1X2",
-     "prese": 4446,
-     "su": 8351,
+     "prese": 4451,
+     "su": 8360,
      "pct": 53.2,
      "rimborsi": 0
     },
     {
      "mercato": "BTTS",
      "prese": 1323,
-     "su": 2332,
+     "su": 2333,
      "pct": 56.7,
      "rimborsi": 0
     },
     {
      "mercato": "DC",
      "prese": 1163,
-     "su": 1431,
-     "pct": 81.3,
+     "su": 1432,
+     "pct": 81.2,
      "rimborsi": 0
     },
     {
      "mercato": "OU",
      "prese": 1357,
-     "su": 2332,
+     "su": 2333,
      "pct": 58.2,
      "rimborsi": 0
     }
    ],
-   "prese": 8289,
+   "prese": 8294,
    "pct": 57.4,
    "mercato": {
     "n": 2585,
@@ -102,40 +102,40 @@
   {
    "chiave": "ratingbet",
    "nome": "RatingBet",
-   "righe": 20273,
+   "righe": 20504,
    "rotte": 0,
-   "misurate": 13183,
+   "misurate": 13217,
    "mercati": [
     {
      "mercato": "1X2",
-     "prese": 1752,
-     "su": 3199,
+     "prese": 1757,
+     "su": 3207,
      "pct": 54.8,
      "rimborsi": 0
     },
     {
      "mercato": "BTTS",
-     "prese": 1833,
-     "su": 3323,
-     "pct": 55.2,
+     "prese": 1836,
+     "su": 3333,
+     "pct": 55.1,
      "rimborsi": 0
     },
     {
      "mercato": "DC",
-     "prese": 2655,
-     "su": 3331,
-     "pct": 79.7,
+     "prese": 2663,
+     "su": 3339,
+     "pct": 79.8,
      "rimborsi": 0
     },
     {
      "mercato": "OU",
-     "prese": 1953,
-     "su": 3330,
+     "prese": 1957,
+     "su": 3338,
      "pct": 58.6,
      "rimborsi": 0
     }
    ],
-   "prese": 8193,
+   "prese": 8213,
    "pct": 62.1,
    "mercato": {
     "n": 1045,
@@ -146,41 +146,41 @@
   {
    "chiave": "xgaura",
    "nome": "xGaura",
-   "righe": 16280,
+   "righe": 16457,
    "rotte": 0,
-   "misurate": 10264,
+   "misurate": 10287,
    "mercati": [
     {
      "mercato": "1X2",
-     "prese": 2114,
-     "su": 3651,
+     "prese": 2115,
+     "su": 3652,
      "pct": 57.9,
      "rimborsi": 0
     },
     {
      "mercato": "BTTS",
-     "prese": 405,
-     "su": 693,
-     "pct": 58.4,
+     "prese": 408,
+     "su": 698,
+     "pct": 58.5,
      "rimborsi": 0
     },
     {
      "mercato": "DC",
-     "prese": 1635,
-     "su": 2253,
+     "prese": 1638,
+     "su": 2256,
      "pct": 72.6,
      "rimborsi": 0
     },
     {
      "mercato": "OU",
-     "prese": 2387,
-     "su": 3667,
+     "prese": 2398,
+     "su": 3681,
      "pct": 65.1,
      "rimborsi": 0
     }
    ],
-   "prese": 6541,
-   "pct": 63.7,
+   "prese": 6559,
+   "pct": 63.8,
    "mercato": {
     "n": 1441,
     "fonte": 58.0,
@@ -213,26 +213,26 @@
   {
    "chiave": "statarea",
    "nome": "Statarea",
-   "righe": 6554,
+   "righe": 6696,
    "rotte": 0,
-   "misurate": 5238,
+   "misurate": 5242,
    "mercati": [
     {
      "mercato": "1X2",
-     "prese": 1832,
-     "su": 3384,
+     "prese": 1833,
+     "su": 3387,
      "pct": 54.1,
      "rimborsi": 0
     },
     {
      "mercato": "DC",
-     "prese": 1293,
-     "su": 1854,
-     "pct": 69.7,
+     "prese": 1294,
+     "su": 1855,
+     "pct": 69.8,
      "rimborsi": 0
     }
    ],
-   "prese": 3125,
+   "prese": 3127,
    "pct": 59.7,
    "mercato": {
     "n": 1246,
