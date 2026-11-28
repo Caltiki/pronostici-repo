@@ -1,66 +1,66 @@
 {
- "aggiornato": "2026-11-28 07:07",
+ "aggiornato": "2026-11-28 09:07",
  "nota": "scarto medio in punti percentuali dall'1X2 senza margine di Pinnacle, per segno",
  "book": [
   {
    "book": "Betfair",
-   "partite": 2139,
+   "partite": 2147,
    "scarto_medio": 0.75,
    "margine_medio": 9.09
   },
   {
    "book": "media dei book",
-   "partite": 2380,
+   "partite": 2392,
    "scarto_medio": 0.8,
    "margine_medio": null
   },
   {
    "book": "Marathonbet",
-   "partite": 2389,
+   "partite": 2401,
    "scarto_medio": 0.91,
    "margine_medio": 8.42
   },
   {
+   "book": "BetVictor",
+   "partite": 2122,
+   "scarto_medio": 0.94,
+   "margine_medio": 9.66
+  },
+  {
    "book": "1xBet",
-   "partite": 2378,
+   "partite": 2390,
    "scarto_medio": 0.94,
    "margine_medio": 7.22
   },
   {
-   "book": "BetVictor",
-   "partite": 2114,
-   "scarto_medio": 0.95,
-   "margine_medio": 9.66
-  },
-  {
    "book": "William Hill",
-   "partite": 2296,
+   "partite": 2304,
    "scarto_medio": 0.96,
    "margine_medio": 10.71
   },
   {
    "book": "Dafabet",
-   "partite": 2227,
+   "partite": 2231,
    "scarto_medio": 1.07,
-   "margine_medio": 5.94
+   "margine_medio": 5.95
   },
   {
    "book": "Betano",
-   "partite": 2275,
+   "partite": 2283,
    "scarto_medio": 1.12,
    "margine_medio": 6.52
   },
   {
    "book": "Bet365",
-   "partite": 2244,
+   "partite": 2252,
    "scarto_medio": 1.2,
    "margine_medio": 8.0
   },
   {
    "book": "SBO",
-   "partite": 1850,
+   "partite": 1858,
    "scarto_medio": 1.49,
-   "margine_medio": 13.49
+   "margine_medio": 13.5
   }
  ]
 }
